@@ -1,0 +1,561 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Serveis web amb Java EE 7</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a1annexos"><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap">Gestió de reserva de places a concerts com a servei web SOAP</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone">Fent servir la gestió de reserva de places a concerts des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web">Fent servir la gestió de reserva de places a concerts des d'una aplicació web</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta "Hello World!!!"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#el_servei_web_de_dades_de_llibres_operacions_crud">El servei web de dades de llibres. Operacions CRUD</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a3" class="tocsection"><p id='u5a3continguts'><a class="section" href="../../../WebContent/u5/a3/continguts.html">Serveis web RESTful amb Java EE7. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a3annexos"><a href="../../../WebContent/u5/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a3/continguts.html#un_client_per_al_servei_web_restful_que_contesta_hola">Un client per al servei web RESTful que contesta "Hola"</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#el_servei_web_de_dades_de_llibres_consum_i_testeig">El servei web de dades de llibres. Consum i testeig</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Java EE 7</a></li><li><a href="continguts.html">Serveis web SOAP amb Java EE 7</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="creacio_d_un_servei_web_soap_amb_netbeans" >Creació d&#039;un servei web SOAP amb NetBeans</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és veure les facilitats que aporta NetBeans en la creació d’un servei web SOAP.
+</p>
+
+<p>
+Creeu un servei web SOAP amb Java EE 7 que permeti les següents operacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Proporcionar una llistat de concerts i el nombre de places lliures a cada un d’ells.</div>
+</li>
+<li class="level1"><div class="li"> Fer la reserva d’una entrada per a un d’aquests concerts.</div>
+</li>
+<li class="level1"><div class="li"> Cancel·lar una reserva d’una entrada.</div>
+</li>
+</ul>
+
+<p>
+Cal que creeu el servei web fent servir els assistents que proporciona NetBeans.
+</p>
+
+<p>
+Feu servir l’aplicació web “Resentioc”, que trobareu en el següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/resentioc.zip">enllaç</a><span> ( 9.5 KB )</span></div></div> com a punt de partida.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Començarem l’activitat important el projecte “Resentioc”, que us servirà de punt de partida a NetBeans.
+</p>
+
+<p>
+Una vegada tingueu el projecte “Resentioc” importat a NetBeans, feu clic amb el botó dret i seleccioneu <em>New</em> / <em>Web Service…</em> (vegeu la <span class="figref"><a href="#fig1.15"><span>figura</span></a></span>), i s’obrirà l’assistent que us permetrà crear el servei web. 
+</p>
+<div class="iocfigure"><a name="fig1.15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘New’ / ‘Web Service…’ a NetBeans
+
+</figcaption><img src="../media/xig1.15.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Cal especificar el nom que tindrà el servei i el paquet on es generarà la classe d’implementació (vegeu la <span class="figref"><a href="#fig1.16"><span>figura</span></a></span>). 
+</p>
+
+<p>
+Podeu triar també si crear la classe des de zero o bé fer servir algun EJB ja desenvolupat. Per fer l’exercici ens quedarem amb l’opció per defecte; anomenareu <code>NetbeansTicketService</code> el servei i el creareu al paquet <code>cat.xtec.ioc.service.impl</code>:
+</p>
+<div class="iocfigure"><a name="fig1.16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assistent de creació d’un servei web SOAP a NetBeans
+
+</figcaption><img src="../media/xig1.16.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Feu clic a <em>Finish</em> i veureu que s’ha generat la classe <code>NetbeansTicketService</code> al paquet <code>cat.xtec.ioc.service.impl</code> amb la implementació del servei web. Com que en Java EE 7 la creació d’una interfície per al servei web és opcional, l’assistent de NetBeans no en crea cap.
+</p>
+
+<p>
+Ara toca afegir les tres operacions que ha d’oferir el servei web de gestió de reserves; per fer-ho, feu clic amb el botó dret al servei web creat i seleccioneu <em>New / Add Operation…</em> (vegeu la <span class="figref"><a href="#fig1.17"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘New’ / ‘Add Operation…’ a NetBeans
+
+</figcaption><img src="../media/xig1.17.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I creeu l’operació que ens ha de proporcionar la llistat de concerts i el nombre de places lliures a cada un d’ells (vegeu la <span class="figref"><a href="#fig1.18"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Operació getAllShows
+
+</figcaption><img src="../media/xig1.18.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Feu clic al botó <em>OK</em> i veureu que s’ha generat el mètode <code>getAllShows</code> a la classe <code>NetBeansTicketService</code>.
+</p>
+
+<p>
+Ara toca escriure la implementació d’aquest mètode; podeu fer ús del repositori de concerts en memòria que teniu a la capa de persistència. Si ho feu, el codi us quedarà similar a aquest:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Show;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.ShowRepository;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.impl.InMemoryShowRepository;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">import javax.jws.WebService;</div></li><li class="li1"><div class="de1">import javax.jws.WebMethod;</div></li><li class="li1"><div class="de1">import javax.jws.WebParam;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@WebService(serviceName = &quot;NetbeansTicketService&quot;)</div></li><li class="li1"><div class="de1">public class NetbeansTicketService {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private final ShowRepository showRepository = new InMemoryShowRepository();</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Web service operation</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @WebMethod(operationName = &quot;getAllShows&quot;)</div></li><li class="li1"><div class="de1">    public ArrayList&lt;Show&gt; getAllShows() {</div></li><li class="li1"><div class="de1">        return new ArrayList&lt;Show&gt;(this.showRepository.getAllShows());</div></li><li class="li1"><div class="de1">    }        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Repetiu el procés per crear les operacions que permetran fer una reserva i cancel·lar-la. Un cop implementades aquestes operacions, el codi de la classe que implementa el servei web us quedarà similar a aquest:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Show;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.ShowRepository;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.impl.InMemoryShowRepository;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">import javax.jws.WebService;</div></li><li class="li1"><div class="de1">import javax.jws.WebMethod;</div></li><li class="li1"><div class="de1">import javax.jws.WebParam;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@WebService(serviceName = &quot;NetbeansTicketService&quot;)</div></li><li class="li1"><div class="de1">public class NetbeansTicketService {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private final ShowRepository showRepository = new InMemoryShowRepository();</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Web service operation</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @WebMethod(operationName = &quot;getAllShows&quot;)</div></li><li class="li1"><div class="de1">    public ArrayList&lt;Show&gt; getAllShows() {</div></li><li class="li1"><div class="de1">        return new ArrayList&lt;Show&gt;(this.showRepository.getAllShows());</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Web service operation</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @WebMethod(operationName = &quot;makeReservation&quot;)</div></li><li class="li1"><div class="de1">    public Show makeReservation(@WebParam(name = &quot;showId&quot;) String showId) {</div></li><li class="li1"><div class="de1">        return this.showRepository.makeReservation(showId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Web service operation</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @WebMethod(operationName = &quot;cancelReservation&quot;)</div></li><li class="li1"><div class="de1">    public Show cancelReservation(@WebParam(name = &quot;showId&quot;) String showId) {</div></li><li class="li1"><div class="de1">        return this.showRepository.cancelReservation(showId);</div></li><li class="li1"><div class="de1">    }   </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb això ja teniu implementat el servei web de gestió de reserves; per desplegar-lo tan sols cal que feu <em>Run</em> a NetBeans (vegeu la <span class="figref"><a href="#fig1.19"><span>figura</span></a></span>) i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte.
+</p>
+<div class="iocfigure"><a name="fig1.19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Run’ a NetBeans
+
+</figcaption><img src="../media/xig1.19.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop desplegat, i amb el servidor d’aplicacions corrent, el podeu provar fent clic amb el botó dret al servei web creat i seleccionant <em>Test Web Service</em> (vegeu la <span class="figref"><a href="#fig1.20"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Test Web Service’ a NetBeans
+
+</figcaption><img src="../media/xig1.20.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I s’obrirà al navegador una pàgina web (vegeu la <span class="figref"><a href="#fig1.21"><span>figura</span></a></span>) on podreu veure el document WSDL de definició del servei web i la llista d’operacions que ofereix, cada una amb entrades per als seus paràmetres i un botó per provar-la:
+</p>
+<div class="iocfigure"><a name="fig1.21"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pàgina de test del servei web
+
+</figcaption><img src="../media/xig1.21.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El codi de la solució d’aquesta activitat el podeu descarregar del següent  <div class="mediaf filezip"><div class="mediacontent"><a href="../media/resentioc_netbeans.zip">enllaç</a><span> ( 10.5 KB )</span></div></div>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_d_un_client_java_stand-alone_per_a_un_servei_web_soap_amb_netbeans" >Creació d’un client Java &#039;stand-alone&#039; per a un servei web SOAP amb NetBeans</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és veure les facilitats que us aporta NetBeans en la creació d’un client Java <em>stand-alone</em> que consumeixi un servei web SOAP.
+</p>
+
+<p>
+Creeu un client Java <em>stand-alone</em> que consumeixi el servei web de gestió de reserves d’entrades a concerts.
+</p>
+
+<p>
+Cal que creeu el client fent servir els assistents que proporciona NetBeans.
+</p>
+
+<p>
+Feu servir l’aplicació “Resentioc”, que trobareu en el següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/resentioc_netbeans.zip">enllaç</a><span> ( 10.5 KB )</span></div></div> i l’aplicació “Resentclientioc”, que trobareu en el següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/resentclientioc.zip">enllaç</a><span> ( 6.9 KB )</span></div></div> com a punt de partida. 
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Començarem l’activitat important els projectes “Resentioc” i “Resentclientioc”,  que us serviran de punt de partida, a NetBeans.
+</p>
+
+<p>
+Una vegada tingueu els dos projectes importats a NetBeans cal que desplegueu el servei web de gestió de reserva d’entrades per a concerts fent clic amb el botó dret sobre el projecte “Resentioc” i polsant <em>Run</em> (vegeu la <span class="figref"><a href="#fig1.22"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Desplegament del servei web
+
+</figcaption><img src="../media/xig1.22.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop desplegat i amb el servidor d’aplicacions corrent, verifiqueu que el servei web funciona correctament fent clic amb el botó dret al servei web <code>NetbeansTicketService</code> i seleccionant <em>Test Web Service</em> (vegeu la <span class="figref"><a href="#fig1.23"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.23"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Prova del servei web
+
+</figcaption><img src="../media/xig1.23.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I s’obrirà al navegador una pàgina web (vegeu la <span class="figref"><a href="#fig1.24"><span>figura</span></a></span>) on podreu veure el document WSDL de definició del servei web i la llista d’operacions que ofereix, cada una amb entrades per als seus paràmetres i un botó per provar-la:
+</p>
+<div class="iocfigure"><a name="fig1.24"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pàgina de test del servei web
+
+</figcaption><img src="../media/xig1.24.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+<strong>Nota important</strong>: la carpeta on teniu el projecte “Resentclientioc” no hauria de tenir espais en blanc al <em>path</em>, ja que <code>wsimport</code> no generaria bé els artefactes. 
+</p>
+
+<p>
+Ara toca fer servir NetBeans per crear una aplicació Java que consumeixi aquest servei web. Per fer-ho, feu clic amb el botó dret al projecte “Resentclientioc” i seleccioneu <em>New / Web Service Client…</em> (vegeu la <span class="figref"><a href="#fig1.25"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.25"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘New’ / ‘Web Service Client…’ a NetBeans
+
+</figcaption><img src="../media/xig1.25.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A l’assistent cal especificar l’<acronym title="Uniform Resource Locator">URL</acronym> on està publicat el document WSDL de definició del servei web i el paquet on volem que NetBeans generi els artefactes necessaris per poder consumir el servei web des d’aquest client (vegeu la <span class="figref"><a href="#fig1.26"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.26"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assistent de creació del client a NetBeans
+
+</figcaption><img src="../media/xig1.26.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Quan polseu <em>Finish</em>, NetBeans generarà els artefactes necessaris per poder consumir el servei web amb la utilitat <code>wsimport</code> i afegirà una referència al servei web al menú <em>Web Service References</em> (vegeu la <span class="figref"><a href="#fig1.27"><span>figura</span></a></span>) i un conjunt de classes Java amb els artefactes necessaris per poder consumir el servei web al paquet <code>cat.xtec.ioc.service.jaxws</code>.
+</p>
+<div class="iocfigure"><a name="fig1.27"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Web Service References’
+
+</figcaption><img src="../media/xig1.27.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara creeu la classe <code>NetBeansTicketServiceClient</code> al paquet <code>cat.xtec.ioc.client</code>, creeu a la classe un mètode <code>main</code> i feu-hi clic amb el botó dret de ratolí: <em>Insert Code… / Call Web Service Operation…</em>; veureu que us apareixen els serveis web que teniu referenciats (vegeu 
+la <span class="figref"><a href="#fig1.28"><span>figura</span></a></span>) i podeu escollir l’operació que voleu cridar.
+</p>
+<div class="iocfigure"><a name="fig1.28"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Serveis web referenciats
+
+</figcaption><img src="../media/xig1.28.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Seleccioneu l’operació <code>getAllShows</code> i NetBeans us generarà el codi necessari per cridar l’operació al servei web. Si NetBeans us genera els noms de les classes amb el prefix del paquet <code>cat.xtec.ioc.service.impl</code> elimineu-lo i afegiu els imports corresponents al paquet on <code>wsimport</code> ha generat els artefactes necessaris per poder consumir el servei web (<code>cat.xtec.ioc.service.jaxws</code>).
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.NetbeansTicketService;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.NetbeansTicketService_Service;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.Show;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class NetBeansTicketServiceClient {</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        try { // Call Web Service Operation</div></li><li class="li1"><div class="de1">            NetbeansTicketService_Service service = new NetbeansTicketService_Service();</div></li><li class="li1"><div class="de1">            NetbeansTicketService port = service.getNetbeansTicketServicePort();</div></li><li class="li1"><div class="de1">            // TODO process result here</div></li><li class="li1"><div class="de1">            java.util.List&lt;Show&gt; result = port.getAllShows();</div></li><li class="li1"><div class="de1">            System.out.println(&quot;Result = &quot;+result);</div></li><li class="li1"><div class="de1">        } catch (Exception ex) {</div></li><li class="li1"><div class="de1">            // TODO handle custom exceptions here</div></li><li class="li1"><div class="de1">        }               </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un cop vist el procés, creeu vosaltres, seguint aquests passos, l’aplicació Java client per gestionar les reserves a concerts. Una possible codificació que mostra el llistat de concerts amb les places disponibles per consola seria la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.NetbeansTicketService;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.NetbeansTicketService_Service;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.jaxws.Show;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class NetBeansTicketServiceClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        NetbeansTicketService_Service service = new NetbeansTicketService_Service();</div></li><li class="li1"><div class="de1">        NetbeansTicketService port = service.getNetbeansTicketServicePort();</div></li><li class="li1"><div class="de1">        List&lt;Show&gt; list = port.getAllShows();</div></li><li class="li1"><div class="de1">        printALlShows(list);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void printALlShows(List&lt;Show&gt; shows) {</div></li><li class="li1"><div class="de1">        shows.stream().forEach((show) -&gt; {</div></li><li class="li1"><div class="de1">            System.out.println(&quot;Show [id=&quot; + show.getId() + &quot;, name=&quot; + show.getName() + &quot;, available tickets=&quot; + show.getAvailableTickets() + &quot;]&quot;);</div></li><li class="li1"><div class="de1">        });</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi de la solució d’aquesta activitat, amb una classe <code>main</code> que treu per consola el llistat de concerts amb les entrades disponibles, el podeu descarregar del següent  <div class="mediaf filezip"><div class="mediacontent"><a href="../media/resentclientioc_netbeans.zip">enllaç</a><span> ( 9.5 KB )</span></div></div>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="consumint_serveis_web_publicats_a_internet" >Consumint serveis web publicats a internet</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és fer un client que Java <em>stand-alone</em> que consumeixi un servei web SOAP publicat a internet.
+</p>
+
+<p>
+Creeu un client Java <em>stand-alone</em> que mostri les ciutats de les quals té informació sobre el temps el servei web GlobalWeather. Podeu obtenir la informació necessària sobre aquest servei web aquí: <a href="http://www.service-repository.com/service/overview/-2082028434" class="urlextern" title="http://www.service-repository.com/service/overview/-2082028434"  rel="nofollow">www.service-repository.com/service/overview/-2082028434</a>.
+</p>
+
+<p>
+A vegades els recursos a internet canvien de lloc o simplement deixen d’estar disponibles. Si no us funciona l’enllaç podeu fer l’exercici amb qualsevol servei web publicat a internet que tingui accessible el document WSDL de definició del servei.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Començarem l’activitat creant el projecte “GlobalWeatherClient” a NetBeans. Per fer-ho, feu <em>New Project… / Java / Java Application</em> (vegeu la <span class="figref"><a href="#fig1.29"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.29"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació d’una aplicació Java a NetBeans
+
+</figcaption><img src="../media/xig1.29.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Polseu <em>Next</em> i ompliu el formulari de l’assistent especificant com a nom del projecte “GlobalWeatherClient” i generant ja la classe <code>main</code>, que contindrà el codi del client (vegeu la <span class="figref"><a href="#fig1.30"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.30"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assistent de creació d’una aplicació Java a NetBeans
+
+</figcaption><img src="../media/xig1.30.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara toca fer servir NetBeans per crear una aplicació Java que consumeixi aquest servei web. Per fer-ho, feu clic amb el botó dret al “projecteGlobalWeatherClien” i seleccioneu <em>New / Web Service Client…</em> (vegeu la <span class="figref"><a href="#fig1.31"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.31"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘New’ / ‘Web Service Client…’ a NetBeans
+
+</figcaption><img src="../media/xig1.31.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Cal especificar l’<acronym title="Uniform Resource Locator">URL</acronym> on està publicat el document WSDL de definició del servei web i el paquet on volem que NetBeans generi els artefactes necessaris per poder consumir el servei web des d’aquest client (vegeu la <span class="figref"><a href="#fig1.32"><span>figura</span></a></span>). El servei GlobalWeather té publicat el document WDSL en aquesta adreça: <a href="http://www.webservicex.com/globalweather.asmx?WSDL" class="urlextern" title="http://www.webservicex.com/globalweather.asmx?WSDL"  rel="nofollow">www.webservicex.com/globalweather.asmx?WSDL</a>, i direm a NetBeans que generi els artefactes al paquet per defecte.
+</p>
+<div class="iocfigure"><a name="fig1.32"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assistent de creació del client a NetBeans
+
+</figcaption><img src="../media/xig1.32.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Amb aquesta informació, NetBeans generarà els artefactes necessaris per poder consumir el servei web amb la utilitat <code>wsimport</code> i afegirà una referència al servei web al menú <em>Web Service References</em>.
+</p>
+
+<p>
+Ara aneu a la classe <code>GlobalWeatherClient</code> al paquet <code>cat.xtec.ioc.client</code> i feu clic amb el botó dret del ratolí al mètode <code>main</code>, <em>Insert Code… / Call Web Service Operation…</em>.
+</p>
+
+<p>
+Veureu que us apareixen els serveis web que teniu referenciats (vegeu la <span class="figref"><a href="#fig1.33"><span>figura</span></a></span>) i podeu escollir l’operació que voleu cridar.
+</p>
+<div class="iocfigure"><a name="fig1.33"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Serveis web referenciats
+
+</figcaption><img src="../media/xig1.33.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Seleccioneu l’operació <code>GetCitiesByCountry</code> i NetBeans us generarà el codi necessari per cridar l’operació al servei web:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private static String getCitiesByCountry(java.lang.String countryName) {</div></li><li class="li1"><div class="de1">        net.webservicex.GlobalWeather service = new net.webservicex.GlobalWeather();</div></li><li class="li1"><div class="de1">        net.webservicex.GlobalWeatherSoap port = service.getGlobalWeatherSoap();</div></li><li class="li1"><div class="de1">        return port.getCitiesByCountry(countryName);</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+Ara ja sols us cal cridar aquesta funció des del mètode <code>main</code> especificant un país, per exemple <em>Spain</em>, i imprimir el resultat per la consola:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class GlobalWeatherClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * @param args the command line arguments</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">       System.out.println(getCitiesByCountry(&quot;Spain&quot;));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static String getCitiesByCountry(java.lang.String countryName) {</div></li><li class="li1"><div class="de1">        net.webservicex.GlobalWeather service = new net.webservicex.GlobalWeather();</div></li><li class="li1"><div class="de1">        net.webservicex.GlobalWeatherSoap port = service.getGlobalWeatherSoap();</div></li><li class="li1"><div class="de1">        return port.getCitiesByCountry(countryName);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si executeu el client fent primer <em>Build</em> i després amb <em>Run File</em> veureu a la consola la llista de ciutats que torna el servei web cridat:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;NewDataSet&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Fuerteventura / Aeropuerto&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Hierro / Aeropuerto&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;La Palma / Aeropuerto&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Las Palmas De Gran Canaria / Gando&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Lanzarote / Aeropuerto&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Tenerife Sur&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  &lt;Table&gt;</div></li><li class="li1"><div class="de1">    &lt;Country&gt;Spain&lt;/Country&gt;</div></li><li class="li1"><div class="de1">    &lt;City&gt;Tenerife / Los Rodeos&lt;/City&gt;</div></li><li class="li1"><div class="de1">  &lt;/Table&gt;</div></li><li class="li1"><div class="de1">  ...</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

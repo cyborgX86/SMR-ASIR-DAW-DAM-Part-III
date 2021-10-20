@@ -1,0 +1,1087 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Generació dinàmica de pàgines web</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Introducció a Spring i Spring MVC</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_maven">"Hola, Món" amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_web_amb_maven">'Hola, Món' web amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_spring_mvc">"Hola, Món" amb Spring MVC</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#estoc_de_medicaments_benvinguda">Estoc de medicaments, benvinguda</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_domini">Estoc de medicaments, capa de domini</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_persistencia">Estoc de medicaments, capa de persistència</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_servei">Estoc de medicaments, capa de servei</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a3" class="tocsection"><p id='u3a3continguts'><a class="section" href="../../../WebContent/u3/a3/continguts.html">Spring MVC, aprofundint en els controladors</a><span class="buttonexp"></span></p><ul><li id="u3a3exercicis"><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a3annexos"><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_capa_de_servei_a_medicament">Estoc de medicaments, capa de servei a medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_medicaments_per_malaltia">Estoc de medicaments, medicaments per malaltia</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_llista_de_medicaments_segons_filtre">"Estoc de medicaments", llista de medicaments segons filtre</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_detall_de_medicament">"Estoc de medicaments", detall de medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a4" class="tocsection"><p id='u3a4continguts'><a class="section" href="../../../WebContent/u3/a4/continguts.html">Spring MVC, altres aplicacions</a><span class="buttonexp"></span></p><ul><li id="u3a4activitats"><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></li><li id="u3a4exercicis"><a href="../../../WebContent/u3/a4/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a4annexos"><a href="../../../WebContent/u3/a4/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a4' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_formulari_per_afegir_medicaments">Estoc de medicaments, formulari per afegir medicaments</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_llista_blanca_al_formulari">Estoc de medicaments, llista blanca al formulari</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_pagina_de_login">Estoc de medicaments, pàgina de 'login'</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_internacionalitzacio">Estoc de medicaments, internacionalització</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Generació dinàmica de pàgines web</a></li><li>Spring MVC, aprofundint en els controladors</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="spring_mvc_aprofundint_en_els_controladors"> Spring MVC, aprofundint en els controladors </a></h1>
+    	
+<p>
+Partiu de l’aplicació web <strong>Estoc de medicaments</strong> que mostra una pàgina de benvinguda, i que mitjançant l’<acronym title="Uniform Resource Locator">URL</acronym> adient pot mostrar una llista de medicaments i fins i tot rebaixar l’estoc d’un d’aquests.
+</p>
+
+<p>
+Aquesta aplicació segueix l’arquitectura i el procés de qualsevol aplicació Spring MVC. L’aplicació s’estructura en les quatre capes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> presentació (<em>Presentation</em>)</div>
+</li>
+<li class="level1"><div class="li"> domini (<em>Domain</em>)</div>
+</li>
+<li class="level1"><div class="li"> servei (<em>Service</em>)</div>
+</li>
+<li class="level1"><div class="li"> persistència (<em>Persistence</em>)</div>
+</li>
+</ul>
+
+<p>
+Estoc de medicaments fa servir anotacions de Spring MVC:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>@Controller</code>, <code>@Repository</code> i <code>@Service</code>, que defineixen el tipus d’objecte Spring.</div>
+</li>
+<li class="level1"><div class="li"> <code>@RequestMapping</code>, que caça l’<acronym title="Uniform Resource Locator">URL</acronym> definit i executa el mètode que el segueix.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Autowired</code>, que injecta l’objecte que segueix.</div>
+</li>
+</ul>
+
+<p>
+A més, Estoc de medicaments conté els fitxers XML amb la configuració necessària per dirigir el comportament de Spring MVC respecte a l’aplicació.
+</p>
+
+<p>
+Anem a afegir més funcionalitat a l’aplicació Estoc de medicaments per conèixer els conceptes i procediments associats, aprofundint un punt més en l’estudi dels controladors.
+</p>
+
+<p>
+Estoc de medicaments mostra la llista dels medicaments. El procés per mostrar la llista el canviareu per adaptar-lo a un veritable procés Spring MVC, és a dir, creant el servei corresponent i fent que el controlador cridi el servei en comptes del que fa ara, cridar directament la persistència. Aprofitant aquesta implementació, usareu l’anotació <code>@RequestMapping</code> a nivell de classe i a nivell de mètode.
+</p>
+
+<p>
+Fareu que Estoc de medicaments mostri medicaments d’una categoria, però en aquest cas introduireu com l’<acronym title="Uniform Resource Locator">URL</acronym> de <code>@RequestMapping</code> pot ser variable (<em>path variable</em>) afegint l’anotació <code>@PathVariable</code>. Ja us convé, atès que ara, pel moviment d’estoc, l’<acronym title="Uniform Resource Locator">URL</acronym> és fix.
+</p>
+
+<p>
+Aprofundint en variables a l’<acronym title="Uniform Resource Locator">URL</acronym> permetreu que Estoc de medicaments mostri medicaments basats en un <strong>filtre</strong>, és a dir, en un conjunt de parells (propietat, valor) que implementareu amb l’anotació <code>@MatrixVariable</code> i una col·lecció <em>Map</em> (<em>matrix variable</em>).
+</p>
+
+<p>
+Finalment, l’aplicació podrà mostrar el detall d’un medicament. En aquest cas no fareu servir variables a l’<acronym title="Uniform Resource Locator">URL</acronym>, sinó que utilitzareu l’anotació <code>@RequestParam</code> per definir paràmetres HTTP a partir de peticions <code>Get</code> o <code>Post</code>.
+</p>
+
+<h2><a id="estoc_de_medicaments_capa_de_servei_a_medicament" >Estoc de medicaments, capa de servei a medicament</a></h2>
+<div class="level2">
+
+<p>
+En l’aplicació Estoc de medicaments de la qual partiu, el controlador <code>MedicamentController</code> crida directament la capa de persistència; concretament, es fa un injecció de <code>MedicamentRepository</code>.
+</p>
+
+<p>
+Arregleu això implementant la capa de servei corresponent i aprofiteu per endreçar una mica les crides fent que mostrar tots els medicaments sigui un cas particular de mostrar medicaments.
+</p>
+
+</div>
+
+<h3><a id="creant_el_servei_a_medicament" >Creant el servei a medicament</a></h3>
+<div class="level3">
+
+<p>
+Al paquet <code>cat.xtec.ioc.service</code> heu de crear la interfície <code>MedicamentService</code> amb el codi que es mostra a continuació:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat capa de servei a medicament es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament que segueix és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc301”.
+</p>
+</div></div><pre class="code">package cat.xtec.ioc.service;
+
+import cat.xtec.ioc.domain.Medicament;
+import java.util.List;
+
+public interface MedicamentService {
+
+    List&lt;Medicament&gt; getAllMedicaments();
+
+    Medicament getMedicamentById(String medicamentID);
+}</pre>
+
+<p>
+L’objectiu és mostrar la llista de medicaments amb les crides ortodoxes (presentació a servei i aquest a persistència), i per això definiu <code>getAllMedicaments</code>. També aprofiteu per endreçar i afegiu el mètode <code>getMedicamentById</code>, que fareu servir quan vulgueu un medicament a partir del seu codi.
+</p>
+
+<p>
+Al paquet <code>cat.xtec.ioc.service.impl</code> heu de crear la classe <code>MedicamentServiceImpl</code> que implementi la interfície anterior amb el codi que es mostra.
+</p>
+<pre class="code">package cat.xtec.ioc.service.impl;
+
+import cat.xtec.ioc.domain.Medicament;
+import cat.xtec.ioc.domain.repository.MedicamentRepository;
+import cat.xtec.ioc.service.MedicamentService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MedicamentServiceImpl implements MedicamentService {
+
+    @Autowired
+    private MedicamentRepository medicamentRepository;
+
+    public List&lt;Medicament&gt; getAllMedicaments() {
+        return medicamentRepository.getAllMedicaments();
+    }
+
+    public Medicament getMedicamentById(String medicamentID) {
+        return medicamentRepository.getMedicamentById(medicamentID);
+    }
+}</pre>
+
+<p>
+En aquest cas, el servei no afegeix més regles de negoci, simplement es limita a cridar la persistència per obtenir el resultat. No obstant això, s’ha d’implementar aquesta capa perquè en el futur és possible que sorgeixin necessitats a implementar en aquesta capa. Per exemple, podríem dir que encara que obtingueu un medicament el retornareu només si l’usuari està autoritzat a la seva categoria.
+</p>
+
+</div>
+
+<h3><a id="ordenant_les_crides_des_del_controlador" >Ordenant les crides des del controlador</a></h3>
+<div class="level3">
+
+<p>
+Canvieu tot el controlador <code>MedicamentController</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import cat.xtec.ioc.service.MedicamentService;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping(&quot;/medicaments&quot;)
+public class MedicamentController {
+
+    @Autowired
+    private MedicamentService medicamentService;
+
+    @RequestMapping(&quot;/all&quot;)
+    public ModelAndView allMedicaments(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;medicaments&quot;);
+        modelview.getModelMap().addAttribute(&quot;medicaments&quot;, medicamentService.getAllMedicaments());
+        return modelview;
+    }
+}</pre>
+
+<p>
+Heu canviat la injecció del <em>repository</em> per la del nou servei. Ara sou a prop de l’ortodòxia a Spring MVC.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’anotació <em>@RequestMapping</em> permet al Servlet Dispatcher encaminar la petició sobre el controlador específic que ha de processar-la.
+</p>
+</div></div>
+<p>
+Ara teniu dos <code>@RequestMapping</code>: un a nivell de classe amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>/medicaments</em> i un altre a nivell del mètode <code>allMedicaments</code> amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>/all</em>. 
+</p>
+
+<p>
+Si convenim que l’<acronym title="Uniform Resource Locator">URL</acronym> inicial de l’aplicació és <em>urlbase</em> (p. ex.: <em>localhost/stmedioc301</em>), quan el <code>Dispatcher Servlet</code> trobi l’<acronym title="Uniform Resource Locator">URL</acronym> <em>urlbase/medicaments/all</em>, amb <em>/medicaments</em> determinarà que el controlador que ha de gestionar la petició és <code>MedicamentController</code>, i amb <em>/all</em> el mètode a executar serà <code>allMedicaments</code>.
+</p>
+
+<p>
+D’aquesta manera, dins de <code>MedicamentController</code> podríeu afegir més mètodes que agafin el control quan es doni una petició <code>urlbase/medicaments/xxx</code>, on <em>xxx</em> és l’<acronym title="Uniform Resource Locator">URL</acronym> que posaríeu a l’anotació <code>@RequestMapping</code> a nivell del mètode corresponent.
+</p>
+
+<p>
+Proveu a executar l’aplicació afegint <em>/medicaments/all</em> a l’<acronym title="Uniform Resource Locator">URL</acronym>, i us ha de mostrar la llista de medicaments.
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_medicaments_per_malaltia" >Estoc de medicaments, medicaments per malaltia</a></h2>
+<div class="level2">
+
+<p>
+Voleu que l’aplicació Estoc de medicaments mostri la llista de medicaments d’una categoria. Pel que sabeu, podeu fer els següents passos d’implementació:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un mètode del repositori que doni aquesta llista de medicaments a partir de la categoria donada com a paràmetre.</div>
+</li>
+<li class="level1"><div class="li"> Un mètode al servei que cridi aquest mètode del repositori.</div>
+</li>
+<li class="level1"><div class="li"> Un mètode al controlador que caci l’<acronym title="Uniform Resource Locator">URL</acronym> de la categoria i cridi el servei.</div>
+</li>
+</ul>
+
+<p>
+Però amb això, l’anotació <code>@RequestMapping</code> al controlador seria fixa amb la categoria com a constant, com per exemple <em>…/medicaments/Analgèsic</em>. Amb dues categories, com és el cas de la vostra aplicació, encara es pot suportar, però si en teniu algunes més ja no tindria sentit, ja que hauríeu de posar un <code>@RequestMapping</code> amb cada categoria com a <acronym title="Uniform Resource Locator">URL</acronym>. Encara més, no sabeu quines categories es poden crear en el futur, i per en cada una hauríeu de modificar el codi.
+</p>
+
+<p>
+No us heu de preocupar, perquè podeu fer servir la funcionalitat de Spring MVC anomenada <strong>plantilla d’<acronym title="Uniform Resource Identifier">URI</acronym></strong> (<code><acronym title="Uniform Resource Identifier">URI</acronym> template pattern</code>).
+</p>
+
+<p>
+
+</p>
+
+<p>
+En el cas d’Estoc de medicaments, teniu:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>localhost:8080/stmedioc301/medicaments/Analgèsic</em></div>
+</li>
+<li class="level1"><div class="li"> <em>localhost:8080/stmedioc301/medicaments/Anti-inflamatori</em></div>
+</li>
+</ul>
+
+<p>
+on podríeu dir que la darrera part de l’<acronym title="Uniform Resource Locator">URL</acronym> és variable.
+</p>
+
+<p>
+A Spring MVC, aquesta variable es nota entre claus i és una variable de ruta (<em>path variable</em>). Si l’anomeneu categoria, llavors l’<acronym title="Uniform Resource Locator">URL</acronym> la podríeu considerar com <em>localhost:8080/stmedioc301/medicaments/{categoria}</em>.
+</p>
+
+<p>
+Amb aquesta definició ja podeu començar a implementar la solució per mostrar els <strong>medicaments per malaltia</strong> amb una variable de ruta.
+</p>
+
+</div>
+
+<h3><a id="adaptant_repositori_i_servei" >Adaptant repositori i servei</a></h3>
+<div class="level3">
+
+<p>
+A la interfície <code>MedicamentRepository</code>, afegiu la següent declaració de mètode:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>medicaments per malaltia</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc301”.
+</p>
+</div></div><pre class="code">List&lt;Medicament&gt; getMedicamentsByCategory(String category);</pre>
+
+<p>
+I a la classe <code>InMemoryMedicamentRepository</code>, implementeu el mètode amb el codi que es mostra:
+</p>
+<pre class="code">    public List&lt;Medicament&gt; getMedicamentsByCategory(String category) {
+        List&lt;Medicament&gt; medicamentsByCategory = new ArrayList&lt;Medicament&gt;();
+        for (Medicament medicament : listOfMedicaments) {
+            if (category.equalsIgnoreCase(medicament.getCategory())) {
+                medicamentsByCategory.add(medicament);
+            }
+        }
+        return medicamentsByCategory;
+    }</pre>
+
+<p>
+El mètode <code>getMedicamentsByCategory</code> retornarà una <em>List</em> amb objectes <code>Medicament</code> de la categoria passada per paràmetre. Fixeu-vos que ignora diferències entre majúscules i minúscules.
+</p>
+
+<p>
+A la interfície <code>MedicamentService</code>, afegiu la següent declaració de mètode:
+</p>
+<pre class="code">List&lt;Medicament&gt; getMedicamentsByCategory(String category);</pre>
+
+<p>
+I a la classe <code>MedicamentServiceImpl</code>, implementeu el mètode amb el codi que es mostra:
+</p>
+<pre class="code">    public List&lt;Medicament&gt; getMedicamentsByCategory(String category) {
+        return medicamentRepository.getMedicamentsByCategory(category);
+    }</pre>
+
+<p>
+Simplement, es crida el repositori sense més regles de negoci a afegir.
+</p>
+
+</div>
+
+<h3><a id="adaptant_el_controlador" >Adaptant el controlador</a></h3>
+<div class="level3">
+
+<p>
+A <code>MedicamentController</code>, afegireu l’anotació <code>@RequestMapping</code> per caçar qualsevol categoria, és a dir, fareu servir una variable de ruta (<em>path variable</em>). I al mètode que segueix, recuperareu aquesta variable per passar-la com a paràmetre en la cerca de medicaments per categoria.
+</p>
+
+<p>
+A la classe <code>MedicamentController</code>, afegiu l’anotació i el mètode amb el codi que es mostra:
+</p>
+<pre class="code">    @RequestMapping(&quot;/{category}&quot;)
+    public ModelAndView getMedicamentsByCategory(@PathVariable(&quot;category&quot;) String medicamentCategory, HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;medicaments&quot;);
+        modelview.getModelMap().addAttribute(&quot;medicaments&quot;, medicamentService.getMedicamentsByCategory(medicamentCategory));
+        return modelview;
+    }</pre>
+
+<p>
+Us demanarà afegir l’import següent:
+</p>
+<pre class="code">import org.springframework.web.bind.annotation.PathVariable;</pre>
+
+<p>
+A <code>@RequestMapping</code> feu servir l’anotació <code>{pathVariable}</code> per indicar a Spring que l’<acronym title="Uniform Resource Locator">URL</acronym> contindrà un valor variable en aquesta part. En el vostre cas, el nom de la variable de ruta és <em>category</em>.
+</p>
+
+<p>
+El mètode que es llança és <code>getMedicamentsByCategory</code>, i en els seus paràmetres heu fet servir l’anotació <code>@PathVariable</code> amb el format:
+</p>
+<pre class="code">  @PathVariable(pathVariable) type variableMetode</pre>
+
+<p>
+on <code>pathVariable</code> és el nom de la variable de ruta definida a l’anotació <code>@RequestMapping</code>, <code>variableMetode</code> és la variable que fareu servir al mètode, i <code>type</code> és el seu tipus. Així, Spring guarda el valor que s’ha posat a l’<acronym title="Uniform Resource Locator">URL</acronym> a <code>variableMetode</code> i ja la podeu fer servir amb aquest nom en el codi inclòs en el mètode.
+</p>
+
+<p>
+En el vostre cas, si executeu l’aplicació per exemple amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc302/medicaments/Analgèsic</em>, el <code>DispatcherServlet</code>, com que l’<acronym title="Uniform Resource Locator">URL</acronym> és <em>urlbase/medicaments/…</em>, passarà el control a <code>MedicamentController</code>. Dins d’aquest controlador es crida el mètode precedit per l’anotació <code>@RequestMapping(“/{category}”)</code>, ja que s’ha passat un <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>urlbase/medicaments/xxx</em>, on <em>xxx</em> és qualsevol valor diferent d’<em>all</em> (existeix <code>@RequestMapping(“/all”)</code>, que cridaria <code>allMedicaments</code>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<code>@PathVariable</code> sense valors de paràmetre implica que <code>pathVariable</code> té el mateix nom que <code>variableMetode</code>.
+</p>
+</div></div>
+<p>
+El mètode <code>getMedicamentsByCategory</code> cridat demana al repositori els medicaments de la categoria que s’ha passat per paràmetre i mostra la vista de medicaments només amb els que ha trobat.
+</p>
+
+<p>
+Així, el resultat per a l’<acronym title="Uniform Resource Locator">URL</acronym> passat hauria de ser el que es mostra en la <span class="figref"><a href="#figXC1"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXC1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de medicaments per categoria
+
+</figcaption><img src="../media/daw_m07_u3_09.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="estoc_de_medicaments_llista_de_medicaments_segons_filtre" >&quot;Estoc de medicaments&quot;, llista de medicaments segons filtre</a></h2>
+<div class="level2">
+
+<p>
+“Estoc de medicaments” pot mostrar medicaments d’una categoria passant l’<acronym title="Uniform Resource Locator">URL</acronym> amb <em>/medicaments/nomDeCategoria</em>, on <code>nomDeCategoria</code> serà rebut al controlador específic amb l’anotació <code>@RequestMapping(“/{category}”)</code> que conté la variable de ruta (<em>path variable</em>).
+</p>
+
+<p>
+Els vostres requeriments es veuen ampliats amb la necessitat de mostrar medicaments segons filtres. Enriquireu l’aplicació acceptant <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>localhost:8080/stmedioc303/medicaments/filter/ByCriteria;producer=Ferrer,Bayer;es toc=1,100</em>, que, per exemple, podeu traduir com a llista de medicaments dels productors Ferrer o Bayer amb unitats en estoc entre 1 i 100. Però com veureu, la traducció és un conveni, perquè depèn del que implementeu a la consulta que fareu a les dades.
+</p>
+
+<p>
+En realitat, el que voleu implementar és l’acceptació de variables de matriu (<em>matrix variables</em>) com a paràmetres i com fer-les servir al vostre codi.
+</p>
+
+<p>
+Aquestes variables es convertiran en un <code> Map&lt;String,List&lt;String» </code> a partir de l’anotació <code>@MatrixVariable</code>. Fixeu-vos que té sentit, perquè <em>producer=Ferrer,Bayer;estoc=1,100</em> es pot representar com una <em>Map</em> amb les <em>keys</em> <em>producer</em> i <em>estoc</em>, i els valors són llistes.
+</p>
+
+<p>
+Implementeu l’exemple que dóna resposta a <em>localhost:8080/stmedioc303 /medicaments/filter/ByCriteria;producer=Ferrer,Bayer;estoc=1,100</em> amb el significat que hem convingut.
+</p>
+
+</div>
+
+<h3><a id="adaptant_repositori_i_servei1" >Adaptant repositori i servei</a></h3>
+<div class="level3">
+
+<p>
+A la interfície <code>MedicamentRepository</code>, afegiu la següent declaració de mètode:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>llista de medicaments segons filtre</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc303”.
+</p>
+</div></div><pre class="code">    Set&lt;Medicament&gt; getMedicamentsByFilter(Map&lt;String, List&lt;String&gt;&gt; filterParams);</pre>
+
+<p>
+I a la classe <code>InMemoryMedicamentRepository</code>, implementeu el mètode amb el codi que es mostra.
+</p>
+<pre class="code">    public Set&lt;Medicament&gt; getMedicamentsByFilter(Map&lt;String, List&lt;String&gt;&gt; filterParams) {
+        Set&lt;Medicament&gt; medicamentsByProducer = new HashSet&lt;Medicament&gt;();
+        Set&lt;Medicament&gt; medicamentsInStockRange = new HashSet&lt;Medicament&gt;();
+        Set&lt;String&gt; criterias = filterParams.keySet();
+        long minStock = 0;
+        long maxStock = 0;
+        if (criterias.contains(&quot;producer&quot;)) {
+            for (String producerName : filterParams.get(&quot;producer&quot;)) {
+                for (Medicament medicament : listOfMedicaments) {
+                    if (producerName.equalsIgnoreCase(medicament.getProducer())) {
+                        medicamentsByProducer.add(medicament);
+                    }
+                }
+            }
+        }
+        if (criterias.contains(&quot;estoc&quot;)) {
+            minStock = Long.parseLong(filterParams.get(&quot;estoc&quot;).get(0));
+            maxStock = Long.parseLong(filterParams.get(&quot;estoc&quot;).get(1));
+
+            for (Medicament medicament : listOfMedicaments) {
+                if ((medicament.getStockQuantity() &gt;= minStock) &amp;&amp; (medicament.getStockQuantity() &lt;= maxStock)) {
+                    medicamentsInStockRange.add(medicament);
+                }
+            }
+
+        }
+        medicamentsInStockRange.retainAll(medicamentsByProducer);
+        return medicamentsInStockRange;
+    }</pre>
+
+<p>
+Es defineixen dues col·leccions (<code>medicamentsByProducer</code> i <code>medicamentsInStockRange</code>) que contindran els medicaments que compleixen els criteris per retornar només una amb la intersecció d’elements.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<code>Set</code> és una interfície del <em>framework</em> Java Collections. Es pot consultar la referència a la mateixa documentació d’Oracle a <a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html" class="urlextern" title="https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html"  rel="nofollow">bit.ly/2r3n02Y</a>. 
+</p>
+</div></div>
+<p>
+És defineix un <em>Set</em> de criteris que en el vostre cas contindrà <em>producer</em> i <em>estoc</em>. Fixeu-vos que podreu provar sense algun dels criteris, i llavors aquest no es tindrà en compte.
+</p>
+
+<p>
+En el cas del criteri <em>producer</em>, se seleccionen els elements del paràmetre amb aquest criteri, es recorre aquesta selecció i per a cada valor s’afegeixen els medicaments amb aquest <em>producer</em> al <em>Set</em> <code>medicamentsByProducer</code>.
+</p>
+
+<p>
+En el cas del criteri <em>estoc</em>, es fan servir les variables <em>minStock</em> i <em>maxStock</em> per assignar respectivament els elements 0 i 1 de la llista de paràmetres amb la <em>key</em> <em>estoc</em> (<code>filterParams.get(“estoc”).get(i)</code>) Llavors, es van afegint sobre el <em>Set</em> <code>medicamentsInStockRange</code> els medicaments amb unitats en estoc en el rang <em>[minStock,maxStock]</em>.
+</p>
+
+<p>
+Finalment, com que voleu retornar la llista de medicaments que compleixen tots els criteris a la vegada, agafeu una de les llistes i només la deixeu amb els medicaments que coincideixen amb l’altre, per finalment retornar la intersecció.
+</p>
+<pre class="code">medicamentsInStockRange.retainAll(medicamentsByProducer);</pre>
+
+<p>
+Un cop heu definit la consulta a les dades, passeu a modificar la capa de servei.
+</p>
+
+<p>
+A la interfície <code>MedicamentService</code>, afegiu la següent declaració de mètode:
+</p>
+<pre class="code">       Set&lt;Medicament&gt; getMedicamentsByFilter(Map&lt;String, List&lt;String&gt;&gt; filterParams);</pre>
+
+<p>
+I a la classe <code>MedicamentServiceImpl</code>, implementeu el mètode amb el codi que es mostra:
+</p>
+<pre class="code">    public Set&lt;Medicament&gt; getMedicamentsByFilter(Map&lt;String, List&lt;String&gt;&gt; filterParams) {
+        return medicamentRepository.getMedicamentsByFilter(filterParams);
+    }</pre>
+
+<p>
+Simplement es crida el repositori, sense més regles de negoci a afegir.
+</p>
+
+</div>
+
+<h3><a id="adaptant_el_controlador1" >Adaptant el controlador</a></h3>
+<div class="level3">
+
+<p>
+Al controlador específic voleu fer servir variables tipus matriu, com per exemple les que es mostren a l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080 /stmedioc303/medicaments/filter/ByCriteria;producer=Ferrer,Bayer;estoc=1,100</em>.
+</p>
+
+<p>
+Tal com heu implementat al mètode <code>getMedicamentsByFilter</code> del repositori, heu convingut que això voldrà dir el conjunt de medicaments amb productor Bayer o Ferrer, i a més l’estoc dels quals estigui entre 1 i 100 unitats.
+</p>
+
+<p>
+Per aconseguir això es farà servir l’anotació <code>@MatrixVariable</code>, però, a més, a Spring MVC es necessita una configuració addicional.
+</p>
+
+<p>
+A DispatcherServlet-servlet.xml canvieu l’etiqueta <code>mvc:annotation-driven</code> així:
+</p>
+<pre class="code">&lt;mvc:annotation-driven enable-matrix-variables=&quot;true&quot;/&gt;</pre>
+
+<p>
+A la classe <code>MedicamentController</code>, afegiu l’anotació i el mètode amb el codi que es mostra:
+</p>
+<pre class="code">    @RequestMapping(&quot;/filter/{ByCriteria}&quot;)
+    public ModelAndView getMedicamentsByFilter(@MatrixVariable(pathVar = &quot;ByCriteria&quot;) Map&lt;String, List&lt;String&gt;&gt; filterParams, HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;medicaments&quot;);
+        modelview.getModelMap().addAttribute(&quot;medicaments&quot;,    medicamentService.getMedicamentsByFilter(filterParams));
+        return modelview;
+    }</pre>
+
+<p>
+A <code>@RequestMapping</code> feu servir l’anotació <code>{pathVariable}</code> per indicar a Spring que l’<acronym title="Uniform Resource Locator">URL</acronym> contindrà un valor variable en aquesta part. En el vostre cas, el nom de la variable és <code>ByCriteria</code>.
+</p>
+
+<p>
+El mètode que es llança és <code>getMedicamentsByFilter</code>, i en els seus paràmetres hem fet servir l’anotació <code>@MatrixVariable</code> amb el format:
+</p>
+<pre class="code">@MatrixVariable(pathVar = &quot;pathVariable&quot;) Map&lt;String, List&lt;String&gt;&gt; filterParams</pre>
+
+<p>
+on <code>pathVariable</code> és el nom de la variable definida a l’anotació <code>@RequestMapping</code> i <code>filterParams</code> és la variable que farem servir al mètode amb tipus <em>Map</em>. Així, Spring guarda el valor que s’ha posat a l’<acronym title="Uniform Resource Locator">URL</acronym> a <code>filterParams</code> i ja la podeu fer servir amb aquest nom en el codi inclòs en el mètode.
+</p>
+
+<p>
+En el vostre cas, si executeu l’aplicació per exemple amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc303/medicaments/filter/ByCriteria;producer=Ferrer,Bayer;es toc=1,100</em>, com que l’<acronym title="Uniform Resource Locator">URL</acronym> és <em>urlbase/medicaments/…</em>, el <code>DispatcherServlet</code> passarà el control a <code>MedicamentController</code>. Dins d’aquest controlador es crida el mètode precedit per l’anotació <code>@RequestMapping(“/filter/{ByCriteria}”)</code>, ja que s’ha passat un <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>urlbase/medicaments/filter/ByCriteria;xxx</em>, on <em>xxx</em> és un conjunt de parells clau=llista de valors.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’anotació <code>@RequestMapping</code> permet definir més d’un grup de criteris, és a dir, més d’un grup de <em>matrix variables</em>. El format seria així: <code>@RequestMapping( “/filter/{ByCriteria}/ {ByOtherCriteria}”)</code>.
+</p>
+</div></div>
+<p>
+El mètode <code>getMedicamentsByFilter</code> cridat demana al repositori els medicaments amb el filtre que s’ha passat per paràmetre i mostra la vista medicaments només amb els que ha trobat. Fixeu-vos que el paràmetre “filtre”, conjunt de parells clau=llista de valors, s’ha convertit a un <em>Map&lt;String, List&lt;String&gt;&gt;</em> que anomenem <code>filterParams</code>, i amb aquest nom el fem servir al codi del mètode.
+</p>
+
+<p>
+Així, el resultat per a l’<acronym title="Uniform Resource Locator">URL</acronym> passat hauria de ser el que es mostra en la <span class="figref"><a href="#figXC2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXC2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de la llista de medicaments amb filtre
+
+</figcaption><img src="../media/daw_m07_u3_09.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu provar <acronym title="Uniform Resource Locator">URL</acronym> amb altres rangs d’estoc i altres productors. 
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_detall_de_medicament" >&quot;Estoc de medicaments&quot;, detall de medicament</a></h2>
+<div class="level2">
+
+<p>
+“Estoc de medicaments” mostra llistes de medicaments que compleixen certs criteris basats en variables que posem a l’<acronym title="Uniform Resource Locator">URL</acronym>. És a dir, en els casos que es gestionen amb les anotacions <code>@PathVariable</code> i <code>@MatrixVariable</code>, s’estan rebent els valors com a part de l’<acronym title="Uniform Resource Locator">URL</acronym> i no com a variables que formen part d’<em> HTTP request</em>.
+</p>
+
+<p>
+Amplieu l’aplicació per tal d’acceptar variables a la petició <em>HTTP</em> (<em>HTTP request</em>). Per exemple, analitzant l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080 /stmedioc304/medicaments/medicament?codi=M020</em> veieu que codi serà passat al servidor dins del cos de la petició HTTP com una variable.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Aquests tipus d’<acronym title="Uniform Resource Locator">URL</acronym> tenen el format <em>urlbase/…?var1=valor1&amp;var2=val or2&amp;…&amp;varn=valorn</em>, on el símbol “?” indica que comença la llista de variables i el símbol <em>&amp;</em> separa cada variable. Cada parell variable=valor serà passat al servidor web dins del cos de l’<em>HTTP request</em> (petició <em>HTTP</em>).
+</p>
+
+<p>
+Per exemple, encara que doni un error, si obriu el navegador i Firebug i provem l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost/?var1=valor1&amp;var2=valor2&amp;var3=valor3</em>, veureu que heu fet un <code>get</code> i ha passat per paràmetre:
+</p>
+<ul>
+<li class="level1"><div class="li"> var1  valor1</div>
+</li>
+<li class="level1"><div class="li"> var2	valor2</div>
+</li>
+<li class="level1"><div class="li"> var3	valor3</div>
+</li>
+</ul>
+
+<p>
+I aquest fet no es dóna quan passeu les <acronym title="Uniform Resource Locator">URL</acronym> del tipus que gestionen <code>@PathVariable</code> i <code>@MatrixVariable</code>, ja que no es correspon amb la sintaxi <em>urlbase/…?var1=valor1&amp;var2=valor2&amp;…&amp;varn=valorn</em> i, per tant, no hi ha paràmetres al cos de la petició HTTP.
+</p>
+
+<p>
+A “Estoc de medicaments”, per il·lustrar el pas de variables a la petició <em>HTTP</em>, veureu com mostrar el detall d’un medicament a partir d’un <acronym title="Uniform Resource Locator">URL</acronym> del tipus esmentat, és a dir, passant els valors com a variables del cos de l’<em>HTTP request</em>. Per fer això fareu servir l’anotació <code>@RequestParam</code>.
+</p>
+
+<p>
+No només veureu això, també fareu que des de qualsevol llista de medicaments, filtrada o no, es pugui anar al detall de qualsevol d’ells amb un botó, i així fareu servir el que heu preparat per mostrar el detall.
+</p>
+
+</div>
+
+<h3><a id="mostrant_el_detall" >Mostrant el detall</a></h3>
+<div class="level3">
+
+<p>
+Heu de mostrar el detall de medicament en una nova vista que anomenareu medicament.jsp. Cal aquesta vista, perquè a les llistes no es mostren totes les dades del medicament, com per exemple la categoria.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat detall de medicament es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc304”.
+</p>
+</div></div>
+<p>
+Aquesta nova vista es mostrarà quan es doni una petició del tipus <em>localhost:8080/stmedioc304/medicaments/medicament?codi=M020</em>.
+</p>
+
+<p>
+I per tant, a <code>MedicamentController</code> haureu d’afegir l’anotació que agafi el control i el mètode a disparar.
+</p>
+
+<p>
+A les diferents capes d’Estoc de medicaments ja teniu la possibilitat d’obtenir un objecte <code>Medicament</code> a partir del seu codi, i per això us estalvieu codificar en altres capes, a banda de la de presentació.
+</p>
+
+<p>
+A la classe <code>MedicamentController</code>, afegiu l’anotació i mètode amb el codi que es mostra;
+</p>
+<pre class="code">    @RequestMapping(&quot;/medicament&quot;)
+    public ModelAndView getMedicamentById(@RequestParam(&quot;codi&quot;) String medicamentId, HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;medicament&quot;);
+        modelview.getModelMap().addAttribute(&quot;medicament&quot;, medicamentService.getMedicamentById(medicamentId));
+        return modelview;
+    }</pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’anotació <em>@RequestParam</em> permet assignar la variable passada per paràmetre des de la petició, amb la variable que es farà servir en el mètode.
+</p>
+</div></div>
+<p>
+En el nostre cas, l’anotació <code>@RequestParam</code> enllaça el paràmetre codi del cos de la petició amb la variable <code>medicamentId</code> que fareu servir dins del mètode.
+</p>
+
+<p>
+El mètode crida <code>getMedicamentById</code> de la capa de servei que ja està implementat. Aquest retorna l’objecte <code>Medicament</code> amb el codi que s’ha passat pel paràmetre.
+</p>
+
+<p>
+A la carpeta <em>views</em>, afegiu la nova vista medicament.jsp amb el codi que es mostra a continuació:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;
+&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=ISO-8859-1&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+        &lt;title&gt;Medicament&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h1&gt;Medicament&lt;/h1&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-5&quot;&gt;
+                    &lt;h3&gt;${medicament.name}&lt;/h3&gt;
+                    &lt;p&gt;${medicament.description}&lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;strong&gt;Codi : &lt;/strong&gt;${medicament.medicamentId}
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;strong&gt;Laboratori&lt;/strong&gt; : ${medicament.producer}
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;strong&gt;Categoria&lt;/strong&gt; : ${medicament.category}
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;strong&gt;Unitats en estoc &lt;/strong&gt; :
+                        ${medicament.stockQuantity}
+                    &lt;/p&gt;
+                    &lt;h4&gt;${medicament.price} USD&lt;/h4&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+La vista mostrarà els valors de l’objecte de nom medicament que havíeu afegit com a atribut al controlador.
+</p>
+
+<p>
+Si executeu l’aplicació al navegador amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc304/medicaments/medicament?codi=M020</em>, el resultat és el que es veu en la <span class="figref"><a href="#figXC3"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXC3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de detall de medicament
+
+</figcaption><img src="../media/daw_m07_u3_10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La part de l’<acronym title="Uniform Resource Locator">URL</acronym> <em>/medicaments</em> ha fet que el <code>Dispatcher Servlet</code> passi la responsabilitat a <code>MedicamentController</code>. L’<acronym title="Uniform Resource Locator">URL</acronym> és <em>/medicaments/medicament</em>, i com que existeix l’anotació <code>@RequestMapping(“/medicament”)</code> dispararà el mètode <code>getMedicamentById</code> que la segueix.
+</p>
+
+<p>
+Aquest mètode té anotacions del tipus <code>@RequestParam</code>, i per tant farà servir els paràmetres del cos de la petició. En concret, l’<acronym title="Uniform Resource Locator">URL</acronym> conté <em>?codi=M020</em>, que vol dir que caçarà el paràmetre <code>codi</code> a partir de <code>@RequestParam(“codi”) String medicamentId</code> i l’assignarà a <code>medicamentId</code>, que després es fa servir per cercar l’objecte <code>Medicament</code> amb igual codi. Aquest objecte <code>Medicament</code> és ficat en un atribut <code>medicament</code> a la resposta (<em>response</em>).
+</p>
+
+<p>
+Llavors, la vista medicament.jsp mostra les dades d’aquest medicament fent servir l’atribut esmentat. Proveu amb altres codis de medicaments per veure’n el funcionament.
+</p>
+
+</div>
+
+<h3><a id="arribant_al_detall_des_de_la_llista" >Arribant al detall des de la llista</a></h3>
+<div class="level3">
+
+<p>
+“Estoc de medicaments” sap com mostrar el detall d’un medicament a partir de paràmetres de petició, és a dir, amb <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>localhost:8080/stmedioc304/medicaments/medicament?codi=xxx</em>, on <em>xxx</em> és el <code>medicamentId</code>.
+</p>
+
+<p>
+Aprofiteu el que heu fet per mostrar el detall de qualsevol medicament a partir de la llista. Afegireu un botó a cada element de la llista que ens porti a la vista de detall. I per no anar canviant <acronym title="Uniform Resource Locator">URL</acronym>, fareu que des del detall es pugui tornar a la llista.
+</p>
+
+<p>
+A medicaments.jsp, afegiu la directiva:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot; %&gt;</pre>
+
+<p>
+i just després de:
+</p>
+<pre class="code">
+&lt;p&gt;Hi ha ${medicament.stockQuantity} unitats en magatzem&lt;/p&gt;</pre>
+
+<p>
+afegiu el codi següent:
+</p>
+<pre class="code">                                &lt;p&gt;
+                                    &lt;a href=&quot; &lt;spring:url value= &quot;/medicaments/medicament?codi=${medicament.medicamentId}&quot; /&gt; &quot; class=&quot;btn btn-primary&quot;&gt;
+                                        &lt;span class=&quot;glyphicon-info-sign glyphicon&quot;/&gt;&lt;/span&gt; Detall
+                                    &lt;/a&gt;
+                                &lt;/p&gt;</pre>
+
+<p>
+L’enllaç té l’etiqueta <code>&lt;spring:url&gt;</code>, que construirà un <acronym title="Uniform Resource Locator">URL</acronym> Spring MVC vàlida. En aquest cas, el codi que farà servir l’obté de l’objecte <code>medicament</code> de la llista que s’està recorrent.
+</p>
+
+<p>
+Executeu l’aplicació amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc304/medicaments/all</em> i obtindreu un resultat com el que mostra <span class="figref"><a href="#figXC4"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXC4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de llista de medicaments amb botó de detall
+
+</figcaption><img src="../media/daw_m07_u3_11.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si premeu al detall del Paracetamol, l’aplicació ha de mostrar el detall (vegeu la <span class="figref"><a href="#figXC5"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXC5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de detall de medicament
+
+</figcaption><img src="../media/daw_m07_u3_10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara afegireu al detall un botó per tornar a la llista. Per fer això també es farà servir l’etiqueta <code>&lt;spring:url&gt;</code>.
+</p>
+
+<p>
+A medicament.jsp, afegiu la directiva:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot; %&gt;</pre>
+
+<p>
+i just després de 
+</p>
+<pre class="code">&lt;h4&gt;${medicament.price} USD&lt;/h4&gt;</pre>
+
+<p>
+afegiu el codi següent:
+</p>
+<pre class="code">                    &lt;a href=&quot;&lt;spring:url value=&quot;/medicaments/all&quot; /&gt;&quot; class=&quot;btn btn-default&quot;&gt;
+                        &lt;span class=&quot;glyphicon-hand-left glyphicon&quot;&gt;&lt;/span&gt; tornar
+                    &lt;/a&gt;</pre>
+
+<p>
+Si executeu l’aplicació i aneu a mostrar la llista de medicaments ja podeu prémer un botó de detall, que farà que es mostri la vista de detall, i després tornar una altra vegada a la llista.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+<code>MedicamentController</code> crida directament a la capa de servei <code>MedicamentService</code> i no directament a la persistència.
+</p>
+
+<p>
+L’anotació <code>@RequestMapping(“/medicaments”)</code> a nivell de classe, fa que qualsevol <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>/medicaments</em> agafi aquest controlador. Les anotacions <code>@RequestMapping(“/xxx”)</code> posades al davant de diversos mètodes, fa que aquests es disparin quan es fan peticions amb <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>/medicaments/xxx</em>.
+</p>
+
+<p>
+Peticions com <em>localhost:8080/stmedioc301/medicaments/Analgèsic</em>,
+on “analgèsic” es pot substituir per qualsevol categoria, són ateses pel mètode que segueix a l’anotació:
+</p>
+<pre class="code">@RequestMapping(&quot;/{category}&quot;)</pre>
+
+<p>
+on <em>category</em> és la variable de ruta (<em>variable path</em>) que és enllaçada a la variable <code>medicamentCategory</code> amb l’anotació: 
+</p>
+<pre class="code">@PathVariable(&quot;category&quot;) String medicamentCategory.</pre>
+
+<p>
+Les variables de matriu (<em>matrix variables</em>), permeten llegir <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>localhost:8080/stmedioc303/medicaments/filter/ByCriteria;producer=Ferrer,Bayer;es toc=1,100</em>, on el conjunt de parell clau=llista de valors és la matriu.
+</p>
+
+<p>
+Amb l’anotació:
+</p>
+<pre class="code">@RequestMapping(&quot;/filter/{ByCriteria}&quot;) </pre>
+
+<p>
+es passa el control al mètode que la segueix, i en aquest, l’anotació:
+</p>
+<pre class="code">@MatrixVariable(pathVar = &quot;ByCriteria&quot;) Map&lt;String, List&lt;String&gt;&gt; filterParams</pre>
+
+<p>
+assigna el paràmetre (la matriu) al <em>Map</em> <code>filterParams</code>, variable que es pot fer servir dins del mètode.
+</p>
+
+<p>
+Poden venir paràmetres al cos d’una petició HTTP, per exemple, a una petició <code>Post</code> d’un formulari.
+</p>
+
+<p>
+En general, es pot atendre a peticions amb <acronym title="Uniform Resource Locator">URL</acronym> del tipus <em>urlbase/…?var1=valor1&amp;var2=valor2&amp;…&amp;varn=valorn</em>, on el que segueix el símbol <em>?</em> és el conjunt de paràmetres que aniran en el cos de la petició HTTP.
+</p>
+
+<p>
+Per exemple, es pot resoldre una <acronym title="Uniform Resource Locator">URL</acronym> com:
+</p>
+
+<p>
+<em>localhost:8080/stmedioc304/medicaments/medicament?codi=M020</em>
+</p>
+
+<p>
+amb l’anotació:
+</p>
+<pre class="code">@RequestMapping(&quot;/medicament&quot;) </pre>
+
+<p>
+precedint al mètode i com a paràmetre d’aquest, l’anotació:
+</p>
+<pre class="code">@RequestParam(&quot;codi&quot;) String medicamentId</pre>
+
+<p>
+que enllaça el paràmetre amb la variable <code>medicamentId</code> que es pot fer servir dins del mètode.
+</p>
+
+<p>
+L’etiqueta de Spring <code>&lt;spring:url&gt;</code> serveix per enllaçar una pàgina amb una altra construint un <acronym title="Uniform Resource Locator">URL</acronym> vàlid.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

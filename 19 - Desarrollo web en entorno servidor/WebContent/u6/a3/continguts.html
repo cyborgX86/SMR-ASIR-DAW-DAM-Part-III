@@ -1,0 +1,696 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../../WebContent/u6/introduccio.html">6. Serveis web amb Spring</a></p><ul class="expander"><li id="u6introduccio"><a href="../../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../../WebContent/u6/a1/continguts.html">Serveis web SOAP amb Spring Web Services</a><span class="buttonexp"></span></p><ul><li id="u6a1exercicis"><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a1annexos"><a href="../../../WebContent/u6/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a1/continguts.html#escrivint_un_servei_web_soap_de_consulta_de_dades_d_empreses_amb_spring-ws">Escrivint un servei web SOAP de consulta de dades d’empreses amb Spring-WS</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#fent_servir_la_consulta_de_dades_d_empreses_des_d_una_aplicacio_java_stand-alone">Fent servir la consulta de dades d’empreses des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../../WebContent/u6/a2/continguts.html">Serveis web RESTful amb Spring. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a2annexos"><a href="../../../WebContent/u6/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#testejant_el_servei_web_hello_world">Testejant el servei web '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#el_servei_web_de_gestio_d_equips_de_futbol_operacions_crud">El servei web de gestió d'equips de futbol. Operacions CRUD</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a3" class="tocsection"><p id='u6a3continguts'><a class="section" href="../../../WebContent/u6/a3/continguts.html">Serveis web RESTful amb Spring. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a3activitats"><a href="../../../WebContent/u6/a3/activitats.html">Activitats</a></li><li id="u6a3exercicis"><a href="../../../WebContent/u6/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a3annexos"><a href="../../../WebContent/u6/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_java_per_al_servei_web_restful_hello_world">Un client Java per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#tests_d_integracio_per_al_servei_web_restful_hello_world">Tests d’integració per al servei web RESTful '"Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_javascript_per_al_servei_web_restful_hello_world">Un client JavaScript per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Spring</a></li><li>Serveis web RESTful amb Spring. Consumint serveis web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_restful_amb_spring_consumint_serveis_web"> Serveis web RESTful amb Spring. Consumint serveis web </a></h1>
+    	
+<p>
+Explicarem, mitjançant exemples, com podem consumir serveis web RESTful remots amb diferents tipus de clients.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Es poden provar els serveis RESTful <strong>amb qualsevol eina que permeti fer peticions HTTP</strong>.
+</p>
+</div></div>
+<p>
+La primera eina en la qual pensaríem tots és un navegador web (Microsoft Internet Explorer, Google Chrome, Mozilla Firefox, etc.). El problema és que els navegadors, per defecte, tan sols poden fer peticions <code>GET</code> i peticions <code>POST</code>. Si voleu fer peticions d’un altre tipus (<code>PUT</code>, <code>DELETE</code>, <code>HEAD</code>) caldrà instal·lar algun <em>plugin</em> al navegador que us ho permeti (Postman és un possible <em>plugin</em> per a Google Chrome, però n’hi ha molts).
+</p>
+
+<p>
+Una altra opció és emprar la utilitat <strong>cURL</strong>, que us permet fer tot tipus de peticions HTTP per línia de comandes.
+</p>
+
+<p>
+Si el que volem és consumir serveis web RESTful des de Java ho podem fer amb l’API de baix nivell <code>java.net.HttpURLConnection</code> o alguna llibreria propietària que us fes la vida una mica més fàcil.
+Una opció és utilitzar la classe <code>RestTemplate</code>, que proporciona Spring, o bé l’API client de JAX-RS; les dues opcions permeten fer tota mena de peticions HTTP als serveis web RESTful remots de forma fàcil.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Spring proporciona la classe <code>RestTemplate</code> per <strong>simplificar la comunicació</strong> HTTP entre el client i el servidor. <code>RestTemplate</code> permet fer tota mena de peticions HTTP als serveis web RESTful remots de forma fàcil.
+</p>
+</div></div>
+<p>
+<code>RestTemplate</code> es pot utilitzar per fer tests d’integració per provar els serveis RESTful, <strong>estiguin o no</strong> desenvolupats amb Spring.
+</p>
+
+<p>
+AJAX és un conjunt de tècniques de desenvolupament d’aplicacions web que permeten crear aplicacions web client asíncrones que cada vegada s’utilitzen més per accedir a serveis web RESTful, tant des d’aplicacions web com des d’aplicacions mòbils.
+</p>
+
+<h2><a id="un_client_java_per_al_servei_web_restful_hello_world" >Un client Java per al servei web RESTful &quot;&#039;Hello, World!!!&#039;&quot;</a></h2>
+<div class="level2">
+
+<p>
+Veurem com consumir serveis web RESTful des d’una aplicació Java <em>stand-alone</em> utilitzant la classe <code>RestTemplate</code> que proporciona Spring per fer-ho.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte té un servei web RESTful configurat a la classe <code>GreetingController</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.springresthelloioc.domain.Greeting;</div></li><li class="li1"><div class="de1">import java.util.concurrent.atomic.AtomicLong;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestParam;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class GreetingController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String template = &quot;Hello, %s&quot;;</div></li><li class="li1"><div class="de1">    private final AtomicLong counter = new AtomicLong();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method =  RequestMethod.GET, value = &quot;/hello&quot;)</div></li><li class="li1"><div class="de1">    public Greeting greeting(@RequestParam(value=&quot;name&quot;, defaultValue=&quot;World!!!&quot;) String name) {</div></li><li class="li1"><div class="de1">        return new Greeting(counter.incrementAndGet(),</div></li><li class="li1"><div class="de1">                            String.format(template, name));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest és un servei web RESTful desenvolupat amb Spring que respon a peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/hello</em> amb “<em>Hello, World!!!</em>” si no li passem cap paràmetre, i si li passem un paràmetre anomenat <code>name</code> torna una salutació personalitzada canviant la paraula <em>World</em> pel nom especificat a <code>name</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springresthellojavaclientioc” en l’estat inicial d’aquest apartat en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+El servei web torna la salutació en format JSON i respon a les peticions <code>GET</code> a <em>/hello</em>:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+I a les peticions <code>GET</code> a <em>/hello?name=User</em> amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, User!&quot;}</pre>
+
+<p>
+
+</p>
+
+<p>
+Un cop importat el projecte cal que modifiqueu el pom.xml per afegir les dependències cap a Jackson per tal que Spring pugui fer la transformació de dades de JSON a objecte Java. Per fer-ho, afegiu les següents línies al fitxer pom.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;2.5.3&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Si recarregueu el pom.xml fent clic amb el botó dret damunt el nom del projecte i prement l’opció <em>Reload POM</em> del menú contextual ja tindreu el projecte configurat i llest per començar a crear el client Spring.
+</p>
+
+</div>
+
+<h3><a id="creacio_del_client_java_stand-alone" >Creació del client Java &#039;stand-alone&#039;</a></h3>
+<div class="level3">
+
+<p>
+El primer que necessitem és una classe Java que representarà el model del domini a la part client i que Spring construirà a partir del missatge JSON retornat pel servei web.
+</p>
+
+<p>
+Fixeu-vos que en el nostre cas es podria haver utilitzat per fer això la classe <code>Greeting</code> que teniu al paquet <code>cat.xtec.ioc.springresthelloioc.domain</code>, i ens estalviaríem de crear-ne una de nova. En crearem una, ja que l’habitual és que el client i el servei web no estiguin al mateix projecte; nosaltres els hem posat al mateix projecte per simplicitat.
+</p>
+
+<p>
+Creeu, doncs, la classe Java que modelarà la resposta del servei web al paquet <code>cat.xtec.ioc.springresthelloioc.client</code> i l’anomeneu <code>GreetingClient</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import com.fasterxml.jackson.annotation.JsonIgnoreProperties;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@JsonIgnoreProperties(ignoreUnknown = true)</div></li><li class="li1"><div class="de1">public class GreetingClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private long id;</div></li><li class="li1"><div class="de1">    private String content;   </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public long getId() {</div></li><li class="li1"><div class="de1">        return id;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setId(long id) {</div></li><li class="li1"><div class="de1">        this.id = id;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getContent() {</div></li><li class="li1"><div class="de1">        return content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setContent(String content) {</div></li><li class="li1"><div class="de1">        this.content = content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String toString() {</div></li><li class="li1"><div class="de1">        return &quot;Greeting{&quot; +</div></li><li class="li1"><div class="de1">                &quot;id='&quot; + id + '\'' +</div></li><li class="li1"><div class="de1">                &quot;, content=&quot; + content +</div></li><li class="li1"><div class="de1">                '}';</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Es tracta d’una classe Java normal amb una propietat per a cada un dels camps que conté la salutació que torna el servei web. L’única particularitat és l’anotació <code>@JsonIgnoreProperties(ignoreUnknown = true)</code> per indicar que en la transformació de JSON a objecte Java ignori les propietats que no tinguin un mapatge definit.
+</p>
+
+<p>
+Creeu la classe Java que farà de client al paquet <code>cat.xtec.ioc.springresthelloioc.client</code> i l’anomeneu <code>HelloWorldClient</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.web.client.RestTemplate;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class HelloWorldClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        RestTemplate restTemplate = new RestTemplate();</div></li><li class="li1"><div class="de1">        GreetingClient greeting = restTemplate.getForObject(&quot;http://localhost:8080/springresthellojavaclientioc/hello&quot;, GreetingClient.class);</div></li><li class="li1"><div class="de1">        System.out.println(greeting.toString());</div></li><li class="li1"><div class="de1">        greeting = restTemplate.getForObject(&quot;http://localhost:8080/springresthellojavaclientioc/hello?name=User&quot;, GreetingClient.class);</div></li><li class="li1"><div class="de1">        System.out.println(greeting.toString());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com veieu, el client és molt simple: creem un objecte de tipus <code>RestTemplate</code> i cridem el mètode <code>getForObject</code> amb l’<acronym title="Uniform Resource Locator">URL</acronym> del servei web i la classe en la qual ha de convertir el missatge JSON rebut.
+</p>
+
+<p>
+Aquesta és només una de les maneres d’utilitzar la classe <code>RestTemplate</code>; n’hi ha moltes més que us permetran fer crides amb tot el conjunt de verbs HTTP, passar paràmetres JSON, recuperar tota la informació de la resposta rebuda, etc. Per veure totes les opcions que us permet la classe <code>RestTemplate</code> podeu consultar la seva <acronym title="Application Programming Interface">API</acronym> en la següent adreça: <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html" class="urlextern" title="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html"  rel="nofollow">bit.ly/2nywYZy</a>.
+</p>
+
+<p>
+Ara ja només ens queda desplegar el servei web i executar el client per veure si es comporta com volem.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_i_prova_amb_el_client_java" >Desplegament del servei web i prova amb el client Java</a></h3>
+<div class="level3">
+
+<p>
+Desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans.
+</p>
+
+<p>
+Comproveu que el servei web està desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springresthellojavaclientioc/hello" class="urlextern" title="http://localhost:8080/springresthellojavaclientioc/hello"  rel="nofollow">localhost:8080/springresthellojavaclientioc/hello</a> amb un navegador. El servei web us ha de tornar la salutació “<em>Hello, World!!!</em>” en format JSON.
+</p>
+
+<p>
+Si tot és correcte ja podem executar el client; per fer-ho, poseu-vos damunt de la classe <code>HelloWorldClient</code> i feu <em>Run File</em> a NetBeans  i veureu la salutació “<em>Hello, World!!!</em>” i “<em>Hello, User</em>”  a la consola de sortida:
+</p>
+<pre class="code">Greeting{id=&#039;1&#039;, content=Hello, World!!!}
+Greeting{id=&#039;2&#039;, content=Hello, User}
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------</pre>
+
+</div>
+
+<h2><a id="tests_d_integracio_per_al_servei_web_restful_hello_world" >Tests d’integració per al servei web RESTful &#039;&quot;Hello, World!!!&#039;&quot;</a></h2>
+<div class="level2">
+
+<p>
+Vegem com fer tests d’integració d’un servei web RESTful amb JUnit i la classe <code>RestTemplate</code>.
+</p>
+
+<p>
+El primer que farem serà desplegar a Glassfish el servei web REST que volem provar i després crearem el conjunt de tests d’integració que faran peticions HTTP al servei web.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>tests d’integració</strong> difereixen dels tests unitaris, ja que no testegen el codi de forma aïllada sinó que requereixen que el codi a testejar estigui desplegat al servidor d’aplicacions per funcionar.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte1" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte té un servei web RESTful configurat a la classe <code>GreetingController</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.springresthelloioc.domain.Greeting;</div></li><li class="li1"><div class="de1">import java.util.concurrent.atomic.AtomicLong;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestParam;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class GreetingController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String template = &quot;Hello, %s&quot;;</div></li><li class="li1"><div class="de1">    private final AtomicLong counter = new AtomicLong();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method =  RequestMethod.GET, value = &quot;/hello&quot;)</div></li><li class="li1"><div class="de1">    public Greeting greeting(@RequestParam(value=&quot;name&quot;, defaultValue=&quot;World!!!&quot;) String name) {</div></li><li class="li1"><div class="de1">        return new Greeting(counter.incrementAndGet(),</div></li><li class="li1"><div class="de1">                            String.format(template, name));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest és un servei web RESTful desenvolupat amb Spring que respon a peticions GET a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/hello</em> amb “<em>Hello, World!!!</em>” si no li passem cap paràmetre, i si li passem un paràmetre anomenat <code>name</code> torna una salutació personalitzada canviant la paraula <em>World</em> pel nom especificat a <code>name</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springtestintresthelloioc” de l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+El servei web torna la salutació en format JSON i respon a les peticions <code>GET</code> a <em>/hello</em> amb:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+I a les peticions <code>GET</code> a <em>/hello?name=User</em> amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, User&quot;}</pre>
+
+<p>
+Crearem els tests d’integració dins el mateix projecte que conté el codi del servei web que volem provar. Una altra opció, igualment vàlida, seria crear un nou projecte i posar-hi només els tests.
+</p>
+
+<p>
+Un cop importat el projecte cal que modifiqueu el pom.xml per afegir les dependències cap a Jackson per tal que Spring pugui fer la transformació de dades de JSON a objecte Java i a JUnit 4. Per fer-ho, afegiu les següent línies al fitxer pom.xml:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> JUnit</p>
+<p>
+JUnit és un <em>framework</em> de test que utilitza anotacions per identificar els mètodes que especifiquen un test. A JUnit, un test, ja sigui unitari o d’integració, és un mètode que s’especifica en una classe que només s’utilitza per al test. Això s’anomena una classe de test. Un mètode de test amb JUnit 4 es defineix amb l’anotació <code>@org.junit.Test</code>. En aquest mètode s’utilitza un mètode d’asserció en el qual es comprova el resultat esperat de l’execució de codi en comparació del resultat real.
+</p>
+</div></div><pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;2.5.3&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;4.12&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;scope&gt;test&lt;/scope&gt;</div></li><li class="li1"><div class="de1">    &lt;type&gt;jar&lt;/type&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Si recarregueu el pom.xml fent clic amb el botó dret damunt el nom del projecte i premeu l’opció <em>Reload POM</em> del menú contextual ja tindreu el projecte configurat i llest per començar a crear el client amb Spring.
+</p>
+
+<p>
+Primer desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans, i comproveu que s’ha desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springtestintresthelloioc/hello" class="urlextern" title="http://localhost:8080/springtestintresthelloioc/hello"  rel="nofollow">localhost:8080/springtestintresthelloioc/hello</a> amb un navegador. El servei web us ha de tornar la salutació “<em>Hello, World!!!</em>” en format JSON:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+Noteu que l’identificador retornat anirà canviant en funció del número de petició.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_execucio_dels_tests_d_integracio" >Creació i execució dels tests d’integració</a></h3>
+<div class="level3">
+
+<p>
+Ara toca començar a crear els tests d’integració per provar el servei web RESTful. 
+</p>
+
+<p>
+El primer que necessitem és una classe Java que representarà el model del domini i que Spring construirà a partir del missatge JSON retornat pel servei web.
+</p>
+
+<p>
+Fixeu-vos que per fer això es podria haver utilitzat la classe <code>Greeting</code> que teniu al paquet <code>cat.xtec.ioc.springresthelloioc.domain</code> i ens estalviaríem de crear-ne una de nova (tan sols li hauríeu d’haver afegit un constructor sense paràmetres).
+</p>
+
+<p>
+Creeu un nou paquet dins de <em>Test Packages</em> anomenat, per exemple, <code>cat.xtec.ioc.springresthelloioc.controller</code>, i creeu-hi una classe Java anomenada <code>GreetingTest</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import com.fasterxml.jackson.annotation.JsonIgnoreProperties;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@JsonIgnoreProperties(ignoreUnknown = true)</div></li><li class="li1"><div class="de1">public class GreetingTest {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private long id;</div></li><li class="li1"><div class="de1">    private String content;   </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public long getId() {</div></li><li class="li1"><div class="de1">        return id;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setId(long id) {</div></li><li class="li1"><div class="de1">        this.id = id;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getContent() {</div></li><li class="li1"><div class="de1">        return content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setContent(String content) {</div></li><li class="li1"><div class="de1">        this.content = content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String toString() {</div></li><li class="li1"><div class="de1">        return &quot;Greeting{&quot; +</div></li><li class="li1"><div class="de1">                &quot;id='&quot; + id + '\'' +</div></li><li class="li1"><div class="de1">                &quot;, content=&quot; + content +</div></li><li class="li1"><div class="de1">                '}';</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Es tracta d’una classe Java normal amb una propietat per a cada un dels camps que conté la salutació que torna el servei web. L’única particularitat és l’anotació <code>@JsonIgnoreProperties(ignoreUnknown = true)</code> per indicar que en la transformació de JSON a objecte Java ignori les propietats que no tinguin un mapatge definit.
+</p>
+
+<p>
+Creeu ara al paquet <code>cat.xtec.ioc.springresthelloioc.controller</code> una classe Java anomenada <code>GreetingControllerTest</code>:
+</p>
+
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ws.rs.core.MediaType;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.springframework.http.HttpStatus;</div></li><li class="li1"><div class="de1">import org.springframework.http.ResponseEntity;</div></li><li class="li1"><div class="de1">import org.springframework.web.client.RestTemplate;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class GreetingControllerTest {</div></li><li class="li1"><div class="de1">    private static final String uri = &quot;http://localhost:8080/springtestintresthelloioc/hello&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El primer test que farem serà un test que <strong>comprovi que la petició <em>/hello</em> sense cap paràmetre torna la representació JSON de la salutació “<em>Hello, World!!!</em>” </strong>; per fer-ho, creeu un mètode anomenat  <code>greetingShouldReturnHelloWorldWithoutName</code> dins la classe <code>GreetingControllerTest</code> amb el següent codi:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Estructura dels tests</p>
+<p>
+Un dels patrons més utilitzats a l’hora d’estructurar el codi d’un test és l’anomenat <strong>AAA</strong> (de l’anglès <em>Arrange-Act-Assert</em>), amb el qual els tests sempre tindran una fase de <strong>preparació</strong> (<em>Arrange</em>), una d’<strong>execució</strong> (<em>Act</em>) i una de <strong>verificació</strong> de resultats (<em>Assert</em>).
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void greetingShouldReturnHelloWorldWithoutName() {</div></li><li class="li1"><div class="de1">  // Arrange                 </div></li><li class="li1"><div class="de1">  RestTemplate restTemplate = new RestTemplate();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Act</div></li><li class="li1"><div class="de1">  GreetingTest greeting = restTemplate.getForObject(uri, GreetingTest.class);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assert</div></li><li class="li1"><div class="de1">  assertEquals(&quot;Hello, World!!!&quot;, greeting.getContent());         </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem anotat el mètode <code>greetingShouldReturnHelloWorldWithoutName</code> amb l’anotació <code>@Test</code> per indicar que es tracta d’un mètode de test; en la fase de <strong>preparació</strong> simplement creem l’objecte <code>RestTemplate</code> per enviar les peticions HTTP al servei web RESTful, després <strong>executem</strong> la petició cridant el mètode <code>getForObject</code> i, finalment, <strong>verifiquem</strong> que la salutació retornada coincideix amb la que esperem.
+</p>
+
+<p>
+Ja podem executar el test que hem creat fent <em>Test File</em> al menú contextual de la classe de <em>Test</em>, i si tot ha anat bé veureu el resultat de l’execució correcta dels tests a la finestra de <em>Test</em>.
+</p>
+
+<p>
+Per mostrar alguna altra capacitat de la classe <code>RestTemplate</code> farem un altre test que comprovarà que el codi HTTP de retorn és un 200 (OK) i que el <em>content type</em> sigui JSON.
+</p>
+
+<p>
+Per fer-ho, creeu un mètode anomenat <code>greetingShouldReturnOKAndJSON</code> dins la classe <code>GreetingControllerTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void greetingShouldReturnOKAndJSON () {</div></li><li class="li1"><div class="de1">  // Arrange                 </div></li><li class="li1"><div class="de1">  RestTemplate restTemplate = new RestTemplate();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Act</div></li><li class="li1"><div class="de1">  ResponseEntity&lt;GreetingTest&gt; response = restTemplate.getForEntity(uri, GreetingTest.class);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assert</div></li><li class="li1"><div class="de1">  assertEquals(HttpStatus.OK, response.getStatusCode());    </div></li><li class="li1"><div class="de1">  assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType().getType() + &quot;/&quot; +               response.getHeaders().getContentType().getSubtype()); </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Executeu-lo de la mateixa manera i comproveu que el test s’executa correctament.
+</p>
+
+<p>
+El darrer test que farem serà un test que <strong>comprovi que la petició <em>/hello?name=User</em> torna la representació JSON de la salutació “<em>Hello, User</em>”</strong>; per fer-ho, creeu un mètode anomenat  <code>greetingShouldReturnHelloNameWithName</code> dins la classe <code>GreetingControllerTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void greetingShouldReturnHelloNameWithName() {</div></li><li class="li1"><div class="de1">  // Arrange                 </div></li><li class="li1"><div class="de1">  RestTemplate restTemplate = new RestTemplate();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Act</div></li><li class="li1"><div class="de1">  GreetingTest greeting = restTemplate.getForObject(uri + &quot;?name=User&quot;, GreetingTest.class);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assert</div></li><li class="li1"><div class="de1">  assertEquals(&quot;Hello, User&quot;, greeting.getContent());         </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi és molt similar al primer test; executeu-lo de la mateixa manera i comproveu que el test s’executa correctament.
+</p>
+
+<p>
+Aquests tres exemples us donen la base per tal que pugueu fer tots els tests d’integració que se us acudeixin i així tenir els serveis web RESTful totalment provats!
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’ús de <code>RestTemplate</code> és l’opció que proporciona Spring; els mateixos tests d’integració els podríeu haver escrit amb qualsevol altre bastiment que permeti fer peticions HTTP. Una opció perfectament vàlida hauria estat utilitzar <strong>JAX-RS</strong>, l’API client per consumir serveis web RESTful que proporciona Java EE.
+</p>
+</div></div>
+<p>
+Noteu que, a part dels tests d’integració, Spring també us permet fer tests unitaris per provar els serveis web RESTful.
+</p>
+
+</div>
+
+<h2><a id="un_client_javascript_per_al_servei_web_restful_hello_world" >Un client JavaScript per al servei web RESTful &quot;&#039;Hello, World!!!&#039;&quot;</a></h2>
+<div class="level2">
+
+<p>
+Veurem com consumir serveis web RESTful des d’una aplicació web amb peticions AJAX de JavaScript. Utilitzarem Angular JS com a bastiment JavaScript per fer les peticions AJAX.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>AJAX</strong> (de l’anglès <em>Asynchronous JavaScript And XML</em>) és una tècnica de desenvolupament que permet fer les pàgines web d’una aplicació web interactives amb JavaScript.
+</p>
+</div></div>
+<p>
+AJAX és un conjunt de tècniques (vegeu la <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>) de desenvolupament d’aplicacions web que permeten crear aplicacions web client asíncrones. Amb AJAX, la part client de les aplicacions web pot enviar i recuperar informació del servidor de forma asíncrona (en <em>background</em>) sense interferir en com es mostra i com es comporta la pàgina. Aquesta forma de desacoblar la capa d’intercanvi de dades de la capa de presentació permet a les pàgines web, i, per extensió, a les aplicacions web, intercanviar contingut dinàmicament amb el servidor sense haver de recarregar tota la pàgina. Tot i que inicialment estava centrat en XML, cada vegada més el format de les dades intercanviades tendeix més a ser JSON, ja que aquest és un format nadiu per a les dades en JavaScript.
+</p>
+<div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ AJAX
+
+</figcaption><img src="../media/daw_m07_u6_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Les aplicacions que fan servir AJAX segueixen, en molta mesura, els principis de disseny inherents a l’arquitectura d’aplicacions REST. Podem veure cada una de les peticions AJAX com una petició a un servei REST que tornarà les dades en un format determinat, moltes vegades JSON, per tal que l’aplicació web les tracti i mostri a l’usuari sense necessitat de recarregar tota la pàgina.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Objectiu de l&#039;exemple</p>
+<p>
+L’objectiu d’aquest exemple no és aprofundir en el coneixement d’Angular JS, sinó que només pretén mostrar com es pot fer servir AJAX com a client per consumir serveis web RESTful. Si voleu aprofundir en el coneixement d’Angular JS ho podeu fer a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="https://angularjs.org/" class="urlextern" title="https://angularjs.org/"  rel="nofollow">angularjs.org</a>.
+</p>
+</div></div>
+<p>
+Aquestes característiques fan d’AJAX una de les formes més utilitzades a l’hora de consumir serveis web RESTful des de pàgines o aplicacions web. 
+</p>
+
+<p>
+Actualment hi ha multitud de bastiments JavaScript que proporcionen, entre moltes altres coses, la possibilitat de fer peticions AJAX. Potser el més popular des dels seus inicis és jQuery.
+</p>
+
+<p>
+Angular JS és un altre bastiment JavaScript que, entre moltes altres coses, proporciona capacitats i ajudes per fer peticions AJAX a serveis web RESTful. 
+</p>
+
+<p>
+A l’exemple veurem un client Angular JS que consumirà amb AJAX el servei web RESTful de salutacions. 
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte2" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte té un servei web RESTful configurat a la classe <code>GreetingController</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.springresthelloioc.domain.Greeting;</div></li><li class="li1"><div class="de1">import java.util.concurrent.atomic.AtomicLong;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestParam;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class GreetingController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String template = &quot;Hello, %s&quot;;</div></li><li class="li1"><div class="de1">    private final AtomicLong counter = new AtomicLong();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method =  RequestMethod.GET, value = &quot;/hello&quot;)</div></li><li class="li1"><div class="de1">    public Greeting greeting(@RequestParam(value=&quot;name&quot;, defaultValue=&quot;World!!!&quot;) String name) {</div></li><li class="li1"><div class="de1">        return new Greeting(counter.incrementAndGet(),</div></li><li class="li1"><div class="de1">                            String.format(template, name));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest servei web és un servei web RESTful desenvolupat amb Spring que respon a peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/hello</em> amb “<em>Hello, World!!!</em>” si no li passem cap paràmetre, i si li passem un paràmetre anomenat <code>name</code> torna una salutació personalitzada canviant la paraula <em>World</em> pel nom especificat a <code>name</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springresthelloangularclientioc” en l’estat inicial d’aquest apartat en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+El servei web torna la salutació en format JSON i respon a les peticions <code>GET</code> a <em>/hello</em> amb:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+I a les peticions <code>GET</code> a <em>/hello?name=User</em> amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, User!&quot;}</pre>
+
+</div>
+
+<h3><a id="creacio_del_client_javascrip_amb_angular_js" >Creació del client JavaScrip amb Angular JS</a></h3>
+<div class="level3">
+
+<p>
+El primer que necessitem és crear un mòdul controlador Angular JS que consumeixi el servei web. Per fer-ho, creeu un fitxer anomenat helloangular.js a <em>Web Pages/static</em>  amb el següent contingut:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">angular.module('demo', [])</div></li><li class="li1"><div class="de1">  .controller('Hello', function ($scope, $http) {</div></li><li class="li1"><div class="de1">      $http.get('http://localhost:8080/springresthelloangularclientioc/hello').</div></li><li class="li1"><div class="de1">              then(function (response) {</div></li><li class="li1"><div class="de1">                  $scope.greeting = response.data;</div></li><li class="li1"><div class="de1">              });</div></li><li class="li1"><div class="de1">  });</div></li></ol></pre>
+
+<p>
+Aquest mòdul controlador, anomenat <em>Hello</em>, es representa com una funció JavaScript a la qual se li passa com a paràmetres els components <code>scope</code> i <code>http</code>. La funció fa servir el component <code>http</code> per fer una crida al servei RESTful a <em>/hello</em>.
+</p>
+
+<p>
+Si la crida té èxit, s’assignarà el JSON retornat des del servei web la variable <code>scope.greeting</code> amb la creació d’un objecte JavaScript que representarà el model. L’establiment d’aquest objecte al model fa que Angular el pugui utilitzar al DOM de la pàgina que fa la sol·licitud i mostrar el seu contingut a l’usuari.
+</p>
+
+<p>
+Un cop tenim el controlador ens cal crear la pàgina <acronym title="HyperText Markup Language">HTML</acronym> que el carregarà al navegador de l’usuari. Per fer-ho, creeu un fitxer anomenat helloangular.html a <em>Web Pages/static</em> amb el següent contingut:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!doctype html&gt;</div></li><li class="li1"><div class="de1">&lt;html ng-app=&quot;demo&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Hello AngularJS&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;helloangular.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div ng-controller=&quot;Hello&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;p&gt;The ID is {{greeting.id}}&lt;/p&gt;</div></li><li class="li1"><div class="de1">            &lt;p&gt;The content is {{greeting.content}}&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;/div&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+A la secció <em>head</em> de la pàgina hi posem aquestes dues etiquetes:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;script src=&quot;helloangular.js&quot;&gt;&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+La primera descarrega la llibreria <code>angular</code> del CDN (de l’anglès <em>Content Delivery Network</em>) per tal que no l’haguem d’incorporar al projecte, i el segon carrega el codi JavaScript del controlador que hem creat (helloangular.js).
+</p>
+
+<p>
+Angular JS habilita un conjunt d’etiquetes pròpies que podrem utilitzar a les pàgines <acronym title="HyperText Markup Language">HTML</acronym>. A l’exemple fem servir l’atribut <code>ng-app</code> per indicar que la pàgina és una aplicació Angular JS i l’etiqueta <code>ng-controller</code> per indicar que el controlador de la pàgina serà el controlador <code>Hello</code> definit al fitxer JavaScript helloangular.js.
+</p>
+
+<p>
+Finalment, la pàgina accedeix a l’objecte del model <code>greeting</code> que ens ha deixat el controlador i mostra l’identificador i la salutació.
+</p>
+
+<p>
+Ara ja sols ens queda desplegar el servei web i el client per veure si es comporta com volem.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_i_prova_del_client_angular" >Desplegament del servei web i prova del client Angular</a></h3>
+<div class="level3">
+
+<p>
+Desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans.
+</p>
+
+<p>
+Comproveu que el servei web està desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springresthelloangularclientioc/hello" class="urlextern" title="http://localhost:8080/springresthelloangularclientioc/hello"  rel="nofollow">localhost:8080/springresthelloangularclientioc/hello</a> amb un navegador. El servei web us ha de tornar la salutació “<em>Hello, World!!!</em>” en format JSON.
+</p>
+
+<p>
+Si tot és correcte ja podem provar el client Angular JS accedint a l’<acronym title="Uniform Resource Locator">URL</acronym>  <a href="http://localhost:8080/springresthelloangularclientioc/static/helloangular.html" class="urlextern" title="http://localhost:8080/springresthelloangularclientioc/static/helloangular.html"  rel="nofollow">localhost:8080/springresthelloangularclientioc/static/helloangular.html</a> amb un navegador, i veureu la salutació “<em>Hello, World!!!</em>” tornada pel servei web (vegeu la <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució del client Angular JS
+
+</figcaption><img src="../media/fig1.2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat heu vist les bases per al desenvolupament de clients Java i JavaScript que accedeixin a serveis web RESTful, i els heu treballat de forma pràctica mitjançant exemples. 
+</p>
+
+<p>
+Concretament, heu après a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Desenvolupar i provar un client Java <em>stand-alone</em> que us permeti consultar un servei web RESTful mitjançant la classe <code>RestTemplate</code>.</div>
+</li>
+<li class="level1"><div class="li"> Fer tests d’integració amb <code>RestTemplate</code> que us permetin provar els serveis web RESTful.</div>
+</li>
+<li class="level1"><div class="li"> Fer crides AJAX a serveis web RESTful.</div>
+</li>
+</ul>
+
+<p>
+Per veure com habilitar sol·licituds Cross-Origin per un servei web RESTful us recomanem la realització de l’activitat associada a aquest apartat.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u6/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u6/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

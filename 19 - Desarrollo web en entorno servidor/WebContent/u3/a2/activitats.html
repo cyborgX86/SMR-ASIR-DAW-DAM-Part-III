@@ -1,0 +1,713 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Generació dinàmica de pàgines web</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Introducció a Spring i Spring MVC</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_maven">"Hola, Món" amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_web_amb_maven">'Hola, Món' web amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_spring_mvc">"Hola, Món" amb Spring MVC</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#estoc_de_medicaments_benvinguda">Estoc de medicaments, benvinguda</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_domini">Estoc de medicaments, capa de domini</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_persistencia">Estoc de medicaments, capa de persistència</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_servei">Estoc de medicaments, capa de servei</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a3" class="tocsection"><p id='u3a3continguts'><a class="section" href="../../../WebContent/u3/a3/continguts.html">Spring MVC, aprofundint en els controladors</a><span class="buttonexp"></span></p><ul><li id="u3a3exercicis"><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a3annexos"><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_capa_de_servei_a_medicament">Estoc de medicaments, capa de servei a medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_medicaments_per_malaltia">Estoc de medicaments, medicaments per malaltia</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_llista_de_medicaments_segons_filtre">"Estoc de medicaments", llista de medicaments segons filtre</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_detall_de_medicament">"Estoc de medicaments", detall de medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a4" class="tocsection"><p id='u3a4continguts'><a class="section" href="../../../WebContent/u3/a4/continguts.html">Spring MVC, altres aplicacions</a><span class="buttonexp"></span></p><ul><li id="u3a4activitats"><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></li><li id="u3a4exercicis"><a href="../../../WebContent/u3/a4/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a4annexos"><a href="../../../WebContent/u3/a4/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a4' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_formulari_per_afegir_medicaments">Estoc de medicaments, formulari per afegir medicaments</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_llista_blanca_al_formulari">Estoc de medicaments, llista blanca al formulari</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_pagina_de_login">Estoc de medicaments, pàgina de 'login'</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_internacionalitzacio">Estoc de medicaments, internacionalització</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Generació dinàmica de pàgines web</a></li><li><a href="continguts.html">Spring MVC, aplicació web</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="noticies_i_comentaris" >Notícies i comentaris</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és que l’estudiant repassi l’arquitectura i el procés d’una aplicació web Spring MVC, és a dir, les capes:
+</p>
+<ul>
+<li class="level1"><div class="li"> presentació</div>
+</li>
+<li class="level1"><div class="li"> domini</div>
+</li>
+<li class="level1"><div class="li"> servei</div>
+</li>
+<li class="level1"><div class="li"> persistència</div>
+</li>
+</ul>
+
+<p>
+Així mateix, el procés de crides entre si; en realitat, entre les seves classes.
+</p>
+
+<p>
+Es proposa el desenvolupament d’una aplicació senzilla per mostrar notícies i els comentaris que els usuaris van fent sobre cada notícia.
+</p>
+
+<p>
+L’aplicació podria tenir aquest model de domini:
+</p>
+<div class="iocfigure"><a name="fig1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Model de domini de notícies i comentaris
+
+</figcaption><img src="../media/daw_m07_u3_21.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Fixeu-vos que en aquest cas hi ha dues entitats. L’aplicació ha de mostrar la llista de totes les notícies i els comentaris fets sobre elles. Podeu fer servir repositoris en memòria, tal com s’ha fet a Estoc de medicaments.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució que s’ha desenvolupat és una solució proposada amb caràcter pedagògic. Hi ha altres solucions que poden treballar-se més, però fora de l’abast d’aquesta unitat.
+</p>
+
+<p>
+A una implementació amb base de dades, i per exemple fent servir Hibernate, es podrien fer les relacions entre els objectes de domini amb anotacions. En aquesta solució es farà sense fer servir cap tipus de <em>framework</em> addicional per a la capa de domini, i per resoldre la relació es farà servir una <em>List</em> de <em>Comment</em> a <em>News</em>.
+</p>
+
+<p>
+El codi de la solució d’aquesta activitat el podeu descarregar del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/noticies.zip">enllaç</a><span> ( 10.8 MB )</span></div></div>.
+</p>
+
+<p>
+No obstant això, es recomana desenvolupar el projecte pas a pas, com es detalla a continuació.
+</p>
+
+<p>
+<strong>Creació del projecte, dependències i configuració</strong>
+</p>
+
+<p>
+Creeu un nou projecte <em>Maven/Project from Archetype</em> amb l’arquetipus <code>maven-archetype-webapp</code> i anomeneu-lo “noticies”.
+</p>
+
+<p>
+Des de la pestanya <em>Files</em> de NetBeans o des del mateix explorador de fitxers del sistema operatiu, creeu la carpeta <em>Java</em> dins de la carpeta <em>src/main</em>. Ara, si torneu a la pestanya <em>Projects</em> de NetBeans veureu que ha aparegut la carpeta <em>Source Packages</em> on crear els nostres paquets.
+</p>
+
+<p>
+Canvieu el fitxer de configuració web.xml.
+</p>
+<pre class="code">&lt;web-app version=&quot;3.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+            xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee
+                                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;&gt;
+
+  &lt;display-name&gt;Notícies&lt;/display-name&gt;
+
+&lt;/web-app&gt;</pre>
+
+<p>
+Afegiu-hi les dependències necessàries, com a qualsevol projecte Spring MVC.
+</p>
+
+<p>
+A la secció <em>Dependències</em> de pom.xml heu d’afegir-hi les següents:
+</p>
+<pre class="code">        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+            &lt;version&gt;4.0.3.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+            &lt;version&gt;1.2&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax&lt;/groupId&gt;
+            &lt;artifactId&gt;javaee-web-api&lt;/artifactId&gt;
+            &lt;version&gt;7.0&lt;/version&gt;
+        &lt;/dependency&gt;</pre>
+
+<p>
+A més, aprofitareu per fer servir la codificació UTF8 en tot el projecte afegint la propietat que defineix aquesta característica en el mateix fitxer pom.xml:
+</p>
+<pre class="code">    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;</pre>
+
+<p>
+Creeu el DispatcherServlet-servlet.xml en una nova carpeta de nom <em>Spring</em> dins de <em>WEB-INF</em>. El contingut és el que es mostra a continuació:
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;
+
+
+    &lt;mvc:annotation-driven /&gt;
+    &lt;context:component-scan base-package=&quot;cat.xtec.ioc&quot; /&gt;
+
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;</pre>
+
+<p>
+Definiu el <code>Dispatcher Servlet</code> (<code>Front Controller</code>) afegint el següent contingut al fitxer de configuració web.xml:
+</p>
+<pre class="code">    &lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;/WEB-INF/spring/DispatcherServlet-servlet.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;</pre>
+
+<p>
+<strong>Capa de domini</strong>
+</p>
+
+<p>
+Creeu el paquet <code>cat.xtec.ioc.domain</code>, on residiran les classes de domini. Fareu una per a cada entitat; és a dir, una per a <code>News</code> i l’altra per a <code>Comments</code>.
+</p>
+
+<p>
+Dins del paquet <code>cat.xtec.ioc.domain</code> creeu la classe <code>News</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.domain;
+
+import java.util.List
+
+public class News {
+    private String newsId;
+    private String contentNews;
+    private List&lt;Comment&gt; comments;
+
+    public News(String newsId, String contentNews) {
+        this.newsId = newsId;
+        this.contentNews = contentNews;
+    }
+
+//..getters and setters omesos al text, no al codi 
+}</pre>
+
+<p>
+Fixeu-vos que <code>Comments</code> no hi és al constructor, ja que només l’omplirem quan ens interessi per retornar el model amb la vista.
+</p>
+
+<p>
+Afegiu-hi també la classe <code>Comment</code> amb el codi següent:
+</p>
+<pre class="code">package cat.xtec.ioc.domain;
+
+public class Comment {
+
+    private String commentId;
+    private String news;
+    private String user;
+    private String contentComment;
+
+    public Comment(String commentId, String news, String user, String contentComment) {
+        this.commentId = commentId;
+        this.news = news;
+        this.user = user;
+        this.contentComment = contentComment;
+    }
+//..getters and setters omesos al text, no al codi 
+
+}</pre>
+
+<p>
+<strong>Capa de persistència</strong>
+</p>
+
+<p>
+Desenvolupeu les interfícies repositori per a la persistència i les implementacions que simularan la persistència de les dades a memòria. Una interfície i una que la implementa per a cada entitat.
+</p>
+
+<p>
+Creeu els paquets <code>cat.xtec.ioc.domain.repository</code> i <code>cat.xtec.ioc.domain.repository.impl</code>, on situarem les interfícies i les classes, respectivament.
+</p>
+
+<p>
+Creeu la interfície <code>NewsRepository</code> en el paquet <code>cat.xtec.ioc.domain.repository</code> amb el codi següent:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository;
+
+import cat.xtec.ioc.domain.News;
+import java.util.List;
+
+public interface NewsRepository {
+    List &lt;News&gt; getAllNews();
+}</pre>
+
+<p>
+Creeu la <code>InMemoryNewsRepository</code> al paquet <code>cat.xtec.ioc.domain.repository.impl</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository.impl;
+
+import cat.xtec.ioc.domain.News;
+import cat.xtec.ioc.domain.repository.NewsRepository;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class InMemoryNewsRepository implements NewsRepository {
+     private List&lt;News&gt; listOfNews = new ArrayList&lt;News&gt;();
+
+    public InMemoryNewsRepository() {
+        News firstN = new News(&quot;010&quot;, &quot;Les condicions meteorològiques milloraran en els propers dies...&quot;);
+        News secondN = new News(&quot;020&quot;, &quot;L&#039;atur ha baixat un 3% el darrer any ...&quot;);
+        News thirdN = new News(&quot;020&quot;, &quot;La natalitat baixa en les zones més deprimides ...&quot;);
+        listOfNews.add(firstN);
+        listOfNews.add(secondN);
+        listOfNews.add(thirdN);
+    }     
+
+    public List&lt;News&gt; getAllNews() {
+        return listOfNews;        
+    }    
+}</pre>
+
+<p>
+A <code>InMemoryNewsRepository</code> heu creat la llista de <code>News</code> que representen les dades de la nostra aplicació com si l’haguéssiu obtingut d’una base de dades. Al constructor es creen dades d’exemple. El mètode que implementen és <code>getAllNews</code>, que simplement retorna la llista.
+</p>
+
+<p>
+Creeu la interfície <code>CommentRepository</code> en el paquet <code>cat.xtec.ioc.domain.repository</code> amb el codi següent:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository;
+
+import cat.xtec.ioc.domain.Comment;
+import java.util.List;
+
+
+public interface CommentRepository {
+    List &lt;Comment&gt; getAllComments();
+    List &lt;Comment&gt; getCommentsByNews(String news);
+}</pre>
+
+<p>
+En aquest cas heu afegit el mètode <code>getCommentsByNews</code> perquè el necessitareu quan vulgueu mostrar una notícia i els seus comentaris.
+</p>
+
+<p>
+Creeu la <code>InMemoryCommentRepository</code> al paquet <code>cat.xtec.ioc.domain.repository.impl</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository.impl;
+
+import cat.xtec.ioc.domain.Comment;
+import cat.xtec.ioc.domain.repository.CommentRepository;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class InMemoryCommentRepository implements CommentRepository {
+    
+    private List&lt;Comment&gt; listOfComments = new ArrayList&lt;Comment&gt;();
+
+    public InMemoryCommentRepository() {
+        
+        Comment comment010a = new Comment(&quot;010a&quot;,&quot;010&quot;,&quot;admin&quot;,&quot;El temps sempre igual.&quot;);
+        Comment comment010b = new Comment(&quot;010b&quot;,&quot;010&quot;,&quot;maria&quot;,&quot;Uf! Quina calor.&quot;);
+        Comment comment010c = new Comment(&quot;010c&quot;,&quot;010&quot;,&quot;joan&quot;,&quot;Paciència.&quot;);
+        Comment comment020a = new Comment(&quot;020a&quot;,&quot;020&quot;,&quot;admin&quot;,&quot;Això és una bona notícia.&quot;);
+        Comment comment020b = new Comment(&quot;020b&quot;,&quot;020&quot;,&quot;joan&quot;,&quot;Jo he trobat feina.&quot;);
+        Comment comment030a = new Comment(&quot;030a&quot;,&quot;030&quot;,&quot;admin&quot;,&quot;Haurem de posar-nos les piles&quot;);
+        listOfComments.add(comment010a);
+        listOfComments.add(comment010b);
+        listOfComments.add(comment010c);
+        listOfComments.add(comment020a);
+        listOfComments.add(comment020b);
+        listOfComments.add(comment030a);
+    }
+    
+    
+
+    public List&lt;Comment&gt; getAllComments() {
+        return listOfComments;
+    }
+
+    public List&lt;Comment&gt; getCommentsByNews(String news) {
+        List&lt;Comment&gt; returnedComments = new ArrayList&lt;Comment&gt;();
+        for (Comment comment : listOfComments) {
+            if (comment != null &amp;&amp; comment.getNews() != null
+                    &amp;&amp; comment.getNews().equals(news)) {
+                returnedComments.add(comment);
+            }
+        }
+        return returnedComments;
+    }
+        
+}</pre>
+
+<p>
+El constructor crea un seguit de comentaris per a les diverses notícies que havíeu creat abans.
+</p>
+
+<p>
+<strong>Capa de servei</strong>
+</p>
+
+<p>
+Només creareu la <code>NewsServiceImpl</code> com a servei i la corresponent interfície <code>NewsService</code>. Això és perquè només tindrà un mètode que ha de tornar la llista de totes les notícies, però a cada element <code>News</code> de la llista s’omplirà a la vegada la seva llista de <code>Comments</code> amb els objectes corresponents.
+</p>
+
+<p>
+Creeu el paquet <code>cat.xtec.ioc.service</code> i a dins la interfície <code>NewsService</code> amb el codi que es mostra:
+</p>
+<pre class="code">package cat.xtec.ioc.service;
+
+import cat.xtec.ioc.domain.News;
+import java.util.List;
+
+public interface NewsService {
+    List&lt;News&gt; getAllNews();
+}</pre>
+
+<p>
+Creeu el paquet <code>cat.xtec.ioc.service.impl</code> i a dins la <code>NewsServiceImpl</code> implementant la interfície anterior i amb el codi següent:
+</p>
+<pre class="code">package cat.xtec.ioc.service.impl;
+
+import cat.xtec.ioc.domain.News;
+import cat.xtec.ioc.domain.repository.CommentRepository;
+import cat.xtec.ioc.domain.repository.NewsRepository;
+import cat.xtec.ioc.service.NewsService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class NewsServiceImpl implements NewsService {
+    
+    @Autowired
+    private NewsRepository newsRepository;
+    @Autowired
+    private CommentRepository commentRepository;
+    
+    public List&lt;News&gt; getAllNews() {
+        List&lt;News&gt; listOfNews = newsRepository.getAllNews();
+        for (News aNews : listOfNews) {
+            aNews.setComments(commentRepository.getCommentsByNews(aNews.getNewsId()));
+        }
+        return listOfNews;
+    }
+    
+}</pre>
+
+<p>
+Aquest servei retorna la llista de notícies i en cada una d’elles ha afegit la llista dels possibles comentaris que pugui tenir associats.
+</p>
+
+<p>
+<strong>Capa de presentació</strong>
+</p>
+
+<p>
+En primer lloc, construireu el controlador <code>NewsController</code>, que recollirà les peticions, cridarà la capa de servei i retornarà el <code>ModelAndView</code>.
+</p>
+
+<p>
+Creeu el paquet <code>cat.xtec.ioc.controller</code> i a dins el controlador <code>NewsController</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import cat.xtec.ioc.service.NewsService;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class NewsController {
+
+    @Autowired
+    private NewsService newsService;
+
+    @RequestMapping(&quot;/&quot;)
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;news&quot;);
+        modelview.getModelMap().addAttribute(&quot;news&quot;, newsService.getAllNews());
+        return modelview;
+    }
+}</pre>
+
+<p>
+Aquest controlador agafarà les peticions a nivell de <em>root</em> de l’aplicació.
+</p>
+
+<p>
+Creeu la carpeta <em>Views</em> dins de la carpeta <em>WEB-INF</em>. A <em>Views</em>, creeu la vista news.jsp amb el codi que es mostra a continuació:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ca&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+        &lt;title&gt;Notícies&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h1&gt;Notícies&lt;/h1&gt;
+                    &lt;p&gt;Llista de notícies&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;c:forEach items=&quot;${news}&quot; var=&quot;aNews&quot;&gt;
+                    &lt;div class=&quot;col-sm-6 col-md-3&quot; style=&quot;padding-bottom: 15px&quot;&gt;
+                        &lt;div class=&quot;thumbnail&quot;&gt;
+                            &lt;div class=&quot;caption&quot;&gt;
+                                &lt;h3&gt;${aNews.newsId}&lt;/h3&gt;
+                                &lt;p&gt;${aNews.contentNews}&lt;/p&gt;
+                                &lt;c:forEach items=&quot;${aNews.comments}&quot; var=&quot;elItem&quot; &gt;
+                                    &lt;p&gt;${elItem.user}&lt;/p&gt;
+                                    &lt;p&gt;${elItem.contentComment}&lt;/p&gt;
+                                &lt;/c:forEach&gt;                                
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/c:forEach&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+Si executeu l’aplicació us ha de quedar semblant a la que es mostra en la imatge:
+</p>
+<div class="iocfigure"><a name="fig1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de la llista de notícies i comentaris
+
+</figcaption><img src="../media/daw_m07_u3_22.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

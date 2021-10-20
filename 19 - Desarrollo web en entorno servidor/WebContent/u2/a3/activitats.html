@@ -1,0 +1,376 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Desenvolupament web en entorn servidor</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">'Servlets'</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_hola_mon">'Servlet' Hola, Món</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_endevinacolor">'Servlet' EndevinaColor</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_publicitat_als_nous">'Servlet' Publicitat als nous</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#que_s_ha_apres">Què s'ha après</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Formularis amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#calculant_el_sou_net">Calculant el sou net</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#escrivint_un_post">Escrivint un 'post'</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#dades_de_subscripcio">Dades de subscripció</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u2a3" class="tocsection"><p id='u2a3continguts'><a class="section" href="../../../WebContent/u2/a3/continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a3activitats"><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></li><li id="u2a3exercicis"><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a3annexos"><a href="../../../WebContent/u2/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_en_una_galeta">L'usuari, en una galeta</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_a_la_sessio">L'usuari a la sessió</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#un_formulari_d_autenticacio_amb_ejb">Un formulari d'autenticació amb EJB</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament web en entorn servidor</a></li><li><a href="continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB...</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="autenticacio_basica_amb_servlets" >Autenticació bàsica amb &#039;servlets&#039;</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre els mecanismes que ens proporciona Java per autenticar els usuaris. Aquests usuaris podran accedir als <em>servlets</em> si tenen un rol determinat.
+</p>
+
+<p>
+Es vol crear un <em>login</em> d’usuari que permeti o no executar un <em>servlet</em>. Feu aquesta activitat amb un formulari d’autenticació creat per vosaltres en comptes d’utilitzar el diàleg per defecte. Els usuaris i els seus rols han d’estar creats en el servidor Glassfish. Només s’ha de deixar executar el <em>servlet</em> als usuaris amb el rol <em>admin</em>.
+</p>
+
+<p>
+Es recomana haver fet la unitat “Manteniment d’estat, autenticació i autorització amb <em>servlets</em> i EJB” abans de fer aquesta activitat.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució de l’exercici la podeu descarregar en aquest <div class="mediaf filezip"><div class="mediacontent"><a href="../media/u2-a3-activitats.zip">enllaç</a><span> ( 7.6 KB )</span></div></div>.
+</p>
+
+<p>
+Començarem l’activitat creant un nou projecte Maven. Aneu a <em>File / New Project / Maven / Web Application</em>. Canvieu el nom del fitxer index.html pel nom SecureServletLogin.html.
+</p>
+
+<p>
+Aquest fitxer tindrà un formulari web on es demanarà l’usuari i la contrasenya a l’usuari. Aquestes credencials s’enviaran al <em>servlet</em>, que comprovarà si l’usuari té el rol d’administrador que es necessita per poder accedir-hi.
+</p>
+
+<p>
+El contingut del fitxer anterior podria ser semblant a aquest (vegeu la <span class="figref"><a href="#fig01"><span>figura</span></a></span>):
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Seguretat en els Servlets&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Accedir a un servlet amb seguretat.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form method=&quot;POST&quot; action=&quot;SecureServlet&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot; value=&quot;Anar&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+<div class="iocfigure"><a name="fig01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+‘Login’ del ‘servlet’ SecureLogin
+
+</figcaption><img src="../media/u2-activitats-secureservlet-login.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Veiem que les credencials són enviades al <em>servlet</em> anomenat SecureServlet, i llavors continuarem amb la seva creació (<em>File / New File / Web / Servlet</em>). No cal afegir la seva configuració en el fitxer web.xml. Una vegada creat, necessitem recuperar aquests valors. Utilitzarem l’objecte <code>request</code> per fer-ho.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String myUsername = request.getParameter(&quot;username&quot;);</div></li><li class="li1"><div class="de1">String myPassword = request.getParameter(&quot;password&quot;);</div></li></ol></pre>
+
+<p>
+Una vegada tenim l’usuari i la contrasenya, com comprovem que són vàlids?
+</p>
+
+<p>
+Recordeu que les credencials dels usuaris s’emmagatzemen en un <em>realm</em> (àmbit o domini) de fitxer i que aquest l’administra el servidor Glassfish (vegeu la <span class="figref"><a href="#fig02"><span>figura</span></a></span>). Hem de preguntar-li al servidor si aquestes credencials són correctes. El mateix objecte <code>request</code> ens permet fer aquesta acció.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">request.login(myUsername, myPassword);</div></li></ol></pre>
+<div class="iocfigure"><a name="fig02"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració dels usuaris al servidor Glassfish
+
+</figcaption><img src="../media/u2-activitats-users-glassfish.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En el cas que l’usuari i la contrasenya no siguin vàlids, el mètode <code>login</code> llençarà una excepció i es podrà informar l’usuari que les seves credencials són incorrectes (vegeu la <span class="figref"><a href="#fig03"><span>figura</span></a></span>). En cas contrari, continuarà l’execució del <em>servlet</em> normalment.
+</p>
+<div class="iocfigure"><a name="fig03"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Error en les credencials de l’usuari
+
+</figcaption><img src="../media/u2-activitats-secureservlet-error.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+De moment, el <em>servlet</em> permet accedir a qualsevol usuari amb unes credencials vàlides. Amb la funció <code>isUserInRole</code>, explicada en la unitat “Manteniment d’estat, autenticació i autorització amb <em>servlets</em> i EJB”, es pot esbrinar si l’usuari té el rol d’administrador. Es deixa a l’alumne la implementació d’aquesta part de l’exercici.
+</p>
+
+<p>
+Sembla una mica estrany haver de fer un formulari <em>ad hoc</em> per a cada <em>servlet</em> que es necessiti autenticació. Java ens permet definir una pàgina que contingui el formulari que ha de mostrar cada vegada que es vulgui accedir a un <em>servlet</em> protegit. Per fer-lo, creeu una nova pàgina <acronym title="HyperText Markup Language">HTML</acronym> i anomeneu-la login.html. El contingut de la pàgina ha de ser el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Seguretat en els Servlets&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Accedir a un servlet amb seguretat.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form method=&quot;POST&quot; action=&quot;j_security_check&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;text&quot; name=&quot;j_username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;password&quot; name=&quot;j_password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot; value=&quot;Anar&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si us hi fixeu, l’acció del formulari i el nom dels <em>inputs</em> són especials. Amb aquests noms estem indicant al mòdul de seguretat de Java que ha de comprovar l’usuari i la contrasenya amb els quals estiguin configurats al servidor web. Si les credencials són correctes ens deixarà executar el <em>servlet</em>; si no, ens mostrarà una pàgina d’error.
+</p>
+
+<p>
+Però quin <em>servlet</em> ens deixarà executar?
+</p>
+
+<p>
+En cap moment s’ha informat el mòdul de seguretat del <em>servlet</em> al qual es vol accedir. Això és perquè aquesta pàgina ens la mostrarà el mòdul de seguretat quan vulguem accedir a un <em>servlet</em> que tingui configurada la seguretat. En cap cas s’executarà directament.
+</p>
+
+<p>
+Per configurar aquest comportament s’ha de modificar el fitxer web.xml. Si no es té aquest fitxer, s’ha de crear: <em>File / New File / Web / Standard deployment descriptor</em>. I afegim la configuració següent:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;web-app version=&quot;3.1&quot; xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;session-config&gt;</div></li><li class="li1"><div class="de1">        &lt;session-timeout&gt;</div></li><li class="li1"><div class="de1">            30</div></li><li class="li1"><div class="de1">        &lt;/session-timeout&gt;</div></li><li class="li1"><div class="de1">    &lt;/session-config&gt;</div></li><li class="li1"><div class="de1">    &lt;login-config&gt;</div></li><li class="li1"><div class="de1">        &lt;auth-method&gt;FORM&lt;/auth-method&gt;</div></li><li class="li1"><div class="de1">        &lt;form-login-config&gt;</div></li><li class="li1"><div class="de1">            &lt;form-login-page&gt;/login.html&lt;/form-login-page&gt;</div></li><li class="li1"><div class="de1">            &lt;form-error-page&gt;/error.html&lt;/form-error-page&gt;</div></li><li class="li1"><div class="de1">        &lt;/form-login-config&gt;</div></li><li class="li1"><div class="de1">    &lt;/login-config&gt;</div></li><li class="li1"><div class="de1">&lt;/web-app&gt;</div></li></ol></pre>
+
+<p>
+Amb l’etiqueta <code>form-login-page</code> definim la pàgina que té el formulari “especial” per enviar les credencials de l’usuari al mòdul de seguretat. A més a més, l’etiqueta <code>form-error-page</code> defineix la pàgina que es mostrarà a l’usuari si les credencials que aporta són incorrectes. Aquesta pàgina té el següent aspecte:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Seguretat en els Servlets&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Error accedint a un servlet amb seguretat.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Una vegada hem acabat de definir la pàgina d’autenticació i la pàgina d’error, procedirem a la creació d’un <em>servlet</em> que requereix el rol <em>admin</em> per poder-se executar.
+</p>
+
+<p>
+Crearem un nou <em>servlet</em>, de la mateixa manera que ho hem fet fins ara, amb el nom SecureServletConstraint.java. Aquest <em>servlet</em> utilitzarà les notacions Java de la classe <code>HttpMethodConstraint</code> per demanar autenticació d’usuari i un rol específic per accedir als seus mètodes.
+</p>
+
+<p>
+Vegeu com es defineix la seguretat amb anotacions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;SecureServletConstraint&quot;, urlPatterns = {&quot;/SecureServletConstraint&quot;})</div></li><li class="li1"><div class="de1">@ServletSecurity(</div></li><li class="li1"><div class="de1"> httpMethodConstraints = {</div></li><li class="li1"><div class="de1">  @HttpMethodConstraint(value = &quot;GET&quot;, rolesAllowed = &quot;admin&quot;),</div></li><li class="li1"><div class="de1">  @HttpMethodConstraint(value = &quot;POST&quot;, rolesAllowed = &quot;admin&quot;,</div></li><li class="li1"><div class="de1">                        transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL),      </div></li><li class="li1"><div class="de1"> }</div></li><li class="li1"><div class="de1">)</div></li><li class="li1"><div class="de1">public class SecureServletConstraint extends HttpServlet {</div></li><li class="li1"><div class="de1">....</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+L’anotació <code>ServletSecurity</code> especifica que es vol activar la seguretat per a aquest <em>servlet</em> i accepta l’anotació <code>HttpMethodContraints</code> com a paràmetre. D’aquesta manera podem definir uns rols específics per a cadascun dels mètodes del <em>servlet</em>. En el nostre cas només volem que sigui l’administrador qui hi tingui accés. Els paràmetres que accepta aquesta anotació són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>value</code>: nom del mètode HTTP.</div>
+</li>
+<li class="level1"><div class="li"> <code>rolesAllowed</code>: conjunt de rols que estan autoritzats per executar aquest mètode (el mètode definit al camp <em>value</em>)</div>
+</li>
+<li class="level1"><div class="li"> <code>transportGuarantee</code>: especifica la protecció que s’ha d’aplicar per a la connexió; per exemple, si s’ha d’enviar la informació amb el protocol HTTPS. Els valors són <code>confidential</code>, <code>integral</code> i <code>none</code>.</div>
+</li>
+</ul>
+
+<p>
+Una vegada s’ha definit la seguretat, no cal fer res més, només intentar accedir directament al <em>servlet</em>, de manera que, amb el botó dret del ratolí, executarem el fitxer SercureServeltContraint.java. Si heu seguit correctament els passos accedireu al formulari web definit al fitxer login.html (vegeu la figura <span class="figref"><a href="#fig04"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig04"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+‘Login’ automàtic del ‘servlet’ amb seguretat definida mitjançant anotacions
+
+</figcaption><img src="../media/u2-activitats-ssconstraint.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En el cas que no tinguem les credencials correctes, el mòdul de seguretat ens mostrarà la pàgina d’error (vegeu la <span class="figref"><a href="#fig05"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig05"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina d’error. Credencials no vàlides
+
+</figcaption><img src="../media/u2-activitats-ssconstraint-error.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En canvi, si acreditem que tenim el rol d’administrador, el mòdul de seguretat ens deixarà executar el <em>servlet</em> i ens retornarà la pàgina corresponent a la seva execució (vegeu la <span class="figref"><a href="#fig06"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig06"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del ‘servlet’ amb el rol d’administrador
+
+</figcaption><img src="../media/u2-activitats-ssconstraint-success.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a3/continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

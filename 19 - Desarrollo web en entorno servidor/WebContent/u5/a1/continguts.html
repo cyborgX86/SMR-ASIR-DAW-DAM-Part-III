@@ -1,0 +1,997 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Serveis web amb Java EE 7</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a1annexos"><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap">Gestió de reserva de places a concerts com a servei web SOAP</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone">Fent servir la gestió de reserva de places a concerts des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web">Fent servir la gestió de reserva de places a concerts des d'una aplicació web</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta "Hello World!!!"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#el_servei_web_de_dades_de_llibres_operacions_crud">El servei web de dades de llibres. Operacions CRUD</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a3" class="tocsection"><p id='u5a3continguts'><a class="section" href="../../../WebContent/u5/a3/continguts.html">Serveis web RESTful amb Java EE7. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a3annexos"><a href="../../../WebContent/u5/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a3/continguts.html#un_client_per_al_servei_web_restful_que_contesta_hola">Un client per al servei web RESTful que contesta "Hola"</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#el_servei_web_de_dades_de_llibres_consum_i_testeig">El servei web de dades de llibres. Consum i testeig</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Java EE 7</a></li><li>Serveis web SOAP amb Java EE 7</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_soap_amb_java_ee_7"> Serveis web SOAP amb Java EE 7 </a></h1>
+    	
+<p>
+Veurem, mitjançant una aplicació d’exemple, els conceptes més rellevants dels serveis web SOAP. Aprendreu a crear-ne, a fer-ne el desplegament i a codificar diferents tipus de clients capaços de consumir els serveis web creats.
+</p>
+
+<p>
+Els serveis web, ja siguin SOAP o REST, són una peça clau en el desenvolupament d’arquitectures de programari orientades a serveis (SOA per les sigles en anglès: Service Oriented Architecture) i, mes recentment, per a la creació d’arquitectures basades en microserveis. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>SOAP</strong> (de l’anglès <em>Simple Object Access Protocol</em>) és un protocol que permet la interacció de serveis web basats en XML. L’especificació de SOAP inclou la sintaxi amb la qual s’han de definir els missatges, les regles de codificació dels tipus de dades i les regles de codificació que regiran les comunicacions entre aquests serveis web.
+</p>
+</div></div>
+<p>
+Quan es descriu una arquitectura <strong>SOAP</strong> ens referim a arquitectures basades en un conjunt de serveis que es despleguen a Internet mitjançant <strong>serveis web</strong>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servei web</strong> és una tecnologia que fa servir un conjunt de protocols i estàndards per tal d’intercanviar dades entre aplicacions.
+</p>
+</div></div>
+<p>
+Podeu veure els serveis web com a components d’aplicacions distribuïdes que estan disponibles de forma externa i que es poden fer servir per integrar aplicacions escrites en diferents llenguatges (Java, .NET, PHP, etc.) i que s’executen en plataformes diferents (Windows, Linux, etc.). <strong>La seva característica principal és, doncs, la interoperativitat</strong>. 
+</p>
+
+<p>
+Un servei web publica una lògica de negoci exposada com a servei als clients. La diferencia més gran entre una lògica de negoci exposada com a servei web i, per exemple, una lògica de negoci exposada amb un mètode d’un EJB és que els serveis web SOAP proporcionen una interfície poc acoblada als clients. Això permet comunicar aplicacions que s’executin en diferents sistemes operatius, desenvolupades amb diferents tecnologies i amb diferents llenguatges de programació.
+</p>
+
+<p>
+Els serveis web i, per tant, les aplicacions orientades a serveis es poden implementar amb diferents tecnologies. Les dues implementacions principals de serveis web que formen part de Java EE 7 són els serveis web <strong>SOAP</strong> i els serveis web <strong>RESTful</strong>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Els serveis web SOAP són força més complexos que els serveis web RESTful, però proporcionen certes capacitats a nivell de seguretat i transaccionalitat que, a vegades, els fan l’única alternativa viable, sobretot en aplicacions empresarials.
+</p>
+
+<p>
+En aquest capítol ens centrarem en la creació i el consum de serveis web SOAP amb Java EE 7.
+</p>
+
+<p>
+El proveïdor del servei web SOAP el dissenya, l’implementa i en publica la seva interfície i el format dels missatges amb <strong>WSDL</strong> (de l’anglès Web Services Description Language), i els clients consulten aquesta definició i es comuniquen amb el servei web seguint la interfície i el format de missatges que ha publicat el proveïdor del servei en el document WDSL de definició del servei web.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>WSDL</strong> descriu on es localitza un servei, quines operacions proporciona, el format dels missatges que han de ser intercanviats i com cal cridar el servei.
+</p>
+</div></div>
+<p>
+Opcionalment es pot publicar la definició WSDL del servei web en un registre <strong>UDDI</strong> (de l’anglès Universal Description, Dicovery and Integration) per tal que els clients puguin fer-hi cerques. Tingueu en compte que actualment no existeix un registre global que inclogui els diferents serveis web i, per això, UDDI ha passat a ser molt poc utilitzat a la pràctica. Normalment, el client coneix l’adreça del document WSDL de descripció del servei i, a partir d’aquest, invoca el servei web. Vegeu la relació entre els diferents components d’un servei web SOAP en la <span class="figref"><a href="#xafig1.1"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="xafig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Components i relacions d’un servei web SOAP
+
+</figcaption><img src="../media/daw_m07_u5_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+L’especificació de Java EE 7 inclou diverses especificacions que donen complet suport a la creació i el consum de serveis web SOAP; la més destacada és <strong>JAX-WS</strong> (de l’anglès Java <acronym title="Application Programming Interface">API</acronym> for XML-Based Web Services), que utilitza missatges XML seguint el protocol SOAP i oculta la complexitat d’aquest protocol proporcionant una <acronym title="Application Programming Interface">API</acronym> senzilla per al desenvolupament, el desplegament i el consum de serveis web SOAP amb Java EE.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan parlem de serveis web, a les operacions se les sol anomenar <em>endpoints</em>. Al text farem servir indistintament qualsevol de les dues paraules.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JAX-WS</strong> és l’API estàndard que defineix Java EE per desenvolupar i desplegar serveis web SOAP i permet ocultar la complexitat inherent a aquest protocol.
+</p>
+</div></div>
+<p>
+Tal com podeu veure en la <span class="figref"><a href="#xafig1.2"><span>figura</span></a></span>, el <em>runtime</em> de JAX-WS converteix les crides a l’API en missatges SOAP i els missatges SOAP en crides a l’API i ho envia per HTTP. La implementació de JAX-WS que incorporen els servidors d’aplicacions compatibles amb Java EE 7 també proporciona eines per generar els documents WSDL de definició dels serveis web i eines per generar els artefactes que faran d’intermediaris entre el client i el servei web. Aquests artefactes s’anomenen <em>stubs</em> a la part del client i <em>ties</em> a la part del servei web.
+</p>
+<div class="iocfigure"><a name="xafig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Esquema de comunicació entre un servei web SOAP i un client amb JAX-WS
+
+</figcaption><img src="../media/daw_m07_u4_02.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<h2><a id="gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap" >Gestió de reserva de places a concerts com a servei web SOAP</a></h2>
+<div class="level2">
+
+<p>
+Veurem els conceptes referents a la definició de serveis web SOAP amb Java EE 7 desenvolupant un servei web SOAP que permeti les següents operacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Proporcionar una llistat de concerts i el nombre de places lliures a cada un d’ells.</div>
+</li>
+<li class="level1"><div class="li"> Fer la reserva d’una entrada per a un d’aquests concerts.</div>
+</li>
+<li class="level1"><div class="li"> Cancel·lar una reserva d’una entrada.</div>
+</li>
+</ul>
+
+<p>
+Farem servir una aplicació web ja desenvolupada que segueixi una arquitectura per capes i hi afegireu una capa de serveis on creareu i publicareu el servei web de gestió de reserves com a servei web SOAP.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Estratègia &#039;top-down&#039;</p>
+<p>
+Tot i ser força més feixuc, també podríem haver seguit una estratègia <em>top-down</em>, creant primer el document de WSDL de definició i, a partit d’aquest, generar automàticament el codi Java que l’implementi.
+</p>
+</div></div>
+<p>
+Per a aquest exemple farem servir una aproximació <em>bottom-up</em>; crearem primer el codi Java que implementarà el servei web i, a partir d’aquest, es generarà automàticament el document WSDL que el descriurà. 
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+L’aplicació de la qual partirem s’anomena “Resentioc” i ens servirà per veure com podem exposar algunes funcionalitats de la capa de serveis d’una aplicació mitjançant serveis web SOAP. Es tracta d’un projecte Spring MVC senzill que segueix una arquitectura típica per capes per tal d’aconseguir una alta reusabilitat, un baix acoblament i una alta cohesió a l’aplicació.
+</p>
+
+<p>
+El projecte constarà de quatre capes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Capa de presentació</div>
+</li>
+<li class="level1"><div class="li"> Capa de domini</div>
+</li>
+<li class="level1"><div class="li"> Capa de serveis</div>
+</li>
+<li class="level1"><div class="li"> Capa de persistència</div>
+</li>
+</ul>
+
+<p>
+A l’exemple no farem servir la capa de presentació, ja que l’objectiu no és proporcionar una interfície d’usuari a l’aplicació, sinó publicar els mètodes de negoci com a serveis web.
+</p>
+
+<p>
+El model de domini ja el teniu implementat i és molt senzill, només hi ha una entitat <code>Show</code> que teniu en la <span class="figref"><a href="#xafig1.3"><span>figura</span></a></span> i que representa els concerts que s’estan oferint amb el nombre d’entrades disponibles. 
+</p>
+<div class="iocfigure"><a name="xafig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Entitat Show
+
+</figcaption><img src="../media/daw_m07_u5_04.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La capa de serveis serà la que treballarem i haurà de proporcionar un <strong>servei web SOAP</strong> que permeti als clients fer les següents operacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Llistat de concerts amb el nombre d’entrades disponibles per a cada un d’ells.</div>
+</li>
+<li class="level1"><div class="li"> Reservar una entrada.</div>
+</li>
+<li class="level1"><div class="li"> Anul·lar una reserva.</div>
+</li>
+</ul>
+
+<p>
+La capa de persistència també la teniu implementada i conté l’objecte repositori que permet mapar les dades de la font de dades amb l’objecte de domini. En el nostre cas, per simplificar, farem servir un repositori <em>in memory</em> que tindrà una llista precarregada de concerts.
+</p>
+
+</div>
+
+<h3><a id="creacio_del_servei_web_soap" >Creació del servei web SOAP</a></h3>
+<div class="level3">
+
+<p>
+L’objectiu d’aquest apartat és crear un servei web SOAP, seguint l’especificació JAX-WS, amb les tres operacions que corresponen a les tres funcionalitats que volem publicar:
+</p>
+<ul>
+<li class="level1"><div class="li"> Llistat de concerts amb el nombre d’entrades disponibles per cada un d’ells.</div>
+</li>
+<li class="level1"><div class="li"> Reservar una entrada.</div>
+</li>
+<li class="level1"><div class="li"> Anul·lar una reserva.</div>
+</li>
+</ul>
+
+<p>
+Els serveis web SOAP amb Java EE 7 es poden implementar de dues maneres: amb una classe Java normal que s’executa en un contenidor de <em>servlets</em> o bé com un EJB de sessió sense estat o <em>singleton</em> que s’executa en un contenidor d’EJB. Veurem com s’implementa el servei web amb una classe Java normal. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Creació dels serveis web</p>
+<p>
+Primer ho farem “a mà”, sense gaire ajut de NetBeans, per tal que veieu i entengueu tot el procés. Veurem que NetBeans us pot ajudar força en el procés de creació dels serveis web, però és molt important que entengueu tot el procés abans de fer servir eines automatitzades.
+</p>
+</div></div>
+<p>
+Creeu una interfície que exposarà les tres operacions que volem; anomenarem la interfície <code>TicketServiceEndpoint</code> i la crearem al paquet <code>cat.xtec.ioc.service</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Resentioc” en l’estat inicial d’aquest apartat des de l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans. Tot i que podeu descarregar-vos també el projecte en l’estat final des de un altre enllaç als annexos, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat.
+</p>
+</div></div>
+<p>
+A la interfície hi creeu els tres mètodes que volem exposar com a <em>endpoints</em> del servei web i els anoteu amb l’anotació <code>javax.jws.WebMethod</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Show;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">import javax.jws.WebMethod;</div></li><li class="li1"><div class="de1">import javax.jws.WebService;</div></li><li class="li1"><div class="de1">import javax.jws.soap.SOAPBinding;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@WebService</div></li><li class="li1"><div class="de1">@SOAPBinding(style = SOAPBinding.Style.DOCUMENT)</div></li><li class="li1"><div class="de1">public interface TicketServiceEndpoint {</div></li><li class="li1"><div class="de1">     @WebMethod ArrayList&lt;Show&gt; getAllShows();</div></li><li class="li1"><div class="de1">     @WebMethod Show makeReservation(String showId);</div></li><li class="li1"><div class="de1">     @WebMethod Show cancelReservation(String showId);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En les noves versions de Java EE, la creació explícita d’una interfície que caldrà que el servei web implementi és opcional.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Hem anotat la interfície amb l’anotació <code>@WebService</code> per indicar que la interfície correspondrà a un servei web.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat la interfície amb l’anotació <code>@SOAPBindig</code> per tal d’especificar l’estil de servei que volem crear. Per l’exemple, utilitzarem l’estil <em>Document</em>, que és l’opció per defecte.</div>
+</li>
+<li class="level1"><div class="li"> Tots els mètodes que volem exposar cal que els anoteu amb l’anotació <code>@WebMethod</code>.</div>
+</li>
+</ul>
+
+<p>
+Un cop fet això cal que creeu la implementació del servei web; per fer-ho, creeu una nova classe anomenada <code>TicketServiceEndpointImpl</code> al paquet <code>cat.xtec.ioc.service.impl</code>. En aquesta classe cal que hi implementeu els tres mètodes que volem exposar com a <em>endpoints</em> del servei web:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Show;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.ShowRepository;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.impl.InMemoryShowRepository;</div></li><li class="li1"><div class="de1">import javax.jws.WebService;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.TicketServiceEndpoint;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@WebService(serviceName = &quot;TicketService&quot;,</div></li><li class="li1"><div class="de1">        endpointInterface = &quot;cat.xtec.ioc.service.TicketServiceEndpoint&quot;)</div></li><li class="li1"><div class="de1">public class TicketServiceEndpointImpl implements TicketServiceEndpoint {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private final ShowRepository showRepository = new InMemoryShowRepository();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public ArrayList&lt;Show&gt; getAllShows() {</div></li><li class="li1"><div class="de1">        return new ArrayList&lt;Show&gt;(this.showRepository.getAllShows());</div></li><li class="li1"><div class="de1">    }        </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Show makeReservation(String showId) {</div></li><li class="li1"><div class="de1">        return this.showRepository.makeReservation(showId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Show cancelReservation(String showId) {</div></li><li class="li1"><div class="de1">        return this.showRepository.cancelReservation(showId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem anotat la classe amb l’anotació <code>@WebService</code> i li hem indicat amb l’atribut <code>name</code> que els clients faran referència al servei web amb el nom <code>TicketService</code>. També li hem indicat quina és la interfície que implementa el servei web amb la ruta completa de la interfície <code>TicketServiceEndpoint</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebService(serviceName = &quot;TicketService&quot;,</div></li><li class="li1"><div class="de1">        endpointInterface = &quot;cat.xtec.ioc.service.TicketServiceEndpoint&quot;)</div></li><li class="li1"><div class="de1">public class TicketServiceEndpointImpl implements TicketServiceEndpoint {</div></li></ol></pre>
+
+<p>
+La classe implementa la interfície que defineix el servei web i proporciona una implementació per a cada un dels tres mètodes que implementaran les operacions que publica el servei web cridant mètodes existents del repositori de concerts. A aquests mètodes no cal afegir-hi cap anotació especial; el fet d’implementar una interfície amb mètodes anotats amb <code>@WebMethod</code> ja indica quins mètodes de la classe corresponen als <em>endpoints</em> del servei web.
+</p>
+
+<p>
+I aquesta és tota la feina que ens cal fer per implementar el servei web de reserva d’entrades, ara tan sols ens manca fer-ne el desplegament al servidor d’aplicacions i provar-lo.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_soap" >Desplegament del servei web SOAP</a></h3>
+<div class="level3">
+
+<p>
+Un cop creat el servei web cal que el desplegueu per tal de fer-lo accessible als clients. El procés de desplegament del servei web engega un conjunt de processos definits a JAX-WS per tal de generar el document WSDL de descripció del servei i publicar els <em>endpoints</em> del servei web.
+</p>
+
+<p>
+El desplegament del servei web es pot fer de diverses maneres, entre elles:
+</p>
+<ul>
+<li class="level1"><div class="li"> Desplegant l’aplicació Java EE que el conté mitjançant els mecanismes normals de desplegament de qualsevol aplicació Java EE.</div>
+</li>
+<li class="level1"><div class="li"> Creant una aplicació Java que s’encarregui de publicar el servei web a un <acronym title="Uniform Resource Locator">URL</acronym> determinat.</div>
+</li>
+</ul>
+
+<p>
+El desplegament del servei web com a part de l’aplicació Java EE que el conté és molt senzill, simplement cal que feu <em>Run</em> a NetBeans (vegeu la <span class="figref"><a href="#xafig1.4xx"><span>figura</span></a></span>) i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte:
+</p>
+<div class="iocfigure"><a name="xafig1.4xx"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Run’ a NetBeans
+
+</figcaption><img src="../media/xig1.4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En fer el desplegament, la implementació de JAX-WS que té el servidor d’aplicacions ja genera automàticament el document WSDL de definició del servei i publica els <em>endpoints</em> que heu definit amb el nom de servei que li heu donat (en el cas que ens ocupa l’hem anomenat <code>TicketService</code>). La <span class="figref"><a href="#xafig1.5"><span>figura</span></a></span> mostra la sortida de la consola de NetBeans amb el desplegament del servei web:
+</p>
+<div class="iocfigure"><a name="xafig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Desplegament a NetBeans
+
+</figcaption><img src="../media/xig1.5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu provar que el desplegament des de NetBeans ha anat bé consultant el document WSDL generat en el següent enllaç: <a href="http://localhost:8080/resentioc/TicketService?wsdl" class="urlextern" title="http://localhost:8080/resentioc/TicketService?wsdl"  rel="nofollow">localhost:8080/resentioc/TicketService?wsdl</a>.
+</p>
+
+<p>
+El desplegament mitjançant una aplicació Java que s’encarregui de publicar el servei web és una mica més complexa, i ens caldrà crear una classe Java que tingui un mètode <code>main</code> que cridi el mètode <code>publish</code> de l’objecte <code>javax.xml.ws.Endpoint</code>. Per fer-ho creem una classe <code>TicketServicePublisher</code> al paquet <code>cat.xtec.ioc.publisher</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.publisher;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.impl.TicketServiceEndpointImpl;</div></li><li class="li1"><div class="de1">import javax.xml.ws.Endpoint;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class TicketServicePublisher {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        Endpoint.publish(&quot;http://localhost:9999/publisher/TicketService&quot;, new TicketServiceEndpointImpl());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que al mètode <code>publish</code> de l’objecte <code>javax.xml.Endpoint</code> cal que li passeu l’<acronym title="Uniform Resource Locator">URL</acronym> on voleu publicar el servei web i una instància de la classe que implementa el servei web.
+</p>
+
+<p>
+Amb això ja podeu publicar el servei web de reserva d’entrades executant aquesta aplicació Java; per fer-ho, poseu-vos damunt de la classe a NetBeans i feu <em>Run File</em> (vegeu la <span class="figref"><a href="#xafig1.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Run File’ a NetBeans
+
+</figcaption><img src="../media/xig1.6.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si ho feu, veureu el següent error a la consola de NetBeans:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Exception in thread &quot;main&quot; com.sun.xml.ws.model.RuntimeModelerException: </div></li><li class="li1"><div class="de1">runtime modeler error: Wrapper class cat.xtec.ioc.service.jaxws.GetAllShows is not found. Have you run APT to generate them?</div></li></ol></pre>
+
+<p>
+El problema és que ens cal executar una utilitat del JDK anomenada <code>wsgen</code> que generarà tots els artefactes portables que necessita el servei web per ser publicat i consumit. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Generar artefactes</p>
+<p>
+Quan heu fet el desplegament amb NetBeans és el contenidor del servidor d’aplicacions qui s’encarrega de generar automàticament aquests artefactes, per això no ho heu hagut de fer manualment.
+</p>
+</div></div>
+<p>
+Per fer-ho obriu un <em>command-prompt</em>, situeu-vos al directori <em>\target\classes\</em> on tingueu el projecte “Resentioc” i executeu la següent línia (cal que tingueu el directori <em>&lt;JDK_HOME&gt;/bin</em> al <em>classpath</em> per tal que us trobi l’executable <code>wsgen</code>):
+</p>
+
+<p>
+Amb Windows:
+</p>
+<pre class="code">wsgen -verbose  -keep -cp . -s ..\..\src\main\java cat.xtec.ioc.service.impl.TicketServiceEndpointImpl</pre>
+
+<p>
+Amb Linux:
+</p>
+<pre class="code">wsgen -verbose  -keep -cp . -s ../../src/main/java cat.xtec.ioc.service.impl.TicketServiceEndpointImpl</pre>
+
+<p>
+Aquesta instrucció us generarà un conjunt de fitxers .java amb tots els artefactes portables necessaris per fer la publicació des de l’aplicació Java i els col·locarà al paquet <code>cat.xtec.ioc.service.jaxws</code> del projecte “Resentioc”.
+</p>
+
+<p>
+Ara sí que podeu publicar el servei web de reserva d’entrades executant el <em>Publisher</em>; si tot va bé, veureu que a la part inferior esquerra de NetBeans (vegeu la <span class="figref"><a href="#xafig1.7"><span>figura</span></a></span>) us apareix una finestra indicant que el servei web està corrent a l’<acronym title="Uniform Resource Locator">URL</acronym> que heu especificat.
+</p>
+<div class="iocfigure"><a name="xafig1.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Servei web publicat a NetBeans
+
+</figcaption><img src="../media/xig1.7.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu provar que el desplegament des de l’aplicació Java ha anat bé consultant el document WSDL generat en el següent enllaç: <a href="http://localhost:9999/publisher/TicketService?wsdl" class="urlextern" title="http://localhost:9999/publisher/TicketService?wsdl"  rel="nofollow">localhost:9999/publisher/TicketService?wsdl</a>.
+</p>
+
+</div>
+
+<h3><a id="provant_el_servei_web" >Provant el servei web</a></h3>
+<div class="level3">
+
+<p>
+Si tot ha anat bé ja teniu el servei web desplegat i a punt per provar-lo. Però com ho fem? Com el provem? Fixeu-vos que fins al moment no hem codificat cap client que faci peticions al servei web desenvolupat; com podem, doncs, provar-lo?
+</p>
+
+<p>
+Per tal de provar el servei web que heu desenvolupat, desplegueu l’aplicació al servidor d’aplicacions Glassfish i accediu al següent <acronym title="Uniform Resource Locator">URL</acronym>: <a href="http://localhost:8080/resentioc/TicketService?Tester" class="urlextern" title="http://localhost:8080/resentioc/TicketService?Tester"  rel="nofollow">localhost:8080/resentioc/TicketService?Tester</a>, on veureu una pàgina (vegeu la <span class="figref"><a href="#xafig1.8"><span>figura</span></a></span>) amb un botó per a cada una de les operacions que conté el servei web i un enllaç al fitxer WSDL de definició de servei que s’ha generat:
+</p>
+<div class="iocfigure"><a name="xafig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pàgina de prova del servei web
+
+</figcaption><img src="../media/xig1.8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Quan es desplega un servei web SOAP es genera un fitxer WSDL de definició del servei web. El fitxer WSDL està forma per elements XML que <strong>descriuen completament el servei web</strong> i com s’ha de consumir. El podeu consultar en el següent <acronym title="Uniform Resource Locator">URL</acronym>: <a href="http://localhost:8080/resentioc/TicketService?WSDL" class="urlextern" title="http://localhost:8080/resentioc/TicketService?WSDL"  rel="nofollow">localhost:8080/resentioc/TicketService?WSDL</a>.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;definitions targetNamespace=&quot;http://impl.service.ioc.xtec.cat/&quot; name=&quot;TicketService&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;import namespace=&quot;http://service.ioc.xtec.cat/&quot; location=&quot;http://localhost:8080/resentioc/TicketService?wsdl=1&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;binding name=&quot;TicketServiceEndpointImplPortBinding&quot; type=&quot;ns1:TicketServiceEndpoint&quot;&gt;&lt;/binding&gt;</div></li><li class="li1"><div class="de1">    &lt;service name=&quot;TicketService&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;port name=&quot;TicketServiceEndpointImplPort&quot; binding=&quot;tns:TicketServiceEndpointImplPortBinding&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;soap:address location=&quot;http://localhost:8080/resentioc/TicketService&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/port&gt;</div></li><li class="li1"><div class="de1">    &lt;/service&gt;</div></li><li class="li1"><div class="de1">&lt;/definitions&gt;</div></li></ol></pre>
+
+<p>
+El fitxer WSDL és un document XML que té una secció abstracta per definir els ports, els missatges i els tipus de dades de les operacions i una part concreta que defineix la instància concreta on hi ha aquestes operacions (vegeu la <span class="figref"><a href="#xafig1.9"><span>figura</span></a></span>). Aquesta estructura permet reutilitzar la part abstracta del document.
+</p>
+<div class="iocfigure"><a name="xafig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura general d’un fitxer WSDL (versions 1.1 i 2.0)
+
+</figcaption><img src="../media/daw_m07_u5_03.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A la part abstracta hi tenim els següents elements:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>types</code></div>
+</li>
+<li class="level1"><div class="li"> <code>message</code></div>
+</li>
+<li class="level1"><div class="li"> <code>portType</code></div>
+</li>
+</ul>
+
+<p>
+Els tipus de dades, tant d’entrada com de sortida, de les operacions es defineixen amb XSD a l’etiqueta <code>&lt;types&gt;</code>. En el nostre cas veiem que ho tenim definit amb un import de <a href="http://localhost:8080/resentioc/TicketService?wsdl=1" class="urlextern" title="http://localhost:8080/resentioc/TicketService?wsdl=1"  rel="nofollow">localhost:8080/resentioc/TicketService?wsdl=1</a>; si accediu a aquest fitxer veureu que referencia un document d’esquema definit amb XSD:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;definitions targetNamespace=&quot;http://service.ioc.xtec.cat/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;types&gt;</div></li><li class="li1"><div class="de1">        &lt;xsd:schema&gt;</div></li><li class="li1"><div class="de1">            &lt;xsd:import namespace=&quot;http://service.ioc.xtec.cat/&quot; schemaLocation=&quot;http://localhost:8080/resentioc/TicketService?xsd=1&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xsd:schema&gt;</div></li><li class="li1"><div class="de1">    &lt;/types&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShows&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShowsResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;portType name=&quot;TicketServiceEndpoint&quot;&gt;&lt;/portType&gt;</div></li><li class="li1"><div class="de1">&lt;/definitions&gt;</div></li></ol></pre>
+
+<p>
+I en aquest document XSD <a href="http://localhost:8080/resentioc/TicketService?xsd=1" class="urlextern" title="http://localhost:8080/resentioc/TicketService?xsd=1"  rel="nofollow">localhost:8080/resentioc/TicketService?xsd=1</a> és on trobem la definició de les operacions i els tipus de dades, tant d’entrada com de sortida, que fan servir les operacions:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;xs:schema version=&quot;1.0&quot; targetNamespace=&quot;http://service.ioc.xtec.cat/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;cancelReservation&quot; type=&quot;tns:cancelReservation&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;cancelReservationResponse&quot; type=&quot;tns:cancelReservationResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;getAllShows&quot; type=&quot;tns:getAllShows&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;getAllShowsResponse&quot; type=&quot;tns:getAllShowsResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;makeReservation&quot; type=&quot;tns:makeReservation&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;makeReservationResponse&quot; type=&quot;tns:makeReservationResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;cancelReservation&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;arg0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;cancelReservationResponse&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;return&quot; type=&quot;tns:show&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;show&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;availableTickets&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;id&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;location&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;makeReservation&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;arg0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;makeReservationResponse&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;return&quot; type=&quot;tns:show&quot; minOccurs=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;getAllShows&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence/&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;getAllShowsResponse&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;return&quot; type=&quot;tns:show&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">&lt;/xs:schema&gt;</div></li></ol></pre>
+
+<p>
+
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Aconseguir interoperativitat</p>
+<p>
+El <em>runtime</em> de JAX-WS serà l’encarregat de fer les transformacions dels missatges SOAP a crides a l’API Java, fent els mapatges de tipus adient per aconseguir, per exemple, tornar als clients objectes Java complexos de tipus <em>Show</em>. Aquesta és la clau per aconseguir interoperativitat, ja que un client que no sigui Java i que tingui un <em>runtime</em> que permeti fer les transformacions pertinents també podrà cridar el servei de gestió de reserves que heu creat.
+</p>
+</div></div>
+<p>
+Per exemple, si us hi fixeu, defineix que les peticions a l’operació <code>cancelReservation</code> reben un paràmetre de tipus <em>string</em> i a les respostes es torna un tipus de dades complex anomenat <em>show</em> que està format per un <em>int</em> i tres <em>string</em> (<code>availableTickets</code>, <code>id</code>, <code>location</code> i <code>name</code>)
+</p>
+
+<p>
+Després de la definició dels tipus de dades trobem els elements <code>&lt;message&gt;</code> amb la definició dels missatges que es poden intercanviar les operacions del servei web, amb una entrada per a la petició i una altra per a la resposta:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;definitions targetNamespace=&quot;http://service.ioc.xtec.cat/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;types&gt;&lt;/types&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShows&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShowsResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;portType name=&quot;TicketServiceEndpoint&quot;&gt;&lt;/portType&gt;</div></li><li class="li1"><div class="de1">&lt;/definitions&gt;</div></li></ol></pre>
+
+<p>
+I després, els elements <code>&lt;portType&gt;</code> ens defineixen les operacions que es poden fer al servei web i els seus paràmetres:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;definitions targetNamespace=&quot;http://service.ioc.xtec.cat/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;types&gt;&lt;/types&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;makeReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShows&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;getAllShowsResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservation&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;message name=&quot;cancelReservationResponse&quot;&gt;&lt;/message&gt;</div></li><li class="li1"><div class="de1">    &lt;portType name=&quot;TicketServiceEndpoint&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;operation name=&quot;makeReservation&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input ns1:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/makeReservationRequest&quot; message=&quot;tns:makeReservation&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;output ns2:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/makeReservationResponse&quot; message=&quot;tns:makeReservationResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/operation&gt;</div></li><li class="li1"><div class="de1">        &lt;operation name=&quot;getAllShows&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input ns3:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/getAllShowsRequest&quot; message=&quot;tns:getAllShows&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;output ns4:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/getAllShowsResponse&quot; message=&quot;tns:getAllShowsResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/operation&gt;</div></li><li class="li1"><div class="de1">        &lt;operation name=&quot;cancelReservation&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input ns5:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/cancelReservationRequest&quot; message=&quot;tns:cancelReservation&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;output ns6:Action=&quot;http://service.ioc.xtec.cat/TicketServiceEndpoint/cancelReservationResponse&quot; message=&quot;tns:cancelReservationResponse&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/operation&gt;</div></li><li class="li1"><div class="de1">    &lt;/portType&gt;</div></li><li class="li1"><div class="de1">&lt;/definitions&gt;</div></li></ol></pre>
+
+<p>
+Vegem, per exemple, que l’operació <code>cancelReservation</code> rep com a paràmetre d’entrada un <code>tns:cancelReservation</code> i que retorna un <code>tns:cancelReservationResponse</code>. Aquests tipus de dades han estat definides completament en el document XSD (vegeu la <span class="figref"><a href="#xafig1.10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Tipus de dades de cancelReservation
+
+</figcaption><img src="../media/xig1.10.png" alt="" /></figure>
+</div>
+<p>
+A la part concreta hi tenim els següents elements:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>binding</code></div>
+</li>
+<li class="level1"><div class="li"> <code>service</code></div>
+</li>
+</ul>
+
+<p>
+L’element <code>&lt;binding&gt;</code> (vegeu la <span class="figref"><a href="#xafig1.11"><span>figura</span></a></span>) defineix el protocol i el format en què es poden fer les operacions; en el nostre cas, es faran per <strong>HTTP</strong> i amb un estil de <em>Document</em>.
+</p>
+<div class="iocfigure"><a name="xafig1.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Element binding
+
+</figcaption><img src="../media/xig1.11.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+L’element <code>&lt;service&gt;</code> (vegeu la <span class="figref"><a href="#xafig1.12"><span>figura</span></a></span>), per la seva part, defineix el lloc físic on hi ha el servei web (adreça <acronym title="Uniform Resource Locator">URL</acronym>) mitjançant una col·lecció de punts de connexió <code>&lt;binding&gt;</code>. En el nostre cas, el servei web es cridarà amb el nom <code>TicketService</code> i està desplegat a l’adreça <a href="http://localhost:8080/resentioc/TicketService" class="urlextern" title="http://localhost:8080/resentioc/TicketService"  rel="nofollow">localhost:8080/resentioc/TicketService</a>.
+</p>
+<div class="iocfigure"><a name="xafig1.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Element service
+
+</figcaption><img src="../media/xig1.12.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si voleu provar alguna de les operacions que proporciona el servei web, per exemple, <code>getAllShows</code>, polseu el botó corresponent (vegeu la <span class="figref"><a href="#xafig1.13"><span>figura</span></a></span>) i es fa una petició a l’operació del servei web que torna la llista de tots els concerts amb les entrades disponibles.
+</p>
+<div class="iocfigure"><a name="xafig1.13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Botó per provar l’operació getAllShows
+
+</figcaption><img src="../media/xig1.13.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquesta petició genera aquest missatge SOAP de petició:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;S:Envelope xmlns:S=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;SOAP-ENV:Header/&gt;</div></li><li class="li1"><div class="de1">    &lt;S:Body&gt;</div></li><li class="li1"><div class="de1">        &lt;ns2:getAllShows xmlns:ns2=&quot;http://service.ioc.xtec.cat/&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/S:Body&gt;</div></li><li class="li1"><div class="de1">&lt;/S:Envelope&gt;</div></li></ol></pre>
+
+<p>
+I aquest missatge SOAP de resposta:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;S:Envelope xmlns:S=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;SOAP-ENV:Header/&gt;</div></li><li class="li1"><div class="de1">    &lt;S:Body&gt;</div></li><li class="li1"><div class="de1">        &lt;ns2:getAllShowsResponse xmlns:ns2=&quot;http://service.ioc.xtec.cat/&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;return&gt;</div></li><li class="li1"><div class="de1">                &lt;availableTickets&gt;5&lt;/availableTickets&gt;</div></li><li class="li1"><div class="de1">                &lt;id&gt;1&lt;/id&gt;</div></li><li class="li1"><div class="de1">                &lt;location&gt;Palau Sant Jordi&lt;/location&gt;</div></li><li class="li1"><div class="de1">                &lt;name&gt;U2 360 Tour&lt;/name&gt;</div></li><li class="li1"><div class="de1">            &lt;/return&gt;</div></li><li class="li1"><div class="de1">            &lt;return&gt;</div></li><li class="li1"><div class="de1">                &lt;availableTickets&gt;3&lt;/availableTickets&gt;</div></li><li class="li1"><div class="de1">                &lt;id&gt;2&lt;/id&gt;</div></li><li class="li1"><div class="de1">                &lt;location&gt;Palau de la musica&lt;/location&gt;</div></li><li class="li1"><div class="de1">                &lt;name&gt;Carmina Burana&lt;/name&gt;</div></li><li class="li1"><div class="de1">            &lt;/return&gt;</div></li><li class="li1"><div class="de1">        &lt;/ns2:getAllShowsResponse&gt;</div></li><li class="li1"><div class="de1">    &lt;/S:Body&gt;</div></li><li class="li1"><div class="de1">&lt;/S:Envelope&gt;</div></li></ol></pre>
+
+</div>
+
+<h2><a id="fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone" >Fent servir la gestió de reserva de places a concerts des d&#039;una aplicació Java &#039;stand-alone&#039;</a></h2>
+<div class="level2">
+
+<p>
+Hi ha dues maneres de cridar serveis web des de Java amb l’API JAX-WS:
+</p>
+<ul>
+<li class="level1"><div class="li"> Creant un <em>stub</em> estàtic.</div>
+</li>
+<li class="level1"><div class="li"> Fent servir una interfície d’invocació dinàmica.</div>
+</li>
+</ul>
+
+<p>
+Anem a crear una aplicació Java <em>stand-alone</em> que consumeixi el servei web de gestió de reserves de places a concerts, i ho farem desenvolupant un <strong>client Java <em>stand-alone</em></strong> que accedirà al servei web amb JAX-WS <strong>utilitzant <em>stubs</em> estàtics</strong>.
+</p>
+
+<p>
+Els passos generals per fer un client que faci servir <em>stubs</em> estàtics són els següents:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><ol>
+<li class="level1"><div class="li"> Codificar la classe que farà de client.</div>
+</li>
+<li class="level1"><div class="li"> Generar els artefactes necessaris per poder consumir el servei web des d’aquest client amb la utilitat <code>wsimport</code>.</div>
+</li>
+<li class="level1"><div class="li"> Compilar i executar el client.</div>
+</li>
+</ol>
+
+<p>
+Creeu la classe Java que farà de client al paquet <code>cat.xtec.ioc.client</code> i l’anomeneu <code>TicketServiceClient</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Resentclientioc” en l’estat inicial d’aquest apartat des de l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+Genereu els artefactes per tal de poder consumir el servei web amb la utilitat <code>wsimport</code>. A <code>wsimport</code> cal especificar l’<acronym title="Uniform Resource Locator">URL</acronym> del document WSDL de descripció del servei web de gestió de reserves i on voleu que us generi els artefactes. Per fer-ho, obriu un <em>command-prompt</em>, situeu-vos al directori <em>\target\classes\</em> on tingueu el projecte “Resentclientioc” i executeu la següent línia (cal que tingueu el directori <em>&lt;JDK_HOME&gt;/bin</em> al <em>classpath</em> per tal que us trobi l’executable <code>wsimport</code> i que hagueu fet <em>Clean and Build</em> del projecte):
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Servidor i WSDL</p>
+<p>
+Assegureu-vos que teniu el servidor d’aplicacions arrencat i el document WSDL de descripció del servei web de gestió de reserves de places a concerts accessible a l’<acronym title="Uniform Resource Locator">URL</acronym> que especifiqueu.
+</p>
+</div></div>
+<p>
+Amb Windows:
+</p>
+<pre class="code">wsimport -s ..\..\src\main\java -p cat.xtec.ioc.service.client.jaxws http://localhost:8080/resentioc/TicketService?wsdl</pre>
+
+<p>
+Amb Linux:
+</p>
+<pre class="code">wsimport -s ../../src/main\java -p cat.xtec.ioc.service.client.jaxws http://localhost:8080/resentioc/TicketService?wsdl</pre>
+
+<p>
+Això us generarà un conjunt de fitxers .java amb tots els artefactes portables necessaris per cridar el servei web des de l’aplicació Java i els col·locarà al paquet <em>cat.xtec.ioc.service.client.jaxws</em> del projecte “Resentclientioc”.
+</p>
+
+<p>
+Ara ja podem codificar la classe Java <code>TicketServiceClient</code> creada utilitzant els artefactes generats per <code>wsimport</code>. A les classes Java generades n’hi haurà una que s’anomenarà <code>TicketService</code> i que heretarà de <code>Service</code>; cal que instancieu aquesta classe i, a partir d’ella, obtingueu l’<em>stub</em> que us permetrà cridar les operacions del servei web.
+</p>
+
+<p>
+El codi de la classe <code>TicketServiceClient</code> amb una crida a l’operació que mostra tots els concerts amb el nombre d’entrades disponibles és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.client.jaxws.Show;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.client.jaxws.TicketService;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.service.client.jaxws.TicketServiceEndpoint;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class TicketServiceClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        TicketService service = new TicketService();</div></li><li class="li1"><div class="de1">        TicketServiceEndpoint port = service.getTicketServiceEndpointImplPort();</div></li><li class="li1"><div class="de1">        List&lt;Show&gt; list = port.getAllShows();</div></li><li class="li1"><div class="de1">        printAllShows(list);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void printAllShows(List&lt;Show&gt; shows) {</div></li><li class="li1"><div class="de1">        shows.stream().forEach((show) -&gt; {</div></li><li class="li1"><div class="de1">            System.out.println(&quot;Show [id=&quot; + show.getId() + &quot;, name=&quot; + show.getName() + &quot;, available tickets=&quot; + show.getAvailableTickets() + &quot;]&quot;);</div></li><li class="li1"><div class="de1">        });</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Ara ja podem executar el client; per fer-ho, poseu-vos damunt de la classe <code>TicketServiceClient</code> i feu <em>Run File</em> a NetBeans (vegeu la <span class="figref"><a href="#xafig1.14"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució del client Java a NetBeans
+
+</figcaption><img src="../media/xig1.14.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I obtindreu per consola un llistat dels concerts i de les entrades disponibles per a cada un d’ells:
+</p>
+<pre class="code">Show [id=1, name=U2 360 Tour, available tickets=5]
+Show [id=2, name=Carmina Burana, available tickets=3]</pre>
+
+</div>
+
+<h2><a id="fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web" >Fent servir la gestió de reserva de places a concerts des d&#039;una aplicació web</a></h2>
+<div class="level2">
+
+<p>
+Anem a crear una aplicació web que consumeixi el servei web de gestió de reserves de places a concerts.
+</p>
+
+<p>
+Per fer-ho crearem una aplicació web molt senzilla que farà servir el servei web SOAP de gestió de reserva de places a concerts.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte1" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+Desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div>
+<p>
+El primer que cal fer és desplegar el servei web de gestió de reserva de places a concerts al servidor.
+</p>
+
+<p>
+Comproveu que el servei web està desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/resentioc/TicketService?WSDL" class="urlextern" title="http://localhost:8080/resentioc/TicketService?WSDL"  rel="nofollow">localhost:8080/resentioc/TicketService?WSDL</a> amb un navegador.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Per desplegar el servei web de gestió de reserva de places a concerts al servidor, descarregueu el codi del projecte resentioc.zip en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+Un cop desplegat el servei web ens cal un altre projecte, que serà l’aplicació web que accedirà com a client al servei web.
+</p>
+
+<p>
+No entrarem en detalls, però el projecte que tenim com a punt de partida és una senzilla aplicació web Spring MVC que ha de mostrar un llistat dels concerts disponibles i, per a cada concert, ha de proporcionar una acció que permeti reservar una entrada i una acció que permeti cancel·lar una reserva. Per simplicitat, a l’exemple no seguirem estrictament una arquitectura per capes on els serveis es cridin des de la capa de serveis. Si ho féssim així crearíem un servei propi en aquesta capa i aquest servei seria l’encarregat de cridar el servei web SOAP de reserva de places a concerts.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Per implementar l’aplicació web que accedirà com a client al servei web, descarregueu el codi del projecte resentwebclientioc.zip en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+L’aplicació web utilitzarà el servei web SOAP de gestió de reserva de places a concerts per proporcionar aquestes funcionalitats.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_prova_del_client_web" >Creació i prova del client web</a></h3>
+<div class="level3">
+
+<p>
+Un cop tingueu el projecte “Resentwebclientioc” carregat a NetBeans, el primer que farem serà llistar tots els concerts disponibles. Per fer-ho heu d’accedir a la classe <code>ShowController</code> del paquet <code>cat.xtec.ioc.controller</code> que fa de controlador i crear la referència al servei web SOAP que ens permetrà obtenir la llista de concerts:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Referències a l&#039;&#039;endpoint&#039; del servei</p>
+<p>
+A l’exemple creem directament una instància de l’<em>endpoint</em> del servei (invocació programàtica); també es pot utilitzar l’anotació <code>@WebServiceRef</code> per tal que el contenidor injecti automàticament la instància del <em>proxy</em> (o <em>stub</em>) del client.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">private final TicketService showsWebService=new TicketService();</div></li></ol></pre>
+
+<p>
+Si ho feu, veureu que NetBeans indica que la classe no compila. Això és degut al fet que ens falta generar els artefactes de client per tal de poder consumir el servei web amb la utilitat <code>wsimport</code>. A <code>wsimport</code> cal especificar l’<acronym title="Uniform Resource Locator">URL</acronym> del document WSDL de descripció del servei web de gestió de reserves i on voleu que us generi els artefactes.
+</p>
+
+<p>
+Per fer-ho, obriu un <em>command-prompt</em>, situeu-vos al directori <em>\target\classes\</em> on tingueu el projecte “Resentwebclientioc” i executeu la següent línia (cal que tingueu el directori <em>&lt;JDK_HOME&gt;/bin</em> al <em>classpath</em> per tal que us trobi l’executable <code>wsimport</code> i que hagueu fet <em>Clean and Build</em> del projecte):
+</p>
+
+<p>
+Amb Windows:
+</p>
+<pre class="code">wsimport -s ..\..\src\main\java -p cat.xtec.ioc.service.client.jaxws http://localhost:8080/resentioc/TicketService?wsdl</pre>
+
+<p>
+Amb Linux:
+</p>
+<pre class="code">wsimport -s ../../src/main\java -p cat.xtec.ioc.service.client.jaxws http://localhost:8080/resentioc/TicketService?wsdl</pre>
+
+<p>
+Això us generarà un conjunt de fitxers .java amb tots els artefactes portables necessaris per cridar el servei web des de l’aplicació i els col·locarà al paquet <code>cat.xtec.ioc.service.client.jaxws</code> del projecte “Resentwebclientioc”. Un cop fet això, i l’import corresponent al controlador, la classe ja us compilarà.
+</p>
+
+<p>
+A l’exemple hem vist que sempre ens cal generar els artefactes de client per poder cridar el servei web SOAP, i hem vist com fer-ho amb la utilitat del JDK <code>wsimport</code>. Si feu servir Maven al projecte també ho podeu fer amb un <em>plugin</em> per a JAX-WS que configura un <em>goal</em> de Maven anomenat <code>wsimport</code> i que s’executa a la fase <code>generate-sources</code> de generació del codi font.
+</p>
+
+<p>
+
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Objectiu de l&#039;exemple</p>
+<p>
+Tingueu en compte que l’objectiu de l’exemple és veure com podem accedir al servei web SOAP des d’una aplicació web i no la construcció de l’aplicació web en si. Per això hi haurà molts detalls propis de l’anatomia de l’aplicació que elidirem o explicarem amb poc detall.
+</p>
+</div></div>
+<p>
+Ja tenim la referència al servei web SOAP; ara crearem l’acció <code>MVC</code> que torni la llista de concerts. Per fer-ho, creeu un mètode anomenat <code>shows</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(value = &quot;/shows&quot;, method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">    public ModelAndView shows(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        ModelAndView modelview = new ModelAndView(&quot;shows&quot;);</div></li><li class="li1"><div class="de1">        modelview.getModelMap().addAttribute(&quot;shows&quot;, showsWebService.getTicketServiceEndpointImplPort().getAllShows());</div></li><li class="li1"><div class="de1">        return modelview;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+La part important d’aquest mètode és la crida al servei web SOAP:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">showsWebService.getTicketServiceEndpointImplPort().getAllShows();</div></li></ol></pre>
+
+<p>
+Obtenim una referència al servei web i invoquem el mètode <code>getAllShows</code>, que ens tornarà la llista de concerts.
+</p>
+
+<p>
+Per provar-ho cal desplegar l’aplicació “Resentwebclientioc” a Glassfish. Per fer-ho, feu <em>Run</em> a NetBeans i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte (vegeu la <span class="figref"><a href="#xafig1.34"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.34"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Run’ a NetBeans
+
+</figcaption><img src="../media/xig1.34.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si tot ha anat bé i accediu a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/resentwebclientioc/shows" class="urlextern" title="http://localhost:8080/resentwebclientioc/shows"  rel="nofollow">localhost:8080/resentwebclientioc/shows</a> veureu la pàgina que mostra el llistat de concerts disponibles (vegeu la <span class="figref"><a href="#xafig1.35"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.35"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Llistat de concerts
+
+</figcaption><img src="../media/xig1.35.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El procés per crear la funcionalitat que permeti fer una reserva i cancel·lar-la és el mateix: us cal crear l’acció corresponent al controlador i fer ús dels mètodes que proporciona el servei web SOAP de gestió de reserva de places a concerts per implementar-la. 
+</p>
+
+<p>
+El codi per a aquestes dues accions és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(&quot;/makeReservation&quot;)</div></li><li class="li1"><div class="de1">public ModelAndView makeReservation(@RequestParam(&quot;id&quot;) String id, HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">        throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    showsWebService.getTicketServiceEndpointImplPort().makeReservation(id);</div></li><li class="li1"><div class="de1">    ModelAndView modelview = new ModelAndView(&quot;shows&quot;);</div></li><li class="li1"><div class="de1">    modelview.getModelMap().addAttribute(&quot;shows&quot;, showsWebService.getTicketServiceEndpointImplPort().getAllShows());</div></li><li class="li1"><div class="de1">    return modelview;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RequestMapping(&quot;/cancelReservation&quot;)</div></li><li class="li1"><div class="de1">public ModelAndView cancelReservation(@RequestParam(&quot;id&quot;) String id, HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">        throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    showsWebService.getTicketServiceEndpointImplPort().cancelReservation(id);</div></li><li class="li1"><div class="de1">    ModelAndView modelview = new ModelAndView(&quot;shows&quot;);</div></li><li class="li1"><div class="de1">    modelview.getModelMap().addAttribute(&quot;shows&quot;, showsWebService.getTicketServiceEndpointImplPort().getAllShows());</div></li><li class="li1"><div class="de1">    return modelview;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si desplegueu la nova versió de l’aplicació fent <em>Run</em> a NetBeans ja podreu provar les funcionalitat que permeten fer una reserva i cancel·lar-la.
+</p>
+
+<p>
+Si ho proveu i aneu fent reserves per al concert del grup <strong>U2</strong> veureu que, quan ja no quedin entrades disponibles, el servidor torna un error HTTP 500 (vegeu la <span class="figref"><a href="#xafig1.36"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xafig1.36"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Error 500 - No more tickets available!
+
+</figcaption><img src="../media/xig1.36.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Això és degut al fet que des del codi del servei web, quan volem fer una reserva per a un concert que no té localitats disponibles, s’està llençant una excepció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public void makeTicketReservation() {</div></li><li class="li1"><div class="de1">    if(this.availableTickets &gt; 0) {</div></li><li class="li1"><div class="de1">        this.availableTickets--;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">        throw new IllegalArgumentException(&quot;No more tickets available!&quot;);</div></li><li class="li1"><div class="de1">    }        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si mirem el <em>log</em> del servidor Glassfish veurem aquesta excepció:
+</p>
+<pre class="code">Grave:   No more tickets available!
+java.lang.IllegalArgumentException: No more tickets available!
+  at cat.xtec.ioc.domain.Show.makeTicketReservation(Show.java:64)
+	at cat.xtec.ioc.domain.repository.impl.InMemoryShowRepository.makeReservation(InMemoryShowRepository.java:33)
+	at cat.xtec.ioc.service.impl.TicketServiceEndpointImpl.makeReservation(TicketServiceEndpointImpl.java:24)</pre>
+
+<p>
+JAX-WS converteix <strong>automàticament</strong> les excepcions de Java en una SOAPFault en format XML que viatjarà al missatge SOAP de resposta. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>SOAPFault</strong> és el mecanisme que proporciona SOAP per indicar que el servei web cridat ha tingut algun problema.
+</p>
+</div></div>
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Heu vist les bases per al desenvolupament dels serveis web SOAP amb Java EE 7 i les heu treballat de forma pràctica mitjançant exemples. 
+</p>
+
+<p>
+Concretament, heu après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les nocions bàsiques dels serveis web SOAP amb Java EE.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar, desplegar i provar un servei web SOAP amb Java EE.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar i provar un client Java que consulti un servei web SOAP.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar i provar una aplicació web que consulti un servei web SOAP.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en aquests conceptes i veure com us pot ajudar NetBeans en la creació i el consum de serveis web SOAP us recomanem que feu les activitats associades a aquest apartat.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

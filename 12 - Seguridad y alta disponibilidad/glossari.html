@@ -1,0 +1,821 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="_/js/modernizr-1.7.min.js"></script>
+	<script src="_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="presentacio" class="rootnode"><p><a href="presentacio.html">Presentació</a></p></li><li id="resultats" class="rootnode"><p><a href="resultats.html">Resultats d'aprenentatge</a></p></li><li id="material_pdf" class="rootnode"><p><a href="material_pdf.html">Continguts en PDF</a></p></li><li id="glossari" class="rootnode"><p><a href="glossari.html">Glossari</a></p></li><li id="" class="indexnode"><p><a href="index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li>Glossari</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="glossari"> Glossari </a></h1>
+    	
+<p>
+<strong>AAA</strong> <em>m</em> Conjunt de protocols que realitzen l’autenticació, l’autorització i la comptabilització (<em>authentication</em>, <em>authorization</em> i <em>accounting</em> en anglès). 
+</p>
+
+<p>
+<strong>AAAA</strong><em> m</em> Vegeu <em>AAA</em>. Els protocols AAAA realitzen també la funció d’auditoria (<em>authentication</em>, <em>authorization</em>, <em>accounting</em> i <em>auditing</em>).
+</p>
+
+<p>
+<strong>adware</strong> <em>n</em> Programa de publicitat. Per exemple, les versions de demostració d’alguns programes poden ensenyar publicitat diversa (d’aquí ve que siguin gratuïtes o de demostració).
+</p>
+
+<p>
+<strong>alta disponibilitat</strong> <em>f</em> Sistema informàtic que ha estat dissenyat seguint un conjunt de normes i tècniques per tal que pugui estar disponible sempre o, si més no, el màxim de temps possible.
+</p>
+
+<p>
+<strong>amenaça</strong> <em>f</em> Esdeveniment extern que pot causar danys al sistema informàtic. A diferència de les vulnerabilitats, considerades factors interns, les amenaces representen accions malicioses que poden provocar danys. Així, una amenaça pot aprofitar o explotar una determinada vulnerabilitat per causar danys al sistema.
+</p>
+
+<p>
+<strong>atac actiu</strong> <em>m</em> L’atacant altera o destrueix algun recurs del sistema.
+</p>
+
+<p>
+<strong>atac informàtic</strong> <em>m</em> Intent de destruir, revelar, alterar, inutilitzar, robar o aconseguir l’accés no autoritzat a un actiu.
+</p>
+
+<p>
+<strong>atac passiu</strong> <em>m</em> L’atacant no modifica ni destrueix cap recurs del sistema informàtic. Simplement observa amb la intenció d’obtenir informació confidencial.
+</p>
+
+<p>
+<strong>autenticació</strong> <em>f</em> Mecanisme de verificació de la identitat d’una persona o d’un procés que vol accedir als recursos d’un sistema informàtic.
+</p>
+
+<p>
+<strong><em>backdoor</em></strong> <em>n</em> Porta del darrere. Codi en un programa que permet, a qui en coneix l’existència i funcionament, evitar els mecanismes d’autenticació (per exemple, existia el rumor que el conegut programari de xifratge PGP tenia un <em>backdoor</em>). Pot permetre l’accés remot a un sistema informàtic evitant els mecanismes d’autenticació. 
+</p>
+
+<p>
+<strong><em>basic Input/Output System</em></strong> <em>n</em> Programa emmagatzemat en un xip ROM que s’encarrega de carregar el sistema operatiu a la memòria quan l’ordinador s’inicia i comprovar els dispositius connectats.
+</p>
+
+<p>
+<strong>BIOS</strong> n Vegeu basic Input/Output System.
+</p>
+
+<p>
+<strong><em>caching</em></strong> <em>n</em> Tècnica emprada pels servidors intermediaris o proxy que consisteix a emmagatzemar la resposta a la sol·licitud d’un usuari (un lloc web), per poder-la oferir directament quan un altre usuari la sol·liciti, sense necessitat de contactar novament amb la pàgina demanada.
+</p>
+
+<p>
+<strong>cancel·lació</strong> <em>f</em> Procediment en virtut del qual el responsable cessa en l’ús de les dades. La cancel·lació implica el bloqueig de les dades, consistent en la seva identificació i reserva amb la finalitat d’impedir-ne el tractament, excepte per posar-los a disposició de les administracions públiques, jutges i tribunals, per a l’atenció de les possibles responsabilitats nascudes del tractament, i només durant el termini de prescripció de les esmentades responsabilitats. Transcorregut aquest termini,  cal eliminar efectivament les dades. 
+capçalera f Conjunt de dades que se situa a l’inici del bloc d’informació i que conté dades suplementàries necessàries per a la seva correcta gestió.
+</p>
+
+<p>
+<strong>cavall de Troia</strong><em> m</em> Part de codi inserida en el programari que habitualment s’utilitza en el sistema. Aquest codi es manté ocult i duu a terme tasques sense que l’usuari o l’administrador se n’adonin. Camuflat sota l’aparença d’un programari útil o habitual, no sol ocasionar efectes destructius. Generalment captura contrasenyes i altres dades confidencials i les envia per correu electrònic a la persona que ha introduït el troià en el sistema atacat.
+</p>
+
+<p>
+<strong>centre de processament de dades</strong> <em>m</em> Ubicació on s’allotgen els sistemes d’informació per al processament de la informació d’una organització.
+</p>
+
+<p>
+<strong><em>CERT</em></strong> <em>n</em> <em>Computer Emergency Response Team</em>. Organisme que s’encarrega d’analitzar les vulnerabilitats de seguretat a Internet, d’estudiar l’evolució de les xarxes i de desenvolupar documentació i estudis de casos per tal d’ajudar a millorar la seguretat de les xarxes.
+</p>
+
+<p>
+<strong>certificat digital</strong> <em>m</em> Document signat digitalment per un prestador de serveis de certificació que vincula unívocament unes dades de signatura al titular, és a dir, que confirma la identitat del titular en qualsevol transacció telemàtica que realitzi. 
+</p>
+
+<p>
+<strong>cessió o comunicació de dades</strong><em> f</em> Tractament de dades que suposa la seva revelació a una persona diferent de l’interessat.
+</p>
+
+<p>
+<strong><em>cloud computing</em></strong> <em>n</em> Vegeu <em>informàtica en núvol</em>.
+</p>
+
+<p>
+<strong>clúster</strong> <em>m</em> Conjunt d’unitats funcionals amb característiques similars interconnectades per mitjà d’una xarxa d’alta velocitat i configurades de manera coordinada perquè actuïn com una sola unitat.
+</p>
+
+<p>
+<strong>codi de paritat</strong> <em>m</em> Codi utilitzat per detectar i corregir errors en les transmissions de dades. S’incorpora un conjunt de bits calculats a partir d’un algorisme al final del missatge original perquè el receptor pugui verificar que les dades són correctes.
+</p>
+
+<p>
+<strong>codi maliciós</strong> <em>m</em> Nom genèric que s’usa per designar tots aquells programes que poden tenir efectes nocius pel sistema informàtic que els allotja. El nom anglès, <em>malware</em>, prové de l’abreviació de l’expressió malicious software. Els virus, cucs i cavalls de Troia són exemples típics de codi maliciós.
+</p>
+
+<p>
+<strong>codi penal</strong> <em>m</em> Compendi ordenat de la legislació aplicable en matèria penal. El Codi Penal vigent a Espanya va ser promulgat el 23 de novembre de 1995 i va substituir un codi que datava de l’any 1944.
+</p>
+
+<p>
+<strong>comerç electrònic</strong> <em>m</em> Compra i venda de productes o serveis a través de xarxes d’ordinadors (com per exemple Internet). En anglès,  <em>e-commerce</em>.
+<strong>confidencialitat</strong> <em>f</em> Propietat relacionada amb la fiabilitat d’un sistema informàtic, per la qual només poden accedir als recursos que integren el sistema els elements autoritzats a fer-ho. 
+</p>
+
+<p>
+<strong>consentiment de l’interessat</strong> <em>m</em> Tota manifestació de voluntat, lliure, inequívoca, específica i informada, mitjançant la qual l’interessat consent el tractament de les dades personals que el concerneixen.
+</p>
+
+<p>
+<strong>Constitució</strong> <em>f</em> Norma suprema de l’estat. Estableix, entre d’altres, els drets i els deures dels ciutadans. La Constitució espanyola data de l’any 1978 i està formada per 169 articles agrupats sistemàticament, segons la matèria regulada, en títols, capítols i seccions. En relació amb aquesta unitat formativa, és especialment rellevant el títol I: Dels drets i deures fonamentals, que reflecteix els drets i llibertats inherents a qualsevol persona. 
+</p>
+
+<p>
+<strong>CP</strong> <em>m</em> Acrònim de Codi Penal.
+</p>
+
+<p>
+<strong>CPD</strong> <em>m</em> Vegeu <em>centre de processament de dades</em>.
+</p>
+
+<p>
+<strong>crack</strong> <em>n</em> Modificació d’un programa, sense autorització del creador, amb la finalitat de modificar el comportament original.
+</p>
+
+<p>
+<strong><em>cracker</em></strong> <em>n</em> Persona que ataca sistemes informàtics amb finalitats destructives. També es refereix a la persona que realitza <em>cracks</em> amb la intenció de trencar els mecanismes de protecció dels programaris.
+</p>
+
+<p>
+<strong>criptoanàlisi</strong> <em>f</em> Tècnica que té com a objectiu esbrinar la clau d’un criptograma a partir del text en clar i del text xifrat.
+</p>
+
+<p>
+<strong>criptografia</strong> <em>f</em> Ciència i estudi de l’escriptura secreta.
+</p>
+
+<p>
+<strong>criptosistema</strong> <em>m</em> Mètode secret d’escriptura, mitjançant el qual un text en clar es transforma en un text  xifrat o criptograma, il·legible si no es disposa de les claus de xifrat.
+</p>
+
+<p>
+<strong>criptosistema asimètric</strong> <em>m</em> Vegeu <em>criptosistema de clau pública</em>.
+</p>
+
+<p>
+<strong>criptosistema de clau privada o compartida (o simètric)</strong> <em>m</em> Aquell criptosistema en el qual emissor i receptor comparteixen una única clau.
+</p>
+
+<p>
+<strong>criptosistema de clau pública (o asimètric)</strong> <em>m</em> Tipus de criptosistema en el qual cada usuari <em>u</em> té associada una parella de claus &lt;P<em>u</em> , S<em>u</em>&gt;. La clau pública, P<em>u</em> , és accessible per tots els usuaris de la xarxa i apareix en un directori públic, mentre que la clau privada, S<em>u</em>, tan sols és coneguda per l’usuari <em>u</em> (és a dir, l’usuari propietari del parell de claus).
+</p>
+
+<p>
+<strong>criptosistema simètric</strong> <em>m</em> Vegeu <em>criptosistema de clau privada o compartida</em>.
+</p>
+
+<p>
+<strong>cuc</strong> <em>m</em> Codi maliciós caracteritzat per la seva capacitat de duplicació i difusió a través de la xarxa. Pot ser relativament inofensiu i només consumir molta amplada de banda de la xarxa, però també es pot programar per produir danys, com per exemple, llençar un atac de denegació de servei (DoS) o instal·lar un virus en el sistema atacat.
+</p>
+
+<p>
+<strong>dada personal</strong> <em>f</em> Qualsevol informació concernent a persones físiques identificades o identificables.
+</p>
+
+<p>
+<strong>dada de caràcter personal relacionada amb la salut</strong> <em>f</em> Les informacions relatives a la salut passada, present i futura, física o mental, d’un individu. En particular, es consideren dades relacionades amb la salut de les persones, el seu percentatge de discapacitat i la seva informació genètica.
+</p>
+
+<p>
+<strong>delicte</strong> <em>m</em> Conducta típica (tipificada per la llei), antijurídica (contrària a dret), culpable i punible. Suposa una conducta infractora del dret penal, és a dir, una acció o omissió tipificada i penada per la llei.
+</p>
+
+<p>
+<strong>desencaminament</strong> <em>m</em> Tècnica que permet que un atacant pugui redirigir un nom de domini a una màquina diferent. En anglès, <em>pharming</em>.
+</p>
+
+<p>
+<strong>destinatari o cessionari</strong> <em>m</em> La persona física o jurídica, pública, privada o òrgan administratiu, a la qual se li revelen les dades.
+</p>
+
+<p>
+<strong>directiva comunitària</strong> <em>f</em> Decisió col·lectiva mútuament obligatòria aprovada pels estats membres de la Unió Europea. Amb ella tots els estats membres s’obliguen a assolir, totalment o parcialment, els objectius que estableix. No obstant això, cada estat pot triar la forma i els mitjans per arribar a assolir-los. Les directives proporcionen un marc normatiu que cada país ha de desenvolupar tenint en compte les seves característiques específiques, però, al mateix temps, respectant els límits de la directiva.
+</p>
+
+<p>
+<strong>disponibilitat</strong> <em>f</em> Propietat relacionada amb la fiabilitat d’un sistema informàtic que determina si els recursos del sistema romanen accessibles als elements autoritzats.
+</p>
+
+<p>
+<strong>disseny arquitectònic d’un tallafoc</strong> <em>m</em> Elecció i adaptació de l’arquitectura d’un tallafoc perquè el seu funcionament sigui òptim.
+</p>
+
+<p>
+<strong>disseny de directives</strong> <em>m</em> Especificació detallada de com ha d’actuar un tallafoc envers paquets de determinades característiques.
+</p>
+
+<p>
+<strong>DMZ</strong> <em>f</em> Xarxa local situada entre la xarxa interna d’una organització i una xarxa externa, generalment Internet.
+</p>
+
+<p>
+<strong>drets ARCO</strong> <em>m pl</em> Conjunt de drets (accés, rectificació, cancel·lació i oposició) que la LOPD garanteix a les persones i que els atorguen el control sobre les seves dades personals.
+</p>
+
+<p>
+<strong>dret penal</strong> <em>m</em> Branca del dret que estableix i regula el càstig dels crims i delictes, a través de la imposició de penes.
+</p>
+
+<p>
+<strong><em>e-commerce</em></strong> n Vegeu <em>comerç electrònic</em>.
+</p>
+
+<p>
+<strong>eina pal·liativa</strong> <em>f</em> Mecanisme que bloqueja els intents de trencar la seguretat de l’equip.
+</p>
+
+<p>
+<strong>eina preventiva</strong> <em>f</em> Mecanisme que reforça la seguretat i detecta febleses en un sistema.
+</p>
+
+<p>
+<strong>enginyeria social</strong> <em>f</em> Obtenció d’informació confidencial mitjançant la manipulació i l’engany dels usuaris legítims.
+</p>
+
+<p>
+<strong>enregistrador de teclat</strong> <em>m</em> Programa o dispositiu que captura les pulsacions del teclat de l’ordinador infectat. Es pot utilitzar, per exemple, per capturar la informació d’accés a un compte bancari. En anglès, <em>keylogger</em>.
+</p>
+
+<p>
+<strong>equip bastió</strong> <em>m</em> Dispositiu connectat directament a la xarxa insegura. És, per tant, el punt que rep més atacs.
+</p>
+
+<p>
+<em><strong>exploit</strong></em> <em>n</em> Programari maliciós que aprofita una vulnerabilitat d’un programari informàtic, conseqüència d’un error de programació. No existeix un <em>exploit</em> general, sinó que cada programari, a causa dels gairebé inevitables errors de programació, té les seves pròpies vulnerabilitats, que poden ser hàbilment aprofitades per programadors experimentats (si bé a Internet es poden trobar <em>exploits</em> per violar la seguretat de tota mena d’aplicacions i sistemes operatius sense necessitat de tenir coneixements de programació).
+</p>
+
+<p>
+<em><strong>extrapenal</strong></em> <em>m</em> Sector de l’ordenament que no és penal, és a dir que conté sancions menys greus que el dret penal.
+</p>
+
+<p>
+<strong>fallada</strong> <em>f</em>  Comportament inesperat d’un component que impedeix que realitzi l’acció per a la qual ha estat dissenyat.
+</p>
+
+<p>
+<strong>fitxer</strong> <em>m</em> Qualsevol conjunt organitzat de dades, amb independència de la forma o modalitat de la seva creació, emmagatzematge, organització i accés. Un fitxer pot ser un CD-ROM, un disquet o fins i tot un quadern.
+</p>
+
+<p>
+<strong>fitxer no automatitzat</strong> <em>m</em> Qualsevol conjunt de dades organitzat de forma no automatitzada i estructurat conforme a criteris específics que permetin accedir a les dades, ja sigui centralitzat, descentralitzat o repartit de forma funcional o geogràfica.
+</p>
+
+<p>
+<strong>GNU (<em>GNU is Not Unix</em>)</strong> <em>n</em> Iniciat per Richard Stallman, el seu objectiu va ser crear un sistema operatiu totalment lliure, anomenat <em>sistema GNU</em>. El projecte es va anunciar l’any 1983. L’any 1991 Linus Torvalds va començar a escriure el nucli del sistema operatiu Linux, que va distribuir amb llicència <acronym title="GNU General Public License">GPL</acronym>. Gràcies a les aportacions de molts altres programadors, el nucli de Linux es va acabar combinant amb el sistema GNU, formant l’anomenat GNU/Linux o distribució Linux, paradigma dels sistemes operatius lliures.
+</p>
+
+<p>
+<em><strong>hash</strong> n</em> La funció hash o resum és una funció matemàtica que fa correspondre una representació de mida fixa a un missatge de mida variable. Aquesta representació té de 128 a 160 bits (els nous algorismes permeten arribar als 256, 384 i 512 bits) i s’anomena <em>valor resum del missatge</em>.
+</p>
+
+<p>
+<em><strong>IDS</strong></em> <em>n</em> Vegeu sistema de detecció d’intrusos. 
+</p>
+
+<p>
+<strong>informàtica en núvol</strong> <em>f</em> Sistema d’emmagatzematge i ús de recursos informàtics basat en el servei en xarxa, que consisteix a oferir a l’usuari un espai virtual, generalment a Internet, en què pot disposar de les versions més actualitzades de maquinari i programari.
+</p>
+
+<p>
+<strong>informàtica forense</strong> <em>f</em> Procés d’aplicar el mètode científic als sistemes informàtics amb la finalitat d’identificar, recollir, adquirir, preservar i analitzar l’evidència digital, de manera que sigui acceptada en un procés judicial.
+</p>
+
+<p>
+<em><strong>insider</strong></em> <em>n</em> Persona o entitat que realitza un atac informàtic i que és part de l’organització víctima de l’atac. 
+</p>
+
+<p>
+<strong>integritat</strong> <em>f</em> Propietat relacionada amb la fiabilitat d’un sistema informàtic, segons la qual els recursos del sistema només poden ser modificats o alterats pels usuaris autoritzats a fer-ho. La modificació inclou diverses operacions, com l’esborrament i la creació, a més de totes les possibles alteracions que es puguin fer a un objecte. 
+</p>
+
+<p>
+<strong>interessat</strong> <em>m</em> Persona física titular de les dades que siguin objecte del tractament. 
+</p>
+
+<p>
+<strong>intrusió</strong> <em>f</em> Accés no autoritzat a un sistema informàtic.
+</p>
+
+<p>
+<em><strong>IPChains</strong> m</em> Tallafoc que formava part de distribucions Linux.
+</p>
+
+<p>
+<em><strong>IPTables</strong> m</em> Tallafoc que ha substituït l’<em>IPChains</em> a les distribucions Linux.
+</p>
+
+<p>
+<strong><em>keylogger</em></strong> <em>n</em> Vegeu <em>enregistrador de teclat</em>.
+</p>
+
+<p>
+<strong>llei ordinària</strong> <em>f</em> Norma de rang legal que constitueix, generalment, l’últim graó en la jerarquia jurídica de les lleis d’un Estat, després de la Constitució i les lleis orgàniques o altres equivalents (que solen posseir requisits extraordinaris per a la seva aprovació i versen sobre matèries especials).
+</p>
+
+<p>
+<strong>llei orgànica</strong> <em>f</em> Norma de rang legal que, generalment, es troba en un nivell jeràrquic superior o que es requereix constitucionalment per regular certes matèries. En general, es distingeix de la llei ordinària a nivell competencial.  
+</p>
+
+<p>
+<strong>llicència de programa</strong> <em>f</em> Contracte entre l’autor/titular dels drets d’explotació/distribuïdor i l’usuari, per utilitzar el programa segons les seves condicions d’ús.
+</p>
+
+<p>
+<strong>llista d’accés</strong> <em>f</em> Relació escrita de condicions que guiaran el trànsit permès o denegat.
+</p>
+
+<p>
+<strong>LOPD</strong> <em>f</em> Acrònim de Llei Orgànica de protecció de dades personals. Ha deixat de ser vigent arran la publicació de l’RGPD i la LOPDGD.
+</p>
+
+<p>
+<strong>LOPDGD</strong> <em>f</em> Acrònim de Llei Orgànica de protecció de dades personals i garanties dels drets digitals. Desenvolupa l’RGPD.
+</p>
+
+<p>
+<strong>LPI</strong> <em>f</em> Acrònim de Llei de propietat intel·lectual.
+</p>
+
+<p>
+<strong>LSSICE</strong> <em>f</em> Acrònim de Llei de serveis de la societat de la informació i comerç electrònic.
+</p>
+
+<p>
+<em><strong>malware</strong></em> <em>n</em> Vegeu <em>codi maliciós</em>.
+</p>
+
+<p>
+<em><strong>màscara wildcard</strong> f</em> Utilitza uns i zeros binaris per filtrar tràfic. El 0 indica fer coincidir el valor corresponent a la direcció IP i l’1 indica ignorar el valor corresponent a la direcció IP.
+</p>
+
+<p>
+<strong>migració en calent</strong> <em>f</em> Tècnica per traslladar una màquina virtual des d’una màquina física a una altra sense que l’usuari se n’adoni. S’anomena <em>migració en calent</em> ja que mentre s’està movent d’un lloc a un altre la màquina virtual continua estant operativa. En anglès, <em>live migration</em>.
+</p>
+
+<p>
+<strong>MTBF</strong> <em>m</em> De l’anglès <em>Mean time between failures</em>. Temps mitjà entre fallades expressat en hores. Es tracta d’una dada estadística obtinguda a partir de proves de laboratori i dels resultats obtinguts de l’experiència dels components electrònics més elementals com xips, busos o resistències. L’MTBF correspon exactament a la probabilitat inversa de fallada d’un sistema.
+</p>
+
+<p>
+<strong>NAS</strong> <em>m</em> De l’anglès <em>Network-Attached Storage</em>. Sistema d’emmagatzematge en xarxa compost per dispositius que es connecten directament a la xarxa corporativa i permeten compartir les dades amb tots els usuaris de l’empresa.
+</p>
+
+<p>
+
+<p>
+<strong>nftables</strong> <em>n</em> Subsistema del nucli de Linux que permet filtrar i classificar els paquets de xarxa. Disponible desde la versió del nucli 3.13 de Linux del 19 de Gener del 2014.
+</p>
+
+</p>
+
+<p>
+<strong>norma jurídica</strong> <em>f</em> Ordenació del comportament humà dictada per l’autoritat competent d’acord amb un criteri de valor i l’incompliment de la qual comporta una sanció. Generalment, imposa deures i confereix drets.
+</p>
+
+<p>
+<strong>organització</strong> <em>f</em> Qualsevol entitat, institució o agrupació que necessiti o utilitzi una infraestructura informàtica per a dur a terme el seu objectiu.
+</p>
+
+<p>
+<em><strong>outsider</strong></em> <em>n</em> Persona o entitat que realitza un atac informàtic i que no pertany a l’organització atacada.
+</p>
+
+<p>
+<em><strong>Peer-to-peer</strong> n</em> Tipus de xarxa en la qual cada node pot efectuar alhora tasques de servidor i de client. A causa de la seva natura intrínseca, les xarxes P2P són molt adequades per compartir fitxers entre els usuaris que la formen, els continguts dels quals poden estar (o no) protegits per les lleis de propietat intel·lectual. Sens dubte, el programari P2P més conegut (i objecte de molta controvèrsia) és l’eMule, basat en la xarxa eDonkey (2002). En català es coneix com a xarxa <em>d’igual a igual</em>.
+</p>
+
+<p>
+<strong>P2P</strong><em> n</em> Vegeu <em>Peer-to-peer</em>.
+</p>
+
+<p>
+<strong>persona física</strong> <em>f</em> Qualsevol membre de l’espècie humana susceptible d’adquirir drets i contraure obligacions.
+</p>
+
+<p>
+<strong>persona identificable</strong> <em>f</em> Tota persona la identitat de la qual es pot determinar, directament o indirectament, mitjançant informació referida a la seva identitat física, fisiològica, psíquica, econòmica, cultural o social. Una persona física no es considerarà identificable si el procés de la seva identificació requereix  terminis o activitats desproporcionades.
+</p>
+
+<p>
+<strong>persona jurídica</strong> <em>f</em>  Ens que les normes jurídiques els reconeixen capacitat per a ser titular de drets i contraure obligacions. També s’anomena persona moral.
+</p>
+
+<p>
+<strong>pesca electrònica</strong> <em>f</em>  Estratègia d’enginyeria social, en la qual s’usa la suplantació de correus electrònics o llocs web per intentar obtenir la informació confidencial de l’usuari. En anglès, <em>phishing</em>.
+</p>
+
+<p>
+<strong><em>pharming</em></strong> <em>n</em> Vegeu <em>desencaminament</em>. 
+</p>
+
+<p>
+<strong><em>phishing</em></strong> <em>n</em> Vegeu <em>pesca electrònica</em>.
+</p>
+
+<p>
+<strong>PIN</strong> <em>m</em> <em>Personal Identification Number</em>. Contrasenya numèrica, sovint formada per quatre dígits. Per exemple, el codi numèric que ens cal introduir en caixers automàtics.
+</p>
+
+<p>
+<strong>pla de contingència</strong> <em>m</em> Conjunt de procediments alternatius que permetrien a l’empresa continuar treballant amb normalitat en el cas que alguna de les seves funcionalitats es veiés afectada per un accident intern o extern.
+</p>
+
+<p>
+<strong>política de <em>backup</em></strong> <em>f</em>  Vegeu <em>política de còpia de seguretat</em>.
+</p>
+
+<p>
+<strong>política de còpia de seguretat</strong> <em>f</em> Realització d’un duplicat de fitxers o aplicacions contingudes en un ordinador amb la finalitat de recuperar les dades en el cas que el sistema d’informació pateixi danys o pèrdues accidentals.
+</p>
+
+<p>
+<strong>protocol d’autenticació</strong> <em>m</em> Protocol criptogràfic destinat a verificar de manera unívoca les entitats que desitgen comunicar-se.
+</p>
+
+<p>
+<strong>proveïdor de serveis d’Internet</strong> <em>m</em> Empresa dedicada a connectar els usuaris (clients) a Internet. També sol oferir, entre d’altres serveis, allotjament web i registre de dominis.
+</p>
+
+<p>
+<strong>PSI</strong> <em>m</em> Vegeu <em>proveïdor de serveis d’Internet</em>.
+</p>
+
+<p>
+<strong>RAID</strong> <em>m</em> De l’anglès <em>Redundant Array of Independent Disks</em>. Sistema d’emmagatzemament d’informació que permet combinar dos o més discs d’igual capacitat i ser tractats pel sistema com una única unitat lògica. La informació es divideix i es replica de manera que ofereixen diferents nivells de tolerància a fallades.
+</p>
+
+<p>
+<strong>redundància</strong> <em>f</em> Incorporació d’informació addicional, fins i tot duplicada per poder recuperar les dades en cas de pèrdua i aconseguir així tolerància a errades.
+</p>
+
+<p>
+<strong>reglament</strong> <em>m</em> Norma jurídica de caràcter general dictada pel poder executiu. El seu rang en l’ordre jeràrquic és immediatament inferior a la llei, i generalment la desenvolupa.
+</p>
+
+<p>
+<strong>responsabilitat civil</strong> <em>f</em> Obligació que recau sobre una persona de rescabalar el dany que ha causat a una altra persona, normalment per un equivalent monetari. Tot i que habitualment la persona que respon és l’autora del dany produït, és possible que se’n faci responsable una persona diferent, com per exemple quan es responsabilitza els pares dels danys causats pels fills.
+</p>
+
+<p>
+<strong>responsabilitat penal</strong> <em>f</em> Subjecció a certs deures d’una persona culpable o còmplice d’un delicte. La imposa l’estat, i consisteix en una pena que busca castigar el delinqüent i reinserir-lo per evitar que torni a delinquir.
+</p>
+
+<p>
+<strong>responsable del fitxer o del tractament</strong> <em>m</em> Persona física o jurídica, de naturalesa pública o privada, o òrgan administratiu, que sol o juntament amb altres, decideix la finalitat, contingut i ús del tractament, encara que no el realitzi materialment.
+</p>
+
+<p>
+<strong>responsable de seguretat dels fitxers</strong> <em>m</em> Persona o persones a les quals el responsable dels fitxers ha assignat la funció de coordinar i controlar les mesures de seguretat aplicables.
+</p>
+
+<p>
+<strong>RFID</strong> <em>n Radio Frequency Identification</em> o identificació per radiofreqüència. Sistema d’emmagatzematge i recuperació de dades remot que usen uns dispositius anomenats <em>etiquetes RFID</em>. Aquests dispositius es poden col·locar, per exemple, a la roba d’una persona (o a qualsevol altre objecte) amb finalitats d’autenticació.
+</p>
+
+<p>
+<strong>RGPD</strong> <em>m</em> Acrònim de Reglament General de Protecció de Dades. Forma part de la legislació de la Unió Europea.
+</p>
+
+<p>
+<em><strong>rootkit</strong></em> <em>n</em> El terme prové d’unir la paraula anglesa <em>root</em> (nom assignat en Unix al compte de màxims privilegis) i<em> kit</em> (que significa conjunt d’eines o programes). Eina informàtica normalment emprada amb finalitats malicioses (com ara l’obtenció d’informació), que permet l’accés il·lícit al sistema per part d’un atacant remot. Fa servir tècniques per ocultar la seva presència i la d’altres processos que puguin estar realitzant accions malicioses sobre el sistema. Els <em>rootkits</em> poden atorgar privilegis d’administrador a l’atacant i, per tant, són molt perillosos perquè cedeixen el control del sistema a l’atacant remot.
+</p>
+
+<p>
+<strong>SAN</strong> <em>m</em> De l’anglès <em>Storage Area Network</em>. Xarxa d’emmagatzematge en què els dispositius es troben connectats directament a una xarxa d’alta velocitat i els usuaris els poden gestionar des del seu sistema operatiu com si es trobessin connectats de forma local.
+</p>
+
+<p>
+<strong><em>security token</em></strong> <em>n</em> Vegeu <em>testimoni d’autenticació</em>.
+</p>
+
+<p>
+<strong>servidor d’accés remot</strong><em> m</em> Combinació de maquinari i programari que permet l’accés a serveis o informació que estan dins d’una xarxa.
+</p>
+
+<p>
+<strong>servidor d’autenticació</strong> <em>m</em> Servidor que autentica els usuaris o altres sistemes a través d’una xarxa insegura.
+</p>
+
+<p>
+<strong>servidor intermediari</strong> <em>m</em> Programa o un equip capaç d’assumir les funcions d’un altre equip.
+</p>
+
+<p>
+<strong>servidor intermediari d’emmascarament</strong> <em>m</em> Servidor intermediari que s’encarrega de permetre als equips d’una xarxa interior comunicar-se amb l’exterior utilitzant una adreça pública.
+</p>
+
+<p>
+<strong>servidor intermediari de web</strong> <em>m</em> Servidor intermediari que possibilita l’accés al web i ofereix memòria cau per millorar la velocitat d’accés a continguts.
+</p>
+
+<p>
+<strong>servidor intermediari extern</strong> <em>m</em> Servidor intermediari que implementa la política d’un equip diferent al que realitza la petició.
+</p>
+
+<p>
+<strong>servidor intermediari invers</strong> <em>m</em> Servidor intermediari que intercepta el trànsit de l’exterior que es dirigeix a un servidor intern.
+</p>
+
+<p>
+<strong>servidor intermediari local</strong> <em>m</em> Servidor intermediari que implementa la política del mateix equip que realitza la petició.
+</p>
+
+<p>
+<strong>servidor intermediari obert</strong> <em>m</em> Servidor intermediari que accepta les peticions d’equips que no tenen per què formar part de la seva xarxa.
+</p>
+
+<p>
+<strong>servidor intermediari proxy</strong> <em>m</em> Servidor intermediari que s’interposa entre els usuaris i l’accés a un servei. Generalment es facilita l’accés al servei mitjançant una aplicació web.
+</p>
+
+<p>
+<strong>servidor intermediari SOCKS</strong> <em>m</em> Servidor intermediari que utilitza connexions directes TCP amb els clients, en contraposició a la resta, que treballa creant connexions per mitjà del CONNECT del protocol HTTP. Els servidors intermediaris SOCKS poden fer reenviament de trànsit UDP.
+</p>
+
+<p>
+<strong>servidor intermediari transparent</strong> <em>m</em> Servidor intermediari que ofereix accés a recursos i serveis sense que l’usuari hagi de configurar-los en cap moment.
+</p>
+
+<p>
+<strong>signatura digital</strong> <em>f</em> Mecanisme de xifrat emprat per autenticar una informació digital.
+</p>
+
+<p>
+<strong>sistema de detecció d’intrusos</strong> <em>m</em> Sistema que revisa l’activitat de la xarxa per identificar patrons sospitosos que podrien indicar un atac a la xarxa o a algun sistema. També conegut com a <em>IDS</em>.
+</p>
+
+<p>
+<strong>SLA</strong> <em>n</em> De l’anglès <em>Service Level Agreement</em>. Acords a nivell de servei que s’acostumen a utilitzar per establir un contracte entre un proveïdor de servei i un client. En aquest contracte s’estableixen els nivells mínims de qualitat en funció del temps de resposta, la disponibilitat horària, el personal assignat… Bàsicament, es realitzen contractes d’aquest tipus amb empreses de telecomunicacions i serveis externalitzats.
+</p>
+
+<p>
+<em><strong>sniffing</strong> n</em> Monitoratge del trànsit circulant en una xarxa. Aquesta operació es pot efectuar per a tasques de seguiment i detecció de problemes, però també es podria efectuar, per exemple, per capturar una contrasenya que en aquell moment circulés en clar a través de la xarxa. 
+</p>
+
+<p>
+<em><strong>spyware</strong> n</em> Programa espia. Recull informació sobre els hàbits dels usuaris sense el seu consentiment. Aquesta recaptació es pot dur a terme amb finalitat publicitària o bé per capturar informació personal. 
+</p>
+
+<p>
+<strong>tallafoc</strong> <em>m</em> Sistema dissenyat per prevenir l’accés no autoritzat a una xarxa o des d’una xarxa privada. Habitualment s’utilitza per evitar l’accés a xarxes privades connectades a Internet per part d’usuaris no autoritzats. Els tallafocs es poden implementar en maquinari, programari, o una combinació d’ambdós. 
+</p>
+
+<p>
+<strong>temps d’inactivitat</strong><em> m</em> Període de temps en què el nostre sistema no està operatiu i no pot respondre a les peticions dels usuaris. En funció de les causes, podem diferenciar dos tipus de temps d’inactivitat: els planificats i els no planificats.
+</p>
+
+<p>
+<strong>tercer</strong> <em>m</em> La persona física o jurídica, pública o privada o òrgan administratiu diferent de l’afectat o interessat, del responsable del tractament, del responsable del fitxer, de l’encarregat del tractament i de les persones autoritzades per tractar les dades sota l’autoritat directa del responsable del tractament o de l’encarregat del tractament.
+</p>
+
+<p>
+<strong>testimoni d’autenticació</strong> <em>m</em> Dispositiu físic de mida reduïda (alguns inclouen un teclat per introduir una clau numèrica o PIN), similar a un clauer, que calcula contrasenyes d’un sol ús (que canvien a cada accés al sistema o cada cert temps). En anglès, <em>security token</em>.
+</p>
+
+<p>
+<strong>tolerància a fallades</strong> <em>f</em> Capacitat d’un sistema de continuar funcionant correctament quan s’ha produït una fallada.
+</p>
+
+<p>
+<strong>tractament de dades</strong> <em>m</em> Qualsevol operació o procediment tècnic, automatitzat o no, de recollida, gravació, conservació, elaboració, modificació, consulta, utilització, cancel·lació, bloqueig o supressió de dades, així com cessions que resultin de les comunicacions, consultes, interconnexions i transferències.
+</p>
+
+<p>
+<em><strong>trashing</strong> n</em> Tècnica d’obtenció de contrasenyes o informació confidencial basada en la cerca de material llençat a les escombraries.
+</p>
+
+<p>
+<strong>virtualització</strong> <em>f</em> Creació amb un programari específic d’una capa d’abstracció sobre una màquina física perquè els seus recursos puguin ser compartits i utilitzats per múltiples usuaris. Es poden virtualitzar servidors, sistemes d’emmagatzematge, connexions de xarxa, estacions de treball, aplicacions i sistemes operatius.
+</p>
+
+<p>
+<strong>virus</strong> <em>m</em> Seqüència de codi que s’insereix en un arxiu executable (anomenat <em>amfitrió</em> o <em>host</em>). El virus no es pot executar per si mateix (no és un programa independent), de manera que necessita l’amfitrió per executar-se i, quan ho fa, normalment replica el codi viral (o una modificació) en altres programes que van estenent la infecció arreu. És, per tant, molt semblant als virus biològics, dels quals rep el nom.
+</p>
+
+<p>
+<strong>VPN</strong> <em>n</em> Sigles de <em>Virtual Private Network</em>. Vegeu <em>xarxa privada virtual.</em>
+</p>
+
+<p>
+<strong>vulnerabilitat</strong> <em>f</em> Qualsevol punt feble que pugui posar en perill la seguretat d’un sistema informàtic. Aquesta feblesa s’ha d’entendre com una qüestió interna. Pot ser aprofitada per un atacant per violar la seguretat del sistema informàtic, o simplement pot provocar danys no intencionats (per exemple, un error de programació pot fer que un programa tingui comportaments incorrectes).
+</p>
+
+<p>
+<em><strong>worm</strong> n</em> Vegeu <em>cuc</em>.
+</p>
+
+<p>
+<strong>xarxa perimètrica</strong> <em>f</em> Xarxa de seguretat que se situa en la zona de “contacte” de la xarxa d’una organització amb les xarxes exteriors.
+</p>
+
+<p>
+<strong>xarxa privada virtual</strong> <em>f</em>   Xarxa privada que s’estén mitjançant l’ús d’infraestructures públiques de transport (típicament Internet). La transmissió d’informació es fa per un procés d’encapsulació i xifratge.
+</p>
+
+<p>
+<strong>xifra</strong><em> f</em> Vegeu <em>criptosistema</em>.
+</p>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="material_pdf.html">Continguts en PDF</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

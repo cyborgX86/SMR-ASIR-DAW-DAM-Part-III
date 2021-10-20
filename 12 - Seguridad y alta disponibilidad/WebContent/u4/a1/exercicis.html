@@ -1,0 +1,643 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Alta disponibilitat</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Alta disponibilitat</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#l_alta_disponibilitat_en_els_sistemes_informatics">L'alta disponibilitat en els sistemes informàtics</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#com_mesurar_l_alta_disponibilitat">Com mesurar l'alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#solucions_d_alta_disponibilitat">Solucions d'alta disponibilitat</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Virtualització</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#objectius_de_la_virtualitzacio">Objectius de la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_de_servidors">Virtualització de servidors</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_escriptoris">Virtualització d'escriptoris</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_aplicacions">Virtualització d'aplicacions</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#eines_per_a_la_virtualitzacio">Eines per a la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#configuracio_i_utilitzacio_de_les_maquines_virtuals">Configuració i utilització de les màquines virtuals</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#migracio_en_calent">Migració en calent</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_i_alta_disponibilitat">Virtualització i alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#informatica_en_nuvol">Informàtica en núvol</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#contenidors">Contenidors</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Alta disponibilitat</a></li><li><a href="continguts.html">Alta disponibilitat</a></li><li>Exercicis d'autoavaluació</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="exercicis_d_autoavaluacio"> Exercicis d'autoavaluació </a></h1>
+    	
+<h2><a id="exercici_1" >Exercici 1</a></h2>
+<div class="level2">
+
+<p>
+Què ha de garantir un sistema perquè el puguem considerar segur?
+</p>
+<div id="id_choice_dfafe28d7cd3acbb746dcdc09ef09851" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Fiabilitat, confidencialitat, disponibilitat i integritat 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Fiabilitat, integritat i disponibilitat
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Confidencialitat, fiabilitat, disponibilitat i seguretat
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Fiabilitat, confidencialitat i qualitat de les dades
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_2" >Exercici 2</a></h2>
+<div class="level2">
+
+<p>
+Indiqueu si les afirmacions següents relacionades amb l’alta disponibilitat són vertaderes o falses.
+</p>
+<div id="id_vf_266b2033134de8c2159c224eff06a71a" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Es consideren sistemes d’alta disponibilitat només aquells sistemes que estan disponibles el 100% del temps. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El temps d’inactivitat és el període de temps en què el nostre sistema no es troba operatiu i per tant no pot respondre a les peticions dels usuaris. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ No totes les empreses han de disposar de sistemes disponibles 24&times;7. Dependrà de la seva àrea de negoci. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Les aturades planificades no es comptabilitzen dins del temps d’inactivitat d’un sistema. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="F,V,V,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_3" >Exercici 3</a></h2>
+<div class="level2">
+
+<p>
+Completeu les afirmacions següents sobre el nivell de servei amb els termes corresponents.
+</p>
+<div id="id_complete_62962a5928d0b85ba568e87d8dc8da20" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ Els <select name="sol_1"><option value="sol_0">..........................</option>
+<option value="sol_1">acords de nivell de servei</option>
+<option value="sol_3">crítics</option>
+<option value="sol_2">nivells de servei</option>
+<option value="sol_4">objectius</option>
+</select> s’utilitzen per establir un contracte entre un proveïdor de servei i un client.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ A l’hora d’implantar una solució d’alta disponibilitat, s’han de definir juntament amb l’usuari quins han de ser els <select name="sol_2"><option value="sol_0">..........................</option>
+<option value="sol_1">acords de nivell de servei</option>
+<option value="sol_3">crítics</option>
+<option value="sol_2">nivells de servei</option>
+<option value="sol_4">objectius</option>
+</select> a assolir.
+</p>
+</td></tr><tr><td>3</td><td>
+<p>
+ Per implantar solucions d’alta disponibilitat cal analitzar tots els components per insignificants que puguin semblar per tal d’identificar quins són els dispositius més <select name="sol_3"><option value="sol_0">..........................</option>
+<option value="sol_1">acords de nivell de servei</option>
+<option value="sol_3">crítics</option>
+<option value="sol_2">nivells de servei</option>
+<option value="sol_4">objectius</option>
+</select> i que en cas de fallada tindran un major impacte.
+</p>
+</td></tr><tr><td>4</td><td>
+<p>
+ Cal validar que la solució implantada assoleix els <select name="sol_4"><option value="sol_0">..........................</option>
+<option value="sol_1">acords de nivell de servei</option>
+<option value="sol_3">crítics</option>
+<option value="sol_2">nivells de servei</option>
+<option value="sol_4">objectius</option>
+</select> establerts prèviament amb l’usuari. En el cas que es produeixi alguna desviació es prendran les mesures correctives per tal d’aconseguir la fita desitjada.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_4" >Exercici 4</a></h2>
+<div class="level2">
+
+<p>
+Vinculeu els tipus de fallades que s’han d’evitar en els sistemes d’alta disponibilitat amb la seva definició.
+</p>
+<div id="id_relations_b622560aa48c47e2345202044ae4d4ce" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ El sistema deixarà d’estar operatiu en el cas que es produeixi una aturada en algun dels dispositius bàsics del servidor com la font d’alimentació, el disc dur o la memòria.
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................................................</option>
+<option value="sol_4">Fallada en la infraestructura de comunicacions</option>
+<option value="sol_1">Fallades en el maquinari</option>
+<option value="sol_2">Pèrdua o bloqueig de la informació</option>
+<option value="sol_5">Saturació en els servidors de processament de dades</option>
+<option value="sol_3">Talls i fluctuacions en el subministrament elèctric</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ La informació del sistema pot trobar-se inaccessible tant per un atac extern com per una mala gestió dels seus usuaris.
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................................................</option>
+<option value="sol_4">Fallada en la infraestructura de comunicacions</option>
+<option value="sol_1">Fallades en el maquinari</option>
+<option value="sol_2">Pèrdua o bloqueig de la informació</option>
+<option value="sol_5">Saturació en els servidors de processament de dades</option>
+<option value="sol_3">Talls i fluctuacions en el subministrament elèctric</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Els sistemes informàtics són molt sensibles als canvis en el subministrament elèctric, que poden ser produïts per una fallada en les fonts d’alimentació locals, per fluctuacions de tensió (pujades i caigudes) i per talls totals en el subministrament elèctric.
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................................................</option>
+<option value="sol_4">Fallada en la infraestructura de comunicacions</option>
+<option value="sol_1">Fallades en el maquinari</option>
+<option value="sol_2">Pèrdua o bloqueig de la informació</option>
+<option value="sol_5">Saturació en els servidors de processament de dades</option>
+<option value="sol_3">Talls i fluctuacions en el subministrament elèctric</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ La majoria de sistemes informàtics estan formats per la unió de diferents dispositius en una xarxa comuna. Un tall en la infraestructura de comunicacions suposarà la fallada del sistema complet, tan si es tracta de comunicacions locals com de en comunicacions entre centres.
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................................................</option>
+<option value="sol_4">Fallada en la infraestructura de comunicacions</option>
+<option value="sol_1">Fallades en el maquinari</option>
+<option value="sol_2">Pèrdua o bloqueig de la informació</option>
+<option value="sol_5">Saturació en els servidors de processament de dades</option>
+<option value="sol_3">Talls i fluctuacions en el subministrament elèctric</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ Sovint, el bloqueig del servidor per un volum de dades superior al que és capaç de gestionar pot suposar una caiguda del sistema.
+</p>
+</td><td><select name="sol_5"><option value="sol_0">....................................................</option>
+<option value="sol_4">Fallada en la infraestructura de comunicacions</option>
+<option value="sol_1">Fallades en el maquinari</option>
+<option value="sol_2">Pèrdua o bloqueig de la informació</option>
+<option value="sol_5">Saturació en els servidors de processament de dades</option>
+<option value="sol_3">Talls i fluctuacions en el subministrament elèctric</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="5"></input><input type="hidden" name="qsol" value="Fallades en el maquinari,Pèrdua o bloqueig de la informació,Talls i fluctuacions en el subministrament elèctric,Fallada en la infraestructura de comunicacions,Saturació en els servidors de processament de dades"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_5" >Exercici 5</a></h2>
+<div class="level2">
+
+<p>
+Indiqueu si les afirmacions següents relacionades amb la redundància de dispositius són vertaderes o falses.
+</p>
+<div id="id_vf_054cfb1fe23cbe23444959ec9919679b" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Les fallades en els components del maquinari poden suposar aturades de moltes hores i fins i tot de dies. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ L’MTBF (<em>mean time between failures</em>) està directament relacionat amb la probabilitat de fallada d’un sistema. A valors més elevats d’MTBF, la probabilitat de fallada és més alta. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Parlem de redundància en calent quan dos servidors idèntics sincronitzats treballen en paral·lel i tots dos responen a les peticions del sistema. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ En la redundància en fred es disposa de dos servidors, un de principal que respon a les peticions del sistema i un de secundari amb característiques semblants, però que no està operatiu. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_6" >Exercici 6</a></h2>
+<div class="level2">
+
+<p>
+Completeu les afirmacions següents sobre sistemes d’emmagatzematge amb els termes corresponents. 
+</p>
+<div id="id_complete_206a50dd86612020ab55d5e5905afff7" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ Un <select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_1">RAID</option>
+<option value="sol_4">RAID 1+0</option>
+<option value="sol_3">codis de paritat</option>
+<option value="sol_2">controladora</option>
+</select> és un sistema d’emmagatzematge d’informació que permet combinar dos o més discs d’igual capacitat i que siguin tractats pel sistema com una única unitat lògica.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Els esquemes RAID poden ser gestionats per maquinari mitjançant una <select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_1">RAID</option>
+<option value="sol_4">RAID 1+0</option>
+<option value="sol_3">codis de paritat</option>
+<option value="sol_2">controladora</option>
+</select> RAID, que permet alleugerir la càrrega del processador del servidor.
+</p>
+</td></tr><tr><td>3</td><td>
+<p>
+ Els <select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_1">RAID</option>
+<option value="sol_4">RAID 1+0</option>
+<option value="sol_3">codis de paritat</option>
+<option value="sol_2">controladora</option>
+</select> serveixen per detectar i corregir errors.
+</p>
+</td></tr><tr><td>4</td><td>
+<p>
+ Algunes controladores permeten niar diferents esquemes RAID. Així ens podem beneficiar dels avantatges que ofereixen cadascun d’ells. El <select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_1">RAID</option>
+<option value="sol_4">RAID 1+0</option>
+<option value="sol_3">codis de paritat</option>
+<option value="sol_2">controladora</option>
+</select> és una combinació d’aquest tipus.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_7" >Exercici 7</a></h2>
+<div class="level2">
+
+<p>
+Vinculeu els conceptes següents sobre solucions d’alta disponibilitat en el subministrament elèctric amb les seves definicions.
+</p>
+<div id="id_relations_7ac748d1d651902e8939ca9bf7de8805" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Molts fabricants ofereixen servidors amb dues fonts d’alimentació.
+</p>
+</td><td><select name="sol_1"><option value="sol_0">.............................................</option>
+<option value="sol_4">Arquitectura elèctrica redundada</option>
+<option value="sol_1">Redundància de dispositius</option>
+<option value="sol_2">Redundància en el subministrament</option>
+<option value="sol_3">Sistema d’alimentació ininterrompuda (SAI)</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Consisteix en la contractació de dues línies de subministrament elèctric a proveïdors de serveis diferents o bé procedents de dues estacions transformadores diferents.
+</p>
+</td><td><select name="sol_2"><option value="sol_0">.............................................</option>
+<option value="sol_4">Arquitectura elèctrica redundada</option>
+<option value="sol_1">Redundància de dispositius</option>
+<option value="sol_2">Redundància en el subministrament</option>
+<option value="sol_3">Sistema d’alimentació ininterrompuda (SAI)</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Serveix per estabilitzar la tensió d’entrada, evitar pics i microtalls. A més, ofereix protecció contra talls en el subministrament elèctric.
+</p>
+</td><td><select name="sol_3"><option value="sol_0">.............................................</option>
+<option value="sol_4">Arquitectura elèctrica redundada</option>
+<option value="sol_1">Redundància de dispositius</option>
+<option value="sol_2">Redundància en el subministrament</option>
+<option value="sol_3">Sistema d’alimentació ininterrompuda (SAI)</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Cada equip crític es connecta a dues línies d’alimentació. Aquestes línies han de ser independents, amb protecció diferencial i magnetotèrmica separades.
+</p>
+</td><td><select name="sol_4"><option value="sol_0">.............................................</option>
+<option value="sol_4">Arquitectura elèctrica redundada</option>
+<option value="sol_1">Redundància de dispositius</option>
+<option value="sol_2">Redundància en el subministrament</option>
+<option value="sol_3">Sistema d’alimentació ininterrompuda (SAI)</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="Redundància de dispositius,Redundància en el subministrament,Sistema d’alimentació ininterrompuda (SAI),Arquitectura elèctrica redundada"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_8" >Exercici 8</a></h2>
+<div class="level2">
+
+<p>
+Indiqueu si les afirmacions següents sobre els centres de processament de dades secundaris són vertaderes o falses.
+</p>
+<div id="id_vf_feeeeb6a92e8397d7663a45327fe6a93" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Es recomana que el servidor secundari es trobi allotjat en el mateix edifici que el principal per reduir el temps de transmissió de dades. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ En les actualitzacions de dades síncrones el centre de processament de dades secundari rep en temps real els canvis que es produeixen en el CPD principal. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ En les actualitzacions asíncrones la informació entre els dos centres de processament no es transmet en temps real, sinó per lots. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Les solucions d’actualització de dades síncrones són sempre bastant més cares que les asíncrones. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="F,V,V,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_9" >Exercici 9</a></h2>
+<div class="level2">
+
+<p>
+Completeu les afirmacions següents sobre xarxes d’emmagatzematge i solucions per a bases de dades amb els termes corresponents.
+</p>
+<div id="id_complete_f42938caac0249ede60cdd945af125b7" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ Els sistemes <select name="sol_1"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select> estan compostos per dispositius d’emmagatzematge que es connecten directament a la xarxa corporativa i permeten compartir les dades amb tots els usuaris de l’empresa.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ En els sistemes <select name="sol_2"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select>, els dispositius d’emmagatzematge estan connectats directament a una xarxa d’alta velocitat i els usuaris els poden gestionar des del seu sistema operatiu com si estiguessin connectats de forma local.
+</p>
+</td></tr><tr><td>3</td><td>
+<p>
+ Per facilitar les tasques de gestió i administració de les dades, aquesta informació es troba emmagatzemada en <select name="sol_3"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select>, les quals disposen de les eines necessàries per poder-ne fer una gestió eficient.
+</p>
+</td></tr><tr><td>4</td><td>
+<p>
+ Els sistemes <select name="sol_4"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select> de rèplica de bases de dades disposen de la informació actualitzada i permeten realitzar una commutació automàtica de les bases de dades sense riscos.
+</p>
+</td></tr><tr><td>5</td><td>
+<p>
+ Per poder obtenir una disponibilitat del 100% en un sistema, tan important és garantir en que tots els dispositius funcionen correctament en tot moment com garantir la en <select name="sol_5"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select> dels diferents dispositius.
+</p>
+</td></tr><tr><td>6</td><td>
+<p>
+ El <select name="sol_6"><option value="sol_0">.......................</option>
+<option value="sol_1">NAS</option>
+<option value="sol_2">SAN</option>
+<option value="sol_3">bases de dades</option>
+<option value="sol_5">comunicació</option>
+<option value="sol_6">repartiment de càrrega</option>
+<option value="sol_4">síncrons</option>
+</select> s’utilitza com a mesura preventiva, ja que permet gestionar el trànsit de la xarxa entre els diferents dispositius del sistema i evita que cap d’ells se saturi i entri en fallada.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_10" >Exercici 10</a></h2>
+<div class="level2">
+
+<p>
+Vinculeu els conceptes següents sobre redundància en el processament de les dades amb les seves definicions.
+</p>
+<div id="id_relations_0f85e1cccfa1d2dc457ee47f56956350" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Conjunt d’unitats funcionals amb característiques similars interconnectades per mitjà d’una xarxa d’alta velocitat i configurades de forma coordinada perquè actuïn com una sola unitat.
+</p>
+</td><td><select name="sol_1"><option value="sol_0">......................................</option>
+<option value="sol_1">Clúster</option>
+<option value="sol_2">Clúster d’alt rendiment</option>
+<option value="sol_3">Clúster d’alta disponibilitat</option>
+<option value="sol_4">Pla de contingència</option>
+<option value="sol_5">Pla de recuperació en cas de desastre</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Clúster que uneix els diferents nodes a través d’una xarxa i parts d’un mateix programa s’executen de forma paral·lela en els diferents processadors connectats. D’aquesta manera s’aconsegueix sumar les capacitats de càlcul dels nodes que el componen.
+</p>
+</td><td><select name="sol_2"><option value="sol_0">......................................</option>
+<option value="sol_1">Clúster</option>
+<option value="sol_2">Clúster d’alt rendiment</option>
+<option value="sol_3">Clúster d’alta disponibilitat</option>
+<option value="sol_4">Pla de contingència</option>
+<option value="sol_5">Pla de recuperació en cas de desastre</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Els diferents nodes que componen el clúster es troben monitorats en tot moment, de manera que si es produeix una fallada en el maquinari o programari d’algun dels nodes es poden restaurar de forma automàtica els serveis caiguts en un altre servidor.
+</p>
+</td><td><select name="sol_3"><option value="sol_0">......................................</option>
+<option value="sol_1">Clúster</option>
+<option value="sol_2">Clúster d’alt rendiment</option>
+<option value="sol_3">Clúster d’alta disponibilitat</option>
+<option value="sol_4">Pla de contingència</option>
+<option value="sol_5">Pla de recuperació en cas de desastre</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Conjunt de procediments alternatius que permetrien a l’empresa continuar treballant amb normalitat en el cas que alguna de les seves funcionalitats es veiés afectada per un accident intern o extern.
+</p>
+</td><td><select name="sol_4"><option value="sol_0">......................................</option>
+<option value="sol_1">Clúster</option>
+<option value="sol_2">Clúster d’alt rendiment</option>
+<option value="sol_3">Clúster d’alta disponibilitat</option>
+<option value="sol_4">Pla de contingència</option>
+<option value="sol_5">Pla de recuperació en cas de desastre</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ Pla de contingència basat en els sistemes d’informació d’una empresa.
+</p>
+</td><td><select name="sol_5"><option value="sol_0">......................................</option>
+<option value="sol_1">Clúster</option>
+<option value="sol_2">Clúster d’alt rendiment</option>
+<option value="sol_3">Clúster d’alta disponibilitat</option>
+<option value="sol_4">Pla de contingència</option>
+<option value="sol_5">Pla de recuperació en cas de desastre</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="5"></input><input type="hidden" name="qsol" value="Clúster,Clúster d’alt rendiment,Clúster d’alta disponibilitat,Pla de contingència,Pla de recuperació en cas de desastre"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

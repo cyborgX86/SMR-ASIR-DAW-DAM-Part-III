@@ -1,0 +1,1260 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Generació dinàmica de pàgines web</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Introducció a Spring i Spring MVC</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_maven">"Hola, Món" amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_web_amb_maven">'Hola, Món' web amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_spring_mvc">"Hola, Món" amb Spring MVC</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#estoc_de_medicaments_benvinguda">Estoc de medicaments, benvinguda</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_domini">Estoc de medicaments, capa de domini</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_persistencia">Estoc de medicaments, capa de persistència</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_servei">Estoc de medicaments, capa de servei</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a3" class="tocsection"><p id='u3a3continguts'><a class="section" href="../../../WebContent/u3/a3/continguts.html">Spring MVC, aprofundint en els controladors</a><span class="buttonexp"></span></p><ul><li id="u3a3exercicis"><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a3annexos"><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_capa_de_servei_a_medicament">Estoc de medicaments, capa de servei a medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_medicaments_per_malaltia">Estoc de medicaments, medicaments per malaltia</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_llista_de_medicaments_segons_filtre">"Estoc de medicaments", llista de medicaments segons filtre</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_detall_de_medicament">"Estoc de medicaments", detall de medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a4" class="tocsection"><p id='u3a4continguts'><a class="section" href="../../../WebContent/u3/a4/continguts.html">Spring MVC, altres aplicacions</a><span class="buttonexp"></span></p><ul><li id="u3a4activitats"><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></li><li id="u3a4exercicis"><a href="../../../WebContent/u3/a4/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a4annexos"><a href="../../../WebContent/u3/a4/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a4' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_formulari_per_afegir_medicaments">Estoc de medicaments, formulari per afegir medicaments</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_llista_blanca_al_formulari">Estoc de medicaments, llista blanca al formulari</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_pagina_de_login">Estoc de medicaments, pàgina de 'login'</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_internacionalitzacio">Estoc de medicaments, internacionalització</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Generació dinàmica de pàgines web</a></li><li>Spring MVC, altres aplicacions</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="spring_mvc_altres_aplicacions"> Spring MVC, altres aplicacions </a></h1>
+    	
+<p>
+Partim de l’aplicació web Estoc de medicaments, que mostra una pàgina de benvinguda i. mitjançant l’<acronym title="Uniform Resource Locator">URL</acronym> adient, pot proporcionar la llista de tots els medicaments, els d’una categoria o els medicaments que compleixen cert filtre.
+</p>
+
+<p>
+També pot mostrar el detall d’un medicament directament amb un <acronym title="Uniform Resource Locator">URL</acronym> o des de la llista de medicaments. Afegit a tot això, l’aplicació pot actualitzar l’estoc d’un medicament.
+</p>
+
+<p>
+Aquesta aplicació segueix l’arquitectura i el procés de qualsevol aplicació Spring MVC. S’estructura en les quatre capes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> presentació (<em>Presentation</em>)</div>
+</li>
+<li class="level1"><div class="li"> domini (<em>Domain</em>)</div>
+</li>
+<li class="level1"><div class="li"> servei (<em>Service</em>)</div>
+</li>
+<li class="level1"><div class="li"> persistència (<em>Persistence</em>)</div>
+</li>
+</ul>
+
+<p>
+Estoc de medicaments fa servir anotacions de Spring MVC:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>@Controller</code>, <code>@Repository</code> i <code>@Service</code>, que defineixen el tipus d’objecte Spring.</div>
+</li>
+<li class="level1"><div class="li"> <code>@RequestMapping</code>, que caça l’<acronym title="Uniform Resource Locator">URL</acronym> definit i executa el mètode que el segueix.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Autowired</code>, que injecta l’objecte que segueix.</div>
+</li>
+<li class="level1"><div class="li"> <code>@PathVariable</code> i <code>@MatrixVariable</code> per accedir a variables dins de l’<acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>@RequestParam</code> per enllaçar amb els paràmetres del cos de la petició (<code>Request params</code>).</div>
+</li>
+</ul>
+
+<p>
+A més, Estoc de medicaments conté els fitxers XML amb la configuració necessària per dirigir el comportament de Spring MVC respecte a l’aplicació.
+</p>
+
+<p>
+Anem a afegir funcionalitat a l’aplicació Estoc de medicaments que necessitareu en la majoria d’aplicacions web.
+</p>
+
+<p>
+Afegireu a Estoc de medicaments un formulari per crear medicaments, la qual cosa us permetrà veure totes les possibilitats que ofereix Spring MVC per tractar els formularis, sobretot com passar dades des de la vista fins al model, perquè fins ara el sentit havia estat al contrari.
+</p>
+
+<p>
+Construireu una pàgina de <em>login</em> (identificació) i el codi necessari a la resta de capes. Al voltant d’aquest objectiu, veureu etiquetes Spring relacionades amb la seguretat i diverses possibilitats de configuració.
+</p>
+
+<p>
+Fareu servir la <strong>internacionalització</strong> de Spring per mostrar com fer l’aplicació multiidioma (parcialment), i veureu què són i com es comporten els <strong>interceptors</strong> de Spring.
+</p>
+
+<p>
+Fareu servir diverses etiquetes pròpies de Spring amb les directives:
+</p>
+<pre class="code">&lt;%@taglib prefix=&quot;form&quot; uri=&quot;http://www.springframework.org/tags/form&quot; %&gt;
+&lt;%@taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot; %&gt;</pre>
+
+<p>
+Aquestes llibreries d’etiquetes proporcionen molta funcionalitat per als formularis, com ara la validació d’errors, però també per a altres finalitats.
+</p>
+
+<h2><a id="estoc_de_medicaments_formulari_per_afegir_medicaments" >Estoc de medicaments, formulari per afegir medicaments</a></h2>
+<div class="level2">
+
+<p>
+A Estoc de medicaments, a tota la funcionalitat que hi vegeu implementada, el flux de dades és des del model fins a la vista.
+</p>
+
+<p>
+Per veure com es genera i manega a Spring MVC un flux de dades des de la vista fins al model afegireu un formulari l’acció del qual sigui crear un medicament.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <em>form-backing bean</em> de Spring MVC és l’objecte que permet associar les dades d’un formulari web amb l’aplicació que rep la petició.
+</p>
+</div></div>
+<p>
+L’anotació <code>@ModelAttribute</code> i l’objecte <code>form-backing bean</code> ens permetran crear el medicament a partir de les dades del formulari.
+</p>
+
+<p>
+Els paràgrafs següents descriuen el procés que heu de seguir per implementar el formulari.
+</p>
+
+<p>
+Per presentar el formulari implementareu un primer mètode que passarà un objecte <code>Medicament</code> buit (<code>newMedicament</code>) com atribut a la nova vista <code>addMedicament</code>.
+</p>
+
+<p>
+A la vista, l’etiqueta de formulari serà de la llibreria de Spring i associarà bidireccionalment <code>newMedicament</code> al formulari, és a dir, cada camp del formulari estarà també associat a les propietats de <code>newMedicament</code> i l’actualització d’uns farà que s’actualitzin els altres. Per això es diu que els objectes com <code>newMedicament</code> són els <em>form-backing bean</em>, ja que és on Spring MVC guarda els valors del formulari en el context.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Finalment, implementareu un segon mètode que reculli el <em>submit</em> del formulari. L’anotació:
+</p>
+<pre class="code">@ModelAttribute(&quot;newMedicament&quot;) Medicament newMedicamentToAdd </pre>
+
+<p>
+us permetrà fer servir els valors del formulari via <code>newMedicamentToAdd</code>.
+</p>
+
+</div>
+
+<h3><a id="treballant_les_capes_de_domini_persistencia_i_servei" >Treballant les capes de domini, persistència i servei</a></h3>
+<div class="level3">
+
+<p>
+A la classe <code>Medicament</code>, afegiu un constructor sense paràmetres.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>formulari per afegir medicament</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc401”.
+</p>
+</div></div><pre class="code">    public Medicament() {
+    }</pre>
+
+<p>
+És necessari, perquè necessitem crear un objecte medicament buit.
+</p>
+
+<p>
+A la interfície <code>MedicamentRepository</code>, afegiu la següent declaració de mètode:
+</p>
+<pre class="code">    void addMedicament(Medicament medicament);</pre>
+
+<p>
+I a la classe <code>InMemoryMedicamentRepository</code>, implementeu el mètode amb el codi que es mostra.
+</p>
+<pre class="code">    public void addMedicament(Medicament medicament) {
+        listOfMedicaments.add(medicament);
+    }</pre>
+
+<p>
+Veieu que simplement s’afegeix un objecte<code> Medicament</code> a la vostra llista de medicaments en memòria. Això és equivalent a un <code>INSERT</code> en el cas que la nostra persistència hagués estat implementada amb una base de dades (relacional amb SQL).
+</p>
+
+<p>
+A la interfície <code>MedicamentService</code>, afegiu la següent declaració de mètode:
+</p>
+<pre class="code">        void addMedicament(Medicament medicament);</pre>
+
+<p>
+I a la classe <code>MedicamentServiceImpl</code>, implementeu el mètode amb el codi que es mostra.
+</p>
+<pre class="code">    public void addMedicament(Medicament medicament) {
+        medicamentRepository.addMedicament(medicament);
+    }</pre>
+
+<p>
+Simplement es crida el repositori sense més regles de negoci a afegir.
+</p>
+
+</div>
+
+<h3><a id="formulari_a_la_capa_de_presentacio" >Formulari a la capa de presentació</a></h3>
+<div class="level3">
+
+<p>
+Al controlador heu d’implementar els mètodes inclosos en el procés que havíeu de seguir. És a dir, un mètode per mostrar el formulari i un mètode per processar-lo.
+</p>
+
+<p>
+A la classe <code>MedicamentController</code>, heu d’afegir els mètodes amb el codi que es mostra.
+</p>
+<pre class="code">    @RequestMapping(value = &quot;/add&quot;, method = RequestMethod.GET)
+    public ModelAndView getAddNewMedicamentForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;addMedicament&quot;);
+        Medicament newMedicament = new Medicament();
+        modelview.getModelMap().addAttribute(&quot;newMedicament&quot;, newMedicament);
+        return modelview;
+    }
+
+    @RequestMapping(value = &quot;/add&quot;, method = RequestMethod.POST)
+    public String processAddNewMedicamentForm(@ModelAttribute(&quot;newMedicament&quot;) Medicament newMedicamentToAdd) {
+        medicamentService.addMedicament(newMedicamentToAdd);
+        return &quot;redirect:/medicaments/all&quot;;
+    }</pre>
+
+<p>
+El mètode <code>getAddNewMedicamentForm</code> és el que fareu servir per mostrar el formulari. En aquest cas, es dispararà amb una petició <code>GET (method = RequestMethod.GET)</code> creant un objecte buit <code>Medicament</code> que retorna a la vista <code>addMedicament</code> com a atribut de nom <code>newMedicament</code>. L’associació que fareu en aquesta vista el converteix en el <em>form-backing bean</em>.
+</p>
+
+<p>
+El mètode <code>processAddNewMedicamentForm</code> és el que fareu servir per processar el formulari. En aquest cas, es dispararà amb una petició <em>POST (method = RequestMethod.POST)</em>. L’anotació:
+</p>
+<pre class="code">@ModelAttribute(&quot;newMedicament&quot;) Medicament newMedicament</pre>
+
+<p>
+associa les dades del formulari (guardades a <code>newMedicament</code>) a la variable <code>newMedicamentToAdd</code> que fareu servir al codi del mètode.
+</p>
+
+<p>
+Com que no heu de tornar un <code>ModelAndView</code> perquè només voleu redirigir a la vista que mostra la llista de medicaments, feu que <code>processAddNewMedicamentForm</code> sigui de tipus <em>string</em>. No manegueu <code>ModelAndView</code> ni necessiteu <code>HttpServletRequest</code> <em>request</em> i <code>HttpServletResponse</code> <em>response</em> com a paràmetres.
+</p>
+
+<p>
+La instrucció:
+</p>
+<pre class="code">return &quot;redirect:/medicaments/all&quot;; </pre>
+
+<p>
+fa que el navegador faci una nova petició amb aquest <acronym title="Uniform Resource Locator">URL</acronym> i, per això, el <code>Dispatcher Servlet</code> tornarà a cercar quin controlador específic s’encarrega de l’<acronym title="Uniform Resource Locator">URL</acronym> passat com a <em>redirect</em>. En aquest cas és el mateix controlador, i mostrarà la llista de tots els medicaments.
+</p>
+
+<p>
+Abans de codificar la vista, a l’arxiu de configuració web.xml heu d’afegir el filtre <code>CharacterEncodingFilter</code> amb les etiquetes que es mostren.
+</p>
+<pre class="code">    &lt;filter&gt;  
+        &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;  
+        &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;  
+        &lt;init-param&gt;  
+            &lt;param-name&gt;encoding&lt;/param-name&gt;  
+            &lt;param-value&gt;UTF-8&lt;/param-value&gt;  
+        &lt;/init-param&gt;  
+        &lt;init-param&gt;  
+            &lt;param-name&gt;forceEncoding&lt;/param-name&gt;  
+            &lt;param-value&gt;true&lt;/param-value&gt;  
+        &lt;/init-param&gt;  
+    &lt;/filter&gt;  
+    &lt;filter-mapping&gt;  
+        &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;  
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
+    &lt;/filter-mapping&gt;</pre>
+
+<p>
+Aquest filtre permet la utilització d’accents als camps del nostre formulari. En realitat, <code>CharacterEncodingFilter</code> permet l’especificació de la codificació de caràcters que forcem en les peticions, ja que actualment existeixen navegadors que no fan cas de la codificació especificada en la pàgina <acronym title="HyperText Markup Language">HTML</acronym> (a la vista, en el vostre cas).
+</p>
+
+<p>
+Afegiu a la carpeta <em>views</em> una nova vista addMedicament.jsp amb el codi que es mostra a continuació:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;
+&lt;%@ taglib prefix=&quot;form&quot; uri=&quot;http://www.springframework.org/tags/form&quot;  %&gt;
+&lt;%@ taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot; %&gt;
+&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=ISO-8859-1&quot;&gt;
+        &lt;link
+            rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+        &lt;title&gt;Medicaments&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h1&gt;Medicament&lt;/h1&gt;
+                    &lt;p&gt;Afegir medicament&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;container&quot;&gt;
+            &lt;form:form modelAttribute=&quot;newMedicament&quot; class=&quot;form-horizontal&quot;&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Afegir medicament&lt;/legend&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;medicamentId&quot;&gt;Codi&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;medicamentId&quot; path=&quot;medicamentId&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;name&quot;&gt;Nom&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;name&quot; path=&quot;name&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;price&quot;&gt;Preu&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;price&quot; path=&quot;price&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;producer&quot;&gt;Laboratori&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;producer&quot; path=&quot;producer&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;   
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;category&quot;&gt;Categoria&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;category&quot; path=&quot;category&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt; 
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;stockQuantity&quot;&gt;Unitats en estoc&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;stockQuantity&quot; path=&quot;stockQuantity&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;                     
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2 col-lg-2&quot; for=&quot;stockInOrder&quot;&gt;Unitats en comandes&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:input id=&quot;stockInOrder&quot; path=&quot;stockInOrder&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;                     
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2&quot;
+                               for=&quot;description&quot;&gt;Descripció&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:textarea id=&quot;description&quot; path=&quot;description&quot; rows =&quot;2&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;control-label col-lg-2&quot;
+                               for=&quot;active&quot;&gt;actiu&lt;/label&gt;
+                        &lt;div class=&quot;col-lg-10&quot;&gt;
+                            &lt;form:radiobutton path=&quot;active&quot; value=&quot;true&quot; /&gt;Si
+                            &lt;form:radiobutton path=&quot;active&quot; value=&quot;false&quot; /&gt;No                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;div class=&quot;col-lg-offset-2 col-lg-10&quot;&gt;
+                            &lt;input type=&quot;submit&quot; id=&quot;btnAdd&quot; class=&quot;btn btn-primary&quot;
+                                   value =&quot;Crear&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+            &lt;/form:form&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+Fixeu-vos que es fan servir les llibreries d’etiquetes de Spring que aporten més funcionalitat.
+</p>
+
+<p>
+L’etiqueta que defineix el formulari:
+</p>
+<pre class="code">&lt;form:form modelAttribute=&quot;newMedicament&quot; class=&quot;form-horizontal&quot;&gt;</pre>
+
+<p>
+està associant els camps del formulari amb el <em>form-backing bean newMedicament</em>, de manera que quan s’enviï el formulari, el controlador podrà agafar els valors d’aquest objecte.
+</p>
+
+<p>
+Les etiquetes dels camps del formulari:
+</p>
+<pre class="code">&lt;form:input id=&quot;medicamentId&quot; path=&quot;medicamentId&quot; type=&quot;text&quot; class=&quot;form:input-large&quot;/&gt;</pre>
+
+<p>
+associen individualment cada control del formulari amb la propietat del <em>form-backing bean</em> mitjançant l’atribut <code>path</code>.
+</p>
+
+<p>
+Si executeu l’aplicació amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc401/medicaments/add</em> us mostrarà la pàgina amb el formulari buit (vegeu la <span class="figref"><a href="#figXD1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació amb el formulari buit
+
+</figcaption><img src="../media/daw_m07_u3_12.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ompliu el formulari tal com es mostra en la <span class="figref"><a href="#figXD2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXD2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació amb el formulari emplenat
+
+</figcaption><img src="../media/daw_m07_u3_13.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+
+</p>
+
+<p>
+En prémer <em>Crear</em> us mostrarà la llista de medicaments amb el nou medicament afegit (vegeu la <span class="figref"><a href="#figXD3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de la llista amb el medicament afegit
+
+</figcaption><img src="../media/daw_m07_u3_14.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="estoc_de_medicaments_llista_blanca_al_formulari" >Estoc de medicaments, llista blanca al formulari</a></h2>
+<div class="level2">
+
+<p>
+El formulari per afegir medicaments de l’aplicació Estoc de medicaments conté totes les propietats de <code>Medicament</code>. S’hi inclouen tots els camps, i alguns no es poden omplir perquè és impossible tenir la informació en crear el medicament, com per exemple les unitats en comanda (encara no hem pogut fer cap comanda).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Spring MVC permet registrar una llista de propietats (<em>Whitelist</em>) que poden obviar-se en una petició d’un formulari.
+</p>
+</div></div>
+<p>
+Si una propietat de la <em>Whitelist</em> és a la petició, podrem identificar-la i decidir què fer. Per exemple, llançar una excepció.
+</p>
+
+<p>
+Això s’aconsegueix afegint al controlador específic l’anotació <code>@InitBinder</code> i la implementació del mètode que es dispararà. En aquest mètode es posarà la llista de propietats sota la restricció esmentada, és a dir, la <em>Whitelist</em>.
+</p>
+
+<p>
+Modifiqueu <code>MedicamentController</code> afegint el mètode per identificar la <em>WhiteList</em> (en el vostre cas només és <code>stockInOrder</code>). El codi és el que es mostra a continuació:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>llista blanca al formulari</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc402”.
+</p>
+</div></div><pre class="code">    @InitBinder
+    public void initialiseBinder(WebDataBinder binder) {
+        binder.setDisallowedFields(&quot;stockInOrder&quot;);
+    }</pre>
+
+<p>
+A la mateixa classe, canvieu el mètode <code>processAddNewMedicamentForm</code> pel codi següent.
+</p>
+<pre class="code">    public String processAddNewMedicamentForm(@ModelAttribute(&quot;newMedicament&quot;) Medicament newMedicamentToAdd, BindingResult result) {
+        String[] suppressedFields = result.getSuppressedFields();
+        if (suppressedFields.length &gt; 0) {
+            throw new RuntimeException(&quot;Attempting to bind disallowed fields: &quot; + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+        }
+        medicamentService.addMedicament(newMedicamentToAdd);
+        return &quot;redirect:/medicaments/all&quot;;
+    }</pre>
+
+<p>
+Fixeu-vos que hem afegit el paràmetre <code>BindingResult result</code>. Aquest paràmetre ens serveix per determinar els camps continguts a la petició i són a la <em>Whitelist</em> (<code>result.getSuppressedFields</code>). Recordeu que no voleu que hi siguin, i per això llanceu una excepció.
+</p>
+
+<p>
+Si executeu l’aplicació per mostrar el formulari, l’ompliu i l’envieu, haureu d’obtenir l’excepció (vegeu la <span class="figref"><a href="#figXD4"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida per a l’excepció de la ‘Whitelist’
+
+</figcaption><img src="../media/formulari_whitelist_excepcio.png" alt="" /></figure>
+</div>
+<p>
+Traieu aquest camp del formulari de la vista addMedicament.jsp i veureu que treballa normalment sense donar l’excepció.
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_pagina_de_login" >Estoc de medicaments, pàgina de &#039;login&#039;</a></h2>
+<div class="level2">
+
+<p>
+L’aplicació Estoc de medicaments mostra la llista de medicaments i permet crear-ne, però normalment no és convenient que qualsevol usuari connectat pugui afegir-hi medicaments.
+</p>
+
+<p>
+Fareu que l’aplicació Estoc de medicaments tingui una pàgina de <em>login</em> que es cridi quan l’usuari intenti anar a la pàgina d’afegir medicaments. Aquesta pàgina de <em>login</em> autenticarà l’usuari mitjançant un codi d’usuari i una contrasenya, i segons qui sigui l’autoritzarà a anar a la pàgina d’afegir medicaments (<strong>control d’accés</strong>).
+</p>
+
+<p>
+Per a aquesta implementació fareu servir funcionalitat <code>Spring Security</code>, afegint l’autenticació bàsica en les nostres pàgines web.
+</p>
+
+</div>
+
+<h3><a id="configurant_spring_security" >Configurant Spring Security</a></h3>
+<div class="level3">
+
+<p>
+Spring Security és un <em>framework</em> que permet configurar i personalitzar l’autenticació i el control d’accés en aplicacions Spring.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+A Estoc de medicaments es fa servir part de la funcionalitat de Spring Security, tot un <em>framework</em> que proporciona autenticació i control d’accés configurable: <a href="http://projects.spring.io/spring-security/" class="urlextern" title="http://projects.spring.io/spring-security/"  rel="nofollow">bit.ly/2nywYZy</a>.
+</p>
+</div></div><div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>pàgina de login</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc403”.
+</p>
+</div></div>
+<p>
+Per fer servir Spring Security a la vostra aplicació heu de configurar les dependències del <em>framework</em> que afegiran les llibreries necessàries.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Afegiu les dependències que es mostren en el fitxer pom.xml.
+</p>
+<pre class="code">        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-security-config&lt;/artifactId&gt;
+            &lt;version&gt;3.1.4.RELEASE&lt;/version&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-asm&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;
+            &lt;version&gt;3.1.4.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;</pre>
+
+<p>
+Recordeu que també les podeu afegir amb l’assistent de NetBeans a tal efecte, la qual cosa us pot ajudar a trobar la versió més recent.
+</p>
+
+<p>
+A la carpeta <em>WEB-INF/spring</em>, creeu l’arxiu security-context.xml amb el codi que es mostra.
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xmlns:security=&quot;http://www.springframework.org/schema/security&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+    &lt;security:http auto-config=&quot;true&quot; use-expressions=&quot;true&quot;&gt;
+        &lt;security:intercept-url pattern=&quot;/medicaments/add&quot; access=&quot;hasRole(&#039;adminRol&#039;)&quot;/&gt;        
+        &lt;security:form-login login-page=&quot;/login&quot; default-target-url=&quot;/medicaments/add&quot; login-processing-url=&quot;/j_spring_security_check&quot;
+                             username-parameter=&quot;j_username&quot; password-parameter=&quot;j_password&quot; authentication-failure-url=&quot;/loginfailed&quot;/&gt;
+        &lt;security:logout logout-success-url=&quot;/logout&quot; /&gt;
+    &lt;/security:http&gt;
+    &lt;security:authentication-manager&gt;
+        &lt;security:authentication-provider&gt;
+            &lt;security:user-service&gt;
+                &lt;security:user name=&quot;ioc&quot; password=&quot;ioc123&quot; authorities=&quot;adminRol&quot;  /&gt;
+            &lt;/security:user-service&gt;
+        &lt;/security:authentication-provider&gt;
+    &lt;/security:authentication-manager&gt;
+&lt;/beans&gt;</pre>
+
+<p>
+L’etiqueta <code>security:http</code>, els seus atributs i el seu contingut defineixen el veritable comportament de la seguretat.
+</p>
+
+<p>
+
+</p>
+
+<p>
+L’etiqueta i els atributs
+</p>
+<pre class="code">&lt;security:intercept-url pattern=&quot;/medicaments/add&quot; access=&quot;hasRole(&#039;adminRol&#039;)&quot;/&gt; </pre>
+
+<p>
+indiquen que una petició sobre <em>/medicaments/add</em> serà interceptada i només hi podrà accedir qui hagi estat identificat amb <em>rol</em> <code>adminRol</code>.
+</p>
+
+<p>
+L’etiqueta i els atributs
+</p>
+<pre class="code">&lt;security:form-login …&gt; </pre>
+
+<p>
+defineixen les pàgines que controlen l’autenticació efectiva, la fallida i el nom dels camps de <em>login</em>.
+</p>
+
+<p>
+L’etiqueta i l’atribut
+</p>
+<pre class="code">&lt;security:logout logout-success-url=&quot;/logout&quot; /&gt; </pre>
+
+<p>
+defineixen la pàgina de desconnexió.
+</p>
+
+<p>
+L’etiqueta i els atributs 
+</p>
+<pre class="code">&lt;security:user name=&quot;ioc&quot; password=&quot;ioc123&quot; authorities=&quot;adminRol&quot;  /&gt; </pre>
+
+<p>
+defineixen els usuaris i les seves credencials. L’atribut <code>authorities</code> determina el rol de l’usuari. En aquest cas només heu configurat un usuari, però se’n poden configurar més repetint l’etiqueta.
+</p>
+
+<p>
+Completeu la configuració a nivell de l’aplicació. A web.xml, afegiu la següent configuració dins de <code>&lt;web-app&gt;</code>:
+</p>
+<pre class="code">    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;/WEB-INF/spring/security-context.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+    &lt;filter&gt;
+        &lt;filter-name&gt;springSecurityFilterChain&lt;/filter-name&gt;
+        &lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;
+    &lt;/filter&gt;
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;springSecurityFilterChain&lt;/filter-name&gt;
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;</pre>
+
+<p>
+Amb el paràmetre de context <code>&lt;context-param&gt;</code> esteu indicant el nom del fitxer on heu configurat la seguretat. Com que el <em>listener</em> és <code>ContextLoaderListener</code>, es carregarà la configuració indicada a security-context.xml a l’inici de l’aplicació i en aquest nivell, sense esperar cap petició i sense dependre del <code>Dispatcher Servlet</code>.
+</p>
+
+<p>
+Sense entrar en més detalls de Spring Security, el filtre està indicant que qualsevol petició (<code>&lt;url-pattern&gt;</code>) serà manegada pel filtre <code>springSecurityFilterChain</code>, i fent servir <code>DelegatingFilterProxy</code> esteu deixant a Spring que crei els <em>beans</em> necessaris.
+</p>
+
+</div>
+
+<h3><a id="el_controlador_per_al_login" >El controlador per al &#039;login&#039;</a></h3>
+<div class="level3">
+
+<p>
+A la configuració que heu fet a security-context.xml heu assignat les <acronym title="Uniform Resource Locator">URL</acronym> que corresponen al <em>login</em>, al <em>logout</em> i a les credencials errònies. Són, respectivament, <em>/login</em>, <em>/logout</em> i <em>/loginfailed</em>.
+</p>
+
+<p>
+Amb aquesta informació, al paquet <code>cat.xtec.ioc.controller</code> podeu crear un nou controlador <code>LoginController</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class LoginController {
+
+    @RequestMapping(value = &quot;/login&quot;, method = RequestMethod.GET)
+    public String login() {
+        return &quot;login&quot;;
+    }
+
+    @RequestMapping(value = &quot;/loginfailed&quot;, method = RequestMethod.GET)
+    public String loginerror(Model model) {
+        model.addAttribute(&quot;error&quot;, &quot;true&quot;);
+        return &quot;login&quot;;
+    }
+
+    @RequestMapping(value = &quot;/logout&quot;, method = RequestMethod.GET)
+    public String logout(Model model) {
+        return &quot;login&quot;;
+    }
+}</pre>
+
+<p>
+Quan algú intenti accedir a l’<acronym title="Uniform Resource Locator">URL</acronym> <em>/medicaments/add</em>, Spring Security mostrarà la pàgina login.jsp. Si l’usuari no s’autentica o no està en el rol adient, segons la configuració actuarà <em>/loginfailed</em>, i s’hi afegirà l’atribut <code>error</code>.
+</p>
+
+<p>
+Si l’usuari provoca una desconnexió, llavors actuarà <em>/logout</em> i es mostrarà un altre cop la pàgina de <em>login</em>.
+</p>
+
+</div>
+
+<h3><a id="la_vistes" >La vistes</a></h3>
+<div class="level3">
+
+<p>
+Com que un cop connectats l’aplicació us dirigirà a la vista <code>addMedicament</code>, podeu afegir aquí la desconnexió.
+</p>
+
+<p>
+Afegiu el codi següent a addMedicament.jsp dins de la <em>div</em> de <em>classe</em> <code>jumbotron</code>.
+</p>
+<pre class="code">&lt;a href=&quot;&lt;c:url value=&quot;/j_spring_security_logout&quot; /&gt;&quot; class=&quot;btn btndanger btn-mini pull-right&quot;&gt;desconnectar&lt;/a&gt;</pre>
+
+<p>
+A <em>views</em>, creeu la vista login.jsp amb el codi que es mostra a continuació:
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;
+&lt;%@ taglib prefix=&quot;form&quot; uri=&quot;http://www.springframework.org/tags/form&quot;  %&gt;
+&lt;%@ taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot; %&gt;
+&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=ISO-8859-1&quot;&gt;
+        &lt;link
+            rel=&quot;stylesheet&quot;href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+        &lt;title&gt;Medicaments&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h1&gt;Medicament&lt;/h1&gt;
+                    &lt;p&gt;Afegir medicament&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-4 col-md-offset-4&quot;&gt;
+                    &lt;div class=&quot;panel panel-default&quot;&gt;
+                        &lt;div class=&quot;panel-heading&quot;&gt;
+                            &lt;h3 class=&quot;panel-title&quot;&gt;Si us plau, proporcioni les seves dades&lt;/h3&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;panel-body&quot;&gt;
+                            &lt;c:if test=&quot;${not empty error}&quot;&gt;
+                                &lt;div class=&quot;alert alert-danger&quot;&gt;
+                                    Credencials incorrectes
+                                &lt;/div&gt;
+                            &lt;/c:if&gt;
+                            &lt;form action=&quot;&lt;c:url value= &quot;/j_spring_security_check&quot;&gt; &lt;/c:url&gt;&quot; method=&quot;post&quot;&gt;
+                                &lt;fieldset&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Usuari&quot; name=&#039;j_username&#039; type=&quot;text&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Contrasenya&quot; name=&#039;j_password&#039; type=&quot;password&quot;&gt;
+                                    &lt;/div&gt;
+                                    &lt;input class=&quot;btn btn-lg btn-success btn-block&quot; type=&quot;submit&quot; value=&quot;Connectar&quot;&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;</pre>
+
+<p>
+L’estructura de selecció <code>&lt;c:if …&gt;</code> mostrarà el missatge en el cas que l’atribut <code>error</code> no sigui buit. Recordeu que el controlador l’omplirà en cas que l’usuari no s’hagi autenticat.
+</p>
+
+<p>
+L’acció del formulari es correspon a la configuració feta a security-context.xml, concretament l’atribut <code>login-processing-url=“/j_spring_security_check”</code>, i els noms dels camps “usuari” i “contrasenya” també es corresponen amb la configuració.
+</p>
+
+</div>
+
+<h3><a id="provant_d_entrar" >Provant d&#039;entrar</a></h3>
+<div class="level3">
+
+<p>
+Executeu l’aplicació amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc403/medicaments/add</em>.
+</p>
+
+<p>
+Veureu la pàgina de <em>login</em> tal com es mostra en la <span class="figref"><a href="#figXD5"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXD5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Formulari de ‘login’ (autenticació)
+
+</figcaption><img src="../media/daw_m07_u3_15.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Proveu amb dades no correctes i l’aplicació us mostrarà el missatge de credencials no vàlides (vegeu la <span class="figref"><a href="#figXD6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Formulari de ‘login’ (autenticació), credencials incorrectes
+
+</figcaption><img src="../media/daw_m07_u3_16.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Proveu, doncs, amb credencials correctes, i llavors us mostrarà la pàgina per afegir el medicament. Fixeu-vos que hi ha l’enllaç a desconnexió (vegeu la <span class="figref"><a href="#figXD7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Formulari de medicament amb enllaç a desconnexió
+
+</figcaption><img src="../media/daw_m07_u3_17.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Amb aquest exemple heu assegurat una pàgina de la vostra aplicació, i es pot interpretar la generalització a qualsevol pàgina de l’aplicació.
+</p>
+
+<p>
+Heu fet servir <strong>Spring Security</strong> baixant les dependències i l’heu configurat amb l’arxiu security-context.xml, on heu definit el comportament de Spring Security quant a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quines pàgines s’ha d’assegurar (interceptar) i quins rols estaran autoritzats a accedir-hi.</div>
+</li>
+<li class="level1"><div class="li"> Quines són les pàgines i <acronym title="Uniform Resource Locator">URL</acronym> de <em>login</em>, <em>logout</em> i <em>error</em>.</div>
+</li>
+<li class="level1"><div class="li"> Quin és el formulari que feu servir per a l’autenticació.</div>
+</li>
+<li class="level1"><div class="li"> Quins són els camps d’usuari i contrasenya que conté el formulari.</div>
+</li>
+<li class="level1"><div class="li"> Quins usuaris hi ha a l’aplicació.</div>
+</li>
+</ul>
+
+<p>
+La configuració d’aquest arxiu i el <em>bean</em> que manega la seguretat es carreguen a l’inici de l’aplicació, i serà vàlida per a tot el context de l’aplicació segons el que s’ha indicat a web.xml.
+</p>
+
+<p>
+Heu implementat un controlador que manega les peticions segons les <acronym title="Uniform Resource Locator">URL</acronym> de l’arxiu de configuració.
+</p>
+
+<p>
+Finalment, heu implementat la vista amb el formulari d’autenticació (<em>login</em>).
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_internacionalitzacio" >Estoc de medicaments, internacionalització</a></h2>
+<div class="level2">
+
+<p>
+L’aplicació Estoc de medicaments està practicament completada segons els objectius pedagògics que s’havien proposat. Però avui dia les aplicacions han de ser multiidioma, i per això cal dotar la nostra aplicació de la possibilitat de mostrar-se en diversos idiomes.
+</p>
+
+<p>
+No tan sols això, sinó que es parlarà d’una <strong>internacionalització</strong> que permet definir més paràmetres, com quina moneda es fa servir i quin és el separador decimal, entre altres personalitzacions. 
+</p>
+
+<p>
+Fareu servir la funcionalitat que es coneix com a <strong>externalització de missatges</strong> a Spring MVC per mostrar el text de les etiquetes en diversos idiomes, segons arxius de propietats.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La <strong>internacionalització</strong> s’abrevia sovint com “i18n” (de l’anglès I-eighteen letters-N), que prové de la “i” del començament, les 18 lletres següents i la “n” del final.
+</p>
+</div></div>
+<p>
+L’externalització és el pas previ a la internacionalització, ja que cal tenir el text de les etiquetes dels diferents idiomes en diferents arxius de configuració per tal que la funcionalitat d’<em>i18N</em> vagi a buscar-los.
+</p>
+
+<p>
+Un cop externalitzats els missatges, ja es pot configurar i implementar tot el que és relatiu a <em>i18n</em>. Per detectar i canviar d’idioma fareu servir <code>SessionLocaleResolver</code> a nivell de <em>web application context</em> i l’interceptor <code>LocaleChangeInterceptor</code> també en aquest nivell.
+</p>
+
+</div>
+
+<h3><a id="externalitzem_els_missatges" >Externalitzem els missatges</a></h3>
+<div class="level3">
+
+<p>
+Per externalitzar els missatges de la vostra aplicació i després poder traduir-los i fer-los servir en diversos idiomes fareu canvis en diversos textos d’algunes etiquetes del formulari de la vista addMedicament.jsp.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat <strong>internacionalització</strong> es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament és millor partir del que ja heu fet servir i copiar-lo amb el nom de “stmedioc404”.
+</p>
+</div></div>
+<p>
+Per altra banda, creareu diversos fitxers de propietats, un per defecte i altres per a altres idiomes (concretament, un addicional per a l’anglès).
+</p>
+
+<p>
+A més, haureu de configurar un <em>bean</em> de Spring per connectar la vista amb els fitxers de propietats que contenen els textos.
+</p>
+
+<p>
+A addMedicament.jsp, modifiqueu les etiquetes de <em>code</em>, <em>name</em>, <em>price</em>, <em>producer</em> i <em>category</em> substituint el text, respectivament, per les etiquetes Spring que s’hi mostren.
+</p>
+<pre class="code">&lt;spring:message code= &quot;addMedicament.form.medicamentId.label&quot;/&gt;
+&lt;spring:message code= &quot;addMedicament.form.name.label&quot;/&gt;
+&lt;spring:message code= &quot;addMedicament.form.price.label&quot;/&gt;
+&lt;spring:message code= &quot;addMedicament.form.producer.label&quot;/&gt;
+&lt;spring:message code= &quot;addMedicament.form.category.label&quot;/&gt;</pre>
+
+<p>
+Amb l’etiqueta <code>spring:message</code>, mitjançant l’atribut <em>code</em>, esteu associant el text amb la propietat definida al fitxer de propietats que creareu per a cada idioma de l’aplicació.
+</p>
+
+</div>
+
+<h4><a id="messagesproperties" >messages.properties</a></h4>
+<div class="level4">
+
+<p>
+A la carpeta <em>/src/main/resources</em> (el que veieu dins d’<em>Other Sources</em> en la pestanya de projectes de NetBeans), creeu un arxiu de propietats de nom messages.properties. Serà l’arxiu per defecte, és a dir, que quan no trobi cap idioma serà el que farà servir.
+</p>
+
+<p>
+Afegiu-hi les propietats de cada etiqueta.
+</p>
+<pre class="code">addMedicament.form.medicamentId.label = Codi de medicament
+addMedicament.form.name.label = Nom
+addMedicament.form.price.label = Preu
+addMedicament.form.producer.label = Laboratori - Fabricant
+addMedicament.form.category.label = Categoria</pre>
+
+<p>
+Finalment, heu de configurar el <em>bean</em> que connecta el fitxer de propietats amb les etiquetes<code> spring:message</code> que heu afegit al jsp. Es configura a nivell de <em>web application context</em>, és a dir, afegiu un <em>bean</em> a l’arxiu DispatcherServlet-servlet.xml.
+</p>
+<pre class="code">&lt;bean id= &quot;messageSource&quot; class=&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;&gt;
+&lt;property name=&quot;basename&quot; value=&quot;messages&quot;/&gt;
+&lt;/bean&gt;</pre>
+
+<p>
+L’atribut <code>value=“messages”</code> és el que determina que el fitxer de propietats és <em>messages</em>.
+</p>
+
+<p>
+Executeu l’aplicació amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc404/medicaments/add</em> per mostrar el formulari. Això sí, us haureu d’identificar i, un cop fet, us mostrarà el formulari amb els valors de l’arxiu de propietats (vegeu la <span class="figref"><a href="#figXD8"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Formulari amb textos externalitzats
+
+</figcaption><img src="../media/daw_m07_u3_18.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="configurant_i_implementant_el_canvi_d_idioma" >Configurant i implementant el canvi d&#039;idioma</a></h3>
+<div class="level3">
+
+<p>
+A <em>resources</em>, creeu l’arxiu <em>messages_en.properties</em> per poder tenir dos idiomes. Afegiu-hi les propietats de <code>messages.properties</code>, però canvieu els valors.
+</p>
+<pre class="code">addMedicament.form.medicamentId.label = Medicament ID
+addMedicament.form.name.label = Name
+addMedicament.form.price.label = Price
+addMedicament.form.producer.label = Producer
+addMedicament.form.category.label = Category</pre>
+
+<p>
+A la vista addMedicament.jsp, afegiu el <strong>selector</strong> per canviar d’idioma just després de l’enllaç de desconnexió.
+</p>
+<pre class="code">&lt;div class=&quot;pull-right&quot; style=&quot;padding-right:50px&quot;&gt;
+&lt;a href=&quot;?language=ca&quot; &gt;Català&lt;/a&gt;|&lt;a href=&quot;?language=en&quot; &gt;Anglès&lt;/a&gt;
+&lt;/div&gt;</pre>
+
+<p>
+A l’arxiu de configuració de <em>web application context</em> DispatcherServlet-servlet.xml, afegiu la definició del <em>bean</em>.
+</p>
+<pre class="code">&lt;bean id=&quot;localeResolver&quot; class=&quot;org.springframework.web.servlet.i18n.SessionLocaleResolver&quot;&gt;
+&lt;property name=&quot;defaultLocale&quot; value=&quot;ca&quot;/&gt;
+&lt;/bean&gt;</pre>
+
+<p>
+<code>SessionLocaleResolver</code> és l’objecte que assigna atributs locals sobre la sessió de l’usuari. Una de les propietats que conté l’objecte és <code>defaultLocale</code>. En el vostre cas, dieu que el llenguatge per defecte és el català (<em>ca</em>).
+</p>
+
+<p>
+També a DispatcherServlet-servlet.xml, heu d’afegir l’interceptor <code>LocaleChangeInterceptor</code> tal com es mostra a continuació:
+</p>
+<pre class="code">    &lt;mvc:interceptors&gt;
+        &lt;bean class=&quot;org.springframework.web.servlet.i18n.LocaleChangeInterceptor&quot;&gt;
+            &lt;property name=&quot;paramName&quot; value=&quot;language&quot;/&gt;
+        &lt;/bean&gt;
+    &lt;/mvc:interceptors&gt;</pre>
+
+<p>
+Amb aquest interceptor esteu dient que el nom del paràmetre que correspon al canvi d’idioma és <code>language</code>, i això es correspon amb el que heu afegit a addMedicament.jsp.
+</p>
+
+</div>
+
+<h3><a id="provant_a_canviar_d_idioma" >Provant a canviar d&#039;idioma</a></h3>
+<div class="level3">
+
+<p>
+Executeu l’aplicació amb l’<acronym title="Uniform Resource Locator">URL</acronym> <em>localhost:8080/stmedioc404/medicaments/add</em> i, un cop autenticats satisfactòriament, us mostrarà el formulari (vegeu la <span class="figref"><a href="#figXD9"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Formulari amb els textos en l’idioma per defecte
+
+</figcaption><img src="../media/daw_m07_u3_19.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Fixeu-vos que les etiquetes són en català. Si premeu l’enllaç <em>Anglès</em>, llavors les etiquetes canviaran (vegeu la <span class="figref"><a href="#figXD10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXD10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Formulari amb els textos en anglès
+
+</figcaption><img src="../media/daw_m07_u3_20.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si torneu a prémer <em>Català</em> tornarà a mostrar les etiquetes en aquest idioma. També podeu veure que les <acronym title="Uniform Resource Locator">URL</acronym> contenen el paràmetre <code>language</code>.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Per veure com es genera i manega a Spring MVC un flux de dades des de la vista fins al model heu afegit el formulari per crear medicaments.
+</p>
+
+<p>
+Al controlador, al mètode que desencadena mostrar el formulari, es crea un atribut que passarà a la resposta amb un <em>domain object</em> (<code>Medicament</code>) buit. A la vista, a l’etiqueta <code>form:form</code>, mitjançant l’atribut d’etiqueta <code>modelAttribute</code>, es relacionen els camps del formulari amb les propietats de l’objecte. Canvis en els valors del formulari provoquen canvis en l’objecte, i per això s’anomena <em>form-backing bean</em>.
+</p>
+
+<p>
+El mètode que recull el <code>POST</code> del formulari amb l’anotació:
+</p>
+<pre class="code">@ModelAttribute(&quot;newMedicament&quot;) Medicament newMedicamentToAdd</pre>
+
+<p>
+està recollint l’objecte <code>form-backing bean</code> i el podrà fer servir amb la variable declarada (<code>newMedicamentToAdd</code>).
+</p>
+
+<p>
+Heu afegit una llista de propietats (<em>Whitelist</em>) per obviar un dels camps del model (<code>stockInOrder</code>). Ho heu aconseguit amb l’anotació <code>@InitBinder</code> i la implementació del mètode que la segueix al controlador específic.
+</p>
+
+<p>
+Heu fet servir <strong>Spring Security</strong>, un <em>framework</em> que permet configurar i personalitzar l’autenticació i el control d’accés en aplicacions Spring. Per usar el <em>framework</em> heu desenvolupat la pàgina de <em>login</em>, afegint l’arxiu de configuració de la seguretat security-context.xml, on heu definit els usuaris i el comportament de la vostra aplicació respecte a la seguretat (per exemple, quines pàgines necessitaran autenticació i quines pàgines han de mostrar-se per a <em>login</em>, <em>logout</em> i <em>error</em>).
+</p>
+
+<p>
+Finalment, heu fet que la vostra aplicació tingui <strong>internacionalització</strong> (<em>i18n</em>). Heu externalitzat missatges ajudats pels fitxers de propietats i etiquetes específiques als <em>jsp</em> (<code>spring:message</code>) i heu configurat la internacionalització amb els <em>beans</em> necessaris a nivell de <em>web application context</em>: <code>SessionLocaleResolver</code> i <code>LocaleChangeInterceptor</code>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

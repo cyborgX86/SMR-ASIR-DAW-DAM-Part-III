@@ -1,0 +1,1339 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u7" class="parentnode"><p><a class="unit" href="../../../WebContent/u7/introduccio.html">7. Desenvolupament de casos pràctics</a></p><ul class="expander"><li id="u7introduccio"><a href="../../../WebContent/u7/introduccio.html">Introducció</a></li><li id="u7resum"><a href="../../../WebContent/u7/resum.html">Resum</a></li><li id="u7resultats"><a href="../../../WebContent/u7/resultats.html">Resultats d'aprenentatge</a></li><li id="u7referencies"><a href="../../../WebContent/u7/referencies.html">Referències</a></li><li id="u7a1" class="tocsection"><p id='u7a1continguts'><a class="section" href="../../../WebContent/u7/a1/continguts.html">Desenvolupament de casos pràctics</a><span class="buttonexp"></span></p><ul><li id="u7a1activitats"><a href="../../../WebContent/u7/a1/activitats.html">Activitats</a></li><li id="u7a1exercicis"><a href="../../../WebContent/u7/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u7a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_amb_nodejs">Desenvolupament amb Node.js</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#aplicacions_amb_la_biblioteca_leaflet">Aplicacions amb la biblioteca Leaflet</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_de_jocs_amb_html5">Desenvolupament de jocs amb HTML5</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Mecanismes de programació asíncrona client-servidor</a></li><li>Comunicació asíncrona amb JavaScript</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="comunicacio_asincrona_amb_javascript"> Comunicació asíncrona amb JavaScript </a></h1>
+    	
+<p>
+Als inicis d’Internet, cada vegada que un usuari realitzava una acció, la pàgina on es trobava s’havia de recarregar completament perquè reflectís aquests canvis (per exemple, quan s’afegia un ítem en un carretó electrònic).
+</p>
+
+<p>
+Això suposava una mala experiència a l’usuari, perquè s’havia d’esperar que la pàgina es descarregués un altre cop sense poder interactuar-hi, per mínim que fos el canvi.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Descàrrega de fitxers i data d&#039;expiració</p>
+<p>
+Habitualment, en obrir una pàgina web, els navegadors emmagatzemen fitxers descarregats per no haver de tornar-los a recarregar en visites posteriors  (imatges, codi <acronym title="Cascading Style Sheets">CSS</acronym>, codi JavaScript, etc.). La data d’expiració –si n’hi ha– depèn de la configuració del servidor, tot i que aquests fitxers es poden eliminar manualment del navegador.
+</p>
+</div></div>
+<p>
+Per altra banda, la càrrega del servidor també s’incrementava perquè havia de tornar a enviar tots els continguts per a cada petició que es feia, i en molts casos s’havien de fer consultes a la base de dades per tornar a generar els mateixos continguts que ja havia descarregat l’usuari inicialment.
+</p>
+
+<h2><a id="introduccio_a_ajax" >Introducció a AJAX</a></h2>
+<div class="level2">
+
+<p>
+Per resoldre el problema de la càrrega dinàmica de dades es fa servir AJAX (Asynchronous JavaScript and XML), un conjunt de tecnologies que permeten actualitzar els continguts d’una pàgina o aplicació web sense necessitat de recarregar-la. Les tecnologies que la componen són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> per a la representació.</div>
+</li>
+<li class="level1"><div class="li"> El model d’objectes del document (DOM) per mostrar i manipular les dades dinàmicament.</div>
+</li>
+<li class="level1"><div class="li"> L’objecte <code>XMLHttpRequest</code>, que permet la comunicació asíncrona.</div>
+</li>
+<li class="level1"><div class="li"> Els formats JSON o XML per a l’intercanvi de dades.</div>
+</li>
+<li class="level1"><div class="li"> JavaScript per lligar totes aquestes tecnologies.</div>
+</li>
+</ul>
+
+<p>
+Com es pot apreciar, totes aquestes tecnologies estan integrades amb JavaScript i, consegüentment, no és necessari fer servir cap llibreria per treballar-hi (tot i que és habitual fer servir jQuery perquè d’aquesta manera no cal implementar la gestió de les peticions).
+</p>
+
+<p>
+Cal destacar que, tot i que originalment es va utilitzar XML per a l’intercanvi de dades, no és un requisit: es poden fer servir diferents formats perquè, com a resposta, admeten tant continguts en format XML com continguts en text pla que es poden analitzar sintàcticament (aquesta acció es coneix com a <em>parse</em> en anglès) per convertir-los a altres formats, per exemple, a JSON o fins i tot <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> &quot;Parsejar&quot; i &quot;Analitzar sintàcticament&quot;</p>
+<p>
+La utilització del terme <em>parsejar</em> és incorrecte però és possible trobar materials que ho fan servir en lloc d’<em>analitzar sintàcticament</em>. Cal tenir en compte que en tots dos casos es fa referencia a la mateixa operació.
+</p>
+</div></div>
+<p>
+L’objecte <code>XMLHttpRequest</code> permet realitzar peticions en segon pla (són asíncrones), de manera que l’aplicació no queda bloquejada quan es fa la petició, i una vegada es rep la resposta (amb dades o amb un missatge d’error) és processada per l’aplicació.
+</p>
+
+<p>
+Fer servir aquesta tecnologia també permet crear aplicacions <code>single-page</code>, que consisteixen en una única pàgina a la qual es mostren uns continguts o uns altres segons les accions de l’usuari, sense haver de sortir-ne, o les pàgines amb desplaçament vertical (<em>scroll</em>) infinit, en què una vegada s’arriba al final de la pàgina es carreguen més continguts (com per exemple el llistat de notícies de Facebook o la cerca d’imatges de Google).
+</p>
+
+<p>
+Un ús molt freqüent és la càrrega dinàmica de les dades de les llistes desplegables; per exemple, quan se selecciona una província d’un desplegable és habitual que es realitzi una petició al servidor que retorna el llistat de localitats que són afegides en una altra llista. D’aquesta manera, s’evita haver de descarregar totes les localitats cada vegada que un usuari visita la pàgina.
+</p>
+
+<p>
+Un altre exemple d’ús seria la càrrega de nivells a un joc <acronym title="HyperText Markup Language">HTML</acronym>, en el qual la informació s’obté d’un fitxer amb format JSON o XML, de manera que el client descarrega el motor del joc i aquest realitza les peticions necessàries per carregar els nivells, la informació sobre enemics o el rànquing. Això facilita molt la tasca de desenvolupar aquest tipus de continguts, ja que es poden crear editors independents (fins i tot en altres llenguatges) i fa possible ampliar el joc sense haver de tocar-ne la implementació.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Exemple de carrega de fitxers mitjançant AJAX</p>
+<p>
+El joc IOC Invaders (<a href="https://goo.gl/fMVSbs" class="urlextern" title="https://goo.gl/fMVSbs"  rel="nofollow">www.goo.gl/fMVSbs</a>) fa servir AJAX per carregar la informació dels nivells i els enemics. Podeu trobar el codi font a <a href="https://goo.gl/LNiK94" class="urlextern" title="https://goo.gl/LNiK94"  rel="nofollow">www.goo.gl/LNiK94</a>.
+</p>
+</div></div>
+<p>
+Tot i que la connexió entre l’aplicació i el servidor s’inicia i acaba amb la petició, és possible crear sistemes de notificacions o de comunicació (tipus xat) realitzant peticions de forma continuada, fent servir els temporitzadors <code>setTimeout()</code> i <code>setInterval()</code>. Cal tenir en compte que aquest sistema no és gens eficient i en aquests casos és recomanable fer servir altres tecnologies com els Web Sockets, que permeten establir una connexió directa amb el servidor.
+</p>
+
+<p>
+A banda de les peticions que podeu fer vosaltres directament, algunes llibreries i paquets de desenvolupament (com l’<acronym title="Application Programming Interface">API</acronym> de Google Maps) poden realitzar les seves pròpies peticions: per aquesta raó, en carregar una pàgina web no és gens estrany que hi hagi peticions fetes per tercers.
+</p>
+
+</div>
+
+<h2><a id="dificultats_a_l_hora_de_provar_el_codi_ajax" >Dificultats a l&#039;hora de provar el codi AJAX</a></h2>
+<div class="level2">
+
+<p>
+Abans de començar a desenvolupar aplicacions que utilitzen AJAX s’ha de tenir en compte que hi ha algunes dificultats a l’hora de comprovar-ne el funcionament que cal conèixer.
+</p>
+
+<p>
+Com a mesura de seguretat, els navegadors apliquen la <em>política del mateix origen</em> (<em>same-origin policy</em>), que només permet realitzar peticions asíncrones dintre del mateix origen, és a dir, tant l’aplicació que realitza la petició com l’<acronym title="Uniform Resource Locator">URL</acronym> al qual s’envia han d’originar-se al mateix domini. No està permès fer aquestes peticions, ni tan sols entre subdominis, per tant, si una aplicació que es troba a <code>www.example.com</code> fa una petició a <code>api.example.com</code> el navegador la bloquejarà.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Política del mateix origen</p>
+<p>
+Es pot trobar més informació a l’enllaç següent: <a href="https://goo.gl/KgoIFn" class="urlextern" title="https://goo.gl/KgoIFn"  rel="nofollow">www.goo.gl/KgoIFn</a>.
+</p>
+</div></div>
+<p>
+Primer de tot creeu un fitxer amb el següent codi <acronym title="HyperText Markup Language">HTML</acronym>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;head&gt;</div></li><li class="li1"><div class="de1">  	&lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">		&lt;script&gt;</div></li><li class="li1"><div class="de1">		// Escriviu aquí el vostre codi</div></li><li class="li1"><div class="de1">		&lt;/script&gt;</div></li><li class="li1"><div class="de1">	&lt;/head&gt;</div></li><li class="li1"><div class="de1">	&lt;body&gt;</div></li><li class="li1"><div class="de1">	&lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+I seguidament afegiu el següent codi dintre de les etiquetes <code>script</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (window.XMLHttpRequest) {</div></li><li class="li1"><div class="de1">  httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">} else if (window.ActiveXObject) { // IE 6 i anteriors</div></li><li class="li1"><div class="de1">  httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">  console.log(&quot;Objecte creat a partir d'ActiveXOBject.&quot;);</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">  console.error(&quot;Error: Aquest navegador no suporta AJAX.&quot;);  </div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.onreadystatechange = function () {</div></li><li class="li1"><div class="de1">  console.log(&quot;Ha canviat l'estat de la petició&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.open('GET', 'http://www.example.com', true);</div></li><li class="li1"><div class="de1">httpRequest.send(null);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wzRjZy?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzRjZy?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzRjZy?editors=0011</a>.
+</p>
+
+<p>
+Aquest codi és completament correcte, però l’adreça de petició (establerta a httpRequest.open) indica que el domini al qual s’envia és <code>www.example.com</code>; així doncs, qualsevol petició enviada des d’altres dominis llançarà una excepció que es pot consultar a la consola de les eines de desenvolupador:
+</p>
+<pre class="code">XMLHttpRequest cannot load http://www.example.com. No &#039;Access-Control-Allow-Origin&#039; header is present on the requested resource. Origin &#039;http://s.codepen.io&#039; is therefore not allowed access.</pre>
+
+<p>
+És possible evitar aquesta limitació fent servir altres mecanismes com CORS (<em>cross-origin resource sharing</em>; <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" class="urlextern" title="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"  rel="nofollow">www.en.wikipedia.org/wiki/Cross-origin_resource_sharing</a>), que afegeix noves capçaleres a la petició per restringir-ne l’accés als usuaris, o JSONP (JSON amb <em>padding</em>; <a href="https://ca.wikipedia.org/wiki/JSONP" class="urlextern" title="https://ca.wikipedia.org/wiki/JSONP"  rel="nofollow">www.ca.wikipedia.org/wiki/JSONP</a>) per carregar la informació som si es tractés d’un script que seguidament és processat.
+</p>
+
+<p>
+
+<p>
+També és possible evitar aquesta limitació usant un proxy invers que afegeixi les capçaleres necessàries a la petició.
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="l_objecte_xmlhttprequest" >L&#039;Objecte XMLHttpRequest</a></h2>
+<div class="level2">
+
+<p>
+L’objecte <code>XMLHttpRequest</code> forma part de les especificacions del <acronym title="World Wide Web Consortium">W3C</acronym> i exposa una sèrie de mètodes i propietats que permeten gestionar les crides asíncrones i les respostes obtingudes.
+</p>
+
+<p>
+Cal destacar que la major part de les propietats que formen part de la interfície <code>XMLHttpRequest</code> només són de lectura, ja que contenen informació que s’hi afegeix externament com a resultat de la petició. A continuació podeu trobar una llista de les més utilitzades:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">XMLHttpRequest: propietats i mètodes</p>
+<p>
+Podeu trobar una llista completa de propietats i mètodes de la interfície XMLHttpRequest a l’enllaç següent: <a href="https://goo.gl/1WpgA3" class="urlextern" title="https://goo.gl/1WpgA3"  rel="nofollow">www.goo.gl/1WpgA3</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>onreadystatechange</strong>: tot i que es tracta d’una propietat, la seva funció és assignar-n’hi una que serà cridada automàticament quan es produeixi un canvi a la propietat <code>readyState</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>readyState</strong>: retorna l’estat de la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>responseText</strong>: retorna la resposta de la petició com a text.</div>
+</li>
+<li class="level1"><div class="li"> <strong>responseXML</strong>: retorna la resposta de la petició com a XML.</div>
+</li>
+</ul>
+
+<p>
+Fixeu-vos que la resposta es pot obtenir tant en text pla com en XML. Així doncs, si el format de la resposta és diferent a XML, s’haurà d’obtenir de la propietat <code>responseText</code> i seguidament analitzar-la sintàcticament per convertir-la en el format correcte (per exemple a JSON).
+</p>
+
+<p>
+Quant als mètodes disponibles per realitzar les peticions bàsiques hi ha els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>open</strong>: inicialitza la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>overrideMimeType</strong>: permet sobreescriure el tipus multimèdia de la resposta rebuda (<code>text/html</code>, <code>text/plain</code>, <code>application/xml</code>, etc.).</div>
+</li>
+<li class="level1"><div class="li"> <strong>send</strong>: envia la petició amb les dades passades com a paràmetre que poden ser, entre d’altres, una cadena de text, un diccionari de dades o tot el document. </div>
+</li>
+</ul>
+
+<p>
+Respecte a la detecció d’<em>events</em>, els navegadors moderns admeten l’ús del mètode <code>addEventListener()</code>, així com l’ús de les dreceres següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>onload</strong>: drecera per afegir un detector de l’<em>event</em> <code>load</code>, que es dispara en rebre la resposta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>onerror</strong>: drecera per afegir un detector de l’<em>event</em> <code>error</code>, que es dispara si es produeix algun error.</div>
+</li>
+<li class="level1"><div class="li"> <strong>onprogress</strong>: drecera per afegir un detector de l’<em>event</em> <code>progress</code>, que es dispara quan s’actualitza el progrés de la resposta i permet controlar la proporció rebuda respecte al total.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="creacio_i_enviament_de_peticions" >Creació i enviament de peticions</a></h3>
+<div class="level3">
+
+<p>
+El primer pas per poder realitzar una petició AJAX és determinar si el navegador admet l’objecte XMLHttpRequest o no. En cas que no l’admeti es comprova si existeix l’objecte <code>ActiveXObject</code> (el seu antecessor, creat per Microsoft) i, si tampoc es troba, es mostra un missatge d’error:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;head&gt;</div></li><li class="li1"><div class="de1">		&lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;script&gt;</div></li><li class="li1"><div class="de1">      if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ </div></li><li class="li1"><div class="de1">        httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">        console.log(&quot;Creat l'objecte a partir de XMLHttpRequest.&quot;);</div></li><li class="li1"><div class="de1">      } else if (window.ActiveXObject) { // IE 6 i anteriors</div></li><li class="li1"><div class="de1">        httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">        console.log(&quot;Creat l'objecte a partir d'ActiveXObject.&quot;);</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);  </div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    &lt;/script&gt;</div></li><li class="li1"><div class="de1">	&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">	&lt;body&gt;</div></li><li class="li1"><div class="de1">	&lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VKqxkv?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKqxkv?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKqxkv?editors=1011</a>.
+</p>
+
+<p>
+Una vegada s’ha creat l’objecte, a partir de <em>XMLHttpRequest</em> o d’<em>ActiveXObject</em>, es pot assignar una funció al mètode <code>onreadystatechange()</code>, que serà invocada automàticament quan canvia l’estat de la petició; és on es gestiona què s’ha de fer amb la resposta o si es produeix un error.
+</p>
+
+<p>
+Una vegada assignada la propietat <code>onreadystatechange</code> es poden fer servir els mètodes <code>open()</code> i <code>send()</code> per crear la petició i enviar-la:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>open</strong> (mètode, <acronym title="Uniform Resource Locator">URL</acronym>, asíncrona): proporciona la informació per crear la petició. El primer paràmetre determina el mètode que es farà servir per a la petició (<code>GET</code>, <code>HEAD</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, <code>TRACE</code>), el segon és l’<acronym title="Uniform Resource Locator">URL</acronym> en el qual es realitzarà la petició, i el tercer (opcional) indica si es vol fer la invocació asíncronament (true) o síncronament (false), cosa que bloquejaria l’execució fins a rebre’n la resposta. Aquest últim paràmetre és opcional, i si s’omet, la petició es fa de manera asíncrona.</div>
+</li>
+<li class="level1"><div class="li"> <strong>send</strong> (params): envia la petició prèviament preparada amb els paràmetres especificats. Aquests paràmetres han d’estar en un format que pugui interpretar el servidor de destí.</div>
+</li>
+</ul>
+
+<p>
+
+<p>
+Per realitzar proves bàsiques amb AJAX farem crides a URLs d’APIs que ens retornaran fitxers JSON, XML, etc.
+</p>
+
+</p>
+
+<p>
+
+<p>
+En l’exemple següent, la <acronym title="Uniform Resource Locator">URL</acronym> que posem a la crida ens retorna el fitxer XML següent:
+</p>
+
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;fitxes version=&quot;1.00&quot; lang=&quot;ca&quot; o=&quot;dades&quot; n=&quot;1&quot; p=&quot;id=080018;i=f171&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;cols&gt;</div></li><li class="li1"><div class="de1">    &lt;col id=&quot;080018&quot; scheme=&quot;mun&quot;&gt;Abrera&lt;/col&gt;</div></li><li class="li1"><div class="de1">    &lt;col id=&quot;11&quot; scheme=&quot;com&quot;&gt;Baix Llobregat&lt;/col&gt;</div></li><li class="li1"><div class="de1">    &lt;col id=&quot;09&quot; scheme=&quot;ca&quot;&gt;Catalunya&lt;/col&gt;</div></li><li class="li1"><div class="de1">  &lt;/cols&gt;</div></li><li class="li1"><div class="de1">  &lt;indicadors&gt;</div></li><li class="li1"><div class="de1">    &lt;i id=&quot;f171&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;c&gt;Població&lt;/c&gt;</div></li><li class="li1"><div class="de1">        &lt;v&gt;12489,825963,7675217&lt;/v&gt;</div></li><li class="li1"><div class="de1">        &lt;u/&gt;</div></li><li class="li1"><div class="de1">        &lt;r&gt;2019&lt;/r&gt;</div></li><li class="li1"><div class="de1">        &lt;s&gt;Idescat, a partir del Padró continu de l'INE.&lt;/s&gt;</div></li><li class="li1"><div class="de1">        &lt;t id=&quot;t25&quot;&gt;Població. Per grups d'edat&lt;/t&gt;</div></li><li class="li1"><div class="de1">        &lt;l&gt;https://www.idescat.cat/pub/?id=pmh&amp;n=9548&amp;geo=mun:080018&lt;/l&gt;</div></li><li class="li1"><div class="de1">        &lt;updated&gt;2020-02-26T11:00:00+00:00&lt;/updated&gt;</div></li><li class="li1"><div class="de1">    &lt;/i&gt;</div></li><li class="li1"><div class="de1">  &lt;/indicadors&gt;</div></li><li class="li1"><div class="de1">&lt;/fitxes&gt;</div></li></ol></pre>
+
+<p>
+El codi per a realitzar la petició serà:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">httpRequest.onreadystatechange = processarCanviEstat;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.open('GET', 'https://api.idescat.cat/emex/v1/dades.xml?id=080018&amp;i=f171', true);</div></li><li class="li1"><div class="de1">httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function processarCanviEstat() {</div></li><li class="li1"><div class="de1">  console.log(&quot;Ha canviat l'estat de la petició&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wzRXmL?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzRXmL?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzRXmL</a>.
+</p>
+
+<p>
+Com es pot apreciar, una vegada es rep la resposta s’invoca la funció <code>processarCanviEstat()</code> tantes vegades com canvis d’estat pateix la resposta. És aquí on s’ha d’implementar la lògica per realitzar una acció o altra en funció de si s’ha finalitzat amb èxit o s’hi ha produït un error.
+</p>
+
+<p>
+Alguns navegadors mostren un error a la consola si no s’especifica el joc de caràcters (<code>charset</code>) que ha d’utilitzar la pàgina, i si s’utilitzen caràcters no anglesos, no es mostren correctament, per tant, és recomanable especificar-ho.
+</p>
+
+<p>
+En cas que el fitxer no tingui un format correcte també es mostrarà error, ja que per defecte s’espera que la resposta siguin dades en format XML. Així doncs, cal assegurar-se, per al bon funcionament dels exemples, que el fitxer XML és correcte.
+</p>
+
+<p>
+El primer que s’ha de fer quan l’estat canvia és comprovar si ja s’ha completat o no. L’objecte XMLHttpRequest es pot trobar en 5 estats diferents i el seu valor s’obté a partir de la propietat <code>readyState</code>. Els noms dels valors possibles (i el seu valor) són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>UNSENT</strong> (0). Encara no s’ha obert la petició amb <code>open()</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>OPENED</strong> (1). S’ha obert la petició però encara no s’ha enviat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>HEADERS_RECEIVED</strong> (2). S’ha enviat la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LOADING</strong> (3). S’està descarregant la resposta. La propietat <code>responseText</code> conté el contingut parcial.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DONE</strong> (4). S’ha completat l’operació.</div>
+</li>
+</ul>
+
+<p>
+Cal destacar que a Internet Explorer els noms són diferents i, per consegüent, a l’hora de desenvolupar qualsevol aplicació, es recomana fer servir els valors enters i assignar-los com a pseudoconstants pròpies en lloc dels noms.
+</p>
+
+<p>
+Substituïu la funció <code>processarCanviEstat()</code> per la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function processarCanviEstat() {</div></li><li class="li1"><div class="de1">  if (httpRequest.readyState === XMLHttpRequest.DONE) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha rebut la resposta. Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(&quot;Encara no s'ha rebut la resposta... Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/mAajqy?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mAajqy?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/mAajqy?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, l’estat va canviant des de l’1 (<code>OPENED</code>) fins al 4 (<code>DONE</code>). Una vegada arribat a aquest punt es pot consultar la propietat <code>status</code> per comprovar si s’ha tingut èxit amb la petició o no. El valor d’aquesta propietat serà 200 quan no s’ha produït cap error o altres valors específics com 404 (pàgina no trobada) o 500 (error intern del servidor).
+</p>
+
+<p>
+Substituïu la funció <code>processarCanviEstat()</code> per la següent, a la qual s’ha afegit el codi per discriminar entre peticions amb èxit i peticions errònies:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function processarCanviEstat() {</div></li><li class="li1"><div class="de1">  if (httpRequest.readyState === XMLHttpRequest.DONE) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha rebut la resposta. Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if (httpRequest.status === 200) {</div></li><li class="li1"><div class="de1">      console.log(&quot;S'ha rebut la resposta correctament. Estat de resposta:&quot;, httpRequest.status);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;S'ha produït un error en obtenir la resposta. Estat de resposta:&quot;, httpRequest.status)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(&quot;Encara no s'ha rebut la resposta... Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QKzBZa?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QKzBZa?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QKzBZa?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, primer s’ha de comprovar que el valor de <code>readyState</code> sigui 4 (<code>DONE</code>) i que l’ <code>status</code> valgui 200 abans de processar la resposta.
+</p>
+
+<p>
+Per acabar, només cal processar les dades i mostrar-les per pantalla, afegint la crida a la funció <code>processaResposta()</code>, en cas d’èxit, i afegint-hi la nova funció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function processarCanviEstat() {</div></li><li class="li1"><div class="de1">  if (httpRequest.readyState === XMLHttpRequest.DONE) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha rebut la resposta. Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if (httpRequest.status === 200) {</div></li><li class="li1"><div class="de1">      console.log(&quot;S'ha rebut la resposta correctament. Estat de resposta:&quot;, httpRequest.status);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      processarResposta(httpRequest.responseXML);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;S'ha produït un error en obtenir la resposta. Estat de resposta:&quot;, httpRequest.status)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(&quot;Encara no s'ha rebut la resposta... Estat actual:&quot;, httpRequest.readyState);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function processarResposta(resposta) {</div></li><li class="li1"><div class="de1">  let elementPre = document.createElement('pre');</div></li><li class="li1"><div class="de1">  elementPre.innerHTML = resposta;</div></li><li class="li1"><div class="de1">  document.body.appendChild(elementPre);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yaGxaR?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yaGxaR?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yaGxaR?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, la funció <code>processarResposta()</code> simplement crea un element i l’afegeix al cos del document, assignant la resposta com a contingut sense realitzar cap tractament, només per comprovar que funciona correctament.
+</p>
+
+<p>
+Alternativament, en cas de treballar només amb navegadors moderns, es pot afegir la detecció de l’<em>event</em> <code>load</code> en lloc de controlar els canvis d’estat. Aquest mètode es va afegir a la segona versió de l’especificació i es dispara automàticament quan es completa la descàrrega. De la mateixa manera, es poden escoltar els <em>events</em> <code>error</code> i <code>progress</code> per determinar si s’ha produït un error o per actualitzar el progrés de la transmissió de dades, respectivament.
+</p>
+
+<p>
+Cal recordar que com que es tracta d’<em>events</em> es pot utilitzar el mètode <code>addEventListener()</code> de l’objecte <code>XMLHttpRequest</code> o les dreceres <code>onload</code>, <code>onerror</code> i <code>onprogress</code> per afegir la funció que serà cridada en detectar-se l’<em>event</em> corresponent.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En la majoria dels casos és recomanable treballar amb els <em>events</em> <code>load</code>, <code>error</code> i <code>progress</code> en lloc de controlar els canvis d’estat.
+</p>
+</div></div>
+<p>
+Vegeu en l’exemple següent com el codi se simplifica molt:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ </div></li><li class="li1"><div class="de1">      	  httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">    		  console.log(&quot;Creat l'objecte a partir de XMLHttpRequest.&quot;);</div></li><li class="li1"><div class="de1">    		} else if (window.ActiveXObject) { // IE 6 i anteriors</div></li><li class="li1"><div class="de1">    		  httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">    		  console.log(&quot;Creat l'objecte a partir d'ActiveXObject.&quot;);</div></li><li class="li1"><div class="de1">    		} else {</div></li><li class="li1"><div class="de1">    		  console.error(&quot;Error: Aquest navegador no suporta AJAX.&quot;);</div></li><li class="li1"><div class="de1">    		}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    		httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    		httpRequest.open('GET', 'https://api.idescat.cat/emex/v1/dades.xml?id=080018&amp;i=f171', true);</div></li><li class="li1"><div class="de1">    		httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    		function processarResposta() {</div></li><li class="li1"><div class="de1">          let elementDiv = document.createElement('div');</div></li><li class="li1"><div class="de1">          let resposta = httpRequest.responseXML;</div></li><li class="li1"><div class="de1">          elementDiv.innerHTML = resposta;</div></li><li class="li1"><div class="de1">          console.log(resposta);</div></li><li class="li1"><div class="de1">          document.body.appendChild(elementDiv);</div></li><li class="li1"><div class="de1">    		}</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZpVrZP?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZpVrZP?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ZpVrZP?editors=1011</a>.
+</p>
+
+<p>
+
+<p>
+Cal destacar que el que es visualitza al document <acronym title="HyperText Markup Language">HTML</acronym> ens indica que hem rebut un objecte XML, que el podem veure per consola.
+</p>
+
+</p>
+
+<p>
+Un altre avantatge d’aquest sistema és que ofereix un mètode senzill per controlar el progrés de la petició, ja que mitjançant la detecció de l’<em>event</em> <code>progress</code> és possible controlar el progrés de la petició. Proveu d’afegir el següent codi a continuació de l’assignació d’ <code>onload</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">httpRequest.onprogress = mostrarProgres;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function mostrarProgres(event) {</div></li><li class="li1"><div class="de1">  if (event.lengthComputable) {</div></li><li class="li1"><div class="de1">    let progres = 100 * event.loaded / event.total;</div></li><li class="li1"><div class="de1">    console.log(&quot;Completat: &quot; + progres + &quot;%&quot;)</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(&quot;No es pot calcular el progrés&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/amPaYO?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/amPaYO?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/amPaYO?editors=1011</a>.
+</p>
+
+<p>
+En aquest exemple, com que es tracta d’una resposta molt curta, no es pot apreciar el progrés i automàticament retorna el 100%, però en cas d’enviament de formularis o pujada de fitxers al servidor es pot utilitzar per mostrar barres de progres a l’usuari.
+</p>
+
+</div>
+
+<h3><a id="enviament_de_parametres" >Enviament de paràmetres</a></h3>
+<div class="level3">
+
+<p>
+Habitualment, en fer una petició AJAX cal afegir-hi un o més paràmetres. Cal distingir entre dos tipus de formats per enviar els paràmetres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Cadena de consulta (<em>query string</em>): els paràmetres es passen codificats a l’<acronym title="Uniform Resource Locator">URL</acronym>, per exemple: <code>http://www.example.com?nom=Maria&amp;cognom=Campmany</code>.</div>
+</li>
+<li class="level1"><div class="li"> Dades de formulari (<em>form data</em>): els paràmetres s’inclouen a la capçalera de la petició.</div>
+</li>
+</ul>
+
+<p>
+Quan el mètode d’enviament és <code>GET</code> s’han de codificar els paràmetres directament a la petició (és a dir, es tracta d’una <em>cadena de consulta</em>), de manera que en cridar el mètode <code>open()</code> de l’objecte <code>XMLHttpRequest</code>, l’<acronym title="Uniform Resource Locator">URL</acronym> ja inclou aquests paràmetres.
+</p>
+
+<p>
+Per exemple, serien paràmetres vàlids els que es mostren a l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">let url = &quot;https://boardgamegeek.com/xmlapi2/search&quot;;</div></li><li class="li1"><div class="de1">let dades = {</div></li><li class="li1"><div class="de1">  query: &quot;monopoly&quot;,</div></li><li class="li1"><div class="de1">  type: &quot;boardgame&quot;,</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let params = convertirEnParametres(dades);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.open('GET', url + &quot;?&quot; + params , true);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.onload = () =&gt; {</div></li><li class="li1"><div class="de1">  // Aquí es processaria la resposta de les peticions</div></li><li class="li1"><div class="de1">  let resposta = httpRequest.responseXML;</div></li><li class="li1"><div class="de1">  console.log(resposta);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function convertirEnParametres(dades) {</div></li><li class="li1"><div class="de1">  let params = '';</div></li><li class="li1"><div class="de1">  for (let dada in dades) {</div></li><li class="li1"><div class="de1">    if (params.length &gt; 0) {</div></li><li class="li1"><div class="de1">      params += '&amp;'</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    params += encodeURIComponent(dada);</div></li><li class="li1"><div class="de1">    params += '=';</div></li><li class="li1"><div class="de1">    params += encodeURIComponent(dades[dada]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return params;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zKgxqN?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zKgxqN?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/zKgxqN?editors=0011</a>.
+</p>
+
+<p>
+Com es pot apreciar, s’ha creat una funció per convertir el diccionari de dades en una cadena de text amb el format adequat per afegir-la a l’<acronym title="Uniform Resource Locator">URL</acronym>. Fixeu-vos que s’ha utilitzat la funció <code>encodeURIComponent()</code> per convertir les dades (tant la clau com el valor) en caràcters acceptats per la codificació de l’<acronym title="Uniform Resource Locator">URL</acronym>, com són els accents, les titlles i els espais.
+</p>
+
+<p>
+Si examineu la capçalera de petició (o la pestanya “paràmetres” de la petició a Mozilla Firefox) amb les eines de desenvolupador del navegador, veureu que es reconeixen els paràmetres <code>nom</code> i <code>cognom</code> com a paràmetres de tipus cadena de consulta.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre les eines de desenvolupador al punt “Depuració de crides AJAX” d’aquest mateix apartat.
+</p>
+</div></div>
+<p>
+Cal destacar que tot i que <code>send()</code> és l’encarregat de fer l’enviament i passar els paràmetres a la petició, en el cas del mètode d’enviament <code>GET</code> no és ben bé així, s’ha de codificar a l’<acronym title="Uniform Resource Locator">URL</acronym>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Enviament de contingut binari mitjançant AJAX</p>
+<p>
+Entre els tipus d’arguments que accepta el mètode <code>send()</code> es troben <code>Blob</code> i <code>ArrayBufferView</code>, que s’utilitzen per enviar contingut binari, com per exemple una imatge.
+</p>
+</div></div>
+<p>
+En el cas d’altres mètodes com <code>POST</code>, <code>PUT</code>/<code>PATCH</code> i <code>DELETE</code> la petició s’ha de fer d’una manera diferent, i hi inclou modificar la capçalera de la petició per especificar el format en el qual s’envien les dades.
+</p>
+
+<p>
+Per exemple, per afegir l’enviament de dades com a cadena de text fent servir el mètode <code>POST</code> no s’ha de modificar l’<acronym title="Uniform Resource Locator">URL</acronym>, però una vegada oberta la petició, cal establir a la capçalera el tipus de contingut com <code>application/x-www-form-urlencoded</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">let url = &quot;https://boardgamegeek.com/xmlapi2/search&quot;;</div></li><li class="li1"><div class="de1">let dades = {</div></li><li class="li1"><div class="de1">  query: &quot;monopoly&quot;,</div></li><li class="li1"><div class="de1">  type: &quot;boardgame&quot;,</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let params = convertirEnParametres(dades);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.open('POST', url, true);</div></li><li class="li1"><div class="de1">httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.onload = () =&gt; {</div></li><li class="li1"><div class="de1">  // Aquí es processaria la resposta de les peticions</div></li><li class="li1"><div class="de1">  let resposta = httpRequest.responseXML;</div></li><li class="li1"><div class="de1">  console.log(resposta);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">httpRequest.send(params);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function convertirEnParametres(dades) {</div></li><li class="li1"><div class="de1">  let params = '';</div></li><li class="li1"><div class="de1">  for (let dada in dades) {</div></li><li class="li1"><div class="de1">    if (params.length &gt; 0) {</div></li><li class="li1"><div class="de1">      params += '&amp;'</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    params += encodeURIComponent(dada);</div></li><li class="li1"><div class="de1">    params += '=';</div></li><li class="li1"><div class="de1">    params += encodeURIComponent(dades[dada]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return params;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VPXXqQ?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VPXXqQ?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VPXXqQ?editors=0011</a>.
+</p>
+
+<p>
+Fixeu-vos que només cal especificar que el mètode d’enviament serà <code>POST</code>; una vegada oberta la petició, s’ha d’especificar el tipus de contingut com a <code>application/x-www-form-urlencoded</code> i passar els paràmetres (convertits en una cadena codificada) com a argument al mètode <code>send()</code>.
+</p>
+
+<p>
+En alguns casos el servei web pot esperar rebre la informació en un altre format. Per fer-ho cal especificar aquest format a la capçalera i codificar les dades de la manera apropiada. Per exemple, si el servidor accepta els paràmetres en format JSON, el codi seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  let httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">  let url = &quot;https://httpbin.org/post&quot;;</div></li><li class="li1"><div class="de1">  let dades = {</div></li><li class="li1"><div class="de1">    nom: &quot;Montserrat&quot;,</div></li><li class="li1"><div class="de1">    cognom: &quot;Capmany&quot;,</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  httpRequest.open('POST', url, true);</div></li><li class="li1"><div class="de1">  httpRequest.setRequestHeader('Content-Type', 'application/json');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  httpRequest.onload = () =&gt; {</div></li><li class="li1"><div class="de1">    // Aquí es processaria la resposta de les peticions</div></li><li class="li1"><div class="de1">   let resposta = httpRequest.responseText;</div></li><li class="li1"><div class="de1">    console.log(JSON.parse(resposta));</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  httpRequest.send(JSON.stringify(dades));</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/KNwdWv?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/KNwdWv?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/KNwdWv?editors=0011</a>.
+</p>
+
+<p>
+Fixeu-vos que en aquest cas el tipus de contingut s’ha establert com a <code>application/json</code> i no és necessari codificar les dades perquè es pot convertir el diccionari de dades en una cadena de text amb format JSON mitjançant <code>JSON.stringify()</code>. A la resposta s’ha afegit l’operació inversa, suposant que el retorn ha de ser una cadena de text també en format JSON, de manera que <code>respostaJSON</code> contindria un diccionari de dades amb la resposta.
+</p>
+
+<p>
+Cal destacar que, utilitzant aquest sistema, el navegador Mozilla Firefox no detecta correctament els paràmetres; en canvi, Google Chrome ho mostra com a <em>Request Payload</em> i es poden visualitzar els paràmetres tant com a cadena de text en format JSON com a parells de dades clau-valor.
+</p>
+
+</div>
+
+<h3><a id="processament_de_respostes_com_a_html" >Processament de respostes com a HTML</a></h3>
+<div class="level3">
+
+<p>
+Tot i que la interfície de <code>XMLHttpRequest</code> no incorpora cap mètode específic per recuperar la resposta en format <acronym title="HyperText Markup Language">HTML</acronym>, és molt fàcil fer-ho directament a partir de la resposta textual.
+</p>
+
+<p>
+Primerament creeu un nou fitxer anomenat <em>provincies.html</em> amb el codi següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1&gt;Provincies&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Barcelona&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Girona&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Lleida&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tarragona&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li></ol></pre>
+
+<p>
+Com que aquesta estructura no es correspon amb el format XML vàlid (hauria d’haver-hi només un element arrel) i en lloc d’enviar la petició al servidor s’està fent servir un fitxer local, és necessari sobreescriure el tipus multimèdia del fitxer de manera que el navegador pugui interpretar la resposta, ja que per defecte considera que totes les respostes són de tipus XML.
+</p>
+
+<p>
+Per fer-ho s’ha d’invocar el mètode <code>overrideMimeType()</code> i passar el tipus <code>text/html</code> com a argument, de manera que el codi per realitzar una petició simple quedaria així:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;head&gt;</div></li><li class="li1"><div class="de1">		&lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;script&gt;</div></li><li class="li1"><div class="de1">      if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ </div></li><li class="li1"><div class="de1">        httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">        console.log(&quot;Creat l'objecte a partir de XMLHttpRequest.&quot;);</div></li><li class="li1"><div class="de1">      } else if (window.ActiveXObject) { // IE 6 i anteriors</div></li><li class="li1"><div class="de1">        httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">        console.log(&quot;Creat l'objecte a partir d'ActiveXObject.&quot;);</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">      httpRequest.onprogress = mostrarProgres;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      function mostrarProgres(event) {</div></li><li class="li1"><div class="de1">        if (event.lengthComputable) {</div></li><li class="li1"><div class="de1">          let progres = 100 * event.loaded / event.total;</div></li><li class="li1"><div class="de1">          console.log(&quot;Completat: &quot; + progres + &quot;%&quot;)</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">          console.log(&quot;No es pot calcular el progrés&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      httpRequest.open('GET', 'provincies.html', true);</div></li><li class="li1"><div class="de1">      httpRequest.overrideMimeType('text/html');</div></li><li class="li1"><div class="de1">      httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      function processarResposta() {</div></li><li class="li1"><div class="de1">        let resposta = httpRequest.responseText;</div></li><li class="li1"><div class="de1">        let contenidor = document.createElement('div');</div></li><li class="li1"><div class="de1">        contenidor.innerHTML = resposta;</div></li><li class="li1"><div class="de1">        document.body.appendChild(contenidor);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    &lt;/script&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;/head&gt;</div></li><li class="li1"><div class="de1">	&lt;body&gt;</div></li><li class="li1"><div class="de1">	&lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wzRLvB?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzRLvB?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzRLvB?editors=1011</a>.
+</p>
+
+<p>
+Gràcies a aquesta funcionalitat és possible enviar peticions al servidor per mostrar diàlegs que seguidament són renderitzats al client o fitxes de productes generades al servidor mitjançant plantilles (tot i que aquesta tasca es pot realitzar al client mitjançant entorns de treball com React, Ember o Angular).
+</p>
+
+</div>
+
+<h3><a id="processament_de_respostes_xml" >Processament de respostes XML</a></h3>
+<div class="level3">
+
+<p>
+El format XML és un dels formats més utilitzats per intercanviar informació. Com que és el format pel qual, originalment, es transferia la informació utilitzant AJAX, l’objecte <code>XMLHttpRequest</code> disposa del mètode <code>responseXML</code> per obtenir la resposta directament en aquest format.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">XML</p>
+<p>
+Podeu trobar més informació sobre XML (‘llenguatge d’etiquetatge extensible’) a l’enllaç següent: <a href="https://ca.wikipedia.org/wiki/Extensible_Markup_Language" class="urlextern" title="https://ca.wikipedia.org/wiki/Extensible_Markup_Language"  rel="nofollow">www.goo.gl/kBf1kz</a>.
+</p>
+</div></div>
+<p>
+S’ha de tenir en compte que en cas que el servidor no especifiqui cap tipus multimèdia per obtenir la resposta (com passa amb els fitxers locals), el navegador pot esperar que es tracti de dades en format XML vàlid. Si no és així, llançarà una excepció i aturarà l’execució de l’aplicació.
+</p>
+
+<p>
+Una resposta XML vàlida seria la següent:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;provincies&gt;</div></li><li class="li1"><div class="de1">  &lt;provincia cp=&quot;08&quot;&gt;Barcelona&lt;/provincia&gt;</div></li><li class="li1"><div class="de1">  &lt;provincia cp=&quot;17&quot;&gt;Girona&lt;/provincia&gt;</div></li><li class="li1"><div class="de1">  &lt;provincia cp=&quot;25&quot;&gt;Lleida&lt;/provincia&gt;</div></li><li class="li1"><div class="de1">  &lt;provincia cp=&quot;43&quot;&gt;Tarragona&lt;/provincia&gt;</div></li><li class="li1"><div class="de1">&lt;/provincies&gt;</div></li></ol></pre>
+
+<p>
+Perquè una resposta sigui considerada amb format XML vàlid ha de complir (entre d’altres) les condicions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Cada element ha d’estar format per una etiqueta d’apertura i una de tancament: <code></code>.</div>
+</li>
+<li class="level1"><div class="li"> Un element pot incloure altres elements (l’element <code>provincies</code> conté 4 elements <code>provincia</code>).</div>
+</li>
+<li class="level1"><div class="li"> Tots els elements s’han de tancar en un ordre jeràrquic correcte, per exemple, no es pot tancar l’element <code>provincies</code> mentre algun dels elements <code>provincia</code> sigui obert.</div>
+</li>
+<li class="level1"><div class="li"> Ha d’existir un element arrel que engloba la resta d’elements del document (en aquest cas l’element arrel és <code>provincies</code>).</div>
+</li>
+<li class="level1"><div class="li"> Es poden especificar atributs assignant un valor entre cometes (<code>cp=“08”</code>).</div>
+</li>
+</ul>
+
+<p>
+Opcionalment, una resposta XML pot incloure un pròleg en el qual s’indiqui la versió XML i la codificació del document, entre d’altres. Per exemple, per indicar que correspon a la versió 1.0 d’XML i la codificació <code>ISO-859-1</code> (la corresponent a l’alfabet llatí, incloent-hi els diacrítics) al començament de la resposta es trobaria el codi següent:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</div></li></ol></pre>
+
+<p>
+Cal recordar que les interfícies del DOM s’apliquen també als documents XML, de manera que es poden fer servir els mateixos mètodes o propietats per tractar tant <acronym title="HyperText Markup Language">HTML</acronym> com XML, tal com podeu veure en l’exemple següent:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre el DOM a la unitat “Programació amb el DOM” d’aquest mateix mòdul.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    if (window.XMLHttpRequest) {</div></li><li class="li1"><div class="de1">      httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">    } else if (window.ActiveXObject) {</div></li><li class="li1"><div class="de1">      httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">    httpRequest.open('GET', 'https://api.idescat.cat/emex/v1/geo.xml?tipus=com', true)</div></li><li class="li1"><div class="de1">    httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta() {</div></li><li class="li1"><div class="de1">      let resposta = httpRequest.responseXML;</div></li><li class="li1"><div class="de1">      let elements = resposta.getElementsByTagName(&quot;v&quot;);</div></li><li class="li1"><div class="de1">      let llista = document.createElement('ul');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; elements.length; i++) {</div></li><li class="li1"><div class="de1">          let item = processarElement(elements[i]);</div></li><li class="li1"><div class="de1">          llista.appendChild(item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      document.body.appendChild(llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarElement(element) {</div></li><li class="li1"><div class="de1">      let ident = element.getAttribute('id');</div></li><li class="li1"><div class="de1">      let municipi = element.textContent;</div></li><li class="li1"><div class="de1">      let item = document.createElement('li');</div></li><li class="li1"><div class="de1">      item.textContent = municipi + ' (ID: ' + ident + ')';</div></li><li class="li1"><div class="de1">      return item;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/EgGBEZ?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/EgGBEZ?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/EgGBEZ?editors=1011</a>.
+</p>
+
+<p>
+
+<p>
+Com es pot apreciar, s’ha descompost el processament de la resposta en dues funcions. Primer s’invoca la funció <code>processarResposta()</code>, que obté els nodes amb informació dels municipis (amb etiqueta <code>v</code>).
+</p>
+
+<p>
+Cal destacar que la propietat <code>responseXML</code> conté un objecte que implementa la interfície <code>Document</code> del DOM.
+</p>
+
+<p>
+Seguidament es recorre la llista dels nodes i s’invoca la funció <code>processarElement()</code> passant com a argument l’element. Aquesta funció extreu l’atribut <code>id</code> i el contingut textual de l’element, crea un nou element de tipus <code>li</code> (element d’una llista d’<acronym title="HyperText Markup Language">HTML</acronym>) i li assigna com a contingut una cadena composta pel nom de la província i el prefix del codi postal.
+</p>
+
+</p>
+
+<p>
+Els elements es processen un per un fins que no en queda cap, llavors s’afegeix la <code>llista</code> al cos del document.
+</p>
+
+<p>
+Fixeu-vos que el tractament que es fa de la resposta XML és igual al que es pot fer a <acronym title="HyperText Markup Language">HTML</acronym>, de manera que es possible extreure la informació dels atributs amb el mètode <code>getAttribute()</code> i del contingut textual amb <code>textContent</code>.
+</p>
+
+<p>
+S’ha de tenir en compte que en casos més complexos pot ser necessari utilitzar funcions recursives per recórrer completament el document. En aquest exemple s’ha considerat que l’arbre només constava de dos nivells i, per tant, només s’ha utilitzat un bucle per iterar sobre els elements. Per aquesta raó, en molts casos necessitareu implementar el vostre propi intèrpret (<em>parser</em> en anglès) que recorri tots els nodes iterativament i els processi un per un segons els requeriments de l’aplicació.
+</p>
+
+</div>
+
+<h3><a id="processament_de_respostes_json" >Processament de respostes JSON</a></h3>
+<div class="level3">
+
+<p>
+
+</p>
+
+<p>
+Per processar una resposta en format JSON (JavaScript Object Notation) s’utilitza la propietat <code>responseText</code> de l’objecte <code>XMLHttpRequest</code> i seguidament s’analitza sintàcticament per convertir-la en un objecte de JavaScript, que es pot utilitzar com qualsevol altre.
+</p>
+
+<p>
+L’estructura del format JSON és molt similar a la declaració literal d’objectes en JavaScript, ja que aquest és el seu origen. S’ha de tenir en compte que tant els noms de les propietats com els valors textuals han d’anar entre cometes dobles (no es poden utilitzar cometes simples).
+</p>
+
+<p>
+El contingut de la resposta s’ha de trobar entre claus, que contenen una o més propietats amb un nom que es pot fer servir com a clau i un valor. Aquest valor pot ser qualsevol dels valors primitius de JavaScript com són els nombres i les cadenes de text, un <em>array</em> o un altre objecte literal. En el cas dels <em>arrays</em> el contingut ha d’anar entre claudàtors, <code>[</code> i <code>]</code>, mentre que els objectes han d’anar entre claus <code>{</code> i <code>}</code>.
+</p>
+
+<p>
+Cal destacar que l’element arrel en una resposta en format JSON tant pot ser un objecte com un <em>array</em>.
+</p>
+
+<p>
+El codi que s’ha de fer servir per realitzar la petició és pràcticament idèntic al de les peticions <acronym title="HyperText Markup Language">HTML</acronym>: primer es crea l’objecte <code>XMLHttpRequest</code>, seguidament s’envia i finalment es processa la resposta:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">     if (window.XMLHttpRequest) {</div></li><li class="li1"><div class="de1">       httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">     } else if (window.ActiveXObject) {</div></li><li class="li1"><div class="de1">       httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">     } else {</div></li><li class="li1"><div class="de1">       console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);</div></li><li class="li1"><div class="de1">     }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">     httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">     httpRequest.open('GET', 'https://api.idescat.cat/pob/v1/geo.json?q=bell', true)</div></li><li class="li1"><div class="de1">    httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta() {</div></li><li class="li1"><div class="de1">      let resposta = JSON.parse(httpRequest.responseText);</div></li><li class="li1"><div class="de1">      console.log(resposta);</div></li><li class="li1"><div class="de1">      let llista = document.createElement('ul');</div></li><li class="li1"><div class="de1">      let municipis = resposta.feed.entry;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; municipis.length; i++) {</div></li><li class="li1"><div class="de1">        let item = processarElement(municipis[i]);</div></li><li class="li1"><div class="de1">        llista.appendChild(item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      document.body.appendChild(llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarElement(munic) {</div></li><li class="li1"><div class="de1">       let item = document.createElement('li');</div></li><li class="li1"><div class="de1">       item.textContent = munic.title;</div></li><li class="li1"><div class="de1">      return item;</div></li><li class="li1"><div class="de1">     }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qaLZyk?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qaLZyk?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/qaLZyk?editors=1011</a>.
+</p>
+
+<p>
+Com es pot comprovar, una vegada obtinguda la resposta, s’analitza sintàcticament fent servir el mètode <code>parse()</code> de l’objecte <code>JSON</code>, de manera que el resultat és un objecte JavaScript funcional que es pot utilitzar com un diccionari de dades.
+</p>
+
+<p>
+
+<p>
+Podeu veure el JSON obtingut a la consola del navegador i així comprovar on es troben les dades que necessitem, en el cas de l’exemple, els municipis es troben en <code>feed</code>, i dintre d’aquest en <code>entry</code>.
+</p>
+
+</p>
+
+<p>
+Es recorren tots els municipis un per un i es retorna un element de tipus <code>li</code> amb el contingut textual corresponent a la província especificada com a argument.
+</p>
+
+<p>
+Fixeu-vos que la implementació en aquest cas és més simple, ja que la conversió de la resposta en un objecte de JavaScript és directa i, per tant, es pot accedir a les seves propietats fent servir la notació de punt (<code>feed.entry</code>) o la notació de claudàtors (<code>feed[“entry”]</code>).
+</p>
+
+<p>
+Com en el cas del processament de respostes XML, s’ha de tenir en compte que en determinats casos (quan no coneixem la resposta a priori, per exemple) pot ser necessari implementar una funció recursiva per recórrer tots els elements de l’arbre per processar-los.
+</p>
+
+<p>
+La utilització d’un format o un altre dependrà del format en el qual el servidor retorna la resposta, tot i que en alguns casos s’ofereix accedir a la mateixa informació tant en XML com en JSON. En aquests casos pot ser més fàcil treballar amb el format JSON, perquè es pot manipular la resposta directament sense necessitat d’utilitzar les interfícies del DOM.
+</p>
+
+</div>
+
+<h2><a id="serveis_web" >Serveis web</a></h2>
+<div class="level2">
+
+<p>
+En moltes ocasions és necessari implementar un sistema informàtic que faciliti l’intercanvi d’informació entre diferents plataformes, així és possible accedir a les mateixes dades des d’una pàgina web o una aplicació mòbil canviant només la interfície en la qual es mostren.
+</p>
+
+<p>
+La implementació d’aquests serveis web depèn del servidor i és el servidor el que determina la forma d’accedir a aquestes dades. Les dues arquitectures més utilitzades són SOAP (Simple Object Access Protocol) i REST (Representational State Transfer); per consegüent, cal conèixer-les per poder desenvolupar aplicacions web que connectin amb aquests serveis, mitjançant AJAX o bé CORS (Cross-Origin Resource Sharing).
+</p>
+
+<p>
+Cal destacar que la implementació del servidor és independent de la implementació dels clients, ja que el servidor permet connectar amb l’aplicació sense que importi la plataforma o el sistema operatiu que s’hagin fet servir. Només cal que els clients implementin correctament els mecanismes de connexió.
+</p>
+
+<p>
+Un avantatge dels serveis web és que quan es treballa sobre el protocol HTTP, per accedir-hi no cal fer cap modificació als clients, al contrari d’altres tipus d’aplicacions que requereixen utilitzar ports específics i que poden ser bloquejats pels tallafocs, tant de l’equip com de l’encaminador a través del qual es connecten a internet.
+</p>
+
+</div>
+
+<h3><a id="soap" >SOAP</a></h3>
+<div class="level3">
+
+<p>
+SOAP és un protocol utilitzat per intercanviar informació en una xarxa d’ordinadors. Utilitza el format XML tant per negociar la connexió com per generar la resposta i pot funcionar sobre diferents protocols de xarxa com HTTP, SMTP, TCP o UDP.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">SOAP</p>
+<p>
+Podeu trobar més informació sobre el protocol SOAP (‘protocol d’accés a objecte simple’) a l’enllaç següent: <a href="https://ca.wikipedia.org/wiki/SOAP" class="urlextern" title="https://ca.wikipedia.org/wiki/SOAP"  rel="nofollow">www.goo.gl/Zufz8w</a>.
+</p>
+</div></div>
+<p>
+Tot i que no és imprescindible, es pot utilitzar un fitxer WSDL (Web Services Description Language) per definir la descripció del <em>web service</em>. Aquest fitxer, en format XML, conté la informació necessària perquè els clients puguin conèixer i utilitzar les operacions que ofereix el servei web.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">WSDL</p>
+<p>
+Podeu trobar més informació sobre WSDL (‘llenguatge de descripció de serveis web’) a l’enllaç següent: <a href="https://goo.gl/SU5j3d" class="urlextern" title="https://goo.gl/SU5j3d"  rel="nofollow">www.goo.gl/SU5j3d</a>.
+</p>
+</div></div>
+<p>
+Entre els desavantatges d’aquesta arquitectura es troba la llargària dels missatges, la complexitat d’implementar els serveis, tant a la banda del client com a la del servidor, i la lentitud en analitzar sintàcticament les respostes XML.
+</p>
+
+</div>
+
+<h3><a id="rest" >REST</a></h3>
+<div class="level3">
+
+<p>
+Mentre que SOAP és un protocol i disposa d’una interfície estàndard, REST és un estil d’arquitectura i no s’aplica cap estàndard a si mateix, tot i que sí que en fa servir alguns com HTTP, <acronym title="Uniform Resource Identifier">URI</acronym>, JSON i XML.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">REST</p>
+<p>
+Podeu trobar més informació sobre l’arquitectura REST (‘transfarència d’estat de representació’) a l’enllaç següent: <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" class="urlextern" title="https://en.wikipedia.org/wiki/Representational_state_transfer"  rel="nofollow">www.goo.gl/bUr2TO</a>.
+</p>
+</div></div>
+<p>
+Els serveis web REST són més simples d’implementar que els serveis SOAP i força més lleugers. Per accedir-hi només cal conèixer l’<acronym title="Uniform Resource Identifier">URI</acronym> (<em>uniform resource identifier</em>, ‘identificador uniforme de recursos’) del punt d’accés per l’acció (<em>endpoint</em>) i el verb o mètode que s’ha d’utilitzar.
+</p>
+
+<p>
+Els verbs es corresponen amb els mètodes del protocol HTTP són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>GET</strong>: per obtenir dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>PUT</strong>: per reemplaçar dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>PATCH</strong>: per actualizar dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>POST</strong>: per afegir una nova dada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DELETE</strong>: per eliminar una dada.</div>
+</li>
+</ul>
+
+<p>
+D’aquesta manera, a partir d’un mateix <acronym title="Uniform Resource Locator">URL</acronym>, segons el verb emprat el resultat serà diferent. Per exemple, a partir de l’<acronym title="Uniform Resource Locator">URL</acronym> (fictícia) <code>http://api.example.com/recursos/</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>GET</strong>: obtindria una llista de tots els recursos.</div>
+</li>
+<li class="level1"><div class="li"> <strong>PUT</strong>: reemplaçaria un recurs existent amb les dades enviades com a paràmetres (des d’un formulari, per exemple).</div>
+</li>
+<li class="level1"><div class="li"> <strong>PATCH</strong>: actualitzaria les dades d’un recurs existent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>POST</strong>: crearia un nou recurs a partir de les dades enviades com a paràmetres.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DELETE</strong>: eliminaria la col·lecció <code>recursos</code>.</div>
+</li>
+</ul>
+
+<p>
+En aquesta arquitectura les accions realitzades utilitzant el mètode <code>GET</code> no han de provocar cap modificació a les dades i, en conseqüència, es tracta d’un mètode segur. Per contra, els altres tres sempre les modifiquen.
+</p>
+
+<p>
+Un avantatge important sobre SOAP és que no requereix utilitzar XML, així que per l’intercanvi de dades es pot utilitzar JSON o altres formats de representació que poden resultar més pràctics i fàcils de comprovar.
+</p>
+
+<p>
+A més a més, el protocol REST és molt lleuger i quan es fan servir altres formats de transferència com JSON, poden minimitzar el consum d’amplada de banda tant per al servidor com per al client.
+</p>
+
+<p>
+A diferència de SOAP, els serveis web REST funcionen només sobre el protocol HTTP, ja que depenen de la utilització dels seus mètodes per determinar quina acció s’ha de portar a terme sobre les dades.
+</p>
+
+<p>
+S’ha de tenir en compte que tant el format com l’estructura de les dades que s’intercanvien són lliures; així doncs, caldrà comprovar la documentació del servei o analitzar sintàcticament la resposta per poder interpretar-les correctament. Per exemple, és possible que la resposta arribi en format JSON amb dos camps, un amb el codi de la resposta i un altre amb les dades:
+</p>
+<pre class="code">{
+  &quot;codi&quot;: 200
+  &quot;dades&quot;: {
+    provincies: [&quot;Barcelona&quot;, &quot;Girona&quot;, &quot;Lleida&quot;, &quot;Tarragona&quot;]
+  }
+}</pre>
+
+<p>
+En altres casos podria arribar només la informació sense cap codi, ja que es pot extreure del codi d’estat de la capçalera (<em>propietat state</em>), llavors la resposta podria ser similar a aquesta:
+</p>
+<pre class="code">{
+  provincies: [&quot;Barcelona&quot;, &quot;Girona&quot;, &quot;Lleida&quot;, &quot;Tarragona&quot;]
+}</pre>
+
+<p>
+Cal destacar que amb aquesta arquitectura és molt fàcil comprovar-ne el funcionament, sobretot amb el mètode <code>GET</code>, ja que només s’ha d’introduir al navegador l’<acronym title="Uniform Resource Identifier">URI</acronym> del punt d’accés amb els paràmetres (amb aquesta forma: <code>www.example.com/recursos?asignatura=m06&amp;unitat=2</code>) i es carregarà el resultat al mateix navegador.
+</p>
+
+</div>
+
+<h2><a id="jsonp_i_cors" >JSONP i CORS</a></h2>
+<div class="level2">
+
+<p>
+A causa de les limitacions imposades per la política del mateix domini no es poden fer peticions AJAX a dominis diferents del que es troba l’aplicació. Per superar aquesta limitació hi ha dues tècniques alternatives: JSONP (JSON amb <em>padding</em>) i CORS (Cross-Origin Resource Sharing).
+</p>
+
+<p>
+Malauradament, totes dues requereixen que el servidor estigui preparat per acceptar aquestes peticions de dominis externs i, per consegüent, no totes les fonts de dades són accessibles des de aplicacions web encara que ofereixin una <acronym title="Application Programming Interface">API</acronym> (interfície de programació d’aplicacions) que exposi aquestes dades.
+</p>
+
+<p>
+S’ha de tenir en compte que la política del mateix domini només afecta els navegadors i, per tant, els serveis web que no admeten ni JSONP ni CORS continuen sent accessibles per aplicacions d’escriptori o mòbils.
+</p>
+
+</div>
+
+<h3><a id="json_amb_padding_jsonp" >JSON amb padding (JSONP)</a></h3>
+<div class="level3">
+
+<p>
+La tècnica del JSON amb <em>padding</em> consisteix a carregar la informació com si es tractés d’un script que inclou una invocació a una funció amb totes les dades com a paràmetre (el <em>padding</em> es refereix a això).
+</p>
+
+<p>
+Aquesta tècnica funciona perquè la càrrega de scripts no està subjecta a la política del mateix origen i permet carregar scripts que invoquin automàticament altres funcions.
+</p>
+
+<p>
+
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">API de Flickr</p>
+<p>
+Podeu trobar tota la informació per desenvolupadors de l’<acronym title="Application Programming Interface">API</acronym> de Flickr a l’enllaç següent: <a href="https://www.flickr.com/services/api/" class="urlextern" title="https://www.flickr.com/services/api/"  rel="nofollow">www.goo.gl/AmwqQl</a>.
+</p>
+</div></div>
+<p>
+Per exemple, la resposta obtinguda en carregar l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processar&amp;tags=kitten&amp;format=json" class="urlextern" title="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processar&amp;tags=kitten&amp;format=json"  rel="nofollow">bit.ly/2ocrAKQ</a> incrusta un script a la pàgina amb una invocació a la funció <code>processar()</code>, que és el valor del paràmetre <code>jsoncallback</code>, i que utilitza el servei web de Flickr (<a href="http://www.flickr.com" class="urlextern" title="http://www.flickr.com"  rel="nofollow">www.flickr.com</a>) per generar la resposta JSONP i li passa totes les dades en format JSON com a argument:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">processar({</div></li><li class="li1"><div class="de1">  	&quot;title&quot;: &quot;Recent Uploads tagged kitten&quot;,</div></li><li class="li1"><div class="de1">		&quot;link&quot;: &quot;http://www.flickr.com/photos/tags/kitten/&quot;,</div></li><li class="li1"><div class="de1">		&quot;description&quot;: &quot;&quot;,</div></li><li class="li1"><div class="de1">		&quot;modified&quot;: &quot;2016-10-22T18:01:41Z&quot;,</div></li><li class="li1"><div class="de1">		&quot;generator&quot;: &quot;http://www.flickr.com/&quot;,</div></li><li class="li1"><div class="de1">		&quot;items&quot;: [</div></li><li class="li1"><div class="de1">	   {</div></li><li class="li1"><div class="de1">			&quot;title&quot;: &quot;Cats images Beautiful Eyes via http://ift.tt/29KELz0&quot;,</div></li><li class="li1"><div class="de1">			&quot;link&quot;: &quot;http://www.flickr.com/photos/dozhub/29860948003/&quot;,</div></li><li class="li1"><div class="de1">			&quot;media&quot;: {&quot;m&quot;:&quot;http://farm9.staticflickr.com/8677/29860948003_31626a7d77_m.jpg&quot;},</div></li><li class="li1"><div class="de1">			&quot;date_taken&quot;: &quot;2016-10-22T11:01:41-08:00&quot;,</div></li><li class="li1"><div class="de1">			&quot;description&quot;: &quot; &lt;p&gt;&lt;a href=\&quot;http://www.flickr.com/people/dozhub/\&quot;&gt;dozhub&lt;\/a&gt; posted a photo:&lt;\/p&gt; &lt;p&gt;&lt;a href=\&quot;http://www.flickr.com/photos/dozhub/29860948003/\&quot; title=\&quot;Cats images Beautiful Eyes via http://ift.tt/29KELz0\&quot;&gt;&lt;img src=\&quot;http://farm9.staticflickr.com/8677/29860948003_31626a7d77_m.jpg\&quot; width=\&quot;240\&quot; height=\&quot;160\&quot; alt=\&quot;Cats images Beautiful Eyes via http://ift.tt/29KELz0\&quot; /&gt;&lt;\/a&gt;&lt;\/p&gt; &lt;p&gt;Cats images Beautiful Eyes -&lt;br /&gt; &lt;br /&gt; Cats images Beautiful Eyes – Cats, kittens and kittys, cute and adorable! Aww! (via &lt;a href=\&quot;http://ift.tt/29KELz0\&quot; rel=\&quot;nofollow\&quot;&gt;ift.tt/29KELz0&lt;\/a&gt;)&lt;br /&gt; &lt;br /&gt; - via &lt;a href=\&quot;http://ift.tt/29KELz0\&quot; rel=\&quot;nofollow\&quot;&gt;ift.tt/29KELz0&lt;\/a&gt;. Cats, kittens and kittys, cute and adorable! Aww!&lt;\/p&gt;&quot;,</div></li><li class="li1"><div class="de1">			&quot;published&quot;: &quot;2016-10-22T18:01:41Z&quot;,</div></li><li class="li1"><div class="de1">			&quot;author&quot;: &quot;nobody@flickr.com (dozhub)&quot;,</div></li><li class="li1"><div class="de1">			&quot;author_id&quot;: &quot;143919671@N07&quot;,</div></li><li class="li1"><div class="de1">			&quot;tags&quot;: &quot;cat kitty kitten cute funny aww adorable cats&quot;</div></li><li class="li1"><div class="de1">	   }]</div></li><li class="li1"><div class="de1">  });</div></li></ol></pre>
+
+<p>
+Així doncs, una vegada es carrega l’script s’executa la funció <code>processar()</code>, que prèviament haurem definit i rep com a paràmetre totes les dades per processar-les.
+</p>
+
+<p>
+Com es pot apreciar, només es pot utilitzar aquesta tècnica si el servidor està preparat per servir les dades en aquest format.
+</p>
+
+<p>
+Vegeu a continuació un exemple que extreu la informació de l’agregador (<em>feed</em>) de Flickr per mostrar fotos de gatets:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  function processar (dades) {</div></li><li class="li1"><div class="de1">    let imatges = dades.items;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    for (let i=0; i&lt;imatges.length; i++) {</div></li><li class="li1"><div class="de1">      let img = document.createElement('img');</div></li><li class="li1"><div class="de1">      img.setAttribute('src', imatges[i].media.m);</div></li><li class="li1"><div class="de1">      img.setAttribute('title', imatges[i].title);</div></li><li class="li1"><div class="de1">      img.setAttribute('alt', imatges[i].title);</div></li><li class="li1"><div class="de1">      document.body.appendChild(img);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script src='http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processar&amp;tags=kitten&amp;format=json'&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NRoWwR?editors=1000" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NRoWwR?editors=1000"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NRoWwR?editors=1000</a>.
+</p>
+
+<p>
+Fixeu-vos que a l’exemple a CodePen s’ha fet servir només la pestanya de codi <acronym title="HyperText Markup Language">HTML</acronym>. Això s’ha fet així per assegurar que primer es defineix la funció <code>processar()</code> i seguidament es realitza la petició JSONP. En cas contrari, la resposta de la petició pot arribar abans de definir-se la funció i produir-se un error, ja que la funció a executar encara no es troba definida.
+</p>
+
+<p>
+La implementació de la funció <code>processar()</code> és molt simple: com que la informació ha arribat en format JSON, s’ha convertit automàticament en un objecte JavaScript sense haver d’analitzar-la sintàcticament, així que només cal iterar sobre les dades i crear un element de tipus <code>img</code> per a cada imatge establint els atributs <code>src</code>, <code>title</code> i <code>imatge</code> associats.
+</p>
+
+</div>
+
+<h3><a id="cross-origin_resource_sharing_cors" >Cross-Origin Resource Sharing (CORS)</a></h3>
+<div class="level3">
+
+<p>
+CORS és un mecanisme que permet als navegadors moderns realitzar peticions AJAX a dominis diferents del que es troba l’aplicació web, utilitzant l’objecte <code>XMLHttpRequest</code> però assegurant la seguretat de la transmissió de dades en col·laboració amb el servidor.
+</p>
+
+<p>
+En enviar una petició, hi ha un intercanvi de dades entre el client i el servidor per comprovar si la transmissió és acceptable o no. Aquestes comprovacions poden incloure diferents factors com l’origen de la petició o l’acreditació de l’usuari.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">CORS</p>
+<p>
+Podeu trobar més informació sobre CORS (‘control d’accés HTTP’) a l’enllaç següent: <a href="https://goo.gl/CHQXLa" class="urlextern" title="https://goo.gl/CHQXLa"  rel="nofollow">www.goo.gl/CHQXLa</a>.
+</p>
+</div></div>
+<p>
+Si el servidor envia a la capçalera el paràmetre <code>Access-Control-Allow-Origin</code> amb un valor que correspongui al del domini de l’aplicació o <code>*</code>, la transmissió es pot dur a terme i la resposta contindrà les dades demanades. En altres casos és necessari comprovar l’acreditació i es necessitarà establir la propietat <code>withCredentials=true</code> de l’objecte que envia la petició per habilitar l’enviament de les galetes al servidor, on es comprovarà la validesa de les credencials.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mecanisme CORS és <strong>transparent</strong> al codi del client, ja que és gestionat per la implementació del servidor i dels navegadors.
+</p>
+</div></div>
+<p>
+A continuació, podeu veure un exemple en què s’envia una petició a una de les fonts de dades obertes de l’Ajuntament de Barcelona i es recupera la llista de festivals de l’any 2019 en format JSON:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    if (window.XMLHttpRequest) {</div></li><li class="li1"><div class="de1">      httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">    } else if (window.ActiveXObject) {</div></li><li class="li1"><div class="de1">      httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">    httpRequest.open('GET', 'https://dades.eicub.net/api/1/festivals-assistents?Any=2019&amp;format=json.xml', true)</div></li><li class="li1"><div class="de1">    httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta() {</div></li><li class="li1"><div class="de1">      let resposta = JSON.parse(httpRequest.responseText);      </div></li><li class="li1"><div class="de1">      let llista = document.createElement('ul');</div></li><li class="li1"><div class="de1">      console.log(resposta);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; resposta.length; i++) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">          let item = processarDada(resposta[i]);</div></li><li class="li1"><div class="de1">          llista.appendChild(item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      document.body.appendChild(llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarDada(dada) {</div></li><li class="li1"><div class="de1">      let item = document.createElement('li');</div></li><li class="li1"><div class="de1">      let enllac = document.createElement('a');</div></li><li class="li1"><div class="de1">      enllac.textContent = dada.Nom_activitat;</div></li><li class="li1"><div class="de1">      if (dada.Web) {  </div></li><li class="li1"><div class="de1">        enllac.setAttribute('href', dada.Web);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      enllac.setAttribute('title', dada.Organitzador);</div></li><li class="li1"><div class="de1">      item.appendChild(enllac);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      return item;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;h1&gt;Festivals 2019&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ALNjyG?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ALNjyG?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ALNjyG?editors=1011</a>.
+</p>
+
+<p>
+Si examineu la capçalera de la petició amb les eines de desenvolupador del navegador, veureu que inclou el paràmetre <code>Access-Control-Allow-Origin</code> amb valor <code>*</code>. És a dir, admet connexions des de qualsevol domini, com es pot apreciar a la <span class="figref"><a href="#figura u6a1-1"><span>figura</span></a></span>.
+</p>
+
+<p>
+CORS inclou altres mecanismes més complexos com són les restriccions de les peticions segons els mètodes empleats, l’ús de credencials o la modificació de les capçaleres, però tots treballen en conjunció amb el servidor i, consegüentment, si no es té accés al servidor o aquest no ha estat preparat per treballar amb aquests mecanismes no es podrà accedir a les dades des d’altres dominis.
+</p>
+<div class="iocfigure"><a name="figura u6a1-1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capçaleres d’una petició CORS
+
+</figcaption><img src="../media/1-capçalera-cors.png" alt="" /></figure>
+</div>
+</div>
+
+<h2><a id="acces_a_dades_obertes" >Accés a dades obertes</a></h2>
+<div class="level2">
+
+<p>
+Les dades obertes són conjunts de dades posades a disposició del públic i que es poden fer servir sense restriccions. Habitualment aquestes dades poden ser consultades al mateix lloc web, descarregades o consumides per altres serveis.
+</p>
+
+<p>
+Aquesta darrera opció permet el desenvolupament d’aplicacions que utilitzin dades de tercers; per exemple, per mostrar els pròxims esdeveniments a una ciutat o l’estat del trànsit.
+</p>
+
+<p>
+Un conjunt de dades, perquè es considerin obertes, han de poder ser reutilitzables, adaptables i distribuïbles pels usuaris.
+</p>
+
+<p>
+S’ha de tenir en compte que per poder accedir a aquestes dades els serveis web que les exposen han d’admetre la utilització de JSONP o de CORS, ja que en cas contrari seran bloquejats per la política del mateix origen dels navegadors.
+</p>
+
+<p>
+En aquest aspecte, l’Ajuntament de Barcelona ofereix una gran selecció de dades obertes a les quals es pot accedir des de l’adreça següent: <a href="https://opendata.bcn.cat/opendata/" class="urlextern" title="https://opendata.bcn.cat/opendata/"  rel="nofollow">www.opendata.bcn.cat/opendata</a>. Malauradament, la majoria de dades d’aquest catàleg no admeten ni JSONP ni CORS i, per consegüentment, no es poden accedir des d’aplicacions web.
+</p>
+
+<p>
+Per comprovar si una font de dades admet JSONP s’ha de consultar la documentació de l’<acronym title="Application Programming Interface">API</acronym> del servei web que es vol utilitzar. Aquesta documentació pot ser disponible o no; per exemple, al catàleg de dades obertes de l’Ajuntament de Barcelona no es pot trobar en la majoria de les fonts. Per contra, les dades ofertes per l’Observatori de dades culturals de Barcelona (que forma part del mateix Ajuntament) sí que ofereix documentació per accedir a les seves dades, que es poden trobar a l’enllaç següent: <a href="https://barcelonadadescultura.bcn.cat/dades-obertes" class="urlextern" title="https://barcelonadadescultura.bcn.cat/dades-obertes"  rel="nofollow">www.barcelonadadescultura.bcn.cat/dades-obertes</a>.
+</p>
+
+<p>
+Comprovar si un lloc admet la transmissió de dades mitjançant el mecanisme CORS bàsic (sense cap requisit) és molt més simple: només cal consultar a les eines de desenvolupador la capçalera de la resposta en accedir directament a l’adreça. Si la capçalera inclou el paràmetre <code>Access-Control-Allow-Origin=“*”</code> (l’asterisc vol dir que accepta qualsevol origen), voldrà dir que s’hi pot accedir utilitzant AJAX directament, perquè el mecanisme CORS està habilitat al servidor.
+</p>
+
+<p>
+Per exemple, si accediu a <a href="https://dades.eicub.net/api/1/museusexposicions-visitants" class="urlextern" title="https://dades.eicub.net/api/1/museusexposicions-visitants"  rel="nofollow">www.dades.eicub.net/api/1/museusexposicions-visitants</a> (que forma part del catàleg de dades obertes de l’Observatori de dades culturals de Barcelona) i a les eines de desenvolupador seleccioneu la pestanya per inspeccionar el tràfic a la xarxa (pestanya <em>Network</em> tant a Google Chrome com a Mozilla Firefox), en fer clic sobre la petició, podeu comprovar que, efectivament, a la capçalera es troba el paràmetre <code>Access-Control-Allow-Origin</code> amb valor <code>*</code> i, per tant, es poden realitzar peticions des de diferents dominis.
+</p>
+
+<p>
+Podeu comprovar-ho amb l’exemple següent, que realitza una petició al catàleg de dades, processa aquestes dades afegint-les a un diccionari de dades propi i les incorpora a una llista desplegable que, en seleccionar l’identificador, mostra les dades enllaçades:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;style&gt;</div></li><li class="li1"><div class="de1">    h1 {</div></li><li class="li1"><div class="de1">      text-align:center;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    fieldset {</div></li><li class="li1"><div class="de1">      width: 400px;</div></li><li class="li1"><div class="de1">      margin: 0 auto;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    label {</div></li><li class="li1"><div class="de1">      display: inline-block;</div></li><li class="li1"><div class="de1">      width: 150px;</div></li><li class="li1"><div class="de1">      font-weight: bold;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    span {</div></li><li class="li1"><div class="de1">      display: inline-block;</div></li><li class="li1"><div class="de1">      width: 250px;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    ul {</div></li><li class="li1"><div class="de1">      list-style-type: none;</div></li><li class="li1"><div class="de1">      padding: 0;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;h1&gt;Activitats de difusió de les fàbriques de creació&lt;/h1&gt;</div></li><li class="li1"><div class="de1">  &lt;fieldset&gt;</div></li><li class="li1"><div class="de1">    &lt;select id=&quot;identificador&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;option&gt;Selecciona un identificador&lt;/option&gt;&lt;/select&gt;</div></li><li class="li1"><div class="de1">    &lt;ul&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Any:&lt;/label&gt;&lt;span id=&quot;any&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Equipament:&lt;/label&gt;&lt;span id=&quot;equipament&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Districte:&lt;/label&gt;&lt;span id=&quot;districte&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Àmbit:&lt;/label&gt;&lt;span id=&quot;ambit&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Assistents:&lt;/label&gt;&lt;span id=&quot;asistents&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Notes:&lt;/label&gt;&lt;span id=&quot;notes&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Tipus d'equipament:&lt;/label&gt;&lt;span id=&quot;tipusEquipament&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Titularitat:&lt;/label&gt;&lt;span id=&quot;titularitat&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;/ul&gt;</div></li><li class="li1"><div class="de1">  &lt;/fieldset&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  if (window.XMLHttpRequest) {</div></li><li class="li1"><div class="de1">    httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">  } else if (window.ActiveXObject) {</div></li><li class="li1"><div class="de1">    httpRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.error(&quot;Error: Aquest navegador no admet AJAX.&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let dades = {}; // Diccionari on es guardaran les dades</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">  httpRequest.open('GET', 'https://dades.eicub.net/api/1/fabriquescreacio-difusio', true)</div></li><li class="li1"><div class="de1">  httpRequest.overrideMimeType('text/plain');</div></li><li class="li1"><div class="de1">  httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function processarResposta() {</div></li><li class="li1"><div class="de1">    let resposta = JSON.parse(httpRequest.responseText);</div></li><li class="li1"><div class="de1">    let llistaDesplegable = document.getElementById('identificador');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; resposta.length; i++) {</div></li><li class="li1"><div class="de1">      let item = processarDada(resposta[i],i);</div></li><li class="li1"><div class="de1">      dades[i] = resposta[i];</div></li><li class="li1"><div class="de1">      llistaDesplegable.appendChild(item);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    llistaDesplegable.onchange = actualitzarDadesMostrades;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function processarDada(dada,pos) {</div></li><li class="li1"><div class="de1">    let item = document.createElement('option');</div></li><li class="li1"><div class="de1">    item.setAttribute('value', pos);</div></li><li class="li1"><div class="de1">    item.textContent = pos; </div></li><li class="li1"><div class="de1">    return item;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function actualitzarDadesMostrades(event) {</div></li><li class="li1"><div class="de1">    let llistaDesplegable = document.getElementById('identificador');</div></li><li class="li1"><div class="de1">    let dada = dades[llistaDesplegable.value]</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    console.log(dada);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('any', dada.Any);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('equipament', dada.Equipament);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('districte', dada.Nom_Districte);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('ambit', dada.Ambit);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('asistents', dada.Assistents);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('notes', dada.Notes_Dades || 'No hi ha cap nota');</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('tipusEquipament', dada.TipusEquipament);</div></li><li class="li1"><div class="de1">    actualitzarDadaMostrada('titularitat', dada.Titularitat);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function actualitzarDadaMostrada(nom, valor) {</div></li><li class="li1"><div class="de1">    document.getElementById(nom).textContent = valor;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jrdVNd?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jrdVNd?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jrdVNd?editors=1111.</a>
+</p>
+
+<p>
+Com es pot apreciar, com que es tracta d’un servei web que  admet CORS, només cal fer una petició AJAX convencional i processar les dades.
+</p>
+
+<p>
+Cal tenir en compte que una mateixa pàgina pot fer peticions a múltiples fonts de dades. Per exemple, seria possible fer consultes a un catàleg de dades d’esdeveniments culturals on s’incloguessin les coordenades de geolocalització i utilitzar aquestes dades per afegir marques a un mapa de Google Maps (que fa servir les seves pròpies crides AJAX).
+</p>
+
+</div>
+
+<h2><a id="api_web_sockets" >API Web Sockets</a></h2>
+<div class="level2">
+
+<p>
+En determinades situacions, la transmissió de dades mitjançant AJAX no és viable, per exemple, en el cas de jocs multijugador en temps real o les aplicacions de missatgeria.
+</p>
+
+<p>
+Cal recordar que les peticions al servidor fent servir el protocol HTTP no conserven l’estat, sinó que cada petició es considera nova i s’han d’utilitzar altres mecanismes com les galetes i l’enviament de paràmetres perquè el servidor reconegui l’usuari.
+</p>
+
+<p>
+La solució és fer servir altres protocols com TCP i UDP, que permeten mantenir la comunicació oberta entre el client i el servidor per enviar i rebre missatges.
+</p>
+
+<p>
+Per implementar aquesta funcionalitat a JavaScript s’ha d’utilitzar l’<acronym title="Application Programming Interface">API</acronym> Web Sockets, introduïda a HTML5, que permet realitzar connexions a servidors utilitzant internament el protocol TCP. Els protocols utilitzats per connectar amb el servidor són <code>ws</code> o <code>wss</code> per a sòcols segurs.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Web Sockets</p>
+<p>
+Podeu trobar més informació sobre l’<acronym title="Application Programming Interface">API</acronym> Web Sockets i l’objecte <code>WebSocket</code> als enllaços següents, respectivament: <a href="https://goo.gl/eJgu0q" class="urlextern" title="https://goo.gl/eJgu0q"  rel="nofollow">www.goo.gl/eJgu0q</a> i <a href="https://goo.gl/OF78BK" class="urlextern" title="https://goo.gl/OF78BK"  rel="nofollow">www.goo.gl/OF78BK</a>
+</p>
+</div></div>
+<p>
+
+</p>
+
+<p>
+Mentre que fent servir peticions AJAX s’han de fer peticions periòdiques al servidor per comprovar si hi ha noves dades, això no cal fer-ho quan s’utilitzen Web Sockets, perquè una vegada hi ha dades noves al servidor, s’envien al client, i així s’estalvien recursos i amplada de banda tant al client com al servidor.
+</p>
+
+<p>
+S’ha de tenir en compte que aquesta tecnologia és experimental, així doncs, abans de començar la implementació de qualsevol aplicació s’ha de consultar documentació actualitzada, ja que és possible que canviïn els noms de propietats, mètodes o els seus paràmetres.
+</p>
+
+<p>
+Per descomptat, per poder realitzar una connexió amb un servidor, ha d’acceptar connexions TCP. Cada llenguatge de programació ofereix les seves alternatives; així doncs, es poden trobar servidors per Web Sockets en pràcticament qualsevol llenguatge.
+</p>
+
+<p>
+Tot i així, s’ha de tenir en compte que no tots els llenguatges tenen el mateix nivell de compatibilitat en aquest àmbit, de manera que si voleu implementar un servidor de Web Sockets en PHP, el nombre de fonts que caldrà consultar serà molt menor que si ho feu amb Node.js (JavaScript a la banda del servidor), que té un grau de compatibilitat molt superior i <acronym title="Application Programming Interface">API</acronym> especialitzades com Socket.IO (<a href="http://socket.io" class="urlextern" title="http://socket.io"  rel="nofollow">www.socket.io</a>) per simplificar aquestes tasques.
+</p>
+
+<p>
+A l’hora de desenvolupar aplicacions segures utilitzant Web Sockets s’ha de tenir en compte que els navegadors no admeten determinats comportaments. Per exemple, si la pàgina on s’executa l’aplicació utilitza el protocol HTTP, l’aplicació pot fer servir el protocol <code>ws</code> o <code>wss</code>. Per contra, si la pàgina fa servir el protocol HTTPS (HTTP segur), s’haurà d’utilitzar forçosament el protocol <code>wss</code> o la connexió serà bloquejada pel navegador.
+</p>
+
+<p>
+Per altra banda, tampoc no està permesa la utilització de certificats (SSL o TLS) autosignats, sinó que han d’utilitzar-se certificats aprovats per una autoritat de certificació i lligats a un nom de domini.
+</p>
+
+</div>
+
+<h2><a id="depuracio_de_crides_ajax" >Depuració de crides AJAX</a></h2>
+<div class="level2">
+
+<p>
+Per desenvolupar aplicacions és imprescindible saber les eines de depuració que teniu al vostre abast. Afortunadament, les eines més importants de les que es disposa a l’hora de depurar una aplicació web estan incorporades en els navegadors més populars, com Google Chrome i Mozilla Firefox.
+</p>
+
+<p>
+Concretament, aquests dos navegadors fan servir interfícies d’usuari molt similars, com es pot apreciar a la <span class="figref"><a href="#figura u6a1-2a"><span>figura</span></a></span>, corresponent a les eines de xarxa de Google Chrome, i la <span class="figref"><a href="#figura u6a1-2b"><span>figura</span></a></span>, que mostra les de Mozilla Firefox.
+</p>
+
+<p>
+Com podeu veure en els dos casos, la pestanya que conté la informació sobre les peticions s’anomena <em>xarxa</em> (<em>network</em> en anglès). En tots dos casos es disposa d’una barra superior on es poden filtrar les peticions que cal visualitzar: XHR, JS, <acronym title="Cascading Style Sheets">CSS</acronym>, Img, WS, etc. Això facilita localitzar ràpidament el recurs que volem consultar, ja que una pàgina pot realitzar desenes de peticions.
+</p>
+<div class="iocfigure"><a name="figura u6a1-2a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Eines de desenvolupador a Google Chrome
+
+</figcaption><img src="../media/2-eines-desenvolupador-chrome.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-2b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Eines de desenvolupador a Mozilla Firefox
+
+</figcaption><img src="../media/2-eines-desenvolupador-firefox.png" alt="" /></figure>
+</div>
+<p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Si quan feu clic a la penstanya <code>network</code> no se us mostra cap petició, torneu a recarregar la pàgina perquè es mostri.
+</p>
+</div></div>
+</p>
+
+<p>
+Una vegada es clica sobre una de les peticions, la pestanya es divideix en dues zones: a l’esquerra es continua veient la informació general de les peticions i a la dreta la informació concreta, dividida al seu torn en sis pestanyes (capçaleres, previsualització, resposta, paràmetres, temps i galetes).
+</p>
+
+<p>
+Per comprovar les dades de la petició i la resposta podeu fer servir el codi següent, que envia una petició a un servei web que admet peticions de diferents dominis:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">  httpRequest = new XMLHttpRequest();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  httpRequest.onload = processarResposta;</div></li><li class="li1"><div class="de1">  httpRequest.open('GET', 'https://dades.eicub.net/api/1/fabriquescreacio-difusio', true)</div></li><li class="li1"><div class="de1">  httpRequest.overrideMimeType('text/plain');</div></li><li class="li1"><div class="de1">  httpRequest.send(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function processarResposta() {</div></li><li class="li1"><div class="de1">    console.log(&quot;Dades carregades correctament&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wzNgrB?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzNgrB?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzNgrB?editors=1011</a>.
+</p>
+
+<p>
+A la pestanya de la capçalera es pot veure tant la informació d’enviament com la resposta del servidor. Entre la informació que es mostra en aquesta pestanya cal destacar l’<acronym title="Uniform Resource Locator">URL</acronym> al qual s’ha enviat la petició, el mètode, el codi d’estatus (200 per a una petició realitzada amb èxit, 404 per a una petició no trobada, 500 per a un error intern del servidor, etc.) i en el cas de peticions a altres dominis, la presència del paràmetre <code>Access-Control-Allow-Origin</code> si el servidor admet CORS.
+</p>
+
+<p>
+Cal destacar que Mozilla Firefox inclou a aquesta pestanya el botó <em>Edita i torna a enviar</em>, que permet editar manualment les dades de la capçalera de la petició i reenviar-la.
+</p>
+
+<p>
+Podeu veure a la <span class="figref"><a href="#figura u6a1-3a"><span>figura</span></a></span> la mostra d’una capçalera en Google Chrome i a la <span class="figref"><a href="#figura u6a1-3b"><span>figura</span></a></span> la mateixa capçalera en Mozilla Firefox.
+</p>
+<div class="iocfigure"><a name="figura u6a1-3a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capçaleres d’una petició a Google Chrome
+
+</figcaption><img src="../media/3-eines-desenvolupador-chrome-headers.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-3b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capçaleres d’una petició a Mozilla Firefox
+
+</figcaption><img src="../media/capcaleresfirefox.png" alt="" /></figure>
+</div>
+<p>
+La pestanya de previsualització és la que mostra més diferències entre els dos navegadors: mentre que a Google Chrome es mostra la informació correctament estructurada com a objectes de JavaScript (com es pot apreciar a la <span class="figref"><a href="#figura u6a1-4a"><span>figura</span></a></span>), a Mozilla Firefox veureu que aquesta informació 
+</p>
+
+<p>
+
+<p>
+ es troba dintre de la pestanya “Resposta” i dintre d’aquí en “Vista preliminar”. Veureu que es mostra com a text pla 
+</p>
+
+</p>
+
+<p>
+ (vegeu la <span class="figref"><a href="#figura u6a1-4b"><span>figura</span></a></span>). Cal destacar que en el cas del codi <acronym title="HyperText Markup Language">HTML</acronym> el més habitual és que es mostri una previsualització de la pàgina.
+</p>
+<div class="iocfigure"><a name="figura u6a1-4a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Previsualització d’una petició a Google Chrome
+
+</figcaption><img src="../media/4-eines-desenvolupador-chrome-preview.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-4b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Previsualització d’una petició a Mozilla Firefox
+
+</figcaption><img src="../media/previsualitzaciofirefos.png" alt="" /></figure>
+</div>
+<p>
+Per altra banda, la pestanya “Response” (‘resposta’) de Google Chrome (vegeu la <span class="figref"><a href="#figura u6a1-5a"><span>figura</span></a></span>) mostra la resposta en text pla, mentre que la pestanya “Resposta” de Mozilla Firefox (vegeu la <span class="figref"><a href="#figura u6a1-5b"><span>figura</span></a></span>) mostra les dades estructurades per facilitar-ne la inspecció. És interessant recordar-ho perquè a l’hora de depurar una aplicació que utilitzi AJAX o Web Sockets, segons quin navegador utilitzeu us interessarà més consultar la informació a la pestanya de resposta o a la de previsualització.
+</p>
+<div class="iocfigure"><a name="figura u6a1-5a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resposta d’una petició a Google Chrome
+
+</figcaption><img src="../media/5-eines-desenvolupador-chrome-resposta.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-5b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resposta d’una petició a Mozilla Firefox
+
+</figcaption><img src="../media/5-eines-desenvolupador-firefox-resposta.png" alt="" /></figure>
+</div>
+<p>
+A la pestanya amb la informació de les galetes es poden veure les galetes de la sol·licitud d’una manera pràcticament idèntica a tots dos navegadors (vegeu la <span class="figref"><a href="#figura u6a1-6a"><span>figura</span></a></span> i la <span class="figref"><a href="#figura u6a1-6b"><span>figura</span></a></span>). Aquesta pestanya només es mostra quan la petició inclou les galetes.
+</p>
+
+<p>
+Cal destacar que es pot trobar més informació sobre les galetes a la pestanya <em>Application</em> a Google Chrome i a la pestanya <em>Storage</em> a Mozilla Firefox.
+</p>
+<div class="iocfigure"><a name="figura u6a1-6a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Galetes d’una petició a Google Chrome
+
+</figcaption><img src="../media/6-eines-desenvolupador-chrome-galetes.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-6b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Galetes d’una petició a Mozilla Firefox
+
+</figcaption><img src="../media/6-eines-desenvolupador-firefox-galetes.png" alt="" /></figure>
+</div>
+<p>
+Finalment, es troba la pestanya <em>Temps</em>, que mostra com s’ha invertit el temps que ha trigat a realitzar-se la petició i en retornar la resposta. Aquesta pestanya mostra la mateixa informació tant a Google Chrome (vegeu la <span class="figref"><a href="#figura u6a1-7a"><span>figura</span></a></span>) com a Mozilla Firefox (vegeu la <span class="figref"><a href="#figura u6a1-7b"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura u6a1-7a"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Temps invertit d’una petició a Google Chrome
+
+</figcaption><img src="../media/7-eines-desenvolupador-chrome-temps.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="figura u6a1-7b"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Temps invertit d’una petició a Mozilla Firefox
+
+</figcaption><img src="../media/7-eines-desenvolupador-firefox-temps.png" alt="" /></figure>
+</div>
+<p>
+Cal destacar que Mozilla Firefox inclou una pestanya extra en la qual es mostren els paràmetres enviats, mentre que a Google Chrome es poden trobar a la mateixa pestanya de la capçalera.
+</p>
+
+<p>
+Conèixer aquestes eines i les opcions que ofereixen, tant per l’enviament com per la resposta, és imprescindible per poder depurar correctament aplicacions que facin servir AJAX, ja que ens permet comprovar, entre altres coses, si la petició ha retornat un codi d’èxit o d’error, si el servidor admet CORS o no, o si els paràmetres enviats i la resposta són els esperats.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u6/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u6/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

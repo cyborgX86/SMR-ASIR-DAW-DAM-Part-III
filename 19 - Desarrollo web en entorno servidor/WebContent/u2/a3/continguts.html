@@ -1,0 +1,927 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Desenvolupament web en entorn servidor</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">'Servlets'</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_hola_mon">'Servlet' Hola, Món</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_endevinacolor">'Servlet' EndevinaColor</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_publicitat_als_nous">'Servlet' Publicitat als nous</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#que_s_ha_apres">Què s'ha après</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Formularis amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#calculant_el_sou_net">Calculant el sou net</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#escrivint_un_post">Escrivint un 'post'</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#dades_de_subscripcio">Dades de subscripció</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u2a3" class="tocsection"><p id='u2a3continguts'><a class="section" href="../../../WebContent/u2/a3/continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a3activitats"><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></li><li id="u2a3exercicis"><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a3annexos"><a href="../../../WebContent/u2/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_en_una_galeta">L'usuari, en una galeta</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_a_la_sessio">L'usuari a la sessió</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#un_formulari_d_autenticacio_amb_ejb">Un formulari d'autenticació amb EJB</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament web en entorn servidor</a></li><li>Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB...</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="manteniment_d_estat_autenticacio_i_autoritzacio_amb_servlets_i_ejb"> Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB </a></h1>
+    	
+<p>
+En aquest apartat s’explicaran les diferents maneres que té el programador Java Web per mantenir l’estat de l’aplicació. Moltes vegades ens interessa reconèixer un usuari que ha entrat anteriorment al programa i ha seleccionat les seves preferències a l’hora d’interactuar amb l’aplicació.
+</p>
+
+<p>
+Existeixen diferents maneres d’emmagatzemar aquest tipus de dades, des de tècniques molt avançades fins a algunes que us podeu inventar per tal de guardar la informació on volem. Però, en general, existeixen dues maneres d’aconseguir-ho. 
+</p>
+
+<p>
+La primera manera consisteix en el fet que la informació l’ha d’emmagatzemar el mateix usuari. Així, cada vegada que es comuniqui amb el servidor automàticament enviarà tota la informació que s’havia emmagatzemat durant l’última visita al programa. Les diferents tècniques que s’utilitzen per emmagatzemar la informació en el costat client corresponen a la utilització de galetes, formularis amb camps ocults i reescriptura d’adreces web (<acronym title="Uniform Resource Locator">URL</acronym>) amb paràmetres.
+</p>
+
+<p>
+La segona manera consisteix a guardar la informació en el costat del servidor. El client només s’ha d’identificar per tal d’obtenir les dades que s’havien emmagatzemat. La tècnica que consisteix a guardar la informació en el costat del servidor s’anomena <em>sessió</em>. És una tècnica molt útil que, junt amb les tècniques anteriors, es pot utilitzar per fer aplicacions interactives i amb una experiència molt satisfactòria per part de l’usuari.
+</p>
+
+<p>
+A més a més, també s’explicarà com autenticar un usuari que està intentant accedir a un recurs del sistema. Normalment, l’autenticació del client es fa mitjançant un usuari i una contrasenya. Una vegada autenticat, depenent del rol de l’usuari, aquest podrà accedir a unes funcions o a unes altres. 
+</p>
+
+<p>
+Per a aquesta última part de la unitat es recomana haver realitzat l’apartat anomenat “Formularis amb <em>servlets</em> i EJB”, on s’expliquen els diferent elements que intervenen en l’arquitectura EJB.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu descarregar-vos el codi Java utilitzat en aquest apartat des de l’enllaç que trobareu a l’apartat d’annexos de la unitat. Recordeu que podeu utilitzar la funció d’importar del Netbeans per accedir a aquest contingut.
+</p>
+</div></div>
+<h2><a id="l_usuari_en_una_galeta" >L&#039;usuari, en una galeta</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat aprendrem a emmagatzemar informació utilitzant galetes. El navegador guarda la informació en forma d’arxiu de text al disc dur del visitant de la pàgina web per tal que certes informacions puguin ser recuperades en posteriors visites. 
+</p>
+
+<p>
+
+</p>
+
+<p>
+Comencem creant un nou projecte amb Maven, i posteriorment crearem un formulari en una pàgina web que enviï les dades d’un usuari a un <em>servlet</em> per tal que l’emmagatzemi en una galeta (<em>cookie</em>). La pàgina web l’anomenarem galetes.html, i el seu contingut és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Galetes&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Emmagatzemar l'usuari a una galeta.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt;Introdueix el teu nom:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;form action=&quot;galetesServlet&quot; method=&quot;post&quot;&gt;  </div></li><li class="li1"><div class="de1">            &lt;label for=&quot;nom&quot;&gt; Nom:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;nom&quot; type=&quot;text&quot; name=&quot;userName&quot;/&gt;  &lt;br/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot; value=&quot;enviar&quot;/&gt;  </div></li><li class="li1"><div class="de1">        &lt;/form&gt;  </div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com podeu veure a la <span class="figref"><a href="#fig01"><span>figura</span></a></span>, la pàgina web envia el nom d’usuari al <em>servlet</em> anomenat galetesServlet. Heu de crear aquest <em>servlet</em>, que rebrà el nom d’usuari i l’emmagatzemarà en una galeta.
+</p>
+<div class="iocfigure"><a name="fig01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Enviar dades al ‘servlet’ per crear una galeta
+
+</figcaption><img src="../media/u2-a3-emmagatzemar-usuari-galeta.png" title="Enviar dades al &#039;servlet&#039; per crear una galeta" alt="Enviar dades al &#039;servlet&#039; per crear una galeta" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Recordeu que per crear el <em>servlet</em> amb NetBeans heu d’accedir a <em>File / New File / Web / Servlet </em>. No cal que afegiu la configuració del <em>servlet</em> al fitxer web.xml. En aquest cas, utilitzarem les anotacions per configurar-lo. El seu nom serà galetesServlet, i la implementació del seu codi és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;galetesServlet&quot;, urlPatterns = {&quot;/galetesServlet&quot;})</div></li><li class="li1"><div class="de1">public class GaletesServlet extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Processes requests for both HTTP GET and POST</div></li><li class="li1"><div class="de1">     * methods.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet galetes1&lt;/title&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Ara guardem la galeta en el teu navegador&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String n = request.getParameter(&quot;userName&quot;);</div></li><li class="li1"><div class="de1">            out.print(&quot;Benvingut &quot; + n);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            Cookie ck = new Cookie(&quot;usuari&quot;, n);</div></li><li class="li1"><div class="de1">            response.addCookie(ck);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.print(&quot;&lt;form action='galetesServlet2'&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.print(&quot;&lt;input type='submit' value='anar'&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.print(&quot;&lt;/form&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;HttpServlet methods. Click on the + sign on the left to edit the code.&quot;&gt;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP GET method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doGet(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP POST method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doPost(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Returns a short description of the servlet.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @return a String containing servlet description</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getServletInfo() {</div></li><li class="li1"><div class="de1">        return &quot;Short description&quot;;</div></li><li class="li1"><div class="de1">    }// &lt;/editor-fold&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El <em>servlet</em> galetesServlet rebrà el nom d’usuari que el navegador web li envia mitjançant un formulari, crearà la galeta i emmagatzemarà el nom d’usuari dins d’aquesta. A més a més, crearà un altre formulari amb un botó.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>galeta</strong> (més coneguda per la seva denominació anglesa, <strong><em>cookie</em></strong>) és un fragment d’informació enviat des d’un servidor de pàgines web a un navegador que pot ésser retornada pel navegador en posteriors accessos a aquest servidor.
+</p>
+</div></div>
+<p>
+Però anem pas a pas. Primer de tot heu de recuperar l’usuari enviat pel navegador web. Aquest usuari s’emmagatzema a l’objecte <code>request</code>, i amb la funció <code>getParameter(nom_parametre)</code> podeu recuperar-lo:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Tipus de galetes</p>
+<p>
+Existeixen molts tipus de galetes. Sempre es generen de la mateixa manera, però es diferencien en el seu ús. Per exemple, existeixen galetes de sessió, galetes persistents, galetes segures (https), galetes només http, i inclús galetes <em>zombie</em>. Aquestes últimes s’emmagatzemen en diversos llocs de l’aplicació, fins i tot en objectes <em>flash</em>, perquè si s’esborren es tornin a generar.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">String n = request.getParameter(&quot;userName&quot;);</div></li></ol></pre>
+
+<p>
+Una vegada teniu la informació que voleu emmagatzemar a la galeta, heu de crear un objecte de tipus <em>cookie</em>, i els seus paràmetres de creació són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>name</em>: correspon al nom de la galeta.</div>
+</li>
+<li class="level2"><div class="li"> <em>value</em>: correspon a la informació que es vol emmagatzemar.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">Cookie ck = new Cookie(&quot;usuari&quot;, n);</div></li></ol></pre>
+
+<p>
+Ja teniu creada la galeta, que pot ser de dos tipus:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Persistent</strong> (<em>persistent cookie</em>): no s’esborra quan l’usuari tanca el navegador, sinó que la galeta té un temps màxim de vida i s’esborra quan arriba el moment. </div>
+</li>
+<li class="level1"><div class="li"> <strong>No persistent</strong> (<em>non-persistent cookie</em>): la galeta s’esborra quan l’usuari tanca el navegador.</div>
+</li>
+</ul>
+
+<p>
+Per defecte, la galeta es crea del tipus no persistent. Si voleu crear una galeta de l’altre tipus s’ha d’utilitzar el mètode de l’objecte <em>cookie</em> anomenat <code>setMaxAge(temps_en_millisegons)</code>. 
+</p>
+
+<p>
+Per exemple, per emmagatzemar una galeta al navegador durant 24 hores escriuríem:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">ck.setMaxAge(24 * 60 * 60);  // 24 hores * 60 minuts * 60 segons</div></li></ol></pre>
+
+<p>
+Si volguéssim esborrar una galeta en aquest mateix moment, sense haver d’esperar que l’usuari tanqui el navegador o que li arribi el temps establert, podeu posar-li un temps igual a zero, i la galeta s’esborra en zero mil·lisegons.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">ck.setMaxAge(0);  //esborra la galeta</div></li></ol></pre>
+
+<p>
+Una vegada s’ha creat la galeta, heu d’enviar-la al navegador perquè aquest sigui qui l’emmagatzemi dins del disc dur client. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">response.addCookie(ck);</div></li></ol></pre>
+
+<p>
+Com podeu veure, la utilització de galetes és una tècnica molt senzilla per guardar informació a l’ordinador. S’utilitza bàsicament per mantenir l’estat de l’aplicació en el costat client.
+</p>
+
+<p>
+El desavantatge que us podeu trobar en fer servir les galetes és que el navegador té una opció per evitar que les pàgines web les emmagatzemin. Per exemple, al navegador web Chrome podeu anar a <em>Configuració / Mostrar configuració avançada / Privacitat / Configuració del contingut </em> per modificar el seu comportament quan un servidor vulgui enviar-li una galeta (vegeu la <span class="figref"><a href="#fig02"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig02"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració de les galetes del navegador Chrome
+
+</figcaption><img src="../media/u2-a3-chrome-galetes.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Com heu pogut comprovar, el funcionament de les galetes és senzill:
+</p>
+<ol>
+<li class="level1"><div class="li"> L’usuari demana la pàgina al servidor web.</div>
+</li>
+<li class="level1"><div class="li"> El servidor web li envia la pàgina amb una galeta.</div>
+</li>
+<li class="level1"><div class="li"> L’usuari envia la galeta cada vegada que es comunica amb el servidor web.</div>
+</li>
+</ol>
+
+<p>
+Arribats a aquest punt, la galeta està emmagatzemada al navegador client. Ara veurem com recuperar-la i com mostrar el seu contingut. Ho farem modificant el <em>servlet</em> GaletesServlet afegint un botó que enviï a l’usuari a un altre <em>servlet</em>, que serà qui recuperi el valor de la galeta creada.
+</p>
+
+<p>
+El codi s’afegeix després que s’hagi creat la galeta i s’hagi enviat a l’usuari (vegeu la <span class="figref"><a href="#fig03"><span>figura</span></a></span>):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.print(&quot;&lt;form action='galetesServlet2'&gt;&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;input type='submit' value='anar'&gt;&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;/form&gt;&quot;);</div></li></ol></pre>
+<div class="iocfigure"><a name="fig03"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Galeta emmagatzemada al navegador
+
+</figcaption><img src="../media/u2-a3-servletgaletes.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquest botó enviarà l’usuari al <em>servlet</em> galetesServlet2, que recuperà la galeta i mostrarà el seu contingut en una pàgina web.
+</p>
+
+<p>
+Cal crear el <em>servlet</em> GaletesServlet2 de la mateixa manera que heu creat anteriorment el <em>servlet</em> GaletesServlet. La implementació del seu codi és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;galetesServlet2&quot;, urlPatterns = {&quot;/galetesServlet2&quot;})</div></li><li class="li1"><div class="de1">public class GaletesServlet2 extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Processes requests for both HTTP GET and POST</div></li><li class="li1"><div class="de1">     * methods.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            /* TODO output your page here. You may use following sample code. */</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet galetes2&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Accedim a la galeta per veure el nom d'usuari.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">            Cookie ck[]=request.getCookies();  </div></li><li class="li1"><div class="de1">            out.print(&quot;Hola &quot;+ck[0].getValue());  </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;HttpServlet methods. Click on the + sign on the left to edit the code.&quot;&gt;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP GET method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doGet(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP POST method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doPost(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Returns a short description of the servlet.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @return a String containing servlet description</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getServletInfo() {</div></li><li class="li1"><div class="de1">        return &quot;Short description&quot;;</div></li><li class="li1"><div class="de1">    }// &lt;/editor-fold&gt;</div></li></ol></pre>
+
+<p>
+Una vegada que està creat, podeu recuperar la galeta de la següent manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> Cookie ck[]=request.getCookies();  </div></li></ol></pre>
+
+<p>
+Adoneu-vos que el mètode <code>getCookies()</code> retorna totes les galetes que té el navegador de la nostra pàgina web. Així, si teniu més d’una galeta heu de fer un bucle per trobar la que us interessi. En el nostre cas no cal, només n’hem emmagatzemat una.
+</p>
+
+<p>
+Així, podeu obtenir el valor de la galeta emmagatzemada fent ús del mètode <code>getValue()</code>. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Tots els navegadors proporcionen una manera de veure les galetes que ha emmagatzemat una pàgina web. En concret, a Google Chrome hi podem accedir clicant el botó dret a la pàgina i seleccionant l’element de menú anomenat ‘inspecciona’. S’obrirà una finestra on haurem de clicar la pestanya ‘recursos’ per poder veure tota la informació que ens proporciona la pàgina, incloent-hi les galetes.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">out.print(&quot;Hola &quot;+ck[0].getValue());  </div></li></ol></pre>
+
+<p>
+El resultat de l’execució del codi anterior el podeu veure a la <span class="figref"><a href="#fig04"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig04"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Mostrar el contingut d’una galeta
+
+</figcaption><img src="../media/u2-a3-resultatgaletes.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="altres_maneres_d_enviar_informacio_al_client" >Altres maneres d&#039;enviar informació al client</a></h3>
+<div class="level3">
+
+<p>
+Us podeu trobar que el navegador web no accepti galetes. En aquest apartat veureu unes tècniques no tan sofisticades com les galetes que us poden ajudar a emmagatzemar informació en el costat client.
+</p>
+
+</div>
+
+<h4><a id="utilitzant_un_camp_ocult" >Utilitzant un camp ocult</a></h4>
+<div class="level4">
+
+<p>
+Aquesta tècnica empra un camp ocult d’un formulari per enviar informació a un altre <em>servlet</em>. 
+</p>
+
+<p>
+Utilitzant el mateix projecte Maven, crearem una pàgina web anomenada textOcult.html (<em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em>). Aquesta pàgina és idèntica a la pàgina galetes.html, únicament heu de canviar el contingut de la propietat <code>action</code> de l’etiqueta <code>formulari</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form action=&quot;TextOcultServlet&quot; method=&quot;post&quot;&gt;  </div></li></ol></pre>
+
+<p>
+Vegeu que el <em>servlet</em> que rep la petició de la pàgina web ha canviat. Llavors heu de crear aquest <em>servlet</em> seguint els mateixos passos que vam utilitzar en crear el <em>servlet</em> GaletesServlet.
+</p>
+
+<p>
+Una vegada teniu el <em>servlet</em> creat, recolliu l’usuari que ens envien per paràmetre:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String n = request.getParameter(&quot;userName&quot;);</div></li></ol></pre>
+
+<p>
+Seguidament, creem un formulari amb un camp de text ocult i emmagatzemem la informació dins d’aquest camp. L’usuari rebrà aquesta informació, però no la veurà.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.print(&quot;&lt;form action='TextOcultServlet2'&gt;&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;input type='hidden' name='nom' value='&quot; + n + &quot;'&gt;&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;input type='submit' value='anar'&gt;&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;/form&gt;&quot;);</div></li></ol></pre>
+
+<p>
+L’usuari només veurà un botó que li permet anar a una altra pàgina web del programa (vegeu la <span class="figref"><a href="#fig05"><span>figura</span></a></span>). Aquesta pàgina web serà un altre <em>servlet</em>, anomenat TextOcultServlet2, que rebrà el paràmetre ocult.
+</p>
+<div class="iocfigure"><a name="fig05"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina web amb un text ocult
+
+</figcaption><img src="../media/u2-a3-textocult.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, només falta crear el <em>servlet</em> TextOcultServlet2 per rebre la informació que envia el navegador client sense que aquest ho sàpiga. Crearem el <em>servlet</em> de la mateixa manera que vam crear els <em>servlets</em> anteriors i modifiquem la funció <code>processRequest</code> perquè recuperi el paràmetre ocult del formulari i el mostri per pantalla.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.println(&quot;&lt;h1&gt;Recuperem el valor ocult enviat amb el formulari.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">String n = request.getParameter(&quot;nom&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;Hola &quot; + n);</div></li></ol></pre>
+
+<p>
+A la <span class="figref"><a href="#fig06"><span>figura</span></a></span> podeu veure la pàgina que envia el <em>servlet</em> TextOcultServlet2.
+</p>
+<div class="iocfigure"><a name="fig06"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina que mostra un text ocult
+
+</figcaption><img src="../media/u2-a3-textocult2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h4><a id="creant_un_url_amb_parametres" >Creant un URL amb paràmetres</a></h4>
+<div class="level4">
+
+<p>
+Aquesta tècnica empra un <acronym title="Uniform Resource Locator">URL</acronym> amb paràmetres per enviar informació a un altre <em>servlet</em>. 
+</p>
+
+<p>
+Utilitzant el mateix projecte Maven, crearem una pàgina web anomenada reescripturaURL.html (<em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em>). Aquesta pàgina és idèntica a la pàgina galetes.html, únicament heu de canviar el contingut de la propietat <code>action</code> de l’etiqueta <code>formulari</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form action=&quot;ReescripturaURLServlet&quot; method=&quot;post&quot;&gt;  </div></li></ol></pre>
+
+<p>
+Vegeu que el <em>servlet</em> que rep la petició de la pàgina web ha canviat. Llavors heu de crear aquest <em>servlet</em> seguint els mateixos passos que en la creació del <em>servlet</em> GaletesServlet.
+</p>
+
+<p>
+Una vegada teniu el <em>servlet</em> creat, recolliu l’usuari que ens envien per paràmetre:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String n = request.getParameter(&quot;userName&quot;);</div></li></ol></pre>
+
+<p>
+Seguidament, creem un <acronym title="Uniform Resource Locator">URL</acronym> i li afegim un paràmetre de tipus <code>GET</code>. La pàgina de l’usuari rebrà aquesta informació, i quan faci clic enviarà sense saber-ho el paràmetre a l’<acronym title="Uniform Resource Locator">URL</acronym> destí.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String n = request.getParameter(&quot;userName&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;br&gt;&lt;a href='ReescripturaURLServlet2?nom=&quot;+n+&quot;'&gt;anar&lt;/a&gt;&quot;);  </div></li></ol></pre>
+
+<p>
+L’usurari només veurà un enllaç que li permet anar a una altra pàgina web del programa (vegeu la <span class="figref"><a href="#fig07"><span>figura</span></a></span>). El destí d’aquest enllaç serà un altre <em>servlet</em>, anomenat ReescripturaURLServlet2, que rebrà el paràmetre.
+</p>
+<div class="iocfigure"><a name="fig07"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina web amb un paràmetre a l’enllaç
+
+</figcaption><img src="../media/u2-a3-reescripturaurl.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, només ens falta crear el <em>servlet</em> ReescripturaURLServlet2 per rebre la informació que ens envia el navegador client mitjançant l’<acronym title="Uniform Resource Locator">URL</acronym>. Crearem el <em>servlet</em> de la mateixa manera que heu creat els <em>servlets</em> anteriors i modifiquem la funció <code>processRequest</code> perquè recuperi el paràmetre de l’<acronym title="Uniform Resource Locator">URL</acronym> i el mostri per pantalla.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.println(&quot;&lt;h1&gt;Recuperem el valor enviat amb la URL.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">String n = request.getParameter(&quot;nom&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;Hola &quot; + n);</div></li></ol></pre>
+
+<p>
+A la <span class="figref"><a href="#fig08"><span>figura</span></a></span> podeu veure la pàgina que envia el <em>servlet</em> ReescripturaURLServlet2.
+</p>
+<div class="iocfigure"><a name="fig08"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina que mostra el paràmetre enviat per l’<acronym title="Uniform Resource Locator">URL</acronym>
+
+</figcaption><img src="../media/u2-a3-reescripturaurl2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="l_usuari_a_la_sessio" >L&#039;usuari a la sessió</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat s’explicarà com guardar i recuperar informació de sessió. L’usuari emplenarà un formulari web. Les dades d’aquest formulari s’enviaran a un <em>servlet</em> que les emmagatzemarà a sessió. Un altre <em>servlet</em> consultarà la sessió i mostrarà les dades emmagatzemades. 
+</p>
+
+<p>
+Utilitzarem el mateix projecte Maven. Creeu una nova pàgina <acronym title="HyperText Markup Language">HTML</acronym>, amb el programa NetBeans, anomenada sessio.html (<em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em>), on afegirem les dades d’un formulari web <acronym title="HyperText Markup Language">HTML</acronym>. El codi de la pàgina pot ser semblant a aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Sessió&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Emmagatzemar l'usuari a la sessió.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt;Introdueix el teu nom:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;form action=&quot;SessioServlet&quot; method=&quot;post&quot;&gt;  </div></li><li class="li1"><div class="de1">            &lt;label for=&quot;nom&quot;&gt; Nom:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;nom&quot; type=&quot;text&quot; name=&quot;userName&quot;/&gt;  &lt;br/&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot; value=&quot;enviar&quot;/&gt;  </div></li><li class="li1"><div class="de1">        &lt;/form&gt;  </div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com podeu veure, el formulari demana el seu nom a l’usuari de la pàgina web. Aquest nom serà enviat al <em>servlet</em> SessioServlet, que el recollirà i l’emmagatzemarà a sessió.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>sessió</strong> serveix per emmagatzemar informació entre diferents peticions HTTP.
+</p>
+</div></div>
+<p>
+En moltes ocasions ens trobarem amb el problema de compartir l’estat (dades d’usuari) entre un conjunt ampli de pàgines de la nostra aplicació. La classe <code>HttpSession</code>, que s’encarrega d’administrar la sessió, té una estructura de diccionari (<em>HashMap</em>) i permet emmagatzemar qualsevol tipus d’objecte de tal manera que pugui ser compartit per les diferents pàgines de l’aplicació.
+</p>
+
+<p>
+El <em>servlet</em> SessioServlet és l’encarregat d’utilitzar la classe <code>HttpSession</code> per emmagatzemar el nom d’usuari dins d’ella. Així, crearem el <em>servlet</em>, tal com heu creat els anteriors, i modificarem la funció <code>processRequest</code> per tal d’afegir aquesta funcionalitat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">HttpSession session=request.getSession();  </div></li><li class="li1"><div class="de1">String n = request.getParameter(&quot;userName&quot;);</div></li><li class="li1"><div class="de1">session.setAttribute( &quot;nom&quot;,n);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">out.print(&quot;&lt;br&gt;&lt;a href='SessioServlet2'&gt;anar&lt;/a&gt;&quot;);  </div></li></ol></pre>
+
+<p>
+Primer de tot, obteniu la sessió mitjançant la funció <code>getSession()</code> de l’objecte <code>Request</code>. Aquesta funció crea una nova sessió si no existeix una sessió creada prèviament. Si ja hi ha una sessió creada, s’utilitzarà la mateixa per poder manipular, si es vol, les dades que contingui.
+</p>
+
+<p>
+Una vegada teniu la sessió, afegiu el nom de l’usuari que s’ha recuperat de la petició. Per afegir el nom de l’usuari s’utilitza la funció <code>setAttribute</code>. Aquest mètode rep dos paràmetres: el primer correspon a l’identificador (nom) amb el qual podrem obtenir les dades emmagatzemades. El segon paràmetre correspon a l’objecte (valor) que es vol emmagatzemar.
+</p>
+
+<p>
+Altres mètodes interessants de l’objecte sessió:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>getCreationTime()</code>: retorna quan va ser creada la sessió, mesurada en mil·lisegons, des del dia 1 de gener de 1970.</div>
+</li>
+<li class="level1"><div class="li"> <code>invalidate()</code>: invalida la sessió i desvincula tots els objectes emmagatzemats. Recordeu que el procés <em>Garbage collection</em> recull tots els objectes que no estan vinculats a cap variable i els elimina.</div>
+</li>
+<li class="level1"><div class="li"> <code>getId()</code>: retorna l’identificador de la sessió.</div>
+</li>
+</ul>
+
+<p>
+Però on es guarda la sessió? A diferència de les galetes, la sessió es guarda en el costat del servidor. Una vegada s’ha creat la sessió s’envia al navegador de l’usuari una galeta que serveix per identificar-li i associar-li el <em>HashMap</em> que s’acaba de construir perquè pugui emmagatzemar-hi informació (vegeu la <span class="figref"><a href="#fig09"><span>figura</span></a></span>). A aquest <em>HashMap</em> s’hi pot accedir des de qualsevol altra pàgina, i ens permet compartir informació.
+</p>
+<div class="iocfigure"><a name="fig09"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Galeta de sessió
+
+</figcaption><img src="../media/u2-a3-sessio-galeta.png" title="Galeta de sessió" alt="Galeta de sessió" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La sessió és individual de cada usuari que es connecta a la nostra aplicació, i la informació no és compartida entre ells. Així doncs, cada usuari disposarà del seu propi <em>HashMap</em> on emmagatzemar la informació que resulti útil entre pàgines.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Normalment s’utilitzen tècniques criptogràfiques per emmagatzemar les dades en el servidor en forma de sessió. Així, es garanteixen la confidencialitat, la integritat i la autenticitat de les dades emmagatzemades.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+No s’ha d’abusar de l’<strong>emmagatzematge d’objectes a sessió</strong>, ja que si teniu molts usuaris concurrents estarem obligant el servidor a utilitzar molta memòria per emmagatzemar-los.
+</p>
+</div></div>
+<p>
+Ja heu vist com emmagatzemar els objectes a sessió, ara veurem com recuperar les dades. Crearem el <em>servlet</em> SessioServlet2 i afegirem un enllaç a la resposta del <em>servlet</em> anterior per tal que puguem accedir a aquest.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.print(&quot;&lt;br&gt;&lt;a href='SessioServlet2'&gt;anar&lt;/a&gt;&quot;);  </div></li></ol></pre>
+
+<p>
+Modificarem la funció <code>processRequest</code> del <em>servlet</em> SessióServlet2 per accedir a la sessió i recuperar el nom d’usuari que s’ha emmagatzemat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.println(&quot;&lt;h1&gt;Recuperem el nom d'usuari de la sessió.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">HttpSession session = request.getSession();</div></li><li class="li1"><div class="de1">String n = (String) session.getAttribute(&quot;nom&quot;);</div></li><li class="li1"><div class="de1">out.print(&quot;Hola &quot; + n);</div></li></ol></pre>
+
+<p>
+Vegeu que per obtenir l’objecte de sessió utilitzem la mateixa funció que vam utilitzar en crear-la. Com que aquest client ja va crear una sessió el mètode <code>getSession</code> agafa la <em>cookie</em> amb la informació de la sessió i pot accedir al <em>HashMap</em> que es va crear amb els valors emmagatzemats.
+</p>
+
+<p>
+Per obtenir un valor s’utilitza el mètode <code>getAttribute</code> i s’empra l’identificador del valor que es vol obtenir per recuperar-lo. Una vegada obteniu el valor ja el podrem usar, com en aquest cas, que el mostrem per pantalla. Vegeu la <span class="figref"><a href="#fig10"><span>figura</span></a></span> per veure’n el resultat final:
+</p>
+<div class="iocfigure"><a name="fig10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat d’obtenir una dada de sessió
+
+</figcaption><img src="../media/u2-a3-session2.png" title="Resultat d&#039;obtenir una dada de sessió
+" alt="Resultat d&#039;obtenir una dada de sessió
+" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="un_formulari_d_autenticacio_amb_ejb" >Un formulari d&#039;autenticació amb EJB</a></h2>
+<div class="level2">
+
+<p>
+Es vol crear una aplicació que autentiqui l’usuari mitjançant un nom i una contrasenya. Una vegada s’ha autenticat, hi haurà una sèrie de mètodes d’un objecte EJB als quals tindrà permisos per accedir i alguns altres per als quals no tindrà permisos.
+</p>
+
+<p>
+Creeu un nou <em>servlet</em> amb el programa NetBeans anomenat BibliotecaServlet.java (<em>File / New File / Web / Servlet</em>). No cal que afegiu la configuració del <em>servlet</em> al fitxer web.xml. En aquest cas, utilitzarem les anotacions per configurar-lo.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+En aquest apartat s’explicaran l’autenticació i l’autorització utilitzant <em>servlets</em> i Enterprise Java Beans (EJB). Es recomana haver fet l’apartat anomenat “Formularis amb <em>servlets</em> i EJB”, on s’explica el funcionament d’un EJB sense estat.
+</p>
+</div></div>
+<p>
+Crearem també un Enterprise Java Beans sense estat anomenat Biblioteca amb una interfície local associada anomenada BibliotecaLocal. Podeu crear les dues classes a la vegada utilitzant el programa Netbeans i accedint a <em>File / New File / Enterprise JavaBeans / SessionBean</em>. 
+</p>
+
+<p>
+La interfície BibliotecaLocal tindrà tres mètodes:
+</p>
+<ul>
+<li class="level1"><div class="li"><code> catalogar(String llibre)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>veureDisponibilitat(String llibre)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>demanarPrestec(String llibre)</code></div>
+</li>
+</ul>
+
+<p>
+Aquests mètodes els sobreescriurà l’EJB sense estat Biblioteca. El mètode <code>catalogar</code> retornarà una cadena de text dient que s’ha catalogat el llibre, i el mètode <code>veureDisponibilitat</code> compararà si és un llibre Java. En el cas que sigui així, retornarà una cadena de text on s’informarà que està disponible, i en cas contrari s’informarà que no en queden còpies disponibles. Finalment, el mètode <code>demanarPrestec</code> retorna sempre <em>false</em>.
+</p>
+
+<p>
+Un exemple de la seva codificació és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class Biblioteca implements BibliotecaLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public String catalogar(String llibre){</div></li><li class="li1"><div class="de1">	  return &quot;Llibre &quot; + llibre + &quot; catalogat.&quot;;</div></li><li class="li1"><div class="de1">   }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public String veureDisponibilitat(String llibre){</div></li><li class="li1"><div class="de1">       if(llibre.equals(&quot;Java&quot;)){</div></li><li class="li1"><div class="de1">           return &quot;Llibre &quot; + llibre + &quot; disponible.&quot;;</div></li><li class="li1"><div class="de1">       }</div></li><li class="li1"><div class="de1">       return &quot;Llibre &quot; + llibre + &quot; no disponible.&quot;;</div></li><li class="li1"><div class="de1">   } </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public Boolean demanarPrestec(String llibre){</div></li><li class="li1"><div class="de1">      return false;</div></li><li class="li1"><div class="de1">   } </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Volem fer que el mètode <code>catalogar</code> només sigui accessible pel bibliotecari, que el mètode <code>veureDisponibilitat</code> estigui disponible per a tothom i que el mètode <code>demanarPrestec</code> no el pugui utilitzar ningú (ja que encara no s’ha implementat). 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’<strong>autenticació</strong> és el procés mitjançant el qual el sistema s’assegura que un usuari és qui diu que és.
+</p>
+</div></div>
+<p>
+Per poder autoritzar l’accés als mètodes de l’EJB a un usuari heu de comprovar quin usuari està utilitzant l’aplicació. Podeu emprar els usuaris de GlassFish per portar a terme l’autenticació. Aquests usuaris els podeu configurar mitjançant la consola d’administració (web) del servidor (vegeu la figura <span class="figref"><a href="#fig11"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pàgina d’administració del servidor Glassfish
+
+</figcaption><img src="../media/u2-a3-glassfish-consola.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per accedir a la consola podeu fer-ho posant a l’<acronym title="Uniform Resource Locator">URL</acronym> del navegador l’adreça <a href="http://localhost:4848/common/index.jsf" class="urlextern" title="http://localhost:4848/common/index.jsf"  rel="nofollow">localhost:4848/common/index.jsf</a>, o bé amb el programa NetBeans accedint al menú desplegat en fer clic amb el botó dret del ratolí damunt del servidor Glassfish i clicant a l’opció <em>View Domain Admin Console</em>. 
+</p>
+
+<p>
+Una vegada heu accedit a la consola, aneu al menú de l’esquerra i cliqueu a l’opció <em>Configurations / Servlet Config / Security / Realms / File</em> (vegeu la <span class="figref"><a href="#fig12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Menú de la consola d’administració per afegir-hi usuaris
+
+</figcaption><img src="../media/a2-a3-realms.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si us fixeu, el menú <em>Realm</em> té tres opcions:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Normalment els usuaris d’una aplicació es troben emmagatzemats en una base de dades, segurament, de la pròpia aplicació. No hem d’oblidar, però, que els servidors d’aplicacions ens proporcionen un mecanisme d’autenticació per a aplicacions petites.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong><em>admin-realm</em></strong>: és un fitxer on s’emmagatzemen les credencials dels usuaris administradors. Aquest fitxer s’anomena admin-keyfile. </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>certificate</em></strong>: el servidor emmagatzema les credencials d’usuari en una base de dades de certificats. Quan s’utilitza aquesta opció, el servidor utilitza certificats amb HTTPS per autenticar els clients web. Per verificar la identitat d’un usuari en el domini certificat, el servei d’autenticació verifica un certificat X.509.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>file</em></strong>: el servidor emmagatzema les credencials d’usuari local en un arxiu amb el nom de keyfile. El servei d’autenticació del servidor verifica la identitat de l’usuari mitjançant la comprovació d’aquest fitxer, que s’utilitza per a l’autenticació de tots els clients excepte per als clients de l’explorador web que utilitzen HTTPS i certificats.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un àmbit o domini (<strong><em>realm</em></strong>) és una política de seguretat definida per a un servidor web o aplicació. Conté una col·lecció d’usuaris, que poden o no poden ser assignats a un grup.
+</p>
+</div></div>
+<p>
+Vosaltres emmagatzemareu tots els usuaris dintre d’un fitxer al nostre servidor web, i llavors accedireu a la opció de menú <em>file</em>.
+</p>
+
+<p>
+Tot seguit, procedireu a la creació d’usuaris clicant al botó <em>Manage users</em>. Una vegada heu accedit al llistat d’usuaris, el programa us permet crear de nous clicant al botó <em>new</em>. Si ho feu, apareixerà una pantalla com la que podeu veure a la <span class="figref"><a href="#fig13"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’un usuari nou
+
+</figcaption><img src="../media/a2-a3-new-user.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Hi afegireu dos usuaris. El primer l’anomenareu <em>alex</em>, o amb qualsevol altre nom, i pertanyerà al grup  <em>bibliotecari</em>. En canvi, el segon usuari pertanyerà al grup d’<em>user</em>, i el seu nom serà <em>user</em> (vegeu la <span class="figref"><a href="#fig14"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Llistat d’usuaris del servidor Glassfish
+
+</figcaption><img src="../media/u2-a3-usuaris.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada definits els usuaris i els grups al servidor Glassfish heu de definir els rols dintre del fitxer de desplegament web.xml. Si no teniu aquest fitxer podeu crear-lo amb el programa NetBeans. Aneu a <em> File / New File / Web / Standard Deployment Descriptor (web.xml) </em> i creeu-lo dins de la carpeta <em>WEB-INF</em>.
+</p>
+
+<p>
+Aneu a l’apartat de seguretat del fitxer web.xml i afegiu-hi els rols, tal com podeu veure a la <span class="figref"><a href="#fig15"><span>figura</span></a></span>):
+</p>
+<div class="iocfigure"><a name="fig15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració dels rols d’usuari al fitxer web.xml
+
+</figcaption><img src="../media/u2.-a3-webxml-users.png" alt="" /></figure>
+</div>
+<p>
+A continuació cal especificar quin <em>servlet</em> de l’aplicació necessita autenticació. Per accedir a aquests <em>servlets</em> se’ls demanarà un usuari i una contrasenya. Per definir-los cal crear una restricció (<em>constraint</em>) nova en el fitxer web.xml.
+</p>
+
+<p>
+A més a més, en la restricció s’ha d’especificar quins rols podran utilitzar aquest <em>servlet</em>. Cal seleccionar, mitjançant el botó <em>Edit</em> de l’opció <em>Enable autentication Constraint</em>, els rols creats anteriorment (vegeu la <span class="figref"><a href="#fig16"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració de l’autenticació
+
+</figcaption><img src="../media/u2-a3-constraint-rols.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, haureu de tenir un fitxer web.xml com aquest:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;web-app version=&quot;3.1&quot; xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;session-config&gt;</div></li><li class="li1"><div class="de1">        &lt;session-timeout&gt;</div></li><li class="li1"><div class="de1">            30</div></li><li class="li1"><div class="de1">        &lt;/session-timeout&gt;</div></li><li class="li1"><div class="de1">    &lt;/session-config&gt;</div></li><li class="li1"><div class="de1">    &lt;security-constraint&gt;</div></li><li class="li1"><div class="de1">        &lt;display-name&gt;restriccion1&lt;/display-name&gt;</div></li><li class="li1"><div class="de1">        &lt;web-resource-collection&gt;</div></li><li class="li1"><div class="de1">            &lt;web-resource-name&gt;login&lt;/web-resource-name&gt;</div></li><li class="li1"><div class="de1">            &lt;description/&gt;</div></li><li class="li1"><div class="de1">            &lt;url-pattern&gt;/bibliotecaServlet&lt;/url-pattern&gt;</div></li><li class="li1"><div class="de1">        &lt;/web-resource-collection&gt;</div></li><li class="li1"><div class="de1">        &lt;auth-constraint&gt;</div></li><li class="li1"><div class="de1">            &lt;description/&gt;</div></li><li class="li1"><div class="de1">            &lt;role-name&gt;user&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">            &lt;role-name&gt;bibliotecari&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">        &lt;/auth-constraint&gt;</div></li><li class="li1"><div class="de1">    &lt;/security-constraint&gt;</div></li><li class="li1"><div class="de1">    &lt;login-config&gt;</div></li><li class="li1"><div class="de1">        &lt;auth-method&gt;BASIC&lt;/auth-method&gt;</div></li><li class="li1"><div class="de1">    &lt;/login-config&gt;</div></li><li class="li1"><div class="de1">    &lt;security-role&gt;</div></li><li class="li1"><div class="de1">        &lt;description/&gt;</div></li><li class="li1"><div class="de1">        &lt;role-name&gt;user&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">    &lt;/security-role&gt;</div></li><li class="li1"><div class="de1">    &lt;security-role&gt;</div></li><li class="li1"><div class="de1">        &lt;description/&gt;</div></li><li class="li1"><div class="de1">        &lt;role-name&gt;bibliotecari&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">    &lt;/security-role&gt;</div></li><li class="li1"><div class="de1">&lt;/web-app&gt;</div></li></ol></pre>
+
+<p>
+Per tal que funcioni, al servidor Glassfish s’ha d’activar el rol principal. Podeu anar a la web d’administració del servidor Glassfish i al menu <em>Server-config / Security</em> activar l’opció (vegeu la <span class="figref"><a href="#fig17"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Activació del rol principal al servidor Glassfish
+
+</figcaption><img src="../media/u3-rolprincipal.png" alt="" /></figure>
+</div>
+<p>
+Arribats a aquest punt, ja heu acabat de configurar l’autenticació per al <em>servlet</em> BibliotecaServlet. A partir d’ara, cada vegada que accediu al <em>servlet</em> us demanarà que proporcioneu un usuari i una contrasenya vàlids.
+</p>
+
+<p>
+Seguidament, definireu els rols dels usuaris que poden executar els diferents mètodes de l’EJB biblioteca. Aquest rols han de coincidir amb els rols definits a l’arxiu web.xml anterior.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’<strong>autorització</strong> defineix quin usuari o grups d’usuari poden executar un recurs determinat. Tot i que tinguin permís d’accés a un recurs, potser no poden utilitzar tot el recurs, sinó només una part.
+</p>
+</div></div>
+<p>
+En el vostre cas, el recurs EJB anomenat biblioteca poden utilitzar-lo, mitjançant el <em>servlet</em> BibliotecaServlet, els usuaris que pertanyin als rols <em>bibliotecari</em> o <em>users</em>. Però, en concret, voleu que el mètode <code>catalogar</code> només sigui accessible per al bibliotecari, que el mètode <code>veureDisponibilitat</code> estigui disponible per a tothom i que el mètode <code>demanarPrestec</code> no el pugui utilitzar ningú (ja que encara no s’ha implementat). 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+És essencial identificar el sistema o els usuaris que accedeixen a les aplicacions i proporcionar l’accés o la negació dels recursos dins de l’aplicació basada en alguns criteris. No tots els usuaris han de tenir els drets d’accés a dades sensibles i cal que hi hagi algun mecanisme d’identificació per restringir-ho.
+</p>
+</div></div>
+<p>
+L’autorització s’ha de fer a nivell d’EJB. Heu d’afegir, mitjançant anotacions, quins mètodes poden executar els diferents rols del sistema. Les anotacions que podeu fer servir són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>DeclareRoles</code>: indica que l’EJB acceptarà els rols definits amb aquesta anotació.</div>
+</li>
+<li class="level1"><div class="li"> <code>RolesAllowed</code>: indica quin mètode pot ser accessible per un rol determinat.</div>
+</li>
+<li class="level1"><div class="li"> <code>PermitAll</code>: indica que aquest mètode és accessible per a tothom.</div>
+</li>
+<li class="level1"><div class="li"> <code>DenyAll</code>: indica que aquest mètode no és accessible per cap rol.</div>
+</li>
+</ul>
+
+<p>
+A continuació, modificareu la classe EJB <code>Biblioteca</code> per afegir-hi la informació anterior:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@DeclareRoles({&quot;bibliotecari&quot;})</div></li><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class Biblioteca implements BibliotecaLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @RolesAllowed({&quot;bibliotecari&quot;})</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public String catalogar(String llibre){</div></li><li class="li1"><div class="de1">	  return &quot;Llibre &quot; + llibre + &quot; catalogat.&quot;;</div></li><li class="li1"><div class="de1">   }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @PermitAll</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public String veureDisponibilitat(String llibre){</div></li><li class="li1"><div class="de1">       if(llibre.equals(&quot;Java&quot;)){</div></li><li class="li1"><div class="de1">           return &quot;Llibre &quot; + llibre + &quot; disponible.&quot;;</div></li><li class="li1"><div class="de1">       }</div></li><li class="li1"><div class="de1">       return &quot;Llibre &quot; + llibre + &quot; no disponible.&quot;;</div></li><li class="li1"><div class="de1">   }  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @DenyAll</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">   public Boolean demanarPrestec(String llibre){</div></li><li class="li1"><div class="de1">      return false;</div></li><li class="li1"><div class="de1">   } </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+D’aquesta manera, la funció <code>catalogar</code> només la podran executar els usuaris que pertanyin al rol <em>bibliotecari</em>, la funció <code>veureDisponibilitat</code> podrà executar-la tothom que tingui accés a l’EJB i la funció <code>demanarPrestec</code> no podrà executar-la ningú.
+</p>
+
+<p>
+Les versions anteriors d’EJB 3.0 no podien utilitzar anotacions i empraven un fitxer XML addicional per configurar el comportament. El fitxer s’anomena ejb-jar.xml i s’ha de crear a la mateixa carpeta que el fitxer de desplegament web.xml. Un exemple de declaració de rols EJB (que han de coincidir amb els declarats al fitxer web.xml) pot ser:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE sun-ejb-jar PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Application Server 9.0 EJB 3.0//EN&quot; &quot;http://www.sun.com/software/appserver/dtds/sun-ejb-jar_3_0-0.dtd&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;sun-ejb-jar&gt;</div></li><li class="li1"><div class="de1">  &lt;security-role-mapping&gt;</div></li><li class="li1"><div class="de1">    &lt;role-name&gt;user&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">    &lt;group-name&gt;user-group&lt;/group-name&gt;</div></li><li class="li1"><div class="de1">  &lt;/security-role-mapping&gt;</div></li><li class="li1"><div class="de1">  &lt;security-role-mapping&gt;</div></li><li class="li1"><div class="de1">    &lt;role-name&gt;bibliotecari&lt;/role-name&gt;</div></li><li class="li1"><div class="de1">    &lt;group-name&gt;bibliotecari-group&lt;/group-name&gt;</div></li><li class="li1"><div class="de1">  &lt;/security-role-mapping&gt;</div></li><li class="li1"><div class="de1">  &lt;enterprise-beans/&gt;</div></li><li class="li1"><div class="de1">&lt;/sun-ejb-jar&gt;</div></li></ol></pre>
+
+<p>
+Ja heu acabat de donar l’autorització demanada als rols dels usuaris perquè puguin executar els mètodes apropiats de l’objecte EJB. A continuació implementareu el <em>servlet</em> BibliotecaServlet perquè executi uns mètodes o uns altres segons el rol de l’usuari.
+</p>
+
+<p>
+Primer injectareu l’objecte EJB dintre del <em>servlet</em> per poder-lo utilitzar.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@EJB</div></li><li class="li1"><div class="de1">private BibliotecaLocal b;</div></li></ol></pre>
+
+<p>
+A continuació, modificareu la funció <code>processRequest</code> perquè mostri per pantalla el nom de l’usuari que ha accedit al <em>servlet</em> i que comprovi si l’usuari és <em>bibliotecari</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">out.println(&quot;&lt;p&gt;Usuari: &quot; + request.getUserPrincipal() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">if(request.isUserInRole(&quot;bibliotecari&quot;)){</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;&quot; + b.catalogar(&quot;java&quot;) + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;&quot; +  b.veureDisponibilitat(&quot;php&quot;) + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb la funció <code>getUserPrincipal()</code> teniu accés al nom de l’usuari que s’ha registrat a l’aplicació, i la funció <code>isUserInRole(nomRol)</code> comprova si l’usuari té el rol enviat com a paràmetre de la funció. En el cas que l’usuari sigui bibliotecari s’executaran les funcions del component EJB <code>catalogar</code> i <code>veureDisponibilitat</code>.
+</p>
+
+<p>
+En canvi, si l’usuari que s’ha registrat té el rol <em>user</em>, llavors no hauria d’accedir a <code>catalogar</code>, ja que no hi està autoritzat, però sí que podria accedir a <code>veureDisponibilitat</code>. El codi seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if(request.isUserInRole(&quot;user&quot;)){</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;&quot; + b.veureDisponibilitat(&quot;java&quot;) + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Finalment, es mostra el que passa si qualsevol dels dos usuaris intenta accedir a la funció <code>demanarPrestec</code>. Aquesta funció està configurada de tal manera que cap dels dos usuaris hauria de poder-la executar. Si ho fan, el component EJB llença una excepció que s’ha de recollir i tractar.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if(b.demanarPrestec(&quot;java&quot;)){</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt; Mai es veurà aquest text.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En executar el <em>servlet</em> BibliotecaServlet us demana un usuari i una contrasenya (vegeu la <span class="figref"><a href="#fig18"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Finestra d’autenticació per accedir al ‘servlet’ BibliotecaServlet
+
+</figcaption><img src="../media/u2-a3-user-pass.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En utilitzar l’usuari amb rol <em>bibliotecari</em>, la informació que mostra es pot veure a la <span class="figref"><a href="#fig19"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució dels mètodes autoritzats al rol ‘bibliotecari’
+
+</figcaption><img src="../media/u2-a3-user-alex.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En canvi, si s’utilitza l’usuari amb el rol <em>user</em>, la informació que mostra es pot veure a la <span class="figref"><a href="#fig20"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució dels mètodes autoritzats al rol ‘usuari’
+
+</figcaption><img src="../media/u2-a3-user-user.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si us n’heu adonat, tant en l’execució del programa amb el rol <em>bibliotecari</em> com en l’execució del programa amb el rol <em>usuari</em>, el <em>servlet</em> ha mostrat per pantalla que no teniu permisos per accedir a un recurs. Això és degut al fet que intenteu accedir, tant en un cas com en l’altre, a la funció <code>demanarPrestec()</code>, i aquesta funció no es pot utilitzar. De fet, el servidor llança la següent excepció (podeu veure el <em>log</em> d’execució).
+</p>
+<pre class="code">Información:   JACC Policy Provider: Failed Permission Check, context(U2-A3-Servlets/U2-A3-Servlets_internal)- permission((&quot;javax.security.jacc.EJBMethodPermission&quot; &quot;Biblioteca&quot; &quot;demanarPrestec,Local,java.lang.String&quot;))
+Advertencia:   A system exception occurred during an invocation on EJB Biblioteca, method: public java.lang.Boolean cat.ioc.m7.u2.a3.servlets.Biblioteca.demanarPrestec(java.lang.String)
+Advertencia:   javax.ejb.AccessLocalException: Client not authorized for this invocation</pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Al acabar aquest apartat s’ha après a utilitzar correctament les diferents tècniques per guardar les preferències de l’usuari de l’aplicació. Les tècniques estudiades són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Cookies</em></div>
+</li>
+<li class="level1"><div class="li"> Formularis amb informació oculta</div>
+</li>
+<li class="level1"><div class="li"> Reescriptura d’adreces web (<acronym title="Uniform Resource Locator">URL</acronym>)</div>
+</li>
+<li class="level1"><div class="li"> Sessions</div>
+</li>
+</ul>
+
+<p>
+A més a més, s’ha utilitzat els components de seguretat EJB per realitzar l’autenticació i l’autorització dels usuaris. Així, tot i que els usuaris poden accedir a l’aplicació mitjançant unes credencials pot ser, no tenen els permisos suficients per accedir a totes les parts del sistema.
+</p>
+
+<p>
+En acabar aquest apartat, els estudiants ja estan preparats per començar les activitats proposades en aquest apartat i poden continuar amb el seu aprenentatge del llenguatge Java Web.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

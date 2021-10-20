@@ -1,0 +1,364 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../WebContent/u6/introduccio.html">6. Serveis web amb Spring</a></p><ul class="expander"><li id="u6introduccio"><a href="../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../WebContent/u6/a1/continguts.html">Serveis web SOAP amb Spring Web Services</a><span class="buttonexp"></span></p><ul><li id="u6a1exercicis"><a href="../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a1annexos"><a href="../../WebContent/u6/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u6/a1/continguts.html#escrivint_un_servei_web_soap_de_consulta_de_dades_d_empreses_amb_spring-ws">Escrivint un servei web SOAP de consulta de dades d’empreses amb Spring-WS</a></li><li><a href="../../WebContent/u6/a1/continguts.html#fent_servir_la_consulta_de_dades_d_empreses_des_d_una_aplicacio_java_stand-alone">Fent servir la consulta de dades d’empreses des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../WebContent/u6/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../WebContent/u6/a2/continguts.html">Serveis web RESTful amb Spring. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a2annexos"><a href="../../WebContent/u6/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u6/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta '"Hello, World!!!"'</a></li><li><a href="../../WebContent/u6/a2/continguts.html#testejant_el_servei_web_hello_world">Testejant el servei web '"Hello, World!!!"'</a></li><li><a href="../../WebContent/u6/a2/continguts.html#el_servei_web_de_gestio_d_equips_de_futbol_operacions_crud">El servei web de gestió d'equips de futbol. Operacions CRUD</a></li><li><a href="../../WebContent/u6/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a3" class="tocsection"><p id='u6a3continguts'><a class="section" href="../../WebContent/u6/a3/continguts.html">Serveis web RESTful amb Spring. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a3activitats"><a href="../../WebContent/u6/a3/activitats.html">Activitats</a></li><li id="u6a3exercicis"><a href="../../WebContent/u6/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a3annexos"><a href="../../WebContent/u6/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u6/a3/continguts.html#un_client_java_per_al_servei_web_restful_hello_world">Un client Java per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../WebContent/u6/a3/continguts.html#tests_d_integracio_per_al_servei_web_restful_hello_world">Tests d’integració per al servei web RESTful '"Hello, World!!!'"</a></li><li><a href="../../WebContent/u6/a3/continguts.html#un_client_javascript_per_al_servei_web_restful_hello_world">Un client JavaScript per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../WebContent/u6/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="introduccio.html">Serveis web amb Spring</a></li><li>Resum</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="resum"> Resum </a></h1>
+    	
+<p>
+Els serveis web són una peça clau en el desenvolupament d’arquitectures de programari orientades a serveis i, més recentment, per a la creació d’arquitectures basades en microserveis.
+</p>
+
+<p>
+Un servei web és una tecnologia que fa servir un conjunt de protocols i estàndards per tal d’intercanviar dades entre aplicacions. La característica principal dels serveis web és que permeten la interoperativitat entre aplicacions que poden estar desenvolupades en diferents llenguatges i executar-se en plataformes diferents.
+</p>
+
+<p>
+Hi ha dos tipus de serveis web:
+</p>
+<ul>
+<li class="level1"><div class="li"> serveis web SOAP</div>
+</li>
+<li class="level1"><div class="li"> serveis web RESTful</div>
+</li>
+</ul>
+
+<p>
+Els serveis web <strong>SOAP</strong> es basen en el protocol SOAP, que permet la interacció de serveis web basats en XML. L’especificació de SOAP inclou la sintaxi amb la qual s’han de definir els missatges, les regles de codificació dels tipus de dades i les regles de codificació que regiran les comunicacions entre aquests serveis web.
+</p>
+
+<p>
+JAX-WS és l’API estàndard que defineix Java EE per desenvolupar i desplegar serveis web SOAP, mentre que Spring-WS és el projecte que ofereix Spring per desenvolupar i desplegar serveis web SOAP. Spring-WS es basa completament en Spring i porta inherent al seu model molts dels conceptes clau a Spring, com poden ser la injecció de dependències.
+</p>
+
+<p>
+Hi ha dues estratègies per desenvolupar serveis web SOAP en Java:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Code First</em></div>
+</li>
+<li class="level1"><div class="li"> <em>Contract First</em></div>
+</li>
+</ul>
+
+<p>
+L’estratègia <em>Code First</em> implica primer implementar les classes Java del servei i, a partir d’aquestes, generar el document WSDL de descripció del servei.
+</p>
+
+<p>
+L’estratègia <em>Contract First</em> implica fer primer la definició del servei abans d’implementar-lo. Això vol dir descriure els paràmetres i tipus de retorn del servei amb XSD (de l’anglès <em>XML Schema Definitions</em>); després utilitzar aquest XSD per generar el document WSDL, que serà el contracte públic del servei, i finalment generar les classes Java que implementaran el servei d’acord amb aquest contracte.
+</p>
+
+<p>
+Spring-WS tan sols suporta la creació de serveis web SOAP seguint l’estratègia <em>Contract First</em>, mentre que amb JAX-WS es poden crear serveis web SOAP tant seguint una estratègia com l’altra.
+</p>
+
+<p>
+L’elecció entre JAX-WS i Spring-WS a l’hora de desenvolupar serveis web SOAP amb Java no és senzilla, i no hi ha cap de les dues tecnologies que sigui una clara guanyadora, atès que totes dues aproximacions tenen els seus punts forts i els seus punts febles.
+</p>
+
+<p>
+El primer que cal fer per desenvolupar un servei web SOAP amb Spring-WS és crear el document XSD que definirà el model de domini i el format de les peticions i les respostes. El model de domini es defineix amb un fitxer d’esquema XML que després Spring-WS s’encarregarà d’exportar a WSDL.
+</p>
+
+<p>
+A partir del document XSD de definició del servei, Spring-WS genera automàticament les classes Java que formaran tant el model del domini com les peticions i les respostes del servei web. Normalment, això es farà automàticament en temps de construcció.
+</p>
+
+<p>
+Un cop generades les classes Java que modelen el domini i les peticions i respostes s’implementa el servei i després es crea l’<em>endpoint</em> que enllaçarà les peticions SOAP amb el servei que farà la feina. Spring proporciona la infraestructura necessària per recollir les peticions SOAP que vagin al servei i les envia a l’<em>endpoint</em> per tal de processar-les i tornar la resposta als clients.
+</p>
+
+<p>
+L’<em>endpoint</em> utilitza un conjunt d’anotacions específiques per enllaçar-lo amb la definició del servei; cal anotar la classe amb <code>@Endpoint</code>, els mètodes amb <code>@PayloadRoo</code>t i <code>@ResponsePayload</code> i els paràmetres dels mètodes, amb <code>@RequestPayload</code>.
+</p>
+
+<p>
+Els serveis web SOAP desenvolupats amb Spring-WS es poden provar amb cURL enviant peticions <code>POST</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> configurat amb el missatge SOAP de la petició.
+</p>
+
+<p>
+Spring-WS permet codificar clients Java que consumeixin qualsevol tipus de servei web SOAP estigui o no codificat amb Spring-WS; només cal la definició WSDL del servei.
+</p>
+
+<p>
+Per crear un client Java amb Spring-WS cal que genereu els artefactes necessaris per poder consumir el servei web a partir de la seva definició en format WSDL, codifiqueu la classe Java que farà la crida al servei web heretant de la classe <code>WebServiceGatewaySupport</code> que proporciona Spring-WS i compileu i executeu aquest client.
+</p>
+
+<p>
+Els serveis web <strong>RESTful</strong> es basen en un conjunt de regles i principis que permeten desenvolupar serveis web fent servir HTTP com a protocol de comunicacions entre el client i el servei web, i es fonamenta a definir accions sobre recursos mitjançant l’ús dels mètodes <code>GET</code>, <code>POST</code>, <code>PUT</code> i <code>DELETE</code> inherents d’HTTP.
+</p>
+
+<p>
+<code>REST</code> es basa en l’ús d’estàndards oberts en totes les seves parts; així, fa servir <acronym title="Uniform Resource Identifier">URI</acronym> per a la localització de recursos; HTTP com a protocol de transport; els verbs HTTP per especificar les <strong>accions sobre els recursos</strong> i els tipus MIME per a la representació dels recursos (XML, JSON, XHTML, <acronym title="HyperText Markup Language">HTML</acronym>, PDF, GIF, JPG, PNG, etc.).
+</p>
+
+<p>
+Qualsevol cosa que es pugui identificar amb una <acronym title="Uniform Resource Identifier">URI</acronym> es considera un recurs i, per tant, es pot manipular mitjançant accions (també anomenades <em>verbs</em>) especificades a la capçalera HTTP de les peticions seguint el següent conjunt de regles i principis que regeixen REST:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>POST</code>: crea un recurs nou.</div>
+</li>
+<li class="level1"><div class="li"> <code>GET</code>: consulta el recurs i obté la seva representació.</div>
+</li>
+<li class="level1"><div class="li"> <code>DELETE</code>: esborra un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>PUT</code>: modifica un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>HEAD</code>: obté metainformació del recurs.</div>
+</li>
+</ul>
+
+<p>
+<strong>Spring MVC</strong> és el mòdul del projecte Spring que proporciona suport per crear i consumir serveis web basats en <code>REST</code>. Spring no proporciona un projecte ni un mòdul específic per a la creació i el consum de serveis web RESTful, sinó que ho engloba com una capacitat més dins el projecte Spring MVC.
+</p>
+
+<p>
+Spring MVC permet publicar serveis web RESTful que implementen les operacions CRUD sobre un recurs de forma molt fàcil i molt àgil.
+</p>
+
+<p>
+Mentre que JAX-RS és una <acronym title="Application Programming Interface">API</acronym> centrada únicament i exclusivament en el desenvolupament de serveis web RESTful, Spring MVC és un mòdul del projecte Spring centrat en el desenvolupament web en general, i és en aquest marc que dóna complet suport tant al desenvolupament d’aplicacions web com al desenvolupament de serveis web RESTful.
+</p>
+
+<p>
+Entre les anotacions més importants que proporciona Spring tenim <code>@RestController</code> per marcar la classe com un controlador <code>REST</code> on cada un dels seus mètodes tornarà un objecte del domini enlloc d’una vista. Aquesta és la diferencia més gran entre un controlador MVC típic i un controlador per serveis web RESTful: el cos de la resposta HTTP es crea transformant un objecte del domini a JSON i no es torna en format <acronym title="HyperText Markup Language">HTML</acronym>. La resta d’anotacions són les mateixes que tenim quan treballem amb un projecte web Spring MVC.
+</p>
+
+<p>
+Un dels formats que suporta Spring i que està esdevenint molt popular per la simplicitat, lleugeresa i facilitat de lectura és JSON. Aquest format és especialment adient per a aplicacions mòbils en què la quantitat d’informació que s’intercanvien client i servidor per fer les operacions és primordial. Spring fa servir la llibreria Jackson per fer les transformacions entre el format JSON i la seva representació Java, i a l’inrevés.
+</p>
+
+<p>
+Spring MVC permet crear un conjunt de tests que van a cavall entre un test unitari i un test d’integració. Aquests tests us permetran provar els serveis web sense necessitat de tenir-los desplegats i executant-se a un servidor d’aplicacions. Els tests unitaris proporcionats per Spring MVC es basen en JUnit 4.
+</p>
+
+<p>
+De forma molt simplificada, podríem veure <strong>HATEOAS</strong> (de l’anglès <em>Hypermedia as the Engine of Application State</em>) com un principi de disseny que obliga al fet que, donat un punt d’entrada al servei, els clients han de ser capaços de descobrir tots els seus recursos basant-se únicament en respostes donades pel servidor. Molts puristes diuen que una <acronym title="Application Programming Interface">API</acronym> no és realment RESTful si no segueix aquest principi de disseny.
+</p>
+
+<p>
+Spring proporciona la classe <code>RestTemplate</code> per simplificar la comunicació HTTP entre el client i el servidor. <code>RestTemplate</code> permet fer tota mena de peticions HTTP des d’aplicacions Java als serveis web RESTful remots de forma fàcil, i és molt útil a l’hora d’escriure tests d’integració per provar serveis web RESTful. 
+</p>
+
+<p>
+AJAX és una de les formes més utilitzades a l’hora de consumir serveis web RESTful des de pàgines o aplicacions web. Actualment hi ha multitud de bastiments JavaScript que proporcionen, entre moltes altres coses, la possibilitat de fer peticions AJAX, entre els quals cal destacar jQuery i Angular JS.
+</p>
+
+<p>
+CORS és una tecnologia que cada vegada necessitem més a l’hora de desenvolupar aplicacions web i també aplicacions mòbils. En una aplicació clàssica podem carregar una pàgina web i sol·licitar dades dinàmiques al servidor mitjançant AJAX, però aquestes dades dinàmiques <strong>han de pertànyer al mateix domini</strong>. Si les dades no pertanyen al mateix domini, l’aplicació no les podrà carregar per limitacions de seguretat.
+</p>
+
+<p>
+Spring proporciona l’anotació <code>@CrossOrigin</code> per habilitar les capçaleres CORS a la resposta enviada pels serveis web i així permetre les peticions Cross-Origin.
+</p>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../WebContent/u6/introduccio.html">Introducció</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

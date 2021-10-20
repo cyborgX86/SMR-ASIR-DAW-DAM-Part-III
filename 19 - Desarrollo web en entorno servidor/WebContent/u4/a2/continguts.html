@@ -1,0 +1,966 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Tècniques d’accés a dades</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Bibliografia bàsica</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Accés a dades amb JDBC</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#importar_un_projecte_de_maven_a_netbeans">Importar un projecte de Maven a Netbeans</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#la_primera_connexio_a_una_base_de_dades">La primera connexió a una base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#millorant_el_codifitxers_de_propietats_i_tests_unitaris">Millorant el codi: fitxers de propietats i tests unitaris</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#tests_unitaris_amb_junit">Tests unitaris amb JUnit</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#fent_consultes_a_la_base_de_dades">Fent consultes a la base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#operacions_crud">Operacions CRUD</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#injeccio_sql">Injecció SQL</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Accés a dades amb Java Enterprise Edition</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a2annexos"><a href="../../../WebContent/u4/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#socioc__dialogant_amb_clients_amb_jpa">"SocIoc". Dialogant amb clients amb JPA</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#servidor_d_aplicacions_glassfish">Servidor d'aplicacions Glassfish</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a3" class="tocsection"><p id='u4a3continguts'><a class="section" href="../../../WebContent/u4/a3/continguts.html">Accés a dades amb Spring i Hibernate</a><span class="buttonexp"></span></p><ul><li id="u4a3activitats"><a href="../../../WebContent/u4/a3/activitats.html">Activitats</a></li><li id="u4a3exercicis"><a href="../../../WebContent/u4/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a3annexos"><a href="../../../WebContent/u4/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_amb_spring_i_hibernate">"SocIoc". Dialogant amb usuaris amb Spring i Hibernate</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_preguntes_i_respostes">"SocIoc". Dialogant amb preguntes i respostes</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_rangs_i_vots">"SocIoc". Dialogant amb usuaris, rangs i vots</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tècniques d’accés a dades</a></li><li>Accés a dades amb Java Enterprise Edition</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="acces_a_dades_amb_java_enterprise_edition">  Accés a dades amb Java Enterprise Edition </a></h1>
+    	
+<p>
+Quan programeu en Java, la forma més simple per accedir a una base és mitjançant JDBC. Per desgràcia, amb JDBC es necessita una gran quantitat de treball manual per convertir els resultats d’una consulta a la base de dades en classes Java. 
+</p>
+
+<p>
+En el següent fragment de codi es mostra com transformar un resultat de consulta JDBC en un objecte <code>User</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">  while (rs.next()) {</div></li><li class="li1"><div class="de1">      int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">      String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">      String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">      String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">      int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">      boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">      Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">      User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">      users.add(user);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Com podeu veure, hi ha molt codi repetitiu per obtenir els resultats dels diferents camps de la base de dades i transformar-los en variables de Java. Penseu que si aquesta classe tingués 30 atributs la quantitat de codi necessària augmentaria considerablement. Aquesta situació seria encara pitjor si a més a més de tenir 30 atributs estigués relacionada amb una altra classe. Per exemple, a l’aplicació “SocIoc” que construireu, un alumne (<em>User</em>) pot crear preguntes. Si la classe que representa les preguntes té 10 atributs, cada cop que fem una consulta on es retornin alumnes com a resultat hauríeu de repetir el codi anterior 40 vegades.
+</p>
+
+<p>
+Un altre desavantatge de JDBC és la seva portabilitat. La sintaxi de la consulta canviarà d’una base de dades a una altra. Per exemple, amb la base de dades Oracle la instrucció ROWNUM s’utilitza per limitar la quantitat de resultats retornats, mentre que SqlServer és TOP. El fet d’haver d’utilitzar SQL natiu específic per a cada BD fa que el nostre codi estigui acoblat amb el tipus de BD utilitzat. Això és un problema, ja que si en el futur es vol canviar de base de dades tindrem problemes. Hi ha diverses solucions a aquest tipus de problema, però totes passen per mantenir el codi SQL necessari per a cada tipus de BD; això costarà molt de mantenir i és molt propici a errors.
+</p>
+
+<p>
+JPA (Java Persistence <acronym title="Application Programming Interface">API</acronym>) es va crear com una solució als problemes esmentats anteriorment. JPA permet treballar amb les classes de Java, ja que proporciona una capa transparent que s’encarrega de gestionar els detalls específics per a cada BD i permet focalitzar els esforços de desenvolupament en el codi Java. JPA representa una sèrie d’interfícies Java, així com una sèrie d’estàndards i especificacions que defineixen com han de ser les implementacions. JPA per si sol no farà res, necessitarà d’una implementació per poder ser utilitzada. Hi ha moltes implementacions de JPA disponibles, tant gratuïtes com de pagament; per exemple, Hibernate, OpenJPA i EclipseLink.
+</p>
+
+<p>
+La principal característica de JPA és la capacitat d’establir i gestionar les relacions entre les taules de la BD i les classes del codi Java. En Java, l’aplicació es modela través d’objectes, però les bases de dades relacionals només poden emmagatzemar valors escalars, com cadenes de caràcters o enters, i organitzar-los en taules. Sense JPA, tal com hem vist a l’exemple de JDBC, és el programador qui ha de convertir els valors representats en forma d’objectes en valors simples o agrupats per poder-los emmagatzemar a la BD, així com implementar el procés invers per poder extreure les dades. JPA defineix com s’ha de resoldre aquest problema i defineix com s’ha de fer el mapatge d’objectes relacionals (ORM Object-Relational Mapping).
+</p>
+
+<p>
+Posarem les bases de l’aprenentatge configurant l’aplicació Java “SocIoc”. Explicarem:
+</p>
+<ul>
+<li class="level1"><div class="li"> Creació de la base de dades “SocIoc” a partir d’un model de MySQL Workbench</div>
+</li>
+<li class="level1"><div class="li"> Notacions JPA</div>
+</li>
+<li class="level1"><div class="li"> Tipus de dades a la BD i correspondència amb Java</div>
+</li>
+<li class="level1"><div class="li"> <em>Persistence units</em></div>
+</li>
+<li class="level1"><div class="li"> Entorn Glassfish configurant el <em>datasource</em> i <em>connection pool</em></div>
+</li>
+<li class="level1"><div class="li"> Validació</div>
+</li>
+<li class="level1"><div class="li"> Tests unitaris</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar la base de dades en memòria H2 per escriure tests unitaris</div>
+</li>
+</ul>
+
+<h2><a id="socioc__dialogant_amb_clients_amb_jpa" >&quot;SocIoc&quot;. Dialogant amb clients amb JPA</a></h2>
+<div class="level2">
+
+<p>
+El primer que haureu de fer serà importar la base de dades “SocIoc”, tal com es mostra en la <span class="figref"><a href="#fig2.1"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Importar model de MySQL Workbench
+
+</figcaption><img src="../media/dawm7u4_20.png" alt="" /></figure>
+</div>
+<p>
+Un cop importat, s’haurà d’haver importat el model entitat relació de la <span class="figref"><a href="#fig2.2"><span>figura</span></a></span>. El model ER de la base de dades “SocIoc” es compon de les següents taules:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar la base de dades “SocIoc” al fitxer de MySQL Workbench que teniu disponible als annexos de la unitat.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>rank</strong>: serveix per guardar la puntuació que aconsegueix un alumne en base a les votacions que reben les respostes que dóna.</div>
+</li>
+<li class="level1"><div class="li"> <strong>questions</strong>: conté les preguntes dels alumnes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>answers</strong>: guarda les respostes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>votes</strong>: els alumnes que llegeixen una resposta la podran votar de forma positiva o negativa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>users</strong>: guarda informació dels alumnes.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="fig2.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Model ER “SocIoc”
+
+</figcaption><img src="../media/dawm7u4_21.png" alt="" /></figure>
+</div>
+<p>
+A continuació haureu de connectar-vos al vostre servidor MySQL per tal de crear les taules que hem definit al model ER “SocIoc”. El primer pas és crear la base de dades al servidor MySQL. Hi ha diferents formes de fer-ho, però en aquest exemple utilitzarem el client de la línia de comandes. En el cas del servidor que s’està fent servir, aquestes són les dades de connexió:
+</p>
+<ul>
+<li class="level1"><div class="li"> usuari: root</div>
+</li>
+<li class="level1"><div class="li"> contrasenya: root</div>
+</li>
+<li class="level1"><div class="li"> IP del servidor: 192.168.99.100</div>
+</li>
+<li class="level1"><div class="li"> port: 32769</div>
+</li>
+</ul>
+<pre class="code bash"><ol><li class="li1"><div class="de1">mysql  --user=root --password=root --host=192.168.99.100  --port=32769</div></li></ol></pre>
+
+<p>
+Utilitzant Mysql Workbench, creeu una connexió amb el vostre servidor MySQL. Per fer-ho, seleccioneu <em>Manage connections</em>, tal com podeu veure en la <span class="figref"><a href="#fig2.3"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Manage connections
+
+</figcaption><img src="../media/dawm7u4_22.png" alt="" /></figure>
+</div>
+<p>
+A continuació afegiu les dades de connexió. En la <span class="figref"><a href="#fig2.4"><span>figura</span></a></span> podeu veure les dades de connexió al servidor local de MySQL.
+</p>
+<div class="iocfigure"><a name="fig2.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Crear connexió amb DB
+
+</figcaption><img src="../media/dawm7u4_23.png" alt="" /></figure>
+</div>
+<p>
+Un cop està configurada la connexió ja es pot passar a exportar el model al servidor. Seleccioneu l’opció <em>Forward Engineering</em> del menú <em>Database</em> (vegeu la <span class="figref"><a href="#fig2.5"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="fig2.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Exportar taules al servidor
+
+</figcaption><img src="../media/dawm7u4_24.png" alt="" /></figure>
+</div>
+<p>
+Seleccioneu la connexió que heu creat (vegeu la <span class="figref"><a href="#fig2.6"><span>figura</span></a></span>); en fer clic a <em>Continue</em> us demanarà la contrasenya per accedir a la BD. 
+</p>
+<div class="iocfigure"><a name="fig2.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Seleccioneu la connexió amb la BD
+
+</figcaption><img src="../media/dawm7u4_25.png" alt="" /></figure>
+</div>
+<p>
+Quant a les opcions, podeu deixar les que hi ha per defecte (vegeu la <span class="figref"><a href="#fig2.7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Opcions d’exportació 
+
+</figcaption><img src="../media/dawm7u4_26.png" alt="" /></figure>
+</div>
+<p>
+Com que només heu creat taules (vegeu la <span class="figref"><a href="#fig2.8"><span>figura</span></a></span>), només fa falta seleccionar la primera de les opcions, que exportarà les taules.
+</p>
+<div class="iocfigure"><a name="fig2.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Opcions d’exportació 
+
+</figcaption><img src="../media/dawm7u4_27.png" alt="" /></figure>
+</div>
+<p>
+Els dos últims passos són una revisió dels <em>scripts</em> de creació dels objectes seleccionats (en el nostre cas, les taules). Si el procés de creació és correcte haureu de veure un missatge de confirmació com el de la <span class="figref"><a href="#fig2.9"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Confirmació de la correcta exportació de les taules
+
+</figcaption><img src="../media/dawm7u4_28.png" alt="" /></figure>
+</div>
+<p>
+Per comprovar que les taules s’han creat adequadament podeu utilitzar l’editor SQL de Workbench. Seleccioneu del menú <em>Database</em> l’opció <em>Query database</em>; després d’escollir la connexió amb la vostra BD accedireu a l’editor (vegeu la <span class="figref"><a href="#fig2.10"><span>figura</span></a></span>) i podreu executar una consulta perquè es mostrin totes les taules de la BD.
+</p>
+<div class="iocfigure"><a name="fig2.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Editor SQL
+
+</figcaption><img src="../media/dawm7u4_29.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="annotacions_jpa" >Annotacions JPA</a></h3>
+<div class="level3">
+
+<p>
+Recordeu que JPA defineix com s’ha de fer el mapatge d’objectes relacionals (ORM Object-Relational Mapping) amb la base de dades. D’aquesta forma, quan desenvolupeu una aplicació, com a programadors us podeu centrar en el codi Java i deixar que JPA s’encarregui dels detalls específics de la base de dades. Començareu creant una classe que representi un usuari de la nostra aplicació i que es pugui utilitzar per emmagatzemar dades. 
+</p>
+
+<p>
+Per fer això creareu una classe i l’anotareu amb l’anotació <code>@Entity</code>. Això transformarà una classe Java simple (POJO, Plain Old Java Object) en una EJB (Enterprise Java Bean). L’ús d’EJB permet gaudir dels serveis prestats pels servidors Java Enterprise Edition (Java EE). Hi ha diferents serveis que proporcionen el seu ús, com <em>clustering</em>, transaccionalitat a través de JTA, seguretat i connexions amb base de dades. A més de l’anotació <code>@Entity</code> hi ha altres anotacions que permeten definir quins atributs de la classe seran persistents i a quina columna de la taula seran emmagatzemats.
+</p>
+
+<p>
+Un cop descarregat i descomprimit el fitxer de partida, ja el podeu importar; el nom del projecte és “UDF4-02”. En la <span class="figref"><a href="#fig2.11"><span>figura</span></a></span> es mostra on és l’opció per obrir un projecte existent. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El fitxer de partida per fer annotacions JPA el trobareu als annexos de la unitat.
+</p>
+</div></div><div class="iocfigure"><a name="fig2.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Editor SQL
+
+</figcaption><img src="../media/dawm7u4_30.png" alt="" /></figure>
+</div>
+<p>
+Netbeans, en detectar el fitxer pom.xml, reconeixerà que és un projecte Maven i començarà a descarregar les dependències. 
+</p>
+
+<p>
+En el fitxer pom.xml de Maven, les úniques dependències que us fan falta són la del <em>driver</em> de la BD H2, de JUnit, <code>javax.persistence</code> i <code>javax.validation</code>. <code>javax.persistence</code> conté les llibreries amb totes les classes que necessitareu per treballar amb JPA. Encara que amb les llibreries de <code>javax.persistence</code> no necessitaríeu res més, <code>javax.validation</code> us aporta una sèrie d’anotacions que seran molt útils a l’hora de validar les dades que emmagatzemareu a la base de dades.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependencies&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;com.h2database&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;h2&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.4.190&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      	&lt;artifactId&gt;junit&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      	&lt;version&gt;4.12&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.persistence&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;persistence-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.0.2&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.validation&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;validation-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.1.0.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;/dependencies&gt;</div></li></ol></pre>
+
+<p>
+Com  a programadors d’aplicacions orientades a objectes, el que us interessa és treballar amb objectes que representin les dades, més que haver de treballar directament amb SQL. JPA permet això, utilitza ORM (Object Relational Mapping) per emmagatzemar i recuperar dades de la base de dades a través de l’ús de classes de tipus entitat (<em>entity classes</em>). Mitjançant l’anotació <code>@Entity</code> es transforma una classe Java simple (POJO, Plain Old Java Object) en una EJB (Enterprise Java Bean). L’ús d’EJB permet gaudir dels serveis prestats pels servidors Java Enterprise Edition (Java EE). Hi ha diferents serveis que proporciona el seu ús, com <em>clustering</em>, transaccionalitat a través JTA, seguretat i connexions amb base de dades. A més de l’anotació <code>@Entity</code> hi ha altres anotacions que permeten definir quins atributs de la classe seran persistents i a quina columna de la taula seran emmagatzemats. En el següent codi podeu veure les diferents anotacions que farem servir.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Entity</div></li><li class="li1"><div class="de1">  @Table(name = &quot;users&quot;)</div></li><li class="li1"><div class="de1">  public class User implements Serializable{</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Column(name = &quot;user_id&quot;)</div></li><li class="li1"><div class="de1">    private Long userId;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 30)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;username&quot;)</div></li><li class="li1"><div class="de1">    private String username;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 30)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;name&quot;)</div></li><li class="li1"><div class="de1">    private String name;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 30)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;email&quot;)</div></li><li class="li1"><div class="de1">    private String email;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 30, min = 5)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;password&quot;)</div></li><li class="li1"><div class="de1">    private String password;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Column(name = &quot;rank&quot;)</div></li><li class="li1"><div class="de1">    private Integer rank;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Column(name = &quot;active&quot;)</div></li><li class="li1"><div class="de1">    private Boolean active;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Column(name = &quot;created_on&quot;)</div></li><li class="li1"><div class="de1">    private Timestamp createdOn;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User(){}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Long getUserId() {</div></li><li class="li1"><div class="de1">        return userId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setUserId(Long userId) {</div></li><li class="li1"><div class="de1">        this.userId = userId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getUsername() {</div></li><li class="li1"><div class="de1">        return username;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setUsername(String username) {</div></li><li class="li1"><div class="de1">        this.username = username;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getName() {</div></li><li class="li1"><div class="de1">        return name;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setName(String name) {</div></li><li class="li1"><div class="de1">        this.name = name;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getEmail() {</div></li><li class="li1"><div class="de1">        return email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEmail(String email) {</div></li><li class="li1"><div class="de1">        this.email = email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getPassword() {</div></li><li class="li1"><div class="de1">        return password;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setPassword(String password) {</div></li><li class="li1"><div class="de1">        this.password = password;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Integer getRank() {</div></li><li class="li1"><div class="de1">        return rank;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setRank(Integer rank) {</div></li><li class="li1"><div class="de1">        this.rank = rank;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Boolean getActive() {</div></li><li class="li1"><div class="de1">        return active;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setActive(Boolean active) {</div></li><li class="li1"><div class="de1">        this.active = active;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Timestamp getCreatedOn() {</div></li><li class="li1"><div class="de1">        return createdOn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setCreatedOn(Timestamp createdOn) {</div></li><li class="li1"><div class="de1">        this.createdOn = createdOn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+L’anotació <code>@Entity</code> indica que serà una classe de tipus entitat i l’anotació <code>@Table</code> permet indicar quin és el nom de la taula que estarà lligada a aquesta classe. Un altre aspecte que és important destacar és que és sempre una bona idea fer que una classe de tipus entitat sigui serialitzable, per tal que la classe pugui ser passada per valor i no per referència. Això s’aconsegueix fent que la classe implementi la interfície <code>java.io.Serializable</code> i afegint l’atribut estàtic <code>serialVersionUID</code>. Sense entrar en molts detalls, <code>serialVersionUID</code> s’utilitza per comprovar que els objectes serialitzats i desserialitzats són compatibles.
+</p>
+
+<p>
+Una classe del tipus entitat necessita tenir un constructor sense arguments i atributs per a cada una de les columnes de la taula. Les anotacions JPA que hem utilitzat les podeu veure en la <span class="tabref"><a href="# Taulax2.1"><span>taula</span></a></span>.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taulax2.1"><span>Taula: </span></a>Annotacions JPA</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Anotació </th><th class="col1"> Descripció </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <code>@Entity</code> </td><td class="col1"> Transforma un POJO en una classe de tipus entitat per tal de poder utilitzar-la amb els serveis JPA. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><code>@Table</code> (opcional) </td><td class="col1"> Especifica el nom de la taula de la base de dades associada amb l’entitat.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><code>@Id</code> </td><td class="col1"> Designa un o més dels atributs de l’entitat com a la clau principal de la taula.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <code>@Column</code> </td><td class="col1"> Associa un atribut que es vol emmagatzemar amb el nom d’una columna de la taula.</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Hi ha altres anotacions que hem utilitzat i que no apareixen en la llista. Intenteu contestar a les següents preguntes abans de continuar:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quines són les anotacions que hem utilitzat i que no pertanyen a l’API de JPA?</div>
+</li>
+<li class="level1"><div class="li"> A quina <acronym title="Application Programming Interface">API</acronym> pertanyen?</div>
+</li>
+<li class="level1"><div class="li"> Per a què creieu que serveixen?</div>
+</li>
+</ul>
+
+<p>
+Les anotacions que no són part de JPA i que hem utilitzat (<span class="tabref"><a href="#Taula 2.2"><span>taula</span></a></span>) són part de l’API <code>javax.validation</code> i serveixen per validar les dades que guardarem a la base de dades abans d’intentar guardar-les.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula 2.2"><span>Taula: </span></a>Annotacions de validació</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Anotació </th><th class="col1"> Descripció </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <code>@Size</code> </td><td class="col1"> Permet especificar la longitud màxima i/o mínima d’una variable de tipus <em>string</em>. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><code>@NotNull</code> </td><td class="col1"> Estableix que l’atribut not pot tenir un valor <em>null</em>.</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Com ja hem vist, JPA és una especificació que indica com es transformen classes en entitats i com aquestes es poden fer servir per llegir i escriure en una base de dades. És una especificació però no una implementació, és a dir, defineix com han de ser les operacions però no les implementa. Això vol dir que amb l’exemple de la classe <code>User</code> que hem vist no podem fer cap operació amb la base de dades. Per poder fer-ho hi ha dues opcions: utilitzar Persistence Units (unitats de persistència) o emprar Enterprise Java Beans, que requerirà de l’ús d’un servidor d’aplicacions com pot ser Glassfish.
+</p>
+
+</div>
+
+<h3><a id="unitats_de_persistencia" >Unitats de persistència</a></h3>
+<div class="level3">
+
+<p>
+Les unitats de persistència són les peces que enllacen l’entitat que hem definit amb la base de dades. Poden usar un <em>pool</em> de connexions amb la BD definides al servidor d’aplicacions o, com en l’exemple següent, una connexió JDBC. El que es aconseguir és crear una unitat de persistència que pugueu utilitzar en els tests unitaris. Obriu el codi que crearà el projecte UDF4-02. Al fitxer src/test/resources/META-INF/persistence.xml trobareu la configuració de la unitat de persistència.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;persistence version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;</div></li><li class="li1"><div class="de1">             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">             xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence</div></li><li class="li1"><div class="de1">http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;InMemoryH2PersistenceUnit&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;org.h2.Driver&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:h2:mem:socioc_db&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li><li class="li1"><div class="de1">&lt;/persistence&gt;</div></li></ol></pre>
+
+<p>
+El fitxer XML que defineix la unitat de persistència és on resideix informació que necessita JPA per saber com connectar-se a la BD. Aquest fitxer pot contenir la configuració de com connectar-se a múltiples BD. Cadascuna d’aquestes configuracions indicarà el tipus de transacció que s’utilitzarà a l’hora de fer les operacions amb la BD que serà JTA o RESOURCE_LOCAL.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Als annexos de la unitat trobareu l’arxiu amb el codi per crear el projecte UDF4-02.
+</p>
+</div></div>
+<p>
+A <em>persistence-unit name=</em> s’indica el nom de la unitat de persistència, que serà utilitzat a l’aplicació per obtenir una referència a la configuració que defineix com ens connectem a la BD. El tipus de transacció indica si s’utilitzarà Java Transaction <acronym title="Application Programming Interface">API</acronym> (JTA) <em>entity managers</em> (gestors d’entitats) per ser utilitzats en un servidor d’aplicacions o bé <em>entity managers</em> locals que no necessiten de cap servidor d’aplicacions, i que és el tipus que us interessa per als vostres tests unitaris.
+</p>
+
+<p>
+<code>&lt;class&gt;</code> permet definir quines classes (en el vostre cas només n’hi ha una, de moment) seran mapejades amb la BD. Després es defineixen els elements que permeten la connexió amb la BD. En aquest cas, nom d’usuari i contrasenya per accedir a la BD i l’<em>string</em> de connexió que defineix com accedir a la base de dades.
+</p>
+
+<p>
+Un cop heu establert com es farà la connexió amb la base de dades, ja podeu escriure un test unitari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public class UserTest {</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">    private EntityTransaction entityTransaction;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setUp() {</div></li><li class="li1"><div class="de1">        entityManager  = Persistence.createEntityManagerFactory(&quot;InMemoryH2PersistenceUnit&quot;).createEntityManager();</div></li><li class="li1"><div class="de1">        entityTransaction = entityManager.getTransaction();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @After</div></li><li class="li1"><div class="de1">    public void cleanUp() {</div></li><li class="li1"><div class="de1">        entityManager.close();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void findAllUsers(){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setRank(100);</div></li><li class="li1"><div class="de1">        user.setUsername(&quot;jdoe&quot;);</div></li><li class="li1"><div class="de1">        user.setUserId(23L);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        entityTransaction.begin();</div></li><li class="li1"><div class="de1">        entityManager.persist(user);</div></li><li class="li1"><div class="de1">        entityTransaction.commit();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Query query = entityManager.createNativeQuery(&quot;select * from users&quot;, User.class);</div></li><li class="li1"><div class="de1">        List&lt;User&gt; userList = query.getResultList();</div></li><li class="li1"><div class="de1">        Assert.assertEquals(1, userList.size());</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;jdoe&quot;, userList.get(0).getUsername());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb <code>Persistence.createEntityManagerFactory</code> definiu quina serà la unitat de persistència que necessitareu per crear l<code>‘EntityManager</code>. Després creeu un objecte per fer transaccions amb la BD; és part del mètode <code>setUp</code>, perquè aquest objecte l’utilitzareu en tots els tests. Al test <code>findAllUsers</code> primer creeu un objecte <code>User</code> (que, recordeu, serà una entitat), inicieu la transacció amb la BD, salveu l’objecte amb <code>entityManager.persist(user);</code> i finalment dieu a l’objecte que gestiona les transaccions que apliqui tots els canvis a la BD. Fixeu-vos que no serà fins a <code>entityTransaction.commit()</code> que els canvis s’escriuran a la base de dades. Finalment, el test comprova que a la taula “Users” de la BD només hi ha una entrada i que correspon a l’usuari que acabeu de crear. Executeu el test i obtindreu el següent error:
+</p>
+<pre class="code">javax.persistence.PersistenceException: No resource files named META-INF/services/javax.persistence.spi.PersistenceProvider were found. Please make sure that the persistence provider jar file is in your classpath.
+
+  at javax.persistence.Persistence.findAllProviders(Persistence.java:167)</pre>
+
+<p>
+Quin és el motiu pel qual teniu aquest error?
+</p>
+
+<p>
+Com ja heu vist, JPA només és una especificació, però no una implementació. L’error vol dir exactament això: quan s’intenta executar el codi no es troba cap llibreria (<code>PersistenceProvider</code>) que implementi JPA, per la qual cosa resulta impossible fer cap operació amb la base de dades. Ho solucionareu utilitzant la implementació <code><a href="http://www.eclipse.org/eclipselink/" class="urlextern" title="http://www.eclipse.org/eclipselink/"  rel="nofollow">EclipseLink</a></code>. No entrarem en detalls sobre EclipseLink, ja que més endavant utilitzareu Hibernate com a implementació. 
+</p>
+
+<p>
+Per incloure EclipseLink al nostre projecte, el primer serà modificar el fitxer de dependències pom.xml.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">  &lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.eclipse.persistence&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;eclipselink&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;2.5.0&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+A continuació haureu de modificar la unitat de persitència per indicar quina implementació utilitzareu:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;InMemoryH2PersistenceUnit&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;provider&gt;org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;org.h2.Driver&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:h2:mem:socioc_db;INIT=runscript from 'classpath:init.sql'&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.database.action&quot; value=&quot;drop-and-create&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.create-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.drop-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li></ol></pre>
+
+<p>
+A la línia 2 s’ha afegit quina serà la implementació del <code>PersistenceProvider</code>. A la línia 8, on s’indica l’<em>string</em> de connexió, afegim també que s’executi un <em>script</em> on creareu la taula “Users”, que utilitzareu per emmagatzemar els usuaris del nostre sistema. El fitxer src/test/resources/init.sql té el següent contingut:
+</p>
+<pre class="code sql"><ol><li class="li1"><div class="de1">CREATE TABLE users(user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,</div></li><li class="li1"><div class="de1">                  username VARCHAR(30) NOT NULL,</div></li><li class="li1"><div class="de1">                  name  VARCHAR(20) NOT NULL,</div></li><li class="li1"><div class="de1">                  email VARCHAR(50) NOT NULL,</div></li><li class="li1"><div class="de1">                  password VARCHAR(50) NOT NULL,</div></li><li class="li1"><div class="de1">                  rank INT DEFAULT 0,</div></li><li class="li1"><div class="de1">                  active BOOLEAN DEFAULT true,</div></li><li class="li1"><div class="de1">                  created_on TIMESTAMP AS CURRENT_TIME)</div></li></ol></pre>
+
+<p>
+Torneu a executar el test <code>findAllUsers</code>, que aquest cop hauria de passar. Un problema d’aquest codi és que la lògica per emmagatzemar i recuperar usuaris està al test. És important que aquest codi estigui a la seva pròpia classe per tal que es pugui utilitzar en tota l’aplicació. Creareu una classe, <code>UserService</code>, que s’encarregarà d’aquesta funció i que tindrà la lògica necessària per guardar un usuari a la base de dades, modificar-lo i buscar usuaris pel seu nom. Començareu creant una interfície que definirà les operacions relacionades amb la BD. Programar utilitzant interfícies té avantatges, com heu pogut veure amb JPA. Es defineix una interfície i després es pot canviar la implementació; així, si canviéssiu de BD i per exemple escollíssiu una BD NoSQL on no es pugui utilitzar JPA només hauríeu de preocupar-vos de canviar la implementació. Definiu la interfície <code>org.ioc.daw.user.UserDAO</code> que us permeti guardar usuaris a la BD, esborrar-los, modificar-los i trobar un usuari pel seu nom.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public interface UserService {</div></li><li class="li1"><div class="de1">    public void create(User user);</div></li><li class="li1"><div class="de1">    public void edit(User user);</div></li><li class="li1"><div class="de1">    public void remove(User user);</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+A continuació creeu la seva implementació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public UserServiceImpl(EntityManager entityManager) {</div></li><li class="li1"><div class="de1">        this.entityManager = entityManager;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(User user) {</div></li><li class="li1"><div class="de1">        entityManager.persist(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void edit(User user) {</div></li><li class="li1"><div class="de1">        entityManager.merge(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        entityManager.remove(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">      return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">          &quot;where o.username = :username&quot;)</div></li><li class="li1"><div class="de1">          .setParameter(&quot;username&quot;, username)</div></li><li class="li1"><div class="de1">          .getSingleResult();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Els mètodes <code>create</code>, <code>remove</code> i <code>edit</code> defineixen les operacions JPA per guardar, actualitzar i esborrar entitats de la BD. La part més interessant és la del mètode <code>findUserByUsername</code>. Utilitzeu <code>createQuery</code>, i en aquest cas feu servir una consulta parametritzada on indiqueu la classe de l’objecte que retornarà la consulta, el paràmetre que passareu (<code>username</code>) i que només retornarà un resultat, ja que només podeu tenir un usuari amb un nom determinat. El test el podeu implementar de la següent manera (en aquest cas emmagatzemeu dos usuaris):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserServiceTest {</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">    private EntityTransaction entityTransaction;</div></li><li class="li1"><div class="de1">    private UserService userService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setUp() {</div></li><li class="li1"><div class="de1">        entityManager  = Persistence.createEntityManagerFactory(&quot;InMemoryH2PersistenceUnit&quot;).createEntityManager();</div></li><li class="li1"><div class="de1">        userService = new UserServiceImpl(entityManager);</div></li><li class="li1"><div class="de1">        entityTransaction = entityManager.getTransaction();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @After</div></li><li class="li1"><div class="de1">    public void cleanUp() {</div></li><li class="li1"><div class="de1">        entityManager.close();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void findAllUsers(){</div></li><li class="li1"><div class="de1">        String username = &quot;jdoe&quot;;</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setRank(100);</div></li><li class="li1"><div class="de1">        user.setUsername(username);</div></li><li class="li1"><div class="de1">        User user1 = new User();</div></li><li class="li1"><div class="de1">        user1.setActive(true);</div></li><li class="li1"><div class="de1">        user1.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        user1.setEmail(&quot;test1@test.com&quot;);</div></li><li class="li1"><div class="de1">        user1.setName(&quot;Joe&quot;);</div></li><li class="li1"><div class="de1">        user1.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user1.setRank(100);</div></li><li class="li1"><div class="de1">        user1.setUsername(&quot;joeTest&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        entityTransaction.begin();</div></li><li class="li1"><div class="de1">        userService.create(user);</div></li><li class="li1"><div class="de1">        userService.create(user1);</div></li><li class="li1"><div class="de1">        entityTransaction.commit();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User userFromDB = userService.findUserByUsername(username);</div></li><li class="li1"><div class="de1">        Assert.assertNotNull(userFromDB);</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;jdoe&quot;, userFromDB.getUsername());</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;test@test.com&quot;, userFromDB.getEmail());</div></li><li class="li1"><div class="de1">        Assert.assertNotNull(userFromDB.getUserId());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que en aquest test no heu donat valor a <code>userId</code>, però tal com testeja <code>Assert.assertNotNull(userFromDB.getUserId());</code> sí que té un valor. Quina anotació JPA s’ha d’afegir a l’atribut <code>userId</code> de la classe <code>User</code> que generarà automàticament un valor? La resposta és <code>GeneratedValue</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Id</div></li><li class="li1"><div class="de1">  @NotNull</div></li><li class="li1"><div class="de1">  @GeneratedValue</div></li><li class="li1"><div class="de1">  @Column(name = &quot;user_id&quot;)</div></li><li class="li1"><div class="de1">  private Long userId;</div></li></ol></pre>
+
+</div>
+
+<h2><a id="servidor_d_aplicacions_glassfish" >Servidor d&#039;aplicacions Glassfish</a></h2>
+<div class="level2">
+
+<p>
+Quan vulgueu desplegar la vostra aplicació, utilitzar EclipseJPA com a implementació de JPA no serà suficient. Necessiteu un servidor d’aplicacions que permeti desplegar aplicacions Java EE. Glassfish és el servidor d’aplicacions de referència per a aplicacions Java EE i inclou les tecnologies EJB, JPA, JSF (Java Server Faces) i JMS (Java Messaging System). Netbeans inclou per defecte un servidor Glassfish. A la pestanya <em>Serveis</em>, tal com podeu veure en la <span class="figref"><a href="#fig2.11"><span>figura</span></a></span>, ja hi ha un servidor Glassfish configurat.
+</p>
+<div class="iocfigure"><a name="fig2.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Glassfish
+
+</figcaption><img src="../media/dawm7u4_31.png" alt="" /></figure>
+</div>
+<p>
+Arranqueu el servidor; després d’uns segons estarà funcionant, i si feu clic a <code>Resources</code> veureu que hi ha dues carpetes, <em>JDBC Resources</em> i <em>Connection Pools</em> (vegeu la <span class="figref"><a href="#fig2.13"><span>figura</span></a></span>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En algunes versions del servidor Glassfish hi ha un <em>bug</em> no solucionat en afegir un <em>pool</em> de connexions. Utilitzeu la versió 4.0 o superior, que podeu descarregar de: <a href="https://glassfish.java.net/download-archive.html" class="urlextern" title="https://glassfish.java.net/download-archive.html"  rel="nofollow">glassfish.java.net/ download-archive.html</a>. 
+</p>
+</div></div><div class="iocfigure"><a name="fig2.13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Resources and connection pools’
+
+</figcaption><img src="../media/dawm7u4_32.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="pool_de_connexions" >&#039;Pool&#039; de connexions</a></h3>
+<div class="level3">
+
+<p>
+Un <em>pool</em> de connexions és un sèrie de connexions amb la BD que es guarden en <em>cache</em> i que poden ser reutilitzades per diferents consultes que es facin a la BD. El motiu d’utilitzar-les és que milloren notablement el rendiment de l’aplicació i la fan molt més ràpida. La gestió d’obrir i tancar connexions amb al BD cada cop que es necessiti guardar o recuperar dades és molt costosa, especialment en aplicacions dinàmiques on el contingut es genera dinàmicament a partir de les dades de la BD. La forma de funcionar és que quan es crea una connexió es posa al <em>pool</em>, de manera que quan es torni a necessitar la connexió no s’ha de tornar a establir. El que volem fer és establir un <em>pool</em> de connexions amb la base de dades MySQL. Per fer-ho, un cop el servidor Glassfish ha arrencat, accediu a la consola d’administració (vegeu la <span class="figref"><a href="#fig2.14"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="fig2.14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Resources and connection pools’
+
+</figcaption><img src="../media/dawm7u4_33.png" alt="" /></figure>
+</div>
+<p>
+La consola d’administració és una aplicació web, així que s’obrirà una finestra al vostre navegador. Navegueu a <code>Resources/JDBC/JDBC Connection Pools</code> i veureu els <em>pools</em> de connexions creats per defecte (vegeu la <span class="figref"><a href="#fig2.15"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="fig2.15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Resources and connection pools’
+
+</figcaption><img src="../media/dawm7u4_34.png" alt="" /></figure>
+</div>
+<p>
+Feu clic a <em>New</em> i podreu crear el <em>pool</em> de connexions. Es fa en dues parts. En la primera part es dóna nom al <em>pool</em> de connexions i se selecciona el tipus de recurs i el <em>driver</em> que s’utilitzarà per connectar-se amb la base de dades (vegeu la <span class="figref"><a href="#fig2.16"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="fig2.16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Configuració del ‘pool’ de connexions I
+
+</figcaption><img src="../media/dawm7u4_35.png" alt="" /></figure>
+</div>
+<p>
+A continuació es configuren els paràmetres del <em>pool</em> de connexions (vegeu la <span class="figref"><a href="#fig2.17"><span>figura</span></a></span>). Els que hi ha per defecte ja aniran bé, així que no els canviareu. Cal destacar els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Initial and Minimum Pool Size: nombre mínim de connexions amb la BD que mantindrem al <em>pool</em>.</div>
+</li>
+<li class="level1"><div class="li"> Maximum Pool Size: nombre màxim de connexions simultànies que mantindrem al <em>pool</em>.</div>
+</li>
+<li class="level1"><div class="li"> Pool Resize Quantity: nombre de connexions que es trauran del <em>pool</em> quan no hi hagi activitat durant més del temps establert pel paràmetre <code>Idle Timeout</code>.</div>
+</li>
+<li class="level1"><div class="li"> Idle Timeout: temps màxim que una connexió pot estar inactiva.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="fig2.17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Configuració del ‘pool’ de connexions II
+
+</figcaption><img src="../media/dawm7u4_36.png" alt="" /></figure>
+</div>
+<p>
+Els únics valors que heu de canviar són els relatius al nom de la base de dades, l’usuari, la contrasenya, la IP i el port que utilitza el servidor MySQL, que trobareu al final de la pàgina web (vegeu la <span class="figref"><a href="#fig2.18"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Configuració del ‘pool’ de connexions III
+
+</figcaption><img src="../media/dawm7u4_37.png" alt="" /></figure>
+</div>
+<p>
+Un cop configurat, assegureu-vos que la connexió amb la BD funciona utilitzant el botó <em>Ping</em>. Si obteniu l’error mostrat en la <span class="figref"><a href="#fig2.19"><span>figura</span></a></span> és perquè el servidor Glassfish no pot accedir al <em>driver</em> de connexió amb MySQL. 
+</p>
+<div class="iocfigure"><a name="fig2.19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Connector MySQL no trobat
+
+</figcaption><img src="../media/dawm7u4_38.png" alt="" /></figure>
+</div>
+<p>
+En aquest cas feu el següent:
+</p>
+<ol>
+<li class="level1"><div class="li"> Descarregueu-vos el connector de <a href="https://dev.mysql.com/downloads/connector/j/5.1.html" class="urlextern" title="https://dev.mysql.com/downloads/connector/j/5.1.html"  rel="nofollow">dev.mysql.com/downloads/connector/ j/5.1.html</a>.</div>
+</li>
+<li class="level1"><div class="li"> Descomprimiu-lo i copieu l’arxiu mysql-connector-java-5.1.40-bin.jar a <em>/instalacio-del-servidor-glassfish/glassfish-4.1/glassfish/domains/domain1 /lib/ </em>. Glassfish estarà instal·lat en el directori on hagueu instal·lat Netbeans. Per veure on està instal·lat exactament mireu les propietats del servidor Glassfish (<em>Installation Location</em>) (vegeu la <span class="figref"><a href="#fig2.20"><span>figura</span></a></span> i la <span class="figref"><a href="#fig2.21"><span>figura</span></a></span>).</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="fig2.20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Directori d’instal·lació de Glassfish
+
+</figcaption><img src="../media/dawm7u4_38-1.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="fig2.21"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Directori d’instal·lació de Glassfish
+
+</figcaption><img src="../media/dawm7u4_38-2.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="recursos_jdbc" >Recursos JDBC</a></h3>
+<div class="level3">
+
+<p>
+Un recurs JDBC proporciona a una aplicació la forma de connectar-se a una base de dades. Típicament, l’administrador del servidor Glassfish crearà un recurs JDBC que establirà quin dels <em>pools</em> de connexions utilitzarà l’aplicació. Cada recurs JDBC creat al servidor d’aplicacions tindrà un únic identificador JNDI (Java Naming and Directory Interface). JNDI és un servei ofert pels servidors d’aplicacions Java EE que permet als clients (en aquest cas, l’aplicació que estem desenvolupant) descobrir serveis i objectes utilitzant un nom. L’objecte que la vostra aplicació descobrirà serà l’objecte que representa el <em>pool</em> de connexions. A l’hora d’escollir el nom per al recurs JDBC es pot triar qualsevol, però per convenció s’utilitza jdbc/nom_del_recurs_pm. Per crear un recurs JDBC aneu a la consola d’administració de Glassfish i navegueu a <em>Resources/JDBC/JDBC Resources</em>. Amb el botó <em>New</em>, creeu un nou recurs i afegiu-hi les dades, tal com podeu veure en la <span class="figref"><a href="#fig2.22"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació d’un recurs JDBC
+
+</figcaption><img src="../media/dawm7u4_39.png" alt="" /></figure>
+</div>
+<p>
+Si refresqueu la informació del servidor Glassfish a Netbeans hauríeu de veure tant el recurs JDBC creat com el <em>pool</em> de connexions (vegeu la <span class="figref"><a href="#fig2.23"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.23"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Recurs JDBC i ‘pool’ de connexions
+
+</figcaption><img src="../media/dawm7u4_40.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="connectar_l_aplicacio_socioc_amb_el_recurs_jdbc" >Connectar l’aplicació &quot;SocIoc&quot; amb el recurs JDBC</a></h3>
+<div class="level3">
+
+<p>
+Un cop ja teniu el <em>pool</em> de connexions i el recurs JDBC creat, ja podeu fer que la vostra aplicació els utilitzi. Per fer-ho haureu de definir una unitat de persistència que especifiqui el recurs JDBC que utilitzareu. A partir del codi , importeu el projecte UDF4-02 i editeu el fitxer persistence.xml i amb el següent contingut:
+</p>
+
+<p>
+
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Trobareu el codi per connectar l’aplicació “SocIoc” amb el recurd JDBC als annexos de la unitat.
+</p>
+</div></div><pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;persistence version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;</div></li><li class="li1"><div class="de1">             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">             xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence</div></li><li class="li1"><div class="de1">http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;InMemoryH2PersistenceUnit&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;provider&gt;org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;org.h2.Driver&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:h2:mem:socioc_db;INIT=runscript from 'classpath:init.sql'&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.database.action&quot; value=&quot;drop-and-create&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.create-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.drop-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;MysqlResourceSocIocPersistence&quot; transaction-type=&quot;JTA&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;jta-data-source&gt;jdbc/socioc__pm&lt;/jta-data-source&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;eclipselink.logging.level&quot; value=&quot;FINEST&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li><li class="li1"><div class="de1">&lt;/persistence&gt;</div></li></ol></pre>
+
+<p>
+Hi ha diversos canvis. El primer és que la definició de la nova unitat de persistència <code>MysqlResourceSocIocPersistence</code> és molt més simple. Penseu que ara tots els detalls de la connexió estan gestionats per Glassfish, així que vosaltres només us heu de preocupar d’indicar quin serà el recurs JDBC que utilitzareu. L’única propietat que s’ha afegit a la línia 23 és <code>eclipselink.logging.level</code>, que indica el nivell de <em>logging</em> de l’aplicació i que serà útil per solucionar problemes. Al test unitari anterior, la gestió de les transaccions era part del test.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    entityTransaction.begin();</div></li><li class="li1"><div class="de1">    userService.create(user);</div></li><li class="li1"><div class="de1">    userService.create(user1);</div></li><li class="li1"><div class="de1">    entityTransaction.commit();</div></li></ol></pre>
+
+<p>
+Això no hauria de formar part del test, ja que el que us interessa és que sigui la classe que fa les consultes a la BD la que s’encarregui de gestionar les transaccions. A més a més, en utilitzar un servidor d’aplicacions les vostres classes seran ara entitats de ple dret, per la qual cosa es pot aprofitar per simplificar el codi utilitzant anotacions. Per fer-ho haureu d’afegir la següent dependència al fitxer pom.xml.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1"> &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;javax.ejb&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      &lt;artifactId&gt;javax.ejb-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      &lt;version&gt;3.2&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Vegeu com s’ha de modificar la classe <code>UserServiceImpl</code>:
+</p>
+
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">@TransactionManagement(TransactionManagementType.BEAN)</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">    @PersistenceContext(unitName = &quot;MysqlResourceSocIocPersistence&quot;)</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Resource</div></li><li class="li1"><div class="de1">    private EJBContext context;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(User user) {</div></li><li class="li1"><div class="de1">        UserTransaction utx = context.getUserTransaction();</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            utx.begin();</div></li><li class="li1"><div class="de1">            entityManager.persist(user);</div></li><li class="li1"><div class="de1">            utx.commit();</div></li><li class="li1"><div class="de1">        } catch (Exception e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">            try {</div></li><li class="li1"><div class="de1">                utx.rollback();</div></li><li class="li1"><div class="de1">            } catch (Exception e1) {</div></li><li class="li1"><div class="de1">                e1.printStackTrace();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void edit(User user) {</div></li><li class="li1"><div class="de1">        UserTransaction utx = context.getUserTransaction();</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            utx.begin();</div></li><li class="li1"><div class="de1">            entityManager.merge(user);</div></li><li class="li1"><div class="de1">            utx.commit();</div></li><li class="li1"><div class="de1">        } catch (Exception e) {</div></li><li class="li1"><div class="de1">            try {</div></li><li class="li1"><div class="de1">                utx.rollback();</div></li><li class="li1"><div class="de1">            } catch (Exception e1) {</div></li><li class="li1"><div class="de1">                e1.printStackTrace();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        UserTransaction utx = context.getUserTransaction();</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            utx.begin();</div></li><li class="li1"><div class="de1">            entityManager.remove(user);</div></li><li class="li1"><div class="de1">            utx.commit();</div></li><li class="li1"><div class="de1">        } catch (Exception e) {</div></li><li class="li1"><div class="de1">            try {</div></li><li class="li1"><div class="de1">                utx.rollback();</div></li><li class="li1"><div class="de1">            } catch (Exception e1) {</div></li><li class="li1"><div class="de1">                e1.printStackTrace();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">      return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">        &quot;where o.username = :username&quot;)</div></li><li class="li1"><div class="de1">        .setParameter(&quot;username&quot;, username)</div></li><li class="li1"><div class="de1">        .getSingleResult();</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+L’anotació <code>Stateless</code> transforma un POJO en una EJB de sessió que adquireix la capacitat d’executar operacions en un servidor d’aplicacions (Glassfish, en el vostre cas). <code>TransactionManagement</code> és necessària per permetre fer operacions amb la BD a través del servidor d’aplicacions. En aquest cas, farà que hi hagi disponible al context de EJB (<code>EJBContext</code>) la classe <code>UserTransaction</code>, que utilitzareu per indicar quan comencen i acaben les transaccions amb la BD. L’anotació <code>PersistenceContext</code> permet declarar quina serà la unitat de persistència que utilitzareu per indicar com l’EJB <code>UserServiceImpl</code> s’ha de connectar amb la BD. Finalment, a cadascun dels mètodes que s’encarreguen de modificar dades a la BD utilitzeu <code>UserTransaction</code> per establir quan comencen i acaben les transaccions. Hi ha un mètode, <code>utx.rollback()</code>, que desfarà les dades modificades a la BD en cas que hi hagi un error.
+</p>
+
+<p>
+
+</p>
+
+<p>
+A continuació cal modificar el vostre test unitari. Hi ha un problema: volem que el test utilitzi el recurs JDBC que heu creat al servidor Glassfish. Això vol dir que el vostre test ha de poder accedir a les EJB a Glassfish. Per aconseguir-ho utilitzareu un servidor Glassfish-embedded, que s’iniciarà durant els tests i permetrà accedir als recursos JDBC i EJB del servidor real Glassfish. El primer pas és afegir unes dependències al fitxer pom.xml. Fixeu-vos que heu de substituir DIRECTORI_INSTALACIO_NETBEANS pel directori on tingueu instal·lat el servidor Glassfish (vegeu la <span class="figref"><a href="#fig2.20"><span>figura</span></a></span> i la <span class="figref"><a href="#fig2.21"><span>figura</span></a></span>). També heu de copiar el fitxer mysql-connector-java-5.1.40-bin.jar al directori <em>/NetBeans/glassfish-4.1/glassfish/lib/embedded</em>.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;properties&gt;</div></li><li class="li1"><div class="de1">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div></li><li class="li1"><div class="de1">    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</div></li><li class="li1"><div class="de1">    &lt;glassfish.embedded-static-shell.jar&gt;/DIRECTORI_INSTALACIO_NETBEANS/glassfish-4.1//glassfish/lib/embedded/glassfish-embedded-static-shell.jar&lt;/glassfish.embedded-static-shell.jar&gt;</div></li><li class="li1"><div class="de1">    &lt;glassfish.mysql.jar&gt;/DIRECTORI_INSTALACIO_NETBEANS/glassfish-4.1//glassfish/lib/embedded/mysql-connector-java-5.1.40-bin.jar&lt;/glassfish.mysql.jar&gt;</div></li><li class="li1"><div class="de1">&lt;/properties&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;dependencies&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;com.h2database&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;h2&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.4.190&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    	&lt;artifactId&gt;junit&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    	&lt;version&gt;4.12&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.validation&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;validation-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.1.0.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.eclipse.persistence&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;eclipselink&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;2.5.0&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.glassfish.main.extras&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;glassfish-embedded-all&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;4.1.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">        &lt;scope&gt;system&lt;/scope&gt;</div></li><li class="li1"><div class="de1">        &lt;systemPath&gt;${glassfish.embedded-static-shell.jar}&lt;/systemPath&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.ejb&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;javax.ejb-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;3.2&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;mysql&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;5.1.40&lt;/version&gt;</div></li><li class="li1"><div class="de1">        &lt;scope&gt;system&lt;/scope&gt;</div></li><li class="li1"><div class="de1">        &lt;systemPath&gt;${glassfish.mysql.jar}&lt;/systemPath&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;/dependencies&gt;</div></li></ol></pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El directori glassfish-4.1 correspon a la versió 4.1. Heu de fer servir el que correspon a la vostra versió.
+</p>
+</div></div>
+<p>
+A continuació creeu un test que utilitzarà el recurs JDBC definit a <code>UserServiceImpl</code> i que, per tant, escriurà dades a la BD MySQL que heu creat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Before</div></li><li class="li1"><div class="de1">  public void setUp() throws NamingException {</div></li><li class="li1"><div class="de1">      Context context = EJBContainer.createEJBContainer().getContext();</div></li><li class="li1"><div class="de1">      userService = (UserService) context.lookup(&quot;java:global/classes/UserServiceImpl&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  public void findUserByUsername() {</div></li><li class="li1"><div class="de1">      String username = &quot;jdoe&quot;;</div></li><li class="li1"><div class="de1">      User user = new User();</div></li><li class="li1"><div class="de1">      user.setActive(true);</div></li><li class="li1"><div class="de1">      user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">      user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">      user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">      user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">      user.setRank(100);</div></li><li class="li1"><div class="de1">      user.setUsername(username);</div></li><li class="li1"><div class="de1">      User user1 = new User();</div></li><li class="li1"><div class="de1">      user1.setActive(true);</div></li><li class="li1"><div class="de1">      user1.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">      user1.setEmail(&quot;test1@test.com&quot;);</div></li><li class="li1"><div class="de1">      user1.setName(&quot;Joe&quot;);</div></li><li class="li1"><div class="de1">      user1.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">      user1.setRank(100);</div></li><li class="li1"><div class="de1">      user1.setUsername(&quot;joeTest&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      userService.create(user);</div></li><li class="li1"><div class="de1">      userService.create(user1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      User userFromDB = userService.findUserByUsername(username);</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(userFromDB);</div></li><li class="li1"><div class="de1">      Assert.assertEquals(&quot;jdoe&quot;, userFromDB.getUsername());</div></li><li class="li1"><div class="de1">      Assert.assertEquals(&quot;test@test.com&quot;, userFromDB.getEmail());</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(userFromDB.getUserId());</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Primer inicialitzeu el servidor Glassfish-embedded i recupereu l’EJB del contenidor d’EJB del servidor Glassfish real. Un cop teniu l’EJB <code>UserServiceImpl</code> ja podeu fer les operacions amb la base de dades. Executeu el test, i hauríeu d’obtenir un error similar al de la <span class="figref"><a href="#fig2.24"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.24"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Error SQL
+
+</figcaption><img src="../media/dawm7u4_41.png" alt="" /></figure>
+</div>
+<p>
+Per què creieu que teniu aquest error?
+</p>
+<ul>
+<li class="level1"><div class="li"> Perquè no es pot connectar amb la BD?</div>
+</li>
+<li class="level1"><div class="li"> Perquè la taula “Users” no està disponible?</div>
+</li>
+<li class="level1"><div class="li"> Perquè la taula “Sequence” no existeix?</div>
+</li>
+</ul>
+
+<p>
+L’error és perquè la taula “Sequence” no existeix, no l’heu definit i no hi feu referència enlloc; llavors, quan s’està intentant crear? Per què quan vau fer el test amb la BD en memòria no va fallar? La resposta està a la classe <code>User</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @GeneratedValue</div></li><li class="li1"><div class="de1">  @Column(name = &quot;user_id&quot;)</div></li><li class="li1"><div class="de1">  private Long userId;</div></li></ol></pre>
+
+<p>
+L’anotació <code>GeneratedValue</code> té com a estratègia per defecte <code>GenerationType.AUTO</code>, que intentarà crear la taula “Sequence” per guardar el valor autogenerat per al camp “user_id” de la taula. Com que la taula no existeix, l’aplicació acaba amb un error, ja que no hi pot escriure. A la vostra taula vau definir que el cap que formaria la clau principal s’autoincrementaria, llavors l’estratègia que heu d’utilitzar és <code>GenerationType.IDENTITY</code>. Modifiqueu la classe <code>User</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">  @Column(name = &quot;user_id&quot;)</div></li><li class="li1"><div class="de1">  private Long userId;</div></li></ol></pre>
+
+<p>
+Executeu el test un altre cop, aquesta vegada tindreu el següent error:
+</p>
+<pre class="code">Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column &#039;user_id&#039; in &#039;field list&#039;</pre>
+
+<p>
+L’error diu ara que no existeix un camp anomenat “user_id” a la taula “Users”. Netbeans deixa crear una connexió amb la BD que us permetrà examinar l’estructura de la taula. Seleccioneu la pestanya “Services”, feu clic amb el botó dret a <em>Database</em> i registreu una connexió amb un servidor MySQL, tal com podeu veure en la <span class="figref"><a href="#fig2.25"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig2.25"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Registrar un servidor MySQL a Netbeans
+
+</figcaption><img src="../media/dawm7u4_42.png" alt="" /></figure>
+</div>
+<p>
+A continuació, afegiu les dades del vostre servidor MySQL (vegeu la <span class="figref"><a href="#fig2.26"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.26"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Registrar el servidor MySQL a Netbeans
+
+</figcaption><img src="../media/dawm7u4_43.png" alt="" /></figure>
+</div>
+<p>
+Un cop definida la connexió ja podeu examinar el contingut de la taula “Users” (vegeu la <span class="figref"><a href="#fig2.27"><span>figura</span></a></span>) a través de la pestanya “Services” de Netbeans.
+</p>
+<div class="iocfigure"><a name="fig2.27"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Contingut de la taula “Users”
+
+</figcaption><img src="../media/dawm7u4_44.png" alt="" /></figure>
+</div>
+<p>
+El problema és que la columna de la taula “Users” s’anomena “id” i no “user_id”. Canvieu, doncs, la classe <code>User</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Id</div></li><li class="li1"><div class="de1">  @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">  @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">  private Long userId;</div></li></ol></pre>
+
+<p>
+Executeu de nou el test, i ara acabarà sense cap error. Com que heu utilitzat la BD MySQL, podeu veure que els dos usuaris creats al tests estan a la taula “Users”. Amb l’opció <em>Execute command</em> (vegeu la <span class="figref"><a href="#fig2.28"><span>figura</span></a></span>) podeu executar consultes i veure que la taula conté els registres esperats (vegeu la <span class="figref"><a href="#fig2.29"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.28"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Executar una consulta SQL
+
+</figcaption><img src="../media/dawm7u4_45.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="fig2.29"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Registres creats durant el test
+
+</figcaption><img src="../media/dawm7u4_46.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="refactoritzant_el_codi_per_simplificar_el_codi_i_millorar_el_test" >Refactoritzant el codi per simplificar el codi i millorar el test</a></h3>
+<div class="level3">
+
+<p>
+Escriure test unitaris que modifiquin el contingut de la base de dades MySQL és un problema. Penseu que aquesta serà la BD que utilitzareu per a la vostra aplicació; tenir un test que escriu dades a aquesta BD és, doncs, un error. Us ha servit per veure com utilitzar el servidor Glassfish per emprar un recurs JDBC i escriure a la BD, però ho heu de canviar. 
+</p>
+
+<p>
+Un altre problema està a la classe <code>UserServiceImpl</code>. El primer problema és que esteu determinant quina unitat de persistència utilitzarà aquesta EJB, i això impossibilita escollir quina unitat de persistència emprar quan s’executen els tests. Heu de refactoritzar el codi per tal de poder escollir la unitat de persistència en funció que executeu tests unitaris o desplegueu l’aplicació al servidor Glassfish.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@PersistenceContext(unitName = “MysqlResourceSocIocPersistence&quot;)</div></li></ol></pre>
+
+<p>
+Un altra cosa que podeu millorar es la gestió de les transaccions. Aquest és el codi que heu utilitzat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Override</div></li><li class="li1"><div class="de1"> public void create(User user) {</div></li><li class="li1"><div class="de1">     UserTransaction utx = context.getUserTransaction();</div></li><li class="li1"><div class="de1">     try {</div></li><li class="li1"><div class="de1">         utx.begin();</div></li><li class="li1"><div class="de1">         entityManager.persist(user);</div></li><li class="li1"><div class="de1">         utx.commit();</div></li><li class="li1"><div class="de1">     } catch (Exception e) {</div></li><li class="li1"><div class="de1">         e.printStackTrace();</div></li><li class="li1"><div class="de1">         try {</div></li><li class="li1"><div class="de1">             utx.rollback();</div></li><li class="li1"><div class="de1">         } catch (Exception e1) {</div></li><li class="li1"><div class="de1">             e1.printStackTrace();</div></li><li class="li1"><div class="de1">         }</div></li><li class="li1"><div class="de1">     }</div></li><li class="li1"><div class="de1"> }</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+El que passa és que quan s’utilitza l’anotació <code>@Stateless</code>, automàticament EJB proporciona la següent anotació a cadascun dels mètodes <code>@TransactionAttribute(TransactionAttributeType.REQUIRED)</code>. Això fa que s’encarregui automàticament de gestionar les transaccions; per tant, podeu simplificar la classe <code>UserServiceImpl</code> notablement.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">    @PersistenceContext</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(User user) {</div></li><li class="li1"><div class="de1">        entityManager.persist(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void edit(User user) {</div></li><li class="li1"><div class="de1">        entityManager.merge(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        entityManager.remove(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">      return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">        &quot;where o.username = :username&quot;)</div></li><li class="li1"><div class="de1">        .setParameter(&quot;username&quot;, username)</div></li><li class="li1"><div class="de1">        .getSingleResult();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+De la forma que heu fet el test anterior era necessari que el servidor Glassfish estigués corrent. Això és un problema, ja que necessiteu executar els tests de manera independent del servidor d’aplicacions, i el més important: heu de ser capaços de poder especificar la unitat de persistència que voleu utilitzar en cada moment. Per poder aconseguir això fareu servir Arquillian (<a href="https://docs.jboss.org/arquillian/reference/1.0.0.Alpha1/en-US/html_single/" class="urlextern" title="https://docs.jboss.org/arquillian/reference/1.0.0.Alpha1/en-US/html_single/"  rel="nofollow">red.ht/2ls9x1Q</a>), que és un <em>framework</em> de testeig que facilita escriure tests del components EJB. Utilitzant Arquillian podreu llançar una versió d’un servidor Glassfish en memòria que us permetrà accedir a les EJB tal com si estiguessin corrent al servidor real. Per aconseguir això, el primer que heu de fer és afegir unes dependències. Hi ha uns quants canvis, per la qual cosa aquí teniu tot el fitxer pom.xml.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1"> &lt;dependencyManagement&gt;</div></li><li class="li1"><div class="de1">    &lt;dependencies&gt;</div></li><li class="li1"><div class="de1">        &lt;dependency&gt;</div></li><li class="li1"><div class="de1">            &lt;groupId&gt;org.jboss.arquillian&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">            &lt;artifactId&gt;arquillian-bom&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">            &lt;version&gt;1.1.11.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">            &lt;scope&gt;import&lt;/scope&gt;</div></li><li class="li1"><div class="de1">            &lt;type&gt;pom&lt;/type&gt;</div></li><li class="li1"><div class="de1">        &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependencies&gt;</div></li><li class="li1"><div class="de1">&lt;/dependencyManagement&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;dependencies&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;com.h2database&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;h2&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.4.190&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;4.12&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.validation&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;validation-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.1.0.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.eclipse.persistence&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;eclipselink&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;2.6.4&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.ejb&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;javax.ejb-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;3.2&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;mysql&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;5.1.40&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.el&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;javax.el-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;3.0.1-b04&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.jboss.arquillian.container&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;arquillian-glassfish-embedded-3.1&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.0.0.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">        &lt;scope&gt;test&lt;/scope&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.glassfish.main.extras&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;glassfish-embedded-all&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;4.1.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">        &lt;scope&gt;provided&lt;/scope&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;javax.inject&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;javax.inject&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;org.jboss.arquillian.junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;arquillian-junit-container&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;scope&gt;test&lt;/scope&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;/dependencies&gt;</div></li></ol></pre>
+
+<p>
+El primer que fareu serà separar el fitxer on definiu les unitats de persistència en dos fitxers. Un contindrà la unitat de persistència per escriure a la BD MySQL i l’altre la unitat de persistència per a testeig (vegeu la <span class="figref"><a href="#fig2.30"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig2.30"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Registres creats durant el test
+
+</figcaption><img src="../media/dawm7u4_47.png" alt="" /></figure>
+</div>
+<p>
+Aquest és la unitat de persistència per escriure a MySQL:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;persistence version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;</div></li><li class="li1"><div class="de1">             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">             xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence</div></li><li class="li1"><div class="de1">http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;SocIocPersistenceUnit&quot; transaction-type=&quot;JTA&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;jta-data-source&gt;jdbc/socioc__pm&lt;/jta-data-source&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;eclipselink.logging.level&quot; value=&quot;FINEST&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li><li class="li1"><div class="de1">&lt;/persistence&gt;</div></li></ol></pre>
+
+<p>
+I aquest és la unitat de persistència que utilitzareu per al testeig:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;persistence version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;</div></li><li class="li1"><div class="de1">             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">             xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence</div></li><li class="li1"><div class="de1">http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;persistence-unit name=&quot;SocIocPersistenceUnit-TEST&quot; transaction-type=&quot;JTA&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;provider&gt;org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider&gt;</div></li><li class="li1"><div class="de1">        &lt;class&gt;org.ioc.daw.user.User&lt;/class&gt;</div></li><li class="li1"><div class="de1">        &lt;properties&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;org.h2.Driver&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;username&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;password&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:h2:mem:socioc_db;INIT=runscript from 'classpath:init.sql'&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.database.action&quot; value=&quot;drop-and-create&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.create-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;property name=&quot;javax.persistence.schema-generation.drop-source&quot; value=&quot;metadata&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/properties&gt;</div></li><li class="li1"><div class="de1">    &lt;/persistence-unit&gt;</div></li><li class="li1"><div class="de1">&lt;/persistence&gt;</div></li></ol></pre>
+
+<p>
+Ara ja podeu reescriure el test unitari. Si teniu el servidor Glassfish en execució pareu-lo, o tindreu conflictes de port.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RunWith(Arquillian.class)</div></li><li class="li1"><div class="de1">public class UserServiceTest {</div></li><li class="li1"><div class="de1">    @Inject</div></li><li class="li1"><div class="de1">    private UserService userService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Deployment(testable = true)</div></li><li class="li1"><div class="de1">    public static JavaArchive createTestableDeployment() {</div></li><li class="li1"><div class="de1">        final JavaArchive jar = ShrinkWrap.create(JavaArchive.class, &quot;example.jar&quot;)</div></li><li class="li1"><div class="de1">                .addClasses(UserService.class, UserServiceImpl.class)</div></li><li class="li1"><div class="de1">                .addAsManifestResource(&quot;META-INF/persistence-test.xml&quot;, &quot;persistence.xml&quot;)</div></li><li class="li1"><div class="de1">                .addAsManifestResource(EmptyAsset.INSTANCE, ArchivePaths.create(&quot;beans.xml&quot;));</div></li><li class="li1"><div class="de1">        return jar;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void findUserByUsername() {</div></li><li class="li1"><div class="de1">        String username = &quot;jdoe&quot;;</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setRank(100);</div></li><li class="li1"><div class="de1">        user.setUsername(username);</div></li><li class="li1"><div class="de1">        User user1 = new User();</div></li><li class="li1"><div class="de1">        user1.setActive(true);</div></li><li class="li1"><div class="de1">        user1.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        user1.setEmail(&quot;test1@test.com&quot;);</div></li><li class="li1"><div class="de1">        user1.setName(&quot;Joe&quot;);</div></li><li class="li1"><div class="de1">        user1.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user1.setRank(100);</div></li><li class="li1"><div class="de1">        user1.setUsername(&quot;joeTest&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        userService.create(user);</div></li><li class="li1"><div class="de1">        userService.create(user1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User userFromDB = userService.findUserByUsername(username);</div></li><li class="li1"><div class="de1">        Assert.assertNotNull(userFromDB);</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;jdoe&quot;, userFromDB.getUsername());</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;test@test.com&quot;, userFromDB.getEmail());</div></li><li class="li1"><div class="de1">        Assert.assertNotNull(userFromDB.getUserId());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>@RunWith(Arquillian.class)</code> indica que executareu el test utilitzant Arquillian, i a continuació injecteu l’EJB UserService. Això és possible perquè Arquillian crea un servidor Glassfish en memòria amb un contenidor amb totes les EJB de la vostra aplicació, la qual cosa us permet afegir-les a una determinada classe quan sigui necessari. A <code>createTestableDeployment</code> és on es configura el servidor d’aplicacions utilitzant Arquillian. La part més important és on indiqueu quines classes són les EJB que voleu afegir al contenidor EJB del servidor i quin és el fitxer amb la definició de la unitat de persistència que voleu fer servir.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar tot el codi resultant de la refactorització als annexos de la unitat.
+</p>
+</div></div>
+<p>
+Heu après que utilitzant JDBC directament al codi té una sèrie d’inconvenients, ja que fa que us hagueu d’encarregar de programar operacions de baix nivell amb la base de dades, com establir i tancar les connexions, encarregar-se del mapatge de les dades de la BD amb els objectes del codi, etc. 
+</p>
+
+<p>
+Per solucionar aquests problemes heu vist JPA, que és una especificació que determina i fa estàndards les operacions amb la BD. És una especificació però no hi ha una implementació, així que per fer els exemples hem utilitzat EclipseLink, una de les implementacions disponibles. També heu vist que, encara que pugueu utilitzar implementacions de JPA per accedir directament a les bases de dades, utilitzar un servidor EJB com Glassfish proporciona diversos avantatges. 
+</p>
+
+<p>
+Pel que fa a JPA, permet establir un <em>pool</em> de connexions per fer més eficients les operacions i reutilitzar les connexions establertes amb la BD, que són operacions molt costoses. Finalment, heu vist diferents formes de testejar aplicacions que treballen amb bases de dades i heu creat una estructura, separant les unitats de persistència i utilitzant el <em>framework</em> Arquillian, que pot servir de base per testejar qualsevol aplicació que treballi amb JPA.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

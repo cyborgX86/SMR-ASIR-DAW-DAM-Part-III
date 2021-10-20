@@ -1,0 +1,1345 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a href="../../../WebContent/u1/introduccio.html">1. Introducció a la programació orientada a objectes. Classes</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1mapa"><a href="../../../WebContent/u1/mapa.html">Mapa conceptual</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id="u1a1continguts"><a href="../../../WebContent/u1/a1/continguts.html">Fonaments de la programació orientada a objectes</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis</a></li></ul></li><li id="u1a2" class="tocsection"><p id="u1a2continguts"><a href="../../../WebContent/u1/a2/continguts.html">Declaració de classes</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Introducció a la programació orientada a objectes. Classes</a></li><li>Declaració de classes</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="declaracio_de_classes"> Declaració de classes </a></h1>
+    	
+<p>
+L’element fonamental de tot programa orientat a objectes és l’objecte. Aquests objectes es generen a partir d’un fitxer de codi font, una classe, on es defineixen les seves propietats i el seu comportament (atributs i mètodes). El llenguatge Java proporciona un conjunt de classes ja creades que es poden usar directament, però gairebé sempre és necessari generar classes noves, d’acord a les necessitats de cada programa concret. Per tant, la clau per poder generar el codi font d’un programa orientat a objectes està en el fet de saber com generar codi per declarar classes correctament.
+</p>
+
+<h2><a id="pas_a_codi_de_classes" >Pas a codi de classes</a></h2>
+<div class="level2">
+
+<p>
+La codificació d’una classe segueix la sintaxi següent, en què s’aprecien dues parts ben diferenciades.
+</p>
+<pre class="code">DeclaracióDeLaClasse {
+  CosDeLaClasse
+}</pre>
+
+<p>
+Cadascuna de les dues parts (declaració i cos) pot ser més o menys complexa i, com acostuma a succeir en l’aprenentatge de qualsevol llenguatge, començarem per les formes més simples per avançar posteriorment cap a formes més complexes.
+</p>
+
+<p>
+En principi, totes les classes que hem dissenyat han tingut, com a declaració, la sintaxi següent:
+</p>
+<pre class="code">public class &lt;NomClasse&gt;</pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El modificador davant el nom d’una classe possibilita que la classe sigui accessible des d’altres classes.
+</p>
+</div></div>
+<p>
+Aquesta declaració es pot veure ampliada amb altres modificadors (a més del public) a l’esquerra de la paraula <code>class</code> i amb uns modificadors a la dreta de <code>NomClasse</code>. Per crear les primeres classes, però, no els necessitem.
+</p>
+
+<p>
+El cos de la classe és una seqüència de tres tipus de components:
+</p>
+<ul>
+<li class="level1"><div class="li"> Els relatius a les <strong>dades</strong> que contindran els objectes de la classe (els atributs).</div>
+</li>
+<li class="level1"><div class="li"> Els relatius a blocs de codi sense nom, coneguts com a <strong>iniciadors</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Els relatius als <strong>mètodes</strong> que la classe proporciona per gestionar les dades que emmagatzema.</div>
+</li>
+</ul>
+
+<p>
+En principi aquests tres tipus de components es poden incloure dins la definició de la classe en qualsevol ordre, però hi ha el conveni de començar amb les dades, continuar amb els iniciadors i finalitzar amb els mètodes.
+</p>
+
+<p>
+Així, doncs:
+</p>
+<pre class="code">public class &lt;NomClasse&gt; {
+  &lt;seqüènciaDeclaracionsDeDades&gt;;
+  &lt;seqüènciaIniciadors&gt;;
+  &lt;seqüènciaDefinicionsDeMètodes&gt;
+}</pre>
+
+<p>
+Un fitxer de codi Java pot incorporar diverses classes, però normalment el millor és que només es declari una a cada fitxer. El nom del fitxer ha de ser exactament igual al de la classe (incloses majúscules/minúscules)
+</p>
+
+</div>
+
+<h3><a id="declaracio_de_les_dades" >Declaració de les dades</a></h3>
+<div class="level3">
+
+<p>
+La seqüència de declaracions de dades consisteix en declaracions de variables de tipus primitius i/o de referències a objectes d’altres classes, seguint la sintaxi següent:
+</p>
+<pre class="code">[&lt;modificadors&gt;] &lt;nomTipus&gt; &lt;nomDada&gt; [=&lt;valorInicial&gt;];</pre>
+
+<p>
+En aquesta sintaxi veiem que la declaració de la dada pot estar precedida d’uns modificadors. Normalment, sempre s’usarà el modificador <code>private</code>, excepte en casos especials, com la declaració de constants. En aquest cas, s’usa <code>public static final</code>.
+</p>
+
+<p>
+Veiem també que la declaració d’una dada pot estar acompanyada d’una inicialització explícita (<code>=&lt;valorInicial&gt;</code>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Java inicialitza implícitament les dades dels objectes durant el procés de creació, però en canvi no inicialitza les variables declarades en mètodes.
+</p>
+</div></div>
+<p>
+En el moment en què crea cada dada, Java efectua una inicialització implícita de totes les dades amb valor zero pels tipus enters,  reals i caràcter, amb valor false per al tipus lògic i amb valor <code>null</code> per a les variables de referència. Posteriorment s’executen les inicialitzacions explícites que hagi pogut indicar el programador en la declaració de la dada.
+</p>
+
+</div>
+
+<h3><a id="iniciadors" >Iniciadors</a></h3>
+<div class="level3">
+
+<p>
+Els iniciadors són blocs de codi (sentències entre claus) que s’executen cada vegada que es crea un objecte de la classe. Es defineixen seguint la sintaxi següent:
+</p>
+<pre class="code">{
+  &lt;conjunt_de_sentències&gt;;
+}</pre>
+
+<p>
+Quin sentit té l’existència d’iniciadors si ja disposem dels constructors per indicar el codi a executar en la creació d’objectes? La resposta és que de vegades podem tenir blocs de codi a executar en el procés de creació d’un objecte de la classe, sigui quin sigui el constructor (n’hi poden haver diversos) emprat en la creació, i la utilització d’iniciadors ens permet no haver de repetir el mateix codi dins els diversos constructors.
+</p>
+
+<p>
+A més, els iniciadors també són indicats per ser utilitzats en el disseny de classes anònimes, les quals, en no tenir nom, no poden tenir mètodes constructors.
+</p>
+
+<p>
+En cas d’existir diversos iniciadors s’executen en l’ordre en què es trobin dins la classe.
+</p>
+
+</div>
+
+<h3><a id="definicio_de_les_operacions" >Definició de les operacions</a></h3>
+<div class="level3">
+
+<p>
+La seqüència de definicions d’operacions consisteix en la definició (prototipus i contingut) dels diversos mètodes amb la sintaxi de Java. La manera més simple de definir un mètode en Java segueix la sintaxi següent:
+</p>
+<pre class="code">[&lt;modificadors&gt;] &lt;tipusRetorn&gt; &lt;nomMètode&gt; (&lt;llistaArguments&gt;) {
+  &lt;declaracióVariablesLocals&gt;
+  &lt;cosDelMètode&gt;
+}</pre>
+
+<p>
+En aquesta sintaxi veiem que la declaració del mètode pot anar precedida d’uns modificadors, tot i que el més habitual (però no sempre) serà <code>public</code>. Per crear els primers mètodes, però, no els necessitem. Per indicar que un mètode no retorna cap resultat, s’utilitza el tipus <code>void</code>.
+</p>
+
+<p>
+Respecte a la llista d’arguments, cal comentar que el pas de paràmetres en Java sempre és usant el mecanisme anomenat <em>per valor</em>, o sigui, es garanteix que tot paràmetre utilitzat en una crida a un mètode manté el valor inicial en finalitzar l’execució del mètode, però, si el paràmetre és una variable que fa referència a un objecte, l’objecte sí pot ser modificat (no substituït) dins el mètode. Al acabar la crida, aquesta modificació es manté.
+</p>
+
+<p>
+Ja estem en condicions de dissenyar la primera classe i fer un petit programa que comprovi el funcionament dels diferents mètodes desenvolupats.
+</p>
+
+</div>
+
+<h4><a id="primera_versio_d_una_classe_per_gestionar_persones" >Primera versió d&#039;una classe per gestionar persones</a></h4>
+<div class="level4">
+
+<p>
+Suposem que es vol dissenyar una classe per gestionar persones, per a les quals interessa gestionar-ne el dni, el nom i l’edat.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Mètodes accessors</p>
+<p>
+Totes les classes acostumen a proporcionar uns mètodes de lectura (<em>get</em>) i escriptura (<em>set</em>) sobre els atributs de la classe, de manera que poden ser manipulats: són les anomenades <em>operacions accessores</em>.
+</p>
+</div></div>
+<p>
+Prenem les primeres decisions de disseny i decidim que dni i nom han de ser objectes <code>String</code> i que edat ha de ser un <code>short</code>. Respecte als mètodes, en un principi se’ns acut desenvolupar els mètodes corresponents a les operacions accessores i, potser, un mètode  visualitzar() per mostrar tot el contingut d’una persona.
+</p>
+
+<p>
+Una possible solució és:
+</p>
+<pre class="code">//Fitxer Persona.java
+public class Persona {
+   String dni;
+   String nom;
+   short edat;
+   // Retorna: 0 si s&#039;ha pogut canviar el dni
+   //          1 si el nou dni no és correcte - No s&#039;efectua el canvi
+   int setDni(String nouDni) {
+      // Aquí hi podria haver una rutina de verificació del dni
+      // i actuar en conseqüència. Com que no la incorporem, retornem sempre 0
+      dni = nouDni;
+      return 0;
+   }
+
+   void setNom(String nouNom) {
+      nom = nouNom;
+   }
+   
+   // Retorna: 0 si s&#039;ha pogut canviar l&#039;edat
+   //          1 : Error per passar una edat negativa
+   //          2 : Error per passar una edat &quot;enorme&quot;
+   int setEdat(int novaEdat) {
+      if (novaEdat&lt;0) return 1;
+      if (novaEdat&gt;Short.MAX_VALUE) return 2;
+      edat = (short)novaEdat;
+      return 0;
+   }
+   
+   String getDni() { return dni; }
+   String getNom() { return nom; }
+   short getEdat() { return edat; }
+   
+   void visualitzar() {
+      System.out.println(&quot;Dni...........:&quot; + dni);
+      System.out.println(&quot;Nom...........:&quot; + nom);
+      System.out.println(&quot;Edat..........:&quot; + edat);
+   }
+
+   public static void main(String args[]) {
+      Persona p1 = new Persona();
+      Persona p2 = new Persona();
+      p1.setDni(&quot;00000000&quot;);
+      p1.setNom(&quot;Pepe Gotera&quot;);
+      p1.setEdat(33);
+      System.out.println(&quot;Visualització de persona p1:&quot;);
+      p1.visualitzar();
+      System.out.println(&quot;El dni de p1 és &quot; + p1.getDni());
+      System.out.println(&quot;El nom de p1 és &quot; + p1.getNom());
+      System.out.println(&quot;L&#039;edat de p1 és &quot; + p1.getEdat());
+      System.out.println(&quot;Visualització de persona p2:&quot;);
+      p2.visualitzar();
+   }
+}</pre>
+
+<p>
+L’execució d’aquest programa dóna el resultat següent:
+</p>
+<pre class="code">Visualització de persona p1:
+Dni...........:00000000
+Nom...........:Pepe Gotera
+Edat..........:33
+El dni de p1 és 00000000
+El nom de p1 és Pepe Gotera
+L&#039;edat de p1 és 33
+Visualització de persona p2:
+Dni...........:null
+Nom...........:null
+Edat..........:0</pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Classes embolcall</p>
+<p>
+El llenguatge Java proporciona per a cadascun dels vuit tipus primitius una classe corresponent, amb el mateix nom que el tipus però iniciades amb majúscula, anomenades <em>classes embolcall</em> (<em>wrapper</em>, en anglès), que proporcionen dades i mètodes per a la gestió dels tipus de dades corresponents.
+</p>
+</div></div>
+<p>
+L’execució del programa sembla adequada. Veiem que les dades de la persona “p2”, no inicialitzades explícitament, han estat inicialitzades - tal i com hem dit més amunt - implícitament amb valor zero les numèriques i valor <code>null</code> les referències. Aprofitem aquest exemple per presentar una problemàtica que ens podem trobar en el disseny de moltes classes, relativa al fet que la classe conté dades de tipus <code>byte</code> o <code>short</code> i, en canvi, els arguments dels mètodes que recullen valors per emplenar aquestes dades es defineixen de tipus <code>int</code>. Per què ho fem? Què hem de tenir en compte?:
+</p>
+<ul>
+<li class="level1"><div class="li"> La declaració dels arguments dels mètodes de tipus <code>int</code> està fonamentada en el tipus de dada associat als literals que s’acostumaran a utilitzar. Així, com que és molt possible cridar el mètode <code>setEdat()</code> passant un literal enter (com en l’exemple), és lògic declarar l’argument d’aquest mètode de tipus <code>int</code>, ja que els literals enters són d’aquest tipus (o <code>long</code> si s’afegeix la lletra “L” al final del literal). Si haguéssim declarat l’argument de tipus <code>short</code> (adequat al tipus de la dada a què s’assignarà en l’interior del mètode), la crida al mètode s’hauria de fer passant un valor de tipus <code>short</code> o explicitant conversions com <code>setEdat( (short) 33)</code> i això no és desitjable.</div>
+</li>
+<li class="level1"><div class="li"> El fet de declarar els arguments dels mètodes amb els tipus de dada més usuals tenint en compte els literals amb els quals podem cridar el mètode ens porta al fet que a l’interior del mètode haguem de fer comprovacions relatives a si el valor que arriba és adequat en termes de grandària (rang). En l’exemple, el mètode <code>setEdat()</code> rep per paràmetre un valor <code>int</code> i en el seu interior, abans d’emplenar la dada edat declarada de tipus <code>short</code>, ens interessa comprovar si el valor és assumible per a una dada de tipus <code>short</code>. Per fer aquests tipus de comprovacions, el llenguatge Java ens proporciona mecanismes per saber quins són els rangs de valors permesos pels diferents tipus de dades. En l’exemple, utilitzem el valor <code>MAX_VALUE</code> de la classe <code>Short</code> per comprovar si el valor enter de l’argument “novaEdat” del mètode <code>setEdat()</code> és massa gran per la dada edat.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="modificadors_dins_d_una_classe" >Modificadors dins d&#039;una classe</a></h3>
+<div class="level3">
+
+<p>
+A l’hora de definir atributs o mètodes dins una classe, és possible indicar un <strong>modificador d’accés</strong>. Vegem amb més detall quins són a la sintaxi del Java.
+</p>
+<pre class="code">[&lt;modificadorAccés&gt;] [&lt;altresModificadors&gt;] &lt;tipusDada&gt; &lt;nomDada&gt;;
+
+[&lt;modificadorAccés&gt;] [&lt;altresModificadors&gt;] &lt;tipusRetorn&gt; &lt;nomMètode&gt; (&lt;llistaArgs&gt;)
+{...}</pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Paquets</p>
+<p>
+Les classes es poden organitzar en paquets i aquesta possibilitat s’acostuma a utilitzar quan tenim un conjunt de classes relacionades entre elles. Totes les classes no incloses explícitament en cap paquet i que estan situades en un mateix directori es consideren d’un mateix paquet.
+</p>
+</div></div>
+<p>
+El modificador d’accés pot prendre quatre valors:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Public</strong>, que dóna accés a tothom.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Private</strong>, que prohibeix l’accés a tothom menys pels mètodes de la pròpia classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Protected</strong>, que es comporta com a <code>public</code> per a les classes derivades de la classe i com a <code>private</code> per a la resta de classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Sense modificador</strong>, que es comporta com a <code>public</code> per a les classes del mateix paquet i com a <code>private</code> per a la resta de classes.</div>
+</li>
+</ul>
+
+<p>
+Donada la classe <code>Persona</code>, si desenvolupem un programa que instanciï objectes de la classe, tenim accés directe a les dades dni, nom i edat? Considerem el programa següent en què es creen objectes de la classe <code>Persona</code>.
+</p>
+<pre class="code">//Fitxer CridaPersona.java
+public class CridaPersona {
+   public static void main(String args[]) {
+      Persona p = new Persona();
+      p.dni = &quot;--$%#@--&quot;;
+      p.nom = &quot;&quot;;
+      p.edat = -23;
+      System.out.println(&quot;Visualització de la persona p:&quot;);
+      p.visualitzar();
+   }
+}</pre>
+
+<p>
+En aquest cas estem en un programa extern a la classe Persona i es veu com accedim directament a les dades dni, nom i edat de la persona creada, i podem fer autèntiques animalades. El compilador no es queixa (cal haver compilat també l’arxiu Persona.java en el mateix directori) i l’execució dóna el resultat:
+</p>
+<pre class="code">Visualització de la persona p:
+Dni...........:--$%#@--
+Nom...........:
+Edat..........:-23</pre>
+
+<p>
+Acabem de veure, doncs, que la versió actual de la classe <code>Persona</code> permet el lliure accés als valors dels seus atributs, ja que en la definició d’aquestes dades no s’ha posat al davant el modificador adequat per evitar-ho. Les classes <code>CridaPersona</code> i <code>Persona</code>, en estar situades en el mateix directori, s’han considerat del mateix paquet i, per tant, en no haver-hi cap modificador d’accés en la definició de les dades dni, nom i edat, la classe <code>CridaPersona</code> hi ha tingut accés total. A més, en no haver-hi cap modificador d’accés en la definició dels mètodes, aquests no poden ser cridats per classes de paquets diferents del paquet al qual pertany la classe <code>Persona</code>.
+</p>
+
+<p>
+Normalment, al crear classes el més correcte és que els atributs no tinguin accés directe. Els motius són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Protegir les dades de modificacions impròpies.</div>
+</li>
+<li class="level1"><div class="li"> Facilitar el manteniment de la classe, ja que si per algun motiu es creu que cal efectuar alguna reestructuració de dades o de funcionament intern, es podran efectuar els canvis pertinents sense afectar les aplicacions desenvolupades (sempre que no es modifiquin els prototipus dels mètodes existents).</div>
+</li>
+</ul>
+
+<p>
+Sembla lògic, doncs, fer evolucionar la versió actual de la classe <code>Persona</code> cap a una classe que tingui les dades declarades com a privades i els mètodes com a públics. Fixem-nos que el mètode <code>main</code> per comprovar el funcionament d’una classe sempre ha estat declarat public.
+</p>
+
+</div>
+
+<h4><a id="versio_de_la_classe_persona_amb_modificadors_d_acces_adequats" >Versió de la classe Persona amb modificadors d&#039;accés adequats</a></h4>
+<div class="level4">
+
+<p>
+A continuació presentem una versió evolucionada de la classe Persona que inclou els modificadors d’accés adequats: dades a <code>private</code> i mètodes a <code>public</code>.
+</p>
+<pre class="code">//Fitxer Persona.java
+
+public class Persona {
+   private String dni;
+   private String nom;
+   private short edat;
+   
+   // Retorna: 0 si s&#039;ha pogut canviar el dni
+   //          1 si el nou dni no és correcte - No s&#039;efectua el canvi
+   public int setDni(String nouDni) {
+      // Aquí hi podria haver una rutina de verificació del dni
+      // i actuar en conseqüència. Com que no la incorporem, retornem sempre 0
+      dni = nouDni;
+      return 0;
+   }
+
+   public void setNom(String nouNom) {
+      nom = nouNom;
+   }
+   
+   // Retorna: 0 si s&#039;ha pogut canviar l&#039;edat
+   //          1 : Error per passar una edat negativa
+   //          2 : Error per passar una edat &quot;enorme&quot;
+   public int setEdat(int novaEdat) {
+      if (novaEdat&lt;0) return 1;
+      if (novaEdat&gt;Short.MAX_VALUE) return 2;
+      edat = (short)novaEdat;
+      return 0;
+   }
+   
+   public String getDni() { return dni; }
+   
+   public String getNom() { return nom; }
+   
+   public short getEdat() { return edat; }
+   
+   public void visualitzar() {
+      System.out.println(&quot;Dni...........:&quot; + dni);
+      System.out.println(&quot;Nom...........:&quot; + nom);
+      System.out.println(&quot;Edat..........:&quot; + edat);
+   }
+     
+  public static void main(String args[]) {
+     Persona p1 = new Persona();
+     Persona p2 = new Persona();
+     p1.setDni(&quot;00000000&quot;);
+     p1.setNom(&quot;Pepe Gotera&quot;);
+     p1.setEdat(33);
+     System.out.println(&quot;Visualització de persona p1:&quot;);
+     p1.visualitzar();
+     System.out.println(&quot;El dni de p1 és &quot; + p1.getDni());
+     System.out.println(&quot;El nom de p1 és &quot; + p1.getNom());
+     System.out.println(&quot;L&#039;edat de p1 és &quot; + p1.getEdat());
+     System.out.println(&quot;Visualització de persona p2:&quot;);
+     p2.visualitzar();
+  }
+}</pre>
+
+<p>
+Amb aquesta versió de la classe <code>Persona</code> compilada, vegem què succeeix quan intentem compilar la classe <code>CridaPersona</code> que crea una persona i intenta accedir directament a les dades:
+</p>
+<pre class="code">CridaPersona.java:11: dni has private access in Persona
+   p.dni = &quot;--$%#@--&quot;;
+   ^
+CridaPersona.java:12: nom has private access in Persona
+   p.nom = &quot;&quot;;
+   ^
+CridaPersona.java:13: edat has private access in Persona
+   p.edat = -23;
+   ^
+3 errors</pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Mètodes privats</p>
+<p>
+Pot tenir sentit un mètode <code>private</code>? La resposta és afirmativa, ja que en el disseny d’una classe pot interessar desenvolupar  un mètode intern per ser cridat en el disseny d’altres mètodes de la classe i no es vol donar a conèixer a la comunitat de programadors que utilitzaran la classe.
+</p>
+</div></div>
+<p>
+Fixem-nos que el compilador ja detecta que no hi ha accés a les dades. Hem aconseguit el nostre objectiu: protegir l’accés directe a les dades. Ara potser no sigui massa evident encara, però els avantatges d’assolir aquest objectiu s’aniran fent més evidents a mesura que es vagi avançant en l’aprenentatge de la creació de programes orientats a objectes.
+</p>
+
+</div>
+
+<h3><a id="sobrecarrega_de_metodes" >Sobrecàrrega de mètodes</a></h3>
+<div class="level3">
+
+<p>
+De vegades, en els programes, cal dissenyar diverses versions de mètodes que tenen un mateix significat i/o objectiu però que s’apliquen en diferents tipus i/o nombre de dades. Així, si necessitàvem disposar d’una funció que sabés sumar dos enters i d’una funció que sabés sumar dos reals, podriem fer simplement dos mètodes diferents anomenats <code>sumaEnters</code> i <code>sumaReals</code>.  Els dos tenen el mateix objectiu i significat, tot i que la gestió interna pot ser força diferent, i des d’un punt de vista lògic, com que les dues permeten calcular una suma, 
+</p>
+
+<p>
+Java permet declarar mètodes repetits amb el mateix nom. Això no és possible a tots els llenguatges de programació. Per exemple:
+</p>
+<pre class="code">public int suma (int n1, int n2) { ... }
+public double suma (double r1, double r2) { ... }</pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El terme anglès per a la sobrecàrrega, molt emprat en informàtica, és overloading.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>sobrecàrrega</strong> de mètodes és la funcionalitat que permet tenir mètodes diferents amb un mateix nom.
+</p>
+</div></div>
+<p>
+Normalment la sobrecàrrega d’un nom de mètode s’utilitza en aquells que tenen un mateix objectiu, però és lícit utilitzar-la en mètodes que no tinguin res a veure. Això no acostuma a succeir si el dissenyador assigna a els mètodes noms que tinguin a veure amb el seu objectiu.
+</p>
+
+<p>
+Hi ha dues regles per poder aplicar la sobrecàrrega de mètodes:
+</p>
+<ul>
+<li class="level1"><div class="li"> La llista d’arguments ha de ser suficientment diferent per permetre una determinació inequívoca del mètode que es crida.</div>
+</li>
+<li class="level1"><div class="li"> Els tipus de dades que retornen poden ser diferents o iguals i no n’hi ha prou de tenir els tipus de retorn diferents per distingir el mètode que es crida.</div>
+</li>
+</ul>
+
+<p>
+El compilador només pot distingir el mètode que es crida a partir del nombre i tipus dels paràmetres indicats en la crida.
+</p>
+
+<p>
+Exemples de mètodes sobrecarregats els podem trobar en moltes classes proporcionades pel llenguatge Java. Així, per exemple, la coneguda classe <code>String</code> té molts mètodes sobrecarregats, com ara <code>format()</code>, <code>getBytes()</code>, <code>indexOf()</code>, etc.
+</p>
+
+</div>
+
+<h2><a id="inicialitzacio_d_objectes" >Inicialització d&#039;objectes</a></h2>
+<div class="level2">
+
+<p>
+La construcció d’un objecte s’efectua amb la utilització de l’operador <code>new</code> acompanyada d’un constructor de la classe. Si bé per classes ja existents dins les llibreries de Java aquests constructors ja existeixen, pel cas de classes noves generades dins un programa orientat a objectes, caldrà declarar-hi aquests constructors entre els seus mètodes disponibles.
+</p>
+
+</div>
+
+<h3><a id="proces_d_inicialitzacio_d_un_objecte_al_java" >Procés d&#039;inicialització d&#039;un objecte al Java</a></h3>
+<div class="level3">
+
+<p>
+Els passos que segueix la màquina virtual davant l’execució de l’operador <code>new</code> són:
+</p>
+<ol>
+<li class="level1"><div class="li"> Reserva memòria per desar el nou objecte i totes les seves dades són inicialitzades amb valor zero pels tipus enters, reals i caràcter, amb valor <code>false</code> pel tipus booleà, i amb valor <code>null</code> per les variables on es desen objectes.</div>
+</li>
+<li class="level1"><div class="li"> S’executen les inicialitzacions explícites. Les dades membres d’una classe es poden inicialitzar explícitament tot assignant expressions en la declaració dels membres.</div>
+</li>
+<li class="level1"><div class="li"> S’executen els iniciadors (blocs de codi sense nom) que hi ha dins la classe seguint l’ordre d’aparició dins d’aquesta.</div>
+</li>
+<li class="level1"><div class="li"> S’executa el constructor indicat en la construcció de l’objecte amb l’operador <code>new</code>.</div>
+</li>
+</ol>
+
+</div>
+
+<h4><a id="exemple_d_inicialitzacio_explicita_de_dades_membres_en_una_classe" >Exemple d&#039;inicialització explícita de dades membres en una classe</a></h4>
+<div class="level4">
+<pre class="code">//Fitxer InicialitzacioExplicita.java
+import java.util.Date;
+
+public class InicialitzacioExplicita {
+   private int x = 20;
+   private int y;
+   private Date d = new Date (100,0,1);
+   private String s;
+   
+   public static void main(String args[]) {
+      InicialitzacioExplicita obj = new InicialitzacioExplicita();
+      System.out.println(&quot;x = &quot; + obj.x);
+      System.out.println(&quot;y = &quot; + obj.y);
+      System.out.println(&quot;d = &quot; + obj.d);
+      System.out.println(&quot;s = &quot; + obj.s);
+   }
+}</pre>
+
+<p>
+En aquesta classe veiem que conté quatre dades membre (“x”, “y”, “d” i “s”) de les quals n’hi ha dues que són inicialitzades explícitament en el moment de la declaració corresponent. Posteriorment, en crear un objecte “obj” de la classe, podem comprovar que les diferents dades d’aquest objecte tenen el valor esperat (“x” i “d” són inicialitzades amb els valors indicats en la declaració i “y” i “s” són inicialitzades amb els valors zero i <code>null</code> que assigna Java).
+</p>
+
+<p>
+L’execució d’aquest programa és:
+</p>
+<pre class="code">x = 20
+y = 0
+d = Sat Jan 01 00:00:00 CET 2000
+s = null</pre>
+
+</div>
+
+<h3><a id="declaracio_de_constructors" >Declaració de constructors</a></h3>
+<div class="level3">
+
+<p>
+El mecanisme d’inicialització explícita és una manera senzilla d’inicialitzar els camps d’un objecte. No obstant això, de vegades es necessita executar un mètode constructor en concret per implementar la inicialització, ja que pot ser necessari fer el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> Recollir valors (pas de paràmetres en el moment de construcció) de manera que es puguin tenir en compte en la construcció de l’objecte.</div>
+</li>
+<li class="level1"><div class="li"> Gestionar errors que puguin aparèixer en la fase d’inicialització.</div>
+</li>
+<li class="level1"><div class="li"> Aplicar processos, més o menys complicats, en els quals poden intervenir tot tipus de sentències (condicionals i repetitives).</div>
+</li>
+</ul>
+
+<p>
+Tot això és possible gràcies a l’existència dels mètodes constructors, un dels quals sempre es crida en crear un objecte amb l’operador <code>new</code>. Per tant, a les classes creades per vosaltres pot ser necessari declarar constructors. En el disseny d’una classe es poden dissenyar mètodes constructors, però si no se’n dissenya cap, el llenguatge proveeix automàticament d’un constructor sense paràmetres.
+</p>
+
+<p>
+Els mètodes constructors d’una classe han de seguir les normes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> El nom del mètode és idèntic al nom de la classe.</div>
+</li>
+<li class="level1"><div class="li"> No se’ls pot definir cap tipus de retorn (ni tant sols<code>void</code>, no es posa absolutament res. Es deixa en blanc).</div>
+</li>
+<li class="level1"><div class="li"> Poden estar sobrecarregats, és a dir, podem definir diversos constructors amb el mateix nom i diferents arguments. En cridar  l’operador <code>new</code>, la llista de paràmetres determina quin constructor s’utilitza.</div>
+</li>
+<li class="level1"><div class="li"> Si es defineix algun constructor (amb paràmetres o no), el llenguatge Java deixa de proporcionar el constructor sense paràmetres automàtic i, per tant, per poder crear objectes cridant un constructor sense paràmetres, caldrà definir-lo explícitament.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="exemple_de_constructors_adequats_per_a_la_classe_persona" >Exemple de constructors adequats per a la classe Persona</a></h4>
+<div class="level4">
+
+<p>
+A continuació presentem un parell de constructors adequats per a la classe Persona:
+</p>
+<pre class="code">public Persona () {}
+
+public Persona (String sDni, String sNom, int nEdat) {
+  dni = sDni;
+  nom = sNom;
+  if (nEdat&gt;=0 &amp;&amp; nEdat&lt;=Short.MAX_VALUE)            
+   edat = (short)nEdat;
+}</pre>
+
+<p>
+Gràcies als dos constructors podem crear objectes com mostra el mètode següent <code>main()</code>:
+</p>
+<pre class="code">public static void main(String args[]) {
+  Persona p1 = new Persona(&quot;00000000&quot;,&quot;Pepe Gotera&quot;,33);
+  Persona p2 = new Persona();
+  System.out.println(&quot;Visualització de persona p1:&quot;);
+  p1.visualitzar();
+  System.out.println(&quot;Visualització de persona p2:&quot;);
+  p2.visualitzar();
+}</pre>
+
+<p>
+El constructor que permet passar per paràmetres el dni, el nom i l’edat de l’objecte <code>Persona</code> a construir s’ha utilitzat per crear l’objecte a què fa referència la variable “p1”.
+</p>
+
+<p>
+El constructor sense paràmetres permet la creació de l’objecte <code>Persona</code> a què fa referència la variable “p2”. Si no haguéssim definit el constructor sense paràmetres, la creació d’aquest objecte no hauria estat possible.
+</p>
+
+<p>
+L’execució del mètode <code>main()</code> presentat facilita la sortida:
+</p>
+<pre class="code">Visualització de persona p1:
+Dni...........:00000000
+Nom...........:Pepe Gotera
+Edat..........:33
+Visualització de persona p2:
+Dni...........:null
+Nom...........:null
+Edat..........:0</pre>
+
+</div>
+
+<h3><a id="la_paraula_reservada_this" >La paraula reservada &quot;this&quot;</a></h3>
+<div class="level3">
+
+<p>
+En Java existeix una paraula reservada especialment útil per tractar la manipulació d’atributs i la seva inicialització. Es tracta de <code>this</code>, que té dues finalitats principals:
+</p>
+<ul>
+<li class="level1"><div class="li"> Dins els mètodes no constructors, per fer referència a l’objecte actual sobre el qual s’està executant el mètode. Així, quan dins un mètode d’una classe es vol accedir a una dada de l’objecte actual, podem utilitzar la paraula reservada <code>this</code>, escrivint <code>this.nomDada</code>, i si es vol cridar un altre mètode sobre l’objecte actual, podem escriure <code>this.nomMètode(…)</code>. En aquests casos, la utilització de la paraula <code>this</code> és redundant, ja que dins un mètode, per referir-nos a una dada de l’objecte actual, podem escriure directament <code>nomDada</code>, i per cridar un altre mètode sobre l’objecte actual podem escriure directament <code>nomMètode(…)</code>. De vegades, però, la paraula reservada <code>this</code> no és redundant, com en el cas en què es vol cridar un mètode en una classe i cal passar l’objecte actual com a argument: <code>nomMètode(this)</code>.</div>
+</li>
+<li class="level1"><div class="li"> Dins els mètodes constructors, com a nom de mètode per cridar un altre constructor de la pròpia classe. De vegades pot passar que un mètode constructor hagi d’executar el mateix codi que un altre mètode constructor ja dissenyat. En aquesta situació seria interessant poder cridar el constructor existent, amb els paràmetres adequats, sense haver de copiar el codi del constructor ja dissenyat, i això ens ho facilita la paraula reservada <code>this</code> utilitzada com a nom de mètode: <code>this(&lt;llistaParàmetres&gt;)</code>. La paraula reservada <code>this</code> com a mètode per cridar un constructor en el disseny d’un altre constructor només es pot utilitzar en la primera sentència del nou constructor. En finalitzar la crida d’un altre constructor mitjançant <code>this</code>, es continua amb l’execució de les instruccions que hi hagi després de la crida <code>this(…)</code>.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="exemple_d_utilitzacio_de_la_paraula_reservada_this_en_metodes_de_la_classe_persona" >Exemple d&#039;utilització de la paraula reservada &quot;this&quot; en mètodes de la classe Persona</a></h4>
+<div class="level4">
+
+<p>
+En primer lloc veiem que ens pot interessar tenir un constructor per crear una persona a partir d’una persona ja existent, és a dir, el constructor <code>Persona (Persona p)</code>.
+</p>
+
+<p>
+Però, d’altra banda, ja tenim un constructor (anomenem-lo <code>xxx</code>) que ens sap construir una persona a partir d’un dni, un nom i una edat passats per paràmetre. Per tant, per construir una persona a partir d’una persona p donada, ens interessa cridar el constructor xxx passant-li com a paràmetres el dni, el nom i l’edat de la persona p. Això ens ho facilita la paraula reservada <code>this</code> com a crida d’un constructor existent:
+</p>
+<pre class="code">public Persona (Persona p) {
+  this (p.dni, p.nom, p.edat);
+}</pre>
+
+<p>
+En segon lloc, suposem que volem tenir un mètode, anomenat clonar, que aplicat sobre un objecte <code>Persona</code> en creï un clon, és a dir, una altra persona idèntica, i retorni la referència a la nova persona. Per aconseguir-ho hem de dissenyar el mètode que en seu interior cridi un dels constructors de la classe. Si optem per utilitzar el constructor <code>Persona (Persona p)</code> necessitem la paraula reservada <code>this</code> per fer referència a l’objecte actual:
+</p>
+<pre class="code">public Persona clonar () {
+  return new Persona (this);
+}</pre>
+
+<p>
+El mètode <code>main()</code> següent permet comprovar el funcionament de tots dos mètodes:
+</p>
+<pre class="code">public static void main(String args[]) {
+  Persona p1 = new Persona(&quot;00000000&quot;,&quot;Pepe Gotera&quot;,33);
+  Persona p2 = new Persona(p1);
+  Persona p3 = p1.clonar();
+  System.out.println(&quot;Visualització de persona p2:&quot;);
+  p2.visualitzar();
+  System.out.println(&quot;Visualització de persona p3:&quot;);
+  p3.visualitzar();
+}</pre>
+
+<p>
+Veiem que els dos mètodes proporcionen el mateix resultat (creació d’una nova persona com a còpia d’una persona existent) i, per tant, el mètode clonar és irrellevant si ja tenim el constructor, però ens ha servit per veure una aplicació de la paraula reservada <code>this</code> per fer referència a l’objecte actual sobre el qual s’executa un mètode.
+</p>
+
+<p>
+L’execució del mètode <code>main()</code> presentat facilita la sortida:
+</p>
+<pre class="code">Visualització de persona p2:
+Dni...........:00000000
+Nom...........:Pepe Gotera
+Edat..........:33
+Visualització de persona p3:
+Dni...........:00000000
+Nom...........:Pepe Gotera
+Edat..........:33</pre>
+
+</div>
+
+<h2><a id="elements_estatics_d_una_classe" >Elements estàtics d&#039;una classe</a></h2>
+<div class="level2">
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les dades membre estàtic, com que són comunes per a tots els objectes de la classe, també s’anomenen variables classe.
+</p>
+</div></div>
+<p>
+Alguns elements d’una classe es poden declarar com “estàtics”. Per fer-ho, el llenguatge Java proporciona la paraula reservada <code>static</code>, amb tres finalitats:
+</p>
+
+<p>
+<strong>1) Com a modificador en la declaració de dades membres d’una classe</strong>, per aconseguir que la dada afectada sigui comuna a tots els objectes de la classe. Per aconseguir aquest efecte, la dada corresponent es declara amb el modificador <code>static</code>, seguint la sintaxi següent:
+</p>
+<pre class="code">static [&lt;altresModificadors&gt;] &lt;tipusDada&gt; &lt;nomDada&gt; [=&lt;valorInicial&gt;];</pre>
+
+<p>
+Les dades <code>static</code> es creen en efectuar la càrrega de la classe, quan encara no hi ha cap instància (objecte) de la classe. Atès que una dada <code>static</code> és comuna per a tots els objectes de la classe, s’hi accedeix de manera diferent de la utilitzada per les dades no <code>static</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Per accedir-hi des de fora de la classe (possible segons el modificador d’accés que l’acompanyi), no es necessita cap objecte de la classe i s’utilitza la sintaxi <code>NomClasse.nomDada</code>. Recordeu que perquè això funcioni, igualment, la dada s’ha de declarar com pública.</div>
+</li>
+<li class="level1"><div class="li"> Per accedir-hi des de la pròpia classe, no cal indicar cap nom d’objecte (<code>nomObjecte.nomDada</code>), sinó directament el seu nom.</div>
+</li>
+</ul>
+
+<p>
+En qualsevol cas, el llenguatge Java permet accedir a una dada <code>static</code> mitjançant el nom d’un objecte de la classe, però no és una nomenclatura coherent.
+</p>
+
+<p>
+<strong>2) Com a modificador en la declaració de mètodes d’una classe</strong>, per aconseguir que el mètode afectat es pugui executar sense necessitat de ser cridat sobre cap objecte concret de la classe.
+</p>
+
+<p>
+Si feu una ullada a la documentació del llenguatge Java, en la majoria de les classes us adonareu de l’existència de mètodes que tenen una sintaxi similar a la següent:
+</p>
+<pre class="code">... static &lt;valorRetorn&gt; &lt;nomMètode&gt; (&lt;llistaArguments&gt;)</pre>
+
+<p>
+Com a exemple, dins la classe <code>String</code>, podeu veure el mètode:
+</p>
+<pre class="code">public static String valueOf(char[]data)</pre>
+
+<p>
+L’explicació que l’acompanya ens diu que aquest mètode, a partir d’una taula de caràcters, ens proporciona un nou objecte <code>String</code> que conté la seqüència de valors de la taula de caràcters. Per tant, és clar que l’execució d’aquest mètode no necessita cap objecte <code>String</code> i, per tant, és lògic que sigui declarat <code>static</code>. Davant aquest raonament, pot aparèixer la pregunta de per què, si no necessita de cap objecte String, és declarat com un mètode de la classe <code>String</code>? La resposta rau en el fet que en el llenguatge Java tot mètode s’ha d’implementar en alguna classe i, ja que aquest mètode permet aconseguir un objecte <code>String</code>, sembla lògic que resideixi dins la classe <code>String</code>.
+</p>
+
+<p>
+Un altre cas potser més habitual i evident és el mètode <code>main</code> que s’usa en les classes principals. Per poder invocar un mètode cal fer-ho sobre un objecte. Però com és possible cridar <code>main</code>, si en iniciar l’execució del programa encara no existeix cap objecte? Els objectes es creen precisament dins el <code>main</code>! Aquest problema seria un peix que es mossega la cua. La resposta està a fer-lo <code>static</code>, de manera que és possible fer-ne la crida sense la necessitat que hi hagi cap objecte existent prèviament.
+</p>
+
+<p>
+Dels mètodes <code>static</code> cal saber:
+</p>
+<ul>
+<li class="level1"><div class="li"> Es criden utilitzant la sintaxi <code>NomClasse.nomMètode()</code>. El llenguatge Java permet cridar-los pel nom d’un objecte de la classe, però no és lògic.</div>
+</li>
+<li class="level1"><div class="li"> En el seu codi no es pot utilitzar la paraula reservada <code>this</code>, ja que l’execució no s’efectua sobre cap objecte en concret de la classe.</div>
+</li>
+<li class="level1"><div class="li"> En el seu codi només es pot accedir als seus propis arguments i a les dades <code>static</code> de la classe.</div>
+</li>
+<li class="level1"><div class="li"> No es poden sobreescriure (sobrecarregar-los en classes derivades) per fer-los no <code>static</code> en les classes derivades.</div>
+</li>
+</ul>
+
+<p>
+<strong>3) Com a modificador d’iniciadors</strong> (blocs de codi sense nom), per aconseguir un iniciador que s’executi únicament quan es carrega la classe. La càrrega d’una classe es produeix en la primera crida d’un mètode de la classe, que pot ser el constructor involucrat en la  creació d’un objecte o un mètode estàtic de la classe. La declaració d’una variable per fer referència a objectes de la classe no provoca la càrrega de la classe.
+</p>
+
+<p>
+La sintaxi a emprar és:
+</p>
+<pre class="code">static {...}</pre>
+
+</div>
+
+<h3><a id="exemple_d_utilitzacio_de_la_paraula_reservada_static_en_les_diverses_possibilitats" >Exemple d&#039;utilització de la paraula reservada &quot;static&quot; en les diverses possibilitats</a></h3>
+<div class="level3">
+
+<p>
+La classe següent ens mostra una situació en què la declaració d’una dada <code>static</code> és necessària, ja que es vol portar un comptador 
+del nombre d’objectes creats de manera que a cada nou objecte es pugui assignar un número de sèrie a partir del nombre d’objectes creats fins al moment.
+</p>
+
+<p>
+Així mateix sembla oportú proporcionar un mètode, anomenat <code>nombreObjectesCreats()</code> per donar informació, com el seu nom indica, referent al nombre d’objectes creats de la classe en un moment donat.
+</p>
+
+<p>
+Per acabar, s’ha inclòs un parell d’iniciadors per comprovar el funcionament dels iniciadors <code>static</code> i no <code>static</code>.
+</p>
+<pre class="code">//Fitxer ExempleUsosStatic.java
+
+public class ExempleUsosStatic {
+   private static int comptador = 0;
+   private int numeroSerie;
+
+   static { System.out.println (&quot;Iniciador \&quot;static\&quot; que s&#039;executa en carregar la classe&quot;); }
+   
+   { System.out.println (&quot;Iniciador que s&#039;executa en la creació de cada objecte&quot;); }
+   
+   public ExempleUsosStatic () {
+      comptador++;
+      numeroSerie = comptador;
+      System.out.println (&quot;S&#039;acaba de crear l&#039;objecte número &quot; + numeroSerie);
+   }
+
+   public static int nombreObjectesCreats () {
+      return comptador;
+   }
+   
+   public static void main(String args[]) {
+      ExempleUsosStatic d1 = new ExempleUsosStatic();
+      ExempleUsosStatic d2;
+      d2 = new ExempleUsosStatic();
+      System.out.println(&quot;Número de sèrie de d1 = &quot; + d1.numeroSerie);
+      System.out.println(&quot;Número de sèrie de d2 = &quot; + d2.numeroSerie);
+      System.out.println(&quot;Objectes creats: &quot; + nombreObjectesCreats());
+   }
+}</pre>
+
+<p>
+L’execució del programa dóna el resultat:
+</p>
+<pre class="code">Iniciador &quot;static&quot; que s&#039;executa en carregar la classe
+Iniciador que s&#039;executa en la creació de cada objecte
+S&#039;acaba de crear l&#039;objecte número 1
+Iniciador que s&#039;executa en la creació de cada objecte
+S&#039;acaba de crear l&#039;objecte número 2
+Número de sèrie de d1 = 1
+Número de sèrie de d2 = 2
+Objectes creats: 2</pre>
+
+</div>
+
+<h3><a id="exemple_per_comprovar_quan_es_produeix_la_carrega_d_una_classe" >Exemple per comprovar quan es produeix la càrrega d&#039;una classe</a></h3>
+<div class="level3">
+
+<p>
+El programa següent demostra en quin moment es carrega una classe i, per tant, s’executen els iniciadors <code>static</code> que pugui tenir definits. Per executar aquest programa cal tenir en el mateix directori el fitxer compilat de la classe <code>ExempleUsosStatic</code>.
+</p>
+<pre class="code">//Fitxer: CarregaClasse.java
+
+public class CarregaClasse {
+   public static void main (String args[]) {
+      System.out.println (&quot;Punt 1. Abans de declarar la variable obj&quot;);
+      ExempleUsosStatic obj;
+      System.out.println (&quot;Punt 2. Després de declarar la variable obj&quot;);
+      System.out.println (&quot;        i abans d&#039;invocar el mètode static&quot;);
+      System.out.println (&quot;Anem a invocar el mètode static: &quot; +  
+                           ExempleUsosStatic.nombreObjectesCreats());
+   }
+}</pre>
+
+<p>
+L’execució d’aquest programa mostra com l’execució de l’iniciador <code>static</code> de la classe <code>ExempleUsosStatic</code> es produeix just abans de la  sentència que inclou la crida del mètode <code>static</code>, malgrat que abans s’hagi declarat una variable per fer referència a objectes de la classe <code>ExempleUsosStatic</code>.
+</p>
+<pre class="code">Punt1.Abans de declarar la variable obj
+Punt2.Després de declarar la variable obj
+   i abans d&#039;invocar el mètode static
+Iniciador &quot;static&quot; que s&#039;executa en carregar la classe
+Anem a invocar el mètode static: 0</pre>
+
+</div>
+
+<h2><a id="llibreries_de_classes" >Llibreries de classes</a></h2>
+<div class="level2">
+
+<p>
+Normalment, a l’hora de generar diferents classes, serà desitjable organitzar-les de manera que se’n pugui facilitar la gestió i saber quines estan relacionades entre si, per exemple, formant part d’un mateix programa. El llenguatge Java proporciona un mecanisme, anomenat <em>package</em>, per poder agrupar classes.
+</p>
+
+<p>
+Abans d’entrar a veure en profunditat el funcionament dels <em>packages</em> del Java, és important tenir clar com es representa una classe Java dins el sistema de fitxers quan no intervenen els <em>packages</em> (o sigui, tal com hem treballant amb classes fins ara), tant a nivell de codi font com un cop compilada. D’aquesta manera, és més senzill entendre el seu impacte dins l’estructura d’un programa fet en Java. Això es deu al fet que, en usar un IDE, tot aquest procés de gestió dels fitxers de codi font i compilats és transparent al desenvolupador, però és igualment important saber quins fitxers estan jugant algun rol en la fase de desenvolupament d’una aplicació en Java.
+</p>
+
+<p>
+Cada classe dins un programa es representa normalment dins un fitxer amb extensió <code>.java</code> i amb un nom idèntic (incloent majúscules i minúscules) al de la pròpia classe tal com s’ha definit al codi font (<code>public class NomClasse {…}</code>). Quan una classe es compila, es genera un fitxer amb extensió <code>.class</code> amb el mateix nom de la classe. Aquest fitxer es genera al mateix directori que el fitxer <code>.java</code> si s’usa el compilador amb intèrpret de comandes, però els IDE habitualment els ordenen en carpetes diferents dins els seus projectes. Per exemple, el Netbeans ubica els fitxers <code>.java</code> dins la carpeta <code>src</code>, mentre que els fitxers <code>.class</code> els ubica a la carpeta <code>build\classes</code>.
+</p>
+
+</div>
+
+<h3><a id="packages" >Packages</a></h3>
+<div class="level3">
+
+<p>
+La pertinença d’una classe a un paquet s’indica amb la sentència package a l’inici del fitxer font en què resideix la classe i afecta a totes les classes definides en el fitxer. La sentència <em>package</em> ha de ser la primera sentència del fitxer font. Abans hi pot haver línies en blanc i/o comentaris, però res més.
+</p>
+
+<p>
+Cal seguir la sintaxi següent:
+</p>
+<pre class="code">package &lt;nomPaquet&gt;;</pre>
+
+<p>
+Els noms dels paquets (per conveni, amb minúscules) poden ser paraules separades per punts, fet que provoca que els corresponents <code>.class</code> s’emmagatzemin en una estructura jeràrquica de directoris que coincideix, en noms, amb les paraules que constitueixen el nom del paquet.
+</p>
+
+<p>
+La inexistència de la sentència <code>package</code> implica que les classes del fitxer font es consideren en el paquet per defecte (sense nom) i els corresponents <code>.class</code> s’emmagatzemen en el mateix directori que el fitxer font.
+</p>
+
+<p>
+Un paquet està constituït pel conjunt de classes dissenyades en fitxers font que incorporen la sentència <code>package</code> amb un nom de paquet idèntic. El paquet per defecte està constituït per totes les classes dissenyades en fitxers font que no incorporen la sentència <em>package</em>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En el cas del Netbeans, les classe estaran a la carpeta “build/classes/xxx/yyy/zzz”.
+</p>
+</div></div>
+<p>
+Totes les classes d’un paquet anomenat “xxx.yyy.zzz” resideixen dins la subcarpeta “zzz” de l’estructura de directoris “xxx/yyy/zzz”, però podem tenir físicament aquesta estructura en diferents ubicacions. És a dir, donades les classes <code>C1</code> i <code>C2</code> del mateix paquet “xxx.yyy.zzz”, es podria donar el cas que el fitxer <code>.class</code> corresponent a <code>C1</code> residís en path “xxx/yyy/zzz/C1” i que el fitxer <code>.class</code> corresponent a <code>C2</code> residís en path “xxx/yyy/zzz/C2”.
+</p>
+
+<p>
+Recordem que el codi incorporat en una classe (iniciadors i mètodes) té accés a tots els membres sense modificador d’accés de totes les classes del mateix paquet (a més de l’accés als membres amb modificador d’accés public).
+</p>
+
+<p>
+En el disseny d’una classe es té accés a totes les classes del mateix paquet, però per accedir a classes de diferents paquets cal emprar un dels dos mecanismes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Utilitzar el nom de la classe precedit del nom del paquet cada vegada que s’hagi d’utilitzar el nom de la classe, amb la sintaxi següent:</div>
+</li>
+</ul>
+<pre class="code">nomPaquet.NomClasse</pre>
+<ul>
+<li class="level1"><div class="li"> Explicitar les classes d’altres paquets a les quals es farà referència amb una sentència import abans de la declaració de la nova classe, seguint la sintaxi següent:</div>
+</li>
+</ul>
+<pre class="code">import &lt;nomPaquet&gt;.&lt;NomClasse&gt;;</pre>
+
+<p>
+És factible carregar totes les classes d’un paquet amb una única sentència utilitzant un asterisc:
+</p>
+<pre class="code">import &lt;nomPaquet&gt;.*;</pre>
+
+<p>
+Les sentències import en un fitxer font han de precedir a totes les declaracions de classes incorporades en el fitxer.
+</p>
+
+<p>
+Així, doncs, si tenim una classe C en un paquet xxx.yyy.zzz i l’hem d’utilitzar en una altra classe, tenim dues opcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Escriure <code>xxx.yyy.zzz.C</code> cada vegada que haguem de referir-nos a la classe C.</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar la sentència <code>import xxx.yyy.zzz.C</code> abans de cap declaració de classe i utilitzar directament el nom <code>C</code> per referir-nos a la classe.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="exemple_de_definicio_de_paquets_de_classes_i_acces_corresponent" >Exemple de definició de paquets de classes i accés corresponent</a></h4>
+<div class="level4">
+
+<p>
+Considerem les classes dissenyades en el fitxer següent: 
+</p>
+<pre class="code">//Fitxer ClasseC1.java
+package xxx.yyy.zzz;
+
+public class ClasseC1 {
+  int mc1=10;
+}
+
+class ClasseC1Bis {
+  int mc1=20;
+}</pre>
+
+<p>
+Veiem que aquest fitxer defineix les classes <code>ClasseC1</code> i <code>ClasseC1Bis</code> dins un paquet anomenat “xxx.yyy.zzz”. Fixem-nos que una d’elles té el modificador public perquè s’hi pugui accedir des de fora del paquet, i recordem que en un fitxer .java només hi pot haver una classe <code>public</code>.
+</p>
+
+<p>
+Considerem un nou fitxer .java que crea més classes en el mateix paquet “xxx.yyy.zzz”: ClasseC2.java
+</p>
+<pre class="code">//Fitxer ClasseC2.java
+package xxx.yyy.zzz;
+
+public class ClasseC2 {
+  int mc2=10;
+}
+
+class ClasseC2Bis {
+  int mc2=20;
+}</pre>
+
+<p>
+Vegem, en primer lloc, que qualsevol classe d’un paquet té accés a totes les classes del mateix paquet i als membres de les que no hagin estat declarades <code>private</code>. Som-hi:
+</p>
+<pre class="code">//Fitxer: AccesIntern.java
+package xxx.yyy.zzz;
+
+class AccesIntern {
+  public static void main (String args[]) {
+   ClasseC1 c1 = new ClasseC1();
+   ClasseC1Bis c1b = new ClasseC1Bis();
+   ClasseC2 c2 = new ClasseC2();
+   ClasseC2Bis c2b = new ClasseC2Bis();
+   System.out.println (&quot;c1.mc1 = &quot; + c1.mc1);
+   System.out.println (&quot;c1b.mc1 = &quot; + c1b.mc1);
+   System.out.println (&quot;c2.mc2 = &quot; + c2.mc2);
+   System.out.println (&quot;c2b.mc2 = &quot; + c2b.mc2);
+  }
+}</pre>
+
+<p>
+Procedim a compilar els fitxers ClasseC1.java i ClasseC2.java. Veiem que la compilació no dóna cap error i podem comprovar l’estructura de directoris que hem generat dins de la carpeta del projecte del vostre IDE, amb aquestes compilacions:
+</p>
+<pre class="code">\xxx
+\xxx\yyy
+\xxx\yyy\zzz
+\xxx\yyy\zzz\ClasseC1.class
+\xxx\yyy\zzz\ClasseC1Bis.class
+\xxx\yyy\zzz\ClasseC2.class
+\xxx\yyy\zzz\ClasseC2Bis.class</pre>
+
+<p>
+Si procedim a executar el programa de la classe <code>AccesIntern</code> obtenim:
+</p>
+<pre class="code">c1.mc1 = 10
+c1b.mc1 = 20
+c2.mc2 = 10
+c2b.mc2 = 20</pre>
+
+<p>
+Veiem que la classe <code>AccesIntern</code> té accés a totes les classes del mateix paquet i a les seves dades membres, ja que no s’havien definit com a <code>private</code>.
+</p>
+
+<p>
+Comprovem ara què cal fer per accedir a les classes del paquet “xxx.yyy.zzz” des d’una classe d’un altre paquet. Comprovarem que no podem accedir a les classes no públiques del paquet “xxx.yyy.zzz” ni als membres no públics de les classes públiques. Per fer aquestes comprovacions, considerem la classe <code>AccesExtern</code> següent:
+</p>
+<pre class="code">//Fitxer AccesExtern.java
+import xxx.yyy.zzz.*;
+
+class AccesExtern {
+   public static void main (String args[]) {
+      ClasseC1 c1 = new ClasseC1();
+      //ClasseC1Bis c1b = new ClasseC1Bis();    // No és classe pública
+      ClasseC2 c2 = new ClasseC2();
+      //ClasseC2Bis c2b = new ClasseC2Bis();    // No és classe pública
+      //System.out.println (&quot;c1.mc1 = &quot; + c1.mc1); // No són membres públics
+      //System.out.println (&quot;c2.mc2 = &quot; + c2.mc2); // No són membres públics
+   }
+}</pre>
+
+<p>
+Veiem que les instruccions comentades donarien error pels motius següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les classes <code>ClasseC1Bis</code> i <code>ClasseC2Bis</code> no són públiques i, per tant, no s’hi té accés des de fora del paquet “xxx.yyy.zzz”.</div>
+</li>
+<li class="level1"><div class="li"> El membre “mc1” de la classe <code>ClasseC1</code> i el membre “mc2” de la classe <code>ClasseC2</code> no són públics i, per tant, no s’hi té accés des de  fora del paquet “xxx.yyy.zzz”.</div>
+</li>
+</ul>
+
+<p>
+En el desenvolupament d’aplicacions en Java cal tenir especial cura a utilitzar noms que siguin únics i així poder-ne assegurar la  reutilització en una gran organització i, encara més, en qualsevol lloc del món. Això pot ser una tasca difícil en una gran organització i absolutament impossible dins la comunitat d’Internet. Per això es proposa que tota organització utilitzi el nom del seu domini, invertit, com a prefix per a totes les classes. És a dir, els paquets de classes desenvolupats per la Generalitat de Catalunya, que té el domini “gencat.cat”, podrien començar per “cat.gencat”.
+</p>
+
+</div>
+
+<h3><a id="arxius_jar" >Arxius jar</a></h3>
+<div class="level3">
+
+<p>
+Una aplicació Java normalment es compon dels compilats de molts fitxers .java, la majoria dels quals formaran part de diferents paquets i, per tant, a l’hora de distribuir l’aplicació caldria mantenir l’estructura de directoris corresponent als paquets, cosa que pot convertir-se en una feina feixuga.
+</p>
+
+<p>
+L’entorn JDK de Java ens proporciona l’eina “jar”, executada sobre línia de comandes, per empaquetar totes les estructures de directoris i els fitxers .class en un únic arxiu d’extensió.jar, que no és més que un arxiu que conté a l’interior altres fitxers, similar als .zip del compressor WinZip o als .rar del compressor WinRAR.
+</p>
+
+<p>
+Per crear un fitxer .jar cal seguir les indicacions que la mateixa eina ens dóna si l’executem sense passar-li cap informació referent al que cal empaquetar:
+</p>
+<pre class="code">G:\&gt;jar
+Uso: jar {ctxui}[vfm0Me] [archivo-jar] [archivo-manifiesto] [punto-entrada] [-C dir] archivos...
+
+Opciones:
+    -c crear archivo de almacenamiento
+    -t crear la tabla de contenido del archivo de almacenamiento
+    -x extraer el archivo mencionado (o todos) del archivo de almacenamiento
+    -u actualizar archivo de almacenamiento existente
+    -v generar salida detallada de los datos de salida estándar
+    -f especificar nombre del archivo de almacenamiento
+    -m incluir información de un archivo de manifiesto especificado
+    -e especificar punto de entrada de la aplicación para aplicación autónoma
+      que se incluye dentro de un archivo jar ejecutable
+    -0 sólo almacenar; no utilizar compresión ZIP
+    -M no crear un archivo de manifiesto para las entradas
+    -i generar información de índice para los archivos jar especificados
+    -C cambiar al directorio especificado e incluir el archivo siguiente
+Si algún archivo coincide también con un directorio, ambos se procesarán.
+El nombre del archivo de manifiesto, el nombre del archivo de almacenamiento y el nombre del pun
+to de entrada se especifican en el mismo orden que las marcas &#039;m&#039;, &#039;f&#039; y &#039;e&#039;.
+
+Ejemplo 1: para archivar dos archivos de clases en un archivo de almacenamiento llamado classes.
+jar:
+        jar cvf classes.jar Foo.class Bar.class
+Ejemplo 2:utilice un archivo de manifiesto ya creado, &#039;mymanifest&#039;, y archive todos los
+        archivos del directorio foo/ en &#039;classes.jar&#039;:
+        jar cvfm classes.jar mymanifest -C foo/ .</pre>
+
+<p>
+Així, doncs, per obtenir un arxiu .jar cal executar quelcom similar a:
+</p>
+<pre class="code">jar cf nomArxiu.jar fitxer1.class fitxer2.class... directori1 directori2...</pre>
+
+<p>
+Un fitxer .jar es pot descomprimir i generar tota l’estructura de directoris en la ubicació en què es vulgui tot executant quelcom similar a:
+</p>
+<pre class="code">jar xf nomArxiu.jar</pre>
+
+<p>
+També hi ha possibilitats d’extreure únicament el(s) fitxer(s) desitjat(s).
+</p>
+
+<p>
+El gran avantatge dels fitxers .jar és que la màquina virtual permet l’execució dels fitxers que conté sense necessitat de desempaquetar, amb la sintaxi següent:
+</p>
+<pre class="code">java -cp nomArxiu.jar fitxerQueContéMètodeMain</pre>
+
+<p>
+Però, tot i així, cal saber quin és el <code>fitxerQueContéMètodeMain</code>. Per evitar haver de recordar el nom de la classe amb el <code>main</code> es pot indicar en un fitxer especial, anomenat <strong>fitxer de manifest</strong>, i incloure aquest fitxer dins l’arxiu .jar. Per aconseguir-ho, generem un fitxer de text amb qualsevol nom (per exemple, manifest.txt) amb el contingut següent i, importantíssim, amb un salt de línia al final:
+</p>
+<pre class="code">Main-Class: fitxerQueContéMètodeMain</pre>
+
+<p>
+Una vegada tenim el fitxer, l’hem d’incloure en l’arxiu .jar fent:
+</p>
+<pre class="code">jar cmf manifest.txt nomArxiu.jar fitxer1.class fitxer2.class... directori1 directori2...</pre>
+
+<p>
+L’opció “mf” indica que s’indica el nom del fitxer de manifest i el nom del fitxer empaquetat en aquest ordre; podem invertir les opcions:
+</p>
+<pre class="code">jar cfm nomArxiu.jar manifest.txt fitxer1.class fitxer2.class... directori1 directori2...</pre>
+
+<p>
+Un cop un conjunt de classes són empaquetades dins un fitxer .jar, aquest es pot afegir directament a l’entorn de treball, de manera que al fer-ho es considera que totes les seves classes formen part del programa que s’està generant. Gestionant un únic fitxer és possible gestionar-ne en realitat molts.
+</p>
+
+<p>
+El fitxer de manifest pot contenir més informació. Deixem per a vosaltres la seva investigació.
+</p>
+
+</div>
+
+<h4><a id="exemple_de_generacio_i_utilitzacio_d_arxiu_jar" >Exemple de generació i utilització d&#039;arxiu **.jar**</a></h4>
+<div class="level4">
+<div class="iocnote"><div class="ioccontent">
+<p>
+Netbeans genera automàticament fitxers JAR per als vostres projectes si useu l’opció <em>Build</em> de la barra d’eines. El fitxer es troba a la carpeta <code>dist</code>.
+</p>
+</div></div>
+<p>
+Considerem els fitxers <code>ClasseC1.java</code>, <code>ClasseC2.java</code> i <code>AccesIntern.java</code> que formen part del paquet “xxx.yyy.zzz” i el fitxer <code>AccesExtern.java</code>. Suposem que estem en una ubicació en què tenim el compilat AccesExtern.class i d’on penja l’estructura de directoris xxx/yyy/zzz amb els fitxers <code>ClasseC1.class</code>, <code>ClasseC2.class</code> i <code>AccesIntern.class</code>.
+</p>
+
+<p>
+Per generar un fitxer JAR que contingui els quatre .class amb l’estructura de directoris indicada:
+</p>
+<pre class="code">G:\&gt;jar cf paquet.jar AccesExtern.class xxx/yyy/zzz</pre>
+
+<p>
+Aquesta ordre ens ha generat un arxiu JAR que conté totes les classes indicades i que podem utilitzar per distribuir la nostra aplicació. Per comprovar-ne la funcionalitat, podem moure el fitxer JAR generat a una altra ubicació, situar-nos-hi i executar.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

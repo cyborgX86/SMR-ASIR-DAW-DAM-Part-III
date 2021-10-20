@@ -1,0 +1,392 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../WebContent/u6/introduccio.html">6. Mecanismes de programació asíncrona client-servidor</a></p><ul class="expander"><li id="u6introduccio"><a href="../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../WebContent/u6/a1/continguts.html">Comunicació asíncrona amb JavaScript</a><span class="buttonexp"></span></p><ul><li id="u6a1activitats"><a href="../../WebContent/u6/a1/activitats.html">Activitats</a></li><li id="u6a1exercicis"><a href="../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u6/a1/continguts.html#introduccio_a_ajax">Introducció a AJAX</a></li><li><a href="../../WebContent/u6/a1/continguts.html#dificultats_a_l_hora_de_provar_el_codi_ajax">Dificultats a l'hora de provar el codi AJAX</a></li><li><a href="../../WebContent/u6/a1/continguts.html#l_objecte_xmlhttprequest">L'Objecte XMLHttpRequest</a></li><li><a href="../../WebContent/u6/a1/continguts.html#serveis_web">Serveis web</a></li><li><a href="../../WebContent/u6/a1/continguts.html#jsonp_i_cors">JSONP i CORS</a></li><li><a href="../../WebContent/u6/a1/continguts.html#acces_a_dades_obertes">Accés a dades obertes</a></li><li><a href="../../WebContent/u6/a1/continguts.html#api_web_sockets">API Web Sockets</a></li><li><a href="../../WebContent/u6/a1/continguts.html#depuracio_de_crides_ajax">Depuració de crides AJAX</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../WebContent/u6/a2/continguts.html">Programació de la comunicació asíncrona amb jQuery</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u6/a2/continguts.html#creacio_i_enviament_de_peticions_amb_jquery">Creació i enviament de peticions amb jQuery</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="introduccio.html">Model d'objectes del document</a></li><li>Resum</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="resum"> Resum </a></h1>
+    	
+<p>
+El <strong>model d’objectes del document (DOM)</strong> facilita treballar amb documents <acronym title="HyperText Markup Language">HTML</acronym>, XML i SVG. Es tracta d’un conjunt d’interfícies que ofereixen les especificacions per treballar amb els documents (estructures en forma d’arbre) independentment del llenguatge. D’aquestes, les més importants són <code>Node</code>, <code>Document</code> i <code>Element</code>.
+</p>
+
+<p>
+En el cas d’<acronym title="HyperText Markup Language">HTML</acronym>, l’arbre que en el document representa l’arrel s’anomena <code>document</code> i va seguit del node <code>html</code>, del qual parteixen la resta de branques que formen el document. Aquests nodes poden ser de diferent tipus però els més importants són els de tipus <code>element</code>, que representen els elements <acronym title="HyperText Markup Language">HTML</acronym> de la pàgina.
+</p>
+
+<p>
+Les interfícies <code>Document</code> i <code>Element</code> deriven de <code>Node</code>, així doncs, tots els mètodes i propietats de <code>Node</code> són accessibles per aquestes interfícies. Entre les propietats i els mètodes més importants hi ha els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>nodeType i nodeName</strong>: proporcionen informació bàsica sobre el node, el seu tipus i el seu nom, respectivament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>textContent</strong>: contingut textual del node, per exemple, el text contingut en un paràgraf.</div>
+</li>
+<li class="level1"><div class="li"> <strong>parentNode</strong>, <strong>firstChild</strong>, <strong>lastChild</strong>, <strong>previousSibling</strong> i <strong>nextSibling</strong>: permeten navegar entre els nodes relacionats, siguin contigus, ascendents o descendents.</div>
+</li>
+<li class="level1"><div class="li"> <strong>childNodes</strong> i <strong>hasChildNodes</strong>: el primer permet obtenir una col·lecció de nodes descendents, mentre que el segon retorna cert si hi ha cap descendent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>appendChild</strong> i <strong>insertBefore</strong>: tots dos serveixen per afegir un node a un altre com a descendent o contigu.</div>
+</li>
+<li class="level1"><div class="li"> <strong>removeChild</strong> i <strong>replaceChild</strong>: permeten eliminar nodes descendents.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cloneNode</strong>: permet copiar un node.</div>
+</li>
+</ul>
+
+<p>
+La interfície <code>Document</code> s’utilitza principalment per crear nous elements o nodes de text i cercar elements al document. A banda dels mètodes que deriven de <code>Node</code>, té els següents mètodes destacats:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>createTextNode</strong> i <strong>createElement</strong>: serveixen per crear nodes de text i elements, respectivament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getElementsByClassName</strong>, <strong>getElementsByTagName</strong> i <strong>getElementById</strong>: els dos primers realitzen una cerca del document i retornen una col·lecció d’elements amb la classe o nom d’etiqueta passat com a argument, respectivament, mentre que l’últim retorna un únic element (si es troba) amb l<code>‘id</code> passat com a argument.</div>
+</li>
+<li class="level1"><div class="li"> <strong>querySelector</strong> i <strong>querySelectorAll</strong>: permeten realitzar una cerca més expressiva fent servir els selectors de <acronym title="Cascading Style Sheets">CSS</acronym>. El primer retorna només el primer element coincident amb la selecció, mentre que el segon retorna una col·lecció amb totes les coincidències.</div>
+</li>
+</ul>
+
+<p>
+La interfície <code>Element</code> permet manipular els elements, les seves propietats, els seus continguts i fer cerques entre els seus descendents. A part dels mètodes i propietats que són herència de <code>Node</code>, ofereix els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>tagName</strong>, <strong>className</strong>, <strong>classList</strong>, i <strong>id</strong>: aquestes propietats permeten obtenir informació sobre l’element, incloent-hi les classes que s’apliquen i el seu identificador únic, si escau.</div>
+</li>
+<li class="level1"><div class="li"> <strong>innerHTML</strong>: es tracta d’una propietat especial que permet establir el contingut de l’element. Si aquest contingut és codi <acronym title="HyperText Markup Language">HTML</acronym>, és interpretat i es generen tots els elements automàticament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>attributtes</strong>, <strong>getAttribute</strong>, <strong>removeAttribute</strong>, <strong>setAtribute</strong>: aquests mètodes permeten manipular, individualment, atributs de l’element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>style</strong>: permet manipular els estils <acronym title="Cascading Style Sheets">CSS</acronym> individuals d’un element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>previousElementSibling</strong>, <strong>nextElementSibling</strong>, <strong>firstElementChild</strong> i <strong>lastElementChild</strong>: mètodes similars als heretats de <code>Node</code> però especialitzats per navegar només entre elements.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getElementsByClassName</strong> i <strong>getElementsByTagName</strong>: aquests mètodes són molt semblants als de la interfície <code>Document</code> amb el mateix nom, però cerquen entre els descendents de l’element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>querySelector</strong> i <strong>querySelectorAll</strong>: igual que els anteriors, la seva funcionalitat replica la de la interfície <code>Document</code>, però la selecció es realitza entre els elements descendents.</div>
+</li>
+</ul>
+
+<p>
+Addicionalment, tant el document com els elements poden detectar quan es disparen <em>events</em>. Cal destacar que poden afegir-se múltiples deteccions d’<em>events</em> a un mateix node, tant per respondre amb diferents funcions a un sol <em>event</em> com per detectar diferents <em>events</em>. Els dos mètodes principals per gestionar aquests <em>events</em> són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> addEventListener: afegeix la detecció d’<em>events</em> a l’element o document. Accepta com a paràmetres una cadena de text amb el nom de l’<em>event</em> i una funció que serà cridada en produir-se.</div>
+</li>
+<li class="level1"><div class="li"> removeEventListener: elimina la detecció d’<em>events</em> per l’<em>event</em> i funció concrets passats com a argument.</div>
+</li>
+</ul>
+
+<p>
+Per simplificar la manipulació del DOM i la gestió d’<em>events</em> s’acostuma a fer servir biblioteques. Una de les més populars és <strong>jQuery</strong> que ofereix, a banda d’aquestes, moltes altres funcionalitats indispensables en la majoria d’aplicacions modernes. Aquesta biblioteca pot descarregar-se i afegir-la com qualsevol altre fitxer JavaScript o carregar-la des d’un CDN, però sempre s’ha de carregar abans que el codi que l’utilitza. En qualsevol cas, és recomanable inicialitzar les aplicacions dintre del mètode <code>ready</code> de <code>jQuery</code>, que és cridat una vegada s’ha carregat el DOM.
+</p>
+
+<p>
+Cal diferenciar entre la funció <code>jQuery</code> (habitualment invocada com a <code>$</code>) i els objectes <code>jQuery</code>. Per generar nous objectes, fer cerques globals o accedir a algunes funcionalitats s’ha de fer a través de la funció. Per altra banda, els mètodes de cerca i creació d’elements retornen objectes <code>jQuery</code> que embolcallen els elements i afegeixen mètodes propis de la biblioteca.
+</p>
+
+<p>
+La funció <code>jQuery</code> permet fer cerques complexes; per fer-les només cal cridar la funció passant el selector com a argument. Poden ser selectors de <acronym title="Cascading Style Sheets">CSS</acronym>, selectors propis de jQuery o una combinació de tots dos. Entre els selectors propis es troben:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>:input</strong>, <strong>:text</strong>, <strong>:checkbox</strong>, <strong>:radio</strong> i <strong>:button</strong>: per seleccionar elements de formularis.</div>
+</li>
+<li class="level1"><div class="li"> <strong>:first</strong> i <strong>:last</strong>: per seleccionar només el primer o l’últim element, respectivament, de la selecció actual.</div>
+</li>
+<li class="level1"><div class="li"> <strong>:header</strong>: selecciona totes les capçaleres (<code>h1</code> fins <code>h6</code>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>:even</strong> i <strong>:odd</strong>: selecciona només els elements parells o senars respectivament. Cal destacar que es comença a comptar per 0 i, per tant, el primer element és parell.</div>
+</li>
+<li class="level1"><div class="li"> <strong>:has(element)</strong>: selecciona els elements que continguin com a descendent l<code>‘element</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>:contains(text)</strong>: selecciona els elements que continguin el <code>text</code>.</div>
+</li>
+</ul>
+
+<p>
+Per altra banda, en cas de necessitar refinar una cerca, jQuery ofereix l’opció de filtrar la selecció (mètode <code>filter</code>) o cercar entre els descendents (<code>find</code>).
+</p>
+
+<p>
+Quant a la creació de nous elements, la biblioteca ofereix dos sistemes diferents a través de la funció <code>jQuery</code>. En tots dos casos el resultat és un objecte <code>jQuery</code> amb els nous elements com a selecció:
+</p>
+<ul>
+<li class="level1"><div class="li"> Passar com a argument una cadena de text amb el codi <acronym title="HyperText Markup Language">HTML</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> Passar un element per clonar-lo.</div>
+</li>
+</ul>
+
+<p>
+Entre els mètodes que ofereixen les objectes <code>jQuery</code> per manipular l’element es troben els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>addClass</strong>, <strong>removeClass</strong> i <strong>toggleClass</strong>: faciliten la gestió de classes a l’element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>val</strong>, <strong>text</strong> i <strong>html</strong>: el primer serveix per manipular el valor d’un element; el segon, per als continguts textuals, i el tercer permet afegir codi <acronym title="HyperText Markup Language">HTML</acronym> que serà interpretat i generarà nous elements (equivalent a la propietat innerHTML de la interfície <code>Element</code>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>css</strong>: permet consultar, afegir, actualitzar i eliminar estils <acronym title="Cascading Style Sheets">CSS</acronym> individuals d’un element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>attr</strong> i <strong>prop</strong>: el primer permet manipular els atributs de l’element, mentre que el segon s’ha de fer servir per a les propietats. Aquesta diferenciació és força subtil, ja que a la declaració <acronym title="HyperText Markup Language">HTML</acronym> són idèntics.</div>
+</li>
+</ul>
+
+<p>
+Els objectes <code>jQuery</code> ofereixen mètodes per crear noves branques i afegir-les al document. Com en el cas de les interfícies del DOM, aquestes branques poden crear-se a la memòria, manipular-se i finalment afegir-se. Els mètodes proporcionats són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>prepend</strong>: afegeix l’element al principi de la llista de descendents directes del contenidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>append</strong>: afegeix l’element al final de la llista descendents directes del contenidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>before</strong>: afegeix l’element al mateix nivell que el contenidor, però davant d’aquest.</div>
+</li>
+<li class="level1"><div class="li"> <strong>after</strong>: afegeix l’element al mateix nivell que el contenidor, però darrere d’aquest.</div>
+</li>
+</ul>
+
+<p>
+Altres avantatges de fer servir jQuery és la facilitat amb la qual es gestionen els <em>events</em>. Disposa de dos mètodes, <code>on</code> i <code>off</code>, que permeten afegir i eliminar la detecció d’<em>events</em> respectivament. Admeten com a nom de l’<em>event</em> que s’ha de detectar una cadena de text amb diferent <em>events</em> separats per espais, de manera que en una sola línia es pot afegir la detecció de múltiples <em>events</em>. A més a més, per als casos més simples, jQuery ofereix l’opció de fer servir dreceres per pràcticament tots els <em>events</em>: <code>load</code>, <code>click</code>, <code>dblclick</code>, etc.
+</p>
+
+<p>
+Hi ha casos en què un mateix bloc de codi l’heu de reutilitzar en diferents components de la vostra aplicació o fins i tot en diferents aplicacions. En aquests casos és recomanable desenvolupar un connector que inclogui aquesta funcionalitat. Una manera de fer-ho és seguir aquests passos:
+</p>
+<ul>
+<li class="level1"><div class="li"> Implementeu la funcionalitat normalment per assegurar-vos que funciona correctament.</div>
+</li>
+<li class="level1"><div class="li"> Si s’han de crear elements amb un estil <acronym title="Cascading Style Sheets">CSS</acronym> concret, afegiu internament el nom de les classes <acronym title="Cascading Style Sheets">CSS</acronym> a aquests elements per no interferir amb l’estil general del document.</div>
+</li>
+<li class="level1"><div class="li"> Assigneu al mètode <code>$.fn.nomDelVostreConnector</code> una funció que contingui la nova funcionalitat que voleu que s’apliqui als objectes <code>jQuery</code>.</div>
+</li>
+<li class="level1"><div class="li"> En cas que vulgueu acceptar paràmetres externs: afegiu l’entrada i la gestió d’arguments.</div>
+</li>
+</ul>
+
+<p>
+El model-vista-controlador és un patró de disseny que ajuda a estructurar l’aplicació dividint-la en tres parts:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>La vista</strong> és la representació de la informació que veu l’usuari i ofereix elements per interactuar amb l’aplicació (camps d’entrada, formularis, botons, etc.).</div>
+</li>
+<li class="level1"><div class="li"> <strong>El controlador</strong> rep les entrades de la vista i a partir d’aquestes entrades realitza les accions necessàries, com per exemple validar les dades i consultar o manipular el model.</div>
+</li>
+<li class="level1"><div class="li"> <strong>El model</strong> conté la lògica de l’aplicació, i les dades que manipula el controlador i visualitza la vista.</div>
+</li>
+</ul>
+
+<p>
+Atès que és un sistema complex, no es recomana fer implementacions pròpies del patró excepte en casos molt simples. En comptes d’això, s’acostuma a fer servir entorns de treball (<em>frameworks</em>) o biblioteques com Angular, Ember o React, que són molt potents i estan comprovades exhaustivament.
+</p>
+
+<p>
+L’especificació del <acronym title="World Wide Web Consortium">W3C</acronym> inclou un tipus de component, el component web, que hauria de permetre desenvolupar els vostres propis elements amb els seus estils i codi JavaScript encapsulat, però actualment no es troba implementada a cap navegador. Tot i així, hi ha múltiples alternatives com Google Polymer o els mateixos components dels entorns de treball i biblioteques MVC.
+</p>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../WebContent/u5/introduccio.html">Introducció</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

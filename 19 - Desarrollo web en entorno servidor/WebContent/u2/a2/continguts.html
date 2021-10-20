@@ -1,0 +1,1302 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Desenvolupament web en entorn servidor</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">'Servlets'</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_hola_mon">'Servlet' Hola, Món</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_endevinacolor">'Servlet' EndevinaColor</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_publicitat_als_nous">'Servlet' Publicitat als nous</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#que_s_ha_apres">Què s'ha après</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Formularis amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#calculant_el_sou_net">Calculant el sou net</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#escrivint_un_post">Escrivint un 'post'</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#dades_de_subscripcio">Dades de subscripció</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u2a3" class="tocsection"><p id='u2a3continguts'><a class="section" href="../../../WebContent/u2/a3/continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a3activitats"><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></li><li id="u2a3exercicis"><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a3annexos"><a href="../../../WebContent/u2/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_en_una_galeta">L'usuari, en una galeta</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_a_la_sessio">L'usuari a la sessió</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#un_formulari_d_autenticacio_amb_ejb">Un formulari d'autenticació amb EJB</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament web en entorn servidor</a></li><li>Formularis amb 'servlets' i EJB</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="formularis_amb_servlets_i_ejb"> Formularis amb 'servlets' i EJB </a></h1>
+    	
+<p>
+En aquest apartat s’explicarà com enviar informació des d’un formulari web a un <em>servlet</em>. Aprendrem a obtenir aquesta informació, tractar-la i enviar una pàgina de resposta a l’usuari.
+</p>
+
+<p>
+Ens endinsarem en l’aprenentatge de l’arquitectura <strong>Enterprise JavaBeans (EJB)</strong>. Veurem com funciona, quins elements la componen i com interacciona amb l’arquitectura Java Web. Així, aprendrem a enviar i rebre informació entre els formularis, els <em>servlets</em> i els components EJB.
+</p>
+
+<p>
+També aprendrem una tècnica per comprovar el format de les dades que ens envia l’usuari amb un formulari. Aquesta tècnica utilitza patrons i expressions regulars que es poden afegir, per automatitzar la comprovació de les dades, als components EJB.
+</p>
+
+<p>
+Tots aquest conceptes s’explicaran partint de l’exemple. Començarem amb un exemple senzill per calcular el sou d’una família, i les dades s’enviaran a un <em>servlet</em>. Continuarem amb l’elaboració d’un blog on introduïren l’arquitectura EJB. Acabarem l’apartat demanant les dades d’un usuari per inscriure’l en l’aplicació, on veurem com tractar les dades i automatitzar el procés per comprovar les restriccions requerides pel programa.
+</p>
+
+<p>
+Per poder fer aquest apartat es recomana haver fet l’apartat “<em>Servlets</em>”, on se n’explica el funcionament i el seu cicle de vida.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu descarregar-vos el codi Java, que utilitzarem en aquest apartat, des de l’enllaç que trobareu a l’apartat d’annexos de la unitat. Recordeu que podeu utilitzar la funció d’importar del Netbeans per accedir a aquest contingut.
+</p>
+</div></div>
+<h2><a id="calculant_el_sou_net" >Calculant el sou net</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat aprendreu a utilitzar els <em>servlets</em> com a receptors de les peticions <code>GET</code> o <code>POST</code> que s’envien des dels formularis <acronym title="HyperText Markup Language">HTML</acronym>. Utilitzareu els formularis per enviar informació des del navegador fins al <em>servlet</em>.
+</p>
+
+<p>
+Comenceu creant un nou projecte amb Maven  (<em>File / New Project / Maven / Web Application</em>) i l’anomeneu formServlets. Posteriorment creareu un <em>servlet</em> anomenat CalculSouServlet. Recordeu que per crear un <em>servlet</em> amb NetBeans heu d’accedir a <em>File / New File / Web / Servlet</em>. No cal que afegiu la configuració del <em>servlet</em> al fitxer web.xml. En aquest cas, utilitzareu les anotacions per configurar-lo.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> GET versus POST</p>
+<p>
+El mètode <strong>GET</strong> és un mètode del protocol HTTP que envia la informació al servidor utilitzant la <acronym title="Uniform Resource Locator">URL</acronym>. En canvi, el mètode <strong>POST</strong> envia la informació utilitzant la capçalera de la petició  i, per tant, sense embrutar la <acronym title="Uniform Resource Locator">URL</acronym> en el navegador.
+</p>
+</div></div>
+<p>
+Aquest <em>servlet</em> calcularà el sou net que rebrà una família a final de mes tenint en compte el nombre de fills i el sou brut que es cobra. Suposeu que la retenció normal és del 21%, i que per cada fill que es tingui es rebaixarà 5 punts aquest percentatge.
+</p>
+
+<p>
+Segons l’enunciat, necessiteu que cada família que vulgui calcular el sou net enviï al <em>servlet</em> les següents dades:
+</p>
+<ul>
+<li class="level1"><div class="li"> sou brut</div>
+</li>
+<li class="level1"><div class="li"> nombre de fills</div>
+</li>
+</ul>
+
+<p>
+Necessiteu un formulari <acronym title="HyperText Markup Language">HTML</acronym> amb els elements necessaris per demanar aquesta informació. Creareu una nova pàgina web (<em>File / New File / Html5 / Html File </em>) amb el nom calcularSou.html. El contingut de la pàgina és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;form-servlet&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Càlcul del salari:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form method=&quot;GET&quot; action=&quot;CalculSouServlet&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;salari&quot;&gt;Salari brut:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;salari&quot; type=&quot;number&quot; name=&quot;salariBrut&quot; min=&quot;0&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;fill&quot;&gt;Nombre de fills:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;fill&quot; type=&quot;number&quot; name=&quot;fills&quot; min=&quot;0&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per elaborar la pàgina calcularSou.html s’ha creat un formulari web on s’han creat dos camps (<em>inputs</em>) que permeten a l’usuari introduir informació. El primer camp correspon al salari brut que cobra la família:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input id=&quot;salari&quot; type=&quot;number&quot; name=&quot;salariBrut&quot; min=&quot;0&quot;/&gt;</div></li></ol></pre>
+
+<p>
+Aquest camp del formulari és de tipus numèric, i com a mínim el valor que introdueixi l’usuari ha de ser 0, així es fa un petit control d’errors abans d’enviar qualsevol dada al <em>servlet</em>. Quan l’usuari introdueixi el seu sou, aquest s’enviarà amb l’identificador que surt al costat de l’atribut <code>name</code>.
+</p>
+
+<p>
+El segon camp correspon al nombre de fills que té la família:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input id=&quot;fill&quot; type=&quot;number&quot; name=&quot;fills&quot; min=&quot;0&quot;&gt;</div></li></ol></pre>
+
+<p>
+Igual que s’ha fet abans, també es fa un petit control d’errors. El tipus de dada que s’ha de posar és numèrica i més gran o igual que 0. Quan l’usuari introdueixi un valor, aquest s’enviarà al <em>servlet</em> amb el nom <em>fills</em>.
+</p>
+
+<p>
+Una vegada s’han definit els camps que s’han d’enviar al servidor cal configurar el mètode d’enviament de la informació, així com el recurs que la rebrà. Aquesta informació es configura en la mateixa etiqueta <code>form</code>. El mètode pot ser <code>POST</code> o <code>GET</code>, i el recurs que rebrà la informació ha de ser el <em>servlet</em> CalculSouServlet.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form method=&quot;GET&quot; action=&quot;CalculSouServlet&quot;&gt;</div></li></ol></pre>
+
+<p>
+Reviseu que teniu una anotació al <em>servlet</em> (fitxer CalculaSouServlet.java) que indica que escolta les peticions enviades a l’<acronym title="Uniform Resource Locator">URL</acronym> CalculSouServlet. L’anotació ha de ser semblant a aquesta:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;CalculSouServlet&quot;, urlPatterns = {&quot;/CalculSouServlet&quot;})</div></li></ol></pre>
+
+<p>
+El nom del recurs configurat a la propietat <code>urlPatterns</code> del <em>servlet</em> ha de coincidir amb el nom de la propietat <code>action</code> configurada al formulari.
+</p>
+
+<p>
+Una vegada arribats a aquest punt, ja teniu la part del client acabada, i continuareu amb la part del servidor. Ara calculareu el sou net que percebrà una família segons les dades que hagi enviat amb el formulari.
+</p>
+
+<p>
+Modificareu la funció <code>processRequest</code> del <em>servlet</em>. Aquesta funció s’executa sempre que es rebi una petició <code>POST</code> o <code>GET</code> indistintament. El contingut de la funció és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">        throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">    try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;title&gt;Servlet formServlet&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;h1&gt;Dades rebudes del formulari&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        int brut = Integer.parseInt(request.getParameter(&quot;salariBrut&quot;));</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;p&gt;Salari brut: &quot; + brut + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        int fills = Integer.parseInt(request.getParameter(&quot;fills&quot;));</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;p&gt;Nombre de fills: &quot; + fills + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;h1&gt;Càlcul del salari net:&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">        int retencio = 21 - (5*fills);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        // Fórmula per calcular la retenció: k = (int)(value*(percentage/100.0f));            </div></li><li class="li1"><div class="de1">        int net = brut -((int)(brut * (retencio/100.0f)));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;p&gt;Tens una retenció del &quot; + retencio + &quot; per cent&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;p&gt;El teu salari net és de &quot; + net + &quot; euros&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;a href='calcularSou.html'&gt; Tornar &lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Bàsicament, la funció <code>processRequest</code> obté els paràmetres que ha enviat l’usuari i fa el càlcul de la retenció per poder mostrar el salari net. Vegeu com s’obté el paràmetre <code>salariBrut</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">int brut = Integer.parseInt(request.getParameter(&quot;salariBrut&quot;));</div></li></ol></pre>
+
+<p>
+Tota la informació que s’envia des del navegador cap al <em>servlet</em> s’emmagatzema a l’objecte <code>request</code> (petició). Aquest objecte té un mètode anomenat <code>.getParameter(name)</code> per obtenir les dades que ha enviat l’usuari. El nom que s’ha d’utilitzar per obtenir les dades és el nom que s’ha configurat a la propietat <code>name</code> de l’<em>input</em> corresponent. Per exemple, si voleu obtenir el salari brut hem de veure com s’ha creat el formulari:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input id=&quot;salari&quot; type=&quot;number&quot; name=&quot;salariBrut&quot; min=&quot;0&quot;/&gt;</div></li></ol></pre>
+
+<p>
+El nom configurat és <code>salariBrut</code>. Aquest nom és el que s’ha d’utilitzar al mètode <code>.getParameter</code> de l’objecte <code>request</code> per obtenir la dada introduïda:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">request.getParameter(&quot;salariBrut&quot;);</div></li></ol></pre>
+
+<p>
+Finalment, com que voleu poder operar amb aquest número s’ha de convertir en un <em>integer</em>, ja que el tipus de dada que retorna el mètode <code>getParametre</code> és de tipus <em>string</em>.
+</p>
+
+<p>
+Feu la mateixa operació amb el paràmetre que representa el nombre de fills.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">int fills = Integer.parseInt(request.getParameter(&quot;fills&quot;));</div></li></ol></pre>
+
+<p>
+Observeu que ambdós paràmetres s’han emmagatzemat en dues variables, anomenades <em>brut</em> i <em>fills</em>, de tipus <em>integer</em>, per poder operar amb elles i calcular el sou net.
+</p>
+
+<p>
+El sou net es calcula multiplicant el salari brut per la retenció apropiada: <em>(net = brut*(percentage/100))</em>. Primer s’ha de calcular quina retenció s’ha d’aplicar. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">int retencio = 21 - (5*fills);</div></li></ol></pre>
+
+<p>
+La retenció màxima s’estableix, segons l’enunciat, en el 21%. Per cada fill que tingui la família s’han de treure 5 punts de retenció. Per tant, amb aquesta fórmula: <em>retenció = retencioMaxima - (numFills*5)</em> obteniu la retenció real que s’ha d’aplicar.
+</p>
+
+<p>
+Una vegada s’ha calculat la retenció real es pot aplicar a la fórmula per calcular el sou net:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">int net = brut -((int)(brut * (retencio/100.0f)));</div></li></ol></pre>
+
+<p>
+Tingueu en compte que a Java, per fer el càlcul dels percentatges, les dades han d’estar en <em>float</em>. Si convertiu el valor 100 a <em>float</em>, la seva divisió amb un <em>integer</em> també dóna un <em>float</em> i obtindreu correctament aquest percentatge.
+</p>
+
+<p>
+Finalment, es mostren les dades per pantalla amb el càlcul del sou net i es permet tornar a la pàgina principal per si es vol fer un altre càlcul.
+</p>
+
+</div>
+
+<h2><a id="escrivint_un_post" >Escrivint un &#039;post&#039;</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat s’explicarà la validació de dades d’un formulari utilitzant <em>servlets</em> i EJB. Aprendrem a integrar aquests elements perquè funcionin plegats validant dades d’un formulari. Es veuran diverses estratègies de funcionament de l’arquitectura EJB per fer-ne la validació.
+</p>
+
+<p>
+Es vol crear una aplicació que permeti escriure un missatge per pantalla que no ha de superar els 150 caràcters. Per permetre escriure un missatge, l’aplicació demana un correu electrònic vàlid i la data de naixement de la persona. Si la persona té menys de 18 anys no se li permet escriure el missatge.
+</p>
+
+<p>
+Per fer aquest apartat aprofitareu el mateix projecte que a l’apartat anterior. Creeu una nova pàgina <acronym title="HyperText Markup Language">HTML</acronym>, amb el programa NetBeans, anomenada escriurePost.html (<em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em>), on afegireu les dades a un formulari web <acronym title="HyperText Markup Language">HTML</acronym>. El codi de la pàgina pot ser semblant a aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;EJB-SERVLET&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">      &lt;h1&gt;Escriu un missatge:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form id=&quot;formulari&quot; method=&quot;POST&quot; action=&quot;PostServlet&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;mail&quot;&gt;Correu electrònic:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;mail&quot; type=&quot;text&quot; name=&quot;mail&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;age&quot;&gt;Edat:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;age&quot; type=&quot;number&quot; name=&quot;edat&quot; min=&quot;0&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">        &lt;label&gt;Missatge:&lt;/label&gt;</div></li><li class="li1"><div class="de1">        &lt;textarea name=&quot;missatgePost&quot; form=&quot;formulari&quot;&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+La pàgina <acronym title="HyperText Markup Language">HTML</acronym> consta d’un formulari on es demana a l’usuari tres dades:
+</p>
+<ul>
+<li class="level1"><div class="li"> adreça de correu electrònic (<em>name=mail</em>)</div>
+</li>
+<li class="level1"><div class="li"> edat de la persona (<em>name=edat</em>)</div>
+</li>
+<li class="level1"><div class="li"> missatge o <em>post</em> a escriure per pantalla (<em>name=missatgePost</em>)</div>
+</li>
+</ul>
+
+<p>
+Per poder escriure el missatge per pantalla, les dades s’han de validar. Les validacions són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> La longitud del missatge (<em>missatgePost</em>) ha d’estar entre 0 i 150 caràcters.</div>
+</li>
+<li class="level1"><div class="li"> L’edat de la persona ha de ser major o igual a 18 anys.</div>
+</li>
+<li class="level1"><div class="li"> El correu electrònic ha de ser vàlid.</div>
+</li>
+</ul>
+
+<p>
+Per implementar la validació de les dades utilitzareu l’arquitectura EJB, que permet la reutilització dels seus components en aquesta o en altres aplicacions.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>Enterprise JavaBean</strong> (EJB) és una arquitectura de components de servidor que simplifica el procés de construcció d’aplicacions de components empresarials distribuïts en Java.
+</p>
+</div></div>
+<p>
+S’utilitza l’arquitectura EJB sempre que vulgueu:
+</p>
+<ul>
+<li class="level1"><div class="li"> Que l’aplicació sigui escalable. Potser a mesura que el nombre d’usuaris vagi creixent es necessitarà distribuir l’aplicació en diferents màquines. </div>
+</li>
+<li class="level1"><div class="li"> Integritat de dades mitjançant transaccions. Els components EJB poden crear transaccions i tenen mecanismes per accedir concurrentment a objectes compartits.</div>
+</li>
+<li class="level1"><div class="li"> Que l’aplicació tingui una gran varietat de clients. Amb poques línies de codi, clients remots poden localitzar fàcilment Enterprise Beans.</div>
+</li>
+</ul>
+
+<p>
+Els components EJB no es poden utilitzar directament per interaccionar amb el protocol HTTP. Necessiten un <em>framework</em>, com pot ser Spring, JSF o aplicacions basades en <em>servlets</em>, per tractar amb el protocol HTTP i després enviar la informació necessària als components EJB. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els <em>frameworks</em> faciliten al programador la seva tasca donat-li una metodologia estàndard, una organització del projecte i uns recursos propis que moltes vegades fan molt fàcil la tasca de programar grans aplicacions. Alguns <em>frameworks</em> que existeixen per a Java son els següents: JSP, JSF, Spring, Struts, Tapestry, Googgle Web Toolkit (GWT), entre d’altres.
+</p>
+</div></div>
+<p>
+Així, necessiteu crear un <em>servlet</em> que rebi les dades enviades amb el formulari i que després les enviï a un component EJB per a la seva validació. 
+</p>
+
+<p>
+Creeu un <em>servlet</em> nou anomenat PostServlet (<em>File / New File / Web / Servlet </em>). No cal que afegiu la configuració del <em>servlet</em> al fitxer web.xml. En aquest cas, utilitzareu les anotacions per configurar-lo.
+</p>
+
+<p>
+El <em>servlet</em> ha de portar a terme tres tasques:
+</p>
+<ul>
+<li class="level1"><div class="li"> Obtenir les dades que ha enviat l’usuari</div>
+</li>
+<li class="level1"><div class="li"> Enviar les dades a un component EJB per validar-les</div>
+</li>
+<li class="level1"><div class="li"> Mostrar per pantalla el resultat de la validació</div>
+</li>
+</ul>
+
+<p>
+El codi corresponent a aquest funcionament és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;PostServlet&quot;, urlPatterns = {&quot;/PostServlet&quot;})</div></li><li class="li1"><div class="de1">public class PostServlet extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @EJB</div></li><li class="li1"><div class="de1">    private PostBeanLocal validation;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet ServletValidation&lt;/title&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;EJB validation&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String mail = request.getParameter(&quot;mail&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidEmail(mail)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El correu electrònic &quot; + mail + &quot; és vàlid&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El correu electrònic no és vàlid.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }      </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String edat = request.getParameter(&quot;edat&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidAge(edat)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;Tens&quot; + edat + &quot; anys i pots escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;Has de ser major d'edat per escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String missatge = request.getParameter(&quot;missatgePost&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidPost(missatge)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El missatge '&quot; + missatge + &quot;' és vàlid.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El missatge no és vàlid. Ha de tenir menys de 150 caràcters.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+Com podeu observar, en el <em>servlet</em> PostServlet es repeteix el funcionament esperat per a cadascuna de les dades enviades des del formulari. 
+</p>
+
+<p>
+Primer es recupera una de les dades enviades, per exemple l’edat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String edat = request.getParameter(&quot;edat&quot;);</div></li></ol></pre>
+
+<p>
+A continuació, es valida l’edat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (validation.isValidAge(edat)) {</div></li></ol></pre>
+
+<p>
+Segons el resultat de la validació, s’envia un missatge o un altre a l’usuari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (validation.isValidAge(edat)) {</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;Tens&quot; + edat + &quot; anys i pots escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;Has de ser major d'edat per escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi que s’ha d’introduir en el <em>servlet</em> s’ha reduït molt. Ara el <em>servlet</em> només conté la part visual de la pàgina de resposta. Tota la lògica de l’aplicació ha estat externalitzada a un component EJB.
+</p>
+
+<p>
+Un EJB (Enterprise JavaBean) és un component que ha d’executar-se en un contenidor d’EJB, i es diferencia molt d’un JavaBean normal. Un JavaBean és un objecte al qual accediu de manera directa des de la vostra aplicació (vegeu la <span class="figref"><a href="#fig01"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Accés a un JavaBean
+
+</figcaption><img src="../media/daw_m07_u2_06.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En canvi, un EJB és un component al qual no podeu accedir d’una forma tan directa i sempre hi accediu a través d’algun tipus d’intermediari (vegeu la <span class="figref"><a href="#fig02"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig02"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Accés a un EJB
+
+</figcaption><img src="../media/daw_m07_u2_07.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquest intermediari aportarà una sèrie de serveis definits pels estàndards en els quals l’EJB es pot recolzar. Existeixen dos tipus d’intermediaris, l’intermediari local i l’intermediari remot. 
+</p>
+
+<p>
+L’intermediari local és aquell que s’executa en la mateixa màquina virtual de Java que l’EJB. En canvi, el remot és aquell intermediari que s’executa en una màquina virtual de Java diferent de la màquina on s’executa l’EJB. Gràcies a aquests intermediaris es poden construir aplicacions distribuïdes (vegeu la <span class="figref"><a href="#fig03"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig03"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura EJB distribuïda
+
+</figcaption><img src="../media/daw_m07_u2_08.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Cadascuna d’aquestes interfícies intermediàries s’encarrega de definir els mètodes que estaran a la disposició dels clients que els invoquen. Aquestes interfícies són les encarregades de donar accés als EJB a tots els serveis addicionals que suporta el contenidor EJB (vegeu la <span class="figref"><a href="#fig04"><span>figura</span></a></span>), com són el maneig de transaccions, la concurrència, la seguretat, la gestió de recursos, els serveis de xarxa, etc.
+</p>
+<div class="iocfigure"><a name="fig04"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Contenidor d’EJB
+
+</figcaption><img src="../media/daw_m07_u2_09.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>contenidor EJB (EJB Container)</strong> és l’encarregat d’administrar l’execució dels components EJB. Controla totes les funcionalitats d’un EJB dintre del servidor actuant com a intermediari entre el servidor i l’aplicació. 
+</p>
+</div></div>
+<p>
+Un contenidor d’EJB pot administrar dos tipus de components EJB: els <em>beans</em> de sessió (<em>Session Beans</em>) o els <em>beans</em> dirigits per missatges (<em>message-driven beans</em>).
+</p>
+
+<p>
+Els <em>beans</em> de tipus <strong><em>message-driven</em></strong> processen missatges asíncrons. Els missatges es reben i s’envien mitjançant el servei de missatges de Java (JMS: Java Message Service).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un contenidor web també és conegut com a Contenidor Servlet perquè la seva funció principal és administrar el cicle de vida dels <em>servlets</em>. Amb les aplicacions EJB van sorgir els seus contenidors propis per administrar els EJB.
+</p>
+</div></div>
+<p>
+Els <strong><em>beans</em> de sessió</strong> encapsulen la lògica de l’aplicació i poden ser invocats per un client local, remot o un client d’un servei web (<em>web service</em>). El client ha d’accedir directament al mètode que vol executar del <em>bean</em>. El contenidor EJB s’encarrega de crear el <em>bean</em> corresponent i facilitar la interacció amb l’aplicació. Els <em>beans</em> de sessió no són persistents, és a dir, no s’emmagatzemen a la base de dades.
+</p>
+
+<p>
+Si observeu el codi on executem la validació de l’edat no creem el <em>bean validation</em> (igual que no creem el <em>servlet</em>). El contenidor EJB crea per a nosaltres un <em>bean</em> que executarà la funcionalitat demanada.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (validation.isValidAge(edat)) {</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;Tens&quot; + edat + &quot; anys i pots escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p&gt;Has de ser major d'edat per escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Existeixen tres tipus de <em>beans</em> de sessió:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Beans</em> sense estat (<em><strong>stateless</strong></em>): no es modifiquen amb les crides dels clients. Els mètodes es posen a disposició de les aplicacions clients que els executen enviant dades i rebent resultats, però que no modifiquen internament el <em>bean</em>. Això permet al contenidor tenir un conjunt d’instàncies (<em>pool</em>) del mateix <em>bean</em> i anar assignant qualsevol instància del <em>bean</em> a qualsevol client. Fins i tot pot tenir la mateixa instància assignada a diferents clients, ja que l’assignació només dura el temps d’execució del mètode.</div>
+</li>
+<li class="level1"><div class="li"> <em>Beans</em> amb estat (<em><strong>stateful</strong></em>): aquests <em>beans</em> poden tenir propietats. Cada <em>bean</em> emmagatzema les dades d’un client durant la seva interacció i no es pot compartir entre diferents clients. Aquestes propietats es poden modificar quan el client va fent les crides als mètodes del <em>bean</em>. Aquestes dades no es guarden quan el client finalitza la sessió. En acabar la comunicació, el <em>bean</em> s’esborra. </div>
+</li>
+<li class="level1"><div class="li"> <em>Bean <strong>singleton</strong></em>: és un <em>bean</em> que s’instancia una vegada i existeix durant tota vida de l’aplicació.</div>
+</li>
+</ul>
+
+<p>
+En aquesta ocasió s’utilitza, a la vostra aplicació, un <em>bean</em> EJB sense estat. Per crear-lo aneu a <em> New File / Enterprise JavaBeans / Session Bean</em> (vegeu la <span class="figref"><a href="#fig05"><span>figura</span></a></span>). Anomeneu-lo PostBean i activeu la creació de la interfície local.
+</p>
+<div class="iocfigure"><a name="fig05"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nou ‘bean’ de sessió
+
+</figcaption><img src="../media/u2-a2-newsessionbean.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per fer la validació del correu electrònic, de l’edat i del missatge enviat es necessiten tres funcions, una per cada valor que es vol validar. Llavors creem aquestes funcions a la interfície local creada. El seu nom és el nom del <em>bean</em> de sessió creat acabat en “Local” (PostBeanLocal). Si heu activat l’opció de creació de la interfície quan heu creat el <em>bean</em> de sessió, aquesta ja estarà creada. El codi de la interfície és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.ioc.m7.formservlets;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ejb.Local;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Local</div></li><li class="li1"><div class="de1">public interface PostBeanLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Boolean isValidEmail(String email);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Boolean isValidAge(String age);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Boolean isValidPost(String message);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que l’anotació <code>@Local</code> s’utilitza per informar el contenidor d’EJB que correspon a una interfície local d’un EJB, és a dir, que una aplicació ubicada a la mateixa màquina virtual de Java, per exemple un <em>servlet</em>, que vulgui obtenir un PostBean ha d’utilitzar aquesta interfície per arribar als seus mètodes.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Existeixen moltes maneres de fer la validació de les dades que introdueix l’usuari. Per exemple, HTML5 i Javascript, que són llenguatges del costat client, també proporcionen patrons per poder validar-les.
+</p>
+</div></div>
+<p>
+Aquestes mètodes es podran cridar de manera independent i el <em>bean</em> que les executi no emmagatzemarà cap informació. Així, pot haver-hi un <em>pool</em> de <em>beans</em> i en cada petició s’agafarà un <em>bean</em> qualsevol. 
+</p>
+
+<p>
+La classe <code>PostBean</code> és el <em>bean</em> de sessió que implementarà la interfície PostBeanLocal i, en conseqüència, les tres funcions anteriors. Modificareu aquest objecte amb la implementació de les tres funcions. Vegeu-ne una possible solució:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class PostBean implements PostBeanLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Boolean isValidEmail(String email) {</div></li><li class="li1"><div class="de1">        //pattern</div></li><li class="li1"><div class="de1">        String regex = &quot;^(.+)@(.+)$&quot;;</div></li><li class="li1"><div class="de1">        Pattern pattern = Pattern.compile(regex);</div></li><li class="li1"><div class="de1">        Matcher matcher = pattern.matcher(email);</div></li><li class="li1"><div class="de1">        return matcher.matches();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Boolean isValidAge(String age) {</div></li><li class="li1"><div class="de1">        //min 18</div></li><li class="li1"><div class="de1">        if(age != null &amp;&amp; !age.equals(&quot;&quot;)) return Integer.parseInt(age) &gt;= 18;</div></li><li class="li1"><div class="de1">        return false;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Boolean isValidPost(String message) {</div></li><li class="li1"><div class="de1">        //length post &lt; 150</div></li><li class="li1"><div class="de1">        return message.length() &lt;= 150;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El <em>bean</em> PostBean utilitza l’anotació <code>@Stateless</code>, que indica que és un <em>bean</em> sense estat. El contenidor EJB, automàticament, crea les interfícies associades llegint aquest atribut durant el seu desplegament en el servidor.
+</p>
+
+<p>
+Observeu que PostBean implementa la interfície PostBeanLocal i, per tant, ha de sobreescriure les seves funcions. Amb l’anotació <code>@Override</code> s’informa el compilador de Java que el mètode està sobreescrit i aquest comprova que el mètode de la interfície correspongui al mètode del <em>bean</em>.
+</p>
+
+<p>
+La implementació de les funcions de validació de l’edat i del missatge no tenen cap misteri. En el primer cas, es retorna <em>true</em> si l’edat és més gran o igual a 18, i <em>false</em> en cas contrari. En el segons cas, es calcula la longitud del missatge amb el mètode <code>.length()</code> i es compara amb 150. Retorna <em>true</em>, indicant que és més petit i que té la longitud correcta, i <em>false</em> en cas contrari.
+</p>
+
+<p>
+La implementació de la funció de validació del correu electrònic s’ha realitzat amb un patró (<em>pattern</em>). Si el correu electrònic coincideix amb el patró retorna <em>true</em>, i retorna <em>false</em> en cas contrari.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>patró</strong> (<em>pattern</em>) és un objecte que conté la representació d’una expressió regular.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>expressió regular</strong> és una seqüència de caràcters que ajuden a trobar cadenes dintre de cadenes utilitzant una sintaxi especial. Es poden utilitzar per cercar o manipular cadenes de text.
+</p>
+</div></div>
+<p>
+La expressió regular utilitzada és <em>^(.+)@(.+)$</em>. Intentem desxifrar-la:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un punt (.) simbolitza qualsevol caràcter.</div>
+</li>
+<li class="level1"><div class="li"> El símbol “+” indica que es pot repetir l’expressió anterior una o més vegades. </div>
+</li>
+<li class="level1"><div class="li"> El símbol “@” és ell mateix. Indica que ha d’aparèixer.</div>
+</li>
+<li class="level1"><div class="li"> El símbol “^” indica que l’expressió següent ha d’aparèixer al principi de l’<em>string</em>.</div>
+</li>
+<li class="level1"><div class="li"> El símbol “$” indica que l’expressió anterior ha d’aparèixer al final de l’<em>string</em>.</div>
+</li>
+</ul>
+
+<p>
+En altres paraules, l’expressió regular “^(.+)@(.+)$” significa: al principi de l’<em>string</em> ha d’aparèixer com a mínim un caràcter, després hi ha d’haver una “@”, i finalment ha d’acabar amb un caràcter o més.
+</p>
+
+<p>
+No és un patró molt acurat per detectar correus electrònics vàlids i, per això, cal que intenteu elaborar un patró una mica més exacte amb aquestes opcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’expressió “\d” vol dir que ha d’aparèixer un dígit. És equivalent a [0-9].</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\D” vol dir que no ha de ser un dígit. És equivalent a [^0-9].</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\s” vol dir que hi ha d’haver un espai en blanc. És equivalent a [\t\n\x0b\r\f].</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\S” vol dir que no hi ha d’haver un espai en blanc. És equivalent a “[^\s]”.</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\w” vol dir que hi ha d’haver una lletra majúscula, minúscula, un dígit o el caràcter “_”. És equivalent a “[a-zA-Z0-9_]”.</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\W” vol dir que no hi ha d’haver una lletra majúscula, minúscula, un dígit o el caràcter “_”. És equivalent a “[^/w]”.</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “\b” estableix el límit d’una paraula.</div>
+</li>
+<li class="level1"><div class="li"> El símbol “*” indica que una expressió es pot repetir 0 o més vegades.</div>
+</li>
+<li class="level1"><div class="li"> El símbol “?” indica 0 o 1 vegades.</div>
+</li>
+</ul>
+
+<p>
+Exemples:
+</p>
+<ul>
+<li class="level1"><div class="li"> El símbol “.” vol dir qualsevol caràcter.</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “[^abc]” vol dir que ha de contenir qualsevol símbol excepte “a”, “b” o “c”. El símbol “^” dintre dels claudàtors indica negació.</div>
+</li>
+<li class="level1"><div class="li"> L’expressió “[a-z1-9]” indica un rang. Les lletres minúscules des de la ‘a’ fins a la “z” (incloent-hi ambdues) i els dígits 1 fins al 9 (també incloent-hi ambdues).</div>
+</li>
+</ul>
+
+<p>
+A Java no podeu utilitzar una sola “\”, s’han d’utilitzar dues. Així, si volem utilitzar l’expressió “\d” hauríem de posar “\d”.
+</p>
+
+<p>
+Una vegada s’ha elaborat l’expressió regular, aquesta s’ha de compilar en un <em>pattern</em>. L’únic que falta és poder comparar-la amb una cadena de text per veure si aquesta compleix l’expressió regular. La comparació, a Java, la fa un objecte anomenat comparador (<code>matcher</code>).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un objecte de tipus <code>matcher</code> és una eina que interpreta un <em>pattern</em> i fa una <strong>operació de comparació</strong> sobre una cadena de text donada.
+</p>
+</div></div>
+<p>
+Vegeu com treballen conjuntament l’expressió regular, l’objecte <code>pattern</code> i l’objecte <code>matcher</code> per validar una adreça de correu electrònic:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Molts processadors de texts i llenguatges de programació fan ús d’expressions regulars per a procediments de cerca o bé de cerca i substitució de texts.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">String email = &quot;a@a&quot;;</div></li><li class="li1"><div class="de1">String regex = &quot;^(.+)@(.+)$&quot;;</div></li><li class="li1"><div class="de1">Pattern pattern = Pattern.compile(regex);</div></li><li class="li1"><div class="de1">Matcher matcher = pattern.matcher(email);</div></li><li class="li1"><div class="de1">return matcher.matches();</div></li></ol></pre>
+
+<p>
+Vegeu ara la utilització del <em>bean</em> de sessió sense estat al <em>servlet</em>. Vegeu com es declara el <em>bean</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;PostServlet&quot;, urlPatterns = {&quot;/PostServlet&quot;})</div></li><li class="li1"><div class="de1">public class PostServlet extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @EJB</div></li><li class="li1"><div class="de1">    private PostBeanLocal validation;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet ServletValidation&lt;/title&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;EJB validation&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String mail = request.getParameter(&quot;mail&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidEmail(mail)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El correu electrònic &quot; + mail + &quot; és vàlid&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El correu electrònic no és vàlid.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }     </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String edat = request.getParameter(&quot;edat&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidAge(edat)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;Tens&quot; + edat + &quot; anys i pots escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;Has de ser major d'edat per escriure un missatge a l'aplicació.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String missatge = request.getParameter(&quot;missatgePost&quot;);</div></li><li class="li1"><div class="de1">            if (validation.isValidPost(missatge)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El missatge '&quot; + missatge + &quot;' és vàlid.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            } else {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;El missatge no és vàlid. Ha de tenir menys de 150 caràcters.&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+El <em>bean</em> forma part del <em>servlet</em> i es defineix com una propietat de la classe. Com veieu, no podeu utilitzar directament el <em>bean</em>, s’ha d’emprar la seva interfície local, ja que el <em>servlet</em> s’executarà a la mateixa màquina virtual que el <em>bean</em> de sessió.
+</p>
+
+<p>
+La seva declaració com a propietat del <em>servlet</em> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@EJB</div></li><li class="li1"><div class="de1">private PostBeanLocal validation;</div></li></ol></pre>
+
+<p>
+Fixeu-vos en l’anotació <code>@EJB</code>. Vol dir que és un <em>bean</em> del tipus EJB i que la seva creació li pertany al contenidor de <em>beans</em> EJB. 
+</p>
+
+<p>
+Quan s’utilitzi la propietat <code>validation</code>, el contenidor EJB agafarà un <em>bean</em> del <em>pool</em> de <em>beans</em> que té disponibles per fer l’execució del mètode utilitzat. Per a cada execució de cadascun dels mètodes fa la mateixa operació. No es pot assegurar que sempre sigui el mateix <em>bean</em>.
+</p>
+
+<p>
+Aquesta operació s’anomena <strong>injecció</strong>. El contenidor d’Enterprise JavaBeans subministra un <em>bean</em> quan una aplicació li demana un <em>bean</em> del seu <em>pool</em> de <em>beans</em>.
+</p>
+
+<p>
+Vegeu el funcionament de l’aplicació Escriure un Post. A la <span class="figref"><a href="#fig06"><span>figura</span></a></span> podeu veure com ens mostra un formulari per introduir les dades següents: edat, correu electrònic i el missatge.
+</p>
+<div class="iocfigure"><a name="fig06"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pantalla inicial de l’aplicació Escriure un Post
+
+</figcaption><img src="../media/u2-a2-escriurepost.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A la següent pantalla, les dades es validen amb EJB i es mostra el resultat de la validació, com podeu veure a la <span class="figref"><a href="#fig07"><span>figura</span></a></span>: 
+</p>
+<div class="iocfigure"><a name="fig07"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pantalla de validació de l’aplicació Escriure un Post
+
+</figcaption><img src="../media/u2-a2-escriurepost-validation.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="beans_de_sessio_amb_estat" >&#039;Beans&#039; de sessió amb estat</a></h3>
+<div class="level3">
+
+<p>
+Vegeu ara una altra implementació de l’exercici Escriure un Post. Aquesta vegada s’utilitzarà un <em>bean</em> amb estat (<em>stateful</em>).
+</p>
+
+<p>
+Els <em>beans</em> amb estat poden tenir propietats i, per tant,  el contenidor EJB no tindrà un <em>pool</em> d’aquests tipus de <em>beans</em>. El contenidor d’EJB ens crearà el <em>bean</em> però ens assegura que mentre duri la petició aquest <em>bean</em> és nostre i podem utilitzar-lo per guardar informació a les seves propietats.
+</p>
+
+<p>
+L’aplicació necessita tres dades de l’usuari: el correu electrònic, l’edat de l’usuari i el missatge a publicar. Aquestes dades corresponen a la informació que guardarà el <em>bean</em>.
+</p>
+
+<p>
+L’objectiu de l’exercici és validar les dades. En comptes d’utilitzar tres mètodes per validar-les emprarem les validacions de Java del <em>package validation</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JavaBeans Validation</strong> (<em>Bean Validation</em>) és un model de validació basat en restriccions (<em>constraints</em>). Les restriccions es posen com a anotacions en una propietat, un mètode o una classe <code>JavaBean</code>.
+</p>
+</div></div>
+<p>
+Les restriccions (<strong><em>constraints</em></strong>) les pot definir l’usuari (<em>custom constraint</em>), o bé utilitzar les que porta per defecte el model (<em>built-in constraints</em>). 
+</p>
+
+<p>
+Començareu creant el <em>bean</em> EJB amb estat (<em> File / New File / Enterprise JavaBeans/ Session Bean</em>) i utilitzareu el mateix projecte Maven que heu emprat fins ara. La <span class="figref"><a href="#fig08"><span>figura</span></a></span> mostra la creació del <em>bean</em> amb estat:
+</p>
+<div class="iocfigure"><a name="fig08"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’un EJB ‘stateful bean’
+
+</figcaption><img src="../media/u2-a2-newstatefulbean.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+
+</p>
+
+<p>
+El <em>bean</em> amb estat necessita, igual que el <em>bean</em> sense estat, d’una interfície local per accedir al <em>bean</em>. Activareu la creació automàtica d’aquesta interfície quan creeu el <em>bean</em>.
+</p>
+
+<p>
+Aquesta interfície ha de tenir els mètodes que s’utilitzaran del <em>bean</em>, no les seves propietats. Així, la interfície, en aquest cas, tindrà els <em>setters</em> i <em>getters</em> de les propietats. Aquests mètodes se sobreescriuran al <em>bean</em> amb estat.
+</p>
+
+<p>
+De moment, el codi de la interfície local és el següent:
+</p>
+<pre class="code Java"><ol><li class="li1"><div class="de1">package cat.ioc.m7.formservlets;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ejb.Local;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Local</div></li><li class="li1"><div class="de1">public interface PostBean2Local {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getEdat();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getMessage();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getEmail();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEdat(String edat);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setMessage(String message);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEmail(String email);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que el mètode <code>setEdat</code> rep un <em>string</em> com a paràmetre i el <code>getEdat</code> retorna un <em>integer</em>. 
+</p>
+
+<p>
+Quan s’utilitza el mètode <code>setEdat</code>, la informació, originàriament, es troba en un formulari. El protocol HTTP envia les dades al <em>servlet</em> i aquest cridarà el mètode <code>setEdat</code>. Totes les dades que s’envien amb un formulari són de tipus <em>string</em>. Així, la conversió de les dades es farà en el mateix <em>bean</em>.
+</p>
+
+<p>
+El codi amb la implementació del <em>bean</em> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateful</div></li><li class="li1"><div class="de1">public class PostBean2 implements PostBean2Local {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private int edat;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String message;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String email;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public int getEdat() {</div></li><li class="li1"><div class="de1">        return edat;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setEdat(String edat) {</div></li><li class="li1"><div class="de1">         if(!edat.equals(&quot;&quot;)){</div></li><li class="li1"><div class="de1">            this.edat=Integer.parseInt(edat);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        else{</div></li><li class="li1"><div class="de1">            this.edat = 0;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getMessage() {</div></li><li class="li1"><div class="de1">        return message;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setMessage(String message) {</div></li><li class="li1"><div class="de1">        this.message = message;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getEmail() {</div></li><li class="li1"><div class="de1">        return email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setEmail(String email) {</div></li><li class="li1"><div class="de1">        this.email = email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Sembla un <em>bean</em> normal. L’única diferència és l’anotació <code>@Stateful</code> en declarar la classe del <em>bean</em>. Aquesta notació informa el servidor que es tracta d’un <em>bean</em> EJB amb sessió i estat.
+</p>
+
+<p>
+Conté les propietats <em>edat</em>, <em>missatge</em> i <em>correu electrònic</em>. A més a més, implementa la interfície PostBean2Local.
+</p>
+
+<p>
+Ara bé, on es posen les validacions? Hem dit que s’utilitzaran les anotacions del paquet Java Beans Validation, i aquestes es poden posar a les propietats, als mètodes o a la mateixa classe. On les poseu?
+</p>
+
+<p>
+Heu de tenir en compte, per respondre a aquesta pregunta, que l’aplicació que utilitzi el <em>bean</em> no podrà accedir-hi directament. Llavors, si voleu veure que les restriccions de seguretat s’estan aplicant, necessiteu utilitzar la classe a la qual podeu accedir directament.
+</p>
+
+<p>
+Aquesta classe és la interfície del <em>bean</em>. Llavors, com que aquesta interfície només posseeix els mètodes del <em>bean</em>, i no les seves propietats, posareu les validacions en els mètodes.
+</p>
+
+<p>
+Fixeu-vos en la nova implementació d’aquesta interfície:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Local</div></li><li class="li1"><div class="de1">public interface PostBean2Local {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Min(value=18, message = &quot;Has de ser major d'edat per escriure un missatge.&quot;)        </div></li><li class="li1"><div class="de1">    public int getEdat();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull @Size(min=1, max=150, message = &quot;El missatge no és vàlid. Ha de tenir menys de 150 caràcters.&quot;)</div></li><li class="li1"><div class="de1">    public String getMessage();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull @Pattern(regexp=&quot;^(.+)@(.+)$&quot;, message = &quot;El correu no és vàlid.&quot;)</div></li><li class="li1"><div class="de1">    public String getEmail();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEdat(String edat);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setMessage(String message);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEmail(String email);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per fer les validacions de cadascuna de les dades s’han utilitzat les següents anotacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>@Min</code>: comprova que el valor sigui un enter i sigui menor que l’atribut <code>value</code> passat com a paràmetre de la restricció. En el cas que es compleixi, es genera un violació de la restricció (<code>ConstraintViolation</code>) que té com a missatge el text de l’atribut <code>message</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>@NotNull</code>: comprova si el valor és <em>null</em>. Si és <em>null</em> es genera una violació de la restricció.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Size</code>: admet dos atributs: <code>min</code> i <code>max</code>. La mida del text ha d’estar entre aquests dos valors. Si no és això es genera una violació de la restricció que té com a missatge el text de l’atribut <code>message</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Pattern</code>: admet una expressió regular. La dada que retorna la funció ha de satisfer l’expressió regular. En el cas que no la compleixi es mostrarà per pantalla el missatge de l’atribut <code>message</code>.</div>
+</li>
+</ul>
+
+<p>
+Heu posat les restriccions en els mètodes <code>get</code> perquè us interessa que sigui quan vulguem accedir al valor que ens indiqui si es compleix la restricció.
+</p>
+
+<p>
+Totes aquestes restriccions estan creades per defecte i pertanyen al paquet Java Validation. En aquest cas no heu necessitat crear restriccions noves.
+</p>
+
+<p>
+Una vegada hem acabat d’implementar les validacions i el <em>bean</em> amb estat, creareu el <em>servlet</em> que rebrà les dades del formulari <acronym title="HyperText Markup Language">HTML</acronym> i les enviarà al bean PostBean2. Creareu un nou <em>servlet</em> (<em> File / New File / Web / Servlet </em>) i l’anomenareu PostServlet2. No activareu la utilització del fitxer web.xml durant la seva creació, ja que fareu servir anotacions.
+</p>
+
+<p>
+La implementació del <em>servlet</em> PostServlet2 és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;PostServlet2&quot;, urlPatterns = {&quot;/PostServlet2&quot;})</div></li><li class="li1"><div class="de1">public class PostServlet2 extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Resource Validator validator;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {       </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">            try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet ServletValidation2&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String missatge = request.getParameter(&quot;missatgePost&quot;);</div></li><li class="li1"><div class="de1">            String mail = request.getParameter(&quot;mail&quot;);</div></li><li class="li1"><div class="de1">            String edat = request.getParameter(&quot;edat&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            PostBean2Local bean = (PostBean2Local) new InitialContext().lookup(</div></li><li class="li1"><div class="de1">                    &quot;java:global/formServlets/PostBean2&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            bean.setMessage(missatge);</div></li><li class="li1"><div class="de1">            bean.setEmail(mail);</div></li><li class="li1"><div class="de1">            bean.setEdat(edat);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Dades rebudes del formulari&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;p&gt;Missatge: &quot; + bean.getMessage() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;p&gt;Edat: &quot; + bean.getEdat() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;p&gt;Email: &quot; + bean.getEmail() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Llistat de validacions:&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">            for (ConstraintViolation c : validator.validate(bean)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;&quot; + c.getMessage() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">            } catch (NamingException ex) {</div></li><li class="li1"><div class="de1">            Logger.getLogger(PostServlet2.class.getName()).log(Level.SEVERE, null, ex);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Bàsicament, el <em>servlet</em> rep les dades enviades per l’usuari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String missatge = request.getParameter(&quot;missatgePost&quot;);</div></li><li class="li1"><div class="de1">String mail = request.getParameter(&quot;mail&quot;);</div></li><li class="li1"><div class="de1">String edat = request.getParameter(&quot;edat&quot;);</div></li></ol></pre>
+
+<p>
+i les introdueix en el <em>bean</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">PostBean2Local bean = (PostBean2Local) new InitialContext().lookup(</div></li><li class="li1"><div class="de1">                    &quot;java:global/formServlets/PostBean2&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">bean.setMessage(missatge);</div></li><li class="li1"><div class="de1">bean.setEmail(mail);</div></li><li class="li1"><div class="de1">bean.setEdat(edat);</div></li></ol></pre>
+
+<p>
+Com que és un <em>bean</em> amb estat, s’ha de demanar la seva utilització. L’objecte <code>InitialContext</code> és l’encarregat de cercar qualsevol tipus d’objecte. Per tal que pugui trobar-lo, li heu de dir el seu nom i el projecte al qual pertany. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">PostBean2Local bean = (PostBean2Local) new InitialContext().lookup(</div></li><li class="li1"><div class="de1">                    &quot;java:global/formServlets/PostBean2&quot;);</div></li></ol></pre>
+
+<p>
+El codi anterior no crea l’objecte, us en cerca un per a vosaltres. Fixeu-vos que quan demanem per l’objecte <code>PostBean2</code> ens retornen un objecte del tipus <code>PostBean2Local</code>. Això és degut al fet que el contenidor EJB no permet accedir directament a l’objecte.
+</p>
+
+<p>
+Una vegada teniu l’objecte, ja podeu introduir les dades de l’usuari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">bean.setMessage(missatge);</div></li><li class="li1"><div class="de1">bean.setEmail(mail);</div></li><li class="li1"><div class="de1">bean.setEdat(edat);</div></li></ol></pre>
+
+<p>
+Una vegada el <em>bean</em> té les dades es força la seva validació manualment. Si hi ha alguna violació de les restriccions posades en els mètodes, en validar-se es generen les <code>ConstraintViolation</code>. El missatge d’aquestes violacions de restricció es mostrarà per pantalla.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (ConstraintViolation c : validator.validate(bean)) {</div></li><li class="li1"><div class="de1">  out.println(&quot;&lt;p&gt;&quot; + c.getMessage() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En el cicle de vida dels <em>servlets</em> no existeix una etapa de validació de les dades. Aquesta s’ha de fer manualment, per això necessiteu accedir al validador de Java Validation. En canvi, en un <em>framework</em> com pot ser Spring o JSF, el validador s’executa automàticament en un moment determinat del cicle de vida del <em>framework</em>.
+</p>
+
+<p>
+Per accedir al validador s’ha creat una propietat del <em>servlet</em> del tipus <code>Validator</code> i s’ha informat que aquest és un recurs de Java. El codi és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Resource Validator validator;</div></li></ol></pre>
+
+<p>
+L’etiqueta <code>@Resource</code> informa el servidor que l’aplicació necessita un validador. Aquest validador s’injecta, igual que el contenidor EJB injecta <em>beans</em> sense estat, la primera vegada que s’utilitza.
+</p>
+
+<p>
+Una vegada teniu el validador, s’executa el mètode <code>validar</code> i per paràmetre s’envia el <em>bean</em> que es vol validar. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">validator.validate(bean)</div></li></ol></pre>
+
+<p>
+Aquest validador utilitzarà els mètodes <code>get</code> per obtenir les dades, i si hi ha alguna violació de restricció s’emmagatzemarà per retornar-lo una vegada s’hagin completat totes les validacions.
+</p>
+
+<p>
+Es pot iterar aquest conjunt per accedir a totes les violacions i mostrar-les per pantalla:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (ConstraintViolation c : validator.validate(bean)) {</div></li><li class="li1"><div class="de1">  out.println(&quot;&lt;p&gt;&quot; + c.getMessage() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una vegada s’ha acabat d’implementar el <em>servlet</em>, creareu una rèplica de la pàgina <acronym title="HyperText Markup Language">HTML</acronym> de l’exercici anterior on demanarem l’edat, el correu electrònic i el missatge per mostrar per pantalla. L’únic canvi serà el recurs al qual se li enviaran les dades (el mètode <code>action</code> del formulari). A aquesta pàgina l’anomenareu escriurePost2.html. El contingut de la pàgina és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Bean Validation&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">      &lt;h1&gt;Escriu un missatge:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form id=&quot;formulari&quot; method=&quot;POST&quot; action=&quot;PostServlet2&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;mail&quot;&gt;Correu electrònic:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;mail&quot; type=&quot;text&quot; name=&quot;mail&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;age&quot;&gt;Edat:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;age&quot; type=&quot;number&quot; name=&quot;edat&quot; min=&quot;0&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">        &lt;label&gt;Missatge:&lt;/label&gt;</div></li><li class="li1"><div class="de1">        &lt;textarea name=&quot;missatgePost&quot; form=&quot;formulari&quot;&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Vegeu el funcionament de l’aplicació Escriure un Post2. A la <span class="figref"><a href="#fig09"><span>figura</span></a></span> podeu veure com ens mostra un formulari per introduir-hi les dades: edat, correu electrònic i el missatge.
+</p>
+<div class="iocfigure"><a name="fig09"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pantalla inicial de l’aplicació Escriure un Post2
+
+</figcaption><img src="../media/u2-a2-escriurepost2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A la següent pantalla, les dades es validen amb EJB i es mostra el resultat de la validació, com podeu veure en la <span class="figref"><a href="#fig10"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Pantalla de validació de l’aplicació Escriure un Post2
+
+</figcaption><img src="../media/u2-a2-escriurepost2-validation.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="dades_de_subscripcio" >Dades de subscripció</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat s’aprofundeix en la validació de dades utilitzant EJB de sessió amb estat. Anteriorment s’ha fet la validació amb restriccions proporcionades per la llibreria Java Validation (<em>built-in constraint</em>), i en aquest apartat introduirem les validacions de restriccions d’usuari (<em>custom constraint</em>). 
+</p>
+
+<p>
+
+</p>
+
+<p>
+Es vol crear un registre d’usuaris de l’aplicació. Es demanarà a l’usuari la següent informació:
+</p>
+<ul>
+<li class="level1"><div class="li"> nom</div>
+</li>
+<li class="level1"><div class="li"> cognoms</div>
+</li>
+<li class="level1"><div class="li"> data de naixement</div>
+</li>
+<li class="level1"><div class="li"> gènere</div>
+</li>
+<li class="level1"><div class="li"> correu electrònic</div>
+</li>
+<li class="level1"><div class="li"> telèfon</div>
+</li>
+<li class="level1"><div class="li"> color favorit</div>
+</li>
+<li class="level1"><div class="li"> marca de cotxe</div>
+</li>
+<li class="level1"><div class="li"> vehicle1 (valor “bicicleta”, si l’usuari en posseeix una)</div>
+</li>
+<li class="level1"><div class="li"> vehicle2 (valor “moto”, si l’usuari en posseeix una)</div>
+</li>
+<li class="level1"><div class="li"> navegador d’Internet favorit </div>
+</li>
+</ul>
+
+<p>
+S’han de validar totes les dades. En concret, es vol comprovar que:
+</p>
+<ul>
+<li class="level1"><div class="li"> No siguin <em>null</em> els camps nom, cognoms, gènere, marca de cotxe i navegador d’Internet favorit.</div>
+</li>
+<li class="level1"><div class="li"> No estiguin buits els camps nom, cognom, data de naixement, correu electrònic, telèfon, vehicle1, vehicle2 i navegador d’Internet.</div>
+</li>
+<li class="level1"><div class="li"> L’usuari sigui major d’edat.</div>
+</li>
+<li class="level1"><div class="li"> El correu electrònic i el telèfon siguin vàlids.</div>
+</li>
+<li class="level1"><div class="li"> El color estigui en hexadecimal i tingui la forma “#hhhhhh” o “#hhh”. </div>
+</li>
+</ul>
+
+<p>
+El projecte utilitzat serà el mateix que heu emprat fins ara, i començareu creant el <em>bean</em> EJB amb estat. Creareu també, automàticament, la interfície local associada. Per crear el <em>bean</em> amb l’IDE NetBeans aneu a <em>File / New File / Enterprise JavaBeans / Session Bean </em> i l’anomeneu SignupBean.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Java Interface</p>
+<p>
+Una interfície a Java és una classe abstracta que especifica els mètodes que han d’implementar totes les classes que implementin aquesta interfície. Les classes que implementin una interfície han d’implementar tots els mètodes o declarar-se també com a abstractes. L’avantatge d’utilitzar interfícies és que simulen l’herència múltiple.
+</p>
+</div></div>
+<p>
+Aquest <em>bean</em> serà un <em>bean</em> de sessió amb estat; per tant, haurà d’aparèixer l’anotació <code>@Stateful</code> abans de la declaració de la classe. A més a més, tindrà totes les propietats corresponents al registre de l’usuari. Podeu veure la seva implementació en el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateful</div></li><li class="li1"><div class="de1">public class SignupBean implements SignupBeanLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String nom;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String cognoms;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String naixement;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String sexe;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String email;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String telefon;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String color;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String marcaCotxe;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String vehicle1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String vehicle2;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private String navegador;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String print() {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        return &quot;&lt;p&gt;nom=&quot; + nom + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;cognoms=&quot; + cognoms + &quot;&lt;/p&gt;&lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;naixement=&quot; + naixement + &quot;&lt;/p&gt;&lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;sexe=&quot; + sexe + &quot;&lt;/p&gt; &lt;p&gt;email=&quot; + email + &quot;&lt;/p&gt;&lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;telefon=&quot; + telefon + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;color=&quot; + color + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;marcaCotxe=&quot; + marcaCotxe + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;vehicle1=&quot; + vehicle1 + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;vehicle2=&quot; + vehicle2 + &quot;&lt;/p&gt; &lt;p&gt;&quot;</div></li><li class="li1"><div class="de1">                + &quot;navegador=&quot; + navegador + &quot;&lt;/p&gt;&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getNom() {</div></li><li class="li1"><div class="de1">        return nom;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setNom(String nom) {</div></li><li class="li1"><div class="de1">        this.nom = nom;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">    public String getCognoms() {</div></li><li class="li1"><div class="de1">        return cognoms;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setCognoms(String cognoms) {</div></li><li class="li1"><div class="de1">        this.cognoms = cognoms;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getNaixement() {</div></li><li class="li1"><div class="de1">        return naixement;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setNaixement(String naixement) {</div></li><li class="li1"><div class="de1">        this.naixement = naixement;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getSexe() {</div></li><li class="li1"><div class="de1">        return sexe;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setSexe(String sexe) {</div></li><li class="li1"><div class="de1">        this.sexe = sexe;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getEmail() {</div></li><li class="li1"><div class="de1">        return email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setEmail(String email) {</div></li><li class="li1"><div class="de1">        this.email = email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getTelefon() {</div></li><li class="li1"><div class="de1">        return telefon;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setTelefon(String telefon) {</div></li><li class="li1"><div class="de1">        this.telefon = telefon;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getColor() {</div></li><li class="li1"><div class="de1">        return color;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setColor(String color) {</div></li><li class="li1"><div class="de1">        this.color = color;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getMarcaCotxe() {</div></li><li class="li1"><div class="de1">        return marcaCotxe;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setMarcaCotxe(String marcaCotxe) {</div></li><li class="li1"><div class="de1">        this.marcaCotxe = marcaCotxe;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getVehicle1() {</div></li><li class="li1"><div class="de1">        return vehicle1;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setVehicle1(String vehicle1) {</div></li><li class="li1"><div class="de1">        this.vehicle1 = vehicle1;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getVehicle2() {</div></li><li class="li1"><div class="de1">        return vehicle2;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setVehicle2(String vehicle2) {</div></li><li class="li1"><div class="de1">        this.vehicle2 = vehicle2;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getNavegador() {</div></li><li class="li1"><div class="de1">        return navegador;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void setNavegador(String navegador) {</div></li><li class="li1"><div class="de1">        this.navegador = navegador;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+De moment, la interfície local associada al <em>bean</em> anterior només conté els <em>getters</em> i <em>setters</em> de les propietats del <em>bean</em>. 
+</p>
+
+<p>
+A continuació s’han d’introduir les restriccions de validació necessàries per assegurar-nos que les dades compleixen els requisits establerts.
+</p>
+
+<p>
+Les llibreries de validació proporcionen les restriccions més habituals. Així, podeu utilitzar les següents anotacions estàndard:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>@NotNull</code>: s’aplicarà als mètodes de la interfície local SignupBeanLocal que es vulgui comprovar que no és <em>null</em>. Llavors, aquesta anotació s’aplicarà als mètodes <code>get</code> de les propietats:  nom, cognoms, gènere, marca de cotxe i navegador d’Internet favorit.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Pattern</code>: aquesta anotació només s’aplicarà per comprovar que el telèfon introduït és vàlid. Creareu una expressió regular que ho comprovi.</div>
+</li>
+</ul>
+
+<p>
+Vegeu com aplicar les restriccions anteriors a la interfície local:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Local</div></li><li class="li1"><div class="de1">public interface SignupBeanLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull (message = &quot;El nom no pot estar buit.&quot;)  </div></li><li class="li1"><div class="de1">    public String getNom();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El cognom no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getCognoms();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getNaixement();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El gènere no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getSexe();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getEmail();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Pattern(regexp = &quot;\d{3}\-\d{3}-\d{3}&quot;, message = &quot;El telèfon no és vàlid.&quot;)</div></li><li class="li1"><div class="de1">    public String getTelefon();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getColor();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;La marca del cotxe no pot estar buida.&quot;)    </div></li><li class="li1"><div class="de1">    public String getMarcaCotxe();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getVehicle1();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getVehicle2();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El navegador no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getNavegador();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String print();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNom(String nom);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setCognoms(String cognoms);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNaixement(String naixement);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setSexe(String sexe);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEmail(String email);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setTelefon(String telefon);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setColor(String color);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setMarcaCotxe(String marcaCotxe);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVehicle1(String vehicle1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVehicle2(String vehicle2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNavegador(String navegador);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Observeu que només s’ha de modificar el missatge de la restricció <code>@NotNull</code> perquè funcioni de la manera esperada. En canvi, a la restricció <code>@Pattern</code> de la propietat “telèfon” s’ha d’afegir l’expressió regular que utilitzarà per comprovar si és vàlid. 
+</p>
+
+<p>
+L’expressió utilitzada és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Pattern(regexp = &quot;\d{3}\-\d{3}-\d{3}&quot;, message = &quot;El telèfon no és vàlid.&quot;)</div></li></ol></pre>
+
+<p>
+La resta de restriccions no es troben implementades per defecte a la llibreria de validacions. Heu de crear les restriccions d’usuari següents per fer comprovacions específiques de la vostra aplicació. El fet de crear aquestes restriccions permet reutilitzar-les posteriorment en altres punts del programa:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Amb la sintaxi  <em>{nombre}</em>, d’una expressió regular, s’indica el nombre de repeticions de l’expressió anterior. Llavors, quan s’indica <em>\d{3}</em> significa que es volen 3 dígits. 
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>@Check18</code>: comprova que l’usuari sigui major d’edat. Rep un <em>string</em> per paràmetre i comprova que a data d’avui sigui més gran de 18 anys.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Color</code>: utilitzant una expressió regular comprova que el color introduït tingui el format <em>#cccccc</em> o bé <em>#ccc</em>, on <em>c</em> és un nombre hexadecimal.  No s’utilitza la restricció <em>@Pattern</em> perquè es vol reaprofitar posteriorment.</div>
+</li>
+<li class="level1"><div class="li"> <code>@Email</code>: utilitzant una expressió regular comprova que l’adreça electrònica sigui vàlida. No s’utilitza la restricció <em>@Pattern</em> perquè es vol reaprofitar posteriorment.</div>
+</li>
+<li class="level1"><div class="li"> <code>@NotBlank</code>: comprova que el text no sigui buit (“”). </div>
+</li>
+</ul>
+
+<p>
+Començareu creant la restricció <code>@Check18</code>. Anireu a <em>File / New File / Bean Validation / Validation Constraint</em>, l’anomenareu Check18 i activareu la creació d’una classe validadora del tipus <em>string</em> (vegeu la <span class="figref"><a href="#fig11"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’una restricció d’usuari nova
+
+</figcaption><img src="../media/u2-a2-newconstraint.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquest procediment crea dues classes. La classe <code>Check18.java</code> és la descripció de l’anotació <code>@Check18</code>. S’especifiquen els paràmetres de la restricció tals com si és una restricció de mètode, de classe o d’atribut.  
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Documented</div></li><li class="li1"><div class="de1">@Constraint(validatedBy = Check18Validator.class)</div></li><li class="li1"><div class="de1">@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE})</div></li><li class="li1"><div class="de1">@Retention(RetentionPolicy.RUNTIME)</div></li><li class="li1"><div class="de1">public @interface Check18 {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    String message() default &quot;{cat.ioc.m7.formservlets.constraints.PastDate}&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Class&lt;?&gt;[] groups() default {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Class&lt;? extends Payload&gt;[] payload() default {};</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El més important de la classe anterior és el validador que s’utilitza. Observeu que amb l’anotació <code>@Constraint</code> s’informa que la classe <code>Check18Validator</code> és el validador associat a aquesta anotació. És a dir, allà on s’apliqui aquesta anotació, qui realment comprova si la dada és vàlida serà aquesta classe.
+</p>
+
+<p>
+L’anotació <code>@Target</code> especifica on es pot utilitzar l’anotació <code>@Check18</code>. En aquest cas, s’ha permès la seva utilització en la declaració de mètodes, de propietats i d’altres anotacions.
+</p>
+
+<p>
+L’altre classe que es crea és el validador de la classe. En aquest cas, el seu nom és <code>Check18Validator</code>. Aquesta classe ha de fer la validació de la dada. Per això, en la seva creació heu d’informar del tipus de dada que validarà. 
+</p>
+
+<p>
+Vegeu la implementació d’aquesta classe:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Check18Validator implements ConstraintValidator&lt;Check18, String&gt; {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void initialize(Check18 constraintAnnotation) {</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public boolean isValid(String value, ConstraintValidatorContext context) {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            if (!value.equals(&quot;&quot;)) {</div></li><li class="li1"><div class="de1">                Date naixement = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(value);</div></li><li class="li1"><div class="de1">                int anyAra = Calendar.getInstance().get(Calendar.YEAR);</div></li><li class="li1"><div class="de1">                Calendar cal = Calendar.getInstance();</div></li><li class="li1"><div class="de1">                cal.setTime(naixement);</div></li><li class="li1"><div class="de1">                int anyNaixement = cal.get(Calendar.YEAR);</div></li><li class="li1"><div class="de1">                return anyAra - anyNaixement &gt;= 18;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        } catch (ParseException ex) {</div></li><li class="li1"><div class="de1">            Logger.getLogger(Check18Validator.class.getName()).log(Level.SEVERE, null, ex);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return false;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En crear el validador, NetBeans afegeix dues excepcions: una en el mètode <code>initialize</code> i l’altra en el mètode <code>isValid</code>. Recordeu de treure-les perquè funcioni la validació.
+</p>
+
+<p>
+El mètode <code>Initialize</code> s’executarà sempre abans del mètode <code>isValid</code>, i s’utilitza per inicialitzar qualsevol propietat que necessiti el validador.
+</p>
+
+<p>
+El mètode <code>isValid</code> és qui fa la validació de la dada. Retorna <em>false</em> si la restricció es compleix i, per tant, s’ha de generar una violació de restricció. Retorna <em>true</em> en cas contrari.
+</p>
+
+<p>
+El paràmetre <em>value</em> del mètode <code>isValid</code> correspon a la dada de la propietat a validar, i no es pot sobreescriure.
+</p>
+
+<p>
+En aquest cas s’ha de calcular l’edat de la persona. Observeu la seva implementació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (!value.equals(&quot;&quot;)) {</div></li><li class="li1"><div class="de1">   Date naixement = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(value);</div></li><li class="li1"><div class="de1">   int anyAra = Calendar.getInstance().get(Calendar.YEAR);</div></li><li class="li1"><div class="de1">   Calendar cal = Calendar.getInstance();</div></li><li class="li1"><div class="de1">   cal.setTime(naixement);</div></li><li class="li1"><div class="de1">   int anyNaixement = cal.get(Calendar.YEAR);</div></li><li class="li1"><div class="de1">   return anyAra - anyNaixement &gt;= 18;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">return false;</div></li></ol></pre>
+
+<p>
+Si el valor <code>value</code> no és buit es transforma en tipus <code>Date</code>. S’aconsegueix l’any actual utilitzant l’objecte <code>Calendar</code> i després, també amb el mateix objecte, s’aconsegueix l’any de la data de naixement. Si la resta, entre l’any actual i l’any del dia que va néixer, és més petita que 18, es retorna <em>false</em> i, llavors, es genera una violació de restricció. Es retorna <em>true</em> en cas contrari i no es genera cap violació de restricció.
+</p>
+
+<p>
+Una vegada s’ha implementat aquest mètode ja es pot utilitzar. Vegeu com s’aplica al mètode <code>getNaixement</code> de la interfície SignupBeanLocal:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Check18 (message = &quot;Has de tenir més de 18 anys.&quot;)</div></li><li class="li1"><div class="de1">public String getNaixement();</div></li></ol></pre>
+
+<p>
+Existeix una altra manera per crear restriccions. La idea és que, a vegades, no cal crear un validador nou, perquè es pot aprofitar una altra restricció per validar la que es vol crear. 
+</p>
+
+<p>
+Per exemple, voleu crear una validació pel color. Com que per validar aquesta restricció utilitzareu una expressió regular i existeix ja una restricció per a <em>patterns</em>, llavors no cal crear un validador nou. Reaprofitareu aquesta restricció (<code>@Pattern</code>) i aplicareu l’expressió regular concreta.
+</p>
+
+<p>
+Començareu creant una nova restricció (<em>File / New File / Bean Validation / Validation Constraint </em>) anomenada Color.java sense activar la creació d’un validador (vegeu la <span class="figref"><a href="#fig12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’una restricció sense validador
+
+</figcaption><img src="../media/u2-a2-colorconstraint.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada creada la restricció <em>Color</em> afegireu l’anotació <code>@Pattern</code> com a anotació de restricció de la interfície. Aquesta anotació <code>@Pattern</code> accepta un paràmetre corresponent al llistat de <em>patterns</em> a comprovar. Vegeu-ho:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Pattern.List({@Pattern(regexp = &quot;#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})&quot;)})</div></li></ol></pre>
+
+<p>
+En incloure aquest llistat, la classe <code>Color</code> ha de definir una interfície anomenada List amb mètode anomenat <code>value()</code> que retorni un <em>array</em> de la classe <code>Color</code>. Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@interface List {</div></li><li class="li1"><div class="de1">   Color[] value();</div></li><li class="li1"><div class="de1">}  </div></li></ol></pre>
+
+<p>
+En introduir aquests dos elements ja no és necessari disposar d’un validador específic per a la classe <code>Color</code>, ja que s’utilitzarà la restricció <code>@Pattern</code> amb l’expressió regular “#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})”.
+</p>
+
+<p>
+Finalment, la restricció Color.java està implementada de la següent manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Pattern.List({@Pattern(regexp = &quot;#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})&quot;)})</div></li><li class="li1"><div class="de1">@Constraint(validatedBy = {})</div></li><li class="li1"><div class="de1">@Documented</div></li><li class="li1"><div class="de1">@Target({ElementType.METHOD,</div></li><li class="li1"><div class="de1">    ElementType.FIELD,</div></li><li class="li1"><div class="de1">    ElementType.ANNOTATION_TYPE,</div></li><li class="li1"><div class="de1">    ElementType.CONSTRUCTOR,</div></li><li class="li1"><div class="de1">    ElementType.PARAMETER})</div></li><li class="li1"><div class="de1">@Retention(RetentionPolicy.RUNTIME)</div></li><li class="li1"><div class="de1">public @interface Color {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    String message() default &quot;{invalid.color}&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Class&lt;?&gt;[] groups() default {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Class&lt;? extends Payload&gt;[] payload() default {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Target({ElementType.METHOD,</div></li><li class="li1"><div class="de1">        ElementType.FIELD,</div></li><li class="li1"><div class="de1">        ElementType.ANNOTATION_TYPE,</div></li><li class="li1"><div class="de1">        ElementType.CONSTRUCTOR,</div></li><li class="li1"><div class="de1">        ElementType.PARAMETER})</div></li><li class="li1"><div class="de1">    @Retention(RetentionPolicy.RUNTIME)</div></li><li class="li1"><div class="de1">    @Documented</div></li><li class="li1"><div class="de1">    @interface List {</div></li><li class="li1"><div class="de1">        Color[] value();</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Observeu com l’anotació <code>@Constraint</code>, que s’utilitza per indicar el validador a fer servir, està buida.
+</p>
+
+<p>
+Ara ja es pot aplicar aquesta restricció al mètode <code>getColor</code> de la classe <code>SignUpBeanLocal</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Color(message = &quot;El color no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">public String getColor();</div></li></ol></pre>
+
+<p>
+Falta crear dues restriccions més: la restricció anomenada <code>@NotBlank</code>, que comprova si una cadena de caràcters és buida (“”), i la restricció anomenada <code>@Email</code>, que comprova si un <em>mail</em> és vàlid amb una expressió regular.
+</p>
+
+<p>
+Es proposa que intenteu fer vosaltres la implementació d’aquestes dues restriccions. La primera restricció, <code>@NotBlank</code>, s’ha de crear amb un validador associat i, en canvi, la restricció <code>@Email</code> cal crear-la sense validador associat utilitzant la restricció <code>@Pattern</code>.
+</p>
+
+<p>
+Podeu trobar la solució d’aquestes restriccions en el codi proporcionat amb aquest apartat.
+</p>
+
+<p>
+Finalment, la classe <code>SignUpBeanLocal</code> ja disposa de totes les validacions demanades:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Local</div></li><li class="li1"><div class="de1">public interface SignupBeanLocal {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull (message = &quot;El nom no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El nom no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getNom();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El cognom no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El cognom no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getCognoms();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Check18 (message = &quot;Has de tenir més de 18 anys.&quot;)</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;La data de naixement no pot estar buida.&quot;)    </div></li><li class="li1"><div class="de1">    public String getNaixement();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El gènere no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getSexe();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Email</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El correu no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getEmail();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Pattern(regexp = &quot;\(\d{3}\)\d{3}-\d{4}&quot;, message = &quot;El telèfon no és vàlid.&quot;)</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El telèfon no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getTelefon();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Color(message = &quot;El color no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getColor();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;La marca del cotxe no pot estar buida.&quot;)    </div></li><li class="li1"><div class="de1">    public String getMarcaCotxe();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El vehicle1 no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getVehicle1();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El vehicle2 no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    public String getVehicle2();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull(message = &quot;El navegador no pot estar buit.&quot;)</div></li><li class="li1"><div class="de1">    @NotBlank(message = &quot;El navegador no pot estar buit.&quot;)    </div></li><li class="li1"><div class="de1">    public String getNavegador();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String print();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNom(String nom);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setCognoms(String cognoms);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNaixement(String naixement);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setSexe(String sexe);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setEmail(String email);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setTelefon(String telefon);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setColor(String color);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setMarcaCotxe(String marcaCotxe);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVehicle1(String vehicle1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVehicle2(String vehicle2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNavegador(String navegador);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una vegada heu acabat d’implementar les validacions i el <em>bean</em> amb estat, creareu el <em>servlet</em> que rebrà les dades del formulari <acronym title="HyperText Markup Language">HTML</acronym> i les enviarà al <em>bean</em> SignupBean. Creareu un nou <em>servlet</em> (<em>File / New File / Web / Servlet</em>) i l’anomenareu SignUpServlet. No activareu la utilització del fitxer web.xml durant la seva creació, ja que fareu servir anotacions.
+</p>
+
+<p>
+La implementació del <em>servlet</em> SignUpServlet és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(name = &quot;SignUpServlet&quot;, urlPatterns = {&quot;/SignUpServlet&quot;})</div></li><li class="li1"><div class="de1">public class SignUpServlet extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Resource Validator validator;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet SingUp&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            SignupBeanLocal bean = (SignupBeanLocal) new InitialContext().lookup(</div></li><li class="li1"><div class="de1">                    &quot;java:global/formServlets/SignupBean&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            try{</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;h1&gt;Dades rebudes del formulari&lt;/h1&gt;&quot;);           </div></li><li class="li1"><div class="de1">                BeanUtils.populate (bean, request.getParameterMap());                </div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;&quot; + bean.print() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            catch(IllegalAccessException | InvocationTargetException e){</div></li><li class="li1"><div class="de1">                out.println(e.getMessage());</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Llistat de validacions:&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            for (ConstraintViolation c : validator.validate(bean)) {</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;p&gt;&quot; + c.getMessage() + &quot;&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        } catch (NamingException ex) {</div></li><li class="li1"><div class="de1">            Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+La implementació del <em>servlet</em> és molt semblant al <em>servlet</em> PostServlet2. Per no ser repetitius només s’explicaran les diferències.
+</p>
+
+<p>
+La primera diferència és el <em>bean</em> que es recupera del contenidor EJB mitjançant l’objecte <code>InitialContext</code>. 
+</p>
+<pre class="code Java"><ol><li class="li1"><div class="de1">SignupBeanLocal bean = (SignupBeanLocal) new InitialContext().lookup(</div></li><li class="li1"><div class="de1">                    &quot;java:global/formServlets/SignupBean&quot;);</div></li></ol></pre>
+
+<p>
+L’objecte EJB a recuperar és <code>SignupBean</code>, però el contenidor EJB retorna un objecte del tipus <code>SignupBeanLocal</code>, tal com s’esperava.
+</p>
+
+<p>
+La segona diferència és la utilització de la classe <code>BeanUtils</code> per associar les propietats del <em>bean</em> amb les dades enviades per l’usuari. En utilitzar aquesta classe s’ha de cercar la seva dependència amb el programa NetBeans.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">BeanUtils.populate (bean, request.getParameterMap());  </div></li></ol></pre>
+
+<p>
+Perquè funcioni el mètode <code>populate</code> de l’objecte <code>BeanUtils</code> s’ha de crear el formulari web de tal manera que el nom dels <em>inputs</em> del formulari correspongui amb el nom dels mètodes <em>set</em> de les propietats.
+Exemple:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Apache Commons BeanUtils</p>
+<p>
+La biblioteca de Java proporciona mecanismes per accedir dinàmicament a les propietats d’un objecte, és a dir, sense utilitzar els seus mètodes <em>getXXX</em> o <em>setXXX</em>. Aquests mecanismes són bastant complexos i requereixen l’ús dels paquets <em>java.lang.reflect</em> i <em>java.beans</em>. El component BeanUtils d’Apache proporciona un mecanisme fàcil d’utilitzar per accedir a aquestes funcionalitats.
+</p>
+</div></div><pre class="code HTML"><ol><li class="li1"><div class="de1"> &lt;input id=&quot;naix&quot; type=&quot;date&quot; name=&quot;naixement&quot;&gt;&lt;br&gt;</div></li></ol></pre>
+
+<p>
+L’atribut <em>name</em> de l’<em>input</em> és <em>naixement</em>, i aquest correspon al nom de la propietat del <em>bean</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private String naixement;</div></li></ol></pre>
+
+<p>
+Aquesta propietat genera un mètode <code>setNaixement</code> que és cridat pel mètode <code>populate</code> de l’objecte <code>BeanUtils</code> en trobar un paràmetre anomenat <em>naixement</em> en l’objecte <code>request</code>.
+</p>
+
+<p>
+D’aquesta manera us estalvieu de fer manualment tots els <em>setters</em> dels paràmetres.
+</p>
+
+<p>
+Una vegada heu acabat d’implementar el <em>servlet</em>, creareu la pàgina <acronym title="HyperText Markup Language">HTML</acronym> associada amb el formulari web i l’anomenareu subscripcio.html.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Subscripció&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Per subscriure't necessitem les següents dades:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form id=&quot;formulari&quot; method=&quot;POST&quot; action=&quot;SignUpServlet&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;nom&quot;&gt;Nom:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;text&quot; name=&quot;nom&quot; id=&quot;nom&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;cognoms&quot;&gt;Cognoms:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;text&quot; name=&quot;cognoms&quot; id=&quot;cognoms&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;naix&quot;&gt;Data de naixement:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;naix&quot; type=&quot;date&quot; name=&quot;naixement&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;radio&quot; name=&quot;sexe&quot; value=&quot;home&quot; checked&gt; Home&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;radio&quot; name=&quot;sexe&quot; value=&quot;dona&quot;&gt; Dona&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;email&quot;&gt;Correu electrònic:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;email&quot; type=&quot;text&quot; name=&quot;email&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;telf&quot;&gt;Telèfon:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;telf&quot; type=&quot;tel&quot; name=&quot;telefon&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;color&quot;&gt;Color preferit:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;color&quot; type=&quot;color&quot; name=&quot;color&quot;&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            &lt;label for=&quot;cotxe&quot;&gt;Marca del cotxe:&lt;/label&gt;</div></li><li class="li1"><div class="de1">            &lt;select id=&quot;cotxe&quot; name=&quot;marcaCotxe&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;fiat&quot;&gt;Fiat&lt;/option&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;audi&quot;&gt;Altre&lt;/option&gt;</div></li><li class="li1"><div class="de1">            &lt;/select&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;checkbox&quot; name=&quot;vehicle1&quot; value=&quot;Bicicleta&quot;&gt; Tinc una bicicleta&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;checkbox&quot; name=&quot;vehicle2&quot; value=&quot;Moto&quot;&gt; Tinc una moto&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;input list=&quot;browsers&quot; name=&quot;navegador&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;datalist id=&quot;browsers&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;Internet Explorer&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;Firefox&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;Chrome&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;Opera&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;option value=&quot;Safari&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;/datalist&gt;</div></li><li class="li1"><div class="de1">            &lt;input type=&quot;submit&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Vegeu el funcionament de l’aplicació Subscripció. En la <span class="figref"><a href="#fig13"><span>figura</span></a></span> podeu veure com ens mostra un formulari per introduir-hi les dades.
+</p>
+<div class="iocfigure"><a name="fig13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pantalla inicial de l’aplicació subscripció
+
+</figcaption><img src="../media/u2-a2-subscripcio.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, les dades es validen amb EJB i es mostra el resultat de la validació, com podeu veure en la <span class="figref"><a href="#fig14"><span>figura</span></a></span>:
+</p>
+<div class="iocfigure"><a name="fig14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de la validació de la subscripció
+
+</figcaption><img src="../media/u2-a2-subscripcio-validation.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En finalitzar aquest apartat l’estudiant ha après a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Tractar les dades enviades mitjançant un formulari a un <em>servlet</em></div>
+</li>
+<li class="level1"><div class="li"> Utilitzar l’arquitectura EJB juntament amb l’arquitectura Java Web</div>
+</li>
+<li class="level1"><div class="li"> Diferenciar entre un Java Bean i un Enterprise Java Bean</div>
+</li>
+<li class="level1"><div class="li"> Diferenciar entre un Bean EJB amb estat i un sense estat</div>
+</li>
+<li class="level1"><div class="li"> Crear i utilitzar expressions regulars</div>
+</li>
+<li class="level1"><div class="li"> Crear i utilitzar les restriccions (<em>constraints</em>) EJB</div>
+</li>
+</ul>
+
+<p>
+En acabar aquesta apartat, els estudiants ja estan preparats per començar les activitats proposades en aquest apartat i poden continuar amb el seu aprenentatge del llenguatge Java Web.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

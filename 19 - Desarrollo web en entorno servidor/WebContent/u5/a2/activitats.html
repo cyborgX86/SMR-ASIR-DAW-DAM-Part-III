@@ -1,0 +1,475 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Serveis web amb Java EE 7</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a1annexos"><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap">Gestió de reserva de places a concerts com a servei web SOAP</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone">Fent servir la gestió de reserva de places a concerts des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web">Fent servir la gestió de reserva de places a concerts des d'una aplicació web</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta "Hello World!!!"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#el_servei_web_de_dades_de_llibres_operacions_crud">El servei web de dades de llibres. Operacions CRUD</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a3" class="tocsection"><p id='u5a3continguts'><a class="section" href="../../../WebContent/u5/a3/continguts.html">Serveis web RESTful amb Java EE7. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a3annexos"><a href="../../../WebContent/u5/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a3/continguts.html#un_client_per_al_servei_web_restful_que_contesta_hola">Un client per al servei web RESTful que contesta "Hola"</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#el_servei_web_de_dades_de_llibres_consum_i_testeig">El servei web de dades de llibres. Consum i testeig</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Java EE 7</a></li><li><a href="continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="creacio_d_un_servei_web_restful_amb_netbeans" >Creació d&#039;un servei web RESTFul amb NetBeans</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és veure les facilitats que us aporta NetBeans en la creació d’un servei web RESTful i com els seus assistents us permeten treballar fàcilment amb fonts de dades persistents i crear automàticament els serveis web RESTful per fer les operacions típiques de CRUD amb aquests recursos.
+</p>
+
+<p>
+Creeu un servei web RESTful amb Java EE 7 que permeti les operacions típiques CRUD sobre una entitat <code>Book</code> representada tal com es pot veure en la <span class="figref"><a href="#fig1.8"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Entitat Book
+
+</figcaption><img src="../media/yig1.8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Cal que creeu el servei web fent servir els assistents que proporciona NetBeans començant per la creació de la taula a la base de dades que contindrà el catàleg de llibres.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució de l’exercici s’ha provat amb la versió 4.1.1 de GlassFish.
+</p>
+
+<p>
+En aquesta activitat fareu “enginyeria inversa”: primer creareu la taula a la base de dades que contindrà el catàleg de llibres, després creareu una entitat JPA que representarà el model del domini i, a partir d’aquesta entitat, creareu el servei web RESTful, que implementarà les operacions CRUD per a l’entitat.
+</p>
+
+<p>
+Començareu l’activitat creant la taula a la base de dades que contindrà el catàleg de llibres. Per fer-ho, aneu a la pestanya <em>Services</em> de NetBeans i a <em>Databases / jdbc:derby:localhost:1527/sample [app on APP]</em>,  feu clic amb el botó dret i <em>Connect</em>. Un cop connectada la base de dades aneu a <em>APP / Tables</em>, feu clic amb el botó dret i creeu una nova taula anomenada “BOOK” (vegeu la <span class="figref"><a href="#fig1.9"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació de la taula “BOOK”
+
+</figcaption><img src="../media/yig1.9.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Creeu tres columnes a la taula i anomeneu-les “ISBN” (que serà la clau primària), “AUTHOR” i “TITLE”(vegeu la <span class="figref"><a href="#fig1.10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Especificació de la taula “BOOK”
+
+</figcaption><img src="../media/yig1.10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Afegiu alguns llibres a la taula, tal com es pot veure en la <span class="figref"><a href="#fig1.11"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Llibres del catàleg
+
+</figcaption><img src="../media/yig1.11.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Creeu el projecte “nb-restbooksioc” a NetBeans. Per fer-ho, feu <em>New Project… / Maven / Web Application</em> (vegeu la <span class="figref"><a href="#fig1.12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació del projecte
+
+</figcaption><img src="../media/yig1.12.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Polseu <em>Next</em> i ompliu el formulari especificant el nom del projecte (vegeu la <span class="figref"><a href="#fig1.13"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Dades del projecte
+
+</figcaption><img src="../media/yig1.13.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En la següent pantalla (vegeu la <span class="figref"><a href="#fig1.14"><span>figura</span></a></span>) de l’assistent, deixeu els valors per defecte i polseu <em>Finish</em>.
+</p>
+<div class="iocfigure"><a name="fig1.14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Configuració del projecte
+
+</figcaption><img src="../media/yig1.14.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per fer la transformació entre objectes Java i JSON i a l’inrevés cal que importeu <em>Jersey</em> i <em>Jackson</em> com a artefactes al pom.xml. Afegiu aquestes línies al pom.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;org.glassfish.jersey.core&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-server&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;2.22.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;com.sun.jersey&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-json&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;1.19&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;        </div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;org.glassfish.jersey.media&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-media-json-jackson&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;2.22.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Ja teniu la taula que guardarà els llibres a la base de dades creada i el projecte que us servirà de base també creat i configurat. Ara generareu una entitat JPA que faci el mapatge de les dades de la taula de llibres en un objecte Java que anomenareu <code>Book</code>. Per fer-ho, feu clic amb el botó dret al projecte “nb-restbooksioc” i seleccioneu <em>New / Entity Classes from Database</em> (vegeu la <span class="figref"><a href="#fig1.15"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació de l’entitat JPA
+
+</figcaption><img src="../media/yig1.15.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Trieu el <em>datasource</em> <em>jdbc/sample</em> i la taula “BOOK” i polseu <em>Next</em> (vegeu la <span class="figref"><a href="#fig1.16"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Selecció de la taula
+
+</figcaption><img src="../media/yig1.16.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A la següent pantalla de l’assistent deixareu els valors per defecte i polsareu <em>Next</em> (vegeu la <span class="figref"><a href="#fig1.17"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Classes a generar
+
+</figcaption><img src="../media/yig1.17.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per a les opcions de mapatge també deixareu els valors per defecte i polsareu <em>Finish</em> (vegeu la <span class="figref"><a href="#fig1.18"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Opcions de mapatge
+
+</figcaption><img src="../media/yig1.18.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+NetBeans ens ha generat una entitat JPA anomenada <code>Book</code> al paquet <code>cat.xtec.ioc.nb.restbooksioc</code> amb tot el codi necessari per fer-la persistent a la taula “BOOK”. No entrarem en detall en aquest codi, ja que no és l’objectiu de l’activitat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Entity</div></li><li class="li1"><div class="de1">@Table(name = &quot;BOOK&quot;)</div></li><li class="li1"><div class="de1">@XmlRootElement</div></li><li class="li1"><div class="de1">@NamedQueries({</div></li><li class="li1"><div class="de1">    @NamedQuery(name = &quot;Book.findAll&quot;, query = &quot;SELECT b FROM Book b&quot;),</div></li><li class="li1"><div class="de1">    @NamedQuery(name = &quot;Book.findByIsbn&quot;, query = &quot;SELECT b FROM Book b WHERE b.isbn = :isbn&quot;),</div></li><li class="li1"><div class="de1">    @NamedQuery(name = &quot;Book.findByAuthor&quot;, query = &quot;SELECT b FROM Book b WHERE b.author = :author&quot;),</div></li><li class="li1"><div class="de1">    @NamedQuery(name = &quot;Book.findByTitle&quot;, query = &quot;SELECT b FROM Book b WHERE b.title = :title&quot;)})</div></li><li class="li1"><div class="de1">public class Book implements Serializable {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @Basic(optional = false)</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(min = 1, max = 30)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;ISBN&quot;)</div></li><li class="li1"><div class="de1">    private String isbn;</div></li><li class="li1"><div class="de1">    @Size(max = 255)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;AUTHOR&quot;)</div></li><li class="li1"><div class="de1">    private String author;</div></li><li class="li1"><div class="de1">    @Size(max = 255)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;TITLE&quot;)</div></li><li class="li1"><div class="de1">    private String title;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Book() {</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Book(String isbn) {</div></li><li class="li1"><div class="de1">        this.isbn = isbn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getIsbn() {</div></li><li class="li1"><div class="de1">        return isbn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setIsbn(String isbn) {</div></li><li class="li1"><div class="de1">        this.isbn = isbn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getAuthor() {</div></li><li class="li1"><div class="de1">        return author;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setAuthor(String author) {</div></li><li class="li1"><div class="de1">        this.author = author;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getTitle() {</div></li><li class="li1"><div class="de1">        return title;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setTitle(String title) {</div></li><li class="li1"><div class="de1">        this.title = title;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public int hashCode() {</div></li><li class="li1"><div class="de1">        int hash = 0;</div></li><li class="li1"><div class="de1">        hash += (isbn != null ? isbn.hashCode() : 0);</div></li><li class="li1"><div class="de1">        return hash;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public boolean equals(Object object) {</div></li><li class="li1"><div class="de1">        // TODO: Warning - this method won't work in the case the id fields are not set</div></li><li class="li1"><div class="de1">        if (!(object instanceof Book)) {</div></li><li class="li1"><div class="de1">            return false;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        Book other = (Book) object;</div></li><li class="li1"><div class="de1">        if ((this.isbn == null &amp;&amp; other.isbn != null) || (this.isbn != null &amp;&amp; !this.isbn.equals(other.isbn))) {</div></li><li class="li1"><div class="de1">            return false;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return true;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String toString() {</div></li><li class="li1"><div class="de1">        return &quot;cat.xtec.ioc.nb.restbooksioc.Book[ isbn=&quot; + isbn + &quot; ]&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un cop teniu ja creada l’entitat JPA <code>Book</code> ja podeu generar el servei web RESTful, que us permetrà fer les operacions CRUD al catàleg de llibres.
+</p>
+
+<p>
+Per fer-ho, feu clic amb el botó dret al projecte “nb-restbooksioc” i seleccioneu <em>New / RESTful Web Services from Entity Classes…</em> (vegeu la <span class="figref"><a href="#fig1.19"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assistent de creació del servei web
+
+</figcaption><img src="../media/yig1.19.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Seleccioneu l’entitat JPA que acabeu de crear i polseu <em>Next</em> (vegeu la <span class="figref"><a href="#fig1.20"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Entitat JPA
+
+</figcaption><img src="../media/yig1.20.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Trieu el paquet on voleu que us generi el codi del servei web, per exemple a <code>cat.xtec.ioc.nb.restbooksioc.service</code> (vegeu la <span class="figref"><a href="#fig1.21"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.21"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Paquet on es generarà l’entitat JPA
+
+</figcaption><img src="../media/yig1.21.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Feu clic a <em>Finish</em> i veureu que s’han generat tres classes al paquet <code>cat.xtec.ioc.nb.restbooksioc.service</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> La classe <code>AbstractFacade</code>, que conté la implementació dels mètodes JPA per fer persistent l’entitat <code>Book</code>.</div>
+</li>
+<li class="level1"><div class="li"> La classe <code>ApplicationConfig</code>, on, per defecte, us ha posat que els recursos RESTful seran accessibles al <code>PATH</code> <em>webresources</em>. Això implica que els recursos seran accessibles a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/nb-restbooksioc/webresources" class="urlextern" title="http://localhost:8080/nb-restbooksioc/webresources"  rel="nofollow">localhost:8080/nb-restbooksioc/webresources</a>.</div>
+</li>
+<li class="level1"><div class="li"> La classe <code>BookFacadeREST</code>, que és la implementació del servei web RESTful amb les operacions CRUD sobre el catàleg de llibres.</div>
+</li>
+</ul>
+
+<p>
+El codi generat a la classe <code>BookFacadeREST</code> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">@Path(&quot;books&quot;)</div></li><li class="li1"><div class="de1">public class BookFacadeREST extends AbstractFacade&lt;Book&gt; {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @PersistenceContext(unitName = &quot;cat.xtec.ioc_nb-restbooksioc_war_1.0-SNAPSHOTPU&quot;)</div></li><li class="li1"><div class="de1">    private EntityManager em;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public BookFacadeREST() {</div></li><li class="li1"><div class="de1">        super(Book.class);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @POST</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</div></li><li class="li1"><div class="de1">    public void create(Book entity) {</div></li><li class="li1"><div class="de1">        super.create(entity);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @PUT</div></li><li class="li1"><div class="de1">    @Path(&quot;{id}&quot;)</div></li><li class="li1"><div class="de1">    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</div></li><li class="li1"><div class="de1">    public void edit(@PathParam(&quot;id&quot;) String id, Book entity) {</div></li><li class="li1"><div class="de1">        super.edit(entity);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @DELETE</div></li><li class="li1"><div class="de1">    @Path(&quot;{id}&quot;)</div></li><li class="li1"><div class="de1">    public void remove(@PathParam(&quot;id&quot;) String id) {</div></li><li class="li1"><div class="de1">        super.remove(super.find(id));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Path(&quot;{id}&quot;)</div></li><li class="li1"><div class="de1">    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</div></li><li class="li1"><div class="de1">    public Book find(@PathParam(&quot;id&quot;) String id) {</div></li><li class="li1"><div class="de1">        return super.find(id);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</div></li><li class="li1"><div class="de1">    public List&lt;Book&gt; findAll() {</div></li><li class="li1"><div class="de1">        return super.findAll();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Path(&quot;{from}/{to}&quot;)</div></li><li class="li1"><div class="de1">    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</div></li><li class="li1"><div class="de1">    public List&lt;Book&gt; findRange(@PathParam(&quot;from&quot;) Integer from, @PathParam(&quot;to&quot;) Integer to) {</div></li><li class="li1"><div class="de1">        return super.findRange(new int[]{from, to});</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Path(&quot;count&quot;)</div></li><li class="li1"><div class="de1">    @Produces(MediaType.TEXT_PLAIN)</div></li><li class="li1"><div class="de1">    public String countREST() {</div></li><li class="li1"><div class="de1">        return String.valueOf(super.count());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected EntityManager getEntityManager() {</div></li><li class="li1"><div class="de1">        return em;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure que s’han generat les següents operacions amb les corresponents anotacions JAX-RS:
+</p>
+<ul>
+<li class="level1"><div class="li"> Operació <code>find</code>: consulta d’un llibre mitjançant l’identificador (operació <code>Read</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Operació <code>create</code>: creació d’un llibre al catàleg (operació <code>Create</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Operació <code>update</code>: actualització de les dades d’un llibre (operació <code>Update</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Operació <code>remove</code>: esborrar un llibre del catàleg (operació <code>Delete</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Operació <code>findAll</code>: llistar tots els llibres del catàleg.</div>
+</li>
+</ul>
+
+<p>
+Per fer més entenedores les <acronym title="Uniform Resource Identifier">URI</acronym> amb les quals provarem el servei web, canvieu <code>@Path(“cat.xtec.ioc.nb.restbooksioc.book”)</code> per <code>@Path(“books”).</code>
+</p>
+
+<p>
+Ara sols cal que feu <em>Clean and Build</em> i després <em>Run</em> a NetBeans i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte (vegeu la <span class="figref"><a href="#fig1.22"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Desplegament del servei web
+
+</figcaption><img src="../media/yig1.22.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I utilitzeu cURL per fer provar les diferents operacions implementades; us en posem un parell com a exemple, la resta les podeu provar vosaltres mateixos.
+</p>
+
+<p>
+Consulta de tots els llibres del catàleg:
+</p>
+<pre class="code">curl localhost:8080/nb-restbooksioc/webresources/books</pre>
+
+<p>
+la sortida seria aquesta:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;books&gt;</div></li><li class="li1"><div class="de1">  &lt;book&gt;</div></li><li class="li1"><div class="de1">    &lt;author&gt;Ildefonso Falcones&lt;/author&gt;</div></li><li class="li1"><div class="de1">    &lt;isbn&gt;9788425343537&lt;/isbn&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;La catedral del mar&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;/book&gt;</div></li><li class="li1"><div class="de1">  &lt;book&gt;</div></li><li class="li1"><div class="de1">    &lt;author&gt;Jose Maria Peridis Perez&lt;/author&gt;</div></li><li class="li1"><div class="de1">    &lt;isbn&gt;9788467009477&lt;/isbn&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;La luz y el misterio de las catedrales&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;/book&gt;</div></li><li class="li1"><div class="de1">&lt;/books&gt;</div></li></ol></pre>
+
+<p>
+Alta d’un llibre al catàleg:
+</p>
+<pre class="code">curl -H &quot;Content-Type: application/xml&quot; -X POST -d &quot;&lt;book&gt;&lt;author&gt;J.K. Rowling&lt;/author&gt;&lt;isbn&gt;9788499301518&lt;/isbn&gt;&lt;title&gt;Harry Potter y la piedra filosofal&lt;/title&gt;&lt;/book&gt;&quot; localhost:8080/nb-restbooksioc/webresources/books</pre>
+
+<p>
+Executeu la comanda anterior i després consulteu el llistat de llibres amb:
+</p>
+<pre class="code">curl localhost:8080/nb-restbooksioc/webresources/books</pre>
+
+<p>
+Si tot ha anat bé veureu que el nou llibre s’ha afegit al catàleg de llibres:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;books&gt;</div></li><li class="li1"><div class="de1">  &lt;book&gt;</div></li><li class="li1"><div class="de1">    &lt;author&gt;Ildefonso Falcones&lt;/author&gt;</div></li><li class="li1"><div class="de1">    &lt;isbn&gt;9788425343537&lt;/isbn&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;La catedral del mar&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;/book&gt;</div></li><li class="li1"><div class="de1">  &lt;book&gt;</div></li><li class="li1"><div class="de1">    &lt;author&gt;Jose Maria Peridis Perez&lt;/author&gt;</div></li><li class="li1"><div class="de1">    &lt;isbn&gt;9788467009477&lt;/isbn&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;La luz y el misterio de las catedrales&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;/book&gt;</div></li><li class="li1"><div class="de1">  &lt;book&gt;</div></li><li class="li1"><div class="de1">    &lt;author&gt;J.K. Rowling&lt;/author&gt;</div></li><li class="li1"><div class="de1">    &lt;isbn&gt;9788499301518&lt;/isbn&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;Harry Potter y la piedra filosofal&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/book&gt;</div></li><li class="li1"><div class="de1">&lt;/books&gt;</div></li></ol></pre>
+
+<p>
+El codi de la solució d’aquesta activitat el podeu descarregar del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/nb-restbooksioc.zip">enllaç</a><span> ( 18.6 KB )</span></div></div>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

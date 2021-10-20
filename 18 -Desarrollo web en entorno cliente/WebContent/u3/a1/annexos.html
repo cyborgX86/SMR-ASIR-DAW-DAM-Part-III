@@ -1,0 +1,623 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Esdeveniments. Manejament de formularis</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Programació d'events</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#que_es_un_event">Què és un event?</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#gestio_d_events">Gestió d'events</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Programació amb formularis</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#que_es_un_formulari">Què és un formulari?</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#estructura_d_un_formulari">Estructura d'un formulari</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#modificacio_d_aparenca_i_comportament">Modificació d'aparença i comportament</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#validacio">Validació</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#expressions_regulars">Expressions regulars</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#utilitzacio_de_galetes_i_web_storage">Utilització de galetes i Web Storage</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Objectes definits pel programador</a></li><li><a href="continguts.html">Objectes definits pel programador</a></li><li>Annexos</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="annexos"> Annexos </a></h1>
+    	
+<h2><a id="format_de_dades_json" >Format de dades JSON</a></h2>
+<div class="level2">
+
+<p>
+El format de dades JSON (<em>JavaScript Object Notation</em>) es basa en la declaració literal d’objectes de JavaScript i va ser especificada i popularitzada per Douglas Crockford l’any 2001. Tot i que inicialment es va utilitzar només amb JavaScript, actualment és utilitzable en els llenguatges més populars.
+</p>
+
+<p>
+Entre els avantatges que presenta JSON al treballar amb JavaScript es troben:
+</p>
+<ul>
+<li class="level1"><div class="li"> És fàcilment interpretable pels humans.</div>
+</li>
+<li class="level1"><div class="li"> És més concís que altres formats, com per exemple XML.</div>
+</li>
+<li class="level1"><div class="li"> La conversió entre dades JSON i objectes de JavaScript és directa.</div>
+</li>
+<li class="level1"><div class="li"> Es tracta d’un format molt popular i la majoria de serveis web ofereixen la seva informació en aquest format entre altres.</div>
+</li>
+</ul>
+
+<p>
+En el cas d’haver de generar aquestes dades (en una aplicació en el servidor o com un fitxer de text pla) s’ha de tenir en compte que per crear una estructura JSON vàlida s’ha de respectar un esquema. Aquest obliga a complir les normes següents per crear un fitxer amb dades vàlid:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar un validador de JSON a <a href="http://jsonlint.com/" class="urlextern" title="http://jsonlint.com/"  rel="nofollow">jsonlint.com</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Tot el contingut de l’estructura ha d’anar entre claus <code>{}</code>.</div>
+</li>
+<li class="level1"><div class="li"> Els noms de les propietats, les claus, han d’anar entre cometes dobles <code>“</code>.</div>
+</li>
+<li class="level1"><div class="li"> Les cadenes de caràcters han d’anar entre cometes dobles <code>”</code>, les cometes simples no són admissibles.</div>
+</li>
+<li class="level1"><div class="li"> Els objectes niuats s’especifiquen entre claus: <code>{}</code>.</div>
+</li>
+<li class="level1"><div class="li"> Els <em>arrays</em> s’especifiquen entre claudàtors: <code>[]</code>.</div>
+</li>
+</ul>
+
+<p>
+Com es pot apreciar, és el mateix format que s’utilitza per declarar objectes en JavaScript (lleugerament més estricte, ja que obliga a fer servir sempre cometes dobles):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">  &quot;nom&quot;: &quot;Ricard&quot;,</div></li><li class="li1"><div class="de1">  &quot;ocupacio&quot;: &quot;Policia&quot;,</div></li><li class="li1"><div class="de1">	&quot;edat&quot;: 40,</div></li><li class="li1"><div class="de1">	&quot;motxilla&quot;: {</div></li><li class="li1"><div class="de1">		&quot;armes&quot;: [{</div></li><li class="li1"><div class="de1">			&quot;nom&quot;: &quot;pistola&quot;,</div></li><li class="li1"><div class="de1">			&quot;atacs&quot;: 1,</div></li><li class="li1"><div class="de1">			&quot;abast&quot;: 60</div></li><li class="li1"><div class="de1">		}, {</div></li><li class="li1"><div class="de1">			&quot;nom&quot;: &quot;ganivet&quot;,</div></li><li class="li1"><div class="de1">			&quot;atacs&quot;: 2</div></li><li class="li1"><div class="de1">		}]</div></li><li class="li1"><div class="de1">	}</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Quan s’envien o reben dades en format JSON a través de la xarxa es tracta l’estructura de dades com una cadena de text. Així doncs, <strong>cal fer la conversió d’objectes a JSON i de JSON a objectes</strong> en enviar i rebre les dades.
+</p>
+</div></div>
+<p>
+Afortunadament, JavaScript ens ofereix un objecte predefinit (<code>JSON</code>) que ens permet convertir els valors d’objectes a JSON i viceversa. A continuació podeu veure com s’utilitza el mètode <code>stringify()</code> que és el que fa la conversió d’objectes a aquest format:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let jsonPersona = JSON.stringify(persona);</div></li><li class="li1"><div class="de1">console.log(jsonPersona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/ezgvEg?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/ezgvEg?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/ezgvEg?editors=0012</a>.
+</p>
+
+<p>
+El mètode per realitzar l’operació inversa és <code>parse()</code>. Fixeu-vos que en aquest cas el paràmetre que es passa és una cadena de caràcters, i el resultat és l’objecte reconstruït:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let jsonPersona = '{&quot;nom&quot;:&quot;Ricard&quot;,&quot;edat&quot;:40}';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let persona = JSON.parse(jsonPersona);</div></li><li class="li1"><div class="de1">console.log(persona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/GqrWMe?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/GqrWMe?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/GqrWMe?editors=0012</a>.
+</p>
+
+<p>
+Cal tenir en compte que JSON és un format d’intercanvi de dades i per tant no tracta amb els mètodes o funcions. En cas de convertir un objecte a JSON <strong>tots els mètodes són descartats durant el procés de conversió</strong>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  saludar: function () {</div></li><li class="li1"><div class="de1">    console.log(`Hola, em dic ${this.nom} i tinc ${this.edat} anys`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let jsonPersona = JSON.stringify(persona);</div></li><li class="li1"><div class="de1">console.log(jsonPersona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/jryBrE?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/jryBrE?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/jryBrE?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, en fer la conversió el mètode <code>saludar()</code> ha estat descartat i només s’han convertit les propietats <code>nom</code> i <code>edat</code>.
+</p>
+
+</div>
+
+<h2><a id="hoisting" >Hoisting</a></h2>
+<div class="level2">
+
+<p>
+Una característica que cal tenir en compte a l’hora d’escriure el vostre codi és que a JavaScript les funcions i variables són <strong><em>hoisted</em></strong>. És a dir, internament la seva declaració es mou al principi de l’àmbit (el global o el de la funció) i això permet assignar valors a variables abans de declarar-les, per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">mostrarNom();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function mostrarNom() {</div></li><li class="li1"><div class="de1">  nom = &quot;Ricard&quot;;</div></li><li class="li1"><div class="de1">  var nom;</div></li><li class="li1"><div class="de1">  console.log(nom);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/wWgbxJ?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/wWgbxJ?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/wWgbxJ?editors=0012</a>.
+</p>
+
+<p>
+En aquest cas el que caldria esperar és que es produís un error, però no és així. Per una banda es crida primer a una funció que encara no ha estat declarada i per altra dintre de la funció s’assigna un valor a una variable que no ha estat declarada amb la sentència <code>var</code>, així que hauria d’haver produït una contaminació de l’espai global. Internament JavaScript ha reorganitzat les funcions i variables segons el seu àmbit, d’una manera semblant a la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function mostrarNom() { // Mogut al principi de l'àmbit global</div></li><li class="li1"><div class="de1">  var nom; // Mogut al principi de l'àmbit de funció</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  nom = &quot;Ricard&quot;;</div></li><li class="li1"><div class="de1">  console.log(nom);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">mostrarNom();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/MeJdPG?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/MeJdPG?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/MeJdPG?editors=0012</a>.
+</p>
+
+<p>
+Aquest comportament del llenguatge pot portar a resultats inesperats i confusions, ja que entre el <em>hoisting</em> i que només existeix l’àmbit de funció (no de bloc com en altres llenguatges) facilita cometre erros als desenvolupadors aprenents de JavaScript.
+</p>
+
+<p>
+Per evitar-ho es recomana declarar totes les variables, funcions i funcions internes al principi de l’àmbit corresponent, de manera que no és possible confondre l’àmbit d’execució ni on són declarats perquè s’està emulant el comportament intern del llenguatge.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Patró de sentència var única</p>
+<p>
+Un patró que s’aplica habitualment amb la reorganització del codi per emular el <em>hoisting</em> és utilitzar la sentència <code>var</code> una sola vegada a cada àmbit i fer servir funcions sense nom (assignant-les a variables) en lloc de declarar les funcions per una altra banda.
+</p>
+
+<p>
+D’aquesta manera sempre es troba la declaració de variables i funcions al principi de l’àmbit corresponent, seguit del codi propi de la funció o aplicació.
+</p>
+</div></div>
+<p>
+
+<p>
+Cal tenir en compte que aquest comportament només és aplicable a <code>var</code>, en el cas de <code>let</code> i <code>const</code> si es detecta la utilització abans de la assignació es produeix un error.
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="patromodul" >Patró: mòdul</a></h2>
+<div class="level2">
+
+<p>
+El patró mòdul és una millora de la creació d’espais de noms. Consisteix a aprofitar les clausures, com en el cas del patró funcional, per encapsular els components que es volen limitar en l’aplicació.
+</p>
+
+<p>
+Per exemple, en el cas de la creació d’un joc hi haurà molt pocs mètodes i propietats que interessi que siguin públics, mentre que la gran majoria poden provocar el mal funcionament de l’aplicació o poden ser explotats per usuaris malintencionats per fer trampes:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let IOC_ApocalipsiZombi = {</div></li><li class="li1"><div class="de1">  nivell: 1,</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  avancarNivell: function() {</div></li><li class="li1"><div class="de1">    /* Avançar al nivell següent */</div></li><li class="li1"><div class="de1">    this.nivell++;</div></li><li class="li1"><div class="de1">    this.carregarNivell();</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  carregarNivell: function() {</div></li><li class="li1"><div class="de1">    /* Carrega el nivell actual */</div></li><li class="li1"><div class="de1">    console.log(`Carregant nivell ${this.nivell}`);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  buclePrincipal: function() { /* Bucle principal del joc */</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; 4; i++) {</div></li><li class="li1"><div class="de1">      this.avancarNivell();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  iniciar: function() {</div></li><li class="li1"><div class="de1">    /* Inici del joc*/</div></li><li class="li1"><div class="de1">    nivell = 1;</div></li><li class="li1"><div class="de1">    console.log(&quot;Iniciant el joc&quot;);</div></li><li class="li1"><div class="de1">    this.carregarNivell();</div></li><li class="li1"><div class="de1">    this.buclePrincipal();</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  reiniciar: function() { /* Reiniciar la partida */</div></li><li class="li1"><div class="de1">    console.log(&quot;Reiniciant el joc&quot;);</div></li><li class="li1"><div class="de1">    this.iniciar();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.nivell = 19;</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.avancarNivell();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qBNoWOB?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qBNoWOB?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/qBNoWOB?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-19"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Espai de noms IOC_ApocalipziZombie
+
+</figcaption><img src="../media/daw_m06_u3_18_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure"> Totes les propietats i mètodes són públics</div></div>
+<p>
+Com es pot apreciar en aquest exemple, com que es tracta tots els mètodes i propietats com a públics és molt fàcil modificar-los per fer trampes. Per altra banda els únics mètodes que són necessàriament públics són <code>iniciar()</code> i <code>reiniciar()</code> que podrien ser cridats des de botons de la interfície del joc. Una solució més apropiada fent servir el patró mòdul seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let IOC_ApocalipsiZombi = (function() {</div></li><li class="li1"><div class="de1">  let _nivell = 1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let _avancarNivell = function() {</div></li><li class="li1"><div class="de1">    /* Avançar al nivell següent */</div></li><li class="li1"><div class="de1">    _nivell++;</div></li><li class="li1"><div class="de1">    _carregarNivell();</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let _carregarNivell = function() {</div></li><li class="li1"><div class="de1">    /* Carrega el nivell actual */</div></li><li class="li1"><div class="de1">    console.log(&quot;Carregant nivell &quot; + _nivell);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let _buclePrincipal = function() { /* Bucle principal del joc */</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; 4; i++) {</div></li><li class="li1"><div class="de1">      _avancarNivell();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return {</div></li><li class="li1"><div class="de1">    iniciar: function() {</div></li><li class="li1"><div class="de1">      /* Inici del joc*/</div></li><li class="li1"><div class="de1">      _nivell = 1;</div></li><li class="li1"><div class="de1">      console.log(&quot;Iniciant el joc&quot;);</div></li><li class="li1"><div class="de1">      _carregarNivell();</div></li><li class="li1"><div class="de1">      _buclePrincipal();</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    reiniciar: function() { /* Reiniciar la partida */</div></li><li class="li1"><div class="de1">      console.log(&quot;Reiniciant el joc&quot;);</div></li><li class="li1"><div class="de1">      this.iniciar();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">})();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.iniciar();</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.reiniciar();</div></li><li class="li1"><div class="de1">console.log(IOC_ApocalipsiZombi);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gOMeYrW?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOMeYrW?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOMeYrW?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-20"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Mòdul IOC_ApocalipsiZombi
+
+</figcaption><img src="../media/daw_m06_u3_19_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure">Només els mètodes iniciar i reiniciar són públics</div></div>
+<p>
+Com es pot apreciar, l’objecte (el mòdul) <code>IOC_ApocalisiZombi</code> només conté els dos mètodes públics: <code>iniciar()</code> i <code>reiniciar()</code>, la resta de mètodes i propietats són privats.
+</p>
+
+<p>
+Fixeu-vos que el que s’ha fet és crear una funció autoexecutable, de manera que es crea una clausura accessible només per l’objecte retornat, on es troben tots els mètodes i funcions privades del mòdul. D’altra banda cal tenir en compte que a <code>reiniciar()</code> es fa una invocació al mètode públic <code>iniciar()</code> i per aquesta raó cal utilitzar <code>this</code> mentre que a <code>iniciar()</code> s’han invocat els mètodes privats (que són variables de la clausura) i es fa la invocació directament.
+</p>
+
+<p>
+Per ajudar a diferenciar quines són les propietats i mètodes encapsulats s’ha fet servir el prefix <code>_</code> davant de les propietats i mètodes privats, d’aquesta manera és trivial diferenciar mètodes públics com <code>iniciar()</code> dels mètodes privats com <code>_carregarNivell()</code>.
+</p>
+
+<p>
+A continuació podeu trobar un exemple més complex en què l’aplicació està composta per múltiples components. En aquest cas en lloc d’implementar les funcionalitats del motor del joc dins del mòdul s’han generat diferents components com objectes (<code>joc</code>, <code>ranking</code> i <code>gestorXarxa</code>):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let IOC_ApocalipsiZombi = (function() {</div></li><li class="li1"><div class="de1">  let joc = {</div></li><li class="li1"><div class="de1">    _nivell: 1,</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    _avancarNivell: function() {</div></li><li class="li1"><div class="de1">      /* Avançar al nivell següent */</div></li><li class="li1"><div class="de1">      this._nivell++;</div></li><li class="li1"><div class="de1">      this._carregarNivell();</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    _carregarNivell: function() {</div></li><li class="li1"><div class="de1">      /* Carrega el nivell actual */</div></li><li class="li1"><div class="de1">      console.log(`Carregant nivell ${this._nivell}`);</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    _buclePrincipal: function() { /* Bucle principal del joc */</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; 4; i++) {</div></li><li class="li1"><div class="de1">        this._avancarNivell();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    iniciar: function() {</div></li><li class="li1"><div class="de1">      /* Inici del joc*/</div></li><li class="li1"><div class="de1">      nivell = 1;</div></li><li class="li1"><div class="de1">      console.log(&quot;Iniciant el joc&quot;);</div></li><li class="li1"><div class="de1">      this._carregarNivell();</div></li><li class="li1"><div class="de1">      this._buclePrincipal();</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    reiniciar: function() { /* Reiniciar la partida */</div></li><li class="li1"><div class="de1">      console.log(&quot;Reiniciant el joc&quot;);</div></li><li class="li1"><div class="de1">      this.iniciar();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let classificacio = {</div></li><li class="li1"><div class="de1">    guardarPuntuacio: function(nom, puntuacio) { /* Codi per guardar una puntuació */ },</div></li><li class="li1"><div class="de1">    _recuperarPuntuacio: function(index) { /* Codi per recuperar una puntuació */ },</div></li><li class="li1"><div class="de1">    llistarPuntuacions: function() {</div></li><li class="li1"><div class="de1">      console.log(&quot;Llistat de les millors puntuacions&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let gestorXarxa = {</div></li><li class="li1"><div class="de1">    connectar: function(ip) { /* Connectar al servidor */ },</div></li><li class="li1"><div class="de1">    desconnectar: function() { /* Desconnectar del servidor */ }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return {</div></li><li class="li1"><div class="de1">    iniciar: joc.iniciar.bind(joc),</div></li><li class="li1"><div class="de1">    reiniciar: joc.reiniciar.bind(joc),</div></li><li class="li1"><div class="de1">    llistarPuntuacions: classificacio.llistarPuntuacions</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">})();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.iniciar();</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.reiniciar();</div></li><li class="li1"><div class="de1">console.log(IOC_ApocalipsiZombi);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="http://codepen.io/ioc-daw-m06/pen/YWxmrk?editors=0012" class="urlextern" title="http://codepen.io/ioc-daw-m06/pen/YWxmrk?editors=0012"  rel="nofollow">http://codepen.io/ioc-daw-m06/pen/YWxmrk?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-21"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-21"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Mòdul compost per tres components (objectes)
+
+</figcaption><img src="../media/daw_m06_u3_20_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure"> No es mostra la possible relació entre els components, només la relació d'associació amb el mòdul.</div></div>
+<p>
+L’objecte <code>joc</code> podria utilitzar els objectes <code>classificacio</code> i <code>gestorXarxa</code> internament, mentre que només estan exposats els mètodes per iniciar i reiniciar el joc, a més de <code>llistarPuntuacions()</code> que permetria consultar les millors classificacions de manera externa.
+</p>
+
+<p>
+Fixeu-vos que els objectes s’han generat fent servir la declaració literal, però es podria haver fet aplicant qualsevol dels patrons de creació. Això vol dir que podrien contenir propietats i mètodes privats no accessibles pels altres components.
+</p>
+
+<p>
+Quant a la privacitat, en aquest exemple s’ha conservat el prefix <code>_</code> a les propietats i mètodes de <code>joc</code>, mentre que a <code>gestorXarxa</code> s’ha considerat que aquests mètodes són públics. La raó és que per determinar la privacitat s’ha de considerar si aquests mètodes o propietats han de ser accessibles per altres objectes o agents externs a l’aplicació i no només si són exposats per l’objecte retornat pel mòdul.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El prefix <code>_</code> només aclareix visualment que s’ha de tractar una propietat o mètode com a privat.
+</p>
+</div></div>
+<p>
+En aquest cas <code>connectar()</code> i <code>desconnectar()</code> han de ser accessibles per <code>joc</code> per poder establir una connexió amb el servidor i tancar-la, així doncs han de ser públics. Per altra banda, a <code>classificacio</code> s’ha considerat que <code>recuperarPuntuacio()</code> és un mètode intern que serà utilitzat per <code>llistarPuntuacions()</code> i per tant ha de ser privat, mentre que <code>guardarPuntuacio()</code> ha de ser públic per permetre a <code>joc</code> guardar noves puntuacions i <code>llistarPuntuacions()</code> ho ha de ser per permetre llistar les puntuacions a altres components.
+</p>
+
+<p>
+Un últim detall a tenir en compte és que en retornar l’objecte que exposa els mètodes públics del mòdul pot ser necessari modificar-ne el context d’execució, per exemple utilitzant el mètode <code>bind()</code>: <code>iniciar: joc.iniciar.bind(joc)</code>. En cas contrari el context d’execució serà el propi objecte del mòdul i es produirà un error o, més difícil de detectar, un comportament anòmal.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si els mètodes públics exposats pel mòdul utilitzen el context <code>this</code> cal passar el context amb els mètodes <code>bind()</code>, <code>call()</code> o <code>apply()</code>.
+</p>
+</div></div>
+<p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Àmbit de mòdul</p>
+<p>
+Cal recordar que actualment JavaScript disposa d’àmbit de mòdul, això permet encapsular l’aplicació en mòduls sense contaminar l’espai global.
+</p>
+</div></div>
+</p>
+
+</div>
+
+<h2><a id="tecniques_alternatives_per_implementar_l_herencia_a_javascript" >Tècniques alternatives per implementar l&#039;herència a JavaScript</a></h2>
+<div class="level2">
+
+<p>
+A banda de la implementació a partir de constructors, JavaScript ofereix altres tècniques d’implementació com són la generació de nous objectes a partir d’altres objectes i la utilització de funcions generadores.
+</p>
+
+<p>
+La complexitat a la qual poden arribar les diferents implementacions és molt alta, ja que el llenguatge és molt flexible i pot adaptar-se a les vostres necessitats. Tot i així es recomana mantenir les implementacions el més simples possible.
+</p>
+
+</div>
+
+<h3><a id="herencia_a_partir_d_altres_objectes" >Herència a partir d&#039;altres objectes</a></h3>
+<div class="level3">
+
+<p>
+Aquesta és la tècnica més simple d’implementar l’herència, però també la que presenta majors limitacions, ja que no permet l’encapsulament de les propietats i mètodes i, per tant, són accessibles públicament.
+</p>
+
+<p>
+Per aplicar-la, primer es crea un objecte (<code>pare</code>) que contindrà propietats i mètodes comuns que a través de la invocació a <code>Object.create()</code> es farà servir com a prototipus d’altres objectes (<code>fills</code>). Aquestes instàncies que podran ser actualitzats i modificades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Es crea objecte útil</div></li><li class="li1"><div class="de1">let criatura = {</div></li><li class="li1"><div class="de1">  nom: 'Criatura',</div></li><li class="li1"><div class="de1">  moviment: 10,</div></li><li class="li1"><div class="de1">  potencia: 1,</div></li><li class="li1"><div class="de1">  caminar: function() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} camina ${this.moviment} metres`);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  atacar: function(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} ataca a ${objectiu.nom} i li causa ${this.potencia} punts de dany`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Es crea un nou objecte a partir de l'objecte útil i l'augmentem i l'actualitzem</div></li><li class="li1"><div class="de1">let gos = Object.create(criatura);</div></li><li class="li1"><div class="de1">gos.nom = 'Gos';</div></li><li class="li1"><div class="de1">gos.potencia = 2;</div></li><li class="li1"><div class="de1">gos.saltar = function() {</div></li><li class="li1"><div class="de1">  console.log(`${this.nom} salta ${this.moviment / 5}  metres`);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let gosZombi = Object.create(gos);</div></li><li class="li1"><div class="de1">gosZombi.nom = 'GosZombi';</div></li><li class="li1"><div class="de1">gosZombi.saltar = function() {</div></li><li class="li1"><div class="de1">  console.log(`${this.nom} intenta saltar... però no pot`)</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">gos.caminar();</div></li><li class="li1"><div class="de1">gos.atacar(gosZombi);</div></li><li class="li1"><div class="de1">gos.saltar();</div></li><li class="li1"><div class="de1">gosZombi.atacar(gos);</div></li><li class="li1"><div class="de1">gosZombi.saltar();</div></li><li class="li1"><div class="de1">gosZombi.caminar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYBWOZg?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYBWOZg?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYBWOZg?editors=0012</a>.
+</p>
+
+<p>
+Primerament, es crea un objecte (<code>criatura</code>) amb algunes propietats i mètodes útils. A partir d’aquest objecte, invocant <code>Objecte.create()</code> creem nous objectes de tipus <code>criatura</code>, i seguidament li actualitzem les propietats <code>nom</code> i <code>potencia</code> i l’augmentem amb el mètode <code>saltar()</code>. A continuació es crea un nou objecte a partir de l’anterior (<code>gos</code>) i actualitzem la propietat <code>nom</code> i el mètode <code>saltar()</code> (polimorfisme).
+</p>
+
+<p>
+Com es pot comprovar, tant <code>gos</code> com <code>gosZombi</code> tenen accés als mètodes <code>caminar()</code> i <code>atacar()</code> de <code>criatura</code> i conserven la propietat <code>moviment</code>, al mateix temps tenen accés al seu propi mètode <code>saltar()</code> i a la seva propietat <code>nom</code> diferenciada.
+</p>
+
+<p>
+A l’hora d’accedir a una propietat o invocar una funció primer es comprova si existeix en el mateix objecte i en cas contrari se cerca en el seu objecte pare. Si en aquest tampoc existeix, se cerca en el pare del pare fins que es troba o ja no hi ha més objectes en els quals buscar (vegeu la <span class="figref"><a href="#figura 1-5"><span>figura</span></a></span>), en aquest cas es produeix un error.
+</p>
+<div class="iocfigure"><a name="figura 1-5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Jerarquia d’objectes
+
+</figcaption><img src="../media/daw_m06_u3_05_versio_grafisme.png" alt="" /></figure>
+</div>
+<p>
+Fixeu-vos que en aquest exemple en lloc de passar una cadena amb el nom de l’objectiu al mètode <code>atacar()</code> s’ha passat un objecte, d’aquesta manera s’hi podrien fer modificacions a més d’extreure’n més informació, per exemple reduir els seus punts de vida.
+</p>
+
+</div>
+
+<h3><a id="herencia_a_traves_de_la_generacio_funcional" >Herència a través de la generació funcional</a></h3>
+<div class="level3">
+
+<p>
+Aquesta tècnica és una millora del patró de creació funcional. La diferència és que en lloc de fer servir un objecte buit com a objecte inicial que s’augmenta, s’actualitza i es retorna; es fa servir com a base un objecte no buit que pot haver estat generat per una altra funció, fent servir un constructor, passat com a paràmetre, etc.:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Es crea una funció generadora</div></li><li class="li1"><div class="de1">let crearCriatura = function(nom) {</div></li><li class="li1"><div class="de1">  let criatura = {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  criatura.nom = nom;</div></li><li class="li1"><div class="de1">  criatura.moviment = 10;</div></li><li class="li1"><div class="de1">  criatura.potencia = 1;</div></li><li class="li1"><div class="de1">  criatura.caminar = function() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} camina ${this.moviment} metres`);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">  criatura.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} ataca a ${objectiu.nom} i li causa ${this.potencia} punts de dany`);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return criatura;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Es crea una funció que generarà objectes a partir de l'anterior</div></li><li class="li1"><div class="de1">let crearGos = function() {</div></li><li class="li1"><div class="de1">  let gos = crearCriatura();</div></li><li class="li1"><div class="de1">  gos.nom = 'Gos';</div></li><li class="li1"><div class="de1">  gos.potencia = 2;</div></li><li class="li1"><div class="de1">  gos.saltar = function() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} salta ${this.moviment / 5} metres`);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return gos;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Es crea un nou constructor a partir de l'anterior</div></li><li class="li1"><div class="de1">let crearGosZombi = function() {</div></li><li class="li1"><div class="de1">  let gosZombi = crearGos();</div></li><li class="li1"><div class="de1">  gosZombi.nom = 'Gos Zombi';</div></li><li class="li1"><div class="de1">  gosZombi.saltar = function() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} intenta saltar... però no pot`);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return gosZombi;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Es generen els objectes a partir de les funcions</div></li><li class="li1"><div class="de1">let gos = crearGos();</div></li><li class="li1"><div class="de1">let gosZombi = crearGosZombi();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">gos.caminar();</div></li><li class="li1"><div class="de1">gos.atacar(gosZombi);</div></li><li class="li1"><div class="de1">gos.saltar();</div></li><li class="li1"><div class="de1">gosZombi.atacar(gos);</div></li><li class="li1"><div class="de1">gosZombi.saltar();</div></li><li class="li1"><div class="de1">gosZombi.caminar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/OJXvLjz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/OJXvLjz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/OJXvLjz?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-22"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Herència d’objectes generats a partir de funcions
+
+</figcaption><img src="../media/daw_m06_u3_21_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure"> Dins de la funció generadora primer es crea un objecte base i a continuació s'augmenta i/o actualitza.</div></div>
+<p>
+Com es pot apreciar, dins de la funció <code>crearGos()</code> en lloc de crear un objecte buit es crida a la funció <code>crearCriatura()</code> i s’actualitza l’objecte retornat amb les propietats <code>nom</code> i <code>potencia</code>. A més a més, s’augmenta amb el mètode <code>saltar()</code>.
+</p>
+
+<p>
+Seguidament, a la funció <code>crearGosZombi()</code> es realitza la mateixa operació, però aquest cop fent servir la funció <code>crearGos()</code>, a la qual s’actualitza la propietat <code>nom</code> i el mètode <code>saltar()</code>.
+</p>
+
+<p>
+Una vegada creats els objectes, el seu comportament és independent del patró de generació que s’hagi utilitzat.
+</p>
+
+</div>
+
+<h3><a id="patrofactoria" >Patró: factoria</a></h3>
+<div class="level3">
+
+<p>
+Atès que la generació d’objectes en JavaScript pot fer-se de moltes maneres diferents, no sempre es pot fer d’un cop i pot ser interessant crear un objecte que us ajudi a construir-los.
+</p>
+
+<p>
+El <strong>patró de disseny factoria</strong> presenta moltes variants. Una implementació molt simple que és més que suficient per aplicar el concepte a JavaScript, ja que no requereix la utilització d’interfícies o subclasses és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let FactoriaArmes = function() {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let Arma = function(nom) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.so = &quot;Zas!&quot;</div></li><li class="li1"><div class="de1">    this.potencia = 1;</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  Arma.prototype.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`${this.so} S\´han causat ${this.potencia} punts de dany a ${objectiu}`);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let ArmaAmbMunicio = function(nom, maxMunicio) {</div></li><li class="li1"><div class="de1">    Arma.call(this, nom);</div></li><li class="li1"><div class="de1">    this.municio = maxMunicio;</div></li><li class="li1"><div class="de1">    this.so = &quot;Bang!&quot;;</div></li><li class="li1"><div class="de1">    this.potencia = 2;</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Es lliga el prototip del pare i es corregeix el constructor</div></li><li class="li1"><div class="de1">  ArmaAmbMunicio.prototype = Object.create(Arma);</div></li><li class="li1"><div class="de1">  ArmaAmbMunicio.prototype.constructor = ArmaAmbMunicio;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  ArmaAmbMunicio.prototype.parent = Arma.prototype; // Es guarda la referència al pare</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  ArmaAmbMunicio.prototype.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">    if (this.municio &gt; 0) {</div></li><li class="li1"><div class="de1">      this.municio--;</div></li><li class="li1"><div class="de1">      ArmaAmbMunicio.prototype.parent.atacar.call(this, objectiu);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;Click! no queda munició!&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return {</div></li><li class="li1"><div class="de1">    crearArma: function(params) {</div></li><li class="li1"><div class="de1">      let arma;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      switch (params.tipus) {</div></li><li class="li1"><div class="de1">        case 'simple':</div></li><li class="li1"><div class="de1">          arma = new Arma(params.nom);</div></li><li class="li1"><div class="de1">          break;</div></li><li class="li1"><div class="de1">        case 'arma de foc':</div></li><li class="li1"><div class="de1">          arma = new ArmaAmbMunicio(params.nom, params.maxMunicio);</div></li><li class="li1"><div class="de1">          break;</div></li><li class="li1"><div class="de1">        case 'subfusell':</div></li><li class="li1"><div class="de1">          arma = new ArmaAmbMunicio(params.nom, params.maxMunicio);</div></li><li class="li1"><div class="de1">          arma.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">            for (let i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">              ArmaAmbMunicio.prototype.atacar.call(this, objectiu)</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">          };</div></li><li class="li1"><div class="de1">          break;</div></li><li class="li1"><div class="de1">        default:</div></li><li class="li1"><div class="de1">          console.error(&quot;No existeix aquest tipus d'arma:&quot; + params.tipus);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      return arma;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let factoria = new FactoriaArmes();</div></li><li class="li1"><div class="de1">let ganivet = factoria.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'simple',</div></li><li class="li1"><div class="de1">  nom: 'Ganivet'</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">let pistola = factoria.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'arma de foc',</div></li><li class="li1"><div class="de1">  nom: 'Pistola',</div></li><li class="li1"><div class="de1">  maxMunicio: 2</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">let ak47 = factoria.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'subfusell',</div></li><li class="li1"><div class="de1">  nom: 'Kalàixnikov',</div></li><li class="li1"><div class="de1">  maxMunicio: 10</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ganivet.atacar('Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">ak47.atacar('Horda de zombis');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/rNLdBzE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rNLdBzE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/rNLdBzE?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-25"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-25"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama del patró factoria
+
+</figcaption><img src="../media/daw_m06_u3_24_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure">S'ha afegit al diagrama una interfície fictícia, per mostrar quina és la característica comuna a tots els constructors/objectes.</div></div>
+<p>
+Cal tenir en compte que en aquest cas en lloc de passar una sèrie d’arguments al mètode <code>crearArma()</code> s’ha passat un objecte com si es tractés una estructura de dades. D’aquesta manera es facilita l’accés als paràmetres que cal passar als diferents generadors d’objectes inclosos a la factoria.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El patró factoria permet amagar la implementació dels generadors de classe i per tant pot utilitzar-se el que sigui més convenient.
+</p>
+</div></div>
+<p>
+Primerament s’ha declarat un nou constructor (<code>FactoriaArmes()</code>) que conté com a propietats privades els constructors <code>Arma()</code> i la seva especialització <code>ArmaAmbMunicio()</code>.
+</p>
+
+<p>
+Gràcies a la clausura, aquests constructors no són accessibles externament de manera que no poden ser modificats per usuaris malintencionats. L’única manera de crear una arma és a través del mètode públic: <code>crearArma()</code>.
+</p>
+
+<p>
+El mètode <code>crearArma()</code> és l’encarregat de generar l’objecte que es retornarà. En el cas de seleccionar el tipus <code>simple</code> o <code>arma de foc</code> la generació és molt simple, només es crea un nou objecte i es retorna. En canvi en el cas de <code>subfusell</code> primer es crea l’objecte i seguidament s’actualitza el seu mètode <code>atacar()</code>.
+</p>
+
+<p>
+Aquesta funció generadora interessa que sigui el més simple possible, en aquest exemple, pel tipus <code>subfusell</code> s’hauria de simplificar més, ja que la implementació anterior no permet la reutilització de la nova funció <code>atacar()</code> i a més complica el codi de <code>crearArma()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">case 'subfusell':</div></li><li class="li1"><div class="de1">  arma = new ArmaAmbMunicio(params.nom, params.maxMunicio);</div></li><li class="li1"><div class="de1">  arma.atacar = repetidor(10, ArmaAmbMunicio.prototype);</div></li><li class="li1"><div class="de1">  break;</div></li></ol></pre>
+
+<p>
+Afegiu la següent funció al principi del constructor <code>FactoriaArmes()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let repetidor = function(repeticions, prototipus) {</div></li><li class="li1"><div class="de1">  return function(objectiu) {</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; repeticions; i++) {</div></li><li class="li1"><div class="de1">      prototipus.atacar.call(this, objectiu)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/dyXmbZp?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dyXmbZp?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/dyXmbZp?editors=0012</a>.
+</p>
+
+<p>
+Aquesta funció pot semblar una mica complexa, però és pràcticament igual el codi que s’ha reemplaçat en el cas del <code>subfusell</code>, amb la diferència que ara es crida a una funció que <strong>retorna una funció</strong> i que s’ha parametritzat per poder especificar el nombre de repeticions i el prototipus, així és possible per exemple afegir un nou tipus d’arma només afegint el tipus com a cas dins del mètode <code>crearArma()</code>, per exemple, una motoserra:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">case 'multiple':</div></li><li class="li1"><div class="de1">  arma = new Arma(params.nom, params.maxMunicio);</div></li><li class="li1"><div class="de1">  arma.atacar = repetidor(params.atacs, Arma.prototype);</div></li><li class="li1"><div class="de1">  break;</div></li></ol></pre>
+
+<p>
+Per provar-la afegiu les línies següents al final del codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let motoserra = factoria.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'multiple',</div></li><li class="li1"><div class="de1">  nom: 'Motoserra',</div></li><li class="li1"><div class="de1">  atacs: 4</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">motoserra.atacar('Horda de zombis');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/eYzMOyw?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYzMOyw?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/eYzMOyw?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-26"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-26"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Ampliació de la factoria amb un nou tipus d’objecte
+
+</figcaption><img src="../media/daw_m06_u3_25_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure">Per cada nou cas afegit a la factoria s'afegeix un nou objecte/constructor al diagrama</div></div>
+<p>
+Fixeu-vos que a partir de 2 constructors diferents s’han pogut generar 4 tipus d’objectes diferents. Gràcies al fet que la generació està encapsulada es poden afegir modificacions abans de retornar els objectes de manera que el resultat final pot ser molt diferent.
+</p>
+
+<p>
+Per altra banda, en cas de modificar la implementació de la factoria (per exemple es podria canviar el patró de creació), no n’afectaria la utilització i el codi que la utilitza no s’hauria de modificar.
+</p>
+
+<p>
+Tal com es pot apreciar, aquest patró ofereix múltiples beneficis, cosa que facilita que els vostres objectes puguin ser utilitzats amagant la complexitat d’implementació, al mateix temps que es facilita la reutilització del codi tant per part de l’herència com per la creació de funcions auxiliars (com <code>repetidor()</code>) que ajuden a afegir comportaments similars a múltiples classes.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

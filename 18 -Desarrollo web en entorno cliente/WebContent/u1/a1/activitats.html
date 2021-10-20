@@ -1,0 +1,502 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Execució de programes al costat client. Introducció a JavaScript</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#introduccio_al_llenguatge_javascript">Introducció al llenguatge JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#llenguatges_compilats_i_interpretats_llenguatges_de_guions">Llenguatges compilats i interpretats. Llenguatges de guions</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_motor_de_javascript_execucio_de_javascript_en_linia_d_ordres">El motor de JavaScript. Execució de JavaScript en línia d'ordres</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#aplicatius_webarquitectura_client-servidor">Aplicatius web: arquitectura client-servidor</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#beneficis_d_utilitzar_javascript_en_les_pagines_web">Beneficis d'utilitzar JavaScript en les pàgines web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#desavantatges_de_javascript">Desavantatges de JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#integracio_del_codi_javascript_en_el_codi_html_primer_exemple">Integració del codi JavaScript en el codi HTML. Primer exemple</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#javascriptprogramacio_dirigida_per_esdeveniments">JavaScript: programació dirigida per esdeveniments</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#eines_i_entorns_per_al_desenvolupament_web">Eines i entorns per al desenvolupament web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#sintaxi_del_llenguatge_javascript">Sintaxi del llenguatge JavaScript</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Introducció. Objectes predefinits i objectes del client web</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#objectes_predifinits_de_javascript">Objectes predifinits de JavaScript</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#bom_browser_object_model">BOM (Browser Object Model)</a></li></ul></div></div><li id="u1a3" class="tocsection"><p id='u1a3continguts'><a class="section" href="../../../WebContent/u1/a3/continguts.html">Programació amb galetes, finestres i marcs</a><span class="buttonexp"></span></p><ul><li id="u1a3activitats"><a href="../../../WebContent/u1/a3/activitats.html">Activitats</a></li><li id="u1a3exercicis"><a href="../../../WebContent/u1/a3/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a3/continguts.html#programacio_amb_galetes_cookies">Programació amb galetes ('cookies')</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#emmagatzemar_informacio_amb_local_storage">Emmagatzemar informació amb Local Storage</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#comunicacio_entre_finestres">Comunicació entre finestres</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#marcs_frames_iframes">Marcs (frames/iframes)</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></li><li><a href="continguts.html">Execució de programes al costat client. Introducció a JavaScript</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="comparativa_de_llenguatges_de_script" >Comparativa de llenguatges de script</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta primera activitat consisteix a comparar diferents llenguatges d’<em>script</em> d’ús habitual. Tots els llenguatges d’ús general tenen funcionalitats comunes, que són independents del sistema operatiu que utilitzin. Entre aquestes, la capacitat d’obrir i llegir fitxers de text en mode lectura o consultar la data del sistema.
+</p>
+
+<p>
+Així, posarem JavaScript al costat d’altres llenguatges de guions per fer en primer lloc un exemple típic: llegir un fitxer de text. Ho provarem amb Bash, Python, Perl i JavaScript.
+</p>
+
+<p>
+Instal·lar Python i Perl, per a Linux o Windows, no representa una dificultat especial. El llenguatge BASH existeix de forma nativa en sistemes Linux.
+</p>
+
+<p>
+El primer que fareu és crear l’arxiu fitxer.txt amb unes quantes línies de text.
+</p>
+
+<p>
+<br/>
+
+<strong>Llenguatge Bash (entorns Linux):</strong>
+</p>
+
+<p>
+Script <em>llegir_fitxer.sh</em>:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">#!/bin/bash        </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">FILENAME=fitxer.txt</div></li><li class="li1"><div class="de1">while read line        </div></li><li class="li1"><div class="de1">do        </div></li><li class="li1"><div class="de1">    echo $line</div></li><li class="li1"><div class="de1">done &lt; $FILENAME</div></li></ol></pre>
+
+<p>
+Per executar l’<em>script</em> hem de donar permisos d’execució, i executar-lo des de la consola:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">$ sudo chmod a+x ara_mateix.sh</div></li><li class="li1"><div class="de1">$ ./llegir_fitxer.sh </div></li></ol></pre>
+
+<p>
+<br/>
+
+<strong>Llenguatge Python (Linux o Windows):</strong>
+</p>
+
+<p>
+Script <em>llegir_fitxer.py</em>:
+</p>
+<pre class="code python"><ol><li class="li1"><div class="de1">import sys</div></li><li class="li1"><div class="de1">fitxer = open('fitxer.txt','r')</div></li><li class="li1"><div class="de1">for linia in fitxer:</div></li><li class="li1"><div class="de1">  print linia</div></li></ol></pre>
+
+<p>
+Per executar-lo, des de la consola:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">$ python llegir_fitxer.py </div></li></ol></pre>
+
+<p>
+<br/>
+
+<strong>Llenguatge Perl (Linux o Windows):</strong>
+</p>
+
+<p>
+Script <em>llegir_fitxer.pl</em>:
+</p>
+<pre class="code perl"><ol><li class="li1"><div class="de1">my $filename = 'ara_mateix.txt';</div></li><li class="li1"><div class="de1">open INFILE,$filename;</div></li><li class="li1"><div class="de1">my $linia;</div></li><li class="li1"><div class="de1">while ( $linia = &lt;INFILE&gt;) {</div></li><li class="li1"><div class="de1">    chomp($linia); </div></li><li class="li1"><div class="de1">    # Incloure aquí sota el codi per a processar la línia</div></li><li class="li1"><div class="de1">    print $linia . &quot;\n&quot;;</div></li><li class="li1"><div class="de1">} </div></li><li class="li1"><div class="de1">close INFILE;</div></li></ol></pre>
+
+<p>
+Per executar-lo, des de la consola:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">$ perl llegir_fitxer.pl</div></li></ol></pre>
+
+<p>
+<br/>
+
+<strong>Llenguatge JavaScript:</strong>
+</p>
+
+<p>
+Per executar aquest codi suposem que tenim instal·lat un motor de JavaScript com ara SpiderMonkey.
+</p>
+
+<p>
+Script <em>llegir_fitxer.js</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data; </div></li><li class="li1"><div class="de1">let file = new File(&quot;fitxer.txt&quot;);</div></li><li class="li1"><div class="de1">file.open(&quot;read&quot;, &quot;text&quot;);</div></li><li class="li1"><div class="de1">data = file.readln();</div></li><li class="li1"><div class="de1">file.close(); </div></li></ol></pre>
+
+<p>
+Per executar-lo des de la consola:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">$ js llegir_fitxer.js</div></li></ol></pre>
+
+<p>
+Però a diferència dels casos anteriors, el normal és que obtinguem un error:
+</p>
+<pre class="code">...
+ReferenceError: File is not defined</pre>
+
+<p>
+I és que accedir al sistema de fitxers des de JavaScript està, a priori, deshabilitat. I l’explicació és que si el codi JavaScript que contenen les pàgines web per on naveguem poguessin accedir al nostre sistema d’arxius local (és a dir, al nostre ordinador o dispositiu personal), seria un forat de seguretat molt gran. 
+</p>
+
+<p>
+Per tant, allò que és normal en qualsevol llenguatge de guions, llegir o escriure en un fitxer, en JavaScript està deshabilitat per defecte, per motiu de seguretat. I és que JavaScript, encara que pot ser un llenguatge de guions de propòsit general, està realment orientat a la web.
+</p>
+
+<p>
+Com hem dit al començament d’aquesta activitat, el que sí que podem fer amb JavaScript, igual que amb qualsevol llenguatge de guions, és mostrar la data del sistema. Codifiqueu amb cadascun d’aquests llenguatges un <em>script</em> que mostri la data del sistema
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+<strong>Llenguatge Bash:</strong>
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">#!/bin/bash</div></li><li class="li1"><div class="de1">now=$(date)</div></li><li class="li1"><div class="de1">echo $now</div></li></ol></pre>
+
+<p>
+<strong>Llenguatge Python:</strong>
+</p>
+<pre class="code python"><ol><li class="li1"><div class="de1">#!/usr/bin/python</div></li><li class="li1"><div class="de1">import time</div></li><li class="li1"><div class="de1">print (time.strftime(&quot;%d-%m-%Y&quot;))</div></li></ol></pre>
+
+<p>
+<strong>Llenguatge Perl:</strong>
+</p>
+<pre class="code perl"><ol><li class="li1"><div class="de1">$now_string = localtime;</div></li><li class="li1"><div class="de1">print &quot;Avui és $now_string\n&quot;;</div></li></ol></pre>
+
+<p>
+<strong>Llenguatge JavaScript:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(Date());</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="estandar_ecma-262" >Estàndar ECMA-262</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és analitzar un document tècnic oficial, on hi ha definida la implementació de JavaScript.
+</p>
+
+<p>
+L’estàndard <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" class="urlextern" title="http://www.ecma-international.org/publications/standards/Ecma-262.htm"  rel="nofollow">ECMA-262</a> es pot consultar en format <acronym title="HyperText Markup Language">HTML</acronym> o PDF.
+</p>
+
+<p>
+L’edició actual a juny del 2020 és la 11a. Treballarem sobre aquest document.
+</p>
+
+<p>
+Obrim el PDF i, amb l’eina de cerca, cerquem la cadena <em>substring</em>. Després de moltes ocurrències arribem a la pàgina 563, on hi ha la definició del mètode <code>substring()</code> de l’objecte <code>String</code>. A continuació copiem textualment aquesta definició, sense fer la traducció al català expressament: 
+</p>
+<pre class="code">21.1.3.22
+String.prototype.substring ( start, end )
+The substring method takes two arguments, start and end, and returns a substring of the result of converting
+this object to a String, starting from index start and running to, but not including, index end of the String (orthrough the end of the String if end is undefined). The result is a String value, not a String object.
+If either argument is NaN or negative, it is replaced with zero; if either argument is larger than the length of the String, it is replaced with the length of the String. If start is larger than end, they are swapped.
+The following steps are taken:
+
+  - Let O be ? RequireObjectCoercible(this value).
+  - Let S be ? ToString(O).
+  - Let len be the length of S.
+  - Let intStart be ? ToInteger(start).
+  - If end is undefined, let intEnd be len; else let intEnd be ? ToInteger(end).
+  - Let finalStart be min(max(intStart, 0), len).
+  - Let finalEnd be min(max(intEnd, 0), len).
+  - Let from be min(finalStart, finalEnd).
+  - Let to be max(finalStart, finalEnd).
+  - Return the String value whose length is to - from, containing code units from S, namely the code units withindices from through to - 1, in ascending order.
+
+NOTE
+The substring function is intentionally generic; it does not require that its this value be a String object.
+Therefore, it can be transferred to other kinds of objects for use as a method.</pre>
+
+<p>
+En resum, el que fa el mètode <code>substring()</code> és obtenir la subcadena entre les posicions primera i segona de l’argument. Però la definició ha de contemplar tots els casos possibles: què passa si no hi ha el segon argument? Què passa si el segon argument és més gran que el primer? Què passa si un dels arguments és negatiu?
+</p>
+
+<p>
+Provem ara el mètode <code>substring()</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Prova mètode substring()&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function provaSubstring() {</div></li><li class="li1"><div class="de1">              let str = document.getElementById(&quot;paragraf&quot;).innerHTML;</div></li><li class="li1"><div class="de1">            	let substring = str.substring(11,20);</div></li><li class="li1"><div class="de1">            	alert(substring);</div></li><li class="li1"><div class="de1">            	document.getElementById(&quot;paragraf&quot;).innerHTML = substring;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Prova mètode substring()&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;p id=&quot;paragraf&quot;&gt;Aquesta és la cadena original&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;button type=&quot;button&quot; onclick=&quot;provaSubstring()&quot;&gt;Subcadena&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+En el cas <code>str.substring(11,20)</code> el resultat és la cadena, des de les posicions 11 a la 20 (la primera posició és la 0).
+</p>
+
+<p>
+En el cas <code>str.substring(11)</code> (no hi ha segon argument) el resultat és la cadena original (fins al final).
+</p>
+
+<p>
+Si fem <code>substring(10,8)</code>, un podria confondre’s amb altres llenguatges i pensar que volem obtenir, des de la posició 10, 8 caràcters. Però si mirem la definició el que es fa és permutar el 10 pel 8, i el resultat és des de la posició 8 fins a la 10, sense incloure el 10, que són 2 caràcters: <em>és</em>.
+</p>
+
+<p>
+Resumint, aquest document conté l’especificació de quines regles té el JavaScript. Per això és important que tots els navegadors segueixin aquesta especificació, que compleixin els estàndards. Seria molt descoratjador, com havia passat temps enrere, que amb diferents navegadors obtinguéssim resultats diferents. Si una empresa de programari es plantegés programar un navegador web, com va fer en el seu dia Google amb el Chrome, per implementar la part de JavaScript, s’haurà d’estudiar aquest document.
+</p>
+
+<p>
+Codifiqueu un <em>script</em> similar a l’anterior i que exemplifiqui dues premisses que s’acaben de veure en la definició de <code>substring()</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si algun dels arguments és major que la longitud de la cadena, es reemplaça amb la longitud de la cadena.</div>
+</li>
+<li class="level1"><div class="li"> Si l’argument <code>start</code> és major que l’argument <code>end</code>, s’intercanvien.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent"><pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Prova mètode substring()&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function provaSubstring() {</div></li><li class="li1"><div class="de1">              var str = document.getElementById(&quot;paragraf&quot;).innerHTML;</div></li><li class="li1"><div class="de1">                let substring = str.substring(25,10);</div></li><li class="li1"><div class="de1">                alert(substring);</div></li><li class="li1"><div class="de1">                document.getElementById(&quot;paragraf&quot;).innerHTML = substring;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Prova mètode substring()&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;p id=&quot;paragraf&quot;&gt;cadena original&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;button type=&quot;button&quot; onclick=&quot;provaSubstring()&quot;&gt;Subcadena&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/GRqQGzx?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/GRqQGzx?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/GRqQGzx?editors=1010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="bucle_i_matrius" >Bucle i matrius</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és treballar aspectes bàsics de la sintaxi JavaScript, com ara els bucles i les matrius.
+</p>
+
+<p>
+En aquesta activitat heu de codificar un <em>script</em> on es defineix en una matriu una llista d’animals, i en una altra matriu la llista de la classe a què pertanyen els animals de la primera matriu: mamífers, ocells, amfibis, rèptils, peixos. Les dues matrius tenen el mateix nombre d’elements. Seguidament definireu un bucle, i en cada passada del bucle es pregunta a l’usuari a quina classe pertany l’animal, escollit de forma aleatòria. Hi haurà un comptador de preguntes, i un comptador de preguntes correctes, per tal de donar un resultat del test. També ha d’haver-hi una condició de sortida del bucle.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A continuació es proposa una solució. Podeu millorar aquest codi ampliant la funcionalitat, el disseny, etc. Per exemple, es pot controlar que no surtin repetides les preguntes.
+</p>
+
+<p>
+Una possible solució:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;      </div></li><li class="li1"><div class="de1">        &lt;title&gt;Exemple de bucle i matrius&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        Per sortir, introdueix 'sortir'.&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Resultat: &lt;span id=&quot;resultat&quot;&gt;&lt;/span&gt;</div></li><li class="li1"><div class="de1">        &lt;p id=&quot;a&quot;&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  const animals = ['serp','cavall','granota','tauró','colom','basilisc','tritó','home','camaleó','salmó','oreneta','mico','truita','àliga','salamadra'];</div></li><li class="li1"><div class="de1">  const tipus = ['rèptil','mamífer','amfibi','peix','ocell','rèptil','amfibi','mamífer','rèptil','peix','ocell','mamífer','peix','ocell','amfibi'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let sortir = false;</div></li><li class="li1"><div class="de1">  let numPreguntes = 0;</div></li><li class="li1"><div class="de1">  let numCorrectes = 0;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  while (!sortir) {</div></li><li class="li1"><div class="de1">  	let num = Math.floor((Math.random() * 15));</div></li><li class="li1"><div class="de1">  	let resposta = prompt(`De quin tipus és ${animals[num]}?`, &quot;&quot;);</div></li><li class="li1"><div class="de1">  	if (resposta === &quot;sortir&quot;) {</div></li><li class="li1"><div class="de1">  		sortir = true;</div></li><li class="li1"><div class="de1">  	} else if (resposta === tipus[num]) {</div></li><li class="li1"><div class="de1">  		numCorrectes++;</div></li><li class="li1"><div class="de1">  		numPreguntes++;</div></li><li class="li1"><div class="de1">  	} else {</div></li><li class="li1"><div class="de1">  		numPreguntes++;</div></li><li class="li1"><div class="de1">  	}</div></li><li class="li1"><div class="de1">  	document.getElementById(&quot;resultat&quot;).innerHTML = `${numCorrectes}/${numPreguntes}`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/mdEXKox?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mdEXKox?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/mdEXKox?editors=1010</a>.
+</p>
+
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="bucle_for_i_col_leccions" >Bucle For i Col·leccions</a></h2>
+<div class="level2">
+
+<p>
+Donades les següents col·leccions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const arrayColors = ['blau', 'vermell', 'taronja', 'verd'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const setColors = new Set();</div></li><li class="li1"><div class="de1">setColors.add('blau');</div></li><li class="li1"><div class="de1">setColors.add('vermell');</div></li><li class="li1"><div class="de1">setColors.add('taronja');</div></li><li class="li1"><div class="de1">setColors.add('verd');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const objecteColors = {</div></li><li class="li1"><div class="de1">  'blau': '#0000FF',</div></li><li class="li1"><div class="de1">  'vermell': '#FF0000',</div></li><li class="li1"><div class="de1">  'taronja': '#FF5E13',</div></li><li class="li1"><div class="de1">  'verd': '#00FF00'</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const mapaColors = new Map();</div></li><li class="li1"><div class="de1">mapaColors.set('blau', '#0000FF');</div></li><li class="li1"><div class="de1">mapaColors.set('vermell', '#FF0000');</div></li><li class="li1"><div class="de1">mapaColors.set('taronja', '#FF5E13');</div></li><li class="li1"><div class="de1">mapaColors.set('verd', '#00FF00');</div></li></ol></pre>
+
+<p>
+Escriviu un programa que les recorri utilitzant la sintaxi <code>for</code> més adient (<code>for</code>, <code>for…in</code> o <code>for…of</code>), tenint en compte que s’ha de mostrar l’índex associat quan sigui possible.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Aquí teniu la solució proposada. Podeu millorar aquest codi per mostrar el resultat a la pàgina en lloc de la consola i aplicar el codi de color com a propietat <acronym title="Cascading Style Sheets">CSS</acronym> per mostrar cada línia amb el color associat per als casos del mapa i l’objecte.
+</p>
+
+<p>
+Una possible solució és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(&quot;Iteració de l'array utilitzant for amb un comptador&quot;)</div></li><li class="li1"><div class="de1">for (let i=0; i&lt;arrayColors.length; i++) {</div></li><li class="li1"><div class="de1">  console.log(`${i} - ${arrayColors[i]}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració de l'array utilitzant for-of (incorrecte, no permet mostrar l'índex)&quot;)</div></li><li class="li1"><div class="de1">for (let color of arrayColors) {</div></li><li class="li1"><div class="de1">  console.log(`${color}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració del set utilitzant for-of&quot;)</div></li><li class="li1"><div class="de1">for (let color of setColors) {</div></li><li class="li1"><div class="de1">  console.log(`${color}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració del map utilitzant for-of&quot;)</div></li><li class="li1"><div class="de1">for (let [color, codi] of mapaColors) {</div></li><li class="li1"><div class="de1">  console.log(`${color} - ${codi}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració de l'objecte utilitzant for-in&quot;)</div></li><li class="li1"><div class="de1">for (let color in objecteColors) {</div></li><li class="li1"><div class="de1">  console.log(`${color} - ${objecteColors[color]}`);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució al següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/wvWyXVR?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wvWyXVR?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wvWyXVR?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que encara que es pot fer servir <code>for…of</code> amb un <em>array</em>, aquesta sintaxi no permet accedir a l’índex i, per consegüent, la solució seria incorrecta.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/continguts.html">Execució de programes al costat client. Introducció a JavaScript</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

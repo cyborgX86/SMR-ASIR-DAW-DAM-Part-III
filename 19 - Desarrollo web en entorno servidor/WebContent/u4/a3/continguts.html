@@ -1,0 +1,1049 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Tècniques d’accés a dades</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Bibliografia bàsica</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Accés a dades amb JDBC</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#importar_un_projecte_de_maven_a_netbeans">Importar un projecte de Maven a Netbeans</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#la_primera_connexio_a_una_base_de_dades">La primera connexió a una base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#millorant_el_codifitxers_de_propietats_i_tests_unitaris">Millorant el codi: fitxers de propietats i tests unitaris</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#tests_unitaris_amb_junit">Tests unitaris amb JUnit</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#fent_consultes_a_la_base_de_dades">Fent consultes a la base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#operacions_crud">Operacions CRUD</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#injeccio_sql">Injecció SQL</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Accés a dades amb Java Enterprise Edition</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a2annexos"><a href="../../../WebContent/u4/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#socioc__dialogant_amb_clients_amb_jpa">"SocIoc". Dialogant amb clients amb JPA</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#servidor_d_aplicacions_glassfish">Servidor d'aplicacions Glassfish</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a3" class="tocsection"><p id='u4a3continguts'><a class="section" href="../../../WebContent/u4/a3/continguts.html">Accés a dades amb Spring i Hibernate</a><span class="buttonexp"></span></p><ul><li id="u4a3activitats"><a href="../../../WebContent/u4/a3/activitats.html">Activitats</a></li><li id="u4a3exercicis"><a href="../../../WebContent/u4/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a3annexos"><a href="../../../WebContent/u4/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_amb_spring_i_hibernate">"SocIoc". Dialogant amb usuaris amb Spring i Hibernate</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_preguntes_i_respostes">"SocIoc". Dialogant amb preguntes i respostes</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_rangs_i_vots">"SocIoc". Dialogant amb usuaris, rangs i vots</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tècniques d’accés a dades</a></li><li>Accés a dades amb Spring i Hibernate</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="acces_a_dades_amb_spring_i_hibernate"> Accés a dades amb Spring i Hibernate </a></h1>
+    	
+<p>
+Java té una <acronym title="Application Programming Interface">API</acronym> que ens facilita la feina d’escriure codi que interactuï amb una base de dades. Aquesta <acronym title="Application Programming Interface">API</acronym> és la Java Persistance <acronym title="Application Programming Interface">API</acronym> (JPA), i és simplement una especificació que defineix les interfícies per fer operacions amb la BD. JPA no consisteix en cap implementació de les dades i per si sola no ens servirà de res. Necessitem unes llibreries que implementin aquesta especificació i que siguin capaces de transformar objectes Java en registres a la BD (ORM, Object-Relational Mapping) a més d’implementar totes les operacions amb la BD. Hi ha moltes implementacions, com ara Eclipselink (<a href="http://www.eclipse.org/eclipselink/" class="urlextern" title="http://www.eclipse.org/eclipselink/"  rel="nofollow">www.eclipse.org/eclipselink</a>), Open JPA (<a href="https://openjpa.apache.org/" class="urlextern" title="https://openjpa.apache.org/"  rel="nofollow">openjpa.apache.org</a>) o TopLink (<a href="http://www.oracle.com/technetwork/middleware/toplink/overview/index-089172.html" class="urlextern" title="http://www.oracle.com/technetwork/middleware/toplink/overview/index-089172.html"  rel="nofollow">bit.ly/2lAMG8o</a>), però una de les més populars és Hibernate (<a href="http://hibernate.org/" class="urlextern" title="http://hibernate.org/"  rel="nofollow">hibernate.org</a>).
+</p>
+
+<p>
+Hibernate és, doncs, un <em>framework</em> ORM per a Java que té un gran rendiment i velocitat i facilita considerablement la feina de programació amb BD. Amb una senzilla configuració, permet establir una relació directa entre classes Java amb taules i tipus de dades SQL i facilita fins i tot la creació automàtica de les taules. Hibernate s’encarregarà aproximadament del 90% de la feina que s’ha de fer per treballar amb una BD automatitzant tasques repetitives. Una altra característica que fa de Hibernate un <em>framework</em> molt popular és el fet que té un llenguatge propi de consulta amb la BD que es diu Hibernate Query Language (HQL). Això permet utilitzar qualsevol de les 10 BD suportades per Hibernate sense haver de canviar ni una sola línia de codi, ja que Hibernate s’encarregarà de traduir les consultes HQL que fem a un llenguatge SQL específic per a cadascuna de les BD. Altres característiques són:
+</p>
+<ul>
+<li class="level1"><div class="li"> És un projecte Opensource amb llicència <acronym title="GNU Lesser General Public License">LGPL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> Alt rendiment: utilitza una memòria <em>cache</em> interna que fa que les operacions de lectura de la BD (normalment sempre hi ha moltes més operacions de lectura que d’escriptura) siguin molt ràpides.</div>
+</li>
+<li class="level1"><div class="li"> Creació automàtica de les taules.</div>
+</li>
+<li class="level1"><div class="li"> Simplifica l’obtenció de dades de múltiples taules.</div>
+</li>
+</ul>
+
+<p>
+Hibernate ens ajudarà pel que fa a les bases de dades, i Spring, per la seva banda, ens ajudarà en el disseny de la nostra aplicació. Spring és un <em>framework</em> que utilitza injecció de dependències (en anglès, DI, Dependency Injection) o la inversió del control (en anglès, IoC, Inversion of Control). IoC es refereix al fet que una classe no s’encarregarà de crear instàncies de les seves dependències, sinó que el contenidor DI s’encarregarà de crear els objectes amb la configuració necessària i injectar-los on faci falta. Aquest fet, que sembla tan simple, té grans implicacions a l’hora de desenvolupar una aplicació. Afavoreix la composició sobre l’herència de classes, la qual cosa fa que hi hagi menys dependències entre les classes. I menys dependències implica que les classes faran menys coses i més específiques, per la qual cosa el codi serà més fàcilment reutilitzable i més fàcilment testejable.
+</p>
+
+<p>
+La combinació de Spring i Hibernate ens permetrà dissenyar i desenvolupar un codi que pugui treballar fàcilment amb diferents tipus de BD (Hibernate) i on Spring ens donarà flexibilitat per canviar si és necessari Hibernate per qualsevol altre <em>framework</em> ORM. 
+</p>
+
+<p>
+Continuarem amb el desenvolupament de l’aplicació Java “SocIoc”. Explicarem:
+</p>
+<ul>
+<li class="level1"><div class="li"> Hibernate</div>
+</li>
+<li class="level1"><div class="li"> Spring i IoC: inversió del control o injecció de dependències</div>
+</li>
+<li class="level1"><div class="li"> HQL</div>
+</li>
+<li class="level1"><div class="li"> Com configurar Spring i Hibernate</div>
+</li>
+<li class="level1"><div class="li"> Anotacions</div>
+</li>
+<li class="level1"><div class="li"> Relacions 1..M i N..M</div>
+</li>
+<li class="level1"><div class="li"> Validació</div>
+</li>
+<li class="level1"><div class="li"> Tests unitaris</div>
+</li>
+</ul>
+
+<h2><a id="socioc__dialogant_amb_usuaris_amb_spring_i_hibernate" >&quot;SocIoc&quot;. Dialogant amb usuaris amb Spring i Hibernate</a></h2>
+<div class="level2">
+
+<p>
+Les classes Java haurien de ser al més independents possible d’altres classes. Això augmenta la possibilitat de reutilitzar aquestes classes i simplifica els tests unitaris. Per aconseguir aquesta separació o desacoblament, la dependència que una classe tingui amb d’altres s’ha d’injectar, més que fer que la classe creï o busqui la dependència. Això representa el principi d’inversió de control o principi de Hollywood: “no ens truquis” (crear/buscar objectes), “nosaltres et trucarem” (injectarem els objectes). Per exemple, la classe A dependrà de B si usa la classe B com a variable. Si usem injecció de dependències, la classe B serà passada a la A via el constructor (injecció de construcció) o a través d’un mètode <em>setter</em> (injecció <em>setter</em>). Vegem un exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public interface UserDAO {</div></li><li class="li1"><div class="de1">    public void create(User user);</div></li><li class="li1"><div class="de1">    public User edit(User user);</div></li><li class="li1"><div class="de1">    public void remove(User user);</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username);</div></li><li class="li1"><div class="de1">    public User findUserWithHighestRank();</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findActiveUsers();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserDAOJPA implements UserDAO {</div></li><li class="li1"><div class="de1">    @PersistenceContext</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(User user) {</div></li><li class="li1"><div class="de1">        entityManager.persist(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User edit(User user) {</div></li><li class="li1"><div class="de1">        return entityManager.merge(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        user = entityManager.merge(user);</div></li><li class="li1"><div class="de1">        entityManager.remove(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">                    &quot;where o.username = :username&quot;)</div></li><li class="li1"><div class="de1">                    .setParameter(&quot;username&quot;, username)</div></li><li class="li1"><div class="de1">                    .getSingleResult();</div></li><li class="li1"><div class="de1">        } catch (NoResultException e) {</div></li><li class="li1"><div class="de1">            return null;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findActiveUsers() {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            return (List&lt;User&gt;) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">                    &quot;where o.active= true&quot;)</div></li><li class="li1"><div class="de1">                    .getResultList();</div></li><li class="li1"><div class="de1">        } catch (NoResultException e) {</div></li><li class="li1"><div class="de1">            return null;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            return (User) entityManager.createQuery(&quot;select object(o) from User o order by o.rank DESC&quot;)</div></li><li class="li1"><div class="de1">                    .setMaxResults(1)</div></li><li class="li1"><div class="de1">                    .getSingleResult();</div></li><li class="li1"><div class="de1">        } catch (NoResultException e) {</div></li><li class="li1"><div class="de1">            return null;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class UserController {</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User getUser(String username){</div></li><li class="li1"><div class="de1">        return userDAO.findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure que la classe <code>UserController</code> utilitza la interfície <code>UserDAO</code>. Si us hi fixeu, el codi no fa referència a cap implementació de la interfície. Hem de modificar el codi de <code>UserController</code> per fer referència a una implementació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserService {</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public UserService() {</div></li><li class="li1"><div class="de1">        this.userDAO = new UserDAOJPA();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User getUser(String username) {</div></li><li class="li1"><div class="de1">        return userDAO.findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest cas, fem que la implementació de la interfície sigui la de la classe <code>UserDAOJPA</code>, que ens proporciona la funcionalitat per accedir a la BD utilitzant JPA. Aquest codi té diversos problemes. La classe <code>UserService</code> té la configuració de la implementació de la interfície <code>UserDAO</code>. Això farà que per testejar la classe <code>UserService</code> utilitzem un objecte real <code>UserDAOJPA</code>, que establirà una connexió amb una BD. Un altre problema és que si canviem la implementació de <code>UserDAO</code> i fem una implementació que usa Hibernate, haurem de venir a la classe <code>UserController</code> i canviar el codi. El que ens permet la injecció de dependències (DI) és que la classe <code>UserController</code> no conegui els detalls de la configuració de <code>UserDAO</code>, sinó que aquests es passin. Si anéssim a utilitzar DI podríem refactoritzar el codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserController {</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public UserController(UserDAO userDAO) {</div></li><li class="li1"><div class="de1">        this.userDAO = userDAO;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User getUser(String username){</div></li><li class="li1"><div class="de1">        return userDAO.findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+D’aquesta manera, la classe <code>UserController</code> està totalment desacoblada de la implementació de <code>UserDAO</code>. El <em>framework</em> de DI s’encarregarà de passar la versió correcta de <code>UserDAO</code> a la classe <code>UserController</code>. La injecció de dependències es pot aconseguir amb Java Standard. Spring, però, simplifica el procés mitjançant una forma estàndard de configurar les dependències entre els objectes.
+</p>
+
+</div>
+
+<h3><a id="integrant_l_aplicacio_socioc_amb_spring" >Integrant l&#039;aplicació &quot;SocIoc&quot; amb Spring</a></h3>
+<div class="level3">
+
+<p>
+Spring és un <em>framework</em> d’inversió del control (IoC) format d’una sèrie de mòduls que faciliten la feina de desenvolupar aplicacions Java. En ser modular, ens permet escollir quins mòduls utilitzar segons les necessitats de l’aplicació que estem desenvolupant. Hi ha uns 20 mòduls, i en la <span class="figref"><a href="#fig3.1"><span>figura</span></a></span> podeu veure la seva arquitectura.
+</p>
+<div class="iocfigure"><a name="fig3.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Mòduls Spring
+
+</figcaption><img src="../media/daw_m07_u4_02.png" alt="" /></figure>
+</div>
+<p>
+<strong><em>Core container</em></strong>: aquest és el mòdul fonamental de Spring, i permet fer IoC i DI. També defineix el context de l’aplicació que indicarà quins <em>beans</em> (objectes gestionats pel <em>container</em> IoC) hi ha i com es relacionen entre si. Està format per quatre mòduls:
+</p>
+<ul>
+<li class="level1"><div class="li"> Core proporciona les parts fonamentals del <em>framework</em>, incloent IoC i injecció de dependències.</div>
+</li>
+<li class="level1"><div class="li"> Beans proporciona <code>BeanFactory</code>, que és una classe que segueix el patró de disseny de <em>software</em> anomenat <em>factory pattern</em> i que serveix per crear objectes a partir d’una classe.</div>
+</li>
+<li class="level1"><div class="li"> Context proporciona la funcionalitat per accedir als objectes gestionats per Spring (<em>beans</em>). La interfície <code>ApplicationContext interface</code> és la part central d’aquest mòdul.</div>
+</li>
+<li class="level1"><div class="li"> SpEL proporciona un llenguatge potent i flexible per manipular un <em>bean</em> i les seves dependències mentre l’aplicació s’està executant.</div>
+</li>
+</ul>
+
+<p>
+<strong>Data Access/Integration</strong>: aquest és el mòdul que proporciona accés a dades i sistemes d’integració. Està format pels següents mòduls:
+</p>
+<ul>
+<li class="level1"><div class="li"> JDBC proporciona la funcionalitat JDBC per accedir a bases de dades.</div>
+</li>
+<li class="level1"><div class="li"> ORM proporciona capes d’integració per a <acronym title="Application Programming Interface">API</acronym> de mapeig d’objectes Java amb taules de les BD. Entre les <acronym title="Application Programming Interface">API</acronym> suportades hi ha JPA, JDO, Hibernate i iBatis.</div>
+</li>
+<li class="level1"><div class="li"> OXM proporciona la funcionalitat per a la transformació d’objectes a XML, i viceversa.</div>
+</li>
+<li class="level1"><div class="li"> JMS (Java Messaging Service) és un mòdul que conté la funcionalitat per consumir i produir missatges JMS.</div>
+</li>
+<li class="level1"><div class="li"> Transaction és un mòdul que facilita la gestió de transaccions.</div>
+</li>
+</ul>
+
+<p>
+<strong>Web</strong>: la capa web està formada pels següents mòduls:
+</p>
+<ul>
+<li class="level1"><div class="li"> Web proporciona funcionalitats típiques que s’utilitzen a les aplicacions web, com pujada de fitxers o la inicialització del contenidor IoC utilitzant <em>servlets</em>.</div>
+</li>
+<li class="level1"><div class="li"> Web-MVC: conté una implementació de MVC (Model View Controller) per a aplicacions web.</div>
+</li>
+<li class="level1"><div class="li"> Web-Socket proporciona suport per a comunicacions client-servidor en aplicacions web.</div>
+</li>
+<li class="level1"><div class="li"> Web-Portlet proporciona una implementació de MVC per ser utilitzada en entorns <em>portlet</em>.</div>
+</li>
+</ul>
+
+<p>
+Hi ha altres mòduls importants:
+</p>
+<ul>
+<li class="level1"><div class="li"> AOP (Aspect-Oriented Programming): consisteix en una implementació de programació orientada a aspectes. AOP permet interceptar crides a funcions i injectar codi que s’executarà abans o després d’executar el codi de la funció. </div>
+</li>
+<li class="level1"><div class="li"> Aspects: aquest mòdul permet la integració d’AspectJ, que és un <em>framework</em> d’AOP.</div>
+</li>
+<li class="level1"><div class="li"> Instrumentation: proporciona instrumentació de classes i funcionalitat per carregar classes que són necessàries a certs servidors d’aplicacions.</div>
+</li>
+<li class="level1"><div class="li"> Test: permet testejar aplicacions Spring utilitzant <em>frameworks</em> de testeig, com JUnit o TestNG.</div>
+</li>
+</ul>
+
+<p>
+No tots aquests mòduls seran necessaris quan desenvolupem una aplicació. El que serà fonamental serà afegir el <em>core</em>, que inclou el contenidor IoC, que serà l’encarregat de crear instàncies dels objectes, configurar-los i crear les dependències necessàries. El contenidor IoC obté aquesta informació de la configuració de Spring que es pot definir amb fitxers XML o amb classes de configuració Java.
+</p>
+
+<p>
+El primer que haurem de fer és afegir les dependències. A partir del fitxer proporcionat als annexos afegirem les següents dependències:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+L’arxiu de partida per treballar el descrit en aquest apartat el teniu disponble als annexos de la unitat.
+</p>
+</div></div><pre class="code xml"><ol><li class="li1"><div class="de1">&lt;properties&gt;</div></li><li class="li1"><div class="de1">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div></li><li class="li1"><div class="de1">    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</div></li><li class="li1"><div class="de1">    &lt;springframework.version&gt;4.3.4.RELEASE&lt;/springframework.version&gt;</div></li><li class="li1"><div class="de1">    &lt;mysql.connector.version&gt;5.1.40&lt;/mysql.connector.version&gt;</div></li><li class="li1"><div class="de1">    &lt;junit.version&gt;4.12&lt;/junit.version&gt;</div></li><li class="li1"><div class="de1">    &lt;mockito.version&gt;1.10.19&lt;/mockito.version&gt;</div></li><li class="li1"><div class="de1">    &lt;h2.version&gt;1.4.190&lt;/h2.version&gt;</div></li><li class="li1"><div class="de1">&lt;/properties&gt;</div></li><li class="li1"><div class="de1">&lt;dependencies&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"> &lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-orm&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${springframework.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;scope&gt;test&lt;/scope&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.mockito&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;mockito-all&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;${mockito.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;scope&gt;test&lt;/scope&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;/dependencies&gt;</div></li></ol></pre>
+
+<p>
+Fixeu-vos que hem definit una sèrie de propietats al pom.xml que permeten centralitzar la versió utilitzada en una variable. D’aquesta manera, quan hi hagi disponible una nova versió de Spring, enlloc de canviar el valor en sis dependències, només ho haurem de fer en un lloc.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1"> &lt;properties&gt;</div></li><li class="li1"><div class="de1">     &lt;springframework.version&gt;4.3.4.RELEASE&lt;/springframework.version&gt;</div></li><li class="li1"><div class="de1">  &lt;/properties&gt;</div></li></ol></pre>
+
+<p>
+A la implementació que tenim de <code>UserService</code>, la classe crea una instància de <code>UserDAO</code>. El que volem ara és que Spring s’encarregui d’aquesta configuració. Refactoritzarem <code>UserService</code> de manera que no creï una instància de <code>UserDAO</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserService {</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public UserService(UserDAO userDAO) {</div></li><li class="li1"><div class="de1">        this.userDAO = userDAO;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User getUser(String username) {</div></li><li class="li1"><div class="de1">        return userDAO.findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El que farem serà que Spring s’encarregui d’injectar la configuració de <code>UserDAO</code> necessària. Això vol dir que podrem testejar la classe <code>UserService</code> sense necessitar tenir cap informació de com serà la implementació de <code>UserDAO</code>. Per poder fer-ho necessitem configurar la nostra aplicació per tal que utilitzi Spring. Spring permet escollir quin serà el context a utilitzar en els tests. El que nosaltres volem testejar ara és que la classe <code>UserService</code> i les seves dependències estan gestionades per Spring. El que faci la implementació de la classe <code>UserDAO</code> realment no ens interessa en aquest moment, per la qual cosa utilitzarem un <em>mock</em> de la classe. Definim llavors la classe que tindrà la configuració del context de Spring a <em>src/test/java</em> al paquet <code>package org.ioc.daw.config;</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package org.ioc.daw.config;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserService;</div></li><li class="li1"><div class="de1">import org.mockito.Mockito;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">public class SpringTestConfig {</div></li><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  public UserDAO userDAO() {</div></li><li class="li1"><div class="de1">      return Mockito.mock(UserDAO.class);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  public UserService userService(UserDAO userDAO) {</div></li><li class="li1"><div class="de1">      return new UserService(userDAO);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>@Configuration</code> indica que la classe conté un o més mètodes anotats amb <code>@Bean</code> i que produeixen <em>beans</em> gestionats pel contenidor de Spring. Aquesta configuració defineix dos <em>beans</em> que estaran gestionats pel contenidor IoC de Spring. Això permetrà injectar aquests dos <em>beans</em> quan ens faci falta.
+</p>
+
+<p>
+Fixeu-vos que l’objecte que retorna <code>userDAO()</code> no és cap implementació real de la interfície. Utilitzant <code>Mockito.mock(UserDAO.class)</code> retornem un <em>mock</em>, és a dir, un objecte que fa de <em>proxy</em> amb la interfície però que no té cap codi. El que això permet és oblidar-se completament del funcionament de les classes que implementen <code>UserDAO</code> i focalitzar el test en <code>UserService</code>. Si l’objecte <em>mock</em> no té cap implementació, com es pot usar en el codi? Al test veureu que podeu definir què retornen els diferents mètodes quan són invocats. Creeu la classe de test <code>UserServiceTest</code> al paquet <code>package org.ioc.daw.user;</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.config.SpringTestConfig;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.ContextConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">import static org.mockito.Mockito.times;</div></li><li class="li1"><div class="de1">import static org.mockito.Mockito.verify;</div></li><li class="li1"><div class="de1">import static org.mockito.Mockito.when;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {SpringTestConfig.class})</div></li><li class="li1"><div class="de1">public class UserServiceTest {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserService userService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void getUserByUsername() {</div></li><li class="li1"><div class="de1">        String username = &quot;test&quot;;</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setUsername(username);</div></li><li class="li1"><div class="de1">        user.setUserId(1L);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        when(userDAO.findUserByUsername(username)).thenReturn(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User userResult = userService.getUser(username);</div></li><li class="li1"><div class="de1">        assertEquals(username, userResult.getUsername());</div></li><li class="li1"><div class="de1">        assertEquals(new Long(1), userResult.getUserId());</div></li><li class="li1"><div class="de1">        verify(userDAO, times(1)).findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>@RunWith(SpringJUnit4ClassRunner.class)</code> especifica que el test carregarà un context de Spring per ser utilitzat en un test <code>JUnit</code>, i <code>@ContextConfiguration(classes = {SpringTestConfig.class})</code> especifica quines classes tenen la configuració del context. Com que hem definit que <code>SpringTestConfig</code> serà la configuració a utilitzar, podem injectar (amb la notació <code>@Autowired</code>) els <em>beans</em> definits. Fixeu-vos que com que <code>UserDAO</code> és un <em>mock</em>, podem dir el que retornaran els seus mètodes:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Mockito és un <em>framework</em> de testeig que facilita la creació d’objectes de test (<em>mock</em>) que amaguen la implementació real i que faciliten els tests unitaris.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">when(userService.findUserByUsername(username)).thenReturn(user);</div></li></ol></pre>
+
+<p>
+Estem dient que quan es cridi al mètode <code>findUserByUsername</code> retornarem l’objecte <code>user</code>. Les línies que utilitzen <code>assertEquals</code> fan les comprovacions del test, comproven que l’objecte retornat pel mètode <code>findUserByUsername</code> de <code>UserService</code> és el mateix que el que retorna <code>UserDAO</code>. Finalment, <code>verify(userDAO, times(1)).findUserByUsername(username);</code> comprova que el mètode <code>findUserByUsername</code> només és invocat un cop. Podeu trobar el codi en el fitxer <div class="mediaf filezip"><div class="mediacontent"><a href="../media/uf4-a3-01.zip">uf4-a3-01.zip</a><span> ( 12 KB )</span></div></div>.
+</p>
+
+</div>
+
+<h3><a id="integrant_l_aplicacio_socioc_amb_hibernate" >Integrant l&#039;aplicació &quot;SocIoc&quot; amb Hibernate</a></h3>
+<div class="level3">
+
+<p>
+Hibernate és un <em>framework</em> ORM (Object-Relational Mapping). És a dir, Hibernate s’encarrega de relacionar taules d’una base de dades amb objectes Java. Com es pot veure en la <span class="figref"><a href="#fig3.2"><span>figura</span></a></span>, Hibernate crea una capa entre la BD i l’aplicació. S’encarregarà de gestionar la configuració de com accedir a la BD, el tipus de BD, com fer el mapeig entre les classes i taules, i establir les relacions entre diferents taules. 
+</p>
+<div class="iocfigure"><a name="fig3.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Arquitectura d’Hibernate
+
+</figcaption><img src="../media/daw_m07_u4_03.png" alt="" /></figure>
+</div>
+<p>
+En la <span class="figref"><a href="#fig3.3"><span>figura</span></a></span> es representa amb més detall com funciona Hibernate. A l’hora de guardar les dades a la BD, Hibernate crea una instància de la classe de tipus entitat (una classe Java mapejada amb una taula). Aquest objecte s’anomena objecte <em>transient</em>, ja que no està associat amb cap sessió i no està guardat a la BD. Per guardar un objecte a la BD s’utilitza una instància de la interfície <code>SessionFactory</code>, un objecte de tipus <em>singleton</em> (només hi ha una instància de l’objecte a l’aplicació) que implementa el patró de disseny <em>factory</em>. <code>SessionFactory</code> carrega la configuració d’Hibernate i s’encarrega de gestionar la configuració de la connexió amb la BD.
+</p>
+<div class="iocfigure"><a name="fig3.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Arquitectura detallada d’Hibernate
+
+</figcaption><img src="../media/daw_m07_u4_04.png" alt="" /></figure>
+</div>
+<p>
+Cada connexió amb la BD a Hibernate es fa creant una instància d’una implementació de la interfície <code>Session</code>. Hibernate també disposa d’una <acronym title="Application Programming Interface">API</acronym> per gestionar les transaccions i que permet utilitzar transaccions JDBC o JTA. Una transacció representa una única unitat de treball amb la base de dades.
+Vegem amb una mica més de detall els diferents blocs de la <span class="figref"><a href="#fig3.3"><span>figura</span></a></span>:
+</p>
+<ul>
+<li class="level1"><div class="li"> SessionFactory: és una classe encarregada de produir objectes de tipus <code>Session</code>. Opcionalment, manté una memòria <em>cache</em> de segon nivell que guarda dades de la connexió amb la BD perquè siguin reutilitzades entre diferents transaccions.</div>
+</li>
+<li class="level1"><div class="li"> Session: s’encarreguen de la conversa entre les aplicacions i la BD. Manté una <em>cache</em> de primer nivell dels objectes de l’aplicació. Aquesta <em>cache</em> s’utilitza a l’hora de recuperar objectes utilitzant el seu identificador o a l’hora de navegar a través de les dependències de l’objecte.</div>
+</li>
+<li class="level1"><div class="li"> Objectes persistents: són objectes que contenen la funcionalitat de l’aplicació. Cada objecte està associat amb una única sessió d’Hibernate. Un cop la sessió associada a un objecte es tanca, els objectes passen a estar a l’estat <em>detached</em> (separat). </div>
+</li>
+<li class="level1"><div class="li"> Objectes tipus <em>transient</em> i <em>detached</em>: són les instàncies de classes de tipus <code>Entity</code> que no estan associades a cap sessió d’Hibernate. Poden haver estat creades per l’aplicació i no haver estat guardades, o poden ser el resultat que s’hagi tancat una sessió d’Hibernate.</div>
+</li>
+<li class="level1"><div class="li"> Proveïdor de connexions (<code>ConnectionProvider</code>): és opcional i permet crear un <em>pool</em> de connexions JDBC.</div>
+</li>
+<li class="level1"><div class="li"> <code>TransactionFactory</code>: permet crear instàncies d’objectes de tipus <code>Transaction</code>.</div>
+</li>
+</ul>
+
+<p>
+Per poder treballar amb Hibernate i que formi part de la vostra aplicació, el primer que fareu serà afegir les dependències necessàries. Importeu a Netbeans el codi descarregat dels annexos. Modificareu el fitxer pom.xml per afegir les dependències d’Hibernate.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">  &lt;properties&gt;  </div></li><li class="li1"><div class="de1">  ..</div></li><li class="li1"><div class="de1">    &lt;hibernate.version&gt;5.2.5.Final&lt;/hibernate.version&gt;</div></li><li class="li1"><div class="de1">  ..</div></li><li class="li1"><div class="de1">  &lt;/properties&gt;</div></li><li class="li1"><div class="de1"> &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      &lt;artifactId&gt;hibernate-validator&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      &lt;version&gt;5.3.4.Final&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      &lt;version&gt;${hibernate.version}&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;org.jadira.usertype&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      &lt;artifactId&gt;usertype.core&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      &lt;version&gt;6.0.1.GA&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Hibernate a la llibreria <em>hibernate-core</em> porta l’especificació JPA 2.1 i la seva implementació. Per tant, no és necessari incloure les següents dependències.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Als annexos de la unitat trobareu un arxiu amb el codi per importar a Netbeans i treballar amb Hibernate.
+</p>
+</div></div><pre class="code">  &lt;dependency&gt;
+        &lt;groupId&gt;javax.persistence&lt;/groupId&gt;
+        &lt;artifactId&gt;persistence-api&lt;/artifactId&gt;
+        &lt;version&gt;1.0.2&lt;/version&gt;
+    &lt;/dependency&gt;</pre>
+
+<p>
+Hibernate utilitza el concepte de sessions per gestionar les connexions amb la base de dades. A cada sessió s’obre una única connexió amb la BD i s’utilitza fins que la sessió es tanca. Cada objecte que es carrega en memòria per Hibernate estarà associat amb la sessió. Això permet a Hibernate persistir automàticament els objectes que s’han modificat. Quan la sessió persisteix canvis a la BD es diu <em>flushing</em>. Cada objecte associat amb la sessió es comprova per veure si ha canviat d’estat. Qualsevol objecte amb canvi d’estat es conservarà a la base de dades, amb independència que els objectes modificats es guardin o no explícitament. Aquesta característica es pot configurar, però per defecte podeu configurar el comportament arran d’Hibernate, es farà automàticament. Hibernate fa <em>flushing</em> en les següents situacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quan s’executa directament el mètode <code>flush()</code>.</div>
+</li>
+<li class="level1"><div class="li"> Abans que Hibernate faci una consulta, si creu que és necessari per obtenir un resultat precís.</div>
+</li>
+<li class="level1"><div class="li"> Quan es confirma una transacció.</div>
+</li>
+<li class="level1"><div class="li"> Quan es tanca la sessió.</div>
+</li>
+</ul>
+
+<p>
+El que volem fer a continuació és començar a utilitzar Hibernate. Per fer-ho definireu una classe que implementi la interfície <code>UserDAO</code> i que utilitzi la funcionalitat d’Hibernate. Creareu la classe <code>org.ioc.daw.user.UserHibernateDAO</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.hibernate.Criteria;</div></li><li class="li1"><div class="de1">import org.hibernate.Session;</div></li><li class="li1"><div class="de1">import org.hibernate.SessionFactory;</div></li><li class="li1"><div class="de1">import org.hibernate.criterion.Order;</div></li><li class="li1"><div class="de1">import org.hibernate.criterion.Restrictions;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.stereotype.Repository;</div></li><li class="li1"><div class="de1">import javax.transaction.Transactional;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Transactional</div></li><li class="li1"><div class="de1">@Repository(&quot;userHibernateDAO&quot;)</div></li><li class="li1"><div class="de1">public class UserHibernateDAO implements UserDAO {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private SessionFactory sessionFactory;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(User user) {</div></li><li class="li1"><div class="de1">        getSession().saveOrUpdate(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User edit(User user) {</div></li><li class="li1"><div class="de1">        return (User) getSession().merge(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        getSession().delete(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">        Criteria criteria = createEntityCriteria();</div></li><li class="li1"><div class="de1">        criteria.add(Restrictions.eq(&quot;username&quot;, username));</div></li><li class="li1"><div class="de1">        return (User) criteria.uniqueResult();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">        Criteria criteria = createEntityCriteria();</div></li><li class="li1"><div class="de1">        criteria.addOrder(Order.desc(&quot;rank&quot;));</div></li><li class="li1"><div class="de1">        return (User) criteria.uniqueResult();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findActiveUsers() {</div></li><li class="li1"><div class="de1">        Criteria criteria = createEntityCriteria();</div></li><li class="li1"><div class="de1">        criteria.add(Restrictions.eq(&quot;active&quot;, true));</div></li><li class="li1"><div class="de1">        return (List&lt;User&gt;) criteria.list();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected Session getSession() {</div></li><li class="li1"><div class="de1">        return sessionFactory.getCurrentSession();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Criteria createEntityCriteria() {</div></li><li class="li1"><div class="de1">        return getSession().createCriteria(User.class);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>@Repository(“userHibernateDAO“)</code> indica que quan la classe sigui escanejada per Spring es crearà un <em>bean</em> anomenat <code>userHibernateDAO</code>. La notació <code>@Transactional</code> indica que els mètodes definits a la classe utilitzaran transaccions, és a dir, que quan el mètode es comença a executar s’obre una transacció i abans d’acabar es tanca. A les línies 4-5 injecteu l’objecte que permetrà fer totes les operacions utilitzant Hibernate <code>SessionFactory</code> i obtenir una sessió d’Hibernate. A la classe <code>UserHibernateDAO</code> heu vist com injectar les dependències necessàries per utilitzar Hibernate i com fer que els mètodes siguin transaccionals. El que heu de fer ara és crear la configuració que creï el <em>bean</em> <code>SessionFactory</code>, un altre <em>bean</em> que defineixi la classe que gestioni les transaccions, i finalment necessitareu definir un <em>bean</em> de tipus <code>DataSource</code>, que establirà com es farà la connexió amb la base de dades. El que interessa és testejar que Hibernate treballi amb la BD correctament, no tant la BD en si, i per això utilitzareu una BD en memòria. En aquest cas, H2. Al directori <em>test/java</em> creareu la classe <code>org.ioc.daw.config.EmbeddedDatabaseTestConfig</code>, i el fitxer de propietats al directori <code>test/resources application-test.properties</code>, tal com podeu veure en la <span class="figref"><a href="#fig3.4"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig3.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Hibernate
+
+</figcaption><img src="../media/dawm7u4_03-01.png" alt="" /></figure>
+</div><pre class="code java"><ol><li class="li1"><div class="de1">import org.hibernate.SessionFactory;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.PropertySource;</div></li><li class="li1"><div class="de1">import org.springframework.core.env.Environment;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.HibernateTransactionManager;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.LocalSessionFactoryBean;</div></li><li class="li1"><div class="de1">import org.springframework.transaction.annotation.EnableTransactionManagement;</div></li><li class="li1"><div class="de1">import javax.sql.DataSource;</div></li><li class="li1"><div class="de1">import java.util.Properties;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;application-test.properties&quot;})</div></li><li class="li1"><div class="de1">public class EmbeddedDatabaseTestConfig {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private Environment environment;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserDAO userDAO() {</div></li><li class="li1"><div class="de1">        return  new UserHibernateDAO();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public DataSource dataSource() {</div></li><li class="li1"><div class="de1">        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();</div></li><li class="li1"><div class="de1">        EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.H2).build();</div></li><li class="li1"><div class="de1">        return db;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {</div></li><li class="li1"><div class="de1">        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();</div></li><li class="li1"><div class="de1">        sessionFactory.setDataSource(dataSource);</div></li><li class="li1"><div class="de1">        sessionFactory.setPackagesToScan(&quot;org.ioc.daw&quot;);</div></li><li class="li1"><div class="de1">        sessionFactory.setHibernateProperties(hibernateProperties());</div></li><li class="li1"><div class="de1">        return sessionFactory;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Properties hibernateProperties() {</div></li><li class="li1"><div class="de1">        Properties properties = new Properties();</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.dialect&quot;, environment.getRequiredProperty(&quot;hibernate.dialect&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.hbm2ddl.auto&quot;, environment.getRequiredProperty(&quot;hibernate.hbm2ddl&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.show_sql&quot;, environment.getRequiredProperty(&quot;hibernate.show_sql&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.format_sql&quot;, environment.getRequiredProperty(&quot;hibernate.format_sql&quot;));</div></li><li class="li1"><div class="de1">        return properties;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public HibernateTransactionManager transactionManager(SessionFactory s) {</div></li><li class="li1"><div class="de1">        HibernateTransactionManager txManager = new HibernateTransactionManager();</div></li><li class="li1"><div class="de1">        txManager.setSessionFactory(s);</div></li><li class="li1"><div class="de1">        return txManager;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>@EnableTransactionManagement</code> habilita la capacitat de gestionar les transaccions amb la BD. <code>@PropertySource(value = {“classpath:application-test.properties”})</code> permet definir propietats a un fitxer de propietats que serà accessible a través del component injectat <em>Environment</em>. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserDAO userDAO() {</div></li><li class="li1"><div class="de1">        return  new UserHibernateDAO();</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+Defineix que com el Bean de tipus <code>UserDAO</code> que utilitzarem serà del tipus <code>UserHibernateDAO</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Bean</div></li><li class="li1"><div class="de1">public DataSource dataSource() {</div></li><li class="li1"><div class="de1">    EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();</div></li><li class="li1"><div class="de1">    EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.H2).build();</div></li><li class="li1"><div class="de1">    return db;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest codi crea un <em>bean</em> de tipus <code>DataSource</code>, que és el que establirà amb quina base de dades es connectarà Hibernate. En el vostre cas, indiqueu que serà una BD en memòria de tipus H2. Això serà l’únic que haureu de canviar en el codi si voleu utilitzar una BD diferent.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  @Autowired</div></li><li class="li1"><div class="de1">  public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {</div></li><li class="li1"><div class="de1">      LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();</div></li><li class="li1"><div class="de1">      sessionFactory.setDataSource(dataSource);</div></li><li class="li1"><div class="de1">      sessionFactory.setPackagesToScan(&quot;org.ioc.daw&quot;);</div></li><li class="li1"><div class="de1">      sessionFactory.setHibernateProperties(hibernateProperties());</div></li><li class="li1"><div class="de1">      return sessionFactory;</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+El mètode <code>sessionFactory()</code> crea un <em>bean</em> de tipus <code>LocalSessionFactoryBean</code> que té informació de com connectar amb la base de dades a través de l’objecte <code>DataSource</code>. Fixeu-vos que el bean <code>DataSource</code> s’injecta utilitzant la notació <code>@Autowired</code>. A més de <code>DataSource</code>, es necessita definir les propietats d’Hibernate (<code>hibernateProperties()</code>). Gràcies a la notació <code>@PropertySource</code> es poden externalitzar les propietats a fitxers, fet que permet carregar diferents fitxers de propietats a diferents contextos. Un cop l’objecte <code>SessionFactory</code> s’ha creat s’injectarà al mètode <code>transactionManager</code>, que proporcionarà suport per a les transaccions amb la base de dades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  @Autowired</div></li><li class="li1"><div class="de1">  public HibernateTransactionManager transactionManager(SessionFactory s) {</div></li><li class="li1"><div class="de1">      HibernateTransactionManager txManager = new HibernateTransactionManager();</div></li><li class="li1"><div class="de1">      txManager.setSessionFactory(s);</div></li><li class="li1"><div class="de1">      return txManager;</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+És a dir, Spring crearà tres <em>beans</em>: un que té informació de la BD a utilitzar, un que usa aquest <em>bean</em> per crear una sessió que gestiona la connexió amb la BD i un altre que gestiona les transaccions. El fitxer de propietats application-test.properties d’Hibernate té el contingut mostrat a continuació. A més de definir que el dialecte SQL que usarà Hibernate és H2Dialect, estem indicant també amb la propietat <code>hibernate.hbm2ddl</code> que es creïn les taules automàticament a partir dels objectes.
+</p>
+<pre class="code">hibernate.dialect = org.hibernate.dialect.H2Dialect
+hibernate.hbm2ddl = create
+hibernate.show_sql = true
+hibernate.format_sql = true</pre>
+
+<p>
+Un cop Hibernate i Spring estan configurats podem passar a crear el test <code>UserDAOTest</code> al paquet <code>org.ioc.daw.user</code>. De moment comprovareu que podeu escriure i llegir informació de la BD. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.config.EmbeddedDatabaseTestConfig;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.*;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.ContextConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">import java.sql.Timestamp;</div></li><li class="li1"><div class="de1">import java.util.Date;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {EmbeddedDatabaseTestConfig.class})</div></li><li class="li1"><div class="de1">public class UserDAOTest {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void saveUser() {</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setEmail(&quot;email@test.com&quot;);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;name&quot;);</div></li><li class="li1"><div class="de1">        user.setRank(10);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        assertNull(user.getUserId());</div></li><li class="li1"><div class="de1">        userDAO.create(user);</div></li><li class="li1"><div class="de1">        assertNotNull(user.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User userFromDb = userDAO.findUserByUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">        assertEquals(user.getUserId(), userFromDb.getUserId());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb <code>@ContextConfiguration(classes = {EmbeddedDatabaseTestConfig</code> <code>.class})</code> definiu quin serà el fitxer de propietats que utilitzareu al test; en el vostre cas és el fitxer de configuració que defineix un <code>DataSource</code> per connectar a la BD H2. Fixeu-vos que abans de guardar l’usuari el valor del seu <code>userId</code> és <em>null</em>, però que un cop Hibernate persisteix l’objecte, tal com es va definir a la classe <code>User</code> (<code>@GeneratedValue(strategy = GenerationType.IDENTITY)</code>), es genera un valor automàticament. El test consisteix a guardar l’usuari a la BD, recuperar-lo usant el nom d’usuari i comprovar que el <code>userId</code> dels dos objectes és el mateix.
+</p>
+
+<p>
+Una de les característiques d’Hibernate és que un cop un objecte forma part d’una sessió si es fan canvis sobre alguna de les seves propietats, els canvis es persisteixen a la BD. Modificareu el test anterior per comprovar-ho.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void saveUser(){</div></li><li class="li1"><div class="de1">    User user = new User();</div></li><li class="li1"><div class="de1">    user.setUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">    user.setActive(true);</div></li><li class="li1"><div class="de1">    user.setEmail(&quot;email@test.com&quot;);</div></li><li class="li1"><div class="de1">    user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">    user.setName(&quot;name&quot;);</div></li><li class="li1"><div class="de1">    user.setRank(10);</div></li><li class="li1"><div class="de1">    user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    assertNull(user.getUserId());</div></li><li class="li1"><div class="de1">    userDAO.create(user);</div></li><li class="li1"><div class="de1">    assertNotNull(user.getUserId());</div></li><li class="li1"><div class="de1">    user.setEmail(&quot;new-email@test.com&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    User userFromDb = userDAO.findUserByUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">    assertEquals(user.getUserId(), userFromDb.getUserId());</div></li><li class="li1"><div class="de1">    assertEquals(&quot;new-email@test.com&quot;, userFromDb.getEmail());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un cop s’ha guardat l’objecte <code>user</code>, modifiqueu el correu-e i comproveu que s’ha guardat correctament. Si executeu el test veureu que hi ha un error:
+</p>
+<pre class="code">Failed tests:   saveUser(org.ioc.daw.user.UserDAOTest): expected:&lt;[new-]email@test.com&gt; but was:&lt;[]email@test.com&gt;</pre>
+
+<p>
+El problema és que necessiteu establir el context per a la transacció, és a dir, indicar on comença i on acaba la transacció. Si afegiu la notació <code>@Transactional</code> al mètode del test i torneu a executar el test veureu que aquest cop s’executa correctament.
+</p>
+
+<p>
+Com podríeu utilitzar el test que heu creat per comprovar que podeu escriure dades a la BD MySQL “SocIoc”?
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu accedir al codi al fitxer que trobareu als annexos de la unitat.
+</p>
+</div></div>
+<p>
+La configuració està definida a la classe <code>EmbeddedDatabaseTestConfig</code>, així que tot el que haureu de canviar estarà aquí:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>@PropertySource(value = {“classpath:application-test.</code> <code>properties”})</code> indica que s’han d’agafar els valors d’aquest fitxer de propietats per fer la connexió amb la BD.</div>
+</li>
+<li class="level1"><div class="li"> El bean <code>DataSource</code> indica que utilitzareu una BD en memòria.</div>
+</li>
+</ul>
+
+<p>
+Llavors, per connectar-vos a la BD MySQL només haureu de canviar el fitxer de propietats i el tipus de <code>DataSource</code>. Si feu el canvi a <code>EmbeddedDatabaseTestConfig</code>, si voleu tornar a utilitzar la BD en memòria, com serà el cas, haureu de tornar a canviar un altre cop el fitxer. Creareu una altra classe de configuració al paquet <code>org.ioc.daw.config</code> que establirà com treballar amb la BD MySQL que anomenarem <code>HibernateMysqlConfiguration</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package org.ioc.daw.config;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.hibernate.SessionFactory;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.ComponentScan;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.PropertySource;</div></li><li class="li1"><div class="de1">import org.springframework.core.env.Environment;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.DriverManagerDataSource;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.HibernateTransactionManager;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.LocalSessionFactoryBean;</div></li><li class="li1"><div class="de1">import org.springframework.transaction.annotation.EnableTransactionManagement;</div></li><li class="li1"><div class="de1">import javax.naming.NamingException;</div></li><li class="li1"><div class="de1">import javax.sql.DataSource;</div></li><li class="li1"><div class="de1">import java.util.Properties;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@ComponentScan({&quot;org.ioc.daw.user&quot;, &quot;org.ioc.daw.question&quot;,</div></li><li class="li1"><div class="de1">        &quot;org.ioc.daw.answer&quot;, &quot;org.ioc.daw.vote&quot;, &quot;org.ioc.daw.rank&quot;})</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;jdbc.properties&quot;, &quot;hibernate.properties&quot;})</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">public class HibernateMysqlConfiguration {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private Environment environment;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public DataSource dataSource() {</div></li><li class="li1"><div class="de1">        DriverManagerDataSource dataSource = new DriverManagerDataSource();</div></li><li class="li1"><div class="de1">        dataSource.setDriverClassName(environment.getRequiredProperty(&quot;jdbc.driverClassName&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setUrl(environment.getRequiredProperty(&quot;jdbc.url&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setUsername(environment.getRequiredProperty(&quot;jdbc.username&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setPassword(environment.getRequiredProperty(&quot;jdbc.password&quot;));</div></li><li class="li1"><div class="de1">        return dataSource;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Afegiu també un fitxer de propietats src/main/resources/application.properties. Fixeu-vos que haureu de canviar jdbc.url per la IP:PORT on estigui funcionant la vostra base de dades.
+</p>
+<pre class="code">jdbc.driverClassName = com.mysql.jdbc.Driver
+jdbc.url = jdbc:mysql://192.168.99.100:32768/socioc?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+jdbc.username = root
+jdbc.password = root
+hibernate.dialect = org.hibernate.dialect.MySQLDialect
+hibernate.show_sql = true
+hibernate.format_sql = true
+hibernate.hbm2ddl = validate</pre>
+
+<p>
+A causa de possibles problemes amb la configuració de MySQL i la seva configuració horària, afegiu una sèrie de paràmetres (<code>?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacy</code> <code>DatetimeCode=false&amp;serverTimezone=UTC/</code>) a la cadena de caracters de la connexió amb el servidor MySQL.
+</p>
+
+<p>
+Si us hi fixeu, la classe de configuració <code>HibernateMysqlConfiguration</code> té repetit gairebé tot el codi respecte a <code>EmbeddedDatabaseTestConfig</code>. Per tant, si voleu fer algun canvi al <code>DataSource</code> o introduir una nova propietat d’Hibernate us haureu de recordar de canviar les dues classes. Això no és una bona pràctica de desenvolupament i és susceptible a errors. El que fareu serà separar les classes en tres: una classe de configuració que contindrà el codi comú i dues amb les configuracions específiques per a MySQL i H2, i afegir els DAO al seu propi fitxer de configuració. Creareu <code>DAOConfig</code> al paquet <code>org.ioc.daw.config</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserHibernateDAO;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">public class DAOConfig {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserDAO userDAO() {</div></li><li class="li1"><div class="de1">        return new UserHibernateDAO();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<em>HibernateConfiguration</em> conté la configuració comú: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.hibernate.SessionFactory;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.core.env.Environment;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.HibernateTransactionManager;</div></li><li class="li1"><div class="de1">import org.springframework.orm.hibernate5.LocalSessionFactoryBean;</div></li><li class="li1"><div class="de1">import org.springframework.transaction.annotation.EnableTransactionManagement;</div></li><li class="li1"><div class="de1">import javax.naming.NamingException;</div></li><li class="li1"><div class="de1">import javax.sql.DataSource;</div></li><li class="li1"><div class="de1">import java.util.Properties;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@Import(value = {DAOConfig.class})</div></li><li class="li1"><div class="de1">public class HibernateConfiguration {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private Environment environment;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) throws NamingException {</div></li><li class="li1"><div class="de1">        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();</div></li><li class="li1"><div class="de1">        sessionFactory.setDataSource(dataSource);</div></li><li class="li1"><div class="de1">        sessionFactory.setPackagesToScan(&quot;org.ioc.daw.user&quot;);</div></li><li class="li1"><div class="de1">        sessionFactory.setHibernateProperties(hibernateProperties());</div></li><li class="li1"><div class="de1">        return sessionFactory;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Properties hibernateProperties() {</div></li><li class="li1"><div class="de1">        Properties properties = new Properties();</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.dialect&quot;, environment.getRequiredProperty(&quot;hibernate.dialect&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.show_sql&quot;, environment.getRequiredProperty(&quot;hibernate.show_sql&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.format_sql&quot;, environment.getRequiredProperty(&quot;hibernate.format_sql&quot;));</div></li><li class="li1"><div class="de1">        properties.put(&quot;hibernate.hbm2ddl.auto&quot;, environment.getRequiredProperty(&quot;hibernate.hbm2ddl&quot;));</div></li><li class="li1"><div class="de1">        return properties;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public HibernateTransactionManager transactionManager(SessionFactory s) {</div></li><li class="li1"><div class="de1">        HibernateTransactionManager txManager = new HibernateTransactionManager();</div></li><li class="li1"><div class="de1">        txManager.setSessionFactory(s);</div></li><li class="li1"><div class="de1">        return txManager;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<code>HibernateMysqlConfiguration</code> tindrà la configuració específica per connectar amb la BD MySQL.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Import;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.PropertySource;</div></li><li class="li1"><div class="de1">import org.springframework.core.env.Environment;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.DriverManagerDataSource;</div></li><li class="li1"><div class="de1">import org.springframework.transaction.annotation.EnableTransactionManagement;</div></li><li class="li1"><div class="de1">import javax.sql.DataSource;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;application.properties&quot;})</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">public class HibernateMysqlConfiguration {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private Environment environment;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public DataSource dataSource() {</div></li><li class="li1"><div class="de1">        DriverManagerDataSource dataSource = new DriverManagerDataSource();</div></li><li class="li1"><div class="de1">        dataSource.setDriverClassName(environment.getRequiredProperty(&quot;jdbc.driverClassName&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setUrl(environment.getRequiredProperty(&quot;jdbc.url&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setUsername(environment.getRequiredProperty(&quot;jdbc.username&quot;));</div></li><li class="li1"><div class="de1">        dataSource.setPassword(environment.getRequiredProperty(&quot;jdbc.password&quot;));</div></li><li class="li1"><div class="de1">        return dataSource;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I finalment, <code>EmbeddedDatabaseTestConfig</code> tindrà la configuració per connectar-se a la BD en memòria H2.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;application-test.properties&quot;})</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">public class EmbeddedDatabaseTestConfig {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public DataSource dataSource() {</div></li><li class="li1"><div class="de1">        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();</div></li><li class="li1"><div class="de1">        EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.H2).build();</div></li><li class="li1"><div class="de1">        return db;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Comproveu que amb el codi refactoritzat podeu executar tots els tests. A continuació modificareu <code>EmbeddedDatabaseTestConfig</code> per tal d’executar els tests contra la BD MySQL. Podeu importar la base de dades “SocIoc” del fitxer de MySQL Workbench descarregat dels annexos. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Als annexos de la unitat trobareu un arxiu amb el codi refactoritzat, així com un altre arxiu de MySQL Workbench amb la base de dades “SocIoc” per importar-la.
+</p>
+</div></div>
+<p>
+Per comprovar que el vostre codi i configuració pot escriure a la BD MySQL que vau definir a Workbench, podeu utilitzar l’editor de <em>queries</em> de Workbench per fer la comprovació. En la <span class="figref"><a href="#fig3.3"><span>figura</span></a></span> podeu veure que el contingut de la taula està buit.
+</p>
+<div class="iocfigure"><a name="fig3.3x"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Contingut de la taula “Users”
+
+</figcaption><img src="../media/dawm7u4_03-03.png" alt="" /></figure>
+</div>
+<p>
+A continuació canvieu el context del test <code>UserDAOTest</code> perquè utilitzi la classe de configuració de MySQL i executeu el test <code>UserDAOTest.saveUser</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@ContextConfiguration(classes = {HibernateMysqlConfiguration.class})</div></li></ol></pre>
+
+<p>
+Si executeu el test hi haurà un altre error:
+</p>
+<pre class="code">.HibernateConfiguration: Invocation of init method failed; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [id] in table [users]; found [int (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]</pre>
+
+<p>
+El problema és que vau definir la taula “Users” com a tipus <em>int</em>, i Hibernate el que espera és un tipus <em>bigint</em>. Això passa perquè heu definit <code>userId</code> com a <em>Long</em>, que Hibernate mapeja amb el tipus <em>bigint</em> per tal d’acomodar a tots els possibles valors que pot guardar una variable de tipus <em>Long</em>. Per solucionar el problema modifiqueu la classe <code>User</code> canviant el tipus de <code>userId</code> de <em>Long</em> a <em>Integer</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">    private Integer userId;</div></li><li class="li1"><div class="de1">    public Integer getUserId() {</div></li><li class="li1"><div class="de1">        return userId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setUserId(Integer userId) {</div></li><li class="li1"><div class="de1">        this.userId = userId;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+Ara sí, executeu el test i mireu el contingut de la taula “Users”; veureu està buida. Què ha passat? Doncs que com que és un test, Hibernate fa un <em>rollback</em> (desfer els canvis d’una transacció) abans de tancar el test i esborra les dades guardades a la BD. Per tal que es guardin les dades a la BD és necessari indicar al test que no faci <em>rollback</em> amb la notació <code>@Rollback(false)</code>. El mètode amb el test tindrà llavors les següents anotacions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  @Transactional</div></li><li class="li1"><div class="de1">  @Rollback(false)</div></li><li class="li1"><div class="de1">  public void saveUser() {</div></li></ol></pre>
+
+<p>
+Ara sí que veureu que hi ha l’usuari que el test ha creat (vegeu la <span class="figref"><a href="#fig3.4"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig3.4x"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Contingut de la taula “Users”
+
+</figcaption><img src="../media/dawm7u4_03-04.png" alt="" /></figure>
+</div>
+<p>
+Aquests canvis que heu fet són només per veure que podeu guardar dades a la BD només canviant un fitxer de configuració. Desfeu els canvis (treure la notació <code>@Rollback</code> i utilitzar la configuració <code>EmbeddedDatabaseTestConfig</code>) abans de continuar endavant.
+</p>
+
+<p>
+A continuació veurem com podreu configurar Spring i Hibernate per treballar amb el servidor d’aplicacions Glassfish. Primer afegireu al fitxer pom.xml una dependència que us permetrà cercar recursos (en el vostre cas, un recurs JDBC) utilitzant JNDI. Java Naming and Directory Interface és una <acronym title="Application Programming Interface">API</acronym> que permet trobar recursos, serveis i components EJB que estan distribuïts. Afegiu el següent al pom.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">  &lt;dependency&gt;</div></li><li class="li1"><div class="de1">      &lt;groupId&gt;org.glassfish.main.common&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">      &lt;artifactId&gt;glassfish-naming&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">      &lt;version&gt;4.1.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+A continuació heu de crear una classe de configuració amb els detalls específics de Glassfish al paquet <code>org.ioc.daw.config</code>. Fixeu-vos que l’únic que heu d’especificar és el tipus de <code>DataSource</code>. En aquest cas utilitzeu <code>JndiDataSourceLookup</code> per buscar el recurs JDBC especificat per a la propietat <code>jndi.socioc</code> del fitxer de propietats glassfish-application.properties.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Import;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.PropertySource;</div></li><li class="li1"><div class="de1">import org.springframework.core.env.Environment;</div></li><li class="li1"><div class="de1">import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;</div></li><li class="li1"><div class="de1">import org.springframework.transaction.annotation.EnableTransactionManagement;</div></li><li class="li1"><div class="de1">import javax.sql.DataSource;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;glassfish-application.properties&quot;})</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class GlassfishPoolConfiguration {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private Environment environment;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean(name = &quot;jndiDataSource&quot;)</div></li><li class="li1"><div class="de1">    public DataSource dataSource() {</div></li><li class="li1"><div class="de1">        String jndiName = environment.getRequiredProperty(&quot;jndi.socioc&quot;);</div></li><li class="li1"><div class="de1">        JndiDataSourceLookup lookup = new JndiDataSourceLookup();</div></li><li class="li1"><div class="de1">        lookup.setResourceRef(true);</div></li><li class="li1"><div class="de1">        return lookup.getDataSource(jndiName);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El fitxer de propietats només ha de contenir les propietats que configuren Hibernate i la propietat que indica el nom del recurs JNDI.
+</p>
+<pre class="code">jndi.socioc = jdbc/socioc
+hibernate.dialect = org.hibernate.dialect.MySQLDialect
+hibernate.show_sql = true
+hibernate.format_sql = true
+hibernate.hbm2ddl = validate</pre>
+
+<p>
+Si us hi fixeu, les propietats d’Hibernate són les mateixes que les que vau utilitzar per a la connexió MySQL. Com que no voleu tenir codi ni configuració repetides, refactoritzareu els fitxers de propietats. Creareu el fitxer hibernate.properties amb les propietats d’Hibernate, jdbc.properties amb les propietats específiques per a JDBC i glassfish.properties amb les propietats de Glassfish.
+</p>
+
+<p>
+hibernate.properties:
+</p>
+<pre class="code">hibernate.dialect = org.hibernate.dialect.MySQLDialect
+hibernate.show_sql = true
+hibernate.format_sql = true
+hibernate.hbm2ddl = validate</pre>
+
+<p>
+jdbc.properties:
+</p>
+<pre class="code">jdbc.driverClassName = com.mysql.jdbc.Driver
+jdbc.url = jdbc:mysql://192.168.99.100:32768/socioc
+jdbc.username = root
+jdbc.password = root
+</pre>
+
+<p>
+glassfish.properties:
+</p>
+<pre class="code">jndi.socioc = jdbc/socioc</pre>
+
+<p>
+A continuació us heu d’assegurar que les classes de configuració inclouen els fitxers de propietats adients.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@PropertySource(value = {&quot;glassfish.properties&quot;,&quot;hibernate.properties&quot; })</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">public class GlassfishPoolConfiguration {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@PropertySource(value = {&quot;jdbc.properties&quot;, &quot;hibernate.properties&quot;})</div></li><li class="li1"><div class="de1">@Import(value = {HibernateConfiguration.class})</div></li><li class="li1"><div class="de1">public class HibernateMysqlConfiguration {</div></li></ol></pre>
+
+<p>
+Finalment, voleu testejar que la nova configuració funciona i que podeu escriure a la BD MySQL. El problema és que el <em>bean</em> de tipus <code>DataSource</code> configurat per utilitzar el recurs JDBC a Glassfish, si l’aplicació no està desplegada al servidor Glassfish, no el trobarà. Hi diverses alternatives: una podria ser utilitzar un servidor Glassfish que s’executi com a part del test utilitzant Glassfish-embedded. Un altra aproximació, que és molt més flexible, ràpida i que ens permet testejar la funcionalitat de Spring, Hibernate i la nostra aplicació, és ampliar la funcionalitat de la classe <code>Spring</code> que executa els tests JUnit perquè sigui ella la que s’encarregui que el test tingui disponible recursos JNDI. La idea és molt senzilla: crear un context JNDI on registrareu un <em>bean</em> que després utilitzareu al test. Això ho podeu fer amb la classe <code>org.ioc.daw.SpringJNDIRunner</code>, que formarà part dels tests.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package org.ioc.daw;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.naming.NamingException;</div></li><li class="li1"><div class="de1">import org.ioc.daw.config.HibernateMysqlConfiguration;</div></li><li class="li1"><div class="de1">import org.junit.runners.model.InitializationError;</div></li><li class="li1"><div class="de1">import org.springframework.context.ApplicationContext;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</div></li><li class="li1"><div class="de1">import org.springframework.mock.jndi.SimpleNamingContextBuilder;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class SpringJNDIRunner extends SpringJUnit4ClassRunner {</div></li><li class="li1"><div class="de1">    public static boolean isJNDIactive;</div></li><li class="li1"><div class="de1">    public SpringJNDIRunner(Class&lt;?&gt; klass) throws InitializationError, IllegalStateException, NamingException {</div></li><li class="li1"><div class="de1">        super(klass);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        synchronized (SpringJNDIRunner.class) {</div></li><li class="li1"><div class="de1">            if (!isJNDIactive) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HibernateMysqlConfiguration.class);</div></li><li class="li1"><div class="de1">                SimpleNamingContextBuilder builder = new SimpleNamingContextBuilder();</div></li><li class="li1"><div class="de1">                builder.bind(&quot;jdbc/socioc&quot;, applicationContext.getBean(&quot;dataSource&quot;));</div></li><li class="li1"><div class="de1">                builder.activate();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                isJNDIactive = true;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb <code>new AnnotationConfigApplicationContext</code> definiu un context de Spring que carrega el <em>bean</em> definit a la classe de configuració <code>HibernateMysqlConfiguration</code>. A continuació registreu el <em>bean</em> anomenat <code>dataSource</code> amb el nom JNDI jdbc/socioc. El <em>bean</em> <code>dataSource</code> és el definit a <code>HibernateMysqlConfiguration</code>, que permet la connexió amb la BD MySQL. Per executar el test només heu d’especificar la nova classe que utilitzareu per definir el context de Spring en el qual correrà el test i el fitxer on heu configurat el <code>DataSource</code> que busca el recurs JDBC utilitzant JNDI.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RunWith(SpringJNDIRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {GlassfishPoolConfiguration.class})</div></li></ol></pre>
+
+<p>
+Heu vist els avantatges d’utilitzar Spring i Hibernate, així com una breu introducció al seu funcionament. Després heu vist com configurar i integrar l’aplicació “SocIoc” amb aquests dos <em>frameworks</em> i com treballar amb diferents recursos JDBC, ja sigui en memòria, connectant directament amb MySQL o utilitzant Glassfish i l’accés als seus recursos utilitzant JNDI.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Assegureu-vos de buidar el contingut de la taula “Users” abans d’executar el test. Aquest és el problema de treballar amb BD reals amb els tests, que mai es pot saber en quin es troba la BD i quines dades conté abans d’executar els tests. Això pot fer que els tests fallin, no per un error en el codi, sinó per un error en les dades.
+</p>
+</div></div>
+</div>
+
+<h2><a id="socioc__dialogant_amb_preguntes_i_respostes" >&quot;SocIoc&quot;. Dialogant amb preguntes i respostes</a></h2>
+<div class="level2">
+
+<p>
+A contnuació aprofundirem més a fons en Hibernate i explorar les relacions entre els objectes i com es guardaran en la BD. Per fer-ho treballarem amb les preguntes, respostes i vots de l’aplicació SocIoc. Recordeu les taules de la base de dades “SocIoc” i com es relacionen. En la <span class="figref"><a href="#fig3.5"><span>figura</span></a></span> podeu veure que les preguntes (taula “Questions”) poden tenir més d’una resposta (taula “Answers”), i que un usuari pot fer més d’una pregunta i contestar moltes altres. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar el codi al fitxer que teniu disponible als annexos de la unitat.
+</p>
+</div></div><div class="iocfigure"><a name="fig3.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Contingut de la taula “Users”
+
+</figcaption><img src="../media/dawm7u4_03-07.png" alt="" /></figure>
+</div>
+<p>
+Començareu creant les classes que representen les preguntes i respostes (vegeu la <span class="figref"><a href="#fig3.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig3.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Classes Question i Answer
+
+</figcaption><img src="../media/dawm7u4_03-08.png" alt="" /></figure>
+</div><pre class="code java"><ol><li class="li1"><div class="de1">import javax.persistence.Column;</div></li><li class="li1"><div class="de1">import javax.persistence.Entity;</div></li><li class="li1"><div class="de1">import javax.persistence.GeneratedValue;</div></li><li class="li1"><div class="de1">import javax.persistence.GenerationType;</div></li><li class="li1"><div class="de1">import javax.persistence.Id;</div></li><li class="li1"><div class="de1">import javax.persistence.Table;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.NotNull;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.Size;</div></li><li class="li1"><div class="de1">import java.io.Serializable;</div></li><li class="li1"><div class="de1">@Entity</div></li><li class="li1"><div class="de1">@Table(name = &quot;answers&quot;)</div></li><li class="li1"><div class="de1">public class Answer implements Serializable {</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">    private Integer answerId;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 45)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;text&quot;)</div></li><li class="li1"><div class="de1">    private String text;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Integer getAnswerId() {</div></li><li class="li1"><div class="de1">        return answerId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setAnswerId(Integer answerId) {</div></li><li class="li1"><div class="de1">        this.answerId = answerId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getText() {</div></li><li class="li1"><div class="de1">        return text;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setText(String text) {</div></li><li class="li1"><div class="de1">        this.text = text;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.ioc.daw.answer.Answer;</div></li><li class="li1"><div class="de1">import javax.persistence.CascadeType;</div></li><li class="li1"><div class="de1">import javax.persistence.Column;</div></li><li class="li1"><div class="de1">import javax.persistence.Entity;</div></li><li class="li1"><div class="de1">import javax.persistence.FetchType;</div></li><li class="li1"><div class="de1">import javax.persistence.GeneratedValue;</div></li><li class="li1"><div class="de1">import javax.persistence.GenerationType;</div></li><li class="li1"><div class="de1">import javax.persistence.Id;</div></li><li class="li1"><div class="de1">import javax.persistence.OneToMany;</div></li><li class="li1"><div class="de1">import javax.persistence.Table;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.NotNull;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.Size;</div></li><li class="li1"><div class="de1">import java.io.Serializable;</div></li><li class="li1"><div class="de1">import java.util.Set;</div></li><li class="li1"><div class="de1">@Entity</div></li><li class="li1"><div class="de1">@Table(name = &quot;questions&quot;)</div></li><li class="li1"><div class="de1">public class Question implements Serializable {</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">    private Integer questionId;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @Size(max = 800)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;text&quot;)</div></li><li class="li1"><div class="de1">    private String text;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">    private Set&lt;Answer&gt; answers;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Integer getQuestionId() {</div></li><li class="li1"><div class="de1">        return questionId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setQuestionId(Integer questionId) {</div></li><li class="li1"><div class="de1">        this.questionId = questionId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getText() {</div></li><li class="li1"><div class="de1">        return text;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setText(String text) {</div></li><li class="li1"><div class="de1">        this.text = text;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Set&lt;Answer&gt; getAnswers() {</div></li><li class="li1"><div class="de1">        return answers;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setAnswers(Set&lt;Answer&gt; answers) {</div></li><li class="li1"><div class="de1">        this.answers = answers;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com podeu veure, a la classe <code>Question</code> s’ha definit la relació amb les respostes amb la notació  <code>@OneToMany</code>, que indica que una pregunta podrà tenir moltes respostes. <code>CascadeType.ALL</code> indica que si volem persistir un objecte que té com a atribut algun objecte que no està persistit, i per tant gestionat per Hibernate, el persistirem. Per exemple, si voleu guardar un objecte <code>User</code> que té una pregunta que no està guardada, la guardarà. De la mateixa manera, si esborreu un usuari que té preguntes, totes les preguntes s’esborraran. <code>FetchType</code> indica l’estratègia que s’utilitzarà per carregar les dades, <code>FetchType.EAGER</code> recuperarà les dades immediatament i <code>FetchType.LAZY</code> ho farà quan faci falta. S’ha de tenir present que per poder utilitzar <code>FetchType.LAZY</code> la sessió ha d’estar encara oberta quan s’intenti accedir a les dades. En el vostre cas <code>FetchType.EAGER</code> és suficient, però s’ha d’estudiar cada cas per veure quina estratègia de càrrega de dades s’utilitza.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">    private Set&lt;Answer&gt; answers;</div></li></ol></pre>
+
+<p>
+Fixeu-vos que a la classe <code>Question</code> no hi ha cap referència als usuaris; com es fa llavors per indicar la relació? Les preguntes no tenen usuaris, una pregunta estarà formulada per un usuari, però serà l’entitat de tipus usuari la que pot tenir múltiples preguntes. Definiu aquesta relació a la classe <code>User</code>. De la mateixa manera, afegiu la relació amb <code>Answer</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">    private Set&lt;Question&gt; questions;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">  private Set&lt;Answer&gt; answers;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public Set&lt;Question&gt; getQuestions() {</div></li><li class="li1"><div class="de1">      return questions;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public void setQuestions(Set&lt;Question&gt; questions) {</div></li><li class="li1"><div class="de1">      this.questions = questions;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public Set&lt;Answer&gt; getAnswers() {</div></li><li class="li1"><div class="de1">      return answers;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public void setAnswers(Set&lt;Answer&gt; answers) {</div></li><li class="li1"><div class="de1">      this.answers = answers;</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Un cop definides les noves entitats, heu de canviar la configuració de <code>HibernateConfiguration</code> per tal que Hibernate escanegi els nous paquets.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class HibernateConfiguration {</div></li><li class="li1"><div class="de1">....</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) throws NamingException {</div></li><li class="li1"><div class="de1">        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();</div></li><li class="li1"><div class="de1">        sessionFactory.setDataSource(dataSource);</div></li><li class="li1"><div class="de1">        sessionFactory.setPackagesToScan(&quot;org.ioc.daw.user&quot;, &quot;org.ioc.daw.question&quot;, &quot;org.ioc.daw.answer&quot;);</div></li><li class="li1"><div class="de1">        sessionFactory.setHibernateProperties(hibernateProperties());</div></li><li class="li1"><div class="de1">        return sessionFactory;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  ....</div></li></ol></pre>
+
+<p>
+Un cop teniu definides les relacions, definireu els objectes per accedir a les dades (DAO). Creeu <code>org.ioc.daw.question.QuestionDAO</code> i la seva implementació <code>org.ioc.daw.question.QuestionHibernateDAO</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public interface QuestionDAO {</div></li><li class="li1"><div class="de1">    Question getById(Integer questionId);</div></li><li class="li1"><div class="de1">    void save(Question question);</div></li><li class="li1"><div class="de1">    Question update(Question question);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.hibernate.Session;</div></li><li class="li1"><div class="de1">import org.hibernate.SessionFactory;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.stereotype.Repository;</div></li><li class="li1"><div class="de1">import javax.transaction.Transactional;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Transactional</div></li><li class="li1"><div class="de1">@Repository(&quot;questionHibernateDAO&quot;)</div></li><li class="li1"><div class="de1">public class QuestionHibernateDAO implements QuestionDAO {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private SessionFactory sessionFactory;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Question getById(Integer questionId) {</div></li><li class="li1"><div class="de1">        return getSession().get(Question.class, questionId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void save(Question question) {</div></li><li class="li1"><div class="de1">        getSession().saveOrUpdate(question);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">    public Question update(Question question) {</div></li><li class="li1"><div class="de1">       return (Question) getSession().merge(question);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected Session getSession() {</div></li><li class="li1"><div class="de1">        return sessionFactory.getCurrentSession();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I declareu el nou bean a <code>org.ioc.daw.config.DAOConfig</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  public QuestionDAO questionDAO(){</div></li><li class="li1"><div class="de1">      return new QuestionHibernateDAO();</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Amb aquest DAO que només permet guardar i trobar preguntes pel seu identificador, com podreu trobar per exemple totes les preguntes d’un usuari o afegir una resposta a una pregunta? Com que els objectes estan relacionats, per fer alguna d’aquestes operacions utilitzareu una combinació de diferents DAO. Creareu, al paquet <code>org.ioc.daw.question</code>, la interfície <code>QuestionService</code> i la seva implementació <code>QuestionServiceImpl</code>, però primer afegireu un mètode a <code>UserDAO</code> que permeti obtenir un usuari utilitzant el seu <em>id</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public interface UserDAO {</div></li><li class="li1"><div class="de1">  ....</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User getById(Integer id);</div></li><li class="li1"><div class="de1">  ...</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">public class UserDAOJPA implements UserDAO {</div></li><li class="li1"><div class="de1">  .....</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User getById(Integer id) {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">                    &quot;where o.id = :id&quot;)</div></li><li class="li1"><div class="de1">                    .setParameter(&quot;id&quot;, id)</div></li><li class="li1"><div class="de1">                    .getSingleResult();</div></li><li class="li1"><div class="de1">        } catch (NoResultException e) {</div></li><li class="li1"><div class="de1">            return null;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1"> ..... </div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Repository(&quot;userHibernateDAO&quot;)</div></li><li class="li1"><div class="de1">public class UserHibernateDAO implements UserDAO {</div></li><li class="li1"><div class="de1"> ..... </div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User getById(Integer userId) {</div></li><li class="li1"><div class="de1">        return getSession().get(User.class, userId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1"> ..... </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">public interface QuestionService {</div></li><li class="li1"><div class="de1">    public Set&lt;Question&gt; getAllQuestions(Integer userId);</div></li><li class="li1"><div class="de1">    public void addAnswer(Answer answer, Integer questionId, Integer userId);</div></li><li class="li1"><div class="de1">    public void create(Question question, Integer userId);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.ioc.daw.answer.Answer;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.User;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import javax.transaction.Transactional;</div></li><li class="li1"><div class="de1">import java.util.HashSet;</div></li><li class="li1"><div class="de1">import java.util.Set;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Transactional</div></li><li class="li1"><div class="de1">public class QuestionServiceImpl implements QuestionService {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private QuestionDAO questionDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Set&lt;Question&gt; getAllQuestions(Integer userId) {</div></li><li class="li1"><div class="de1">        User user = userDAO.getById(userId);</div></li><li class="li1"><div class="de1">        return user.getQuestions();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Question addAnswer(Answer answer, Integer questionId, Integer userId) {</div></li><li class="li1"><div class="de1">        User user = userDAO.getById(userId);</div></li><li class="li1"><div class="de1">        Set&lt;Answer&gt; userAnswers = user.getAnswers();</div></li><li class="li1"><div class="de1">        addAnswerToCollection(answer, userAnswers);</div></li><li class="li1"><div class="de1">        user.setAnswers(userAnswers);</div></li><li class="li1"><div class="de1">        userDAO.create(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Question question = questionDAO.getById(questionId);</div></li><li class="li1"><div class="de1">        Set&lt;Answer&gt; answers = question.getAnswers();</div></li><li class="li1"><div class="de1">        answers = addAnswerToCollection(answer, answers);</div></li><li class="li1"><div class="de1">        question.setAnswers(answers);</div></li><li class="li1"><div class="de1">        return questionDAO.update(question);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Set&lt;Answer&gt; addAnswerToCollection(Answer answer, Set&lt;Answer&gt; answers) {</div></li><li class="li1"><div class="de1">        if (answers != null) {</div></li><li class="li1"><div class="de1">            answers.add(answer);</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">            answers = new HashSet&lt;Answer&gt;();</div></li><li class="li1"><div class="de1">            answers.add(answer);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return answers;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void create(Question question, Integer userId) {</div></li><li class="li1"><div class="de1">        User user = userDAO.getById(userId);</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questions = user.getQuestions();</div></li><li class="li1"><div class="de1">        if (questions != null) {</div></li><li class="li1"><div class="de1">            questions.add(question);</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">            questions = new HashSet&lt;&gt;();</div></li><li class="li1"><div class="de1">            questions.add(question);</div></li><li class="li1"><div class="de1">            user.setQuestions(questions);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        userDAO.create(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Creeu un nou fitxer de configuracions org.ioc.daw.config.ServicesConfig i declareu el <em>now bean</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Configuration</div></li><li class="li1"><div class="de1">  public class ServicesConfig {</div></li><li class="li1"><div class="de1">    @Bean  </div></li><li class="li1"><div class="de1">    public QuestionService questionService(){</div></li><li class="li1"><div class="de1">          return new QuestionServiceImpl();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserService userService(UserDAO userDAO) {</div></li><li class="li1"><div class="de1">        return new UserService(userDAO);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Comproveu que estem injectant dependències de forma diferent als <em>beans</em> <code>QuestionService</code> i <code>UserController</code>. A <code>UserController</code> esteu injectant <code>UserDAO</code> al constructor, mentre que a <code>QuestionService</code> ho feu amb la notació <code>@Autowired</code>, que injectarà els <em>beans</em> utilitzant els <em>setters</em>. Què és millor, utilitzar injecció per a <em>setters</em> o per a constructors? No és qüestió de millor ni pitjor, i realment depèn de cada cas. De forma general, si les dependències que esteu injectant són imprescindibles per al funcionament de la classe es recomana utilitzar injecció mitjançant constructors; per tant, refactoritzarem la classe <code>QuestionServiceImpl</code>. La classe que configura els <em>beans</em> de servei quedarà de la següent forma:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">public class ServicesConfig {</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public QuestionService questionService(UserDAO userDAO, QuestionDAO questionDAO) {</div></li><li class="li1"><div class="de1">        return new QuestionServiceImpl(userDAO, questionDAO);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserService userService(UserDAO userDAO) {</div></li><li class="li1"><div class="de1">        return new UserService(userDAO);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class QuestionServiceImpl implements QuestionService {</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">    private QuestionDAO questionDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public QuestionServiceImpl(UserDAO userDAO, QuestionDAO questionDAO) {</div></li><li class="li1"><div class="de1">        this.userDAO = userDAO;</div></li><li class="li1"><div class="de1">        this.questionDAO = questionDAO;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+A continuació creareu el test <code>QuestionDAOTest</code> per comprovar que les preguntes es guarden correctament a la base de dades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.config.EmbeddedDatabaseTestConfig;</div></li><li class="li1"><div class="de1">import org.ioc.daw.config.ServicesConfig;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.User;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.ContextConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">import java.sql.Timestamp;</div></li><li class="li1"><div class="de1">import java.util.Date;</div></li><li class="li1"><div class="de1">import java.util.Set;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertNotNull;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {ServicesConfig.class, EmbeddedDatabaseTestConfig.class})</div></li><li class="li1"><div class="de1">public class QuestionDAOTest {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private QuestionService questionService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">    public void createQuestion() {</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setEmail(&quot;email@test.com&quot;);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;name&quot;);</div></li><li class="li1"><div class="de1">        user.setRank(10);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        userDAO.create(user);</div></li><li class="li1"><div class="de1">        Question question = new Question();</div></li><li class="li1"><div class="de1">        question.setText(&quot;This is a question&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        questionService.create(question, user.getUserId());</div></li><li class="li1"><div class="de1">        assertNotNull(question.getQuestionId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questions = questionService.getAllQuestions(user.getUserId());</div></li><li class="li1"><div class="de1">        assertEquals(1, questions.size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A continuació comprovareu si la vostra aplicació seria capaç de guardar les dades a la base de dades “SocIoc” que vau crear a MySQL. Per fer-ho només fa falta canviar el <code>ContextConfiguration</code> del test.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar aquest codi al fitxer que teniu disponible als annexos de la unitat.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">@ContextConfiguration(classes = {ServicesConfig.class, HibernateMysqlConfiguration.class})</div></li></ol></pre>
+
+<p>
+Si executeu el test veureu el següent error on s’indica que la taula “questions_answers” no existeix. 
+</p>
+<pre class="code">Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#039;sessionFactory&#039; defined in org.ioc.daw.config.HibernateConfiguration: Invocation of init method failed; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [users_answers]</pre>
+
+<p>
+D’on surt aquesta taula? Per defecte, Hibernate utilitza taules intermèdies per desnormalitzar la base de dades. Això no té gaire a veure amb Hibernate <em>per se</em>, però sí amb el correcte disseny de la BD. En la <span class="tabref"><a href="#Taula31"><span>taula</span></a></span> podeu veure com quedarien les dades de la taula “Questions” amb l’exemple d’un usuari que hagués fet diverses preguntes.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula31"><span>Taula: </span></a>Taula “Questions”</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> id </th><th class="col1"> text </th><th class="col2"> user_id </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> 1     </td><td class="col1 leftalign"> pregunta 1     </td><td class="col2"> 2 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 2     </td><td class="col1 leftalign"> pregunta 2     </td><td class="col2"> 2 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 3     </td><td class="col1 leftalign"> pregunta 3     </td><td class="col2"> 4 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 4     </td><td class="col1 leftalign"> pregunta 4     </td><td class="col2"> 2 </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Podeu veure que el fet que la taula tingui el camp “user_id” fa que no representi només les dades d’una pregunta, sinó que hi ha també informació dels usuaris. Això trenca la segona norma de normalització de les base de dades, que diu que totes les columnes han de ser dependents de la clau principal. És a dir, si a la pregunta “aquesta columna descriu el que la clau principal identifica?” la resposta és no, llavors vol dir que la columna no és dependent de la clau principal. En el vostre cas, “la columna ‘user_id’ descriu el que la clau principal ‘id’ identifica (una pregunta)?”, clarament no. Això implica que aquesta taula no està normalitzada. En la <span class="figref"><a href="#fig3.7"><span>figura</span></a></span> podeu veure com es podria aconseguir la normalització per a les taules “Questions”, “Users” i “Answers”.
+</p>
+<div class="iocfigure"><a name="fig3.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Normalització de les taules
+
+</figcaption><img src="../media/dawm7u4_03-09.png" alt="" /></figure>
+</div>
+<p>
+Amb les noves taules, les dades que relacionen preguntes i usuaris quedarien tal com es pot veure en la <span class="tabref"><a href="#Taula32"><span>taula</span></a></span> i la <span class="tabref"><a href="#Taula33"><span>taula</span></a></span>.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula32"><span>Taula: </span></a>Taula “Users questions”</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> user_id </th><th class="col1"> question_id </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> 2 </td><td class="col1"> 1 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1"> 2 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 4 </td><td class="col1"> 3 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 2 </td><td class="col1"> 4 </td>
+	</tr>
+</table></div>
+</div><div class="ioctable ">
+<div class="titletable"><a name="Taula33"><span>Taula: </span></a>Taula “Questions”</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> id </th><th class="col1"> text </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> 1     </td><td class="col1"> pregunta 1 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 2     </td><td class="col1"> pregunta 2 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 3     </td><td class="col1"> pregunta 3 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 4     </td><td class="col1"> pregunta 4 </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Un dels beneficis d’utilitzar Hibernate és que es pot encarregar d’això. El que fareu serà crear un nou esquema a MySQL que utilitzareu per fer que Hibernate s’encarregui de la generació de les taules necessàries. Creeu un nou esquema utilitzant MySQL Workbench anomenat “soc_ioc”, tal com es mostra en la <span class="figref"><a href="#fig3.8"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig3.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Schema soc_ioc
+
+</figcaption><img src="../media/dawm7u4_03-10.png" alt="" /></figure>
+</div>
+<p>
+Canvieu l’<acronym title="Uniform Resource Locator">URL</acronym> de connexió JDBC per utilitzar el nou esquema modificant el paràmetre <code>jdbc.url</code> del fitxer jdbc.properties i modifiqueu la propietat <code>hibernate.hbm2ddl</code> de hibernate.properties perquè creï les taules automàticament, però que no modifiqui les taules si hi ha canvis a les entitats.
+</p>
+<pre class="code">jdbc.url = jdbc:mysql://192.168.99.100:32768/soc_ioc</pre>
+<pre class="code">hibernate.hbm2ddl = update</pre>
+
+<p>
+Si ara executeu el test <code>org.ioc.daw.question.QuestionDAOTest#createQuestion</code> comprovareu que no hi ha cap error. Si comproveu a MySQL Worbench veureu que Hibernate haurà creat les taules a partir de les entitats que hem definit, tal com podeu veure en la <span class="figref"><a href="#fig3.9"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig3.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Taules creades per Hibernate
+
+</figcaption><img src="../media/dawm7u4_03-11.png" alt="" /></figure>
+</div>
+<p>
+Ara que sabeu que el codi és capaç d’escriure i llegir dades correctament a la BD MySQL, tornareu a canviar la BD utilitzada als tests per a la BD en memòria H2 i hi afegireu més tests.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  public void addAnswer() {</div></li><li class="li1"><div class="de1">      User user = new User();</div></li><li class="li1"><div class="de1">      user.setUsername(&quot;test&quot;);</div></li><li class="li1"><div class="de1">      user.setActive(true);</div></li><li class="li1"><div class="de1">      user.setEmail(&quot;email@test.com&quot;);</div></li><li class="li1"><div class="de1">      user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">      user.setName(&quot;name&quot;);</div></li><li class="li1"><div class="de1">      user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">      userDAO.create(user);</div></li><li class="li1"><div class="de1">      Question question = new Question();</div></li><li class="li1"><div class="de1">      question.setText(&quot;This is a question&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      questionService.create(question, user.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      Answer answer = new Answer();</div></li><li class="li1"><div class="de1">      answer.setText(&quot;This is an answer&quot;);</div></li><li class="li1"><div class="de1">      question = questionService.addAnswer(answer, question.getQuestionId(), user.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      assertEquals(1, question.getAnswers().size());</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+Fixeu-vos en un detall: no heu definit cap objecte <code>AnswersDAO</code> i heu pogut persistir una resposta. Recordeu que això és possible gràcies al fet que hem utilitzat <code>CascadeType.ALL</code>, que automàticament s’encarregarà de persistir els objectes que no estiguin associats a una sessió d’Hibernate.
+</p>
+
+<p>
+A continuació escriureu el test per a la classe <code>QuestionService</code>. En aquest cas el que voldrem fer serà injectar objectes <em>mock</em> per a <code>UserDAO</code> i <code>QuestionDAO</code> i que el test comprovi que la lògica és correcta. La configuració dels objectes <em>mocks</em> és a la classe <code>SpringTestConfig</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@EnableTransactionManagement</div></li><li class="li1"><div class="de1">@Import(value = {ServiceConfig.class})</div></li><li class="li1"><div class="de1">public class SpringTestConfig {</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public UserDAO userDAO() {</div></li><li class="li1"><div class="de1">        return Mockito.mock(UserDAO.class);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public QuestionDAO questionDAO() {</div></li><li class="li1"><div class="de1">        return Mockito.mock(QuestionDAO.class);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public PlatformTransactionManager transactionManager() {</div></li><li class="li1"><div class="de1">        return Mockito.mock(PlatformTransactionManager.class);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un cop la configuració dels <em>beans</em> està preparada, ja podeu escriure el test. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.answer.Answer;</div></li><li class="li1"><div class="de1">import org.ioc.daw.config.SpringTestConfig;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.User;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.mockito.Mockito;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.ContextConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">import java.util.HashSet;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">import java.util.Set;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertNotNull;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">import static org.mockito.Mockito.*;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {SpringTestConfig.class})</div></li><li class="li1"><div class="de1">public class QuestionServiceTest {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAOMock;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private QuestionDAO questionDAOMock;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private QuestionService questionService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void getAllQUestions() {</div></li><li class="li1"><div class="de1">        Question question1 = getDummyQuestion(1);</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questions = new HashSet&lt;&gt;();</div></li><li class="li1"><div class="de1">        questions.add(question1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        int userId = 1;</div></li><li class="li1"><div class="de1">        User userMock = Mockito.mock(User.class);</div></li><li class="li1"><div class="de1">        when(userMock.getQuestions()).thenReturn(questions);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        when(userDAOMock.getById(userId)).thenReturn(userMock);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questionsResponse = questionService.getAllQuestions(userId);</div></li><li class="li1"><div class="de1">        assertEquals(1, questionsResponse.size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void addTheFirstAnswerToAQuestion() {</div></li><li class="li1"><div class="de1">        int userID = 1;</div></li><li class="li1"><div class="de1">        int questionId = 1;</div></li><li class="li1"><div class="de1">        int answerId = 1;</div></li><li class="li1"><div class="de1">        Answer answer = getDummyAnswer(answerId);</div></li><li class="li1"><div class="de1">        Question question1 = getDummyQuestion(questionId);</div></li><li class="li1"><div class="de1">        User user1 = getDummyUser(userID);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        when(userDAOMock.getById(userID)).thenReturn(user1);</div></li><li class="li1"><div class="de1">        when(questionDAOMock.getById(questionId)).thenReturn(question1);</div></li><li class="li1"><div class="de1">        when(questionDAOMock.update(question1)).thenReturn(question1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Question questionResponse = questionService.addAnswer(answer, questionId, userID);</div></li><li class="li1"><div class="de1">        assertEquals(1, questionResponse.getAnswers().size());</div></li><li class="li1"><div class="de1">        verify(userDAOMock, Mockito.times(1)).create(user1);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void addTheAnswerToAQuestionOnceItHasSomeAnswers() {</div></li><li class="li1"><div class="de1">        int questionId = 1;</div></li><li class="li1"><div class="de1">        int userID = 1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Answer answer1 = getDummyAnswer(1);</div></li><li class="li1"><div class="de1">        Answer answer2 = getDummyAnswer(2);</div></li><li class="li1"><div class="de1">        Question question1 = getDummyQuestion(questionId);</div></li><li class="li1"><div class="de1">        Set&lt;Answer&gt; answers = new HashSet&lt;&gt;();</div></li><li class="li1"><div class="de1">        answers.add(answer1);</div></li><li class="li1"><div class="de1">        question1.setAnswers(answers);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        List&lt;Question&gt; questions = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">        questions.add(question1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User user1 = getDummyUser(userID);</div></li><li class="li1"><div class="de1">        when(userDAOMock.getById(userID)).thenReturn(user1);</div></li><li class="li1"><div class="de1">        when(questionDAOMock.getById(questionId)).thenReturn(question1);</div></li><li class="li1"><div class="de1">        when(questionDAOMock.update(question1)).thenReturn(question1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        questionService.addAnswer(answer2, questionId, userID);</div></li><li class="li1"><div class="de1">        verify(userDAOMock, Mockito.times(1)).create(user1);</div></li><li class="li1"><div class="de1">        assertEquals(2, answers.size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void createFirstUserQuestion() {</div></li><li class="li1"><div class="de1">        int userId = 1;</div></li><li class="li1"><div class="de1">        Question question = getDummyQuestion(1);</div></li><li class="li1"><div class="de1">        User user = getDummyUser(1);</div></li><li class="li1"><div class="de1">        when(userDAOMock.getById(userId)).thenReturn(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        questionService.create(question, userId);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        verify(userDAOMock, timeout(1)).create(user);</div></li><li class="li1"><div class="de1">        assertEquals(1, user.getQuestions().size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void createUserQuestionWhenItsNotTheFirstOne() {</div></li><li class="li1"><div class="de1">        int userId = 1;</div></li><li class="li1"><div class="de1">        Question question1 = getDummyQuestion(1);</div></li><li class="li1"><div class="de1">        Question question2 = getDummyQuestion(2);</div></li><li class="li1"><div class="de1">        User user = getDummyUser(1);</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questions = new HashSet&lt;&gt;();</div></li><li class="li1"><div class="de1">        questions.add(question1);</div></li><li class="li1"><div class="de1">        user.setQuestions(questions);</div></li><li class="li1"><div class="de1">        when(userDAOMock.getById(userId)).thenReturn(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        questionService.create(question2, userId);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        verify(userDAOMock, timeout(1)).create(user);</div></li><li class="li1"><div class="de1">        assertEquals(2, questions.size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Question getDummyQuestion(int questionId) {</div></li><li class="li1"><div class="de1">        Question question1 = new Question();</div></li><li class="li1"><div class="de1">        question1.setQuestionId(questionId);</div></li><li class="li1"><div class="de1">        question1.setText(&quot;Some question&quot;);</div></li><li class="li1"><div class="de1">        Set&lt;Question&gt; questions = new HashSet&lt;&gt;();</div></li><li class="li1"><div class="de1">        questions.add(question1);</div></li><li class="li1"><div class="de1">        return question1;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Answer getDummyAnswer(int answerId) {</div></li><li class="li1"><div class="de1">        Answer answer = new Answer();</div></li><li class="li1"><div class="de1">        answer.setAnswerId(answerId);</div></li><li class="li1"><div class="de1">        answer.setText(&quot;This is an answer&quot;);</div></li><li class="li1"><div class="de1">        return answer;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private User getDummyUser(int userId) {</div></li><li class="li1"><div class="de1">        String username = &quot;test&quot;;</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setUsername(username);</div></li><li class="li1"><div class="de1">        user.setUserId(userId);</div></li><li class="li1"><div class="de1">        return user;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una cosa que heu de comprovar és la diferència de què passa quan creem preguntes o respostes per primer cop. Si és el primer cop, la col·lecció s’ha de crear. Agafem el test <code>createUserQuestionWhenItsNotTheFirstOne</code> com a exemple. A la línia 86 afegim una llista de preguntes a l’objecte <code>usuari</code>. Com que la llista existirà, el que farà <code>QuestionService</code> serà afegir un element nou, però l’objecte <code>llista</code> serà el mateix que tenia l’usuari. Per això podem comprovar que la llista creada té un objecte més. Al test <code>createFirstUserQuestion</code>, l’usuari no té cap pregunta, llavors un nou objecte de tipus llista es crearà i s’associarà a l’objecte <code>user</code>, que és el que comprovem a la línia 74.
+</p>
+
+</div>
+
+<h2><a id="socioc__dialogant_amb_usuaris_rangs_i_vots" >&quot;SocIoc&quot;. Dialogant amb usuaris, rangs i vots</a></h2>
+<div class="level2">
+
+<p>
+Un usuari tindrà associat un rang, que serà el resultat d’un càlcul dels vots rebuts per les respostes d’un usuari. Els vots poden ser positius o negatius. Així, un usuari tindrà associada una sèrie de vots, que estaran associats a diferents preguntes. D’aquesta manera, un usuari tindrà múltiples vots i una resposta també pot tenir múltiples vots. Vegeu en la <span class="figref"><a href="#fig3.10"><span>figura</span></a></span> com serà la relació entre les taules.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Al fitxer que teniu disponible als annexos de la unitat podeu trobar el codi d’aquest apartat.
+</p>
+</div></div><div class="iocfigure"><a name="fig3.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Taules normalitzades
+
+</figcaption><img src="../media/dawm7u4_03-12.png" alt="" /></figure>
+</div>
+<p>
+La taula “Votes” està relacionada amb “Answers” i “Users” no directament, però amb unes taules intermèdies . Fixeu-vos també en com la taula “Users” es relaciona amb <em>rank</em>, hi ha un camp “user_id” i no hi ha cap taula intermèdia. El motiu és que la relació d’un usuari amb el seu <em>rank</em> és 1 a 1, és a dir, cada usuari tindrà només un <em>rank</em> i cada <em>rank</em> pertany només a un usuari. Vegeu com es representa això en el codi Java de la vostra aplicació. Creeu la classe <code>Rank</code> al paquet <code>org.ioc.daw.rank</code>. Com podeu veure, l’atribut <code>total</code> el calcularem a partir dels vots positius i negatius. Cada cop que s’actualitzi el valor dels vots, s’actualitzarà el total.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import javax.persistence.Column;</div></li><li class="li1"><div class="de1">import javax.persistence.Entity;</div></li><li class="li1"><div class="de1">import javax.persistence.GeneratedValue;</div></li><li class="li1"><div class="de1">import javax.persistence.GenerationType;</div></li><li class="li1"><div class="de1">import javax.persistence.Id;</div></li><li class="li1"><div class="de1">import javax.persistence.Table;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.NotNull;</div></li><li class="li1"><div class="de1">import java.io.Serializable;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Entity</div></li><li class="li1"><div class="de1">@Table(name = &quot;ranks&quot;)</div></li><li class="li1"><div class="de1">public class Rank implements Serializable {</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">    private Integer rankId;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Column(name = &quot;positive_votes&quot;)</div></li><li class="li1"><div class="de1">    private int positive;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Column(name = &quot;negative_votes&quot;)</div></li><li class="li1"><div class="de1">    private int negative;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Column(name = &quot;total&quot;)</div></li><li class="li1"><div class="de1">    private int total;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getPositive() {</div></li><li class="li1"><div class="de1">        return positive;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setPositive(int positive) {</div></li><li class="li1"><div class="de1">        this.positive = positive;</div></li><li class="li1"><div class="de1">        this.total = positive - getNegative();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getNegative() {</div></li><li class="li1"><div class="de1">        return negative;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setNegative(int negative) {</div></li><li class="li1"><div class="de1">        this.negative = negative;</div></li><li class="li1"><div class="de1">        this.total = getPositive() - negative;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Integer getRankId() {</div></li><li class="li1"><div class="de1">        return rankId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setRankId(Integer rankId) {</div></li><li class="li1"><div class="de1">        this.rankId = rankId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getTotal() {</div></li><li class="li1"><div class="de1">        return total;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setTotal(int total) {</div></li><li class="li1"><div class="de1">        this.total = total;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A la classe “User” hi afegiu l’atribut <code>rank</code> amb el seu <em>getter</em> i <em>setter</em>, i també el nou paquet a escanejar per Hibernate a <code>HibernateConfiguration</code>. En la definició de la interfície <code>UserDAO</code> hi ha un mètode relacionat amb el rang. L’implementareu i hi afegireu un test.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @OneToOne(cascade = {CascadeType.ALL})</div></li><li class="li1"><div class="de1">  private Rank rank;</div></li><li class="li1"><div class="de1">  public Rank getRank() {</div></li><li class="li1"><div class="de1">      return rank;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  public void setRank(Rank rank) {</div></li><li class="li1"><div class="de1">      this.rank = rank;</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+<pre class="code"> sessionFactory.setPackagesToScan(&quot;org.ioc.daw.user&quot;, &quot;org.ioc.daw.question&quot;,
+                &quot;org.ioc.daw.answer&quot;, &quot;org.ioc.daw.rank&quot;);</pre>
+
+<p>
+La implementació que tenim de <code>UserHibernateDAO#findActiveUsers</code> està basada en quan la classe <code>User</code> tenia un atribut de tipus <em>enter</em> que tenia el rang de l’usuari. Ara aquesta implementació no funcionarà, ja que l’atribut que conté el rang d’un usuari és una classe, i a la BD, una altra taula. Per obtenir quin és l’usuari que té un major rang ho podríeu fer mitjançant el llenguatge de consultes d’Hibernate (HQL); el problema és que si canvieu d’implementació de JPA haureu de tornar a escriure totes les consultes de nou. Una solució és utilitzar consultes JPA.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">    public User findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">        Criteria criteria = createEntityCriteria();</div></li><li class="li1"><div class="de1">        criteria.addOrder(Order.desc(&quot;rank&quot;));</div></li><li class="li1"><div class="de1">        return (User) criteria.uniqueResult();</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+JPA permet crear consultes amb la classe <code>CriteriaBuilder</code>. El que primer indicareu serà de quina classe voldreu fer la consulta (línia 5) i què és el que retornarà la consulta (línia 4) i com s’ordenaran els resultats retornats (línia 7). En aquest cas, l’ordre serà descendent <em>(cb.desc</em>) i estarà ordenat per l’atribut total de la classe <code>Rank</code>, que és l’atribut <code>rank</code> a la classe <code>User</code>. Finalment, indiqueu que només voleu retornar el primer resultat (<code>setMaxResults(1)</code>) i que per tant aquesta consulta només ha de retornar un únic resultat (<code>getSingleResult()</code>).
+</p>
+<dl class="code">
+<dt><a href="/doku.php?do=export_code&amp;id=fp:daw:m07:htmlindex&amp;codeblock=63" title="Baixa el fragment" class="mediafile mf_">1</a></dt>
+<dd><pre class="code java"><ol><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">    public User findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">        CriteriaBuilder cb = createCriteriaBuilder();</div></li><li class="li1"><div class="de1">        CriteriaQuery&lt;User&gt; criteriaQuery = cb.createQuery(User.class);</div></li><li class="li1"><div class="de1">        Root&lt;User&gt; root = criteriaQuery.from(User.class);</div></li><li class="li1"><div class="de1">        criteriaQuery.select(root);</div></li><li class="li1"><div class="de1">        criteriaQuery.orderBy(cb.desc(root.join(&quot;rank&quot;).get(&quot;total&quot;)));</div></li><li class="li1"><div class="de1">        EntityManager em = createEntityManager();</div></li><li class="li1"><div class="de1">        return em.createQuery(criteriaQuery).setMaxResults(1).getSingleResult();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">   private CriteriaBuilder createCriteriaBuilder() {</div></li><li class="li1"><div class="de1">        return getSession().getEntityManagerFactory().getCriteriaBuilder();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private EntityManager createEntityManager() {</div></li><li class="li1"><div class="de1">        return getSession().getEntityManagerFactory().createEntityManager();</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+</dd></dl>
+
+<p>
+A continuació creeu la classe <code>org.ioc.daw.vote.Vote</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import javax.persistence.Column;</div></li><li class="li1"><div class="de1">import javax.persistence.Entity;</div></li><li class="li1"><div class="de1">import javax.persistence.GeneratedValue;</div></li><li class="li1"><div class="de1">import javax.persistence.GenerationType;</div></li><li class="li1"><div class="de1">import javax.persistence.Id;</div></li><li class="li1"><div class="de1">import javax.persistence.Table;</div></li><li class="li1"><div class="de1">import javax.validation.constraints.NotNull;</div></li><li class="li1"><div class="de1">import java.io.Serializable;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Entity</div></li><li class="li1"><div class="de1">@Table(name = &quot;votes&quot;)</div></li><li class="li1"><div class="de1">public class Vote implements Serializable {</div></li><li class="li1"><div class="de1">    private static final long serialVersionUID = 1L;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Id</div></li><li class="li1"><div class="de1">    @NotNull</div></li><li class="li1"><div class="de1">    @GeneratedValue(strategy = GenerationType.IDENTITY)</div></li><li class="li1"><div class="de1">    @Column(name = &quot;id&quot;)</div></li><li class="li1"><div class="de1">    private Integer voteId;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Column(name = &quot;vote&quot;)</div></li><li class="li1"><div class="de1">    private Boolean vote;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Integer getVoteId() {</div></li><li class="li1"><div class="de1">        return voteId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVoteId(Integer voteId) {</div></li><li class="li1"><div class="de1">        this.voteId = voteId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Boolean getVote() {</div></li><li class="li1"><div class="de1">        return vote;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVote(Boolean vote) {</div></li><li class="li1"><div class="de1">        this.vote = vote;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Afegiu el paquet a la configuració d’Hibernate (<code>HibernateConfiguration</code>) per tal que l’escanegi.
+</p>
+<pre class="code"> sessionFactory.setPackagesToScan(&quot;org.ioc.daw.user&quot;, &quot;org.ioc.daw.question&quot;,
+                &quot;org.ioc.daw.answer&quot;, &quot;org.ioc.daw.rank&quot;, &quot;org.ioc.daw.vote&quot;);</pre>
+
+<p>
+Abans de crear el les classes relacionades amb els vots creareu un objecte DAO per a “Answers” i afegireu la relació entre respostes i vots a la classe <code>Answer</code>. Creareu la interfície <code>AnswersDAO</code> i la seva implementació <code>AnswerHibernateDAO</code>, i afegireu el nou DAO a <code>DAOConfig</code> i el <em>mock</em> a <code>SpringTestConfig</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Answer implements Serializable {</div></li><li class="li1"><div class="de1">....</div></li><li class="li1"><div class="de1">    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">    private Set&lt;Vote&gt; votes;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Set&lt;Vote&gt; getVotes() {</div></li><li class="li1"><div class="de1">        return votes;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setVotes(Set&lt;Vote&gt; votes) {</div></li><li class="li1"><div class="de1">        this.votes = votes;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">....</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public interface AnswerDAO {</div></li><li class="li1"><div class="de1">    Answer getById(Integer questionId);</div></li><li class="li1"><div class="de1">    void save(Answer question);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Transactional</div></li><li class="li1"><div class="de1">@Repository(&quot;answerHibernateDAO&quot;)</div></li><li class="li1"><div class="de1">public class AnswerHibernateDAO implements AnswerDAO {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private SessionFactory sessionFactory;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public Answer getById(Integer questionId) {</div></li><li class="li1"><div class="de1">        return getSession().get(Answer.class, questionId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   @Override</div></li><li class="li1"><div class="de1">    public void save(Answer answer) {</div></li><li class="li1"><div class="de1">        getSession().saveOrUpdate(answer);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected Session getSession() {</div></li><li class="li1"><div class="de1">        return sessionFactory.getCurrentSession();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">public class DAOConfig {</div></li><li class="li1"><div class="de1">   .......</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public AnswerDAO answerDAO(){</div></li><li class="li1"><div class="de1">        return new AnswerHibernateDAO();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    .......</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un usuari votarà, així que heu d’afegir la relació dels usuaris amb els vots.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class User implements Serializable {</div></li><li class="li1"><div class="de1">....</div></li><li class="li1"><div class="de1">    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)</div></li><li class="li1"><div class="de1">    private Set&lt;Vote&gt; votes;</div></li><li class="li1"><div class="de1">    public Set&lt;Vote&gt; getVotes() {</div></li><li class="li1"><div class="de1">        return votes;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    public void setVotes(Set&lt;Vote&gt; votes) {</div></li><li class="li1"><div class="de1">        this.votes = votes;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">....</div></li></ol></pre>
+
+<p>
+Com sempre, ara heu de testejar que podem treballar amb l’entitat <code>Votes</code>. Però què és el que realment volem testejar? Realment no volem testejar que podem guardar un vot a la base de dades, ni mai guardarem un vot de forma aïllada. Els vots sempre estaran relacionats amb les respostes i els usuaris. Llavors, el que volem testejar és que un usuari té la capacitat de votar una pregunta i que, si ho fa, aquesta informació es guardarà a la base de dades. Per fer-ho creareu el test <code>VoteDAOTest</code>, encara que no hem creat la classe <code>VoteDAO</code>; el que volem testejar és que els vots es guarden a la base de dades correctament. Abans implementarem la funcionalitat per votar negativament i positivament. Creem la interfície <code>org.ioc.daw.vote.VoteService</code> i la seva implementació. A partir del l’identificador d’una pregunta, recupereu les dades de la BD i creeu el nou objecte de tipus <code>Vote</code>, i en guardar l’objecte <code>pregunta</code> es guardarà la informació del vot.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public interface VoteService {</div></li><li class="li1"><div class="de1">    void votePositive(Integer answerId, Integer userId);</div></li><li class="li1"><div class="de1">    void voteNegative(Integer answerId, Integer userId);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.ioc.daw.answer.Answer;</div></li><li class="li1"><div class="de1">import org.ioc.daw.answer.AnswerDAO;</div></li><li class="li1"><div class="de1">import javax.transaction.Transactional;</div></li><li class="li1"><div class="de1">import java.util.HashSet;</div></li><li class="li1"><div class="de1">import java.util.Set;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Transactional</div></li><li class="li1"><div class="de1">public class VoteServiceImpl implements VoteService {</div></li><li class="li1"><div class="de1">    private AnswerDAO answerDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public VoteServiceImpl(AnswerDAO answerDAO, UserDAO userDAO){</div></li><li class="li1"><div class="de1">        this.answerDAO = answerDAO;</div></li><li class="li1"><div class="de1">        this.userDAO = userDAO;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void votePositive(Integer answerId, Integer userId) {</div></li><li class="li1"><div class="de1">        vote(answerId, userId, true);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void voteNegative(Integer answerId, Integer userId) {</div></li><li class="li1"><div class="de1">        vote(answerId, userId, false);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Vote vote(Integer userId, Integer answerId, Boolean value) {</div></li><li class="li1"><div class="de1">        User user = userDAO.getById(userId);</div></li><li class="li1"><div class="de1">        Set&lt;Vote&gt; userVotes = user.getVotes();</div></li><li class="li1"><div class="de1">        Vote vote = new Vote();</div></li><li class="li1"><div class="de1">        vote.setVote(value);</div></li><li class="li1"><div class="de1">        userVotes = getVotes(vote, userVotes);</div></li><li class="li1"><div class="de1">        user.setVotes(userVotes);</div></li><li class="li1"><div class="de1">        userDAO.create(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Answer answer = answerDAO.getById(answerId);</div></li><li class="li1"><div class="de1">        Set&lt;Vote&gt; votes = answer.getVotes();</div></li><li class="li1"><div class="de1">        votes = getVotes(vote, votes);</div></li><li class="li1"><div class="de1">        answer.setVotes(votes);</div></li><li class="li1"><div class="de1">        answerDAO.save(answer);</div></li><li class="li1"><div class="de1">        return vote;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private Set&lt;Vote&gt; getVotes(Vote vote, Set&lt;Vote&gt; votes) {</div></li><li class="li1"><div class="de1">        if (votes != null) {</div></li><li class="li1"><div class="de1">            votes.add(vote);</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">            votes = new HashSet&lt;Vote&gt;();</div></li><li class="li1"><div class="de1">            votes.add(vote);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return votes;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+No us heu d’oblidar d’afegir <code>VoteService</code> a <code>ServiceConfig</code> per tal que Spring creï el <em>bean</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Bean</div></li><li class="li1"><div class="de1">  public VoteService voteService(AnswerDAO answerDAO, UserDAO userDAO){</div></li><li class="li1"><div class="de1">      return new VoteServiceImpl(answerDAO, userDAO);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Com sempre, ara heu de testejar que podeu treballar amb l’entitat <code>Votes</code>. Però què és el que realment volem testejar? Realment no volem testejar que podem guardar un vot a la base de dades, ni mai guardarem un vot de forma aïllada. Els vots sempre estaran relacionats amb les respostes i els usuaris. Llavors, el que volem testejar és que un usuari té la capacitat de votar una pregunta i que, si ho fa, aquesta informació es guardarà a la base de dades. Per fer-ho creareu el test <code>VoteDAOTest</code>, encara que no hem creat la classe <code>VoteDAO</code>; el que volem testejar és que els vots es guarden a la base de dades correctament.
+</p>
+
+<p>
+En el test fareu diverses coses. Primer creeu i persistiu tres usuaris, després l’usuari “user1” crea una pregunta, l’usuari “user2” crea una resposta per a la pregunta i feu que l’usuari “user3” voti de forma positiva la pregunta. Finalment, comproveu que la resposta i l’usuari “user3” tenen un vot i que l’identificador del vot és el mateix en els dos casos.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import org.ioc.daw.answer.Answer;</div></li><li class="li1"><div class="de1">import org.ioc.daw.answer.AnswerDAO;</div></li><li class="li1"><div class="de1">import org.ioc.daw.config.EmbeddedDatabaseTestConfig;</div></li><li class="li1"><div class="de1">import org.ioc.daw.config.ServicesConfig;</div></li><li class="li1"><div class="de1">import org.ioc.daw.question.Question;</div></li><li class="li1"><div class="de1">import org.ioc.daw.question.QuestionService;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.User;</div></li><li class="li1"><div class="de1">import org.ioc.daw.user.UserDAO;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.ContextConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">import java.sql.Timestamp;</div></li><li class="li1"><div class="de1">import java.util.Date;</div></li><li class="li1"><div class="de1">import static org.junit.Assert.assertEquals;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@ContextConfiguration(classes = {ServicesConfig.class, EmbeddedDatabaseTestConfig.class})</div></li><li class="li1"><div class="de1">public class VoteDAOTest {</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private QuestionService questionService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private UserDAO userDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private AnswerDAO answerDAO;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private VoteService voteService;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void votePositive() {</div></li><li class="li1"><div class="de1">        User user1 = getUser(&quot;test&quot;, &quot;test@email.com&quot;);</div></li><li class="li1"><div class="de1">        User user2 = getUser(&quot;test1&quot;, &quot;test1@email.com&quot;);</div></li><li class="li1"><div class="de1">        User user3 = getUser(&quot;test2&quot;, &quot;test2@email.com&quot;);</div></li><li class="li1"><div class="de1">        userDAO.create(user1);</div></li><li class="li1"><div class="de1">        userDAO.create(user2);</div></li><li class="li1"><div class="de1">        userDAO.create(user3);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Question question = new Question();</div></li><li class="li1"><div class="de1">        question.setText(&quot;This is a question&quot;);</div></li><li class="li1"><div class="de1">        questionService.create(question, user1.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Answer answer = new Answer();</div></li><li class="li1"><div class="de1">        answer.setText(&quot;This is an answer&quot;);</div></li><li class="li1"><div class="de1">        question = questionService.addAnswer(answer, question.getQuestionId(), user2.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        int answerId = question.getAnswers().iterator().next().getAnswerId();</div></li><li class="li1"><div class="de1">        voteService.votePositive(user3.getUserId(), answerId);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        User userDB = userDAO.getById(user3.getUserId());</div></li><li class="li1"><div class="de1">        Answer answerDB = answerDAO.getById(answerId);</div></li><li class="li1"><div class="de1">        assertEquals(1, userDB.getVotes().size());</div></li><li class="li1"><div class="de1">        assertEquals(1, answerDB.getVotes().size());</div></li><li class="li1"><div class="de1">        assertEquals(userDB.getVotes().iterator().next().getVoteId(), answerDB.getVotes().iterator().next().getVoteId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private User getUser(String username, String email) {</div></li><li class="li1"><div class="de1">        User user = new User();</div></li><li class="li1"><div class="de1">        user.setUsername(username);</div></li><li class="li1"><div class="de1">        user.setActive(true);</div></li><li class="li1"><div class="de1">        user.setEmail(email);</div></li><li class="li1"><div class="de1">        user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">        user.setName(&quot;name&quot;);</div></li><li class="li1"><div class="de1">        user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">        return user;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Heu après que hi ha diferents <em>frameworks</em> que ens poden ajudar a l’hora de desenvolupar aplicacions. Spring ens ajuda a crear un codi més modular, reutilitzable i fàcil de testejar. Hem vist com podem canviar fàcilment quina base de dades utilitzar o els <em>beans</em> a injectar a una classe. Per una altra banda, Hibernate ens dóna les eines per treballar amb bases de dades focalitzant els esforços en el desenvolupament del codi i no en el disseny de la BD. Això no vol dir que el disseny de la BD no tingui importància; al contrari, serà fonamental per al correcte comportament de l’aplicació quan estigui a producció, però aquesta tasca serà responsabilitat de l’administrador de la BD. Hibernate ens farà més fàcil la tasca de relacionar els objectes de l’aplicació amb les taules de la base dades. També heu après a fer tests unitaris i a testejar l’aplicació utilitzant una BD en memòria emprant els <em>frameworks</em> JUnit i Mockito. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar el fitxer amb aquest codi als annexos de la unitat.
+</p>
+</div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

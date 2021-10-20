@@ -1,0 +1,1001 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a href="../../../WebContent/u5/introduccio.html">5. POO i gestors de base de dades</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5mapa"><a href="../../../WebContent/u5/mapa.html">Mapa conceptual</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id="u5a1continguts"><a href="../../../WebContent/u5/a1/continguts.html">Introducció al diagrama estàtic UML</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis</a></li></ul></li><li id="u5a2" class="tocsection"><p id="u5a2continguts"><a href="../../../WebContent/u5/a2/continguts.html">Aplicacions amb BD no orientades a objectes</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><li id="u5a3" class="tocsection"><p id="u5a3continguts"><a href="../../../WebContent/u5/a3/continguts.html">Aplicacions amb BD orientades a objectes</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">POO i gestors de base de dades</a></li><li>Introducció al diagrama estàtic UML</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="introduccio_al_diagrama_estatic_uml"> Introducció al diagrama estàtic UML </a></h1>
+    	
+<p>
+A l’hora de resoldre un problema, no sol ser una bona idea començar a anar per feina sense aturar-se un moment a pensar què es vol fer i, en el cas de problemes complexos, cal idear sobre el paper un petit esquema o croquis de què cal fer. Llavors, sobre el paper, es pot reflexionar si la solució sembla tenir sentit i es pot anar refinant, ja sigui un mateix o amb l’ajut d’altres entesos. Fins que no s’arriba a una solució satisfactòria, no es comença la feina. En el cas d’un problema d’una disciplina complexa, evidentment, cal anar una mica més enllà i no n’hi ha prou només amb un croquis <em>ad hoc</em>. Els plànols d’un arquitecte per fer un gratacels no són simples esbossos. Cal un mecanisme formal per descriure el problema i la solució, de manera que tota persona implicada pugui plasmar les seves idees de manera que tothom l’entengui. El desenvolupament d’aplicacions no és una excepció.
+</p>
+
+<p>
+Un dels avantatges més importants de la metodologia de l’orientació a objectes, i el principal motiu que l’ha fet rellevant, és que ha permès establir un llenguatge unificat per representar dissenys: el llenguatge UML (<em>unified modelling language</em>). D’aquesta manera, el desenvolupament del programari es pot equiparar a la resta de disciplines tècniques, en les quals és possible generar un esquema d’allò que es vol crear, que pot ser interpretat per qui s’encarregarà de fabricar-ho, sense necessitat que el constructor hagi format part del procés de disseny. A més a més, també és possible que altres experts externs avaluïn l’esquema abans de la fabricació, de manera que es puguin detectar errades abans de consumir cap recurs. Aquesta possibilitat és molt valuosa quan es tracta de crear sistemes complexos.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En el cas concret del desenvolupament del programari, quan parlem de constructor ens referim a un programador.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+L’<strong>UML</strong> és un llenguatge estàndard que permet especificar amb notació gràfica programari orientat a objectes.
+</p>
+</div></div>
+<p>
+Els orígens de l’UML es remunten a l’any 1994, quan Grady Booch i Jim Rumbaugh van començar a unificar diferents tècniques de modelització orientada a objectes, en un intent de trobar una solució satisfactòria als problemes que els dissenyadors tenien a l’hora d’especificar el programari. Al llarg d’aquest procés, s’hi va unir Ivar Jacobson. Cadascú va aportar el propi mètode: el mètode Boosch, OMT (<em>object modelling technique</em>, ‘tècnica de modelització d’objectes’) i OOSE (<em>object oriented software engineering</em>, ‘enginyeria de programari orientada a objectes’).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’UML no està limitat al programari, sinó que també permet especificar altres sistemes com, per exemple, models de negoci.
+</p>
+</div></div>
+<p>
+Els motius principals que els van dur a unir esforços van ser tres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Evitar que cada mètode evolucionés independentment, cosa que portaria a una situació amb molts mètodes heterogenis que seria perjudicial per als dissenyadors.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Establir una notació única que aportés certa estabilitat al camp de l’orientació a objectes. Això era molt important per tal que el diferent programari de suport a la metodologia fos compatible entre si.</div>
+</li>
+<li class="level1"><div class="li"> Trobar millores mitjançant la col·laboració entre ells, partint de l’experiència individual en la creació de cada mètode.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’<acronym title="Oh my God">OMG</acronym> és una organització sense ànim de lucre amb l’objectiu d’impulsar les tecnologies basades en l’orientació a objectes.
+</p>
+</div></div>
+<p>
+L’any 1996 van fer la seva proposta d’UML 0.9, subjecta a l’escrutini i els comentaris de la comunitat, la qual es va convertir en objectiu estratègic de diverses organitzacions, com Digital, Hewlett-Packard, Oracle o Microsoft. Els esforços d’aquestes organitzacions van ser canalitzats per l’Object Management Grup (<acronym title="Oh my God">OMG</acronym>, Grup de Gestió d’Objectes), que va donar lloc a l’UML 1.0. En els anys següents, l’UML ha seguit evolucionant i se n’han fet noves versions, que es continuen utilitzant dins el procés de disseny d’aplicacions.
+</p>
+
+<h2><a id="esquema_general_de_resolucio_de_problemes_mitjancant_orientacio_a_objectes" >Esquema general de resolució de problemes mitjançant orientació a objectes</a></h2>
+<div class="level2">
+
+<p>
+A nivell general, els passos ordenats per resoldre un problema usant orientació a objectes es poden resumir en:
+</p>
+<ol>
+<li class="level1"><div class="li"> Plantejar l’escenari descriptivament, amb llenguatge humà. Com més detallada sigui la descripció, més fàcil serà la feina.</div>
+</li>
+<li class="level1"><div class="li"> Localitzar, dins la descripció de l’escenari, els elements que es consideren més importants: els que realment interactuen amb vista a resoldre el problema. Aquests seran els objectes del programa. Normalment, solen ser substantius dins la descripció.</div>
+</li>
+<li class="level1"><div class="li"> Considerar quins elements són d’una certa complexitat. Redefinir-los com a agrupacions d’objectes més simples. Una bona estratègia és partir del fet que tot l’escenari en si és un objecte complex (igual que una màquina també és un objecte complex) i anar-lo descomponent en parts més petites.</div>
+</li>
+<li class="level1"><div class="li"> Agrupar els diferents objectes segons el tipus: quins objectes veiem que tenen propietats o comportaments idèntics. Cada tipus d’objecte serà una classe que caldrà especificar.</div>
+</li>
+<li class="level1"><div class="li"> Identificar i enumerar les característiques dels objectes de cada classe: quines en són les propietats (els atributs) i el comportament (les operacions que ofereixen). N’hi ha prou amb una llista general, escrita en llenguatge humà però suficientment entenedora.</div>
+</li>
+<li class="level1"><div class="li"> Establir les relacions que hi ha entre els objectes de les diferents classes a partir del paper que interpreten en el problema general. Els objectes no es generen en un buit, sinó que estan relacionats entre si, de la mateixa manera que les peces d’una màquina o els elements d’un edifici no floten en l’aire, sinó que estan connectats per formar un tot. De la mateixa manera, un cop identificats els objectes que conformen el problema a resoldre (el programa que es vol fer, en aquest cas), cal identificar com es relacionen entre ells. Normalment, aquesta mena d’enllaços es pot identificar com “un objecte d’aquest tipus conté objectes d’aquesta altra classe” o “una instància d’aquesta classe gestiona instàncies d’aquesta altra classe”. A mode d’ajut, es pot generar un <strong>mapa d’objectes</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Per a cada classe, especificar-ne formalment els atributs i les operacions, extrets a partir de la llista de propietats dels seus objectes dels punts 5 i 6. Normalment, especificar-ne els atributs és un procés més immediat que l’especificació de les operacions.</div>
+</li>
+</ol>
+
+<p>
+UML ofereix una notació formal per poder plasmar tots els elements resultants de cadascun dels passos: classes, atributs, mètodes, relacions entre objectes… El resultat final d’aquest procés seguint la notació UML és un esquema anomenat <em>diagrama estàtic UML</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>diagrama estàtic UML</strong> mostra el conjunt de classes i objectes importants que formen part d’un sistema, juntament amb les relacions existents entre aquestes classes i objectes. Mostra d’una manera estàtica l’estructura d’informació del sistema i la visibilitat que té cadascuna de les classes, donada per les seves relacions amb les altres en el model.
+</p>
+</div></div>
+<p>
+Mitjançant UML també és possible definir formalment molts altres aspectes del comportament de l’aplicació (comportament dinàmic, relacions entre crides a mètodes…), però aquí ens centrarem en el diagrama estàtic, que és la base de tot. 
+</p>
+
+</div>
+
+<h2><a id="definicio_de_classes_mitjancant_uml" >Definició de classes mitjançant UML</a></h2>
+<div class="level2">
+
+<p>
+La peça fonamental d’un diagrama estàtic són les classes, ja que, de fet, el codi d’un programa orientat a objectes es compon de classes, on es defineixen els atributs i els mètodes de què disposaran les seves instàncies (els objectes) quan el programa s’executi. Per tant, abans de poder crear un diagrama complex, el primer pas és identificar-les i saber com representar-les en UML.
+</p>
+
+<p>
+En UML, una classe es representa en format complet mitjançant una caixa dividida horitzontalment en tres parts. La part superior compleix exactament la mateixa funció i té el mateix format que en el format simplificat, i és on consta el nom de la classe. En la part del mig es defineixen els atributs que tindran les seves instàncies. Finalment, en la part inferior, es defineixen les operacions que es poden cridar sobre qualsevol de les seves instàncies. L’aspecte és el que es mostra en l’exemple de la <span class="figref"><a href="#Figure1"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Notació formal d’una classe en UML.
+
+</figcaption><img src="../media/ic10m03u5_01.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="definicio_d_atributs" >Definició d&#039;atributs</a></h3>
+<div class="level3">
+
+<p>
+En definir una classe, els atributs s’especifiquen segons la sintaxi següent. El camp de valor inicial es correspon al valor que pren l’atribut en el moment d’instanciar un objecte d’aquesta classe. Concretar-lo en l’especificació dels atributs és opcional. Com veieu, el format és semblant a la declaració d’una variable qualsevol en Java.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">visibilitat nomAtribut<span class="sy0">:</span> tipus <span class="br0">&#91;</span><span class="sy0">=</span> valor inicial<span class="br0">&#93;</span></div></li></ol></pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Nomenclatura</p>
+<p>
+Per a atributs s’usen paraules concatenades, en què la primera inicial està amb minúscula i la resta amb majúscula. Per exemple: <code>elMeuAtribut</code>.
+</p>
+</div></div>
+<p>
+Els dos aspectes més importants de la definició d’un atribut en representar una classe en UML són la seva visibilitat i el seu tipus de dades.
+</p>
+
+<p>
+Pel que fa a la seva visibilitat, aquesta indica si l’atribut és accessible directament des d’altres classes. Hi ha diferents tipus de visibilitat, si bé es destacaran els dos més utilitzats: la visibilitat pública i la privada. Tot i que és possible triar entre diverses, normalment, els atributs es defineixen amb visibilitat privada.
+</p>
+
+<p>
+L’UML no indica explícitament quin és el significat real de cada tipus de visibilitat, i deixa aquesta tasca a cada llenguatge de programació. El motiu és que aquest terme es refereix a l’accessibilitat a un objecte en l’àmbit del codi. Tot i així, es descriurà quina sol ser la seva interpretació en la majoria de llenguatges de programació orientats a objectes. Cada tipus de visibilitat s’identifica en la definició de l’atribut amb un símbol especial:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un <strong>atribut públic</strong> s’identifica amb el símbol ”+”. En aquest cas, si una instància <code><em class="u">a:</em></code> està enllaçada amb una instància <code><em class="u">b:</em></code>, <code><em class="u">a:</em></code> pot accedir lliurement als valors emmagatzemats en els atributs de <code><em class="u">b:</em></code>. </div>
+</li>
+<li class="level1"><div class="li"> Un <strong>atribut privat</strong> s’identifica amb el símbol ”-”. No es pot accedir a aquest atribut des d’altres objectes, independentment del fet que existeixi un enllaç o no. A efectes pràctics, és com si no existís fora de l’especificació de la classe i, en conseqüència, només es pot utilitzar en les operacions dins la mateixa classe en què s’ha definit. </div>
+</li>
+</ul>
+
+<p>
+
+</p>
+
+<p>
+Quant al tipus de dades, donat que UML és un mecanisme de notació genèric, no vinculat a cap llenguatge específic de programació, els tipus de dades que es poden usar no són exactament els mateixos que en Java, si es vol ser estricte. Se sol usar el llenguatge natural, en anglès, per indicar el tipus, enlloc d’una paraula clau concreta depenent del llenguatge. Tot seguit s’enumeren els més típics si es fa en català:
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table1"><span>Taula: </span></a>Tipus bàsics dels atributs.</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> Tipus  </th><th class="col1 leftalign"> Significat  </th><th class="col2 leftalign"> Exemple  </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> Enter </td><td class="col1"> Un nombre sense decimals </td><td class="col2"> 1, 56, 128, 15487 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Real </td><td class="col1"> Un nombre amb decimals </td><td class="col2"> 1,34, 3,2415, 267,14, 41,0 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Caràcter </td><td class="col1"> Una lletra </td><td class="col2"> A, a, b, g, -, ?, ç </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> Booleà </td><td class="col1"> Cert/fals </td><td class="col2"> Cert, fals </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> Byte </td><td class="col1"> Un byte </td><td class="col2"> 0x30, 0xA2, 0xFF </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> Matriu de… (…[ ] ) </td><td class="col1" colspan="2"> Un conjunt d’elements… [1, 2, 3], [a, b, c, f, g], [1,2, 3,0] </td>
+	</tr>
+</table></div>
+</div>
+<p>
+En el darrer cas, els tipus múltiples es poden especificar de dues maneres diferents, segons la interpretació que es vol expressar:
+</p>
+<ul>
+<li class="level1"><div class="li"> enter[5] indica que hi ha exactament cinc enters.</div>
+</li>
+<li class="level1"><div class="li"> enter[0..5] indica que hi pot haver entre zero i cinc enters.</div>
+</li>
+</ul>
+
+<p>
+De totes maneres, també es pot considerar que ja hi ha predefinits un conjunt de tipus de propòsit general, que pràcticament tots els llenguatges suporten d’una manera o d’una altra:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>String</code>, per especificar tipus de dades que corresponen a cadenes de caràcters, així s’evita haver d’operar amb caràcters.</div>
+</li>
+<li class="level1"><div class="li"> <code>List&lt;nomTipus&gt;</code>, per especificar seqüències d’elements de tipus “nomTipus”, sense cap fita predeterminada. En el camp “nomTipus” s’indica el tipus d’element que conté la llista, per exemple:List&lt;enter&gt;, List&lt;Cita&gt;, List&lt;String&gt; … </div>
+</li>
+</ul>
+
+<p>
+Així, doncs, els atributs d’una classe anomenada <code>TipusProducte</code> es poden definir tal com mostra la <span class="figref"><a href="#Figure2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Definició d’atributs de la classe TipusProducte
+
+</figcaption><img src="../media/ic10m03u5_02.png" alt="" /></figure>
+</div><div class="iocnote"><div class="ioccontent">
+<p>
+Els atributs de classe són especialment útils per definir constants.
+</p>
+</div></div>
+<p>
+A part dels atributs que defineixen les propietats de cada instància d’una classe, hi ha un tipus especial d’atributs, anomenats <strong>atributs de classe</strong> o estàtics. A l’hora de definir-los, es diferencien amb un subratllat i, si són constants, normalment estan escrits amb el nom en majúscules. A part d’això, la sintaxi és idèntica als atributs genèrics.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">visibilitat nomAtributClasse<span class="sy0">:</span> tipus <span class="br0">&#91;</span><span class="sy0">=</span> valor inicial<span class="br0">&#93;</span></div></li></ol></pre>
+
+<p>
+Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="sy0">+</span>PI<span class="sy0">:</span> real</div></li></ol></pre>
+
+</div>
+
+<h3><a id="definicio_de_metodes" >Definició de mètodes</a></h3>
+<div class="level3">
+<div class="iocnote"><div class="ioccontent">
+<p>
+La convenció de nomenclatura d’una operació és idèntica a la dels atributs.
+</p>
+</div></div>
+<p>
+Dins la definició d’una classe, les operacions disponibles s’especifiquen en UML de la manera següent:
+</p>
+<pre class="code">visibilitat nomOperació (llistaParàmetres): tipusRetorn</pre>
+
+<p>
+El camp “llistaParàmetres” té el format següent:
+</p>
+<pre class="code">nomParàmetre1: tipus, ... , nomParàmetreN: tipus</pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Recordeu que el ”+” abans del nom indica que les operacions tenen visibilitat pública.
+</p>
+</div></div>
+<p>
+Totes les explicacions donades per als tipus o la visibilitat en el cas dels atributs també són aplicables a les operacions. En aquest cas, normalment les operacions solen ser públiques, i es deixen com a privades operacions que es consideren auxiliars, o que simplement faciliten la comprensió de les tasques que duran a terme les instàncies de les classes, però que no es poden invocar des de cap altra part del futur codi.
+</p>
+
+<p>
+Alguns exemples d’especificacions d’operacions poden ser:
+</p>
+<pre class="code">+afegirMèdia (m: Mèdia)
++ajustarVolum (v: enter)
++pausa/reanuda ()
++mèdiaSegüent(): Mèdia</pre>
+
+<p>
+Addicionalment, hi ha un conjunt d’operacions que no sempre cal especificar, ja que se suposen en dissenyar una classe: les operacions accessores. S’acostumen a considerar operacions o mètodes accessors els que donen accés de lectura o d’escriptura als atributs d’una classe. La nomenclatura estàndard per a l’accessor d’escriptura (per modificar el valor de l’atribut) i de lectura (per consultar-lo) és, respectivament:
+</p>
+<ul>
+<li class="level1"><div class="li"> setNomAtribut (valor: tipus).</div>
+</li>
+<li class="level1"><div class="li"> getNomAtribut(): tipus.</div>
+</li>
+</ul>
+
+<p>
+Per tant, en l’especificació d’una classe no cal explicitar tots els accessors entre les seves operacions. Per a cada atribut especificat ja es dóna per entès que sempre hi ha les operacions <em>set</em> i <em>get</em> associades, a menys que es digui el contrari.
+</p>
+
+<p>
+La <span class="figref"><a href="#Figure3"><span>figura</span></a></span> mostra una representació UML de les operacions d’una classe anomenada <code>Lector</code>.
+</p>
+<div class="iocfigure"><a name="Figure3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Especificació d’operacions de la classe Lector.
+
+</figcaption><img src="../media/ic10m03u5_03.png" alt="" /></figure>
+</div>
+</div>
+
+<h2><a id="relacions_entre_classes" >Relacions entre classes</a></h2>
+<div class="level2">
+
+<p>
+Un cop identificades les classes dels objectes que componen el problema a resoldre, el pas següent és establir quines relacions hi ha entre elles i representar-les dins el diagrama estàtic UML. De fet, les relacions són el punt especialment rellevant d’un diagrama estàtic UML, ja que, en cas contrari, les classes queden representades en un buit, disperses. Només es disposa d’una llista de classes i prou, sense cap idea de com col·laboren entre elles o quin sentit tenen dins l’aplicació futura. En el diagrama estàtic, cada relació indica que hi ha una connexió entre els objectes d’una classe i els d’una altra. Fent un símil amb una màquina, l’existència d’una relació és equivalent al fet que dues de les seves peces estiguin connectades entre elles. 
+</p>
+
+</div>
+
+<h3><a id="associacions" >Associacions</a></h3>
+<div class="level3">
+
+<p>
+El tipus de relació més freqüent és l’associació.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Es considera que hi ha una <strong>associació</strong> entre dues classes quan es vol indicar que els objectes d’una classe poden cridar operacions sobre els objectes d’una altra.
+</p>
+</div></div>
+<p>
+Per tant, perquè dos objectes puguin interactuar hi ha d’haver una associació entre les seves classes al diagrama estàtic UML, de manera que es considera que estan <strong>enllaçats</strong>. En cas contrari, la crida d’operacions no és possible. Quan per mitjà d’un enllaç un objecte <strong>objecteA:</strong> crida una operació sobre un objecte <strong>objecteB:</strong>, les transformacions fetes per l’operació únicament afectaran l’objecte <strong>objecteB:</strong>. No n’afectaran cap de la resta d’instàncies que hi hagi en aquell moment que pertanyin a la mateixa classe que l’<strong>objecteB:</strong>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Eines CASE</p>
+<p>
+Normalment, els diagrames estàtics UML es generen mitjançant l’ajut d’eines CASE (<em>computer aided software engineering</em>, ‚enginyeria de programari assistida per ordinador’).
+</p>
+</div></div>
+<p>
+El diagrama estàtic UML estarà format en la seva totalitat per la representació gràfica de totes les classes identificades i les relacions que hi ha entre totes elles. En la <span class="figref"><a href="#Figure4"><span>figura</span></a></span> es representen les relacions amb una línia que uneix les classes implicades.
+</p>
+<div class="iocfigure"><a name="Figure4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Associació entre classes.
+
+</figcaption><img src="../media/ic10m03u5_04.png" alt="" /></figure>
+</div>
+<p>
+Tot i que les associacions indiquen que hi ha enllaços entre objectes, es representen gràficament en el diagrama respecte a les seves classes. Quan dues classes es representen relacionades, les seves instàncies poden estar enllaçades en algun moment de l’execució de l’aplicació.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els enllaços són dinàmics. Poden variar al llarg de l’execució de l’aplicació.
+</p>
+</div></div>
+<p>
+Donada una associació, hi ha un conjunt de descriptors addicionals que es poden especificar:
+</p>
+<ul>
+<li class="level1"><div class="li"> En el centre, entre les dues classes implicades, s’especifica el <strong>nom de l’associació</strong>. Aquest nom indica què representa l’associació a nivell conceptual.</div>
+</li>
+<li class="level1"><div class="li"> En cada extrem de l’associació s’especifica quines són les funcions de les classes implicades. El nom indica, de manera entenedora, el paper que tenen els objectes de cada classe en la relació.</div>
+</li>
+<li class="level1"><div class="li"> Amb una fletxa se n’especifica la <strong>navegabilitat</strong>. Partint del nom de l’associació i les funcions de les classes, s’ha de poder establir quina és la classe origen i quina la destinació. A efectes pràctics, la navegabilitat indica el sentit de les interaccions entre objectes: a quina classe pertanyen els objectes que poden cridar operacions i a quina els objectes que reben aquestes crides.</div>
+</li>
+<li class="level1"><div class="li"> Juntament amb la funció, s’especifica la <strong>cardinalitat</strong>, o multiplicitat, de la relació per a cada extrem. La cardinalitat especifica amb quantes instàncies d’una de les classes pot estar enllaçada una instància de l’altra classe.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Si cal, res no impedeix que una associació sigui <strong>navegable</strong> en ambdós sentits, tot i que no és el cas més freqüent. En aquest cas, no cal posar cap fletxa.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>cardinalitat</strong> defineix quantes instàncies diferents d’una classe ClasseA es poden associar amb una instància de la classe ClasseB en un moment determinat de l’execució del programa.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Les cardinalitats més usades solen ser les 1, 1..* i *.
+</p>
+</div></div>
+<p>
+El nombre d’instàncies per a cada cas s’indica amb una llista de nombres enters, ubicada en l’extrem oposat de l’associació. Per exemple, la cardinalitat que indica quantes instàncies de la ClasseB pot enllaçar una instància de la ClasseA s’ubica en l’extrem de l’associació en què està representada la classe ClasseB. En cas que es vulgui indicar un nombre indeterminat, sense fita superior en el nombre d’enllaços, s’utilitza el símbol *. Per establir rangs de valors possibles, s’usen les fites inferior i superior separades amb tres punts.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Diferents cardinalitats i el seu significat</p><ul>
+<li class="level1"><div class="li"> 1:      Només un enllaç.</div>
+</li>
+<li class="level1"><div class="li"> 0…1:  Cap o un enllaç.</div>
+</li>
+<li class="level1"><div class="li"> 2,4:    Dos o quatre enllaços.</div>
+</li>
+<li class="level1"><div class="li"> 1…5:  Entre un i cinc enllaços (un, dos, tres, quatre o cinc).</div>
+</li>
+<li class="level1"><div class="li"> 1…*:  Entre un i un nombre indeterminat. És a dir, més d’un.</div>
+</li>
+<li class="level1"><div class="li"> *:      Un nombre indeterminat. És equivalent a 0…*.</div>
+</li>
+</ul>
+</div></div>
+<p>
+Perquè el programa es consideri correcte a l’hora d’implementar el disseny, s’ha de fer el necessari perquè les condicions que expressen les cardinalitats sempre siguin certes. Si una cardinalitat és, per exemple, 1, això vol dir que tot objecte d’aquesta classe sempre està enllaçat amb un, i només un, objecte de l’altra classe. Mai no hi pot haver dins el programa en execució un cas en què no es compleixi aquesta condició.
+</p>
+
+<p>
+De tots aquests descriptors, només la navegabilitat i la cardinalitat són imprescindibles (i de les dues, la cardinalitat és la més important), ja que la decisió que es prengui en aquests aspectes dins l’etapa de disseny tindrà implicacions directes sobre la implementació. Les funcions i el nom són opcionals, si bé molt útils amb vista a la comprensió del diagrama estàtic i com a mètode de reflexió per al dissenyador.
+</p>
+
+<p>
+En la <span class="figref"><a href="#Figure5"><span>figura</span></a></span> es mostra una representació completa d’una associació, amb tota la informació que cal especificar.
+</p>
+<div class="iocfigure"><a name="Figure5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació gràfica d’una associació entre classes.
+
+</figcaption><img src="../media/ic10m03u5_05.png" alt="" /></figure>
+</div>
+<p>
+
+</p>
+
+<p>
+A partir del que expressa la figura, aquestes són algunes de les conclusions a les quals arribaria un observador aliè al procés de disseny:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>A partir d’(a)</strong>. Una instància qualsevol de la classe <code>Pàgina</code> pot enllaçar fins a un nombre indeterminat d’objectes diferents de la classe <code>Cita</code>. Això inclou no tenir-ne cap (una pàgina en blanc). Així, doncs, hi ha pàgines que tenen tres cites, d’altres deu, d’altres cap, etc.</div>
+</li>
+<li class="level1"><div class="li"> <strong>A partir d’(a)</strong>. Recíprocament, donat un objecte qualsevol de la classe <code>Cita</code>, només estarà enllaçat a un únic objecte <code>Pàgina</code>. Per tant, no es pot tenir una mateixa cita en dues pàgines diferents (però sí tenir dues citacions diferents i de contingut idèntic, amb els mateixos valors per als atributs, cadascuna a una pàgina diferent). Tampoc no hi pot haver citacions que, tot i ser en l’aplicació, no estiguin escrites a cap pàgina.</div>
+</li>
+<li class="level1"><div class="li"> <strong>A partir de (b)</strong>. Un objecte de la classe Control sempre té un objecte de la classe Lector enllaçat. Per tant, un tauler de control sempre controla un únic lector de mèdia. No es pot donar el cas que un tauler de control no controli cap lector. La inversa també es certa; tot lector és controlat per algun tauler de control.</div>
+</li>
+<li class="level1"><div class="li"> <strong>A partir de (b)</strong>. Donada la navegabilitat especificada, s’està dient que el tauler de control pot cridar operacions sobre el lector, però no a l’inrevés. Això té sentit, ja que és el tauler de control qui controla el lector.</div>
+</li>
+<li class="level1"><div class="li"> <strong>A partir de ©</strong>. Donat un client, aquest pot estar enregistrat en més d’una sucursal, però almenys sempre ho estarà en una. Mai no es pot donar el cas d’un client donat d’alta en el sistema però que no estigui enregistrat en cap sucursal.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Cada objecte és únic i té la seva pròpia identitat, independentment dels valors dels seus atributs.
+</p>
+</div></div>
+<p>
+Tot i que no és habitual, res no impedeix que dues classes tinguin més d’una associació entre elles. Normalment, aquest cas s’aplica quan es vol fer una diferenciació explícita de diferents tipus de relació o de funcions entre instàncies de cada classe. En la <span class="figref"><a href="#Figure6"><span>figura</span></a></span> es mostra un exemple en què es pot aplicar aquest principi.
+</p>
+<div class="iocfigure"><a name="Figure6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Múltiples associacions entre dues classes.
+
+</figcaption><img src="../media/ic10m03u5_06.png" alt="" /></figure>
+</div>
+<p>
+Atès que un transportista pot adoptar diferents papers en la seva relació amb una sucursal, això es pot representar especificant que hi ha diferents tipus d’associació entre sucursals i transportistes.
+</p>
+
+<p>
+Tot i la versatilitat dels diagrames estàtics UML, aquests no sempre són capaços de reflectir totes les restriccions necessàries en els enllaços entre objectes de diferents classes. Les associacions indiquen els possibles enllaços, però no especifiquen condicions concretes per a la seva presència. En aquests casos s’utilitza una <strong>restricció textual</strong>. Aquesta no és més que una frase addicional al peu del diagrama, escrita en llenguatge humà, en què s’explica breument en què consisteix aquesta restricció.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’<em>object constraint language</em> és un mecanisme formal per expressar restriccions textuals sense usar el llenguatge humà.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Els transportistes</p>
+<p>
+Amb les associacions representades en la <span class="figref"><a href="#Figure6"><span>figura</span></a></span> és possible expressar que sempre hi ha un únic transportista de reserva i diversos de servei. Malauradament, és impossible indicar que un transportista concret, per exemple el transportista2:, no pot ser alhora de reserva i de servei.
+</p>
+
+<p>
+Per resoldre aquest problema cal afegir una restricció textual al peu del diagrama que expliqui la condició en la qual es pot complir l’associació “de reserva”: un transportista de reserva no pot estar de servei i viceversa.
+</p>
+</div></div>
+</div>
+
+<h3><a id="agregacions" >Agregacions</a></h3>
+<div class="level3">
+
+<p>
+Hi ha un tipus d’associació especial mitjançant la qual el dissenyador vol donar un sentit més específic a l’enllaç, com ara que els objectes de certa classe formen part dels objectes d’una altra. Aquest subtipus d’associació s’anomena <em>agregació</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>agregació</strong> és un tipus d’associació especial que especifica explícitament que hi ha una relació de tot-part entre els objectes de l’agregat (el tot) i el component (la part).
+</p>
+</div></div>
+<p>
+En el diagrama estàtic UML, això es representa gràficament afegint un rombe blanc en l’extrem de l’associació on hi ha la classe que representa el tot. Com que amb aquest símbol ja es diu quina és la relació entre els objectes d’ambdues classes, es poden ometre el nom i la funció en els descriptors de l’associació.
+</p>
+
+<p>
+Això es mostra en la <span class="figref"><a href="#Figure7"><span>figura</span></a></span>, en la qual es refina l’associació PàginaCita que s’ha mostrat en els exemples anteriors. Una pàgina conté citacions escrites al seu interior i es pot considerar que el que s’ha escrit en una pàgina és part d’aquesta. Per tant, aquest cas és aplicable.
+</p>
+<div class="iocfigure"><a name="Figure7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Agregació Pàgina-Cita
+
+</figcaption><img src="../media/ic10m03u5_07.png" alt="" /></figure>
+</div>
+<p>
+De totes maneres, val la pena esmentar que la definició d’aquest tipus d’associació no és gaire estricta, de manera que en la literatura hi ha diverses interpretacions de què vol dir realment <em>conté</em> o és <em>part de</em>. En darrera instància, és una interpretació personal del dissenyador considerar si un tipus d’objecte és realment part d’un altre.
+</p>
+
+</div>
+
+<h3><a id="composicions" >Composicions</a></h3>
+<div class="level3">
+
+<p>
+Un altre subtipus d’associació amb una semàntica especial són les anomenades <em>composicions</em>. Amb aquestes associacions també s’expressa el concepte de <em>és part de</em>, però anant més enllà: es considera que la classe composta no té sentit sense els seus components. En contraposició, en una agregació, l’agregat sí que té sentit sense cap dels seus components.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Qualsevol associació en què el dissenyador posaria un verb de l’estil <em>té</em>, <em>conté</em>, <em>és part de</em>, etc. és una agregació o una composició.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>composició</strong> és una forma d’agregació que requereix que els objectes components només pertanyin a un únic objecte agregat i que, a més a més, aquest darrer no té sentit que existeixi si no n’existeixen els components.
+</p>
+</div></div>
+<p>
+Cal anar amb compte, ja que de vegades és fàcil confondre agregació i composició.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En l’agregació , segons la mateixa definició, la cardinalitat en la banda de l’agregat sempre ha de ser 1.
+</p>
+</div></div>
+<p>
+Aquest tipus d’associació es representa de manera idèntica a una agregació, només que en aquest cas el rombe és de color negre. La <span class="figref"><a href="#Figure8"><span>figura</span></a></span> en mostra un exemple amb l’associació Agenda-Pàgina.
+</p>
+<div class="iocfigure"><a name="Figure8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Agregació Agenda-Pàgina Agenda-Pàgina.
+
+</figcaption><img src="../media/ic10m03u5_08.png" alt="" /></figure>
+</div><div class="iocnote"><div class="ioccontent">
+<p>
+Un altre exemple immediat de composició són les associacions que sortirien de en el reproductor multimèdia.
+</p>
+</div></div>
+<p>
+En aquest cas, en usar una composició per representar aquesta associació, el dissenyador expressa que no té sentit una agenda sense pàgines. De fet, conceptualment, el propi conjunt de pàgines és l’agenda en si. Tampoc no pot ser que una mateixa pàgina (es parla de la mateixa pàgina física, no d’una rèplica) sigui de més d’una agenda alhora. En canvi, sí que té sentit una pàgina en blanc sense cap cita, motiu pel qual el cas Pàgina-Cita és una agregació però no una composició.
+</p>
+
+</div>
+
+<h3><a id="classes_associatives" >Classes associatives</a></h3>
+<div class="level3">
+
+<p>
+Hi ha circumstàncies que fan que el dissenyador consideri necessari afegir propietats addicionals a una associació, el valor de les quals pot variar segons quines siguin les instàncies enllaçades. En definitiva, el dissenyador vol especificar atributs en una associació. Amb aquesta finalitat s’usen les <em>classes associatives</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les <strong>classes associatives</strong> representen associacions que es poden considerar classes.
+</p>
+</div></div>
+<p>
+Una classe associativa es representa amb el mateix format que una classe: és una nova classe que cal especificar dins la descomposició del problema. Com es mostra en la <span class="figref"><a href="#Figure9"><span>figura</span></a></span>, una línia discontinua uneix la nova classe amb l’associació que representa.
+</p>
+<div class="iocfigure"><a name="Figure9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de classe associativa
+
+</figcaption><img src="../media/ic10m03u5_09.png" alt="" /></figure>
+</div>
+<p>
+En la classe associativa Petició hi hauria les propietats vinculades a la petició d’un tipus de producte concret dins un encàrrec (per exemple, el nombre de productes que cal enviar o el seu color). Cap d’aquestes propietats no correspon a l’encàrrec ni al tipus de producte. Tot això es plasmarà en forma d’atributs dins d’aquesta classe.
+</p>
+
+<p>
+Totes les classes associatives que apareguin en el diagrama estàtic UML s’hauran d’especificar completament, tant pel que fa als atributs com a les operacions. Tot i representar una associació i no un element identificable dins del problema, a efectes pràctics són una classe més, com qualsevol altra.
+</p>
+
+<p>
+Una particularitat de les classes associatives és que es poden representar amb classes i associacions normals. Aquest fet és important, ja que és l’única manera de representar-les en un mapa d’objectes i la majoria de llenguatges de programació no suporten les associacions amb aquest tipus de classes vinculades.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Java no suporta directament classes associatives.
+</p>
+</div></div>
+<p>
+Seguint el sentit de la navegabilitat (classe origen - classe destinació) el desenvolupament és el següent:
+</p>
+<ol>
+<li class="level1"><div class="li"> Eliminar l’associació original.</div>
+</li>
+<li class="level1"><div class="li"> Generar una associació de la classe origen a la classe associativa. El tipus de la nova associació i la navegabilitat són idèntics a l’original.</div>
+</li>
+<li class="level1"><div class="li"> Generar una altra associació de la classe associativa a la destinació. La navegabilitat és de classe associativa a destinació.</div>
+</li>
+</ol>
+
+<p>
+Ara la classe associativa ja és una classe normal dins el diagrama estàtic UML, però atès que ara hi ha dues associacions, cal adaptar-hi les cardinalitats:
+</p>
+<ul>
+<li class="level1"><div class="li"> La cardinalitat en els extrems oposats a l’antiga classe associativa sempre és 1.</div>
+</li>
+<li class="level1"><div class="li"> La cardinalitat en l’extrem oposat de la classe origen, en què ara hi ha la classe associativa, és la que hi havia respecte a l’antiga classe destinació.</div>
+</li>
+<li class="level1"><div class="li"> La cardinalitat en l’extrem oposat de la classe destinació, en què ara hi ha la classe associativa, és la que hi havia respecte a l’antiga classe origen.</div>
+</li>
+</ul>
+
+<p>
+El resultat d’aplicar aquesta traducció es mostra en la <span class="figref"><a href="#Figure10"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Traducció de classe associativa.
+
+</figcaption><img src="../media/ic10m03u5_10.png" alt="" /></figure>
+</div>
+<p>
+De fet, depenent de les interpretacions que ha fet el dissenyador respecte a la descripció del problema, es pot arribar a aquest diagrama directament des del pas d’identificació de classes. De totes maneres, en fer un diagrama estàtic UML, és recomanable usar classes associatives sempre que apliqui i només fer la traducció en el moment d’implementar.
+</p>
+
+</div>
+
+<h3><a id="associacions_reflexives" >Associacions reflexives</a></h3>
+<div class="level3">
+
+<p>
+Atès que una associació indica enllaços entre instàncies d’una classe, res no impedeix que un objecte estigui enllaçat amb objectes del mateix tipus. Quan això passa, es representa mitjançant una associació reflexiva.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per la seva definició, no es pot aplicar una associació reflexiva a una composició.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>associació reflexiva</strong> és aquella en què la classe origen i la destinació són la mateixa.
+</p>
+</div></div>
+<p>
+Un exemple d’aquest cas es mostra en la <span class="figref"><a href="#Figure11"><span>figura</span></a></span>, en què els clients de l’aplicació de gestió recomanen altres clients. Es tracta d’una associació reflexiva, ja que tant qui recomana com qui és recomanat, un client, pertanyen a la mateixa classe.
+</p>
+<div class="iocfigure"><a name="Figure11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Associació reflexiva
+
+</figcaption><img src="../media/ic10m03u5_11.png" alt="" /></figure>
+</div>
+<p>
+Un dels moments en què el dissenyador ha d’anar amb més compte en aquest tipus d’associacions és quan n’especifica la cardinalitat. La cardinalitat a l’origen de la relació sempre ha de preveure el cas 0. En cas contrari, és impossible generar un mapa d’objectes que la satisfaci, ja que s’hi genera un bucle infinit. Això s’ha de tenir en compte, independentment del fet que, conceptualment, afegir-hi cardinalitat 0 tingui sentit o no.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de bucle infinit: un arbre genealògic</p>
+<p>
+Un exemple d’aquesta problema és l’ús d’una associació reflexiva entre objectes d’una classe <code>Persona</code> per crear un arbre genealògic. Una persona sempre ha nascut a partir de dos pares (pare i mare), que a la vegada també són persones. Per tant, és lògic, i correcte des del punt de vista conceptual, que la cardinalitat en origen sigui 2, i en destinació, * (una persona pot tenir un nombre indeterminat de fills).
+</p>
+
+<p>
+Malauradament, si es fa així, és impossible generar un mapa d’objectes que compleixi aquesta cardinalitat. Per a cada objecte :Persona hi ha d’haver dos enllaços provinents d’altres objectes:Persona, i això és impossible tret que hi hagi cicles (cosa que no pot ser en un arbre genealògic). L’única manera d’evitar-ho és establir que la cardinalitat pot ser 0 o 2.
+</p>
+
+<p>
+El cas 0 serà una excepció per als objectes :Persona inicials dins el sistema (per als quals no s’enregistrarà quins van ser els pares).
+</p>
+</div></div>
+</div>
+
+<h3><a id="herencia" >Herència</a></h3>
+<div class="level3">
+
+<p>
+Finalment, dins un diagrama estàtic UML també s’estableixen les relacions d’herència entre els objectes de diferents classes. Això permet definir relacions d’especialització/generalització, on la classe a la part superior de la relació representa un concepte més general que el de la part inferior, més específic. Aquest tipus de relació normalment també indica que la classe més específica és idèntica a una altra, excepte en alguns petits aspectes on, o bé és diferent, o bé se suposen propietats addicionals. 
+</p>
+
+<p>
+Per exemple, diferents tipus de fitxers de mèdia es poden vincular entre si d’acord a una relació d’herència tal com mostra la <span class="figref"><a href="#Figure12"><span>figura</span></a></span>. A la dreta es veu quin concepte es considera més general i quin més específic.
+</p>
+<div class="iocfigure"><a name="Figure12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Herència dins un diagrama estàtic UML
+
+</figcaption><img src="../media/ic10m03u5_12.png" alt="" /></figure>
+</div>
+</div>
+
+<h2><a id="exemples_de_diagrames_estatics" >Exemples de diagrames estàtics</a></h2>
+<div class="level2">
+
+<p>
+Una vegada s’ha efectuat el procés de descomposició de programes es pot fer un possible diagrama estàtic UML. En cada cas, el diagrama segueix cadascuna de les composicions proposades del problema. Per fer més entenedora la lectura dels diagrames, només s’inclou el nom de les relacions menys evidents.
+</p>
+
+<p>
+Per a cada cas, també es representa un possible mapa d’objectes per a un moment determinat de l’execució de l’aplicació. És interessant veure com cada associació al diagrama estàtic es tradueix en un cert nombre d’enllaços entre objectes, sempre respectant la cardinalitat especificada en l’associació.
+</p>
+
+</div>
+
+<h3><a id="una_agenda" >Una agenda</a></h3>
+<div class="level3">
+
+<p>
+El primer exemple és molt senzill, amb molts pocs elements i funcionalitats i amb un paral·lelisme clar amb el món real per facilitar-ne la comprensió. Es vol dissenyar una agenda que permeti consultar les dates d’un calendari per a un any concret i apuntar cites a unes hores concretes. En aquest cas, és possible fer un cert paral·lelisme amb el món real, ja que el concepte d’agenda hi existeix. Es pot pensar en l’agenda com un llibre en què es van passant pàgines endavant o endarrere, cadascuna de les quals correspon a un dia. En cada pàgina es poden escriure cites establertes per a unes hores d’inici i de finalització determinades. Aquesta descripció en llenguatge humà seria la que s’ha descrit en el pas 1 de l’esquema d’aplicació de l’orientació a objectes. 
+</p>
+
+<p>
+Una bona manera de descompondre un problema en objectes és partir de l’element més general i, a partir d’aquí, anar extraient els elements més senzills. Així, doncs, en aquest cas es pot partir d’un objecte agenda, i deduir els elements que el componen. Una agenda es compon de les pàgines, les quals contenen cites. 
+</p>
+
+<p>
+Per saber exactament el tipus de relacions entre classes, cal establir la relació de dependència entre elles. Per això, també va bé fer-se una idea de si una situació té sentit o no si estiguéssiu tractant amb un objecte del món real. Així doncs, una agenda està formada per pàgines, i no té sentit una agenda sense pàgines, pel que s’està parlant d’una composició. D’altra banda, cal saber la pàgina oberta en tot moment, per la qual cosa cal una altra relació. Aquesta pot ser una simple associació, ja que no compleix cap de les característiques dels altres tipus de relacions. Finalment, les pàgines contenen cites, però sí que té sentit que una pàgina, en un moment donat, encara no tingui cap cita, per la qual cosa es tracta d’una agregació.
+</p>
+
+<p>
+El diagrama estàtic UML de l’agenda es mostra en la <span class="figref"><a href="#Figure13"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama estàtic UML de l’agenda.
+
+</figcaption><img src="../media/ic10m03u5_13.png" alt="" /></figure>
+</div>
+<p>
+La instància d’Agenda pot tenir dos tipus de relacions amb les pàgines. D’una banda, la de composició: entre totes les pàgines formen l’agenda. A més a més, una agenda també sap per quina pàgina està oberta, que seria la pàgina que es pot llegir en aquest moment.
+</p>
+
+</div>
+
+<h3><a id="un_reproductor_multimedia" >Un reproductor multimèdia</a></h3>
+<div class="level3">
+
+<p>
+En aquest exemple es presenta la descomposició d’un sistema de reproducció multimèdia (música, vídeos…). La motivació pot ser crear una aplicació senzilla per a l’ordinador o generar el sistema de control d’un reproductor portàtil (un dispositiu físic). En aquest cas, es parteix de la identificació de classes següent: <code>Reproductor</code>,  <code>Mèdia</code>, <code>Control</code>, <code>Lector</code>, <code>Magatzem</code> i <code>Altaveu</code>.
+</p>
+
+<p>
+El diagrama estàtic UML del reproductor es pot veure en la <span class="figref"><a href="#Figure14"><span>figura</span></a></span>. En fer-lo, s’ha decidit que el reproductor té dos altaveus, de manera que es pot controlar el mode mono o estèreo. També cal tenir en compte els punts següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> La cardinalitat de la relació <code>Mèdia</code>-<code>Lector</code> especificada en l’extrem de la classe <code>Mèdia</code> (a l’esquerra) indica que hi pot haver moments en què el lector no reprodueix cap cançó (cas 0 de la cardinalitat: el lector reprodueix 0 cançons).</div>
+</li>
+<li class="level1"><div class="li"> La cardinalitat en l’altre extrem expressa que, per a qualsevol cançó, o bé s’està reproduint en el lector (cas 1) o no (cas 0).</div>
+</li>
+<li class="level1"><div class="li"> El magatzem pot ser buit (cas 0 de la cardinalitat “*” en la relació <code>Magatzem</code> - <code>Mèdia</code>).</div>
+</li>
+<li class="level1"><div class="li"> S’ha decidit que la relació entre <code>Magatzem</code> i <code>Mèdia</code> és una agregació, però també es pot interpretar com una associació normal si no es considera que les dades emmagatzemades, les cançons, són part del magatzem i tenen entitat pròpia.</div>
+</li>
+<li class="level1"><div class="li"> La relació “darrera” entre <code>Magatzem</code> i <code>Mèdia</code> expressa quina és la darrera cançó a què s’ha accedit en el magatzem, per fer-ne accés seqüencial.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama estàtic UML del reproductor.
+
+</figcaption><img src="../media/ic10m03u5_14.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="una_aplicacio_de_gestio" >Una aplicació de gestió</a></h3>
+<div class="level3">
+
+<p>
+Suposeu que una empresa vol crear una aplicació que gestioni el transport d’encàrrecs d’una sucursal d’una franquícia. Cada sucursal té un conjunt de transportistes assignats, el nombre dels quals pot variar segons la grandària de la sucursal. Cada dia hi ha un transportista que no treballa, però es considera que està en reserva. Cada un disposa del seu propi vehicle, identificat per un número de llicència. Quan un client vol fer un encàrrec, se n’enregistren les dades personals i especifica les condicions de lliurament: dia i hora, adreça… En l’encàrrec fa constar la llista de productes que vol que li serveixin. Tan bon punt es genera un encàrrec, automàticament, ja s’assigna algun transportista perquè el serveixi. Mai no hi ha encàrrecs sense transportista assignat. Els clients també tenen l’opció de recomanar amics seus perquè s’hi apuntin com a clients. Aquest fet es té en compte de cara a algunes promocions o descomptes especials. 
+</p>
+
+<p>
+En aquest cas, es partirà de la descomposició en les següents classes: <code>Encàrrec</code>, <code>Sucursal</code>, <code>Transportista</code>, <code>Client</code>, <code>TipusProducte</code>. El diagrama estàtic UML de l’aplicació de gestió és el següent, representat en la <span class="figref"><a href="#Figure15"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama estàtic UML de l’aplicació de gestió
+
+</figcaption><img src="../media/ic10m03u5_15.png" alt="" /></figure>
+</div>
+</div>
+
+<h2><a id="els_diagrama_estatic_i_els_mapes_d_objectes" >Els diagrama estàtic i els mapes d&#039;objectes</a></h2>
+<div class="level2">
+
+<p>
+Una eina útil per reflexionar sobre si una cardinalitat representa allò que el dissenyador vol és crear mapes d’objectes. Es tracta d’esquemes que representen els diferents estats possibles de l’aplicació.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En un <strong>mapa d’objectes</strong> es mostren tots els objectes instanciats i els enllaços que hi ha entre ells en un moment determinat de l’execució, l’aplicació d’acord amb el que s’ha representat en el diagrama estàtic UML.
+</p>
+</div></div>
+<p>
+Els mapes d’objectes només són una eina de suport, i no s’utilitzen com a mecanisme formal per representar el disseny. En el diagrama estàtic UML ja hi ha tota la informació necessària.
+</p>
+
+<p>
+La <span class="figref"><a href="#Figure16"><span>figura</span></a></span> representa un seguit de mapes d’objectes, un per cada cas, amb diferents objectes enllaçats correctament segons la cardinalitat especificada en l’associació. Els enllaços es representen amb fletxes segons la navegabilitat de les associacions. El cas (a) correspon a l’associació PàginaCita, el cas (b) a la Control-Lector i el © a la Sucursal-Client. Damunt de cada mapa representat hi ha un recordatori de la cardinalitat de l’associació.
+</p>
+<div class="iocfigure"><a name="Figure16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de mapes d’objectes
+
+</figcaption><img src="../media/ic10m03u5_16.png" alt="" /></figure>
+</div>
+<p>
+La <span class="figref"><a href="#Figure17"><span>figura</span></a></span> mostra alguns casos d’estats que es considerarien incorrectes segons les cardinalitats especificades en les associacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>El cas (a)</strong> és incorrecte, ja que una cita sempre ha d’estar escrita en alguna pàgina (cardinalitat esquerra = 1), i la instància cita3: no ho compleix, en no estar enllaçada a cap objecte :Pàgina. Només seria correcte si la cardinalitat fos, per exemple, 0..1.</div>
+</li>
+<li class="level1"><div class="li"> <strong>El cas (b)</strong> és incorrecte, ja que un tauler de control només controla un únic lector enllaçat (cardinalitat dreta = 1), i la instància control1: no ho compleix, en estar enllaçada a dues instàncies, lector1: ilector2:. A més a més, un lector només pot estar enllaçat a un únic tauler de control (cardinalitat esquerra = 1), i la instància lector2: tampoc no ho compleix.</div>
+</li>
+<li class="level1"><div class="li"> <strong>El cas ©</strong> és incorrecte, ja que tot client ha d’estar enregistrat en alguna sucursal, i la instància client2: no està enllaçada amb cap.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemples d’enllaços incorrectes
+
+</figcaption><img src="../media/ic10m03u5_17.png" alt="" /></figure>
+</div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

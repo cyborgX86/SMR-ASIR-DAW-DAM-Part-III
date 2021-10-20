@@ -1,0 +1,1020 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Alta disponibilitat</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Alta disponibilitat</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#l_alta_disponibilitat_en_els_sistemes_informatics">L'alta disponibilitat en els sistemes informàtics</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#com_mesurar_l_alta_disponibilitat">Com mesurar l'alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#solucions_d_alta_disponibilitat">Solucions d'alta disponibilitat</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Virtualització</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#objectius_de_la_virtualitzacio">Objectius de la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_de_servidors">Virtualització de servidors</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_escriptoris">Virtualització d'escriptoris</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_aplicacions">Virtualització d'aplicacions</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#eines_per_a_la_virtualitzacio">Eines per a la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#configuracio_i_utilitzacio_de_les_maquines_virtuals">Configuració i utilització de les màquines virtuals</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#migracio_en_calent">Migració en calent</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_i_alta_disponibilitat">Virtualització i alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#informatica_en_nuvol">Informàtica en núvol</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#contenidors">Contenidors</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Alta disponibilitat</a></li><li>Alta disponibilitat</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="alta_disponibilitat"> Alta disponibilitat </a></h1>
+    	
+<p>
+Quan parlem de seguretat informàtica, estem parlant en definitiva de fiabilitat, confidencialitat, integritat i disponibilitat. Només si aconseguim complir totes aquestes condicions podrem dir que el nostre sistema és segur.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Fiabilitat</strong>: funcionament correcte dels sistemes, realitzant les tasques tal com han estat previstes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Confidencialitat</strong>: garantir que l’accés a les dades del sistema està restringit únicament a les persones autoritzades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Integritat</strong>: assegurar que les dades del sistema no han estat manipulades per persones no autoritzades i que per tant no s’han vist alterades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Disponibilitat</strong>: capacitat del sistema per ser accessible i operatiu el màxim de temps possible.</div>
+</li>
+</ul>
+
+<p>
+Tan important és garantir una bona seguretat dels sistemes informàtics tot evitant l’entrada de persones alienes i assegurant la qualitat de les dades que s’hi emmagatzemen com que el sistema estigui disponible el màxim de temps possible. No serveix de res tenir un sistema 100% infal·lible si finalment no pot realitzar les tasques per a les quals s’ha creat i no està disponible a l’usuari.
+</p>
+
+<p>
+Per tal d’assegurar la qualitat i la disponibilitat de les dades, fa uns anys que ha sorgit un nou concepte a l’hora de dissenyar els sistemes informàtics.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els sistemes d’<strong>alta disponibilitat</strong> són sistemes informàtics que han estat dissenyats seguint un conjunt de normes i tècniques per tal que el sistema pugui estar disponible sempre o, si més no, el màxim de temps possible. 
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Aplicacions de l&#039;alta disponibilitat</p>
+<p>
+En els sistemes informàtics no només és important conèixer l’índex de disponibilitat. També hi ha altres tipus de serveis en els quals és interessant conèixer els temps d’inactivitat. El Metro de Barcelona, per exemple, genera estadístiques mensuals sobre el temps de funcionament del seu servei.
+</p>
+</div></div>
+<p>
+Aconseguir que els sistemes informàtics estiguin disponibles sempre és gairebé utòpic, ja que són molts els riscos que s’han de tenir en compte. No obstant això, les empreses preparen els seus sistemes per tal que estiguin disponibles el màxim temps possible.
+</p>
+
+<h2><a id="l_alta_disponibilitat_en_els_sistemes_informatics" >L&#039;alta disponibilitat en els sistemes informàtics</a></h2>
+<div class="level2">
+
+<p>
+Les empreses són cada cop més dependents dels seus sistemes informàtics i, per tant, una aturada en els servidors els pot suposar elevades pèrdues tant econòmiques com materials. Fins i tot en casos extrems podria suposar la pèrdua de vides humanes. És per aquest motiu que cal dissenyar adequadament els sistemes informàtics de manera que es trobin disponibles en qualsevol moment i que puguin oferir els seus serveis als usuaris de forma continuada. 
+</p>
+
+<p>
+Per tal que els sistemes informàtics tingui una elevada disponibilitat caldrà implantar solucions de programari i de maquinari. Cal tenir present que la majoria de solucions d’alta disponibilitat comporten uns costos força elevats. 
+</p>
+
+<p>
+En el procés de disseny cal determinar les necessitats d’alta disponibilitat que tindrà el nostre sistema i fins a quin nivell és necessari implantar aquest tipus de solucions, ja que a vegades per millorar la disponibilitat unes poques hores s’han de fer grans inversions econòmiques. Per exemple, no té associats els mateixos riscos l’aturada dels sistemes d’una torre de control, una entitat bancària o una botiga virtual que la del sistema comptable d’una perruqueria, un taller mecànic o una botiga de queviures. 
+</p>
+
+<p>
+En funció del tipus de negoci, no cal que els sistemes estiguin disponibles les vint-quatre hores del dia i, per tant, es poden programar aturades per realitzar tasques de manteniment. I en cas que es produeixi una aturada inesperada, sovint no impediran l’activitat econòmica que es desenvolupa.
+</p>
+
+<p>
+Fa uns anys, l’alta disponibilitat estava únicament orientada a donar solució als sistemes informàtics de grans empreses. Tanmateix, en els últims anys s’han desenvolupat solucions menys costoses, fet que ha permès la implantació de solucions d’aquest tipus en empreses petites i mitjanes. 
+</p>
+
+<p>
+Determinades tasques de manteniment que realitzen els administradors (com actualitzacions, canvis de configuració o algunes còpies de seguretat) provoquen que el sistema deixin d’estar operatiu durant uns minuts. Aquest tipus d’aturades és el que s’anomenen <em>aturades planificades</em>, ja que els administradors les planifiquen per realitzar en moments que puguin tenir poc impacte en el funcionament de l’empresa. Estan controlades i es coneix per endavant la durada que tindran. Aquest tipus d’accions que generen un temps d’inactivitat s’acostumen a fer per les nits o en cap de setmana per tal d’afectar el mínim nombre d’usuaris, i sempre es notifiquen per endavant.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El <strong>temps d’inactivitat</strong> és el període de temps en què el nostre sistema no està operatiu i, per tant, no pot respondre a les peticions que realitzin els usuaris. En funció de les causes podem diferenciar dos tipus de temps d’inactivitat: <strong>planificat</strong> o <strong>no planificat</strong>.
+</p>
+</div></div>
+<p>
+D’altra banda, es troben els temps d’inactivitat no planificats, els quals poden ser causats per factors diversos. Per tal de poder identificar els possibles causants cal fer una avaluació de riscos. A continuació s’identifiquen alguns dels possibles riscos que caldrà tenir en compte:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Fallades de maquinari</strong>: el sistema deixarà d’estar operatiu si es produeix una aturada en algun dels dispositius bàsics del servidor com són la font d’alimentació, el disc dur o bé la memòria.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Talls i fluctuacions del subministrament elèctric</strong>: els sistemes informàtics són molt sensibles als canvis en el subministrament elèctric, que poden ser produïts per una fallada en les fonts d’alimentació locals, fluctuacions de tensió (tant pujades com caigudes de tensió) i per acabar, talls totals en el subministrament elèctric.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pèrdua o bloqueig de la informació</strong>: la informació del sistema pot ser inaccessible ja sigui per un atac o bé per una mala gestió dels usuaris.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fallada en la infraestructura de comunicacions</strong>: avui en dia la majoria de sistemes informàtics estan formats per la unió de diferents dispositius en una xarxa comuna. Un tall en la infraestructura de comunicacions suposarà la fallada del sistema complet, tant si es tracta de comunicacions locals com de comunicacions entre centres.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Saturació en els servidors de processament de dades</strong>: sovint, el bloqueig del servidor per un volum de dades superior al que és capaç de gestionar pot suposar una caiguda del sistema.</div>
+</li>
+</ul>
+
+<p>
+Un cop s’han identificat els possibles riscos, cal dissenyar i implantar solucions d’alta disponibilitat per tal que si algun d’aquests riscos s’acabés manifestant no representés una fallada del funcionament del sistema informàtic.
+</p>
+
+<p>
+Per dur a terme un projecte d’implantació d’alta disponibilitat caldrà que seguim les fases de projecte següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Coneixement del sistema i identificació de riscos</strong>: primer de tot cal conèixer en detall l’arquitectura del sistema on treballarem. Cal analitzar tots els components, per insignificants que puguin semblar, per poder identificar els dispositius més crítics i que, per tant, tindran un impacte més gran en cas de fallada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Establiment dels objectius a assolir</strong>: s’han de definir juntament amb l’usuari quins han de ser els nivells de servei a assolir.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Disseny i planificació</strong>: un cop s’han establert els objectius, es buscaran les possibles solucions per donar resposta aquesta demanda. S’analitzaran una a una i s’escollirà la que més s’adeqüi a les nostres necessitats. Finalment, es realitzarà el disseny del nou sistema i es crearà la planificació del projecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Implantació</strong>: a partir del disseny realitzat i en base a la planificació elaborada, es procedirà a la implantació de la solució acordada. Cal ser curosos a l’hora d’implantar un sistema d’aquest tipus, de manera que l’usuari no noti canvis en la qualitat del servei.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Mesura</strong>: validar que la solució implantada assoleix els objectius establerts. En el cas que es produeixi alguna desviació es prendran les mesures correctives per tal de poder aconseguir la fita marcada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Control</strong>: monitorar i controlar el sistema implantat per tal d’assegurar-nos que està treballant dins dels paràmetres establerts. Al llarg dels anys els sistemes es van actualitzant i van afegint nous dispositius. Cal també controlar que aquestes variacions del disseny inicial no influeixen de manera negativa en el funcionament del sistema.</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a id="com_mesurar_l_alta_disponibilitat" >Com mesurar l&#039;alta disponibilitat</a></h2>
+<div class="level2">
+
+<p>
+Per tal de controlar els temps de disponibilitat dels sistemes informàtics s’ha creat una mètrica de càlcul. Aquesta mètrica es vàlida per a tots els sistemes informàtics. Primer de tot cal establir quina hauria de ser la disponibilitat del nostre sistema. És el que s’anomena SLA (<em>Service Level Agreement</em>) <strong>acord del nivell de servei</strong>, que en una empresa normal podria rondar entre 8&times;5 o un 10&times;5, depenent dels horaris dels treballadors, que garanteix que els sistemes estaran operatius els cinc dies laborables de la setmana dins de l’horari de treball. Hi ha altres tipus de sistemes, però, que necessiten d’una disponibilitat superior, com poden ser les entitats bancàries les quals han de tenir una acord de servei de 24&times;365, és a dir que es trobin operatius tots els dies de l’any les vint-i-quatre hores del dia. Aquests acords de servei d’alta disponibilitat també poden anomenar-se 24/7, com el seu nom indica els sistemes es trobaran operatius les vint-i-quatre hores del dia tots els dies de la setmana.
+</p>
+
+<p>
+Un cop s’han determinat les hores de servei de cada sistema podem passar a calcular el total d’hores anuals que el sistema suposadament hauria d’estar operatiu. En el cas de sistemes d’alta disponibilitat, 24 x 365 = 8.760 hores/any. Si coneixem el total de temps d’inactivitat del sistema al llarg de l’any podem calcular el percentatge de disponibilitat aplicant la fórmula matemàticasegüent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">SLA</p>
+<p>
+Els SLA (<em>Service Level Agreement</em>) o acords del nivell de servei s’acostumen a utilitzar per establir un contracte entre un proveïdor de servei i un client. En aquest contracte s’estableixen els nivells mínims de qualitat en base a diferents aspectes: temps de resposta, disponibilitat horària, personal assignat… Bàsicament, es realitzen contractes d’aquest tipus amb empreses de telecomunicacions i serveis externalitzats.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>% disponibilitat</strong> = ((X – Y) / X) · 100 
+</p>
+
+<p>
+On X representa el nombre d’hores que el sistema hauria d’estar operatiu en referència a l’acord de nivell de servei de l’empresa i Y representa les hores d’inactivitat del sistema.
+</p>
+</div></div>
+<p>
+És interessant conèixer alguns dels càlculs més habituals d’índex de disponibilitat i temps d’inactivitat.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de càlcul de l&#039;índex de disponibilitat</p>
+<p>
+El cap d’informàtica d’un hospital ens ha demanat que calculem l’índex de disponibilitat del servidor on es troben emmagatzemats els expedients mèdics de tots els pacients. L’hospital disposa de servei d’urgències, que està obert les vint-i-quatre hores del dia tots els dies de l’any. Perquè els metges del servei puguin consultar els expedients mèdics s’han implantat algunes mesures d’alta disponibilitat, no obstant això, al llarg de l’any el servidor ha tingut un temps d’inactivitat acumulat de 53 minuts i 14 segons. El cap ens comenta que un índex de disponibilitat inferior a un 99,99% seria insuficient per al servidor de l’hospital.
+</p>
+
+<p>
+Primer de tot hem d’identificar quin ha de ser el nombre d’hores que el servei hauria d’estar operatiu. En aquest cas hauríem d’aconseguir que el servidor estigués operatiu vint-i-quatre hores durant 365 dies de l’any per tant un total de 24 x 365 = 8.760 hores. Atès que el temps d’inactivitat està indicat en minuts i segons cal passar el temps d’inactivitat tot a hores per poder aplicar la fórmula. 53 min / 60 = 0,88 hores i 14 segons / 3.600 = 0,0038 hores. Per tant, els 53 minuts i 14 segons equivalen a 0,89 hores. Finalment, calculem l’índex de disponibilitat: ((8.760 – 0,89) / 8.760) · 100 = <strong>99,98%</strong>. Podem determinar que les solucions d’alta disponibilitat implantades no són suficients, ja que l’índex de disponibilitat obtingut és inferior a l’esperat.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de càlcul del temps d&#039;inactivitat</p>
+<p>
+En una gestoria on els treballadors fan un horari laboral de nou del matí a sis de la tarda, el servidor on s’emmagatzemen les dades de comptabilitat té un índex de disponibilitat del 99%. Quin temps d’inactivitat màxim ha acumulat el servidor al llarg de l’any per arribar a aquest índex d’inactivitat? 
+</p>
+
+<p>
+En aquest tipus d’exercicis, primer de tot s’ha de determinar el nombre d’hores que hauria d’haver estat operatiu el servidor. Com que no es tracta d’un sistema d’alta disponibilitat, el servidor de comptabilitat només hauria d’haver estat operatiu els dies laborables entre les 9 i les 18 h. Atès que en un any hi ha 240 dies laborables i la jornada laboral de la gestoria és de nou hores diàries, al llarg d’un any el sistema hauria d’haver estat operatiu un total de 240 x 9 = 2.160 hores. En aquest cas, a partir de l’índex de disponibilitat s’ha d’esbrinar el temps d’inactivitat. 99% = ((2.160 – t. inactivitat)) / 2.160. S’aïlla de la fórmula el temps d’inactivitat i s’obté un temps de 21,6 hores.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de relació entre l&#039;índex de disponibilitat i el temps d&#039;inactivitat</p>
+<p>
+En una empresa d’allotjament web disposen actualment d’un índex d’inactivitat del 99%. Han rebut una oferta força interessant econòmicament d’una agència de viatges que opera per Internet. No obstant això, per acabar utilitzant els seus serveis exigeixen un índex de disponibilitat no inferior al 99,99%. Com s’hauria de reduir el temps d’inactivitat per tal que l’agència de viatges accepti allotjar el seu web en el servidor d’aquesta empresa? 
+</p>
+
+<p>
+En aquest cas, en tractar-se d’una empresa d’allotjament web, els seus servidors han d’estar operatius 24 hores x 365 dies = 8.760 hores/any. Si l’índex de disponibilitat és del 99%, substituint a la fórmula 99% = ((8.760 – t. inactivitat)) / 8.760 s’obté que el màxim temps d’inactivitat actual és de 87,6 hores. Si es millorés l’índex d’inactivitat al 99,99% = ((8.760 – t. inactivitat)) / 8.760 s’obtindria un temps d’inactivitat màxim de 0,876 hores. Per tant, s’haurien d’implantar millores d’alta disponibilitat per reduir el temps d’inactivitat en 87,6 – 0,876 = 86,724 hores.
+</p>
+</div></div>
+<p>
+A la <span class="tabref"><a href="#Taula1"><span>taula</span></a></span> podeu veure un quadre resum de la relació entre l’índex de disponibilitat i el temps d’inactivitat per any, mes i dia d’un sistema d’alta disponibilitat.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula1"><span>Taula: </span></a>Relació entre percentatge de disponibilitat i temps d’inactivitat per any, mes i dia d’un sistema 24&times;365</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Disponibilitat </th><th class="col1"> Temps inactiu/any </th><th class="col2"> Temps inactiu/mes </th><th class="col3"> Temps inactiu/dia </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>90%</strong>        </td><td class="col1 leftalign"> 36,5 d            </td><td class="col2 leftalign"> 73 h              </td><td class="col3 leftalign"> 2,4 h             </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>95%</strong>        </td><td class="col1 leftalign"> 18,3 d            </td><td class="col2 leftalign"> 36,5 h            </td><td class="col3 leftalign"> 1,2 h             </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>98%</strong>        </td><td class="col1 leftalign"> 7,3 d             </td><td class="col2 leftalign"> 14,6 h            </td><td class="col3 leftalign"> 28,8 min          </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>99%</strong>        </td><td class="col1 leftalign"> 3,65 d            </td><td class="col2 leftalign"> 7,3 h             </td><td class="col3 leftalign"> 14,6 min          </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong>99,9%</strong>      </td><td class="col1 leftalign"> 8,8 h             </td><td class="col2 leftalign"> 43,8 min          </td><td class="col3 leftalign"> 1,46 min          </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <strong>99,99%</strong>     </td><td class="col1 leftalign"> 52,6 min          </td><td class="col2 leftalign"> 4,4 min           </td><td class="col3 leftalign"> 8,8 s             </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> <strong>99,999%</strong>    </td><td class="col1 leftalign"> 5,3 min           </td><td class="col2 leftalign"> 26,3 s            </td><td class="col3 leftalign"> 0,9 s             </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> <strong>99,9999%</strong>   </td><td class="col1 leftalign"> 31,5 s            </td><td class="col2 leftalign"> 2,6 s             </td><td class="col3 leftalign"> 0,08 s            </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Com es pot apreciar en la <span class="tabref"><a href="#Taula1"><span>taula</span></a></span>, per cada increment de disponibilitat, el temps d’inactivitat es redueix de manera significativa. D’altra banda, cal analitzar els costos associats que comporta una millora d’aquest tipus, ja que passar d’una disponibilitat del 99% a una del 99,99% pot suposar duplicar el pressupost. Fins i tot se sol dir que per cada 9 que millorem en disponibilitat hauríem d’afegir un 0 en el pressupost.
+</p>
+
+<p>
+Per aquest motiu és important establir una relació entre les millores econòmiques que ens suposarà augmentar la disponibilitat del nostre sistema i els costos que això comporta. A més, no totes les empreses necessiten tenir una disponibilitat del 99,999%. Només ho necessiten entitats bancàries, sistema de pagament amb targeta de crèdit de grans magatzems, botigues virtuals o torres de control, entre d’altres.
+</p>
+
+<p>
+Tanmateix, és important que els administradors sàpiguen interpretar aquests resultats i que per analitzar la disponibilitat i fiabilitat dels seus sistemes no es basin únicament en aquests indicadors, ja que de vegades poden no ser del tot representatius. Per exemple ens podríem trobar amb un sistema amb una disponibilitat del 99,99%, que, tot i estar operatiu, presenta problemes de rendiment i no ofereix un bon servei als seus usuaris. Per tant, cal valorar també el tipus de servei que s’està oferint, no només els temps d’activitat dels dispositius. És per aquest motiu que cal també monitorar els serveis que ofereixen les nostres màquines. 
+</p>
+
+</div>
+
+<h2><a id="solucions_d_alta_disponibilitat" >Solucions d&#039;alta disponibilitat</a></h2>
+<div class="level2">
+
+<p>
+Un cop s’han identificat els possibles riscos als quals pot estar sotmès un sistema informàtic s’han d’implantar les solucions adients per evitar o mitigar el seu impacte. Les empreses que necessitin garantir una major disponibilitat dels seus serveis hauran d’incrementar les inversions en aquest àmbit per tal de cobrir totes les possibles circumstàncies.
+</p>
+
+<p>
+Podem trobar solucions de tot tipus, des de redundància en els dispositius de maquinari a redundància en les comunicacions, passant per centres de processament de dades secundaris i plans de contingència.
+</p>
+
+</div>
+
+<h3><a id="redundancia_en_el_maquinari" >Redundància en el maquinari</a></h3>
+<div class="level3">
+
+<p>
+Un dels riscos que en cas de manifestar-se pot comportar uns majors temps d’inactivitat són les fallades en el maquinari. Si no han estat previstes, aquest tipus de fallades poden deixar el sistema totalment inoperatiu durant hores i fins i tot dies. Tots els elements del maquinari poden deixar de funcionar en un moment determinat, no obstant això, cal identificar quins són més crítics per a la continuïtat del funcionament del nostre sistema. Aquests són, bàsicament, les fonts d’alimentació, els discos durs i la memòria.
+</p>
+
+<p>
+Per poder dimensionar adequadament la solució que més ens convé, cal conèixer les dades de fiabilitat dels diferents components que formen un servidor. Normalment, els fabricants d’equips electrònics aporten entre altres dades tècniques l’anomenat MTBF (de l’anglès <em>mean time between failures</em>), que és el temps mitjà entre fallades expressat en hores. Es tracta d’una dada estadística obtinguda a partir de proves de laboratori i dels resultats obtinguts de l’experiència amb els components electrònics més elementals, com poden ser els xips, els busos, les resistències… L’MTBF correspon exactament a la probabilitat inversa de fallada d’un sistema. Cal tenir present que varia segons els tipus de dispositius, el fabricants i les gammes de productes. A continuació s’indiquen alguns exemples d’MTBF:
+</p>
+<ul>
+<li class="level1"><div class="li"> Disc dur: 10.000-20.000 hores</div>
+</li>
+<li class="level1"><div class="li"> Mòdem: 20.000-30.000 hores</div>
+</li>
+<li class="level1"><div class="li"> Ordinador personal: 1.000-5.000 hores</div>
+</li>
+<li class="level1"><div class="li"> Impressora: 2.000-4.000 hores</div>
+</li>
+</ul>
+
+<p>
+Normalment els valors de MTBF no són constants en el temps, sinó que es poden dividir en tres etapes ben diferenciades:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Mortalitat infantil</strong>: es considera que el primer any de vida d’un dispositiu és el període en què poden aparèixer més fallades. El motiu és clar: si hi ha hagut errors en la fabricació, males condiciones en l’emmagatzematge, defectes en els materials emprats per al muntatge o un tractament deficient en les manipulacions, és a l’inici del seu ús on aquests es manifestaran i causaran un mal funcionament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vida útil</strong>: passat un any sense fallades, es considera que un dispositiu entra en la seva vida útil i la probabilitat que falli passa a ser l’MTBF indicat pel fabricant, sempre i quan el dispositiu treballi en les condicions necessàries de temperatura, humitat, vibracions… recomanades pel fabricant.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Final de la vida útil</strong>: finalment, passat uns anys es considera que els components s’han degradat degut a l’ús, a la temperatura… i la probabilitat que fallin augmenta considerablement.</div>
+</li>
+</ol>
+
+<p>
+En a la <span class="figref"><a href="#Figura1"><span>figura</span></a></span> es mostra la fiabilitat d’un dispositiu en el temps, amb les tres etapes diferenciades.
+</p>
+<div class="iocfigure"><a name="Figura1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Evolució de la probabilitat de fallada en el temps
+
+</figcaption><img src="../media/a1_continguts_image_0.png" alt="" /></figure>
+</div>
+<p>
+Així, a l’hora de dissenyar els plans per aconseguir una alta disponibilitat en els dispositius de maquinari cal analitzar degudament les dades que aporta el fabricant. En funció d’aquesta anàlisi es pot determinar quines parts del sistema és necessari redundar, que és la principal solució per assegurar l’alta disponibilitat, ja que permet reduir la probabilitat de fallada per dos o, el que és el mateix, duplicar el valor de l’MTBF.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de càlcul del MTBF</p>
+<p>
+Tenim un servidor que segons el fabricant té una probabilitat de fallada de 1 x 10<sup>–4</sup>. Per tant, el seu MTBF és: 1 / Probabilitat de fallada = 10.000 hores de vida útil. Aquest valor indica que estadísticament el servidor fallarà cada 416 dies. 
+</p>
+
+<p>
+L’empresa considera que aquest valor és massa baix i que necessita una disponibilitat més elevada. Per això decideix redundar el dispositiu completament i que dos servidors treballin en paral·lel. D’aquesta manera, la fallada del sistema global només es produirà quan fallin els dos servidors a la vegada. 
+</p>
+
+<p>
+Per tant, P (sistema) = P (fallada servidor 1) · P (fallada servidor 2) = 10<sup>–8</sup>. 
+</p>
+
+<p>
+L’MTBF serà de 100.000.000 hores: la disponibilitat global del sistema ha augmentat de manera significativa.
+</p>
+</div></div>
+</div>
+
+<h3><a id="redundancia_de_servidors" >Redundància de servidors</a></h3>
+<div class="level3">
+
+<p>
+Atès que en un servidor hi ha diversos components que poden deixar de funcionar i, en conseqüència, impedir al sistema oferir un nivell de servei adequat, s’acostuma a duplicar el servidor sencer. D’aquesta manera, sigui quin sigui el component que ha deixat de funcionar podem garantir un nivell de servei semblant al que s’ofereix en el servidor principal.
+</p>
+
+<p>
+Es pot classificar la redundància de servidors en funció de la capacitat de resposta en cas de fallada:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Redundància en calent</strong>: es tracta de dos servidors idèntics sincronitzats que treballen en paral·lel, però dels quals només un respon a les peticions del sistema. Disposen d’un programari de supervisió mútua. En cas que el servidor que està responent en aquell moment entri en fallada, el servidor en espera prendrà el relleu en un temps suficient perquè el servei no es vegi afectat, habitualment de l’ordre de pocs mil·lisegons.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Redundància intermèdia</strong>: es tracta de dos servidors, un de principal que respon a les peticions del sistema i un de secundari que no està sincronitzat en temps real. El servidor secundari s’actualitza cada cert període de temps prèviament establert, per exemple un cop al dia o un cop per setmana. En cas de fallada es produeix una aturada en el servei, perquè el servidor secundari s’ha d’actualitzar amb les dades del sistema principal. Aquest tipus d’aturades poden durant entre pocs minuts i algunes hores.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Redundància freda</strong>: es tracta de dos servidors, un de principal que respon a les peticions del sistema i un de secundari amb característiques semblants, però que no està operatiu. En cas de fallada s’hauria d’iniciar el servidor secundari, instal·lar el programari actualitzat i fer un bolcat de les dades. L’activació d’un sistema d’aquest tipus acostuma a requerir algunes hores i fins i tot algun dia.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="subministrament_electric" >Subministrament elèctric</a></h3>
+<div class="level3">
+
+<p>
+Tan important és preveure arquitectures i solucions d’alta disponibilitat del maquinari com dels sistemes de subministrament elèctric. Sense una bona infraestructura que permeti l’alimentació ininterrompuda dels nostres sistemes és impossible assegurar una alta disponibilitat global.
+</p>
+
+<p>
+Els talls en el subministrament elèctric poden produir-se per motius diversos. A continuació s’enumeren algunes de les fallades elèctriques que poden originar problemes en el funcionament d’un sistema informàtic:
+</p>
+<ul>
+<li class="level1"><div class="li"> Talls en el subministrament elèctric de la companyia proveïdora de servei.</div>
+</li>
+<li class="level1"><div class="li"> Fallades elèctriques dins de la instal·lació de l’empresa a causa de curtcircuits, derivacions…</div>
+</li>
+<li class="level1"><div class="li"> Avaria d’un dispositiu elèctric com el transformador, la font d’alimentació…</div>
+</li>
+</ul>
+
+<p>
+Per tenir un sistema robust i obtenir el nivell de protecció adequat contra aquestes amenaces es poden utilitzar les solucions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Redundància en el subministrament</strong>: es recomana la contractació de dues línies de subministrament elèctric a dos proveïdors de serveis diferents. En el cas que això no sigui possible es recomana disposar de dues connexions provinents de dues estacions transformadores diferents, d’aquesta manera la caiguda d’una part de la xarxa elèctrica no afectarà el funcionament de la empresa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Arquitectura elèctrica redundada</strong>: dins de l’arquitectura elèctrica de l’empresa es connectaran dues línies d’alimentació per a cada equip crític. Aquestes línies hauran de ser independents, amb protecció diferencial i magnetotèrmica independent. D’aquesta manera, si un dispositiu falla i fa disparar la protecció de capçalera, els altres dispositius no es veuran afectats. Per exemple, en dos servidors redundants s’hauria de disposar de dues línies independents per a cadascun d’ells.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Sistema d’alimentació ininterrompuda (SAI)</strong>: aquest dispositiu serveix per estabilitzar la tensió d’entrada, evitar pics i microtalls. A més, aquests sistemes ofereixen protecció contra talls en els subministrament elèctric oferint a partir de bateries l’autonomia necessària per continuar amb l’activitat de l’empresa o per a l’apagament controlat dels sistemes. En casos en què es necessiti un nivell de disponibilitat molt elevat, es col·loquen dos SAI en paral·lel (no deixa de ser un dispositiu que també pot fallar).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Redundància de dispositius</strong>: per acabar, també es poden produir fallades en les fonts d’alimentació dels mateixos equips. És per aquest motiu que molts fabricants ja ofereixen servidors amb dues fonts d’alimentació. Tanmateix, redundar totes les fonts d’alimentació de tots els servidors crítics pot suposar un cost massa elevat per a segons quina empresa. Com a alternativa existeixen els clústers d’alimentació (<em>n</em>+1). Aquests clústers estan formats per <em>n</em> fonts d’alimentació connectades en paral·lel que disposen de la potència necessària per a tota la instal·lació més una font addicional per si alguna fallés.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="sistemes_d_emmagatzematge_redundant" >Sistemes d&#039;emmagatzematge redundant</a></h3>
+<div class="level3">
+
+<p>
+Per garantir el bon funcionament d’un sistema informàtic és important que la informació estigui sempre disponible o bé que en cas de fallada es pugui recuperar quan es necessiti sense que els usuaris se n’assabentin. 
+</p>
+
+<p>
+Tot i que els discos tenen cada vegada una capacitat més gran i són més fiables, continuen sent un dels principals punts dèbils dels sistemes informàtics. La tecnologia RAID (<em>Redundant Array of Independent Disks </em>o conjunt redundant de discos independents) ens permet assolir alts graus de fiabilitat en l’emmagatzematge de la informació. 
+</p>
+
+<p>
+Un <strong>RAID</strong> és un sistema d’emmagatzematge d’informació que permet combinar dos o més discos d’igual capacitat perquè siguin tractats pel sistema com una única unitat lògica. La informació es divideix i es replica, de manera que s’ofereixen diferents nivells de tolerància a fallades. 
+</p>
+
+<p>
+Els esquemes RAID poden ser gestionats per:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Maquinari</strong>: en aquest cas es necessita una controladora RAID específica que permet alleugerir la càrrega del processador. Aplicant una solució de maquinari obtindrem una tolerància més alta a fallades i millorarem el rendiment de lectura i escriptura als discos. No obstant això, en afegir la controladora RAID també estem afegint un possible nou punt de fallada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Programari</strong>: el mateix sistema operatiu és l’encarregat de gestionar els discos i, per tant, el rendiment del sistema es veu afectat, ja que part del processador ha d’estar dedicat a aquesta gestió.</div>
+</li>
+</ul>
+
+<p>
+Com s’ha indicat, les arquitectures RAID gestionades per maquinari ofereixen un millor rendiment. A més, aquest tipus de solucions acostumen a admetre substitucions en calent (<em>hot swapping</em>), és a dir, permeten que els discos puguin ser substituïts sense necessitat d’aturar el sistema.
+</p>
+
+<p>
+A continuació es detallen els esquemes RAID més comuns.
+</p>
+
+</div>
+
+<h4><a id="raid_0" >RAID 0</a></h4>
+<div class="level4">
+
+<p>
+El RAID 0, també anomenat <em>stripping</em>, distribueix equitativament la informació entre els diferents discos durs, de manera que la capacitat de la unitat lògica és la suma de les capacitats dels discos que la formen. De tots els esquemes RAID, aquest és l’únic que no proporciona tolerància a fallades: si un dels discos del RAID falla es perden totes les dades.
+</p>
+
+<p>
+Com podem veure en la <span class="figref"><a href="#Figura2"><span>figura</span></a></span>, les dades es divideixen en petits blocs que es van emmagatzemant de forma alternada entre els diferents discos que formen el RAID. Aquesta manera d’emmagatzemar la informació permet que les lectures i escriptures en el disc puguin ser simultànies, la qual cosa augmenta la velocitat de transferència. 
+</p>
+<div class="iocfigure"><a name="Figura2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Distribució de la informació en un sistema RAID 0
+
+</figcaption><img src="../media/a1_continguts_image_1.png" alt="" /></figure>
+</div>
+<p>
+Aquest esquema s’acostuma a utilitzar per millorar el rendiment en entorns on les dades no són crítiques, ja que una fallada en un dels disc suposaria la pèrdua total de la informació.
+</p>
+
+</div>
+
+<h4><a id="raid_1" >RAID 1</a></h4>
+<div class="level4">
+
+<p>
+El RAID 1, també anomenat <em>mirror</em>, està format per la unió de dos o més disc durs. La capacitat de la unitat lògica correspon a la capacitat del disc més petit. En aquest esquema totes les dades es dupliquen en cadascun dels discos, d’aquesta manera si algun falla es poden recuperar totes les dades sempre que quedi un disc operatiu (<span class="figref"><a href="#Figura3"><span>figura</span></a></span>).
+</p>
+
+<p>
+El RAID 1 ens proporciona un bon nivell de tolerància a fallades, però empitjora l’eficiència pel que fa a l’emmagatzematge disponible, ja que es necessita el doble d’espai per emmagatzemar una informació determinada. La velocitat de lectura i escriptura és semblant a la que podem aconseguir en un sol disc.
+</p>
+
+<p>
+Aquest tipus de solucions és recomanable per a empreses petites que volen aconseguir seguretat en l’emmagatzematge de dades sense fer una gran inversió.
+</p>
+<div class="iocfigure"><a name="Figura3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Distribució de la informació en un sistema RAID 1
+
+</figcaption><img src="../media/a1_continguts_image_2.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="raid_5" >RAID 5</a></h4>
+<div class="level4">
+
+<p>
+El RAID 5, també conegut com a <em>stripping amb paritat</em>, necessita un mínim de tres discos per poder-se implantar. La capacitat d’emmagatzematge de la unitat lògica correspon a la suma de les capacitats de tots els seus discos menys un. 
+</p>
+
+<p>
+Tal com s’observa en la <span class="figref"><a href="#Figura4"><span>figura</span></a></span>, la informació es divideix en petits blocs que es van emmagatzemant alternativament entre els diferents discos. S’introdueixen codis de paritat distribuïts entre els diferents discos per tal de garantir la recuperació de les dades. En el cas de que un dels discos falli es podrà recuperar la informació a partir de les dades emmagatzemades en la resta de discos i els codis de paritat.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Codis de paritat</p>
+<p>
+Serveixen per detectar i corregir errors en les transmissions de dades. S’incorpora un conjunt de bits calculats a partir d’un algorisme al final del missatge original per tal que el receptor pugui verificar que les dades són correctes. 
+</p>
+</div></div><div class="iocfigure"><a name="Figura4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Distribució de la informació en un sistema RAID 5
+
+</figcaption><img src="../media/a1_continguts_image_3.png" alt="" /></figure>
+</div>
+<p>
+El RAID 5 ha aconseguit una gran popularitat, perquè ofereix redundància de dades a un cost baix.
+</p>
+
+</div>
+
+<h4><a id="raid_1_0" >RAID 1+0</a></h4>
+<div class="level4">
+
+<p>
+Algunes targetes controladores RAID permeten niar diferents esquemes RAID, de manera que ens podem beneficiar dels avantatges que ofereix cadascun. El RAID 1+0 és una combinació d’aquest tipus. Consisteix, concretament, a unir discos amb un RAID 1 com si es tractessin de discos físics en un RAID 0. D’aquesta manera, aconseguim la velocitat en els accessos que ens ofereix el RAID 0 en permetre accessos simultanis i la redundància que ens ofereixen els esquemes RAID 1. 
+</p>
+
+<p>
+Aquesta combinació es podria també realitzar a la inversa creant un RAID 0+1, però no és recomanable fer-ho, ja que en cas de fallada s’haurien de recuperar més discos.
+</p>
+
+<p>
+Com es pot observar en la <span class="figref"><a href="#Figura5"><span>figura</span></a></span>, per implementar una solució d’aquest tipus són necessaris quatre discos com a mínim, fet que incrementa notablement el cost de la solució.
+</p>
+<div class="iocfigure"><a name="Figura5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Distribució de la informació en un sistema RAID 1+0
+
+</figcaption><img src="../media/a1_continguts_image_4.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="centres_de_processament_secundaris" >Centres de processament secundaris</a></h3>
+<div class="level3">
+
+<p>
+Un centre de processament de dades (CPD) secundari està especialment dissenyat per entrar en funcionament quan per qualsevol contingència el centre principal deixa d’estar operatiu. Els costos d’adquisició i manteniment d’un CPD secundari són molt elevats. És per aquest motiu que només són recomanables per a empreses molt grans que requereixin d’una disponibilitat total.
+</p>
+
+<p>
+Les característiques tècniques del CPD secundari han de ser les mateixes o molt semblants a les del CPD principal, ja que en cas que entri en funcionament haurà de poder oferir el mateix nivell de servei. A més, caldrà que compleixi amb les mateixes mesures de seguretat tant pel que fa a seguretat física com a la lògica per garantir la integritat de les dades. Es recomana ubicar el servidor secundari a uns 30 o 50 quilòmetres de distància del principal per evitar que els dos CPD es puguin veure compromesos en un mateix desastre natural. A l’hora de triar la ubicació, cal tenir present que quanta més distància hi hagi entre els dos CPD més retard hi haurà en les transmissions de dades i que, per tant, es pot produir un petit decalatge.
+</p>
+
+<p>
+Les actualitzacions de dades entre els dos CPD poden ser de dos tipus:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Síncrones</strong>: el CPD secundari rep en temps real els canvis que es produeixen en el CPD principal i manté en tot moment una còpia exacta de les dades. En el cas que es produeixi una emergència i entri en funcionament, podrà fer-se càrrec del servei amb la garantia de disposar de totes les dades actualitzades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Asíncrones</strong>: les actualitzacions no es fan en temps real sinó per lots. Per exemple, es poden fer còpies diàries per la nit al CPD principal i restaurar-les al CPD secundari el matí següent. En el cas que el centre secundari entri en funcionament s’ha de tenir present el possible decalatge temporal i actuar amb conseqüència.</div>
+</li>
+</ul>
+
+<p>
+En definitiva, sempre és més fiable un centre de processament de dades secundari amb actualitzacions síncrones que un amb actualitzacions asíncrones, perquè en cas de caiguda podrà disposar de tota la informació, mentre que en el que fa actualitzacions asíncrones podem tenir una pèrdua irrecuperable d’informació. D’altra banda, la implementació d’un sistema síncron és molt més cara que la d’un asíncron, ja que s’han d’establir canals de comunicació entre el centre principal i el secundari amb prou capacitat per enviar un gran volum de dades a temps real. A més, aquests costos es disparen com més gran sigui la distància entre els dos centres.
+</p>
+
+<p>
+Els CPD secundaris amb actualitzacions asíncrones poden ser una bona solució per a empreses grans que no requereixin una disponibilitat total. Són més econòmics i no necessiten una infraestructura de telecomunicacions tan costosa.
+</p>
+
+<p>
+Un altre aspecte a tenir en compte és com es realitzarà entre els dos centres la commutació de serveis. Aquest fet dependrà molt del tipus de servei que es vulgui traslladar. Pel que fa als sistemes síncrons, la commutació de serveis acostuma a ser senzilla i ràpida, semblant a commutar equips redundants dins d’un mateix CPD. Pel que fa als centres asíncrons, acostuma a ser més complicada i menys automatitzada. Sovint es necessita fer una posada a punt del CPD i realitzar una restauració de les dades, fet que pot provocar temps d’ineficiència en el sistema.
+</p>
+
+</div>
+
+<h3><a id="xarxes_i_sistemes_d_emmagatzematge_en_xarxa" >Xarxes i sistemes d&#039;emmagatzematge en xarxa</a></h3>
+<div class="level3">
+
+<p>
+Les empreses generen un volum de dades cada cop més gran i fer una gestió eficient d’aquesta informació és cada cop més complicat. A més, els usuaris necessiten que les dades es trobin disponibles en tot moment des de diferents plataformes i dispositius. Amb aquest objectiu s’han desenvolupat dues solucions d’emmagatzematge en xarxa: el NAS (sistema d’emmagatzematge en xarxa) i el SAN (xarxa d’emmagatzematge).
+</p>
+
+</div>
+
+<h4><a id="sistema_d_emmagatzematge_en_xarxa_nas" >Sistema d&#039;emmagatzematge en xarxa (NAS)</a></h4>
+<div class="level4">
+
+<p>
+Els sistemes d’emmagatzematge en xarxa o NAS (en anglès <em>Network-Attached Storage</em>) estan compostos per dispositius d’emmagatzematge que es connecten directament a la xarxa corporativa i permeten compartir les dades amb tots els usuaris de l’empresa (<span class="figref"><a href="#Figura6"><span>figura</span></a></span>). 
+</p>
+
+<p>
+Els servidors NAS disposen d’un maquinari específic per traduir els diferents sistemes de fitxers, des del qual els usuaris poden accedir als dispositius d’emmagatzematge. Internament, els dispositius d’emmagatzematge tenen implantats esquemes RAID, la qual cosa els proporciona un bon rendiment i una alta tolerància a fallades. Podem afirmar que les dades estan protegides, ja que estan centralitzades en el sistema NAS, que té una estructura d’alta disponibilitat.
+</p>
+
+<p>
+Per accedir a la informació emmagatzemada en un sistema NAS, s’han de fer servir les funcions del sistema de fitxers del mateix sistema operatiu. Així, les lectures de dades es realitzen a nivell de fitxers i no a nivell de blocs, com es fa habitualment en un sistema d’emmagatzematge local. Això fa que les consultes en el sistema NAS siguin més lentes que en un sistema d’emmagatzematge natiu, fet que pot provocar retards en sistemes que treballin a temps real, tot i que pot ser una molt bona solució per a empreses que no requereixin un temps de resposta tan ràpid.
+</p>
+
+<p>
+Els sistemes NAS són fàcils d’instal·lar i d’administrar. A més, en els últims anys han baixat molt de preu i avui en dia són assequibles per a qualsevol empresa i fins i tot per a usuaris particulars.
+</p>
+
+<p>
+Els protocols que utilitzen aquests sistemes són el CIFS, l’NFS i l’SMB. Fins i tot podem trobar distribucions de programari lliure que ofereixen serveis NAS, com FreeNas, NASLite i Openfiler, entre d’altres.
+</p>
+<div class="iocfigure"><a name="Figura6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura d’un sistema d’emmagatzematge en xarxa
+
+</figcaption><img src="../media/a1_continguts_image_5.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="xarxa_d_emmagatzematge_san" >Xarxa d&#039;emmagatzematge (SAN)</a></h4>
+<div class="level4">
+
+<p>
+En les xarxes d’emmagatzematge o SAN (en anglès, <em>Storage Area Network</em>), els dispositius d’emmagatzematge estan connectats directament a una xarxa d’alta velocitat i els usuaris els poden gestionar des del seu sistema operatiu com si hi estiguessin connectats de forma local (<span class="figref"><a href="#Figura7"><span>figura</span></a></span>).
+</p>
+
+<p>
+Els dispositius d’emmagatzematge i els servidors estan connectats a la xarxa mitjançant fibra òptica o iSCSI, que garanteixen rapidesa i fiabilitat en les seves connexions. La fibra òptica proporciona més velocitat. Això no obstant, les targetes i els commutadors de fibra òptica són molt cars. És per aquest motiu que avui en dia la majoria de xarxes SAN utilitzen el protocol iSCSI, ja que les peticions SCSI s’envien pel protocol TCP/IP, sense necessitat d’instal·lar fibra òptica. No són tan ràpides, però permeten reduir costos.
+</p>
+<div class="iocfigure"><a name="Figura7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura d’una xarxa d’emmagatzematge
+
+</figcaption><img src="../media/a1_continguts_image_6.png" alt="" /></figure>
+</div>
+<p>
+De tota manera, aquest tipus d’infraestructures són molt costoses i, per tant, només són assequibles per a empreses molt grans.
+</p>
+
+<p>
+A diferència dels sistemes NAS, les xarxes SAN no estan orientades a fitxers, sinó a blocs, igual que els sistemes d’emmagatzematge local. D’aquesta manera, els accessos són molt més ràpids, la qual cosa en fa una bona solució per a sistemes a temps real.
+</p>
+
+<p>
+Un dels avantatges de les xarxes SAN és que en tenir una connectivitat més alta, els servidors i els dispositius d’emmagatzematge poden estar-hi connectats més d’una vegada i, per tant, creen d’aquesta manera canals redundants, fet que n’augmenta la tolerància davant de fallades.
+</p>
+
+</div>
+
+<h3><a id="solucions_d_alta_disponibilitat_en_bases_de_dades" >Solucions d&#039;alta disponibilitat en bases de dades</a></h3>
+<div class="level3">
+
+<p>
+Avui en dia les empreses treballen amb volums de dades molt grans i la tendència ens indica que en el futur encara s’emmagatzemaran més dades. Ara mateix, les empreses ja no mantenen únicament un llistat dels clients, sinó que acostumen a emmagatzemar altra informació rellevant com: els seus hàbits, aficions, llistat de compres realitzades… Amb tota aquesta informació es poden crear perfils de compres genèrics i individuals, d’aquesta manera l’empresa pot avançar-se a les tendències del mercat i realitzar campanyes publicitàries personalitzades.
+</p>
+
+<p>
+Per facilitar les tasques de gestió i administració de les dades, aquesta informació es troba emmagatzemada en bases de dades que disposen de les eines necessàries per poder-ne fer una gestió eficient. 
+</p>
+
+<p>
+En els últims anys s’ha incrementat en el món empresarial l’ús del programari de gestió ERP (<em>Enterprise Resource Planning</em>), que ha fomentat la creació de grans bases de dades on se centralitza tota la informació de l’empresa. Aquest tipus de bases de dades acostuma a estar força exposat a fallades, ja que gestiona un volum de peticions molt elevat i això pot causar errors o caigudes del sistema. Per a moltes empreses, especialment les que tenen negocis molt dependents dels sistemes d’informació, com els bancs, una caiguda de la base de dades pot suposar pèrdues econòmiques importants. Per això les hem d’identificar com un dels punts més crítics del sistema.
+</p>
+
+<p>
+La millor manera de reduir el nombre d’errors i fallades en una base de dades és disposar d’un bon disseny inicial que permeti una escalabilitat posterior. També cal que les aplicacions que treballen amb la base de dades realitzin només les peticions indispensables per obtenir la informació que necessiten.
+</p>
+
+<p>
+En qualsevol cas, un bon disseny no garanteix que no tinguem cap tipus de fallada o caiguda del sistema. Per això cal que protegim les bases de dades amb sistemes d’alta disponibilitat. El sistema més habitual és disposar de la base de dades de producció, anomenada també <em>principal</em> o <em>primària</em>, i una base de dades secundària rèplica exacta de la primària. La base de dades replicada entrarà en funcionament quan es produeixi una fallada en la base de dades de producció o quan es realitzi alguna actualització. Per tal de millorar-ne la disponibilitat és recomanable que les dues bases de dades es trobin ubicades físicament en servidors diferents; així augmentarem la disponibilitat en cas d’una caiguda del servidor.
+</p>
+
+<p>
+La còpia d’informació entre les dues bases de dades es pot fer de forma síncrona o asíncrona:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Síncrona</strong>: en cada transacció que suposa una modificació de la base de dades es copien de manera automàtica tots els canvis a la base de dades secundària i no es dóna la transacció per acabada fins que no s’ha realitzat la modificació en ambdues bases de dades. Aquest mètode empitjora lleugerament el rendiment de la base de dades, ja que les transaccions són més llargues.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Asíncrona</strong>: en aquest cas es potencia més el rendiment de la base de dades que la qualitat de les dades en cas de fallada. Es dóna per vàlida la transacció un cop s’han guardat els canvis a producció i es retarda lleugerament la còpia de dades al servidor secundari. Això pot generar petites diferències amb la base de dades original en el cas que s’hagi de restaurar.</div>
+</li>
+</ul>
+
+<p>
+Com que els sistemes síncrons tenen la informació actualitzada permeten fer una commutació automàtica de les bases de dades sense riscos. D’aquesta manera, si es produís una caiguda o errada en la base de dades principal, els sistemes de la empresa podrien funcionar amb normalitat amb la base de dades secundaria, sense que els seus usuaris se n’assabentessin. 
+</p>
+
+<p>
+D’altra banda, quan es produeix una fallada en la base de dades principal d’un sistema asíncron s’ha de forçar la commutació, fet que pot generar pèrdues de dades, ja que la base de dades secundària pot no trobar-se del tot actualitzada en el moment del canvi.
+</p>
+
+<p>
+Els principals proveïdors de bases de dades ja ofereixen solucions asíncrones i de commutació automàtica de les dades. És el cas de Data Guard d’Oracle i l’AlwaysOn d’SQL Servers.
+</p>
+
+</div>
+
+<h3><a id="redundancia_en_les_comunicacions" >Redundància en les comunicacions</a></h3>
+<div class="level3">
+
+<p>
+Les comunicacions no són menys importants que les bases de dades. No serveix de res tenir un servidor amb una disponibilitat del 100% si els clients no s’hi poden connectar. Per garantir aquesta connectivitat entre servidors i clients, la majoria de servidors disposen de dues targetes de xarxa. Així els serveis no es veuen afectats en cas de fallada. Tanmateix, el servidor pot treballar amb es dues targetes de xarxa com si fossin una de sola, sumant les seves capacitats i millorant el seu rendiment.
+</p>
+
+<p>
+Tant si les comunicacions són internes com externes hi intervenen molts dispositius de xarxa (encaminadors, commutadors, concentradors…). La caiguda de qualsevol d’aquests dispositius pot suposar la caiguda del servei. És important redundar la majoria d’aquests dispositius en les xarxes internes de l’empresa perquè una caiguda no afecti a les comunicacions i, en definitiva, al servei ofert. A part dels dispositius de la xarxa també és important replicar els canals de connexió entre els principals dispositius per tal d’evitar que un tall en el canal provoqui la caiguda del sistema. Per això s’acostuma a construir les xarxes amb una arquitectura d’anell, de manera que la caiguda d’un canal entre dos nodes, per exemple per un tall accidental en una fibra òptica, no afecti a les comunicacions del sistema i tots els dispositius puguin seguir estant connectats entre sí i treballar amb total normalitat (<span class="figref"><a href="#Figura8"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="Figura8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura d’una connexió en anell
+
+</figcaption><img src="../media/a1_continguts_image_7.png" alt="" /></figure>
+</div>
+<p>
+Una xarxa en anell, però, pot originar alguns problemes en la selecció de rutes per part dels protocols i crear situacions de bucles infinits dins de la xarxa, en els quals els paquets es vagin enviant entre els dispositius de xarxa sense arribar mai a la seva destinació. Per això cal utilitzar protocols que permetin la resolució d’aquests problemes, com fa el protocol Ethernet amb la seva funcionalitat <em>Spanning Tree</em> (STP). Aquesta funcionalitat detecta automàticament en una xarxa quan s’ha creat un anell de redundància entre els dispositius, desactiva un dels enllaços entre els nodes de comunicació de manera automàtica i evita així la formació de bucles. Davant d’una fallada en un enllaç, l’STP activa l’enllaç que havia desactivat virtualment per evitar l’aparició de bucles i desactiva l’enllaç que ha caigut realment.
+</p>
+
+<p>
+La majoria d’empreses disposen avui d’una xarxa d’oficines connectades entre elles per compartir recursos i dades. Tot i disposar d’una xarxa de comunicacions interna d’alta disponibilitat, aquestes comunicacions entre centres requereixen l’ús de xarxes de telecomunicacions públiques, com per exemple Internet. Així, doncs, els proveïdors de serveis passen a ser un dels punts més crítics del sistema. Una caiguda del proveïdor de servei d’Internet suposa unes pèrdues econòmiques significatives per a la empresa. No només es perden les comunicacions entre les diferents seus, sinó que també deixen d’estar disponibles altres serveis imprescindibles per al bon funcionament de la companyia com el correu electrònic, el web, es perden comunicacions amb els clients… a més que es pot generar la desconfiança de clients potencials.
+</p>
+
+<p>
+Per garantir un bon accés a Internet i evitar tots aquests problemes, les empreses opten per contractar dues línies de comunicacions amb diferents proveïdors. Encara es millorarà més la disponibilitat si es contracta l’accés a Internet a dos proveïdors que ofereixin una tecnologia diferent, per exemple fibra òptica i ADSL. Tanmateix, aquesta opció no sempre és viable.
+</p>
+
+<p>
+Disposar de més d’un proveïdor d’accés a Internet ajuda a garantir la disponibilitat de les comunicacions en cas de caiguda del servei i, a més, permet realitzar un repartiment de càrrega entre les dues línies i millorar la seva capacitat.
+</p>
+
+</div>
+
+<h3><a id="repartiment_de_carrega" >Repartiment de càrrega</a></h3>
+<div class="level3">
+
+<p>
+Tot i que el repartiment de càrrega no és una solució d’alta disponibilitat, serveix com a mesura preventiva, ja que permet gestionar el trànsit de la xarxa entre els diferents dispositius de manera que no es puguin saturar les interfícies i provocar una caiguda de les comunicacions. En el cas que una de les interfícies de xarxa caigués, es podrien mantenir les comunicacions a partir de les altres interfícies operatives. Per contra, el rendiment de la xarxa es veuria afectat.
+</p>
+
+</div>
+
+<h3><a id="cluster_de_servidors" >Clúster de servidors</a></h3>
+<div class="level3">
+
+<p>
+Un dels factors que més impacte pot tenir en el funcionament d’un sistema són les fallades del maquinari. Una caiguda del servidor principal pot tenir uns efectes devastadors i per això es recomana redundar aquest tipus de màquines. No obstant això, no s’ha d’oblidar que és una solució costosa i que no totes les empreses poden permetre-se-la. 
+</p>
+
+<p>
+Tanmateix, la redundància de servidors no és la única opció. Hi ha altres solucions més econòmiques i més ràpides per continuar amb l’activitat de negoci. Una de les solucions que més implanta a les empreses són els clústers de servidors d’alta disponibilitat.
+</p>
+
+<p>
+Per facilitar la tasca de transferència de serveis i dades entre servidors en cas de fallada s’han desenvolupat noves arquitectures de servidors, els clústers.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>clúster</strong> és un conjunt d’unitats funcionals amb característiques similars interconnectades per mitjà d’una xarxa d’alta velocitat i configurades perquè actuïn coordinadament, com una sola unitat.
+</p>
+</div></div>
+<p>
+Els clústers es poden classificar segons la seva finalitat en:
+</p>
+<ul>
+<li class="level1"><div class="li"> Clústers d’alt rendiment</div>
+</li>
+<li class="level1"><div class="li"> Clústers d’alta disponibilitat</div>
+</li>
+</ul>
+
+<p>
+Un <strong>clúster d’alt rendiment</strong> es basa en el processament en paral·lel, que consisteix a unir els diferents nodes en una xarxa i que parts d’un mateix programa s’executin de forma paral·lela en els diferents processadors connectats. D’aquesta manera s’aconsegueixen sumar les capacitats de càlcul dels nodes que el componen. Sovint, aquestes formacions poden disposar d’un gran nombre d’ordinadors connectats per a la creació de supercomputadors. Aquest tipus d’arquitectura s’acostuma a utilitzar per a la resolució de problemes científics que requereixin processar un gran volum de dades. És el cas dels estudis sobre el genoma humà o el canvi climàtic. 
+</p>
+
+<p>
+Encara que la finalitat dels clústers d’alt rendiment no és l’alta disponibilitat, també acostumen a incorporar solucions d’aquest tipus, ja que no es podrà assolir un alt rendiment si no s’assegura una alta disponibilitat del sistema. Per això un clúster d’alt rendiment sempre oferirà millors prestacions que un únic ordinador amb igual capacitat de càlcul. A Catalunya, el supercomputador MareNostrum funciona amb aquesta tecnologia. 
+</p>
+
+<p>
+En un <strong>clúster d’alta disponibilitat</strong>, els diferents nodes que componen el clúster es troben monitorats en tot moment, de manera que si es produeix una fallada en el maquinari o programari d’algun dels nodes, es podran restaurar de forma automàtica els serveis caiguts en un altre servidor. Quan el node caigut torna a estar operatiu es restauren els seus serveis inicials i tot continua funcionant com ho feia abans de la caiguda. D’aquesta manera, la caiguda d’un dels servidors no afecta al funcionament global del sistema. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Supercomputador MareNostrum</p>
+<p>
+A Catalunya tenim el supercomputador MareNostrum, basat en una tecnologia de clúster d’alt rendiment. Va ser creat l’any 2004 i encara avui és un dels superordinadors més potents de tot Europa. Està format per la unió de 10.280 processadors de 64 bits, una memòria de 20 terabytes, 280 terabytes de disc, que li proporcionen una capacitat de procés de 62 teraflops. El Barcelona Supercomputing Center (BSC) és l’organisme encarregat de la seva gestió i de seleccionar els projectes científics que en poden fer ús. S’hi desenvolupen tot tipus de projectes, com per exemple investigacions sobre el genoma humà o l’estructura de les proteïnes. Està ubicat en una antiga capella a les instal·lacions del campus de la UPC a Barcelona.
+</p>
+</div></div>
+<p>
+Els clústers d’alta disponibilitat no només són útils davant d’aturades no planificades, sinó que també són una bona solució per realitzar tasques de manteniment sense deixar d’oferir servei. A diferència dels clústers d’alt rendiment, no acostumen a disposar d’un gran nombre de nodes connectats; sovint es tracta únicament de la unió de dos nodes.
+</p>
+
+<p>
+Existeixen diferents configuracions de clústers d’alta disponibilitat, tot i que les més comunes són l’actiu-actiu i l’actiu-passiu.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Configuració actiu-actiu</strong>: tots els nodes estan operatius i poden executar els mateixos recursos de forma simultània. En el cas que es produís una fallada en un dels nodes, la resta de nodes del clúster podrien oferir els mateixos serveis, però augmentaria la càrrega dels altres nodes i la qualitat del servei es podria veure afectada. Aquesta configuració permet aprofitar molt millor els recursos del clúster, ja que tots els nodes poden treballar de forma simultània. La implantació d’un solució d’aquest tipus és bastant més complexe que una configuració actiu-passiu.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Configuració actiu-passiu</strong>: el node actiu està operatiu i és l’encarregat d’oferir el servei als usuaris, mentre que el node passiu està aturat i només entra en funcionament quan el node actiu pateix una fallada. Aquest tipus de configuració és menys eficient que l’actiu-actiu, ja que en un moment determinat només s’aprofiten els recursos d’un dels dos nodes.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="plans_de_contingencia" >Plans de contingència</a></h3>
+<div class="level3">
+
+<p>
+Siguin quines siguin les mesures que s’hagin aplicat per garantir l’alta disponibilitat en un sistema, sempre es poden produir fallades que no estiguessin contemplades o que no hagin pogut ser resoltes per les solucions implantades. En aquests casos només ens quedarà posar en funcionament el pla de contingència.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El <strong>pla de contingència</strong> recull el conjunt de procediments alternatius que permetrien a l’empresa continuar treballant de manera normal en el cas que alguna de les seves funcionalitats es veiés afectada per un accident intern o extern.
+</p>
+</div></div>
+<p>
+A l’hora d’elaborar un pla de contingències, primer de tot cal realitzar una anàlisi de riscos. Aquesta anàlisi consisteix a identificar les causes i conseqüències de les amenaces que pot patir el nostre sistema. Per facilitar la feina, habitualment es dibuixen unes taules en les quals s’identifica per a cada una de les possibles amenaces la probabilitat que es produeixi i l’impacte que tindria en la continuïtat del negoci. 
+</p>
+
+<p>
+Un cop identificades totes les possibles amenaces es començaran a definir les solucions o processos per evitar que es produeixin o per mitigar-ne l’impacte. Es comença descrivint els processos d’aquelles amenaces que tenen una probabilitat i impacte alt, i s’acaba per les que són molt poc probables i tindrien un impacte molt baix.
+</p>
+
+<p>
+Per a cadascuna de les amenaces identificades es descriuen diferents solucions. Algunes seran preventives, d’altres d’actuació i d’altres de recuperació. 
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Solucions preventives</strong>: descriuen les accions que s’han de realitzar per evitar que es materialitzi aquesta amenaça.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Solucions d’actuació</strong>: consisteixen en la descripció de les accions que s’han de realitzar un cop s’ha manifestat l’amenaça per tal de mitigar-ne l’impacte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Solucions de recuperació</strong>: són les accions que s’han de realitzar per recuperar el funcionament del sistema. </div>
+</li>
+</ul>
+
+<p>
+En un pla de contingència hi trobarem les solucions d’actuació per a tots els riscos identificats. En canvi, no sempre trobarem solucions preventives i de recuperació. Els procediments d’actuació han de contenir la informació següent: les accions a realitzar, la metodologia i el protocol a seguir, els materials necessaris, les persones implicades, les seves funcions i la persona responsable.
+</p>
+
+<p>
+Els plans de contingència han ser revisats periòdicament, perquè no quedin obsolets i representin en tot moment la realitat de l’empresa. A part d’aquestes revisions periòdiques, cada cop que es posa en funcionament el pla se’n fa una valoració posterior per identificar possibles millores.
+</p>
+
+</div>
+
+<h4><a id="pla_de_recuperacio_en_cas_de_desastre" >Pla de recuperació en cas de desastre</a></h4>
+<div class="level4">
+
+<p>
+Un pla de recuperació en cas de desastre (en anglès, <em>Disaster Recovery Plan</em>) és un pla de contingència basat en els sistemes d’informació d’una empresa. En aquest pla s’identifiquen les amenaces que poden afectar al programari o maquinari del sistema, que poden causar una pèrdua de dades, en definitiva. Les empreses són cada cop més dependents de les tecnologies de la informació i per això si assegurem aquesta part de la companyia s’evitaran molts problemes derivats.
+</p>
+
+<p>
+Aquest pla protegiria els sistemes d’informació contra desastres naturals com incendis i inundacions, actes vandàlics, talls en el subministrament elèctric, aturades del sistema i baixes de personal, entre altres situacions.
+</p>
+
+<p>
+Es calcula que un 50% de les grans empreses estan protegides amb plans d’aquest tipus, mentre que en les petites i mitjanes empreses encara és una assignatura pendent, ja que només al voltant d’un 20% tenen plans de recuperació en cas de desastre. Algunes empreses destinen grans quantitats de diners a mantenir aquest tipus de plans. Tot i que poden tenir costos molt elevats, és preferible fer aquest tipus d’inversions que no que es produeixi una pèrdua de dades. Això suposaria pèrdues econòmiques importants per a la empresa i podria causar danys d’imatge irreparables.
+</p>
+
+</div>
+
+<h4><a id="pla_de_continuitat_del_negoci" >Pla de continuïtat del negoci</a></h4>
+<div class="level4">
+
+<p>
+Els plans de continuïtat de negoci (en anglès, <em>Business Continuity Plan</em>) són els plans de contingència que vetllen per la continuïtat de les funcions crítiques del negoci en cas de que es produeixi una interrupció no programada. En aquests tipus de plans, a part de disposar d’un pla de recuperació dels sistemes d’informació en cas de desastre, es detallen els procediments necessaris per poder continuar l’activitat. Per tant, es tracta de plans molt més complexos i que requereixen la implicació de tota la organització. 
+</p>
+
+<p>
+Perquè aquests plans siguin efectius cal generar una cultura de continuïtat de negoci i campanyes de sensibilització als treballadors, ja que és important que tot el personal participi en la elaboració del pla i sàpiga on trobar-lo quan faci falta. 
+</p>
+
+<p>
+En el seu procés d’elaboració és important que s’identifiquin les funcions crítiques del negoci i que s’elaborin plans preventius, d’actuació i recuperació per a cadascuna d’aquestes funcions, per tal de poder garantir un servei mínim en cas de contingència. Sovint no és fàcil identificar els processos més crítics o que poden tenir un major impacte de cara els clients. Per poder visualitzar tots aquests aspectes i poder prioritzar els diferents processos s’acostuma a realitzar una anàlisi d’impacte (en anglès, <em>Business Impact Analysis</em>). En aquestes anàlisis s’identifica per a cada funció l’impacte econòmic i d’imatge, temps de recuperació i els recursos requerits per continuar amb el seu funcionament. En base a aquestes anàlisis es prioritzen els processos i s’elaboren els procediments d’actuació.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

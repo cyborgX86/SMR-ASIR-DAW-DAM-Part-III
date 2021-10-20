@@ -1,0 +1,1588 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Introducció als llenguatges de servidor</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Entorns a punt per desenvolupar aplicacions web</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_webhola_mon">El vostre primer projecte web: 'Hola, Món'</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_phphola_mon">El vostre primer projecte PHP: 'Hola, Món'</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a2annexos"><a href="../../../WebContent/u1/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_amb_php">Descrivint una persona amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_php">Gestionant un hotel amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_a_jsp_jstl">Descrivint una persona a JSP, JSTL</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_jsp">Gestionant un hotel amb JSP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Introducció als llenguatges de servidor</a></li><li>PHP i VDL a Java EE: dades, estructures de control i 'arrays'</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="php_i_vdl_a_java_eedades_estructures_de_control_i_arrays"> PHP i VDL a Java EE: dades, estructures de control i 'arrays' </a></h1>
+    	
+<p>
+En aquesta unitat parlarem dels llenguatges de marques executables per un servidor web identificant-los i escrivint sentències simples per comprovar els seus efectes en la pàgina web resultant. Els llenguatges de marques que s’explicaran seran PHP, JSP i JSTL. 
+</p>
+
+<p>
+El llenguatge PHP s’explicarà de manera molt breu, ja que el llenguatge vehicular del mòdul serà Java (JEE7 i Spring MVC) i, per tant, el seu llenguatge de marques serà JSP.
+</p>
+
+<p>
+Veurem les estructures de control més habituals, el tipus de dades que es poden utilitzar i l’estructura de dades més utilitzada per realitzar iteracions, els <em>arrays</em>.
+</p>
+
+<p>
+Començarem amb PHP descrivint una persona. Definirem les variables necessàries per guardar la informació  i les mostrarem pel navegador. En l’exemple següent utilitzarem els <em>arrays</em> per emmagatzemar les dades referents a la gestió d’un hotel i aprendrem a recórrer-los utilitzant les estructures de control més habituals.
+</p>
+
+<p>
+Utilitzarem els mateixos exemples per descriure una persona amb JSP i amb JSTL. Així, apreciareu les diferències i les igualtats d’implementar en aquests llenguatges.
+</p>
+
+<p>
+En tots els casos s’explicaran els tipus de variable que existeixen, com convertir els valors d’un tipus a un altre i l’àmbit de les variables creades.
+</p>
+
+<p>
+En aquest apartat posem les bases de l’aprenentatge d’aplicacions web, i explicarem:
+</p>
+<ul>
+<li class="level1"><div class="li"> el llenguatge PHP</div>
+</li>
+<li class="level1"><div class="li"> el llenguatge JSP </div>
+</li>
+<li class="level1"><div class="li"> el llenguatge JSTL</div>
+</li>
+</ul>
+
+<p>
+S’explicarà de cada llenguatge:
+</p>
+<ul>
+<li class="level1"><div class="li"> les variables</div>
+</li>
+<li class="level1"><div class="li"> els àmbits de les variables </div>
+</li>
+<li class="level1"><div class="li"> les estructures de control més habituals </div>
+</li>
+<li class="level1"><div class="li"> els tipus de dades i <em>arrays</em></div>
+</li>
+</ul>
+
+<p>
+Tots els conceptes que es veuran s’explicaran sempre partint de l’exemple. Quan acabeu aquest apartat estareu preparats per començar a fer les primeres aplicacions web amb PHP i JSP.
+</p>
+
+<p>
+No triguem més temps i comencem descrivint una persona amb el llenguatge PHP. Però abans que comenceu aquest apartat comproveu que heu portat a terme la instal·lació de l’entorn PHP proposada a <a href="/doku.php?id=fp:daw:m07:u1:a1:continguts#posar_a_punt_el_servidor_web" class="wikilink1" title="fp:daw:m07:u1:a1:continguts">l&#039;apartat</a> anterior. Penseu que per provar els exemples heu de tenir un servidor PHP per executar-los.
+</p>
+
+<h2><a id="descrivint_una_persona_amb_php" >Descrivint una persona amb PHP</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat veurem quins tipus de dades existeixen a PHP,  com crear variables i quin és el seu àmbit. Aprendrem aquests conceptes en el procés de descriure una persona i intentar emmagatzemar les seves dades.
+</p>
+
+<p>
+Començarem creant un nou projecte amb l’IDE Netbeans del tipus PHP/PHP Application. A continuació creem la variable <em>NomPersona</em> i li assignem un nom de tipus <em>string</em>:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Als annexos del material didàctic trobareu el codi PHP que utilitzarem en aquest apartat, per poder-lo descarregar. Recordeu que podeu utilitzar la funció d’importar del Netbeans per accedir a aquest contingut més fàcilment.
+</p>
+</div></div><pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Àlex&quot;;</div></li></ol></pre>
+
+<p>
+Observem que a PHP les variables comencen amb el símbol del dòlar. Sempre, en utilitzar una variable, aquesta ha d’estar precedida per aquest símbol: <em>$</em>.
+Les variables a PHP han de complir els següents requisits:
+</p>
+<ul>
+<li class="level1"><div class="li"> Han de començar amb el símbol <strong>$</strong>.</div>
+</li>
+<li class="level1"><div class="li"> El nom de la variable ha de començar per una <strong>lletra</strong> o amb el símbol guió baix <strong>_</strong>.</div>
+</li>
+<li class="level1"><div class="li"> El nom de la variable no pot començar amb un nombre.</div>
+</li>
+<li class="level1"><div class="li"> El nom de la variable només pot contenir nombres, lletres i guions baixos.</div>
+</li>
+<li class="level1"><div class="li"> PHP distingeix entre majúscules i minúscules. Les variables <em>$persona</em> i <em>$Persona</em> són diferents.</div>
+</li>
+</ul>
+
+<p>
+També veiem que en crear la variable <em>$nomPersona</em> no definim prèviament el seu tipus, ni tan sols el declarem. PHP no suporta la definició explícita de tipus en la declaració de variables, i el tipus d’una variable es determina pel seu context. Aquesta peculiaritat ens permet que una mateixa variable a vegades sigui d’un tipus i unes altres vegades sigui d’un altre.
+</p>
+
+<p>
+Executeu el següent codi:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Àlex&quot;;</div></li><li class="li1"><div class="de1">$edat = &quot;35&quot;;</div></li><li class="li1"><div class="de1">// la variable edat és de tipus string</div></li><li class="li1"><div class="de1">echo &quot;$nomPersona té $edat anys&lt;br&gt;&quot;;</div></li><li class="li1"><div class="de1">//Ara la variable edat és de tipus integer:</div></li><li class="li1"><div class="de1">$edat = 34;</div></li><li class="li1"><div class="de1">$edat++;</div></li><li class="li1"><div class="de1">echo &quot;$nomPersona té $edat anys&quot;;</div></li></ol></pre>
+
+<p>
+Observem a la figura <span class="figref"><a href="#fig-a2-1"><span>figura</span></a></span> que els dos missatges són idèntics i la variable <em>$edat</em> primer era de tipus <em>string</em> i després ha canviat a ser de tipus <em>integer</em>.
+</p>
+<div class="iocfigure"><a name="fig-a2-1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de l’execució del codi anterior
+
+</figcaption><img src="../media/uf1-a2-2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara que ja sabeu crear variables a PHP, intenteu definir el patró dels enginyers informàtics, Ramon Llull. En concret, es vol:
+</p>
+<ul>
+<li class="level1"><div class="li"> nom </div>
+</li>
+<li class="level1"><div class="li"> cognoms</div>
+</li>
+<li class="level1"><div class="li"> edat de tipus numèric</div>
+</li>
+<li class="level1"><div class="li"> data de naixement</div>
+</li>
+<li class="level1"><div class="li"> telèfon</div>
+</li>
+<li class="level1"><div class="li"> adreça postal</div>
+</li>
+<li class="level1"><div class="li"> adreça electrònica</div>
+</li>
+</ul>
+
+<p>
+Quan hàgiu acabat podeu veure la solució:
+<form action=""><div class="solution ioccontent"><pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Ramon&quot;;</div></li><li class="li1"><div class="de1">$cognoms = &quot;Llull&quot;;</div></li><li class="li1"><div class="de1">$edat = 83; //edat aprox. de la seva mort</div></li><li class="li1"><div class="de1">$data_naixement = strtotime(&quot;1232-01-01&quot;); //no se sap el dia exacte</div></li><li class="li1"><div class="de1">$telefon = &quot;935555555&quot;;</div></li><li class="li1"><div class="de1">$adrecaPostal = &quot;Ciutat de Mallorca, Convent de Sant Francesc de Palma&quot;;</div></li><li class="li1"><div class="de1">$email = &quot;ramon.llull@ioc.cat&quot;;</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+<p>
+A continuació es mostra una altra configuració per a una altra persona:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$edat = 30;  // tipus integer</div></li><li class="li1"><div class="de1">$sou = 30000; //tipus integer</div></li><li class="li1"><div class="de1">$data_naixement = strtotime(&quot;1986-03-11&quot;); //timestamp (int)</div></li><li class="li1"><div class="de1">$telefon = &quot;935555555&quot;; // tipus string</div></li><li class="li1"><div class="de1">$adrecaPostal = &quot;Blackpool, England&quot;; //tipus string</div></li><li class="li1"><div class="de1">$email = &quot;oswin@dr.who&quot;; //tipus string</div></li><li class="li1"><div class="de1">$treballa = true; // tipus boolean</div></li><li class="li1"><div class="de1">$alcada = 167.23; // tipus float</div></li><li class="li1"><div class="de1">$convStringData = date(&quot;jS F, Y&quot;, $data_naixement); //Converteix a string una data segons un format donat.</div></li></ol></pre>
+
+<p>
+Com podeu veure, no cal definir cap tipus. Automàticament, la variable agafa el valor que li hem donat i és quan es defineix el seu tipus. Si executem el codi anterior veiem que no podem veure res per pantalla. 
+</p>
+
+<p>
+A PHP, en ser un llenguatge que s’executa en el servidor, necessitem una manera de dir que volem enviar una informació a l’usuari. Es fa amb la comanda <strong>echo</strong>. Llavors, per poder veure per pantalla la informació anterior podem afegir al final la següent instrucció:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">echo &quot;La persona es diu $nomPersona $cognoms té $edat anys i guanya $sou €.&quot; .</div></li><li class="li1"><div class="de1">&quot; La seva data de naixement és $convStringData i viu a $adrecaPostal.&quot; .</div></li><li class="li1"><div class="de1">&quot; El seu e-mail és $email i la seva alçada és de $alcada. Creieu que treballa? $treballa.&quot;;</div></li></ol></pre>
+
+<p>
+Podeu veure el resultat de l’execució del codi anterior en la figura <span class="figref"><a href="#fig-a2-2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-a2-2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de l’execució de la descripció d’una persona
+
+</figcaption><img src="../media/uf1-a2-descripcio-persona-1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En utilitzar la comanda <strong>echo</strong> veieu que sempre intenta convertir les variables a <em>string</em>. De fet, concatenar les variables amb els texts que volem donar a l’usuari és molt fàcil. Només s’ha de posar la variable dintre de l’<em>string</em> sempre que aquest estigui construït amb dobles cometes (“). També es pot fer amb la forma tradicional concatenant <em>string</em> purs amb variables. Per concatenar <em>strings</em> s’utilitza el símbol del punt (<strong>.</strong>).
+</p>
+
+<p>
+Si ens fixem, en convertir el booleà <em>true</em> a <em>string</em> el converteix en el nombre “1”. Si la conversió hagués estat a <em>integer</em> el resultat seria 1, però si el valor del booleà hagués estat <em>false</em> la seva conversió a <em>integer</em> seria un 0 i a <em>string</em> seria la cadena buida.
+</p>
+
+<p>
+PHP té aquest comportament perquè és un derivat del llenguatge C. Per a tots aquells que sabeu C us serà molt fàcil programar amb PHP, s’assemblen molt.
+</p>
+
+</div>
+
+<h3><a id="conversions_de_tipus" >Conversions de tipus</a></h3>
+<div class="level3">
+
+<p>
+Tot i que les variables a PHP no tenen tipus, sí que es pot convertir la dada d’un tipus a un altre. Existeixen diferents maneres de fer-ho. Observeu el següent codi:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$quantitat = &quot;10&quot;;</div></li><li class="li1"><div class="de1">$quantitat = (int) $quantitat;</div></li><li class="li1"><div class="de1">$quantitat++;</div></li><li class="li1"><div class="de1">echo $quantitat;</div></li></ol></pre>
+
+<p>
+El codi anterior funciona correctament. Al final, la variable <em>$quantitat</em> té un valor de 11. Així, amb la conversió a <em>integer</em> s’ha pogut convertir el tipus de dada de <em>string</em> a <em>integer</em> i realitzar una operació matemàtica.
+</p>
+
+<p>
+Aquest tipus de conversió es diu que és una <strong>conversió forçada (<em>casting</em>)</strong>. A la taula <span class="tabref"><a href="#tab1-tipus"><span>taula</span></a></span> podeu veure les diferents conversions forçades que es poden utilitzar.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="tab1-tipus"><span>Taula: </span></a>Conversions de tipus forçades</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Instrucció de conversió </th><th class="col1"> Significat </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> (<em>int</em>), (<em>integer</em>)  </td><td class="col1"> conversió a <em>integer</em> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> (<em>bool</em>), (<em>boolean</em>) </td><td class="col1"> conversió a <em>boolean</em> </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> (<em>float</em>), (<em>double</em>), (<em>real</em>)  </td><td class="col1"> conversió a <em>float</em> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> (<em>string</em>)   </td><td class="col1"> conversió a <em>string</em> </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> (<em>array</em>)   </td><td class="col1"> conversió a <em>array</em> </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> (<em>object</em>)   </td><td class="col1"> conversió a <em>object</em> </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> (<em>unset</em>)   </td><td class="col1"> conversió a <em>null</em> </td>
+	</tr>
+</table></div>
+</div>
+</div>
+
+<h4><a id="conversio_a_boolea" >Conversió a booleà</a></h4>
+<div class="level4">
+
+<p>
+Ara que ja sabem com convertir un tipus de dades ens falta per saber què hem d’esperar. És a dir, quina dada hem d’esperar obtenir després de la conversió. En aquest cas, volem convertir a booleà. Vegeu les conversions a booleà següents:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">var_dump((bool) &quot;&quot;);        // bool(false)</div></li><li class="li1"><div class="de1">var_dump((bool) 1);         // bool(true)</div></li><li class="li1"><div class="de1">var_dump((bool) -2);        // bool(true)</div></li><li class="li1"><div class="de1">var_dump((bool) &quot;foo&quot;);     // bool(true)</div></li><li class="li1"><div class="de1">var_dump((bool) 2.3e5);     // bool(true)</div></li><li class="li1"><div class="de1">var_dump((bool) array(12)); // bool(true)</div></li><li class="li1"><div class="de1">var_dump((bool) array());   // bool(false)</div></li><li class="li1"><div class="de1">var_dump((bool) &quot;false&quot;);   // bool(true)</div></li></ol></pre>
+
+<p>
+En aquest cas, en comptes d’utilitzar la instrucció <em>echo</em> s’ha escollit utilitzar la instrucció <strong><em>var_dump</em></strong>. Aquesta instrucció dóna informació estructurada l’expressió donada incloent-hi el seu tipus i el seu valor.
+</p>
+
+<p>
+Sembla, pel codi anterior, que sempre o quasi sempre es converteix a <em>true</em> qualsevol cosa. Existeixen molt pocs casos en què un tipus de dades es converteix a <em>false</em>, només quan:
+</p>
+<ul>
+<li class="level1"><div class="li"> És l’<em>integer</em> 0.</div>
+</li>
+<li class="level1"><div class="li"> És el <em>float</em> 0.0.</div>
+</li>
+<li class="level1"><div class="li"> És un <em>string</em> buit o un <em>string</em> amb el valor “0”.</div>
+</li>
+<li class="level1"><div class="li"> Un <em>array</em> sense elements.</div>
+</li>
+<li class="level1"><div class="li"> El tipus especial <em>null</em>.</div>
+</li>
+<li class="level1"><div class="li"> Objectes <em>simpleXML</em> creats des d’etiquetes buides.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="conversio_a_string" >Conversió a &#039;string&#039;</a></h4>
+<div class="level4">
+
+<p>
+Hem vist que es pot convertir a <em>string</em> utilitzant la conversió forçosa, però també podem utilitzar la funció <strong><em>strval()</em></strong>.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">var_dump(strval(1));       // &quot;1&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(array())); // &quot;Array&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(-2));      // &quot;-2&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(false));   // &quot;&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(true));    // &quot;1&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(2.3e5));   // &quot;230000&quot;</div></li><li class="li1"><div class="de1">var_dump(strval(NULL));    // &quot;&quot;</div></li></ol></pre>
+
+<p>
+Els únics casos remarcables és quan s’intenta convertir un <em>false</em>, un <em>null</em> o un <em>array</em>. En els dos primers casos, la conversió esdevé cadena buida. A l’últim cas, curiosament, ens retorna una cadena amb la paraula <em>array</em>. 
+</p>
+
+<p>
+Tot i així, tots els valors es poden convertir de manera correcta en <em>string</em> per després convertir-los novament en el seu tipus. Amb la funció <strong><em>serialize()</em></strong> podem emmagatzemar en un <em>string</em> un objecte sencer per després tornar-lo a restaurar. La forma de restaurar-lo és utilitzant la funció <strong><em>unserialize()</em></strong>. 
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$arr = array(&quot;a&quot;,&quot;e&quot;,&quot;i&quot;,&quot;o&quot;,&quot;u&quot;);</div></li><li class="li1"><div class="de1">$serial = serialize($arr);</div></li><li class="li1"><div class="de1">echo($serial);</div></li></ol></pre>
+
+<p>
+El resultat de l’execució del codi anterior és el següent:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">a:5:{i:0;s:1:&quot;a&quot;;i:1;s:1:&quot;e&quot;;i:2;s:1:&quot;i&quot;;i:3;s:1:&quot;o&quot;;i:4;s:1:&quot;u&quot;;}</div></li></ol></pre>
+
+<p>
+Com veieu, aquesta execució ha convertit l’<em>array</em> a una cadena, i utilitzant la funció <em>unserializer()</em> podem reconstruir l’<em>array</em> original. Fem-ho:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$arrayText = 'a:5:{i:0;s:1:&quot;a&quot;;i:1;s:1:&quot;e&quot;;i:2;s:1:&quot;i&quot;;i:3;s:1:&quot;o&quot;;i:4;s:1:&quot;u&quot;;}';</div></li><li class="li1"><div class="de1">$arrayOriginal = unserialize($arrayText);</div></li><li class="li1"><div class="de1">echo $arrayOriginal[1]; //e</div></li></ol></pre>
+
+<p>
+Gràcies a la funció <em>unserialize()</em> podem recuperar l’objecte original i tractar les dades normalment.
+</p>
+
+</div>
+
+<h4><a id="conversio_a_integer" >Conversió a &#039;integer&#039;</a></h4>
+<div class="level4">
+
+<p>
+Igual que hem vist amb la conversió de <em>string</em>, la conversió a un valor de tipus <em>integer</em> es pot realitzar de dues maneres: la primera amb la conversió forçosa utilitzant la paraula reservada <em>(int)</em> o <em>(integer)</em>. La segona, utilitzant la funció <strong><em>intval()</em></strong>.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">var_dump(intval(&quot;1&quot;));                // 1</div></li><li class="li1"><div class="de1">var_dump(intval(array(3,9,8,6,&quot;w&quot;))); // 1</div></li><li class="li1"><div class="de1">var_dump(intval(array()));            // 0</div></li><li class="li1"><div class="de1">var_dump(intval(&quot;-2&quot;));               // -2</div></li><li class="li1"><div class="de1">var_dump(intval(false));              // 0</div></li><li class="li1"><div class="de1">var_dump(intval(true));               // 1</div></li><li class="li1"><div class="de1">var_dump(intval(2.3e5));              // 230000</div></li><li class="li1"><div class="de1">var_dump(intval(NULL));               // 0</div></li><li class="li1"><div class="de1">var_dump(intval(&quot;casa&quot;));             // 0</div></li></ol></pre>
+
+<p>
+Observant el resultat de l’execució del codi anterior notem que si no pot traduir un objecte a un <em>integer</em> el resultat de la conversió és el nombre <em>0</em>. Aquests casos són quan, per exemple, volem convertir l’<em>string</em> “casa” o un <em>array</em> buit. En canvi, si l’<em>array</em> conté algun element es tradueix pel nombre 1.
+</p>
+
+</div>
+
+<h4><a id="conversio_a_array" >Conversió a &#039;array&#039;</a></h4>
+<div class="level4">
+
+<p>
+Es pot convertir qualsevol dada en un <em>array</em>. El que es fa és crear un <em>array</em>, i com a únic i primer element la dada que volies convertir en <em>array</em>. Exemple:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$dada = &quot;hola&quot;;</div></li><li class="li1"><div class="de1">$arr  = (array) $dada;</div></li><li class="li1"><div class="de1">echo $arr[0]; // hola</div></li></ol></pre>
+
+<p>
+En executar el codi anterior ens retorna la paraula “hola”. Per això, convertir una dada en <em>array</em> és el mateix que crear un <em>array</em> amb aquesta dada dintre:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$arr = array(&quot;hola&quot;);</div></li><li class="li1"><div class="de1">echo $arr[0]; // hola</div></li></ol></pre>
+
+</div>
+
+<h3><a id="ambit_de_les_variables" >Àmbit de les variables</a></h3>
+<div class="level3">
+
+<p>
+En els exemples anteriors sempre teníem accés a les variables i podíem veure i manipular el seu valor. No sempre és així. Si tornem a l’exemple del principi, “descrivint una persona”, el podem modificar de la següent manera:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">function calculaEdat($data){</div></li><li class="li1"><div class="de1">    $avui = date_create('today');</div></li><li class="li1"><div class="de1">    $diferencia =  date_diff($avui, $data)-&gt;y;</div></li><li class="li1"><div class="de1">    return $diferencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$data_naixement = date_create(&quot;1986-03-11&quot;); //tipus date</div></li><li class="li1"><div class="de1">$edat = calculaEdat($data_naixement);</div></li><li class="li1"><div class="de1">echo $edat;</div></li></ol></pre>
+
+<p>
+Si executeu el codi anterior veureu que no hi ha cap sorpresa. S’executa perfectament sense error i ens proporciona les dades esperades. Resultat de l’execució:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">29</div></li></ol></pre>
+
+<p>
+Però podríem fer que la funció <em>calculaEdat</em> accedeixi directament a la data de naixement sense haver d’enviar-la per paràmetre? Podríem fer:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$data_naixement = date_create(&quot;1986-03-11&quot;); //tipus date</div></li><li class="li1"><div class="de1">function calculaEdat(){</div></li><li class="li1"><div class="de1">    $avui = date_create('today');</div></li><li class="li1"><div class="de1">    $diferencia =  date_diff($avui, $data_naixement)-&gt;y;</div></li><li class="li1"><div class="de1">    return $diferencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">$edat = calculaEdat();</div></li><li class="li1"><div class="de1">echo $edat;</div></li></ol></pre>
+
+<p>
+En altres paraules, la variable <em>$data_naixement</em> és una variable d’àmbit global? Proveu-ho.
+</p>
+
+<p>
+En executar el codi us adoneu que no funciona. No podeu accedir a la variable <em>$data_naixement</em> dintre de la funció <em>calculaEdat()</em>. Les variables que s’utilitzen dintre d’una funció es troben en un àmbit diferent de les variables que existeixen fora de la funció. Sembla lògic pensar que la variable <em>$diferencia</em> no es pot utilitzar fora de la funció:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$data_naixement = date_create(&quot;1986-03-11&quot;); //tipus date</div></li><li class="li1"><div class="de1">function calculaEdat($data){</div></li><li class="li1"><div class="de1">    $avui = date_create('today');</div></li><li class="li1"><div class="de1">    $diferencia =  date_diff($avui, $data )-&gt;y;</div></li><li class="li1"><div class="de1">//    return $diferencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">calculaEdat($data_naixement);</div></li><li class="li1"><div class="de1">echo $diferencia;</div></li></ol></pre>
+
+<p>
+Efectivament, si ho proveu tampoc funciona. Definitivament, es troben en àmbits diferents.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’<strong>àmbit d’una variable</strong> és el context dins de la qual la variable està definida. La major part de les variables PHP només tenen un àmbit simple.
+</p>
+</div></div>
+</div>
+
+<h4><a id="ambit_global_i_ambit_local" >Àmbit global i àmbit local</a></h4>
+<div class="level4">
+
+<p>
+No existeixen variables globals? No podem accedir dintre de la funció <em>calculaEdat</em> a la data de naixement sense que ens l’enviïn per paràmetre?
+</p>
+
+<p>
+Sí que es pot. De fet, la variable <em>$data_naixement</em> està declarada en l’<strong>àmbit global</strong>. Totes les variables que es declaren fora de les funcions són variables globals. Podem tenir totes les variables globals que vulguem. 
+En canvi, les variables que es declaren dintre d’una funció són variables d’<strong>àmbit local</strong> a les quals mai podrem accedir fora de la funció (un exemple és la variable <em>$diferencia</em>).
+</p>
+
+<p>
+Com és que en la variable <em>$data_naixement</em>, tot i ser d’àmbit global, no hem pogut accedir al seu valor dintre de la funció <em>calculaEdat()</em>?
+</p>
+
+<p>
+PHP no sap si vols una variable local amb el mateix nom o vols utilitzar la variable global. Si no informes a PHP que la variable <em>$data_naixement</em> és global pensarà que vols una variable local amb aquest nom. Observa el següent codi per veure com utilitzar <em>$data_naixement</em> com a variable global:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">function calculaEdat(){</div></li><li class="li1"><div class="de1">    global $data_naixement;</div></li><li class="li1"><div class="de1">    $avui = date_create('today');</div></li><li class="li1"><div class="de1">    $diferencia =  date_diff($avui, $data_naixement )-&gt;y;</div></li><li class="li1"><div class="de1">    return $diferencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$data_naixement = date_create(&quot;1986-03-11&quot;); //tipus date</div></li><li class="li1"><div class="de1">$edat = calculaEdat();</div></li><li class="li1"><div class="de1">echo $edat;</div></li></ol></pre>
+
+<p>
+S’executa perfectament sense error i ens proporciona les dades esperades. Resultat de l’execució:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">29</div></li></ol></pre>
+
+<p>
+Dintre de la funció <em>calculaEdat()</em> hem hagut de declarar la variable <em>$data_naixement</em> com a global. Hem utilitzat la paraula reservada <strong>global</strong>.
+</p>
+
+<p>
+També podem utilitzar l’<em>array</em> associatiu <strong>GLOBALS</strong> per accedir a les variables globals i, d’aquesta manera, ens estalviem haver de declarar-la <em>global</em>.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">function calculaEdat(){</div></li><li class="li1"><div class="de1">    $avui = date_create('today');</div></li><li class="li1"><div class="de1">    $diferencia =  date_diff($avui, $GLOBALS[&quot;data_naixement&quot;] )-&gt;y;</div></li><li class="li1"><div class="de1">    return $diferencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">$nomPersona = &quot;Clara&quot;; //tipus string</div></li><li class="li1"><div class="de1">$cognoms = &quot;Oswin&quot;; // tipus string</div></li><li class="li1"><div class="de1">$data_naixement = date_create(&quot;1986-03-11&quot;); //tipus date</div></li><li class="li1"><div class="de1">$edat = calculaEdat();</div></li><li class="li1"><div class="de1">echo $edat;</div></li></ol></pre>
+
+<p>
+Funciona exactament igual que abans, el resultat de l’execució és:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">29</div></li></ol></pre>
+
+<p>
+Ara veiem una peculiaritat dintre de l’àmbit local. Normalment, les variables perden el seu valor una vegada la funció s’ha executat, o no?
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">function suma(){</div></li><li class="li1"><div class="de1">   static $num;</div></li><li class="li1"><div class="de1">   $num++;</div></li><li class="li1"><div class="de1">   return $num;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">echo suma();</div></li><li class="li1"><div class="de1">echo suma();</div></li><li class="li1"><div class="de1">echo suma();</div></li></ol></pre>
+
+<p>
+El resultat de l’execució del codi anterior és:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">1</div></li><li class="li1"><div class="de1">2</div></li><li class="li1"><div class="de1">3</div></li></ol></pre>
+
+<p>
+La paraula reservada <strong><em>static</em></strong> permet guardar el valor d’una variable d’àmbit local dintre de la funció. Cada vegada que s’executi la funció, la variable tindrà l’últim valor que havia tingut a l’execució anterior.
+</p>
+
+</div>
+
+<h2><a id="gestionant_un_hotel_amb_php" >Gestionant un hotel amb PHP</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat veurem el tipus de dades <em>array</em> i les estructures de control necessàries per tractar amb aquest tipus de dades. Aprendrem aquests conceptes gestionant, d’una manera molt senzilla, alguns aspectes de la gestió d’un hotel.
+</p>
+
+</div>
+
+<h3><a id="gestio_de_les_taules_del_restaurant_del_hotel" >Gestió de les taules del restaurant del hotel</a></h3>
+<div class="level3">
+
+<p>
+Començarem amb la gestió de les taules del restaurant. Volem saber quants comensals hi ha en cadascuna de les taules del restaurant. Suposeu que tenim 10 taules i que en cadascuna de les taules hi pot haver fins a 5 comensals. Aneu pensant quins passos haurem de realitzar per aconseguir-ho.
+</p>
+
+<p>
+Si només tinguéssim una taula en el restaurant escriuríem un codi com aquest:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$comensals = rand(0,5);</div></li><li class="li1"><div class="de1">echo &quot;A la taula hi ha $comensals comensals&quot;;</div></li></ol></pre>
+
+<p>
+La funció <em>rand(min, max)</em> ens dóna un nombre pseudoaleatori entre el nombre mínim i el nombre màxim definits en la crida de la funció. Un possible resultat de l’execució del codi anterior seria:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">A la taula hi ha 3 comensals.</div></li></ol></pre>
+
+<p>
+Imagineu que la funció aleatòria ens retorna el valor 0. No seria millor que el programa ens digués que “la taula està buida”, en comptes de “a la taula hi ha 0 comensals”? Modifiquem el codi anterior per afegir aquesta millora:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$comensals = rand(0,5);</div></li><li class="li1"><div class="de1">if ($comensals == 0){</div></li><li class="li1"><div class="de1">    echo &quot;La taula està buida&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else{</div></li><li class="li1"><div class="de1">    echo &quot;A la taula hi ha $comensals comensals&quot;;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+L’estructura de control <strong><em>if</em></strong> és una de les estructures més importants. Permet l’execució condicional d’un tros de codi. Funciona de la següent manera:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’expressió que hi ha entre parèntesis, després de la paraula clau <em>if</em>, s’avalua i el resultat ha de ser <em>true</em> o <em>false</em>.</div>
+</li>
+<li class="level1"><div class="li"> Si s’avalua com a <em>true</em> s’executarà el tros de codi immediatament posterior.</div>
+</li>
+<li class="level1"><div class="li"> En canvi, si l’expressió s’avalua com a <em>false</em> s’executarà el tros de codi que hi ha després de la paraula reservada <em>else</em>.</div>
+</li>
+<li class="level1"><div class="li"> En ser una estructura condicional, en cap cas s’executaran els dos trossos de codi a la vegada.</div>
+</li>
+</ul>
+
+<p>
+Per exemple, si la variable <em>$comensals</em> tingués el valor <em>1, 2, 3, 4 o 5</em>, el resultat de l’execució seria:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">A la taula hi ha 1 comensals // quan $comensals = 1</div></li></ol></pre>
+
+<p>
+En canvi, si la variable <em>$comensals</em> tingués el valor <em>0</em>, el resultat de l’execució seria:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">La taula està buida</div></li></ol></pre>
+
+<p>
+Molt bé, doncs ara volem afegir el condicional de quan la taula està plena. No volem que ens digui que hi ha 5 comensals, si no que volem que ens digui la frase: “La taula està plena”.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$comensals = rand(0,5);</div></li><li class="li1"><div class="de1">if ($comensals == 0){</div></li><li class="li1"><div class="de1">    echo &quot;La taula està buida&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">elseif ($comensals == 5){</div></li><li class="li1"><div class="de1">    echo &quot;La taula està plena&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else {</div></li><li class="li1"><div class="de1">    echo &quot;A la taula hi ha $comensals comensals&quot;;    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest cas afegim l’estructura <em>elseif(expressió)</em>. Com afecta, en l’execució del codi anterior, haver afegit aquesta estructura?
+</p>
+<ul>
+<li class="level1"><div class="li"> L’expressió que hi ha entre parèntesis, després de la paraula clau <em>if</em>, s’avalua i el resultat ha de ser <em>true</em> o <em>false</em>.</div>
+</li>
+<li class="level1"><div class="li"> Si s’avalua com a <em>true</em> s’executarà el tros de codi immediatament posterior.</div>
+</li>
+<li class="level1"><div class="li"> En canvi, si l’expressió s’avalua com a <em>false</em> s’avaluarà l’expressió de l’estructura <em>elseif</em>. Si aquesta s’avalua com a <em>true</em> s’executarà el tros de codi immediatament posterior.</div>
+</li>
+<li class="level1"><div class="li"> Si no, si s’avalua com a <em>false</em> s’executarà el tros de codi que hi ha després de la paraula reservada <em>else</em>.</div>
+</li>
+<li class="level1"><div class="li"> En ser una estructura condicional, en cap cas s’executaran els tres trossos de codi a la vegada.</div>
+</li>
+</ul>
+
+<p>
+Us recomanem que feu diverses proves forçant la variable <em>$comensals</em> perquè executi cadascun dels trossos anteriors. Ho podeu fer actualitzant la pàgina (F5) per canviar el valor donat de la funció <em>random</em> (<em>rand</em>).
+</p>
+
+<p>
+Ha arribat el moment de començar a ampliar el restaurant. Amb una única taula no fareu negoci. Tornem al problema que es va plantejar al principi: voleu saber quants comensals hi ha en cadascuna de les taules del restaurant. Suposeu que tenim 10 taules i en cadascuna de les taules hi pot haver fins a 5 comensals.
+</p>
+
+<p>
+Si heu estat pensant quina és la millor manera de guardar les dades segur que heu arribat a la conclusió que un <em>array</em> ens facilitaria la gestió de les dades. Podem tenir ordenades les taules i podem guardar el nombre de comensals en cadascuna de les seves posicions.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$taules = array();</div></li><li class="li1"><div class="de1">$taules[0] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[1] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[2] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[3] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[4] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[5] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[6] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[7] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[8] = rand(0,5);</div></li><li class="li1"><div class="de1">$taules[9] = rand(0,5);</div></li></ol></pre>
+
+<p>
+En el codi anterior, veiem com guardar el nombre de comensals en cadascuna de les taules. Els <em>arrays</em> en PHP no cal inicialitzar-los amb el nombre de posicions que ha de tenir (la seva mida). Cada vegada que accedim a una posició de l’<em>array</em>, aquesta es crea i s’afegeix la dada. 
+També ho podríem haver codificat de la següent manera:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$taules = array();</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li><li class="li1"><div class="de1">array_push($taules, rand(0,5));</div></li></ol></pre>
+
+<p>
+En aquest cas utilitzem la funció <strong><em>array_push</em></strong>, que afegeix una dada al final de l’<em>array</em>. Va creant noves posicions a mesura que es necessiti afegir dades noves.
+</p>
+
+<p>
+Tot i que els codis anteriors són correctes i inicialitzen l’<em>array</em>, sembla que estem repetint molt de codi, no? I si en comptes de 10 taules tinguéssim 100? Sembla estrany haver de repetir una línia de codi 100 vegades. Observeu la següent estructura de control:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$taules = array();</div></li><li class="li1"><div class="de1">for($numTaula=0;$numTaula &lt; 10 ; $numTaula++ ){</div></li><li class="li1"><div class="de1">    $taules[$numTaula] = rand(0,5);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">echo $taules[4];</div></li></ol></pre>
+
+<p>
+En aquest cas estem repetint una instrucció deu vegades, però cada vegada que es repeteix canvia la variable <em>$numTaula</em>. A cada volta la variable canvia el seu valor, segons el tercer paràmetre de l’estructura de control, <em>$numTaula++</em>.
+</p>
+
+<p>
+Utilitzem aquesta variable per canviar de posició en l’<em>array</em> <em>$taules</em> i d’aquesta manera podem afegir els comensals a la nova taula.
+</p>
+
+<p>
+L’estructura de control <strong><em>for</em></strong> té la següent estructura:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">for (inicialitzar comptador; comparació per saber quan parar; incrementar comptador) {</div></li><li class="li1"><div class="de1">    codi a executar;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta estructura és útil quan saps quantes vegades s’han d’executar les instruccions. En aquest cas, com que tenim 10 taules s’ha d’executar 10 vegades. De fet, és l’estructura típica del bucle <em>for</em>. Però a PHP hi ha un tipus de bucle <em>for</em> que és exclusiu per a <em>arrays</em>. 
+</p>
+
+<p>
+Utilitzarem un <em>array</em> associatiu en què en comptes de tenir un nombre per accedir a una posició de l’<em>array</em> utilitzarem un <em>string</em>. Observeu:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//creació de l'array</div></li><li class="li1"><div class="de1">$taules = array();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Omplir l'array associatiu:</div></li><li class="li1"><div class="de1">for($numTaula=0;$numTaula &lt; 10 ; $numTaula++ ){</div></li><li class="li1"><div class="de1">    $taules[&quot;taula &quot;.$numTaula] = rand(0,5);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//visualització del contingut de l'array</div></li><li class="li1"><div class="de1">foreach($taules as $posicio =&gt; $comensals){</div></li><li class="li1"><div class="de1">    echo &quot;La $posicio té $comensals comensals\n&lt;br&gt;&quot;;</div></li><li class="li1"><div class="de1">} </div></li></ol></pre>
+
+<p>
+Una possible sortida de l’execució del codi anterior:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">La taula 0 té 4 comensals</div></li><li class="li1"><div class="de1">La taula 1 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 2 té 4 comensals</div></li><li class="li1"><div class="de1">La taula 3 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 4 té 5 comensals</div></li><li class="li1"><div class="de1">La taula 5 té 3 comensals</div></li><li class="li1"><div class="de1">La taula 6 té 3 comensals</div></li><li class="li1"><div class="de1">La taula 7 té 5 comensals</div></li><li class="li1"><div class="de1">La taula 8 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 9 té 5 comensals</div></li></ol></pre>
+
+<p>
+Amb l’estructura de control <em>foreach</em> podem accedir a la clau (<em>$posicio</em>) i al valor(<em>$comensals</em>). Aquests valors s’omplen de manera automàtica i a cada volta ens dóna la següent posició i el seu valor corresponent: <em>$comensals = $taules[$posicio];</em>. 
+</p>
+
+<p>
+L’estructura de control <strong><em>foreach</em></strong> té la següent estructura:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">foreach (expresio_array as $clau =&gt; $valor){</div></li><li class="li1"><div class="de1">    sentencies</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Doncs ara, per acabar la gestió del restaurant haurem d’unir les estructures condicionals per saber quan una taula està plena o buida amb les estructures de control iteratives.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//creació de l'array</div></li><li class="li1"><div class="de1">$taules = array();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Omplir l'array associatiu:</div></li><li class="li1"><div class="de1">for($numTaula=0;$numTaula &lt; 10 ; $numTaula++ ){</div></li><li class="li1"><div class="de1">    $taules[&quot;taula &quot;.$numTaula] = rand(0,5);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//visualització del contingut de l'array</div></li><li class="li1"><div class="de1">foreach($taules as $posicio =&gt; $comensals){</div></li><li class="li1"><div class="de1">    if ($comensals == 0){</div></li><li class="li1"><div class="de1">        echo &quot;La $posicio està buida\n&lt;br&gt;&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    elseif ($comensals == 5){</div></li><li class="li1"><div class="de1">        echo &quot;La $posicio està plena\n&lt;br&gt;&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    else {</div></li><li class="li1"><div class="de1">        echo &quot;A la $posicio hi ha $comensals comensals\n&lt;br&gt;&quot;;    </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">} </div></li></ol></pre>
+
+<p>
+Un possible resultat del codi anterior és el següent:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">A la taula 0 hi ha 2 comensals</div></li><li class="li1"><div class="de1">A la taula 1 hi ha 3 comensals</div></li><li class="li1"><div class="de1">A la taula 2 hi ha 1 comensals</div></li><li class="li1"><div class="de1">A la taula 3 hi ha 3 comensals</div></li><li class="li1"><div class="de1">La taula 4 està buida</div></li><li class="li1"><div class="de1">A la taula 5 hi ha 2 comensals</div></li><li class="li1"><div class="de1">La taula 6 està plena</div></li><li class="li1"><div class="de1">La taula 7 està plena</div></li><li class="li1"><div class="de1">La taula 8 està plena</div></li><li class="li1"><div class="de1">La taula 9 està buida</div></li></ol></pre>
+
+</div>
+
+<h3><a id="gestio_de_les_habitacions_de_l_hotel" >Gestió de les habitacions de l&#039;hotel</a></h3>
+<div class="level3">
+
+<p>
+En aquest apartat es veurà el tractament d’informació amb <em>arrays</em> de més d’una dimensió. Aprendreu com crear <em>arrays</em> multidimensionals, com modificar els valors i com cercar-los. 
+</p>
+
+<p>
+Es tractarà de programar la gestió d’habitacions d’un hotel. Imagineu un hotel amb 5 plantes i 10 habitacions en cadascuna de les plantes. Es vol guardar el nombre de clients que hi ha en cada habitació. Com a màxim hi pot haver 4 clients per habitació.
+</p>
+
+<p>
+Començarem creant un <em>array</em> de dues dimensions:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">define(&quot;NUM_PLANTES&quot;, 5);</div></li><li class="li1"><div class="de1">define(&quot;NUM_HAB&quot;, 10);</div></li><li class="li1"><div class="de1">$habitacions = array();</div></li><li class="li1"><div class="de1">for($pis=0; $pis &lt; NUM_PLANTES; $pis++){</div></li><li class="li1"><div class="de1">    $habitacions[$pis] = array();</div></li><li class="li1"><div class="de1">    for($porta=0; $porta &lt; NUM_HAB; $porta++){</div></li><li class="li1"><div class="de1">        $habitacions[$pis][$porta] = &quot;&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Veieu que s’utilitza la funció <strong><em>define</em></strong>, que defineix una constant en el programa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>constant</strong> és un identificador que s’utilitza per expressar un valor simple, que no variarà en el transcurs del programa. Per convenció, els identificadors de les constants sempre se solen declarar en majúscules.
+</p>
+</div></div>
+<p>
+Per utilitzar la constant en el codi només s’ha d’utilitzar el nom definit prèviament a la funció <em>define</em>.
+</p>
+
+<p>
+El codi anterior genera una estructura com aquesta:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">Array</div></li><li class="li1"><div class="de1">(</div></li><li class="li1"><div class="de1">    [0] =&gt; Array</div></li><li class="li1"><div class="de1">        (</div></li><li class="li1"><div class="de1">            [0] =&gt; </div></li><li class="li1"><div class="de1">            [1] =&gt; </div></li><li class="li1"><div class="de1">            [2] =&gt; </div></li><li class="li1"><div class="de1">            [3] =&gt; </div></li><li class="li1"><div class="de1">            [4] =&gt; </div></li><li class="li1"><div class="de1">            [5] =&gt; </div></li><li class="li1"><div class="de1">            [6] =&gt; </div></li><li class="li1"><div class="de1">            [7] =&gt; </div></li><li class="li1"><div class="de1">            [8] =&gt; </div></li><li class="li1"><div class="de1">            [9] =&gt; </div></li><li class="li1"><div class="de1">        )</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    [1] =&gt; Array</div></li><li class="li1"><div class="de1">        (</div></li><li class="li1"><div class="de1">            [0] =&gt; </div></li><li class="li1"><div class="de1">            [1] =&gt; </div></li><li class="li1"><div class="de1">            [2] =&gt; </div></li><li class="li1"><div class="de1">            [3] =&gt; </div></li><li class="li1"><div class="de1">            [4] =&gt; </div></li><li class="li1"><div class="de1">            [5] =&gt; </div></li><li class="li1"><div class="de1">            [6] =&gt; </div></li><li class="li1"><div class="de1">            [7] =&gt; </div></li><li class="li1"><div class="de1">            [8] =&gt; </div></li><li class="li1"><div class="de1">            [9] =&gt; </div></li><li class="li1"><div class="de1">        )</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    [2] =&gt; Array</div></li><li class="li1"><div class="de1">        (</div></li><li class="li1"><div class="de1">            [0] =&gt; </div></li><li class="li1"><div class="de1">            [1] =&gt; </div></li><li class="li1"><div class="de1">            [2] =&gt; </div></li><li class="li1"><div class="de1">            [3] =&gt; </div></li><li class="li1"><div class="de1">            [4] =&gt; </div></li><li class="li1"><div class="de1">            [5] =&gt; </div></li><li class="li1"><div class="de1">            [6] =&gt; </div></li><li class="li1"><div class="de1">            [7] =&gt; </div></li><li class="li1"><div class="de1">            [8] =&gt; </div></li><li class="li1"><div class="de1">            [9] =&gt; </div></li><li class="li1"><div class="de1">        )</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    [3] =&gt; Array</div></li><li class="li1"><div class="de1">        (</div></li><li class="li1"><div class="de1">            [0] =&gt; </div></li><li class="li1"><div class="de1">            [1] =&gt; </div></li><li class="li1"><div class="de1">            [2] =&gt; </div></li><li class="li1"><div class="de1">            [3] =&gt; </div></li><li class="li1"><div class="de1">            [4] =&gt; </div></li><li class="li1"><div class="de1">            [5] =&gt; </div></li><li class="li1"><div class="de1">            [6] =&gt; </div></li><li class="li1"><div class="de1">            [7] =&gt; </div></li><li class="li1"><div class="de1">            [8] =&gt; </div></li><li class="li1"><div class="de1">            [9] =&gt; </div></li><li class="li1"><div class="de1">        )</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    [4] =&gt; Array</div></li><li class="li1"><div class="de1">        (</div></li><li class="li1"><div class="de1">            [0] =&gt; </div></li><li class="li1"><div class="de1">            [1] =&gt; </div></li><li class="li1"><div class="de1">            [2] =&gt; </div></li><li class="li1"><div class="de1">            [3] =&gt; </div></li><li class="li1"><div class="de1">            [4] =&gt; </div></li><li class="li1"><div class="de1">            [5] =&gt; </div></li><li class="li1"><div class="de1">            [6] =&gt; </div></li><li class="li1"><div class="de1">            [7] =&gt; </div></li><li class="li1"><div class="de1">            [8] =&gt; </div></li><li class="li1"><div class="de1">            [9] =&gt; </div></li><li class="li1"><div class="de1">        )</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">)</div></li></ol></pre>
+
+<p>
+Per crear un <em>array</em> de dues dimensions (matriu bidimensional) a PHP hem de crear un <em>array</em> d’<em>arrays</em>, és a dir, un <em>array</em> en què cadascuna de les seves posicions és un altre <em>array</em>. En aquest cas, amb el primer índex de l’<em>array</em> <em>$habitacions</em> accedim al pis, i amb el segon índex accedim a l’habitació d’aquell pis.
+</p>
+
+<p>
+Per exemple, si accedim a la posició de l’<em>array</em> <em>$habitacions[0][4]</em> estem accedint al pis 0 (planta baixa) habitació 4.
+</p>
+
+<p>
+Doncs bé, igual que abans amb el restaurant, ara ens falta inicialitzar l’<em>array</em> amb el nombre de clients per habitació.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">define(&quot;NUM_PLANTES&quot;, 5);</div></li><li class="li1"><div class="de1">define(&quot;NUM_HAB&quot;, 10);</div></li><li class="li1"><div class="de1">define(&quot;MAX_CLIENTS&quot;, 4);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">$habitacions = array();</div></li><li class="li1"><div class="de1">for($pis=0; $pis &lt; NUM_PLANTES; $pis++){</div></li><li class="li1"><div class="de1">    $habitacions[$pis] = array();</div></li><li class="li1"><div class="de1">    for($porta=0; $porta &lt; NUM_HAB; $porta++){</div></li><li class="li1"><div class="de1">        $habitacions[$pis][$porta] = rand(0,MAX_CLIENTS);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Només calia afegir la constant <em>MAX_CLIENTS</em>, que indica el nombre màxim de persones que hi pot haver en una habitació i la crida a la funció <em>random</em> (<em>rand()</em>) perquè de manera aleatòria afegeixi persones a les habitacions.
+</p>
+
+<p>
+Ara volem un llistat amb l’ocupació de les habitacions de l’hotel. Aquest llistat s’assemblarà molt al que hem fet abans amb les taules del restaurant.
+</p>
+
+<p>
+Aquells que ja teniu una idea de com implementar-ho aneu pensant com faríeu per saber si hi ha alguna habitació lliure.
+</p>
+
+<p>
+Codi per obtenir el llistat amb el nombre de persones per habitació:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//Llistat del nombre de persones per habitació</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Crear l'estructura inicial</div></li><li class="li1"><div class="de1">define(&quot;NUM_PLANTES&quot;, 5);</div></li><li class="li1"><div class="de1">define(&quot;NUM_HAB&quot;, 10);</div></li><li class="li1"><div class="de1">define(&quot;MAX_CLIENTS&quot;, 4);</div></li><li class="li1"><div class="de1">$habitacions = array();</div></li><li class="li1"><div class="de1">for($pis=0; $pis &lt; NUM_PLANTES; $pis++){</div></li><li class="li1"><div class="de1">   $habitacions[$pis] = array();</div></li><li class="li1"><div class="de1">   for($porta=0; $porta &lt; NUM_HAB; $porta++){</div></li><li class="li1"><div class="de1">       $habitacions[$pis][$porta] = rand(0,MAX_CLIENTS);</div></li><li class="li1"><div class="de1">   }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//recórrer l'estructura per obtenir la informació:</div></li><li class="li1"><div class="de1">for($pis=0; $pis &lt; NUM_PLANTES; $pis++){</div></li><li class="li1"><div class="de1">    for($porta=0; $porta &lt; NUM_HAB; $porta++){</div></li><li class="li1"><div class="de1">        switch ($habitacions[$pis][$porta]){</div></li><li class="li1"><div class="de1">            case 0:</div></li><li class="li1"><div class="de1">                echo &quot;La habitació $porta de la planta $pis està buida.\n&quot;;</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">            case 4:</div></li><li class="li1"><div class="de1">                echo &quot;La habitació $porta de la planta $pis està plena.\n&quot;;</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">            default :</div></li><li class="li1"><div class="de1">                echo &quot;A la habitació $porta de la planta $pis hi ha &quot;. $habitacions[$pis][$porta]. &quot; persones.\n&quot;;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El resultat de l’execució del codi anterior és el següent:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">A l'habitació 0 de la planta 0 hi ha 1 persones.</div></li><li class="li1"><div class="de1">L'habitació 1 de la planta 0 està buida.</div></li><li class="li1"><div class="de1">L'habitació 2 de la planta 0 està plena.</div></li><li class="li1"><div class="de1">L'habitació 3 de la planta 0 està buida.</div></li><li class="li1"><div class="de1">A l'habitació 4 de la planta 0 hi ha 3 persones.</div></li><li class="li1"><div class="de1">L'habitació 5 de la planta 0 està buida.</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 0 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 7 de la planta 0 hi ha 1 persones.</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 0 hi ha 3 persones.</div></li><li class="li1"><div class="de1">L'habitació 9 de la planta 0 està buida.</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 1 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 1 de la planta 1 hi ha 3 persones.</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 1 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 3 de la planta 1 està buida.</div></li><li class="li1"><div class="de1">A l'habitació 4 de la planta 1 hi ha 1 persones.</div></li><li class="li1"><div class="de1">A l'habitació 5 de la planta 1 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 1 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 7 de la planta 1 hi ha 3 persones.</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 1 hi ha 3 persones.</div></li><li class="li1"><div class="de1">L'habitació 9 de la planta 1 està plena.</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 2 està plena.</div></li><li class="li1"><div class="de1">L'habitació 1 de la planta 2 està buida.</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 2 hi ha 1 persones.</div></li><li class="li1"><div class="de1">A l'habitació 3 de la planta 2 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 4 de la planta 2 està plena.</div></li><li class="li1"><div class="de1">L'habitació 5 de la planta 2 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 6 de la planta 2 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 7 de la planta 2 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 2 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 9 de la planta 2 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 3 està buida.</div></li><li class="li1"><div class="de1">L'habitació 1 de la planta 3 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 3 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 3 de la planta 3 està buida.</div></li><li class="li1"><div class="de1">L'habitació 4 de la planta 3 està buida.</div></li><li class="li1"><div class="de1">L'habitació 5 de la planta 3 està buida.</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 3 està buida.</div></li><li class="li1"><div class="de1">L'habitació 7 de la planta 3 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 3 hi ha 2 persones.</div></li><li class="li1"><div class="de1">L'habitació 9 de la planta 3 està plena.</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 4 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 1 de la planta 4 hi ha 1 persones.</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 4 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 3 de la planta 4 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 4 de la planta 4 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 5 de la planta 4 hi ha 3 persones.</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 4 està plena.</div></li><li class="li1"><div class="de1">A l'habitació 7 de la planta 4 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 4 hi ha 2 persones.</div></li><li class="li1"><div class="de1">A l'habitació 9 de la planta 4 hi ha 3 persones.</div></li></ol></pre>
+
+<p>
+Com podeu observar, l’estructura per recórrer la matriu bidimensional i l’estructura per crear-la és la mateixa. S’ha de recórrer cada <em>array</em> que s’ha creat a cada posició de l’<em>array</em> principal. Una vegada hem accedit a una habitació d’una planta s’ha de comprovar el nombre de persones que hi ha. 
+</p>
+
+<p>
+
+</p>
+
+<p>
+Aquesta vegada, per fer-ho una mica diferent, s’ha utilitzat l’estructura <strong><em>switch</em></strong>. Aquesta estructura de control és similar a una sèrie de sentències <em>if</em>. En moltes ocasions, és possible que es vulgui comparar la mateixa variable (o expressió) amb molts valors diferents i executar una part del codi depenent de quin valor és igual.
+</p>
+
+<p>
+Exemple de dues maneres d’escriure el mateix: la primera amb les estructures de control <em>if</em> i la segona amb l’estructura de control <em>switch</em>:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">if ($i == 0) {</div></li><li class="li1"><div class="de1">    echo &quot;i és igual a 0&quot;;</div></li><li class="li1"><div class="de1">} elseif ($i == 1) {</div></li><li class="li1"><div class="de1">    echo &quot;i és igual a 1&quot;;</div></li><li class="li1"><div class="de1">} elseif ($i == 2) {</div></li><li class="li1"><div class="de1">    echo &quot;i és igual a 2&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">switch ($i) {</div></li><li class="li1"><div class="de1">    case 0:</div></li><li class="li1"><div class="de1">        echo &quot;i és igual a 0&quot;;</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">    case 1:</div></li><li class="li1"><div class="de1">        echo &quot;i és igual a 1&quot;;</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">    case 2:</div></li><li class="li1"><div class="de1">        echo &quot;i és igual a 2&quot;;</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Ha arribat l’hora de solucionar el repte plantejat anteriorment. Volem saber si existeix una habitació lliure. Volem recórrer la matriu bidimensional, però quan hagi trobat la primera habitació lliure ha de terminar el programa. L’estructura de control que ens permet parar la cerca una vegada hem trobat la dada és la següent:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">while (expr){</div></li><li class="li1"><div class="de1">    sentencies</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per realitzar la cerca demanada primer inicialitzarem la matriu i després, amb aquesta estructura de control, buscarem la primera habitació on hi hagi 0 persones:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//Cercar si hi ha habitacions lliures</div></li><li class="li1"><div class="de1">//Crear l'estructura inicial</div></li><li class="li1"><div class="de1">define(&quot;NUM_PLANTES&quot;, 5);</div></li><li class="li1"><div class="de1">define(&quot;NUM_HAB&quot;, 10);</div></li><li class="li1"><div class="de1">define(&quot;MAX_CLIENTS&quot;, 4);</div></li><li class="li1"><div class="de1">$habitacions = array();</div></li><li class="li1"><div class="de1">for($pis=0; $pis &lt; NUM_PLANTES; $pis++){</div></li><li class="li1"><div class="de1">    $habitacions[$pis] = array();</div></li><li class="li1"><div class="de1">    for($porta=0; $porta &lt; NUM_HAB; $porta++){</div></li><li class="li1"><div class="de1">        $habitacions[$pis][$porta] = rand(0,MAX_CLIENTS);</div></li><li class="li1"><div class="de1">    } </div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">//recórrer l'estructura per obtenir la informació:</div></li><li class="li1"><div class="de1">$pis=0;</div></li><li class="li1"><div class="de1">$porta=0;</div></li><li class="li1"><div class="de1">$trobat = false;</div></li><li class="li1"><div class="de1">while (!$trobat &amp;&amp; $pis &lt; NUM_PLANTES){</div></li><li class="li1"><div class="de1">    if($habitacions[$pis][$porta] === 0){</div></li><li class="li1"><div class="de1">        $trobat = true;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if($porta == NUM_HAB -1){</div></li><li class="li1"><div class="de1">        $porta = 0;</div></li><li class="li1"><div class="de1">        $pis++;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    else{</div></li><li class="li1"><div class="de1">        $porta++;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">echo ($trobat)? &quot;Almenys hi ha una habitació lliure.&quot; : &quot;No existeixen habitacions lliures.&quot;;</div></li></ol></pre>
+
+<p>
+Per recórrer la matriu tenim dos índexs: <em>$pis</em> i <em>$porta</em>. Amb el primer índex accedim a la planta de l’hotel, i amb el segon a l’habitació d’aquella planta. Primer hem d’inicialitzar els índexs:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$pis = 0;</div></li><li class="li1"><div class="de1">$porta = 0;</div></li></ol></pre>
+
+<p>
+Una vegada inicialitzats ja podem recórrer la matriu. Com? Doncs pis a pis. Hem de recórrer totes les habitacions del primer pis (<em>$porta++</em>), i quan les haguem recorregut hem d’anar al següent pis. Anar al següent pis significa que hem arribat a l’última porta, llavors inicialitzem el número de porta (<em>$porta = 0;</em>) i a l’índex <em>$pis</em> sumar-hi un més.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">if($porta == NUM_HAB -1){</div></li><li class="li1"><div class="de1">    $porta = 0;</div></li><li class="li1"><div class="de1">    $pis++;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else{</div></li><li class="li1"><div class="de1">    $porta++;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Però hem dit que hem de cercar la primera habitació on no hi hagi cap persona. Quan trobem una que compleixi la condició hem d’avisar, posant una variable a <em>true</em>, que ja hem trobat el que estàvem cercant:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">if($habitacions[$pis][$porta] === 0){</div></li><li class="li1"><div class="de1">    $trobat = true;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest cas, utilitzem una comparació amb tres símbols <em>=</em>. Els tres iguals significa que el valor ha de ser el mateix, com sempre, però a més a més ha de ser del mateix tipus. En aquest cas, ha de ser un 0 i de tipus enter, ja que al costat dret de la comparació utilitzem directament el símbol de tipus enter amb valor 0.
+</p>
+
+<p>
+Si trobem una habitació amb 0 persones la variable <em>$trobat</em> canvia el seu valor a <em>true</em>. Fent aquest canvi, la condició per continuar dintre del bucle esdevé <em>false</em> i no tornarà a executar cap sentència de dintre del bucle.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">$trobat = false;</div></li><li class="li1"><div class="de1">while (!$trobat &amp;&amp; $pis &lt; NUM_PLANTES){</div></li><li class="li1"><div class="de1">    if($habitacions[$pis][$porta] === 0){</div></li><li class="li1"><div class="de1">        $trobat = true;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    ....</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El bucle acaba i ja podem donar una resposta a l’usuari. En canvi, què passa si no hi ha cap habitació lliure? És a dir, què passaria si no es posa a <em>true</em> la variable <em>$trobat</em>? Doncs hem de tenir en compte aquesta situació a l’hora d’elaborar la condició de sortida del bucle. Si no ho tenim en compte el bucle mai acabaria i continuaria indefinidament. 
+</p>
+
+<p>
+Quina altra condició podem utilitzar per sortir del bucle si no hi ha cap habitació buida? És clar, haver recorregut tota la matriu. En aquest cas, quan haguem arribat al cinquè pis. Si arribem a aquest pis, aquesta condició <em>$pis &lt; NUM_PLANTES</em> esdevé falsa i el bucle s’atura.  
+</p>
+
+<p>
+Només ens faltaria comunicar a l’usuari si existeixen o no habitacions lliures.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">echo ($trobat)? &quot;Almenys hi ha una habitació lliure.&quot; : &quot;No existeixen habitacions lliures.&quot;;</div></li></ol></pre>
+
+<p>
+Amb el codi anterior estem realitzant una estructura condicional alternativa al típic <em>if()…else…</em>. S’anomena <strong>operador ternari</strong> i ens estalvia molt temps en l’escriptura del nostre codi, alhora que el simplifica.
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">expressio1 ? expressio2 : expressio3</div></li></ol></pre>
+
+<p>
+S’avalua l’<em>expressio1</em>, i si el seu resultat és veritat, llavors s’avalua i retorna com a resultat l’<em>expressio2</em>. Si <em>expressio1</em> és fals, s’avalua i retorna <em>expressio3</em>. En aquest cas, és equivalent a escriure:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">if (expressio1) {</div></li><li class="li1"><div class="de1">    expressio2;</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">    expressio3;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Un exemple d’assignació a una variable:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//sense operador ternari</div></li><li class="li1"><div class="de1">$faFred=false;</div></li><li class="li1"><div class="de1">if ($faFred) {</div></li><li class="li1"><div class="de1">    $temps = &quot;Fa molt de fred&quot;;</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">    $temps = &quot;No fa fred&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">echo $temps;</div></li><li class="li1"><div class="de1">//amb operador ternari</div></li><li class="li1"><div class="de1">$faFred=false;</div></li><li class="li1"><div class="de1">$temps = ($faFred)? &quot;Fa molt de fred&quot; : &quot;No fa fred&quot;;</div></li><li class="li1"><div class="de1">echo $temps;</div></li></ol></pre>
+
+<p>
+Així, el codi equivalent a l’operador ternari utilitzat a la solució seria:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">//operador ternari utilitzat a la solució </div></li><li class="li1"><div class="de1">echo ($trobat)? &quot;Almenys hi ha una habitació lliure.&quot; : &quot;No existeixen habitacions lliures.&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//estructura equivalent amb if...else</div></li><li class="li1"><div class="de1">if($trobat){</div></li><li class="li1"><div class="de1">    echo &quot;Almenys hi ha una habitació lliure.&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else{</div></li><li class="li1"><div class="de1">    echo &quot;No existeixen habitacions lliures.&quot;;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="descrivint_una_persona_a_jsp_jstl" >Descrivint una persona a JSP, JSTL</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat començarem a utilitzar el llenguatge de marques de Java: JSP/JSTL, que pertany a JEE7. Veurem quins tipus de dades existeixen a JSP/JSTL, com crear variables i quin és el seu àmbit. Aprendrem aquests conceptes en el procés de descriure una persona i intentar emmagatzemar les seves dades.
+</p>
+
+</div>
+
+<h3><a id="sintaxi_estandard_jsp" >Sintaxi estàndard JSP</a></h3>
+<div class="level3">
+
+<p>
+Comencem creant un projecte amb Netbeans, escollint l’opció <em>Maven / Web Application</em>. Crear un projecte amb Maven, com sabeu, és mot útil. És una eina capaç de generar totes les estructures de directoris per al projecte, descarregar automàticament les llibreries que s’utilitzin i, a més a més, està integrat a la majoria dels IDE.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Als annexos del material didàctic trobareu el codi JSP/JSTL que utilitzarem en aquest apartat, per poder-lo descarregar. Recordeu que podeu utilitzar la funció d’importar del Netbeans per accedir a aquest contingut més fàcilment.
+</p>
+</div></div>
+<p>
+Una vegada s’han descarregat les dependències del projecte, començarem afegint una pàgina JSP. Amb aquesta pàgina descriurem una persona. 
+</p>
+
+<p>
+A l’hora de crear la pàgina JSP ens demana la informació que podeu veure a la figura <span class="figref"><a href="#fig-uf1-a2-jsp-descPersona"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-uf1-a2-jsp-descPersona"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’una Java Servlet Page
+
+</figcaption><img src="../media/fig-uf1-a2-jsp-descpersona.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+De moment, seleccionem l’opció JSP File (Standard Syntax). Ens apareixerà un codi com aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Page&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Hello World!&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Sembla una pàgina web normal, però hi ha etiquetes addicionals. Per exemple, fixeu-vos-hi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li></ol></pre>
+
+<p>
+El codi JSP s’introdueix utilitzant les etiquetes: <strong>&lt;% —- codi JSP —-%&gt;</strong>. Dintre d’aquestes etiquetes podem utilitzar codi Java. Recordeu que aquest codi s’executa en el servidor abans d’enviar la pàgina al navegador. En aquest cas,<strong>&lt;%@page</strong> és una <strong>directiva</strong> on es defineixen uns paràmetres que s’han de complir a tota la pàgina. En concret, es defineix el tipus de contingut de la pàgina JSP i la seva codificació. 
+</p>
+
+<p>
+També podem fer altres coses, com importar classes o bé indicar si volem activar la sessió de l’usuari. Exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page session=&quot;true&quot; import=&quot;java.io.*, miPackage.miClase&quot;%&gt;</div></li></ol></pre>
+
+<p>
+Per descriure les dades d’una persona necessitem declarar les variables necessàries per a la seva descripció. Fixeu-vos com es declaren les variables:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.LocalDate&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%! </div></li><li class="li1"><div class="de1">String nomPersona =&quot;Clara&quot; ;</div></li><li class="li1"><div class="de1">String cognoms =&quot;Oswin&quot;;</div></li><li class="li1"><div class="de1">int edat = 30;</div></li><li class="li1"><div class="de1">LocalDate dataNaixement = LocalDate.of(1986,3,11);</div></li><li class="li1"><div class="de1">String telf = &quot;935555555&quot;;</div></li><li class="li1"><div class="de1">String adrecaPostal = &quot;Blackpool, England&quot;;</div></li><li class="li1"><div class="de1">String email = &quot;oswin@dr.who&quot;;</div></li><li class="li1"><div class="de1">boolean treballa = false;</div></li><li class="li1"><div class="de1">float alcada = 167.23f;</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: &lt;%=nomPersona + &quot; &quot; + cognoms%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té &lt;%=edat%&gt;   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Va néixer l'any: &lt;%=dataNaixement.toString()%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu telèfon és: &lt;%=telf %&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Viu a &lt;%=adrecaPostal %&gt; &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu e-mail és el &lt;%=email %&gt; &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt;i actualment &lt;%=(treballa)?&quot;si&quot;:&quot;no&quot; %&gt;   treballa.&lt;/li&gt;                        </div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per executar el codi anterior es fa servir la llibreria <em>java.time.LocalDate</em>, amb la qual és molt més senzill fer càlcul amb dates. Per poder utilitzar-la s’ha de canviar la versió del JDK del servidor GlassFish del 1.7 al 1.8.  Vegeu la figura <span class="figref"><a href="#fig-uf1-a2-jsp-jdk"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-uf1-a2-jsp-jdk"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Canvi de la versió del JDK al servidor Glassfish
+
+</figcaption><img src="../media/u2-jsp-jdk.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+L’execució del codi anterior la podeu veure a la figura <span class="figref"><a href="#fig-uf1-a2-jsp-descPersona2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-uf1-a2-jsp-descPersona2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Descrivint una persona amb JSP
+
+</figcaption><img src="../media/fig-uf1-a2-jsp-descpersona2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu executar el codi directament executant aquest fitxer (botó dret del ratolí damunt del fitxer i seleccionar <em>Run File</em>). El codi <acronym title="HyperText Markup Language">HTML</acronym> resultant és:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: Clara Oswin &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té 30   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Va néixer l'any: 1986-03-11 &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu telèfon és el: 935555555 &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Viu a Blackpool, England &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu e-mail és oswin@dr.who &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt;i actualment no   treballa.&lt;/li&gt;                        </div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per declarar les variables hem utilitzat el símbol <strong>&lt;%! –declaracions– %&gt;</strong>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%! </div></li><li class="li1"><div class="de1">String nomPersona =&quot;Clara&quot; ;</div></li><li class="li1"><div class="de1">String cognoms =&quot;Oswin&quot;;</div></li><li class="li1"><div class="de1">int edat = 30;</div></li><li class="li1"><div class="de1">LocalDate dataNaixement = LocalDate.of(1986,3,11);</div></li><li class="li1"><div class="de1">String telf = &quot;935555555&quot;;</div></li><li class="li1"><div class="de1">String adrecaPostal = &quot;Blackpool, England&quot;;</div></li><li class="li1"><div class="de1">String email = &quot;oswin@dr.who&quot;;</div></li><li class="li1"><div class="de1">boolean treballa = false;</div></li><li class="li1"><div class="de1">float alcada = 167.23f;</div></li><li class="li1"><div class="de1">%&gt;</div></li></ol></pre>
+
+<p>
+Com que es necessita la llibreria <em>LocalDate</em> per declarar la data de naixement s’ha hagut d’importar, declarant-la al principi del document per poder-la utilitzar:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.LocalDate&quot;%&gt;</div></li></ol></pre>
+
+<p>
+Una vegada tenim les variables inicialitzades les utilitzem amb el símbol <strong>&lt;%= –expressió que retorna un valor –%&gt;</strong>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;li&gt;Es diu: &lt;%=nomPersona + &quot; &quot; + cognoms%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;li&gt;i actualment &lt;%=(treballa)?&quot;si&quot;:&quot;no&quot; %&gt;   treballa.&lt;/li&gt; </div></li></ol></pre>
+
+<p>
+Aquest símbol <strong>&lt;%=</strong> necessita d’una dada que mostrar. No permet executar més instruccions, només una, i aquesta ha de retornar un valor que es pugui mostrar en aquella posició en la pàgina JSP.
+</p>
+
+<p>
+També podíem haver codificat la descripció de la persona de la següent manera:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.LocalDate&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    String nomPersona = &quot;Clara&quot;;</div></li><li class="li1"><div class="de1">    String cognoms = &quot;Oswin&quot;;</div></li><li class="li1"><div class="de1">    int edat = 30;</div></li><li class="li1"><div class="de1">    LocalDate dataNaixement = LocalDate.of(1986, 3, 11);</div></li><li class="li1"><div class="de1">    String telf = &quot;935555555&quot;;</div></li><li class="li1"><div class="de1">    String adrecaPostal = &quot;Blackpool, England&quot;;</div></li><li class="li1"><div class="de1">    String email = &quot;oswin@dr.who&quot;;</div></li><li class="li1"><div class="de1">    boolean treballa = false;</div></li><li class="li1"><div class="de1">    float alcada = 167.23f;</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;%</div></li><li class="li1"><div class="de1">            String html = &quot;&lt;li&gt;Es diu: &quot; + nomPersona + &quot; &quot; + cognoms + &quot; &lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;Té&quot; + edat + &quot; anys&lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;Va néixer l'any:&quot;+ dataNaixement.toString() + &quot;&lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;El seu telèfon és el: &quot; + telf + &quot;&lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;Viu a &quot; + adrecaPostal + &quot; &lt;/li&gt;&quot;;            </div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;El seu e-mail és &quot; + email + &quot; &lt;/li&gt;&quot;;            </div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt; actualment &quot; + ((treballa) ? &quot;si&quot; : &quot;no&quot;) + &quot; treballa.&lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            html += &quot;&lt;li&gt;i té una alçada de &quot; +  alcada + &quot; cm.&lt;/li&gt;&quot;;</div></li><li class="li1"><div class="de1">            out.println(html);</div></li><li class="li1"><div class="de1">            %&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Veiem que amb el símbol <strong>&lt;% –codi java – %&gt;</strong> podem crear variables, podem executar instruccions i podem enviar el seu valor amb la instrucció <em>out.println(expr)</em> cap al navegador. 
+</p>
+
+<p>
+La pregunta que ens podem fer és: quina diferència existeix entre declarar les variables dintre dels símbols &lt;%! … %&gt; o dintre de &lt;% … %&gt;?
+Proveu el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%! int comptador=0; %&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Comptador&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Hola has executat aquesta pàgina &lt;%= comptador++ %&gt; vegades.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si executeu la pàgina anterior veureu al navegador la següent informació:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Hola has executat aquesta pàgina 0 vegades.</div></li></ol></pre>
+
+<p>
+Si, sense tancar la pàgina del navegador, premem F5 (la tornem a carregar), veurem:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Hola has executat aquesta pàgina 1 vegades.</div></li></ol></pre>
+
+<p>
+La variable <em>comptador</em> no perd el seu valor, es manté. Aquest tipus de variables conserven el seu valor entre successives execucions. En canvi, si les declarem dintre de <strong>&lt;%..%&gt;</strong> no es manté el seu valor. Exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Comptador&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">        int comptador = 0;</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Hola, has executat aquesta pàgina &lt;%= comptador++ %&gt; vegades.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si executem el codi anterior i premem F5 moltes vegades, no canviarà el seu valor. Sempre mostrarà:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Hola, has executat aquesta pàgina 0 vegades.</div></li></ol></pre>
+
+</div>
+
+<h4><a id="resum_etiquetes_jsp_standard_syntax" >Resum etiquetes JSP (Standard Syntax)</a></h4>
+<div class="level4">
+
+<p>
+Una vegada hem arribat a aquest punt, recapitulem el tipus d’informació i sintaxi que podem utilitzar amb JSP (Standard Syntax):
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Directives</strong> (<em>&lt;%@..%&gt;</em>): indiquen informació general de la pàgina, com pot ser importació de classes, pàgina a invocar davant errors, si la pàgina forma part d’una sessió, incloure una altre pàgina o fitxer, etc. <br/>
+Exemple:</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@page session=&quot;true&quot; import=&quot;java.util.ArrayList&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@include file=&quot;titulo.txt&quot;%&gt;</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong>Declaracions</strong> (<em>&lt;%! .. %&gt;</em>): serveixen per a funcions mètodes o variables. Aquestes variables conservaran el seu valor entre successives execucions. A més a més, les variables declarades dintre d’aquestes etiquetes esdevenen variables globals i poden ser utilitzades des de qualsevol lloc de la pàgina JSP.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%-- Exemple  --%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">private String ahora()</div></li><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">return &quot;&quot;+new java.util.Date();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">//Exemple2</div></li><li class="li1"><div class="de1">&lt;%! int comptador=0; %&gt;</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong><em>Scriptlets</em></strong> (<em>&lt;%…%&gt;</em>): codi Java embegut.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%-- Exemple  --%&gt;</div></li><li class="li1"><div class="de1">&lt;table&gt;</div></li><li class="li1"><div class="de1">   &lt;% for (int i=0;i&lt;10;i++)</div></li><li class="li1"><div class="de1">   {</div></li><li class="li1"><div class="de1">    %&gt;</div></li><li class="li1"><div class="de1">   &lt;tr&gt;&lt;td&gt; &lt;%=i%&gt; &lt;/td&gt;&lt;/tr&gt;</div></li><li class="li1"><div class="de1">    &lt;% }</div></li><li class="li1"><div class="de1">    %&gt;</div></li><li class="li1"><div class="de1">&lt;/table&gt;</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong>Expressions</strong> (<em>&lt;%=…%&gt;</em>): expressions Java que s’avaluen i s’envien a la sortida.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%= new java.util.Date() %&gt;</div></li><li class="li1"><div class="de1">&lt;%= Math.PI*2 %&gt;</div></li></ol></pre>
+
+</div>
+
+<h3><a id="sintaxi_jsp_standard_tag_library_jstl" >Sintaxi JSP Standard Tag Library (JSTL)</a></h3>
+<div class="level3">
+
+<p>
+Veurem una altra manera d’afegir codi Java a una pàgina web i utilitzarem les llibreries d’etiquetes JSTL. Aquesta manera de definir una pàgina web està basada en etiquetes XML. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La llibreria estàndard d’etiquetes <strong>JSTL</strong> és una col·lecció d’etiquetes JSP que encapsula les funcionalitats principals de moltes aplicacions JSP.
+</p>
+</div></div>
+<p>
+Començarem creant una nova pàgina web JSP i afegirem el conjunt d’etiquetes principals JSTL. Per accedir al nou conjunt d’etiquetes posarem el prefix <em>c</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li></ol></pre>
+
+<p>
+A més, com que utilitzarem dates necessitem el conjunt d’etiquetes <em>i18n</em> (internacionalització), que ens permetrà utilitzar-les d’una manera més còmoda.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot; %&gt;</div></li></ol></pre>
+
+<p>
+Una vegada hem afegit les llibreries de les etiquetes XML que utilitzarem comencem a definir les variables i a mostrar el seu valor per pantalla. El codi resultant és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSTL Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;nom&quot; value=&quot;Clara&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;cognoms&quot; value=&quot;Oswin&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;edat&quot; value=&quot;30&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;fmt:parseDate   var=&quot;datanaixement&quot; pattern=&quot;dd-MM-yyyy&quot; value=&quot;11-03-1986&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;telef&quot; value=&quot;935555555&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;adreca&quot; value=&quot;Blackpool, England&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;email&quot; value=&quot;oswin@dr.who&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;treballa&quot; value=&quot;false&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;alcada&quot; value=&quot;167.23f&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: &lt;c:out value=&quot;${nom} ${cognoms}&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té &lt;c:out value=&quot;${edat}&quot; /&gt;   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Va néixer el  &lt;fmt:formatDate  value=&quot;${datanaixement}&quot;   dateStyle=&quot;full&quot;/&gt;.&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu telèfon és el: &lt;c:out value=&quot;${telef}&quot; /&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Viu a &lt;c:out value=&quot;${adreca}&quot; /&gt; &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt;El seu e-mail és &lt;c:out value=&quot;${email}&quot; /&gt; &lt;/li&gt;            </div></li><li class="li1"><div class="de1">            &lt;li&gt; actualment &lt;c:out value=&quot;${treballa? 'si' : 'no'}&quot; /&gt;   treballa.&lt;/li&gt;    </div></li><li class="li1"><div class="de1">            &lt;li&gt;i té una alçada de &lt;c:out value=&quot;${alcada + 1}&quot; /&gt; cm.&lt;/li&gt;                        </div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com veieu, per declarar una variable utilitzem l’etiqueta <strong>&lt;c:set</strong>. Recordeu que hem utilitzat la lletra <strong>c</strong> com a prefix per poder utilitzar les etiquetes del nucli <em>jstl</em>, i per això les etiquetes comencen amb <strong>&lt;c:</strong>. Una vegada escollida l’etiqueta per declarar variables, a continuació hem de donar-li un nom, un valor i un àmbit. Per donar-li el nom utilitzem l’atribut de l’etiqueta <em>var</em>, per donar-li un valor utilitzem l’atribut <em>value</em>, i per donar-li un àmbit a la variable utilitzem l’atribut <em>scope</em>. Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:set var=&quot;edat&quot; value=&quot;30&quot; scope=&quot;page&quot; /&gt;</div></li></ol></pre>
+
+<p>
+Com podeu veure en l’exemple anterior, no cal definir el tipus de variable. Automàticament es converteix en el tipus que necessitem per fer l’operació que necessitem. Vegeu com s’utilitza la variable <em>alcada</em>.
+</p>
+
+<p>
+Per mostrar la variable per pantalla utilitzem l’etiqueta <strong>&lt;c:out</strong>. Aquesta etiqueta només té l’atribut <em>value</em>, amb el qual podem mostrar per pantalla el valor d’una variable o d’una expressió. Per poder utilitzar una variable de les definides prèviament s’ha de fer servir la sintaxi <strong>${expr}</strong>, on <em>expr</em> pot ser el nom de la variable a mostrar. Aquest nom correspon a l’atribut <em>var</em> de l’etiqueta <em>&lt;c:set</em>. Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;li&gt;i té una alçada de &lt;c:out value=&quot;${alcada + 1}&quot; /&gt; cm.&lt;/li&gt;                        </div></li></ol></pre>
+
+<p>
+A l’exemple anterior agafem el valor d’una variable i li sumem 1. Aquest valor es veurà per pantalla en aquesta posició. Com veieu, no cal definir els tipus; automàticament s’ha convertit en un <em>float</em>, ha sumat un 1 i després l’ha convertit en un <em>string</em>.
+</p>
+
+<p>
+Per utilitzar les variables creades s’utilitza la notació <strong>${expr}</strong>, que és estàndard i molt potent. És un llenguatge en si mateix que s’anomena <em>EL</em> (Expression Language).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>EL (Expression Language)</strong> permet la resolució dinàmica dels objectes i els mètodes de Java en pàgines JSP i Facelets. Les expressions <em>EL</em> tenen la forma de <em>${foo}</em> i <em>#{bar}</em>.
+</p>
+</div></div>
+<p>
+A més a més, per poder programar amb aquest llenguatge necessitem saber quines són les etiquetes que ens proporciona la llibreria principal JSTL (vegeu la <span class="tabref"><a href="#taulaX1"><span>taula</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> JavaServer Faces</p>
+<p>
+JavaServer Faces (<strong>JSF</strong>) és una tecnologia per a aplicacions Java basades en web que simplifica el desenvolupament d’aplicacions Java EE. El principal avantatge sobre JSP és que permet una clara separació entre el comportament de l’aplicació i la seva presentació.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taulaX1"><span>Taula: </span></a>Etiquetes de la llibreria JSTL</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Etiqueta </th><th class="col1"> Significat </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <em>set</em>      </td><td class="col1">S’utilitza per donar un valor a una propietat o a una variable en qualsevol dels seus àmbits </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <em>remove</em>   </td><td class="col1">S’utilitza per eliminar una variable </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <em>choose</em>   </td><td class="col1">És una etiqueta condicional utilitzada per a la creació d’un condicional del tipus <em>if…else</em></td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <em>when</em>     </td><td class="col1">Aquesta etiqueta s’utilitza dintre de l’etiqueta <em>choose</em>. Serveix per avaluar una expressió a <em>true</em> o <em>false</em> </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <em>otherwise</em> </td><td class="col1">Aquesta etiqueta s’utilitza dintre de l’etiqueta <em>choose</em>. El contingut d’aquesta etiqueta s’executa si l’expressió avaluada per l’etiqueta <em>when</em> és <em>false</em> </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> <em>forEach</em> </td><td class="col1">Aquesta etiqueta serveix per fer un bucle </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> <em>forTokens</em> </td><td class="col1">Aquesta etiqueta serveix per iterar sobre un <em>string</em>. A cada volta dóna la porció de l’<em>string</em> que hi ha entre uns delimitadors </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> <em>import</em> </td><td class="col1">Aquesta etiqueta serveix per importar un fitxer. Per exemple, podem importar el contingut d’una pàgina o un fitxer dintre d’una variable per després tractar la informació</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><em>param</em> </td><td class="col1">S’utilitza per afegir un paràmetre a la <acronym title="Uniform Resource Locator">URL</acronym> </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><em>redirect</em> </td><td class="col1"> S’utilitza per redirigir a l’usuari a una altra <acronym title="Uniform Resource Locator">URL</acronym> </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><em>url</em></td><td class="col1">S’utilitza per crear una <acronym title="Uniform Resource Locator">URL</acronym> a una pàgina</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><em>catch</em></td><td class="col1">Serveix per agafar els errors que es produeixen a la pàgina </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><em>out</em></td><td class="col1">Aquesta etiqueta és l’equivalent a les expressions <em>&lt;%=..%&gt;</em> de la llibreria estàndard de JSP </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Anirem utilitzant les etiquetes anteriors segons les requerim per solucionar els diversos problemes que se’ns presentin a l’hora de codificar els exemples amb JSTL.
+</p>
+
+<p>
+Només queda per explicar l’atribut <strong><em>scope</em></strong> de l’etiqueta <em>set</em>. Aquest atribut no deixa de ser l’àmbit de la variable declarada. A JSP existeixen diferents àmbits (<span class="tabref"><a href="#t2XX"><span>taula</span></a></span>).
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="t2XX"><span>Taula: </span></a>Tipus d’àmbits a JSP i JSTL</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus d’àmbit </th><th class="col1"> Significat </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"><em>page</em>     </td><td class="col1">Els objectes declarats en aquest àmbit només són accessibles en la pàgina declarada. La dada d’aquest objecte només és vàlida durant el processament de l’actual resposta. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"><em>request</em>  </td><td class="col1">Els objectes d’àmbit de <em>request</em> són accessibles en les pàgines processades en la mateixa petició en la qual es va crear. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"><em>session</em>  </td><td class="col1"> Els objectes declarats en aquest àmbit són accessibles en les pàgines processades de sol·licituds que es troben en la mateixa sessió que en la que van crear. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><em>application</em> </td><td class="col1">Els objectes declarats en aquest àmbit són accessibles per qualsevol pàgina JSP que formi part de la mateixa aplicació. </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Millor veiem amb un exemple com s’utilitzen:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Àmbits de les variables a JSLT&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;test&quot; value=&quot;Valor d'una variable d'àmbit de pàgina&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;test&quot; value=&quot;Valor d'una variable d'àmbit de Request&quot;</div></li><li class="li1"><div class="de1">               scope=&quot;request&quot; /&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;test&quot; value=&quot;Valor d'una variable d'àmbit de sessió&quot;</div></li><li class="li1"><div class="de1">               scope=&quot;session&quot; /&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;test&quot; value=&quot;Valor d'una variable d'àmbit d'aplicació&quot;</div></li><li class="li1"><div class="de1">               scope=&quot;application&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Àmbits de les variables a JSLT:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;table border=&quot;1&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;tr&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;b&gt;Àmbit per defecte: &lt;/b&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${test}&quot; /&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">            &lt;/tr&gt;</div></li><li class="li1"><div class="de1">            &lt;tr&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;b&gt;Àmbit de pàgina&lt;/b&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${pageScope.test}&quot; /&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">            &lt;/tr&gt;</div></li><li class="li1"><div class="de1">            &lt;tr&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;b&gt;Âmbit de Request: &lt;/b&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${requestScope.test}&quot; /&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">            &lt;/tr&gt;</div></li><li class="li1"><div class="de1">            &lt;tr&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;b&gt;Àmbit de sessió&lt;/b&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${sessionScope.test}&quot; /&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">            &lt;/tr&gt;</div></li><li class="li1"><div class="de1">            &lt;tr&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;b&gt;Àmbit d'aplicació&lt;/b&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">                &lt;td&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${applicationScope.test}&quot; /&gt;</div></li><li class="li1"><div class="de1">                &lt;/td&gt;</div></li><li class="li1"><div class="de1">            &lt;/tr&gt;</div></li><li class="li1"><div class="de1">        &lt;/table&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Observeu que el nom de la variable utilitzada és el mateix (<em>test</em>). Aquesta variable té diferents valors depenent de l’àmbit on està. En altres paraules, existeixen diferents variables anomenades <em>test</em> en diferents àmbits del programa.
+</p>
+
+<p>
+En executar el codi anterior obtenim la pàgina que podeu veure a la figura <span class="figref"><a href="#fig-uf1-a2-ambits-jsp"><span>figura</span></a></span>
+</p>
+<div class="iocfigure"><a name="fig-uf1-a2-ambits-jsp"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Àmbits de les variables en JSP
+
+</figcaption><img src="../media/fig-uf1-a2-ambits-jsp.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="calcular_l_edat_d_una_persona" >Calcular l&#039;edat d&#039;una persona</a></h3>
+<div class="level3">
+
+<p>
+Continuant amb l’exemple de descripció d’una persona, volem afegir la funcionalitat de calcular l’edat si sabem l’any que va néixer. Volem fer el càlcul de dues maneres: amb la sintaxi estàndard i amb la sintaxi JSTL.
+</p>
+
+<p>
+Començarem amb la sintaxi estàndard. Afegirem una funció que rebi per paràmetre la data de naixement i retorni l’edat de la persona fins al dia actual.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.temporal.ChronoUnit&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.LocalDate&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">private long calculaEdat(LocalDate dataNaix){</div></li><li class="li1"><div class="de1">    LocalDate now = LocalDate.now();</div></li><li class="li1"><div class="de1">    return ChronoUnit.YEARS.between(dataNaix, now);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;%</div></li><li class="li1"><div class="de1">                String nomPersona = &quot;Clara&quot;;</div></li><li class="li1"><div class="de1">                String cognoms = &quot;Oswin&quot;;</div></li><li class="li1"><div class="de1">                LocalDate dataNaixement = LocalDate.of(1986, 3, 11);</div></li><li class="li1"><div class="de1">            %&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: &lt;%=nomPersona + &quot; &quot; + cognoms%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té &lt;%=calculaEdat(dataNaixement)%&gt;   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Va néixer l'any: &lt;%=dataNaixement.toString()%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+La declaració de la funció es fa dintre de la zona de declaracions. Una vegada s’ha declarat la funció es pot utilitzar en qualsevol lloc del codi JSP. En aquest cas, la utilitzem directament a una expressió per tal de retornar l’edat de la persona i mostrar-la en el lloc adient de la pàgina JSP.
+</p>
+
+<p>
+
+</p>
+
+<p>
+La variable <em>dataNaixement</em> és una variable local que només es pot fer servir en el mateix <em>scriptlet</em> i en les expressions d’assignació (<em>&lt;%=</em>). Per poder utilitzar aquest valor dintre d’una funció s’ha d’enviar mitjançant un paràmetre, tal com s’ha fet a l’exemple. 
+</p>
+
+<p>
+També podríem haver utilitzat variables globals. No queda tan bé, però es pot implementar. Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.temporal.ChronoUnit&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page import=&quot;java.time.LocalDate&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">public long calculaEdat(){</div></li><li class="li1"><div class="de1">    LocalDate now = LocalDate.now();</div></li><li class="li1"><div class="de1">    return ChronoUnit.YEARS.between(dataNaixement, now);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">LocalDate dataNaixement = LocalDate.of(1986, 3, 11);</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSP Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;%</div></li><li class="li1"><div class="de1">                String nomPersona = &quot;Clara&quot;;</div></li><li class="li1"><div class="de1">                String cognoms = &quot;Oswin&quot;;</div></li><li class="li1"><div class="de1">            %&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: &lt;%=nomPersona + &quot; &quot; + cognoms%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té &lt;%=calculaEdat()%&gt;   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Va néixer l'any: &lt;%=dataNaixement.toString()%&gt; &lt;/li&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+La variable global <em>dataNaixement</em> s’ha declarat dintre de la zona dedicada a la declaracions de variables i funcions. Aquesta variable, en ser global, es pot utilitzar perfectament dintre de la funció (sense haver d’enviar-la per paràmetre) i en les expressions d’assignacions (<em>&lt;%=</em>).
+</p>
+
+<p>
+La segona manera de calcular l’edat d’una persona és utilitzant etiquetes JSTL.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;JSTL Descrivint a una Persona&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Descrivint una persona&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;h2&gt; Les dades de la persona són:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;nom&quot; value=&quot;Clara&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;cognoms&quot; value=&quot;Oswin&quot; scope=&quot;page&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;fmt:parseDate   var=&quot;datanaixement&quot; pattern=&quot;dd-MM-yyyy&quot; value=&quot;11-03-1986&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;c:set var=&quot;avui&quot; value=&quot;&lt;%=new java.util.Date()%&gt;&quot; /&gt; </div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Es diu: &lt;c:out value=&quot;${nom} ${cognoms}&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Té &lt;c:out value=&quot;${avui.year - datanaixement.year}&quot; /&gt;   anys&lt;/li&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Observem que en aquesta solució només es té en compte, en el càlcul de l’edat de la persona, els anys de diferència que hi ha entre les dues dates. Primer creem la data de la persona amb l’etiqueta <em>fmt</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;fmt:parseDate   var=&quot;datanaixement&quot; pattern=&quot;dd-MM-yyyy&quot; value=&quot;11-03-1986&quot;/&gt;</div></li></ol></pre>
+
+<p>
+Aquesta etiqueta crea una data a la variable <em>datanaixement</em>. Aquesta data té l’any de naixement de la persona en el format <em>dia-mes-any</em>. També podem crear dates utilitzant etiquetes JSTL amb etiquetes JSP estàndard. Fixeu-vos com hem creat la data actual:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:set var=&quot;avui&quot; value=&quot;&lt;%=new java.util.Date()%&gt;&quot; /&gt; </div></li></ol></pre>
+
+<p>
+Amb el codi anterior hem creat una variable anomenada <em>avui</em> que conté la data actual. Ara només s’ha de calcular la diferència entre aquestes dues dates per tal d’obtenir l’edat de la persona.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:out value=&quot;${avui.year - datanaixement.year}&quot; /&gt;   </div></li></ol></pre>
+
+<p>
+El codi anterior no fa el càlcul exacte de l’edat, però per començar ja ens va prou bé. Fa la resta exacta entre l’any de naixement i l’any actual sense tenir en compte el mes i el dia. L’interessant d’aquesta notació és que podem accedir als <em>getters</em> de la classe <code>java.util.Date</code> directament, sense haver de posar <em>datanaixement.getYear()</em>. Aquest notació ens permet accedir a la propietat d’una classe si aquesta té la funció <em>get</em> associada.
+</p>
+
+</div>
+
+<h2><a id="gestionant_un_hotel_amb_jsp" >Gestionant un hotel amb JSP</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat veurem el tipus de dades <em>array</em> i les estructures de control necessàries per tractar amb aquest tipus de dades. Aprendrem aquests conceptes gestionant, d’una manera molt senzilla, alguns aspectes de la gestió d’un hotel.
+</p>
+
+</div>
+
+<h3><a id="gestio_de_les_taules_d_un_restaurant" >Gestió de les taules d&#039;un restaurant</a></h3>
+<div class="level3">
+
+<p>
+Igual que vam fer amb PHP, volem utilitzar el llenguatge JSP per guardar el nombre de comensals que hi ha en cada taula i mostrar la informació. 
+</p>
+
+<p>
+Penseu com determinar quines taules estan buides. Volem crear una funció que donat un <em>array</em> amb el nombre de comensals de cada taula ens retorni en un altre <em>array</em> el nombre de cada taula que estigui buida.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max+1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Gestió de taules d'un restaurant&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            //inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">            int[] taules = new int[10];</div></li><li class="li1"><div class="de1">            for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">                taules[i] = rand(0, 5);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Gestió de taules d'un restaurant&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;%</div></li><li class="li1"><div class="de1">            //llistat de les taules</div></li><li class="li1"><div class="de1">            for(int i = 0; i &lt; 10; i++)</div></li><li class="li1"><div class="de1">            {</div></li><li class="li1"><div class="de1">                switch(taules[i]){</div></li><li class="li1"><div class="de1">                    case 0:</div></li><li class="li1"><div class="de1">                        %&gt;</div></li><li class="li1"><div class="de1">                            &lt;li&gt;La taula &lt;%=i%&gt; està buida&lt;/li&gt;</div></li><li class="li1"><div class="de1">                        &lt;%</div></li><li class="li1"><div class="de1">                        break;</div></li><li class="li1"><div class="de1">                    case 5:</div></li><li class="li1"><div class="de1">                        %&gt;</div></li><li class="li1"><div class="de1">                            &lt;li&gt;La taula &lt;%=i%&gt; està plena.&lt;/li&gt;</div></li><li class="li1"><div class="de1">                        &lt;%</div></li><li class="li1"><div class="de1">                        break;</div></li><li class="li1"><div class="de1">                    default:</div></li><li class="li1"><div class="de1">                        %&gt;</div></li><li class="li1"><div class="de1">                            &lt;li&gt;La taula &lt;%=i%&gt; té &lt;%=taules[i]%&gt; comensals&lt;/li&gt;</div></li><li class="li1"><div class="de1">                        &lt;%</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            %&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Una possible resposta a l’execució del codi anterior és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de taules d'un restaurant</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">La taula 0 està plena.</div></li><li class="li1"><div class="de1">La taula 1 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 2 està plena.</div></li><li class="li1"><div class="de1">La taula 3 té 4 comensals</div></li><li class="li1"><div class="de1">La taula 4 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 5 està buida</div></li><li class="li1"><div class="de1">La taula 6 té 1 comensals</div></li><li class="li1"><div class="de1">La taula 7 està buida</div></li><li class="li1"><div class="de1">La taula 8 està buida</div></li><li class="li1"><div class="de1">La taula 9 té 3 comensals</div></li></ol></pre>
+
+<p>
+Observeu el codi anterior. Veieu que s’ha utilitzat l’estructura <strong><em>for</em></strong> per recórrer l’<em>array</em>. Aquesta estructura funciona igual que a Java i a PHP. El que pot sobtar és la manera d’enviar la informació al navegador. Observeu amb deteniment l’estructura del bucle <em>for</em> i com utilitzem les etiquetes <strong>&lt;% … %&gt;</strong>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">    switch (taules[i]) {</div></li><li class="li1"><div class="de1">        case 0:</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">                &lt;li&gt;La taula &lt;%=i%&gt; està buida&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">        case 5:</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">                &lt;li&gt;La taula &lt;%=i%&gt; està plena.&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">        default:</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">                &lt;li&gt;La taula &lt;%=i%&gt; té &lt;%=taules[i]%&gt; comensals&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">%&gt;</div></li></ol></pre>
+
+<p>
+En comptes d’utilitzar la funció <em>out.println(expr)</em> per enviar la informació al navegador hem tancat l’etiqueta JSP i hem posat el codi <acronym title="HyperText Markup Language">HTML</acronym> directament a la pàgina. Perquè el codi es pugui enviar a la pàgina <acronym title="HyperText Markup Language">HTML</acronym> ha de complir les condicions posades anteriorment dintre de les etiquetes JSP. Així, podem anar alternant entre codi <acronym title="HyperText Markup Language">HTML</acronym> i codi JSP. 
+</p>
+
+<p>
+Una alternativa del codi anterior podria ser:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">    switch (taules[i]) {</div></li><li class="li1"><div class="de1">        case 0:            </div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;li&gt;La taula &quot; + i + &quot; està buida&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">        case 5:</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;li&gt;La taula &quot; + i + &quot; està plena.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                break;</div></li><li class="li1"><div class="de1">        default:</div></li><li class="li1"><div class="de1">                out.println(&quot;&lt;li&gt;La taula &quot; + i + &quot; té &quot; + taules[i] + &quot; comensals.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">%&gt;</div></li></ol></pre>
+
+<p>
+Solucionem el repte anterior. Volem crear una funció que donat un <em>array</em> amb el nombre de comensals de cada taula ens retorni en un altre <em>array</em> el nombre de cada taula que estigui buida. Mostrarem per pantalla totes les taules buides.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page import=&quot;java.util.ArrayList&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max + 1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    private ArrayList cercarBuides(int[] taules){</div></li><li class="li1"><div class="de1">        ArrayList buides = new ArrayList();</div></li><li class="li1"><div class="de1">        for (int i = 0; i &lt; taules.length; i++) {</div></li><li class="li1"><div class="de1">            if(taules[i] == 0){</div></li><li class="li1"><div class="de1">                buides.add(i);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return buides;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Gestió de taules d'un restaurant&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            //inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">            int[] taules = new int[10];</div></li><li class="li1"><div class="de1">            for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">                taules[i] = rand(0, 5);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            //cerquem les taules buides</div></li><li class="li1"><div class="de1">            ArrayList taulesBuides = cercarBuides(taules);</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Les següents taules estan buides:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;%</div></li><li class="li1"><div class="de1">                //llistat de les taules buides</div></li><li class="li1"><div class="de1">                if(taulesBuides.isEmpty()){</div></li><li class="li1"><div class="de1">                    out.println(&quot;No hi han taules buides.&quot;);</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">                for (Object taula: taulesBuides){</div></li><li class="li1"><div class="de1">                    out.println(&quot;&lt;li&gt;La taula &quot; + taula + &quot; està buida.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">            %&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Una possible resposta a l’execució del codi anterior seria:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Les següents taules estan buides:</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">La taula 1 està buida.</div></li><li class="li1"><div class="de1">La taula 6 està buida.</div></li><li class="li1"><div class="de1">La taula 9 està buida.</div></li></ol></pre>
+
+<p>
+Hem emprat la classe <code>ArrayList</code> per emmagatzemar les taules buides. Com que, a priori, no sabem quantes taules buides tindrem, no podem utilitzar un <em>array</em> de mida fixa. Java ens proporciona la classe <code>ArrayList</code> per a aquests casos. La funció <em>cercarBuides</em> recorre l’<em>array</em> taules per cercar el número de taula que té <em>0</em> comensals. Quan trobem una taula que no té cap comensal l’afegim a l’<em>array</em> de taules buides.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private ArrayList cercarBuides(int[] taules){</div></li><li class="li1"><div class="de1">    ArrayList buides = new ArrayList();</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; taules.length; i++) {</div></li><li class="li1"><div class="de1">        if(taules[i] == 0){</div></li><li class="li1"><div class="de1">            buides.add(i);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return buides;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Quan hem obtingut l’<em>ArrayList</em> amb el llistat de taules buides hem de mostrar-lo per pantalla. Aquesta vegada iterem l’<em>ArrayList</em> amb un bucle del tipus <em>foreach</em>. A Java, aquests bucles es codifiquen de la següent manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (Object taula: taulesBuides){</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;li&gt;La taula &quot; + taula + &quot; està buida.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si ens hi fixem, és un bucle <strong><em>for</em></strong> però amb una altra sintaxi. Aquesta vegada, dintre dels parèntesis hem d’indicar el tipus d’element que tindrem a cada iteració, el nom de la variable que contindrà l’element i la col·lecció d’elements (podria ser un <em>array</em>, però en el nostre cas és un <em>ArrayList</em>). En general:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for(Tipus element: col·lecció){</div></li><li class="li1"><div class="de1">    //fer alguna cosa amb l'element</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Ja hem vist com utilitzar <em>arrays</em> d’una dimensió amb JSP, i ara veurem els mateixos exemples però amb la sintaxi JSTL. Veureu que no tot es pot fer amb JSTL, però farem tot el possible per utilitzar-ho al màxim. 
+</p>
+
+<p>
+Començarem amb la implementació del programa que llista les taules d’un restaurant.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max + 1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Gestió de taules d'un restaurant&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            //inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">            int[] taules = new int[10];</div></li><li class="li1"><div class="de1">            for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">                taules[i] = rand(0, 5);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            request.setAttribute(&quot;taules&quot;, taules);</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Gestió de taules d'un restaurant&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;c:forEach var=&quot;num&quot; varStatus=&quot;loop&quot;  items=&quot;${taules}&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;c:choose&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:when test=&quot;${num eq 0}&quot;&gt;</div></li><li class="li1"><div class="de1">                        &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${'està buida&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">                    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:when test=&quot;${num eq 5}&quot;&gt;</div></li><li class="li1"><div class="de1">                        &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${' està plena&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">                    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:otherwise&gt;</div></li><li class="li1"><div class="de1">                        &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${' té '} ${num} ${'comensals&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">                    &lt;/c:otherwise&gt;</div></li><li class="li1"><div class="de1">                &lt;/c:choose&gt;</div></li><li class="li1"><div class="de1">            &lt;/c:forEach&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si observem detingudament el codi anterior ens adonarem que just després de crear l’<em>array taules</em> i omplir-lo amb els comensals s’ha enregistrat en l’objecte <strong><em>request</em></strong>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">int[] taules = new int[10];</div></li><li class="li1"><div class="de1">for (int i = 0; i &lt; 10; i++) {</div></li><li class="li1"><div class="de1">    taules[i] = rand(0, 5);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">request.setAttribute(&quot;taules&quot;, taules);</div></li></ol></pre>
+
+<p>
+Els objectes que es creen amb la sintaxi estàndard JSP no es poden utilitzar, per defecte, amb les etiquetes JSTL. Aquests objectes se’ls ha de fer accessibles des de JSTL. Una manera de fer-lo accessible és afegint-lo com a atribut del objecte <em>request</em> de la pàgina. Una vegada hem fet accessible l’objecte el podem assignar a una variable de JSTL o utilitzar-lo com a col·lecció amb la qual poder iterar.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:forEach var=&quot;num&quot; varStatus=&quot;loop&quot;  items=&quot;${taules}&quot;&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;/c:forEach&gt;</div></li></ol></pre>
+
+<p>
+És exactament el que hem fet amb l’<em>array</em> taules. L’hem assignat a l’atribut <em>items</em> de l’etiqueta <em>foreach</em>. Aquest atribut ha de ser una col·lecció amb la qual poder extreure tota la informació element a element. Cada element de l’<em>array</em> taules s’emmagatzema dintre de la variable <em>num</em>. A més a més, podem accedir a l’índex de l’<em>array</em> de la iteració actual. El nom de l’índex de l’<em>array</em> s’ha d’especificar en l’atribut <em>varStatus</em> de l’etiqueta <em>forEach</em>.
+</p>
+
+<p>
+Una vegada ja tenim l’estructura del bucle hem d’utilitzar una estructura de <em>switch</em>. A JSTL aquesta estructura la podem crear utilitzant la combinació de les etiquetes <em>choose</em>, <em>when</em> i <em>otherwise</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//estructura equivalent a switch() però amb etiquetes JSTL</div></li><li class="li1"><div class="de1">&lt;c:choose&gt;</div></li><li class="li1"><div class="de1">    &lt;c:when test=&quot;${num eq 0}&quot;&gt;</div></li><li class="li1"><div class="de1">           ...</div></li><li class="li1"><div class="de1">    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">    &lt;c:when test=&quot;${num eq 5}&quot;&gt;</div></li><li class="li1"><div class="de1">           ...</div></li><li class="li1"><div class="de1">    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">    &lt;c:otherwise&gt;</div></li><li class="li1"><div class="de1">           ...</div></li><li class="li1"><div class="de1">    &lt;/c:otherwise&gt;</div></li><li class="li1"><div class="de1">&lt;/c:choose&gt;</div></li></ol></pre>
+
+<p>
+Podem utilitzar tantes etiquetes <em>when</em> com ens faci falta per especificar els <em>case</em> de l’estructura <em>switch</em>. L’únic atribut que admet aquesta etiqueta és <em>test</em>. Aquest atribut admet una EL (<em>Expression Language</em>) que en ser avaluada retorna <em>true</em> o <em>false</em>. Si s’avalua com a <em>true</em> s’executaran les instruccions que hi ha dintre de la mateixa etiqueta <em>when</em>. En el cas que s’avaluï a <em>false</em> anirà a avaluar l’atribut <em>test</em> de la següent etiqueta <em>when</em> fins que, finalment, s’executa l’etiqueta <em>otherwise</em>.
+</p>
+
+<p>
+Per acabar l’exemple només ens queda imprimir per pantalla la informació que ens demana l’enunciat de l’exercici. Volem fer un llistat amb les taules i el nombre de comensals.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Per fer aquesta part només hem d’utilitzar les etiquetes <em>&lt;c:out</em> per enviar la informació al navegador.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:choose&gt;</div></li><li class="li1"><div class="de1">    &lt;c:when test=&quot;${num eq 0}&quot;&gt;</div></li><li class="li1"><div class="de1">       &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${'està buida&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">    &lt;c:when test=&quot;${num eq 5}&quot;&gt;</div></li><li class="li1"><div class="de1">       &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${' està plena&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">    &lt;/c:when&gt;</div></li><li class="li1"><div class="de1">    &lt;c:otherwise&gt;</div></li><li class="li1"><div class="de1">       &lt;c:out value=&quot;${'&lt;li&gt;La taula'} ${loop.index} ${' té '} ${num} ${'comensals&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;   </div></li><li class="li1"><div class="de1">    &lt;/c:otherwise&gt;</div></li><li class="li1"><div class="de1">&lt;/c:choose&gt;</div></li></ol></pre>
+
+<p>
+Per imprimir correctament la informació veieu que s’ha utilitzat una concatenació d’expressions <em>EL</em>. Per imprimir un <em>string</em> s’han d’utilitzar les cometes simples. Dintre de l’<em>string</em> podem afegir etiquetes <acronym title="HyperText Markup Language">HTML</acronym> perquè les interpreti el navegador sempre que l’atribut <strong>escapeXML</strong> estigui desactivat. Si no el desactivem, el navegador no interpretarà les etiquetes enviades amb l’etiqueta <em>&lt;c:out</em>.
+</p>
+
+<p>
+Dintre de l’expressió <em>EL</em> podem utilitzar la variable de l’etiqueta <em>foreach</em> i l’índex de la col·lecció per mostrar la informació a l’usuari. L’execució del codi anterior ens dóna aquesta sortida:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de taules d'un restaurant</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">La taula 0 està plena</div></li><li class="li1"><div class="de1">La taula 1 té 4 comensals</div></li><li class="li1"><div class="de1">La taula 2 té 4 comensals</div></li><li class="li1"><div class="de1">La taula 3 està buida</div></li><li class="li1"><div class="de1">La taula 4 està buida</div></li><li class="li1"><div class="de1">La taula 5 té 3 comensals</div></li><li class="li1"><div class="de1">La taula 6 està plena</div></li><li class="li1"><div class="de1">La taula 7 té 2 comensals</div></li><li class="li1"><div class="de1">La taula 8 té 2 comensals</div></li><li class="li1"><div class="de1">La taula 9 té 3 comensals</div></li></ol></pre>
+
+<p>
+Intenteu implementar amb etiquetes JSTL, dintre del possible, el següent exercici: creareu una funció que donat un <em>array</em> amb el nombre de comensals de cada taula ens retorni un altre <em>array</em> amb el nombre de cada taula que estigui buida. Mostrareu per pantalla totes les taules buides.
+</p>
+
+</div>
+
+<h3><a id="gestio_de_les_habitacions_d_un_hotel" >Gestió de les habitacions d&#039;un hotel</a></h3>
+<div class="level3">
+
+<p>
+En aquest apartat es veurà el tractament d’informació amb <em>arrays</em> de més d’una dimensió. Aprendreu com crear <em>arrays</em> multidimensionals, com modificar els valors i com cercar-los.
+</p>
+
+<p>
+Es tractarà de programar la gestió d’habitacions d’un hotel. Imagineu un hotel amb 5 plantes i 10 habitacions en cadascuna de les plantes. Es vol guardar el nombre de clients que hi ha en cada habitació, i com màxim n’hi pot haver 4.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Començarem creant un <em>array</em> de dues dimensions (matriu bidimensional) on a cada posició guardarem el nombre de clients que hi ha. Amb el primer índex de l’<em>array</em> accedirem al pis, i amb el segon índex accedim a la habitació d’aquell pis. Per exemple, si accedim a la posició de l’<em>array</em> habitacions[0][4] estem accedint al pis 0 (planta baixa) habitació 4.
+</p>
+
+<p>
+Doncs bé, igual que abans amb el restaurant, inicialitzarem l’<em>array</em> de manera aleatòria amb el nombre de clients per habitació. Una vegada tinguem la matriu preparada mostrarem per pantalla la informació.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private static final int NUM_PLANTES = 5;</div></li><li class="li1"><div class="de1">    private static final int NUM_HAB = 10;</div></li><li class="li1"><div class="de1">    private static final int MAX_CLIENTS = 5;</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max + 1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Gestió de les habitacions d'un hotel&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;H1&gt;Gestió de les habitacions d'un hotel&lt;/H1&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            //inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">            int[][] hotel = new int[NUM_PLANTES][NUM_HAB];</div></li><li class="li1"><div class="de1">            for (int pis = 0; pis &lt; NUM_PLANTES; pis++) {</div></li><li class="li1"><div class="de1">                for (int hab = 0; hab &lt; NUM_HAB; hab++) {</div></li><li class="li1"><div class="de1">                    hotel[pis][hab] = rand(0, MAX_CLIENTS);</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            //Llistat amb el nombre de clients per habitacions</div></li><li class="li1"><div class="de1">            for (int pis = 0; pis &lt; NUM_PLANTES; pis++) {</div></li><li class="li1"><div class="de1">                for (int hab = 0; hab &lt; NUM_HAB; hab++) {</div></li><li class="li1"><div class="de1">                    out.println(&quot;&lt;li&gt;A l'habitació &quot; + hab + &quot; de la planta &quot; + pis + &quot; hi ha &quot; + hotel[pis][hab] + &quot; clients&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Una possible execució del codi anterior és la següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de les habitacions d'un hotel</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">A l'habitació 0 de la planta 0 hi ha 0 clients</div></li><li class="li1"><div class="de1">A l'habitació 1 de la planta 0 hi ha 3 clients</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 0 hi ha 5 clients</div></li><li class="li1"><div class="de1">A l'habitació 3 de la planta 0 hi ha 5 clients</div></li><li class="li1"><div class="de1">A l'habitació 4 de la planta 0 hi ha 2 clients</div></li><li class="li1"><div class="de1">A l'habitació 5 de la planta 0 hi ha 5 clients</div></li><li class="li1"><div class="de1">A l'habitació 6 de la planta 0 hi ha 3 clients</div></li><li class="li1"><div class="de1">A l'habitació 7 de la planta 0 hi ha 4 clients</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 0 hi ha 1 clients</div></li><li class="li1"><div class="de1">A l'habitació 9 de la planta 0 hi ha 4 clients</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">A l'habitació 0 de la planta 4 hi ha 2 clients</div></li><li class="li1"><div class="de1">A l'habitació 1 de la planta 4 hi ha 3 clients</div></li><li class="li1"><div class="de1">A l'habitació 2 de la planta 4 hi ha 4 clients</div></li><li class="li1"><div class="de1">A l'habitació 3 de la planta 4 hi ha 0 clients</div></li><li class="li1"><div class="de1">A l'habitació 4 de la planta 4 hi ha 2 clients</div></li><li class="li1"><div class="de1">A l'habitació 5 de la planta 4 hi ha 1 clients</div></li><li class="li1"><div class="de1">A l'habitació 6 de la planta 4 hi ha 5 clients</div></li><li class="li1"><div class="de1">A l'habitació 7 de la planta 4 hi ha 2 clients</div></li><li class="li1"><div class="de1">A l'habitació 8 de la planta 4 hi ha 5 clients</div></li><li class="li1"><div class="de1">A l'habitació 9 de la planta 4 hi ha 2 clients</div></li></ol></pre>
+
+<p>
+Fixem-nos en la declaració de les constants. A JSP s’han de declarar a l’espai de declaracions, és a dir, dintre de les etiquetes <strong>&lt;%! …. %&gt;</strong>. Les constants es declaren utilitzant les paraules reservades <strong><em>static</em></strong> i <strong><em>final</em></strong>, tot i que només amb <strong>final</strong>, en el nostre cas, ja ens serviria.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private static final int NUM_PLANTES = 5;</div></li><li class="li1"><div class="de1">    private static final int NUM_HAB = 10;</div></li><li class="li1"><div class="de1">    private static final int MAX_CLIENTS = 5;</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max + 1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">%&gt;</div></li></ol></pre>
+
+<p>
+La diferència entre posar <strong><em>static</em></strong> i no posar-ho és que les variables estàtiques (<em>static</em>) pertanyen a la classe, i en les no estàtiques hi ha una per a cada objecte de la classe. La paraula reservada <strong><em>final</em></strong> significa que el valor de la variable no canviarà, és a dir, serà constant.
+</p>
+
+<p>
+A l’hora de recórrer i de crear la matriu veiem que no hi ha sorpreses. Per crear la matriu utilitzem la instrucció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">int[][] hotel = new int[NUM_PLANTES][NUM_HAB];</div></li></ol></pre>
+
+<p>
+Per crear la matriu hem de dir la mida que tindran els dos índexs. I per recórrer la matriu utilitzem dos bucles de tipus <strong><em>for</em></strong>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Llistat amb el nombre de clients per habitacions</div></li><li class="li1"><div class="de1">for (int pis = 0; pis &lt; NUM_PLANTES; pis++) {</div></li><li class="li1"><div class="de1">    for (int hab = 0; hab &lt; NUM_HAB; hab++) {</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;li&gt;A l'habitació &quot; + hab + &quot; de la planta &quot; + pis + &quot; hi ha &quot; + hotel[pis][hab] + &quot; clients&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per acabar, volem un llistat amb l’ocupació de les habitacions de l’hotel i una funció que ens indiqui si hi ha habitacions lliures. Penseu com fer la funció mentre traiem el llistat amb l’ocupació de l’hotel. Per determinar-la es vol un llistat amb el nombre d’habitacions ocupades per planta.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private int[] ocupacio(int[][] hotel){</div></li><li class="li1"><div class="de1">    int [] ocupades = new int[NUM_PLANTES];</div></li><li class="li1"><div class="de1">    int num = 0;</div></li><li class="li1"><div class="de1">    for (int pis = 0; pis &lt; NUM_PLANTES; pis++) {</div></li><li class="li1"><div class="de1">        for (int hab = 0; hab &lt; NUM_HAB; hab++) {</div></li><li class="li1"><div class="de1">            if(hotel[pis][hab] != 0){</div></li><li class="li1"><div class="de1">                num++;    </div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        ocupades[pis] = num;</div></li><li class="li1"><div class="de1">        num=0;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return ocupades;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb la funció anterior es determina quantes habitacions tenen com a mínim un client a cada planta. Utilitzem la variable <em>num</em> com a comptador del nombre d’habitacions plenes. Cada vegada que recorrem una planta tornem a posar a 0 el comptador. Finalment, la funció retorna un <em>array</em> on cada posició correspon a la planta, i el valor de la posició al nombre d’habitacions que estan ocupades.
+</p>
+
+<p>
+Una manera de llistar l’<em>array</em> resultant de l’execució de la funció <em>ocupació</em> podria ser:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Llistat amb l'ocupació de l'hotel</div></li><li class="li1"><div class="de1">int planta = 0;</div></li><li class="li1"><div class="de1">for (int num : ocupacio(hotel)) {</div></li><li class="li1"><div class="de1">    switch(num){</div></li><li class="li1"><div class="de1">        case 0:</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;li&gt;A la planta &quot; + planta + &quot; estan totes les habitacions buides&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">            break;</div></li><li class="li1"><div class="de1">        case NUM_HAB:</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;li&gt;A la planta &quot; + planta + &quot; estan totes les habitacions plenes.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">            break;</div></li><li class="li1"><div class="de1">        default:</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;li&gt;A la planta &quot; + planta + &quot; hi ha &quot; + num + &quot; habitacions ocupades.&lt;/li&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    planta++;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem utilitzat l’estructura del bucle <em>foreach</em> perquè és molt més neta. Queda molt clar el recorregut que es fa amb l’<em>array</em>. Però com que amb aquesta estructura no podem accedir a l’índex de l’element actual a cada volta del bucle, hem de crear-nos el nostre propi índex. Aquest índex només el voldrem per donar la informació de la planta actual a l’usuari.
+</p>
+
+<p>
+Un possible resultat de l’execució del codi anterior, quan afegim les funcions anteriors al codi del hotel, seria:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de les habitacions d'un hotel</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">A la planta 0 estan totes les habitacions buides.</div></li><li class="li1"><div class="de1">A la planta 1 hi ha 9 habitacions ocupades.</div></li><li class="li1"><div class="de1">A la planta 2 hi ha 9 habitacions ocupades.</div></li><li class="li1"><div class="de1">A la planta 3 estan totes les habitacions plenes.</div></li><li class="li1"><div class="de1">A la planta 4 hi ha 8 habitacions ocupades</div></li></ol></pre>
+
+<p>
+Per acabar, codificarem la funció que determina si existeix alguna habitació buida a l’hotel.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private boolean habBuides(int[][] hotel) {</div></li><li class="li1"><div class="de1">    boolean trobat = false;</div></li><li class="li1"><div class="de1">    int pis = 0, porta = 0;</div></li><li class="li1"><div class="de1">    while (!trobat &amp;&amp; pis &lt; NUM_PLANTES) {</div></li><li class="li1"><div class="de1">        if (hotel[pis][porta] == 0) {</div></li><li class="li1"><div class="de1">            trobat = true;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        if (porta == NUM_HAB - 1) {</div></li><li class="li1"><div class="de1">            porta = 0;</div></li><li class="li1"><div class="de1">            pis++;</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">            porta++;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return trobat;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per mostrar el resultat de la funció anterior a l’usuari s’ha optat per utilitzar un operador ternari dintre de les etiquetes <em>&lt;%= … %&gt;</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;h2&gt;&lt;%= habBuides(hotel)? &quot;Almenys hi ha una habitació lliure.&quot; : &quot;No existeixen habitacions lliures.&quot; %&gt;&lt;/h2&gt;</div></li></ol></pre>
+
+<p>
+La funció per recórrer la matriu és la mateixa que la que hem vist a l’apartat de PHP, únicament s’ha adaptat al llenguatge Java. 
+</p>
+
+<p>
+Un exemple de l’execució del codi anterior seria el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de les habitacions d'un hotel</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">A la planta 0 estan totes les habitacions plenes.</div></li><li class="li1"><div class="de1">A la planta 1 hi han 9 habitacions ocupades.</div></li><li class="li1"><div class="de1">A la planta 2 estan totes les habitacions plenes.</div></li><li class="li1"><div class="de1">A la planta 3 hi han 9 habitacions ocupades.</div></li><li class="li1"><div class="de1">A la planta 4 hi han 9 habitacions ocupades.</div></li><li class="li1"><div class="de1">Almenys hi ha una habitació lliure.</div></li></ol></pre>
+
+<p>
+Ja hem vist com utilitzar una matriu amb la sintaxi estàndard de JSP. Ara veurem la traducció d’alguns exemples a la sintaxi JSTL, i farem el primer exemple. Es vol llistar quants clients hi ha en cada habitació de l’hotel.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div></li><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%!</div></li><li class="li1"><div class="de1">    private static final int NUM_PLANTES = 5;</div></li><li class="li1"><div class="de1">    private static final int NUM_HAB = 10;</div></li><li class="li1"><div class="de1">    private static final int MAX_CLIENTS = 5;</div></li><li class="li1"><div class="de1">    private int rand(int min, int max) {</div></li><li class="li1"><div class="de1">        return (int) (Math.random() * (max + 1 - min) + min);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Gestió de les habitacions d'un hotel&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;H1&gt;Gestió de les habitacions d'un hotel&lt;/H1&gt;</div></li><li class="li1"><div class="de1">        &lt;%           </div></li><li class="li1"><div class="de1">            //inicialització de les taules amb els comensals</div></li><li class="li1"><div class="de1">            int[][] hotel = new int[NUM_PLANTES][NUM_HAB];</div></li><li class="li1"><div class="de1">            for (int pis = 0; pis &lt; NUM_PLANTES; pis++) {</div></li><li class="li1"><div class="de1">                for (int hab = 0; hab &lt; NUM_HAB; hab++) {</div></li><li class="li1"><div class="de1">                    hotel[pis][hab] = rand(0, MAX_CLIENTS);</div></li><li class="li1"><div class="de1">                }</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            request.setAttribute(&quot;hotel&quot;, hotel);</div></li><li class="li1"><div class="de1">            //Llistat amb el nombre de clients per habitacions</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">        &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;c:forEach var=&quot;planta&quot; varStatus=&quot;numplanta&quot; items=&quot;${hotel}&quot;&gt;  </div></li><li class="li1"><div class="de1">                &lt;c:forEach var=&quot;clients&quot; varStatus=&quot;numporta&quot;  items=&quot;${planta}&quot;&gt;</div></li><li class="li1"><div class="de1">                    &lt;c:out value=&quot;${'&lt;li&gt;La habitació'} ${numporta.index} ${'de la planta'} ${numplanta.index} ${'té'} ${clients} ${'clients&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li><li class="li1"><div class="de1">                &lt;/c:forEach&gt;</div></li><li class="li1"><div class="de1">            &lt;/c:forEach&gt;</div></li><li class="li1"><div class="de1">        &lt;/ul&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+En aquesta ocasió s’ha enregistrat a l’objecte <em>request</em> la matriu bidimensional <em>hotel</em>, que està inicialitzada amb tots els clients que hi ha a l’hotel. Es deixa a les etiquetes JSTL el llistat de la informació que conté.
+</p>
+
+<p>
+Per poder iterar l’<em>array</em> calen dos bucles <em>foreach</em>. El primer bucle ens dóna l’<em>array</em> corresponent a les habitacions que s’ha de recórrer al bucle següent.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:forEach var=&quot;planta&quot; varStatus=&quot;numplanta&quot; items=&quot;${hotel}&quot;&gt; </div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"> &lt;/c:forEach&gt;</div></li></ol></pre>
+
+<p>
+La matriu <em>hotel</em> s’assigna a l’atribut <em>items</em> de l’etiqueta <em>foreach</em>. A cada iteració omplirà la variable <em>planta</em> amb l’<em>array</em> de clients per habitació que hi ha en aquella planta de l’hotel. A la variable <em>numplanta</em> tenim el número d’iteració actual, és a dir, el número de planta actual.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:forEach var=&quot;planta&quot; varStatus=&quot;numplanta&quot; items=&quot;${hotel}&quot;&gt;  </div></li><li class="li1"><div class="de1">    &lt;c:forEach var=&quot;clients&quot; varStatus=&quot;numporta&quot;  items=&quot;${planta}&quot;&gt;</div></li><li class="li1"><div class="de1">        ....</div></li><li class="li1"><div class="de1">    &lt;/c:forEach&gt;</div></li><li class="li1"><div class="de1">&lt;/c:forEach&gt;</div></li></ol></pre>
+
+<p>
+Així, al bucle intern iterem sobre l’<em>array</em> <em>planta</em> i accedim al nombre de clients de cada habitació de la planta amb la variable <em>clients</em>. La variable <em>numporta</em> ens dóna la informació sobre el numero d’habitació actual.
+</p>
+
+<p>
+Amb totes aquestes dades ja podem mostrar per pantalla la informació que ens demana l’enunciat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;c:out value=&quot;${'&lt;li&gt;La habitació'} ${numporta.index} ${'de la planta'} ${numplanta.index} ${'té'} ${clients} ${'clients&lt;/li&gt;'}&quot; escapeXml=&quot;false&quot;&gt;&lt;/c:out&gt;</div></li></ol></pre>
+
+<p>
+Utilitzant l’etiqueta <em>&lt;c:out</em> i amb expressions <em>EL</em> podem enviar al navegador la informació demanada. El resultat de l’execució del codi anterior seria el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Gestió de les habitacions d'un hotel</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 0 té 4 clients</div></li><li class="li1"><div class="de1">L'habitació 1 de la planta 0 té 0 clients</div></li><li class="li1"><div class="de1">L'habitació 2 de la planta 0 té 1 clients</div></li><li class="li1"><div class="de1">L'habitació 3 de la planta 0 té 3 clients</div></li><li class="li1"><div class="de1">L'habitació 4 de la planta 0 té 0 clients</div></li><li class="li1"><div class="de1">L'habitació 5 de la planta 0 té 3 clients</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 0 té 2 clients</div></li><li class="li1"><div class="de1">L'habitació 7 de la planta 0 té 3 clients</div></li><li class="li1"><div class="de1">L'habitació 8 de la planta 0 té 4 clients</div></li><li class="li1"><div class="de1">L'habitació 9 de la planta 0 té 3 clients</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">L'habitació 0 de la planta 4 té 0 clients</div></li><li class="li1"><div class="de1">L'habitació 1 de la planta 4 té 3 clients</div></li><li class="li1"><div class="de1">L'habitació 2 de la planta 4 té 2 clients</div></li><li class="li1"><div class="de1">L'habitació 3 de la planta 4 té 5 clients</div></li><li class="li1"><div class="de1">L'habitació 4 de la planta 4 té 4 clients</div></li><li class="li1"><div class="de1">L'habitació 5 de la planta 4 té 2 clients</div></li><li class="li1"><div class="de1">L'habitació 6 de la planta 4 té 4 clients</div></li><li class="li1"><div class="de1">L'habitació 7 de la planta 4 té 1 clients</div></li><li class="li1"><div class="de1">L'habitació 8 de la planta 4 té 4 clients</div></li><li class="li1"><div class="de1">L'habitació 9 de la planta 4 té 5 clients</div></li></ol></pre>
+
+<p>
+Intenteu traduir a JSTL, dintre de les possibilitats del llenguatge, l’ocupació de l’hotel tal com hem fet anteriorment. En concret, volem un llistat amb l’ocupació de les habitacions de l’hotel i una funció que ens indiqui si hi ha habitacions lliures.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat l’alumne ha après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les nocions bàsiques dels llenguatges: PHP, JSP i JSTL.</div>
+</li>
+<li class="level1"><div class="li"> Crear petites aplicacions amb els llenguatges anteriors.</div>
+</li>
+<li class="level1"><div class="li"> Utilització dels <em>arrays</em> per emmagatzemar un conjunt de dades.</div>
+</li>
+<li class="level1"><div class="li"> Crear i utilitzar matrius bidimensionals.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en aquests llenguatges es recomana la realització de les activitats associades a aquest apartat. Una vegada fetes, l’alumne estarà preparat per endinsar-se en la programació amb Java Servlets.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

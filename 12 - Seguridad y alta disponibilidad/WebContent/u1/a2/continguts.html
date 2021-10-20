@@ -1,0 +1,1513 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Seguretat física, lògica i legislació</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Seguretat informàtica</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a1annexos"><a href="../../../WebContent/u1/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#conceptes_de_seguretat_informaticafiabilitat_confidencialitat_integritat_i_disponibilitat">Conceptes de seguretat informàtica: fiabilitat, confidencialitat, integritat i disponibilitat</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#elements_vulnerablesmaquinari_programari_i_dades">Elements vulnerables: maquinari, programari i dades</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_de_les_principals_vulnerabilitats_d_un_sistema_informatic">Anàlisi de les principals vulnerabilitats d'un sistema informàtic</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_fisica_i_ambiental">Seguretat física i ambiental</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_logica">Seguretat lògica</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#amenaces">Amenaces</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_forense_en_sistemes_informatics">Anàlisi forense en sistemes informàtics</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Legislació sobre seguretat, protecció de dades i Codi Penal</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_penal">Marc jurídic penal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_extrapenal">Marc jurídic extrapenal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#legislacio_sobre_els_serveis_de_societat_de_la_informacio_i_el_comerc_electronic">Legislació sobre els serveis de societat de la informació i el comerç electrònic</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Seguretat física, lògica i legislació</a></li><li>Legislació sobre seguretat, protecció de dades i Codi Penal</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="legislacio_sobre_seguretat_proteccio_de_dades_i_codi_penal"> Legislació sobre seguretat, protecció de dades i Codi Penal </a></h1>
+    	
+<p>
+La seguretat informàtica es relaciona de forma natural amb aspectes legislatius que, sovint, sorprenen els informàtics. Efectivament, no n’hi ha prou amb el coneixement de les disciplines tècniques, sinó que cal saber que hi ha lleis que protegeixen l’accés a les dades personals dels nostres sistemes (pensem que moltes d’aquestes dades són estrictament confidencials i poden revelar aspectes molt íntims de la nostra personalitat), o bé que ens permeten denunciar als cossos policials els danys que hagi pogut patir el nostre sistema com a conseqüència d’accions nocives que algú hagi pogut produir. També és molt important que, com a informàtics, sapiguem que el desconeixement d’una norma jurídica no ens eximeix de responsabilitat i que no perquè una acció sigui tècnicament possible de fer ha d’estar necessàriament ajustada a la norma jurídica.
+</p>
+
+<h2><a id="marc_juridic_penal" >Marc jurídic penal</a></h2>
+<div class="level2">
+
+<p>
+D’una manera intuïtiva, tots coneixem l’existència d’un conjunt de normes jurídiques que regulen les conductes constitutives de delicte, i també les sancions previstes en aquestes situacions (algunes poden ser fins i tot privatives de llibertat). El recull legislatiu aplicable en aquest tipus de matèria s’anomena Codi Penal. Cada país disposa de les seves pròpies normes i, per tant, és possible que variïn d’un país a un altre. És molt important conèixer l’essència de la normativa que afecta l’ús de les tecnologies, ja que, amb independència de la nostra voluntat, condiciona l’ús de les tecnologies, tant des del punt de vista del treballador tècnic, com del de l’usuari d’un ordinador d’una llar qualsevol.
+</p>
+
+</div>
+
+<h3><a id="el_delicte_informatic" >El “delicte informàtic”</a></h3>
+<div class="level3">
+
+<p>
+El delicte informàtic no apareix explícitament definit en l’actual Codi Penal (1995), ni en les reformes posteriors (Llei 15/2003 i Llei 5/2010) que se n’han fet i, per tant, no es pot parlar de delicte informàtic pròpiament dit, sinó de delictes fets amb l’ajut de les noves tecnologies, en els quals l’ordinador s’usa com a mitjà d’execució del delicte (per exemple, l’enviament d’un correu electrònic amb amenaces) o com a objectiu d’aquesta activitat (per exemple, una intrusió en un sistema informàtic).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Definició de delicte</p>
+<p>
+El <strong>delicte</strong> es defineix com una conducta típica (tipificada per la llei), antijurídica (contrària a dret), culpable i punible. Implica una conducta infractora del dret penal, és a dir, una acció o una omissió tipificades i penades per la llei.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Límits tècnics i legals</p>
+<p>
+El límit de velocitat d’un cotxe no és imposat per raons tècniques, sinó per normes legals. De fet, hi ha limitadors per evitar que la tecnologia pugui ultrapassar el límit fixat per la legislació.
+</p>
+</div></div>
+<p>
+La legislació del nostre país encara presenta buits pel que fa als mal anomenats <em>delictes informàtics</em>, de manera que tan sols oferirem un seguit de directrius bàsiques, més relacionades amb el sentit comú que amb la normativa complexa que es va generant entorn de l’aplicació de les noves tecnologies.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Una <strong>intrusió</strong> és un accés no autoritzat a un sistema informàtic.
+</p>
+</div></div>
+<p>
+El vessant tecnològic o científic dels estudis d’informàtica sovint deixa de banda el vessant social de l’aplicació dels avenços en aquestes disciplines. Consegüentment, els usuaris i tècnics d’un sistema informàtic poden ser molt competents en la seva feina, però és probable que tinguin molts dubtes a l’hora d’abordar situacions com les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si el meu cap em demana que li mostri el contingut de la bústia de correu personal d’un treballador, tinc l’obligació de fer-ho?</div>
+</li>
+<li class="level1"><div class="li"> Puc entrar a la bústia de correu electrònic d’un amic?</div>
+</li>
+<li class="level1"><div class="li"> Uns intrusos han modificat el lloc web de l’empresa en què treballo. Aquest fet és denunciable? A qui ho he de denunciar?</div>
+</li>
+<li class="level1"><div class="li"> El sistema informàtic de la feina emmagatzema dades de caràcter personal (com, per exemple, el nom, els cognoms, l’adreça i el DNI dels treballadors). Cal protegir aquestes dades d’alguna manera?</div>
+</li>
+<li class="level1"><div class="li"> Puc penjar a Internet un lloc web amb les fotografies i logotips del meu grup de música preferit?</div>
+</li>
+<li class="level1"><div class="li"> Puc descarregar lliurement qualsevol fitxer de música de la xarxa? </div>
+</li>
+</ul>
+
+<p>
+Segurament, cap dels exemples descrits no us suposa cap dificultat tècnica. No obstant això, cal que tingueu molt present que, si bé no totes les accions vistes són constitutives de delicte, totes elles poden tenir conseqüències. Així, doncs, haureu de ser conscients que no hi ha una línia d’actuació única i que cal ser molt prudent a l’hora d’enfrontar-nos amb aquest tipus de situacions, ja que <strong>no tot allò que és tècnicament possible és legal</strong>, i, sobretot, cal que tingueu en compte que el desconeixement de les normes no exonera de responsabilitat (penal o no) el treballador informàtic. 
+</p>
+
+</div>
+
+<h3><a id="el_codi_penal_i_les_conductes_il_licites_relacionades_amb_la_informatica" >El Codi Penal i les conductes il·lícites relacionades amb la informàtica</a></h3>
+<div class="level3">
+
+<p>
+El nostre Codi Penal és especialment sever amb la protecció dels drets fonamentals i les llibertats públiques, recollits en el títol I de la Constitució. Aquests drets i llibertats són inherents a la condició de persona i, per aquest motiu, gaudeixen d’una protecció tan especial. 
+</p>
+
+<p>
+Un dels articles de la Constitució espanyola (1978) relacionats amb la pràctica informàtica (tant des del punt de vista tècnic com del simple usuari) és l’article 18, que reconeix el dret a la intimitat. Han de ser objecte de protecció no sols l’àmbit íntim de l’individu, sinó també l’esfera familiar i domiciliària. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La constitució és la norma fonamental de l’Estat, superior a la resta de lleis i a qualsevol tipus de norma. 
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Article 18 de la Constitució</p><ol>
+<li class="level1"><div class="li"> Es garanteix el dret a l’honor, a la intimitat personal i familiar i a la pròpia imatge.</div>
+</li>
+<li class="level1"><div class="li"> El domicili és inviolable. No s’hi pot entrar ni fer-hi cap escorcoll sense el consentiment del titular o sense resolució judicial, llevat del cas de delicte flagrant.</div>
+</li>
+<li class="level1"><div class="li"> Es garanteix el secret de les comunicacions i, especialment, de les postals, telegràfiques i telefòniques, excepte en cas de resolució judicial.</div>
+</li>
+<li class="level1"><div class="li"> La llei limita l’ús de la informàtica per tal de garantir l’honor i la intimitat personal i familiar dels ciutadans i el ple exercici dels seus drets.</div>
+</li>
+</ol>
+</div></div>
+</div>
+
+<h3><a id="delictes_contra_la_intimitat" >Delictes contra la intimitat</a></h3>
+<div class="level3">
+
+<p>
+Una part molt important dels delictes relacionats amb la informàtica entra dins de la tipificació de <strong>delictes contra la intimitat</strong>. Sovint, els autors d’aquestes conductes no són conscients de la importància dels béns protegits per la llei i no s’adonen de les conseqüències de les seves accions fins que ja és massa tard. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per consultar la Constitució aneu a la secció “Adreces d’interès” del web.
+</p>
+</div></div>
+<p>
+Els delictes contra la intimitat són recollits en l’article 197.1 de l’actual Codi Penal. Com a conseqüència de l’assimilació de la <strong>intercepció del correu electrònic</strong> amb la <strong>violació de la correspondència</strong>, aquest article disposa que les conductes següents són constitutives de delicte:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’apoderament de papers, cartes, missatges de correu electrònic o qualsevol altre document o efectes personals.</div>
+</li>
+<li class="level1"><div class="li"> La intercepció de les telecomunicacions.</div>
+</li>
+<li class="level1"><div class="li"> La utilització d’artificis tècnics d’escolta, transmissió, gravació o reproducció de so o de qualsevol altre senyal de comunicació. </div>
+</li>
+</ul>
+
+<p>
+Per ser constitutives de delicte, aquestes activitats s’han de produir sense <strong>el consentiment de la persona afectada</strong> (ni autorització judicial motivada o justificada), i amb la intenció de descobrir-ne els secrets o vulnerar-ne la intimitat.
+</p>
+
+<p>
+Per tant, obrir la bústia d’un correu electrònic que no sigui el nostre i llegir els missatges que s’hi emmagatzemen podria esdevenir una conducta constitutiva de delicte. Cal anar amb molt de compte amb aquest tipus d’accions (tècnicament solen ser molt senzilles d’efectuar) i, com a norma general, mai no s’ha de llegir cap correu electrònic que no vagi adreçat a nosaltres (ni tan sols si el nostre cap, dins de l’àmbit laboral, ens ho demana). 
+</p>
+
+<p>
+En el cas de la intercepció del correu electrònic en l’àmbit empresarial, se sol argumentar que els treballadors no poden fer ús dels mitjans de l’empresa per a qüestions personals. Algunes sentències s’han pronunciat a favor de l’empresa perquè s’ entén que, efectivament, els mitjans pertanyen a l’empresa i que, per tant, no és un lloc adient per enviar i rebre missatges de caràcter privat. No obstant això, davant del dubte, cal que sempre tingueu present que els correus electrònics dels treballadors de l’empresa gaudeixen de la mateixa protecció legal, pel que fa a la intimitat, que els correus electrònics personals.
+</p>
+
+<p>
+Una manera útil per fer saber als usuaris d’una organització quins són els usos correctes dels mitjans de l’empresa i les seves limitacions consisteix en l’ús de contractes en els qual s’especifica, per exemple, quines obligacions i responsabilitats té un usuari d’un compte de correu electrònic. Igualment, una bona estratègia consisteix a emprar noms de comptes de correu corporatiu en lloc de noms personals (per exemple: <a href="mailto:&#x6e;&#x6f;&#x6d;&#x5f;&#x65;&#x6d;&#x70;&#x72;&#x65;&#x73;&#x61;&#x40;&#x70;&#x72;&#x6f;&#x76;&#x65;&#x69;&#x64;&#x6f;&#x72;&#x2e;&#x63;&#x61;&#x74;" class="mail" title="&#x6e;&#x6f;&#x6d;&#x5f;&#x65;&#x6d;&#x70;&#x72;&#x65;&#x73;&#x61;&#x40;&#x70;&#x72;&#x6f;&#x76;&#x65;&#x69;&#x64;&#x6f;&#x72;&#x2e;&#x63;&#x61;&#x74;">nom_empresa@proveidor.cat</a>, en lloc de <a href="mailto:&#x65;&#x6c;&#x5f;&#x6d;&#x65;&#x75;&#x5f;&#x6e;&#x6f;&#x6d;&#x40;&#x70;&#x72;&#x6f;&#x76;&#x65;&#x69;&#x64;&#x6f;&#x72;&#x2e;&#x63;&#x61;&#x74;" class="mail" title="&#x65;&#x6c;&#x5f;&#x6d;&#x65;&#x75;&#x5f;&#x6e;&#x6f;&#x6d;&#x40;&#x70;&#x72;&#x6f;&#x76;&#x65;&#x69;&#x64;&#x6f;&#x72;&#x2e;&#x63;&#x61;&#x74;">el_meu_nom@proveidor.cat</a>). Si com a tècnics se’ns requereix que demostrem l’ús indegut d’algun mitjà electrònic de l’organització, sempre serà preferible usar controls tan poc lesius com sigui possible, com ara el monitoratge o el seguiment del nombre de bytes transmesos o rebuts per un usuari concret (per exemple, si un usuari descarrega fitxers de vídeo o cançons, el nombre de bytes rebuts serà, probablement, molt més gran que el que seria si fes un ús adequat del correu).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Activitats personals</p>
+<p>
+Les activitats personals abracen, per exemple, l’ús dels jocs inclosos per defecte en els sistemes operatius.
+</p>
+</div></div>
+</div>
+
+<h4><a id="usurpacio_i_cessio_de_dades_reservades_de_caracter_personal" >Usurpació i cessió de dades reservades de caràcter personal</a></h4>
+<div class="level4">
+
+<p>
+Els articles 197 a 200 del Codi Penal tipifiquen com a conductes delictives l’accés, la utilització, la modificació, la revelació, la difusió o la cessió de dades reservades de caràcter personal que es trobin emmagatzemades en fitxers en suports informàtics, electrònics o telemàtics, sempre que aquestes conductes les facin persones no autoritzades Aquestes conductes s’anomenen, genèricament, <strong>abusos informàtics sobre dades personals</strong>. A més de la responsabilitat penal en què poden derivar aquests tipus d’accions, també cal considerar que les dades personals s’ han d’emmagatzemar i declarar segons una normativa especificada en el <strong>Reglament General de Protecció de Dades</strong> (RGPD).
+
+</p>
+
+<p>
+El Codi Penal considera un agreujant que l’objecte del delicte siguin dades de caràcter personal que revelin ideologia, religió, creences, salut, origen racial o vida sexual. Altres circumstàncies agreujants són que la víctima sigui un menor d’edat o incapacitat o que la persona que comet el delicte sigui responsable dels fitxers que hi estan involucrats. Mereix una consideració especial l’article 199.2, en el qual es castiga la conducta del professional que, incomplint l’obligació de reserva, <strong>divulga els secrets</strong> d’una altra persona.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+
+Vegeu l’RGPD i una definició més detallada de <em>dada personal</em> en l’apartat “Marc jurídic extrapenal” d’aquesta unitat.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Article 25 del Codi Penal</p>
+<p>
+A l’efecte d’aquest codi es considera incapaç tota persona, se n’hagi declarat o no la incapacitació, que pateixi una malaltia de caràcter persistent que li impedeixi governar la seva persona o béns per ella mateixa.
+</p>
+</div></div>
+<p>
+El sentit comú ja ens avisa que aquestes accions poden tenir algun tipus de repercussió. El que probablement desconeixem és que se’n puguin derivar responsabilitats penals. Així, com a tècnics i usuaris de sistemes informàtics, és molt probable que tinguem accés a dades personals que tenim l’obligació de mantenir el secret i que no podem cedir a ningú. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La revelació del secret professional és una conducta tipificada en l’article 199 del Codi Penal.
+</p>
+</div></div>
+</div>
+
+<h4><a id="delicte_d_intrusio" >Delicte d&#039;intrusió</a></h4>
+<div class="level4">
+
+<p>
+A la modificació de l’any 2010 es va incloure en el Codi Penal el delicte d’intrusió, és a dir, l’accés no autoritzat a un sistema informàtic (siguin dades o programes). Cal dir que si bé fins a aquella data la intrusió no era constitutiva de delicte, aquests tipus d’accions se solen trobar vinculades a altres conductes que sí que ho eren (i ho continuen essent), com, per exemple, els danys en un sistema informàtic o els mitjans que s’hagin utilitzat per dur a terme l’accés no autoritzat. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Podeu consultar el Codi Penal en la secció “Adreces d’interès” del web.
+</p>
+</div></div>
+<p>
+Arran d’aquesta modificació del Codi Penal (apartat 3 de l’article 197), la intrusió directa, encara que no provoqui danys, i encara que no “trenqui” o descobreixi cap contrasenya d’accés, pot ser considerada una conducta constitutiva de delicte.
+</p>
+
+<p>
+És interessant observar que, tot i que, com ja s’ha dit, el “delicte informàtic” no es troba definit en el Codi Penal, la intrusió en un sistema informàtic pot ser considerada com a tal, a causa de la seva especificitat i a la desvinculació de la resta de conductes il·lícites contingudes en el Codi Penal. 
+</p>
+
+</div>
+
+<h3><a id="delicte_de_frau_informatic" >Delicte de frau informàtic</a></h3>
+<div class="level3">
+
+<p>
+En l’article 248.2 del Codi Penal es castiga la conducta de qui, emprant qualsevol mètode informàtic, aconsegueixi la transferència no consentida de qualsevol bé, amb ànim de lucre i perjudici sobre tercer. També apareixen en el Codi Penal les conductes preparatòries per a la comissió de delictes de frau informàtic, les quals poden ser, a tall d’exemple, la fabricació, la facilitació o simplement la mera possessió de programes específics destinats a la comissió del delicte de frau informàtic.
+</p>
+
+<p>
+Per exemple, el <strong>descaminament</strong> (<em>pharming</em>) és una de les tècniques que es poden englobar dins d’aquesta tipificació. Aquesta tècnica permet que un atacant pugui redirigir un nom de domini a una màquina diferent. Així, un usuari pot creure que accedeix al seu compte bancari via Internet, quan en realitat el que fa és proporcionar les seves claus d’accés a l’atacant. El descaminament està molt relacionat amb un altre delicte, la <strong>pesca electrònica</strong> (<em>phishing</em>). En aquest darrer cas, però, no estarem parlant d’una tècnica informàtica, sinó d’una estratègia d’enginyeria social que usa la suplantació de correus electrònics o llocs web per obtenir informació confidencial de l’usuari. És a dir, a diferència del desencaminament, molt més tècnic, en la pesca l’usuari creu que introdueix les dades en el portal d’una entitat bancària, però en realitat ho fa en un portal diferent, amb una adreça diferent de la real. En el cas del desencaminament, en canvi, l’usuari introdueix l’adreça real del portal d’Internet, però es produeix una redirecció a una màquina diferent.
+</p>
+
+<p>
+Tot i que la duplicació o clonació de les bandes magnètiques d’una targeta de crèdit podria semblar una operació similar a les anteriors, en realitat pot comportar conseqüències encara més greus, ja que, segons l’article 387 del Codi Penal, aquesta acció es pot assimilar a un delicte de falsificació de moneda.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Definició d&#039;enginyeria social</p>
+<p>
+L’<strong>enginyeria social</strong> és la pràctica d’obtenir informació confidencial mitjançant la manipulació i l’engany dels usuaris legítims, per exemple, amb una trucada telefònica en la qual algú es fa passar per un administrador del sistema, se’ns demana la nostra contrasenya d’accés.
+</p>
+</div></div>
+</div>
+
+<h3><a id="delicte_de_danys" >Delicte de danys</a></h3>
+<div class="level3">
+
+<p>
+Els delictes de danys, juntament amb els delictes contra la intimitat i contra la propietat intel·lectual, són, amb diferència, els més freqüents. Com passa amb els delictes contra la intimitat de les persones, sovint els autors d’aquestes accions no són conscients de les conseqüències que poden comportar els seus actes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Segons l’article 264 del Codi Penal, el <strong>delicte de danys</strong> consisteix en la destrucció, alteració, inutilització o qualsevol altra accióque impliqui el dany de dades, programari o documents electrònics emmagatzemats en xarxes, suports o sistemes informàtics.
+</p>
+</div></div>
+<p>
+Arran de la modificació del Codi Penal de l’any 2010, aquest delicte també inclou els <strong>atacs de denegació de servei</strong> (DoS). Així, doncs, l’obstaculització o interrupció del funcionament d’un sistema informàtic o fer inaccessibles dades informàtiques de manera no autoritzada són conductes recollides en el Codi Penal. 
+</p>
+
+<p>
+Tal com ens podem imaginar, aquest delicte pot tenir repercussions econòmiques molt importants en les organitzacions afectades i, en conseqüència, les sancions per aquestes accions poden comportar grans sumes de diners.
+</p>
+
+<p>
+Alguns danys produïts en un sistema informàtic es poden valorar. És essencial, en aquest cas, adjuntar-ne una valoració en el moment d’efectuar la denúncia davant d’un cos policial. La valoració dels danys és un procés complex de dur a terme i pot abastar diferents aspectes: cost de restauració d’un lloc web, pèrdues en conceptes de publicitat no emesa (<strong>lucre cessant</strong>), o per serveis que no s’han pogut prestar… A tall d’exemple, l’alteració d’una pàgina web (<em>defacement</em>) per una persona no autoritzada és un cas de delicte de danys. Tot i que en alguns casos pugui semblar una acció innocent (i fins i tot divertida, des del punt de vista dels pirates), pot comportar pèrdues de milers d’euros.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un <strong>pirata</strong> (<em>cracker</em>) és una persona que fa atacs a sistemes informàtics amb finalitats destructives.
+</p>
+</div></div>
+</div>
+
+<h3><a id="delictes_contra_la_propietat_intel_lectual" >Delictes contra la propietat intel·lectual</a></h3>
+<div class="level3">
+
+<p>
+El delicte contra la propietat intel·lectual és una de les qüestions que més interès suscita en la comunitat informàtica, ja que està vinculat amb una de les activitats més polèmiques entorn d’Internet: la descàrrega de fitxers protegits per les lleis de propietat intel·lectual i l’ús de programaris d’intercanvis de fitxers en xarxes d’igual a igual (anomenades també P2P o <em>peer-to-peer</em>).
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Xarxes d’igual a igual</p>
+<p>
+En les xarxes d’igual a igual, cada node pot efectuar alhora tasques de <strong>servidor</strong> i de <strong>client</strong>. A causa de la seva natura intrínseca, les xarxes P2P són molt adequades per compartir fitxers entre usuaris, els continguts dels quals poden ser (o no) protegits per les lleis de propietat intel·lectual. Sens dubte, el programari P2P més conegut (i objecte de molta controvèrsia) és l’<strong>eMule</strong>, basat en la xarxa <strong>eDonkey</strong> (2002). 
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Segons l’<strong>article 270 del Codi Penal</strong>, les conductes relatives als delictes contra la propietat intel·lectual són aquelles en què es reprodueix, plagia, distribueix o comunica públicament, tant d’una manera total com parcial, una obra literària, artística o científica sense l’autorització dels titulars dels drets de propietat intel·lectual de l’obra. 
+</p>
+</div></div>
+<p>
+Aquestes condicions s’apliquen independentment del suport en què s’hagi enregistrat l’obra: textos, programaris, vídeos, sons, gràfics o qualsevol altre fitxer relacionat. És a dir, els delictes relatius a la venda, la distribució o la fabricació de còpies no autoritzades de programari són delictes contra la propietat intel·lectual. No obstant això, segons la interpretació literal del Codi Penal, cal que aquestes accions s’hagin efectuat amb <strong>ànim de lucre</strong> i en perjudici de tercers. Així, doncs, per poder aplicar aquest article resulta essencial que es pugui demostrar l’existència d’aquest lucre. Malgrat que això no pugui ser fàcilment demostrable, recordem que, de qualsevol manera, tota obra (literària, científica o artística) està protegida per uns drets de propietat intel·lectual que cal respectar. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Llei de propietat intel·lectual</p>
+<p>
+Dins del marc jurídic no penal, la Llei de propietat intel·lectual regula la protecció de les obres literàries, artístiques i científiques.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle"> Exemples de delictes contra la propietat intel·lectual</p>
+<p>
+Els delictes contra la propietat intel·lectual es poden produir de manera molt diversa, tal com es pot veure en els exemples següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Reproducció íntegra de programes i venda al marge dels drets de llicència.</div>
+</li>
+<li class="level1"><div class="li"> Instal·lació de còpies no autoritzades de programes en un ordinador en el moment de la compra.</div>
+</li>
+<li class="level1"><div class="li"> Publicació del codi font de programes (o el programa mateix), o altres fitxers (MP3, llibres…) a Internet, al marge dels drets de llicència d’aquestes obres.</div>
+</li>
+<li class="level1"><div class="li"> Utilització d’una llicència de programa per a només un sol ordinador per donar servei a tota la xarxa.</div>
+</li>
+<li class="level1"><div class="li"> Trencament dels mecanismes de protecció que permeten el funcionament correcte del programa (motxilles o <em>dongles</em>, contrasenyes i altres elements de seguretat). Aquestes tècniques reben el nom genèric de <em>cracking</em>. Així, el terme <em>cracker</em> es refereix tant a la persona que s’introdueix en un sistema amb finalitats destructives, com a la que fa <em>cracks</em> amb la intenció de trencar els mecanismes de protecció dels programes. </div>
+</li>
+</ul>
+
+<p>
+El mateix article 270 del Codi Penal preveu penes per a qui faci circular o disposi de qualsevol mitjà específicament dissenyat per anul·lar qualsevol dispositiu tècnic de protecció del programari (per exemple, els programes que permeten “saltar” les proteccions anticòpia de CD o DVD).
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Permís dels titulars</p>
+<p>
+No podem fer un ús lliure de la informació que es pugui trobar a Internet, com, per exemple, gràfics, animacions, logotips o fotografies, sense el permís dels titulars dels drets de propietat intel·lectual.
+</p>
+</div></div>
+<p>
+Tot i els esforços d’alguns països de la Unió Europea per evitar la descàrrega i la compartició (mitjançant programaris d’igual a igual) de continguts protegits, encara no s’ha arribat a una solució de consens. No obstant això, cal aclarir que l’ús i la instal·lació de programaris d’igual a igual en els nostres ordinadors no es considera (des del punt de vista jurídic) cap pràctica il·legal. De la mateixa manera que no es prohibeix que tinguem ganivets a la cuina pel fet que el seu mal ús pot ser delictiu, tampoc no se sanciona el fet d’instal·lar i usar programaris d’intercanvi de fitxers (ja que poden tenir un ús perfectament lícit). Recordem, però, que la simple tinença de qualsevol mitjà (per exemple, un programa) dissenyat per anul·lar la protecció de programes sí que és susceptible de ser sancionada.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Llicència de programari</p>
+<p>
+Una <strong>llicència de programari</strong> és un contracte entre l’autor/titular dels drets d’explotació/distribuïdor i l’usuari, per utilitzar el programa segons les seves condicions d’ús.
+</p>
+</div></div>
+<p>
+Pel que fa a la <strong>creació de programari</strong>, també cal fer algunes consideracions. Segons el tipus de contracte al qual es trobi subjecte el treballador, el programari que desenvolupi per a una organització determinada pertany a l’empresa i, en conseqüència, si el treballador abandona l’organització, no es pot emportar el programari que ha creat en el seu antic lloc de treball. Com en el cas de la utilització del correu electrònic, seria recomanable que el contracte de treball especifiqués aquesta qüestió.
+</p>
+
+</div>
+
+<h4><a id="la_copia_privada" >La còpia privada</a></h4>
+<div class="level4">
+
+<p>
+És un límit al dret de reproducció d’una obra que posseeixen els titulars dels drets de propietat intel·lectual de l’esmentada obra, és a dir, les persones que les han accedit legalment. Aquest límit no permet que la còpia obtinguda es pugui emprar de manera col·lectiva o bé amb ànim de lucre. 
+</p>
+
+<p>
+Per pal·liar el perjudici econòmic que origina la còpia privada, s’ha creat una compensació (anomenat <strong>cànon per còpia privada</strong> o <strong>cànon digital</strong>) que han d’assumir els fabricants i els importadors d’equips i suports de reproducció d’obres.
+</p>
+
+</div>
+
+<h4><a id="tipus_de_llicencies" >Tipus de llicències</a></h4>
+<div class="level4">
+
+<p>
+L’ús d’una llicència no adequada (per exemple, una llicència personal en lloc d’una llicència de xarxa) pot comportar problemes diversos i no s’hi val a argumentar el desconeixement com a eximent. 
+</p>
+
+</div>
+
+<h5><a id="llicencies_de_programari_no_lliure" >Llicències de programari no lliure</a></h5>
+<div class="level5">
+
+<p>
+Amb la finalitat d’emprar adequadament les llicències caldrà estudiar de quins tipus n’hi ha per poder-les adquirir segons les nostres necessitats i el pressupost de què disposem. Vegem-ne algunes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>OEM (</strong>Original Equipment Manufacturer<strong>).</strong> Tipus de llicència, normalment referida a sistemes operatius (encara que també es pot aplicar al maquinari), que supedita la venda del programa com a part integrant d’un equip informàtic nou (programari preinstal·lat). Així, doncs, aquest programari no es pot vendre aïlladament, sinó juntament amb el maquinari que l’incorpora. Solen no disposar de l’embalatge de la versió normalitzada del producte. No es poden vendre ni cedir a tercers separats del maquinari.</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>Retail</strong></em>. Consisteix en les versions de venda normalitzades d’un programari, amb els embalatges que se solen veure a les botigues d’informàtica. A diferència de les versions OEM, es poden vendre independentment del maquinari on s’integren i poden tenir algun extra que no apareix en les versions OEM.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Llicències per volum.</strong> Llicències destinades a empreses i institucions (com instituts i universitats). Són similars a les llicències OEM, però no estan vinculades a equips nous. Poden servir, per exemple, per instal·lar un programari d’ús comú en una xarxa d’ordinadors d’un institut.</div>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="llicencies_de_programari_lliure" >Llicències de programari lliure</a></h5>
+<div class="level5">
+
+<p>
+Segons la Free Software Foundation (fundació pel programari lliure), el programari lliure ha de complir les quatre condicions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Llibertat perquè els usuaris emprin els programes amb qualsevol propòsit.</div>
+</li>
+<li class="level1"><div class="li"> Llibertat per estudiar el funcionament del programa i adaptar-lo a les necessitats de cada usuari (aquesta condició requereix accedir al codi font del programari).</div>
+</li>
+<li class="level1"><div class="li"> Llibertat per redistribuir còpies del programa.</div>
+</li>
+<li class="level1"><div class="li"> Llibertat per efectuar millores dels programes i fer-les públiques (redistribuir les còpies del programari modificat) en benefici de tota la comunitat (tal com passa amb la segona condició, això només és possible si es té accés al codi font del programari).</div>
+</li>
+</ul>
+
+<p>
+En resum, el programari lliure es caracteritza perquè pot ser usat, estudiat i modificat sense restriccions de cap mena, es pot redistribuir en una versió modificada (o sense modificar) sense cap restricció, o amb millores que permetin als futurs usuaris gaudir de les mateixes llibertats a què hem fet referència.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Free Software Foundation</p>
+<p>
+La <strong>Free Software Foundation</strong> és una organització creada l’any 1985 per Richard Stallman entre altres defensors del programari lliure. Un dels seus principals objectius consisteix en la defensa del projecte GNU.
+</p>
+</div></div>
+<p>
+Notem que, si bé el tema de les llicències de programari no està recollida al Codi Penal, és una qüestió de l’àmbit informàtic relacionada amb els drets d’autor, i per això la tractem.
+</p>
+
+<p>
+El fet que un programari sigui lliure no vol pas dir que sigui <strong>gratuït</strong>. Per exemple, el programari gratuït pot tenir certes restriccions que fan que no s’adapti a la definició de programari lliure (un programari pot ser gratuït, però podria no incloure el codi font, tal com estableix la definició de programari lliure). D’altra banda, sovint trobem a la venda CD de <strong>distribucions de Linux</strong> (programari lliure). En aquest cas, però, el comprador pot copiar el CD i distribuir-lo.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Programari descatalogat (abandonware)</p>
+<p>
+El programari descatalogat sol ser programari antic, els drets d’autor del qual han caducat. Es pot trobar a la xarxa en webs dedicats i no té cap altra via de distribució.
+</p>
+</div></div>
+<p>
+Pel que fa al programari lliure, les llicències més habituals són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Llicències <acronym title="GNU General Public License">GPL</acronym></strong> (llicència pública general de GNU). En aquest tipus de llicències, el creador conserva els drets d’autor (<em>copyright</em>) i permet la redistribució (comercial o no) i la modificació, però amb la condició que totes les versions modificades del programari es continuïn mantenint sota els termes més restrictius de la llicència GNU <acronym title="GNU General Public License">GPL</acronym>. Això implica que si un programa té parts amb llicència no <acronym title="GNU General Public License">GPL</acronym>, el programa final ha de tenir forçosament llicència <acronym title="GNU General Public License">GPL</acronym>.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Projecte GNU (GNU is Not Unix)</p>
+<p>
+El projecte GNU va ser iniciat per Richard Stallman amb l’objectiu de crear un sistema operatiu totalment lliure, anomenat sistema GNU. El projecte es va iniciar l’any 1983. L’any 1991 Linus Torvalds va començar a escriure el nucli del sistema operatiu Linux, que va distribuir amb llicència <acronym title="GNU General Public License">GPL</acronym>. Gràcies a les aportacions de molts altres programadors, el nucli de Linux es va acabar combinant amb el sistema GNU, i va formar l’anomenat GNU/Linux o distribució Linux, paradigma dels sistemes operatius lliures.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Llicències BSD</strong> (Berkeley Software Distribution). BSD és un sistema operatiu derivat de l’Unix creat per la Universitat de Califòrnia, Berkeley. Precisament, aquestes llicències s’anomenen BSD perquè s’utilitzen en molts programaris distribuïts amb el sistema operatiu BSD. Són llicències sense restriccions, compatibles amb les llicències GNU <acronym title="GNU General Public License">GPL</acronym>, que proporcionen a l’usuari una llibertat il·limitada, fins i tot per redistribuir el programari com a no lliure. No obstant això, el creador manté els drets d’autor (<em>copyright</em>) pel reconeixement de l’autoria en treballs derivats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Llicències MPL</strong> (Mozilla Public License) i derivades. Aquest tipus de llicència rep el nom del projecte de programari lliure Mozilla, a bastament conegut per tota la comunitat d’internautes. En aquest cas, i a diferència de les llicències <acronym title="GNU General Public License">GPL</acronym>, no cal que el producte final també sigui llicenciat en MPL (encara que el codi font modificat o copiat amb MPL ha de mantenir aquest tipus de llicència). D’aquesta manera, es promou efectivament la col·laboració entre autors i la generació de programari lliure, ja que les llicències <acronym title="GNU General Public License">GPL</acronym> presentaven el problema d’afavorir una certa expansió endogàmica a causa de l’obligació que el producte final fos també llicenciat en <acronym title="GNU General Public License">GPL</acronym>. Aquestes llicències són més restrictives que les BSD i, en definitiva, es poden considerar a mig camí entre aquestes i les <acronym title="GNU General Public License">GPL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Llicències <em>copyleft</em></strong>. En aquest cas, el propietari de la llicència gaudeix del dret de còpia, modificació i redistribució. A més, també pot desenvolupar una versió d’aquest programari (amb llicència subjecte a <em>copyright</em>) i vendre’l o cedir-lo amb qualsevol de les llicències estudiades, sense que això afecti les llicències <em>copyleft</em> ja atorgades. L’autor també pot retirar una llicència <em>copyleft</em>, però sense efectes retroactius, ja que l’autor no té dret a retirar el permís d’una llicència que encara es troba vigent. Es pot aplicar no només a programes, sinó a tota mena de creacions artístiques (música, vídeo…). </div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="delicte_de_revelacio_de_secrets_d_empresa" >Delicte de revelació de secrets d&#039;empresa</a></h3>
+<div class="level3">
+
+<p>
+Segons l’article 278.1 del Codi Penal, fa <strong>revelació de secrets d’empresa</strong> qui, amb la finalitat de descobrir un secret d’empresa, intercepti qualsevol tipus de telecomunicació o utilitzi artificis tècnic d’escolta, transmissió, gravació o enregistrament de so, imatge o qualsevol altre senyal de comunicació. Notem la semblança que hi ha entre aquest forma de delicte i els delictes contra la intimitat.
+</p>
+
+</div>
+
+<h3><a id="altres_delictes_i_la_investigacio_dels_delictes_informatics" >Altres delictes i la investigació dels delictes informàtics</a></h3>
+<div class="level3">
+
+<p>
+A més dels delictes que s’han descrit, és evident que n’hi ha molts més, coneguts intuïtivament per tots nosaltres, es poden dur a terme amb el concurs de la tecnologia. En aquests casos, la tecnologia esdevé únicament el mitjà de comissió del delicte, el qual ja es troba perfectament tipificat dins dels delictes ocorreguts en el món “real”. Ens referim, entre d’altres, a aquests:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’exemple més característic de la revelació de secrets d’empresa és l’espionatge industrial.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Amenaces i coaccions (per mitjà de xats o correus electrònics).</div>
+</li>
+<li class="level1"><div class="li"> Falsedat documental: alteracions i simulacions de documents públics o privats.</div>
+</li>
+<li class="level1"><div class="li"> Tinença i difusió de pornografia infantil a Internet.</div>
+</li>
+<li class="level1"><div class="li"> Defraudació dels interessos econòmics dels prestadors de serveis: facilitació a tercers de l’accés a serveis interactius o audiovisuals (com, per exemple, els canals de televisió de pagament), sense el permís dels prestadors d’aquests serveis.</div>
+</li>
+</ul>
+
+<p>
+Els investigadors dels delictes informàtics (policials o d’empreses especialitzades) disposen, a grans trets, de dues fonts d’informació essencials:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Els fitxers o registres locals</strong>. Els sistemes operatius i els programaris que s’executen en els ordinadors enregistren algunes de les activitats que fan en els anomenats <em>fitxers de registre</em>. Per exemple, la intrusió d’un pirata en un sistema informàtic deixa, si l’atacant no és gaire hàbil, empremtes en diversos fitxers del sistema. La informació que contenen aquests fitxers (per exemple, l’adreça IP de l’atacant) és la primera baula que els investigadors analitzen per arribar a establir l’origen de l’atac.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Els registres dels proveïdors de servei d’Internet (PSI)</strong>. La persona que ha comès el delicte (o qualsevol altre fet susceptible de ser investigat) haurà utilitzat la connexió oferta per un cert proveïdor de serveis d’Internet. Les dades associades a aquesta connexió són emmagatzemades pels PSI segons la <strong>Llei de conservació de dades relatives a les comunicacions electròniques i a les xarxes públiques de comunicacions</strong> (com a màxim 12 mesos, a partir de la data de comunicació de reserva, encara que es pot ampliar o reduir), les quals només poden ser cedides als investigadors per ordre judicial. Així, doncs, un cop que els investigadors han establert la informació bàsica del succés (IP d’origen, franja horària i la data en què s’ha produït l’esdeveniment), caldrà que sol·licitin al jutge una ordre perquè el proveïdor de serveis els lliuri la informació requerida (associada a la IP i a la resta de dades determinades en les etapes inicials de la investigació) per continuar el procés i identificar l’usuari que ha emprat la connexió sospitosa.</div>
+</li>
+</ul>
+
+<p>
+Si l’administrador d’un sistema informàtic és víctima de qualsevol d’aquests delictes o descobreix, per exemple, que el sistema que administra és utilitzat com a plataforma de distribució de còpies de programari no autoritzades, ho ha de denunciar immediatament a la comissaria de policia més pròxima, tenint en compte el protocol d’actuació següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Proveïdor de serveis (PSI)</p>
+<p>
+Un <strong>proveïdor de serveis </strong> (PSI) és una empresa dedicada a connectar els usuaris (clients) a Internet. També sol oferir, entre d’altres, serveis d’allotjament web i registre de dominis.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Vegeu la Llei de serveis de la societat de la informació (LSSI) en l’apartat “Marc jurídic extrapenal”, d’aquesta mateixa unitat (subapartat “Legislació sobre els serveis de la societat de la informació, comerç i el correu electrònic”).
+</p>
+</div></div><ol>
+<li class="level1"><div class="li"> Adjuntar els fitxers de registre (registres locals del sistema) relacionats amb el delicte comès. Aquests fitxers han de reflectir, en cas que hagin quedat registrats, la IP de l’atacant i les accions produïdes en el sistema investigat.</div>
+</li>
+<li class="level1"><div class="li"> En cas que s’hagi produït un delicte de danys, cal adjuntar una valoració dels danys ocasionats.</div>
+</li>
+<li class="level1"><div class="li"> Actuar amb rapidesa (els proveïdors no emmagatzemen indefinidament els fitxers de registre dels seus servidors). </div>
+</li>
+<li class="level1"><div class="li"> En cas que aquesta acció delictiva s’ hagi produït per correu electrònic, cal adjuntar les capçaleres completes del correu rebut.</div>
+</li>
+<li class="level1"><div class="li"> En cas que sigui necessari, cal considerar la possibilitat de duplicar (o clonar) el disc dur del servidor per preservar les proves del delicte i, a continuació, reinstal·lar el sistema per evitar que el delicte es continuï produint. No obstant això, cal anar amb compte amb aquesta consideració. Suposem, per exemple, que l’administrador d’un sistema descobreix que el servidor del qual és responsable allotja pornografia infantil. La duplicació del disc dur (a l’efecte de salvaguardar les proves) i la reinstal·lació posterior de tot el sistema permetrien evitar que el delicte (la difusió de pornografia infantil) es continués produint, però al mateix temps en podria dificultar la investigació.</div>
+</li>
+</ol>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els usuaris domèstics també poden ser víctimes de delictes relacionats amb les noves tecnologies (contra la intimitat, amenaces, coaccions, suplantacions d’identitat…). Moltes de les aplicacions amb les quals s’executen aquestes accions poden emmagatzemar els seus propis <em>logs</em> (per exemple, les converses de xat, capçaleres de correu electrònic), els quals caldria adjuntar en cas de denúncia. 
+</p>
+</div></div>
+</div>
+
+<h2><a id="marc_juridic_extrapenal" >Marc jurídic extrapenal</a></h2>
+<div class="level2">
+
+<p>
+La Constitució vol protegir d’una manera molt curosa una sèrie de drets inherents a tota persona: els anomenats <strong>drets fonamentals</strong>. Entre aquests destaca el <strong>dret a la intimitat</strong>. A més de les conseqüències penals que pot comportar la vulneració d’aquest dret, hi ha altres lleis que protegeixen la privacitat de la persona, també pel que fa a les seves pròpies dades.
+</p>
+
+<p>
+La legislació té molta cura de la protecció de les dades perquè contenen informació personal que ha d’ésser protegida adequadament. Això afecta de manera negativa els sistemes informàtics, la gestió de les organitzacions, i fins i tot el dia a dia de les persones. El conjunt de normes intenta trobar un equilibri entre aquests elements, aparentment oposats: un nivell de seguretat de les dades adequat, juntament amb una protecció suficient de la intimitat, i permetre a les empreses operar amb la informació de manera eficient.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Marc extrapenal</p>
+<p>
+En dret s’entén per <em>marc extrapenal</em> el sector o la branca de l’ordenament jurídic que no és penal, és a dir, que conté sancions menys greus que el dret penal (per exemple, dret administratiu, dret civil, dret laboral…). 
+</p>
+</div></div>
+</div>
+
+<h3><a id="legislacio_sobre_proteccio_de_dades" >Legislació sobre protecció de dades</a></h3>
+<div class="level3">
+
+<p>
+La protecció de les dades de caràcter personal ha pres darrerament una gran rellevància. Les persones es mostren cada dia més curoses amb les seves dades i són més conscients de la protecció de què ha de gaudir la seva informació personal. 
+</p>
+
+<p>
+La situació actual és producte, d’una banda, de la normativa en matèria de protecció de dades i, de l’altra, de l’activitat creixent de l’<strong>Agència Espanyola de Protecció de Dades</strong>, organisme autònom encarregat d’assegurar el compliment de la legislació vigent (i fruit de la mateixa legislació).
+</p>
+
+<p>
+Veurem a continuació com han anat evolucionant les lleis; la primera en aparèixer va ser la <strong>Llei Orgànica 15/1999, de 13 de desembre, de protecció de dades de caràcter personal (LOPD)</strong>. Aquesta norma tenia per objecte garantir i protegir, en relació amb el tractament de dades personals, les llibertats públiques i els drets fonamentals de les persones físiques, i en especial el seu honor, intimitat i privacitat. La LOPD va crear els anomenats drets ARCO:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Per a més informació sobre l’Agència Espanyola de Protecció de Dades, consulteu la secció “Adreces d’interès” del web.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Agències autonòmiques</p>
+<p>
+A data d’avui no totes les comunitats autònomes han creat les seves agències de protecció de dades. Catalunya sí que en té: és l’Agència Catalana de Protecció de Dades, consulteu la secció “Adreces d’interès” del web.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Dret d’<strong>Accés</strong>: Reconeix als ciutadans la potestat de defensar la seva privacitat controlant per si mateixos l’ús que es fa de les seves dades personals.</div>
+</li>
+<li class="level1"><div class="li"> Drets de <strong>Rectificació</strong> : La LOPD també regula els drets de rectificació i cancel·lació: quan les dades personals d’un ciutadà resulten ser incompletes, inexactes, excessives o inadequades aquest pot requerir al responsable del fitxer la seva rectificació o cancel·lació.</div>
+</li>
+<li class="level1"><div class="li"> Dret de <strong>Cancel·lació</strong>: El ciutadà pot exigir al responsable del fitxer la supressió de dades que consideri inadequades o excessives.</div>
+</li>
+<li class="level1"><div class="li"> Dret d’<strong>Oposició</strong>: Consisteix en el dret dels titulars de les dades per dirigir-se al responsable del fitxer perquè deixi de tractar les seves dades sense el seu consentiment per a fins de publicitat o prospecció comercial.</div>
+</li>
+</ul>
+
+<p>
+Posteriorment, amb el desenvolupament i popularització d’Internet i l’aparició de comerços online va aparèixer al 2002 la llei de serveis de la societat de la informació i comerç electrònic, coneguda per les seves sigles com LSSI.
+</p>
+
+<p>
+Al 2003 apareix la llei de la firma electrònica per regular els certificats digitals i donar validesa jurídica a aquesta firma. Al 2003 també s’aprova el Reglament que desenvolupa la llei de protecció de dades de caràcter personal de 1999. El 2007 s’aprova la llei de conservació de dades a les comunicacions electròniques i a les xarxes públiques de comunicacions. 
+</p>
+
+<p>
+El 27 d’abril de 2016 s’aprova el <strong>el Reglament General de Protecció de dades (RGPD)</strong>, que no va entrar en vigor fins al Maig del 2018, per donar un marc Europeu. Aquest reglament, entre altres coses, amplia els drets ARCO.
+</p>
+
+<p>
+El 5 de desembre de 2018 s’aprova la llei orgànica 3/2018, <strong>Protecció de Dades Personals i Garanties dels Drets Digitals</strong> (LOPDGD), que adapta l’RGPD a la normativa espanyola. Amb LOPDGD i l’RGPD es deroga l’antiga LOPD.
+</p>
+
+<p>
+A continuació teniu un llistat d’aquestes lleis :
+</p>
+<ul>
+<li class="level1"><div class="li"> Llei Orgànica 15/1999, de 13 de desembre, de protecció de dades de caràcter personal (LOPD).</div>
+</li>
+<li class="level1"><div class="li"> Llei 34/2002, d’11 de juliol, de serveis de la societat de la informació i comerç electrònic (LSSICE) o, habitualment (LSSI).</div>
+</li>
+<li class="level1"><div class="li"> Llei 59/2003, de 19 de desembre, de firma electrònica.</div>
+</li>
+<li class="level1"><div class="li"> Llei Orgànica 15/2003, de 25 de novembre, per la qual es modifica la Llei Orgànica 10/1995, de 23 de novembre, del Codi Penal.</div>
+</li>
+<li class="level1"><div class="li"> Reial Decret 1720/2007, de 21 de desembre, pel que s’aprova el Reglament de desenvolupament de la Llei Orgànica 15/1999, de 13 de desembre, de protecció de dades de caràcter personal.</div>
+</li>
+<li class="level1"><div class="li"> Llei 25/2007, de 18 d’octubre, de conservació de dades relatives a las comunicacions electròniques i a les xarxes públiques de comunicacions.</div>
+</li>
+<li class="level1"><div class="li"> Llei Orgànica 5/2010, de 22 de juny, per la qual es modifica la Llei Orgànica. 10/1995, de 23 de novembre, del Codi Penal.</div>
+</li>
+<li class="level1"><div class="li"> Reglament General de Protecció de dades (RGPD) del 27 d’Abril de 2016.</div>
+</li>
+<li class="level1"><div class="li"> Llei orgànica 3/2018 Protecció de Dades Personals i Garanties dels Drets Digitals (LOPDGD) del 5 de desembre de 2018.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per dur a terme una tasca professional de qualitat és molt important (fins i tot ens atreviríem a dir que imprescindible) conèixer la normativa espanyola aplicable a la protecció de dades de caràcter personal.
+</p>
+</div></div>
+</div>
+
+<h4><a id="el_reglament_general_de_proteccio_de_dades_rgpd" >El Reglament General de Protecció de dades (RGPD)</a></h4>
+<div class="level4">
+
+<p>
+Aquest reglament és una norma d’àmbit europeu que protegeix les dades personals de tots els residents a la Unió Europea i garanteix el flux de dades entre els països de la Unió Europea. Per tant, els països necessiten <strong>integrar</strong> aquest reglament a les seves legislacions.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Reviseu el subapartat “El Codi Penal i les conductes il·lícites vinculades a la informàtica”, d’aquesta mateixa unitat.
+</p>
+</div></div>
+<p>
+Aquest reglament estableix l’obligació de les organitzacions d’adoptar mesures destinades a garantir la protecció d’aquestes dades que afecten sistemes informàtics, fitxers, suports d’emmagatzematge,  demanar el consentiment per usar les dades de caràcter personal i procediments operatius. Aquestes mesures han d’adoptar-les totes les organitzacions que operen amb residents a la Unió Europea, encara que no hi tinguin la seva seu.
+</p>
+
+<p>
+En el Capítol 7 d’aquest reglament es crea el Comitè Europeu de protecció de dades per supervisar el Reglament i la seva aplicació als diferents països d’Europa. En el Capítol 11, <em>Disposicions finals</em>, s’estableix com a màxim el 25 de maig del 2020 per fer una primera avaluació i revisió del reglament per tal d’anar-lo actualitzant als nous temps. Posteriorment, aquesta revisió es repetirà cada 4 anys.
+</p>
+
+<p>
+
+L’RGPD és aplicable a qualsevol informació sobre persones físiques identificades o identificables (nom i cognoms, edat, sexe, dades d’identificació fiscal, estat civil, professió, domicili, dades biomètriques…) enregistrada en qualsevol suport físic (inclòs el paper), que en permeti el tractament  manual o automatitzat i ús posterior pel sector públic o privat. Traspassat a l’àmbit de les empreses, s’ha d’interpretar que l’RGPD és aplicable a qualsevol organització que manipuli o arxivi fitxers, tant en paper com en suport magnètic, que continguin informació o dades de caràcter personal, tant dels seus treballadors com dels seus clients o proveïdors (persones físiques), la qual cosa obliga les empreses, institucions, professionals i, en general, totes les persones jurídiques o físiques que operin amb fitxers de dades de caràcter personal, al compliment d’una sèrie d’obligacions legals. Cal tenir present, però, que al considerand 18, diu: “El reglament no s’aplica al tractament de dades de caràcter personal dut a terme per una persona física en el curs d’una activitat exclusivament personal o domèstica, és a dir sense cap connexió amb una activitat professional o comercial”. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els fitxers que han de satisfer mesures de seguretat no són tan sols aquells als quals es pot accedir a Internet, sinó tots els que continguin dades personals.
+</p>
+</div></div>
+<p>
+Per <strong>tractament</strong> s’entén “qualsevol operació o conjunt d’operacions realitzades sobre dades personals o conjunts de dades personals, ja sigui per procediments automatitzats o no, com la recollida, el registre, l’organització, l’estructuració, la conservació, l’adaptació o la modificació, l’extracció, la consulta, la utilització, la comunicació per transmissió, difusió o qualsevol altra forma d’habilitació d’accés, acarament o interconnexió, limitació, supressió o destrucció”.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Què és una dada de caràcter personal?</p>
+<p>
+Segons el Reglament General de Protecció de dades (RGPD), una dada de caràcter personal és “qualsevol informació sobre una persona física identificada o identificable (l’interessat)”.
+</p>
+</div></div>
+</div>
+
+<h4><a id="objectiu_del_reglament_i_principis_basics_de_l_rgpd" >Objectiu del reglament i principis bàsics de l&#039;RGPD</a></h4>
+<div class="level4">
+
+<p>
+El parlament Europeu i el Consell de la Unió Europea, a partir del Tractat de funcionament de la Unió Europea, en concret de l’article 16, i d’una proposta de la Comissió Europea, van enviar una proposta del text legislatiu als parlaments nacionals, per posteriorment elaborar dos dictàmens. L’RGPD considera que la protecció del tractament de les dades personals és un dret fonamental, tal i com està a la Carta dels Drets Fonamentals de la Unió Europea a l’article 8, que estableix que qualsevol persona té dret a la protecció de les dades de caràcter personal que l’afecten. Pel que fa al tractament de les dades personals s’han de respectar les llibertats i els drets fonamentals, especialment el dret a la protecció de les dades de caràcter personal, sigui quina sigui la seva nacionalitat o residència.
+</p>
+
+<p>
+L’<strong>objectiu de l’RGPD</strong> és, doncs, garantir i protegir la privacitat i la intimitat de les persones físiques. Tal i com queda clar a l’article 1 del RGPD on s’explica l’objecte d’aquest, engloba tres objectes:
+</p>
+<ol>
+<li class="level1"><div class="li"> Establir les normes relatives a la protecció de les persones físiques pel que fa al tractament de les dades personals i les normes relatives a la lliure circulació d’aquestes dades.</div>
+</li>
+<li class="level1"><div class="li"> Protegir els drets i les llibertats fonamentals de les persones físiques i el seu dret a la protecció de les dades personals.</div>
+</li>
+<li class="level1"><div class="li"> Evitar restriccions a la lliure circulació de les dades personals a la Unió Europea originades per les necessitats de protecció de dades.</div>
+</li>
+</ol>
+
+<p>
+L’RGPD canvia alguns articles de la LOPD i afegeix noves obligacions per a les empreses.
+</p>
+
+<p>
+Els canvis més importants de l’RGPD respecte la LOPD són:
+</p>
+<ul>
+<li class="level1"><div class="li"> El principi de <strong>responsabilitat proactiva</strong>. El nou Reglament indica que el responsable del tractament ha d’aplicar mesures apropiades per poder demostrar que el tractament és conforme al Reglament, tal i com aparèix a l’article 5. Les organitzacions han d’analitzar quines dades tracten i amb quines finalitats ho fan i han de mirar quins tipus d’operacions de tractament realitzen per tal d’aplicar les mesures que preveu l’RGPD. Aquestes mesures han de ser les adequades per complir amb el Reglament. També han de poder demostrar el compliment del Reglament davant de tercers. Aquest principi exigeix que el responsable del tractament ha de tenir una actitud proactiva, davant de tots els tractaments de dades que realitzi.</div>
+</li>
+<li class="level1"><div class="li"> El principi de l’<strong>enfocament de risc</strong>. El nou Reglament indica que s’ha de tenir en compte el risc per als drets i les llibertats de les persones. Així, algunes de les mesures només s’han d’aplicar quan hi hagi un alt risc per als drets i les llibertats. Les mesures previstes per l’RGPD s’han d’adaptar a les característiques de les organitzacions. El que pot ser bo per a una organització no necessàriament ho ha de ser per a una altra. No és el mateix una organització que utilitza dades de milions de persones, amb tractaments que contenen informació personal sensible o volums importants de dades sobre cada persona, que una petita empresa amb poques dades i que treballa amb dades no sensibles.</div>
+</li>
+</ul>
+
+<p>
+A més, manté (ampliats en alguns casos) els següents principis ja recollits a la LOPD:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Principi de qualitat de les dades</strong>: les dades de caràcter personal només es poden recollir per al seu tractament i sotmetre’s a aquest tractament quan siguin adequades, pertinents i no excessives amb relació a l’àmbit i les finalitats determinades, explícites i legítimes per a les quals s’hagin obtingut. L’RGPD exigeix reduir al mínim necessari tant el tractament de les dades com les persones autoritzades a accedir a aquestes dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Finalitat expressa</strong>: les dades de caràcter personal objecte de tractament no poden ser usades per a finalitats que no siguin compatibles amb aquelles per a les quals s’han recollit. Es consideren compatibles, tanmateix, el tractament posterior d’aquestes dades amb finalitats històriques, estadístiques o científiques. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Necessitat de consentiment de la persona afectada</strong>: el tractament de les dades requereix el consentiment de la persona afectada. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Actualitat de les dades</strong>: les dades personals que s’incorporin en un fitxer han de respondre a una situació actual.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Principi d’exactitud</strong>: les dades personals han de ser susceptibles de modificació i de rectificació des del moment en què se’n coneix la modificació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Deure d’informació a la persona afectada</strong>: les persones interessades a les quals se sol·licitin dades de caràcter personal hauran de ser advertides prèviament de manera expressa, precisa i inequívoca:</div>
+<ul>
+<li class="level2"><div class="li"> Que les seves dades seran incloses en un fitxer, de la finalitat de la recollida i dels destinataris de la informació.</div>
+</li>
+<li class="level2"><div class="li"> De l’obligatorietat o voluntarietat de donar aquestes dades.</div>
+</li>
+<li class="level2"><div class="li"> De les conseqüències que porten aparellades l’obtenció de les dades o de la negativa a subministrar-les.</div>
+</li>
+<li class="level2"><div class="li"> De la possibilitat d’exercir els <strong>drets d’accés, rectificació, cancel·lació i oposició</strong> (drets ARCO). </div>
+</li>
+<li class="level2"><div class="li"> De la identificació i de l’adreça de la persona encarregada de dur a terme el tractament del fitxer o, si escau, del seu representant, perquè els afectats puguin exercir els seus drets.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+A l’RGPD alguns d’aquests drets s’han ampliat:
+</p>
+<ul>
+<li class="level1"><div class="li"> El dret de cancel·lació ha passat a denominar-se dret de supressió i té un aspecte molt comentat però adreçat essencialment als navegadors d’internet i xarxes socials: <strong>el dret a l’oblit</strong>.</div>
+</li>
+<li class="level1"><div class="li"> El dret al consentiment: L’RGPD requereix que l’interessat presti el consentiment mitjançant una declaració inequívoca o una acció afirmativa clara. Als efectes del nou Reglament, les caselles ja marcades, el consentiment tàcit o la inacció no constitueixen un consentiment vàlid.  Igualment, perquè les dades estiguin especialment protegides, és necessari donar el consentiment exprés i per escrit.</div>
+</li>
+</ul>
+
+<p>
+També s’han incorporat dos nous drets: limitació del tractament i portabilitat.
+</p>
+<ul>
+<li class="level1"><div class="li"> El dret a la limitació del tractament amplia el dret del consentiment; és el dret de l’usuari a posar limitacions als tractaments sobre les seves dades.</div>
+</li>
+<li class="level1"><div class="li"> El dret a la portabilitat de les dades inclou, per una banda, que la informació com a resposta al dret d’accés s’ha de proporcionar de manera completa i en format compatible d’ús corrent i, per una altra, que ha de poder-se transmetre a petició de l’interessat en aquest format directament a una altra organització (per exemple, si canviem de proveïdor).</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Cancel·lació i bloqueig de dades</p>
+<p>
+És el procediment en virtut del qual el responsable cessa en l’ús de les dades. La cancel·lació implicarà el bloqueig de les dades, que consisteix a identificar-les i reservar-les per impedir-ne el tractament, excepte per posar-les a disposició de les administracions públiques, jutges i tribunals per atendre les possibles responsabilitats nascudes del tractament, i només durant el termini de prescripció de les responsabilitats esmentades. Transcorregut aquest termini, caldrà eliminar efectivament les dades.
+</p>
+</div></div>
+<p>
+És precís informar a les persones afectades per l’ús de les seves dades dels ítems que es llisten a continuació, per tal que puguin exercir pròpiament els drets anteriors:  
+</p>
+<ul>
+<li class="level1"><div class="li"> La base jurídica del tractament.</div>
+</li>
+<li class="level1"><div class="li"> Interessos legítims que es volen assolir.</div>
+</li>
+<li class="level1"><div class="li"> Necessitat de donar un consentiment. Aquest s’ha de donar amb un acte afirmatiu clar, específic, informat i inequívoc. Pot realitzar-se en paper o a través de mitjans electrònics.</div>
+</li>
+<li class="level1"><div class="li"> Termini de conservació de les dades. Quan aquest venci, el responsable del tractament n’ha de limitar el tractament a través de mitjans tècnics com impedir-hi l’acces als usuaris, trasllat temporal de les dades afectades a un altre sistema de tractament o retirada temporal d’un lloc d’Internet de les dades afectades.</div>
+</li>
+<li class="level1"><div class="li"> Dades de contacte amb el delegat de protecció de dades (si n’hi ha).</div>
+</li>
+<li class="level1"><div class="li"> Existència del dret a reclamar a una autoritat de control. Això és important, ja que també existeix, en cas de tractament inadequat o negligent, el dret a obtenir una reparació, i si escau una indemnització per part del perjudicat.</div>
+</li>
+<li class="level1"><div class="li"> Existència de decisions automatitzades o l’elaboració de perfils (si n’hi ha). L’interessat té dret a oposar-se a que les dades personals que l’afecten siguin objecte d’un tractament, inclosa l’elaboració de perfils. El responsable del tractament ha de deixar de tractar aquestes dades personals, tret que acrediti motius legítims imperiosos per al tractament que prevalguin sobre els interessos, els drets i les llibertats de l’interessat, o per a la formulació, l’exercici o la defensa de reclamacions.  L’interessat també té dret a no ser objecte de decisions basades exclusivament en un tractament automatitzat.</div>
+</li>
+<li class="level1"><div class="li"> Dret a la informació de l’afectat davant canvis en les seves dades: Si hi ha un canvi de les dades s’ha d’informar del canvi a l’afectat, per tal de que les verifiqui i conegui el canvi.</div>
+</li>
+<li class="level1"><div class="li"> Si es transmetran les dades a tercers. Cal tenir present que només s’han de fer transferències de dades personals que es tracten o que es tractaran quan es transfereixin a un tercer país o a una organització internacional si, sens perjudici de la resta de disposicions del RGPD, el responsable i l’encarregat del tractament compleixen les condicions adecuades, incloses les relatives a les transferències posteriors de dades personals des del tercer país o organització internacional a un altre tercer país o una altra organització internacional.</div>
+</li>
+</ul>
+
+<p>
+La informació proporcionada en tot moment ha de ser clara i fàcilment intel·ligible: No s’ha de posar lletra petita, ni usar paraules ambígües ni frases complicades o difícils d’entendre.
+</p>
+
+<p>
+La LOPDGD tracta, a més, dels drets que s’apliquen al cas de menors i de dades de persones difuntes.
+</p>
+
+</div>
+
+<h3><a id="obligacions_de_les_empreses_i_els_implicats_en_els_tractaments" >Obligacions de les empreses i els implicats en els tractaments</a></h3>
+<div class="level3">
+
+<p>
+La necessitat de proporcionar als usuaris els drets recollits per l’RGPD, deriva en una sèrie d’obligacions per a les empreses i persones responsables i encarregades d’efectuar els tractaments, com són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Proporcionar procediments senzills per exercitar els drets.</div>
+</li>
+<li class="level1"><div class="li"> Disposar de formularis conformes amb l’RGPD i la LOPDGD per informar als usuaris i perquè aquests exerceixin els seus drets.  </div>
+</li>
+<li class="level1"><div class="li"> Pseudonimització de les dades i les bases de dades.</div>
+</li>
+<li class="level1"><div class="li"> Protecció de dades des del disseny i per defecte (article 25 RGPD); això implica tenir en compte les mesures de seguretat abans de l’inici del tractament i quan aquest s’està duent a terme).</div>
+</li>
+<li class="level1"><div class="li"> Tenir  un registre de les activitats del tractament.</div>
+</li>
+<li class="level1"><div class="li"> Poder demostrar davant l’autoritat que es segueix la llei si s’és sol·licitat per aquesta.</div>
+</li>
+<li class="level1"><div class="li"> Notificar les violacions de seguretat. </div>
+</li>
+</ul>
+
+<p>
+D’altra banda, no és obligatori registrar a l’autoritat de control els fitxers amb dades personals que té l’organització, com passava amb l’anterior LOPD.
+</p>
+
+<p>
+Altres obligacions recollides a l’RGPD són:
+</p>
+<ul>
+<li class="level1"><div class="li"> En el Capítol 4 apareix l’obligació de xifrar les dades personals, a més de guardar-les amb pseudònims (pseudonimització) per tal de que sigui més difícil d’identificar de qui són les dades. </div>
+</li>
+<li class="level1"><div class="li"> En aquest mateix capítol, a l’article 42, s’assenyala que els organismes es podran certificar de forma voluntària.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="notificacio_de_violacions_de_seguretat" >Notificació de violacions de seguretat</a></h3>
+<div class="level3">
+
+<p>
+L’article 33 de l’RGPD, <em>Notificació d’una violació de la seguretat de les dades personals a l’autoritat de control</em>, diu que el responsable ha de notificar a l’autoritat de control la violació de seguretat, sense dilació indeguda i, si és possible, en un termini màxim de 72 hores i de conformitat amb l’article 55, tret que sigui improbable que constitueixi un risc per als drets i les llibertats de les persones.
+</p>
+
+<p>
+Quan sigui probable que la violació comporti un alt risc per als drets de les persones interessades, el responsable l’ha de comunicar a les persones afectades sense dilacions indegudes i en un llenguatge clar i senzill tal i com diu l’article 34, tret que:
+</p>
+<ul>
+<li class="level1"><div class="li"> El responsable hagi adoptat mesures de protecció adequades, com ara que les dades no siguin intel·ligibles per a persones no autoritzades.</div>
+</li>
+<li class="level1"><div class="li"> El responsable hagi aplicat mesures posteriors que garanteixen que ja no hi ha la probabilitat que es concreti l’alt risc.</div>
+</li>
+<li class="level1"><div class="li"> Suposi un esforç desproporcionat. En aquest cas, cal optar per una comunicació pública o una mesura semblant.</div>
+</li>
+</ul>
+
+<p>
+La notificació de la fallada a les autoritats dins de les 72 hores següents a partir del moment al qual el responsable n’ha tingut constància pot ser objecte d’interpretacions variades. Normalment, es considera que se’n té constància quan hi ha certesa i coneixement suficient de les circumstàncies. La mera sospita no obliga a notificar ja que, en aquests casos, no és possible conèixer suficientment l’abast del succés.
+</p>
+
+<p>
+Ara bé, si sospitem que el problema pot tenir un gran impacte, és recomanable contactar amb l’autoritat de supervisió.
+</p>
+
+<p>
+En cas que no sigui possible realitzar la notificació dins el termini de 72 hores, pot fer-se més tard, però cal justificar-hi les causes del retard.
+</p>
+
+<p>
+L’RGPD estableix  el contingut mínim de la notificació. Aquests contenen elements com:
+</p>
+<ul>
+<li class="level1"><div class="li"> La naturalesa de la violació.</div>
+</li>
+<li class="level1"><div class="li"> Les categories de dades i d’interessats afectats.</div>
+</li>
+<li class="level1"><div class="li"> Les mesures adoptades pel responsable per a solucionar la fallada i, si és el cas, les mesures aplicades per pal·liar els possibles efectes negatius sobre les persones interessades. </div>
+</li>
+</ul>
+
+<p>
+La informació també es pot proporcionar de forma escalonada, quan no es pugui fer completament al mateix moment de la notificació.
+</p>
+
+<p>
+Finalment, el responsable del tractament ha de documentar qualsevol violació de la seguretat de les dades personals, inclosos els fets que hi estan relacionats, els seus efectes i les mesures correctores que s’han adoptat.
+</p>
+
+</div>
+
+<h3><a id="el_responsable_l_encarregat_del_tractament_i_el_delegat_de_proteccio_de_dades_dpd" >El responsable, l&#039;encarregat del tractament i el delegat de protecció de dades (DPD)</a></h3>
+<div class="level3">
+
+<p>
+L’RGPD introdueix les figures del responsable del tractament de dades, de l’encarregat del tractament i del delegat de protecció de dades.
+</p>
+
+<p>
+El capítol IV de l’RGPD tracta del responsable, de l’encarregat del tractament i del delegat de protecció de dades.
+</p>
+
+<p>
+Hi pot haver representants dels responsables i/o dels encarregats del tractament quan aquests no estan establerts a la Unió, però entra dins de l’àmbit del Reglament, segons recull l’article 3, apartat 2. En aquests casos, el responsable o l’encarregat del tractament ha de designar per escrit un representant a la Unió.
+</p>
+
+</div>
+
+<h4><a id="el_responsable_del_tractament" >El responsable del tractament</a></h4>
+<div class="level4">
+
+<p>
+El responsable del tractament o responsable és la persona física o jurídica, autoritat pública, servei o qualsevol altre organisme que, sol o juntament amb d’altres, determina les finalitats i els mitjans del tractament. El responsable ho és i ha de poder demostrar (<em>accountability</em>) que les dades personals siguin:
+</p>
+<ul>
+<li class="level1"><div class="li"> Adequades, pertinents i limitades al que és necessari en relació amb les finalitats per a les quals es tracten (minimització de dades).  </div>
+</li>
+<li class="level1"><div class="li"> Conservades de manera que permetin identificar els interessats durant un període no superior al necessari per a les finalitats del tractament de dades personals. </div>
+</li>
+<li class="level1"><div class="li"> Exactes. Això implica que, quan sigui precís, s’hauran d’actualitzar. Cal adoptar les mesures raonables perquè es suprimeixin o es rectifiquin les dades personals que siguin inexactes amb les finalitats per a les quals es tracten (“exactitud”);</div>
+</li>
+<li class="level1"><div class="li"> Tractades de manera lícita, lleial i transparent en relació amb l’interessat (licitud, lleialtat i transparència).</div>
+</li>
+<li class="level1"><div class="li"> Recollides amb finalitats determinades, explícites i legítimes; posteriorment no s’han de tractar de manera incompatible amb aquestes finalitats. D’acord amb l’article 89, el tractament posterior de les dades personals amb finalitats d’arxiu en interès públic, amb finalitats de recerca científica i històrica o amb finalitats estadístiques no es considera incompatible amb les finalitats inicials (limitació de la finalitat).</div>
+</li>
+<li class="level1"><div class="li"> Tractades de manera que se’n garanteixi una seguretat adequada, inclosa la protecció contra el tractament no autoritzat o il·lícit i contra la seva pèrdua, destrucció o dany accidental, mitjançant l’aplicació de les mesures tècniques o organitzatives adequades (“integritat i confidencialitat”), fent copies de seguretat…</div>
+</li>
+</ul>
+
+<p>
+Així, per exemple, el responsable del tractament serà qui haurà de decidir si les dades recollides inicialment amb el consentiment del client continuen essent vàlides per a una altra finalitat o no ho són i s’ha de tornar a demanar el consentiment al client. El responsable del tractament ha de prendre les mesures oportunes per facilitar a l’interessat tota la informació que indiquen els articles 13 (<em>Informació que cal facilitar quan les dades personals s’obtenen de l’interessat</em>) i 14 (<em>Informació que cal facilitar quan les dades personals no s’han obtingut de l’interessat</em>).
+</p>
+
+<p>
+El responsable del tractament ha de facilitar a l’interessat l’exercici dels seus drets, en virtut dels articles 15 a 22.
+</p>
+
+</div>
+
+<h4><a id="l_encarregat_del_tractament" >L&#039;encarregat del tractament</a></h4>
+<div class="level4">
+
+<p>
+L’article 28 del RGPD tracta de l’<strong>encarregat del tractament</strong> o <strong>encarregat</strong>. L’encarregat és la persona física o jurídica, autoritat pública, servei o qualsevol altre organisme que tracta dades personals per compte del responsable del tractament. L’encarregat és únic i el nomena el responsable del tractament de les dades. L’encarregat del tractament pot, però, contractar a altres encarregats de tractament de dades amb el consentiment per escrit del responsable del tractament de dades. El tractament efectuat per l’encarregat s’ha de regir per un contracte o per un altre acte jurídic conforme al dret de la Unió o dels estats membres. Aquest contracte ha de vincular l’encarregat respecte del responsable i ha d’establir l’objecte, la durada, la naturalesa i la finalitat del tractament, així com el tipus de dades personals i categories d’interessats i les obligacions i els drets del responsable. Aquest contracte o acte jurídic ha d’estipular, en particular, que l’encarregat:
+</p>
+<ul>
+<li class="level1"><div class="li"> Tracta les dades personals únicament seguint instruccions documentades del responsable.</div>
+</li>
+<li class="level1"><div class="li"> Garanteix que les persones autoritzades per tractar dades personals s’han compromès a respectar-ne la confidencialitat o estan subjectes a una obligació de confidencialitat de naturalesa estatutària.</div>
+</li>
+<li class="level1"><div class="li"> Respecta les condicions establertes als apartats 2 i 4, per recórrer a un altre encarregat del tractament.</div>
+</li>
+<li class="level1"><div class="li"> Pren totes les mesures necessàries, de conformitat amb l’article 32.</div>
+</li>
+<li class="level1"><div class="li"> Assisteix el responsable sempre que sigui possible, d’acord amb la naturalesa del tractament i mitjançant les mesures tècniques i organitzatives adequades perquè pugui complir amb l’obligació de respondre les sol·licituds que tinguin per exercici dels drets dels interessats.</div>
+</li>
+<li class="level1"><div class="li"> Ajuda el responsable a garantir el compliment de les obligacions.</div>
+</li>
+<li class="level1"><div class="li"> A elecció del responsable, ha de suprimir o retornar totes les dades personals, una vegada finalitzada la prestació dels serveis de tractament, i suprimir les còpies existents, tret que sigui necessari conservar les dades personals en virtut del dret de la Unió o dels estats membres.</div>
+</li>
+<li class="level1"><div class="li"> Ha de posar a disposició del responsable tota la informació necessària per demostrar que compleix les obligacions assenyalades en aquest article 28 de l’RGPD. Així mateix, ha de permetre i contribuir a la realització d’auditories, incloses inspeccions, per part del responsable o d’un altre auditor autoritzat pel responsable.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="el_delegat_de_proteccio_de_dades_dpd" >El delegat de protecció de dades (DPD)</a></h4>
+<div class="level4">
+
+<p>
+El Reglament, a l’article 37, introdueix la figura del <strong>Delegat de Protecció de Dades (DPD)</strong> i especifica quan és necessari nomenar-lo.
+</p>
+
+<p>
+El Delegat de Protecció de Dades pot formar part de la plantilla del responsable o l’encarregat o bé actuar en el marc d’un contracte de serveis. 
+</p>
+
+<p>
+El delegat de protecció de dades és nomenat pel responsable i l’encarregat del tractament i se l’ha de nomenar quan es alguna d’aquestes condicions:
+</p>
+<ul>
+<li class="level1"><div class="li"> El tractament l’efectua una autoritat o un organisme públic, tret dels tribunals que actuen en l’exercici de la seva funció judicial.</div>
+</li>
+<li class="level1"><div class="li"> Les activitats principals del responsable o de l’encarregat consisteixen en operacions de tractament que requereixen una observació habitual i sistemàtica a gran escala.</div>
+</li>
+<li class="level1"><div class="li"> Les activitats principals del responsable o de l’encarregat consisteixen en el tractament a gran escala de categories especials de dades personals i de les dades relatives a condemnes i infraccions.</div>
+</li>
+</ul>
+
+<p>
+El delegat de protecció de dades s’ha de designar atenent a les seves qualitats professionals i als coneixements especialitzats del dret, a la pràctica en matèria de protecció de dades i a la capacitat per exercir les funcions esmentades a l’article 39, que principalment són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Assessorar respecte de l’avaluació d’impacte relativa a la protecció de dades.</div>
+</li>
+<li class="level1"><div class="li"> Actuar com a punt de contacte de l’autoritat de control per a qüestions relatives al tractament.</div>
+</li>
+<li class="level1"><div class="li"> Cooperar amb l’autoritat de control.</div>
+</li>
+<li class="level1"><div class="li"> Informar i assessorar el responsable o l’encarregat i els treballadors sobre les obligacions que imposa la normativa de protecció de dades.</div>
+</li>
+<li class="level1"><div class="li"> Supervisar que es compleix l’RGPD i la resta de legislació relativa a la protecció de dades.</div>
+</li>
+</ul>
+
+<p>
+Això no vol dir que el DPD hagi de tenir una titulació específica, però, tenint en compte que entre les funcions del DPD s’inclou l’assessorament al responsable o l’encarregat en tot el referent a la normativa sobre protecció de dades, els coneixements jurídics en la matèria són sens dubte necessaris; també cal que compti amb coneixements aliens a l’àmbit estrictament jurídic, com per exemple en matèria de tecnologia aplicada al tractament de dades o en relació amb l’àmbit d’activitat de l’organització en la qual exerceix la seva tasca.
+</p>
+
+<p>
+Altres coses a tenir en compte són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un grup empresarial pot nomenar un únic delegat de protecció de dades, sempre que sigui fàcilment accessible des de cada establiment.</div>
+</li>
+<li class="level1"><div class="li"> Si el responsable o l’encarregat del tractament és una autoritat o un organisme públic, tret de jutjats i tribunals, es pot tenir un únic delegat de protecció de dades per diversos organismes.</div>
+</li>
+<li class="level1"><div class="li"> La posició del DPD a les organitzacions ha de complir els requisits que l’RGPD estableix expressament. Entre aquests requisits hi ha la total autonomia en l’exercici de les seves funcions, la necessitat que es relacioni amb el nivell superior de la direcció o l’obligació que el responsable o l’encarregat li facilitin tots els recursos necessaris per desenvolupar la seva activitat.</div>
+</li>
+</ul>
+
+<p>
+Els sistemes informàtics encarregats del tractament i del manteniment de dades gestionen sovint dades de caràcter personal. Quan ens trobem en aquesta situació, hem de complir l’RGPD i la resta de legislació de protecció de dades. Com que el tractament es fa en fitxers de l’empresa, la llei ens diu que hem d’adoptar les mesures necessàries per garantir la seguretat de les dades personals.
+</p>
+
+</div>
+
+<h3><a id="dades_personals" >Dades personals</a></h3>
+<div class="level3">
+
+<p>
+El concepte de <em>dada de caràcter personal</em> genera força confusions. Per determinar què és realment, ens hem de fixar en l’RGPD, que el defineix com “qualsevol informació sobre una persona física identificada o identificable, com ara un nom, un número d’identificació, dades de localització, un identificador en línia o un o diversos elements propis de la identitat física, fisiològica, genètica, psíquica, econòmica, cultural o social d’aquesta persona”.
+</p>
+
+<p>
+Així, doncs, quan parlem de <em>dada personal</em> ens referim a qualsevol informació relativa a una persona concreta. Les dades personals ens identifiquen com a individus i caracteritzen les nostres activitats en la societat, tant públiques com privades. El fet que diguem que les dades són de caràcter personal no vol dir que només tinguin protecció les vinculades a la vida privada o íntima de la persona, sinó que són dades protegides totes les que ens identifiquen o que en combinar-les permeten la nostra identificació.
+</p>
+
+<p>
+Tenen la consideració de dades personals:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Només les dades de persones físiques, i no les dades de persones jurídiques, com empreses, societats…, són dades de caràcter personal.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Nom i cognoms, data de naixement.</div>
+</li>
+<li class="level1"><div class="li"> Número de telèfon, adreça postal i electrònica.</div>
+</li>
+<li class="level1"><div class="li"> Dades biomètriques (empremtes, iris, dades genètiques, imatge, raça, veu…).</div>
+</li>
+<li class="level1"><div class="li"> Dades sanitàries (malalties, avortaments, cirurgia estètica…).</div>
+</li>
+<li class="level1"><div class="li"> Orientació sexual.</div>
+</li>
+<li class="level1"><div class="li"> Ideologia, creences religioses, afiliació sindical, estat civil…</div>
+</li>
+<li class="level1"><div class="li"> Dades econòmiques: bancàries, solvència, compres.</div>
+</li>
+<li class="level1"><div class="li"> Consums (aigua, gas, electricitat, telèfon…), subscripcions premsa…</div>
+</li>
+<li class="level1"><div class="li"> Dades judicials (antecedents penals).</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="dades_personals_sensibles" >Dades personals sensibles</a></h4>
+<div class="level4">
+
+<p>
+No totes les dades personals són igual d’importants. Algunes s’anomenen <strong>sensibles</strong> a causa de la seva transcendència per a la nostra intimitat i a la necessitat d’evitar que siguin usades per discriminar-nos. No es tracta de preservar la nostra intimitat, sinó d’evitar perjudicis per l’ús que es pugui fer d’aquestes dades.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Dades personals</p>
+<p>
+Dades com el correu electrònic o dades biomètriques també són dades personals, ja que permeten identificar la persona. L’Agència de Protecció de Dades fins i tot considera la IP (Informe 327/2003) una dada personal.
+</p>
+</div></div>
+<p>
+Tenen la consideració de <strong>dades sensibles</strong> les que es refereixen a la nostra raça, opinions polítiques, a les conviccions religioses, a les afiliacions a partits polítics o a sindicats, a la nostra salut o orientació sexual, genètiques, biomètriques.
+</p>
+
+</div>
+
+<h3><a id="infraccions_i_sancions_de_l_rgpd" >Infraccions i sancions de l&#039;RGPD</a></h3>
+<div class="level3">
+
+<p>
+
+L’incompliment d’una normativa legal pot comportar sancions. En el cas de l’RGPD, el règim de responsabilitat previst és de caràcter <strong>administratiu</strong> (menys greu que el penal i que no pot representar sancions privatives de llibertat). L’import de les sancions varia segons els drets personals afectats, volum de dades efectuats, els beneficis obtinguts, el grau d’intencionalitat i qualsevol altra circumstància que l’agència estimi oportuna.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les dades sensibles reben una protecció més alta que la resta.
+</p>
+</div></div>
+<p>
+Una diferència amb l’antiga LOPD és que no hi ha tipus de sancions (lleus, greus, molt greus). A l’article 83.2  especifica que les multes aniran en funció de la infracció. Les multes administratives poden arribar a ser d’entre 10 i 20 milions d’euros, o entre el 2 i el 4% del volum de negoci anual global. Per determinar la quantitat de les sancions es mirarà el cas particular tenint en compte:
+</p>
+<ul>
+<li class="level1"><div class="li"> La naturalesa, gravetat i la durada de la infracció, estudiant la naturalesa, abast o propósit de la mateixa, així com el nombre d’interesats afectats i el nivell dels danys i perjudicis que hagin sofert.</div>
+</li>
+<li class="level1"><div class="li"> La intencionalidat o negligència en la infracció.</div>
+</li>
+<li class="level1"><div class="li"> Qualsevol mesura presa pel responsable o encarregat del tractament per solucionar i reduir els danys soferts pels interessats.</div>
+</li>
+<li class="level1"><div class="li"> El grau de responsabilitat de l’encarregat del tractament de les dades, segons les mesures aplicades per protegir la informació.</div>
+</li>
+<li class="level1"><div class="li"> Totes les infraccions anteriors dels responsables o encarregats del tractament.</div>
+</li>
+<li class="level1"><div class="li"> El grau de cooperació amb l’autoritat de control amb la finalitat de solucionar la infracció i mitigar els possibles efectes adversos de la infracció.</div>
+</li>
+<li class="level1"><div class="li"> Les categories de les dades de caràcter personal afectades per la infracció.</div>
+</li>
+<li class="level1"><div class="li"> La forma amb que l’autoritat de control va tenir coneixement de la infracció, en concret si el responsable o l’encarregat va notificar la infracció i en quina mesura.</div>
+</li>
+<li class="level1"><div class="li"> Que el responsable o l’encarregat ja hagin estat sancionats, amb advertència del compliment de les mesures.</div>
+</li>
+<li class="level1"><div class="li"> L’adhesió a codis de conducta o a mecanismes de certificació aprovats segons l’articulat del propi RGPD.</div>
+</li>
+<li class="level1"><div class="li"> Qualsevol altre factor agravant o atenuant aplicable a les circumstàncies del cas, com als beneficis financers obtinguts o a les pèrdues evitades, directa o indirectament, amb la infracció.</div>
+</li>
+</ul>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple d’infracció i multa amb la nova llei</p>
+<p>
+Donar les dades a una empresa de serveis, sense haver firmat el corresponent acord, amb les mesures de seguretat necessàries establertes per l’RGPD, que amb la LOPD era castigat fins a 300.000€, pasarà a ser multat fins a 10 milions d’euros o un 2% del volum de negoció total anual de l’any anterior.
+</p>
+</div></div>
+<p>
+
+</p>
+
+</div>
+
+<h2><a id="legislacio_sobre_els_serveis_de_societat_de_la_informacio_i_el_comerc_electronic" >Legislació sobre els serveis de societat de la informació i el comerç electrònic</a></h2>
+<div class="level2">
+
+<p>
+Com a conseqüència de l’expansió de les xarxes d’ordinadors i especialment d’Internet, fenòmens que abans eren habituals dins del món analògic han acabat traspassant les fronteres per esdevenir freqüents en el món virtual (per exemple, el comerç electrònic). No podem esperar que el marc jurídic actual pugui donar resposta a tots els nous reptes provocats per l’ús de les tecnologies de la informació. Per donar resposta a aquests buits legals cal ampliar o redefinir conceptes jurídics. Aquesta regulació no solament ha d’evitar el mal ús de la tecnologia (per exemple, l’enviament de correu brossa o no consentit), sinó que ha de generar un entorn de confiança en el qual es delimitin clarament les responsabilitats i els deures de cadascú, sense el qual no és possible l’establiment de transaccions, com ara el comerç electrònic. 
+</p>
+
+<p>
+Així, l’objectiu de la <strong>Llei 34/2002, d’11 de juliol, de serveis de la societat de la informació i del comerç electrònic</strong> (LSSI) és la incorporació de la directiva comunitària sobre el comerç electrònic al marc jurídic espanyol. Aquesta normativa s’ha desenvolupat en diversos àmbits: europeu, estatal i autonòmic.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El <strong>comerç electrònic</strong> o <em>e-commerce</em> consisteix en la compra i venda de productes o serveis mitjançant xarxes d’ordinadors (com, per exemple, Internet).
+</p>
+</div></div>
+</div>
+
+<h3><a id="concepte_de_serveis_de_la_societat_d_informacio" >Concepte de serveis de la societat d’informació</a></h3>
+<div class="level3">
+
+<p>
+Segons l’LSSI, el concepte de servei de la societat d’informació és molt ampli i comprèn els àmbits següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Contractació de béns i serveis per via electrònica.</div>
+</li>
+<li class="level1"><div class="li"> Subministrament d’informació per via electrònica (per exemple, els diaris digitals).</div>
+</li>
+<li class="level1"><div class="li"> Activitats d’intermediació relatives a:</div>
+<ul>
+<li class="level2"><div class="li"> La provisió d’accés a la xarxa.</div>
+</li>
+<li class="level2"><div class="li"> La transmissió de dades.</div>
+</li>
+<li class="level2"><div class="li"> La realització de la còpia temporal de les pàgines d’Internet sol·licitades pels usuaris.</div>
+</li>
+<li class="level2"><div class="li"> L’allotjament de dades en els servidors d’informació.</div>
+</li>
+<li class="level2"><div class="li"> Els serveis o aplicacions facilitats per altres.</div>
+</li>
+<li class="level2"><div class="li"> La provisió d’eines de cerca.</div>
+</li>
+<li class="level2"><div class="li"> Els enllaços a altres llocs d’Internet.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Qualsevol altre servei que es presti a petició individual dels usuaris (descàrrega de fitxers de vídeo o àudio…), sempre que representi una activitat econòmica per al prestador. </div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els serveis de la societat d’informació són oferts pels operadors de telecomunicacions, els <strong>proveïdors d’accés a Internet</strong>, els portals, els motors de cerca o qualsevol altre subjecte que disposi d’un lloc a Internet per mitjà del qual dugui a terme alguna de les activitats indicades, inclòs el comerç electrònic.
+</p>
+</div></div>
+</div>
+
+<h3><a id="obligacions_i_responsabilitat_dels_prestadors_de_serveis" >Obligacions i responsabilitat dels prestadors de serveis</a></h3>
+<div class="level3">
+
+<p>
+No solament per desenvolupar l’esmentat marc de confiança, sinó també per poder perseguir les activitats il·lícites que es puguin desenvolupar a la xarxa, l’LSSI determina quines són les obligacions i responsabilitats dels prestadors de serveis. No oblideu, però, que l’LSSI se situa dins del marc jurídic extrapenal. Per això les sancions que preveu aquesta llei no comporten penes privatives de llibertat. Per exemple, l’enviament de correu brossa o correu no consentit és una activitat sancionada per l’LSSI, però, en canvi, no apareix reflectida en el Codi Penal. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Proveïdors de serveis</p>
+<p>
+Els operadors que ens proporcionen l’accés a Internet a les nostres llars són exemples del que l’LSSI entén per proveïdors de serveis.
+</p>
+</div></div>
+</div>
+
+<h4><a id="obligacions_dels_prestadors_de_serveis" >Obligacions dels prestadors de serveis</a></h4>
+<div class="level4">
+
+<p>
+Malgrat tot, les obligacions que tenen els prestadors de serveis, descrites en l’LSSI, possibiliten la persecució dels delictes relacionats amb Internet. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El correu brossa (<em>spam</em>) se sol prendre per un delicte informàtic, però no ho és.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+La llei imposa el <strong>deure de col·laboració dels prestadors de serveis d’intermediació</strong> per impedir que determinats serveis o continguts il·lícits es continuïn divulgant.
+</p>
+</div></div>
+<p>
+Així, doncs, i sempre mitjançant una resolució judicial motivada, els prestadors de serveis han de col·laborar amb els jutges, i han de posar a la seva disposició les dades que els siguin requerides. Per exemple, si una investigació criminal descobreix un lloc d’Internet que allotja pornografia infantil o programes “pirates”, els proveïdors de serveis hauran de lliurar al jutge encarregat de la investigació els fitxers de registre de l’activitat de l’usuari que ha allotjat el contingut il·lícit en el lloc. 
+</p>
+
+<p>
+Un altre aspecte destacable de la preservació dels registres és la consideració de la IP com una dada personal (tot i que no identifica directament una persona, sí esdevé un mitjà per identificar-la). 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Són activitats d’intermediació la transmissió, còpia, allotjament i localització de dades a la xarxa.
+</p>
+</div></div>
+<p>
+Com podíem esperar, les dades que enregistra el proveïdor de serveis s’han d’emmagatzemar garantint els drets constitucionals i amb les mesures determinades per la llei de protecció de dades. Només pot retenir les dades imprescindibles per identificar l’<strong>origen de la connexió</strong> i el <strong>moment en què s’inicià la prestació del servei</strong>. La preservació de les dades no pot atemptar en cap cas contra el secret de les comunicacions. 
+</p>
+
+</div>
+
+<h4><a id="regim_de_responsabilitats_dels_prestadors_de_serveis" >Règim de responsabilitats dels prestadors de serveis</a></h4>
+<div class="level4">
+
+<p>
+Els prestadors de serveis de la societat de la informació estan subjectes a <strong>responsabilitat civil, penal i administrativa</strong>. Per determinar el tipus de responsabilitat que recau sobre ells caldrà diferenciar les situacions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> El prestador és l’autor (creador) directe de la informació, o bé desenvolupa tasques de control sobre els continguts que es transmeten a la xarxa. És el cas, per exemple, del gestor d’una llista de distribució de correu electrònic (<em>mailing list</em>) o del moderador d’un fòrum de discussió. En tots dos casos, el prestador pot tenir coneixement de la informació que s’introdueix a la Xarxa i en pot exercir-ne el control. Per tant, la seva responsabilitat és inqüestionable. </div>
+</li>
+<li class="level1"><div class="li"> Quan no hi ha participació activa del prestador amb relació als continguts allotjats, la determinació de la responsabilitat ja no és tan evident i consta de les exempcions següents:</div>
+</li>
+<li class="level1"><div class="li"> Si el servei consisteix en la mera transmissió de les dades proveïdes pel destinatari del servei, o en proporcionar l’accés a la xarxa, s’entén que els proveïdors desconeixen els continguts transmesos i no en són responsables, sempre que no es produeixin les situacions següents: que els prestadors no hagin originat la transmissió, que no hagin modificat ni seleccionat les dades o que no hagin seleccionat el destinatari.</div>
+</li>
+<li class="level1"><div class="li"> Els prestadors solen emmagatzemar en els servidors còpies automàtiques i temporals de les dades facilitades pel destinatari del servei (<em>caching</em>). En aquest cas els proveïdors tampoc no són responsables del contingut d’aquestes dades, sempre que no hagin modificat la informació. </div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Una <strong>llista de correu</strong> és un conjunt de noms i adreces de correu electrònic emprades per un usuari o organització per enviar informació a múltiples destinataris.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Fòrum de discussió</p>
+<p>
+Una <strong>fòrum de discussió</strong> és una aplicació web que permet que diferents usuaris expressin les seves opinions en línia, normalment entorn d’una qüestió proposada per un moderador.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Caching</p>
+<p>
+El <em>caching</em> és una tècnica emprada pels anomenats <strong>servidors intermediaris</strong>, els quals (entre altres activitats) emmagatzemen la resposta a la sol·licitud d’un usuari (un lloc web) per poder-la oferir directament quan un altre usuari la sol·liciti, sense necessitat de contactar novament amb la pàgina demanada. 
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> En el cas dels proveïdors de serveis que allotgen o emmagatzemen dades, aplicacions o serveis (hostatge), no hi haurà responsabilitat en els casos següents: quan els prestadors no tinguin coneixement efectiu que l’activitat o la informació és il·lícita o que pot lesionar béns o drets d’un tercer susceptible d’indemnització o en cas que en tinguin coneixement, no tenen cap responsabilitat si retiren amb prestesa les dades o hi impossibiliten l’accés.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Coneixement efectiu</p>
+<p>
+Els prestadors de serveis tenen coneixement efectiu quan:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’autoritat competent ha declarat que les dades són il·lícites, n’ha ordenat la retirada o demanat que se n’impossibiliti l’accés.</div>
+</li>
+<li class="level1"><div class="li"> Quan s’ha declarat l’existència d’una lesió i el prestador coneix la resolució corresponent. </div>
+</li>
+</ul>
+</div></div>
+<p>
+Cal dir que, en aquest sentit, molts proveïdors ofereixen als usuaris la possibilitat de valorar els continguts i marcar-los en cas que el contingut no sigui lícit o lesioni els drets d’una persona. En aquests casos, els proveïdors supervisen els continguts marcats i determinen si cal o no cal eliminar-los. No obstant això, la llei no exigeix als prestadors l’obligació de supervisió, ni la realització de recerques de continguts il·lícits. 
+</p>
+<ul>
+<li class="level1"><div class="li"> Finalment, quan el prestador facilita enllaços amb continguts o inclou eines de cerca, no és responsable de la informació redirigida pels enllaços, sempre que es produeixin els requisits d’exempció, ja esmentats en l’apartat d’allotjament: quan els prestadors no tinguin coneixement efectiu que l’activitat o la informació és il·lícita o que pot lesionar béns o drets d’un tercer susceptible d’indemnització o en cas que en tinguin coneixement, no tenen cap responsabilitat si retiren amb prestesa les dades o hi impossibiliten l’accés.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En el cas del portal YouTube, els mateixos usuaris poden determinar i marcar els continguts que no consideren lícits.
+</p>
+</div></div>
+</div>
+
+<h4><a id="obligacions_de_les_empreses_que_fan_comerc_electronic" >Obligacions de les empreses que fan comerç electrònic</a></h4>
+<div class="level4">
+
+<p>
+Com a usuaris potencials del comerç electrònic, convé que conegueu les obligacions d’informació que tenen totes les empreses que es dediquen a aquesta activitat. El portal web ha de mostrar, entre d’altres, les dades següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> La denominació social, NIF, domicili i adreça de correu electrònic o fax.</div>
+</li>
+<li class="level1"><div class="li"> Els codis de conducta als quals s’ha adherit.</div>
+</li>
+<li class="level1"><div class="li"> Preus dels productes o serveis que ofereix, amb indicació dels impostos i despeses d’enviament.</div>
+</li>
+<li class="level1"><div class="li"> Si escau, les dades relatives a l’autorització administrativa necessària per a l’exercici de l’activitat, dades de col·legiació i títol acadèmic dels professionals que exerceixin l’activitat.</div>
+</li>
+</ul>
+
+<p>
+En cas que l’empresa faci contractes en línia, també caldrà que ofereixi la informació següent, amb caràcter previ a la contractació del servei: 
+</p>
+<ul>
+<li class="level1"><div class="li"> Tràmits que cal seguir per fer la contractació en línia. </div>
+</li>
+<li class="level1"><div class="li"> Si el document electrònic del contracte s’arxivarà i si serà accessible. </div>
+</li>
+<li class="level1"><div class="li"> Mitjans tècnics per identificar i corregir errors durant el procés d’introducció de dades. </div>
+</li>
+<li class="level1"><div class="li"> Idioma o idiomes en els quals es pot formalitzar el contracte. </div>
+</li>
+<li class="level1"><div class="li"> Condicions generals del contracte. </div>
+</li>
+</ul>
+
+<p>
+A més, l’usuari ha de rebre un acusament de rebut de la comanda feta. 
+</p>
+
+<p>
+Amb relació als usuaris d’Internet, els titulars de pàgines personals que no percebin cap ingrés econòmic pel seu web no estan subjectes a la llei. No obstant això, si guanyen diners (per exemple, gràcies a la inclusió de bàners en la seva pàgina), hauran de mostrar informació bàsica (nom, residència, adreça de correu electrònic, telèfon o fax i NIF) i respectar les normes de publicitat incloses en la llei: 
+</p>
+<ul>
+<li class="level1"><div class="li"> L’anunciant s’ha d’identificar clarament. </div>
+</li>
+<li class="level1"><div class="li"> El caràcter publicitari de la informació ha de resultar inequívoc.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="regulacio_de_comunicacions_publicitaries_correu_brossa" >Regulació de comunicacions publicitàries (correu brossa)</a></h3>
+<div class="level3">
+
+<p>
+El correu brossa consisteix en l’enviament no consentit pels receptorsde missatges de correu electrònic a una multitud de destinataris, amb finalitat comercial. 
+</p>
+
+<p>
+Si bé aquesta conducta s’associa freqüentment a l’esfera del mal anomenat <em>delicte informàtic</em>, i tot i que és susceptible de ser sancionada, no està recollida en el Codi Penal. 
+</p>
+
+<p>
+Això no obstant, dins de l’àmbit extrapenal, aquestes accions apareixen recollides de la manera següent: 
+</p>
+<ul>
+<li class="level1"><div class="li">  L’RGPD determina la necessitat del consentiment de la persona interessada en el cas del tractament de dades amb finalitats de publicitat i de prospecció comercial.</div>
+</li>
+<li class="level1"><div class="li"> L’LSSI també prohibeix l’enviament de comunicacions publicitàries per correu electrònic (o mitjans electrònics equivalents) si no ha estat prèviament autoritzat de manera expressa pels destinataris. </div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’incompliment d’aquesta prohibició pot constituir una <strong>infracció lleu</strong>, punible amb <strong>una multa de fins a 30.000 euros</strong>, o bé una <strong>infracció greu</strong>, que es pot castigar amb una <strong>multa de 30.001 a 150.000 euros</strong>
+, segons els casos. En cap cas, però, pot generar responsabilitat penal perquè no és cap conducta constitutiva de delicte.
+</p>
+</div></div>
+<p>
+En general, pel que fa a la publicitat, cal que recordeu que qualsevol usuari té dret a conèixer la identitat de l’anunciant, a no rebre publicitat no sol·licitada i deixar de rebre la que ha autoritzat (si així ho fa saber). 
+</p>
+
+<p>
+Les infraccions de l’LSSI poden ser lleus, greus i molt greus.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

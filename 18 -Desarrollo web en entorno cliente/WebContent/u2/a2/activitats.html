@@ -1,0 +1,449 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Estructures definides pel programador</a></li><li><a href="continguts.html">Programació amb col·leccions</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="xifrat_juli_cesar" >Xifrat Juli Cèsar</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és utilitzar alguna de les funcions predefinides del llenguatge JavaScript. Podeu utilitzar les funcions: <code>chatAt()</code>, <code>indexOf()</code>, <code>alert()</code>, <code>length()</code>, <code>prompt()</code> i <code>toUpperCase()</code>.
+</p>
+
+<p>
+El dictador Juli Cèsar utilitzava un codi quan volia mantenir en secret un missatge. El xifrat consistia a substituir la primera lletra de l’alfabet (A) per la quarta (D) i així successivament amb les altres, és a dir, B, per la cinquena (I) la tercera (C) per la sisena (F)…
+</p>
+
+<p>
+L’alfabet llatí que utilitzava Juli Cèsar constava de 21 lletres, per tant la substitució de lletres per xifrar o desxifrar missatges queda descrita com segueix:
+</p>
+<pre class="code">Alfabet original : A B C D E F G H I K L M N O P Q R S T V
+Alfabet xifrat   : D E F G H I K L M N O P Q R S T V A B C</pre>
+
+<p>
+Aquest tipus de xifrat és un codi de rotació, on la clau de rotació és 3.
+Escriu un programa que permeti xifrar utilitzant un codi de rotació. La clau serà una variable del programa.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/oNLEJLm?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oNLEJLm?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/oNLEJLm?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let alfabet = &quot;ABCDEFGHIKLMNOPQRSTV&quot;;</div></li><li class="li1"><div class="de1">let clau = 3;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let text = prompt(&quot;Escriu el text a xifrar&quot;).toUpperCase();</div></li><li class="li1"><div class="de1">let textxifrat = &quot;&quot;;</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; text.length; i++) {</div></li><li class="li1"><div class="de1">  let charorig = text.charAt(i);</div></li><li class="li1"><div class="de1">  let poscharxifrat = (alfabet.indexOf(charorig) + clau) % alfabet.length;</div></li><li class="li1"><div class="de1">  textxifrat = textxifrat + alfabet.charAt(poscharxifrat);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">alert(`El resultat és el següent: ${textxifrat}`);</div></li></ol></pre>
+
+<p>
+Com podeu observar, primer es demana a l’usuari que introdueixi quin text vol xifrar amb la funció <code>propmt()</code>. Després, s’agafa cadascuna de les lletres, mitjançant la funció <code>chatAt()</code>, i es calcula la posició de la lletra dintre del alfabet amb la funció <code>indexOf()</code>.
+</p>
+
+<p>
+Per saber quina seria la lletra xifrada s’aplica l’algoritme Juli Cèsar. A la posició de la lletra dins de l’alfabet se suma la clau (3) i al resultat s’aplica el mòdul de la longitud de l’alfabet per tornar a començar en el cas que donés un número superior a la longitud de l’alfabet.
+</p>
+
+<p>
+Totes les lletres xifrades es guarden en una variable per mostrar el resultat final.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="contrasenya_segura" >Contrasenya segura</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és que realitzeu un programa utilitzant les funcions predefinides del llenguatge JavaScript. En concret, es demana que realitzeu un programa que verifiqui si una contrasenya és segura.
+</p>
+
+<p>
+Per tal que sigui segura ha de complir les següents regles:
+</p>
+<ul>
+<li class="level1"><div class="li"> Ha de contenir almenys una vocal</div>
+</li>
+<li class="level1"><div class="li"> No ha de tenir tres vocals consecutives o tres consonants consecutives</div>
+</li>
+<li class="level1"><div class="li"> No ha de tenir dues ocurrències consecutives de la mateixa lletra, excepte per ‘ee’ o ‘oo’</div>
+</li>
+<li class="level1"><div class="li"> La longitud mínima és de 6 caràcters i la màxima de 10</div>
+</li>
+<li class="level1"><div class="li"> Els espais en blanc no estan permesos</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/LYZQMxq?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYZQMxq?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYZQMxq?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let pass = &quot;rtiseewaf&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let contvocals = 0;</div></li><li class="li1"><div class="de1">let contconsonants = 0;</div></li><li class="li1"><div class="de1">let almenysvocal = 0;</div></li><li class="li1"><div class="de1">let segur = true;</div></li><li class="li1"><div class="de1">if (pass.length &gt; 10 &amp;&amp; pass.length &lt; 6) {</div></li><li class="li1"><div class="de1">  alert(</div></li><li class="li1"><div class="de1">    &quot;Password no segur, la mida del password ha de ser més gran que 6 i menys que 10&quot;</div></li><li class="li1"><div class="de1">  );</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; pass.length; i++) {</div></li><li class="li1"><div class="de1">    if (</div></li><li class="li1"><div class="de1">      pass.charAt(i) == &quot;a&quot; ||</div></li><li class="li1"><div class="de1">      pass.charAt(i) == &quot;u&quot; ||</div></li><li class="li1"><div class="de1">      pass.charAt(i) == &quot;e&quot; ||</div></li><li class="li1"><div class="de1">      pass.charAt(i) == &quot;o&quot; ||</div></li><li class="li1"><div class="de1">      pass.charAt(i) == &quot;i&quot;</div></li><li class="li1"><div class="de1">    ) {</div></li><li class="li1"><div class="de1">      contvocals++;</div></li><li class="li1"><div class="de1">      contconsonants = 0;</div></li><li class="li1"><div class="de1">      almenysvocal++;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      contconsonants++;</div></li><li class="li1"><div class="de1">      contvocals = 0;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (contvocals == 3 || contconsonants == 3) {</div></li><li class="li1"><div class="de1">      segur = false;</div></li><li class="li1"><div class="de1">      alert(&quot;Password no segur, 3 vocals o 3 consonants consecutives&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (</div></li><li class="li1"><div class="de1">      pass.charAt(i) == pass.charAt(i + 1) &amp;&amp;</div></li><li class="li1"><div class="de1">      pass.charAt(i) != &quot;e&quot; &amp;&amp;</div></li><li class="li1"><div class="de1">      pass.charAt(i) != &quot;o&quot;</div></li><li class="li1"><div class="de1">    ) {</div></li><li class="li1"><div class="de1">      segur = false;</div></li><li class="li1"><div class="de1">      alert(&quot;Password no segur, no pot haver 2 consonants o vocals iguals&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (pass.charAt(i) == &quot; &quot;) {</div></li><li class="li1"><div class="de1">      segur = false;</div></li><li class="li1"><div class="de1">      alert(&quot;Password no segur, no pot contenir espais&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  if (segur &amp;&amp; almenysvocal &gt; 0) {</div></li><li class="li1"><div class="de1">    alert(&quot;Password Segur&quot;);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    alert(&quot;Password no segur, no hi ha cap vocal.&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquesta exercici, la contrasenya no es demana a l’usuari sinó que està guardada en una variable del programa. Utilitzant aquesta variable es miren totes les condicions que estableixen que una contrasenya és segura.
+</p>
+
+<p>
+Primer de tot es mira que la longitud de la contrasenya estigui dins dels paràmetres de seguretat. Una vegada s’ha comprovat, es mira caràcter a caràcter si compleix les altres restriccions de seguretat. Per exemple, hi ha un comptador de vocals i un altre de consonants que compten quantes vocals o consonants consecutives hi ha. En el cas que hi hagi 3 o més vocals o consonants consecutives es considera insegur. Si es troba que hi ha dos vocals o consonants consecutives iguals també es considera insegur, a no ser que sigui una <em>e</em> o una <em>o</em>.
+</p>
+
+<p>
+També es comprova que la contrasenya no contingui espais.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="bender" >Bender</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és que utilitzeu funcions predefinides del llenguatge JavaScript implementant la sobrecàrrega d’un mètode d’un objecte.
+</p>
+
+<p>
+Tenim un robot anomenat “Bender”, que li agrada dividir cadenes. Implementeu el mètode <code>divideix()</code> de diferents maneres utilitzant el número de paràmetres que s’envien al mètode per definir el seu comportament. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">bender = {}</div></li></ol></pre>
+
+<p>
+El seu comportament és el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si li passen només 1 cadena: divideix aquesta cadena per la meitat i retorna la primera part.</div>
+</li>
+<li class="level1"><div class="li"> Si li passen dues cadenes: primer divideix la primera cadena per la meitat (A,B). Deprés la segona cadena, també la divideix per la meitat (C,D). Retorna una <em>string</em> concatenant les parts de la següent manera: CBDA</div>
+</li>
+<li class="level1"><div class="li"> Si li passen dues cadenes i un número: concatena a la primera cadena tants caràcters de la segona cadena com digui el número. Si el número és més gran que la longitud de la cadena tornarà a començar a concatenar des del principi fins que s’arribi al número indicat. </div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/mdEXamy?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mdEXamy?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/mdEXamy?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function afegirMetode(objecte, nom, funcio) {</div></li><li class="li1"><div class="de1">  let old = objecte[nom];</div></li><li class="li1"><div class="de1">  objecte[nom] = function () {</div></li><li class="li1"><div class="de1">    if (funcio.length == arguments.length) return funcio.apply(this, arguments);</div></li><li class="li1"><div class="de1">    else if (typeof old == &quot;function&quot;) return old.apply(this, arguments);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">bender = {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Funció amb 1 paràmetre. Retorna la primera meitat de la cadena.</div></li><li class="li1"><div class="de1">afegirMetode(bender, &quot;divideix&quot;, function (a) {</div></li><li class="li1"><div class="de1">  let meitat = a.length / 2;</div></li><li class="li1"><div class="de1">  return a.substr(0, meitat);</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Funció amb 2 paràmetres. Retorna un string construït amb trossos de les cadenes d'entrada.</div></li><li class="li1"><div class="de1">afegirMetode(bender, &quot;divideix&quot;, function (cadena1, cadena2) {</div></li><li class="li1"><div class="de1">  let meitat1 = cadena1.length / 2;</div></li><li class="li1"><div class="de1">  let meitat2 = cadena2.length / 2;</div></li><li class="li1"><div class="de1">  let a = cadena1.substr(0, meitat1);</div></li><li class="li1"><div class="de1">  let b = cadena1.substr(meitat1);</div></li><li class="li1"><div class="de1">  let c = cadena2.substr(0, meitat2);</div></li><li class="li1"><div class="de1">  let d = cadena2.substr(meitat2);</div></li><li class="li1"><div class="de1">  return c + b + d + a;</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">afegirMetode(bender, &quot;divideix&quot;, function (cadena1, cadena2, nombre) {</div></li><li class="li1"><div class="de1">  if (!isNaN(nombre)) {</div></li><li class="li1"><div class="de1">    let cont = 0;</div></li><li class="li1"><div class="de1">    let pos = 0;</div></li><li class="li1"><div class="de1">    let resultat = cadena1;</div></li><li class="li1"><div class="de1">    while (cont &lt; nombre) {</div></li><li class="li1"><div class="de1">      if (pos &gt; cadena2.length - 1) {</div></li><li class="li1"><div class="de1">        pos = 0;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      resultat += cadena2.charAt(pos);</div></li><li class="li1"><div class="de1">      cont++;</div></li><li class="li1"><div class="de1">      pos++;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return resultat;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Exemple de funcionament:</div></li><li class="li1"><div class="de1">document.write(`1 paràmetre: ${bender.divideix(&quot;HOLA&quot;)}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">document.write(`2 paràmetres: ${bender.divideix(&quot;HOLA&quot;, &quot;ADEU&quot;)}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">document.write(`3 paràmetres : ${bender.divideix(&quot;HOLA&quot;, &quot;ADEU&quot;, 5)}&lt;br&gt;`);</div></li></ol></pre>
+
+</p>
+
+<p>
+Per realitzar la sobrecàrrega de funcions s’utilitza la funció <code>afegirMetode()</code>. La funció sobrecarrega un mètode d’un objecte. Necessita un objecte, el nom del mètode al qual s’aplica la sobrecàrrega i la funció de sobrecàrrega.
+</p>
+
+<p>
+Es crida a la funció <code>afegirMetode()</code> tres vegades, amb tres funcions diferents que reben paràmetres diferents. La primera vegada s’envia una funció amb 1 paràmetre. Aquesta funció divideix una cadena per la meitat i retorna la primera part.
+</p>
+
+<p>
+La segona vegada retorna una cadena construïda amb trossos de les dues cadenes d’entrada i la tercera vegada, concatena a la primera cadena tants caràcters de la segona cadena com digui el número passat per paràmetre.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="cens" >Cens</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Ens han demanat la realització d’un cens per províncies. Per implementar-lo cal que l’aplicació ens demani en primer lloc el nom de cada província i el seu nombre d’habitants i que les províncies s’afegeixin a una estructura de dades que ha de permetre:
+</p>
+<ul>
+<li class="level1"><div class="li"> afegir noves províncies.</div>
+</li>
+<li class="level1"><div class="li"> eliminar una província per nom.</div>
+</li>
+</ul>
+
+<p>
+Addicionalment caldrà implementar una funció per mostrar el llistat actualitzat de províncies.
+</p>
+
+<p>
+També caldrà que l’aplicació, un cop afegida l’última província i mostrat el llistat de les províncies, demani el nom d’una província que caldrà esborrar i mostri el llistat després d’aquesta eliminació.
+</p>
+
+<p>
+Utilitzeu el tipus de col·lecció més adient per aquesta tasca. Cal tenir en compte que els noms de les províncies introduïdes serà únic. No cal fer gestió d’errors d’entrada.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A continuació podeu trobar la solució proposada per aquesta activitat. Fixeu-vos que s’ha fet servir un <em>map</em>, ja que sabem que els noms de les províncies és únic i aquest tipus de col·lecció ens permet afegir-hi elements, eliminar-los i consultar-los fàcilment.
+</p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/vYKdbpm?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vYKdbpm?editors=1011"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/vYKdbpm?editors=1011</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;h1&gt;Instruccions&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Introdueix províncies i els seus habitants.&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Per sortir has de premer enter quan pregunti el nom de la nova província.&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;h1&gt;Llistat de províncies&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let provincies = new Map();</div></li><li class="li1"><div class="de1">  let sortir = false;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function mostrarProvincies(provs) {</div></li><li class="li1"><div class="de1">    let total = 0;</div></li><li class="li1"><div class="de1">    for (let [nom, habitants] of provs) {</div></li><li class="li1"><div class="de1">      document.write(`${nom}: ${habitants} habitants&lt;br&gt;`);</div></li><li class="li1"><div class="de1">      total += habitants;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    document.write(`Habitants totals: ${total}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  do {</div></li><li class="li1"><div class="de1">    let nom = prompt(&quot;Nom província:&quot;);</div></li><li class="li1"><div class="de1">    let habitants;</div></li><li class="li1"><div class="de1">    if (!nom) {</div></li><li class="li1"><div class="de1">      sortir = true;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      habitants = Number(prompt(&quot;Habitants:&quot;));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (nom &amp;&amp; habitants != NaN) {</div></li><li class="li1"><div class="de1">      provincies.set(nom, habitants);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  } while (!sortir);</div></li><li class="li1"><div class="de1">  mostrarProvincies(provincies);</div></li><li class="li1"><div class="de1">  document.write(`&lt;h1&gt;Eliminació&lt;/h1&gt;`);</div></li><li class="li1"><div class="de1">  let eliminar = prompt(`Introdueix el nom d´una província per eliminar`);</div></li><li class="li1"><div class="de1">  if (provincies.has(eliminar)) {</div></li><li class="li1"><div class="de1">    provincies.delete(eliminar);</div></li><li class="li1"><div class="de1">    document.write(`Eliminat: ${eliminar}`);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.write(`&lt;p&gt;&lt;b&gt;L´element no existeix&lt;/b&gt;&lt;/p&gt;`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  document.write(`&lt;h1&gt;Llistat final&lt;/h1&gt;`);</div></li><li class="li1"><div class="de1">  mostrarProvincies(provincies);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="gestio_d_alumnes" >Gestió d&#039;alumnes</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Ens han demanat implementar un sistema de gestió  d’alumnes molt simple: només cal controlar la addició i l’eliminació. També cal poder llistar tots els alumnes actualment a la llista.
+</p>
+
+<p>
+Us indiquen que ha d’utilitzar-se un <em>set</em> que ja tenen definit:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let alumnes = new Set();</div></li></ol></pre>
+
+<p>
+Per tant, haureu d’implementar tres funcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> afegirAlumne(nom): afegeix un nou alumne.</div>
+</li>
+<li class="level1"><div class="li"> eliminarAlumne(nom): elimina l’alumne de la llista.</div>
+</li>
+<li class="level1"><div class="li"> llistarAlumnes(): mostra el llistat d’alumnes actual.</div>
+</li>
+</ul>
+
+<p>
+Tingueu en compte que per aquesta activitat es considera que el nom de cada alumne és únic.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A continuació podeu trobar la solució proposada per aquesta activitat amb la demostració del seu correcte funcionament.
+</p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/vYKdMgo?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vYKdMgo?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/vYKdMgo?editors=0012</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let alumnes = new Set();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function afegirAlumne(nom) {</div></li><li class="li1"><div class="de1">  alumnes.add(nom);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function eliminarAlumne(nom) {</div></li><li class="li1"><div class="de1">  alumnes.delete(nom);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function llistarAlumnes() {</div></li><li class="li1"><div class="de1">  console.log(&quot;Alumnes:&quot;)</div></li><li class="li1"><div class="de1">  for (let nom of alumnes) {</div></li><li class="li1"><div class="de1">    console.log(nom);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">afegirAlumne('Pere');</div></li><li class="li1"><div class="de1">afegirAlumne('Maria');</div></li><li class="li1"><div class="de1">afegirAlumne('Ramon');</div></li><li class="li1"><div class="de1">llistarAlumnes();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">eliminarAlumne('Ramon');</div></li><li class="li1"><div class="de1">listarAlumnes();</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a2/continguts.html">Programació amb col·leccions</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

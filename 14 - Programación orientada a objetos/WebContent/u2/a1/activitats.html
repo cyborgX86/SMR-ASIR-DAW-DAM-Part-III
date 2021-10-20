@@ -1,0 +1,583 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a href="../../../WebContent/u2/introduccio.html">2. Utilització avançada de classes</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2mapa"><a href="../../../WebContent/u2/mapa.html">Mapa conceptual</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id="u2a1continguts"><a href="../../../WebContent/u2/a1/continguts.html">Creació d'aplicacions escalables</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Utilització avançada de classes</a></li><li><a href="continguts.html">Creació d'aplicacions escalables</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="aplicacions_de_les_jerarquies_de_classes" >Aplicacions de les jerarquies de classes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és veure de quina manera els llenguatges reals fan ús de l’herència i del polimorfisme.
+</p>
+
+<p>
+Les jerarquies de classes són molt utilitzades en el disseny de biblioteques per a llenguatges orientats a objectes com, per exemple, el Java. Cerqueu informació sobre quina és la jerarquia de classes vinculada al paquet gràfic de Java anomenat Swing. Concretament, estudieu les classes de la part de la jerarquia relativa a les àrees de text dins una interfície gràfica.
+</p>
+
+<p>
+Pista: La superclasse de la part relativa a camps de text és <code>JTextComponent</code>.
+</p>
+
+<p>
+No es demana estudiar la documentació en línia de les biblioteques del llenguatge Java, només veure l’esquema gràfic de la jerarquia i reflexionar sobre quina és la funció de cada classe i els motius de la seva ubicació dins la jerarquia.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per trobar la representació de la jerarquia Swing, n’hi ha prou d’usar les paraules clau “swing hierarchy” a un cercador. A grans trets, la jerarquia de classes swing es veu representada a la figura següent:
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La part que representa el tractament dels camps de text inclou les classes <code>JTextComponent</code>, <code>JTextArea</code> i <code>JTextField</code>, entre d’altres. Cadascuna representa un camp de text amb petites diferències en el seu comportament (per exemple, de múltiples línies o una sola línia)
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_de_jerarquies_de_classesun_programa_de_musica" >Creació de jerarquies de classes: un programa de música</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és saber definir jerarquies de classes que s’adaptin a un escenari concret.
+</p>
+
+<p>
+Es vol dissenyar un programa de música en què es puguin utilitzar diferents instruments musicals. Dissenyeu una jerarquia de classes en què es representin els diferents tipus d’instruments musicals. Especifiqueu correctament les classes tenint en compte quines han de ser abstractes i quines no.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per definir la jerarquia, primer de tot cal establir l’estratègia a usar per diferenciar cadascuna de les classes (els tipus d’instruments musicals). Això pot dur a diferents solucions. Aquí s’usarà segons el tipus d’instrument: vent, percussió… En aquesta jerarquia, només les subclasses més específiques no són classes abstractes, la resta (<code>Instrument</code>, <code>Corda</code>, <code>Vent</code>, <code>Percussió</code>) ho són.
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_2.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_de_jerarquies_de_classesgestio_d_un_centre_educatiu" >Creació de jerarquies de classes: gestió d&#039;un centre educatiu</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és saber definir jerarquies de classes que s’adaptin a un escenari concret dins una aplicació.
+</p>
+
+<p>
+En el procés de disseny d’una aplicació de gestió de personal d’un centre educatiu s’han identificat les classes següents:
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Proposeu una jerarquia de classes que minimitzi la duplicació de codi a l’hora d’implementar-lo. Podeu afegir les classes noves que creieu més adients per assolir-ho.
+</p>
+
+<p>
+Notes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>Intercanvi</code> representa els estudiants provinents d’un programa d’intercanvi que vénen de l’estranger.</div>
+</li>
+<li class="level1"><div class="li"> Per a cada atribut hi ha implícitament associada una operació d’accés de lectura i d’escriptura.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La figura següent mostra una possible solució. Cal fixar-se que <code>Estudiant</code> no és una classe abstracta, i que es fa ús del fet que el NIF i el NIE són, en definitiva, cadenes de text, i, per tant, es pot usar el mateix atribut per a les dues dades.
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_4.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="disseny_amb_herencia_i_polimorfismeuna_aplicacio_de_dibuix" >Disseny amb herència i polimorfisme: una aplicació de dibuix</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és saber dissenyar aplicacions escalables fent ús dels mecanismes d’herència i polimorfisme.
+</p>
+
+<p>
+Es vol dissenyar un sistema que permeti a infants dibuixar de manera senzilla. Aquests poden seleccionar figures (geomètriques o més complexes) predefinides i enganxar-les en una zona de dibuix. En qualsevol moment es pot variar la ubicació, la mida i el color de les figures que hi ha en la zona de dibuix. Només es poden enganxar figures, no es pot dibuixar lliurement. En acabar, és possible desar el dibuix (en un fitxer o imprimint-lo).
+</p>
+
+<p>
+Ideeu una jerarquia de classes per l’aplicació, utilitzant correctament els mecanismes d’herència i polimorfisme. Indiqueu alguns atributs i operacions dins les classes que estiguin incloses dins d’alguna jerarquia d’herència.
+</p>
+
+<p>
+Aquest és un exercici obert, en què el grau de complexitat depèn exclusivament de les capacitats que es vulguin afegir al sistema.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Dins aquest problema, l’aplicació d’herència se centra bàsicament a establir una jerarquia de les figures que es volen dibuixar. Hi ha un seguit de característiques comunes (color, gruix de la línia) i d’altres específiques segons la figura (les que defineixen la seva mida). La figura següent mostra un exemple. Es parteix de la base que les mides es mesuren en píxels, i, per tant, són valors enters.
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_5.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="extensio_de_les_funcionalitats_d_una_aplicacio" >Extensió de les funcionalitats d&#039;una aplicació</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és modificar la jerarquia de classes original que s’ha mostrat en els diferents exemples de la unitat, de manera que l’aplicació pugui suportar una nova funcionalitat.
+</p>
+
+<p>
+Es vol ampliar l’aplicació del reproductor multimèdia de manera que també sigui capaç de reproduir ràdio per Internet.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Atès que una ràdio per internet no deixa de ser un element de so, semblant a una cançó (però amb la particularitat que és dinàmica, no sempre sona el mateix, és clar), seria suficient d’estendre la part de la jerarquia que hereta de Música. Per exemple:
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_6.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En aquest cas, l’atribut heretat d’artista es podria correspondre al nom de l’emissora, ja que no té estrictament un artista únic. L’estil es manté, si és una ràdio temàtica.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="implementacio_d_herencia" >Implementació d&#039;herència</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és implementar un seguit de classes en Java relacionades mitjançant herència.
+</p>
+
+<p>
+Implementeu les classes <code>Fitxa</code>, <code>Obra</code>, <code>Volum</code> i <code>Revista</code> corresponents a la figura següent, pensades per poder gestionar alguns dels elements que ens podem trobar en la gestió d’una biblioteca.
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_7.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El significat dels atributs que puguin induir a confusió són:
+</p>
+<ul>
+<li class="level1"><div class="li"> nrePags: nombre de pàgines de l’obra</div>
+</li>
+<li class="level1"><div class="li"> nro: número de revista o número de volum</div>
+</li>
+</ul>
+
+<p>
+Aquestes classes han de contenir, com a mínim, els mètodes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Constructors adequats, que han de permetre crear objectes de les classes corresponents.</div>
+</li>
+<li class="level1"><div class="li"> Mètodes per obtenir els valors dels atributs. 	</div>
+</li>
+<li class="level1"><div class="li"> Mètodes per modificar els valors dels atributs.</div>
+</li>
+<li class="level1"><div class="li"> El mètode <code>visualitzar()</code>, que ha de mostrar la informació de l’objecte actiu per la consola.</div>
+</li>
+<li class="level1"><div class="li"> El mètode <code>toString()</code>, que ha de mostrar la referència de l’objecte actiu per la consola.</div>
+</li>
+<li class="level1"><div class="li"> La sobreescriptura del mètodes <code>equals()</code> heretat de la classe <code>Object</code>. Cal considerar que dues fitxes són iguals si tenen la mateixa referència.</div>
+</li>
+</ul>
+
+<p>
+Les classes han de residir en un paquet anomenat biblioteca. Desenvolupeu una altra classe, anomenada <code>ProvaFitxes</code>, que contingui un mètode <code>main()</code> que comprovi la gestió correcta de les classes <code>Fitxa</code> i derivades implementades. La presència d’aquesta classe no prohibeix que cada classe tingui el propi mètode <code>main()</code> per comprovar-ne el funcionament.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Descarregueu l’arxiu següent amb la solució:
+</p>
+
+<p>
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/sol-u2.a1.act6.zip">Solució</a><span> ( 2.7 KB )</span></div></div>
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="gestio_de_d_objectes_dins_d_una_jerarquia_d_herencia" >Gestió de d&#039;objectes dins d&#039;una jerarquia d&#039;herència</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és veure com es gestionen diferents objectes quan aquests pertanyen a diferents classes vinculades mitjançant herència.
+</p>
+
+<p>
+Considereu la implementació de la jerarquia de classes corresponent a la figura següent:
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Dissenyeu una classe anomenada <code>Biblioteca</code> que permeti la gestió d’una biblioteca a partir d’una taula d’objectes de les classes derivades de la classe Fitxa.
+</p>
+
+<p>
+Els requeriments són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> En la creació de la biblioteca cal indicar la seva dimensió.</div>
+</li>
+<li class="level1"><div class="li"> En una biblioteca no hi pot haver dues fitxes amb la mateixa referència.</div>
+</li>
+<li class="level1"><div class="li"> Ha de proporcionar mètodes per:</div>
+<ul>
+<li class="level2"><div class="li"> Conèixer la capacitat de la biblioteca.</div>
+</li>
+<li class="level2"><div class="li"> Conèixer el nombre d’elements que hi ha en la biblioteca.</div>
+</li>
+<li class="level2"><div class="li"> Afegir una fitxa a la biblioteca.</div>
+</li>
+<li class="level2"><div class="li"> Cercar una fitxa a partir de la seva referència.</div>
+</li>
+<li class="level2"><div class="li"> Extreure una fitxa a partir de la seva referència.</div>
+</li>
+<li class="level2"><div class="li"> Proporcionar la fitxa que es troba en una posició determinada en la biblioteca.</div>
+</li>
+<li class="level2"><div class="li"> Visualitzar el contingut de la biblioteca.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Desenvolupeu una altra classe, anomenada <code>ProvaBiblioteca</code>, que contingui un mètode <code>main()</code> que comprovi la gestió correcta de la classe <code>Biblioteca</code> implementada.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Descarregueu l’arxiu següent amb la solució:
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/sol-u2.a1.act7.zip">Solució</a><span> ( 1.9 KB )</span></div></div>
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="disseny_de_classes_abstractes" >Disseny de classes abstractes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és practicar el disseny de classes abstractes en Java.
+</p>
+
+<p>
+Considereu la implementació de la jerarquia de classes corresponent a la figura següent, basada en els fitxers FiguraGeometrica01.java, Rectangle01.java, Cercle01.java i Triangle01.java (disponibles al final de l’enunciat).
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_9.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Milloreu la implementació amb les característiques següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> La classe <code>FiguraGeometrica</code> ha de passar a ser abstracta i ha de fer que qualsevol classe derivada implementi obligatòriament el mètode <code>area()</code> per calcular l’àrea de la figura corresponent. Quin canvi cal efectuar en la figura anterior?</div>
+</li>
+<li class="level1"><div class="li"> Cal sobreescriure els mètodes <code>toString()</code>, <code>equals()</code> heretats de la classe <code>Object</code>.</div>
+</li>
+<li class="level1"><div class="li"> Cal considerar que dues figures geomètriques són iguals si tenen el mateix codi.</div>
+</li>
+<li class="level1"><div class="li"> Cal incloure totes les classes de la jerarquia en un paquet anomenat figures.</div>
+</li>
+</ul>
+
+<p>
+Desenvolupeu una altra classe, anomenada <code>ProvaFigures</code>, pertanyent a un paquet anomenat <code>proves</code>, que contingui un mètode <code>main()</code> per comprovar la gestió correcta de les classes <code>FiguraGeometrica</code> i derivades implementades. La presència d’aquesta classe no prohibeix que cada classe tingui el propi mètode <code>main()</code> per comprovar-ne el funcionament.
+</p>
+
+<p>
+Descarregueu l’arxiu següent amb el codi font de les classes:
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/figures.zip">Codi</a><span> ( 2.4 KB )</span></div></div>
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Descarregueu l’arxiu següent amb la solució:
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/sol-u2.a1.act8.zip">Solució</a><span> ( 3.3 KB )</span></div></div>
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="disseny_d_interfaces" >Disseny d&#039;interfaces</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és comprovar la necessitat d’usar <em>interfaces</em>.
+</p>
+
+<p>
+Feu que <code>FiguraGeomètrica</code> implement l’<em>interface</em> Java <code>Comparable</code> (disponible directament a les llibreries del Java, sense necessitat d’importar cap llibreria).
+</p>
+
+<p>
+Un cop fet, aprofiteu aquest fet per crear un mètode anomenat <code>ordenar(Comparable[] items): void</code> que serveixi per ordenar (utilitzant l’algorisme de la bombolla) una taula d’objectes de qualsevol classe dissenyada per nosaltres per a la qual hi hagi definit un criteri d’ordenació (ja que, en cas contrari, ordenar-ne els objectes seria impossible). Per exemple, per la mida de l’àrea. El mètode s’ha d’ubicar en una nova classe anomenada <code>Algorismes</code> ubicada en un paquet anomenat <code>utilitats</code>.
+</p>
+
+<p>
+Desenvolupeu una altra classe, anomenada <code>ProvaOrdenar</code>, pertanyent a un paquet anomenat proves, que contingui un mètode <code>main()</code> en què es declari un <code>array</code> d’objectes de la jerarquia de classes corresponent a la figura següent, per executar-hi un procés d’ordenació basat en l’àrea de cada figura.
+</p>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span></figcaption><img src="../media/wdamm03u2_10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si cal, podeu millorar el disseny de les classes de la jerarquia que neix a <code>FiguraGeometrica</code> afegint els mètodes i/o característiques que corresponguin.
+</p>
+
+<p>
+Descarregueu l’arxiu següent amb el codi font de les classes: 
+</p>
+
+<p>
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/figures.zip">Codi</a><span> ( 2.4 KB )</span></div></div>
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Descarregueu l’arxiu següent amb la solució:
+</p>
+
+<p>
+<div class="mediaf filezip"><div class="mediacontent"><a href="../media/sol-u2.a1.act9.zip">Solució</a><span> ( 3.8 KB )</span></div></div>
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a1/continguts.html">Creació d'aplicacions escalables</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

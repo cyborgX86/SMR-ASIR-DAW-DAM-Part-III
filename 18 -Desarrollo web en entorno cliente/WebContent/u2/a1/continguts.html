@@ -1,0 +1,1869 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Estructures definides pel programador</a></li><li>Programació amb funcions</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_amb_funcions"> Programació amb funcions </a></h1>
+    	
+<p>
+La principal diferència entre escriure bon codi JavaScript i un codi mediocre és concebre-ho com un llenguatge funcional. Les funcions són la base d’aquest llenguatge i saber utilitzar-les marca la diferència. 
+</p>
+
+<p>
+El més important és que les funcions són objectes de primera classe, és a dir, coexisteixen amb qualsevol altre objecte i les podem tractar com un d’ells. Igual que els altres tipus de JavaScript (Integer, Boolean…) les funcions les podem crear com a literals i fins i tot les podem passar com a paràmetres d’altres funcions. És convenient començar l’estudi de les funcions veient les ja definides al llenguatge.
+</p>
+
+<h2><a id="funcions_predefinides_pel_llenguatge" >Funcions predefinides pel llenguatge</a></h2>
+<div class="level2">
+
+<p>
+És important conèixer les diferents funcions que ens proporciona el llenguatge JavaScript per tractar cadenes de text, nombres, conversions de tipus i altres funcions interessants. 
+</p>
+
+</div>
+
+<h3><a id="funcions_predefinides_de_cadenes_de_text" >Funcions predefinides de cadenes de text</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+Abans de començar a parlar de les funcions predefinides de les cadenes de text cal destacar la propietat <strong>length</strong> que retorna la mida de la cadena de text, ja que aquesta és una propietat que s’utilitza força sovint. Veieu un exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write(frase.length);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/rNeNyGe?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rNeNyGe?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/rNeNyGe?editors=0010</a>.
+</p>
+
+<p>
+A continuació podeu veure algunes de les funcions predefinides de les cadenes de text més utilitzades.
+</p>
+
+<h4><a id="concat" >concat()</a></h4>
+<div class="level4">
+
+</div>
+
+</p>
+
+<p>
+Per concatenar o unir dues paraules o frases emmagatzemades en variables diferents es pot utilitzar el símbol <strong>+</strong> o bé la funció <strong>concat</strong>. S’ha de tenir en compte que a l’hora d’utilitzar-les s’uniran les dues paraules sense cap separació, per tant, si es volen separar les paraules a la cadena resultant s’ha d’afegir el símbol corresponent.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase1 = &quot;Estudiant a l'IOC&quot;;</div></li><li class="li1"><div class="de1">let frase2 = &quot;s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">//sense separació</div></li><li class="li1"><div class="de1">let resultat = frase1 + frase2;</div></li><li class="li1"><div class="de1">document.write(resultat + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//amb separació</div></li><li class="li1"><div class="de1">let resultat = frase1 + &quot; &quot; + frase2; </div></li><li class="li1"><div class="de1">document.write(resultat + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//sense separació</div></li><li class="li1"><div class="de1">let resultat = frase1.concat(frase2); </div></li><li class="li1"><div class="de1">document.write(resultat + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//amb separació</div></li><li class="li1"><div class="de1">let resultat = frase1.concat(&quot; &quot; +frase2); </div></li><li class="li1"><div class="de1">document.write(resultat);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNYWQz?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNYWQz?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNYWQz?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos què passa si es concatena una variable de tipus String amb una variable de tipus numèric. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;L'IOC és un &quot;;</div></li><li class="li1"><div class="de1">let nombre = 10;</div></li><li class="li1"><div class="de1">document.write(frase + nombre);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYqYZWo?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYqYZWo?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYqYZWo?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Al concatenar un String amb una variable numèrica, aquesta es converteix automàticament a String. La biblioteca JavaScript permet fer el canvi automàticament sense que nosaltres haguem de fer cap tipus de conversió.
+</p>
+
+<p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una alternativa a la concatenació de cadenes de text i variables és la utilització de plantilles de literals, per exemple: <code>document.write(`L’IOC és un ${nombre}`)</code>.
+</p>
+</div></div>
+</p>
+
+</div>
+
+<h4><a id="touppercase_i_tolowercase" >toUpperCase() i toLowerCase()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>toUpperCase()</strong> converteix la cadena sencera a majúscules. I la funció <strong>toLowerCase()</strong> realitza l’operació inversa a <code>toUpperCase()</code>, és a dir, canvia els caràcters en majúscula per minúscula.
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write(frase.toUpperCase() + &quot;&lt;br&gt;&quot;); </div></li><li class="li1"><div class="de1">document.write(frase.toLowerCase()); </div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/JjXjWmr?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/JjXjWmr?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/JjXjWmr?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="charat" >charAt()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>charAt(posició)</strong> retorna el caràcter que es troba a la posició indicada pel paràmetre.
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">var frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write(frase.charAt(0));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(1));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(2));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(3));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(4));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(5));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(6));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(7));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(8));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(9));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(18));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(19));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(20));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(21));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(22));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(23));</div></li><li class="li1"><div class="de1">document.write(frase.charAt(24));</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xxVxqQL?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xxVxqQL?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/xxVxqQL?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+El resultat de l’exemple és <em>Estudiant s’aprèn</em>. Aquesta frase és una porció de la frase original. Existeixen altres maneres de poder obtenir porcions de frases. Per exemple amb la funció <code>substring()</code>.
+</p>
+
+</div>
+
+<h4><a id="substring" >substring</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>substring(inici, final)</strong> retorna una porció d’un text des de la posició <code>inici</code> fins a la posició <code>final</code>. Si només s’indica el paràmetre <code>inici</code>, la funció retorna la part de la cadena original corresponent des d’aquesta posició fins al final.
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write( frase.substring(0,10) + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(frase.substring(18,25) + &quot;&lt;br&gt;&quot;);</div></li></ol></pre>
+
+<p>
+Si volem obtenir la mateixa cadena que a l’exemple amb <code>charAt()</code>, llavors s’han de concatenar les dues porcions de la cadena original.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.write(frase.substring(0,10) + frase.substring(18,25) + &quot;&lt;br&gt;&quot;);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent:<a href="https://codepen.io/ioc-daw-m06/pen/ExKxWGX?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExKxWGX?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ExKxWGX?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos el comportament de la funció quan se li indica un valor negatiu com a posició inicial o final.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write(&quot;Primer exemple: &quot; + frase.substring(0,-12) + &quot;&lt;br&gt;&quot;); </div></li><li class="li1"><div class="de1">document.write(&quot;Segon exemple: &quot; + frase.substring(-1,2)+ &quot;&lt;br&gt;&quot;); </div></li><li class="li1"><div class="de1">document.write(&quot;Tercer exemple:&quot; + frase.substring(-1,-12)+ &quot;&lt;br&gt;&quot;); </div></li><li class="li1"><div class="de1">document.write(&quot;Quart exemple:&quot; + frase.substring(-22)); </div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwawpEe?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwawpEe?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwawpEe?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Com heu vist, el primer exemple no retorna cap porció de la cadena original ja que la posició final negativa no la pot traduir a una posició final coherent.
+</p>
+
+<p>
+En canvi, en el segon exemple al utilitzar una posició positiva, en aquest cas com a final de subcadena, llavors ha retornat des de l’inici (posició inicial igual a 0) fins a la posició final indicada (en aquest cas posició final igual a 2). El resultat és, doncs, la subcadena <em>Es</em>. 
+</p>
+
+<p>
+En el tercer exemple no ha retornat cap subcadena ja que, tal i com passava en l’exemple primer, no pot traduir les posicions negatives i per tant, no pot retornar cap subcadena.
+</p>
+
+<p>
+En canvi, a l’últim exemple només se li indica d’una posició negativa. En aquest cas, el comportament de la funció <code>substring()</code> és retornar la frase original sencera.
+</p>
+
+<p>
+I si en comptes d’utilitzar nombres negatius utilitzem una posició final més petita que una posició inicial? 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">document.write(frase.substring(9, 0));</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExKxWrX?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExKxWrX?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ExKxWrX?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Bé, en aquest cas, la funció <code>substring()</code> canvia l’ordre de les posicions. El resultat del codi anterior és <em>Estudiant</em>.
+</p>
+
+</div>
+
+<h4><a id="indexof" >indexOf()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>indexOf(caracter)</strong> retorna la posició de la primera ocurrència d’un caràcter en una cadena. Si la cadena no conté el caràcter, la funció retorna el valor -1. En canvi, la funció <strong>lastIndexOf(caracter)</strong> retorna l’última ocurrència del caràcter cercat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">let posicio = frase.indexOf(&quot;IOC&quot;); </div></li><li class="li1"><div class="de1">let posicio2 = frase.indexOf(&quot;ñ&quot;); </div></li><li class="li1"><div class="de1">document.write(`Posició de la paraula IOC: ${posicio}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">document.write(`Posició de la lletra ñ: ${posicio2}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">posicio = frase.lastIndexOf(&quot;t&quot;); </div></li><li class="li1"><div class="de1">posicio2 = frase.lastIndexOf(&quot;ñ&quot;); </div></li><li class="li1"><div class="de1">document.write(`Posició de la lletra t: ${posicio}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">document.write(`Posició de la lletra ñ: ${posicio2}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwawpOq?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwawpOq?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwawpOq?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="split" >split()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>split(separador)</strong> separa una cadena de text en trossos. Es crea un pedaç de la cadena cada vegada que es troba el caràcter separador. Tots els pedaços de la cadena es retornen en un <em>array</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">let trossos = frase.split(&quot; &quot;);</div></li><li class="li1"><div class="de1">document.write(`Array: ${trossos}&lt;br&gt;`);</div></li><li class="li1"><div class="de1">document.write(trossos[0] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[1] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[2] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[3] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[4] + &quot;&lt;br&gt;&quot;);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/KKzKWOV?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/KKzKWOV?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/KKzKWOV?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+A cadascuna de les posicions de l’<em>array</em> <code>trossos</code> es troba un pedaç de la frase original. Els pedaços s’han creat cada vegada que s’ha trobat el caràcter <em>espai</em> (“ ”). La funció recorre caràcter a caràcter la frase original i cada vegada que troba el caràcter separador talla la cadena i guarda el pedaç tallat en una posició de l’<em>array</em>. Continua recorrent la cadena fins que s’acaba. 
+</p>
+
+<p>
+I si no li indiquem cap caràcter de separació? Si no li indiqueu cap caràcter separador, llavors separa caràcter a caràcter. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let frase = &quot;Estudiant a l'IOC s'aprèn molt.&quot;;</div></li><li class="li1"><div class="de1">let trossos = frase.split(&quot;&quot;); </div></li><li class="li1"><div class="de1">document.write(trossos[0] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[1] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[2] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[3] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[4] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[5] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[6] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[7] + &quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(trossos[8] + &quot;&lt;br&gt;&quot;);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/poyoPzb?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/poyoPzb?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/poyoPzb?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="startswith_endswith_i_includes" >startsWith(), endsWith() i includes()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+Aquestes tres funcions són molt útils a l’hora de comprovar cadenes de text, ja que ens permeten esbrinar si una cadena comença, acaba o inclou un fragment de text concret respectivament. Només cal passar com argument el fragment de text a cercar:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let cadena = &quot;Estudiant a l'IOC s'aprèn molt&quot;;</div></li><li class="li1"><div class="de1">console.log(`La cadena comença per &quot;Estu&quot;? ${cadena.startsWith(&quot;Estu&quot;)}`);</div></li><li class="li1"><div class="de1">console.log(`La cadena acaba amb &quot;molt&quot;? ${cadena.endsWith(&quot;molt&quot;)}`);</div></li><li class="li1"><div class="de1">console.log(`La cadena inclou &quot;IOC&quot;? ${cadena.includes(&quot;IOC&quot;)}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`La cadena comença per &quot;1234&quot;? ${cadena.startsWith(&quot;1234&quot;)}`);</div></li><li class="li1"><div class="de1">console.log(`La cadena acaba amb &quot;1234&quot;? ${cadena.endsWith(&quot;1234&quot;)}`);</div></li><li class="li1"><div class="de1">console.log(`La cadena inclou &quot;1234&quot;? ${cadena.includes(&quot;1234&quot;)}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WNoNZXp?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WNoNZXp?editors=0011"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/WNoNZXp?editors=0011</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="repeat" >repeat()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+La funció <strong>repeat(repeticions)</strong> retorna la mateixa cadena repetida el nombre de repeticions indicada:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let cadena = &quot;*&quot;;</div></li><li class="li1"><div class="de1">for (let i=1; i&lt;5; i++) {</div></li><li class="li1"><div class="de1">  console.log(cadena.repeat(i));</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qBZBmmM?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qBZBmmM?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/qBZBmmM?editors=0012</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="padstart_i_padend" >padStart() i padEnd()</a></h4>
+<div class="level4">
+
+<p>
+
+<p>
+Aquestes funcions permeten omplir una cadena per la dreta o per l’esquerra per assegurar-nos que la longitud d’una cadena es fixa. Això és interessant quan es treballa amb estils o dispositius amb fonts monoespaiades (per exemple la consola del navegador), és a dir, que totes les lletres són de la mateixa amplada.
+</p>
+
+<p>
+<strong>padStart(mida, cadenaPerAfegir)</strong> omple la cadena fins a arribar a la mida que s’especifica i amb la cadena indicada començant per l’esquerra, mentre que <strong>padEnd(mida, cadenaPerAfegir)</strong> fa el mateix però començant per la dreta. Podeu veure les diferències en el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let cadena = &quot;Joan&quot;;</div></li><li class="li1"><div class="de1">console.log(cadena);</div></li><li class="li1"><div class="de1">console.log(cadena.padStart(2));</div></li><li class="li1"><div class="de1">console.log(cadena.padStart(15));</div></li><li class="li1"><div class="de1">console.log(cadena.padStart(15, &quot;#&quot;));</div></li><li class="li1"><div class="de1">console.log(cadena.padStart(15, &quot;#*&quot;));</div></li><li class="li1"><div class="de1">console.log(cadena.padEnd(2));</div></li><li class="li1"><div class="de1">console.log(cadena.padEnd(15));</div></li><li class="li1"><div class="de1">console.log(cadena.padEnd(15, &quot;#&quot;));</div></li><li class="li1"><div class="de1">console.log(cadena.padEnd(15, &quot;#*&quot;));</div></li><li class="li1"><div class="de1">let midaCadena = cadena.length;</div></li><li class="li1"><div class="de1">let midaAmbPadStart = cadena.padStart(15).length;</div></li><li class="li1"><div class="de1">let midaAmbPadEnd = cadena.padEnd(15).length;</div></li><li class="li1"><div class="de1">console.log(`Mida original: ${midaCadena}`);</div></li><li class="li1"><div class="de1">console.log(`Mida amb padStart: ${midaAmbPadStart}`);</div></li><li class="li1"><div class="de1">console.log(`Mida amb padEnd: ${midaAmbPadEnd}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bGpGWrE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGpGWrE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bGpGWrE?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, si no s’indica un segon argument, la cadena s’omple amb espais fins a arribar a la mida indicada. En el cas que la cadena passada com argument contingui més d’un caràcter es descarten els sobrants, de manera que la mida sempre es respecta. Per altra banda, si s’indica una mida inferior a la de la cadena original, es retorna la mateixa cadena i no s’ajusta la mida.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="funcions_predefinides_de_nombres" >Funcions predefinides de nombres</a></h3>
+<div class="level3">
+
+<p>
+La biblioteca JavaScript permet totes les operacions de nombres que es poden realitzar en qualsevol altre llenguatge. Per sumar dos nombres utilitzarem l’operador suma (+), per multiplicar utilitzarem l’operador <em>asterisc</em> (*), per restar utilitzarem l’operador guió (-) i per dividir utilitzarem l’operador barra (/). Aquestes són les operacions bàsiques que es poden realitzar amb dos nombres. Però, una operació pot donar valors inesperats si no es comproven els dos operands. Per exemple, què donaria una divisió on els dos valors són zero? O què passaria si es divideix un nombre qualsevol per zero? Bé, la biblioteca JavaScript ens dona alguns valors i funcions per protegir el nostre programa davant d’aquestes situacions.
+</p>
+
+<p>
+Una de les funcions que ens ajudarà a evitar aquestes situacions és la funció <strong>isNaN()</strong>. Aquesta funció comprova si el valor retornat per una operació amb nombres és un nombre o bé no ho és. De fet <strong>NaN</strong> son les inicials, en anglès, de <strong>Not A Number</strong> (No és un nombre). 
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nombre = 0;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">if(isNaN(nombre/nombre)) {</div></li><li class="li1"><div class="de1">   document.write(&quot;La divisió no és correcta.&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else {</div></li><li class="li1"><div class="de1">   document.write(`La divisió és: ${nombre/nombre}`);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bGpGWmB?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGpGWmB?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bGpGWmB?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos en l’exemple anterior. Abans d’utilitzar el resultat de la divisió entre els dos nombres es comprova si aquesta retornarà un nombre o bé un valor no numèric. Així podem evitar utilitzar aquest valor en futures operacions. Bé, en el cas que no sigui un nombre s’informa a l’usuari d’aquesta situació i en el cas que l’operació sigui correcta es realitza la divisió.
+</p>
+
+<p>
+
+</p>
+
+<p>
+A l’exemple següent forcem la divisió entre dos zeros. Quin és el resultat?
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nombre = 0;</div></li><li class="li1"><div class="de1">document.write(nombre/nombre); </div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwawVqw?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwawVqw?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwawVqw?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+La biblioteca JavaScript ha creat un valor que indica que no és un nombre. S’ha anomenat <strong>NaN</strong>. Com veieu aquest és el resultat de la divisió anterior.
+</p>
+
+<p>
+També s’ha creat el valor <strong>Infinity</strong> per representar el valor infinit positiu i  <strong>-Infinity</strong> per representar el valor infinit negatiu.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nombre = 10;</div></li><li class="li1"><div class="de1">let zero = 0;</div></li><li class="li1"><div class="de1">document.write(nombre/zero);</div></li><li class="li1"><div class="de1">document.write(&quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(-nombre/zero);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYqYwML?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYqYwML?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYqYwML?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Si us fixeu, a la primera divisió dona com a resultat el valor positiu <code>Infinity</code> però a la segona divisió dona el valor <code>-Infinity</code>, ja que és la divisió d’un nombre negatiu.
+</p>
+
+<p>
+Una altra funció interessant de nombres és la funció <strong>toFixed(digits)</strong>. Aquesta funció arrodoneix els decimals d’un número.
+</p>
+
+<p>
+Veieu-ne un exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nombre = 1234.56789;</div></li><li class="li1"><div class="de1">document.write(nombre.toFixed(1) + &quot;&lt;br&gt;&quot;); </div></li><li class="li1"><div class="de1">document.write(nombre.toFixed(8)+ &quot;&lt;br&gt;&quot;);  </div></li><li class="li1"><div class="de1">document.write(nombre.toFixed()+ &quot;&lt;br&gt;&quot;);  </div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gOrOWZa?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOrOWZa?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOrOWZa?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+El resultat d’executar la funció amb el paràmetre 1 indica que només es vol un decimal. Al fer arrodoniment en comptes de donar el nombre <em>1234,5</em> dona <em>1234,6</em> ja que el valor 1234,56789 està més a prop d’aquesta xifra.
+</p>
+
+<p>
+En canvi, si li enviem un nombre superior als decimals que té el nombre original el resultat de l’execució afegeix tants zeros com decimals falten. En aquest cas mostra el valor <em>1234,56789000</em>. 
+</p>
+
+<p>
+Finalment, si no li enviem cap dígit a la funció llavors li estem indicant que no volem decimals i per això el resultat de l’execució de la funció és <em>1235</em>. Fixeu-vos que en aquest cas també s’arrodoneix la xifra.
+</p>
+
+</div>
+
+<h3><a id="altres_funcions_interessants" >Altres funcions interessants</a></h3>
+<div class="level3">
+
+<p>
+JavaScript té unes quantes funcions bastant diferents entre sí, però que en moltes ocasions són força útils. Algunes funcions demanen la intervenció de l’usuari per realitzar una acció i d’altres serveixen per executar una acció un nombre determinat de vegades.
+</p>
+
+</div>
+
+<h4><a id="quadres_de_dialeg_entre_l_usuari_i_el_programa" >Quadres de diàleg entre l&#039;usuari i el programa</a></h4>
+<div class="level4">
+
+<p>
+N’hi ha de tres tipus: funció <code>alert()</code>, funció <code>confirm()</code> i funció <code>prompt()</code>.
+</p>
+
+<p>
+
+<p>
+Aquestes funcions mostren un diàleg amb un missatge i un o més botons. Cal destacar que aquestes funciones interrompen l’execució del programa fins que es clica algun dels botons.
+</p>
+
+</p>
+
+<p>
+<div class="ioctextl"><div class="ioccontent">
+<p>
+Aquestes funcions proporcionen una manera ràpida de visualitzar i entrar dades però no s’utilitzen en el desenvolupament de pàgines web, ja que no es pot canviar l’estil i aquest sempre depèn del navegador. En el seu lloc es fan servir diàlegs modals, on la visualització s’implementa amb <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> i el comportament dels botons s’afegeix amb JavaScript (però no s’interromp l’execució).
+</p>
+</div></div>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Funció alert</strong>: s’utilitza quan es vol donar una informació a l’usuari sense esperar cap resposta d’ell. Es crearà una finestra amb un únic botó.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">alert(&quot;Hola Món&quot;);</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong>Funció confirm</strong>: s’utilitza quan es vol donar l’opció a l’usuari de confirmar o no l’execució d’una tasca del programa. Es crearà una finestra amb dos botons: <em>True</em> o <em>False</em>.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">let resposta = confirm(&quot;Vols saber la hora?&quot;);</div></li><li class="li1"><div class="de1">if (resposta){</div></li><li class="li1"><div class="de1">   document.write(new Date());</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else{</div></li><li class="li1"><div class="de1">   document.write(&quot;oooh.&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong>Funció prompt</strong>: s’utilitza per demanar a l’usuari alguna informació. Es crearà una finestra amb un quadre de text on l’usuari pot introduir la informació demanada.</div>
+</li>
+</ul>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let resposta = prompt(&quot;Escriu el teu nom:&quot;);</div></li><li class="li1"><div class="de1">document.write(`El teu nom és: ${resposta}`);</div></li></ol></pre>
+
+<p>
+Podeu veure un exemple complet en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNWvXM?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNWvXM?editors=1010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNWvXM?editors=1010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="funcions_de_temporitzacio" >Funcions de temporització</a></h4>
+<div class="level4">
+
+<p>
+Hi ha dues funcions de temporització: setInterval(codiAExecutar, tempsEnMs) i setTimeout(codiAExecutar, tempsEnMs):
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>setTimeout(codiAExecutar, tempsEnMs)</strong>: executa una funció després d’un instant de temps.</div>
+<ul>
+<li class="level2"><div class="li"> codiAExecutar: nom de la funció que s’executarà després que hagi passat el temps <code>tempsEnMs</code> en mil·lisegons.</div>
+</li>
+<li class="level2"><div class="li"> tempsEnMs: temps que trigarà a executar-se la funció <code>codiAExecutar()</code>.</div>
+</li>
+<li class="level2"><div class="li"> Aquesta funció retorna un <em>ID</em> (identificador) per poder cancel·lar la seva execució.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Per veure clarament que hi ha un retard en executar la funció <code>setTimeout()</code> a l’exemple ens ajudem de dos botons. El primer per configurar la funció <code>setTimeout()</code> i el segon per cancel·lar la seva execució. El codi és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p&gt;Exemple de la funció setTimeOut:&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;funcioRetardada();&quot;&gt;Mostra una alerta amb retard&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;cancelaFuncio();&quot;&gt;Cancel·la l'alerta abans que es produeixi&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Codi JavaScript associat a l’<acronym title="HyperText Markup Language">HTML</acronym> anterior:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let timeoutID;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function funcioRetardada() {</div></li><li class="li1"><div class="de1">  timeoutID = setTimeout(alerta, 2000);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function alerta() {</div></li><li class="li1"><div class="de1">  alert(&quot;Hola Món!&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function cancelaFuncio() {</div></li><li class="li1"><div class="de1">  clearTimeout(timeoutID);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple, completat amb codi <acronym title="HyperText Markup Language">HTML</acronym> per fer-lo més entenedor, a l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOLXNj?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOLXNj?editors=1010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOLXNj?editors=1010</a>.
+</p>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>setInterval (codiAExecutar, tempsEnMs)</strong>: executa una funció indefinidament. L’interval de temps entre cada execució de la funció és definit pel paràmetre <code>tempsEnMs</code>.</div>
+<ul>
+<li class="level2"><div class="li"> codiAExecutar: nom de la funció que s’executarà cada <code>tempsEnMs</code> mil·lisegons.</div>
+</li>
+<li class="level2"><div class="li"> tempsEnMs: temps en mil·lisegons que s’esperarà entre cada execució de la funció <code>codiAExecutar()</code>.</div>
+</li>
+<li class="level2"><div class="li"> Aquesta funció retorna un <em>ID</em> (identificador) per poder cancel·lar la seva execució.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Per veure clarament el funcionament de la funció <code>setInterval()</code>, a l’exemple, ens ajudem de dos botons. El primer per configurar la funció <code>setInterval()</code> i el segon per cancel·lar la seva execució. El codi és el següent:
+</p>
+
+<p>
+Codi <acronym title="HyperText Markup Language">HTML</acronym> de l’exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p&gt;Exemple de la funció setInterval:&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;funcioReiterada();&quot;&gt;Mostra una alerta cada 2 segons&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;cancelaExecucio();&quot;&gt;Cancel·la l'alerta&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Codi JavaScript associat a l’<acronym title="HyperText Markup Language">HTML</acronym> anterior:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let intervalID;</div></li><li class="li1"><div class="de1">let numExec = 1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function funcioReiterada() {</div></li><li class="li1"><div class="de1">  intervalID = setInterval(alerta, 2000);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function alerta() {</div></li><li class="li1"><div class="de1">  alert(`Hola, aquesta és l´execució número: ${numExec}`);</div></li><li class="li1"><div class="de1">  numExec++;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function cancelaExecucio() {</div></li><li class="li1"><div class="de1">  clearInterval(intervalID);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bEgLjj" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bEgLjj"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bEgLjj</a>.
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="funcions_definides_pel_programador" >Funcions definides pel programador</a></h2>
+<div class="level2">
+
+<p>
+Les funcions, en JavaScript, són objectes de primera classe, és a dir, coexisteixen amb qualsevol altre objecte i poden tractar-se com un d’ells. Igual que els tipus més mundans de JavaScript, les variables poden fer referència a elles, es poden declarar amb literals i fins i tot passar-se com a paràmetres d’altres funcions.
+La funció és la principal unitat modular d’execució. Vol dir que excepte les instruccions incrustades en el codi que s’executen mentre s’avalua les etiquetes, tota la resta està dins d’una funció.
+</p>
+
+<p>
+Els objectes tenen les següents capacitats:
+</p>
+
+<p>
+<ul>
+<li class="level1"><div class="li">  Poden crear-se a través de literals.</div>
+</li>
+</ul>
+
+</p>
+<ul>
+<li class="level1"><div class="li">  S’assignen a variables, entrades de matriu i propietats d’altres objectes.</div>
+</li>
+<li class="level1"><div class="li">  Es poden passar com a arguments per a funcions.</div>
+</li>
+<li class="level1"><div class="li">  Es retornen com a valors a partir de funcions.</div>
+</li>
+<li class="level1"><div class="li">  Tenen propietats que poden crear-se i assignar-se de forma dinàmica.</div>
+</li>
+</ul>
+
+<p>
+Les funcions tenen totes aquestes capacitats i, a més, tenen la capacitat que poden invocar-se.
+</p>
+
+<p>
+Exemple d’una funció auto-executable: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let parellOsenar = (function() {</div></li><li class="li1"><div class="de1">    let avui = new Date()</div></li><li class="li1"><div class="de1">    if (new Date().getDate() % 2 == 0) {</div></li><li class="li1"><div class="de1">        return function() { document.write(&quot;Avui és dia parell&quot;) }</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">        return function() { document.write(&quot;Avui és dia senar&quot;) }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">})();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">parellOsenar();</div></li></ol></pre>
+
+<p>
+La funció <code>parellOsenar()</code> retorna una altra funció segons sigui el dia parell o senar. La funció retornada s’executa i s’escriu la frase apropiada.
+</p>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/poyowyV?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/poyowyV?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/poyowyV?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="declaracio" >Declaració</a></h3>
+<div class="level3">
+
+<p>
+Les funcions es declaren utilitzant la següent especificació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function nom([parametre,[, parametre,[..., parametre]]]) {</div></li><li class="li1"><div class="de1">   [instruccions]</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les funcions literals es componen de quatre parts:
+</p>
+<ul>
+<li class="level1"><div class="li">  La paraula clau <code>function</code></div>
+</li>
+<li class="level1"><div class="li">  Un nom opcional que, si s’especifica, ha de ser un identificador vàlid.</div>
+</li>
+<li class="level1"><div class="li">  Una llista separada per comes de noms de paràmetres entre parèntesis. La llista pot estar buida, però els parèntesis han d’estar presents.</div>
+</li>
+<li class="level1"><div class="li">  El cos de la funció. Una sèrie d’instruccions entre claus.</div>
+</li>
+</ul>
+
+<p>
+El nom de la funció és opcional, perquè si no hi ha una necessitat de posar un nom a una funció concreta, no cal fer-ho. 
+</p>
+
+<p>
+Quan se li posa un nom a una funció, és vàlid en tot l’àmbit en el qual aquesta es declara. Si una funció es declara amb nom en el nivell superior, es crea una propietat utilitzant el nom de la funció en l’objecte <code>window</code>. Finalment, totes les funcions tenen dins una propietat oculta anomenada <code>name</code> que emmagatzema el nom de la funció com una cadena.
+</p>
+
+<p>
+
+<p>
+En el cas de les funcions assignades a variables aquesta propietat tindrà el nom de la variable i serà buida en el cas de les funcions anònimes.
+</p>
+
+</p>
+
+<p>
+Exemple de sintaxi d’una funció JavaScript:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function estudiar()</div></li><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">	let frase  = &quot;A l'IOC s'estudia molt.&lt;br&gt;&quot;;</div></li><li class="li1"><div class="de1">	return frase;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest tipus de funcions es declaren per a fer-ne ús en un altre moment i tantes vegades com sigui necessari.
+</p>
+
+<p>
+Proveu tot el que s’ha comentat anteriorment amb un exemple. Utilitzareu un joc de proves per veure si realment les funcions són objectes de primera classe. Les funcions que provareu seran les següents:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function lleugera() {</div></li><li class="li1"><div class="de1">	return true;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">var sensenom = function(){return true;};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">window.esVeritat = function(){return true;};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function externa(){</div></li><li class="li1"><div class="de1">	function interna(){}</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">var unaFuncio = function unaAltraFuncio(){return true;};</div></li></ol></pre>
+
+<p>
+S’utilitzarà el joc de proves amb la biblioteca <em>QUnit.js</em>. Aquesta biblioteca té una finalitat similar a la biblioteca <em>JUnit</em> de Java. S’utilitza per definir jocs de proves.
+</p>
+
+<p>
+QUnit té implementada la funció <code>test()</code> i la funció <code>equal()</code>. Amb la funció <code>test()</code> definim un nou joc de proves i li donem un nom. La funció <code>equal()</code> comprova si la igualtat que li passem com a primer paràmetre correspon amb el que nosaltres esperem (segon paràmetre), si és així, el resultat de la execució de la funció <code>equal()</code> serà <em>okay</em>:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">test(&quot;Conjunt de Tests per a funcions&quot;, function() {</div></li><li class="li1"><div class="de1">	equal(typeof window.lleugera === &quot;function&quot;, true);</div></li><li class="li1"><div class="de1">	equal(lleugera.name === &quot;lleugera&quot;, true);</div></li><li class="li1"><div class="de1">	equal(typeof window.sensenom === &quot;function&quot;, true);</div></li><li class="li1"><div class="de1">	equal(sensenom.name === &quot;sensenom&quot;, true);</div></li><li class="li1"><div class="de1">	equal(typeof window.esVeritat === &quot;function&quot;, true);</div></li><li class="li1"><div class="de1">	equal(typeof window.externa === &quot;function&quot;, true);</div></li><li class="li1"><div class="de1">	equal(typeof window.interna === &quot;function&quot;, false);</div></li><li class="li1"><div class="de1">	equal(window.unaFuncio.name === &quot;unaAltraFuncio&quot;, true);</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZEWEyaV?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZEWEyaV?editors=1011"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ZEWEyaV?editors=1011</a>.
+</p>
+
+</p>
+
+<p>
+Aquest joc de proves demostra que les funcions s’afegeixen com a propietats de l’objecte <code>window</code>. A més, es pot veure també la propietat <code>name</code>. El fet que <code>window.sensenom</code> es defineixi com una funció demostra que les variables globals, fins i tot les que contenen funcions, acaben amb <code>window</code>. I, finalment, cal puntualitzar que <code>window.esVeritat</code> es defineix com una funció. 
+</p>
+
+<p>
+
+<p>
+Actualment JavaScript inclou un altre tipus de funció, anomenada “funció de fletxa”, que substitueix a les funcions anònimes quan el cos de la funció és molt simple. Aquest tipus de funcions és molt més concís i, quan s’utilitza adequadament, fa que el codi sigui més fàcil d’entendre.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les funcions de fletxa s’utilitzen de forma semblant a les funcions Lambda en altres llenguatges com Java.
+</p>
+</div></div>
+<p>
+La sintaxi de les funcions de fletxa és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">([parametre,[, parametre,[..., parametre]]]) =&gt; { [instruccions] }</div></li></ol></pre>
+
+<p>
+Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const sumar = (x, y) =&gt; { return x + y };</div></li><li class="li1"><div class="de1">console.log(sumar(2, 3));</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNWgxB?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNWgxB?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNWgxB?editors=0012</a>.
+</p>
+
+<p>
+Quan el cos de la funció consisteix en el retorn d’una expressió pot eliminar-se tant el “return” com les claus. La funció anterior es podria reduir a:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const sumar = (x, y) =&gt; x + y;</div></li></ol></pre>
+
+</p>
+
+</div>
+
+<h3><a id="ambit_de_les_variables_i_de_les_funcions" >Àmbit de les variables i de les funcions</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+Actualment a JavaScript trobem quatre tipus d’àmbits ben diferenciats:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Definició d&#039;àmbit</p>
+<p>
+Un <strong>àmbit</strong> (anomenat <em>scope</em> en anglès) és una zona del codi en la qual es pot accedir a una variable o funció.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Espai global: en aquest espai es troben les funcions i propietats afegides pels navegadors (com <code>setInterval()</code>, <code>alert()</code> o <code>console</code>). Les variables i funcions declarades a l’espai global són accessibles des de qualsevol punt de l’aplicació.</div>
+</li>
+<li class="level1"><div class="li"> Àmbit de bloc: delimitat entre claus com en altres llenguatges com C i Java. Les variables i funcions declarades dintre d’un bloc no són accessibles fora d’aquest. S’aplica a les variables declarades amb <code>let</code> i <code>const</code></div>
+</li>
+<li class="level1"><div class="li"> Àmbit de funció: aquest és el comportament tradicional de les variables a JavaScript i no es recomana utilitzar-lo. Les variables i funcions declarades dintre d’una altra funció només són accessibles dintre d’aquesta funció. S’aplica a les variables declarades amb <code>var</code>.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per respectar l’àmbit de bloc cal declarar sempre les variables amb <strong>let</strong> o <strong>const</strong> segons escaigui. 
+</p>
+
+<p>
+Per aquest motiu <strong>es desaconsella fer servir var</strong>, ja que no respecta l’àmbit de bloc.
+</p>
+</div></div>
+<p>
+Cal tenir en compte que els àmbits es tracten com una pila, sempre es pot accedir als elements accessibles de l’àmbit superior. Veieu el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">var cadena1 = &quot;ambit global&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function prova() {</div></li><li class="li1"><div class="de1">  var cadena2 = &quot;ambit de funció&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (true) {</div></li><li class="li1"><div class="de1">    let cadena3 = &quot;ambit de bloc&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    console.log(cadena1);</div></li><li class="li1"><div class="de1">    console.log(cadena2);</div></li><li class="li1"><div class="de1">    console.log(cadena3);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">prova();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOLXrw?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOLXrw?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOLXrw?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, dintre del bloc es continua tenint accés a l’àmbit de funció i a l’àmbit global. Si ho observem com una jerarquia en aquest exemple tindríem <code>àmbit global &gt; àmbit funció prova &gt; bloc if (true)</code>. És a dir, des de la funció tenim accés a l’àmbit global i desde el bloc <code>if</code> tenim accés a l’àmbit de la funció i a l’àmbit global.
+</p>
+
+<h4><a id="espai_o_ambit_global" >Espai o àmbit global</a></h4>
+<div class="level4">
+
+<p>
+Als navegadors l’espai global es troba representat per l’objecte <code>window</code>, aquest objecte es troba a tots els navegadors i conté totes les propietats i funcions globals.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Hi ha altres contexts on també s’utilitza JavaScript (com Node.js) però no existeix l’objecte <code>window</code>.
+</p>
+</div></div>
+<p>
+Qualsevol variable declarada amb <code>var</code> en un codi que no es trobi dintre de cap funció o objecte s’afegirà a l’espai global, per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">var a = &quot;hola mòn&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function adeu() {</div></li><li class="li1"><div class="de1">	var b = &quot;adéu mòn&quot;</div></li><li class="li1"><div class="de1">    console.log(`valor de a (funció): ${a}`);</div></li><li class="li1"><div class="de1">    console.log(`valor de b (funció): ${b}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de a: ${a}`);</div></li><li class="li1"><div class="de1">console.log(`valor de a (window): ${window.a}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">  console.log(`valor de b: ${b}`);  </div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">  console.log(e.message);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b: ${window.b}`);  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">adeu();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYoYPLx?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYoYPLx?editors=1111"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYoYPLx?editors=1111</a>.
+</p>
+
+<p>
+Com es pot apreciar, el valor de <code>a</code> es troba definit a l’objecte <code>window</code> i és accessible des de qualsevol punt sense necessitat d’indicar que és una propietat d’aquest objecte. Per altra banda, el valor de <code>b</code> només es troba definit dintre de la funció <code>adeu()</code> i, per consegüent, no es troba a l’espai global, no apareix com a propietat de l’objecte <code>window</code> i no és accessible fora de la funció.
+</p>
+
+<p>
+Fixeu-vos que hem fet servir <code>var</code> per declarar les variables, si fem servir <code>let</code> la variable no s’afegeix a l’objecte <code>window</code>, encara que continua sent accessible globalment dintre d’aquest codi (així és com funcionen els mòduls), per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">var a = &quot;hola mòn&quot;;</div></li><li class="li1"><div class="de1">let b = &quot;adéu mòn&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de a: ${a}`);</div></li><li class="li1"><div class="de1">console.log(`valor de a (window): ${window.a}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b: ${b}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.b}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/BaKawRy?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BaKawRy?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/BaKawRy?editors=0012</a>.
+</p>
+
+<p>
+Hi ha un altre cas en el qual les variables s’afegeixen a l’espai global: si oblidem declarar una variable, aquesta es declara automàticament a l’espai global, inclús si es troba dintre d’una funció, per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function adeu() {</div></li><li class="li1"><div class="de1">	b = &quot;adéu mòn&quot;</div></li><li class="li1"><div class="de1">  console.log(`valor de b (funció): ${b}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">  console.log(`valor de b: ${b}`);</div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">  console.log(e.message);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">adeu();</div></li><li class="li1"><div class="de1">console.log(`valor de b: ${b}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.b}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PoNoJKo?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PoNoJKo?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/PoNoJKo?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que abans de cridar la funció el valor de <code>b</code> no està definit, però un cop s’invoca la funció <code>b</code> es declara a l’espai global. Cal tenir molt de compte amb aquests errors perquè són difícils de detectar, ja que no es tracta d’un error sintàctic.
+</p>
+
+<p>
+De la mateixa manera, quan es declara una funció que no es troba dintre de cap objecte ni altres funcions directament o amb <code>var</code>, aquestes s’afegeixen a l’espai global, però com passa amb les variables, si es declaren amb <code>let</code> o <code>const</code> no s’afegeixen a <code>window</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function hola1() {}</div></li><li class="li1"><div class="de1">var hola2 = function () {};</div></li><li class="li1"><div class="de1">let hola3 = function () {};</div></li><li class="li1"><div class="de1">const hola4 = () =&gt; {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b (codi): ${hola1}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.hola1}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b (codi): ${hola2}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.hola2}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b (codi): ${hola3}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.hola3}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`valor de b (codi): ${hola4}`);</div></li><li class="li1"><div class="de1">console.log(`valor de b (window): ${window.hola4}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwawLxz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwawLxz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwawLxz?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, les funcions declarades amb <code>let</code> i <code>const</code> no s’han afegit a l’objecte window. Això permet encapsular correctament els mòduls, ja que mitjançant <code>let</code> i <code>const</code> les nostres variables i funcions es trobaran encapsulades dintre del mòdul encara que carreguem múltiples mòduls que facin servir els mateixos noms de variables; en canvi, si féssim servir <code>var</code>, en carregar un nou fitxer que declari variables o funcions amb el mateix nom se sobreescriurien i el programa no funcionaria o ho faria de formes inesperades.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Contaminació del espai global</p>
+<p>
+Crear variables o funcions a l’espai global es considera una contaminació d’aquest espai i fer-ho es considera una mala pràctica. Es recomana utilitzar algun mecanisme com els mòduls o encapsular l’aplicació dintre d’un altre objecte per tal d’evitar-ho.
+</p>
+</div></div>
+</div>
+
+<h4><a id="ambit_de_bloc" >Àmbit de bloc</a></h4>
+<div class="level4">
+
+<p>
+Quan es declaren funcions o variables amb <code>let</code> i <code>const</code>, el seu àmbit queda delimitat per les claus que les envolten o el mòdul on es declarin. És a dir, si es declara el comptador d’un bucle for amb <code>let</code> aquest només serà definit dins del bucle:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (let i = 0; i &lt; 3; i++) {</div></li><li class="li1"><div class="de1">  console.log(`valor de i (dins del bucle) ${i}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">  console.log(`valor de i (fora del bucle): ${i}`);  </div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">  console.log(e.message);  </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/oNYNoRW?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oNYNoRW?editors=0011"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/oNYNoRW?editors=0011</a>.
+</p>
+
+<p>
+Com es pot apreciar, fora del bucle el valor de <code>i</code> no es troba definit. El mateix passa amb qualsevol altre tipus de bloc, per exemple amb un bloc <code>if…else</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if (true) {</div></li><li class="li1"><div class="de1">  let i = 3;</div></li><li class="li1"><div class="de1">  const j = 4;</div></li><li class="li1"><div class="de1">  console.log(`valor de i (dins del if) ${i}`);</div></li><li class="li1"><div class="de1">  console.log(`valor de j (dins del if) ${j}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">  console.log(`valor de i (fora del if): ${i}`);  </div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">  console.log(e.message);  </div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">  console.log(`valor de j (fora del if): ${j}`);  </div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">  console.log(e.message);  </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/YzqzEQq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/YzqzEQq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/YzqzEQq?editors=0012</a>.
+</p>
+
+</div>
+
+<h4><a id="ambit_de_modul" >Àmbit de mòdul</a></h4>
+<div class="level4">
+
+<p>
+Es considera un mòdul el codi que es trobi dintre d’una etiqueta <code>script</code> amb el tipus <code>module</code> assignat com atribut:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Ampliar informació mòduls</p>
+<p>
+Podeu trobar més informació sobre els mòduls al següent enllaç: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules" class="urlextern" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"  rel="nofollow">mzl.la/3ibdoOl</a>.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script type=&quot;module&quot;&gt;</div></li><li class="li1"><div class="de1">  // Codi del mòdul</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+O quan es carrega un fitxer amb codi JavaScript indicant el tipus <code>module</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script type=&quot;module&quot; src=&quot;fitxer_modul.js&quot;&gt;&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+En tots dos casos, el codi queda encapsulat dintre del mòdul, de manera que només són accessibles externament les funcions i variables quan:
+</p>
+<ul>
+<li class="level1"><div class="li"> Dins del mòdul d’origen s’han exportat mitjançant la instrucció <code>export</code>.</div>
+</li>
+<li class="level1"><div class="li"> Al mòdul on es volen utilitzar s’han importat mitjançant la instrucció <code>import</code>.</div>
+</li>
+</ul>
+
+<p>
+Cal destacar que només es pot utilitzar <code>import</code> i <code>export</code> dins de mòduls, en cas contrari es produeix un error.
+</p>
+
+<p>
+A continuació podeu veure un exemple d’exportació i d’importació de mòduls. Per provar-lo heu de crear un fitxer diferent per cada mòdul i un altre pel codi <acronym title="HyperText Markup Language">HTML</acronym>, tots tres dins del mateix directori.
+</p>
+
+<p>
+Codi del mòdul que exporta la funció (<em>modul.js</em>):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//modul.js</div></li><li class="li1"><div class="de1">export function suma(a, b) { return a + b}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let cadena = &quot;hola&quot;;</div></li></ol></pre>
+
+<p>
+Codi del mòdul que importa la funció <code>suma()</code> del mòdul <em>principal.js</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//principal.js</div></li><li class="li1"><div class="de1">import { suma } from './modul.js';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(suma(2, 3));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">try {</div></li><li class="li1"><div class="de1">    console.log(`Valor de la cadena? ${cadena}`);</div></li><li class="li1"><div class="de1">} catch (e) {</div></li><li class="li1"><div class="de1">    console.log(e.message);    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Codi <acronym title="HyperText Markup Language">HTML</acronym> que carrega el fitxer <em>principal.js</em> que s’executa automàticament en carregar-se.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;script src=&quot;principal.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com podeu comprovar la funció exportada <code>suma()</code> es pot cridar des del mòdul que la importa, però la variable <code>cadena</code> no és accessible.
+</p>
+
+</div>
+
+<h4><a id="ambit_de_funcio" >Àmbit de funció</a></h4>
+<div class="level4">
+
+<p>
+Quan es declara una variable utilitzant <code>var</code> dintre d’una funció aquesta és accessible dintre de la mateixa funció independentment de si s’ha declarat dintre d’un bloc com per exemple <code>for</code> o <code>if</code>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Cal recordar que es desaconsella declarar les variables fent servir <code>var</code>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">function demostracio() {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (true) {</div></li><li class="li1"><div class="de1">    var i = 3;</div></li><li class="li1"><div class="de1">    console.log(`valor de i (dins del if): ${i}`);  </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(`valor de i (fora del if): ${i}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (var j = 0; j&lt;3; j++) {</div></li><li class="li1"><div class="de1">    console.log(`valor de j (dins del for): ${j}`);  </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  console.log(`valor de j (fora del for): ${j}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">demostracio();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwawQwE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwawQwE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwawQwE?editors=0012</a>.
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+<h3><a id="invocacions" >Invocacions</a></h3>
+<div class="level3">
+
+<p>
+Existeixen maneres diferents d’invocar una funció i cadascuna d’elles té les seves peculiaritats. Per exemple, es pot invocar una funció de la manera habitual: <code>nomfunció()</code>. També es pot executar una funció com a mètode d’un objecte o bé es pot invocar una funció indirectament, per exemple, al crear un objecte s’invoca el mètode constructor. Aquestes maneres d’invocació de funcions es troben a tots els llenguatges orientats a objectes, però a JavaScript, a més a més, es poden invocar utilitzant dos mètode addicionals: <strong><code>apply()</code> </strong> i <strong> <code>call()</code></strong>.
+</p>
+
+<p>
+En totes aquestes maneres d’invocar una funció, a la majoria de llenguatges, el nombre d’arguments i paràmetres ha de ser el mateix. A JavaScript, però, això és diferent. Si hi ha més arguments que paràmetres, els arguments de més no s’assignen als noms de paràmetres i la invocació de la funció és correcta i no dona error.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function qualsevol(a,b,c){}</div></li><li class="li1"><div class="de1">qualsevol(1,2,3,4,5,6); //4,5,6 no s'assignen a cap paràmetre.</div></li></ol></pre>
+
+<p>
+Si, en canvi, hi ha més paràmetres que arguments, els paràmetres que no tinguin el seu argument corresponent s’estableixen com <code>undefined</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function qualsevol(a,b,c){}</div></li><li class="li1"><div class="de1">qualsevol(1); //b,c tenen el valor undefined</div></li></ol></pre>
+
+<p>
+A JavaScript, a totes les invocacions de les funcions es passen 2 paràmetres extres (es passen en silenci i estan en el seu àmbit): <code>arguments</code> i <code>this</code>. El paràmetre <strong>arguments</strong>  és una col·lecció de tots els paràmetres que s’han passat a la funció i té una propietat anomenada <code>length</code> que conté el numero de paràmetres que s’han passat. Els valors dels paràmetres es poden obtenir com si fos un <em>array</em>. En canvi, el paràmetre <strong>this</strong> és el context de la funció. A Java <code>this</code> és la instància de la classe en la qual es defineix el mètode. A JavaScript és una mica diferent perquè es defineix segons com s’invoca la funció, és a dir, es defineix quan s’executa no quan es declara la funció.
+</p>
+
+</div>
+
+<h4><a id="invocacio_com_una_funcio" >Invocació com una funció</a></h4>
+<div class="level4">
+
+<p>
+La invocació <em>com una funció</em> és la manera “normal” d’invocar una funció en qualsevol llenguatge.
+</p>
+
+<p>
+
+<p>
+Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function cridam(){};</div></li><li class="li1"><div class="de1">cridam();</div></li><li class="li1"><div class="de1">const unaltre = function(){};</div></li><li class="li1"><div class="de1">unaltre();</div></li></ol></pre>
+
+<p>
+Quan es declara com una funció sense indicar <code>let</code> ni <code>const</code>, la funció s’afegeix com a mètode de l’objecte <code>window</code>, per consegüent és possible invocar-lo a partir d’aquest objecte:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En el cas de la declaració de funcions s’acostuma a utilitzar <code>const</code> perquè el valor no ha de canviar.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">function cridam(){};</div></li><li class="li1"><div class="de1">window.cridam();</div></li></ol></pre>
+
+<p>
+En canvi, si provem d’executar la funció declarada com a <code>const</code> es produirà un error, ja que no s’afegeix a l’objecte <code>window</code>, només és accessible dintre del mòdul:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const unaltre = function(){};</div></li><li class="li1"><div class="de1">window.unaltre();</div></li></ol></pre>
+
+<p>
+De la mateixa manera es poden executar funcions de fletxa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const saludar = () =&gt; &quot;hola&quot;;</div></li><li class="li1"><div class="de1">let text = saludar(); </div></li><li class="li1"><div class="de1">document.write(text);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNWQeM?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNWQeM?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNWQeM?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="invocacio_com_un_metode" >Invocació com un mètode</a></h4>
+<div class="level4">
+
+<p>
+La invocació <em>com un mètode</em> es produeix quan s’assigna una funció a la propietat d’un objecte.
+Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//es crea l'objecte anomenat 'o'</div></li><li class="li1"><div class="de1">let o = {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//es defineix una propietat anomenada 'nomMetode' i se li assigna una funció.</div></li><li class="li1"><div class="de1">//aquesta propietat s'ha convertit en un mètode.</div></li><li class="li1"><div class="de1">o.nomMetode = function(){return &quot;hola&quot;;};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//crida al mètode.</div></li><li class="li1"><div class="de1">let text = o.nomMetode(); </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">document.write(text);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExKxQBO?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExKxQBO?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ExKxQBO?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Quan invoquem d’aquesta manera a la funció, l’objecte es converteix en el context de la funció, és a dir, el paràmetre implícit <strong>this</strong> apunta a l’objecte.
+</p>
+
+<p>
+
+<p>
+L’execució de funcions de fletxa es fa de la mateixa manera, l’única diferència és que la seva declaració és més concisa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let o = {};</div></li><li class="li1"><div class="de1">o.nomMetode = () =&gt; &quot;hola&quot;;</div></li><li class="li1"><div class="de1">let text = o.nomMetode(); </div></li><li class="li1"><div class="de1">document.write(text);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/oNxNqgK?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oNxNqgK?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/oNxNqgK?editors=0010</a>.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La paraula clau<strong> <code>this</code></strong> té en JavaScript un comportament diferent al d’altres llenguatges però en general, el seu valor fa referència al <strong>propietari</strong> de la funció que l’està invocant.
+</p>
+
+<p>
+Quan no estem dins d’una estructura definida el propietari d’una funció és sempre el context global. En el cas dels navegadors web, s’ha de recordar que aquest objecte és <code>window</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(this === window);  // true</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function test(){</div></li><li class="li1"><div class="de1">  console.log(this === window);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">test(); // true</div></li></ol></pre>
+</div></div>
+<p>
+La variable <code>this</code>, normalment, s’utilitza per accedir als valors d’un objecte des del propi objecte. Per exemple, penseu en un objecte amb una sèrie de propietats:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let obj = {</div></li><li class="li1"><div class="de1">  nom: 'Ramon',</div></li><li class="li1"><div class="de1">  cognom: 'Llull',</div></li><li class="li1"><div class="de1">  naixement: '1232',</div></li><li class="li1"><div class="de1">  isMallorqui: true</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">document.write(obj.nom); // Ramón</div></li><li class="li1"><div class="de1">document.write(obj.isMallorqui); // true</div></li></ol></pre>
+
+<p>
+Suposem ara que necessitem una altra propietat més ‘dinàmica’ que participi dels valors assignats a qualsevol altra propietat. Per exemple, volem un <code>nomSencer</code> que uneixi <code>nom</code> i  <code>cognom</code>. Sembla, a priori, que podríem utilitzar la variable <code>this</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let obj = {</div></li><li class="li1"><div class="de1">  nom: 'Ramon',</div></li><li class="li1"><div class="de1">  cognom: 'Llull',</div></li><li class="li1"><div class="de1">  naixement: '1232',</div></li><li class="li1"><div class="de1">  isMallorqui: true,</div></li><li class="li1"><div class="de1">  nomSencer: this.nom + &quot; &quot; + this.cognom</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">document.write(obj.nom + &quot;&lt;br&gt;&quot;); // Ramon</div></li><li class="li1"><div class="de1">document.write(obj.isMallorqui + &quot;&lt;br&gt;&quot;); // true</div></li><li class="li1"><div class="de1">document.write(obj.nom+ &quot;&lt;br&gt;&quot;); // Ramon</div></li><li class="li1"><div class="de1">document.write(obj.nomSencer + &quot;&lt;br&gt;&quot;); // Ramon Llull?</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNWmNO?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNWmNO?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNWmNO?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+Encara que sembla coherent, quan passem a comprovar-ho veiem que el resultat no és l’esperat: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Ramon</div></li><li class="li1"><div class="de1">true</div></li><li class="li1"><div class="de1">Ramon</div></li><li class="li1"><div class="de1">undefined undefined</div></li></ol></pre>
+
+<p>
+El problema és que <code>this</code> no apunta a l’objecte anomenat <code>obj</code> sinó que <code>this</code> apunta al context global, és a dir,  a l’objecte <code>window</code>.
+</p>
+
+<p>
+Per obtenir el resultat esperat hem d’aplicar un patró d’invocació que modifiqui al propietari des del qual s’invoca el <code>this</code>.
+</p>
+
+<p>
+En el desenvolupament d’aplicacions modernes, el patró més recurrent és el d’invocació per mètode. Quan una funció és emmagatzemada com a propietat d’un objecte es converteix en el que anomenem mètode.
+</p>
+
+<p>
+Quan invoquem a un mètode, <code>this</code> fa referència al mateix objecte:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let obj = {</div></li><li class="li1"><div class="de1">  nom: 'Ramon',</div></li><li class="li1"><div class="de1">  cognom: 'Llull',</div></li><li class="li1"><div class="de1">  naixement: '1232',</div></li><li class="li1"><div class="de1">  isMallorqui: true,</div></li><li class="li1"><div class="de1">  nomSencer: function() { return `${this.nom}  ${this.cognom}`;}</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">document.write(obj.nom + &quot;&lt;br&gt;&quot;); // Ramón</div></li><li class="li1"><div class="de1">document.write(obj.isMallorqui + &quot;&lt;br&gt;&quot; ); // true</div></li><li class="li1"><div class="de1">document.write(obj.nom+ &quot;&lt;br&gt;&quot; ); // Ramón</div></li><li class="li1"><div class="de1">document.write(obj.nomSencer() + &quot;&lt;br&gt;&quot; ); // Ramon Llull?</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOLKaE?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOLKaE?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOLKaE?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+En aquesta ocasió, podem comprovar com <code>this</code> apunta al mateix objecte i busca les propietats <code>nom</code> i <code>cognom</code> en comptes d’anar fins el context global.
+</p>
+
+</div>
+
+<h4><a id="invocacio_amb_els_metodes_apply_i_call" >Invocació amb els mètodes apply() i call()</a></h4>
+<div class="level4">
+
+<p>
+JavaScript ens proporciona un mitjà per invocar una funció i especificar de forma explícita qualsevol objecte que vulguem com a context. És a dir, podem decidir quin és el valor del paràmetre <code>this</code> quan cridem a una funció.
+</p>
+
+<p>
+S’aconsegueix amb qualsevol dels dos mètodes que posseeixen les funcions: <code>apply()</code> i <code>call()</code>.
+</p>
+
+<p>
+Paràmetres del mètode <code>apply()</code>:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Els mètodes apply() i call()</p>
+<p>
+Totes les funciones tenen aquest dos mètodes disponibles ja que són objectes de primera classe i poden tenir propietats i mètodes igual que qualsevol altre objecte.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> L’objecte que s’utilitzarà com a context de la funció</div>
+</li>
+<li class="level1"><div class="li"> <em>Array</em> de valors que s’utilitzaran com a arguments de la funció.</div>
+</li>
+</ul>
+
+<p>
+Paràmetres del mètode <code>call()</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’objecte que s’utilitzarà com a context de la funció</div>
+</li>
+<li class="level1"><div class="li"> Llista de valors que s’utilitzaran com a arguments de la funció.</div>
+</li>
+</ul>
+
+<p>
+Exemple:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function exemple() {</div></li><li class="li1"><div class="de1">  let total = 0;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; arguments.length; i++) {</div></li><li class="li1"><div class="de1">    total += arguments[i];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.result = total;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let objecte1 = {};</div></li><li class="li1"><div class="de1">let objecte2 = {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">exemple.apply(objecte1, [1, 2, 3, 4]);</div></li><li class="li1"><div class="de1">exemple.call(objecte2, 5, 6, 7, 8);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// en aquest punt objecte1.result tindrà el valor 10</div></li><li class="li1"><div class="de1">// i objecte2.result tindrà el valor 26</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNWmmr?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNWmmr?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNWmmr?editors=0010</a>.
+</p>
+
+</p>
+
+<p>
+La funció <code>exemple()</code> utilitza la paraula reservada <code>this</code> per crear una propietat anomenada <code>total</code> que conté el resultat de l’execució de la pròpia funció.
+</p>
+
+<p>
+Si executem la funció la variable <code>this</code> apunta a l’objecte <code>window</code>, llavors, la propietat <code>result</code> seria una propietat global. Però en utilitzar els mètodes <code>apply()</code> o <code>call()</code> canviem l’objecte on apunta la variable <code>this</code>.
+</p>
+
+<p>
+En el primer cas, amb el mètode <code>apply()</code>, la variable <code>this</code> apunta l’ <code>objecte1</code> (ja que aquest objecte és el primer paràmetre del mètode <code>apply()</code>). 
+</p>
+
+<p>
+En el segon cas, la variable <code>this</code> apunta l’ <code>objecte2</code>. Llavors quan la funció <code>exemple()</code> executa l’última instrucció: <code>this.result = result;</code> està creant una propietat anomenada <code>result</code> a l’ <code>objecte1</code> o a l’ <code>objecte2</code>, segons sigui el cas, i està guardant el resultat de l’execució del codi anterior.
+</p>
+
+<p>
+
+<h4><a id="canvi_de_context_d_una_funcio_amb_el_metode_bind" >Canvi de context d&#039;una funció amb el mètode bind()</a></h4>
+<div class="level4">
+
+<p>
+Una altra manera de canviar el context d’execució d’una funció és utilitzar el mètode <code>bind(context)</code>. Aquest mètode <strong>crea una nova funció amb el context passat com a paràmetre</strong>, això ens permet utilitzar-lo de dues formes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Assignant la funció retornada com una nova funció, això permet executar-la sempre amb el nou context.</div>
+</li>
+<li class="level1"><div class="li"> Invocar-la directament, de manera que s’executa només una vegada amb el nou context.</div>
+</li>
+</ul>
+
+<p>
+Veieu aquests dos casos en el següent exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">    let persona1 = {</div></li><li class="li1"><div class="de1">        nom: 'Joan',</div></li><li class="li1"><div class="de1">        saludar: function () {</div></li><li class="li1"><div class="de1">            console.log(`Hola!, em dic ${this.nom}`);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    let persona2 = {</div></li><li class="li1"><div class="de1">        nom: 'Maria',</div></li><li class="li1"><div class="de1">    };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // la funció s'executa en el seu context, persona1</div></li><li class="li1"><div class="de1">    persona1.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // la funció s'executa en el context de persona2</div></li><li class="li1"><div class="de1">    persona1.saludar.bind(persona2)();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // afegim una nova funció saludar amb el nou context</div></li><li class="li1"><div class="de1">    persona1.saludarNou = persona1.saludar.bind(persona2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // el context per aquesta funció és persona 2</div></li><li class="li1"><div class="de1">    persona1.saludarNou();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // comprovem que si canviem les propietats del context, la crida a la funció continua sent correcte</div></li><li class="li1"><div class="de1">    persona2.nom = &quot;Rosa&quot;;</div></li><li class="li1"><div class="de1">    persona1.saludarNou();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // comprovem que saludar continua utilitzant el seu context original</div></li><li class="li1"><div class="de1">    persona1.saludar();</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VwawRKY?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VwawRKY?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/VwawRKY?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, quan s’invoca la funció <code>saludar()</code> amb <code>bind(persona2)</code> la funció s’executa en el context de <code>persona2</code> però subsegüents invocacions a la funció <code>saludar()</code> continuant utilitzant <code>persona1</code> com a context. Per altra banda quan assignem la funció retornada per <code>bind()</code>, totes les invocacions a aquesta nova funció es fan utilitzant el context de <code>persona2</code>.
+</p>
+
+<p>
+Fixeu-vos que encara que canviïn els valors de <code>persona2</code> quan es crida a la funció <code>saludarNou()</code> el resultat continua sent correcte perquè el context és una referència a <code>persona2</code> i no una còpia.
+</p>
+
+</div>
+
+<h3><a id="exemplememoritzar_valors_calculats_a_la_propia_funcio_memoize" >Exemple: memoritzar valors calculats a la pròpia funció (Memoize)</a></h3>
+<div class="level3">
+
+</div>
+
+</p>
+
+<p>
+La memorització (<em>memoization</em>) és el procés de crear una funció que pot recordar els seus valors calculats. Així es pot incrementar considerablement el rendiment evitant càlculs complexos innecessaris que ja s’han calculat.
+</p>
+
+<p>
+Per exemple, escrivim una funció que ens digui si un enter positiu és o no primer:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function esPrimer(valor) {</div></li><li class="li1"><div class="de1">  if (!esPrimer.cache) {</div></li><li class="li1"><div class="de1">    esPrimer.cache = {}; // si no hi ha cache de resultats, la creem</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (esPrimer.cache[valor] != null) {</div></li><li class="li1"><div class="de1">    // resultat ja calculat</div></li><li class="li1"><div class="de1">    return `${valor} és primer (cache)? ${esPrimer.cache[valor]}`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // cal calcular-lo perquè no tenim el resultat</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let primer = valor != 1; // 1 no és primer</div></li><li class="li1"><div class="de1">  // busquem un divisor superior a 2 i inferior a valor</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 2; i &lt; valor; i++) {</div></li><li class="li1"><div class="de1">    if (valor % i == 0) {</div></li><li class="li1"><div class="de1">      primer = false;</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  esPrimer.cache[valor] = primer;</div></li><li class="li1"><div class="de1">  return `${valor} és primer (calculat)? ${primer}`;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">console.log(esPrimer(5));</div></li><li class="li1"><div class="de1">console.log(esPrimer(5));</div></li><li class="li1"><div class="de1">console.log(esPrimer.cache);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wvGvZdY?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wvGvZdY?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/wvGvZdY?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+
+<p>
+La segona vegada que es crida a la funció entra dins del segon <code>if</code> perquè el troba en memòria i retorna el resultat directament.
+</p>
+
+<p>
+Fixeu-vos que, donat que les funcions també són objectes, hem pogut crear una nova propietat anomenada <code>cache</code> directament a la funció. Es pot accedir a aquesta propietat com si es tractés de qualsevol altre objecte, en aquest cas amb <code>esPrimer.cache</code>. Per aquest mateix motiu és accessible des de fora de la funció, ja que les propietats a JavaScript són públiques.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="sobrecarrega_de_funcions" >Sobrecàrrega de funcions</a></h3>
+<div class="level3">
+
+<p>
+En altres llenguatges de programació orientats a objectes, per sobrecarregar una funció se sol declarar diferents implementacions de mètodes amb el mateix nom però amb un conjunt diferent de paràmetres. En JavaScript no es fa d’aquesta manera. En JavaScript se sobrecarreguen les funcions amb una única implementació que modifica el seu comportament mitjançant l’examen del nombre d’arguments que l’han proporcionat.
+</p>
+
+<p>
+És fàcil d’imaginar que es podria implementar la sobrecàrrega de funcions utilitzant una estructura del tipus <em>if-then i else-if</em>. Però no sempre ho podrem fer. 
+</p>
+
+<p>
+Exemple d’una funció sobrecarregada de manera monolítica:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  calculMatricula = function(){</div></li><li class="li1"><div class="de1">	  switch(arguments.length){</div></li><li class="li1"><div class="de1">			case 0:</div></li><li class="li1"><div class="de1">				// fer algo</div></li><li class="li1"><div class="de1">				break;</div></li><li class="li1"><div class="de1">			case 1: </div></li><li class="li1"><div class="de1">				// fer una altre cosa</div></li><li class="li1"><div class="de1">				break;</div></li><li class="li1"><div class="de1">			case 2:</div></li><li class="li1"><div class="de1">				// fer una altre cosa més</div></li><li class="li1"><div class="de1">				break;</div></li><li class="li1"><div class="de1">			... etc ...		</div></li><li class="li1"><div class="de1">		}</div></li><li class="li1"><div class="de1">	}</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<h4><a id="exempletecnica_per_sobrecarregar_funcions" >Exemple: tècnica per sobrecarregar funcions</a></h4>
+<div class="level4">
+
+</div>
+
+</p>
+
+<p>
+Veurem una tècnica per ens permet crear diverses funcions (aparentment amb el mateix nom, però es diferencia pel número de paràmetres) que poden escriure’s com diferents, anònimes i independents i no com un bloc monolític <em>if-then-else-if</em>.
+</p>
+
+<p>
+Tot això depèn d’una propietat poc coneguda de les funcions: la propietat <code>length</code>.
+</p>
+
+<p>
+Algunes consideracions inicials a tenir en compte:
+</p>
+<ul>
+<li class="level1"><div class="li"> El paràmetre <code>length</code> de la funció no ha de confondre’s amb la propietat <code>length</code> del paràmetre arguments. </div>
+</li>
+<li class="level1"><div class="li"> El paràmetre <code>length</code> de la funció ens indica el número total de paràmetres formals amb els quals s’ha declarat la funció.</div>
+</li>
+<li class="level1"><div class="li"> La propietat <code>length</code> del paràmetre <code>arguments</code> ens indica el número total de paràmetres que s’han passat a la funció en el moment de cridar-la.</div>
+</li>
+</ul>
+
+<p>
+Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function max(a,b){</div></li><li class="li1"><div class="de1">   ...</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">max(1,4,5,7,23,234);</div></li></ol></pre>
+
+<p>
+En aquest cas el paràmetre <code>length</code> de la funció <code>max()</code> és 2 i la propietat <code>length</code> del paràmetre <code>arguments</code> és 6.
+</p>
+
+<p>
+Utilitzarem aquest paràmetre per crear funcions sobrecarregades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function afegirMetode(objecte, nom, funcio){</div></li><li class="li1"><div class="de1">	let old = objecte[nom];</div></li><li class="li1"><div class="de1">	objecte[nom] = function(){</div></li><li class="li1"><div class="de1">			if(funcio.length == arguments.length){	</div></li><li class="li1"><div class="de1">					return funcio.apply(this, arguments);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">			else  if (typeof old == 'function'){</div></li><li class="li1"><div class="de1">					return old.apply(this, arguments);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">		};</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let persona = {};</div></li><li class="li1"><div class="de1">afegirMetode(persona, &quot;calculMatricula&quot;, function(){ //fer quelcom  });</div></li><li class="li1"><div class="de1">afegirMetode(persona, &quot;calculMatricula&quot;, function(a){ //fer una altra cosa  });</div></li><li class="li1"><div class="de1">afegirMetode(persona, &quot;calculMatricula&quot;, function(a,b){  //fer una altra cosa més  });</div></li></ol></pre>
+
+<p>
+La funció <code>afegirMetode()</code> s’utilitza per afegir un mètode a un objecte. Aquesta funció rep tres paràmetres:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’objecte al qual volem afegir un mètode</div>
+</li>
+<li class="level1"><div class="li"> El nom del mètode que volem afegir</div>
+</li>
+<li class="level1"><div class="li"> La funció associada al nom del mètode anterior</div>
+</li>
+</ul>
+
+<p>
+La funció <code>afegirMetode()</code> utilitza el mètode <code>apply()</code> per afegir a un objecte la pròpia funció <code>afegirMetode()</code>. Aquesta funció és recursiva ja que tots els mètodes afegits d’aquesta manera tenen disponible la variable <code>old</code>, que guarda els mètodes amb els mateixos noms però amb un nombre de paràmetres diferent. Noteu que en aquest cas la variable <code>this</code> apunta a la funció <code>afegirMetode()</code>.
+</p>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/MWyWRPa?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MWyWRPa?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/MWyWRPa?editors=0010</a>.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="clausures" >Clausures</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+A JavaScript és possible crear funcions dintre de funcions i això genera un <em>àmbit lèxic</em>, és a dir, les funcions internes tenen accés a l’àmbit de la funció externa (per exemple, variables i paràmetres). Aquesta característica de JavaScript ens permet crear <em>clausures</em>:
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una clausura és la combinació d’una funció i l’entorn lèxic en el qual aquesta funció és declarada amb les següents característiques:
+</p>
+<ul>
+<li class="level1"><div class="li"> Té accés a les variables i funcions definides a la funció interna (àmbit de funció).</div>
+</li>
+<li class="level1"><div class="li"> Té accés a totes les variables i funcions declarades en la funció externa, incloent-hi els paràmetres amb què es va invocar la funció (àmbit lèxic).</div>
+</li>
+<li class="level1"><div class="li"> Té accés a l’àmbit global.</div>
+</li>
+</ul>
+</div></div>
+<p>
+Veieu un exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// funció externa</div></li><li class="li1"><div class="de1">function inicialitzacio() {</div></li><li class="li1"><div class="de1">  let nom = 'Joan';</div></li><li class="li1"><div class="de1">  // funció interna</div></li><li class="li1"><div class="de1">  function mostrarNom() {</div></li><li class="li1"><div class="de1">    console.log(nom);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  mostrarNom();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">inicialitzacio();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jOqOoBq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOqOoBq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/jOqOoBq?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que la variable <code>nom</code> es declara a la funció <code>inicialitzacio()</code> però és accessible des de la funció <code>mostrarNom()</code> i que aquesta funció és invocada per la funció <code>inicialitzacio()</code>.
+</p>
+
+<p>
+Com que a JavaScript és possible retornar una funció, podríem retornar la funció <code>mostrarNom()</code> i aquesta funció continuaria tenint accés a l’àmbit de la funció externa com podeu veure en el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// funció externa</div></li><li class="li1"><div class="de1">function inicialitzacio() {</div></li><li class="li1"><div class="de1">  let nom = 'Joan';</div></li><li class="li1"><div class="de1">  // funció interna</div></li><li class="li1"><div class="de1">  function mostrarNom() {</div></li><li class="li1"><div class="de1">    console.log(nom);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return mostrarNom;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">let mostrar = inicialitzacio();</div></li><li class="li1"><div class="de1">mostrar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bGpGyrd?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGpGyrd?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bGpGyrd?editors=0012</a>.
+</p>
+
+<p>
+Quan s’assigna el valor a la variable <code>mostrar</code> s’executa la funció <code>inicialitzacio()</code>, s’assigna el valor a la variable <code>nom</code> i es retorna la funció <code>mostrarNom()</code>; així, doncs, el valor de la variable <code>mostrar</code> és la funció <code>mostrarNom()</code> amb accés a l’àmbit de la funció <code>inicialitzacio()</code>.
+</p>
+
+<p>
+Fixeu-vos que el valor de <code>nom</code> no és accessible des de fora de la funció, per tant es pot considerar que els valors declarats a la funció externa són <code>privats</code>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’únic mecanisme que proporciona JavaScript per encapsular valors de manera el seu accés sigui <strong>privat</strong> és mitjançant <strong>clausures</strong>.
+</p>
+</div></div>
+<p>
+Una altra característica remarcable és que l’àmbit es crea en el moment en què s’invoca la funció, això vol dir que si cridem a una mateixa funció amb diferents paràmetres, cada funció retornada continuarà tenint accés a l’àmbit existent quan es va invocar la funció externa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// funció externa</div></li><li class="li1"><div class="de1">function crearTaula(multiplicador) {</div></li><li class="li1"><div class="de1">  // funció interna</div></li><li class="li1"><div class="de1">  function multiplicar() {</div></li><li class="li1"><div class="de1">    for (let i = 1; i&lt;=10; i++) {</div></li><li class="li1"><div class="de1">      console.log(`${i} x ${multiplicador} = ${i * multiplicador}`);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return multiplicar;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const taulaDel5 = crearTaula(5);</div></li><li class="li1"><div class="de1">taulaDel5();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const taulaDel9 = crearTaula(9);</div></li><li class="li1"><div class="de1">taulaDel9();</div></li><li class="li1"><div class="de1">taulaDel5();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNYomX?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNYomX?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNYomX?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, s’ha assignat a les variables <code>taulaDel5</code> i <code>taulaDel9</code> el retorn de la funció <code>crearTaula()</code> invocada amb diferents arguments i quan s’invoca a qualsevol d’aquestes funcions el retorn és l’esperat, a l’àmbit de <code>taulaDel5</code> el valor de <code>multiplicador</code> és 5, mentre que al de <code>taulaDel9</code> és 9.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="funcions_sense_nom_definicio_i_usos" >Funcions sense nom. Definició i usos</a></h3>
+<div class="level3">
+
+<p>
+Les funcions <strong>sense nom</strong>, o anònimes, les fem servir quan volem poder disposar d’elles posteriorment. Per exemple, quan les emmagatzemem en una variable, quan les posem com a mètodes d’objectes o bé quan les utilizem com a <em>callback</em> (callback de timeout, callback de controladors d’esdeveniments, etc). 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>callback</strong> és un pedaç de codi executable (una funció) que es passa com a paràmetre a un altre codi, que s’espera per executar-lo. La invocació pot ser immediata (síncrona), o pot ocórrer en un moment posterior (asíncrona).
+</p>
+</div></div>
+<p>
+En tots aquests casos, les funcions no necessiten tenir un nom per poder invocar-les.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">window.onload = function() {alert(&quot;1&quot;);};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let obj = {print : function() {alert(&quot;2&quot;);}}</div></li><li class="li1"><div class="de1">obj.print();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">setTimeout(function(){ alert(&quot;3&quot;); }, 500);</div></li></ol></pre>
+
+<p>
+També podíem haver fet amb el controlador de l’esdeveniment de càrrega de pàgina:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function salutacio(){</div></li><li class="li1"><div class="de1">  document.write(&quot;Hola estudiants de l'IOC!&quot;);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">window.onload = salutacio;</div></li></ol></pre>
+
+<p>
+Però no cal donar-li nom si mai més l’utilitzarem. Realment no necessitem que <code>salutacio()</code> sigui un mètode de l’objecte <code>window</code>.
+A més a més, podem pensar que el mètode <code>print()</code> és el nom de la funció anònima que li assignem, però no ho és.
+</p>
+
+<p>
+
+<p>
+Una funció anònima es pot definir sense assignar-li un nom ni assignar-la a cap variable, però en fer-ho d’aquesta manera no es pot invocar. Per consegüent el codi és vàlid però no és correcte:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function () {</div></li><li class="li1"><div class="de1">  document.write(&quot;Hola estudiants de l'IOC!&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+De vegades ens interessa poder posar nom a les funcions anònimes. Normalment, les funcions sense nom o anònimes les utilitzem quan creem els mètodes dels objectes. El mètode ha de tenir un nom, la seva funció no. 
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">    cantar : function (){return 1;}</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">console.log(persona.cantar.name);</div></li></ol></pre>
+
+</p>
+
+<p>
+En aquest exemple s’ha declarat un objecte anomenat <code>persona</code>, que conté un mètode anomenat <code>cantar()</code>.
+</p>
+
+<p>
+
+<p>
+Malgrat que aquest mètode s’ha declarat com una funció anònima, automàticament s’ha assignat el nom de la propietat com a nom de la funció.
+</p>
+
+<p>
+Tot i que no és gaire utilitzat, JavaScript permet anomenar una funció assignada a una propietat, en aquest cas el nom de la funció serà l’indicat i no pas el de la propietat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  cantar : function(n){ return n &gt; 1 ? this.cantar(n - 1) + &quot;-fiu&quot; : &quot;fiu&quot;; },</div></li><li class="li1"><div class="de1">  cantar2 : function xiular(n){ return n &gt; 1 ? xiular(n - 1) + &quot;-fiu&quot; : &quot;fiu&quot;; }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">console.log(&quot;Cridem al mètode cantar que a la seva vegada crida a la funció xiular: persona.cantar(3):&quot;);</div></li><li class="li1"><div class="de1">console.log(persona.cantar(3));</div></li><li class="li1"><div class="de1">console.log(persona.cantar2(3));</div></li><li class="li1"><div class="de1">console.log(persona.cantar.name);</div></li><li class="li1"><div class="de1">console.log(persona.cantar2.name);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NWNWZGj?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NWNWZGj?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/NWNWZGj?editors=0012</a>.
+</p>
+
+<h3><a id="funcions_de_fletxa" >Funcions de fletxa</a></h3>
+<div class="level3">
+
+<p>
+Les funcions de fletxa proporcionen una manera molt més concisa d’utilitzar les funcions anònimes; d’aquesta manera es poden assignar a variables, mètodes o, també, utilitzar com a <em>callbacks</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">window.onload = () =&gt; console.log(&quot;1&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let obj = {print: () =&gt; console.log(&quot;2&quot;)};</div></li><li class="li1"><div class="de1">obj.print();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">setTimeout(() =&gt; console.log(&quot;3&quot;), 500);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/eYZYwWP?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYZYwWP?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/eYZYwWP?editors=0012</a>.
+</p>
+
+<p>
+Si el cos de la funció tingués més d’una instrucció, caldria posar-les entre claus.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Utilització de funcions de fletxa</p>
+<p>
+No es recomana utilitzar aquestes funcions quan el cos de la funció sigui llarg, ja que l’avantatge principal és fer el codi més llegible. Si utilitzar una funció de fletxa el codi no ho fa més entenedor, és preferible fer servir la implementació habitual.
+</p>
+</div></div>
+<p>
+Com podeu veure a continuació hi ha casos en què la utilització d’aquest tipus de funció fa el codi més entenedor, ja que mostren només la informació rellevant en funcions molt simples (com <code>sumar()</code>) o permeten escriure una funció de callback en una sola línia:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Assignat com a funció</div></li><li class="li1"><div class="de1">const sumar = (a, b) =&gt; a + b;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Utilitzat com a callback</div></li><li class="li1"><div class="de1">let tick = 0;</div></li><li class="li1"><div class="de1">setInterval(() =&gt; {console.log( tick % 2 == 0 ? &quot;Tic&quot; : &quot;Tac&quot;);tick++;}, 1000);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/oNxNrog?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oNxNrog?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/oNxNrog?editors=0012</a>.
+</p>
+
+</div>
+
+</p>
+
+<p>
+En els casos en què només hi ha un paràmetre encara es poden simplificar una mica més les funcions de fletxes, ja que no són necessaris els parèntesis:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const duplicar = a =&gt; a * 2;</div></li><li class="li1"><div class="de1">console.log(duplicar(2));</div></li></ol></pre>
+
+</div>
+
+<h3><a id="funcions_immediates" >Funcions immediates</a></h3>
+<div class="level3">
+
+<p>
+Una funció immediata es basa en el concepte de les clausures.
+</p>
+
+<p>
+Exemple de funció immediata:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(function(){})()</div></li></ol></pre>
+
+<p>
+Analitzarem la construcció de la funció ignorant el primer grup dels parèntesis.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(instruccions)()</div></li></ol></pre>
+
+<p>
+Sabem que podem fer la crida d’una funció utilitzant la sintaxi <code>functionName()</code>, però en lloc del nom podem utilitzar qualsevol expressió que es refereixi a una de les seves instàncies.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let estudiar = function(){instrucions};</div></li><li class="li1"><div class="de1">result = estudiar();</div></li><li class="li1"><div class="de1">// o també podem fer:</div></li><li class="li1"><div class="de1">result = (estudiar)();</div></li></ol></pre>
+
+<p>
+Això significa que a <strong>(funció)()</strong>, el primer joc de parèntesis és un limitador que tanca una expressió. El segon joc de parèntesis és un operador.
+</p>
+
+<p>
+Ara en lloc d’una variable, hi posem la funció anònima directament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(function(){instruccions})();</div></li></ol></pre>
+
+<p>
+Aquesta funció s’instancia, tot seguit s’executa i, finalment, es descarta. Per exemple, es poden utilitzar aquest tipus de funcions per crear un àmbit temporal que emmagatzemi l’estat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(function(){</div></li><li class="li1"><div class="de1">	let numclicks = 0;</div></li><li class="li1"><div class="de1">	document.addEventListener(&quot;click&quot;, function(){alert(++numclicks);}, false);</div></li><li class="li1"><div class="de1">})();</div></li></ol></pre>
+
+<p>
+L’important és observar que es crea una clausura pel controlador que inclou <code>numclicks</code>, llavors només ell pot fer referència a aquesta variable. Ningú més podrà modificar el seu valor.
+</p>
+
+<p>
+Aquesta és una de les formes d’ús comú de les funcions immediates: com embolcalls simples e independents.
+</p>
+
+<p>
+També es poden passar paràmetres a les funcions immediates incloent-los al final. Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(function(salutacio){alert(salutacio);})(&quot;Hola&quot;);</div></li></ol></pre>
+
+</div>
+
+<h3><a id="les_funcions_niades" >Les funcions niades</a></h3>
+<div class="level3">
+
+<p>
+A l’estructura que esdevé al declarar funcions una dintre d’altres s’anomena estructura de funcions niades. Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function estudiar(vegades) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function molt(frase) {</div></li><li class="li1"><div class="de1">        document.write(frase)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    molt(`Estudieu més de ${vegades} hores.`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">estudiar(10);</div></li></ol></pre>
+
+<p>
+Podem combinar aquesta estructura amb el retorn de les funcions. La funció pare pot escollir una de les funcions internes i retornar-la. Les clausures permeten mantenir la informació que hi ha dintre dels paràmetres o de les variables a les que té accés la funció interna.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function estudiar(frase) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function molt() {</div></li><li class="li1"><div class="de1">        document.write(frase)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return molt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const ioc = estudiar('Estudiant a l´IOC s´aprèn molt.')</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ioc()</div></li></ol></pre>
+
+<p>
+Podem combinar tot el que hem après sobre les funcions. Podem crear-les anònimes i auto-executables.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const estudiar = (function(frase) {</div></li><li class="li1"><div class="de1">    function molt() {</div></li><li class="li1"><div class="de1">        alert(frase)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    return molt</div></li><li class="li1"><div class="de1">})(&quot;Estudiant a l'IOC s'aprèn molt.&quot;)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">estudiar();</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/abNzbLr?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/abNzbLr?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/abNzbLr?editors=0010</a>.
+</p>
+
+<h3><a id="desestructuracio_i_assignacio_de_valors_per_defecte_als_parametres" >Desestructuració i assignació de valors per defecte als paràmetres</a></h3>
+<div class="level3">
+
+<p>
+Actualment JavaScript permet la desestructuració d’objectes i <em>arrays</em>, això significa que es poden assignar directament els valors d’un <em>array</em> o objecte a un grup de variables:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Desestructuració d'un array</div></li><li class="li1"><div class="de1">let colors = ['verd', 'ambar', 'vermell'];</div></li><li class="li1"><div class="de1">let [pasar, perill, prohibit] = colors;</div></li><li class="li1"><div class="de1">console.log(pasar, perill, prohibit);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Desestructuració d'un objecte</div></li><li class="li1"><div class="de1">let persona = {nom: &quot;Joan&quot;, poblacio: &quot;Barcelona&quot;};</div></li><li class="li1"><div class="de1">// variables amb el mateix nom que les propietats</div></li><li class="li1"><div class="de1">let {nom, poblacio} = persona;</div></li><li class="li1"><div class="de1">console.log(nom, poblacio);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// variables amb diferent nom que les propietats</div></li><li class="li1"><div class="de1">let {nom: a, poblacio: b} = persona;</div></li><li class="li1"><div class="de1">console.log(a, b);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYqYVeg?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYqYVeg?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYqYVeg?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que a la banda esquerra s’indiquen les variables a les quals s’assignarà el valor i a la dreta l’objecte o <em>array</em> que es desestructurarà.
+</p>
+
+<p>
+En el cas dels <em>arrays</em>, cal indicar els noms de les variables entre claudàtors i els valors s’assignaran en ordre (l’índex 0 a la primera variable, l’índex 1 a la segona, l’índex 2 a la tercera, etc.).
+</p>
+
+<p>
+Per altra banda, en el cas dels objectes, s’indicaran els noms entre claus i, en cas que els noms de les variables siguin diferents dels noms de les propietats, caldrà indicar-los separats per dos punts, separant els parells de propietat i variable per una coma.
+</p>
+
+<p>
+Aquesta mateixa desestructuració es pot aprofitar per passar arguments amb nom a les funcions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function saludar({ nom, poblacio }) {</div></li><li class="li1"><div class="de1">  console.log(`Hola ${nom} de ${poblacio}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let joan = {nom: &quot;Joan&quot;, poblacio: &quot;Barcelona&quot;};</div></li><li class="li1"><div class="de1">let maria = {nom: &quot;Maria&quot;, poblacio: &quot;Lleida&quot;};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">saludar(joan);</div></li><li class="li1"><div class="de1">saludar(maria);</div></li><li class="li1"><div class="de1">saludar({nom: &quot;Pere&quot;, poblacio: &quot;Tarragona&quot;});</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PoNoMqQ?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PoNoMqQ?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/PoNoMqQ?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que, en lloc d’indicar un nom de paràmetre, el que hem fet és indicar una desestructuració d’un objecte i, per tant, els paràmetres <code>nom</code> i <code>població</code> rebran el valor de les propietats corresponent a l’objecte que es passi com argument.
+</p>
+
+<p>
+Una altra característica de les desestructuracions és que permeten assignar valors per defecte pels casos en què l’objecte reestructurat no contingut cap valor per assignar:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Desestructuració d'un objecte</div></li><li class="li1"><div class="de1">let persona = {nom: &quot;Joan&quot;};</div></li><li class="li1"><div class="de1">// variables amb el mateix nom que les propietats</div></li><li class="li1"><div class="de1">let {nom, poblacio = &quot;desconegut&quot;} = persona;</div></li><li class="li1"><div class="de1">console.log(nom, poblacio);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/poyoMNm?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/poyoMNm?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/poyoMNm?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, quan l’objecte desestructurat no conté la propietat <code>poblacio</code> (com en aquest exemple), el valor assignat és <code>desconegut</code>.
+</p>
+
+<p>
+Això ens permet crear funcions amb paràmetres que acceptin valors per defecte:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function saludar({nom, poblacio = &quot;desconegut&quot;}) {</div></li><li class="li1"><div class="de1">  console.log(`Hola ${nom} de ${poblacio}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">let maria = {nom: &quot;Maria&quot;, poblacio: &quot;Lleida&quot;};</div></li><li class="li1"><div class="de1">saludar(maria);</div></li><li class="li1"><div class="de1">saludar({nom: &quot;Pere&quot;});</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYqYgwr?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYqYgwr?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYqYgwr?editors=0012</a>.
+</p>
+
+<p>
+Així doncs, quan invoquem a la funció <code>saludar()</code> amb un objecte que no contingui la propietat <code>poblacio</code> s’assigna el valor <code>desconegut</code> i, en cas contrari, s’assigna el valor de la propietat.
+</p>
+
+</div>
+
+<h3><a id="propagacio_i_retorn_de_multiples_valors" >Propagació i retorn de múltiples valors</a></h3>
+<div class="level3">
+
+<p>
+En alguns casos pot ser necessari que una funció retorni més d’un valor. En aquest cas es pot fer retornat un objecte o un <em>array</em>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Utilització avançada de paràmetres i retorns</p>
+<p>
+Podeu trobar més exemples avançats d’utilització de la desestructuració i la propagació al següent enllaç: <a href="https://bit.ly/3ifbZq1" class="urlextern" title="https://bit.ly/3ifbZq1"  rel="nofollow">https://bit.ly/3ifbZq1</a>.
+</p>
+</div></div>
+<p>
+Per exemple, retornant un <em>array</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function getCoordenades() {</div></li><li class="li1"><div class="de1">  let coordenades = [2, 4];</div></li><li class="li1"><div class="de1">  return coordenades;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let novesCoordenades = getCoordenades();</div></li><li class="li1"><div class="de1">console.log(`Primera coordenada: ${novesCoordenades[0]}`);</div></li><li class="li1"><div class="de1">console.log(`Segona coordenada: ${novesCoordenades[1]}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/BaKyaBz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BaKyaBz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/BaKyaBz?editors=0012</a>.
+</p>
+
+<p>
+O retornant un objecte:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function getCoordenades() {</div></li><li class="li1"><div class="de1">  let coordenades = {x: 2, y: 4};</div></li><li class="li1"><div class="de1">  return coordenades;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let novesCoordenades = getCoordenades();</div></li><li class="li1"><div class="de1">console.log(`Primera coordenada: ${novesCoordenades.x}`);</div></li><li class="li1"><div class="de1">console.log(`Segona coordenada: ${novesCoordenades.y}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNEYYv?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNEYYv?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNEYYv?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, en tots dos casos cal accedir a l’element de l’<em>array</em> o la propietat de l’objecte respectivament, però, gràcies a l’operador de propagació  (que es representa per tres punts suspensius, <em>…</em>), és possible desestructurar el retorn:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function getCoordenades() {</div></li><li class="li1"><div class="de1">  let coordenades = {a: 1, x: 2, y: 4, z: 3};</div></li><li class="li1"><div class="de1">  return {...coordenades};</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let {x, y} = getCoordenades();</div></li><li class="li1"><div class="de1">console.log(`Primera coordenada: ${x}`);</div></li><li class="li1"><div class="de1">console.log(`Segona coordenada: ${y}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wvGBvKg?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wvGBvKg?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/wvGBvKg?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que al retorn es troba entre claus i s’ha fet servir l’operador de propagació. D’aquesta manera en invocar la funció <code>getCoordenades()</code> s’assigna automàticament el valor de les propietats a les variables <code>x</code> i <code>y</code> com si es tractés d’una desestructuració.
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a href="../../../WebContent/u5/introduccio.html">5. POO i gestors de base de dades</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5mapa"><a href="../../../WebContent/u5/mapa.html">Mapa conceptual</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id="u5a1continguts"><a href="../../../WebContent/u5/a1/continguts.html">Introducció al diagrama estàtic UML</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis</a></li></ul></li><li id="u5a2" class="tocsection"><p id="u5a2continguts"><a href="../../../WebContent/u5/a2/continguts.html">Aplicacions amb BD no orientades a objectes</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><li id="u5a3" class="tocsection"><p id="u5a3continguts"><a href="../../../WebContent/u5/a3/continguts.html">Aplicacions amb BD orientades a objectes</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">POO i gestors de base de dades</a></li><li>Aplicacions amb BD orientades a objectes</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="aplicacions_amb_bd_orientades_a_objectes"> Aplicacions amb BD orientades a objectes </a></h1>
+    	
+<p>
+Si bé les BD relacionals són les més populars i les que tenen més acceptació, la seva utilització dins una aplicació orientada a objectes implica un procés de traducció del diagrama UML original a un model relacional, totalment basat en taules. En aquesta traducció es perden moltes de les funcionalitats bàsiques de l’orientació a objectes, que s’han de simular d’alguna manera: referències a objectes, classes associatives, llistes d’objectes, herència, etc. Quan el diagrama és de certa complexitat, la traducció pot esdevenir molt complicada.
+</p>
+
+<p>
+Per resoldre aquest problema hi ha les BD orientades a objectes (BDOO). Aquestes, en lloc d’organitzar les dades en taules, les organitzen exactament tal com ho fa un diagrama UML, mitjançant la definició del conjunt de classes i relacions entre elles. Per tant, no cal fer cap traducció.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per evitar confusions, fem servir el terme <em>BDR</em> per referir-nos explícitament a una BD relacional i el terme <em>BDOO</em> per referir-nos a una BD orientada a objectes, de manera que ambdós quedin diferenciats.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El Java té una especificació per a BDOO anomenada JDO (<em>Java data objects</em>).
+</p>
+</div></div>
+<p>
+Actualment, l’aplicació de BDOO es limita a àmbits molt concrets, especialment els vinculats a àrees científiques. La seva implantació en aplicacions comercials d’àmbit general és molt baixa. Un dels problemes principals de les BDOO és que els fabricants tendeixen a crear solucions incompatibles, que no obeeixen cap especificació concreta. Al contrari que en el cas de les BDR, és molt possible que una aplicació client feta pel producte d’un fabricant concret no funcioni sobre una BDOO d’un altre fabricant. De fet, a les BDOO que suporten Java no s’accedeix mitjançant JDBC, ja que aquest mecanisme és específic per a BDR, sinó que normalment s’hi accedeix usant biblioteques específiques per a cada fabricant.
+</p>
+
+<h2><a id="els_llenguatges_odl_i_oql" >Els llenguatges ODL i OQL</a></h2>
+<div class="level2">
+
+<p>
+De la mateixa manera que hi ha l’SQL com a llenguatge estàndard per accedir a una BDR independentment del fabricant, hi ha un llenguatge per accedir a les dades d’una BDOO: el llenguatge de consultes a objectes (<em>object query language</em>, OQL). Addicionalment, hi ha el llenguatge de descripció d’objectes (<em>object description language</em>, ODL), que serveix per especificar el format d’una BDOO: quina mena d’objectes pot contenir i les seves relacions. Malauradament, si bé aquests llenguatges estan especificats, i com ja s’ha dit, no es pot comptar amb el fet que qualsevol fabricant realment els suporti. De cap manera arriben al grau d’acceptació de l’SQL.
+</p>
+
+</div>
+
+<h3><a id="el_llenguatge_odl" >El llenguatge ODL</a></h3>
+<div class="level3">
+
+<p>
+El llenguatge ODL s’utilitza per definir classes d’objectes persistents dins una BDOO, de manera que els seus objectes es puguin emmagatzemar. Dins la declaració de cada classe s’inclou:
+</p>
+<ul>
+<li class="level1"><div class="li"> El nom de la classe.</div>
+</li>
+<li class="level1"><div class="li"> Declaracions opcionals de claus primàries.</div>
+</li>
+<li class="level1"><div class="li"> La declaració de l’extensió: el nom del conjunt d’instàncies existents.</div>
+</li>
+<li class="level1"><div class="li"> Declaracions d’elements: atributs, relacions o mètodes.</div>
+</li>
+</ul>
+
+<p>
+La sintaxi és la següent (entre claudàtors s’indiquen camps opcionals):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">class</span> nomClasse <span class="br0">&#91;</span><span class="br0">&#40;</span>key nomAtribut<span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">attribute tipusAtribut nomAtribut<span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="me1">relationship</span> tipus<span class="sy0">&lt;</span>nomClasseDestinació<span class="sy0">&gt;</span> nomRelacio<span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="me1">tipusRetorn</span> nomMetode<span class="br0">&#40;</span>params<span class="br0">&#41;</span> <span class="br0">&#91;</span>raises <span class="br0">&#40;</span>tipusExcepcio<span class="br0">&#41;</span><span class="br0">&#93;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Com es pot apreciar, simplement és un canvi de sintaxi respecte al llenguatge Java pròpiament, però la majoria d’elements d’una classe són clarament identificables.
+</p>
+
+<p>
+L’única diferència és la declaració explícita de les relacions en forma de la paraula clau relationship, en contrast en Java, que es tradueixen a atributs. Hi ha diferents tipus de relacions segons la cardinalitat que es vol expressar. De fet cadascun d’aquests tipus té una certa correspondència amb les classes que s’usen en Java per implementar relacions. Per a cardinalitat 1, és suficient de posar el nom de la classe destinació. En cas de cardinalitat múltiple, es pot triar entre diferents tipus:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>&lt;nomClasseDestinació&gt;</code>, si la relació és només a un únic objecte.</div>
+</li>
+<li class="level1"><div class="li"> <code>Set&lt;nomClasseDestinació&gt;</code>, un conjunt no ordenat sense repeticions.</div>
+</li>
+<li class="level1"><div class="li"> <code>Bag&lt;nomClasseDestinació&gt;</code>, un conjunt no ordenat amb repeticions. </div>
+</li>
+<li class="level1"><div class="li"> <code>List&lt;nomClasseDestinació&gt;</code>, un conjunt ordenat amb repeticions, amb insercions eficients.  </div>
+</li>
+<li class="level1"><div class="li"> <code>Array&lt;nomClasseDestinació&gt;</code>, un conjunt ordenat amb repeticions.</div>
+</li>
+</ul>
+
+<p>
+El seu significat és el mateix que el de les classes homònimes del Java (capacitat d’haver-hi repeticions d’elements, ordenades o no per índex, etc.). Normalment, la més usada és <code>Set&lt;nomClasseDestinació&gt;</code>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si retornem a un model orientat a objectes, amb referències, no cal l’atribut “id”.
+</p>
+</div></div>
+<p>
+Tot seguit es mostra com es podria representar dues classes interdependents anomenades <code>Client</code> i <code>Encarrec</code>, que emmagatzemen dades a una aplicació de gestió de clients, mitjançant ODL.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">class</span> Client <span class="br0">&#40;</span>key id<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1"> attribute <span class="kw4">int</span> id<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> attribute <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> attribute <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> adreçaPostal<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> attribute <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> adreçaMail<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> attribute <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> telefon<span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"> relationship Set<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> encarrecs<span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getId<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> ...</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">class</span> Encarrec <span class="br0">&#40;</span>key id<span class="br0">&#41;</span>  <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1"> attribute <span class="kw4">int</span> id<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> attribute <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a> data<span class="sy0">;</span></div></li><li class="li1"><div class="de1"> ...</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+L’herència entre classes s’inicia en la seva declaració mitjançant la paraula clau <code>extends</code> seguit del nom de la superclasse:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">class</span> nomClasse <span class="kw1">extends</span> nomSuperClasse <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  ...  </div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+</div>
+
+<h3><a id="el_llenguatge_oql" >El llenguatge OQL</a></h3>
+<div class="level3">
+
+<p>
+El llenguatge OQL es limita a permetre consultes sobre una BDOO. El seu operador principal és <code>SELECT</code>, el qual té una gran similitud amb l’equivalent SQL. Tot i així, té algunes particularitats degudes a la manera com s’estructuren les dades mitjançant l’orientació a objectes (per exemple, no hi ha taules, és clar).
+</p>
+
+<p>
+La sintaxi general és:
+</p>
+<pre class="code SQL"><ol><li class="li1"><div class="de1"><span class="kw1">SELECT</span> valor1<span class="sy0">,</span>valor2<span class="sy0">,...</span></div></li><li class="li1"><div class="de1"><span class="kw1">FROM</span> llista de col<span class="sy0">.</span>lecions i noms per membres típics</div></li><li class="li1"><div class="de1"><span class="kw1">WHERE</span> condició</div></li></ol></pre>
+
+<p>
+Atès que ara ja no hi ha taules, cal tenir en compte dues coses. D’una banda, la llista de col·leccions especificada en l’apartat <code>FROM</code> correspon a alguna de les classes declarades. Juntament al nom d’aquesta classe s’especifica la variable que s’usarà en els termes <code>SELECT</code> i <code>WHERE</code> per referenciar valors. D’altra banda, els valors que es volen consultar o comparar són atributs de classes, pel que la manera de referir-s’hi és mitjançant la nomenclatura: <code>nomClasse.nomAtribut</code>. Aquesta possibilitat també es pot usar per indicar-ne les relacions.
+</p>
+
+<p>
+Per exemple, a una aplicació de gestió de clients, si es volen consultar els clients de la BDOO d’acord amb la definició de les seves classes, es pot fer:
+</p>
+<pre class="code SQL"><ol><li class="li1"><div class="de1"><span class="kw1">SELECT</span> c<span class="sy0">.</span>adreçaPostal<span class="sy0">,</span> c<span class="sy0">.</span>telefon </div></li><li class="li1"><div class="de1"><span class="kw1">FROM</span> Clients c </div></li><li class="li1"><div class="de1"><span class="kw1">WHERE</span> c<span class="sy0">.</span>nom <span class="sy0">=</span> <span class="st0">&quot;Client1&quot;</span></div></li></ol></pre>
+
+<p>
+Aquesta consulta retorna l’adreça postal i el telèfon del client amb nom “Client1”.
+</p>
+
+<p>
+També és possible accedir als encàrrecs per mitjà dels clients, seguint la seva relació:
+</p>
+<pre class="code SQL"><ol><li class="li1"><div class="de1"><span class="kw1">SELECT</span> e<span class="sy0">.</span><span class="kw1">DATA</span></div></li><li class="li1"><div class="de1"><span class="kw1">FROM</span> Clients c<span class="sy0">,</span> c<span class="sy0">.</span>encarrecs e</div></li><li class="li1"><div class="de1"><span class="kw1">WHERE</span> c<span class="sy0">.</span>adreçaMail <span class="sy0">=</span> <span class="st0">&quot;email1@domini.com&quot;</span></div></li></ol></pre>
+
+<p>
+Aquesta consulta retorna la data de tots els encàrrecs del client amb adreça de correu “email1@domini.com”.
+</p>
+
+</div>
+
+<h2><a id="la_llibreria_db4o" >La llibreria db4O</a></h2>
+<div class="level2">
+
+<p>
+Tot i els esforços per estandarditzar l’ús de les BDOO, no es pot dir que actualment hi hagi cap equivalent al llenguatge SQL. Tot i que sobre el paper hi ha l’ODL i l’OQL, a la pràctica ara mateix no hi ha cap llengua franca que es pugui garantir que està suportada, almenys en els seus aspectes fonamentals, per totes les bases de dades, tot i que després cada fabricant pugui afegir igualment les seves pròpies extensions propietàries. Per tant, cada tipus de BDOO ofereix el seu propi sistema per accedir als objectes emmagatzemats. Afortunadament, com aviat veureu, això no és gaire problemàtic, ja que l’avantatge d’usar una BDOO és poder crear codi on operar amb objectes persistents; és gairebé igual que treballar amb objectes a memòria, i, per tant, els mecanismes que ofereixen les diferents BDOO sovint són molt semblants a treballar amb objectes directament a memòria. El que varia són les llibreries de classes a usar, però no la idea general.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les classes de db4o estan dins els <em>packages</em> <code>com.db4o…</code>
+</p>
+</div></div>
+<p>
+En aquest apartat es veurà un cas concret d’accés a una BDOO anomenada <strong>db4o</strong>, de lliure distribució, actualment amb versions per al Java i per a .NET. Evidentment, aquesta secció se centra exclusivament en la versió per al Java. No es troba en la distribució estàndard del Java, i, per tant, s’ha de descarregar i afegir als vostres projectes a part.
+</p>
+
+<p>
+La llista de passos per interactuar amb aquesta BDOO és molt semblant a l’emprada mitjançant JDBC, si bé la manera com es fa amb codi Java és completament diferent en alguns aspectes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un cop s’han emmagatzemat objectes a una <strong>BDOO db4o</strong>, ja no es pot modificar la classe d’aquests objectes. Si es modifica (i, per tant, es torna a compilar el fitxer JAVA), totes les dades que hi ha dins deixen de tenir validesa. Si es vol usar la nova versió de la classe, cal tornar a generar el contingut de la BDOO des de zero.
+</p>
+</div></div>
+</div>
+
+<h3><a id="obertura_de_la_bdoo" >Obertura de la BDOO</a></h3>
+<div class="level3">
+<div class="iocnote"><div class="ioccontent">
+<p>
+Normalment, els fitxers de db4o s’escriuen amb l’extensió ”.db4o”
+</p>
+</div></div>
+<p>
+Una BDOO <em>db4o</em> no és més que un fitxer, si bé força complex en la seva estructura interna. Per tant, alguns dels aspectes són semblants, com ara l’accés a les dades emmagatzemades dins, que és semblant a com es faria amb un fitxer qualsevol. Aquest és el cas de la seva obertura, per tal de poder llegir les seves dades o escriure’n, i el seu posterior tancament quan ja no cal usar-lo més. El mètode estàtic <code>openFile</code> de la classe <code>Db4oEmbedded</code> permet que es pugui obrir aquest fitxer. Com succeeix en treballar amb fitxers, si aquest no existeix, se’n crea un de nou, amb la BDOO buida.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="me1">ObjectContainer</span> db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="co1">//Accions amb la BDOO</span></div></li><li class="li1"><div class="de1">db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Mitjançant l’objecte resultant de la crida, una instància d<code>‘ObjectContainer </code>, es podran dur a terme totes les accions amb la BDOO. Fins a cert punt, és l’equivalent a una connexió a una BDR mitjançant JDBC. Un cop s’ha acabat de treballar, sempre cal tancar la BDOO usant el mètode <code>close</code>.
+</p>
+
+<p>
+Ara bé, aquesta és una aproximació molt simple a l’ús d’una BD, ja que el fitxer ha d’estar emmagatzemat en local a la mateixa màquina que executa l’aplicació. Per poder tractar les dades des d’una altra màquina, caldrà copiar tant l’aplicació com també el fitxer de la BD. Normalment, el model de treball amb una BD es basa que hi ha un servidor, on s’executa la BD, i el desenvolupador genera el client, que s’hi connecta per xarxa. Un cop establerta la connexió, pot enviar peticions a la BD, i un cop dutes a terme totes les tasques, la tanca.
+</p>
+
+<p>
+Les llibreries de <em>db4o</em> no proporcionen cap servidor en forma de programa que només cal instal·lar i configurar en un equip. Afortunadament, aquesta tasca és molt simple, ja que es pot fer en poques línies de codi. Dins aquest model d’accés a les dades, la BD continua essent un únic fitxer, en aquest cas emmagatzemat al servidor central, i les llibreries ja proporcionen tots els mecanismes necessaris per publicar el servei a la màquina i poder accedir-hi remotament de manera transparent, com si en realitat fos un fitxer en local en l’equip que executa l’aplicació client.
+</p>
+
+<p>
+Per posar en marxa un servidor, cal usar el mètode estàtic <code>openServer</code> de la classe <code>Db4oClientServer</code> (al <em>package</em> <code>com.db4o.cs</code>). Un cop s’executa el mètode, el servei d’accés a la DBOO es posa en marxa a l’equip local on s’ha executat. Mentre el programa segueixi en execució, estarà disponible. Aquest mètode requereix tres paràmetres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un nou objecte de configuració del servidor, que sempre es genera cridant <code>Db4oClientServer.newServerConfiguration()</code>.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> El nom del fitxer on es desa la BDOO. Si no existeix, se’n crearà un de nou buit.</div>
+</li>
+<li class="level1"><div class="li"> El port on s’executarà el servei.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Sovint, en engegar o apagar un servei db4o apareix un missatge de depuració per la consola d’errors del Java.
+</p>
+</div></div>
+<p>
+La creació d’un servidor retorna un objecte <code>ObjectServer</code>, a partir del qual es poden configurar certs aspectes del comportament del servei. El més important de tots és poder afegir usuaris i contrasenyes que limitin qui pot accedir a la BDOO remotament. Això es fa usant el mètode <code>grantAccess</code>.
+</p>
+
+<p>
+Vegem un exemple de servidor <em>db4o</em>, molt senzill, però més que suficient per provar-ne el funcionament i els exemples d’aquest apartat si es desitja. En aquest cas, s’ha fet que el programa que executa el servei no finalitzi fins que l’usuari pitgi “Q” o “q”. En fer-ho, el servei s’apaga i deixa d’estar accessible remotament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.io.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.cs.Db4oClientServer</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Server <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectServer sv <span class="sy0">=</span> Db4oClientServer.<span class="me1">openServer</span><span class="br0">&#40;</span>Db4oClientServer.<span class="me1">newServerConfiguration</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="st0">&quot;BDRemota.db4o&quot;</span>, <span class="nu0">7000</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    sv.<span class="me1">grantAccess</span><span class="br0">&#40;</span><span class="st0">&quot;usuari&quot;</span>, <span class="st0">&quot;contrasenya&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Pitja [Q] per tancar el servidor.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">while</span> <span class="br0">&#40;</span>in.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span>  <span class="br0">&#40;</span><span class="st0">&quot;Q&quot;</span>.<span class="me1">equalsIgnoreCase</span><span class="br0">&#40;</span>in.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Des del punt de vista de l’aplicació que vol accedir a la BD remota, cal usar el mètode <code>openClient</code> de la classe <code>Db4oClientServer</code>. Ara bé, calen alguns paràmetres per poder identificar on es vol accedir:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’identificador de la màquina remota.</div>
+</li>
+<li class="level1"><div class="li"> El port del servei, tal com s’ha configurat en fer <code>openServer</code>.</div>
+</li>
+<li class="level1"><div class="li"> Un nom d’usuari i una contrasenya vàlids.</div>
+</li>
+</ul>
+
+<p>
+Si algun d’aquests paràmetres no és correcte, es llançarà una excepció indicant que la connexió no s’ha pogut establir.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.cs.Db4oClientServer</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="me1">ObjectContainer</span> db <span class="sy0">=</span> Db4oClientServer.<span class="me1">openClient</span><span class="br0">&#40;</span><span class="st0">&quot;lamevamaquina.domini.cat&quot;</span>, <span class="nu0">7000</span>, <span class="st0">&quot;usuari&quot;</span>,<span class="st0">&quot;contrasenya&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="co1">//Accions amb la BDOO</span></div></li><li class="li1"><div class="de1">db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Localhost</p>
+<p>
+Per connectar-se a l’equip local, pel cas on tant el client com el servidor s’executen la mateixa màquina,es pot usar el nom de <em>host</em>, <em>localhost</em>. Això és útil per fer proves en un únic equip.
+</p>
+</div></div>
+<p>
+L’objecte retornat en aquest cas també és un <code>ObjectContainer</code>, per la qual cosa, un cop establerta la connexió amb la DB remota amb aquesta crida, totes les operacions que es poden dur a terme són exactament iguals que si es fessin accedint a un fitxer en local.
+</p>
+
+</div>
+
+<h3><a id="emmagatzematge_de_nous_objectes" >Emmagatzematge de nous objectes</a></h3>
+<div class="level3">
+
+<p>
+Per emmagatzemar qualsevol objecte del vostre programa dins la BDOO, només cal cridar el mètode <code>store</code> que proporciona l<code>‘ObjectContainer</code>, obtingut en obrir la BD (ja sigui en un fitxer local o remot). Aquest mètode només té un paràmetre, que és l’objecte a emmagatzemar. Mitjançant aquest mètode es pot desar qualsevol tipus d’objecte, sense que per aquest fet s’hagi de fer cap modificació al seu codi font.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Per exemple, suposeu que es volen gestionar els encàrrecs que duen a terme clients d’una empresa i, per a tal efecte, s’han generat les classes següents, que inicialment no es van desenvolupar amb el propòsit de ser integrades dins cap BDOO <em>db4o</em>. Noteu que la classe <code>Client</code> només permet canviar l’adreça electrònica un cop s’ha instanciat (usant el mètode <code>setAElectronica</code>).
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Client <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> aPostal<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> aElectronica<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> telefon<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> List<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> liComandes <span class="sy0">=</span> <span class="kw1">new</span> LinkedList<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> Client<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> n, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ap, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ae, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> t<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    nom <span class="sy0">=</span> n<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    aPostal <span class="sy0">=</span> ap<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    aElectronica <span class="sy0">=</span> ae<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    telefon <span class="sy0">=</span> t<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getNom<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> nom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getAPostal<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> aPostal<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getAElectronica<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> aElectronica<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> setAElectronica<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ae<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    aElectronica <span class="sy0">=</span> ae<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getTelefon<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> telefon<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">int</span> getNreComandes<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> liComandes.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> addComanda<span class="br0">&#40;</span>Encarrec e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    liComandes.<span class="me1">add</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> List<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> getComandes<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> liComandes<span class="sy0">;</span>  </div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  @Override</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> toString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> res <span class="sy0">=</span> nom <span class="sy0">+</span> <span class="st0">&quot; : &quot;</span> <span class="sy0">+</span> aPostal <span class="sy0">+</span> <span class="st0">&quot; : (&quot;</span> <span class="sy0">+</span> aElectronica <span class="sy0">+</span> <span class="st0">&quot;, &quot;</span> <span class="sy0">+</span> telefon <span class="sy0">+</span> <span class="st0">&quot;)<span class="es0">\n</span>&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    Iterator<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> it <span class="sy0">=</span> liComandes.<span class="me1">iterator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">while</span> <span class="br0">&#40;</span>it.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Encarrec e <span class="sy0">=</span> it.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      res <span class="sy0">+=</span> e.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;<span class="es0">\n</span>&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">     <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> res<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Date</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Encarrec <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nomProducte<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">int</span> quantitat<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a> data<span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> Encarrec<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> n, <span class="kw4">int</span> q<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    nomProducte <span class="sy0">=</span> n<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    quantitat <span class="sy0">=</span> q<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    data <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getNom<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> nomProducte<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">int</span> getQuantitat<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> quantitat<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a> getData<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> data<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  @Override</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> toString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> getData<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">+</span> <span class="st0">&quot; - &quot;</span> <span class="sy0">+</span> getNom<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot; (&quot;</span> <span class="sy0">+</span> getQuantitat<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;)&quot;</span><span class="sy0">;</span>  </div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+El codi d’un programa que emmagatzema quatre clients a la BDOO, entre els quals un d’ells ja té tres encàrrecs associats, seria el que hi ha a continuació, basat, senzillament, a fer crides successives a <code>store</code>, passant com a paràmetre cada objecte que es vol emmagatzemar. Per simplificar, se suposa que s’obre una BDOO ubicada en un fitxer local, però per al cas remot, seria exactament el mateix. Recordeu que sempre cal controlar les excepcions en accedir a les dades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> EmmagatzemaClients  <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Client<span class="br0">&#91;</span><span class="br0">&#93;</span> clients <span class="sy0">=</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">new</span> Client<span class="br0">&#40;</span><span class="st0">&quot;Client1&quot;</span>, <span class="st0">&quot;Adreça1&quot;</span>, <span class="st0">&quot;e-mail1@domini.com&quot;</span>, <span class="st0">&quot;+34931112233&quot;</span><span class="br0">&#41;</span>,</div></li><li class="li1"><div class="de1">        <span class="kw1">new</span> Client<span class="br0">&#40;</span><span class="st0">&quot;Client2&quot;</span>, <span class="st0">&quot;Adreça2&quot;</span>, <span class="st0">&quot;e-mail2@domini.com&quot;</span>, <span class="st0">&quot;+34932223344&quot;</span><span class="br0">&#41;</span>,</div></li><li class="li1"><div class="de1">        <span class="kw1">new</span> Client<span class="br0">&#40;</span><span class="st0">&quot;Client3&quot;</span>, <span class="st0">&quot;Adreça3&quot;</span>, <span class="st0">&quot;e-mail3@domini.com&quot;</span>, <span class="st0">&quot;+34931112233&quot;</span><span class="br0">&#41;</span>,</div></li><li class="li1"><div class="de1">        <span class="kw1">new</span> Client<span class="br0">&#40;</span><span class="st0">&quot;Client4&quot;</span>, <span class="st0">&quot;Adreça3&quot;</span>, <span class="st0">&quot;e-mail4@domini.com&quot;</span>, <span class="st0">&quot;+34931112233&quot;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      clients<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span>.<span class="me1">addComanda</span><span class="br0">&#40;</span><span class="kw1">new</span> Encarrec<span class="br0">&#40;</span><span class="st0">&quot;Impressora&quot;</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      clients<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span>.<span class="me1">addComanda</span><span class="br0">&#40;</span><span class="kw1">new</span> Encarrec<span class="br0">&#40;</span><span class="st0">&quot;Toner Impressora&quot;</span>,<span class="nu0">4</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      clients<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span>.<span class="me1">addComanda</span><span class="br0">&#40;</span><span class="kw1">new</span> Encarrec<span class="br0">&#40;</span><span class="st0">&quot;Paquest A4&quot;</span>, <span class="nu0">20</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> clients.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        db.<span class="me1">store</span><span class="br0">&#40;</span>clients<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+En aquest codi hi ha un aspecte molt important en què val la pena fixar-se en detall. Si l’examineu, veureu que, tot i que els objectes que cal emmagatzemar són tant els clients com els encàrrecs, enlloc es fa cap <code>store</code> per als encàrrecs. Només es fa per als clients. Això es deu al fet que, en les BDOO, en fer persistent un objecte, aquesta persistència es propaga a tots els objectes enllaçats també, de manera transitiva, fins que tot el mapa d’objectes, el <em>graf</em> d’enllaços que parteix de l’objecte emmagatzemat es troba al complet a la BDOO. Això es fa automàticament sense necessitat que ho faci el programador. Aquest comportament, esquematitzat a la <span class="figref"><a href="#Figure22"><span>figura</span></a></span>, també succeeix quan es recuperen les dades amb alguna cerca, com veureu properament.
+</p>
+<div class="iocfigure"><a name="Figure22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tractament dels mapes d’objectes sobre una BDOO
+
+</figcaption><img src="../media/ic10m03u5_22.png" alt="" /></figure>
+</div>
+<p>
+Una pregunta que pot sorgir és: què passa si, <em>a posteriori</em>, s’emmagatzema un objecte que, a causa d’aquest comportament, ja existeix a la BDOO? Per exemple, si es fa un <code>store</code> d’un dels tres encàrrecs, quan aquest de fet ja està a la BDOO, ja que s’ha desat automàticament en emmagatzemar el client 3. La resposta és que no passa res. La BDOO ja detecta que es tracta del mateix objecte i, per tant, no es generen dues còpies. 
+</p>
+
+<p>
+Això és possible ja que, recordeu que una de les bases de la OO és “Tot és un objecte, amb una identitat pròpia”. O sigui, tot objecte s’identifica amb una única referència. Aquesta pot estar replicada en diferents variables, però totes apunten a un únic objecte a memòria. Això també es compleix dins la BDOO, i, per tant, aquesta és capaç d’identificar diferents operacions amb un mateix objecte.
+</p>
+
+<p>
+Ara bé, aquest comportament té unes altres implicacions que cal tenir també ben presents. Suposeu que aquest mateix programa l’executeu 3 vegades consecutives. Quants objectes client hi haurà emmagatzemats a la BDOO després de la darrera execució? La resposta és que n’hi haurà 12, ja que els objectes de cada execució són independents entre si. Tot i que el contingut dels objectes en successives execucions és exactament el mateix, l’objecte en si és diferent, tenen diferents referències, i, per tant, es considera un nou element a la BDOO. En conseqüència, cal anar amb molt de compte en emmagatzemar nous objectes entre execucions diferents del programa, ja que això sempre implicarà la creació d’un nou element a la BDOO.
+</p>
+
+</div>
+
+<h3><a id="cerca_d_objectes" >Cerca d&#039;objectes</a></h3>
+<div class="level3">
+
+<p>
+Els mecanismes de lectura d’una BD solen ser els més importants, ja que normalment són els que s’usen més sovint. La llibreria <em>db4o</em> ofereix dos sistemes diferents per dur a terme aquest procés, diferenciats únicament per com es discrimina quins objectes cal retornar de la BDOO. En qualsevol dels dos casos, el que es retorna és un conjunt d’objectes, exactament tal com els heu definit a les vostres classes, empaquetat dins un contenidor específic de <em>db4o</em> anomenat <code>ObjectSet&lt;T&gt;</code>. Aquesta és una classe genèrica, de manera que, en declarar-ne una variable, cal establir sempre el tipus d’objectes que contindrà (com passa amb altres contenidors del Java:<code>List</code>, <code>Set</code>…). Per exemple, si es volen consultar clients, caldrà usar la definició <code>ObjectSet&lt;Client&gt;</code>.
+</p>
+
+<p>
+Una de les característiques més interessants de les cerques dins una BDOO és la recuperació d’objectes enllaçats entre si, de manera que si, en recuperar un objecte, aquest contenia a la vegada referències a altres objectes, aquests objectes també són recuperats. 
+</p>
+
+<p>
+I així fins a un cert nivell de profunditat, que per defecte val 5, però que es pot modificar utilitzant el codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">EmbeddedConfiguration conf <span class="sy0">=</span> Db4oEmbedded.<span class="me1">newConfiguration</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">conf.<span class="me1">common</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">activationDepth</span><span class="br0">&#40;</span>novaProfunditat<span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+L’exemple més senzill d’aquest comportament són els atributs de tipus <code>String</code>, que també són pròpiament objectes, i són restaurats junt amb l’objecte original. Però aquest comportament també es compleix per a objectes de qualsevol altra classe, ja sigui del Java o creada per vosaltres. 
+</p>
+
+</div>
+
+<h4><a id="cerques_per_exemple" >Cerques per exemple</a></h4>
+<div class="level4">
+
+<p>
+Les cerques per exemple (<em>Query-By-Example</em>) són les més senzilles. Es basen a crear una instància del tipus d’objecte a cercar, i només assignar valors als atributs sobre els quals es vol cercar una coincidència exacta. La resta, es posen a <code>null</code> (en el cas de valors numèrics, a 0). Llavors, s’invoca el mètode <code>queryByExample</code>, usant com a paràmetre aquesta instància.
+</p>
+
+<p>
+Per exemple, per cercar tots els clients que tenen com a adreça la cadena de text “Adreça3” es faria d’acord al codi que hi ha a continuació. En executar-se el codi, atesos els quatre clients d’exemple existents a la BDOO, dins l<code>‘ObjectSet</code> hi haurà 2 objectes <code>Client</code>: el que té com a <code>Client3</code> i el que té <code>Client4</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  ...</div></li><li class="li1"><div class="de1">  <span class="me1">Client</span> ex <span class="sy0">=</span> <span class="kw1">new</span> Client<span class="br0">&#40;</span><span class="kw2">null</span>, <span class="st0">&quot;Adreça3&quot;</span>, <span class="kw2">null</span>, <span class="kw2">null</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> result <span class="sy0">=</span> db.<span class="me1">queryByExample</span><span class="br0">&#40;</span>ex<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  ...</div></li></ol></pre>
+
+<p>
+L<code>‘ObjectSet</code> pot ser recorregut seqüencialment mitjançant els mètodes <code>hasNext()</code>, que indica si encara hi ha elements per recórrer, i <code>next()</code>, que llegeix un element i avança una posició. En aquest sentit, es comporta exactament igual que un <code>Iterator</code> de les llibreries estàndard del Java. Per exemple, per tal de mostrar per pantalla tots els elements obtinguts per la consulta, es podria fer el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> result <span class="sy0">=</span> ...</div></li><li class="li1"><div class="de1"><span class="kw1">while</span> <span class="br0">&#40;</span>result.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  Client cli <span class="sy0">=</span> result.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>cli<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Atès que <code>ObjectSet</code> és una classe genèrica, el mètode <code>next()</code> retorna directament una instància del tipus indicat, i no cal fer cap “cast”. Ara bé, cal anar amb compte a definir sempre el tipus dels elements de l<code>‘ObjectSet</code>, en declarar-ne la variable, de la mateixa classe que la instància usada en invocar <code>queryByExample</code>. En cas contrari, es produirà un error per manca de concordança de tipus.
+</p>
+
+<p>
+Si bé aquesta mena de cerques són molt senzilles de fer, no permeten res més que la comparació directa d’atributs. Tanmateix, tampoc no permeten fer cerques sobre valors que siguin <code>null</code> o 0, ja que són les condicions per ignorar-los com a criteri de cerca. També tenen la restricció que no poden usar-se a partir d’objectes que no permeten inicialitzar atributs a valors <code>null</code> o 0.
+</p>
+
+</div>
+
+<h4><a id="cerques_natives" >Cerques natives</a></h4>
+<div class="level4">
+
+<p>
+Normalment, les cerques que es voldran fer dins una BD van més enllà de les simples concordances directes entre valors d’atributs, i es desitjarà poder avaluar tota mena de condicions, a gust del desenvolupador, tal com permet SQL (o més). Hi ha dos mecanismes per dur a terme cerques d’acord a criteris complexos dins <em>db4o</em>, però la més potent, i, a la vegada, la més senzilla, són les cerques natives (<em>Native Queries</em>). Es basen en l’execució d’un codi Java per avaluar si un objecte dins la BDOO compleix la condició de cerca o no. En basar-se només en codi Java, la seva versatilitat és la mateixa que en qualsevol programa possible, o sigui, molt gran.
+</p>
+
+<p>
+Per executar una cerca nativa s’usa el mètode <code>query</code>, que necessita com a paràmetre una implementació de la classe <code>Predicate&lt;T&gt;</code> (pertanyent al <em>package</em> <code>com.db4o.query</code>).
+</p>
+
+<p>
+
+</p>
+
+<p>
+<code>Predicate&lt;T&gt;</code> és una classe genèrica abstracta, per la qual cal indicar quina mena d’objectes és capaç de processar en emprar-la. L’únic mètode abstracte que cal implementar és <code>match</code>, que s’ha de fer que s’avaluï a <code>true</code> si es considera que l’objecte passat com a paràmetre compleix el criteri de cerca, o <code>false</code> en cas contrari. Aquest mètode s’executarà passant com a paràmetre tots els objectes de la BDOO que es corresponguin al tipus escollit, un per un. Ara bé, el codi d’aquest mètode l’heu d’implementar vosaltres, ja que és el que ha de prendre la decisió de si un objecte compleix o no el criteri de cerca, i, per tant, el podeu fer al vostre gust. Per a cada cerca diferent que es vol fer al programa, caldrà crear una implementació diferent d’aquesta classe.
+</p>
+
+<p>
+Tot seguit, es mostra un exemple d’implementació de la classe <code>Predicate&lt;T&gt;</code>, de manera que avalua si, donat un client, aquest té com a adreça “Adreça3”, ignorant majúscules i minúscules (cosa que no es pot fer amb una cerca per exemple, ja que compara textos estrictament). Normalment, per implementar aquesta classe s’usa una classe anònima, de manera que tan bon punt es declara una variable d’aquest tipus, ja s’indica el seu codi immediatament, en lloc de fer-ho en un fitxer a part.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co1">//Declaració de la implementació de Predicate&lt;T&gt; com a classe anònima</span></div></li><li class="li1"><div class="de1">Predicate p <span class="sy0">=</span> <span class="kw1">new</span> Predicate<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  @Override</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">boolean</span> match<span class="br0">&#40;</span>Client c<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Codi pel criteri de cerca</span></div></li><li class="li1"><div class="de1">    <span class="kw1">return</span> <span class="st0">&quot;Adreça3&quot;</span>.<span class="me1">equalsIgnoreCase</span><span class="br0">&#40;</span>c.<span class="me1">getAPostal</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="co1">//Fi de la declaració</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> result <span class="sy0">=</span> db.<span class="me1">query</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li></ol></pre>
+
+<p>
+L’avantatge d’usar classes anònimes és que permeten incloure, dins el seu propi codi, atributs declarats dins la mateixa classe que les conté. Això atorga gran flexibilitat si es volen fer cerques en base a variables, i no a valors constants. Això permet crear cerques parametritzades mitjançant objectes <code>Predicate</code>. Per exemple, suposem que es volen cercar els clients que han superat cert valor en el nombre de comandes, però aquest valor depèn d’una variable dins el codi del vostre programa, ja que es demana pel teclat i per tant pot ser diferent en diferents execucions. El codi següent fa tot just això. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.query.Predicate</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> CercaParametritzada  <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">int</span> valor <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> cercaClients<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>    </div></li><li class="li1"><div class="de1">    <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Predicate p <span class="sy0">=</span> <span class="kw1">new</span> Predicate<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">       @Override</div></li><li class="li1"><div class="de1">       <span class="kw1">public</span> <span class="kw4">boolean</span> match<span class="br0">&#40;</span>Client c<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">return</span> valor <span class="sy0">&lt;=</span> c.<span class="me1">getNreComandes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">       <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> result <span class="sy0">=</span> db.<span class="me1">query</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">while</span> <span class="br0">&#40;</span>result.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        Client cli <span class="sy0">=</span> result.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>cli<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> setValor<span class="br0">&#40;</span><span class="kw4">int</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    valor <span class="sy0">=</span> v<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      CercaParametritzada cp <span class="sy0">=</span> <span class="kw1">new</span> CercaParametritzada<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és el valor mínim a cercar? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      cp.<span class="me1">setValor</span><span class="br0">&#40;</span>in.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      cp.<span class="me1">cercaClients</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+En fer cerques, recordeu que a la BDOO no només hi ha aquells objectes dels quals s’ha fet una crida <code>store</code> explícita, sinó que també es troben disponibles els objectes emmagatzemats implícitament a causa d’enllaços amb altres objectes. Per tant, a la BDOO, també es poden fer cerques sobre encàrrecs. El següent codi permet fer una cerca parametritzada d’encàrrecs dins el sistema, en base a un valor mínim en la seva quantitat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.query.Predicate</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> CercaParametritzada  <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">int</span> valor <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> cercaEncarrecs<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Predicate p <span class="sy0">=</span> <span class="kw1">new</span> Predicate<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">       @Override</div></li><li class="li1"><div class="de1">       <span class="kw1">public</span> <span class="kw4">boolean</span> match<span class="br0">&#40;</span>Encarrec c<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">return</span> valor <span class="sy0">&lt;=</span> c.<span class="me1">getQuantitat</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">       <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      ObjectSet<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> result <span class="sy0">=</span> db.<span class="me1">query</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">while</span> <span class="br0">&#40;</span>result.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        Encarrec e <span class="sy0">=</span> result.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw4">void</span> setValor<span class="br0">&#40;</span><span class="kw4">int</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    valor <span class="sy0">=</span> v<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      CercaParametritzada cp <span class="sy0">=</span> <span class="kw1">new</span> CercaParametritzada<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és el valor mínim a cercar? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      cp.<span class="me1">setValor</span><span class="br0">&#40;</span>in.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      cp.<span class="me1">cercaEncarrecs</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+En aquests exemples, el codi per establir si cada objecte compleix o no el criteri de la cerca és relativament simple, d’una sola línia, però el codi del mètode <code>match</code> pot ser tan complex com es desitgi i basat en qualsevol informació disponible dins el programa. Ara bé, malauradament, això vol dir que no es pot disposar de funcions executables directament a la BD (com passava amb MAX, AVG… a SQL).
+</p>
+
+</div>
+
+<h3><a id="actualitzacions_d_objectes" >Actualitzacions d&#039;objectes</a></h3>
+<div class="level3">
+
+<p>
+Normalment, l’actualització d’objectes té sentit quan, primer de tot, s’afegeix un element a la BDOO, i, en posteriors execucions del programa, el contingut dels objectes emmagatzemats veuen modificats els seus valors al llarg del seu cicle de vida (un client canvia la seva adreça electrònica, o va afegint encàrrecs). És el que dóna sentit a la persistència dels objectes en una BD, en definitiva.
+</p>
+
+<p>
+L’actualització d’objectes amb <em>db4o</em> es porta a terme usant la crida <code>store</code>, tal com s’ha usat per emmagatzemar un nou objecte, només que, en aquest cas, en lloc de ser un objecte nou, és un que ja existia prèviament a la BD. Per fer això, primer cal carregar a memòria l’objecte des de la BD, usant una cerca, i un cop es disposa de la seva referència, ja s’hi pot accedir per fer canvis usant els mètodes que proporciona la seva classe, tal com es faria normalment. Aquests canvis no es propagaran a la BD fins tornar a executar <code>store</code>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Podeu comprovar que s’ha modificat executant els exemples anteriors de cerca amb un valor que llisti tots els clients (com el 0).
+</p>
+</div></div>
+<p>
+Per exemple, el següent codi permet canviar l’adreça electrònica d’un client, donat el seu nom (suposarem que el nom ha de ser únic perquè funcioni). Per millorar la llegibilitat, s’han omès algunes comprovacions d’errors (si no s’escriu res amb el teclat, per exemple).
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> ModificaAElectronica <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>    </div></li><li class="li1"><div class="de1">    Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és nom del client? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Cercar clients a la BDOO i obtenir-los a memòria com a objectes del programa</span></div></li><li class="li1"><div class="de1">    Client qbe <span class="sy0">=</span> <span class="kw1">new</span> Client<span class="br0">&#40;</span>nom, <span class="kw2">null</span>, <span class="kw2">null</span>, <span class="kw2">null</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> clients <span class="sy0">=</span> db.<span class="me1">queryByExample</span><span class="br0">&#40;</span>qbe<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="kw1">if</span> <span class="br0">&#40;</span>clients.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;No es pot modificar aquest nom.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quina és la nova adreça? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ad <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      Client c <span class="sy0">=</span> clients.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      c.<span class="me1">setAElectronica</span><span class="br0">&#40;</span>ad<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">store</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’única excepció a aquest comportament és si l’objecte enllaçat és una cadena de text (com s’ha vist, precisament, a l’exemple anterior).
+</p>
+</div></div>
+<p>
+Ara bé, en el cas d’objectes que contenen enllaços a altres objectes (que, a la vegada, poden tenir enllaços a altres objectes, i així fins a molts nivells de profunditat), el comportament de <em>db4o</em> no és aquest. Per poder garantir un rendiment òptim, és obligat, en el cas d’accés a fitxers en local, canviar una mica la declaració de l’obertura de la BD, indicant que ha d’estar configurada per acceptar actualitzacions en cascada. Això es fa usant un constructor diferent i una inicialització prèvia d’un objecte <code>EmbeddedConfiguration</code>. En aquesta inicialització, cal llistar totes les classes on es vol que la BDOO controli actualitzacions en cascada. O sigui, que es vol que, si es fa un <code>store</code> sobre un objecte d’aquest tipus, també es comprovi si cal actualitzar tots els seu <em>graf</em> d’objectes enllaçats. 
+</p>
+
+<p>
+El codi d’inicialització és el que hi ha a continuació. On diu “NomClasse1”, “NomClass2”… caldria posar el nom de la classe a controlar les actualitzacions en cascada. Hi haurà tants registres de classes com classes es volen controlar. Per al cas de qualsevol classe que no s’enumeri explícitament a la inicialització, amb una línea corresponent, en fer un <code>store</code>, només se n’actualitzaran els atributs que siguin tipus primitius o cadenes de text, però no altres objectes.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  EmbeddedConfiguration config <span class="sy0">=</span> Db4oEmbedded.<span class="me1">newConfiguration</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="co1">//Configurar totes les classes on cal propagar canvis</span></div></li><li class="li1"><div class="de1">  config.<span class="me1">common</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">objectClass</span><span class="br0">&#40;</span>NomClasse1.<span class="kw1">class</span><span class="br0">&#41;</span>.<span class="me1">cascadeOnUpdate</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span> </div></li><li class="li1"><div class="de1">  config.<span class="me1">common</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">objectClass</span><span class="br0">&#40;</span>NomClasse2.<span class="kw1">class</span><span class="br0">&#41;</span>.<span class="me1">cascadeOnUpdate</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span> </div></li><li class="li1"><div class="de1">  <span class="co1">//etc.</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span>config, <span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per exemple, el codi següent permet afegir un encàrrec a un client, donat el seu nom (suposant que aquest és únic). Com que els encàrrecs estan enllaçats dins una llista, cal forçar les actualitzacions en cascada per a aquesta classe.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.config.EmbeddedConfiguration</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> AfegirEncarrec <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    EmbeddedConfiguration config <span class="sy0">=</span> Db4oEmbedded.<span class="me1">newConfiguration</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    config.<span class="me1">common</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">objectClass</span><span class="br0">&#40;</span>Client.<span class="kw1">class</span><span class="br0">&#41;</span>.<span class="me1">cascadeOnUpdate</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span> </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span>config, <span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és nom del client? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Cercar clients a la BDOO i obtenir-los a memòria com a objectes del programa</span></div></li><li class="li1"><div class="de1">    <span class="co1">//S'usa una cerca per exemple</span></div></li><li class="li1"><div class="de1">    Client qbe <span class="sy0">=</span> <span class="kw1">new</span> Client<span class="br0">&#40;</span>nom, <span class="kw2">null</span>, <span class="kw2">null</span>, <span class="kw2">null</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> clients <span class="sy0">=</span> db.<span class="me1">queryByExample</span><span class="br0">&#40;</span>qbe<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="kw1">if</span> <span class="br0">&#40;</span>clients.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;No es pot modificar aquest nom.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és nom del producte? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> prod <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quants en vols encarregar? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> txtQuan <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw4">int</span> quant <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+integer"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>txtQuan<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      Encarrec ne <span class="sy0">=</span> <span class="kw1">new</span> Encarrec<span class="br0">&#40;</span>prod, quant<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      Client c <span class="sy0">=</span> clients.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      c.<span class="me1">addComanda</span><span class="br0">&#40;</span>ne<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">store</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+</div>
+
+<h3><a id="esborrat_d_objectes" >Esborrat d&#039;objectes</a></h3>
+<div class="level3">
+
+<p>
+Per esborrar un objecte s’aplica la idea general de les actualitzacions, però en lloc del mètode <code>store</code>, cal usar el mètode <code>delete</code>. Primer cal recuperar l’objecte de la BD, carregar-lo a memòria, i després esborrar-lo usant la seva referència. Per exemple, per esborrar un client, d’entrada, es podria fer així:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> EsborraClient <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és nom del client? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Cercar clients a la BDOO i obtenir-los a memòria com objectes del programa</span></div></li><li class="li1"><div class="de1">    Client qbe <span class="sy0">=</span> <span class="kw1">new</span> Client<span class="br0">&#40;</span>nom, <span class="kw2">null</span>, <span class="kw2">null</span>, <span class="kw2">null</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> clients <span class="sy0">=</span> db.<span class="me1">queryByExample</span><span class="br0">&#40;</span>qbe<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">if</span> <span class="br0">&#40;</span>clients.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;No es pot modificar aquest nom.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Client c <span class="sy0">=</span> clients.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">delete</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Si mostreu els clients que hi ha a la BDOO, veureu que ja no existeix el client que heu escrit en executar-lo. Ara bé, aquest programa no és del tot correcte. Si esborreu el client 3, executeu el programa que fa cerca de comandes i cerqueu totes les comandes amb una quantitat superior a 0, observareu que les comandes del client 3 encara estan a la BD. La crida a <code>delete</code> esborra, estrictament, l’objecte associat a aquest client, però absolutament res més.
+</p>
+
+<p>
+Com passava amb les actualitzacions d’objectes que enllacen altres objectes, aquest cas s’ha de tractar d’una manera una mica especial. Malauradament, no hi ha cap paràmetre de configuració que resolgui el problema. Per tal d’eliminar objectes, el programador ha de fer un codi que, manualment i un per un, vagi recorrent el mapa d’objectes i eliminant els que correspongui. Per als clients, el programa correcte hauria de ser el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">com.db4o.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> EsborraClient <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    ObjectContainer db <span class="sy0">=</span> Db4oEmbedded.<span class="me1">openFile</span><span class="br0">&#40;</span><span class="st0">&quot;BDOOClients.db4o&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    Scanner in <span class="sy0">=</span> <span class="kw1">new</span> Scanner<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Quin és nom del client? &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom <span class="sy0">=</span> in.<span class="me1">nextLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Cercar clients a la BDOO i obtenir-los a memòria com objectes del programa</span></div></li><li class="li1"><div class="de1">    Client qbe <span class="sy0">=</span> <span class="kw1">new</span> Client<span class="br0">&#40;</span>nom, <span class="kw2">null</span>, <span class="kw2">null</span>, <span class="kw2">null</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ObjectSet<span class="sy0">&lt;</span>Client<span class="sy0">&gt;</span> clients <span class="sy0">=</span> db.<span class="me1">queryByExample</span><span class="br0">&#40;</span>qbe<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="kw1">if</span> <span class="br0">&#40;</span>clients.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;No es pot modificar aquest nom.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Client c <span class="sy0">=</span> clients.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      List<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> li <span class="sy0">=</span> c.<span class="me1">getComandes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      Iterator<span class="sy0">&lt;</span>Encarrec<span class="sy0">&gt;</span> it <span class="sy0">=</span> li.<span class="me1">iterator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="co1">//anem esborrant tots els encàrrecs, un per un</span></div></li><li class="li1"><div class="de1">      <span class="kw1">while</span> <span class="br0">&#40;</span>it.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        Encarrec e <span class="sy0">=</span> it.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        db.<span class="me1">delete</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">      <span class="co1">//Ja es pot esborrar el client</span></div></li><li class="li1"><div class="de1">      db.<span class="me1">delete</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+En aquest cas concret, la tasca no és gaire complicada, ja que només hi ha un nivell d’objectes enllaçats, i donat un client, les seves comandes només les gestiona ell i cap altre objecte. Ara bé, cal ser conscients que gestionar l’esborrat correcte d’objectes enllaçats dins la BDOO es pot arribar a complicar força en casos complexos, ja que sempre cal garantir la consistència de tot el mapa d’objectes emmagatzemat. Si un objecte és referenciat per més d’un altre objecte, cal anar amb molt de compte de no esborrar-lo, perquè es podrien deixar referències a <code>null</code> sense voler, cosa que comportaria errors d’execució en el futur. Per exemple, si els encàrrecs es poguessin compartir entre més d’un client, en esborrar un client no es podrien esborrar alegrement tots els seus encàrrecs. Caldrà comprovar que cada encàrrec només està assignat a un únic client i, si cal, l’esborrarem, però, en cas contrari, no.
+</p>
+
+</div>
+
+<h2><a id="jdo_java_data_objects" >JDO (Java Data Objects)</a></h2>
+<div class="level2">
+
+<p>
+Normalment, el motiu principal per treballar amb una BDDO és poder generar codi que s’integri de manera natural en un programa orientat a objectes. O sigui, poder desar i cercar directament objectes dins la base de dades, de manera que si estan enllaçats a altres objectes mitjançant referències, també es recuperin automàticament. A més a més, els mètodes d’accés a la BD ja retornen directament els conjunts d’objectes que es vol cercar. 
+</p>
+
+<p>
+En contraposició, l’ús d’una BDR implica haver de fer traduccions d’objectes a taules, i les cerques retornen files de valors de taules, que cal recuperar, i a partir d’aquests cal instanciar les classes desitjades. Per desar un objecte, cal fer exactament el mateix, però a la inversa: extreure’n els atributs i convertir-los a valors dins una taula. En cas de voler desar objectes enllaçats entre si, la tasca es pot arribar a complicar força. A part, cal fer conversions de tipus Java a SQL i viceversa. En general, la seva integració dins el codi Java no és gens natural, ja que s’està usant un sistema basat en taules per desar elements que, a memòria, no són pas a taules. 
+</p>
+
+<p>
+Per tant, des del punt de vista de simplicitat del codi, l’ús d’una BDOO dins un programa orientat a objectes ofereix enormes avantatges. Malauradament, el seu grau de maduresa i estandardització no arriba ni de bon tros al que actualment tenen les BDR, per la qual cosa no és tan senzill decidir quin tipus usar. Ara bé, el Java disposa d’una especificació pròpia per definir la persistència d’objectes usant una estratègia semblant a l’accés a una BDOO, però sense lligar-se a un tipus concret de mecanisme d’emmagatzematge.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Java Data Objects (JDO)</strong> <acronym title="Application Programming Interface">API</acronym> és una interfície estàndard basada en l’abstracció del model de persistència de Java. Les aplicacions escrites amb l’<acronym title="Application Programming Interface">API</acronym> de JDO són independents del sistema d’emmagatzematge subjacent. Diferents implementacions poden donar suport a diferents tipus de bases de dades, incloent bases de dades relacionals i d’objecte, XML, arxius…
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Una BDOO que es basa en JDO, per a l’accés a les seves dades, és JDOInstruments.
+</p>
+</div></div>
+<p>
+Aquesta especificació només serveix per al llenguatge Java i no és portable a cap altre llenguatge, en contrast amb l’ODL i OQL, que intenten ser llenguatges genèrics independents del llenguatge (com l’SQL). De fet, l’objectiu d’aquesta especificació és haver d’obviar la necessitat d’aprendre cap llenguatge extra que no sigui el mateix Java i res més. En aquesta secció es presenta només una breu introducció dels aspectes generals del seu funcionament.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les classes de JDO pertanyen al paquet <code>javax.jdo</code>. Aquest no pertany a la distribució estàndard del Java.
+</p>
+</div></div>
+<p>
+JDO defineix tres tipus de classes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Habilitades per a persistència</strong>. Representen les classes els objectes de les quals poden passar a un estat persistent. Al llarg de l’execució de l’aplicació poden passar de la memòria a ser emmagatzemades en la BD, i viceversa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Conscients de persistència</strong>. Són les classes que manipulen el tipus anterior. Concretament, la classe <code>JDOHelper</code> proporciona diferents mètodes per descobrir si un objecte concret es troba en un estat persistent o no.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Normals</strong>. Els seus objectes no poden passar a un estat persistent, només existiran en la memòria de l’aplicació.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Objectes transitoris</p>
+<p>
+S’anomena objectes transitoris els que només són en la memòria, però no en la BD, i objectes buits (<em>hollow</em>) els que només estan en la BD, sense representació en la memòria.
+</p>
+</div></div>
+<p>
+Els objectes de classes habilitades per a la persistència poden passar per diferents estats dins el seu cicle de vida, depenent de diversos factors: si només es troben en la memòria o també estan representats en la BD, si la seva representació actual en la memòria difereix de l’escrita en la BD, etc. La transició entre estats és controlada per la classe <code>PersistenceManager</code>, que serveix d’<em>interface</em> primària entre l’aplicació i la BD. Aquesta classe és, fins a cert punt, l’equivalent a la connexió JDBC en el cas d’accés a BDR.
+</p>
+
+<p>
+Totes les accions cap a la BD vindran determinades a partir de crides a mètodes definits en aquesta classe. Alguns dels seus mètodes més significatius són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>void makePersistent(Object o)</code>. Fa un objecte persistent a la BD de manera que quan es manipulin les seves dades, quedaran desades.</div>
+</li>
+<li class="level1"><div class="li"> <code>void makeTransient(Object o)</code>. Fa que un objecte deixi de ser persistent en la BD i passi a ser transitori.</div>
+</li>
+<li class="level1"><div class="li"> <code>void deletePersistent(Object o)</code>. Esborra un objecte persistent de la BD.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="instanciacio_d_un_objecte_persistencemanager" >Instanciació d&#039;un objecte PersistenceManager</a></h3>
+<div class="level3">
+
+<p>
+Per instanciar un objecte <code>PersistenceManager</code> no es pot usar directament una sentència <code>new</code>, cal usar la classe <code>PersistenceManagerFactory</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+properties"><span class="kw3">Properties</span></a> props <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+properties"><span class="kw3">Properties</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">props.<span class="me1">put</span><span class="br0">&#40;</span>...<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">PersistenceManagerFactory pmf <span class="sy0">=</span> JDOHelper.<span class="me1">getPersistenceManagerFactory</span><span class="br0">&#40;</span>props<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">PersistenceManager pm <span class="sy0">=</span> pmf.<span class="me1">getPersistenceManager</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Un cop disposem de l’objecte <code>PersistenceManager</code>, ja es pot començar a operar amb la BDOO.
+</p>
+
+</div>
+
+<h3><a id="interaccio_amb_la_bd" >Interacció amb la BD</a></h3>
+<div class="level3">
+
+<p>
+Per interactuar amb la BD, el JDO usa transaccions, per modificar l’estat d’un objecte, i consultes, per accedir a les dades persistents. Aquesta filosofia no és gaire diferent de la de JDBC. Les transaccions estan representades per la classe <code>Transaction</code>, mentre que les consultes per la classe <code>Query</code>. Els objectes d’ambdós tipus s’obtenen a partir de crides al <code>PersistenceManager</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Transaction currentTransaction()</strong>. Obté una transacció per modificar l’estat d’objectes dins l’aplicació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Query newQuery(java.lang.Class cls)</strong>. Crea una consulta, per ser executada posteriorment per accedir als objectes persistents dins la BDOO. El paràmetre cls indica la classe esperada dels objectes que es vol consultar. Aquest mètode es troba sobrecarregat per poder proporcionar diferents opcions.</div>
+</li>
+</ul>
+
+<p>
+L’aspecte més important en el procés d’emmagatzemament i recuperació de dades en la BD és que tot codi Java generat segueix exactament la mateixa filosofia orientada a objectes com si sempre s’operés sobre instàncies a memòria (només s’opera amb referències). El mecanisme de persistència és transparent.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>rollback()</code> permet fer enrere una transacció en cas d’error durant el procés.
+</p>
+</div></div>
+<p>
+Tot seguit es mostra com un objecte passa de ser transitori a persistent. El resultat final és que aquest queda emmagatzemat en la BDOO.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Client cli <span class="sy0">=</span> <span class="kw1">new</span> client<span class="br0">&#40;</span><span class="st0">&quot;Client1&quot;</span>, <span class="st0">&quot;Adreça1&quot;</span>,...<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">Transaction tr<span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  tr <span class="sy0">=</span> pm.<span class="me1">currentTransaction</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>                   </div></li><li class="li1"><div class="de1">  tr.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  pm.<span class="me1">makePersistent</span><span class="br0">&#40;</span>cli<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  tr.<span class="me1">commit</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">if</span><span class="br0">&#40;</span>tx.<span class="me1">isActive</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      tx.<span class="me1">rollback</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li></ol></pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>closeAll()</code> finalitza la consulta, alliberant els objectes resultants.
+</p>
+</div></div>
+<p>
+Per executar una consulta cal cridar el mètode <code>execute()</code> definit en la classe <code>Query</code>. Aquest retorna una col·lecció d’objectes resultants. Per exemple, per recuperar objectes <code>Client</code> emmagatzemats es faria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  Query query <span class="sy0">=</span> pm.<span class="me1">getQuery</span><span class="br0">&#40;</span>Client.<span class="kw1">class</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  query.<span class="me1">setFilter</span><span class="br0">&#40;</span><span class="st0">&quot;(nom == param)&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  query.<span class="me1">declareParameters</span><span class="br0">&#40;</span><span class="st0">&quot;String param&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+collection"><span class="kw3">Collection</span></a> c <span class="sy0">=</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+collection"><span class="kw3">Collection</span></a><span class="br0">&#41;</span>query.<span class="me1">execute</span><span class="br0">&#40;</span><span class="st0">&quot;Client1&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+iterator"><span class="kw3">Iterator</span></a> it <span class="sy0">=</span> c.<span class="me1">iterator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">while</span><span class="br0">&#40;</span>it.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    Client cli <span class="sy0">=</span> <span class="br0">&#40;</span>Client<span class="br0">&#41;</span>it.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;S'ha trobat el client:&quot;</span> <span class="sy0">+</span> cli<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span>                             closeAll<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  query.<span class="me1">closeAll</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+exception"><span class="kw3">Exception</span></a> e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  ...   </div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Els mètodes <code>setFilter</code> i <code>declareParameters</code> permeten establir condicions de cerca. Amb el primer s’estableix la condició d’acord amb certs paràmetres d’entrada (param) que s’usaran en fer la consulta i es compararan amb els camps dels objectes (nom). Amb el segon establim els tipus dels paràmetres d’entrada (String param). En fer execute, s’indiquen els valors dels paràmetres (Client1).
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

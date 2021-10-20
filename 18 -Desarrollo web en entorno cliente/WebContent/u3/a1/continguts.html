@@ -1,0 +1,1880 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Esdeveniments. Manejament de formularis</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Programació d'events</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#que_es_un_event">Què és un event?</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#gestio_d_events">Gestió d'events</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Programació amb formularis</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#que_es_un_formulari">Què és un formulari?</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#estructura_d_un_formulari">Estructura d'un formulari</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#modificacio_d_aparenca_i_comportament">Modificació d'aparença i comportament</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#validacio">Validació</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#expressions_regulars">Expressions regulars</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#utilitzacio_de_galetes_i_web_storage">Utilització de galetes i Web Storage</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Objectes definits pel programador</a></li><li>Objectes definits pel programador</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="objectes_definits_pel_programador"> Objectes definits pel programador </a></h1>
+    	
+<p>
+A excepció dels nombres, les cadenes de caràcters, els booleans (<code>true</code> i <code>false</code>), <code>null</code> i <code>undefined</code>, a JavaScript tot són objectes. Fins i tot les funcions són tractades com objectes i, per tant, comparteixen les seves característiques. Encara que es pot pensar que els tipus primitius també són objectes (inclouen mètodes i propietats) aquests són immutables i per tant no en són, per exemple: el número <code>2</code> sempre serà <code>2</code>, no pot ser un altre número i, en conseqüència, és immutable.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El terme <em>herència clàssica</em> es refereix a un tipus d’herència basada en classes.
+</p>
+</div></div>
+<p>
+
+<p>
+Ara bé, si tenim una variable a la qual s’ha assignat un valor numèric és possible cridar mètodes a partir d’aquesta variable com per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const PI = 3.141592653589793;</div></li><li class="li1"><div class="de1">console.log(num.toFixed(2); // mostra &quot;3.14&quot;</div></li></ol></pre>
+
+<p>
+Això és possible perquè internament es fa la conversió del valor assignat a un objecte de tipus <code>Number</code> i llavors es crida al mètode <code>toFixed()</code>.
+</p>
+
+<p>
+Actualment JavaScript admet la creació d’objectes fent servir l’<em>herència clàssica</em>, mitjançant la definició de classes i la seva instanciació mitjançant l’operador <code>new</code>, de forma similar a com es fa en altres llenguatges com Java o C++:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">  constructor(nom, edat) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.edat = edat;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Persona('ricard', 40);</div></li><li class="li1"><div class="de1">let patrici = new Persona('patrici', 35);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(ricard.nom, ricard.edat);</div></li><li class="li1"><div class="de1">console.log(patrici.nom, patrici.edat);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que a la definició de la classe s’ha posat el primer caràcter en majúscules: <code>Persona</code>, en canvi el nom de les variables comença amb minúscules(<code>ricard</code>). Això es fa per convenció: els noms de les classes sempre comencen per majúscules, d’aquesta manera és fàcil diferenciar quan es fa referència a una classe o a un altre element.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>classe</strong> és una plantilla a partir de la qual es creen <strong>objectes</strong> i es diu que aquests objectes són <strong>instàncies</strong> de la classe.
+</p>
+</div></div>
+<p>
+Un altre sistema per crear objectes a JavaScript és la declaració literal d’objectes:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ricard = {nom: 'ricard', edat: 40};</div></li><li class="li1"><div class="de1">let patrici = {nom: 'patrici', edat: 35};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(ricard.nom, ricard.edat);</div></li><li class="li1"><div class="de1">console.log(patrici.nom, patrici.edat);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwaogMZ?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwaogMZ?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwaogMZ?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, és molt més concís, ja que no requereix la definició de les classes, però requereix definir totes les propietats de cada objecte.
+</p>
+
+<p>
+En versions anteriors a ES6 no existien les classes i per simular l’herència clàssica calia utilitzar funcions constructores. Aquest sistema continua funcionant, però no es recomana utilitzar-lo perquè complica la creació d’objectes complexos i és més limitada, ja que per implementar l’herència cal modificar el prototipus de l’objecte i la manera de simular els mètodes estàtics no és clara. A continuació podeu veure un exemple on s’utilitzen aquestes funcions constructores, típiques del codi anterior a ES6:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const Persona = function (nom, edat) {</div></li><li class="li1"><div class="de1">  this.nom = nom;</div></li><li class="li1"><div class="de1">  this.edat = edat;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Persona('Ricard', 40);</div></li><li class="li1"><div class="de1">let patrici = new Persona('Patrici', 35);</div></li><li class="li1"><div class="de1">console.log(ricard.nom, ricard.edat);</div></li><li class="li1"><div class="de1">console.log(patrici.nom, patrici.edat);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/KKzNqjj?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/KKzNqjj?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/KKzNqjj?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+La instanciació dels objectes <code>Persona</code> es fa de la mateixa manera que quan es defineix una classe, però s’utilitza una funció juntament amb l’operador <code>new</code>. Cal tenir compte amb això, perquè si ens oblidem d’afegir l’operador, l’aplicació continuarà funcionant però no s’hauria creat l’objecte, ja que s’hauria invocat la funció i assignat el retorn d’aquesta que serà <code>undefined</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ricard = new Persona('Ricard', 40);</div></li><li class="li1"><div class="de1">let patrici = Persona('Patrici', 35);</div></li><li class="li1"><div class="de1">console.log(ricard.nom, ricard.edat);</div></li><li class="li1"><div class="de1">console.log(patrici.nom, patrici.edat); // error, patrici és undefined</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jOqVLMN?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOqVLMN?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/jOqVLMN?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que <code>patrici</code> és <code>undefined</code>, ja que en lloc d’assignar-se l’objecte creat mitjançant la funció constructora <code>persona</code> s’ha assignat el retorn d’aquesta, que en aquest cas és <code>undefined</code>.
+</p>
+
+<p>
+Un dels problemes d’utilitzar funcions constructores és que per crear objectes complexos cal recórrer a la modificació del prototipus de l’objecte o afegir tot el codi dintre del cos de la funció constructora (per exemple, múltiples funcions niuades).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Originalment JavaScript només permetia l’<em>herència prototípica</em>. Tots els objectes es creen a partir d’un prototipus del qual hereten les seves propietats i mètodes.
+</p>
+</div></div>
+<p>
+<div class="ioctextl"><div class="ioccontent">
+<p>
+En aquests materials ens centrarem en la creació d’objectes mitjançant la definició de classes i la declaració literal d’objectes.
+</p>
+</div></div>
+</p>
+
+<h2><a id="introduccio_a_la_programacio_orientada_a_objectes" >Introducció a la programació orientada a objectes</a></h2>
+<div class="level2">
+
+<p>
+Les característiques que ha d’acomplir un llenguatge per considerar-se orientat a objectes són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Abstracció</strong>: s’han de poder crear objectes que ens serviran per modelar la realitat i el problema a resoldre (per exemple en un joc sobre un apocalipsi zombi s’han de poder modelar els personatges, les armes, els zombis, els vehicles que es troben, etc.)</div>
+</li>
+<li class="level1"><div class="li"> <strong>Encapsulament</strong>: s’ha de poder encapsular informació dins d’un objecte que no sigui accessible externament. En llenguatges com Java seria equivalent a mètodes i propietats amb accés privat, en canvi en JavaScript es fa a través de les <strong>clausures</strong>.</div>
+</li>
+</ul>
+
+<p>
+<ul>
+<li class="level1"><div class="li"> <strong>Herència</strong>: una classe ha de poder heretar d’un altre de manera que la nova classe tingui totes les característiques (accessibles) del que hereta a més de les pròpies.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Polimorfisme</strong>: una classe que hereti d’un altre ha de poder modificar el comportament de les accions, per exemple sobreescrivint els mètodes.</div>
+</li>
+</ul>
+
+</p>
+
+<p>
+Una classe conté propietats i mètodes. Les <strong>propietats</strong> són similars a les variables, ja que permeten emmagatzemar valors (nombres, cadenes de text, objectes, <em>arrays</em>, etc.), però lligades a l’objecte. Per altra banda, els <strong>mètodes</strong> són funcions lligades a l’objecte i el seu funcionament és idèntic, amb excepció del context <code>this</code> que passa a ser el mateix objecte.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Cal destacar que a JavaScript el concepte de modificador d’accés (públic o privat) no forma part del llenguatge. <strong>Totes les propietats i mètodes són considerats públics</strong>, encara que és possible encapsular-los mitjançant <em>clausures</em>.
+</p>
+</div></div>
+<p>
+
+<p>
+Actualment JavaScript permet utilitzar explicitament totes aquestes característiques a excepció de l’encapsulament, que requereix la utilització de clausures.
+</p>
+
+</p>
+
+<p>
+Quant a l’herència cal tenir clars dos conceptes basats en l’herència clàssica:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Generalització</strong>: consisteix en la creació d’una classe que implementi les propietats i mètodes comuns d’altres classes que heretaran d’aquesta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Especialització</strong>: consisteix en la creació d’una classe amb un comportament especialitzat que afegeix o modifica el comportament de la classe de la qual hereta.</div>
+</li>
+</ul>
+
+<p>
+
+<p>
+Fixeu-vos en la <span class="figref"><a href="#figura 1-6"><span>figura</span></a></span> per veure un exemple de jerarquía d’herència:
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Generalització i especialització
+
+</figcaption><img src="../media/daw_m06_u3_06_versio_grafisme.png" alt="" /></figure>
+<div class="footfigure"> Quan es tracta d'objectes el seu nom comença amb minúscula.</div></div>
+<p>
+Com es pot apreciar, <code>Criatura</code> és la generalització de <code>Persona</code> i <code>Gos</code>, ja que conté els mètodes comuns. Per altra banda, <code>Persona</code> i <code>Gos</code> són especialitzacions de <code>Criatura</code>, ja que actualitzen algunes propietats i afegeixen nous mètodes. Al mateix temps, <code>GosZombi</code> és una especialització de <code>Gos</code> perquè hereta d’aquest i hi afegeix les seves propietats i mètodes.
+</p>
+
+<p>
+En els <strong>diagrames de classes</strong>, com el de la <span class="figref"><a href="#figura 1-6"><span>figura</span></a></span>, es posa a la capçalera del requadre el nom de la classe, a continuació les propietats i en darrer lloc els mètodes (fàcilment distingibles perquè inclouen parèntesis). Per indicar l’herència es fan servir fletxes amb la punta buida, que assenyalen a la super-classe (o objecte/constructor pare).
+</p>
+
+</div>
+
+<h2><a id="creacio_d_objectes_amb_el_constructor" >Creació d&#039;objectes amb el constructor</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+En els llenguatges clàssics es denomina constructor a la funció que es crida automàticament quan es crea un objecte d’una classe concreta. Aquesta funció pot acceptar paràmetres que habitualment s’utilitzen per inicialitzar la classe.
+</p>
+
+<p>
+A JavaScript existeix un concepte de constructor que és una mica diferent, ja que no fa referència al constructor que es pot trobar a una classe, sinó que es tracta d’una funció per inicialitzar un objecte i que s’utilitza juntament amb l’operador <code>new</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = new Object();</div></li></ol></pre>
+
+<p>
+El resultat d’executar aquest codi és equivalent a: <code>let persona = {}</code>. En cas de voler crear un objecte nou amb propietats fent servir aquest format es pot fer de dues maneres:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Tots els objectes hereten d<code>‘Object</code>, que es pot fer servir com a funció constructora per crear un objecte buit.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Afegint un objecte declarat literalment com a paràmetre de <code>Object</code>, per exemple: <code>new Object({nom: “Ricard”})</code>.</div>
+</li>
+<li class="level1"><div class="li"> Augmentar-lo afegint les propietats que siguin necessaries.</div>
+</li>
+</ul>
+
+<p>
+De la mateixa manera, si volem crear una instància d’una classe, només cal indicar el nom de la classe, i, si escau, els paràmetres que passaran al constructor:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ricard = new Persona('ricard', 40);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple ampliat en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/eYZBRyq?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Es pot trobar més informació sobre els <em>diagrames de classes</em> a l’enllaç següent: <a href="https://ca.wikipedia.org/wiki/Diagrama_de_classes" class="urlextern" title="https://ca.wikipedia.org/wiki/Diagrama_de_classes"  rel="nofollow">ca.wikipedia.org/wiki /Diagrama_de_classes</a>.
+</p>
+</div></div>
+</div>
+
+<h2><a id="declaracio_literal_d_objectes" >Declaració literal d&#039;objectes</a></h2>
+<div class="level2">
+
+<p>
+La manera més simple de crear un objecte en JavaScript és a través de la seva declaració literal. Aquesta declaració consisteix a fer servir un parell de claus <code>{}</code> dins de les quals es defineixen els valors desitjats en forma de parells clau-valor, que corresponen al nom i al valor de la propietat respectivament, separats per comes.
+</p>
+
+<p>
+Per exemple, es pot crear un objecte referenciat per la variable <code>persona</code> que guardarà les dades d’aquesta persona:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  ocupacio: 'Policia',</div></li><li class="li1"><div class="de1">  edat: 40</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+És important tenir en compte que el format és diferent de l’habitual que trobem a JavaScript, ja que en lloc de fer servir l’operador d’assignació <code>=</code> es fan servir els dos punts <code>:</code>.
+</p>
+
+<p>
+Aquesta forma de crear objectes és la base del <strong>format d’intercanvi de dades JSON</strong> (<em>JavaScript Object Notation</em> en anglès), un format molt utilitzat tant en JavaScript com en altres llenguatges.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre el format JSON en la secció “Annexos” del web del mòdul.
+</p>
+</div></div>
+</div>
+
+<h3><a id="assignar_i_accedir_a_propietats" >Assignar i accedir a propietats</a></h3>
+<div class="level3">
+
+<p>
+Les <strong>propietats</strong> d’un objecte són similars a les variables, però els seus valors són accessibles només a través de l’objecte. En aquest cas per mostrar el valor del nom de <code>persona</code> es faria de la manera següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(persona.nom);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExKNvew?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExKNvew?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ExKNvew?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+El nom de les propietats es pot afegir amb cometes o sense, excepte si ha d’incloure espais (cosa poc habitual), llavors és obligatori:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  'nom': 'Ricard',</div></li><li class="li1"><div class="de1">  'ocupacio': 'Policia',</div></li><li class="li1"><div class="de1">  'edat': 40,</div></li><li class="li1"><div class="de1">  'lloc de partida': 'Cambrils'</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(persona.nom);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwaoZYE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwaoZYE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwaoZYE?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+i el diagrama corresponent a la <span class="figref"><a href="#figura 1-9"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama d’objecte amb quatre propietats
+
+</figcaption><img src="../media/daw_m06_u3_08_vg.png" alt="" /></figure>
+<div class="footfigure">El símbol + indica que es tracta de propietats públiques</div></div>
+<p>
+En aquest cas s’han fet servir les cometes per totes les propietats encara que només són necessàries en el cas de <code>lloc de partida</code>, ja que pel fet de contenir espais es produiria un error.
+</p>
+
+<p>
+Cal tenir en compte que es poden fer servir indistintament les cometes simples o les cometes dobles per definir el nom de les propietats, de la mateixa manera que si es tractessin de cadenes de text, com es pot apreciar en el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  &quot;nom&quot;: &quot;Ricard&quot;,</div></li><li class="li1"><div class="de1">  &quot;ocupacio&quot;: &quot;Policia&quot;,</div></li><li class="li1"><div class="de1">  &quot;edat&quot;: 40,</div></li><li class="li1"><div class="de1">  &quot;lloc de partida&quot;: &quot;Cambrils&quot;</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+Com podeu apreciar, s’hi han substituït les cometes simples per cometes dobles, tant al nom de les propietats com al de les cadenes de text. Utilitzar les primeres és un punt més òptim que fer servir les dobles, però allò realment important és mantenir un mateix criteri al llarg del codi.
+</p>
+
+<p>
+A més de la notació de punt, és possible accedir a les propietats fent servir la notació de claudàtors, com si es tractés d’un <em>array</em> en lloc d’un objecte. Per exemple, podem afegir a l’exemple anterior:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(persona.['edat']);</div></li><li class="li1"><div class="de1">console.log(persona.['ocupacio']);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/abNByRE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/abNByRE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/abNByRE?editors=0012</a>.
+</p>
+
+<p>
+Això permet tractar aquests objectes de la mateixa manera que en altres llenguatges es tracten els <em>arrays</em> associatius o els diccionaris. A més a més, al contrari que en altres llenguatges, els <em>arrays</em> de JavaScript no són tan eficients, raó per la qual es poden utilitzar objectes o <em>arrays</em> indistintament segons les vostres necessitats.
+</p>
+
+<p>
+Encara que s’ha de tenir en compte que els objectes no ofereixen les mateixes funcionalitats que els <em>arrays</em>, ja que l’ordre és irrellevant.
+</p>
+
+<p>
+
+<p>
+A més a més, actualment JavaScript inclou l’objecte predefinit <code>Map</code> que permet crear col·leccions de dades en parells clau-valor i funcionalitats més apropiades per treballar amb dades com la iteració, la comprovació dels valors, l’addició i l’eliminació de les dades.
+</p>
+
+</p>
+
+<p>
+En el següent exemple, en el cas de les ocupacions només interessa conèixer el nom de l’ocupació i per tant és més pràctic fer servir un <em>array</em>, en canvi, en el cas dels supervivents és més útil poder accedir a la informació directament fent servir el continent com a clau:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ocupacions = ['Sense ocupació', 'Policia', 'Militar', 'Metge', 'Tècnic', 'Mecànic', 'Delinqüent'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let supervivents = {</div></li><li class="li1"><div class="de1">    'Barcelona': 23140,</div></li><li class="li1"><div class="de1">    'Girona': 6789,</div></li><li class="li1"><div class="de1">    'Lleida': 11298,</div></li><li class="li1"><div class="de1">    'Tarragona': 19830</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Array: Primera ocupació?', ocupacions[0]);</div></li><li class="li1"><div class="de1">console.log('Objecte: Supervivents a Girona?', supervivents['Girona']);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bGpBrzN?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGpBrzN?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bGpBrzN?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Però no només es poden emmagatzemar valors primitius, les propietats dels objectes ens permeten emmagatzemar tot tipus de dades com poden ser <em>arrays</em> i altres objectes. Al mateix temps, aquests objectes poden ser emmagatzemats en <em>arrays</em>, el que permet crear estructures de dades complexes:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Ús de caràcters no estàndard com a nom de propietats</p>
+<p>
+Quan es tracten els objectes com a diccionaris és normal utilitzar caràcters que habitualment no són recomanables pels noms de les propietats i variables, per exemple: caràcters amb titlla o dièresi.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">let MOTOR_DEL_JOC = {</div></li><li class="li1"><div class="de1">  ocupacions: ['Sense ocupació', 'Policia', 'Militar', 'Metge', 'Tècnic', 'Mecànic', 'Delinqüent'],</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  supervivents: {</div></li><li class="li1"><div class="de1">    'Barcelona': 23140,</div></li><li class="li1"><div class="de1">    'Girona': 6789,</div></li><li class="li1"><div class="de1">    'Lleida': 11298,</div></li><li class="li1"><div class="de1">    'Tarragona': 19830,</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  jugadors: [{</div></li><li class="li1"><div class="de1">    'nom': 'Ricard',</div></li><li class="li1"><div class="de1">    'ocupacio': 'Policia',</div></li><li class="li1"><div class="de1">    'edat': 40,</div></li><li class="li1"><div class="de1">    'lloc de partida': 'Cambril'</div></li><li class="li1"><div class="de1">  }, {</div></li><li class="li1"><div class="de1">    'nom': 'Patrici',</div></li><li class="li1"><div class="de1">    'ocupacio': 'Delinqüent',</div></li><li class="li1"><div class="de1">    'edat': 35,</div></li><li class="li1"><div class="de1">    'lloc de partida': 'Reus'</div></li><li class="li1"><div class="de1">  }]</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Tercera ocupació:', MOTOR_DEL_JOC.ocupacions[3]);</div></li><li class="li1"><div class="de1">console.log('Supervivents a Girona:', MOTOR_DEL_JOC.supervivents['Girona']);</div></li><li class="li1"><div class="de1">console.log('Nom del primer jugador:', MOTOR_DEL_JOC.jugadors[0]['nom']);</div></li><li class="li1"><div class="de1">console.log('Ocupació del primer jugador:', MOTOR_DEL_JOC.jugadors[0].ocupacio);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExKNvro?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExKNvro?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ExKNvro?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-10"><span>figura</span></a></span>.
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura de dades que conté <em>arrays</em> i altres objectes
+
+</figcaption><img src="../media/daw_m06_u3_09_vg.png" alt="" /></figure>
+</div>
+<p>
+
+</p>
+
+<p>
+
+<p>
+Als diagrames de classe es fa servir un rombe a l’extrem de la classe que conté la <strong>composició</strong> (els múltiples elements que formen l’altre objecte, per exemple els elements d’un <em>array</em>), en canvi quan es tracta d’un sol element es defineix com una associació i es fa servir una línia simple que uneix les dues classes.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, per accedir als elements d’<em>arrays</em> i d’altres objectes niuats només cal fer servir la notació de punt o de claudàtors segons correspongui:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log('Nom del primer jugador:', motorDelJoc.jugadors[0]['nom']);</div></li></ol></pre>
+
+<p>
+Per enumerar les propietats d’un objecte o els elements d’un diccionari de dades s’utilitza una variant de la sentència <code>for</code>, coneguda com <code>for…in</code>. Aquesta sentència recorre tots els elements d’un objecte o <em>array</em> sense haver d’especificar el valor inicial ni final, ja que fa un recorregut complet, com es pot apreciar en el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ocupacions = ['Sense ocupació', 'Policia', 'Militar', 'Metge', 'Tècnic', 'Mecànic', 'Delinqüent'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let supervivents = {</div></li><li class="li1"><div class="de1">  'Barcelona': 23140,</div></li><li class="li1"><div class="de1">  'Girona': 6789,</div></li><li class="li1"><div class="de1">  'Lleida': 11298,</div></li><li class="li1"><div class="de1">  'Tarragona': 19830</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Llistat de professions');</div></li><li class="li1"><div class="de1">for (let clau in ocupacions) {</div></li><li class="li1"><div class="de1">  console.log(ocupacions[clau]);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Llistat de supervivents per províncies')</div></li><li class="li1"><div class="de1">for (let provincia in supervivents) {</div></li><li class="li1"><div class="de1">  console.log(provincia, ':', supervivents[provincia]);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PoNbKLM?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PoNbKLM?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/PoNbKLM?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La sentència <code>for…in</code> itera sobre totes les propietats de l’objecte, diccionari o <em>array</em> <strong>sense oferir cap garantia de respectar l’ordre</strong>.
+</p>
+</div></div>
+<p>
+Aquesta variant de la sentència <code>for</code> emmagatzema a la variable la clau de la propietat actual de l’objecte especificat a continuació del <code>in</code>, iterant sobre totes les propietats de l’objecte o els elements d’un <em>array</em>.
+</p>
+
+<p>
+Un altre ús molt habitual d’un objecte declarat literalment és utilitzar-lo com a paràmetre de funcions i mètodes. D’aquesta manera només cal passar l’objecte com a argument i no cal recordar l’ordre dels paràmetres, ja que s’accedeix a aquell que sigui necessari fent servir el nom de la propietat (o clau):
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function mostrarDades(dadesPersona) {</div></li><li class="li1"><div class="de1">  console.log(`Nom: ${dadesPersona.nom}`);</div></li><li class="li1"><div class="de1">  console.log(`Ocupació: ${dadesPersona.ocupacio}`);</div></li><li class="li1"><div class="de1">  console.log(`Edat: ${dadesPersona.edat}`)</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let dadesPersona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  ocupacio: 'Policia',</div></li><li class="li1"><div class="de1">  edat: 40</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">mostrarDades(dadesPersona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/GRZNMRV?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/GRZNMRV?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/GRZNMRV?editors=0012</a>.
+</p>
+
+<p>
+A més a més, és possible desestructurar l’objecte per convertir les propietats en paràmetres:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Desestructuració d&#039;objectes</p>
+<p>
+Per desestructurar un objecte cal escriure els noms de les propietats que volem extreure entre claus. Els valors d’aquestes propietats s’assignen automàticament a variables amb el mateix nom.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">function mostrarDades({nom, ocupacio, edat}) {</div></li><li class="li1"><div class="de1">  console.log(`Nom: ${nom}`);</div></li><li class="li1"><div class="de1">  console.log(`Ocupació: ${ocupacio}`);</div></li><li class="li1"><div class="de1">  console.log(`Edat: ${edat}`)</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let dadesPersona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  ocupacio: 'Policia',</div></li><li class="li1"><div class="de1">  edat: 40</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">mostrarDades(dadesPersona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/Vwamzoq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/Vwamzoq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/Vwamzoq?editors=0012</a>.
+</p>
+
+<p>
+Utilitzant la desestructuració es poden definir també valors per defectes per alguns o per a tots els paràmetres:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function mostrarDades({nom = &quot;Lluis&quot;, ocupacio = &quot;Comerciant&quot;, edat}) {</div></li><li class="li1"><div class="de1">  console.log(`Nom: ${nom}`);</div></li><li class="li1"><div class="de1">  console.log(`Ocupació: ${ocupacio}`);</div></li><li class="li1"><div class="de1">  console.log(`Edat: ${edat}`)</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let dadesPersona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">mostrarDades(dadesPersona);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwoKNEO?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwoKNEO?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwoKNEO?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, la funció <code>mostrarDades()</code> utilitza el <code>nom</code> i l´<code>edat</code> que hem passat com argument i l´<code>ocupacio</code> per defecte.
+</p>
+
+</p>
+
+<p>
+És recomanable aplicar aquesta tècnica quan hi ha molts paràmetres optatius, ja que s’evita haver de passar valors nuls com a paràmetres a la funció. L’inconvenient és que, si no es documenta la funció o mètode que rep l’objecte, s’ha d’analitzar el seu codi per saber quines són les propietats que ha de contenir l’objecte.
+</p>
+
+<p>
+
+<p>
+Quan es treballa ma classes es possible de definir valors per defecte assignant-los directamente a la classe:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  constructor (nom) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  edat = 0  </div></li><li class="li1"><div class="de1">  ocupacio = 'desconeguda'</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let persona = new Persona('Ricard');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(persona.nom);</div></li><li class="li1"><div class="de1">console.log(persona['edat']);</div></li><li class="li1"><div class="de1">console.log(persona['ocupacio']);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;=&quot;.repeat(15));</div></li><li class="li1"><div class="de1">persona.edat = 40;</div></li><li class="li1"><div class="de1">persona.ocupacio = 'Policia';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(persona.nom);</div></li><li class="li1"><div class="de1">console.log(persona['edat']);</div></li><li class="li1"><div class="de1">console.log(persona['ocupacio']);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOVzJo?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOVzJo?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOVzJo?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que el cas del <code>nom</code> hem optat per assignar-lo al constructor. Tot i que no ho hem definit com a propietat, un cop es crea una instància de l’objecte es crida automàticament al constructor i s’assigna el valor passat com a paràmetre a la propietat <code>nom</code>.
+</p>
+
+<p>
+Per altra banda, hem assignat a <code>edat</code> i <code>ocupacio</code> uns valors per defectes, per tant es poden consultar a partir de la instància de <code>Persona</code> i el seu valor serà el definit a la classe.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Definició de propietats dins de classes</p>
+<p>
+Tot i que és possible definir propietats fora del constructor, no s’acostuma a fer així. Es recomana definir totes les propietats amb els seus valors per defecte dins del constructor de la classe.
+</p>
+</div></div>
+<p>
+Com es pot apreciar a l’hora de consultar-los i modificar-los ho podem fer de la mateixa manera que es fa amb la declaració literal.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="assignar_metodes" >Assignar mètodes</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+<strong>Mètode</strong> és el nom que rep una funció quan forma part d’un objecte o classe.
+</p>
+
+</p>
+
+<p>
+Atès que, en JavaScript, les funcions poden ser emmagatzemades com a variables, el fet d’assignar una funció a una propietat converteix aquesta en un mètode. Aquests funcionen exactament igual que una funció, però <strong>el seu context d’execució (<code>this</code>) és l’objecte</strong>.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  ocupacio: 'Policia',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  presentacio: function () {</div></li><li class="li1"><div class="de1">    console.log(`Hola, em dic ${this.nom}, tinc ${this.edat} anys i sóc ${this.ocupacio}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.presentacio();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NWNbaxr?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NWNbaxr?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/NWNbaxr?editors=0012</a> i el diagrama que el representa a la <span class="figref"><a href="#figura 1-11"><span>figura</span></a></span>.
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Objecte amb mètodes
+
+</figcaption><img src="../media/daw_m06_u3_10_vg.png" alt="" /></figure>
+<div class="footfigure">Els mètodes s'afegeixen a la capsa inferior del requadre de la classe o objecte.</div></div>
+<p>
+Com es pot apreciar, per invocar un mètode cal escriure primer el nom de la variable que referencia a l’objecte i a continuació fent servir la notació de punt (o de claudàtors) el nom del mètode a invocar seguit dels parèntesis.
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+<p>
+Totes les classes inclouen un mètode per defecte anomenat <code>constructor()</code>, que és cridat automàticament quan es crea una nova instància de la classe: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  constructor(nom, edat) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.edat = edat;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que per definir mètodes dins d’una classe la sintaxi és diferent: <code>nomFuncio(arguments) {/* Cos de la funció */}</code>. Com es pot apreciar, no cal utilitzar <code>function</code> ni assignar la funció a cap variable ni propietat.
+</p>
+
+<p>
+Per definir altres mètodes ho fem de la mateixa manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">  constructor(nom, edat, ocupacio) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.edat = edat;</div></li><li class="li1"><div class="de1">    this.ocupacio = ocupacio;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  saludar() {</div></li><li class="li1"><div class="de1">     console.log(`Hola, em dic ${this.nom}, tinc ${this.edat} anys i sóc ${this.ocupacio}`); </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Persona('Ricard', 40, 'Policia');</div></li><li class="li1"><div class="de1">ricard.saludar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/mdPOBxe?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mdPOBxe?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/mdPOBxe?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Cal recordar que les funcions a JavaScript es poden declarar amb nom o com a funcions anònimes. En qualsevol dels dos casos es poden afegir com a mètodes d’un objecte, només cal assignar com a valor de la propietat el nom de la funció o el nom de la variable que fa referència a la funció sense incloure els parèntesis.
+</p>
+
+<p>
+Fixeu-vos que, tot i que no és idèntic, el format en què es declaren els mètodes és molt similar a com es declaren funcions anònimes que es guarden en variables: <code>let nomVariable = function(arguments) {/* Cos de la funció */}</code>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Si a una variable o propietat s’assigna una funció afegint parèntesis aquesta <strong>és invocada i el resultat es guarda a la funció</strong>. En canvi, si <strong>no</strong> es posen els parèntesis el que es guarda és la referència a la funció, el que permet invocar-la.
+</p>
+</div></div>
+<p>
+Veieu en el següent exemple les dues formes en què es pot declarar una funció i com s’assignen a un objecte:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function funcioPresentacio() {</div></li><li class="li1"><div class="de1">  console.log(`Hola, em dic ${this.nom}, tinc ${this.edat} anys i sóc ${this.ocupacio}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">const funcioComiat = function() {</div></li><li class="li1"><div class="de1">  console.log(`${this.nom} abandona la sala`);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  ocupacio: 'Policia',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  presentacio: funcioPresentacio,</div></li><li class="li1"><div class="de1">  comiat: funcioComiat</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// El context d'aquestes invocacions és l'objecte persona</div></li><li class="li1"><div class="de1">persona.presentacio();</div></li><li class="li1"><div class="de1">persona.comiat();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// El context d'aquestes invocacions es l'espai global (window)</div></li><li class="li1"><div class="de1">funcioPresentacio();</div></li><li class="li1"><div class="de1">funcioComiat();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/dyMOVzE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dyMOVzE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/dyMOVzE?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, l’assignació com a mètode és igual en tots dos casos i, encara que les funcions s’han declarat fora de l’objecte, el context del mètode és correcte. En canvi, si s’invoquen les funcions de forma independent, el context d’aquestes és l’espai global i per tant no es troben definides les propietats <code>nom</code>, <code>ocupacio</code>, ni <code>edat</code> i mostrarà <code>undefined</code> en el seu lloc.
+</p>
+
+<p>
+De la mateixa manera que les funcions, els mètodes també poden acceptar paràmetres que són aplicats exactament igual. És a dir, es crea un objecte <code>arguments</code> que pot ser manipulat, poden passar-se múltiples arguments i en cas de no passar-ne suficients, el valor d’aquests serà <code>undefined</code> però no es produirà cap error:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  parlar: function (missatge, buit) {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} diu: ${missatge}`);</div></li><li class="li1"><div class="de1">    console.log(`Contingut de buit: ${buit}`);</div></li><li class="li1"><div class="de1">    console.log('Contingut d\'arguments: ', arguments);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.parlar('Bon dia!');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VwamMEw?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VwamMEw?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/VwamMEw?editors=0012</a>.
+</p>
+
+</p>
+
+</div>
+
+<h4><a id="conflicte_de_contextos" >Conflicte de contextos</a></h4>
+<div class="level4">
+
+<p>
+Possiblement el punt més conflictiu en treballar amb objectes és el canvi de context, ja que pot resultar molt confós saber a quin context fa referència <code>this</code>. Especialment en el moment que es comença a treballar de forma asíncrona, per exemple amb temporitzadors:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  sortir: function(temps) {</div></li><li class="li1"><div class="de1">    setTimeout(function() {</div></li><li class="li1"><div class="de1">      console.log(`${this.nom} surt de la sala ${temps}s després`);</div></li><li class="li1"><div class="de1">    }, temps * 1000);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.sortir(3);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/JjXbOoP?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/JjXbOoP?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/JjXbOoP?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com podeu veure el resultat és confós, per una banda <code>this.nom</code> ha estat avaluat com <code>undefined</code>, en canvi el valor del paràmetre <code>temps</code> és correcte.
+</p>
+
+<p>
+En el primer cas el valor és <code>undefined</code> perquè quan la funció és invocada per <code>setTimeout()</code> es fa amb el seu context (l’espai global, <code>window</code>) i, per tant, <code>this.nom</code> no està definit.
+</p>
+
+<p>
+El segon cas (<code>temps</code>) és un paràmetre i, per tant, es tracta com una variable. Dins del mètode es crea una <strong>clausura</strong>, de manera que la funció que es passa com a argument a <code>setTimeout()</code> té accés a les variables declarades dins del mètode <code>sortir()</code> i per aquesta raó el valor és correcte.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les <strong>clausures</strong> es tracten a la unitat “Estructures definides pel programador”. 
+</p>
+</div></div>
+<p>
+
+<p>
+Hi ha tres maneres de solucionar aquest conflicte, una consisteix a aprofitar el funcionament de les clausures:
+</p>
+<ul>
+<li class="level1"><div class="li"> Creant una variable que guardi el context.</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar el mètode <code>bind()</code> (propi de totes les funcions) que estableix el context en què s’executarà la funció</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar una funció de fletxa en lloc d’una funció anònima.</div>
+</li>
+</ul>
+
+<p>
+Vegeu un exemple en el qual s’apliquen les tècniques de la clausura i la utilització del mètode <code>bind()</code>:
+</p>
+
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  entrar: function(temps) {</div></li><li class="li1"><div class="de1">    setTimeout(function() {</div></li><li class="li1"><div class="de1">      console.log(`${this.nom} entra a la sala al cap de ${temps}s`);</div></li><li class="li1"><div class="de1">    }.bind(this), temps * 1000);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  sortir: function(temps) {</div></li><li class="li1"><div class="de1">    let that = this;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    setTimeout(function() {</div></li><li class="li1"><div class="de1">      console.log(`${that.nom} surt de la sala ${temps}s després`);</div></li><li class="li1"><div class="de1">    }, temps * 1000);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.entrar(1);</div></li><li class="li1"><div class="de1">persona.sortir(3);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jOqVaPx?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOqVaPx?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/jOqVaPx?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan es guarda el valor del context <code>this</code> en una variable s’acostuma a anomenar-la <code>that</code> o <code>self</code>.
+</p>
+</div></div>
+<p>
+Com es pot apreciar, en aquest cas concret se soluciona el conflicte aprofitant la clausura i fent servir el mètode <code>bind()</code>. Fer servir una tècnica o altra dependrà de les circumstàncies. Per exemple, si la funció que s’ha de cridar no es declara dins de la clausura, no serà possible passar-li el context fent servir una variable ni tampoc si es tracta d’un mètode d’un altre objecte.
+</p>
+
+<p>
+
+<p>
+Cal destacar que actualment és possible evitar el conflicte de canvis de context fent servir funcions de fletxa. Si en lloc de fer servir una funció anònima fem servir una funció de fletxa, el context d’execució de la funció continua sent l’objecte:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les funcions de fletxa es tracten a la unitat “Estructures definides pel programador”.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  sortir: function(temps) {</div></li><li class="li1"><div class="de1">    setTimeout(() =&gt; {console.log(`${this.nom} surt de la sala ${temps}s després`)}, temps * 1000);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.sortir(3);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwaoLOa?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwaoLOa?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwaoLOa?editors=0012</a>.
+</p>
+
+<p>
+Atés que les funciones de fletxa conserven el context original, el codi és més clar. A més a més, un dels casos d’ús més importants per les funcions de fletxes és fer-les servir com a paràmetres de funcions.
+</p>
+
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">bind, call i apply</p>
+<p>
+Els mètodes <code>call()</code> i <code>apply()</code> es poden utilitzar quan la invocació es realitza immediatament (síncrona), en canvi <code>bind()</code> s’utilitza quan l’execució es produirà en el futur (asíncrona).
+</p>
+</div></div><div class="iocreference"><div class="ioccontent">
+<p>
+Els mètodes <code>call()</code> i <code>apply()</code> es tracten a la unitat “Estructures definides pel programador”.
+</p>
+</div></div>
+</div>
+
+<h3><a id="actualitzar_propietats" >Actualitzar propietats</a></h3>
+<div class="level3">
+
+<p>
+A JavaScript no existeix el concepte d’àmbit privat o públic d’altres llenguatges, així doncs, totes les propietats dels objectes són accessibles tant per llegir-les com per canviar-les (o actualitzar-les).
+</p>
+
+<p>
+Canviar el valor d’una propietat és tan simple com assignar-li un nou valor tal com es pot comprovar en l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  saludar: function () {</div></li><li class="li1"><div class="de1">    console.log(`Hola, em dic ${this.nom} i tinc ${this.edat} anys`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació original');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.nom = 'Pere';</div></li><li class="li1"><div class="de1">persona.edat++;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació després de modificar l\'objecte');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/OJNbOpO?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/OJNbOpO?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/OJNbOpO?editors=0012</a>.
+</p>
+
+<p>
+Primer se li ha modificat el nom, assignant-n’hi un de nou, i seguidament s’ha incrementat l’edat fent servir l’operador <code>++</code>. Com es pot apreciar, modificar el valor d’una propietat és igual que canviar el valor d’una variable.
+</p>
+
+<p>
+Modificar una funció és igual de fàcil, fixeu-vos en l’exemple següent com s’actualitza el mètode <code>atacar()</code> per modificar el comportament de l’objecte:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  atacar: function(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`- ${this.nom} dona un cop de puny a ${objectiu}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Personatge ataca desarmat:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Es troba una pistola i l\'equipa:');</div></li><li class="li1"><div class="de1">persona.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">  console.log(`- ${this.nom} dispara dos trets a ${objectiu}`);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Utilitza la nova arma:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/abNBVWb?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/abNBVWb?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/abNBVWb?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Inicialment l’objecte <code>persona</code> quan invoca <code>atacar()</code> fa servir la funció predefinida (per donar cops de puny). Però, una vegada actualitzem el mètode amb la nova funció, dispara trets a l&lt;nocode&gt;&#039;&lt;/nocode&gt;<code>objectiu</code>.
+</p>
+
+<p>
+Una manera més neta de fer aquests canvis interns és afegir un mètode que s’encarregui de fer la substitució com a l’exemple següent, on s’ha afegit el mètode <code>equiparArma()</code>, de manera que fer servir l’objecte és més clar:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  atacar: function(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`- ${this.nom} dóna un cop de puny a ${objectiu}`);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  equiparArma: function(arma) {</div></li><li class="li1"><div class="de1">    this.atacar = arma;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let pistola = function(objectiu) {</div></li><li class="li1"><div class="de1">  console.log(`- ${this.nom} dispara dos trets a ${objectiu}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Personatge ataca desarmat:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Es troba una pistola i l\'equipa:');</div></li><li class="li1"><div class="de1">persona.equiparArma(pistola);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Utilitza la nova arma:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gOrLXRG?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOrLXRG?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOrLXRG?editors=0012</a>.
+</p>
+
+<p>
+Aquesta solució també és aplicable quan es treballa amb classes, ja que un cop instanciat un objecte les seves propietats i mètodes poden ser reassignats:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  constructor(nom) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`- ${this.nom} dona un cop de puny a ${objectiu}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  equiparArma(arma) {</div></li><li class="li1"><div class="de1">    this.atacar = arma;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let persona = new Persona('Ricard');</div></li><li class="li1"><div class="de1">let pistola = function(objectiu) {</div></li><li class="li1"><div class="de1">  console.log(`- ${this.nom} dispara dos trets a ${objectiu}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Personatge ataca desarmat:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Es troba una pistola i l\'equipa:');</div></li><li class="li1"><div class="de1">persona.equiparArma(pistola);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Utilitza la nova arma:');</div></li><li class="li1"><div class="de1">persona.atacar('Zombi');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/OJNbOjz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/OJNbOjz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/OJNbOjz?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+En altres llenguatges, aplicar un comportament similar no és trivial, ja que els mètodes no es poden actualitzar directament sobre els objectes i s’ha de recórrer a l’herència o la <em>delegació</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’actualització de mètodes és una clara demostració de com s’aplica el <strong>polimorfisme</strong> a JavaScript.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+La delegació és una tècnica que es basa a encarregar les operacions d’un objecte a un altre en lloc de realitzar-les ell mateix.
+</p>
+</div></div>
+<p>
+Per altra banda, com que JavaScript és un llenguatge dèbilment <em>tipat</em>, s’ha de tenir en compte que en actualitzar una propietat és possible assignar un tipus de dada incorrecte. Per exemple, si proveu el següent codi, no es produirà cap error, però el resultat no és el desitjat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  saludar: function () {</div></li><li class="li1"><div class="de1">    console.log(`Hola, em dic ${this.nom} i tinc ${this.edat} anys`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació original');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.edat = 'quaranta';</div></li><li class="li1"><div class="de1">persona.edat++;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació després de modificar l\'objecte');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qBZqVpZ?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qBZqVpZ?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/qBZqVpZ?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un llenguatge és dèbilment <em>tipat</em> (<em>weak typing</em>) si les variables poden tenir valors de tipus diferents al llarg de l’execució del programa . En un llenguatge fortament tipat (<em>strong typing</em>), les variables sempre tenen valors del mateix tipus. En aquests llenguatges sol haver també mecanismes de conversió de tipus. A vegades als llenguatges fortament tipats se’ls anomena, simplement, tipats.
+</p>
+</div></div>
+<p>
+Com que s’ha canviat un nombre per una cadena de text, l’operació d’increment ja no és possible i el resultat és <code>NaN</code> (<em>Not a number</em>).
+</p>
+
+<p>
+Però no només afecta les propietats. Atès que els mètodes no són més que propietats que referencien una funció, és possible actualitzar una propietat assignant com a valor una funció i a la inversa, canviar un mètode assignant-li qualsevol altra cosa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let persona = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  edat: 40,</div></li><li class="li1"><div class="de1">  saludar: function () {</div></li><li class="li1"><div class="de1">    console.log(`Hola, em dic ${this.nom} i tinc ${this.edat} anys`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació original');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.edat = function() {</div></li><li class="li1"><div class="de1">  console.log('Aquesta funció sobreescriu el valor de l\'edat');</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">persona.saludar = 42;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Contingut de la propietat edat: ', persona.edat)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Salutació després de modificar l\'objecte');</div></li><li class="li1"><div class="de1">persona.saludar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wvGoPpj?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wvGoPpj?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/wvGoPpj?editors=0012</a>.
+</p>
+
+<p>
+En el cas de la propietat <code>edat</code>, en lloc de mostrar el seu valor, ens mostra el codi de la funció i en el cas del mètode <code>saludar()</code> es produeix un error (es pot veure a la consola de les eines de desenvolupador), ja que s’intenta invocar a <code>persona.saludar()</code> i com que es tracta d’un nombre això no és possible.
+</p>
+
+<p>
+Una possible solució és fer servir <strong>mètodes d’accés</strong> (<em>getters</em> o <em>accessors</em> en anglès) i <strong>mètodes d’actualització</strong> (<em>setters</em> o <em>mutators</em> en anglès). Consisteix a agregar dos mètodes per cada propietat: un per accedir i un altre per actualitzar-la, de manera que es pot fer el control del tipus dins del mètode.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+A ES6 s’han afegit mètodes d’accés i actualització juntament amb la definició de classe.
+</p>
+</div></div>
+<p>
+Aquesta solució pot facilitar que els tipus de cada propietat i mètode siguin correctes, però a JavaScript presenta inconvenients que la fan inviable en molts casos:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si no es fan servir clausures tant els mètodes com les propietats continuen sent accessibles i actualitzables directament, per tant, <strong>no es garanteix que es conservi la integritat de l’objecte</strong>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>El codi es complica</strong>, ja que per cada propietat s’han d’afegir 2 mètodes.</div>
+</li>
+</ul>
+
+<p>
+Així doncs, s’ha de valorar cas per cas si és raonable afegir aquesta complexitat extra. Per aquesta raó JavaScript requereix una major disciplina per part dels desenvolupadors perquè mentre en altres llenguatges aquests tipus d’error són detectats pel compilador, a JavaScript moltes vegades produeixen errors silenciosos difícilment detectables.
+</p>
+
+<p>
+Un altre punt important a tenir en compte a l’hora de treballar amb objectes és que, igual que els <em>arrays</em>, aquests es passen a les funcions/mètodes per referència. És a dir, quan s’invoca una funció a la qual es passa un objecte com argument, qualsevol canvi que es produeixi afectarà l’objecte original, ja que es tracta del mateix:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let pistola = {</div></li><li class="li1"><div class="de1">  municio: 19</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let recarregar = function (arma) {</div></li><li class="li1"><div class="de1">  arma.municio = 42;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Munició actual de l\'arma: ', pistola.municio);</div></li><li class="li1"><div class="de1">recarregar (pistola);</div></li><li class="li1"><div class="de1">console.log('Munició actual de la pistola: ', pistola.municio)</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gOrLXeo?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOrLXeo?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOrLXeo?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, la propietat <code>municio</code> de l’objecte s’ha actualitzat tot i que l’operació s’ha realitzat en una funció aliena a l’objecte.
+</p>
+
+</div>
+
+<h3><a id="augmentar_objectes" >Augmentar objectes</a></h3>
+<div class="level3">
+
+<p>
+Una altra peculiaritat de JavaScript, que no es troba en gaires llenguatges, és que els objectes poden ser augmentats. És a dir, <strong>es poden afegir noves propietats i mètodes a qualsevol objecte ja existent</strong>.
+</p>
+
+<p>
+La manera d’augmentar-los és molt simple, només cal establir el nom de la propietat i assignar-li el valor desitjat. A partir d’aquest moment la nova propietat formarà part de l’objecte com es pot veure a la <span class="figref"><a href="#figura 1-12"><span>figura</span></a></span> i a l’exemple següent:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arma = {</div></li><li class="li1"><div class="de1">  nom: 'Pistola'</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">arma.municio = 19;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`Munició de ${arma.nom}: ${arma.municio}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNbeRz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNbeRz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNbeRz?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Objecte augmentat amb una propietat
+
+</figcaption><img src="../media/daw_m06_u3_11_vg.png" alt="" /></figure>
+</div>
+<p>
+Com es pot apreciar, la declaració de l’objecte <code>arma</code> no inclou cap propietat <code>municio</code>, però una vegada es fa l’assignació aquesta s’afegeix i es pot tractar com qualsevol altra propietat. En cas de tractar-se d’una funció, l’augment es realitza exactament igual com es pot comprovar en la <span class="figref"><a href="#figura 1-13"><span>figura</span></a></span> i en l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arma = {</div></li><li class="li1"><div class="de1">  nom: 'Pistola'</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">arma.so = function() {</div></li><li class="li1"><div class="de1">  console.log('Bang!');</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">arma.so();</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WNwodGq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WNwodGq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/WNwodGq?editors=0012</a>.
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Objecte augmentat amb un mètode
+
+</figcaption><img src="../media/daw_m06_u3_12_vg.png" alt="" /></figure>
+</div>
+<p>
+Fixeu-vos que aquesta flexibilitat permet afegir noves propietats i mètodes directament o copiant-les d’altres objectes o <em>arrays</em> (iterant sobre ells fent servir la sentència <code>for…in</code>).
+</p>
+
+<p>
+Cal remarcar que fer ús d’aquesta característica pot portar fàcilment a errors de difícil detecció, ja que un error tipogràfic en una propietat pot causar que en lloc d’actualitzar un valor s’agregui una nova propietat amb el nom mal escrit i malauradament no es produirà cap error que us permeti detectar-lo:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La possibilitat d’augmentar els objectes fa factible utilitzar-los com a diccionaris o estructures de dades.
+</p>
+</div></div>
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arma = {</div></li><li class="li1"><div class="de1">  municio: 19,</div></li><li class="li1"><div class="de1">  disparar: function() {</div></li><li class="li1"><div class="de1">    if (this.municio &gt; 0) {</div></li><li class="li1"><div class="de1">      this.mumicio = this.municio - 1;</div></li><li class="li1"><div class="de1">      console.log(`Bang! resten ${this.municio} bales`);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log('Click! munició esgotada');</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">arma.disparar();</div></li><li class="li1"><div class="de1">arma.disparar();</div></li><li class="li1"><div class="de1">arma.disparar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(arma);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PoNbEbx?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PoNbEbx?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/PoNbEbx?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, no es produeix cap error, però el resultat és incorrecte. Dins del mètode <code>disparar()</code> s’ha comès un error tipogràfic i en lloc de <code>municio</code> s’ha escrit <code>mumicio</code>, cosa que provoca un augment de l’objecte afegint una propietat amb aquest mateix nom i valor 18 (obtingut a partir de <code>this.municio - 1</code>) en lloc de reduir la propietat <code>this.municio</code>.
+</p>
+
+<p>
+
+<p>
+S’ha de tenir en compte que l’augmentació es produeix sobre els objectes, independentment de com s’hagin creat, i no té cap efecte sobre les classes.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="eliminar_propietats_i_metodes" >Eliminar propietats i mètodes</a></h3>
+<div class="level3">
+
+<p>
+De la mateixa manera que es pot augmentar un objecte, JavaScript ens ofereix l’operador <code>delete</code> per eliminar mètodes o propietats:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arma = {</div></li><li class="li1"><div class="de1">  nom: 'pistola',</div></li><li class="li1"><div class="de1">  municio: 19</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(`Munició de ${arma.nom}: ${arma.municio}`);</div></li><li class="li1"><div class="de1">delete arma.municio;</div></li><li class="li1"><div class="de1">console.log(`Munició de ${arma.nom}: ${arma.municio}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/JjXbMJr?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/JjXbMJr?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/JjXbMJr?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+En el mateix moment en què es crida l’operador <code>delete</code> seguit de la propietat a eliminar, aquesta deixa d’estar vinculada a l’objecte. En cas de voler eliminar propietats niuades només s’ha d’aplicar la notació de punt o de claudàtors per especificar-la, de la mateixa manera que per accedir, augmentar o actualitzar:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let motxilla = {</div></li><li class="li1"><div class="de1">  armes: [{</div></li><li class="li1"><div class="de1">    nom: 'pistola',</div></li><li class="li1"><div class="de1">    atacs: 1,</div></li><li class="li1"><div class="de1">    abast: 60</div></li><li class="li1"><div class="de1">  }, {</div></li><li class="li1"><div class="de1">    nom: 'ganivet',</div></li><li class="li1"><div class="de1">    atacs: 2</div></li><li class="li1"><div class="de1">  }]</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function mostrarInventari(inventari) {</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; inventari.armes.length; i++) {</div></li><li class="li1"><div class="de1">    for (let propietat in inventari.armes[i]) {</div></li><li class="li1"><div class="de1">      console.log(`${propietat}: ${inventari.armes[i][propietat]}`);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    console.log('----------');</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Mostrant inventari:');</div></li><li class="li1"><div class="de1">mostrarInventari(motxilla);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">delete motxilla.armes[0]['abast'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Mostrant inventari després d\'eliminar l\'abast:')</div></li><li class="li1"><div class="de1">mostrarInventari(motxilla);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zYqopdZ?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zYqopdZ?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/zYqopdZ?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos que per eliminar la propietat s’ha fet servir la notació de claudàtors per accedir al primer element de l’<em>array</em> i a continuació el nom de la propietat. En aquest cas s’ha optat per fer servir la notació de claudàtors en tots dos casos, però fent servir la notació de punt el resultat hauria estat el mateix: <code>delete motxilla.armes[0].abast</code>.
+</p>
+
+<p>
+En el cas d’intentar accedir a una propietat esborrada el valor retornat serà <code>undefined</code>. En canvi, en invocar un mètode esborrat es produirà un error i s’aturarà l’execució, com es pot comprovar en l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arma = {</div></li><li class="li1"><div class="de1">  nom: 'Pistola',</div></li><li class="li1"><div class="de1">  so: function() {</div></li><li class="li1"><div class="de1">    console.log('Bang!');</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">delete arma.nom;</div></li><li class="li1"><div class="de1">delete arma.so;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Nom de l\'arma: ', arma.nom);</div></li><li class="li1"><div class="de1">arma.so(); // Produeix un error i s'atura l'execució</div></li><li class="li1"><div class="de1">console.log('Aquesta línia mai s\'executa');</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/JjXbMrr?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/JjXbMrr?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/JjXbMrr?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar l’última línia no s’executa mai perquè en invocar a <code>arma.so()</code> es dispara una excepció de tipus <code>TypeError</code> i s’atura l’execució del codi.
+</p>
+
+<p>
+Generalment l’operador <code>delete</code> s’utilitza amb diccionaris i estructures de dades per poder eliminar els elements, ja que la necessitat d’eliminar una propietat o mètode és molt menys habitual.
+</p>
+
+</div>
+
+<h2><a id="definir_un_espai_de_noms" >Definir un espai de noms</a></h2>
+<div class="level2">
+
+<p>
+Un dels problemes de treballar amb JavaScript és la facilitat amb què es pot <strong>contaminar l’espai global del navegador</strong>, ja que si dins d’una funció no es declara una variable aquesta es defineix a l’espai global i els resultats poden ser imprevisibles.
+</p>
+
+<p>
+Per altra banda, s’ha de tenir en compte que en una mateixa pàgina és habitual carregar múltiples fonts de codi JavaScript que no són controlades per nosaltres com poden ser llibreries (jQuery, Google Maps, Google Analytics, etc.) o codi afegit pels gestors de continguts.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’espai global al navegador es correspon amb l’objecte <code>window</code> i amb <code>global</code> a <strong>Node.js</strong>.
+</p>
+</div></div>
+<p>
+En el cas de fer servir variables globals, és molt fàcil que alguna d’aquestes aplicacions sobreescrigui alguns dels vostres valors (o al contrari), fet que genera uns errors molt difícils de depurar, ja que tant el codi de tercers com el propi funcionarà correctament de forma individual.
+</p>
+
+<p>
+
+<p>
+També és més difícil depurar i gestionar els objectes de l’aplicació si aquests es troben barrejats amb els objectes del navegador i el codi de tercers, fixeu-vos en el contingut de l’objecte <code>window</code> amb les eines de desenvolupador del navegador:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(window);</div></li></ol></pre>
+
+<p>
+Com es pot apreciar, inclou tots els objectes predefinits, variables i funcions de JavaScript, a més de les que afegeixen els navegadors i això sense comptar amb el vostre codi ni carregar llibreries externes.
+</p>
+
+<p>
+
+<p>
+Hi ha dues solucions a aquest problema:
+</p>
+<ul>
+<li class="level1"><div class="li"> Fer servir un <strong>espai de noms</strong> (<em>namespace</em> en anglès), ficant tots els components de l’aplicació es troben al seu interior. D’aquesta manera és més fàcil inspeccionar els objectes que formen part de l’aplicació al mateix temps que s’eviten possibles conflictes amb altres aplicacions.</div>
+</li>
+<li class="level1"><div class="li"> Fer servir <strong>mòduls</strong> per encapsular l’aplicació. D’aquesta manera tota l’aplicació es troba dintre de l’àmbit del mòdul i no a l’espai global.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Actualment, el mètode preferit per aïllar l’aplicació és la utilització de <strong>mòduls</strong>.
+</p>
+</div></div><div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar informació sobre els mòduls al següent enllaç: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules" class="urlextern" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"  rel="nofollow">mzl.la/3ibdoOl</a> i a la unitat “Objectes predefinits del llenguatge”.
+</p>
+</div></div>
+</p>
+
+<p>
+Crear un espai de noms consisteix a crear un únic objecte que es trobarà a l’espai global del navegador, dins del qual s’afegeix la resta de l’aplicació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Aquest és l'espai de noms per l'aplicació</div></li><li class="li1"><div class="de1">let IOC_ApocalipsiZombi = {</div></li><li class="li1"><div class="de1">  // Codi de l'aplicació  </div></li><li class="li1"><div class="de1">  versio: 1,</div></li><li class="li1"><div class="de1">  iniciar: function() { /*Inicialització de l'aplicació */}</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Inici de l'aplicació</div></li><li class="li1"><div class="de1">IOC_ApocalipsiZombi.iniciar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Contingut de l'aplicació</div></li><li class="li1"><div class="de1">console.log(window.IOC_ApocalipsiZombi);</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/mdPOpLa?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mdPOpLa?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/mdPOpLa?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-14"><span>figura</span></a></span>.
+</p>
+
+</p>
+<div class="iocfigure"><a name="figura 1-14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Espai de noms que agrupa diferents components de l’aplicació
+
+</figcaption><img src="../media/daw_m06_u3_13_vg.png" alt="" /></figure>
+</div>
+<p>
+S’ha de tenir en compte que tant la propietat com el mètode s’han afegit amb finalitat demostrativa i no són obligatoris. El contingut serà el que necessiteu per la vostra aplicació.
+</p>
+
+<p>
+Si us hi fixeu, tot el contingut de la vostra aplicació es troba ara dins de <code>window.IOC_ApocalipsiZombi</code>, de manera que s’eviten possibles conflictes i és més fàcil comprovar el seu contingut.
+</p>
+
+<p>
+Al contrari del que passa en altres llenguatges, a JavaScript no existeix cap convenció per establir el nom de l’objecte que es fa servir com a espai de noms, per aquesta raó se’n pot fer servir qualsevol que considereu prou únic per evitar conflictes.
+</p>
+
+<p>
+El punt feble d’aquesta tècnica és que no s’encapsula la informació i, consegüentment, es pot accedir a qualsevol de les propietats o mètodes de l’espai de noms directament. Per solucionar aquest problema es pot aplicar el <strong>patró mòdul</strong>, una tècnica basada en l’ús de clausures i funcions autoexecutables.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre el <em>patró mòdul</em> en la secció “Annexos” del web del mòdul.
+</p>
+</div></div>
+<p>
+
+<p>
+En conclusió, es recomana fer servir sempre un mòdul o un espai de noms per encapsular la vostra aplicació, encara que això no s’aplica al codi d’exemples o demostracions perquè causaria una complicació innecessària del codi.
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="prototipus" >Prototipus</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+JavaScript és un llenguatge basat en prototipus, és a dir, els objectes poden construir-se a partir d’uns altres objectes (el seu prototipus) i seguidament augmentar-lo amb nous mètodes i propietats.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+A causa de deficiències del propi llenguatge el funcionament d’aquest mecanisme porta fàcilment a confusió. Per aquest motiu a partir de la versio ECMAScript 2015 <strong>es recomana treballar sempre amb classes</strong>, ja que la seva finalitat és molt semblant.
+</p>
+</div></div>
+</p>
+
+<p>
+Un prototipus és un objecte del qual altres objectes hereten propietats i mètodes. Aquest objecte només es troba definit a les funcions, com a propietat <code>prototype</code> i és possible actualitzar-lo o augmentar-lo.
+</p>
+
+<p>
+Quan s’utilitza una funció com a <strong>constructor</strong>, el prototipus de l’objecte creat referencia al de la funció constructora, de manera que aquest hereta totes les propietats i mètodes establerts al prototipus. Consegüentment, només els objectes generats a partir d’aquest patró tenen accés al prototipus automàticament.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>constructor</strong> a JavaScript és una funció que crea un objecte. Per convenció, el nom d’aquesta funció sempre comença amb majúscules i la creació de l’objecte es realitza amb l’operador <code>new</code>.
+</p>
+</div></div>
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let Persona = function (nom) {</div></li><li class="li1"><div class="de1">  this.nom = nom;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Persona.prototype.saludar = function () {</div></li><li class="li1"><div class="de1">  console.log(`Hola, em dic ${this.nom}`);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let jugador = new Persona('Ricard');</div></li><li class="li1"><div class="de1">jugador.saludar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xxVRjjP?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xxVRjjP?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/xxVRjjP?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Cal recordar que les funcions a JavaScript són objectes i, per consegüent, tenen propietats i mètodes. Podeu veure’n alguns a la <span class="figref"><a href="#figura 1-28"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-28"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació d’una funció
+
+</figcaption><img src="../media/daw_m06_u3_27_vg.png" alt="" /></figure>
+</div>
+<p>
+S’ha de tenir en compte que la propietat <code>prototype</code> dels objectes generats a partir d’un constructor és una referència al prototipus de la funció constructora i, consegüentment, si s’augmenta o actualitza en un dels objectes aquest canvi afectarà el prototipus del constructor i de totes les instàncies generades.
+</p>
+
+<p>
+Per aquesta raó <strong>es desaconsella modificar el prototipus d’un objecte generat a partir d’un constructor</strong> fent servir la seva propietat <code>prototype</code>. Si realment es vol modificar el seu prototipus, s’han d’aplicar els canvis a la propietat <code>prototype</code> de la funció constructora.
+</p>
+
+</div>
+
+<h3><a id="augmentar_objectes_predefinits" >Augmentar objectes predefinits</a></h3>
+<div class="level3">
+
+<p>
+Gràcies als prototipus és possible augmentar també els objectes predefinits del sistema, per exemple els objectes <code>Array</code>, <code>String</code> o <code>Number</code>; ja que una vegada augmentat un prototip s’aplica a tots els objectes dels quals forma part immediatament.
+</p>
+
+<p>
+Per exemple, es pot augmentar el prototip de <code>Number</code> per afegir un mètode anomenat <code>duplicar()</code> a tots els nombres:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+
+<p>
+No és possible invocar un mètode a partir d’un número literal (per exemple <code>5</code>), però és posible invocar-lo a partir d’una variable amb el valor <code>5</code> assignat com a literal.
+</p>
+
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">let x = 9.5;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Number.prototype.duplicar = function () {</div></li><li class="li1"><div class="de1">  return this * 2;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let y = 21;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(x.duplicar());</div></li><li class="li1"><div class="de1">console.log(y.duplicar());</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xxVRjQp?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xxVRjQp?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/xxVRjQp?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, una vegada modificat el prototip de <code>Number</code>, tots els nombres de JavaScript tenen accés a aquest mètode, tant els que existien abans de l’augment com els nous.
+</p>
+
+<p>
+Fixeu-vos també que s’ha fet servir <code>this</code> dins del nou mètode i el context s’ha aplicat correctament, ja que en invocar al mètode <code>duplicar()</code> primer s’ha cercat entre els mètodes de l’objecte i a continuació entre els mètodes del seu prototip, no es tracta d’una funció externa.
+</p>
+
+<p>
+Cal remarcar que d’aquesta manera es poden augmentar objectes per accedir a una nova funcionalitat globalment, fins i tot entre diferents espais de nom, sense contaminar l’espai global. Veieu a continuació un altre exemple, aquest cop amb <code>String</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String.prototype.revertir = function() {</div></li><li class="li1"><div class="de1">  let revertit = '';</div></li><li class="li1"><div class="de1">  for (let i = this.length - 1; i &gt;= 0; i--) {</div></li><li class="li1"><div class="de1">    revertit += this[i];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return revertit;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Bang!'.revertir());</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZEWBoVe?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZEWBoVe?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ZEWBoVe?editors=0012</a>.
+</p>
+
+<p>
+En aquest cas, al contrari que amb els nombres, és possible cridar directament al mètode a partir de la cadena de caràcters.
+</p>
+
+<p>
+
+<h2><a id="classes_en_javascript" >Classes en JavaScript</a></h2>
+<div class="level2">
+
+<p>
+Actualment, tots els navegadors admeten l’ús de classes de JavaScript, això ens permet treballar amb un sistema d’herència clàssica en lloc de l’herència prototípica pròpia de JavaScript, afegir mètodes d’accés, mètodes actualitzadors i mètodes estàtics.
+</p>
+
+</div>
+
+<h3><a id="metodes_d_acces_i_actualitzadors_getters_i_setters" >Mètodes d&#039;accés i actualitzadors (getters i setters)</a></h3>
+<div class="level3">
+
+</div>
+
+</p>
+
+<p>
+Les classes permeten afegir mètodes d’accés i actualitzadors directament a les classes (cosa que també es pot fer amb ES5, però resulta més farragós):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">  constructor(nom, cognom) {</div></li><li class="li1"><div class="de1">    this._nom = nom;</div></li><li class="li1"><div class="de1">    this._cognom = cognom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  set nom(nom) {</div></li><li class="li1"><div class="de1">    this._nom = nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get nom() {</div></li><li class="li1"><div class="de1">    return this._nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  set cognom(cognom) {</div></li><li class="li1"><div class="de1">    this._cognom = cognom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get cognom() {</div></li><li class="li1"><div class="de1">    return this._cognom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get nomComplet() {</div></li><li class="li1"><div class="de1">    return `${this._nom} ${this._cognom}`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Persona('Ricard', 'Ensutjs');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('Nom (amb accessor):', ricard.nom);</div></li><li class="li1"><div class="de1">console.log('Cognom (amb accessor):', ricard.cognom);</div></li><li class="li1"><div class="de1">console.log('Nom complet:', ricard.nomComplet);</div></li><li class="li1"><div class="de1">console.log('Nom (propietat):', ricard._nom);</div></li><li class="li1"><div class="de1">console.log('Cognom (propietat):', ricard._cognom);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gOrLEZv?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOrLEZv?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOrLEZv?editors=0012</a>.
+&lt;/newcontent&gt;
+</p>
+
+<p>
+Fixeu-vos en l’<em>accessor</em> a <code>nomComplet</code> i com s’utilitza. No s’invoca, sinó que s’hi accedeix com si es tractés d’una propietat, però realment no existeix, el que es fa és generar-la dinàmicament a partir de les propietats <code>nom</code> i <code>cognom</code>. De la mateixa manera s’accedeix a les propietats <code>nom</code> i <code>cognom</code> que són generades dinàmicament (però sense variació) a partir de <code>_nom</code> i <code>_cognom</code> respectivament.
+</p>
+
+<p>
+Malauradament, com es pot apreciar, les propietats <code>_nom</code> i <code>_cognom</code> continuen sent accessibles (i actualitzables) i per tant no s’està aplicant l’encapsulació de la informació. Per aquesta raó, la utilització d’<em>accessors</em> i actualitzadors només és interessant en casos molt marginals (per exemple, per generar propietats dinàmiques com el cas de <code>nomComplet</code>).
+</p>
+
+<p>
+L’encapsulament de la informació encara no forma part de cap especificació ni esborrany, per tant cal recórrer a mètodes alternatius que escapen a l’abast d’aquests materials. Així doncs, la recomanació és fer servir el prefix ‘_’ per distingir-les i en cas de requerir mètodes o propietats privades utilitzar la implementació del patró constructor o funcional per aquests objectes en lloc de les classes d’ES6.
+</p>
+
+<p>
+
+<h3><a id="metodes_estatics" >Mètodes estàtics</a></h3>
+<div class="level3">
+
+<p>
+Les classes a JavaScript també permeten crear mètodes estàtics, és a dir, mètodes que poden utilitzar-se sense instanciar cap classe, per exemple:
+</p>
+
+</div>
+
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar mètodes d’implementar l’encapsulació a JavaScript en l’enllaç següent: <a href="https://curiosity-driven.org/private-properties-in-javascript" class="urlextern" title="https://curiosity-driven.org/private-properties-in-javascript"  rel="nofollow">goo.gl/2t6jfU</a>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">class FactoriaArmes {</div></li><li class="li1"><div class="de1">  static crearArma({tipus}) {</div></li><li class="li1"><div class="de1">    let arma;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    switch (tipus) {</div></li><li class="li1"><div class="de1">      case 'simple':</div></li><li class="li1"><div class="de1">        arma = new Arma(arguments[0]);</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">      case 'arma de foc':</div></li><li class="li1"><div class="de1">        arma = new ArmaAmbMunicio(arguments[0]);</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">      default:</div></li><li class="li1"><div class="de1">        console.error(`No existeix aquest tipus d\´arma: ${params.tipus}`);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    return arma;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Tal com es pot apreciar només consta d’un mètode, però va precedit per la paraula clau <code>static</code>, això indica que es tracta d’un mètode estàtic i s’hi pot accedir sense instanciar la classe <code>FactoriaArmes</code>.
+</p>
+
+<p>
+
+<p>
+En aquest cas, la factoria crea instàncies de les classes <code>Arma</code> i <code>ArmaAmbMunicio</code> que han d’implementar un constructor que accepti un objecte com a paràmetre, per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Arma {</div></li><li class="li1"><div class="de1">  constructor: ({nom, potencia}) {</div></li><li class="li1"><div class="de1">    // cos del constructor</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class ArmaAmbMunicio extends Arma {</div></li><li class="li1"><div class="de1">  constructor: ({nom, potencia, maxMunicio}) {</div></li><li class="li1"><div class="de1">    // cos del constructor</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per instanciar els nous objectes a partir de la factoria i utilitzar els objectes es faria de la següent manera:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ganivet = FactoriaArmes.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'simple',</div></li><li class="li1"><div class="de1">  nom: 'Ganivet',</div></li><li class="li1"><div class="de1">  potencia: 1</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let pistola = FactoriaArmes.crearArma({</div></li><li class="li1"><div class="de1">  tipus: 'arma de foc',</div></li><li class="li1"><div class="de1">  nom: 'Pistola',</div></li><li class="li1"><div class="de1">  maxMunicio: 2,</div></li><li class="li1"><div class="de1">  potencia: 2</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ganivet.atacar('Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li></ol></pre>
+
+<p>
+
+<p>
+Podeu veure l’exemple complet en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vYGyPwe?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vYGyPwe?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/vYGyPwe?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos que no s’instancia cap objecte fent servir l’operador <code>new</code>, es generen cridant al mètode estàtic <code>crearArma()</code> que rep un objecte amb l’estructura de dades que conté la informació necessària per instanciar cada objecte.
+</p>
+
+<p>
+
+<p>
+Els mètodes estàtics resulten útils per la implementació de diferents patrons de disseny com ara les <em>factories</em> o la creació de biblioteques, però s’ha de tenir en compte la complexitat afegida per encapsular la informació utilitzant el sistema de classes si realment és necessari utilitzar propietats o mètodes privats.
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="herencia" >Herència</a></h2>
+<div class="level2">
+
+<p>
+El paradigma de la programació orientada a objectes, a banda de permetre crear abstraccions de la realitat, facilita la reutilització del codi gràcies a l’herència.
+</p>
+
+<p>
+En els llenguatges clàssics, l’herència permet crear noves classes que hereten d’unes altres. Això permet modificar-ne el comportament (polimorfisme) o augmentar-les. 
+</p>
+
+<p>
+
+<p>
+Cal tenir en compte que a JavaScript no existeix el concepte d’<strong>interfície</strong> (<em>interface</em> en anglès) d’altres llenguatges clàssics, ja que no es pot forçar el compliment del “contracte” que representa la interfície en tractar-se d’un llenguatge dèbilment tipat.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Interficies</p>
+<p>
+Una interfície és el conjunt de mètodes que un objecte ha de tenir per permetre la comunicació amb uns altres. Així doncs, tots els objectes amb aquests mètodes podran utilitzar-se indistintament com a component. Atès que l’especificació de JavaScript no inclou les interfícies i, consegüentment, no es pot forçar el comportament, el desenvolupador ha de parar atenció per respectar aquest “contracte”.
+</p>
+</div></div>
+<p>
+Per altra banda, encara que JavaScript no suporta l’herència múltiple (un objecte que hereti de múltiples objectes), és possible implementar-la gràcies a la gran flexibilitat del llenguatge. Per exemple, utilitzant una funció per crear els <em>mix-ins</em> (mescles d’objectes).
+</p>
+
+<p>
+En aquests materials ens centrarem en l’herència clàssica fent servir classes en lloc de prototips.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Es pot trobar més informació sobre els <em>mix-ins</em> al següent enllaç: <a href="https://es.wikipedia.org/wiki/Mixin" class="urlextern" title="https://es.wikipedia.org/wiki/Mixin"  rel="nofollow">es.wikipedia.org/wiki/Mixin</a>.
+</p>
+</div></div>
+</p>
+
+</div>
+
+<h3><a id="implementar_l_herencia" >Implementar l&#039;herència</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+JavaScript ofereix diverses tècniques per reaprofitar el codi, ja que es poden crear jerarquies d’objectes utilitzant el sistema de classes o aplicant diferents patrons de generació (fins i tot combinant-los) amb alguna petita modificació, és a dir, no està restringit només al sistema de classes.
+</p>
+
+</p>
+
+<p>
+
+<p>
+Cal tenir en compte que independentment del sistema empleat per implementar l’herència, els objectes generats funcionen exactament de la mateixa manera.
+</p>
+
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+
+<p>
+Podeu trobar més informació i exemples sobre les tècniques alternatives a l’ús de constructors per implementar l’herència prototípica en la secció “Annexos” d’aquesta unitat.
+</p>
+
+</p>
+</div></div>
+</div>
+
+<h4><a id="herencia_a_partir_d_altres_objectes" >Herència a partir d&#039;altres objectes</a></h4>
+<div class="level4">
+
+<p>
+La implementació de l’herència fent servir aquesta tècnica és la més simple de totes. Consisteix a crear un primer objecte que serà el pare dels altres objectes (contindrà les propietats i mètodes comuns) i a continuació invocar <code>Object.create()</code> per crear noves instàncies que podran ser actualitzar-se i augmentar-se.
+</p>
+
+</div>
+
+<h4><a id="herencia_a_traves_de_la_generacio_funcional" >Herència a través de la generació funcional</a></h4>
+<div class="level4">
+
+<p>
+Les modificacions que s’han de fer per afegir un objecte pare a aquest patró són mínimes. Només cal substituir la creació de l’objecte buit per la generació de l’objecte pare, que seguidament serà actualitzat i augmentat segons sigui necessari.
+</p>
+
+</div>
+
+<h4><a id="herencia_a_partir_de_constructors" >Herència a partir de constructors</a></h4>
+<div class="level4">
+
+<p>
+La creació d’objectes a partir de constructors és la tècnica que més s’assembla a l’herència clàssica sense utilitzar classes, ja que s’afegeix la propietat <code>prototype</code> que permet distingir quins objectes tenen un mateix pare, aplicar la cadena de prototipus i cridar mètodes del constructor pare.
+</p>
+
+<p>
+La creació de constructors especialitzats requereix aplicar els canvis següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Dins del constructor s’ha de cridar al constructor pare passant com a context el nou objecte i els arguments: <code>ConstructorPare.apply(this, arguments);</code>.</div>
+</li>
+<li class="level1"><div class="li"> La propietat <code>prototype</code> del constructor s’ha de substituir per una còpia de la del constructor pare: <code>ConstructorFill.prototype = Object.create(ConstructorPare.prototype);</code>.</div>
+</li>
+<li class="level1"><div class="li"> Una vegada substituït el prototipus s’ha de corregir el constructor perquè apunti al nou constructor: <code>ConstructorFill.prototype.constructor = ConstructorFill</code>.</div>
+</li>
+</ul>
+
+<p>
+
+<p>
+Com podeu imaginar, la implementació de l’herència fent servir constructors es força complicada, per aquest motiu es recomana fer servir el sistema d’herència mitjançant classes que es va afegir a ES2015.
+</p>
+
+<h4><a id="herencia_a_mitjancant_el_sistema_de_classes" >Herència a mitjançant el sistema de classes</a></h4>
+<div class="level4">
+
+<p>
+Actualment JavaScript permet utilitzar el sistema de classes molt similar al que trobem en altres llenguatges com Java o C++, això ens permet crear subclasses fàcilment, només cal utilitzar la paraula clau <code>extends</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Superclasse</div></li><li class="li1"><div class="de1">class Criatura {</div></li><li class="li1"><div class="de1">  constructor() {</div></li><li class="li1"><div class="de1">    this.nom = 'Criatura de tipus desconegut';</div></li><li class="li1"><div class="de1">    this.moviment = 10;</div></li><li class="li1"><div class="de1">    this.potencia = 1;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  caminar() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} camina ${this.moviment} metres`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} ataca a ${objectiu.nom} i li causa ${this.potencia} punts de dany`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class Gos extends Criatura {</div></li><li class="li1"><div class="de1">  constructor() {</div></li><li class="li1"><div class="de1">    super();    </div></li><li class="li1"><div class="de1">    this.nom = &quot;Gos&quot;;</div></li><li class="li1"><div class="de1">    this.potencia = 2;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  saltar() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} salta ${this.moviment / 5} metres`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class GosZombi extends Gos {</div></li><li class="li1"><div class="de1">  constructor() {</div></li><li class="li1"><div class="de1">    super();</div></li><li class="li1"><div class="de1">    this.nom = &quot;Gos Zombi&quot;;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  saltar() {</div></li><li class="li1"><div class="de1">    console.log(`${this.nom} intenta saltar... però no pot`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Es generen les instancies del objectes a partir de les classes</div></li><li class="li1"><div class="de1">let gos = new Gos(),</div></li><li class="li1"><div class="de1">    gosZombi = new GosZombi();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">gos.caminar();</div></li><li class="li1"><div class="de1">gos.atacar(gosZombi);</div></li><li class="li1"><div class="de1">gos.saltar();</div></li><li class="li1"><div class="de1">gosZombi.atacar(gos);</div></li><li class="li1"><div class="de1">gosZombi.saltar();</div></li><li class="li1"><div class="de1">gosZombi.caminar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/poyNKPr?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/poyNKPr?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/poyNKPr?editors=0012</a> i el diagrama corresponent a la <span class="figref"><a href="#figura 1-23"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura 1-23"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Herència fent servir classes
+
+</figcaption><img src="../media/daw_m06_u3_22_vg.png" alt="" /></figure>
+<div class="footfigure">Els noms de les classes comencen amb majúscula mentre que els objectes instanciats ho fan amb minúscula.</div></div>
+<p>
+Tal com es pot apreciar, encara que els mètodes <code>caminar()</code> i <code>atacar()</code> no s’han definit a les classes <code>Gos</code> ni <code>GosZombi</code>, es poden invocar correctament perquè totes dues tenen com a superclasse <code>Criatura</code>, que és on es troben definits aquests mètodes.
+</p>
+
+<p>
+Per altra banda, podem veure que totes dues subclasses reassignen el valor de la propietat <code>nom</code> dins del constructor, per consegüent encara que no s’hagi indicat cap nom en crear les instàncies s’assigna automàticament.
+</p>
+
+<p>
+La classe <code>Gos</code> afegeix el mètode <code>saltar()</code>, augmentant la classe <code>Criatura</code> i la classe <code>GosZombi</code> la sobreescriu, modificant el comportament (polimorfisme). És a dir, quan s’invoca aquest mètode des d’una instància de <code>Gos</code> es crida al mètode de <code>Gos</code>, però quan s’invoca des d’una instància de <code>GosZombie</code> el codi executat és el corresponent al mètode definit en <code>GosZombie</code>.
+</p>
+
+<p>
+Quant a jerarquia de classes, es pot comprovar que es creen les referències correctament i es pot determinar si un objecte és instància d’una classe determinada. Proveu d’afegir les següents línies a l’exemple anterior:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log('GosZombie és una instància d\'Object?', gosZombi instanceof Object);</div></li><li class="li1"><div class="de1">console.log('GosZombie és una instància d\'Criatura?', gosZombi instanceof Criatura);</div></li><li class="li1"><div class="de1">console.log('GosZombie és una instància d\'Gos?', gosZombi instanceof Gos);</div></li><li class="li1"><div class="de1">console.log('GosZombie és una instància d\'GosZombie?', gosZombi instanceof GosZombi);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/EyWzKo?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/EyWzKo?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/EyWzKo?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que dins dels constructors de les subclasses s’ha utilitzat la paraula clau <code>super</code>. Aquesta paraula clau es pot fer servir de dues maneres diferents:
+</p>
+<pre class="code">super([arguments]); // crida al constructor de la superclasse amb els arguments
+super.funcioEnSuperclasse([arguments]); // crida a la funció concreta de la superclasse</pre>
+
+<p>
+Cal tenir en compte que encara que els arguments són opcionals, s’han de passar els paràmetres adequats en invocar <code>super</code> (o a la funció de la superclasse), en cas contrari el resultat no serà l’esperat. Per exemple, si el constructor de la superclasse espera el paràmetre <code>nom</code> i des de la subclasse no es passa el seu valor serà <code>undefined</code>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Tingueu en compte que dins dels constructors cal invocar a <strong><code>super()</code> abans de poder utilitzar <code>this</code></strong>, en cas contrari es produirà un error.
+</p>
+</div></div>
+<p>
+Veiem un exemple d’utilització de <code>super()</code> en les dues situacions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Arma {</div></li><li class="li1"><div class="de1">  constructor(nom) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.so = 'Zas!'</div></li><li class="li1"><div class="de1">    this.potencia = 1;</div></li><li class="li1"><div class="de1">  }  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">      console.log(`${this.so} S\´han causat ${this.potencia} punts de dany a ${objectiu} amb ${this.nom}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class ArmaAmbMunicio extends Arma {</div></li><li class="li1"><div class="de1">  constructor(nom, maxMunicio) {</div></li><li class="li1"><div class="de1">    super(nom);</div></li><li class="li1"><div class="de1">    this.municio = maxMunicio;</div></li><li class="li1"><div class="de1">    this.so = 'Bang!';</div></li><li class="li1"><div class="de1">    this.potencia = 2;    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    if (this.municio &gt; 0) {</div></li><li class="li1"><div class="de1">      this.municio--;</div></li><li class="li1"><div class="de1">      super.atacar(objectiu);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;Click! no queda munició!&quot;);</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ganivet = new Arma('Ganivet');</div></li><li class="li1"><div class="de1">let pistola = new ArmaAmbMunicio('Pistola', 2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ganivet.atacar('Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li><li class="li1"><div class="de1">pistola.atacar('Gos Zombi');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/KKzNBwR?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/KKzNBwR?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/KKzNBwR?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, quan s’invoca <code>atacar()</code> des de la pistola només es comprova que hi hagi munició, si hi ha munició es crida al mètode <code>atacar()</code> de la superclasse i, en cas contrari, mostra un missatge.
+</p>
+
+<p>
+Fixeu-vos que quan s’invoca a <code>super()</code> en el constructor de <code>ArmaAmbMunicio</code> només es passa el paràmetre <code>nom</code> i no <code>maxMunicio</code>, ja que la superclasse només accepta un paràmetre.
+</p>
+
+</div>
+
+<h3><a id="herencia_multiplemix-ins" >Herència múltiple: mix-ins</a></h3>
+<div class="level3">
+
+<p>
+L’herència múltiple consisteix en el fet que una classe hereti de múltiples classes. Per exemple es poden definir dues classes diferents que no estiguin relacionades però que tinguin subclasses que comparteixin algun comportament.
+</p>
+
+<p>
+Utilitzant l’herència simple hauríem de duplicar el codi del comportament compartit a cada subclasse, en canvi utilitzant l’herència múltiple es podria definir el nou comportament en una classe externa i fer que les subclasses heretin de la seva superclasse i d’aquesta nova classe.
+</p>
+
+<p>
+Tot i que JavaScript no permet l’herència múltiple directament, es pot implementar utilitzant <em>mix-ins</em>. Per crear un mix-in, en lloc de definir una classe, el que fem és definir una funció que:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Mix-ins</p>
+<p>
+És una associació de mètodes i propietats que, després, poden ser heretats per qualsevol classe.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> rep com a paràmetre la classe a la qual s’ha d’afegir el mix-in.</div>
+</li>
+<li class="level1"><div class="li"> retorna una nova classe que té com a superclasse la classe passada com a paràmetre.</div>
+</li>
+</ul>
+
+<p>
+Per exemple, per crear un nou mix-in que afegeixi un nou comportament definiríem la funció així:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nouMixin = Base =&gt; class extends Base {</div></li><li class="li1"><div class="de1">  nouComportament() { }</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+Fixeu-vos que la funció s’ha definit com una funció de fletxa. Això no és necessari però fa que el codi sigui més net.
+</p>
+
+<p>
+Tingueu en compte que en aquest exemple només hem afegit un nou comportament, però un mix-in pot contenir qualsevol quantitat de mètodes i propietats, com una classe normal.
+</p>
+
+<p>
+Per crear una subclasse que utilitzi aquest mix-in es faria de la següent manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class ClasseBase {</div></li><li class="li1"><div class="de1">  // mètodes i propietats de ClasseBase</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class NovaClasse extends nouMixin(ClasseBase) {</div></li><li class="li1"><div class="de1">  // mètodes i propietats de NovaClasse</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com es pot apreciar, es crida a la funció <code>nouMixin()</code> passant com a paràmetre la classe que volem fer servir com a classe base. Si volguéssim afegir més mix-ins només caldria niuar les invocacions a les funcions de manera que el resultat d’una passa com argument de la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class NovaClasse extends nouMixin1(nouMixin2(nouMixin3(ClasseBase))) {</div></li><li class="li1"><div class="de1">  // mètodes de NovaClasse</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Vegeu a continuació un exemple complet:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Arma {</div></li><li class="li1"><div class="de1">  constructor({nom}) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.so = &quot;Zas!&quot;;</div></li><li class="li1"><div class="de1">    this.potencia = 1;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(</div></li><li class="li1"><div class="de1">      `${this.so} S\`han causat ${this.potencia} punts de dany a ${objectiu} amb ${this.nom}`</div></li><li class="li1"><div class="de1">    );</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let carguesMixin = (Base) =&gt;</div></li><li class="li1"><div class="de1">  class extends Base {</div></li><li class="li1"><div class="de1">    constructor({cargues}) {</div></li><li class="li1"><div class="de1">      super(arguments[0]);</div></li><li class="li1"><div class="de1">      this.cargues = cargues;</div></li><li class="li1"><div class="de1">      this.maxCargues = cargues;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    recarregar() {</div></li><li class="li1"><div class="de1">      this.cargues = this.maxCargues;</div></li><li class="li1"><div class="de1">      console.log(`${this.nom} recarregada`);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class ArmaDeFoc extends carguesMixin(Arma) {</div></li><li class="li1"><div class="de1">  constructor({nom}) {</div></li><li class="li1"><div class="de1">    super(arguments[0]);</div></li><li class="li1"><div class="de1">    this.so = &quot;Bang!&quot;;</div></li><li class="li1"><div class="de1">    this.potencia = 2;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    if (this.cargues &gt; 0) {</div></li><li class="li1"><div class="de1">      this.cargues--;</div></li><li class="li1"><div class="de1">      super.atacar(objectiu);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;Click! no queda munició!&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ganivet = new Arma({nom: &quot;Ganivet&quot;});</div></li><li class="li1"><div class="de1">let pistola = new ArmaDeFoc({nom: &quot;Pistola&quot;, cargues: 2});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ganivet.atacar(&quot;Zombi&quot;);</div></li><li class="li1"><div class="de1">pistola.atacar(&quot;Gos Zombi&quot;);</div></li><li class="li1"><div class="de1">pistola.atacar(&quot;Gos Zombi&quot;);</div></li><li class="li1"><div class="de1">pistola.atacar(&quot;Gos Zombi&quot;);</div></li><li class="li1"><div class="de1">pistola.recarregar();</div></li><li class="li1"><div class="de1">pistola.atacar(&quot;Gos Zombi&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class Dispositiu {</div></li><li class="li1"><div class="de1">  constructor ({nom}) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  utilitzar() {</div></li><li class="li1"><div class="de1">    console.log(`Utilitzant ${this.nom}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class DispositiuAmbPiles extends carguesMixin(Dispositiu) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  utilitzar() {</div></li><li class="li1"><div class="de1">    if (this.cargues &gt; 0) {</div></li><li class="li1"><div class="de1">      this.cargues--;</div></li><li class="li1"><div class="de1">      super.utilitzar();</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(&quot;Piles esgotades!&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let llinterna = new DispositiuAmbPiles({nom: 'llinterna', cargues: 3});</div></li><li class="li1"><div class="de1">llinterna.utilitzar();</div></li><li class="li1"><div class="de1">llinterna.utilitzar();</div></li><li class="li1"><div class="de1">llinterna.utilitzar();</div></li><li class="li1"><div class="de1">llinterna.utilitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOVZyM?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOVZyM?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOVZyM?editors=0012</a>.
+</p>
+
+<p>
+Fixeu-vos que s’ha fet servir un objecte com a paràmetre dels constructors (on són desestructurats). D’aquesta manera es poden passar els paràmetres per nom sense importar l’ordre. Això permet que el mix-in només agafi el paràmetre que necessita <code>cargues</code>, mentre que les superclasses agafen el paràmetre <code>nom</code>.
+</p>
+
+<p>
+Atès que el constructor rep un objecte desestructurat, no podem passar a <code>super()</code> només el nom del paràmetre, ja que llavors es perdria la resta d’informació passada originalment com objecte. Afortunadament podem accedir a l’objecte original mitjançant l’objecte <code>arguments</code>, i com només es passa un paràmetre podem assegurar que l’índex 0 conté aquest objecte. Per consegüent, amb <code>super(arguments[0])</code> es passa l’objecte original als constructors de les classes pares.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> objecte arguments</p>
+<p>
+És un objecte especial similar a un <em>array</em> que rep cada funció i conté tots els paràmetres indexats per ordre. És a dir, l’índex 0 conté el primer paràmetre, l’índex 1 el segon, l’índex 2 el tercer, etc.
+</p>
+</div></div>
+<p>
+Com es pot apreciar, s’han fet servir dues classes base diferents:, <code>Arma</code> i <code>Dispositiu</code>, i s’ha afegit el mix-in <code>carguesMixin</code> a les subclasses <code>ArmaDeFoc</code> i <code>DispositiuAmbPiles</code>, de manera que totes dues compareixen les propietats <code>cargues</code> i <code>maxCargues</code> i el mètode <code>recargar()</code>.
+</p>
+
+<p>
+En conclusió, la utilització dels mix-ins permet afegir a subclasses, que pertanyen a diferents jerarquies de classes, un comportament compartit sense duplicar el codi.
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+<h3><a id="patrofactoria" >Patró: factoria</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+A causa de la complexitat que pot presentar la generació d’objectes i les jerarquies d’herència a JavaScript, de vegades pot ser recomanable utilitzar alguna tècnica que simplifiqui aquesta tasca.
+</p>
+
+</p>
+
+<p>
+Una opció és utilitzar el <strong>patró factoria</strong>, un patró de disseny que amaga la implementació de la creació d’objectes i exposa un mètode a través del qual es poden obtenir instàncies dels objectes sense necessitat de conèixer la seva implementació.
+</p>
+
+<p>
+És a dir, la implementació d’aquest patró ens ajuda a crear un objecte a través del qual invocant un mètode es generen completament altres objectes, per exemple una <em>factoria</em> d’armes ens permet invocar els mètodes: <code>factoria.crearArma(‘ganivet’)</code>, <code>factoria.crearArma(‘subfusil’)</code>, etc.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre el <em>patró factoria</em> en l’apartat “Annexos” del web del mòdul.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Patrons de disseny</p>
+<p>
+Els patrons de disseny són solucions comunes a problemes de disseny de programari. Van ser introduïts pel <em>Gang of Four</em> el 1994. Aquestes solucions són aplicables a tots els llenguatges de programació. Podeu trobar-ne més informació en l’enllaç següent: <a href="https://en.wikipedia.org/wiki/Design_Patterns" class="urlextern" title="https://en.wikipedia.org/wiki/Design_Patterns"  rel="nofollow">bit.ly/3bznlEV</a>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="composicio_i_delegacio" >Composició i delegació</a></h3>
+<div class="level3">
+
+<p>
+Una tècnica molt potent que afegeix una gran flexibilitat a la utilització d’objectes és la <strong>composició</strong>. Consisteix a afegir objectes com a propietats de l’objecte compost, de manera que es pot dividir la complexitat entre diferents components.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un dels principis de la programació orientada a objectes recomana <strong>afavorir la composició per sobre de l’herència</strong> (<em>composition over inheritance</em> en anglès), ja que la composició és molt més flexible i l’herència pot portar fàcilment a la duplicació de codi i la generació de jerarquies d’objectes molt més complexes.
+</p>
+</div></div>
+<p>
+Per determinar si cal utilitzar una composició o una relació d’herència podeu comprovar si la relació entre els dos objectes és de <em>ser</em> o de <em>tenir</em>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un gos zombi <strong>és</strong> un zombi, per tant, és una relació d’<strong>herència</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Ricard <strong>té</strong> una arma, així doncs, es tracta d’una <strong>composició</strong>.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Simplificació dels diagrames</p>
+<p>
+Per simplificar els diagrames s’ha optat per fer servir la representació d’associació (una línia contínua) quan la composició és amb un sol objecte i la d’agregació (rombe contigu a l’objecte compost) quan són múltiples (per exemple, un <em>array</em> d’objectes).
+</p>
+
+<p>
+Per altra banda, per fer més entenedors els diagrames es mostra tant la propietat a l’objecte com l’associació, encara que allò correcte és que només s’utilitzi una representació o l’altra (associació/composició o propietat).
+</p>
+</div></div>
+<p>
+A diferència dels llenguatges clàssics, a JavaScript qualsevol objecte pot formar part d’una composició (no hi ha restriccions per classe o interfície). Això permet una gran flexibilitat però, per altra banda, és possible establir com a propietats objectes que no implementin els mètodes necessaris.
+</p>
+
+<p>
+En el següent exemple podeu veure com les instàncies de <code>Persona</code> estan compostes per una propietat, <code>arma</code>, on s’espera que s’estableixi un objecte amb el mètode <code>atacar()</code>. Una vegada es detecta que s’ha establert la propietat, en invocar al mètode <code>atacar()</code> es delega la invocació a l’objecte emmagatzemat a <code>arma</code>.
+</p>
+
+<p>
+D’aquesta manera només actualitzant la propietat <code>arma</code> es pot canviar el comportament de l’objecte, per exemple: quan es fa servir el ganivet es pot atacar un nombre il·limitat de vegades, però en utilitzar la <code>pistola</code> s’afegeix una complexitat extra ja que s’ha afegit el control de munició.
+</p>
+
+<p>
+Fixeu-vos que sense haver de tocar la implementació de <code>Persona</code> es podrien crear nous tipus d’armes amb funcionaments molts diferents, sempre que complissin amb els següents requisits:
+</p>
+<ul>
+<li class="level1"><div class="li"> El nou tipus d’arma té assignada a la propietat <code>atacar</code> una funció, és a dir, és tracta d’un mètode.</div>
+</li>
+<li class="level1"><div class="li"> Aquest mètode accepta un paràmetre, que serà l’objectiu de l’atac.</div>
+</li>
+<li class="level1"><div class="li"> Opcionalment, el constructor podrà rebre un o dos paràmetres, corresponents a les propietats <code>nom</code> i la <code>potencia</code>.</div>
+</li>
+</ul>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Arma {</div></li><li class="li1"><div class="de1">  constructor(nom, potencia) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.potencia = potencia;    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    console.log(`Zas! ${this.personatge.nom} ataca amb ${this.nom} i causa ${this.potencia} punts de dany a ${objectiu}`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class ArmaAmbMunicio extends Arma {</div></li><li class="li1"><div class="de1">  constructor (nom, potencia, municio) {</div></li><li class="li1"><div class="de1">    super(nom, potencia);</div></li><li class="li1"><div class="de1">    this.municio = municio;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar (objectiu) {</div></li><li class="li1"><div class="de1">    if (this.municio &gt; 0) {</div></li><li class="li1"><div class="de1">      console.log(`Bang! ${this.personatge.nom} ataca amb ${this.nom} i causa ${this.potencia} punts de dany a ${objectiu}`);</div></li><li class="li1"><div class="de1">      this.municio--;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log('Click! no hi ha munició!');</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">} </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">  constructor (nom) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  atacar(objectiu) {</div></li><li class="li1"><div class="de1">    if (this.arma) {</div></li><li class="li1"><div class="de1">      this.arma.atacar(objectiu)</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log('No es pot atacar perquè no hi ha cap arma equipada!');</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  equipar(arma) {      </div></li><li class="li1"><div class="de1">    this.arma = arma;</div></li><li class="li1"><div class="de1">    arma.personatge = this;</div></li><li class="li1"><div class="de1">    console.log(this.nom + ' ha equipat ' + arma.nom);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Persona('Ricard');</div></li><li class="li1"><div class="de1">let ganivet = new Arma('Ganivet', 2);</div></li><li class="li1"><div class="de1">let pistola = new ArmaAmbMunicio('Pistola', 3, 2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.atacar('Zombi');</div></li><li class="li1"><div class="de1">ricard.equipar(ganivet);</div></li><li class="li1"><div class="de1">ricard.atacar('Zombi');</div></li><li class="li1"><div class="de1">ricard.equipar(pistola);</div></li><li class="li1"><div class="de1">ricard.atacar('Zombi');</div></li><li class="li1"><div class="de1">ricard.atacar('Zombi');</div></li><li class="li1"><div class="de1">ricard.atacar('Zombi');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNbaOG?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNbaOG?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNbaOG?editors=0012</a>. 
+</p>
+
+</p>
+
+<p>
+i el diagrama corresponent a la <span class="figref"><a href="#figura 1-24"><span>figura</span></a></span>.
+</p>
+
+<p>
+Tal com es pot apreciar, la clau de la composició és assignar un objecte a una propietat (en aquest cas a través del mètode <code>equipar()</code>) i delegar determinades accions a aquests objectes (com el mètode <code>atacar()</code> de l’exemple: <code>this.arma.atacar(objectiu);</code>).
+</p>
+
+<p>
+Com que <code>ArmaAmbMunicio</code> hereta d’ <code>arma</code> i aquesta té el mètode <code>atacar()</code> que és el requisit per poder equipar-lo (encara que no se’n força la comprovació), es pot assegurar que, encara que no s’actualitzés el valor d’ <code>atacar</code>, tots els objectes instanciats per aquest constructor es podran equipar correctament.
+</p>
+<div class="iocfigure"><a name="figura 1-24"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Constructor d’objecte compost Persona amb Arma
+
+</figcaption><img src="../media/daw_m06_u3_23_vg.png" alt="" /></figure>
+<div class="footfigure">S'ha afegit la propietat 'personatge' amb valor 'undefined' perquè és afegida per la Persona quan s'invoca el mètode equipar.</div></div>
+<p>
+La composició es pot realitzar de diverses maneres. En aquest cas s’ha fet a través d’un mètode, però es podria haver generat l’objecte al constructor. Proveu de substituir la declaració del constructor de <code>Persona</code> per la següent:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">constructor (nom) {</div></li><li class="li1"><div class="de1">  this.nom = nom;</div></li><li class="li1"><div class="de1">  let puny = new Arma('Cop de puny', 1);</div></li><li class="li1"><div class="de1">  this.equipar(puny);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/OJNbqQz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/OJNbqQz?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/OJNbqQz?editors=0012</a>.
+</p>
+
+</p>
+
+<p>
+En aquest cas s’ha creat un nou objecte <code>puny</code> i s’ha equipat. Fixeu-vos que no s’ha assignat directament a la propietat <code>arma</code>, sinó que s’ha cridat al mètode <code>equipar()</code>. Pareu atenció a la declaració del mètode:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">equipar(arma) {      </div></li><li class="li1"><div class="de1">  this.arma = arma;</div></li><li class="li1"><div class="de1">  arma.personatge = this;</div></li><li class="li1"><div class="de1">  console.log(this.nom + ' ha equipat ' + arma.nom);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+Primerament es mostra un missatge i seguidament s’actualitza la propietat <code>arma</code> amb l’objecte passat com a paràmetre. Però, a continuació, s’augmenta l’objecte <code>arma</code> amb la propietat <code>personatge</code> i el valor <code>this</code>. El valor de <code>this</code> en aquest cas és la instància de <code>Persona</code>. Així doncs, si la instància de <code>Persona</code> és l’objecte referenciat <code>ricard</code>, en equipar un ganivet es pot entendre que <code>arma.personatge = ricard;</code>.
+</p>
+
+<p>
+D’aquesta manera, <code>ganivet</code> té la informació de qui l’ha equipat i pot fer servir <code>this.personatge.nom</code> per accedir al <code>nom</code> de la <code>Persona</code>. És a dir, l’ <code>Arma</code> té accés a tota la informació de la <code>Persona</code> que l’equipa i per tant en un cas real es podria fer servir per determinar la probabilitat d’encertar un atac, sumar la potència a la del personatge, etc.
+</p>
+
+<p>
+Un altre detall a tenir en compte és que s’ha aplicat l’augment al paràmetre <code>arma</code> i no a la propietat <code>this.arma</code> (que faria referència a la instància de <code>Persona</code>). Es podria haver fet de les dues maneres:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">arma.personatge = this; // Paràmetre</div></li><li class="li1"><div class="de1">this.arma.personatge = this; // Propietat d'instància de Persona</div></li></ol></pre>
+
+<p>
+La raó per la qual el resultat és el mateix d’una forma o l’altra és que <code>arma</code> és un objecte i, per tant, s’està treballant amb una referència a aquest i qualsevol canvi al paràmetre o a la propietat afecten el mateix objecte.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

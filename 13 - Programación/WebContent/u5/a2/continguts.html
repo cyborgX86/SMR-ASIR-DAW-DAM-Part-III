@@ -1,0 +1,979 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació bàsica (ASX) \ Programació (DAM i DAW)</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació bàsica (ASX) \ Programació (DAM i DAW)">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació bàsica (ASX) \ Programació (DAM i DAW)</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Biblioteques. Proves. Recursivitat</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats_d_aprenentatge"><a href="../../../WebContent/u5/resultats_d_aprenentatge.html">Resultats d'aprenentatge</a></li><li id="u5mapa"><a href="../../../WebContent/u5/mapa.html">Mapa conceptual</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Descomposició en classes i biblioteques</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#programes_amb_multiples_classes">Programes amb múltiples classes</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#biblioteques_de_classespackages">Biblioteques de classes: packages</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#l_api_del_llenguatge_java">L'API del llenguatge Java</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#metodes_estatics">Mètodes estàtics</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#documentacio_de_programes_en_java">Documentació de programes en Java</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#solucio_dels_reptes_proposats">Solució dels reptes proposats</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Creació d'una aplicació modular. El joc de combats a l'arena</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#el_joc_de_combats_a_l_arena">El joc de combats a l'arena</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#la_biblioteca_jocarenaregles">La biblioteca "joc.arena.regles"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#la_biblioteca_jocarenainterficie">La biblioteca "joc.arena.interficie"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#la_classe_principal">La classe principal</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#simplificacio_d_algorismes_complexos_usant_recursivitat">Simplificació d'algorismes complexos usant recursivitat</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Biblioteques. Proves. Recursivitat</a></li><li>Creació d'una aplicació modular. El joc de combats a l'arena</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="creacio_d_una_aplicacio_modular_el_joc_de_combats_a_l_arena"> Creació d'una aplicació modular. El joc de combats a l'arena </a></h1>
+    	
+<p>
+Durant el procés d’aprendre a programar es van presentant diferents conceptes que es consideren importants, des d’aspectes més teòrics o metodològics (què és un tipus de dades, programació estructurada, disseny descendent, etc.), fins aquells molt lligats a la sintaxi del llenguatge (inicialització de variables, invocació de mètodes, sentències, etc.). Quan s’escriuen programes complexos, és imprescindible saber combinar totes aquestes peces per arribar a bon port. Malauradament, sovint us podeu trobar que resulta factible entendre cada concepte de manera individual, i resoldre problemes simples, però no és senzill veure com encaixar totes les peces en problemes més complexos.
+</p>
+
+<p>
+En aquesta unitat es planteja resoldre un problema amb un grau de complexitat alt en explicar el funcionament del joc de combats a l’arena. L’objectiu és que us serveixi d’exemple aplicat, i mostrar com totes aquestes petites peces que heu anat aprenent dins el camp de la programació es poden combinar per poder generar un programa de certa envergadura, així com aprendre alguns criteris que es consideren encertats a l’hora de prendre algunes decisions. Per crear aquest programa, es farà especial èmfasi en el concepte de modularitat, de manera que el seu codi font es compongui de diverses classes i se’n pugui veure clarament la justificació.
+</p>
+
+<h2><a id="el_joc_de_combats_a_l_arena" >El joc de combats a l&#039;arena</a></h2>
+<div class="level2">
+
+<p>
+El programa que serveix com a fil argumental d’aquest apartat és un joc, en el qual el jugador es va enfrontant amb diversos adversaris en una arena. Cada combat es divideix en rondes, a l’inici de les quals el jugador i el seu adversari trien secretament una estratègia a seguir. Cada ronda pot seguir una estratègia diferent. Segons les estratègies triades per cadascú, el combat s’anirà resolent més favorablement cap a un o cap a l’altre, fins que finalment es consideri que un dels dos ha estat derrotat. Si es derrota l’adversari, s’atorga una puntuació al jugador. Si el jugador és derrotat, acaba la partida. L’objectiu final del jugador és sobreviure deu combats, assolint la màxima puntuació possible en el procés.
+</p>
+
+<p>
+Tant per mostrar dades a l’usuari com per introduir les ordres del jugador, s’usa només text.
+</p>
+
+</div>
+
+<h3><a id="descripcio_detallada_del_programa" >Descripció detallada del programa</a></h3>
+<div class="level3">
+
+<p>
+En tractar-se d’un problema més complex, val la pena dedicar un espai a descriure detalladament el problema i veure en què consisteix exactament el joc, en el qual aprofitareu la capacitat d’un ordinador per resoldre ràpidament el tractament d’unes dades per implementar un sistema de combat entre dos lluitadors una mica elaborat, inspirat en els sistemes emprats als CRPG (<em>Computer Role Playing Game</em> “joc de rol per ordinador”, en anglès), però sense arribar ni de bon tros al nivell dels jocs moderns.
+</p>
+
+</div>
+
+<h4><a id="atributs_dels_lluitadors" >Atributs dels lluitadors</a></h4>
+<div class="level4">
+
+<p>
+Per descriure tots els lluitadors, tant el jugador com els seus adversaris, aquests disposen d’un seguit d’atributs que indiquen el seu estat en tot moment. Alguns d’aquests atributs serveixen per establir com progressa el combat i poden veure modificats els seus valors. Tot seguit s’enumeren: 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar una mica més d’informació sobre què és un CRPG a l’adreça <a href="http://ca.wikipedia.org/wiki/Joc_de_rol_per_ordinador" class="urlextern" title="http://ca.wikipedia.org/wiki/Joc_de_rol_per_ordinador"  rel="nofollow">http://goo.gl/cxZpb</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Nom</strong>: el nom del lluitador. Per al jugador és “Aventurer”, mentre que per als adversaris es referirà a criatures fantàstiques (“Nan”, “Ogre”, “Hidra”, etc.)</div>
+</li>
+<li class="level1"><div class="li"> <strong>Nivell:</strong> indicador general de la capacitat de combat del lluitador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Punts:</strong> els punts que ha acumulat el lluitador fins al moment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Punts de Vida (PV):</strong> l’energia del lluitador actual, que pot variar al llarg del combat. Quan arriba a 0 o menys, es considera derrotat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Punts de Vida Màxims:</strong> valor màxim que poden tenir els punts de vida en qualsevol moment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Atac:</strong> la seva capacitat de dur a terme amb èxit estratègies ofensives. S’usa per resoldre el resultat d’una ronda de combat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Defensa:</strong> igual que l’anterior, però per a estratègies defensives.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="combat_entre_lluitadors" >Combat entre lluitadors</a></h4>
+<div class="level4">
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m3u5_10.png" class="imgB" title="Un combat a mort entre dos lluitadors" alt="Un combat a mort entre dos lluitadors" /></li><li><small>Un combat a mort entre dos lluitadors</small></li>
+</ul></div>
+
+</p>
+
+<p>
+El programa es basa en què el jugador va realitzant un combat rere l’altre contra diferents adversaris. Per guanyar, ha de sobreviure a deu combats. Fins que no acaba un combat, i s’ha decidit si el jugador l’ha guanyat o l’ha perdut, no es comença un de nou.
+</p>
+
+<p>
+A l’inici de cada combat, es mostra l’estat actual del jugador, el valor actual de tots els seus atributs, i se li pregunta contra quin adversari vol lluitar. El jugador ha d’escriure el nom d’un adversari. Si aquest nom no es troba entre el dels adversaris disponibles en el joc, iniciarà un combat contra un triat a l’atzar entre tots els adversaris disponibles del seu mateix nivell o un de diferència. Això evita que, per sorpresa, es trobi que ha de lluitar contra un adversari massa poderós per a ell, impossible de guanyar.
+</p>
+
+<p>
+Si el nom pertany a algun adversari disponible, llavors s’enfronta contra ell. En aquest cas, no hi ha cap restricció de nivell. El jugador pot triar lluitar contra adversaris molt més o menys poderosos que ell.
+</p>
+
+<p>
+Aquest plantejament està disposat de manera que, d’entrada, un nou jugador no sap el nom de cap adversari, ja que no es proporciona cap llista (a menys que hagi fet el programa o vist el codi font, és clar). La intenció és que vagi descobrint nous noms d’adversaris a mesura que va jugant partides, o parlant amb amics que també juguin al joc.
+</p>
+
+</div>
+
+<h4><a id="resolucio_d_una_ronda_de_combat" >Resolució d&#039;una ronda de combat</a></h4>
+<div class="level4">
+
+<p>
+Cada combat es divideix en un seguit de rondes, en cadascuna de les quals el jugador ha de triar quina estratègia vol usar. Al principi de cada ronda es mostra l’estat actual tant del jugador com del seu adversari, de manera que sigui possible avaluar quina via d’acció li pot convenir més dur a terme. Llavors, el jugador tria l’estratègia entre quatre possibles: Atacar, Defensar, Engany i Maniobra. Un cop triada, l’adversari en triarà la seva i es decidirà el resultat de la ronda.
+</p>
+
+<p>
+Primer de tot, cal veure per a cada lluitador el grau d’èxit de la seva estratègia. Si ha triat Atacar o Engany, representa que llença tantes monedes com el seu valor d’Atac. Si ha triat Defensar o Maniobra, fa el mateix usant el seu valor de Defensa. El grau d’èxit serà el nombre de cares obtingudes.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El sistema del joc de combats a l’arena està inspirat en el joc de rol de sobretaula “The Mouse Guard RPG” (per David Petersen).
+</p>
+</div></div>
+<p>
+En resoldre la ronda, cada lluitador pot rebre un dels efectes següents. La gravetat de cadascun d’ells depèn del grau d’èxit del lluitador mateix o del seu contrincant.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Res:</strong> no passa res.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Danyat:</strong> el lluitador perd una quantitat de punts de vida igual al grau d’èxit del contrincant.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Guarit:</strong> el lluitador recupera tants punts de vida, sense superar mai el valor màxim, com el seu propi grau d’èxit.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Penalitzat:</strong> el lluitador veu penalitzat el seu valor d’atac o de defensa (es tria a l’atzar) en tants punts com el grau d’èxit del contrincant. La penalització mai pot fer baixar el valor per sota d’1. Aquest efecte dura fins a la propera ronda múltiple de cinc (5, 10, 15, etc.). Llavors, retorna al seu valor original.</div>
+</li>
+</ul>
+
+<p>
+L’efecte que rep cada lluitador depèn de les interaccions entre les estratègies, de manera semblant al joc de pedra, paper, tisores. Depenent de l’estratègia triada i la de l’adversari, el resultat serà diferent. La <span class="tabref"><a href="#Table1"><span>taula</span></a></span> mostra el resultat de les interaccions entre estratègies. Per abreujar, “Jug” es refereix al jugador i “Adv” a l’adversari. Un indicador de “x2” vol dir que a l’hora de resoldre aquest efecte, es doblen els èxits assolits pel contrincant.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table1"><span>Taula: </span></a>Resolució d’estratègies</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Jug\Adv </th><th class="col1">Atac </th><th class="col2">Defensa </th><th class="col3">Engany </th><th class="col4">Maniobra </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>Atac</strong>     </td><td class="col1"> Jug i Adv: Danyat </td><td class="col2 leftalign"> Adv: Guarit       </td><td class="col3 leftalign"> Adv: Danyat       </td><td class="col4 leftalign"> Adv: Danyat           </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>Defensa</strong>  </td><td class="col1 leftalign"> Jug: Guarit       </td><td class="col2"> Jug i Adv: Guarit </td><td class="col3 leftalign"> Jug: Danyat x2    </td><td class="col4 leftalign"> Jug: Penalitzat       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>Engany</strong>   </td><td class="col1 leftalign"> Jug: Danyat       </td><td class="col2 leftalign"> Adv: Danyat x2    </td><td class="col3"> Jug i Adv: Danyat </td><td class="col4 leftalign"> Jug: Penalitzat       </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <strong>Maniobra</strong> </td><td class="col1 leftalign"> Jug: Danyat       </td><td class="col2 leftalign"> Adv: Penalitzat   </td><td class="col3 leftalign"> Adv: Penalitzat   </td><td class="col4"> Jug i Adv: Penalitzat </td>
+	</tr>
+</table></div>
+</div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de ronda de combat</p>
+<p>
+Per exemple, suposeu que el jugador té ara mateix 10 punts de vida i els seus valors d’atac i defensa són 4 i 3, respectivament. L’adversari té 6 punts de vida i els seus valors d’atac i defensa són 3 i 5 respectivament. Primer de tot, cadascú tria la seva estratègia. El jugador tria Atac mentre que l’adversari tria Maniobra. Això vol dir que, per veure el grau d’èxit, el jugador llençarà tantes monedes com el seu Atac i l’adversari, en haver triat Maniobra, tantes com la seva defensa. El jugador llença 4 monedes i suposeu que treu dues cares. L’adversari en llença 5 i suposeu que n’obté quatre.
+</p>
+
+<p>
+Ara cal veure l’efecte de les estratègies. D’acord a la taula, si el jugador tria Atac i l’adversari tria Maniobra, el resultat és que l’adversari rep l’efecte de “Danyat” (<em>Adv: Danyat</em>). Se li descompten tants punts de vida com el grau d’èxit del jugador (2). Per tant, ara li queden 6 - 2 = 4 punts de vida i acaba aquesta ronda. 
+</p>
+
+<p>
+S’inicia una nova ronda on es mostra l’estat dels dos lluitadors i es tria una nova estratègia…
+</p>
+</div></div>
+<p>
+Evidentment, a l’hora de triar l’estratègia, l’ordinador no hauria de fer trampes (ja que coneixerà la del jugador abans de triar-ne la seva). Es pot triar a l’atzar, o seguint alguna tàctica segons el seu estat (defensar més sovint si li queden pocs punts de vida, enganyar si el jugador defensa molt sovint, etc.). Això depèn del grau d’intel·ligència que es vol que tingui l’ordinador.
+</p>
+
+</div>
+
+<h4><a id="resolucio_de_la_finalitzacio_del_combat" >Resolució de la finalització del combat</a></h4>
+<div class="level4">
+
+<p>
+El combat finalitza quan, en acabar una ronda, un del lluitadors té 0 o menys punts de vida. Si es tracta del jugador, es considera derrotat. La partida acaba i es mostra la seva puntuació final. Aquesta circumstància inclou també el cas d’empat (ambdós lluitadors han arribat a 0 punts de vida). Si, en cas contrari, és l’adversari el derrotat, al personatge se li atorga certa quantitat de punts, que se sumen als que ja disposa. Els punts atorgats dependran dels punts de l’adversari i, normalment, adversaris més difícils tindran sempre punts.
+</p>
+
+<p>
+En atorgar punts al jugador, si aquest arriba o supera un valor associat a una centena (100, 200, 300, etc.), es considera que “puja de nivell” i es fa més poderós. Quan això succeeix, el jugador veu incrementat en un punt el seu nivell, el seu màxim de punts de vida s’incrementa en dos, i el seu atac o defensa, un dels dos triat a l’atzar, s’incrementa en un punt. El jugador també és immediatament guarit, recuperant tots els punts de vida actuals fins a aquest nou màxim.
+</p>
+
+<p>
+Un cop atorgats els punts i un possible increment del seu nivell, totes les penalitzacions actuals sobre el jugador desapareixen. Ara bé, a menys que hagi pujat de nivell, aquest no recupera cap punt de vida. Començarà el combat següent amb exactament els mateixos punts amb els quals ha finalitzat aquest.
+</p>
+
+<p>
+Si aquest era el desè combat, la partida acaba amb un missatge de felicitació i es mostra la puntuació final. En cas contrari, es torna a iniciar un nou combat.
+</p>
+
+</div>
+
+<h3><a id="identificacio_de_les_dades_a_tractar" >Identificació de les dades a tractar</a></h3>
+<div class="level3">
+
+<p>
+De la descripció del problema, les dades principals que cal tractar són les dels dos lluitadors, el jugador i els seus adversaris, que seran les mateixes. Afortunadament, la descripció del problema ofereix una visió clara de quina mena de valors cal manipular (Nom, Nivell, Vida, etc.). En aquest cas, atès que són força valors, tots vinculats entre ells, el més factible és usar un <em>array</em>, de manera que es gestioni un per al jugador i un per a l’adversari. D’aquesta manera, amb un parell de variables és senzill disposar de totes les dades vinculades a tots dos. Cada posició de l’<em>array</em> pot representar cadascun dels atributs.
+</p>
+
+<p>
+Per tal de triar el tipus de dades a desar, pràcticament tots els atributs dels lluitadors són enters, per la qual cosa es poden usar <em>arrays</em> d’enters per representar-los. L’únic cas especial que trenca aquesta solució simple és el nom, que seria una cadena de text. Per resoldre això es pot usar l’estratègia següent. Dins l’<em>array</em> s’usa un enter per identificar el nom, de manera que cada lluitador sempre tingui un identificador diferent. Llavors, a part, es pot usar una taula de traducció d’identificadors a cadenes de text. L’identificador de tipus enter de cada lluitador diu quin és l’índex dins aquesta taula de traducció on hi ha el seu nom.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si a simple vista no us queda clar com dur a terme això, no us amoïneu per ara. Quan arribi el moment de mostrar el codi font per fer això, ja es veurà millor.
+</p>
+</div></div>
+<p>
+La <span class="tabref"><a href="#Table2"><span>taula</span></a></span> mostra un resum d’una primera proposta d’estructura de l’<em>array</em> que representa un lluitador, segons les posicions d’aquest. Ara bé, sempre heu de ser conscients que, a mesura que es va codificant el programa, es pot donar el cas que us adoneu que cal modificar-la.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table2"><span>Taula: </span></a>Estructura de les dades associades a un lluitador</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> 0             </th><th class="col1 leftalign"> 1      </th><th class="col2 leftalign"> 2     </th><th class="col3 leftalign"> 3    </th><th class="col4 leftalign"> 4        </th><th class="col5 leftalign"> 5    </th><th class="col6 leftalign"> 6       </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> Identificador </td><td class="col1"> Nivell </td><td class="col2"> Punts </td><td class="col3"> Vida </td><td class="col4"> Vida Màx </td><td class="col5"> Atac </td><td class="col6"> Defensa </td>
+	</tr>
+</table></div>
+</div>
+</div>
+
+<h3><a id="disseny_descendent" >Disseny descendent</a></h3>
+<div class="level3">
+
+<p>
+En aquest cas, l’objectiu principal del problema plantejat és veure com crear aplicacions complexes de manera modular. Per tant, no es durà a terme un disseny descendent complet fins al darrer detall, sinó que aquest servirà per fer un esquema clar de quines són les accions que ha de dur a terme el programa i, en alguns casos, en quin ordre. Per tant, aquest apartat també té un paper de suport a l’hora de presentar-vos el problema perquè l’entengueu.
+</p>
+
+<p>
+
+</p>
+
+<p>
+De la descripció del problema general, se’n podrien extreure els subproblemes enumerats tot seguit. Recordeu, però, que potser aquesta no és l’única solució vàlida, és una proposta d’interpretació possible de l’enunciat. Hi poden haver altres descomposicions vàlides.
+</p>
+<ol>
+<li class="level1"><div class="li"> Generar els atributs del nou jugador.</div>
+</li>
+<li class="level1"><div class="li"> Anunciar inici del combat.</div>
+<ol>
+<li class="level2"><div class="li"> Mostrar estat del jugador.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Triar l’adversari.</div>
+</li>
+<li class="level1"><div class="li"> Combatre. </div>
+<ol>
+<li class="level2"><div class="li"> Mostrar estat dels lluitadors.</div>
+<ol>
+<li class="level3"><div class="li"> Mostrar estat del jugador.</div>
+</li>
+<li class="level3"><div class="li"> Mostrar estat de l’adversari.</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Triar estratègia del jugador.</div>
+</li>
+<li class="level2"><div class="li"> Triar estratègia de l’adversari.</div>
+</li>
+<li class="level2"><div class="li"> Resoldre resultats d’estratègies.</div>
+<ol>
+<li class="level3"><div class="li"> Llençar monedes.</div>
+</li>
+<li class="level3"><div class="li"> Penalitzar lluitador.</div>
+</li>
+<li class="level3"><div class="li"> Danyar lluitador.</div>
+</li>
+<li class="level3"><div class="li"> Guarir lluitador.</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Restaurar lluitador.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Resoldre resultat del combat.</div>
+<ol>
+<li class="level2"><div class="li"> Atorgar puntuació.</div>
+</li>
+<li class="level2"><div class="li"> Pujar de nivell.</div>
+</li>
+<li class="level2"><div class="li"> Finalització del joc.</div>
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+Aquesta llista ja dóna una bona idea del conjunt de tasques que cal fer. En aquest cas, a mesura que es vagi resolent cada subproblema, si es considera que encara és massa complex o resulta que és un mètode massa llarg, ja es faran noves descomposicions en el mateix moment. Aquesta és una estratègia acceptable per a programes complexos, ja que la descomposició es pot fer molt complicada, en ser difícil veure realment tots els detalls i tenir una idea clara de la mida o complexitat dels mètodes resultants. Però al menys, sempre heu de tenir la disciplina de fer una primera aproximació, per generar el codi font amb una idea clara de per on començar.
+</p>
+
+<p>
+Abans de seguir, val la pena fer alguns comentaris. Els subproblemes 4.II i 4.III s’han considerat diferents ja que, si us hi fixeu, hauran de dur a terme tasques força diferents. En el cas del jugador, es pregunta directament a l’usuari, mentre que en el cas de l’adversari l’ordinador és qui l’ha de generar d’alguna manera (per exemple, simplement a l’atzar). En canvi, per al cas dels subproblemes 4.I.a i b, de ben segur que faran el mateix. Només canviaran les dades a tractar. Per tant és un cas clar de parametrització d’un mètode. Per acabar, aquest plantejament també reaprofita subproblemes, ja que el 4.I.a i el 2.I són exactament el mateix.
+</p>
+
+</div>
+
+<h3><a id="moduls" >Mòduls</a></h3>
+<div class="level3">
+
+<p>
+Si es vol considerar una aproximació modular, un cop es coneixen les tasques que ha de dur a terme el programa en forma de subproblemes, el pas següent seria agrupar-les d’acord al tipus d’accions que porten a terme. Cada conjunt serà un mòdul diferent. En aquest cas, atès que el programa es fa en Java, ja s’usarà directament una organització en classes i <em>packages</em>.
+</p>
+
+<p>
+Com a punt de partida, caldria escollir un nom de <em>package</em> general per a tot el programa. Aquest serà <code>joc.arena</code>. La classe principal anirà aquí.
+</p>
+
+<p>
+A continuació, cal escollir si es vol usar una jerarquia de <em>packages</em> que parteixi de la base per ordenar totes les classes o no. Per a aquest cas, sol ser una bona política dividir les parts vinculades amb la interfície d’usuari de les que estan lligades a la manipulació de les dades del programa. En separar els aspectes relacionats amb la presentació de les dades del seu tractament, els canvis en els mòduls d’un programa(per exemple, passar d’una interfície textual a una gràfica) no afecten el codi dels mòduls de l’altre. Aquesta divisió es pot fer usant dos <em>packages</em>: <code>joc.arena.regles</code> i <code>joc.arena.interficie</code>.
+</p>
+
+<p>
+Ara és el moment de dividir les tasques que ha de fer el programa en classes i triar a quin <em>package</em> anirà cadascuna. Aquest procés és relativament subjectiu i s’avé a la visió que té el programador sobre com s’ha d’estructurar el seu programa. En aquest sentit, la decisió és tan personal com decidir de quina manera classificar fotos en carpetes dins d’un ordinador. De totes formes, en aquest procés, el que heu de tenir sempre en compte és que l’objectiu final és organitzar el vostre codi de manera que sigui fàcil d’identificar on trobar cada mètode. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En aplicar modularitat, cal que cada classe encapsuli un conjunt de tasques clarament relacionades, independentment del nombre de mètodes que al final signifiqui que hi ha a cada classe (molts o pocs).
+</p>
+</div></div>
+<p>
+L’objectiu <strong>no</strong> és distribuir uniformement els mètodes per fer classes de mida similar. Si a un programa s’identifiquen 30 mètodes, l’objectiu no és crear 6 classes perquè hi hagi 5 mètodes a cadascuna.
+</p>
+
+<p>
+Per a aquest problema es proposa la divisió següent en mòduls. Al <em>package</em> <code>joc.arena.regles</code> hi haurà les classes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Monedes:</strong> per a les tasques vinculades al llançament de monedes per resoldre una ronda.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Lluitador:</strong> per a les tasques vinculades a la manipulació de les dades d’un lluitador (danyar, guarir, etc.).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Bestiari:</strong> per a les tasques vinculades a la generació d’adversaris i el jugador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Combat:</strong> per a les tasques vinculades a la resolució d’estratègies enfrontades.</div>
+</li>
+</ul>
+
+<p>
+Al <em>package</em> <code>joc.arena.interficie</code> es decideix dividir les classes que tracten la pantalla i el teclat, de manera que hi haurà:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>EntradaTeclat:</strong> s’encarrega de les tasques importants que són donades pel que escriu l’usuari usant el teclat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>SortidaPantalla:</strong> com l’anterior, però per mostrar informació a pantalla.</div>
+</li>
+</ul>
+
+<p>
+La classe principal, <strong>JocArena</strong> és al <em>package</em> que engloba els anteriors, <code>joc.arena</code>, donada la jerarquia de noms. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+La solució completa de l’exemple emprat en aquest apartat el podeu trobar a la secció “Annexos” del web
+</p>
+</div></div>
+<p>
+Un cop es disposa d’aquesta divisió, cada cop que calgui implementar un subproblema en forma de mètode, caldrà fer-ho a la classe que correspongui d’acord a aquesta distribució de tasques.
+</p>
+
+</div>
+
+<h2><a id="la_biblioteca_jocarenaregles" >La biblioteca &quot;joc.arena.regles&quot;</a></h2>
+<div class="level2">
+
+<p>
+Abans de poder mostrar dades per pantalla, cal poder disposar d’elles i haver-les manipulat. Per tant, el que té més sentit és començar per aquest <em>package</em> i no pas per <code>joc.arena.interficie</code>. De fet, de ben segur que des de les classes per mostrar o entrar dades al programa s’invocaran mètodes de tractament de dades. O sigui, mètodes de classes d’aquest <em>package</em>.
+</p>
+
+<p>
+Per tant, el primer <em>package</em> a tractar és aquest.
+</p>
+
+</div>
+
+<h3><a id="la_classe_monedes" >La classe Monedes</a></h3>
+<div class="level3">
+
+<p>
+Aquesta classe agrupa els mètodes vinculats als aspectes aleatoris quan es resol un combat. Bàsicament, això es redueix al llançament d’un cert nombre de monedes per comptar quantes cares s’han tret. Això es pot dur a terme usant la classe <code>Random</code>, pertanyent al <em>package</em> <code>java.util</code> de l’<acronym title="Application Programming Interface">API</acronym> de Java, que permet generar valors a l’atzar. Com que només es vol mirar si es treu cara o creu, es pot usar el mètode <code>nextBoolean</code>, de manera que si s’avalua <code>true</code>, es considera cara, i en cas contrari, creu. Dins d’aquest programa, seria la classe més senzilla.
+</p>
+
+<p>
+Com es pot veure en el codi font, aquesta classe només disposa d’un mètode, ja que, donat el plantejament del problema, només hi ha una acció vinculada al llançament de monedes. Això no és cap problema. Recordeu que, per generar els mòduls d’un programa, el criteri principal i més important és establir parcel·les diferenciades segons les funcionalitats o temàtiques dels mètodes inclosos. No es tracta d’intentar distribuir-los equitativament en parts iguals. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.regles;</div></li><li class="li1"><div class="de1">import java.util.Random;</div></li><li class="li1"><div class="de1">public class Monedes {</div></li><li class="li1"><div class="de1">  /** Resol el llançament d'un grup de monedes.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param numMonedes Nombre de monedes que s'han llençat.</div></li><li class="li1"><div class="de1">   * @return Nombre de cares obtingudes.</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int ferTirada(int numMonedes) {</div></li><li class="li1"><div class="de1">    Random rnd = new Random();</div></li><li class="li1"><div class="de1">    int numCares = 0;</div></li><li class="li1"><div class="de1">    for (int i =0; i &lt; numMonedes; i++) {</div></li><li class="li1"><div class="de1">      boolean tirada = rnd.nextBoolean();</div></li><li class="li1"><div class="de1">      if (tirada) {</div></li><li class="li1"><div class="de1">        numCares++;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return numCares;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="la_classe_lluitador" >La classe Lluitador</a></h3>
+<div class="level3">
+
+<p>
+Aquesta classe és la més important, ja que és la que gestiona la manipulació de l’estat dels lluitadors. I per a la descripció del problema, es pot veure que a un lluitador li poden passar moltes coses… Per tant, aquesta classe es tractarà amb molt de detall, ja que serveix per aprendre moltes coses sobre com fer un programa modular correcte.
+</p>
+
+<p>
+Quan cal tractar un conjunt de dades de manera complexa, sempre és interessant dedicar un mòdul íntegrament a totes les operacions que es volen dur a terme amb aquestes. Sobretot si algunes de les operacions s’usaran en molts llocs diferents. Un exemple és el cas de disposar d’un repositori de mètodes per manipular <em>arrays</em> o cadenes de text que segueixen un format especial. D’aquesta manera, aquestes manipulacions queden encapsulades sota l’identificador d’un mètode i el codi és més fàcil de seguir. 
+</p>
+
+<p>
+En aquest cas, hi ha un conjunt de dades molt particulars sobre les quals cal fer unes quantes operacions complexes: l’<em>array</em> que representa cada <em>lluitador</em>. Res impedeix treballar directament amb índexs de posicions per manipular els seus valors, però és millor crear un mètode per a cada operació que es vol dur a terme. És més fàcil entendre una instrucció on posa <code>danyar(jugador, 3)</code> que no pas <code>jugador[3] = jugador[3] - 2;</code>. A més a més, moltes d’aquestes operacions ja sorgeixen de la descomposició del problema general (per exemple, subproblemes “Combatre&gt; Resoldre resultats d’estrategues: Llençar monedes, penalitzar lluitador, danyar lluitador, guarir lluitador”. 
+</p>
+
+<p>
+L’estratègia final d’aquesta classe és: si un mètode tindria com a paràmetre un lluitador, ja que ha de dur a terme una tasca segons els seus valors, llavors va dins d’aquesta classe.
+</p>
+
+</div>
+
+<h4><a id="metodes_basics_de_manipulacio_de_dades" >Mètodes bàsics de manipulació de dades</a></h4>
+<div class="level4">
+
+<p>
+D’acord amb la descripció del problema, com a mínim cal poder fer les operacions següents sobre un lluitador, ja que modifiquen el seu estat:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Danyar</strong>: restar punts de vida.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Guarir</strong>: incrementar punts de vida, fins a un màxim.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Penalitzar</strong>: restar punts d’Atac o Defensa a l’atzar, però mai de manera que el valor final quedi per sota d’1.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Restaurar</strong>: recuperar-se de les penalitzacions (es fa cada ronda múltiple de 5).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Renovar</strong>: recuperar tots els punts de vida i eliminar les penalitzacions (en pujar de nivell).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Atorgar puntuació</strong>: sumar punts guanyats per un combat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pujar de nivell</strong>: dur a terme el procés d’increment d’un nivell.</div>
+</li>
+</ul>
+
+<p>
+Un cop arribats a aquest punt, es pot detectar que per fer una operació de restaurar, cal saber quin era el valor original de l’Atac o la Defensa. Per tant, el plantejament inicial de com estructurar l’<em>array</em> amb les dades dels lluitadors no és suficient. El fet de trobar-vos que heu de reenfocar part del disseny quan heu arribat a la implementació del codi no és un fet estrany. La <span class="tabref"><a href="#Table3"><span>taula</span></a></span> mostra el nou format emprat per representar un lluitador.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table3"><span>Taula: </span></a>Nova estructura de les dades associades a un lluitador</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">0 </th><th class="col1">1 </th><th class="col2">2 </th><th class="col3">3 </th><th class="col4">4 </th><th class="col5">5 </th><th class="col6">6 </th><th class="col7">7 </th><th class="col8">8 </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> Identificador </td><td class="col1"> Nivell </td><td class="col2"> Punts </td><td class="col3"> Vida </td><td class="col4"> Vida Màx </td><td class="col5"> Atac </td><td class="col6"> Atac Màx </td><td class="col7"> Defensa </td><td class="col8"> Defensa Màx </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Hi ha un altre aspecte que val la pena considerar en aquest cas, on cada posició de l’<em>array</em> que representa un lluitador té un significat molt concret. Es tracta de no usar directament números per accedir a les posicions de l’<em>array</em>, sinó fer-ho a partir de constants. Això té dues funcions. D’una banda, millora la llegibilitat del programa. D’altra banda, si en el futur es volen incloure més dades a l’<em>array</em> o canviar algun dels camps existents (per exemple, ara el nivell estarà a la posició 3), només caldrà modificar el valor de la constant i el canvi es propagarà a la resta del codi. Com acabeu de veure, haver de canviar el plantejament de les posicions d’un <em>array</em> pot passar perfectament. Cal ser previsors.
+</p>
+
+<p>
+Finalment, per aprofitar la capacitat que us proporciona un programa per dur a terme càlculs de certa complexitat, l’atorgament dels punts tindrà una particularitat. Sobre els punts que val cada adversari s’aplica un factor de correcció de 0*5 punts per cada nivell de diferència. D’aquesta manera, adversaris proporcionalment més difícils valen més punts, però lluitar repetides vegades contra adversaris de nivell massa baix no reporta cap punt. Per veure-ho, estudieu el mètode <code>atorgarPunts</code>.
+</p>
+
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.regles;</div></li><li class="li1"><div class="de1">import java.util.Random;</div></li><li class="li1"><div class="de1">public class Lluitador {</div></li><li class="li1"><div class="de1">  //Format</div></li><li class="li1"><div class="de1">  //Nom:Nivell:XP:PV:Max PV:Atac:Max Atac:max Defensa</div></li><li class="li1"><div class="de1">  public final static int ID = 0;</div></li><li class="li1"><div class="de1">  public final static int NIVELL = 1;</div></li><li class="li1"><div class="de1">  public final static int PUNTS = 2;</div></li><li class="li1"><div class="de1">  public final static int VIDA = 3;</div></li><li class="li1"><div class="de1">  public final static int VIDA_MAX = 4;</div></li><li class="li1"><div class="de1">  public final static int ATAC = 5;</div></li><li class="li1"><div class="de1">  public final static int ATAC_MAX = 6;</div></li><li class="li1"><div class="de1">  public final static int DEFENSA = 7;</div></li><li class="li1"><div class="de1">  public final static int DEFENSA_MAX = 8;</div></li><li class="li1"><div class="de1">  /** Infligeix dany a un lluitador, restant punts de vida, fins a un mínim de 0.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador que rep el dany</div></li><li class="li1"><div class="de1">   * @param punts Punts de vida que perd</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void danyar(int[] lluitador, int punts) {</div></li><li class="li1"><div class="de1">    if (lluitador[VIDA] &gt; punts) {</div></li><li class="li1"><div class="de1">      lluitador[VIDA] = lluitador[VIDA] - punts;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      lluitador[VIDA] = 0;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Guareix un lluitador, que recupera punts de vida. Mai pot superar</div></li><li class="li1"><div class="de1">   * el màxim possible.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador a guarir</div></li><li class="li1"><div class="de1">   * @param punts Punts de vida recuperats</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void guarir(int[] lluitador, int punts) {</div></li><li class="li1"><div class="de1">    lluitador[VIDA] = lluitador[VIDA] + punts;</div></li><li class="li1"><div class="de1">    if (lluitador[VIDA] &gt; lluitador[VIDA_MAX]) {</div></li><li class="li1"><div class="de1">      lluitador[VIDA] = lluitador[VIDA_MAX];</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Aplica una penalització al lluitador. Es fa a l'atzar entre el valor</div></li><li class="li1"><div class="de1">   * d'atac i el de defensa. Se li resta un punt, fins a un valor mínim d'1.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador a penalitzar</div></li><li class="li1"><div class="de1">   * @param grau Grau de penalització</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void penalitzar(int[] lluitador, int grau) {</div></li><li class="li1"><div class="de1">    //Es tria quina habilitat penalitzar</div></li><li class="li1"><div class="de1">    Random rnd = new Random();</div></li><li class="li1"><div class="de1">    int penalitzar = ATAC;</div></li><li class="li1"><div class="de1">    if (rnd.nextBoolean()) {</div></li><li class="li1"><div class="de1">      penalitzar = DEFENSA;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Es penalitza. Mínim baixa fins a 1</div></li><li class="li1"><div class="de1">    lluitador[penalitzar] -= grau;</div></li><li class="li1"><div class="de1">      if (lluitador[penalitzar] &lt; 1) {</div></li><li class="li1"><div class="de1">        lluitador[penalitzar] = 1;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Renova un lluitador, anul·lant totes les penalitzacions i danys.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador a renovar</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void renovar(int[] lluitador) {</div></li><li class="li1"><div class="de1">    restaurar(lluitador);</div></li><li class="li1"><div class="de1">    lluitador[VIDA] = lluitador[VIDA_MAX];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Restaura els valors d'atac i defensa del lluitador als valors originals.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador a restaurar</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void restaurar(int[] lluitador) {</div></li><li class="li1"><div class="de1">    lluitador[ATAC] = lluitador[ATAC_MAX];</div></li><li class="li1"><div class="de1">    lluitador[DEFENSA] = lluitador[DEFENSA_MAX];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol l'atorgament de punts a l'aventurer en derrotar un adversari. La</div></li><li class="li1"><div class="de1">   * quantitat de punts depèn de la diferencia de nivells entre els dos. Si es</div></li><li class="li1"><div class="de1">   * guanyen prou punts, s'avisa si cal pujar de nivell.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param aventurer Aventurer</div></li><li class="li1"><div class="de1">   * @param adversari Adversari derrotat</div></li><li class="li1"><div class="de1">   * @returns Si s'ha pujat de nivell (cada 100 punts)</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public boolean atorgarPunts(int[] aventurer, int[] adversari) {</div></li><li class="li1"><div class="de1">    //Es calcula el multiplicador</div></li><li class="li1"><div class="de1">    float multiplicador = 0;</div></li><li class="li1"><div class="de1">    int numMultiplicadors = adversari[NIVELL]  - aventurer[NIVELL] + 2;</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; numMultiplicadors; i++) {</div></li><li class="li1"><div class="de1">      multiplicador += 0.5;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Punts finals a atorgar</div></li><li class="li1"><div class="de1">    int puntsAdversari = llegirPunts(adversari);</div></li><li class="li1"><div class="de1">    int puntsAtorgats = Math.round(puntsAdversari*multiplicador);</div></li><li class="li1"><div class="de1">    //Puja de nivell?</div></li><li class="li1"><div class="de1">    aventurer[PUNTS] += puntsAtorgats;</div></li><li class="li1"><div class="de1">    int nouNivell = 1 + aventurer[PUNTS]/100;</div></li><li class="li1"><div class="de1">    if (nouNivell &gt; aventurer[NIVELL]) {</div></li><li class="li1"><div class="de1">      return true;    </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return false;    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol un increment d'un nivell, augmentant a l'atzar atac o defensa i dos</div></li><li class="li1"><div class="de1">   * punts de vida màxims. A més a més, el lluitador es guareix totalment.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador que puja de nivell.</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void pujarNivell(int[] lluitador) {</div></li><li class="li1"><div class="de1">    lluitador[NIVELL]++;</div></li><li class="li1"><div class="de1">    Random rnd = new Random();</div></li><li class="li1"><div class="de1">    if (rnd.nextBoolean()) {</div></li><li class="li1"><div class="de1">      //S'incrementa atac</div></li><li class="li1"><div class="de1">      lluitador[ATAC_MAX]++;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //S'incrementa defensa</div></li><li class="li1"><div class="de1">      lluitador[DEFENSA_MAX]++;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    lluitador[VIDA_MAX] += 2;</div></li><li class="li1"><div class="de1">    //Es deixa nou de trinca</div></li><li class="li1"><div class="de1">    renovar(lluitador);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h4><a id="metodes_vinculats_a_l_estat_del_lluitador" >Mètodes vinculats a l&#039;estat del lluitador</a></h4>
+<div class="level4">
+
+<p>
+Atès que aquesta classe inclou tots els mètodes que depenen de l’estat d’un lluitador per fer la seva feina, també cal incloure, no només els que modifiquen el seu estat, sinó també els mètodes el resultat dels quals depèn d’aquest estat. Aquests inclouen els que fan les operacions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Calcular el grau d’èxit d’Atac, ja que depèn del valor d’Atac del lluitador.</div>
+</li>
+<li class="level1"><div class="li"> El mateix per a la defensa.</div>
+</li>
+<li class="level1"><div class="li"> Triar una estratègia a l’atzar, ja que es pot usar l’estat del lluitador per prendre certes decisions. Aquí es farà que si els punts de vida de l’adversari són molt baixos, és més probable que decideixi defensar.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">  //Mètodes d'accions vinculades a l'estat del lluitador</div></li><li class="li1"><div class="de1">  /** Resol una tirada d'atac d'un lluitador. Es llencen tantes monedes com</div></li><li class="li1"><div class="de1">   * el seu valor d'atac.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador que fa la tirada</div></li><li class="li1"><div class="de1">   * @return El nombre de cares obtingudes</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int tirarAtac(int[] lluitador) {</div></li><li class="li1"><div class="de1">    Monedes monedes = new Monedes();</div></li><li class="li1"><div class="de1">    return monedes.ferTirada(lluitador[ATAC]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol una tirada de defensa d'un lluitador. Es llencen tantes monedes com</div></li><li class="li1"><div class="de1">   * el seu valor de defensa.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador que fa la tirada</div></li><li class="li1"><div class="de1">   * @return El nombre de cares obtingudes</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int tirarDefensa(int[] lluitador) {</div></li><li class="li1"><div class="de1">    Monedes monedes = new Monedes();</div></li><li class="li1"><div class="de1">    return monedes.ferTirada(lluitador[DEFENSA]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Donat un lluitador, tria a l'atzar quina estratègia usar en una</div></li><li class="li1"><div class="de1">   * ronda de combat.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador que tria l'acció</div></li><li class="li1"><div class="de1">   * @return Acció triada</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int triarEstrategiaAtzar(int[] lluitador) {</div></li><li class="li1"><div class="de1">    Random rnd = new Random();</div></li><li class="li1"><div class="de1">    int limitDefensa = 3;</div></li><li class="li1"><div class="de1">    //Si li queda poca vida, defensa el 50% dels cops</div></li><li class="li1"><div class="de1">    if (lluitador[VIDA] &lt; 2) {</div></li><li class="li1"><div class="de1">      limitDefensa = 1;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    int accio = rnd.nextInt(10);</div></li><li class="li1"><div class="de1">    if ((accio &gt;= 0)&amp;&amp;(accio &lt; limitDefensa)) {</div></li><li class="li1"><div class="de1">      return Combat.ATAC;</div></li><li class="li1"><div class="de1">    } else if ((limitDefensa &gt;= 3)&amp;&amp;(accio &lt; 6)) {</div></li><li class="li1"><div class="de1">      return Combat.DEFENSA;</div></li><li class="li1"><div class="de1">    } else if ((accio &gt;= 6)&amp;&amp;(accio &lt; 8)) {</div></li><li class="li1"><div class="de1">      return Combat.ENGANY;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      return Combat.MANIOBRA;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+</div>
+
+<h4><a id="metodes_per_facilitar_la_lectura_de_les_dades" >Mètodes per facilitar la lectura de les dades</a></h4>
+<div class="level4">
+
+<p>
+Finalment, quan es treballa amb conjunts de dades amb una funció molt especial, com és aquest cas, pot valer la pena també incloure mètodes que serveixin com a dreceres per fer lectures de les dades que contenen. Aquests no fan res d’especial que no es podria fer accedint directament a l’<em>array</em> per índex, però poden fer el codi de la resta de classes més aclaridor, i a més a més, en cas de documentar la classe usant el <em>javadoc</em>, serveixen com una llista de les dades a les quals es pot accedir individualment.
+</p>
+
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  //Mètodes per facilitar la lectura de dades</div></li><li class="li1"><div class="de1">  /** Diu l'identificador d'un lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir l'identificador</div></li><li class="li1"><div class="de1">   * @return Identificador del lluitador</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirId(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[ID];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quin és el nivell de lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir el nivell</div></li><li class="li1"><div class="de1">   * @return</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirNivell(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[NIVELL];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quins punts val el lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es volen llegir els punts</div></li><li class="li1"><div class="de1">   * @return</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirPunts(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[PUNTS];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quina vida té el lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir la vida</div></li><li class="li1"><div class="de1">   * @return Vida</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirVida(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[VIDA];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quina vida màxima té el lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir la vida màxima</div></li><li class="li1"><div class="de1">   * @return Vida</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirVidaMax(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[VIDA_MAX];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quin atac té el lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir l'atac</div></li><li class="li1"><div class="de1">   * @return Grau d'atac</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirAtac(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[ATAC];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu quina defensa té el lluitador. Usar un mètode facilita la lectura</div></li><li class="li1"><div class="de1">   * del codi, més que accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador de qui es vol llegir la defensa</div></li><li class="li1"><div class="de1">   * @return Grau de defensa</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int llegirDefensa(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return lluitador[DEFENSA];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Diu si un lluitador és mort o no. O sigui, si els seus punts de vida</div></li><li class="li1"><div class="de1">   * son 0 ara mateix. Usar un mètode facilita la lectura del codi, més que</div></li><li class="li1"><div class="de1">   * accedir a posicions d'un array.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param lluitador Lluitador a comprovar</div></li><li class="li1"><div class="de1">   * @return Si es considera mort (true) o no (false)</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public boolean esMort(int[] lluitador) {</div></li><li class="li1"><div class="de1">    return (lluitador[VIDA] == 0);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+</div>
+
+<h3><a id="la_classe_bestiari" >La classe Bestiari</a></h3>
+<div class="level3">
+
+<p>
+Aquesta classe s’encarrega de tots els aspectes vinculats a la generació dels lluitadors, tant de les dades inicials del jugador com la dels adversaris triats pel jugador (veure si hi ha el que s’ha demanat, i si no és el cas, triar-lo a l’atzar). En aquest cas, s’ha escollit que els adversaris no es generin a l’atzar, sinó que les seves dades ja existeixin dins el codi font, de manera que, donat un adversari amb un nom concret, sempre sigui igual. Per emmagatzemar-los, s’usa un <em>array</em> bidimensional: un <em>array</em> on en cada posició hi ha l’<em>array</em> que descriu els valors d’un adversari. Atès que és on estan definits els noms dels lluitadors, també es gestiona la traducció dels identificadors dels lluitadors al seu nom. 
+</p>
+
+<p>
+En aquesta classe també es mostra una possibilitat quan s’usen mètodes d’una altra classe sovint dins del codi font. En lloc d’inicialitzar constantment la classe per poder invocar els seus mètodes, hi ha l’opció de declarar la variable on es duu a terme la inicialització com a global. Com a variable global té un àmbit igual a tota la classe, pot ser usada des de qualsevol lloc per invocar mètodes de l’altra classe. Això és tot just el que passa amb la variable <code>lluitador</code>. Fixeu-vos-hi.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.regles;</div></li><li class="li1"><div class="de1">import java.util.Random;</div></li><li class="li1"><div class="de1">public class Bestiari {</div></li><li class="li1"><div class="de1">  //Taula de traducció d'identificadors a noms</div></li><li class="li1"><div class="de1">  private String[] noms = {&quot;Aventurer&quot;,</div></li><li class="li1"><div class="de1">                           &quot;Nan&quot;, &quot;Kobold&quot;,</div></li><li class="li1"><div class="de1">                           &quot;Orc&quot;, &quot;Profund&quot;,</div></li><li class="li1"><div class="de1">                           &quot;Bruixot maligne&quot;, &quot;Ogre&quot;,</div></li><li class="li1"><div class="de1">                           &quot;Guerrer del caos&quot;, &quot;Troll&quot;,</div></li><li class="li1"><div class="de1">                           &quot;Elemental terrestre&quot;, &quot;Hidra&quot;};</div></li><li class="li1"><div class="de1">  //Jugador: ID = 0</div></li><li class="li1"><div class="de1">  private int[] jugador = {0,  1,  0, 10, 10, 3, 3, 3, 3};</div></li><li class="li1"><div class="de1">  //Adversaris possibles al joc</div></li><li class="li1"><div class="de1">  private int[][] adversaris = {</div></li><li class="li1"><div class="de1">                               {1,  1, 25,  8,  8, 3, 3, 3, 3},</div></li><li class="li1"><div class="de1">                               {2,  1, 30, 10, 10, 4, 4, 2, 2},</div></li><li class="li1"><div class="de1">                               {3,  2, 35, 12, 12, 4, 4, 3, 3},</div></li><li class="li1"><div class="de1">                               {4,  2, 40, 14, 14, 3, 3, 4, 4},</div></li><li class="li1"><div class="de1">                               {5,  3, 45, 15, 15, 3, 3, 5, 5},</div></li><li class="li1"><div class="de1">                               {6,  3, 50, 16, 16, 5, 5, 2, 2},</div></li><li class="li1"><div class="de1">                               {7,  4, 55, 15, 15, 4, 4, 4, 4},</div></li><li class="li1"><div class="de1">                               {8,  4, 60, 18, 18, 3, 3, 5, 5},</div></li><li class="li1"><div class="de1">                               {9,  5, 70, 22, 22, 4, 4, 6, 6},</div></li><li class="li1"><div class="de1">                               {10, 5, 80, 30, 30, 8, 8, 2, 2}</div></li><li class="li1"><div class="de1">                               };</div></li><li class="li1"><div class="de1">  //Inicialització usant una variable global</div></li><li class="li1"><div class="de1">  private Lluitador lluitador = new Lluitador();</div></li><li class="li1"><div class="de1">  /** Genera un nou jugador</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @return Un array amb les dades d'un jugador inicial</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] generarJugador() {</div></li><li class="li1"><div class="de1">    lluitador.renovar(jugador);</div></li><li class="li1"><div class="de1">    return jugador;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Donat un nom, genera l'adversari corresponent. Si aquest nom no existeix,</div></li><li class="li1"><div class="de1">   * es genera a l'atzar.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param nomAdv Nom de l'adversari a obtenir</div></li><li class="li1"><div class="de1">   * @return El lluitador amb aquest nom, o null si no existeix</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] cercarAdversari(String nomAdv) {</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; adversaris.length; i++) {</div></li><li class="li1"><div class="de1">     int id = lluitador.llegirId(adversaris[i]);</div></li><li class="li1"><div class="de1">     String nom = traduirIDANom(id);</div></li><li class="li1"><div class="de1">     if (nom.equalsIgnoreCase(nomAdv)) {</div></li><li class="li1"><div class="de1">       lluitador.renovar(adversaris[i]);</div></li><li class="li1"><div class="de1">       return adversaris[i];</div></li><li class="li1"><div class="de1">     }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return null;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /**Donat un nivell, genera l'adversari corresponent a l'atzar. Es tracta</div></li><li class="li1"><div class="de1">   * d'un adversari que sigui d'aquest nivell almenys.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param nivell Nivell proper al de l'adversari a obtenir</div></li><li class="li1"><div class="de1">   * @return Un adversari</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] triarAdversariAtzar(int nivell) {</div></li><li class="li1"><div class="de1">    Random rnd = new Random();</div></li><li class="li1"><div class="de1">    int[] adversari = null;</div></li><li class="li1"><div class="de1">    boolean cercar = true;</div></li><li class="li1"><div class="de1">    while (cercar) {</div></li><li class="li1"><div class="de1">      int i = rnd.nextInt(adversaris.length);</div></li><li class="li1"><div class="de1">      adversari = adversaris[i];</div></li><li class="li1"><div class="de1">      int nivellAdv = lluitador.llegirNivell(adversari);</div></li><li class="li1"><div class="de1">      int dif = nivell - nivellAdv;</div></li><li class="li1"><div class="de1">      if ((dif &gt;= -1)&amp;&amp;(dif &lt;= 1)) {</div></li><li class="li1"><div class="de1">        cercar = false;    </div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Es deixa a l'adversari nou de trinca, llest per lluitar</div></li><li class="li1"><div class="de1">    lluitador.renovar(adversari);</div></li><li class="li1"><div class="de1">    return adversari;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Transforma un identificador de lluitador al seu nom.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param id Identificador</div></li><li class="li1"><div class="de1">   * @return La cadena de text amb el nom.</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public String traduirIDANom(int id) {</div></li><li class="li1"><div class="de1">    if ((id &gt;= 0) &amp;&amp; (id &lt; noms.length)) {</div></li><li class="li1"><div class="de1">      return noms[id];</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return &quot;DESCONEGUT&quot;;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="la_classe_combat" >La classe Combat</a></h3>
+<div class="level3">
+
+<p>
+Aquesta classe s’encarrega dels aspectes vinculats a la resolució d’una ronda de combat, donat l’estat actual dels dos lluitadors (punts de vida, Atac i Defensa) i l’estratègia triada per aquesta ronda. Bàsicament, sobre ella recau el pes del subproblema “Combatre&gt;Resoldre resultats d’estràtegia” resultant del disseny descendent. Com que aquest encara es divideix en altres subproblemes, per fer les seves tasques li caldrà fer invocacions sobre altres mètodes (concretament, de la classe <code>Lluitador</code>).
+</p>
+
+<p>
+Per indicar cada estratègia s’usa un valor enter, de manera que fer comparacions és molt més senzill que no pas amb cadenes de text. Per facilitar la lectura del codi, el valor associat a cada estratègia s’assigna a una constant. Fixeu-vos com mitjançant invocacions a mètodes de la classe <code>Lluitador</code> es modifica l’estat de cada lluitador segons la resolució de la ronda. Si s’han triat els noms dels mètodes de manera adient, aquest sistema deixa molt clar què succeeix en cada cas sense haver d’anar a inspeccionar el codi font de <code>Lluitador</code>.
+</p>
+
+<p>
+A més a més, amb ja certa previsió amb vista a mostrar dades per pantalla, s’inclou un mètode que serveix per transformar una acció donada a la seva representació en format text. Es tracta del mètode <code>estrategiaAText</code>.
+</p>
+
+<p>
+El codi d’aquesta classe seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.regles;</div></li><li class="li1"><div class="de1">public class Combat {</div></li><li class="li1"><div class="de1">  //Constants que indiquen possibles accions de combat</div></li><li class="li1"><div class="de1">  public static final int ATAC = 0;</div></li><li class="li1"><div class="de1">  public static final int DEFENSA = 1;</div></li><li class="li1"><div class="de1">  public static final int ENGANY = 2;</div></li><li class="li1"><div class="de1">  public static final int MANIOBRA = 3;</div></li><li class="li1"><div class="de1">  /** Donat el codi d'una estratègia, el converteix a un text.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param acció Codi de l'estratègia</div></li><li class="li1"><div class="de1">   * @return Text associat</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public String estrategiaAText(int accio) {</div></li><li class="li1"><div class="de1">    switch(accio) {</div></li><li class="li1"><div class="de1">      case ATAC: return &quot;ATAC&quot;;</div></li><li class="li1"><div class="de1">      case DEFENSA: return &quot;DEFENSA&quot;;</div></li><li class="li1"><div class="de1">      case ENGANY: return &quot;ENGANY&quot;;</div></li><li class="li1"><div class="de1">      case MANIOBRA: return &quot;MANIOBRA&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return &quot;DESCONEGUDA&quot;;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Obté en grau d'èxit corresponent segons l'acció triada pel lluitador.</div></li><li class="li1"><div class="de1">   * </div></li><li class="li1"><div class="de1">   * @param ll Lluitador que fa l'acció.</div></li><li class="li1"><div class="de1">   * @param accio Acció triada</div></li><li class="li1"><div class="de1">   * @return Grau d'èxit de l'acció</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int calcularGrauExit(int[] ll, int accio) {</div></li><li class="li1"><div class="de1">    Lluitador lluitador = new Lluitador();</div></li><li class="li1"><div class="de1">    switch(accio) {</div></li><li class="li1"><div class="de1">      case ATAC:</div></li><li class="li1"><div class="de1">      case ENGANY:</div></li><li class="li1"><div class="de1">        return lluitador.tirarAtac(ll);</div></li><li class="li1"><div class="de1">      default:</div></li><li class="li1"><div class="de1">        return lluitador.tirarDefensa(ll);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol una ronda d'accions entre dos lluitadors, d'acord amb les estratègies</div></li><li class="li1"><div class="de1">   * individuals de cadascú.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param jug Estat del Jugador</div></li><li class="li1"><div class="de1">   * @param accioJug Estratègia triada pel Jugador</div></li><li class="li1"><div class="de1">   * @param adv Estat de l'Adversari</div></li><li class="li1"><div class="de1">   * @param accioAdv Estratègia triada per l'Adversari.</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void resoldreEstrategies(int[] jug, int accioJug, int[] adv, int accioAdv) {</div></li><li class="li1"><div class="de1">    int exitJug = calcularGrauExit(jug, accioJug);</div></li><li class="li1"><div class="de1">    int exitAdv = calcularGrauExit(adv, accioAdv);</div></li><li class="li1"><div class="de1">    Lluitador lluitador = new Lluitador();</div></li><li class="li1"><div class="de1">    if ((accioJug == ATAC)&amp;&amp;(accioAdv == ATAC)) {</div></li><li class="li1"><div class="de1">      //Jug i Adv: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(jug, exitAdv);</div></li><li class="li1"><div class="de1">      lluitador.danyar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ATAC)&amp;&amp;(accioAdv == DEFENSA)) {</div></li><li class="li1"><div class="de1">      //Adv: Guarit</div></li><li class="li1"><div class="de1">      lluitador.guarir(adv, exitAdv);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ATAC)&amp;&amp;(accioAdv == ENGANY)) {</div></li><li class="li1"><div class="de1">      //Adv: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ATAC)&amp;&amp;(accioAdv == MANIOBRA)) {</div></li><li class="li1"><div class="de1">      //Adv: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == DEFENSA)&amp;&amp;(accioAdv == ATAC)) {</div></li><li class="li1"><div class="de1">      //Jug: Guarit</div></li><li class="li1"><div class="de1">      lluitador.guarir(jug, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == DEFENSA)&amp;&amp;(accioAdv == DEFENSA)) {</div></li><li class="li1"><div class="de1">      //Jug i Adv: Guarit</div></li><li class="li1"><div class="de1">      lluitador.guarir(adv, exitAdv);</div></li><li class="li1"><div class="de1">      lluitador.guarir(jug, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == DEFENSA)&amp;&amp;(accioAdv == ENGANY)) {</div></li><li class="li1"><div class="de1">      //Jug: Danyat x2</div></li><li class="li1"><div class="de1">      lluitador.danyar(jug, exitAdv*2);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == DEFENSA)&amp;&amp;(accioAdv == MANIOBRA)) {</div></li><li class="li1"><div class="de1">      //Jug: Penalitzat</div></li><li class="li1"><div class="de1">      lluitador.penalitzar(jug, exitAdv);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ENGANY)&amp;&amp;(accioAdv == ATAC)) {</div></li><li class="li1"><div class="de1">      //Jug: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(jug,exitAdv);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ENGANY)&amp;&amp;(accioAdv == DEFENSA)) {</div></li><li class="li1"><div class="de1">      //Adv: Danyat x2</div></li><li class="li1"><div class="de1">      lluitador.danyar(adv, exitJug*2);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ENGANY)&amp;&amp;(accioAdv == ENGANY)) {</div></li><li class="li1"><div class="de1">      //Jug i Adv: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(jug, exitAdv);</div></li><li class="li1"><div class="de1">      lluitador.danyar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == ENGANY)&amp;&amp;(accioAdv == MANIOBRA)) {</div></li><li class="li1"><div class="de1">      //Jug: Penalitzat</div></li><li class="li1"><div class="de1">      lluitador.penalitzar(jug, exitAdv);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == MANIOBRA)&amp;&amp;(accioAdv == ATAC)) {</div></li><li class="li1"><div class="de1">      //Jug: Danyat</div></li><li class="li1"><div class="de1">      lluitador.danyar(jug, exitAdv);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == MANIOBRA)&amp;&amp;(accioAdv == DEFENSA)) {</div></li><li class="li1"><div class="de1">      //Adv: Penalitzat</div></li><li class="li1"><div class="de1">      lluitador.penalitzar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == MANIOBRA)&amp;&amp;(accioAdv == ENGANY)) {</div></li><li class="li1"><div class="de1">      //Adv: Penalitzat</div></li><li class="li1"><div class="de1">      lluitador.penalitzar(adv, exitJug);</div></li><li class="li1"><div class="de1">    } else if ((accioJug == MANIOBRA)&amp;&amp;(accioAdv == MANIOBRA)) {</div></li><li class="li1"><div class="de1">      //Jug i Adv: Penalitzat </div></li><li class="li1"><div class="de1">      lluitador.penalitzar(adv, exitJug);</div></li><li class="li1"><div class="de1">      lluitador.penalitzar(jug, exitAdv);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //No s'hauria de donar aquest cas...</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="la_biblioteca_jocarenainterficie" >La biblioteca &quot;joc.arena.interficie&quot;</a></h2>
+<div class="level2">
+
+<p>
+Un cop es disposa del codi font de totes les classes que gestionen les dades a manipular, ja és possible generar les que les obtenen o les mostren a l’usuari.
+</p>
+
+</div>
+
+<h3><a id="la_classe_entradateclat" >La classe EntradaTeclat</a></h3>
+<div class="level3">
+
+<p>
+Donada la descripció del problema general, només hi ha dos casos on l’usuari ha d’entrar dades usant el teclat. Per indicar contra quin adversari vol lluitar en iniciar-se un combat i per dir l’estratègia a seguir en una ronda de combat. Per tant, només cal incloure dos mètodes: 
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>triarAdversari</code>, associat al subproblema “Triar l’adversari”.</div>
+</li>
+<li class="level1"><div class="li">  <code>preguntarEstrategia</code>, associat al subproblema “Combatre&gt;Triar estratègia del jugador”. </div>
+</li>
+</ul>
+
+<p>
+Per al cas de l’estratègia, es donarà a triar amb un menú amb quatre opcions, cadascuna associada a una lletra: <code>[A]tacar</code>, <code>[D]efensar</code>, <code>[E]ngany</code> i <code>[M]aniobra</code>.
+</p>
+
+<p>
+Un fet interessant d’aquesta classe és que, atès que a la classe <code>Combat</code> les quatre estratègies possibles estan indicades mitjançant constants, cal traduir la lletra que ha escrit l’usuari al valor de la constant associada. Per accedir a una constant declarada a una altra classe, cal usar la mateixa sintaxi que per invocar un mètode estàtic, però usant l’identificador de la contant: <code>NomClasse.NOM_CONSTANT</code>. Això es pot veure al codi del mètode <code>preguntarEstrategia</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.interficie;</div></li><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Bestiari;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Combat;</div></li><li class="li1"><div class="de1">public class EntradaTeclat {</div></li><li class="li1"><div class="de1">  /** Tria l'adversari del jugador segons la seva resposta.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @return Cadena de text amb la resposta</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] triarAdversari(int nivell) {</div></li><li class="li1"><div class="de1">    System.out.print(&quot;Contra quin adversari vols lluitar en aquest combat? &quot;);</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    String resposta = lector.nextLine();</div></li><li class="li1"><div class="de1">    Bestiari bestiari = new Bestiari();</div></li><li class="li1"><div class="de1">    int[] adversari = bestiari.cercarAdversari(resposta);</div></li><li class="li1"><div class="de1">    if (adversari == null) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Aquest enemic no existeix. Es tria a l'aztar.&quot;);</div></li><li class="li1"><div class="de1">      adversari = bestiari.triarAdversariAtzar(nivell);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return adversari;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Pregunta a l'usuari quina estratègia vol usar, d'entre</div></li><li class="li1"><div class="de1">   * les quatre possibles.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @return Accio a dur a terme, d'acord a les constants de la classe Combat. </div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int preguntarEstrategia() {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Quina estrategia vols seguir aquesta ronda?&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;[A]tacar\t[D]efensar\t[E]ngany\t[M]aniobra&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;--------&quot;);</div></li><li class="li1"><div class="de1">    boolean preguntar = true;</div></li><li class="li1"><div class="de1">    int accio = -1;</div></li><li class="li1"><div class="de1">    while (preguntar) {</div></li><li class="li1"><div class="de1">      System.out.print(&quot;Accio: &quot;);</div></li><li class="li1"><div class="de1">      String resposta = lector.nextLine();</div></li><li class="li1"><div class="de1">      if (&quot;A&quot;.equalsIgnoreCase(resposta)) {</div></li><li class="li1"><div class="de1">        accio =  Combat.ATAC;</div></li><li class="li1"><div class="de1">        preguntar = false;</div></li><li class="li1"><div class="de1">      } else if (&quot;D&quot;.equalsIgnoreCase(resposta)) {</div></li><li class="li1"><div class="de1">        accio = Combat.DEFENSA;</div></li><li class="li1"><div class="de1">        preguntar = false;</div></li><li class="li1"><div class="de1">      } else if (&quot;E&quot;.equalsIgnoreCase(resposta)) {</div></li><li class="li1"><div class="de1">        accio = Combat.ENGANY;</div></li><li class="li1"><div class="de1">        preguntar = false;</div></li><li class="li1"><div class="de1">      } else if (&quot;M&quot;.equalsIgnoreCase(resposta)) {</div></li><li class="li1"><div class="de1">        accio = Combat.MANIOBRA;</div></li><li class="li1"><div class="de1">        preguntar = false;</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        System.out.print(&quot;Acció incorrecta...&quot;);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return accio;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="la_classe_sortidapantalla" >La classe SortidaPantalla</a></h3>
+<div class="level3">
+
+<p>
+En aquesta classe s’agruparien els mètodes en els quals cal més d’una única instrucció per mostrar informació per pantalla. Concretament es tractaria dels mètodes associats als subproblemes “Anunciar inici de combats&gt;Mostrar estat del jugador” i “Combatre&gt;Mostrar l’estat dels lluitadors: Mostrat estat del jugador, Mostrar estat de l’adversari” del resultat d’aplicar disseny descendent. No es tracta d’una classe molt complexa.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena.interficie;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Bestiari;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Lluitador;</div></li><li class="li1"><div class="de1">public class SortidaPantalla {</div></li><li class="li1"><div class="de1">  /** Mostra per pantalla el missatge d'inici del Joc</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void mostarBenvinguda() {</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Benvingut al Joc de l'Arena&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;===========================&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escull amb astúcia la teva estratègia per sobreviure...&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Mostra l'estat d'un lluitador per pantalla.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param ll LLuitador a visualitzar</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void mostrarLluitador(int[] ll) {</div></li><li class="li1"><div class="de1">    Lluitador lluitador = new Lluitador();</div></li><li class="li1"><div class="de1">    Bestiari bestiari = new Bestiari();</div></li><li class="li1"><div class="de1">    int id = lluitador.llegirId(ll);</div></li><li class="li1"><div class="de1">    String nom = bestiari.traduirIDANom(id);</div></li><li class="li1"><div class="de1">    System.out.print(nom);</div></li><li class="li1"><div class="de1">    System.out.print(&quot;\tNivell: &quot; + lluitador.llegirNivell(ll));</div></li><li class="li1"><div class="de1">    System.out.print(&quot; (punts: &quot; + lluitador.llegirPunts(ll) + &quot;)&quot;);</div></li><li class="li1"><div class="de1">    System.out.print(&quot;\tVIDA: &quot; + lluitador.llegirVida(ll));</div></li><li class="li1"><div class="de1">    System.out.print(&quot; (&quot; + lluitador.llegirVidaMax(ll) + &quot;)&quot;);</div></li><li class="li1"><div class="de1">    System.out.print(&quot;\tATAC: &quot; + lluitador.llegirAtac(ll));</div></li><li class="li1"><div class="de1">    System.out.println(&quot;\tDEFENSA: &quot; + lluitador.llegirDefensa(ll));</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Mostra l'estat actual del jugador contra el seu adversari.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param jugador Jugador</div></li><li class="li1"><div class="de1">   * @param adversari Adversari</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void mostrarVersus(int[] jugador, int[] adversari) {</div></li><li class="li1"><div class="de1">    System.out.print(&quot;JUGADOR: &quot;);</div></li><li class="li1"><div class="de1">    mostrarLluitador(jugador);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;VS&quot;);</div></li><li class="li1"><div class="de1">    System.out.print(&quot;ADVERSARI: &quot;);</div></li><li class="li1"><div class="de1">    mostrarLluitador(adversari);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="la_classe_principal" >La classe principal</a></h2>
+<div class="level2">
+
+<p>
+Quan es genera un programa modular estructurat d’acord a una certa jerarquia de <em>packages</em>, la classe principal se sol ubicar en el <em>package</em> arrel, tota sola. Recordeu que aquesta és la que s’encarrega de resoldre el problema general a partir de la invocació de mètodes de tota la resta de classes dels altres <em>packages</em>.
+</p>
+
+<p>
+Per a aquest programa, el seu codi seria el següent. Observeu com, novament, la seva estructura és molt propera al primer nivell de descomposició del disseny descendent.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package joc.arena;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Bestiari;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Combat;</div></li><li class="li1"><div class="de1">import joc.arena.regles.Lluitador;</div></li><li class="li1"><div class="de1">import joc.arena.interficie.EntradaTeclat;</div></li><li class="li1"><div class="de1">import joc.arena.interficie.SortidaPantalla;</div></li><li class="li1"><div class="de1">public class JocArena {</div></li><li class="li1"><div class="de1">  public static final int MAX_COMBAT = 10;</div></li><li class="li1"><div class="de1">  private EntradaTeclat entrada = new EntradaTeclat();</div></li><li class="li1"><div class="de1">  private SortidaPantalla sortida = new SortidaPantalla();</div></li><li class="li1"><div class="de1">  private Lluitador lluitador = new Lluitador();</div></li><li class="li1"><div class="de1">  private Combat combat = new Combat();</div></li><li class="li1"><div class="de1">  private Bestiari bestiari = new Bestiari();</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    JocArena programa = new JocArena();</div></li><li class="li1"><div class="de1">    programa.inici();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  public void inici() {</div></li><li class="li1"><div class="de1">    sortida.mostarBenvinguda();</div></li><li class="li1"><div class="de1">    int[] jugador = bestiari.generarJugador();</div></li><li class="li1"><div class="de1">    int numCombat = 0;</div></li><li class="li1"><div class="de1">    boolean jugar = true;</div></li><li class="li1"><div class="de1">    while (jugar) {</div></li><li class="li1"><div class="de1">      numCombat++;</div></li><li class="li1"><div class="de1">      //Abans de cada combat es restaura al jugador</div></li><li class="li1"><div class="de1">      lluitador.restaurar(jugador);</div></li><li class="li1"><div class="de1">      //Inici d'un combat</div></li><li class="li1"><div class="de1">      System.out.println(&quot;*** COMBAT &quot; + numCombat);</div></li><li class="li1"><div class="de1">      System.out.print(&quot;Estat actual del jugador: &quot;);</div></li><li class="li1"><div class="de1">      sortida.mostrarLluitador(jugador);</div></li><li class="li1"><div class="de1">      System.out.println(&quot;**************************&quot;);</div></li><li class="li1"><div class="de1">      //S'obté l'adversari</div></li><li class="li1"><div class="de1">      int[] adversari = entrada.triarAdversari(lluitador.llegirNivell(jugador));</div></li><li class="li1"><div class="de1">      //Combat</div></li><li class="li1"><div class="de1">      combatre(jugador, adversari);</div></li><li class="li1"><div class="de1">      //Fi</div></li><li class="li1"><div class="de1">      jugar = fiCombat(jugador, adversari);</div></li><li class="li1"><div class="de1">      if (numCombat == MAX_COMBAT) {</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Has sobreviscut a tots els combats. Enhorabona!!&quot;);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.print(&quot;Estat final del jugador: &quot;);</div></li><li class="li1"><div class="de1">    sortida.mostrarLluitador(jugador);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol totes les rondes d'un combat.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param jugador Estat del jugador</div></li><li class="li1"><div class="de1">   * @param adversari Estat de l'adversari</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void combatre(int[] jugador, int[] adversari) {</div></li><li class="li1"><div class="de1">    boolean combatre = true;</div></li><li class="li1"><div class="de1">    int numRonda = 0;</div></li><li class="li1"><div class="de1">    while (combatre) {</div></li><li class="li1"><div class="de1">      numRonda++;</div></li><li class="li1"><div class="de1">      if (numRonda%5 == 0) {</div></li><li class="li1"><div class="de1">        //A les rondes múltiples de cinc es restauren l'atac i la defensa</div></li><li class="li1"><div class="de1">        lluitador.restaurar(jugador);</div></li><li class="li1"><div class="de1">        lluitador.restaurar(adversari);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      System.out.println(&quot;--- RONDA &quot; + numRonda);</div></li><li class="li1"><div class="de1">      sortida.mostrarVersus(jugador, adversari);</div></li><li class="li1"><div class="de1">      System.out.println(&quot;--------------------------&quot;);</div></li><li class="li1"><div class="de1">      int accioJug = entrada.preguntarEstrategia();</div></li><li class="li1"><div class="de1">      int accioAdv = lluitador.triarEstrategiaAtzar(adversari);</div></li><li class="li1"><div class="de1">      System.out.print(&quot;Has triat &quot; + combat.estrategiaAText(accioJug));</div></li><li class="li1"><div class="de1">      System.out.println(&quot; i el teu enemic &quot; + combat.estrategiaAText(accioAdv));</div></li><li class="li1"><div class="de1">      combat.resoldreEstrategies(jugador, accioJug, adversari, accioAdv);</div></li><li class="li1"><div class="de1">      if (lluitador.esMort(jugador)||lluitador.esMort(adversari)) {</div></li><li class="li1"><div class="de1">        combatre = false;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Resol la finalització del combat.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param jugador Estat del jugador</div></li><li class="li1"><div class="de1">   * @param adversari Estat de l'adversari</div></li><li class="li1"><div class="de1">   * @returns Si el jugador ha de seguir jugant (true) o no (false)</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public boolean fiCombat(int[] jugador, int[] adversari) {</div></li><li class="li1"><div class="de1">    if (lluitador.esMort(jugador)) {</div></li><li class="li1"><div class="de1">      //Has perdut (Nota: tambe inclou el cas que tots dos moren alhora)</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Has estat derrotat... :-(&quot;);</div></li><li class="li1"><div class="de1">      return false;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Has guanyat el combat :-)&quot;);</div></li><li class="li1"><div class="de1">    boolean pujarNivell = lluitador.atorgarPunts(jugador, adversari);</div></li><li class="li1"><div class="de1">    if (pujarNivell) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Has pujat de nivell!!&quot;);</div></li><li class="li1"><div class="de1">      lluitador.pujarNivell(jugador);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return true;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="simplificacio_d_algorismes_complexos_usant_recursivitat" >Simplificació d&#039;algorismes complexos usant recursivitat</a></h2>
+<div class="level2">
+
+<p>
+A l’hora de crear programes complexos, un dels aspectes que diferencia el bon programador de l’aficionat és la seva capacitat de fer algorismes eficients. O sigui, que siguin capaços de resoldre el problema plantejat en el mínim de passes. En el cas d’un programa, això significa la necessitat d’executar el mínim nombre d’instruccions possible. Certament, si el resultat ha de ser exactament el mateix, sempre serà millor fer una tasca en 10 passes que no pas en 20, intentant evitar passes que en realitat són innecessàries. Per tant, l’etapa de disseny d’un algorisme és força important i cal pensar bé una estratègia eficient. Ara bé, normalment, els algorismes més eficients també són més difícils de pensar i codificar, ja que no sempre són evidents.
+</p>
+
+<p>
+Un exemple molt senzill d’això és la resolució del problema següent. Suposeu que una amiga apunta un número entre el 0 i el 99 en un full de paper i vosaltres l’heu d’endevinar. Cada cop que contesteu, us dirà si el valor que heu dit és més gran o més petit que el que heu d’endevinar. Quina estratègia seguiríeu per assolir-ho? Cal pensar un algorisme a seguir per resoldre aquest problema.
+</p>
+
+<p>
+Una aproximació molt ingènua podria ser anar dient tots els valors un per un, començant pel 0. està clar que quan arribeu al 99 l’haureu endevinat. En el millor cas, si havia escrit el 0, encertareu a la primera, mentre que en el pitjor cas, si havia escrit el 99, necessitareu 100 intents. Si estava pel mig, potser amb 40-70 n’hi ha prou. Aquest seria un algorisme que fa el fet i és molt senzill, però no gaire eficient. Anar provant valors a l’atzar en lloc de fer això tampoc millora gran cosa el procés, i ve a ser el mateix.
+</p>
+
+<p>
+De ben segur, si mai heu jugat a aquest joc, el que heu fet és ser una mica més astuts i començar per algun valor del mig. En aquest cas, per exemple, podria ser el 50. Llavors, en cas de fallar, un cop sabeu si el valor secret és més gran o més petit que la vostra resposta, en l’intent següent provar un valor més alt o més baix, i anar fent això repetides vegades. 
+</p>
+
+<p>
+Generalment, la millor estratègia per endevinar un número secret entre 0 i N seria primer provar N/2. Si no s’ha encertat, llavors si el número secret és més alt s’intenta endevinar entre (N/2 + 1) i N. Si era més baix, s’intenta endevinar el valor entre 0 i N-1. Per a cada cas, es torna a provar el valor que hi ha al bell mig del nou interval. I així successivament, fent cada cop més petit l’interval de cerca, fins a endevinar-lo. En el cas de 100 valors, això garanteix que, en el pitjor dels casos, en 7 intents segur que s’endevina. Això és una millora molt gran respecte al primer algorisme, on calien 100 intents, i per tant, aquest seria un algorisme més eficient. Concretament, sempre s’endevinarà en log2(N) intents com a màxim.
+</p>
+
+<p>
+Si us hi fixeu, l’exemple que tot just s’acaba d’explicar, en realitat, no és més que un esquema de cerca dins una seqüència de valors, com pot ser dins d’un <em>array</em>, partint de la condició que tots els elements estiguin ordenats de més petit a més gran. De fet, fins ara, per fer una cerca d’un valor dins d’un <em>array</em> s’ha usat el sistema “ingenu”, mirant una per una totes les posicions. Però si els elements estan ordenats prèviament, es podria usar el sistema “astut” per dissenyar un algorisme molt més eficient, i fins a cert punt, més “intel·ligent”. 
+</p>
+
+<p>
+L’algorisme basat en aquesta estratègia es coneix com <strong>cerca binària</strong> o <strong>dicotòmica</strong>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>binarySearch</code> de la classe <code>Arrays</code> fa una cerca dicotòmica.
+</p>
+</div></div>
+<p>
+Per tant, per què no aplicar aquest coneixement per millorar el mètode <code>cercarAdversari</code>, a la classe <code>Bestiari</code>?
+</p>
+
+</div>
+
+<h3><a id="aplicacio_de_la_recursivitat" >Aplicació de la recursivitat</a></h3>
+<div class="level3">
+
+<p>
+Malauradament, sovint us trobareu que explicar de paraula la idea general d’una estratègia pot ser senzill, però traduir-la a instruccions de Java ja no ho és tant. Atès que cal anar repetint unes passes en successives iteracions, està més o menys clar que el problema plantejat per fer cerques eficients es basa en una estructura de repetició. Però no es recorren tots els elements i l’índex no s’incrementa un a un, sinó que es va canviant a valors molt diferents per cada iteració. No és un cas evident. Precisament, aquest exemple no s’ha triat a l’atzar, ja que és un cas en què us pot anar bé aplicar un nou concepte que permet facilitar la definició d’algorismes complexos on hi ha repeticions.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>recursivitat</strong> és una forma de descriure un procés per resoldre un problema de manera que, al llarg d’aquesta descripció, s’usa el procés mateix que s’està descrivint, però aplicat a un cas més simple.
+</p>
+</div></div>
+<p>
+De fet, potser sense adonar-vos-en, ja s’ha usat recursivitat per descriure com resoldre un problema. Per veure què vol dir exactament la definició formal tot just descrita, es repetirà el text en qüestió, però remarcant l’aspecte recursiu de la descripció:
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m3u5_11.png" class="imgB" title=" Una definició recursiva: les inicials del sistema operatiu GNU volen dir &quot;GNU is Not Unix&quot;. Font: The GNU Art Gallery" alt=" Una definició recursiva: les inicials del sistema operatiu GNU volen dir &quot;GNU is Not Unix&quot;. Font: The GNU Art Gallery" /></li><li><small> Una definició recursiva: les inicials del sistema operatiu GNU volen dir &quot;GNU is Not Unix&quot;. Font: The GNU Art Gallery</small></li>
+</ul></div>
+
+</p>
+
+<p>
+“Generalment, la millor estratègia per <strong>endevinar</strong> un número secret entre 0 i N seria primer provar N/2. Si no s’ha encertat, llavors si el número secret és més alt s’intenta <strong>endevinar</strong> entre (N/2 + 1) i N. Si era més baix, s’intenta <strong>endevinar</strong> el valor entre 0 i N-1. Per a cada cas, es torna a provar el valor que hi ha al bell mig del nou interval. I així successivament, fins a endevinar-lo.”
+</p>
+
+<p>
+O sigui, el procés d’endevinar un número es basa en el procés d’intentar endevinar un número! Això sembla fer trampes, ja és com usar la mateixa paraula que es vol definir a la seva pròpia definició. Però fixeu-vos en un detall molt important. Els nous usos del procés d’“endevinar” són casos més simples, ja que primer s’endevina entre N valors possibles, després entre N/2 valors, després entre N/4, etc. Aquest fet no és casual i d’ell depèn poder definir un procés recursiu de manera correcta.
+</p>
+
+</div>
+
+<h3><a id="implementacio_de_la_recursivitat" >Implementació de la recursivitat</a></h3>
+<div class="level3">
+
+<p>
+La implementació de la recursivitat dins del codi font d’un programa es fa a nivell de mètode.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>mètode recursiu</strong> és aquell que, dins del seu bloc d’instruccions, té alguna invocació a ell mateix.
+</p>
+</div></div>
+<p>
+El bloc de codi d’un mètode recursiu sempre es basa en una estructura de selecció múltiple, on cada branca és d’algun dels dos casos possibles descrits tot seguit.
+</p>
+
+<p>
+D’una banda, en el <strong>cas base</strong>, que conté un bloc instruccions dins de les quals no hi ha cap crida al mètode mateix. S’executa quan es considera que, a partir dels paràmetres d’entrada, el problema ja és prou simple com per ser resolt directament. En el cas de la cerca, seria quan la posició intermèdia és exactament el valor que s’està cercant, o bé quan ja es pot decidir que l’element a cercar no existeix.
+</p>
+
+<p>
+D’altra banda, hi ha el <strong>cas recursiu</strong>, que conté un bloc d’instruccions dins de les quals hi ha una crida al mètode mateix, atès que es considera que encara no es pot resoldre el problema fàcilment. Ara bé, valors usats com a paràmetres d’aquesta nova crida han de ser diferents als originals. Concretament, han de ser uns valors que tendeixin a apropar-se al cas base. En el cas de la cerca, es correspon a la cerca sobre la meitat dels valors originals, ja sigui cap a la meitat inferior o superior. Aquest és un cas en què l’interval de posicions on es farà la nova cerca es va apropant al cas base, ja que tard o d’hora, crida rere crida, l’espai de cerca s’anirà reduint fins que, o bé es troba l’element, o queda clar que no hi és.
+</p>
+
+<p>
+Dins de l’estructura de selecció sempre hi ha d’haver almenys un cas base i un de recursiu. Normalment, els algorismes recursius més senzills en tenen un de cada. És imprescindible que els casos recursius sempre garanteixin que successives crides van aproximant els valors dels paràmetres d’entrada a algun cas base, ja que, en cas contrari, el programa mai acaba i es produeix el mateix efecte que un bucle infinit.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En Java, en cas d’un bucle infinit en fer crides recursives es produeix un error de <em>Stack Overflow</em> (“desbordament de pila”, en anglès).
+</p>
+</div></div>
+</div>
+
+<h4><a id="calcul_recursiu_de_l_operacio_factorial" >Càlcul recursiu de l&#039;operació factorial</a></h4>
+<div class="level4">
+
+<p>
+Com exemple del funcionament d’un mètode recursiu, es començarà amb un cas senzill. Es tracta del càlcul de l’anomenada operació factorial d’un valor enter positiu. Aquesta és unària i s’expressa amb l’operador exclamació (per exemple, 4!, 20!, 3!). El resultat d’aquesta operació és la multiplicació de tots els valors des de l’1 fins a l’indicat (7! = 1*2*3*4*5*6*7). Normalment, la definició matemàtica d’aquesta operació es fa de manera recursiva:
+</p>
+<ul>
+<li class="level1"><div class="li"> 0! = 1 (cas base)</div>
+</li>
+<li class="level1"><div class="li"> n! = n*(n - 1)! (cas recursiu)</div>
+</li>
+</ul>
+
+<p>
+Així, doncs, fixeu-vos que el cas recursiu realitza un càlcul que depèn d’usar la pròpia definició de l’operació, però quan ho fa és amb un nou valor inferior a l’original, de manera que es garanteix que, en algun moment, es farà una crida recursiva que desembocarà en el cas base. Quan això passi, la cadena de crides recursives acaba. Una manera de veure això és desenvolupant pas per pas aquesta definició:
+</p>
+<ol>
+<li class="level1"><div class="li"> 4! = 4*(4 - 1)! = 4*(3)! </div>
+</li>
+<li class="level1"><div class="li"> 4*3! =  4*(3*(3 - 1))! = 4*3*(2)!</div>
+</li>
+<li class="level1"><div class="li"> 4*3*2! = 4*3*(2*(2 - 1))! = 4*3*2*(1)!</div>
+</li>
+<li class="level1"><div class="li"> 4*3*2*1! = 4*3*2*(1*(1 - 1))! = 4*3*2*1*(0)!   </div>
+</li>
+<li class="level1"><div class="li"> 4*3*2*1*0! = 4*3*2*1*(1) = 24   </div>
+</li>
+</ol>
+
+<p>
+La seva implementació en Java seria la següent. Ara bé, en aquest codi s’han afegit algunes sentències per escriure informació per pantalla, de manera que es vegi amb més detall com funciona un mètode recursiu. Veureu que, inicialment, es porten a terme un seguit d’invocacions del cas recursiu, un rere l’altre, fins que s’arriba a una crida que executa el cas base. És a partir de llavors quan, a mesura que es van executant les sentències <code>return</code> del cas recursiu, realment es va acumulant el càlcul. Una altra manera de veure-ho és depurant el programa.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package unitat5.apartat2.exemples;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class Factorial {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    Factorial programa = new Factorial();</div></li><li class="li1"><div class="de1">    programa.inici();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public void inici() {</div></li><li class="li1"><div class="de1">    System.out.println(factorial(4));</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  /** Mètode recursiu que calcula l'operació factorial</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param n Operador</div></li><li class="li1"><div class="de1">   * @return Resultat de n!</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int factorial (int n) {</div></li><li class="li1"><div class="de1">    if (n == 0) {</div></li><li class="li1"><div class="de1">      //Cas base: Se sap el resultat directament</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Cas base: S'avalua a 0&quot;);</div></li><li class="li1"><div class="de1">      return 1;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //Cas recursiu: Per calcular-lo cal invocar el propi metode</div></li><li class="li1"><div class="de1">      //El valor del nou parametre d'entrada ha de variar de manera que</div></li><li class="li1"><div class="de1">      //es vagi aproximant al cas base</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Cas recursiu &quot; + (n - 1) + &quot;: S'invoca el factorial&quot;);</div></li><li class="li1"><div class="de1">      int res = n*factorial(n - 1);</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Cas recursiu &quot; + (n - 1) + &quot;: Resultat = &quot; + res);</div></li><li class="li1"><div class="de1">      return res;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h4><a id="calcul_recursiu_de_la_cerca_dicotomica" >Càlcul recursiu de la cerca dicotòmica</a></h4>
+<div class="level4">
+
+<p>
+Tot seguit es mostra el codi de l’algorisme recursiu de cerca dicotòmica sobre un <em>array</em>. Observeu atentament els comentaris, els quals identifiquen els casos base i recursius. En aquest cas, hi ha més d’un cas base i recursiu. Si voleu veure amb més detall com funciona, el podeu depurar per veure com van evolucionant els valors dels paràmetres d’entrada en successives invocacions als casos recursius.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package unitat5.apartat2.exemples;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class CercaDicotomica {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    CercaDicotomica programa = new CercaDicotomica();</div></li><li class="li1"><div class="de1">    programa.inici();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public void inici() {</div></li><li class="li1"><div class="de1">    int[] array = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};</div></li><li class="li1"><div class="de1">    int cercaDivuit = cercaDicotomica(array, 0, array.length-1, 18);</div></li><li class="li1"><div class="de1">    int cercaCinc = cercaDicotomica(array, 0, array.length-1, 5);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Cerca del 18: &quot; + cercaDivuit);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Cerca del 5: &quot; + cercaCinc);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  /** Cerca dicotòmica recursiva sobre un array d'enters.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param array On es fa la cerca</div></li><li class="li1"><div class="de1">   * @param inici Posició inicial de la cerca</div></li><li class="li1"><div class="de1">   * @param fi Posició final</div></li><li class="li1"><div class="de1">   * @param valor Valor a cercar</div></li><li class="li1"><div class="de1">   * @return Índex on és el valor, o -1 si no existeix</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int cercaDicotomica(int[] array, int inici, int fi, int valor) {</div></li><li class="li1"><div class="de1">    if (inici &gt; fi) {</div></li><li class="li1"><div class="de1">      //Cas base: No s'ha trobat el valor</div></li><li class="li1"><div class="de1">      return -1;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Es calcula la posició central entre els dos índexs de cerca</div></li><li class="li1"><div class="de1">    int pos = inici + (fi - inici) / 2;</div></li><li class="li1"><div class="de1">    if (array[pos] &gt; valor) {</div></li><li class="li1"><div class="de1">      //Cas recursiu: Si el valor es menor que la posició que s'ha mirat</div></li><li class="li1"><div class="de1">      //llavors cal seguir cercant per la part &quot;dreta&quot; de l'array</div></li><li class="li1"><div class="de1">      return cercaDicotomica(array, inici, pos - 1, valor);</div></li><li class="li1"><div class="de1">    } else if (array[pos] &lt; valor) {</div></li><li class="li1"><div class="de1">      //Cas recursiu: Si el valor és més gran que la posició que s'ha mirat</div></li><li class="li1"><div class="de1">      //llavors cal seguir cercant per la part &quot;esquerra&quot; de l'array</div></li><li class="li1"><div class="de1">      return cercaDicotomica(array, pos + 1, fi, valor);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //cas base: És igual, per tant, s'ha trobat</div></li><li class="li1"><div class="de1">      return pos;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Pràcticament qualsevol problema que es pot resoldre amb un algorisme recursiu també es pot resoldre amb sentències d’estructures de repetició. Però molt sovint la seva implementació serà molt menys evident i les interaccions entre instruccions força més complexes que l’opció recursiva (un cop s’entén aquest concepte, és clar).
+</p>
+
+</div>
+
+<h3><a id="recursivitat_al_joc_de_combats_a_l_arena" >Recursivitat al joc de combats a l&#039;arena</a></h3>
+<div class="level3">
+
+<p>
+Un cop coneixeu la base genèrica per generar un algorisme recursiu, és el moment d’aplicar-lo per incloure una cerca dicotòmica dins del joc proposat. En aquest cas, es tractaria de millorar el mètode <code>cercarAdversari</code>, de manera que, en lloc de fer la cerca posició per posició, es faci de manera més eficient. La cerca es fa sobre els noms dels adversaris, que han d’estar prèviament ordenats alfabèticament. Per tant, per poder dur a terme aquesta millora, cal garantir que la llista de noms està ordenada i que els valors dels identificadors als <em>arrays</em> amb els atributs de tots els adversaris continuen encaixant amb la nova llista de noms. Fer això manualment pot ser una mica pesat, sobretot si en el futur s’afegeixen nous adversaris. L’ordenació es pot dur a terme amb codi tot just al principi del programa.
+</p>
+
+<p>
+Per les característiques modulars del programa, el nou mètode de cerca i el d’ordenació anirien dins de la classe <code>Bestiari</code>. Tot seguit es mostra el nou codi que cal afegir. En el cas de <code>cercarAdversari</code>, aquest reemplaçaria el ja existent. La resta són nous.
+</p>
+
+<p>
+Estudieu atentament el codi següent, que presenta la solució al que es planteja. Presteu especial atenció a com es fa la comparació entre cadenes de text mitjançant el mètode <code>compareTo</code> de la classe <code>String</code>. Aquest indica si una cadena de text és igual, o té un ordre alfabètic inferior o superior a una altra. També tingueu en compte que les majúscules i minúscules es consideren lletres diferents i afecten l’ordre de les paraules. Per tant, per evitar que això succeeixi, sempre es passa tot a minúscula abans de comparar, amb el mètode <code>toLowercase</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  //Mètodes per recursivitat a la classe Bestiari</div></li><li class="li1"><div class="de1">  /** Donat l'array bidimensional amb els adversaris, els ordena pel nom</div></li><li class="li1"><div class="de1">   * associat a cada identificador. Recordar que un array bidimensional es</div></li><li class="li1"><div class="de1">   * considera un &quot;array d'arrays&quot;</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void ordenarAdversaris() {</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; adversaris.length; i++) {</div></li><li class="li1"><div class="de1">      for (int j = i + 1; j &lt; adversaris.length; j++) {</div></li><li class="li1"><div class="de1">        int idI = lluitador.llegirId(adversaris[i]);</div></li><li class="li1"><div class="de1">        String nomI = traduirIDANom(idI);</div></li><li class="li1"><div class="de1">        nomI = nomI.toLowerCase();</div></li><li class="li1"><div class="de1">        int idJ = lluitador.llegirId(adversaris[j]);</div></li><li class="li1"><div class="de1">        String nomJ = traduirIDANom(idJ);</div></li><li class="li1"><div class="de1">        nomJ = nomJ.toLowerCase();</div></li><li class="li1"><div class="de1">        if (nomI.compareTo(nomJ) &gt; 0) {</div></li><li class="li1"><div class="de1">          //I &gt; J. Cal intercanviar</div></li><li class="li1"><div class="de1">          int midaArray = adversaris[i].length;</div></li><li class="li1"><div class="de1">          int[] temp = new int[midaArray];</div></li><li class="li1"><div class="de1">          copiarArray(adversaris[i], temp);</div></li><li class="li1"><div class="de1">          copiarArray(adversaris[j], adversaris[i]);</div></li><li class="li1"><div class="de1">          copiarArray(temp, adversaris[j]);</div></li><li class="li1"><div class="de1">        }    </div></li><li class="li1"><div class="de1">      }    </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Mètode auxiliar per copiar els valors d'un array a un altre.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param origen Array origen</div></li><li class="li1"><div class="de1">   * @param desti Array destí</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public void copiarArray(int[] origen, int[] desti) {</div></li><li class="li1"><div class="de1">    for (int i=0; i &lt; desti.length; i++) {</div></li><li class="li1"><div class="de1">      desti[i] = origen[i];</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Inici de la cerca recursiva. Adapta la crida normal d'acord a la mida</div></li><li class="li1"><div class="de1">   * de la llista d'adversaris.</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param nomAdv Nom a cercar</div></li><li class="li1"><div class="de1">   * @return Adversari (null si no es troba)</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] cercarAdversari(String nomAdv) {</div></li><li class="li1"><div class="de1">    return cercarAdversariRecursivament(nomAdv.toLowerCase(), 0, adversaris.length - 1);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  /** Cerca recursiva real</div></li><li class="li1"><div class="de1">   *</div></li><li class="li1"><div class="de1">   * @param nomAdv Nom a cercar</div></li><li class="li1"><div class="de1">   * @param inici Posició inicial de la cerca</div></li><li class="li1"><div class="de1">   * @param fi Posició final de la cerca</div></li><li class="li1"><div class="de1">   * @return Adversari trobat (o null si no es troba)</div></li><li class="li1"><div class="de1">   */</div></li><li class="li1"><div class="de1">  public int[] cercarAdversariRecursivament(String nomAdv, int inici, int fi) {</div></li><li class="li1"><div class="de1">    int diferencia =  fi - inici;</div></li><li class="li1"><div class="de1">    if (diferencia &lt; 0) {</div></li><li class="li1"><div class="de1">      //No s'ha trobat</div></li><li class="li1"><div class="de1">      return null;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      int posicio = inici + diferencia/2;</div></li><li class="li1"><div class="de1">      int id = lluitador.llegirId(adversaris[posicio]);</div></li><li class="li1"><div class="de1">      String nom = traduirIDANom(id);</div></li><li class="li1"><div class="de1">      nom = nom.toLowerCase();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      int compara = nom.compareTo(nomAdv);</div></li><li class="li1"><div class="de1">      if (compara == 0) {</div></li><li class="li1"><div class="de1">        //Són iguals. Trobat!</div></li><li class="li1"><div class="de1">        return adversaris[posicio];</div></li><li class="li1"><div class="de1">      } else if (compara &lt; 0) {</div></li><li class="li1"><div class="de1">        //El nom de la llista és mes petit. Cal cercar pels posteriors</div></li><li class="li1"><div class="de1">        return cercarAdversariRecursivament(nomAdv, posicio + 1,fi);</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        //El nom de la llista és mes gran. Cal cercar pels anteriors</div></li><li class="li1"><div class="de1">        return cercarAdversariRecursivament(nomAdv, inici, posicio - 1);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Per garantir que els noms estan ordenats alfabèticament, caldrà cridar el mètode d’ordenació tan bon punt s’iniciï el programa, al mètode <code>inici</code> a la classe <code>JocArena</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public void inici() {</div></li><li class="li1"><div class="de1">    //PART RECURSIVA</div></li><li class="li1"><div class="de1">    bestiari.ordenarAdversaris();</div></li><li class="li1"><div class="de1">    //De fet, fora de l'ordenació, tot el codi es manté idèntic</div></li><li class="li1"><div class="de1">    sortida.mostarBenvinguda();</div></li><li class="li1"><div class="de1">    int[] jugador = bestiari.generarJugador();</div></li><li class="li1"><div class="de1">    //etc.</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Amb aquestes esmenes, s’ha aplicat recursivitat per millorar l’eficiència del programa. És clar que, per trobar adversaris dins una llista de 10 elements no serà pas evident a simple vista, però fer programes eficients és important per tal de permetre la gestió de quantitats molt més grans d’informació.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

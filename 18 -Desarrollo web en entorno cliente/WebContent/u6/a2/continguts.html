@@ -1,0 +1,900 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u7" class="parentnode"><p><a class="unit" href="../../../WebContent/u7/introduccio.html">7. Desenvolupament de casos pràctics</a></p><ul class="expander"><li id="u7introduccio"><a href="../../../WebContent/u7/introduccio.html">Introducció</a></li><li id="u7resum"><a href="../../../WebContent/u7/resum.html">Resum</a></li><li id="u7resultats"><a href="../../../WebContent/u7/resultats.html">Resultats d'aprenentatge</a></li><li id="u7referencies"><a href="../../../WebContent/u7/referencies.html">Referències</a></li><li id="u7a1" class="tocsection"><p id='u7a1continguts'><a class="section" href="../../../WebContent/u7/a1/continguts.html">Desenvolupament de casos pràctics</a><span class="buttonexp"></span></p><ul><li id="u7a1activitats"><a href="../../../WebContent/u7/a1/activitats.html">Activitats</a></li><li id="u7a1exercicis"><a href="../../../WebContent/u7/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u7a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_amb_nodejs">Desenvolupament amb Node.js</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#aplicacions_amb_la_biblioteca_leaflet">Aplicacions amb la biblioteca Leaflet</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_de_jocs_amb_html5">Desenvolupament de jocs amb HTML5</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Mecanismes de programació asíncrona client-servidor</a></li><li>Programació de la comunicació asíncrona amb jQuery</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_de_la_comunicacio_asincrona_amb_jquery"> Programació de la comunicació asíncrona amb jQuery </a></h1>
+    	
+<p>
+A banda de la gestió d’<em>events</em> i la manipulació del DOM, una de les funcionalitats més importants de jQuery és la gestió de peticions AJAX (Javascript asíncron i XML).
+</p>
+
+<p>
+Una de les diferències és que no cal fer cap comprovació prèvia per discriminar entre les versions antigues del navegador Internet Explorer i els navegadors actuals, la biblioteca s’encarrega de fer-ho, i la gestió de la resposta se simplifica mitjançant mètodes propis en lloc d’haver d’afegir-hi la detecció d’<em>events</em> (que els navegadors antics potser no admeten).
+</p>
+
+<p>
+Cal destacar que per poder utilitzar aquestes funcionalitats s’ha de carregar la biblioteca jQuery. Per exemple, a partir del codi local (suposem que es troba dins del directori /js/biblioteques i que el nom del fitxer és <em>jquery-3.5.1.js</em>):
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script src=&quot;js/biblioteques/jquery-3.5.1.js&quot;&gt;&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+En cas d’utilitzar una xarxa de lliurament de continguts (en anglès, <em>content delivery network</em>, CDN) el codi seria el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.js&quot; integrity=&quot;sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+S’ha de tenir en compte que tant si s’utilitza la biblioteca com si es fa servir una implementació pròpia, els navegadors apliquen la política del mateix origen i, per consegüent, només es poden realitzar peticions al mateix domini en què es troba l’aplicació.
+</p>
+
+<p>
+Aquesta limitació no s’aplica si el servei web al qual s’envia la petició admet CORS (peticions amb diferent origen) i, en cas de requerir-les, les capçaleres i les dades d’autenticació són correctes, o si admet JSONP (JSON amb <em>padding</em>) i es realitza la petició utilitzant aquesta tècnica.
+</p>
+
+<p>
+A diferència de les implementacions pròpies, amb jQuery s’utilitza el mètode <code>ajax()</code> de l’objecte <code>jQuery</code> tant per a les peticions ordinàries com per a les peticions mitjançant JSONP.
+</p>
+
+<h2><a id="creacio_i_enviament_de_peticions_amb_jquery" >Creació i enviament de peticions amb jQuery</a></h2>
+<div class="level2">
+
+<p>
+Com que la biblioteca jQuery s’encarrega de gestionar les diferències entre versions, no cal comprovar si el navegador admet o no la utilització de l’objecte <code>XMLHttpRequest</code> o si es tracta d’una versió antiga d’Internet Explorer.
+</p>
+
+<p>
+Només cal afegir la càrrega de la biblioteca (en el següent exemple mitjançant un CDN):
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;head&gt;</div></li><li class="li1"><div class="de1">    &lt;meta charset=&quot;utf-8&quot;&gt;  </div></li><li class="li1"><div class="de1">    &lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.js&quot; integrity=&quot;sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">  &lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Una vegada tingueu l’entorn preparat, només heu d’afegir les següents línies al final de l’element <code>body</code> per enviar la petició i mostrar el resultat per la consola:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  $.ajax('https://api.idescat.cat/emex/v1/geo.xml?tipus=com', {</div></li><li class="li1"><div class="de1">    success: processarResposta,</div></li><li class="li1"><div class="de1">    error: processarError</div></li><li class="li1"><div class="de1">  });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">    console.log(dades, statusText);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function processarError(jqXHR, statusText, error) {</div></li><li class="li1"><div class="de1">    console.log(error, statusText);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zKVzwG?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zKVzwG?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/zKVzwG?editors=0011</a>.
+</p>
+
+<p>
+
+<p>
+Si en comptes de fer un projecte propi executeu l’exemple en <em>codepen</em>, per veure la resposta haureu d’anar a la consola del navegador, ja que la resposta és massa llarga per mostrar-la a la pròpia consola del <em>codepen</em>.
+</p>
+
+</p>
+
+<p>
+Com es pot apreciar, el codi és molt simple. S’invoca el mètode <code>ajax()</code> de l’objecte <code>jQuery</code> passant com a paràmetres l’<acronym title="Uniform Resource Locator">URL</acronym> on s’enviarà la petició i un objecte de JavaScript amb una propietat anomenada <code>success</code>, a la qual s’ha assignat la funció <code>processarResposta()</code>, i una altra propietat anomenada <code>error</code>, a la qual s’ha assignat la funció <code>processarError()</code>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Configuració de la funció &#039;ajax&#039; de jQuery</p>
+<p>
+Podeu consultar una llista completa d’opcions de configuració per la funció <code>ajax()</code> a l’enllaç següent: <a href="https://goo.gl/fDsgT5" class="urlextern" title="https://goo.gl/fDsgT5"  rel="nofollow">www.goo.gl/fDsgT5</a>.
+</p>
+</div></div>
+<p>
+Aquest objecte conté les opcions que s’utilitzen per configurar la petició. En aquest cas se n’han vist dues:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>success</strong>: s’executa si la petició s’ha realitzat correctament i rep la resposta, el text d’estat i l’objecte <code>jqXHR</code> creat per la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>error</strong>: s’executa quan s’ha produït un error. En aquest cas els paràmetres són l’objecte <code>jqXHR</code>, el text d’estat i l’error produït.</div>
+</li>
+</ul>
+
+<p>
+L’objecte <code>jqXHR</code> (una versió ampliada de l’objecte XMLHttpRequest dels navegadors) és retornat per la invocació del mètode <code>ajax()</code> i permet realitzar o encadenar altres accions a la invocació mitjançant una interfície anomenada <em>objecte diferit</em> (<em>deferred object</em>). Per aquesta raó, es passa també com a argument les funcions <code>success</code> i <code>error</code>, de manera que es pot obtenir més informació o realitzar altres operacions sobre la petició.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Objectes diferits</p>
+<p>
+Podeu trobar més informació sobre els objectes diferits a l’enllaç següent: <a href="https://goo.gl/5oxmwa" class="urlextern" title="https://goo.gl/5oxmwa"  rel="nofollow">www.goo.gl/5oxmwa</a>.
+</p>
+</div></div>
+<p>
+Tot i que la petició es realitza automàticament en invocar el mètode <code>ajax()</code>, cal recordar que (per defecte) és asíncrona i, per tant, la resposta no s’obté immediatament; l’aplicació continuarà executant-se sense bloquejar-se fins que es rebi la resposta, llavors s’executarà el mètode pertinent (assignat a <code>success</code> o <code>error</code>).
+</p>
+
+<p>
+Alternativament, es pot invocar el mètode <code>ajax()</code> utilitzant, només, l’objecte amb les opcions com a paràmetre i assignant l’<acronym title="Uniform Resource Locator">URL</acronym> a la propietat <code>url</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">  url: 'https://api.idescat.cat/emex/v1/geo.xml?tipus=com',</div></li><li class="li1"><div class="de1">  success: processarResposta,</div></li><li class="li1"><div class="de1">  error: processarError</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/Bprxvj?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/Bprxvj?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/Bprxvj?editors=1011</a>.
+</p>
+
+</div>
+
+<h3><a id="parametres" >Paràmetres</a></h3>
+<div class="level3">
+
+<p>
+Habitualment en fer una petició AJAX s’han de passar un o més paràmetres al servidor. Aquests paràmetres són visibles a l’<acronym title="Uniform Resource Locator">URL</acronym> en el cas d’utilitzar el mètode <code>GET</code> per a l’enviament (el mètode per defecte).
+</p>
+
+<p>
+Per exemple, la següent petició s’efectuaria sobre l’<acronym title="Uniform Resource Locator">URL</acronym> <code>http://example.com</code> i els paràmetres enviats són <code>nom</code> i <code>cognom</code>. Com que no s’especifica el mètode, s’utilitzarà <code>GET</code>. Fixeu-vos que en aquest cas s’afegiran a l’<acronym title="Uniform Resource Locator">URL</acronym>: <code>http://example.com/?nom=Maria&amp;Cognom=Campmany</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> $.ajax({</div></li><li class="li1"><div class="de1">   url: 'http://example.com',</div></li><li class="li1"><div class="de1">   data: { nom:&quot;Maria&quot;, cognom:&quot;Campmany&quot;}</div></li><li class="li1"><div class="de1"> });</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jMgOpJ?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jMgOpJ?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jMgOpJ?editors=0010</a>.
+</p>
+
+<p>
+Obriu les eines de desenvolupadors i a la pestanya xarxa (<em>network</em>) trobareu una línia corresponent a aquesta petició. Quan hi feu clic, tindreu accés a tota la informació sobre la petició. Pareu especial atenció a la capçalera (<em>header</em>).
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre les eines de desenvolupador a l’apartat “Comunicació asíncrona amb JavaScript” d’aquesta mateixa unitat.
+</p>
+</div></div>
+<p>
+El símbol <code>?</code> indica que el que hi ha a continuació són els paràmetres de la consulta, que estarà formada per parells de clau i valor separats pel signe igual. Aquests parells, al seu torn, són separats d’altres paràmetres pel símbol <code>&amp;</code>.
+</p>
+
+<p>
+Així doncs, analitzant l’<acronym title="Uniform Resource Locator">URL</acronym>, es pot dividir en diferents parts:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>http</strong>: correspon al protocol HTTP.</div>
+</li>
+<li class="level1"><div class="li"> <strong>example.com</strong>: correspon al domini al qual s’envia la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>/</strong>: correspon a la ruta, que en aquest cas és l’arrel del domini.</div>
+</li>
+<li class="level1"><div class="li"> <strong>nom=Maria</strong>: primer paràmetre, corresponent a la clau <code>nom</code> amb valor <em>Maria</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cognom=Campmany</strong>: segon paràmetre, corresponent a la clau <code>cognom</code> amb valor <em>Campmany</em>.</div>
+</li>
+</ul>
+
+<p>
+Una alternativa a fer servir un objecte per passar els paràmetres és fer servir una cadena de text amb els parells clau-valor separats pel signe igual i aquests separats d’altres parells pel símbol <code>&amp;</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> $.ajax({  </div></li><li class="li1"><div class="de1">   url: 'http://example.com',</div></li><li class="li1"><div class="de1">   data: 'nom=Maria&amp;cognom=Campmany'</div></li><li class="li1"><div class="de1"> });</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/MJVGMr?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MJVGMr?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/MJVGMr?editors=0010</a>.
+</p>
+
+<p>
+Quan es fa servir un altre mètode, com <code>POST</code> o <code>PUT</code>, aquesta informació només és visible a la capçalera. Cal destacar que això no és cap garantia de privadesa ni seguretat, ja que aquesta capçalera pot ser inspeccionada per qualsevol node de la xarxa per on passi la informació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> $.ajax({  </div></li><li class="li1"><div class="de1">   url: 'http://example.com',</div></li><li class="li1"><div class="de1">   method: 'post',</div></li><li class="li1"><div class="de1">   data: { nom:&quot;Maria&quot;, cognom:&quot;Campmany&quot;}</div></li><li class="li1"><div class="de1"> });</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PGMovd?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PGMovd?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/PGMovd?editors=0010</a>.
+</p>
+
+<p>
+En aquest cas, en analitzar la petició amb les eines de desenvolupador, podeu comprovar que l’<acronym title="Uniform Resource Locator">URL</acronym> no s’ha modificat i aquests paràmetres s’han afegit a la capçalera com a dades de formulari.
+</p>
+
+<p>
+Cal destacar que la biblioteca jQuery permet assignar la propietat <code>data</code> de les opcions com a cadena de text per a tots els mètodes i no només per al mètode <code>GET</code>, ja que jQuery fa les conversions necessàries. Així doncs, és possible fer servir com a <code>data</code> la cadena de text <code>nom=Maria&amp;cognom=Campmany</code> i en enviar la petició aquests paràmetres s’afegeixen com a dades a la capçalera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> $.ajax({  </div></li><li class="li1"><div class="de1">   url: 'http://example.com',</div></li><li class="li1"><div class="de1">   method: 'post',</div></li><li class="li1"><div class="de1">   data: 'nom=Maria&amp;cognom=Campmany'</div></li><li class="li1"><div class="de1"> });</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ORKPJa?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ORKPJa?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ORKPJa?editors=0010</a>.
+</p>
+
+</div>
+
+<h3><a id="tipus_de_dadesdatatype" >Tipus de dades: dataType</a></h3>
+<div class="level3">
+
+<p>
+Si no s’especifica una altra cosa, s’espera que el format de la resposta sigui XML vàlid. És a dir, si proveu de fer una petició demanant un fitxer de text pla amb el contingut que trobareu a continuació, es produirà un error:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">Barcelona</div></li><li class="li1"><div class="de1">Girona</div></li><li class="li1"><div class="de1">Lleida</div></li><li class="li1"><div class="de1">Tarragona</div></li></ol></pre>
+
+<p>
+Com que no s’ha especificat el tipus de dades, es produeix un error: el format del fitxer no és vàlid. Així doncs, cal especificar el tipus de dades que s’espera rebre del servidor assignant la propietat <code>dataType</code> a les opcions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">  url: 'https://api.idescat.cat/pob/v1/sug.txt?p=q/ab',</div></li><li class="li1"><div class="de1">  dataType: 'text',</div></li><li class="li1"><div class="de1">  success: processarResposta,</div></li><li class="li1"><div class="de1">  error: processarError</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/MjMvoJ?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MjMvoJ?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/MjMvoJ?editors=1011</a>.
+</p>
+
+<p>
+Els tipus de dades admesos per les peticions AJAX de jQuery són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>xml</strong> (tipus per defecte): retorna un document XML que pot ser processat per jQuery.</div>
+</li>
+<li class="level1"><div class="li"> <strong>html</strong>: retorna el codi <acronym title="HyperText Markup Language">HTML</acronym> com a text pla.</div>
+</li>
+<li class="level1"><div class="li"> <strong>script</strong>: avalua la resposta com a JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong>json</strong>: avalua la resposta com a JSON i retorna un objecte de JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong>jsonp</strong>: utilitzat per obtenir les dades d’un altre domini fent servir la tècnica JSONP, retorna un objecte de JavaScript amb les dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>text</strong>: resposta com a text pla.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En cas de carregar fitxers, com en aquests exemples, o si el servidor no especifica el tipus multimèdia de la resposta, s’ha de sobreescriure mitjançant el mètode <code>overrideMimeType()</code> de l’objecte <code>jqXHR</code>.
+</p>
+</div></div>
+<p>
+Per assegurar que el tipus de contingut multimèdia és correcte es pot utilitzar l’opció <code>beforeSend</code>, que permet especificar una funció que serà invocada abans de realitzar la petició. Aquesta funció rep com a paràmetre l’objecte <code>jqXHR</code> i sobre aquest es pot invocar el mètode <code>overrideMimeType()</code> per forçar el tipus de la resposta:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">  url: 'https://api.idescat.cat/pob/v1/sug.txt?p=q/ab',</div></li><li class="li1"><div class="de1">  dataType: 'text',</div></li><li class="li1"><div class="de1">  beforeSend: function (jqXHR) {</div></li><li class="li1"><div class="de1">    jqXHR.overrideMimeType('text/plain');</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  success: processarResposta,</div></li><li class="li1"><div class="de1">  error: processarError</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ozremJ?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ozremJ?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ozremJ?editors=1011</a>.
+</p>
+
+<p>
+Cal destacar que el més habitual és que el servidor web retorni el tipus multimèdia correcte i no s’hagi de sobreescriure.
+</p>
+
+<p>
+Com es pot apreciar, un altre dels tipus admesos és <acronym title="HyperText Markup Language">HTML</acronym>. 
+</p>
+
+<p>
+Suposem que s’ha d’afegir dinàmicament a una pàgina el codi <acronym title="HyperText Markup Language">HTML</acronym> següent (podria ser la resposta enviada pel servidor, per exemple):
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;h1&gt;Provincies&lt;/h1&gt;</div></li><li class="li1"><div class="de1">  &lt;ul&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Barcelona&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Girona&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Lleida&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Tarragona&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;/ul&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per fer-ho, només caldria especificar el tipus com <code>html</code> i afegir-lo utilitzant el mètode <code>append()</code> de l’objecte jQuery:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'provincies.html',</div></li><li class="li1"><div class="de1">      dataType: 'html',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      error: processarError</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">        $dades = $(dades);</div></li><li class="li1"><div class="de1">        $('body').append($dades);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarError(jqXHR, statusText, error) {</div></li><li class="li1"><div class="de1">      console.log(error, statusText);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XjLaVe?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XjLaVe?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XjLaVe?editors=1011</a>.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Errors habituals quan no s&#039;especifica el tipus de dades</p>
+<p>
+Habitualment es produeixen errors si no s’especifica el tipus de dades mitjançant la propietat <code>dataType</code>, ja que a l’hora de processar la resposta la biblioteca jQuery intentarà interpretar-lo com XML i si no ho aconsegueix llença una excepció.
+</p>
+</div></div>
+<p>
+En aquest cas, com que el codi <acronym title="HyperText Markup Language">HTML</acronym> utilitzat té el mateix format que XML (que és el valor per defecte de dataType) es considera correcte i no cal sobreescriure el tipus multimèdia.
+</p>
+
+<p>
+En canvi, si la resposta fos en format JSON, caldria canviar el <code>dataType</code> per JSON.
+</p>
+
+<p>
+El codi JavaScript seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">  url: 'https://api.idescat.cat/pob/v1/geo.json?q=cabell',</div></li><li class="li1"><div class="de1">  dataType: 'json',</div></li><li class="li1"><div class="de1">  success: processarResposta,</div></li><li class="li1"><div class="de1">  error: processarError</div></li><li class="li1"><div class="de1">});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">  console.log(dades, statusText);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function processarError(jqXHR, statusText, error) {</div></li><li class="li1"><div class="de1">  console.log(error, statusText);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wzLqOM?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzLqOM?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzLqOM?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, en aquest cas la resposta és un objecte JavaScript que es pot processar de la forma habitual.
+</p>
+
+</div>
+
+<h3><a id="metodes_d_enviament" >Mètodes d&#039;enviament</a></h3>
+<div class="level3">
+
+<p>
+De la mateixa manera que a les implementacions pròpies d’AJAX, la biblioteca jQuery permet especificar el mètode amb el qual s’envien les peticions. Només cal afegir, a l’objecte amb les opcions, la propietat <code>method</code> i assignar-li el mètode pertinent: <code>GET</code> (per defecte), <code>POST</code>, <code>PUT</code> o <code>DELETE</code>. Per exemple, es pot especificar el mètode <code>GET</code> per llegir un fitxer JSON:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      method: 'get',</div></li><li class="li1"><div class="de1">      url: 'https://api.idescat.cat/pob/v1/geo.json?q=cabell',</div></li><li class="li1"><div class="de1">      dataType: 'json',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      error: processarError</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      console.log(dades, statusText);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarError(jqXHR, statusText, error) {</div></li><li class="li1"><div class="de1">      console.log(error, statusText);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/wzLQOR?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wzLQOR?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wzLQOR?editors=1011</a>.
+</p>
+
+<p>
+Cal recordar que aquests mètodes es corresponen amb els del protocol HTTP 1.1, i als serveis web REST són utilitzats sobre un mateix <acronym title="Uniform Resource Locator">URL</acronym> per realitzar diferents accions:
+</p>
+<ul>
+<li class="level1"><div class="li">  <strong>GET</strong>: consultar les dades.</div>
+</li>
+<li class="level1"><div class="li">  <strong>POST</strong>: afegir noves dades.</div>
+</li>
+<li class="level1"><div class="li">  <strong>PATCH</strong>: actualitzar dades ja existents.</div>
+</li>
+<li class="level1"><div class="li">  <strong>PUT</strong>: reemplaçar dades ja existents.</div>
+</li>
+<li class="level1"><div class="li">  <strong>DELETE</strong>: eliminar dades.</div>
+</li>
+</ul>
+
+<p>
+A més a més, jQuery ofereix dues dreceres per simplificar l’enviament de peticions a través dels mètodes <code>GET</code> i <code>POST</code>. Tots dos mètodes s’invoquen a partir de l’objecte jQuery:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">&#039;get&#039; i &#039;post&#039;</p>
+<p>
+Podeu trobar totes les opcions dels mètodes <code>$.get()</code> i <code>$.post()</code> als següents enllaços: <a href="https://goo.gl/DVzxg8" class="urlextern" title="https://goo.gl/DVzxg8"  rel="nofollow">www.goo.gl/DVzxg8</a> i <a href="https://goo.gl/zRbp5A" class="urlextern" title="https://goo.gl/zRbp5A"  rel="nofollow">www.goo.gl/zRbp5A</a>; respectivament.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>$.get()</code>: envia una petició AJAX fent servir el mètode <code>GET</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>$.post()</code>: envia una petició AJAX fent servir el mètode <code>POST</code>.</div>
+</li>
+</ul>
+
+<p>
+Aquests mètodes ofereixen un nombre més limitat d’opcions, però suficient en la major part de les situacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>url</strong>: una cadena amb l’<acronym title="Uniform Resource Locator">URL</acronym> al qual s’envia la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>data</strong>: un objecte o cadena de text que s’enviaran com a paràmetres de la petició.</div>
+</li>
+<li class="level1"><div class="li"> <strong>sucess</strong>: funció de tipus <em>callback</em> que serà cridada si la petició es realitza amb èxit.</div>
+</li>
+<li class="level1"><div class="li"> <strong>dataType</strong>: el tipus de dades esperat pel servidor (<code>xml</code>, <code>json</code>, <code>script</code>, <code>text</code> i <code>html</code>).</div>
+</li>
+</ul>
+
+<p>
+Aquestes opcions es poden passar com a paràmetres individuals:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.get(url, data, success, dataType);</div></li></ol></pre>
+
+<p>
+O com un objecte en el qual totes les propietats, excepte <code>url</code>, són opcionals:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.get({</div></li><li class="li1"><div class="de1">  url: 'provincies.html',</div></li><li class="li1"><div class="de1">  data: {nom: 'Josep', cognoms: 'Torres Blanc'},</div></li><li class="li1"><div class="de1">  success: processarResposta},</div></li><li class="li1"><div class="de1">  dataType: 'html'</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Així doncs, per fer una petició amb el mètode <code>GET</code> i obtenir una resposta en <acronym title="HyperText Markup Language">HTML</acronym> el codi complet seria el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.get({</div></li><li class="li1"><div class="de1">      url: 'https://api.geekdo.com/xmlapi2/search',</div></li><li class="li1"><div class="de1">      data: {query: 'dixit', type: 'boardgame'},</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'xml'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      console.log(dades);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/RGzvgP?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RGzvgP?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/RGzvgP?editors=1011</a>.
+</p>
+
+<p>
+
+<p>
+Com es pot apreciar, aquest exemple fa una petició a una <acronym title="Application Programming Interface">API</acronym> de jocs, en què diem que necessitem les dades de jocs amb un nom i un tipus determinat. En tractar-se del mètode <code>get()</code> s’ha convertit l’<acronym title="Uniform Resource Locator">URL</acronym> de la petició en quelcom similar al següent: <code><a href="https://api.geekdo.com/xmlapi2/search?query=dixit&amp;type=boardgame" class="urlextern" title="https://api.geekdo.com/xmlapi2/search?query=dixit&amp;type=boardgame"  rel="nofollow">https://api.geekdo.com/xmlapi2/search?query=dixit&amp;type=boardgame</a></code>. Tingueu en compte que en aquest exemple també farà falta comprovar les dades retornades en la consola del navegador i no en la consola de codepen.
+</p>
+
+</p>
+
+<p>
+És a dir, jQuery ha convertit l’objecte passat com a argument en paràmetres vàlids per enviar com a petició, fent servir el nom de les propietats com a clau i el valor assignat com a valor del paràmetre.
+</p>
+
+<p>
+S’ha de tenir en compte que, tal com passa amb el mètode <code>ajax()</code>, si l’<acronym title="Uniform Resource Locator">URL</acronym> de la petició no correspon a un servidor que envia una resposta amb un tipus especificat, l’aplicació esperarà que es tracti d’una resposta XML i donarà error. En el cas de les dreceres no existeix l’opció <code>beforeSend</code> i, per consegüent, no es pot sobreescriure el tipus multimèdia de la resposta.
+</p>
+
+</div>
+
+<h3><a id="interpretar_la_resposta" >Interpretar la resposta</a></h3>
+<div class="level3">
+
+<p>
+Segons el tipus de data (<code>dataType</code>) de la resposta i si aquesta és correcta, la resposta serà retornada de diferents maneres:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>XML</strong>: un objecte <code>XMLDocument</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="HyperText Markup Language">HTML</acronym></strong>, <strong>TEXT</strong>: una cadena de text amb el contingut.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JSON</strong>: un objecte de JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Script</strong>: un bloc de codi JavaScript que serà avaluat (executat).</div>
+</li>
+</ul>
+
+<p>
+<code>XMLDocument</code> és un tipus d’objecte que és herència de la interfície del DOM <code>document</code> i no afegeixen cap altra propietat o mètode nous. Això permet utilitzar jQuery per manipular aquest document:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.get({</div></li><li class="li1"><div class="de1">      url: 'https://api.geekdo.com/xmlapi2/search',</div></li><li class="li1"><div class="de1">      data: {query: 'dixit', type: 'boardgame'},</div></li><li class="li1"><div class="de1">      success: processarResposta</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dadesXML, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      let $jocs = $(dadesXML).find('name');</div></li><li class="li1"><div class="de1">      let $llista = $('&lt;ul&gt;');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      $jocs.each(function() {</div></li><li class="li1"><div class="de1">        let nomJoc = $(this).attr('value');</div></li><li class="li1"><div class="de1">        $joc = $('&lt;li&gt;');</div></li><li class="li1"><div class="de1">        $joc.text(nomJoc);</div></li><li class="li1"><div class="de1">        $llista.append($joc);</div></li><li class="li1"><div class="de1">      })</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      $('body').append($llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/MjMLRP?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MjMLRP?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/MjMLRP?editors=1010</a>.
+</p>
+
+<p>
+
+<p>
+Una vegada s’ha obtingut la resposta, es converteix en un objecte jQuery i se seleccionen tots els elements amb el nom <code>name</code>. A continuació, es crea una nova llista sense numeració (<code>&lt;ul&gt;</code>) i es procedeix a recórrer-los fent servir el mètode <code>each()</code>, que invoca la funció passada com a argument amb l’element corresponent com a context. És a dir, l’element és referenciat per <code>this</code> (en aquest cas, cadascun dels elements de <code>jocs</code>).
+</p>
+
+<p>
+De cadascun d’aquests elements s’obté el nom del joc a partir del contingut intern de l’atribut <code>value</code> de l’element mitjançant el mètode <code>attr()</code>. Seguidament es crea un nou element de tipus element de llista (<code>&lt;li&gt;</code>) i s’assigna com a contingut d’aquest element el nom del joc que, finalment, és afegit a la llista que, al seu torn, és afegida al cos de la pàgina quan es finalitza el recorregut.
+</p>
+
+</p>
+
+<p>
+Com que XML es el tipus per defecte, no cal especificar-lo quan es treballa amb aquest format.
+</p>
+
+<p>
+En el cas de <code><acronym title="HyperText Markup Language">HTML</acronym></code> es pot utilitzar la funció <code>jQuery()</code> per convertir aquest text en un objecte jQuery que, al seu torn, converteix la cadena de text en elements del DOM: <code>$branca = $(dades)</code>. Aquesta nova branca es pot afegir a altres elements: <code>$(‘body’).append($branca)</code>.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'provincies.html',</div></li><li class="li1"><div class="de1">      beforeSend: function (jqXHR) {</div></li><li class="li1"><div class="de1">        jqXHR.overrideMimeType('text/html');</div></li><li class="li1"><div class="de1">      },</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'html'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dadesHTML, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">        let $branca = $(dadesHTML);</div></li><li class="li1"><div class="de1">        $('body').append($branca);</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en lenllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/EgBMXj?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/EgBMXj?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/EgBMXj?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, s’ha fet servir el mètode <code>ajax()</code> per incloure l’opció <code>beforeSend</code> i canviar el tipus multimèdia a <code>text/html</code>. D’aquesta manera s’eviten possibles errors de format, ja que el sistema de fitxers no especifica el tipus de contingut.
+</p>
+
+<p>
+Per analitzar un fitxer de tipus textual s’han de fer servir les funcions de tractament de cadenes, com per exemple <code>split()</code>, o expressions regulars. Per exemple, es podria processar la resposta dividint la cadena per la coma, mitjançant el mètode <code>split()</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'https://api.idescat.cat/pob/v1/geo.txt?sug=por',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'text'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dadesText, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      let municipis = dadesText.split('\n');</div></li><li class="li1"><div class="de1">      let $llista = $('&lt;ul&gt;');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; municipis.length; i++) {</div></li><li class="li1"><div class="de1">        let $item = $('&lt;li&gt;');</div></li><li class="li1"><div class="de1">        $item.html(municipis[i]);</div></li><li class="li1"><div class="de1">        $llista.append($item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      $('body').append($llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZpdPME?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZpdPME?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ZpdPME?editors=1010</a>.
+</p>
+
+<p>
+En el cas que la resposta sigui un objecte JavaScript és molt fàcil treballar-hi, ja que es pot accedir directament a tota la informació fent servir la notació de claudàtors (<code>provincia[‘nom]</code>) o de punt (<code>provincia.nom</code>).
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'https://api.idescat.cat/pob/v1/geo.json?q=por',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'json'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dadesJSON, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      let municipis = dadesJSON.feed.entry;</div></li><li class="li1"><div class="de1">      let $llista = $('&lt;ul&gt;');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; municipis.length; i++) {</div></li><li class="li1"><div class="de1">        let $item = $('&lt;li&gt;');</div></li><li class="li1"><div class="de1">        $item.html(municipis[i].title);</div></li><li class="li1"><div class="de1">        $llista.append($item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      $('body').append($llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PGrLVd?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PGrLVd?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/PGrLVd?editors=1010</a>.
+</p>
+
+<p>
+Per acabar, veurem un exemple amb JSONP:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url:  'https://get.geojs.io/v1/ip/geo/8.8.8.8.js',</div></li><li class="li1"><div class="de1">      beforeSend: jqXHR =&gt; jqXHR.overrideMimeType('application/javascript'),</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'jsonp'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dadesJS, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      console.log(&quot;Dades rebudes:&quot;, dadesJS);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/pRLKZO?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/pRLKZO?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/pRLKZO?editors=1011</a>.
+</p>
+
+</div>
+
+<h3><a id="events_ajax" >Events AJAX</a></h3>
+<div class="level3">
+
+<p>
+Durant l’enviament d’una petició AJAX mitjançant la biblioteca jQuery es disparen tot un seguit d’<em>events</em>. Aquests <em>events</em> poden ser locals (propis d’una petició concreta) o globals (disparats al document).
+</p>
+
+<p>
+L’ordre en què es disparen aquests <em>events</em> és el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>ajaxStart</strong> (global): es dispara quan comença la petició i no hi ha cap altra petició en execució.</div>
+</li>
+<li class="level1"><div class="li"> <strong>beforeSend</strong> (local): es dispara abans de realitzar-se l’enviament i permet modificar la petició abans d’enviar-la (per exemple, per sobreescriure el tipus multimèdia).</div>
+</li>
+<li class="level1"><div class="li"> <strong>ajaxSend</strong> (global): disparat globalment quan es realitza l’enviament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>success</strong> (local): es dispara només si la petició retorna amb una resposta exitosa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ajaxSuccess</strong> (global): disparat en les mateixes condicions que l’anterior, però globalment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>error</strong> (local): disparat només quan es produeix un error.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ajaxError</strong> (global): igual que l’anterior però disparat globalment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>complete</strong> (local): es dispara en finalitzar la petició independentment de si ha estat exitosa o errònia.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ajaxComplete</strong> (global): igual que l’anterior però disparat globalment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ajaxStop</strong> (global): es dispara quan no hi ha més peticions AJAX processant-se.</div>
+</li>
+</ul>
+
+<p>
+Fixeu-vos que els <em>events</em> locals es corresponen amb les opcions a les quals es pot afegir una funció de tipus <em>callback</em>: <code>beforeSend</code>, <code>success</code>, <code>error</code> i <code>complete</code>.
+</p>
+
+<p>
+Per altra banda, a excepció de l’<em>event</em> <code>ajaxStart</code> i <code>ajaxStop</code>, la resta d’<em>events</em> globals són rèpliques dels <em>events</em> locals i es disparen a continuació d’aquests.
+</p>
+
+<p>
+Cal destacar que per detectar quan es dispara un <em>event</em> global s’ha d’especificar la detecció al document, tal com es mostra en l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$(document).ajaxSend(() =&gt; console.log(&quot;S'ha enviat una petició AJAX&quot;));</div></li></ol></pre>
+
+<p>
+Per contra, la detecció d’<em>event</em> local s’especifica a la petició concreta que hi està lligada, com es pot apreciar en l’exemple següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">      url: 'provincies.xml',</div></li><li class="li1"><div class="de1">      beforeSend: jqXHR =&gt; console.log(&quot;Disparat abans d'enviar una petició concreta&quot;);</div></li><li class="li1"><div class="de1">      });</div></li></ol></pre>
+
+<p>
+Fixeu-vos que en el primer cas el missatge es mostraria a la consola quan s’enviés qualsevol petició AJAX, mentre que en el segon cas només es mostraria quan s’enviés la petició concreta on s’ha especificat.
+</p>
+
+</div>
+
+<h3><a id="altres_opcions_del_metode_ajax" >Altres opcions del mètode Ajax</a></h3>
+<div class="level3">
+
+<p>
+El mètode <code>ajax()</code> ofereix múltiples opcions per crear una petició, a banda dels més utilitzats com <code>method</code>, <code>url</code> i <code>data</code>, podeu trobar els següents, que permeten crear peticions més avançades afegint dades d’autenticació o modificant les capçaleres per adequar-les als requeriments dels serveis web.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>async</strong>: per defecte el seu valor és <code>true</code>; si s’estableix com a <code>false</code>, la petició serà síncrona.</div>
+</li>
+<li class="level1"><div class="li"> <strong>contentType</strong>: permet canviar el tipus de contingut enviat en les peticions a altres dominis; si és diferent d<code>‘application/x-www-form-urlencoded</code>, <code>multipart/form-data</code> o <code>text/plain</code> s’activaran mesures de comprovació extres al navegador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>crossDomain</strong>: permet forçar l’enviament de la petició com si es tractés d’un altre domini, tot i que el destí sigui el mateix en què es troba l’aplicació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>headers</strong>: aquesta propietat permet afegir parelles de claus i valors addicionals a la capçalera de la petició. Per exemple, és possible que alguns serveis web requereixin que a la capçalera es trobi un <em>token</em> d’autenticació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>password</strong>: contrasenya que serà utilitzada en una petició HTTP d’autenticació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>username</strong>: nom d’usuari que serà utilitzat en una petició HTTP d’autenticació.</div>
+</li>
+</ul>
+
+<p>
+Addicionalment, <strong>tot i que no es recomana fer-lo servir</strong>, jQuery ofereix el mètode <code>ajaxSetup()</code>, que permet establir uns valors per defecte que seran utilitzats per totes les peticions realitzades pel mètode <code>ajax()</code> i els seus derivats, com els mètodes <code>get()</code> i <code>post()</code>.
+</p>
+
+<p>
+Així, per exemple, el següent codi canviaria el mètode d’enviament per defecte (<code>GET</code>) per <code>POST</code>, cosa que podria fer que altres peticions de l’aplicació deixessin de funcionar o tinguessin efectes no desitjats.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajaxSetup({</div></li><li class="li1"><div class="de1">  method: 'post'</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+</div>
+
+<h2><a id="jsonp_i_cors_amb_jquery" >JSONP i CORS amb jQuery</a></h2>
+<div class="level2">
+
+<p>
+Sovint és necessari l’accés a dades en serveis webs amb origen diferent. Per poder accedir a aquestes dades depenem del servidor, que ha d’oferir les dades o bé en format JSONP (JSON amb <em>padding</em>) o implementar mecàniques per habilitar el CORS (Cross-Origin Resource Sharing).
+</p>
+
+<p>
+En tots dos casos jQuery utilitza la mateixa interfície, mitjançant el mètode AJAX, de manera que les tècniques emprades són pràcticament transparents a l’usuari.
+</p>
+
+<p>
+Aquesta estandardització es veu molt clarament en la implementació de les peticions amb JSONP, ja que en lloc d’afegir una etiqueta <code>script</code> amb l’origen de les dades i passant els paràmetres com una cadena de text, es pot crear una petició AJAX amb les opcions corresponents. Fixeu-vos en una aplicació que consulta l’agregador (<em>feed</em>) de l’aplicació <code>flickr</code> enviant com a paràmetres l’etiqueta <code>kittens</code> i el format <code>json</code>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">API de Flickr</p>
+<p>
+Podeu trobar tota la informació per desenvolupadors de l’<acronym title="Application Programming Interface">API</acronym> de Flickr a l’enllaç següent: <a href="https://www.flickr.com/services/api" class="urlextern" title="https://www.flickr.com/services/api"  rel="nofollow">www.goo.gl/tAVTBD</a>.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'http://api.flickr.com/services/feeds/photos_public.gne',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: &quot;jsonp&quot;,</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      // Nom del paràmetre que indica al servidor el nom de la funció de callback, definit a la seva documentació</div></li><li class="li1"><div class="de1">      jsonp: &quot;jsoncallback&quot;,</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      // Paràmetres que es passen al servidor, definits a la seva documentació</div></li><li class="li1"><div class="de1">      data: {</div></li><li class="li1"><div class="de1">        tags: 'kitten',</div></li><li class="li1"><div class="de1">        format: 'json'</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dades) {</div></li><li class="li1"><div class="de1">      let imatges = dades.items;</div></li><li class="li1"><div class="de1">      console.log(dades);</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; imatges.length; i++) {</div></li><li class="li1"><div class="de1">        let $img = $('&lt;img&gt;');</div></li><li class="li1"><div class="de1">        $img.attr('src', imatges[i].media.m);</div></li><li class="li1"><div class="de1">        $img.attr('title', imatges[i].title);</div></li><li class="li1"><div class="de1">        $img.attr('alt', imatges[i].title);</div></li><li class="li1"><div class="de1">        $('body').append($img);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    };</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExgRdBN?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExgRdBN?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ExgRdBN?editors=0011</a>.
+</p>
+
+<p>
+Com es pot apreciar, només es diferencia d’una crida AJAX estàndard en el fet que s’ha especificat l’opció <code>jsonp</code> per indicar el nom del paràmetre corresponent a la funció <em>callback</em>, que es farà servir com a <em>padding</em> a la resposta, i l’opció <code>dataType</code> a la qual s’ha assignat el valor <code>jsonp</code>.
+</p>
+
+<p>
+Quant a les crides a serveis web que admetin CORS, com també en les implementacions pròpies d’AJAX, no canvia res quan el servidor inclou a la capçalera el paràmetre <code>Access-Control-Allow-Origin</code> i el seu valor es correspon amb el del domini on s’executa l’aplicació o el seu valor és <code>*</code> i, per consegüent, accessible per a tothom.
+</p>
+
+<p>
+Vegeu en l’exemple següent com es consulta una font de dades obertes de l’Ajuntament de Barcelona per recuperar la llista de festivals de l’any 2019 en format JSON:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">&lt;h1&gt;Festivals 2019&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'https://dades.eicub.net/api/1/festivals-assistents',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'json',</div></li><li class="li1"><div class="de1">      data: {</div></li><li class="li1"><div class="de1">        format : 'json',</div></li><li class="li1"><div class="de1">        Any : 2019,</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(dades, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">        let $llista = $('&lt;ul&gt;');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        for (let i=0; i&lt;dades.length; i++) {</div></li><li class="li1"><div class="de1">            let $dada = processarDada(dades[i]);</div></li><li class="li1"><div class="de1">            $llista.append($dada)</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        $('body').append($llista);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarDada(dada) {</div></li><li class="li1"><div class="de1">      let $item = $('&lt;li&gt;');</div></li><li class="li1"><div class="de1">      let $enllac = $('&lt;a&gt;');</div></li><li class="li1"><div class="de1">      $enllac.html(dada.Nom_activitat);</div></li><li class="li1"><div class="de1">      $enllac.attr('href', dada.Web);</div></li><li class="li1"><div class="de1">      $enllac.attr('title', dada.Organitzador);</div></li><li class="li1"><div class="de1">      $item.append($enllac);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      return $item;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RGXbBr?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RGXbBr?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/RGXbBr?editors=1010</a>.
+</p>
+
+<p>
+En cas que el servei web requereixi autenticació o altres paràmetres, a les opcions que es passen al mètode <code>ajax()</code> es pot especificar la propietat <code>xhrFields</code> per incloure-les en la petició (per exemple, per afegir l’ús de credencials si el servidor les demana), i es faria de la manera següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">$.ajax({</div></li><li class="li1"><div class="de1">  url: url_en_un_domini_diferent,</div></li><li class="li1"><div class="de1">  xhrFields: {</div></li><li class="li1"><div class="de1">    withCredentials: true</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Com que les dades addicionals que pot requerir un servei web que implementi les mecàniques per habilitar CORS poden ser molt diferents, cal consultar-ne la documentació per poder configurar correctament les peticions.
+</p>
+
+</div>
+
+<h2><a id="acces_a_dades_obertes_amb_jquery" >Accés a dades obertes amb jQuery</a></h2>
+<div class="level2">
+
+<p>
+L’accés a dades obertes com les que ofereix l’Observatori de dades culturals de Barcelona (<a href="http://barcelonadadescultura.bcn.cat/dades-obertes" class="urlextern" title="http://barcelonadadescultura.bcn.cat/dades-obertes"  rel="nofollow">www.barcelonadadescultura.bcn.cat/dades-obertes</a>) es realitza de la mateixa manera que altres peticions AJAX mitjançant jQuery, amb l’avantatge que en cas que sigui necessari enviar paràmetres, la tasca se simplifica, ja que no cal modificar la informació de la capçalera i es tracta igual si el mètode d’enviament és <code>GET</code> o qualsevol altre.
+</p>
+
+<p>
+Vegeu a continuació un exemple d’una consulta que carrega les dades de les “activitats de difusió de les fàbriques de creació” i permet seleccionar, segons el seu identificador, de quina activitat es volen visualitzar les dades.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta charset=&quot;utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;style&gt;</div></li><li class="li1"><div class="de1">    h1 {</div></li><li class="li1"><div class="de1">      text-align:center;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    fieldset {</div></li><li class="li1"><div class="de1">      width: 300px;</div></li><li class="li1"><div class="de1">      margin: 0 auto;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    label {</div></li><li class="li1"><div class="de1">      display: inline-block;</div></li><li class="li1"><div class="de1">      width: 150px;</div></li><li class="li1"><div class="de1">      font-weight: bold;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    span {</div></li><li class="li1"><div class="de1">      display: inline-block;</div></li><li class="li1"><div class="de1">      width: 150px;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    ul {</div></li><li class="li1"><div class="de1">      list-style-type: none;</div></li><li class="li1"><div class="de1">      padding: 0;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;h1&gt;Activitats de difusió de les fàbriques de creació&lt;/h1&gt;</div></li><li class="li1"><div class="de1">  &lt;fieldset&gt;</div></li><li class="li1"><div class="de1">    &lt;select id=&quot;identificador&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;option&gt;Selecciona un identificador&lt;/option&gt;&lt;/select&gt;</div></li><li class="li1"><div class="de1">    &lt;ul&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Any:&lt;/label&gt;&lt;span id=&quot;any&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Equipament:&lt;/label&gt;&lt;span id=&quot;equipament&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Districte:&lt;/label&gt;&lt;span id=&quot;districte&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Ambit:&lt;/label&gt;&lt;span id=&quot;ambit&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Assistents:&lt;/label&gt;&lt;span id=&quot;asistents&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Notes:&lt;/label&gt;&lt;span id=&quot;notes&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Tipus d'equipament:&lt;/label&gt;&lt;span id=&quot;tipusEquipament&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Titularitat:&lt;/label&gt;&lt;span id=&quot;titularitat&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;&lt;label&gt;Activitats de difusió dins dels centres:&lt;/label&gt;&lt;span id=&quot;activitats&quot;&gt;&lt;/span&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;/ul&gt;</div></li><li class="li1"><div class="de1">  &lt;/fieldset&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    let dades = {};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    $.ajax({</div></li><li class="li1"><div class="de1">      url: 'https://dades.eicub.net/api/1/fabriquescreacio-difusio',</div></li><li class="li1"><div class="de1">      success: processarResposta,</div></li><li class="li1"><div class="de1">      dataType: 'json'</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarResposta(resposta, statusText, jqXHR) {</div></li><li class="li1"><div class="de1">      let $llistaDesplegable = $('#identificador');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; resposta.length; i++) {</div></li><li class="li1"><div class="de1">        let $item = processarDada(i);</div></li><li class="li1"><div class="de1">        dades[i] = resposta[i];</div></li><li class="li1"><div class="de1">        console.log(resposta[i]);</div></li><li class="li1"><div class="de1">        $llistaDesplegable.append($item);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      $llistaDesplegable.on('change', actualitzarDadesMostrades);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function processarDada(num) {</div></li><li class="li1"><div class="de1">      let $item = $('&lt;option&gt;');</div></li><li class="li1"><div class="de1">      $item.attr('value', num);</div></li><li class="li1"><div class="de1">      $item.text(num);</div></li><li class="li1"><div class="de1">      return $item;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function actualitzarDadesMostrades(event) {</div></li><li class="li1"><div class="de1">      let $llistaDesplegable = $('#identificador');</div></li><li class="li1"><div class="de1">      let dada = dades[$llistaDesplegable.val()]</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('any', dada.Any);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('equipament', dada.Equipament);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('districte', dada.Nom_Districte);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('ambit', dada.Ambit);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('asistents', dada.Assistents);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('notes', dada.Notes_Dades || 'No hi ha cap nota');</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('tipusEquipament', dada.TipusEquipament);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('titularitat', dada.Titularitat);</div></li><li class="li1"><div class="de1">      actualitzarDadaMostrada('activitats', dada.Activitats_de_difusio_dins_dels_centres);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function actualitzarDadaMostrada(nom, valor) {</div></li><li class="li1"><div class="de1">      $('#' + nom).html(valor);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bwXGLx?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bwXGLx?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/bwXGLx?editors=1111</a>.
+</p>
+
+<p>
+Com es pot apreciar, en aquest cas no s’han especificat paràmetres perquè la font de dades no els requeria. En els casos que és necessari només cal especificar a l’objecte d’opcions la propietat <code>data</code> i assignar els paràmetres necessaris, o en forma de cadena de text o d’objecte, i la biblioteca s’encarregarà d’afegir-los a la capçalera de la forma correcta segons el mètode emprat.
+</p>
+
+</div>
+
+<h2><a id="metodes_d_ajudaserialize_serializearray_i_param" >Mètodes d&#039;ajuda: serialize, serializeArray i param</a></h2>
+<div class="level2">
+
+<p>
+La biblioteca jQuery ofereix un seguit de mètodes per facilitar l’obtenció i manipulació de dades a l’hora de realitzar peticions, entre els quals cal destacar <code>serialize()</code>, <code>serializeArray()</code> i <code>params()</code>.
+</p>
+
+<p>
+El mètode <code>serialize()</code> converteix la informació dels controls d’un objecte <code>jQuery</code> que encapsula un formulari en una cadena de text codificada per fer servir com a paràmetre. Aquesta cadena estarà formada pels controls que disposin de la propietat <code>name</code> i el seu valor.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form&gt;</div></li><li class="li1"><div class="de1">  &lt;input name=&quot;nom&quot; /&gt;</div></li><li class="li1"><div class="de1">  &lt;input name=&quot;cognom&quot; /&gt;</div></li><li class="li1"><div class="de1">&lt;/form&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  $('input').on('input change', () =&gt; {</div></li><li class="li1"><div class="de1">    let serialitzat = $('form').serialize();</div></li><li class="li1"><div class="de1">    $('div').html(serialitzat);</div></li><li class="li1"><div class="de1">  });</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vXoExz?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vXoExz?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vXoExz?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, això permet establir l’opció <code>data</code> d’una petició AJAX directament a partir d’aquesta cadena, ja que inclou tota la informació del formulari sense haver de recórrer els elements i extreure’n les dades una per una.
+</p>
+
+<p>
+De forma similar, el mètode <code>serializeArray()</code> també obté la informació del formulari, però en aquest cas genera un <em>array</em> d’objectes JavaScript amb tota la informació del formulari.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form&gt;</div></li><li class="li1"><div class="de1">  &lt;input name=&quot;nom&quot; value=&quot;Maria&quot;/&gt;</div></li><li class="li1"><div class="de1">  &lt;input name=&quot;cognom&quot; value=&quot;Campmany&quot;/&gt;</div></li><li class="li1"><div class="de1">&lt;/form&gt;</div></li><li class="li1"><div class="de1">&lt;button&gt;Comprovar&lt;/button&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  $('button').on('click', () =&gt; {</div></li><li class="li1"><div class="de1">    let serialitzat = $('form').serializeArray();</div></li><li class="li1"><div class="de1">    console.log(serialitzat);</div></li><li class="li1"><div class="de1">  });</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wgbobe?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wgbobe?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wgbobe?editors=1011</a>.
+</p>
+
+<p>
+L’<em>array</em> d’objectes generats per la invocació del mètode <code>serializeArray()</code> seria el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">[</div></li><li class="li1"><div class="de1">  Object {</div></li><li class="li1"><div class="de1">    name: &quot;nom&quot;,</div></li><li class="li1"><div class="de1">    value: &quot;Maria&quot;</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  Object {</div></li><li class="li1"><div class="de1">    name: &quot;cognom&quot;,</div></li><li class="li1"><div class="de1">    value: &quot;Campmany&quot;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">]</div></li></ol></pre>
+
+<p>
+Fixeu-vos que aquest objecte es pot utilitzar directament com a valor assignat a l’opció <code>data</code>: aquesta opció accepta tant objectes de JavaScript (sense mètodes) com cadenes de text.
+</p>
+
+<p>
+Mentre que <code>serialize()</code> i <code>serializeArray()</code> faciliten la tasca de convertir les dades introduïdes als controls d’un formulari per fer-les servir com a <strong>dades</strong> en una petició AJAX, el mètode <code>param()</code> permet convertir objectes de JavaScript, objectes de jQuery i <em>arrays</em> en una <strong>cadena de consulta</strong> codificada:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<em>Cadena de consulta</em> és una mena de cadena de text amb un format especial utilitzat per enviar peticions i que, inclús, pot portar paràmetres.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">  let dades = [{</div></li><li class="li1"><div class="de1">    name: 'nom',</div></li><li class="li1"><div class="de1">    value: 'Maria'</div></li><li class="li1"><div class="de1">  }, {</div></li><li class="li1"><div class="de1">    name: 'cognom',</div></li><li class="li1"><div class="de1">    value: 'Campmany'</div></li><li class="li1"><div class="de1">  }, ]</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log($.param(dades));</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/xEvbpp?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xEvbpp?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/xEvbpp?editors=0011</a>.
+</p>
+
+<p>
+La cadena de consulta obtinguda en invocar el mètode <code>param()</code> serà: <code>nom=Maria&amp;cognom=Campmany</code>.
+</p>
+
+<p>
+Fixeu-vos que mentre que <code>serialize()</code> i <code>serializeArray()</code> són mètodes que es criden sobre una instància d’objecte <code>jQuery</code> que conté la referència al formulari, el mètode <code>param()</code> s’invoca directament a partir de la funció <code>jQuery()</code> passant les dades que s’han de convertir com a argument.
+</p>
+
+<p>
+S’ha de tenir en compte que en el cas dels objectes JavaScript, han de tenir forçosament el format següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">[</div></li><li class="li1"><div class="de1">  {</div></li><li class="li1"><div class="de1">    name: nom_del_parametre</div></li><li class="li1"><div class="de1">    value: valor_corresponent</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">]</div></li></ol></pre>
+
+<p>
+Els objectes jQuery han de contenir referències a objectes de tipus <code>input</code> en què els controls tinguin definit l’atribut <code>name</code> (com en el cas de <code>serialize()</code> i <code>serializeArray()</code>), en cas contrari no funcionarà correctament.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

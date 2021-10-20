@@ -1,0 +1,514 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../../WebContent/u6/introduccio.html">6. Mecanismes de programació asíncrona client-servidor</a></p><ul class="expander"><li id="u6introduccio"><a href="../../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../../WebContent/u6/a1/continguts.html">Comunicació asíncrona amb JavaScript</a><span class="buttonexp"></span></p><ul><li id="u6a1activitats"><a href="../../../WebContent/u6/a1/activitats.html">Activitats</a></li><li id="u6a1exercicis"><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a1/continguts.html#introduccio_a_ajax">Introducció a AJAX</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#dificultats_a_l_hora_de_provar_el_codi_ajax">Dificultats a l'hora de provar el codi AJAX</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#l_objecte_xmlhttprequest">L'Objecte XMLHttpRequest</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#serveis_web">Serveis web</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#jsonp_i_cors">JSONP i CORS</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#acces_a_dades_obertes">Accés a dades obertes</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#api_web_sockets">API Web Sockets</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#depuracio_de_crides_ajax">Depuració de crides AJAX</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../../WebContent/u6/a2/continguts.html">Programació de la comunicació asíncrona amb jQuery</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a2/continguts.html#creacio_i_enviament_de_peticions_amb_jquery">Creació i enviament de peticions amb jQuery</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Model d'objectes del document</a></li><li><a href="continguts.html">Programació amb el DOM (Document Object Model)</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="cerca_d_elements_i_extraccio_d_informacio" >Cerca d&#039;elements i extracció d&#039;informació</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre com cercar elements a qualsevol document i com extreure informació d’aquests.
+</p>
+
+<p>
+Per un projecte personal en el qual esteu treballant necessiteu extreure un llistat complet dels enllaços de la Viquipèdia, concretament de la següent <a href="https://ca.wikipedia.org/wiki/Web_scraping" class="urlextern" title="https://ca.wikipedia.org/wiki/Web_scraping"  rel="nofollow">URL</a>. Per poder copiar-la us interessa que el resultat es mostri en format JSON.
+</p>
+
+<p>
+Com que es tracta d’una tasca puntual i no cal repetir-la heu decidit fer un petit programa en JavaScript que cerqui tots els elements, extregui les URLs i les guardi en un <em>array</em>, que convertireu a format JSON amb <code>JSON.stringify(llista)</code>.
+</p>
+
+<p>
+El format de cada element de l’<em>array</em> serà el contingut textual de l’enllaç com a <code>nom</code> i la <acronym title="Uniform Resource Locator">URL</acronym> com a <code>url</code>.
+</p>
+
+<p>
+<strong>Nota</strong>: La <acronym title="Uniform Resource Locator">URL</acronym> proporcionada no és rellevant, el programa s’enganxarà a la consola del navegador i serà reutilitzable en qualsevol pàgina.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Primerament, s’ha d’obtenir una llista de tots els elements que continguin enllaços i crear un <em>array</em> buit on es guardaran les dades obtingudes. Per fer-ho es pot utilitzar el mètode <code>querySelectorAll()</code> que admet un selector <acronym title="Cascading Style Sheets">CSS</acronym> i utilitzar com a selector la cadena <code>a[href]</code>, és a dir, tots els elements de tipus <code>a</code> que continguin un atribut <code>href</code>.
+</p>
+
+<p>
+Seguidament es recorre la llista d’elements obtinguda i es genera un nou objecte que conté el nom (obtingut a partir de l’element amb el mètode <code>textContent()</code>) i la <acronym title="Uniform Resource Locator">URL</acronym> (obtinguda invocant el mètode <code>getAttribute()</code>). S’afegeixen cadascun d’aquests objectes a l’<em>array</em>.
+</p>
+
+<p>
+Finalment per mostrar el resultat per la consola només cal invocar al mètode <code>console.log()</code> i passar com argument el resultat d’invocar <code>JSON.stringify()</code> amb l’<em>array</em> generat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let elementsEnllac = document.querySelectorAll('a[href]');</div></li><li class="li1"><div class="de1">let enllacos = [];</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; elementsEnllac.length; i++) {</div></li><li class="li1"><div class="de1">  let enllac = {</div></li><li class="li1"><div class="de1">    nom: elementsEnllac[i].textContent,</div></li><li class="li1"><div class="de1">    url: elementsEnllac[i].getAttribute('href')</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">  enllacos.push(enllac);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">console.log(JSON.stringify(enllacos));</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/dpvQAj?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dpvQAj?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/dpvQAj?editors=0011</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_d_elements_a_partir_de_dades_externes" >Creació d&#039;elements a partir de dades externes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és entendre com crear nous elements al DOM a partir d’un diccionari de dades.
+</p>
+
+<p>
+Heu obtingut un diccionari de dades que conté noms i enllaços extrets d’una pàgina de la Viquipèdia. Per poder consultar-los fàcilment heu decidit crear una petita aplicació que a partir d’aquestes dades generi una llista d’enllaços clicables.
+</p>
+
+<p>
+Per assegurar-vos que tots els enllaços mostren algun text haureu de controlar que el nom no estigui buit i que l’enllaç apunti algun lloc (és a dir, que la <acronym title="Uniform Resource Locator">URL</acronym> no sigui el símbol <code>#</code>).
+</p>
+
+<p>
+Podeu fer servir la següent funció per eliminar els salts de línia dels continguts textuals:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let netejarText = function (nom) {</div></li><li class="li1"><div class="de1">  return nom.replace(/(\r\n|\n|\r)/gm,&quot;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+En primer lloc s’ha de declarar la variable que conté el diccionari de dades. En aquesta solució farem servir només 3 objectes per simplificar, però a l’exemple a CodePen que trobareu al final d’aquesta solució podeu trobar una llista amb més de 100 elements.
+</p>
+
+<p>
+Seguidament, aplicant el disseny descendent es creen tres funcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>netejarText</strong>: per eliminar els salts de línia dels noms.</div>
+</li>
+<li class="level1"><div class="li"> <strong>crearLlista</strong>: encarregada de crear la llista que es mostra per pantalla</div>
+</li>
+<li class="level1"><div class="li"> <strong>crearFila</strong>: encarregada de crear cadascuna de les files que formen la llista.</div>
+</li>
+</ul>
+
+<p>
+S’ha optat per fer servir una llista ordenada (<code>ol</code>) per facilitar l’enumeració dels enllaços.
+</p>
+
+<p>
+A la funció <code>crearLlista()</code>, primerament es crea un element de tipus <code>h1</code> amb <code>document.createElement()</code> al que s’assigna com a contingut textual el títol que es vol mostrar. Seguidament s’afegeix al cos del document invocant <code>document.body.appendChild()</code>.
+</p>
+
+<p>
+A continuació es crea l’element pare de la llista (element <code>ol</code>) i es recorren les dades. Es valida que existeixi un valor per la <acronym title="Uniform Resource Locator">URL</acronym> i que aquest no sigui el símbol <code>#</code>, si és així, es continua amb el següent element de l’<em>array</em> i, en cas contrari, es crea una fila a partir d’aquestes dades i s’afegeixen a la llista invocant <code>appendChild()</code>.
+</p>
+
+<p>
+La funció <code>crearFila()</code> rep un objecte amb el parell de dades <code>nom</code> i <code>url</code>. Primerament es crea un element de tipus <code>li</code> i un altre de tipus <code>a</code> al que s’estableix com atribut <code>href</code> la <acronym title="Uniform Resource Locator">URL</acronym> corresponent a la dada amb el mètode <code>setAttribute()</code>.
+</p>
+
+<p>
+Seguidament es neteja el nom cridant a la funció <code>netejarText()</code> i es comprova que tingui algun valor. Si té assignat un valor, es fa servir aquest com a contingut textual de l’enllaç, en cas contrari s’utilitza l’<acronym title="Uniform Resource Locator">URL</acronym>. Finalment s’afegeix l’enllaç a la fila i es retorna.
+</p>
+
+<p>
+Per iniciar l’execució del programa es genera la llista invocant <code>crearLlista()</code> i s’afegeix al cos de document amb <code>document.body.appendChild()</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let dades = [{</div></li><li class="li1"><div class="de1">  &quot;nom&quot;: &quot;&quot;,</div></li><li class="li1"><div class="de1">  &quot;url&quot;: &quot;#&quot;</div></li><li class="li1"><div class="de1">}, {</div></li><li class="li1"><div class="de1">  &quot;nom&quot;: &quot;\n\n&quot;,</div></li><li class="li1"><div class="de1">  &quot;url&quot;: &quot;https://ca.wikipedia.org/wiki/Viquiprojecte:Monuments/Repte_2016&quot;</div></li><li class="li1"><div class="de1">}, {</div></li><li class="li1"><div class="de1">  &quot;nom&quot;: &quot;Wiki Loves Monuments: Fotografia un monument, ajuda la Viquipèdia i guanya!&quot;,</div></li><li class="li1"><div class="de1">  &quot;url&quot;: &quot;https://ca.wikipedia.org/wiki/Viquiprojecte:Monuments/Repte_2016&quot;</div></li><li class="li1"><div class="de1">}];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let crearFila = function(dada) {</div></li><li class="li1"><div class="de1">  let fila = document.createElement('li');</div></li><li class="li1"><div class="de1">  let enllac = document.createElement('a');</div></li><li class="li1"><div class="de1">  enllac.setAttribute('href', dada.url);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let nom = netejarText(dada.nom)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (nom) {</div></li><li class="li1"><div class="de1">    enllac.textContent = dada.nom;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    enllac.textContent = dada.url;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  fila.appendChild(enllac);</div></li><li class="li1"><div class="de1">  return fila;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let netejarText = function(nom) {</div></li><li class="li1"><div class="de1">  return nom.replace(/(\r\n|\n|\r)/gm, &quot;&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let crearLlista = function(dades) {</div></li><li class="li1"><div class="de1">  let titol = document.createElement('h1');</div></li><li class="li1"><div class="de1">  titol.textContent = &quot;Llista d'enllaços&quot;;</div></li><li class="li1"><div class="de1">  document.body.appendChild(titol);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let llista = document.createElement('ol');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; dades.length; i++) {</div></li><li class="li1"><div class="de1">    let dada = dades[i];</div></li><li class="li1"><div class="de1">    if (!dada.url || dada.url == &quot;#&quot;) {</div></li><li class="li1"><div class="de1">      continue;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    let fila = crearFila(dades[i]);</div></li><li class="li1"><div class="de1">    llista.appendChild(fila);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return llista;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">document.body.appendChild(crearLlista(dades));</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/rrybWw?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rrybWw?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/rrybWw?editors=0010</a>. 
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="canviar_estils_d_elements_concrets" >Canviar estils d&#039;elements concrets</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és discriminar entre elements i aplicar uns estils o altres segons el seu tipus.
+</p>
+
+<p>
+Per facilitar la localització d’enllaços a diferents pàgines web heu decidit canviar l’estil de tots els elements a gris clar amb el fons blanc i eliminar les vores, mentre que els enllaços mostraran un color de fons vermell, color blanc i vores arrodonides.
+</p>
+
+<p>
+Aquest programa es podrà executar enganxant-lo a la consola de qualsevol navegador. 
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Cal crear dues funcions, una que aplicarà els estils per amagar els nodes que no interessen (color gris clar amb fons blanc) i una altra per ressaltar (color de fons vermell, color blanc i vores arrodonides). S’ha afegit també <code>padding</code> per ressaltar més encarà els enllaços.
+</p>
+
+<p>
+El bloc principal de codi és cridat amb la funció inicialitzar. Primerament se seleccionen tots els elements de la pàgina amb <code>querySelectorAll(‘*’)</code>, a continuació s’itera sobre aquests i es comprova si el nom del node és <code>A</code>. Si és així, s’invoca a <code>ressaltar()</code> passant el node com argument, en cas contrari invoca a <code>amagar()</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let ressaltar = function(node) {</div></li><li class="li1"><div class="de1">  node.style['border-radius'] = '5px';</div></li><li class="li1"><div class="de1">  node.style['padding'] = '2px';</div></li><li class="li1"><div class="de1">  node.style['background-color'] = 'red';</div></li><li class="li1"><div class="de1">  node.style['color'] = 'white';</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let amagar = function(node) {</div></li><li class="li1"><div class="de1">  node.style['background-color'] = 'white';</div></li><li class="li1"><div class="de1">  node.style['color'] = 'lightgrey';</div></li><li class="li1"><div class="de1">  node.style['border'] = 0;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let tot = document.body.querySelectorAll('*');</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; tot.length; i++) {</div></li><li class="li1"><div class="de1">  if (tot[i].nodeName == 'A') {</div></li><li class="li1"><div class="de1">    ressaltar(tot[i]);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    amagar(tot[i]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/yarAWK?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yarAWK?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yarAWK?editors=0010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+<p>
+
+<h2><a id="canviar_visibilitat_crear_i_eliminar_elements" >Canviar visibilitat, crear i eliminar elements</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és canviar la visibilitat, crear i eliminar certs elements del DOM depenent de la seva posició. Més concretament, els elements fills d’un altre.
+</p>
+
+<p>
+Partint del següent codi <acronym title="HyperText Markup Language">HTML</acronym>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">  &lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">  &lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">      &lt;style&gt;</div></li><li class="li1"><div class="de1">        #contenidor{</div></li><li class="li1"><div class="de1">          display: flex;</div></li><li class="li1"><div class="de1">          justify-content: space-around;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        .elem{</div></li><li class="li1"><div class="de1">          background: lightblue;</div></li><li class="li1"><div class="de1">          font-size: 35px;</div></li><li class="li1"><div class="de1">          color: darkblue;</div></li><li class="li1"><div class="de1">          padding: 5px;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        .elem p{</div></li><li class="li1"><div class="de1">          font-size: 25px;</div></li><li class="li1"><div class="de1">          color: black;</div></li><li class="li1"><div class="de1">          background-color: white;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      &lt;/style&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">      &lt;div id=&quot;contenidor&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;div class=&quot;elem&quot;&gt;Element 1</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 1&lt;/p&gt;</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 2&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;div class=&quot;elem&quot;&gt;Element 2</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 1&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;div class=&quot;elem&quot;&gt;Element 3&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;div class=&quot;elem&quot;&gt;Element 4</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 1&lt;/p&gt;</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 2&lt;/p&gt;</div></li><li class="li1"><div class="de1">            &lt;p&gt;Paràgraf 3&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;/div&gt;</div></li><li class="li1"><div class="de1">      &lt;/div&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">  &lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Feu que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quan es faci clic en algun dels elements de classe <code>elem</code> amb el botó esquerre del ratolí, es facin visibles (o s’invisibilitzin si ja són visibles) els paràgrafs que aquest element conté.</div>
+</li>
+<li class="level1"><div class="li"> Quan es faci clic en algun dels elements de classe <code>elem</code> amb el botó central del ratolí, s’afegeixi un nou paràgraf dintre d’aquest element amb el número de paràgraf corresponent. La seva visibilitat dependrà de la visibilitat dels elements ja existents. Si no tenia cap element, farem que sigui no visible inicialment.</div>
+</li>
+<li class="level1"><div class="li"> Quan es faci clic en algun dels elements de classe <code>elem</code> amb el botó dret, s’haurà d’eliminar l’últim paràgraf d’aquest element.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Primer haurem d’assignar l’event <code>click</code> als elements amb classe <code>elem</code>. Dintre d’aquest comprovarem quina és la visibilitat dels elements fills (<code>visible</code> o <code>hidden</code>) i els posarem el valor contrari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">window.onload = function(){</div></li><li class="li1"><div class="de1">  let elements = document.getElementsByClassName('elem');</div></li><li class="li1"><div class="de1">  for(let i=0; i&lt;elements.length; i++){</div></li><li class="li1"><div class="de1">    elements[i].addEventListener('contextmenu', function(e){</div></li><li class="li1"><div class="de1">          e.preventDefault();</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">    elements[i].addEventListener('mouseup',function(e){</div></li><li class="li1"><div class="de1">    switch(e.button){</div></li><li class="li1"><div class="de1">      case 0: //botó esquerre</div></li><li class="li1"><div class="de1">        let fills = this.children;</div></li><li class="li1"><div class="de1">        for (let j=0; j&lt;fills.length; j++){</div></li><li class="li1"><div class="de1">          var visibilitat = fills[j].style.visibility;</div></li><li class="li1"><div class="de1">          fills[j].style.visibility = (visibilitat == 'visible') ? 'hidden' : 'visible';</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      case 1: //botó central</div></li><li class="li1"><div class="de1">        let nou_elem = document.createElement('p');</div></li><li class="li1"><div class="de1">        let text = document.createTextNode('Paràgraf '+ (parseInt(this.children.length)+1));</div></li><li class="li1"><div class="de1">        nou_elem.append(text);</div></li><li class="li1"><div class="de1">        if(this.children.length &gt; 0){</div></li><li class="li1"><div class="de1">          nou_elem.style.visibility = this.lastElementChild.style.visibility;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        else{</div></li><li class="li1"><div class="de1">          nou_elem.style.visibility = 'hidden';</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        this.append(nou_elem);</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      case 2: //botó dret</div></li><li class="li1"><div class="de1">        if(this.children.length &gt; 0){</div></li><li class="li1"><div class="de1">          this.lastElementChild.remove();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">     }</div></li><li class="li1"><div class="de1">   });</div></li><li class="li1"><div class="de1"> }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/oNZqwMg" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oNZqwMg"  rel="nofollow">codepen.io/ioc-daw-m06/pen/oNZqwMg</a>.
+</p>
+
+<p>
+Cal remarcar el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> Tingueu en compte que al codepen és possible que s’hagi de polsar dues vegades el botó central per veure la seva funcionalitat.</div>
+</li>
+</ul>
+
+<p>
+S’ha usat l’event <code>mouseup</code> per poder detectar correctament la propietat <code>button</code> de l’objecte <code>event</code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Fixeu-vos com l’objecte <code>this</code> fa referència a aquell element sobre el que ha ocorregut l’esdeveniment, i a partir d’ell, ens movem als seus elements fills amb la propietat <code>children</code>.</div>
+</li>
+<li class="level1"><div class="li"> S’ha afegit el <code>e.preventDefault()</code> dintre de l’esdeveniment <code>contextmenu</code> per evitar que surti el menú contextual al polsar el botó esquerre del ratolí.</div>
+</li>
+</ul>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+<h2><a id="substitucio_de_classes" >Substitució de classes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a substituir classes d’elements en interactuar amb algun element de l’aplicació.
+</p>
+
+<p>
+Us han demanat implementar un sistema visual per gestionar un semàfor manualment. El sistema consisteix en un botó que al pitjar-lo ha de fer que s’encenguin els llums del semàfor en l’ordre correcte.
+</p>
+
+<p>
+Només necessiten la implementació a JavaScript perquè ja disposen del codi <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> per representar el semàfor, què és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  .exterior {</div></li><li class="li1"><div class="de1">    width: 60px;</div></li><li class="li1"><div class="de1">    height: 170px;</div></li><li class="li1"><div class="de1">    background-color: green;</div></li><li class="li1"><div class="de1">    border: 1px solid black;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .pal {</div></li><li class="li1"><div class="de1">    height: 140px;</div></li><li class="li1"><div class="de1">    width: 20px;</div></li><li class="li1"><div class="de1">    margin-left: 20px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .apagat,</div></li><li class="li1"><div class="de1">  .ences {</div></li><li class="li1"><div class="de1">    width: 50px;</div></li><li class="li1"><div class="de1">    height: 50px;</div></li><li class="li1"><div class="de1">    margin: 5px;</div></li><li class="li1"><div class="de1">    background-color: black;</div></li><li class="li1"><div class="de1">    border-radius: 25px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  #vermell.ences {</div></li><li class="li1"><div class="de1">    background-color: red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  #ambre.ences {</div></li><li class="li1"><div class="de1">    background-color: orange;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  #verd.ences {</div></li><li class="li1"><div class="de1">    background-color: LawnGreen</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;canviar&quot;&gt;Canviar&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;div class=&quot;exterior&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;verd&quot; class=&quot;ences&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;ambre&quot; class=&quot;apagat&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;vermell&quot; class=&quot;apagat&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div class=&quot;pal exterior&quot;&gt;&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+El primer pas és determinar com ha de funcionar el semàfor. Es poden distingir tres estats diferents: verd, ambre i vermell. La transició entre aquests és sempre la mateixa així que només cal implementar un selector de tipus <code>switch</code> que canvií al següent estat de la seqüència.
+</p>
+
+<p>
+Aprofitant com a nom dels estats el <code>id</code> de cada un dels quadres és molt fàcil obtenir l’element que està encès actualment amb <code>document.getElementById()</code>, llavors només cal canviar la classe de l’estat actual a <code>apagat</code>, obtenir el següent estat, obtenir l’element i canviar el seu estat a <code>ences</code>.
+</p>
+
+<p>
+Finalment, per determinar quan s’ha de canviar de color s’ha d’afegir un detector d’<em>events</em> a l’element amb <code>id</code> canviar que es dispari en fer clic amb <code>addEventListener</code> i passant el nom de l’<em>event</em> i la funció que canvia l’estat com argument.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let estat = 'verd';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let canviarAlSeguentEstat = function() {</div></li><li class="li1"><div class="de1">  let llum = document.getElementById(estat);</div></li><li class="li1"><div class="de1">  llum.className = &quot;apagat&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  switch (estat) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    case 'verd':</div></li><li class="li1"><div class="de1">      estat = 'ambre';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    case 'ambre':</div></li><li class="li1"><div class="de1">      estat = 'vermell';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    case 'vermell':</div></li><li class="li1"><div class="de1">      estat = 'verd';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  llum = document.getElementById(estat);</div></li><li class="li1"><div class="de1">  llum.className = 'ences';</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let boto = document.getElementById('canviar');</div></li><li class="li1"><div class="de1">boto.addEventListener('click', canviarAlSeguentEstat);</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/RGpqkJ" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RGpqkJ"  rel="nofollow">codepen.io/ioc-daw-m06/pen/RGpqkJ</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="cerca_de_continguts_textuals_amb_jquery" >Cerca de continguts textuals amb jQuery</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a cercar continguts textuals amb els mètodes proporcionats per les interfícies del DOM.
+</p>
+
+<p>
+Ús han demanat que desenvolupeu una aplicació que permeti ressaltar quins paràgrafs contenen un determinat text que serà entrat per l’usuari. Per comprovar el correcte funcionament de l’aplicació podeu fer servir el següent codi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  input {</div></li><li class="li1"><div class="de1">    margin: 0 5px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  p {</div></li><li class="li1"><div class="de1">    padding: 2px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .trobat {</div></li><li class="li1"><div class="de1">    background-color: LemonChiffon;</div></li><li class="li1"><div class="de1">    border: 1px solid grey;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;label&gt;Cercar paràgrafs que continguin:&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;text&quot;/&gt;&lt;button id=&quot;cercar&quot;&gt;Cercar&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Deuria ésser molt reverit si los cavallers observaven aquelll. Havia obtesa victòria gloriosa E trobant-se lo. És dels actes e costumes que. No els ha tolt l'universal Creador lo franc. Valent cavaller d'honor e glòria e. Cavallers deuen haver sobre lo</div></li><li class="li1"><div class="de1">  poble La primera part serà. Bastat aterrar les forces dels. Llibre de Tirant la qual tracta. Noble persona en l'exercici de les armes seguint guerres. Dels enemics E per ço foren. La mia tornada m'és incerta si. Valent cavaller d'honor e glòria e la</div></li><li class="li1"><div class="de1">  fama. Comte Guillem de Varoic Aquest era. Era fet ab tal artifici que es departia pel. Era entrat en cinc llices de camp clos u per. Li plau que los set planets. Havia obtesa victòria gloriosa E trobant-se lo. Les armes del cavaller; la sisena és dels</div></li><li class="li1"><div class="de1">  actes. La primera part del llibre de. Adquirida; e felicitat no pot ésser atesa sens mitjà de.&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;p&gt;Astúcia dels cavallers ha bastat aterrar les forces dels enemics. Anell era fet ab tal artifici que es departia. Es tenia un fill de molta poca edat E havia. Tornada m'és incerta si a Jesucrist serà. Cavallers ha bastat aterrar les forces dels enemics</div></li><li class="li1"><div class="de1">  E per. Virtuosos actes que féu lo comte Guillem de Varoic en. Tractarà de certs virtuosos actes. Los hòmens virtuosos e singularment aquells qui per. Temps envellits mas encara los actes. Pertanyen; la setena e darrera és de l'honor. Les guerres e batalles</div></li><li class="li1"><div class="de1">  on s'era trobat E feta. És de la forma com deu. Per tal que per oblivió no fossen delides. Los sants miracles e actes admirables dels. Per tal que per oblivió no. Regnes e ciutats no es porien sostenir en. Donen influència en lo món e tenen domini.</div></li><li class="li1"><div class="de1">  Anell sancer e ab la meitat de les armes. De moneda e a cascú. Molt triümfava nomenat lo comte Guillem.&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;p&gt;Ha ordenat e li plau que los set. Esmena de sos desfalliments E aquest virtuós. Fet fer un anell d'or ab les armes. E moltes gestes e innumerables històries són. Llibre de cavalleria en set parts principals per. De Pompeu d'Octovià de Marc. Militar era</div></li><li class="li1"><div class="de1">  tengut en tanta reverència. Miracles e actes admirables dels. Mitjà de virtuts Los cavallers animosos. Pompeu d'Octovià de Marc Antoni e de molts. Dari; les aventures de Lançalot. Útil e expedient deduir en escrit les gestes. E lo viatge és de grandíssim</div></li><li class="li1"><div class="de1">  perill per què. Jerusalem com tot cristià deu anar si. La forma com deu ésser fet cavaller; la. Usar volen de discreció; e per ço ab lo. Moneda e a cascú de sos servidors.&lt;/p&gt;</div></li></ol></pre>
+
+<p>
+Per comprovar que la solució es correcta tingueu en compte que en cercar amb <em>Deuria</em> ha de resaltar el primer paràgraf, amb <em>aterrar</em> els dos primers i <em>Miracles</em> només el tercer.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La implementació d’aquesta funcionalitat és una mica complexa perquè les interfícies del DOM no ofereixen cap selector que permeti cercar el contingut textual dels elements.
+</p>
+
+<p>
+S’han fet servir múltiples funcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>inicialitzar</strong>: afegeix al botó la detecció de l’<em>event</em> <code>click</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cercarText</strong>: obté el valor de l’entrada de text, cerca quins paràgrafs el contenen i afegeix la classe <code>trobat</code> a aquests.</div>
+</li>
+<li class="level1"><div class="li"> <strong>seleccionarPerText</strong>: a partir de la llista de nodes passats com argument comprova quins contenen un text i els retorna.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ressaltarTexts</strong>: afegeix la classe <code>trobat</code> als nodes passats com argument.</div>
+</li>
+<li class="level1"><div class="li"> <strong>netejarTexts</strong>: elimina la classe <code>trobat</code> de tots els paràgrafs.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let boto = document.getElementById('cercar');</div></li><li class="li1"><div class="de1">  boto.onclick = cercarText;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let cercarText = function() {</div></li><li class="li1"><div class="de1">  netejarTexts();</div></li><li class="li1"><div class="de1">  let text = document.getElementById('text').value;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let trobats = seleccionarPerText(document.getElementsByTagName('p'), text);</div></li><li class="li1"><div class="de1">  resaltarTexts(trobats);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ressaltarTexts = function(nodes) {</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; nodes.length; i++) {</div></li><li class="li1"><div class="de1">    nodes[i].className = 'trobat';</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let netejarTexts = function() {</div></li><li class="li1"><div class="de1">  let nodes = document.getElementsByTagName('p');</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; nodes.length; i++) {</div></li><li class="li1"><div class="de1">    nodes[i].className = '';</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let seleccionarPerText = function(nodes, text) {</div></li><li class="li1"><div class="de1">  let trobats = [];</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; nodes.length; i++) {</div></li><li class="li1"><div class="de1">    let node = nodes[i]</div></li><li class="li1"><div class="de1">    if (node.textContent.indexOf(text) !== -1) {</div></li><li class="li1"><div class="de1">      trobats.push(node);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return trobats;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">document.body.onload = inicialitzar;</div></li></ol></pre>
+
+<p>
+Podeu trobar la solució a aquest exercici en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/QKvjwY" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QKvjwY"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QKvjwY</a>. 
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a1/continguts.html">Programació amb el DOM (Document Object Model)</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

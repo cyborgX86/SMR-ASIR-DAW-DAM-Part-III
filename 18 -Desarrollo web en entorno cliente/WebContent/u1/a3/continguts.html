@@ -1,0 +1,593 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Execució de programes al costat client. Introducció a JavaScript</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#introduccio_al_llenguatge_javascript">Introducció al llenguatge JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#llenguatges_compilats_i_interpretats_llenguatges_de_guions">Llenguatges compilats i interpretats. Llenguatges de guions</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_motor_de_javascript_execucio_de_javascript_en_linia_d_ordres">El motor de JavaScript. Execució de JavaScript en línia d'ordres</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#aplicatius_webarquitectura_client-servidor">Aplicatius web: arquitectura client-servidor</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#beneficis_d_utilitzar_javascript_en_les_pagines_web">Beneficis d'utilitzar JavaScript en les pàgines web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#desavantatges_de_javascript">Desavantatges de JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#integracio_del_codi_javascript_en_el_codi_html_primer_exemple">Integració del codi JavaScript en el codi HTML. Primer exemple</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#javascriptprogramacio_dirigida_per_esdeveniments">JavaScript: programació dirigida per esdeveniments</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#eines_i_entorns_per_al_desenvolupament_web">Eines i entorns per al desenvolupament web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#sintaxi_del_llenguatge_javascript">Sintaxi del llenguatge JavaScript</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Introducció. Objectes predefinits i objectes del client web</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#objectes_predifinits_de_javascript">Objectes predifinits de JavaScript</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#bom_browser_object_model">BOM (Browser Object Model)</a></li></ul></div></div><li id="u1a3" class="tocsection"><p id='u1a3continguts'><a class="section" href="../../../WebContent/u1/a3/continguts.html">Programació amb galetes, finestres i marcs</a><span class="buttonexp"></span></p><ul><li id="u1a3activitats"><a href="../../../WebContent/u1/a3/activitats.html">Activitats</a></li><li id="u1a3exercicis"><a href="../../../WebContent/u1/a3/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a3/continguts.html#programacio_amb_galetes_cookies">Programació amb galetes ('cookies')</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#emmagatzemar_informacio_amb_local_storage">Emmagatzemar informació amb Local Storage</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#comunicacio_entre_finestres">Comunicació entre finestres</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#marcs_frames_iframes">Marcs (frames/iframes)</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></li><li>Programació amb galetes, finestres i marcs</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_amb_galetes_finestres_i_marcs"> Programació amb galetes, finestres i marcs </a></h1>
+    	
+<p>
+Les galetes (<em>cookies</em>) són dades, emmagatzemades en la màquina client dins de fitxers de text (o base de dades SQLite, depèn de la versió del navegador).
+</p>
+
+<p>
+Quan un servidor web serveix una pàgina a un client, la connexió finalitza, i el servidor no recorda res sobre l’usuari. Les galetes es van implementar per tal que el servidor recordi informació del client. Així podem guardar informació de forma persistent entre clients.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Des del cantó del servidor, per exemple programant amb PHP, també podeu accedir a les galetes del client. En PHP existeix per exemple la funció <code>setcookie()</code>, o les variables <code>$_COOKIE</code>. Això és així perquè les galetes formen part de la capçalera HTTP, és a dir, en el procés de comunicació s’envia la informació de les galetes.
+</p>
+</div></div>
+<p>
+Les galetes es guarden en parelles nom-valor com ara:
+</p>
+<pre class="code">lang = cat</pre>
+
+<p>
+Quan el navegador demana una pàgina web al servidor, les galetes que pertanyen a aquesta pàgina s’adjunten a la capçalera de la petició IP. I d’aquesta manera en el cantó del servidor es pot recordar la sessió a què pertany la petició.
+</p>
+
+<p>
+Les finestres obertes al navegador són accessibles a través de l’objecte <code>window</code>, que la representa.
+</p>
+
+<p>
+Un marc (<em>frame</em>) és una àrea de la pantalla que té un contingut independent de la resta de la pàgina. Normalment s’especifiquen amb el tag <code>&lt;iframe&gt;</code>, que especifica un <em>inline frame</em> i s’utilitza per inserir un document <acronym title="HyperText Markup Language">HTML</acronym> dins un altre document <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<h2><a id="programacio_amb_galetes_cookies" >Programació amb galetes (&#039;cookies&#039;)</a></h2>
+<div class="level2">
+
+<p>
+Quan un usuari visita una pàgina web, hi ha determinada informació que es pot guardar entre sessions. Això es fa amb les galetes (<em>cookies</em>). Per exemple, podeu recordar si preferiu que l’aplicatiu web es mostri en català, castellà o anglès. La informació s’emmagatzema en les galetes, en l’ordinador del client. L’usuari pot activar o desactivar les galetes en les preferències del seu navegador web. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Política de galetes</p>
+<p>
+Recordeu que si un lloc web fa ús de galetes, cal demanar confirmació a l’usuari i afegir un enllaç a la política de galetes. Podeu trobar la <em>Guia sobre l’ús de galetes</em> al següent enllaç: <a href="http://www.interior.gob.es/documents/10180/13073/Guia_Cookies.pdf/7c72c988-1e55-42b5-aeee-f7c46a319903" class="urlextern" title="http://www.interior.gob.es/documents/10180/13073/Guia_Cookies.pdf/7c72c988-1e55-42b5-aeee-f7c46a319903"  rel="nofollow">bit.ly/2EcoTq3</a>.
+</p>
+</div></div>
+<p>
+L’ús de les galetes s’ha considerat tradicionalment un forat de seguretat potencial. Tanmateix, avui dia és habitual tenir activades les galetes, de manera que els programadors web dóna per fet que en el cantó del client les galetes estaran habilitades.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Recordeu que tant a Mozilla Firefox com a Chrome teniu les eines de desenvolupador. No només teniu una consola per llegir, sinó que també teniu en ella un espai per escriure. Aquest és el lloc correcte per fer proves. Per exemple: <code>document.cookie = “idioma = castella”;</code>, per gravar una galeta, o bé <code>document.cookie</code> per veure les galetes.
+</p>
+</div></div>
+<p>
+Les galetes són parelles nom-valor, com ara:
+</p>
+<pre class="code">idioma=catala</pre>
+
+<p>
+Amb JavaScript podem crear, modificar i esborrar les galetes mitjançant la propietat <code>cookie</code>: <code>document.cookie</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.cookie = &quot;idioma = catala&quot;;</div></li><li class="li1"><div class="de1">document.cookie = &quot;idioma = catala; expires=31 Dec 2030&quot;;</div></li><li class="li1"><div class="de1">document.cookie = &quot;colorFons = red&quot;;</div></li><li class="li1"><div class="de1">console.log(document.cookie);</div></li></ol></pre>
+
+<p>
+Llegint <code>document.cookie</code> obtenim una cadena similar a:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">colorFons=red; idioma=catala;</div></li></ol></pre>
+
+<p>
+Fixem-vos que el format sempre és punt i coma seguit d’un espai en blanc. A més a més, si voleu que la galeta es mantingui un cop tancada la sessió, cal indicar la data d’expiració. En el nostre cas: <code>expires=31 DEC 2030</code>.
+</p>
+
+<p>
+Les galetes es poden llegir amb <code>document.cookie</code>, que retorna una cadena amb totes les galetes que estan definides. Per canviar el valor d’una galeta, només cal cridar-la igual que s’ha creat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.cookie = &quot;idioma = castella&quot;;</div></li><li class="li1"><div class="de1">document.cookie =&quot;colorFons = blue&quot;;</div></li><li class="li1"><div class="de1">console.log(document.cookie);</div></li><li class="li1"><div class="de1">document.cookie =&quot;idioma = angles; colorFons = green&quot;;</div></li><li class="li1"><div class="de1">console.log(document.cookie);</div></li></ol></pre>
+
+<p>
+Per esborrar una galeta n’hi ha prou amb posar la data d’expiració a una data passada:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.cookie = &quot;idioma=; expires=01 Jan 2000 00:00:00 UTC&quot;; </div></li><li class="li1"><div class="de1">console.log(document.cookie);</div></li></ol></pre>
+
+<p>
+Podem veure com la galeta <code>idioma</code> ha desaparegut.
+</p>
+
+<p>
+Ja que la propietat <code>document.cookie</code> ens retorna una cadena amb les diferents galetes separades per punt i coma - espai, podem llistar-les una per una si fem un <em>split</em> de la cadena amb el <em>; </em> com a caràcter separador:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arrayCookies = document.cookie.split('; ');</div></li><li class="li1"><div class="de1">for(let cookie of arrayCookies) {</div></li><li class="li1"><div class="de1">  console.log(cookie);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per distingir entre el nom de la galeta i el seu valor, hem de veure que el signe <em>=</em> és el separador. Podem tornar a fer servir <code>split()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arrayCookies = document.cookie.split('; ');</div></li><li class="li1"><div class="de1">for(let cookie of arrayCookies) {</div></li><li class="li1"><div class="de1">  console.log(cookie);</div></li><li class="li1"><div class="de1">  let temp = cookie.split('=');</div></li><li class="li1"><div class="de1">  let nomCookie = temp[0];</div></li><li class="li1"><div class="de1">  let valorCookie = temp[1];</div></li><li class="li1"><div class="de1">  console.log(`Nom de la galeta: ${nomCookie}; valor de la cookie: ${valorCookie}`);  </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jOWdRLp?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOWdRLp?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jOWdRLp?editors=0012</a>.
+</p>
+
+<p>
+Una mostra d’una petita aplicació escrivint i llegint els valors de les galetes <code>idioma</code> i <code>colorFons</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;title&gt;Programació amb galetes&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    function carregarCookies() {</div></li><li class="li1"><div class="de1">      let arrayCookies = document.cookie.split(&quot;; &quot;);</div></li><li class="li1"><div class="de1">      let nomCookie;</div></li><li class="li1"><div class="de1">      let valorCookie;</div></li><li class="li1"><div class="de1">      for (let cookie of arrayCookies) {</div></li><li class="li1"><div class="de1">        let temp = cookie.split(&quot;=&quot;);</div></li><li class="li1"><div class="de1">        nomCookie = temp[0];</div></li><li class="li1"><div class="de1">        valorCookie = temp[1];</div></li><li class="li1"><div class="de1">        console.log(`Nom de la cookie: ${nomCookie}; valor de la cookie: ${valorCookie}`);</div></li><li class="li1"><div class="de1">      };</div></li><li class="li1"><div class="de1">      let h1 = document.getElementById(&quot;header&quot;);</div></li><li class="li1"><div class="de1">      if (nomCookie === &quot;idioma&quot; &amp;&amp; valorCookie === &quot;catala&quot;) {</div></li><li class="li1"><div class="de1">        h1.innerHTML = &quot;Text en català&quot;;</div></li><li class="li1"><div class="de1">      } else if (nomCookie === &quot;idioma&quot; &amp;&amp; valorCookie === &quot;castella&quot;) {</div></li><li class="li1"><div class="de1">        h1.innerHTML = &quot;Texto en castellano&quot;;</div></li><li class="li1"><div class="de1">      } else if (nomCookie === &quot;idioma&quot; &amp;&amp; valorCookie === &quot;angles&quot;) {</div></li><li class="li1"><div class="de1">        h1.innerHTML = &quot;Text in English&quot;;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      if (nomCookie === &quot;colorFons&quot;) {</div></li><li class="li1"><div class="de1">        document.body.style.backgroundColor = valorCookie;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body onload=&quot;carregarCookies()&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1 id=&quot;header&quot;&gt;Text en català&lt;/h1&gt;</div></li><li class="li1"><div class="de1">  Per veure els canvis, actualitzar la pàgina.&lt;br /&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'idioma = catala';&quot;&gt;Català&lt;/button&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'idioma = castella';&quot;&gt;Castellà&lt;/button&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'idioma = angles';&quot;&gt;Anglès&lt;/button&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'colorFons = red';&quot;&gt;Vermell&lt;/button&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'colorFons = blue';&quot;&gt;Blau&lt;/button&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;document.cookie = 'colorFons = green';&quot;&gt;Verd&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bGEzJoL?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGEzJoL?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/bGEzJoL?editors=1011</a>.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">On es guarden les galetes?</p>
+<p>
+Les galetes es guarden de forma permanent en el sistema. Tant si reiniciem el navegador com si reiniciem l’ordinador, recuperem el seu valor. Per tant, s’han de guardar en fitxers. La manera com es guarden depèn tant del navegador (Mozilla, Chrome, Internet Explorer) com de la versió del navegador.
+</p>
+
+<p>
+Era usual que les galetes es guardessin en un fitxer cookies.txt. És també usual que es guardin en un fitxer de base de dades del sistema SQLite. En qualsevol cas, també es pot accedir a les galetes i esborrar-les des de les preferències del navegador.
+</p>
+</div></div>
+</div>
+
+<h2><a id="emmagatzemar_informacio_amb_local_storage" >Emmagatzemar informació amb Local Storage</a></h2>
+<div class="level2">
+
+<p>
+Les galetes s’inclouen en cada <em>request</em> HTTP, encara que no les necessitem, i no estan encriptades (a no ser que utilitzem SSL en el servidor). Això representa una disminució de la velocitat de transmissió. A més, les galetes estan limitades a uns 4 KB d’informació.
+</p>
+
+<p>
+Seria bo que en els clients web disposéssim d’un espai d’emmagatzematge que fos persistent, i que no es transmetés al servidor.
+</p>
+
+<p>
+Abans de l’HTML5 això no era possible. Però ara, amb HTML5 i els navegadors que el tenen suportat, això ja és possible gràcies al <em>DOM Storage</em> en general i al <em>Local Storage</em> en particular.
+</p>
+
+<p>
+L’emmagatzematge DOM (<em>DOM Storage</em>) (també emmagatzematge WEB, <em>WEB Storage</em>) és el nom donat a un conjunt de característiques relacionades amb l’emmagatzematge introduïdes a HTML5 i ara detallades en l’especificació <em><acronym title="World Wide Web Consortium">W3C</acronym> Web Storage</em>. L’emmagatzematge DOM està dissenyat per facilitar una forma ampla, segura i simple per emmagatzemar informació alternativa a les galetes. A més, proporciona la possibilitat de guardar les dades durant un llarg període de temps sense necessitat d’estar connectat.
+</p>
+
+<p>
+Dins del <em>DOM Storage</em> ens interessa principalment l’objecte <code>localStorage</code> per accedir a l’emmagatzematge persistent, i l’objecte <code>sessionStorage</code> per guardar un espai d’emmagatzematge disponible durant la sessió de navegació:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>localStorage</code>: guarda informació que quedarà emmagatzemada un temps indefinit, sense importar que el navegador es tanqui.</div>
+</li>
+<li class="level1"><div class="li"> <code>sessionStorage</code>: emmagatzema les dades d’una sessió, que s’eliminen quan es tanca.</div>
+</li>
+</ul>
+
+<p>
+Les característiques de <code>localStorage</code> i <code>sessionStorage</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Permeten emmagatzemar entre 5MB i 10MB d’informació, incloent text i multimèdia.</div>
+</li>
+<li class="level1"><div class="li"> La informació es guarda en local, i a diferència de les galetes, no s’envia al servidor en cada petició que es fa al servidor.</div>
+</li>
+<li class="level1"><div class="li"> Utilitzen un número mínim de peticions al servidor i el tràfic queda molt reduït.</div>
+</li>
+<li class="level1"><div class="li"> Quan treballem sense connexió o ens quedem sense connexió, es garanteix l’emmagatzematge.</div>
+</li>
+<li class="level1"><div class="li"> La informació es guarda a nivell de domini web (inclou totes les pàgines del domini).</div>
+</li>
+</ul>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de &#039;localStorage&#039;</p>
+<p>
+En el cas de <code>localStorage</code> utilitzem els mètodes <code>setItem()</code> i <code>getItem()</code> per escriure i llegir els parells nom-valor per emmagatzemar la informació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">localStorage.setItem(&quot;animal&quot;, &quot;gos&quot;);</div></li><li class="li1"><div class="de1">console.log(localStorage.getItem(&quot;animal&quot;));</div></li><li class="li1"><div class="de1">localStorage.removeItem(&quot;animal&quot;);</div></li></ol></pre>
+
+<p>
+Fem l’exemple més complet amb un formulari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;      </div></li><li class="li1"><div class="de1">        &lt;title&gt;Exemple localStorage&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function guardar() {</div></li><li class="li1"><div class="de1">              let animal = document.getElementById(&quot;nomanimal&quot;).value;</div></li><li class="li1"><div class="de1">              let vegetal = document.getElementById(&quot;nomvegetal&quot;).value;</div></li><li class="li1"><div class="de1">              /*Guardem les dades en el localStorage*/</div></li><li class="li1"><div class="de1">              localStorage.setItem(&quot;animal&quot;, animal);</div></li><li class="li1"><div class="de1">              localStorage.setItem(&quot;vegetal&quot;, vegetal);</div></li><li class="li1"><div class="de1">              /* netegem el camp */</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomanimal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomvegetal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">            };  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            function carregar() {</div></li><li class="li1"><div class="de1">              let animal = localStorage.getItem(&quot;animal&quot;);</div></li><li class="li1"><div class="de1">              let vegetal = localStorage.getItem(&quot;vegetal&quot;);</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomanimal&quot;).value = animal;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomvegetal&quot;).value = vegetal;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;center&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Exemple localStorage&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;input type=&quot;text&quot;  placeholder=&quot;nom animal&quot; id=&quot;nomanimal&quot;&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;input type=&quot;text&quot;  placeholder=&quot;nom vegetal&quot; id=&quot;nomvegetal&quot;&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;guardar()&quot;&gt;Guardar&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;carregar()&quot;&gt;Carregar&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com a prova, podeu tancar el navegador i tornar-lo a obrir, i quan cliqueu <em>Carregar</em> veureu que es recuperen les dades emmagatzemades.
+</p>
+
+<p>
+Podeu provar aquest exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/rNxPbRN?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rNxPbRN?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/rNxPbRN?editors=1010</a>.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de &#039;sessionStorage&#039;</p>
+<p>
+Amb <code>sessionStorage</code> la informació es guarda en les diferents pàgines de la mateixa sessió. Utilitzem els mètodes <code>setItem()</code> i <code>getItem()</code> per escriure i llegir els parells nom-valor per emmagatzemar la informació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">sessionStorage.setItem(&quot;animal&quot;, &quot;gos&quot;);</div></li><li class="li1"><div class="de1">console.log(sessionStorage.getItem(&quot;animal&quot;));</div></li><li class="li1"><div class="de1">sessionStorage.removeItem(&quot;animal&quot;);</div></li></ol></pre>
+
+<p>
+Les dades amb <code>sessionStorage</code> són accessibles mentre dura la sessió de navegació. Hem de tenir en compte, i això és important de cara la realització de l’exercici, que les dades no són recuperables si:
+</p>
+<ul>
+<li class="level1"><div class="li"> Es tanca el navegador i es torna a obrir.</div>
+</li>
+<li class="level1"><div class="li"> S’obre una pestanya de navegació independent i se segueix navegant en aquesta pestanya.</div>
+</li>
+<li class="level1"><div class="li"> Es tanca la finestra de navegació i se n’obre una altra.</div>
+</li>
+</ul>
+
+<p>
+Fem l’exemple més complet. Necessitem els scripts <em>animal.html</em> i <em>vegetal.html</em>. Des dels dos scripts podem veure totes les variables de sessió, però per veure-les recomanem utilitzar els enllaços, i no obrir una nova pestanya.
+</p>
+
+<p>
+<em>animal.html</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;      </div></li><li class="li1"><div class="de1">        &lt;title&gt;Exemple sessionStorage. Animal&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function guardar() {</div></li><li class="li1"><div class="de1">              let animal = document.getElementById(&quot;nomanimal&quot;).value;</div></li><li class="li1"><div class="de1">              /*Guardem les dades en el sessionStorage*/</div></li><li class="li1"><div class="de1">              sessionStorage.setItem(&quot;animal&quot;, animal);</div></li><li class="li1"><div class="de1">              /* Netegem els camps */</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomanimal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblanimal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblvegetal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">            };  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            function carregar() {</div></li><li class="li1"><div class="de1">              let animal = sessionStorage.getItem(&quot;animal&quot;);</div></li><li class="li1"><div class="de1">              let vegetal = sessionStorage.getItem(&quot;vegetal&quot;);</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblanimal&quot;).innerHTML = animal;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblvegetal&quot;).innerHTML = vegetal;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;center&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Exemple sessionStorage&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;input type=&quot;text&quot;  placeholder=&quot;nom animal&quot; id=&quot;nomanimal&quot;&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;guardar()&quot;&gt;Guardar&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;carregar()&quot;&gt;Carregar&lt;/button&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Animal: &lt;label id=&quot;lblanimal&quot;&gt;&lt;/label&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Vegetal: &lt;label id=&quot;lblvegetal&quot;&gt;&lt;/label&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;a href=&quot;vegetal.html&quot;&gt;vegetal.html&lt;/a&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+<em>vegetal.html</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;      </div></li><li class="li1"><div class="de1">        &lt;title&gt;Exemple sessionStorage. Vegetal&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function guardar() {</div></li><li class="li1"><div class="de1">              let vegetal = document.getElementById(&quot;nomvegetal&quot;).value;</div></li><li class="li1"><div class="de1">              /*Guardem les dades en el sessionStorage*/</div></li><li class="li1"><div class="de1">              sessionStorage.setItem(&quot;vegetal&quot;, vegetal);</div></li><li class="li1"><div class="de1">              /* netegem els camps */</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;nomvegetal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblvegetal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblvegetal&quot;).value = &quot;&quot;;</div></li><li class="li1"><div class="de1">            };  </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            function carregar() {</div></li><li class="li1"><div class="de1">              let animal = sessionStorage.getItem(&quot;animal&quot;);</div></li><li class="li1"><div class="de1">              let vegetal = sessionStorage.getItem(&quot;vegetal&quot;);</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblanimal&quot;).innerHTML = animal;</div></li><li class="li1"><div class="de1">              document.getElementById(&quot;lblvegetal&quot;).innerHTML = vegetal;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;center&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Exemple sessionStorage&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;input type=&quot;text&quot;  placeholder=&quot;nom vegetal&quot; id=&quot;nomvegetal&quot;&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;guardar()&quot;&gt;Guardar&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;carregar()&quot;&gt;Carregar&lt;/button&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Animal: &lt;label id=&quot;lblanimal&quot;&gt;&lt;/label&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Vegetal: &lt;label id=&quot;lblvegetal&quot;&gt;&lt;/label&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;a href=&quot;animal.html&quot;&gt;animal.html&lt;/a&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu provar el darrer exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/xxZMeeV?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xxZMeeV?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/xxZMeeV?editors=1010</a> i a <a href="https://codepen.io/ioc-daw-m06/pen/MWKLRRM?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MWKLRRM?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/MWKLRRM?editors=1010</a>.
+</p>
+</div></div>
+</div>
+
+<h2><a id="comunicacio_entre_finestres" >Comunicació entre finestres</a></h2>
+<div class="level2">
+
+<p>
+L’objecte <code>window</code> representa una finestra oberta en un navegador. Quan des d’una finestra s’obre una altra finestra, el navegador web “coneix” aquesta relació de dependència, i es pot parlar de finestra <em>pare</em> i finestra <em>filla</em>. En el següent exemple mostrem com es comunica una finestra amb la finestra filla que crea; i a l’hora la finestra filla també es comunica amb el seu pare. Aquestes tècniques només es poden utilitzar entre finestres que tenen relació de pare i fills. No ens podem comunicar amb finestres independents.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En el mètode <code>window.open()</code>, si no posem el tercer argument, on definim els paràmetres <code>top</code>, <code>left</code>, <code>width</code> i <code>height</code>, la finestra s’obre en una nova pestanya del navegador. Aleshores es podria parlar de comunicació entre pestanyes del navegador.
+</p>
+</div></div>
+<p>
+script <em>finestraPare.html</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Comunicació entre finestres&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            let i = 0;</div></li><li class="li1"><div class="de1">            function crearFinestraFilla() {</div></li><li class="li1"><div class="de1">                let finestraFilla = window.open(&quot;finestraFilla.html&quot;, &quot;Comptador&quot;, &quot;top=200,left=200,width=200,height=200&quot;);</div></li><li class="li1"><div class="de1">                setInterval(function(){ temporitzador(finestraFilla) }, 1000);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            function temporitzador(finestraFilla) {</div></li><li class="li1"><div class="de1">                i++;</div></li><li class="li1"><div class="de1">                let comptador_fill = finestraFilla.document.getElementById(&quot;comptador&quot;);</div></li><li class="li1"><div class="de1">                comptadorFill.innerHTML= i;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;crearFinestraFilla();&quot;&gt;Crear la finestra filla&lt;/button&gt;   </div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+script <em>finestraFilla.html</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Comunicació entre finestres&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function randomColorInParent() {</div></li><li class="li1"><div class="de1">              let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';</div></li><li class="li1"><div class="de1">              //finestra del pare:</div></li><li class="li1"><div class="de1">              opener.document.body.style.backgroundColor = color;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;randomColorInParent();&quot;&gt;Canviar el color de la finestra pare&lt;/button&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        Comptador processat pel pare:</div></li><li class="li1"><div class="de1">        &lt;p id=&quot;comptador&quot;&gt;&lt;/p&gt;   </div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+<code>window.open()</code> existeix des dels primers inicis de JavaScript i el web. Però el temps ha passat, i amb HTML5 i les versions actuals dels navegadors han aparegut noves tècniques que permeten establir comunicació entre finestres independents, com ara <code>localStorage</code>.
+</p>
+
+<p>
+Gràcies a l’objecte <code>localStorage</code> es pot guardar informació en el cantó del client, i es pot establir un canal de comunicació entre finestres independents. Quan una finestra vol enviar un missatge a una altra finestra, n’hi ha prou a emmagatzemar el missatge i d’alguna manera s’ha d’aixecar un <em>event</em> per tal que la finestra receptora sàpiga que ha de llegir el missatge. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Trobareu un exemple concret amb <code>localStorage</code> a la secció “Activitats” del web del mòdul.
+</p>
+</div></div>
+</div>
+
+<h2><a id="marcs_frames_iframes" >Marcs (frames/iframes)</a></h2>
+<div class="level2">
+
+<p>
+El tag <code>&lt;iframe&gt;</code> especifica un <em>inline frame</em>, que s’utilitza per inserir un document <acronym title="HyperText Markup Language">HTML</acronym> dins un altre document <acronym title="HyperText Markup Language">HTML</acronym>. Per exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe src=&quot;http://ioc.xtec.cat/educacio/&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Segurament l’exemple anterior no té un disseny adequat als estàndards actuals de disseny web. Per tal que l<code>’&lt;iframe&gt;</code> tingui l’aspecte desitjat, tenim una col·lecció d’atributs, així com la possibilitat d’aplicar estils <acronym title="Cascading Style Sheets">CSS</acronym>. Hem de tenir present que hi ha diferències substancials entre els atributs disponibles a HTML5, i els que teníem a HTML4. Els més interessants suportats per HTML5 són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>width</code>, <code>height</code>: amplada i altura dels <code>&lt;iframe&gt;</code>. Aquests atributs s’han conservat a HTML5, però no hi ha cap motiu per no utilitzar <acronym title="Cascading Style Sheets">CSS</acronym> per especificar l’amplada i altura.</div>
+</li>
+<li class="level1"><div class="li"> <code>name</code>: el nom del <code>&lt;iframe&gt;</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>src</code>: <acronym title="Uniform Resource Locator">URL</acronym> del document que incrustarem a l<code>’&lt;iframe&gt;</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>srcdoc</code>: el contingut <acronym title="HyperText Markup Language">HTML</acronym> que incrustarem a l<code>’&lt;iframe&gt;</code>.</div>
+</li>
+</ul>
+
+<p>
+Molts atributs que teníem en versions anteriors de <acronym title="HyperText Markup Language">HTML</acronym> com ara <code>align</code>, <code>marginheight</code>, <code>marginwidth</code> no estan suportats a HTML5 (la qual cosa no vol dir que el navegador web no les sàpiga interpretar, de moment). Utilitzarem estils <acronym title="Cascading Style Sheets">CSS</acronym> per acabar de polir l’aspecte que desitgem per al nostre <code>&lt;iframe&gt;</code>. Aquesta manera de fer està totalment d’acord amb la tendència actual de separar el contingut web del seu disseny. Vegem-ho amb un exemple:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les possibilitats que tenim avui dia amb HTML5 i CSS3 d’incloure-hi estils nostres és molt ample. En aquest exemple pots provar: <code>-moz-transform:rotate(20deg);</code>
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;iframes&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;style&gt;</div></li><li class="li1"><div class="de1">            iframe {</div></li><li class="li1"><div class="de1">              width: 600px;</div></li><li class="li1"><div class="de1">              height: 600px;</div></li><li class="li1"><div class="de1">              border: #ff0000 1px dotted;</div></li><li class="li1"><div class="de1">              margin-top: 30px;</div></li><li class="li1"><div class="de1">              margin-bottom: 30px;</div></li><li class="li1"><div class="de1">              padding: 20px;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/style&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;iframe de la IOC&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe src=&quot;http://ioc.xtec.cat/educacio/&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si no volem que apareguin els <em>scrolls</em>, i que l<code>’&lt;iframe&gt;</code> es fusioni totalment amb la nostra pàgina, podem provar el següent codi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;iframes&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;style&gt;</div></li><li class="li1"><div class="de1">            iframe {</div></li><li class="li1"><div class="de1">              width: 1000px;</div></li><li class="li1"><div class="de1">              height: 1000px;</div></li><li class="li1"><div class="de1">              border:none;</div></li><li class="li1"><div class="de1">              padding: 0;</div></li><li class="li1"><div class="de1">              margin: 0;</div></li><li class="li1"><div class="de1">              overflow: hidden;</div></li><li class="li1"><div class="de1">              overflow-x: hidden;</div></li><li class="li1"><div class="de1">              overflow-y: hidden;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/style&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;iframe de la IOC&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe src=&quot;http://ioc.xtec.cat/educacio/&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">&lt;frame&gt; vs &lt;iframe&gt;</p>
+<p>
+A <acronym title="HyperText Markup Language">HTML</acronym> existeixen els tags <code>&lt;frame&gt;</code> i <code>&lt;frameset&gt;</code>, que ja no estan suportats per HTML5. Amb <code>&lt;frameset&gt;</code> podem dividir una pàgina en diverses parts, horitzontalment i verticalment, i incrustar diferents <code>&lt;frame&gt;</code>. Amb aquesta tècnica es van fer moltes pàgines web al principi d’Internet comercial, a finals dels anys 90. Avui dia ja no fem servir els <code>&lt;frame&gt;</code> sinó els <code>&lt;iframe&gt;</code>, que ens permeten incrustar una pàgina dins d’una altra.
+</p>
+</div></div>
+</div>
+
+<h3><a id="programacio_amb_marcs_iframes" >Programació amb marcs (iframes)</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>window</code> té la propietat <code>frames</code>, que retorna tots els elements <code>&lt;iframe&gt;</code> de la finestra actual.
+</p>
+
+<p>
+Vegeu aquest exemple, on es recorren tots els marcs i s’hi carregua un contingut de la Viquipèdia:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;title&gt;Llista de municipis&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;style&gt;</div></li><li class="li1"><div class="de1">    iframe {</div></li><li class="li1"><div class="de1">      width: 800px;</div></li><li class="li1"><div class="de1">      height: 200px;</div></li><li class="li1"><div class="de1">      border: #ff0000 1px dotted;</div></li><li class="li1"><div class="de1">      margin-top: 10px;</div></li><li class="li1"><div class="de1">      margin-bottom: 0px;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/style&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    function carregarFrames() {</div></li><li class="li1"><div class="de1">      let array = [&quot;Manresa&quot;, &quot;Sallent&quot;, &quot;Balsareny&quot;, &quot;Puig-reig&quot;];</div></li><li class="li1"><div class="de1">      let frames = window.frames;</div></li><li class="li1"><div class="de1">      console.log(frames.length);</div></li><li class="li1"><div class="de1">      console.log(frames[0].width);</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; frames.length; i++) {</div></li><li class="li1"><div class="de1">        frames[i].location = &quot;https://ca.wikipedia.org/wiki/&quot; + array[i];</div></li><li class="li1"><div class="de1">        console.log(window.frames[i].parent === window) //true: el pare del iframe és la finestra on està incrustada</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body onload=&quot;carregarFrames()&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1&gt;Llista de municipis&lt;/h1&gt;</div></li><li class="li1"><div class="de1">  &lt;iframe&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">  &lt;iframe&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">  &lt;iframe&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">  &lt;iframe&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xxZMNbE?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xxZMNbE?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/xxZMNbE?editors=1010</a>.
+</p>
+
+<p>
+Un cas d’ús molt habitual per a la utilització d<code>‘iframe</code> és incrustar editors de text o vídeos en una pàgina web. Per exemple, <a href="https://www.youtube.com" class="urlextern" title="https://www.youtube.com"  rel="nofollow">Youtube</a> inclou un botó per compartir vídeos i l’opció <em>Inserir el vídeo</em> mostra el codi <acronym title="HyperText Markup Language">HTML</acronym> per inserir-lo a qualsevol pàgina web, només cal enganxar-lo. Per exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/F1UP7wRCPH8&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExPrzPy?editors=1000" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExPrzPy?editors=1000"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ExPrzPy?editors=1000</a>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Com que el contingut dels <em>frames</em> pot trigar a carregar-se (i més si el seu contingut està en un domini remot), té sentit llençar l’<em>event</em> de quan s’ha acabat de carregar l’<em>iframe</em>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Llista de municipis&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Llista de municipis&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe src=&quot;http://ioc.xtec.cat/educacio/&quot; name=&quot;IOC&quot; style=&quot;height:100px&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">          // set onload on element</div></li><li class="li1"><div class="de1">          document.getElementsByTagName('iframe')[0].onload = function() {</div></li><li class="li1"><div class="de1">            alert('1. Frame carregat del tot')</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">          // set onload on window</div></li><li class="li1"><div class="de1">          frames[0].onload = function() {</div></li><li class="li1"><div class="de1">            alert('2. Frame carregat del tot')</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Arribats a aquest punt s’ha de tenir en compte que la crida a les funcions amb <code>onload</code> us funcionarà en el primer exemple i en el segon no. I és que hi ha un concepte important, que són les <strong>polítiques d’accés a dominis creuats</strong> (<em>cross-domain access policies</em>), o la política del mateix origen (<em>same origin policy</em>). Per motius de seguretat, accedir a contingut i propietats d’URLs que es troben en altres dominis està deshabilitat. I per tant, no podem pretendre que puguem accedir a totes les propietats d’un <em>iframe</em> quan no tenen el mateix nom de domini, protocol i port que la <acronym title="Uniform Resource Locator">URL</acronym> pròpia. Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">frames[0].height = '30px'; //Error: Permission denied to access property 'height'</div></li></ol></pre>
+
+<p>
+Però en canvi sí que podem fer:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.getElementById(&quot;frame1&quot;).style.height = '100px';</div></li></ol></pre>
+
+<p>
+És a dir, no podem accedir a la propietat com a element del DOM, de l’objecte <code>window</code>, però sí que podem accedir a l’estil <acronym title="HyperText Markup Language">HTML</acronym> de l’element.
+</p>
+
+</div>
+
+<h3><a id="comunicacio_entre_marcs_iframes" >Comunicació entre marcs (iframes)</a></h3>
+<div class="level3">
+
+<p>
+Es pot enviar missatges entre els diferents <em>frames</em> que composen una pàgina. Per fer-ho, s’ha de fer referència als <em>frames</em> com a objectes del DOM: a JavaScript, un cop es té referenciat un objecte, es pot accedir als seus mètodes i propietats. A més a més, un objecte pot tenir com a propietats els descendents que hi pengen en la seva jerarquia. Per exemple, veureu tot seguit com, en un document <acronym title="HyperText Markup Language">HTML</acronym>, es pot accedir als formularis que conté; i en un formulari, es pot accedir als elements que conté.
+</p>
+
+<p>
+Per implementar el següent exemple necessitareu tres fitxers: pare.html, frame1.html i frame2.html:
+</p>
+
+<p>
+<strong>pare.html</strong>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Comunicació entre iframes&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Comunicació entre iframes&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        En aquest exemple hem de posar el valor que volem que tingui l'altura de l'altre iframe. Per exemple: 100.&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe id=&quot;iframe1&quot; src=&quot;frame1.html&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">        &lt;iframe id=&quot;iframe2&quot; src=&quot;frame2.html&quot;&gt;&lt;/iframe&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+<strong>frame1.html</strong>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;iframe 1&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function funcio1() {</div></li><li class="li1"><div class="de1">              let ifrm1 = parent.document.getElementById('iframe1');</div></li><li class="li1"><div class="de1">              let ifrm2 = parent.document.getElementById('iframe2');</div></li><li class="li1"><div class="de1">              let win1 = ifrm1.contentWindow;</div></li><li class="li1"><div class="de1">              let win2 = ifrm2.contentWindow;</div></li><li class="li1"><div class="de1">              console.log(win1);</div></li><li class="li1"><div class="de1">              let doc1 = ifrm1.contentDocument? ifrm1.contentDocument: ifrm1.contentWindow.document;</div></li><li class="li1"><div class="de1">              let doc2 = ifrm2.contentDocument? ifrm2.contentDocument: ifrm2.contentWindow.document;</div></li><li class="li1"><div class="de1">              console.log (doc1);</div></li><li class="li1"><div class="de1">              let fld1 = doc1.forms[0].elements[0];</div></li><li class="li1"><div class="de1">              console.log(fld1);</div></li><li class="li1"><div class="de1">              let valor1 = fld1.value;</div></li><li class="li1"><div class="de1">              console.log(valor1);</div></li><li class="li1"><div class="de1">              doc2.forms[0].elements[0].value = valor1;</div></li><li class="li1"><div class="de1">              ifrm2.style.height = valor1 + 'px';</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;iframe 1&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form&gt;</div></li><li class="li1"><div class="de1">            &lt;input id=&quot;txt1&quot; type=&quot;text&quot; /&gt;</div></li><li class="li1"><div class="de1">            &lt;button onclick=&quot;funcio1()&quot;&gt;Passar al iframe2 i canviar altura&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;/form&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+<strong>frame2.html</strong>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;iframe 2&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            function funcio2() {</div></li><li class="li1"><div class="de1">              let ifrm1 = parent.document.getElementById('iframe1');</div></li><li class="li1"><div class="de1">              let ifrm2 = parent.document.getElementById('iframe2');</div></li><li class="li1"><div class="de1">              let win1 = ifrm1.contentWindow;</div></li><li class="li1"><div class="de1">              let win2 = ifrm2.contentWindow;</div></li><li class="li1"><div class="de1">              console.log(win2);</div></li><li class="li1"><div class="de1">              let doc1 = ifrm1.contentDocument? ifrm1.contentDocument: ifrm1.contentWindow.document;</div></li><li class="li1"><div class="de1">              let doc2 = ifrm2.contentDocument? ifrm2.contentDocument: ifrm2.contentWindow.document;</div></li><li class="li1"><div class="de1">              console.log (doc2);</div></li><li class="li1"><div class="de1">              let fld2 = doc2.forms[0].elements[0];</div></li><li class="li1"><div class="de1">              console.log(fld2);</div></li><li class="li1"><div class="de1">              let valor2 = fld2.value;</div></li><li class="li1"><div class="de1">              console.log(valor2);</div></li><li class="li1"><div class="de1">              doc1.forms[0].elements[0].value = valor2;</div></li><li class="li1"><div class="de1">              ifrm1.style.height = valor2 + 'px';</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">      &lt;h1&gt;iframe 2&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;form&gt;</div></li><li class="li1"><div class="de1">        &lt;input id=&quot;txt2&quot; type=&quot;text&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;funcio2()&quot;&gt;Passar al iframe1 i canviar altura&lt;/button&gt;</div></li><li class="li1"><div class="de1">      &lt;/form&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Des d’un dels <em>frames</em> es pot accedir al seu pare mitjançant <code>parent.document</code>. Podeu accedir als continguts dels <em>frames</em> amb <code>contentDocument</code> o <code>contentWindow.contentDocument</code> (depenent dels navegadors); i un cop es té referenciat el document, es pot accedir als elements del DOM, com ara els formularis i els elements que contenen (les caixes de text). Es pot canviar el contingut de les caixes de text amb la propietat <code>value</code>.
+</p>
+
+<p>
+Per acabar, cal tenir en compte que cada <em>frame</em> es considera un document independent i, per consegüent, quan es faci una cerca de nodes al document no es trobaran els nodes dintre d’un <em>frame</em>. Pel mateix motiu, els estils <acronym title="Cascading Style Sheets">CSS</acronym> aplicats al document principal no afecten el contingut dels <em>frames</em>, ja que són diferents documents i habitualment carreguen els seus propis estils.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

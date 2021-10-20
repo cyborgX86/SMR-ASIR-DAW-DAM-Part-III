@@ -1,0 +1,710 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Serveis web amb Java EE 7</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a1annexos"><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap">Gestió de reserva de places a concerts com a servei web SOAP</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone">Fent servir la gestió de reserva de places a concerts des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web">Fent servir la gestió de reserva de places a concerts des d'una aplicació web</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta "Hello World!!!"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#el_servei_web_de_dades_de_llibres_operacions_crud">El servei web de dades de llibres. Operacions CRUD</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a3" class="tocsection"><p id='u5a3continguts'><a class="section" href="../../../WebContent/u5/a3/continguts.html">Serveis web RESTful amb Java EE7. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a3annexos"><a href="../../../WebContent/u5/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a3/continguts.html#un_client_per_al_servei_web_restful_que_contesta_hola">Un client per al servei web RESTful que contesta "Hola"</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#el_servei_web_de_dades_de_llibres_consum_i_testeig">El servei web de dades de llibres. Consum i testeig</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Java EE 7</a></li><li>Serveis web RESTful amb Java EE7. Consumint serveis web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_restful_amb_java_ee7_consumint_serveis_web"> Serveis web RESTful amb Java EE7. Consumint serveis web </a></h1>
+    	
+<p>
+Explicarem, mitjançant exemples, com podem consumir serveis web RESTful remots amb Java.
+</p>
+
+<p>
+Un cop codificat el servei web RESTful, el següent que ens cal fer és accedir-hi, i per fer-ho l’únic que ens cal és fer les diferents peticions HTTP a l’<acronym title="Uniform Resource Identifier">URI</acronym> del servidor que tingui els recursos als quals volem accedir.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Es poden provar els serveis RESTful <strong>amb qualsevol eina que permeti fer peticions HTTP</strong>.
+</p>
+</div></div>
+<p>
+La primera eina en la qual pensaríem tots és un navegador web (Microsoft Internet Explorer, Google Chrome, Mozilla Firefox, etc.). El problema és que els navegadors, per defecte, tan sols poden fer peticions <code>GET</code> i peticions <code>POST</code>. Si voleu fer peticions d’un altre tipus (<code>PUT</code>, <code>DELETE</code>, <code>HEAD</code>) us caldrà instal·lar algun <em>plugin</em> al navegador que us ho permeti (Postman és un possible <em>plugin</em> per a Google Chrome, però n’hi ha molts).
+</p>
+
+<p>
+Una altra opció és utilitzar la utilitat <strong>cURL</strong> que us permet fer tot tipus de peticions HTTP per línia de comandes.
+</p>
+
+<p>
+Si el que volem és consumir serveis web RESTful des de Java, l’única opció que hi havia abans de JAX-RS 2.0 era fer servir l’API de baix nivell <code>java.net.HttpURLConnection</code> o alguna llibreria propietària que us fes la vida una mica més fàcil.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JAX-RS 2.0</strong> proporciona una <acronym title="Application Programming Interface">API</acronym> client estàndard que permet fer tota mena de peticions HTTP als serveis web RESTful remots de forma fàcil.
+</p>
+</div></div>
+<p>
+L’API client de JAX-RS és molt senzilla d’utilitzar; moltes vegades tan sols us caldrà utilitzar tres classes: <code>Client</code>, <code>WebTarget</code> i <code>Response</code>.
+</p>
+
+<p>
+Amb SOAP, l’API JAX-WS forma part del mateix JDK, mentre que amb JAX-RS cal que incloguem JAX-RS al <em>classpath</em> del client. JAX-WS generava un conjunt d’artefactes automàticament per poder connectar amb els serveis web, mentre que JAX-RS no en genera cap; tan sols cal tenir el .jar de la implementació de l’API al <em>classpath</em>.
+</p>
+
+<h2><a id="un_client_per_al_servei_web_restful_que_contesta_hola" >Un client per al servei web RESTful que contesta &quot;Hola&quot;</a></h2>
+<div class="level2">
+
+<p>
+Veurem com consumir serveis web RESTful des d’una aplicació Java <em>stand-alone</em> utilitzant l’API que proporciona JAX-RS.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte és un senzill servei web RESTful que respon a peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <a href="http://localhost:8080/resthelloioc/rest/hello" class="urlextern" title="http://localhost:8080/resthelloioc/rest/hello"  rel="nofollow">localhost:8080/resthelloioc/rest/hello</a> amb la salutació “<em>Hello World!!!</em>”.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Resthelloioc” en l’estat inicial d’aquest apartat des de l’enllaç que trobareu als annexos de la unitat, i importeu-lo a NetBeans.
+</p>
+
+<p>
+Tot i que també podeu descarregar-vos el projecte en l’estat final des del annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_del_client_java_stand-alone" >Creació del client Java &#039;stand-alone&#039;</a></h3>
+<div class="level3">
+
+<p>
+Creeu la classe Java que farà de client al paquet <code>cat.xtec.ioc.resthelloioc.client</code> i l’anomeneu <code>HelloWorldClient</code> amb el següent codi:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan NetBeans us demani quins imports voleu afegir especifiqueu els del paquet <code>javax.ws.rs</code>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">public class HelloWorldClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        Client client = ClientBuilder.newClient();</div></li><li class="li1"><div class="de1">        WebTarget target = client.target(&quot;http://localhost:8080/resthelloioc/rest/hello&quot;);</div></li><li class="li1"><div class="de1">        Invocation invocation = target.request(MediaType.TEXT_HTML).buildGet();</div></li><li class="li1"><div class="de1">        Response res = invocation.invoke();        </div></li><li class="li1"><div class="de1">        System.out.println(res.readEntity(String.class));                </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fem servir la interfície <code>Client</code> per construir l’objecte <code>WebTarget</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Client client = ClientBuilder.newClient();</div></li></ol></pre>
+
+<p>
+L’objecte <code>WebTarget</code> representa l’<acronym title="Uniform Resource Identifier">URI</acronym> on enviarem les peticions; en el nostre cas, a <a href="http://localhost:8080/resthelloioc/rest/hello" class="urlextern" title="http://localhost:8080/resthelloioc/rest/hello"  rel="nofollow">localhost:8080/resthelloioc/rest/hello</a>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">WebTarget target = client.target(&quot;http://localhost:8080/resthelloioc/rest/hello&quot;);</div></li></ol></pre>
+
+<p>
+Un cop tenim l’<acronym title="Uniform Resource Identifier">URI</acronym> on enviarem les peticions ens cal construir la petició HTTP. Ho fem amb la interfície <code>Invocation</code>, que permet, entre moltes altres coses, especificar el tipus MIME de la petició:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Invocation invocation = target.request(MediaType.TEXT_HTML).buildGet();</div></li></ol></pre>
+
+<p>
+En aquest punt, quan construïm la petició, podrem especificar paràmetres, especificar el <em>path</em>, els objectes i el format d’aquests per a les peticions <code>POST</code> i <code>PUT</code>, etc. Tot això ho podrem fer mitjançant els mètodes de la interfície <code>Invocation</code>.
+</p>
+
+<p>
+La creació de l’objecte <code>Invocation</code> no executa encara la petició, i per fer-ho cal que executeu el mètode <code>invoke</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Response res = invocation.invoke()</div></li></ol></pre>
+
+<p>
+Aquesta crida, en el nostre cas, fa una petició <code>GET</code> a un servei web RESTful que hi ha a <a href="http://localhost:8080/resthelloioc/rest/hello" class="urlextern" title="http://localhost:8080/resthelloioc/rest/hello"  rel="nofollow">localhost:8080/resthelloioc/rest/hello</a> i ens torna el resultat en text/<acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+Noteu que, pel fet que l’API client de JAX-RS és una <acronym title="Application Programming Interface">API</acronym> <em>fluent</em>, podríem escriure tot el codi anterior d’una forma molt més concisa:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> API fluent</p>
+<p>
+Una <acronym title="Application Programming Interface">API</acronym> fluent és un patró de disseny que permet encadenar les crides als mètodes d’un objecte amb l’objectiu de fer un codi més elegant, concís i comprensible.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">Response response = ClientBuilder.newClient()</div></li><li class="li1"><div class="de1">                    .target(&quot;http://localhost:8080/resthelloioc/rest/hello&quot;)</div></li><li class="li1"><div class="de1">                    .request(MediaType.TEXT_HTML).get();</div></li></ol></pre>
+
+<p>
+L’objecte <code>Response</code> representa la resposta del servei web i conté, a part del “<em>Hello World!!!</em>”, informació de la resposta HTTP rebuda del servei web. Amb <code>Response</code> podreu verificar els codis HTTP de retorn, accedir a les capçaleres, a les <em>cookies</em> i al valor de retorn.
+</p>
+
+<p>
+Accedirem al valor retornat pel servei web amb el mètode <code>readEntity</code>; a aquest mètode li heu de passar un objecte que permeti fer la transformació entre la representació del recurs que envia el servidor (en el nostre cas, un senzill <em>String</em>, però poden ser tipus complexes) i el tipus de dades que volem. JAX-RS s’encarregarà de fer aquestes transformacions.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">res.readEntity(String.class)</div></li></ol></pre>
+
+<p>
+Ara ja tan sols ens queda desplegar el servei web i executar el client per veure si es comporta com volem.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_i_prova_amb_el_client_java" >Desplegament del servei web i prova amb el client Java</a></h3>
+<div class="level3">
+
+<p>
+Desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans.
+</p>
+
+<p>
+Comproveu que el servei web està desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/resthelloioc/rest/hello" class="urlextern" title="http://localhost:8080/resthelloioc/rest/hello"  rel="nofollow">localhost:8080/resthelloioc/rest/hello</a> amb un navegador. El servei web us ha de tornar la salutació “<em>Hello World!!!</em>”.
+</p>
+
+<p>
+Si tot és correcte ja podeu executar el client; per fer-ho, poseu-vos damunt de la classe <code>HelloWorldClient</code> i feu <em>Run File</em> a NetBeans (vegeu la <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució d’una classe Java a NetBeans
+
+</figcaption><img src="../media/fig1.1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I veureu la salutació “<em>Hello World!!!</em>” a la consola de sortida de NetBeans:
+</p>
+<pre class="code">Hello World!!!
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------</pre>
+
+</div>
+
+<h2><a id="el_servei_web_de_dades_de_llibres_consum_i_testeig" >El servei web de dades de llibres. Consum i testeig</a></h2>
+<div class="level2">
+
+<p>
+Veurem com consumir i fer un test d’integració d’un servei web que permet als clients fer operacions sobre un catàleg de llibres des d’un conjunt de test d’integració amb JUnit i l’API client que proporciona JAX-RS.
+</p>
+
+<p>
+El primer que fareu serà desplegar a Glassfish el servei web REST de gestió del catàleg de llibres i després creareu el conjunt de tests d’integració que faran peticions HTTP al servei web amb l’API client de JAX-RS.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>tests d’integració</strong> difereixen dels tests unitaris en el fet que no testegen el codi de forma aïllada, sinó que requereixen que el codi a testejar estigui desplegat al servidor d’aplicacions per funcionar.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte1" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+Aquest projecte correspon al servei web RESTful de gestió d’un catàleg de llibres i ja té codificades les següents operacions:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Restbooksioc” des de l’enllaç disponible als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’altre enllaç disponible, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Llistar tots els llibres del catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Consulta d’un llibre mitjançant l’ISBN.</div>
+</li>
+<li class="level1"><div class="li"> Creació d’un llibre al catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Actualització de les dades d’un llibre.</div>
+</li>
+<li class="level1"><div class="li"> Esborrar un llibre del catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Cercar llibres per títol.</div>
+</li>
+</ul>
+
+<p>
+Crearem els tests d’integració dins el mateix projecte que conté el codi del servei web que volem provar. Una altra opció, igualment vàlida, seria crear un nou projecte i posar-hi només el test.
+</p>
+
+<p>
+JUnit és un <em>framework</em> de test que utilitza anotacions per identificar els mètodes que especifiquen un test. A JUnit, un test, ja sigui unitari o d’integració, és un mètode que s’especifica en una classe que només s’utilitza per al test. Això s’anomena <em>classe de test</em>. Un mètode de test amb JUnit 4 es defineix amb l’anotació <code>@org.junit.Test</code>. En aquest mètode s’utilitza un mètode d’asserció en el qual es comprova el resultat esperat de l’execució de codi en comparació del resultat real.
+</p>
+
+<p>
+Per tal de fer els tests d’integració farem servir JUnit 4; per fer-ho ens cal tenir la dependència a JUnit al pom.xml del projecte. Al projecte de partida ja hi teniu aquesta dependència afegida.
+</p>
+
+<p>
+Tot i que el resultat de l’execució dels tests es pot veure a la finestra de sortida de NetBeans, és molt més còmode visualitzar-ho a la finestra de resultats de test que proporciona també NetBeans. Per mostrar aquesta finestra aneu al menú <em>Window / IDE Tools / Test Results</em> (vegeu la <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra de resultats dels tests
+
+</figcaption><img src="../media/fig1.2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A Netbeans, els tests es poden executar de forma individual, és a dir, classe per classe o tots els del projecte. Si voleu executar tots els tests d’un projecte primer heu de designar com a projecte principal el projecte “Restbooksioc”, tal com podeu veure en la <span class="figref"><a href="#fig1.3"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Assignació del projecte com a projecte principal
+
+</figcaption><img src="../media/fig1.3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop fet això, desplegueu el servei web com a part de l’aplicació Java EE que el conté fent <em>Clean and Build</em> i després <em>Run</em> a NetBeans.
+</p>
+
+<p>
+Comproveu que el servei web s’ha desplegat correctament accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> amb un navegador. El servei web us ha de tornar el llistat de llibres que té el catàleg en format JSON:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot;Ildefonso Falcones&quot;,&quot;title&quot;:&quot;La catedral del mar&quot;},
+{&quot;isbn&quot;:&quot;9788467009477&quot;,&quot;author&quot;:&quot;Jose Maria Peridis Perez&quot;,&quot;title&quot;:&quot;La luz y el misterio de las catedrales&quot;}]</pre>
+
+</div>
+
+<h3><a id="creacio_i_execucio_dels_tests_d_integracio" >Creació i execució dels tests d’integració</a></h3>
+<div class="level3">
+
+<p>
+Ara toca començar a crear els tests d’integració per provar el servei web RESTful de gestió del catàleg. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan NetBeans us demani quins imports voleu afegir, especifiqueu els del paquet <code>javax.ws.rs</code>.
+</p>
+</div></div>
+<p>
+Per fer-ho, creeu un nou paquet dins de <code>Test Packages</code> anomenat, per exemple, <em>cat.xtec.ioc.test</em>, i creeu-hi una classe Java anomenada <code>BooksRestServiceTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.test;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ws.rs.client.Client;</div></li><li class="li1"><div class="de1">import javax.ws.rs.client.ClientBuilder;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class BooksRestServiceTest {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final Client client = ClientBuilder.newClient();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Estructura dels tests</p>
+<p>
+Un dels patrons més utilitzats a l’hora d’estructurar el codi d’un test és l’anomenat <strong>AAA</strong> (de l’anglès <strong>A</strong>rrange-<strong>A</strong>ct-<strong>A</strong>ssert); amb aquest, els tests sempre tindran una fase de <strong>preparació</strong> (<em>Arrange</em>), una d’<strong>execució</strong> (<em>Act</em>) i una de <strong>verificació</strong> de resultats (<em>Assert</em>).
+</p>
+</div></div>
+<p>
+El primer test que fareu serà un test que <strong>comprovi que la consulta de tots els llibres del catàleg us torna la llista sencera de llibres</strong>; per fer-ho, creeu un mètode anomenat <code>shouldReturnAllBooks</code> dins la classe <code>BooksRestServiceTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void shouldReturnAllBooks() {</div></li><li class="li1"><div class="de1">    // Arrange         </div></li><li class="li1"><div class="de1">    URI uri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).build();</div></li><li class="li1"><div class="de1">    WebTarget target = client.target(uri);</div></li><li class="li1"><div class="de1">    Invocation invocation = target.request(MediaType.APPLICATION_JSON).buildGet();</div></li><li class="li1"><div class="de1">    Book first = new Book(&quot;9788425343537&quot;, &quot;Ildefonso Falcones&quot;, &quot;La catedral del mar&quot;);</div></li><li class="li1"><div class="de1">    Book second = new Book(&quot;9788467009477&quot;, &quot;Jose Maria Peridis Perez&quot;, &quot;La luz y el misterio de las catedrales&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Act</div></li><li class="li1"><div class="de1">    Response res = invocation.invoke();</div></li><li class="li1"><div class="de1">    List&lt;Book&gt; returnedBooks = res.readEntity(new GenericType&lt;List&lt;Book&gt;&gt;() {});</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Assert</div></li><li class="li1"><div class="de1">    assertTrue(returnedBooks.contains(first));                </div></li><li class="li1"><div class="de1">    assertTrue(returnedBooks.contains(second));</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si analitzeu el codi veureu diverses coses importants: la primera és que heu anotat el mètode <code>shouldReturnAllBooks</code> amb l’anotació <code>@Test</code> per indicar que es tracta d’un mètode de test.
+</p>
+
+<p>
+A la fase de <strong>preparació</strong> feu servir la interfície <code>Client</code> per construir l’objecte <code>WebTarget</code>, que representa l’<acronym title="Uniform Resource Identifier">URI</acronym> on enviareu les peticions; en el vostre cas, a <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">URI uri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).build();</div></li><li class="li1"><div class="de1">WebTarget target = client.target(uri);</div></li></ol></pre>
+
+<p>
+Un cop teniu l’<acronym title="Uniform Resource Identifier">URI</acronym> on enviareu les peticions cal construir la petició HTTP. Ho feu amb la interfície <code>Invocation</code>, que permet, entre moltes altres coses, especificar el tipus MIME de la petició:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Invocation invocation = target.request(MediaType.APPLICATION_JSON).buildGet();</div></li></ol></pre>
+
+<p>
+Tot l’anterior ha servit per preparar la petició que voleu enviar al servei web; el següent que fareu serà l’<strong>execució</strong>, cridant el mètode <code>invoke</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Response res = invocation.invoke();</div></li></ol></pre>
+
+<p>
+Aquesta crida, en el vostre cas, fa una petició <code>GET</code> a un servei web RESTful que hi ha a <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> i torna el resultat en format <code>application/json</code>.
+</p>
+
+<p>
+L’objecte <code>Response</code> representa la resposta del servei web que us permetrà verificar que el resultat és correcte. Per fer-ho, accedireu al valor retornat pel servei web amb el mètode <code>readEntity</code>; a aquest mètode li heu de passar un objecte que permeti fer la transformació entre la representació del recurs que envia el servidor (en el vostre cas, la llista de llibres en format JSON) i el tipus de dades que voleu. JAX-RS s’encarregarà de fer aquestes transformacions.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">List&lt;Book&gt; returnedBooks = res.readEntity(new GenericType&lt;List&lt;Book&gt;&gt;() {});</div></li></ol></pre>
+
+<p>
+En la fase de <strong>verificació</strong> comproveu, per exemple, que el títol dels dos llibres coincideix amb l’esperat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">assertTrue(returnedBooks.contains(first));                </div></li><li class="li1"><div class="de1">assertTrue(returnedBooks.contains(second));</div></li></ol></pre>
+
+<p>
+Ja podeu executar el test que heu creat fent <em>Test File</em> (vegeu la <span class="figref"><a href="#fig1.4"><span>figura</span></a></span>) al menú contextual de la classe de <code>Test</code>.
+</p>
+<div class="iocfigure"><a name="fig1.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del test
+
+</figcaption><img src="../media/fig1.4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si tot ha anat bé veureu el resultat a la finestra de <code>Test</code> (vegeu la <span class="figref"><a href="#fig1.5"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de l’execució del test
+
+</figcaption><img src="../media/fig1.5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El segon test que fareu serà un test que <strong>comprovarà que si consulteu un llibre per ISBN que no existeix al catàleg de llibres el servei web us torna el codi HTTP 404 – Not Found</strong>.
+</p>
+
+<p>
+Per fer-ho, creeu un mètode anomenat <code>nonExistentBookShouldReturn404</code> dins la classe <code>BooksRestServiceTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void nonExistentBookShouldReturn404() {</div></li><li class="li1"><div class="de1">    // Arrange    </div></li><li class="li1"><div class="de1">    URI uri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).build();</div></li><li class="li1"><div class="de1">    WebTarget target = client.target(uri).path(&quot;unknownISBN&quot;);</div></li><li class="li1"><div class="de1">    Invocation invocation = target.request(MediaType.APPLICATION_JSON).buildGet();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Act</div></li><li class="li1"><div class="de1">    Response res = invocation.invoke();       </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Assert</div></li><li class="li1"><div class="de1">    assertEquals(Response.Status.NOT_FOUND.toString(), res.getStatusInfo().toString());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que ara l’<acronym title="Uniform Resource Identifier">URI</acronym> on enviareu les peticions <code>GET</code> és <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a>, i que li afegiu el <em>path</em> <em>/unknownISBN</em>. Aquesta crida correspon al mètode <code>find</code> del servei web que té el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@GET</div></li><li class="li1"><div class="de1">@Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">@Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public Book find(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">  return this.bookRepository.get(isbn);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A la fase d’execució feu el mateix que per cercar tots els llibres del catàleg, i a la verificació ara comprovareu el codi HTTP retornat per la crida:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">assertEquals(Response.Status.NOT_FOUND.toString(), res.getStatusInfo().toString());</div></li></ol></pre>
+
+<p>
+L’objecte <code>Response</code> representa la resposta del servei web i conté, a part del contingut, molta informació de la resposta HTTP rebuda. Amb <code>Response</code> podeu verificar els codis HTTP de retorn i accedir a les capçaleres, a les <em>cookies</em> i al valor de retorn.
+</p>
+
+<p>
+Si executeu els tests veureu que el test que comprova que el servei web torni un <em>404 – Not Found</em> si consulteu un llibre per ISBN que no existeix falla perquè torna un <em>204 – No content</em> enlloc de l’esperat <em>404 – Not Found</em> (vegeu la <span class="figref"><a href="#fig1.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat erroni de l’execució del test
+
+</figcaption><img src="../media/fig1.6.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El problema és la codificació del mètode que fa la cerca per ISBN al servei web; us tocarà modificar-lo si voleu que torni un error 404 enlloc d’un 204. Per fer-ho obriu la classe <code>BooksRestService</code> del paquet <code>cat.xtec.ioc.service</code> i canvieu el codi del mètode <code>find</code> pel següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@GET</div></li><li class="li1"><div class="de1">@Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">@Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public Response find(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">    Book book = this.bookRepository.get(isbn);</div></li><li class="li1"><div class="de1">    if(book == null) {</div></li><li class="li1"><div class="de1">        throw new NotFoundException();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return Response.ok(book).build();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem canviat el tipus de retorn a <code>Response</code>, i en aquest objecte hi afegim el llibre en cas que el trobem. En cas que no trobem el llibre llencem una excepció de tipus <code>NotFoundException</code> que el <em>runtime</em> de JAX-RS s’encarregarà de transformar en un error <em>HTTP 404 – Not Found</em>.
+</p>
+
+<p>
+Desplegueu el servei web fent <em>Run</em> a NetBeans i torneu a executar el test. Si tot ha anat bé  veureu que s’han executat correctament els dos tests (vegeu la <span class="figref"><a href="#fig1.7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat correcte de l’execució dels tests
+
+</figcaption><img src="../media/fig1.7.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El tercer test que mostrarem és un test que <strong>comprovarà que no es puguin afegir llibres amb contingut nul</strong>. El que volem és que si la informació del llibre que es vol afegir és nul·la, el servei web ens torni el codi <em>HTTP 400 – Bad Request</em>.
+</p>
+
+<p>
+Per fer-ho, creeu un mètode anomenat <code>attemptsToCreateNullBooksShouldReturn400</code> dins la classe <code>BooksRestServiceTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void attemptsToCreateNullBooksShouldReturn400() {</div></li><li class="li1"><div class="de1">    // Arrange    </div></li><li class="li1"><div class="de1">    URI uri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).build();</div></li><li class="li1"><div class="de1">    WebTarget target = client.target(uri);</div></li><li class="li1"><div class="de1">    Invocation invocation = target.request(MediaType.APPLICATION_JSON).buildPost(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Act</div></li><li class="li1"><div class="de1">    Response res = invocation.invoke();               </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Assert</div></li><li class="li1"><div class="de1">    assertEquals(Response.Status.BAD_REQUEST.toString(), res.getStatusInfo().toString());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que ara enviarem peticions <code>POST</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> especificant un objecte nul. Aquesta crida correspon al mètode <code>create</code> del servei web:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@POST</div></li><li class="li1"><div class="de1">@Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public void create(Book book) {</div></li><li class="li1"><div class="de1">    this.bookRepository.add(book);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A la fase d’execució feu el mateix que per cercar tots els llibres del catàleg i a la verificació tornareu a comprovar el codi HTTP retornat per la crida:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Assert</div></li><li class="li1"><div class="de1">assertEquals(Response.Status.BAD_REQUEST.toString(), res.getStatusInfo().toString());</div></li></ol></pre>
+
+<p>
+Si executeu els tests veureu que el test que comprova que no es puguin afegir llibres amb contingut nul falla perquè torna un <em>500 – Internal Server Error</em> enlloc del <em>400 – Bad Request</em>(vegeu la <span class="figref"><a href="#fig1.8"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat erroni de l’execució del test
+
+</figcaption><img src="../media/fig1.8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El problema és la codificació del mètode que fa la creació de llibres al servei web; us tocarà modificar-lo si voleu que torni un error 400 enlloc d’un 500. Per fer-ho, obriu la classe <code>BooksRestService</code> del paquet <code>cat.xtec.ioc.service</code> i canvieu el codi del mètode <code>create</code> pel següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@POST</div></li><li class="li1"><div class="de1">@Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public Response create(Book book) {</div></li><li class="li1"><div class="de1">    if(book == null) {</div></li><li class="li1"><div class="de1">        throw new BadRequestException();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    this.bookRepository.add(book);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    return Response.ok(book).build();</div></li><li class="li1"><div class="de1">}    </div></li></ol></pre>
+
+<p>
+Heu canviat el tipus de retorn a <code>Response</code>, i si us passen un llibre nul llenceu una excepció de tipus <code>BadRequestException</code> que el <em>runtime</em> de JAX-RS s’encarregarà de transformar en un error <em>HTTP 400 – Bad Request</em>.
+</p>
+
+<p>
+Desplegueu el servei web fent <em>Run</em> a NetBeans i torneu a executar el test. Si tot ha anat bé  veureu que s’han executat correctament els tres tests (vegeu la <span class="figref"><a href="#fig1.9"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat correcte de l’execució dels tests
+
+</figcaption><img src="../media/fig1.9.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El quart i últim test que mostrarem és un test que <strong>comprovarà que la creació d’un llibre ens torni l’<acronym title="Uniform Resource Locator">URL</acronym> amb la qual es podrà consultar el llibre</strong>. Per fer-ho, creeu un mètode anomenat <code>createBookShouldReturnTheURLToGetTheBook</code> dins la classe <code>BooksRestServiceTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void createBookShouldReturnTheURLToGetTheBook() {</div></li><li class="li1"><div class="de1">    // Arrange    </div></li><li class="li1"><div class="de1">    Book book = new Book(&quot;9788423342518&quot;, &quot;Clara Sanchez&quot;, &quot;Lo que esconde tu nombre&quot;);</div></li><li class="li1"><div class="de1">    URI uri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).build();</div></li><li class="li1"><div class="de1">    WebTarget target = client.target(uri);</div></li><li class="li1"><div class="de1">    Invocation invocation = target.request(MediaType.APPLICATION_JSON).buildPost(Entity.entity(book, MediaType.APPLICATION_JSON));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Act</div></li><li class="li1"><div class="de1">    Response res = invocation.invoke();      </div></li><li class="li1"><div class="de1">    URI returnedUri = res.readEntity(URI.class);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Assert</div></li><li class="li1"><div class="de1">    URI expectedUri = UriBuilder.fromUri(&quot;http://localhost/restbooksioc/rest/books&quot;).port(8080).path(&quot;9788423342518&quot;).build();</div></li><li class="li1"><div class="de1">    assertEquals(expectedUri, returnedUri);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi del test és el mateix que el codi del test que comprovava que no es poguessin afegir llibres nul; tan sols canvia la comprovació final i el llibre a afegir. Evidentment, si executeu aquest test fallarà, ja que ara el mètode <code>create</code> del servei web està tornant la representació del llibre en format JSON i no l’<acronym title="Uniform Resource Locator">URL</acronym> on es pot consultar el llibre. 
+</p>
+
+<p>
+Per fer que torni l’<acronym title="Uniform Resource Locator">URL</acronym> cal que modifiqueu un altre cop el codi del servei web. Per fer-ho, obriu la classe <code>BooksRestService</code> del paquet <code>cat.xtec.ioc.service</code> i canvieu el codi del mètode <code>create</code> pel següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@POST</div></li><li class="li1"><div class="de1">@Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public Response create(Book book) {</div></li><li class="li1"><div class="de1">    if(book == null) {</div></li><li class="li1"><div class="de1">        throw new BadRequestException();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    this.bookRepository.add(book);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    URI bookUri = uriInfo.getAbsolutePathBuilder().path(book.getIsbn()).build(); </div></li><li class="li1"><div class="de1">    return Response.ok(bookUri).build();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+També cal que afegiu el següent atribut a la classe:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Context  private UriInfo uriInfo;</div></li></ol></pre>
+
+<p>
+L’objecte <code>UriInfo</code> us permet accedir a informació sobre la petició, i amb això podreu construir l’<acronym title="Uniform Resource Locator">URL</acronym> amb la qual es podrà consultar el llibre creat i tornar-la a l’objecte <code>Response</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">URI bookUri = uriInfo.getAbsolutePathBuilder().path(book.getIsbn()).build(); </div></li></ol></pre>
+
+<p>
+Desplegueu el servei web fent <em>Run</em> a NetBeans i torneu a executar el test. Si tot ha anat bé  veureu que s’han executat correctament els quatre tests (vegeu la <span class="figref"><a href="#fig1.10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat correcte de l’execució dels tests
+
+</figcaption><img src="../media/fig1.10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquests quatre exemples us donen la base per tal que pugueu fer tots els tests d’integració que se us acudeixin i així tenir el servei web de gestió del catàleg de llibres totalment provat!
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat heu vist les bases per al desenvolupament de clients Java que accedeixin a serveis web RESTful amb Java EE 7 i els heu treballat de manera pràctica mitjançant exemples. 
+</p>
+
+<p>
+Concretament, heu après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les bases de l’API Client de JAX-RS.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar i provar un client Java <em>stand-alone</em> que consulti un servei web RESTful mitjançant l’API Client de JAX-RS.</div>
+</li>
+<li class="level1"><div class="li"> A fer tests d’integració que us permeten provar els serveis web RESTful.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en algun d’aquests conceptes i veure com podeu treballar de forma asíncrona amb els serveis web RESTful us recomanem la realització de l’activitat associada a aquest apartat.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

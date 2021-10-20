@@ -1,0 +1,438 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Model d'objectes del document</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Programació amb el DOM (Document Object Model)</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#estructura_del_dom_interficies_principals">Estructura del DOM. Interfícies principals</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficies_del_dom">Interfícies del DOM</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficie_node">Interficie 'Node'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficie_document">Interficie 'Document'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#la_interficie_element">La interfície 'Element'</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Programació amb el DOM i la biblioteca jQuery</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#introduccio_a_jquery">Introducció a jQuery</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#selectors">Selectors</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#crear_i_manipular_elements">Crear i manipular elements</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#utilitzar_events_amb_jquery">Utilitzar Events amb jQuery</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#model-vista-controlador_mvc">Model-vista-controlador (MVC)</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Esdeveniments. Manejament de formularis</a></li><li><a href="continguts.html">Programació d'events</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="deteccio_d_events_del_ratoli" >Detecció d&#039;events del ratolí</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a utilitzar alguns dels <em>events</em> disparats per les accions realitzades amb el ratolí.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL us ha demanat implementar el prototip d’un joc molt simple en JavaScript. Us proporcionen el codi <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym>, i heu d’implementar les regles següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> El jugador té 3 segons per fer clic sobre el cercle de color vermell, que serà seleccionat aleatòriament.</div>
+</li>
+<li class="level1"><div class="li"> Una vegada s’ha exhaurit el temps, el cercle s’intercanvia amb un altre.</div>
+</li>
+<li class="level1"><div class="li"> Si es fa clic al cercle dintre del temps indicat, mostra una alerta amb el missatge: “Has guanyat”.</div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div&gt;div {</div></li><li class="li1"><div class="de1">    width: 100px;</div></li><li class="li1"><div class="de1">    height: 100px;</div></li><li class="li1"><div class="de1">    border: 1px solid red;</div></li><li class="li1"><div class="de1">    display: inline-block;</div></li><li class="li1"><div class="de1">    border-radius: 50px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .objectiu {</div></li><li class="li1"><div class="de1">    background-color: red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;1&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;2&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;3&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;4&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;5&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;6&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;7&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;8&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div id=&quot;9&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+Per obtenir un node podeu fer servir el mètode <code>document.getElementById()</code> passant com a argument l<code>‘id</code> de l’element, i per modificar la classe només cal assignar el nou valor a la propietat <code>className</code> del node.
+</p>
+
+<p>
+<strong>Nota</strong>: Per accedir a les classes que donen estil a un element d’<acronym title="HyperText Markup Language">HTML</acronym> s’utilitza la propietat <code>className</code> de l’element. Aquesta propietat conté una cadena de text que pot ser modificada per reemplaçar les classes, afegir-ne de noves o eliminar-les. Així doncs, per canviar el color del cercle que s’ha de clicar, només cal reemplaçar el <code>className</code> de l’element per <code>objectiu</code> o per una cadena buida, segons si es vol ressaltar o netejar.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per fer més entenedor el codi s’ha aplicat el disseny descendent i s’ha dividit en múltiples funcions.
+</p>
+
+<p>
+Primerament, s’han definit les funcions <code>afegirObjectiu()</code> i <code>eliminarObjectiu()</code>, que s’encarreguen d’afegir o eliminar la classe i la detecció d’<em>events</em> de l’element amb l<code>‘id</code> passat com a argument.
+</p>
+
+<p>
+Seguidament, s’ha definit una funció <code>guanyar()</code>, que és cridada quan es clica sobre el cercle vermell.
+</p>
+
+<p>
+A continuació, es troba la funció <code>canviarCercle()</code>, que és el bucle principal del joc. Primer, comprova si el cercle actual és major de 0 (és a dir, si el joc ja s’ha iniciat) i, si és així, s’elimina l’objectiu anterior. Seguidament, es genera un nou objectiu i s’activa un temporitzador que tornarà a cridar aquesta mateixa funció 3 segons després (3000 ms).
+</p>
+
+<p>
+Finalment, s’ha definit i invocat la funció <code>inicialitzar()</code> que, tot i que no és necessària, en aquest cas ajuda a entendre quin és el punt d’inicialització de l’aplicació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let idTemporitzador, actual;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let afegirObjectiu = function(id) {</div></li><li class="li1"><div class="de1">  let node = document.getElementById(id);</div></li><li class="li1"><div class="de1">  node.className = 'objectiu';</div></li><li class="li1"><div class="de1">  node.addEventListener('click', guanyar);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let eliminarObjectiu = function(id) {</div></li><li class="li1"><div class="de1">  let node = document.getElementById(id);</div></li><li class="li1"><div class="de1">  node.className = '';</div></li><li class="li1"><div class="de1">  node.removeEventListener('click', guanyar);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let guanyar = function() {</div></li><li class="li1"><div class="de1">  eliminarObjectiu(actual);</div></li><li class="li1"><div class="de1">  clearTimeout(idTemporitzador);</div></li><li class="li1"><div class="de1">  alert(&quot;Has guanyat!&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function getEnterAleatori(min, max) {</div></li><li class="li1"><div class="de1">  return Math.floor(Math.random() * (max - min)) + min;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let canviarCercle = function() {</div></li><li class="li1"><div class="de1">  if (actual &gt; 0) {</div></li><li class="li1"><div class="de1">    eliminarObjectiu(actual);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  actual = getEnterAleatori(1, 9)</div></li><li class="li1"><div class="de1">  afegirObjectiu(actual);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  idTemporitzador = setTimeout(canviarCercle, 3000);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function () {</div></li><li class="li1"><div class="de1">  canviarCercle();  </div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yapNxV" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yapNxV"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yapNxV</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="deteccio_d_events_del_teclat" >Detecció d&#039;events del teclat</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a utilitzar alguns dels <em>events</em> disparats per les accions realitzades amb el teclat.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL us ha demanat que implementeu un sistema de detecció que permeti canviar el color d’un element segons la tecla que es premi:
+</p>
+<ul>
+<li class="level1"><div class="li"> Tecla V: vermell</div>
+</li>
+<li class="level1"><div class="li"> Tecla G: groc</div>
+</li>
+<li class="level1"><div class="li"> Tecla B: blanc</div>
+</li>
+</ul>
+
+<p>
+Us proporcionen el següent codi <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div {</div></li><li class="li1"><div class="de1">    width: 100px; </div></li><li class="li1"><div class="de1">    height: 100px;</div></li><li class="li1"><div class="de1">    border: 1px solid black;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .blanc {</div></li><li class="li1"><div class="de1">    background-color: white;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .vermell {</div></li><li class="li1"><div class="de1">    background-color: red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .groc {</div></li><li class="li1"><div class="de1">    background-color: yellow;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;proves&quot; tabindex=1&gt;&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+<strong>Notes</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Fixeu-vos que s’ha fet servir l’atribut <code>tabindex=1</code>: això permet que l’element <code>div</code> sigui seleccionable i sigui capaç de detectar els <em>events</em> del teclat.</div>
+</li>
+<li class="level1"><div class="li"> Per accedir a les classes que donen estil a un element d’<acronym title="HyperText Markup Language">HTML</acronym> s’utilitza la propietat <code>className</code> de l’element. Aquesta propietat conté una cadena de text que pot ser modificada per reemplaçar les classes, afegir-ne de noves o eliminar-les. Així doncs, per canviar el color del contenidor només cal que reemplaceu el <code>className</code> de l’element pel qual correspongui.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A la funció <code>inicialitzar()</code> s’afegeix un detector per a l’esdeveniment <code>keypress</code> que invoca la funció <code>determinarColor()</code> i que rebrà com a argument tota la informació de l’<em>event</em> quan es dispara.
+</p>
+
+<p>
+Cal recordar que no tots els navegadors interpreten l’entrada de teclat de la mateixa manera, per tant, per millorar la compatibilitat, cal fer proves amb les propietats <code>key</code> i <code>keyIdentifier</code>.
+</p>
+
+<p>
+Una vegada determinada la tecla i el node només cal invocar la funció <code>canviarColor()</code>, que assignarà la classe corresponent segons la tecla premuda.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let canviarColor = function(node, tecla) {</div></li><li class="li1"><div class="de1">  switch (tecla) {</div></li><li class="li1"><div class="de1">    case 'v':</div></li><li class="li1"><div class="de1">      node.className = 'vermell';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    case 'g':</div></li><li class="li1"><div class="de1">      node.className = 'groc';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    case 'b':</div></li><li class="li1"><div class="de1">      node.className = 'blanc';</div></li><li class="li1"><div class="de1">      break;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let determinarColor = function(event) {</div></li><li class="li1"><div class="de1">  let tecla = event.key || event.keyIdentifier;</div></li><li class="li1"><div class="de1">  let node = document.getElementById('proves');</div></li><li class="li1"><div class="de1">  canviarColor(node, tecla);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let element = document.getElementById('proves');</div></li><li class="li1"><div class="de1">  element.focus();</div></li><li class="li1"><div class="de1">  element.addEventListener('keypress', determinarColor);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NRXGXj" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NRXGXj"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NRXGXj</a>.
+</p>
+
+<p>
+Fixeu-vos que l’element ha d’estar seleccionat per detectar els <em>events</em>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="deteccio_d_altres_events_del_dom" >Detecció d&#039;altres events del DOM</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a utilitzar altres <em>events</em> disparats pel DOM.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL us ha demanat un formulari de contacte preparat per afegir un sistema de validació propi que s’activarà quan s’enviï el formulari.
+</p>
+
+<p>
+Només necessiten una funció que mostri una alerta, ja que l’alerta serà substituïda pel codi de validació en una fase posterior. El codi proporcionat és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form id=&quot;contacte&quot; method=&quot;post&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;label&gt;Nom:&lt;input type=&quot;text&quot; name=&quot;nom&quot;/&gt;&lt;/label&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">  &lt;label&gt;Correu:&lt;input type=&quot;text&quot; name=&quot;correu&quot;/&gt;&lt;/label&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">  &lt;label&gt;Missatge:&lt;/label&gt;&lt;br&gt;&lt;textarea name=&quot;missatge&quot;&gt;&lt;/textarea&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">  &lt;button&gt;Enviar&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;/form&gt;</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució a aquest exercici és molt simple. Primerament, s’afegeix la detecció de l’<em>event</em> <code>submit</code> al formulari, especificant el nom de la funció que s’utilitzarà per validar les dades; en aquest cas és <code>validar</code>.
+</p>
+
+<p>
+Dins d’aquesta funció es validarien les dades, i en cas que siguin correctes, s’enviarien al servidor. En aquest cas només demanen mostrar una alerta. Depsrés de cridar a la funció <code>alert()</code> s’evita l’enviament del formulari mitjançant el mètode <code>event.preventDefault()</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let validar = function(event) {</div></li><li class="li1"><div class="de1">  alert(&quot;Validant les dades...&quot;);</div></li><li class="li1"><div class="de1">  event.preventDefault();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let formulari = document.getElementById('contacte');</div></li><li class="li1"><div class="de1">  formulari.addEventListener('submit', validar);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yapZyR?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yapZyR?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yapZyR?editors=1010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="deteccio_d_events_d_html5" >Detecció d&#039;events d&#039;HTML5</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a utilitzar alguns dels <em>events</em> disparats pels nous elements afegits a HTML5.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL vol afegir un reproductor d’àudio al seu lloc web i necessiten poder controlar quan es posa pausa en una cançó per mostrar un missatge personalitzat. És a dir, heu d’implementar un sistema que mostri una alerta quan es posi en pausa la cançó que s’està reproduint. El codi proporcionat és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;audio id=&quot;reproductor&quot; controls src = &quot;https://jocs.surge.sh/IOC_Puzzle_Lite/assets/audio/Batty-McFaddin-slower.mp3&quot;&gt;&lt;/audio&gt;</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La gestió dels <em>events</em> multimèdia afegits a HTML5 és idèntica a la d’altres elements. Només cal invocar el mètode <code>addEventListener()</code> especificant el tipus d’<em>event</em> i la funció que cal invocar quan es detecti.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let mostrarMissatge = function () {</div></li><li class="li1"><div class="de1">  alert ('S\'ha posat en pausa el reproductor');</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let reproductor = document.getElementById('reproductor');</div></li><li class="li1"><div class="de1">  reproductor.addEventListener('pause', mostrarMissatge);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ozpbzx?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ozpbzx?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ozpbzx?editors=1010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="deteccio_d_events_de_les_web_apis" >Detecció d&#039;events de les Web APIs</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a utilitzar alguns dels <em>events</em> disparats per una de les Web APIs estàndard.
+</p>
+
+<p>
+Us han demanat implementar un sistema per controlar els canvis en el magatzem de dades local: ha de detectar quan s’hi ha produït un canvi i ha de mostrar un avís a la resta de pestanyes obertes.
+</p>
+
+<p>
+Per fer les proves només necessiten que implementeu el codi necessari per detectar l’<em>event</em> i que mostri una alerta. Podeu fer servir el següent codi per desar les dades al magatzem:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let botoAfegir = document.getElementById('afegir');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">botoAfegir.addEventListener('click', function() {</div></li><li class="li1"><div class="de1">  localStorage.setItem(clauElement.value, valorElement.value);</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+I el codi <acronym title="HyperText Markup Language">HTML</acronym> següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input placeholder=&quot;Introdueix una clau&quot; id=&quot;clau&quot;/&gt;&lt;input placeholder=&quot;Introdueix un valor&quot; id=&quot;valor&quot;/&gt;&lt;button id=&quot;afegir&quot;&gt;Afegir&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+<strong>Nota</strong>: la detecció de canvis en el magatzem de dades no es dispara a la pestanya on es produeixen els canvis; per aquesta raó (i per provar que funciona) cal obrir dues o més pestanyes amb el mateix codi.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La utilització de l’<em>event</em> <code>storage</code> de l’<acronym title="Application Programming Interface">API</acronym> Web Storage presenta dues peculiaritats. La primera és que no es dispara a la pestanya on s’apliquen els canvis al magatzem, i la segona és que el mètode <code>addEventListener()</code> s’ha d’invocar sobre l’objecte <code>window</code> i no sobre l’objecte <code>localStorage</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let actualitzarPestanya = function(event) {</div></li><li class="li1"><div class="de1">  alert('S\'ha emmagatzemmat el valor ' + event.newValue + &quot; amb la clau &quot; + event.key);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let botoAfegir = document.getElementById('afegir');</div></li><li class="li1"><div class="de1">  let clauElement = document.getElementById('clau');</div></li><li class="li1"><div class="de1">  let valorElement = document.getElementById('valor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  botoAfegir.addEventListener('click', function() {</div></li><li class="li1"><div class="de1">    localStorage.setItem(clauElement.value, valorElement.value);</div></li><li class="li1"><div class="de1">  });</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  window.addEventListener('storage', actualitzarPestanya);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/BLJKov?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BLJKov?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/BLJKov?editors=1010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a1/continguts.html">Programació d'events</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

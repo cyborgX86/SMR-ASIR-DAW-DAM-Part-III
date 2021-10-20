@@ -1,0 +1,888 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Desenvolupament web en entorn servidor</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">'Servlets'</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_hola_mon">'Servlet' Hola, Món</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_endevinacolor">'Servlet' EndevinaColor</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#servlet_publicitat_als_nous">'Servlet' Publicitat als nous</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#que_s_ha_apres">Què s'ha après</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Formularis amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#calculant_el_sou_net">Calculant el sou net</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#escrivint_un_post">Escrivint un 'post'</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#dades_de_subscripcio">Dades de subscripció</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u2a3" class="tocsection"><p id='u2a3continguts'><a class="section" href="../../../WebContent/u2/a3/continguts.html">Manteniment d'estat, autenticació i autorització amb 'servlets' i EJB</a><span class="buttonexp"></span></p><ul><li id="u2a3activitats"><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></li><li id="u2a3exercicis"><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a3annexos"><a href="../../../WebContent/u2/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_en_una_galeta">L'usuari, en una galeta</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#l_usuari_a_la_sessio">L'usuari a la sessió</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#un_formulari_d_autenticacio_amb_ejb">Un formulari d'autenticació amb EJB</a></li><li><a href="../../../WebContent/u2/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament web en entorn servidor</a></li><li>'Servlets'</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="servlets"> 'Servlets' </a></h1>
+    	
+<p>
+Els <em>servlets</em> són programes petits que s’executen dintre dels servidors d’aplicacions. En concret, en aquest apartat s’explicarà:
+</p>
+<ul>
+<li class="level1"><div class="li"> Introducció als <em>servlets</em></div>
+</li>
+<li class="level1"><div class="li"> Configuració dels <em>servlets</em> utilitzant anotacions i fitxers XML</div>
+</li>
+<li class="level1"><div class="li"> Diferents classes Java relacionades amb els <em>servlets</em>, com el <code>ServletContext</code> o contenidor d’aplicacions</div>
+</li>
+</ul>
+
+<p>
+En aquest apartat també parlarem del cicle de vida d’un <em>servlet</em>, els seus paràmetres inicials i com redirigir una petició. 
+</p>
+
+<p>
+Tots els conceptes que es veuran s’explicaran sempre partint de l’exemple. Quan acabeu aquest apartat estareu preparats per crear un <em>servlet</em>, analitzar les peticions i crear les respostes adequades.
+</p>
+
+<h2><a id="servlet_hola_mon" >&#039;Servlet&#039; Hola, Món</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat aprendreu a utilitzar <strong><em>servlets</em></strong>, les seves etiquetes XML i les anotacions, i s’explicarà el <code>ServletContext</code> com a contenidor d’aplicacions.
+</p>
+
+<p>
+Començareu creant un nou projecte web amb Maven (vegeu la <span class="figref"><a href="#fig01"><span>figura</span></a></span>) i l’anomenem <em>servlets</em> (<em>File / New Project / Maven / Web Application</em>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Orígens dels &#039;servlets&#039;</p>
+<p>
+Sun Microsystems va escriure la primera especificació dels servlets. Va finalitzar la versió 1.0 el juny de 1997. A partir de la versió 2.3, l’especificació dels <em>servlets</em> va ser desenvolupada subjecta al Java Community Process.
+</p>
+</div></div><div class="iocfigure"><a name="fig01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Procés de creació d’un ‘servlet’
+
+</figcaption><img src="../media/uf2-a1-servletxml.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada s’ha creat, crearem dos <em>servlets</em> (<em>File / New File / Web / Servlet </em>) en el paquet que indica el mateix NetBeans, en aquest cas, a <em>cat.ioc.m7.servlets</em>. De totes les opcions que podeu configurar només posareu el nom d’Hola, Món com a nom del <em>servlet</em>, les altres opcions tindran el valor per defecte. Creareu un segon <em>servlet</em> i li posareu el nom d’HolaMónXML i activareu l’opció <em>add information to deployment descriptor (web.xml)</em>.
+Per defecte, el codi resultant en crear el <em>servlet</em> Hola, Món és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.io.IOException;</div></li><li class="li1"><div class="de1">import java.io.PrintWriter;</div></li><li class="li1"><div class="de1">import javax.servlet.ServletException;</div></li><li class="li1"><div class="de1">import javax.servlet.annotation.WebServlet;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServlet;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServletRequest;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServletResponse;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">/**</div></li><li class="li1"><div class="de1"> *</div></li><li class="li1"><div class="de1"> * @author ioc</div></li><li class="li1"><div class="de1"> */</div></li><li class="li1"><div class="de1">@WebServlet(urlPatterns = {&quot;/HolaMon&quot;})</div></li><li class="li1"><div class="de1">public class HolaMon extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Processes requests for both HTTP GET and POST</div></li><li class="li1"><div class="de1">     * methods.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            /* TODO output your page here. You may use following sample code. */</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet HolaMon&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Servlet HolaMon at &quot; + request.getContextPath() + &quot;&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;HttpServlet methods. Click on the + sign on the left to edit the code.&quot;&gt;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP GET method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doGet(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP POST method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doPost(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Returns a short description of the servlet.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @return a String containing servlet description</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getServletInfo() {</div></li><li class="li1"><div class="de1">        return &quot;Short description&quot;;</div></li><li class="li1"><div class="de1">    }// &lt;/editor-fold&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi resultant en crear el <em>servlet</em> Hola, Món amb sintaxi XML és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.io.IOException;</div></li><li class="li1"><div class="de1">import java.io.PrintWriter;</div></li><li class="li1"><div class="de1">import javax.servlet.ServletException;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServlet;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServletRequest;</div></li><li class="li1"><div class="de1">import javax.servlet.http.HttpServletResponse;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">/**</div></li><li class="li1"><div class="de1"> *</div></li><li class="li1"><div class="de1"> * @author ioc</div></li><li class="li1"><div class="de1"> */</div></li><li class="li1"><div class="de1">public class HolaMonXML extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Processes requests for both HTTP GET and POST</div></li><li class="li1"><div class="de1">     * methods.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">            /* TODO output your page here. You may use following sample code. */</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet HolaMonXML&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h1&gt;Servlet HolaMonXML at &quot; + request.getContextPath() + &quot;&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;HttpServlet methods. Click on the + sign on the left to edit the code.&quot;&gt;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP GET method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doGet(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Handles the HTTP POST method.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @param request servlet request</div></li><li class="li1"><div class="de1">     * @param response servlet response</div></li><li class="li1"><div class="de1">     * @throws ServletException if a servlet-specific error occurs</div></li><li class="li1"><div class="de1">     * @throws IOException if an I/O error occurs</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    protected void doPost(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">        processRequest(request, response);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Returns a short description of the servlet.</div></li><li class="li1"><div class="de1">     *</div></li><li class="li1"><div class="de1">     * @return a String containing servlet description</div></li><li class="li1"><div class="de1">     */</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public String getServletInfo() {</div></li><li class="li1"><div class="de1">        return &quot;Short description&quot;;</div></li><li class="li1"><div class="de1">    }// &lt;/editor-fold&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Segons el codi que heu vist, intenteu contestar a la següent pregunta: quin <acronym title="Uniform Resource Locator">URL</acronym> s’ha d’escriure al navegador per accedir als <em>servlets</em>?
+</p>
+
+<p>
+Si executeu els dos <em>servlets</em> veieu que no hi ha cap diferència, funcionen exactament igual, però si mireu el codi veieu que no és així.
+</p>
+
+<p>
+La primera i fonamental diferència és la llibreria <em>import javax.servlet.annotation.WebServlet;</em>, que no hi és en el <em>servlet</em> creat amb XML perquè la seva configuració es farà en el fitxer web.xml. En canvi, al <em>servlet</em> creat per defecte, la seva configuració es posarà com a anotacions dintre del mateix <em>servlet</em>, que es llegiran en el moment de la seva compilació.
+</p>
+
+<p>
+Però abans de començar veient les diferències contesteu a la següent pregunta: què és un <em>servlet</em> i com funciona?
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong><em>servlet</em></strong> és un programa del costat del servidor que s’utilitza per generar pàgines web dinàmiques. Genera pàgines web com a resposta d’una petició rebuda des del client (navegador).
+</p>
+</div></div>
+<p>
+El funcionament d’un <em>servlet</em> és el mateix tant amb XML o amb Annotations (anotacions). El <em>servlet</em> implementa el costat servidor de la comunicació client-servidor.
+</p>
+
+<p>
+Un <em>servlet</em> pot rebre la petició de dues maneres diferents: amb el mètode <code>GET</code> o amb el mètode <code>POST</code> d’HTTP. Amb el mètode <code>GET</code>, l’habitual, un navegador accedeix a una pàgina web. El mètode <code>POST</code> és el mètode utilitzat en l’enviament de dades al servidor des d’un formulari web.
+</p>
+
+<p>
+Si utilitzeu el mètode <code>GET</code> s’executarà la funció <code>doGet</code>, i si empreu NetBeans crearà una funció com aquesta:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un <em>servlet</em> és capaç de rebre una invocació i generar una resposta, com, per exemple, enviar una pàgina web quan algú accedeix al <em>servlet</em> mitjançant la seva <acronym title="Uniform Resource Locator">URL</acronym>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    processRequest(request, response);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Igualment, si s’utilitza el mètode <code>POST</code> s’executarà la funció <code>doPost</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    processRequest(request, response);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com veieu, les dues funcions anteriors fan la crida a la mateixa funció protegida, anomenada <code>processRequest</code>. Això és perquè NetBeans suposa que volem el mateix comportament tant si es fa una petició amb el mètode <code>GET</code> com amb el mètode <code>POST</code>.
+</p>
+
+<p>
+La funció <code>processRequest</code> ha de generar una resposta segons els paràmetres de la petició. En aquests cas, en ser un programa molt senzill, només volem veure per pantalla una pàgina web amb la benvinguda. La pàgina web que veieu la creeu de manera dinàmica dintre de la funció. Vegeu com s’implementa la resposta:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {</div></li><li class="li1"><div class="de1">    response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">    try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">        /* TODO output your page here. You may use following sample code. */</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;title&gt;Servlet HolaMon&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;h1&gt;Servlet HolaMon at &quot; + request.getContextPath() + &quot;&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com veieu, esteu escrivint el codi <acronym title="HyperText Markup Language">HTML</acronym> directament a l’objecte resposta (<code>response.getWriter()</code>). Escriviu, utilitzant l’objecte <code>PrinterWriter</code>, la pàgina Hola, Món que volem que vegi l’usuari.
+</p>
+
+<p>
+El funcionament intern dels dos <em>servlets</em> és el mateix.
+</p>
+
+<p>
+La configuració del <em>servlet</em> amb XML es fa mitjançant el fitxer <strong>web.xml</strong>, conegut com a descriptor de desplegament (<em>deployment descriptor</em>).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El fitxer <strong>web.xml</strong> es troba dintre de la carpeta <em>WEB-INF</em> i conté la informació corresponent al nom i a l’<acronym title="Uniform Resource Locator">URL</acronym> dels <em>servlets</em>. Però bàsicament, aquest fitxer informa el Servlet Container de la classe que ha d’executar (<em>servlet</em>) per a un <acronym title="Uniform Resource Locator">URL</acronym> donat.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El servidor Apache Tomcat és un exemple de contenidor web, no comercial, que suporta l’execució de <em>servlets</em> definits mitjançant el fitxer web.xml.
+</p>
+</div></div>
+<p>
+El fitxer web.xml conté la següent informació:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;web-app version=&quot;3.1&quot; xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;servlet&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;HolaMonXML&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-class&gt;HolaMonXML&lt;/servlet-class&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet&gt;</div></li><li class="li1"><div class="de1">    &lt;servlet-mapping&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;HolaMonXML&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;url-pattern&gt;/HolaMonXML&lt;/url-pattern&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet-mapping&gt;</div></li><li class="li1"><div class="de1">    &lt;session-config&gt;</div></li><li class="li1"><div class="de1">        &lt;session-timeout&gt;</div></li><li class="li1"><div class="de1">            30</div></li><li class="li1"><div class="de1">        &lt;/session-timeout&gt;</div></li><li class="li1"><div class="de1">    &lt;/session-config&gt;</div></li><li class="li1"><div class="de1">&lt;/web-app&gt;</div></li></ol></pre>
+
+<p>
+En el fitxer anterior observeu com es defineix un <em>servlet</em> i quin <acronym title="Uniform Resource Locator">URL</acronym> s’ha d’utilitzar per poder emprar-lo des del navegador. L’etiqueta <code>servlet-name</code> conté el nom del <em>servlet</em> i l’etiqueta <code>servlet-class</code>, la classe on està codificat. 
+</p>
+
+<p>
+Una vegada s’ha definit el <em>servlet </em> s’ha d’informar de l’<acronym title="Uniform Resource Locator">URL</acronym> que s’utilitzarà per executar el <em>servlet</em> anterior. Aquesta informació es defineix dintre de l’etiqueta <code>servlet-mapping</code>. En concret, s’ha de dir el nom del <em>servlet</em> i l’<acronym title="Uniform Resource Locator">URL</acronym> associat. Les etiquetes XML són <em>servlet-name</em> per al nom del <em>servlet</em> i <code>url-pattern</code> per definir l’<acronym title="Uniform Resource Locator">URL</acronym> que s’utilitzarà.
+</p>
+
+<p>
+Tota aquesta informació es pot reduir molt utilitzant Annotations (anotacions). Vegeu la informació que es genera en el <em>servlet</em> per defecte per definir tota la informació anterior:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(urlPatterns = {&quot;/HolaMon&quot;})</div></li></ol></pre>
+
+<p>
+L’anotació <code>@WebServlet</code> s’utilitza per declarar una classe de tipus <em>servlet</em>. Aquesta classe ha d’heretar de la classe <code>HttpServlet</code> i s’empra per configurar un mapatge <acronym title="Uniform Resource Locator">URL</acronym>. Vegeu-ne un altre exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@WebServlet(</div></li><li class="li1"><div class="de1">    name = &quot;ServletExemple&quot;,</div></li><li class="li1"><div class="de1">    description = &quot;Un exemple d'anotació Servlet&quot;,</div></li><li class="li1"><div class="de1">    urlPatterns = {&quot;/ServletExemple&quot;}</div></li><li class="li1"><div class="de1">)</div></li><li class="li1"><div class="de1">public class ServletExemple extends HttpServlet {</div></li><li class="li1"><div class="de1">    // codi...</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//o amb més d'una URL</div></li><li class="li1"><div class="de1">@WebServlet(</div></li><li class="li1"><div class="de1">    urlPatterns = {&quot;/foo&quot;, &quot;/bar&quot;, &quot;/cool&quot;}</div></li><li class="li1"><div class="de1">)</div></li><li class="li1"><div class="de1">public class ServletExemple extends HttpServlet {</div></li><li class="li1"><div class="de1">    // codi...</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Vegeu que és molt més ràpid utilitzar les anotacions que el marcatge XML per definir la configuració dels <em>servlets</em>.
+</p>
+
+<p>
+Ara ja heu de poder contestar a aquesta pregunta: quin <acronym title="Uniform Resource Locator">URL</acronym> s’ha d’escriure per accedir als <em>servlets</em>?
+</p>
+
+<p>
+L’<acronym title="Uniform Resource Locator">URL</acronym> que s’ha d’escriure seria semblant a: <a href="http://localhost:8080/servlets/HolaMon" class="urlextern" title="http://localhost:8080/servlets/HolaMon"  rel="nofollow">localhost:8080/servlets/HolaMon</a>.
+</p>
+
+<p>
+En general:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">http://ip-servidor:port/nom-aplicacio/SERVLET-URL-PATTERN</div></li></ol></pre>
+
+<p>
+En el vostre cas, el servidor Glassfish us dóna el port 8080 per poder connectar-nos, i la IP és el mateix PC. El nom de l’aplicació correspon al nom del projecte que heu creat amb Netbeans, i el <code>servlet-<acronym title="Uniform Resource Locator">URL</acronym>-pattern</code> correspon a l’<acronym title="Uniform Resource Locator">URL</acronym> definit, amb l’anotació <code>@WebServlet</code> o bé amb l’etiqueta <code>url-pattern</code> del fitxer web.xml.
+</p>
+
+<p>
+Com sabeu, un servidor pot tenir més d’una aplicació funcionant al mateix temps. Dintre de cada aplicació hi pot haver més d’un <em>servlet</em> actiu, atès que totes les aplicacions estan dintre del Servlet Container (vegeu la <span class="figref"><a href="#fig02"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="fig02"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Java Servlet Container
+
+</figcaption><img src="../media/daw_m07_u2_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Tots els <em>servlets</em> definits en una mateixa aplicació web comparteixen recursos i la informació web de l’aplicació. Per poder accedir a tota aquesta informació s’ha d’accedir al <code>ServletContext</code>, que dóna un conjunt de mètodes als <em>servlets</em> perquè es puguin comunicar.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El <code>ServletContext</code> és un objecte que conté <strong>metainformació sobre l’aplicació</strong>. Els atributs emmagatzemats estan disponibles a tots els <em>servlets</em> de l’aplicació, fins i tot entre diferents peticions i sessions. 
+</p>
+</div></div>
+<p>
+S’hi pot accedir via l’objecte <code>HttpRequest</code> de la següent manera:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">ServletContext context = request.getSession().getServletContext();</div></li></ol></pre>
+
+<p>
+Aquests atributs es troben emmagatzemats en memòria del Servlet Container, la qual cosa vol dir que estan disponibles a tots els clients de l’aplicació. En canvi, els atributs de sessió només estan disponibles per a l’usuari que ha creat la sessió. 
+</p>
+
+<p>
+Exemple de creació d’un atribut en el <code>ServletContext</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">context.setAttribute(&quot;atribut&quot;, &quot;valor_del_atribut&quot;);</div></li></ol></pre>
+
+<p>
+Exemple de lectura d’un atribut en el <code>ServletContext</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Object valorAtribut = context.getAttribute(&quot;atribut&quot;);</div></li></ol></pre>
+
+</div>
+
+<h2><a id="servlet_endevinacolor" >&#039;Servlet&#039; EndevinaColor</a></h2>
+<div class="level2">
+
+<p>
+En aquest exemple voleu codificar un joc d’endevinació molt senzill. El programa tindrà configurat un color com a paràmetre inicial (constant) i li donareu a l’usuari unes quantes opcions. L’usuari haurà d’endevinar el color configurat.
+</p>
+
+<p>
+Primer creareu un <em>servlet</em> nou (<em>File / New File / Web / Servlet</em>) en el mateix projecte Maven de l’exemple anterior i l’anomenareu EndevinaColor. Durant la seva creació seleccioneu que volem afegir la seva configuració en el fitxer web.xml i introduireu un paràmetre inicial nou (vegeu la <span class="figref"><a href="#fig03"><span>figura</span></a></span>). El paràmetre inicial introduït es diu <em>color</em>, i el seu valor correspondrà al color que l’usuari ha d’endevinar.
+</p>
+<div class="iocfigure"><a name="fig03"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configurar paràmetres d’inicialització amb l’IDE NetBeans
+
+</figcaption><img src="../media/u2-a1-servlets-parametresinicialitzacio.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Fixeu-vos en el codi afegit al fitxer de configuració web.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;web-app version=&quot;3.1&quot; xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">    &lt;servlet&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;EndevinaColor&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-class&gt;cat.ioc.m7.servlets.EndevinaColor&lt;/servlet-class&gt;</div></li><li class="li1"><div class="de1">        &lt;init-param&gt;</div></li><li class="li1"><div class="de1">            &lt;param-name&gt;color&lt;/param-name&gt;</div></li><li class="li1"><div class="de1">            &lt;param-value&gt;green&lt;/param-value&gt;</div></li><li class="li1"><div class="de1">        &lt;/init-param&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;servlet-mapping&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;EndevinaColor&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;url-pattern&gt;/EndevinaColor&lt;/url-pattern&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet-mapping&gt;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;/web-app&gt;</div></li></ol></pre>
+
+<p>
+Si us hi fixeu, s’especifica el nou <em>servlet</em> anomenat EndevinaColor i la seva classe Java associada. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les etiquetes <code>init-param</code> serveixen per definir els paràmetres inicials o constants als quals podrà accedir el <em>servlet</em> en el moment d’execució.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+A Java EE existeixen dos tipus de descriptors de desplegament (<em>deploymnet descriptors</em>): <em>Java EE deployment descriptors</em> i <em>runtime deployment descriptors</em>. El fitxer <em>web.xml</em> és un exemple de fitxer de desplegament estàndard per a <em>servlets</em> de Java. I el fitxer <em>sun-web-xml</em> és un exemple de fitxer de configuració específic per al servidor Glassfish.
+</p>
+</div></div>
+<p>
+L’avantatge d’utilitzar paràmetres afegits a la seva configuració és que si es volgués canviar el seu valor no s’hauria de modificar ni compilar el <em>servlet</em>. Un altre paràmetre que s’ha configurat és l’<acronym title="Uniform Resource Locator">URL</acronym> EndevinaColor, que correspon al <em>servlet</em> EndevinaColor (<em>servlet-mapping</em>).
+</p>
+
+<p>
+
+</p>
+
+<p>
+Per crear el joc d’endevinació es necessitaran dos fitxers. El primer serà el <em>servlet</em> EndevinaColor.java, i el segon serà la pàgina inicial que es mostrarà a l’usuari amb les opcions que pot escollir. El nom de la pàgina serà EndevinaColor.html i es guardarà a la carpeta per defecte <em>Web Pages</em>. Aquesta pàgina serà un <acronym title="HyperText Markup Language">HTML</acronym> amb un llistat d’enllaços, cadascun dels quals informarà el <em>servlet</em> del color escollit per l’usuari. Com que el paràmetre es passa junt amb l’<acronym title="Uniform Resource Locator">URL</acronym> del <em>servlet</em>, el mètode HTTP utilitzat per enviar les dades és <code>GET</code>. Vegeu un exemple de pàgina <acronym title="HyperText Markup Language">HTML</acronym> amb el llistat d’enllaços: 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Start Page&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Endevina el color configurat:&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=white'&gt;blanc&lt;/a&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=red'&gt;vermell&lt;/a&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=blue'&gt;blau&lt;/a&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=yellow'&gt;groc&lt;/a&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=green'&gt;verd&lt;/a&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='EndevinaColor?color=black'&gt;negre&lt;/a&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com podeu observar, depenent de l’enllaç que esculli l’usuari s’enviarà al <em>servlet</em> un color diferent, que correspon a la proposta que li fa l’usuari. El <em>servlet</em> haurà de comparar aquest color amb el color configurat en el fitxer web.xml. Si són iguals, l’usuari haurà endevinat el color, i si no ho són l’usuari haurà perdut i ho podrà tornar a intentar. A continuació podeu veure aquest comportament traduït a codi Java i utilitzat per implementar el <em>servlet</em> EndevinaColor: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {</div></li><li class="li1"><div class="de1">   response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">   try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;title&gt;Endevina el color&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      String endevinat = &quot;Llàstima, has perdut!&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      //L'usuari ha seleccionat un color i ho ha enviat.</div></li><li class="li1"><div class="de1">      String colorUsuari = request.getParameter(&quot;color&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      //S'ha configurat un paràmetre que conté el color a endevinar:</div></li><li class="li1"><div class="de1">      String colorInicial = getServletConfig().getInitParameter(&quot;color&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      if(colorInicial.toLowerCase().equals(colorUsuari.toLowerCase())){</div></li><li class="li1"><div class="de1">         endevinat = &quot;Felicitats! Has endevinat el color.&quot;;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;h1&gt;&quot; + endevinat +&quot;&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;a href='EndevinaColor.html'&gt;Tornar a intentar&lt;a/&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">      out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si voleu accedir al color que l’usuari ha enviat s’ha de mirar la seva petició (<em>request</em>). Els navegadors web envien molta informació al servidor web que aquest no pot llegir directament perquè forma part de la capçalera de la petició HTTP.
+</p>
+
+<p>
+La llibreria (<acronym title="Application Programming Interface">API</acronym>) dels <em>servlets</em> defineix dues interfícies on s’encapsula la petició de l’usuari en forma d’objecte. Les classes son <code>javax.servlet.ServletRequest</code> i <code>javax.servlet.http.HttpServletRequest</code>.
+</p>
+
+<p>
+Quina diferència hi ha entre aquestes dues classes? (vegeu la <span class="figref"><a href="#fig04"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig04"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+La classe HttpServletRequest hereta de la classe ServletRequest
+
+</figcaption><img src="../media/daw_m07_u2_02.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La classe <code>HttpServletRequest</code> hereta la classe <code>ServletRequest</code> per afegir mètodes que es relacionen amb la capçalera del protocol HTTP. Per exemple, els mètodes <code>getSession</code> o <code>getCookies</code> són mètodes de la classe <code>HttpServletRequest</code> però no de la classe <code>ServletRequest</code>. És així perquè la classe <code>HttpServletRequest</code> ha analitzat la petició i ha creat els mètodes necessaris per accedir a la informació d’una manera més intuïtiva.
+</p>
+
+<p>
+La funció <code>processRequest</code> dóna accés a la classe <code>HttpServletRequest</code>, mitjançant la qual podrem accedir al paràmetre enviat per l’usuari. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String colorUsuari = request.getParameter(&quot;color&quot;);</div></li></ol></pre>
+
+<p>
+El mètode <code>getParameter(nom_parametre)</code> retorna el valor del paràmetre enviat a la petició de l’usuari. En el cas que no existeixi el paràmetre, el resultat de l’assignació de la variable <code>colorUsuari</code> seria <code>NULL</code> (<code>colorUsuari=NULL</code>).
+</p>
+
+<p>
+Ara només queda accedir al paràmetre inicial del <em>servlet</em> per poder saber si l’usuari ha encertat amb el color. Per accedir al color definit en el <em>servlet</em> s’utilitza la següent instrucció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String colorInicial = getServletConfig().getInitParameter(&quot;color&quot;);</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+L’objecte <code>ServletConfig</code> s’utilitza per obtenir informació de configuració del fitxer web.xml. Aquest objecte és creat pel contenidor web per a cada <em>servlet</em>. Si la informació de configuració es defineix a l’arxiu web.xml no cal canviar el <em>servlet</em>. Per tant, és més fàcil d’administrar l’aplicació web si els paràmetres del <em>servlet</em> només es modifiquen de tant en tant.
+</p>
+
+<p>
+L’objecte <code>ServletConfig</code> sempre està disponible per al <em>servlet</em> durant la seva execució. Una vegada que el <em>servlet</em> ha completat l’execució, l’objecte <code>ServletConfig</code> serà eliminat pel contenidor.
+</p>
+
+<p>
+Llavors, l’avantatge principal d’utilitzar l’objecte <code>ServletConfig</code> és que no cal editar l’arxiu <em>servlet</em> si la informació inicial s’ha introduït a l’arxiu web.xml.
+</p>
+
+<p>
+Una vegada tenim la variable inicial ‘color’ ja podem procedir a comparar-la amb el color que ha enviat l’usuari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String endevinat = &quot;Llàstima, has perdut!&quot;;</div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">if(colorInicial.toLowerCase().equals(colorUsuari.toLowerCase())){</div></li><li class="li1"><div class="de1">     endevinat = &quot;Felicitats! Has endevinat el color.&quot;;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">out.println(&quot;&lt;h1&gt;&quot; + endevinat +&quot;&lt;/h1&gt;&quot;);</div></li></ol></pre>
+
+<p>
+Utilitzant la variable <code>endevinat</code> mostrem la informació a l’usuari. En el cas que sigui el mateix color es mostrarà la frase “Felicitats! Has endevinat el color”; en cas contrari es mostrarà “Llàstima, has perdut!”.
+</p>
+
+</div>
+
+<h2><a id="servlet_publicitat_als_nous" >&#039;Servlet&#039; Publicitat als nous</a></h2>
+<div class="level2">
+
+<p>
+En aquest exemple es vol crear un <em>servlet</em> que identifiqui si és la primera vegada que s’accedeix a la pàgina. En el cas que sigui la primera vegada es mostrarà una pàgina amb un text publicitari; si no és la primera vegada se’n mostrarà una altra.
+</p>
+
+<p>
+Començareu creant un nou <em>servlet</em> (<em>File / New File / Web / Servlet</em>) anomenat Publicitat dintre del mateix projecte Maven utilitzat en els exemples anteriors. Durant la creació del <em>servlet</em> hi afegireu un paràmetre addicional anomenat <em><acronym title="Uniform Resource Locator">URL</acronym></em> que contindrà l’<acronym title="Uniform Resource Locator">URL</acronym> del patrocinador de l’aplicació (el valor el podeu inventar). A més a més, hi incorporareu la descripció del <em>servlet</em> al fitxer de configuració web.xml.
+</p>
+
+<p>
+Una possible implementació del <em>servlet</em> demanat és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Publicitat extends HttpServlet {</div></li><li class="li1"><div class="de1">      private int visites;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private int num;</div></li><li class="li1"><div class="de1">    private String urlPublicitat;</div></li><li class="li1"><div class="de1">    private HashMap ip;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void init (ServletConfig config) throws ServletException</div></li><li class="li1"><div class="de1">    {</div></li><li class="li1"><div class="de1">        super.init(config);</div></li><li class="li1"><div class="de1">        this.ip = new HashMap();</div></li><li class="li1"><div class="de1">        this.num++;</div></li><li class="li1"><div class="de1">        this.visites = 0;</div></li><li class="li1"><div class="de1">        this.urlPublicitat = getServletConfig().getInitParameter(&quot;url&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{</div></li><li class="li1"><div class="de1">     response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet Publicitat&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String requestIp = request.getRemoteAddr();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            if(this.ip.containsKey(requestIp)){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                noEsLaPrimeraVegada(out);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            else{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                esLaPrimeraVegada(requestIp, out);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h5&gt;S'han fet &quot; + this.visites +&quot; visites&lt;/h5&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h5&gt;S'ha cridat el mètode init &quot; + this.num +&quot; vegades&lt;/h5&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            this.visites++;   </div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private void noEsLaPrimeraVegada(PrintWriter out){</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;h1&gt;Gràcies per tornar a la pàgina web. Ja no veuràs el patrocinador.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private void esLaPrimeraVegada(String requestIp, PrintWriter out){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        this.ip.put(requestIp, &quot;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;h1&gt;És la primera vegada que accedeixes a la pàgina. Benvingut.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;p style='color:red;'&gt;Accedeix al nostre patrocinador clicant al següent enllaç:&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;a href='&quot; + this.urlPublicitat + &quot;'&gt;Pàgina web del patrocinador&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+On es troben implementats els mètodes <code>processRequest</code>, <code>doGet()</code> i <code>doPost()</code>?
+</p>
+
+<p>
+En aquest cas no s’ha implementat cap d’aquests mètodes. S’ha anat als orígens i s’ha intentat contestar a la següent pregunta: quins són els mètodes bàsics que ha d’implementar un <em>servlet</em>?
+</p>
+
+<p>
+Per poder contestar a la pregunta heu de saber de quines classes hereta un <em>servlet</em> (vegeu la <span class="figref"><a href="#fig05"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig05"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Herència d’un ‘servlet’
+
+</figcaption><img src="../media/daw_m07_u2_03.png" title="&#039;" alt="&#039;" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La interfície <strong><em>servlet</em></strong> és la interfície més genèrica. Tots els mètodes d’aquesta interfície s’han d’implementar. Els mètodes són: <code>init</code>, <code>service</code>, <code>destroy</code>, <code>getServletInfo</code> i <code>getServletConfig</code>.
+</p>
+
+<p>
+La classe abstracta <code>GenericServlet</code> implementa la interfície <em>servlet</em> donant una implementació genèrica a tots el mètodes de la interfície <em>servlet</em> excepte per al mètode <code>service</code>, que està definit com a abstracte. Qualsevol que vulgui implementar un <em>servlet</em> pot heretar d’aquesta classe i només hauria d’implementar el mètode <code>service</code>. També podria donar una implementació alternativa a qualsevol altre mètode, si el sobreescriu.
+</p>
+
+<p>
+Finalment, la classe abstracta <code>HttpServlet</code> hereta de la classe <code>GenericServlet</code> implementant els mètodes necessaris per donar una solució adaptada al protocol HTTP. Aquesta classe, tot i ser abstracta, no té cap mètode abstracte. El mètode <code>service</code> ha estat reemplaçat pels mètodes <code>doGet</code>, <code>doPost</code>, etc., amb els mateixos paràmetres que el mètode <code>service</code> (vegeu la <span class="figref"><a href="#fig06"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig06"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Implementació del mètode service en submètodes
+
+</figcaption><img src="../media/daw_m07_u2_04.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El codi corresponent a una implementació senzilla del mètode <code>service</code> de la classe <code>HttpRequest</code> podria ser el següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Protocol HTTP</p>
+<p>
+El protocol HTTP està basat en uns mètodes que indiquen l’acció a realitzar sobre un recurs web determinat. Els més coneguts són els mètodes <em>GET</em> i <em>POST</em>, però n’existeixen alguns més com: <em>HEAD, PUT, DELETE, TRACE, OPTIONS, CONNECT i PATCH</em>. 
+</p>
+</div></div>
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">protected void service(HttpServletRequest req, HttpServletResponse resp) {</div></li><li class="li1"><div class="de1">    String method = req.getMethod();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if (method.equals(METHOD_GET)) {</div></li><li class="li1"><div class="de1">            doGet(req, resp);</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_HEAD)) {</div></li><li class="li1"><div class="de1">        doHead(req, resp);</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_POST)) {</div></li><li class="li1"><div class="de1">        doPost(req, resp);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_PUT)) {</div></li><li class="li1"><div class="de1">        doPut(req, resp);   </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_DELETE)) {</div></li><li class="li1"><div class="de1">        doDelete(req, resp);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_OPTIONS)) {</div></li><li class="li1"><div class="de1">        doOptions(req,resp);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    } else if (method.equals(METHOD_TRACE)) {</div></li><li class="li1"><div class="de1">        doTrace(req,resp);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">        resp.sendError(HttpServletResponse.SC_NOT_IMPLEMENTED, errMsg);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Com a regla general no s’ha de sobreescriure mai el mètode <code>service</code> si s’està responent a una petició feta amb el <strong>protocol HTTP</strong>. La solució més adient és sobreescriure els mètodes <code>doGet</code> o <code>doPost</code>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="funcionament_d_un_servlet__cicle_de_vida" >Funcionament d&#039;un &#039;servlet&#039;. Cicle de vida</a></h3>
+<div class="level3">
+
+<p>
+Contestant a la pregunta “Quins són els mètodes bàsics que ha d’implementar un <em>servlet</em>?”, són tres:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>init</code>: s’executa quan s’inicia l’aplicació o la primera vegada que s’executa el <em>servlet</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>service</code>: s’executa en un fil (<em>thread</em>) diferent cada vegada que el <em>servlet</em> rep una petició (<em>request</em>).</div>
+</li>
+<li class="level1"><div class="li"> <code>destroy</code>: s’executa quan s’elimina l’aplicació. </div>
+</li>
+</ul>
+
+<p>
+Aquests tres mètodes constitueixen el cicle de vida d’un <em>servlet</em> (vegeu la <span class="figref"><a href="#fig07"><span>figura</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Threads</p>
+<p>
+Els fils d’execució (<em>threads</em>) són les unitats més petites d’execució d’un programa. Un procés està format per diversos <em>threads</em> que poden ser executats simultàniament. La majoria dels llenguatges de programació disposen de llibreries per programar-los. Les aplicacions típiques que els utilitzen son les aplicacions gràfiques i les aplicacions basades en client-servidor. 
+</p>
+</div></div><div class="iocfigure"><a name="fig07"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Cicle de vida d’un ‘servlet’
+
+</figcaption><img src="../media/daw_m07_u2_05.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La primera vegada que s’executa el <em>servlet</em> es crea l’objecte que representa aquest <em>servlet</em> i s’executa el mètode <code>init</code>. Aquest objecte, que representa el <em>servlet</em>, no s’elimina fins que no s’elimina tota l’aplicació.
+</p>
+
+<p>
+Així, qualsevol petició (<em>request</em>) que rebi de qualsevol client la manipularà el mateix objecte, i qualsevol variable que tingui el <em>servlet</em> es compartirà entre peticions de diferents clients. Cada petició que rebi el <em>servlet</em> s’executarà en un fil (<em>thread</em>) diferent, i poden executar-se diferents peticions de manera concurrent (a la mateixa vegada). El mètode <code>service</code> és el mètode encarregat d’executar les peticions dels clients.
+</p>
+
+<p>
+Finalment, quan l’aplicació és eliminada s’eliminen tots els <em>servlets</em> associats. En aquest moment s’executa el mètode <code>destroy</code> per alliberar els recursos que tingui, com per exemple tancar una connexió a basede dades. 
+</p>
+
+</div>
+
+<h4><a id="el_metode_init_del_servlet_publicitat" >El mètode init del &#039;servlet&#039; Publicitat</a></h4>
+<div class="level4">
+
+<p>
+El mètode <code>init</code> té la peculiaritat que només s’executarà una vegada, en crear l’objecte del <em>servlet</em>. Podeu pensar en aquest mètode com si fos el seu constructor, però no ho és. El codi que hi haurà dintre d’aquest mètode serà el d’inicialització de les variables privades del <em>servlet</em>. 
+</p>
+
+<p>
+Fixem-nos en el mètode <code>init</code> del <em>servlet</em> Publicitat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Override</div></li><li class="li1"><div class="de1">public void init (ServletConfig config) throws ServletException</div></li><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">    super.init(config);</div></li><li class="li1"><div class="de1">    this.ip = new HashMap();</div></li><li class="li1"><div class="de1">    this.num++;</div></li><li class="li1"><div class="de1">    this.visites = 0;</div></li><li class="li1"><div class="de1">    this.urlPublicitat = getServletConfig().getInitParameter(&quot;url&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+S’han inicialitzat totes les variables privades. S’utilitza un objecte del tipus <em>HashMap</em> per emmagatzemar les diferents IP del clients que es connectin al <em>servlet.</em>
+</p>
+
+<p>
+S’han creat dues variables, una per comptar el nombre de vegades que s’executa la funció <code>init</code> (variable <code>num</code> ) i una altra per comptar el nombre de vegades que s’executa el mètode <code>service</code> (variable <code>visites</code>).
+</p>
+
+<p>
+A més a més, s’ha recuperat el paràmetre inicial <code>url</code> que es troba en el fitxer web.xml. Aquest paràmetre correspon a l’<acronym title="Uniform Resource Locator">URL</acronym> del patrocinador de la pàgina web.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode <code>init</code> s’utilitza principalment per a la <strong>inicialització</strong> del <em>servlet</em>, és a dir, per crear o recuperar objectes que s’utilitzaran durant l’execució del mètode <code>service</code>.
+</p>
+</div></div>
+<p>
+
+</p>
+
+<p>
+I la instrucció <code>super.init(config);</code>? És imprescindible, atès que associa l’objecte <code>ServletConfig</code> al <em>servlet</em> Publicitat. Sense aquest objecte no podríem accedir als paràmetres inicials emmagatzemats en el fitxer web.xml. 
+</p>
+
+</div>
+
+<h4><a id="el_metode_service_del_servlet_publicitat" >El mètode service del &#039;servlet&#039; Publicitat</a></h4>
+<div class="level4">
+
+<p>
+El mètode <code>service</code> s’executarà cada cop que un client accedeixi al <em>servlet</em>. Així, cada vegada que un navegador accedeixi a l’<acronym title="Uniform Resource Locator">URL</acronym> del <em>servlet</em> Publicitat s’executarà el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{</div></li><li class="li1"><div class="de1">     response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">        try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;title&gt;Servlet Publicitat&lt;/title&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String requestIp = request.getRemoteAddr();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            if(this.ip.containsKey(requestIp)){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                noEsLaPrimeraVegada(out);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            else{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                esLaPrimeraVegada(requestIp, out);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h5&gt;S'han fet&quot; + this.visites +&quot; visites&lt;/h5&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;h5&gt;S'ha cridat el mètode init &quot; + this.num +&quot; vegades&lt;/h5&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">            out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            this.visites++;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+El mètode <code>service</code> té accés, igual que els mètodes <code>doGet</code> i <code>doPost</code>, a l’objecte <code>request</code> de la petició i a l’objecte <code>response</code> per donar una resposta.
+</p>
+
+<p>
+El codi que us permet decidir si és la primera vegada que l’usuari accedeix a la pàgina o no ho és és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String requestIp = request.getRemoteAddr();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">if(this.ip.containsKey(requestIp)){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    noEsLaPrimeraVegada(out);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">else{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    esLaPrimeraVegada(requestIp, out);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Amb l’objecte <code>request</code> obteniu l’adreça IP del client que ha fet la petició. Una vegada teniu l’adreça IP, comproveu si hi ha accedit amb anterioritat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if(this.ip.containsKey(requestIp)){</div></li></ol></pre>
+
+<p>
+La variable <code>ip</code> és de tipus <em>HashMap</em>. Els objectes de tipus <em>HashMap</em> permeten emmagatzemar objectes del tipus <code>clau:valor</code>. L’avantatge d’aquests objectes és que recuperar un element, si se sap la clau, és molt ràpid. A més a més, us proporciona el mètode <code>containsKey(clau)</code>, que us retornarà <em>true</em> si la IP està guardada en el <em>HashMap</em> i <em>false</em> en cas contrari.
+Aquesta variable mai oblidarà aquest valor si no l’elimineu vosaltres, ja que l’objecte <em>servlet</em> perdurarà entre diferents peticions. 
+</p>
+
+<p>
+Si no es troba emmagatzemada vol dir que és la primera vegada que un usuari amb aquesta IP ha accedit a la pàgina. Llavors s’executarà la funció <code>esLaPrimeraVegada()</code>, que té el següent codi:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Objecte Java HashMap</p>
+<p>
+És una de les col·leccions de Java més populars entre els programadors. Existeixen altres col·leccions basades en Hash com són <em>HashTable i ConcurrentHashMap</em> però el seu rendiment és més baix en entorns amb un sol fil de processament. La col·lecció <em>HashMap</em> permet als programadors fer molts tipus d’operacions com afegir un element, treure’l, recórrer tots els elements, calcular la seva mida, obtenir totes les claus del <em>hash</em> o tots els seus valors, entre d’altres operacions interessants. 
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">private void esLaPrimeraVegada(String requestIp, PrintWriter out){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    this.ip.put(requestIp, &quot;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;h1&gt;És la primera vegada que accedeixes a la pàgina. Benvingut.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;p style='color:red;'&gt;Accedeix al nostre patrocinador clicant al següent enllaç:&lt;/p&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='&quot; + this.urlPublicitat + &quot;'&gt;Pàgina web del patrocinador&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Primer de tot s’emmagatzema la IP dintre del <em>HashMap</em>:  <em>this.ip.put(requestIP, “”)</em>, i a continuació s’escriu el pedaç de pàgina corresponent als usuaris que hi accedeixen per primera vegada, com per exemple l’<acronym title="Uniform Resource Locator">URL</acronym> del patrocinador de la web.
+</p>
+
+<p>
+Si, en canvi, no és la primera vegada que s’hi accedeix, llavors el codi anterior no s’executa. La funció que s’executaria seria <code>noEsLaPrimeraVegada();</code>, que té el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private void noEsLaPrimeraVegada(PrintWriter out){</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;h1&gt;Gràcies per tornar a la pàgina web. Ja no veuràs el Patrocinador.&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+La funció anterior només informa l’usuari que ja hi ha accedit prèviament i li dóna les gràcies per tornar a entrar-hi.
+</p>
+
+<p>
+D’altra banda, si executeu el <em>servlet</em> Publicitat veureu que la variable <code>num</code> no canvia, ja que és un comptador que només s’actualitza dintre de la funció <code>init</code> i, en canvi, la variable <code>visites</code> s’actualitza cada vegada que hi ha una petició. Aquest és un símptoma que l’objecte <em>servlet</em> Publicitat és únic i s’executa el mètode <code>service</code> en cada petició.
+</p>
+
+</div>
+
+<h4><a id="el_metode_destroy_del_servlet_publicitat" >El mètode destroy del &#039;servlet&#039; Publicitat</a></h4>
+<div class="level4">
+
+<p>
+Durant la implementació d’aquest <em>servlet</em> no ha estat necessària la utilització de recursos que calgui eliminar utilitzant aquest mètode.
+</p>
+
+<p>
+El mètode <code>destroy</code> es crida només una vegada al final del cicle de vida d’un <em>servlet</em>. Aquest mètode li dóna al seu <em>servlet</em> l’oportunitat de tancar les connexions de base de dades, aturar subprocessos de fons o escriure llistes de <em>cookies</em>, així com fer altres activitats de neteja.
+</p>
+
+<p>
+La definició del mètode <code>destroy</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public void destroy ( ) {</div></li><li class="li1"><div class="de1">    // La finalització de codi ...</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="exemple_de_publicitat_amb_redireccions" >Exemple de Publicitat amb redireccions</a></h3>
+<div class="level3">
+
+<p>
+Es vol modificar el <em>servlet</em> Publicitat afegint-hi redireccions. En comptes d’escriure directament en la resposta de la petició es vol enviar l’usuari a una pàgina <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+En concret, si és la primera vegada que l’usuari accedeix al <em>servlet</em> es mostrarà la pàgina anomenada <em>1a_vegada.html</em>. La podeu crear accedint a <em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em>, i hi podeu afegir el següent codi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Servlet Publicitat&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;És la primera vegada que accedeixes a la pàgina. Benvingut.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;p style='color:red;'&gt;Accedeix al nostre patrocinador clicant al següent enllaç:&lt;/p&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='http://ioc.xtec.cat'&gt;Pàgina web del patrocinador&lt;/a&gt;&lt;br&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='Publicitat2'&gt;Tornar a accedir&lt;/a&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+En canvi, si no és la primera vegada l’usuari veurà el fitxer <acronym title="HyperText Markup Language">HTML</acronym> anomenat resta_vegades.html. El podeu crear accedint a <em>File / New File / HTML5 / <acronym title="HyperText Markup Language">HTML</acronym> File</em> i podeu afegir-hi el següent codi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Servlet Publicitat&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Gràcies per tornar a la pàgina web. Ja no veuràs el patrocinador.&lt;/h1&gt;</div></li><li class="li1"><div class="de1">        &lt;a href='Publicitat2'&gt;Tornar a accedir&lt;/a&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per fer aquest exercici creareu un <em>servlet</em> nou (<em>File / New File / Web / Servlet</em>) en el mateix projecte Maven de l’exemple anterior i l’anomenareu Publicitat2. Aquest cop, durant la creació del <em>servlet</em> no afegireu un paràmetre addicional, però sí hi la descripció del <em>servlet</em> al fitxer de configuració web.xml.
+</p>
+
+<p>
+Fixeu-vos que en el codi afegit al fitxer de configuració web.xml ja no apareix cap paràmetre inicial:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">&lt;servlet&gt;</div></li><li class="li1"><div class="de1">     &lt;servlet-name&gt;Publicitat2&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">     &lt;servlet-class&gt;cat.ioc.m7.servlets.Publicitat2&lt;/servlet-class&gt;</div></li><li class="li1"><div class="de1">&lt;/servlet&gt;</div></li><li class="li1"><div class="de1">&lt;servlet-mapping&gt;</div></li><li class="li1"><div class="de1">   &lt;servlet-name&gt;Publicitat2&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">   &lt;url-pattern&gt;/Publicitat2&lt;/url-pattern&gt;</div></li><li class="li1"><div class="de1">&lt;/servlet-mapping&gt;</div></li><li class="li1"><div class="de1">...</div></li></ol></pre>
+
+<p>
+Una possible implementació del <em>servlet</em> demanat és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Publicitat2 extends HttpServlet {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private HashMap ip;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void init (ServletConfig config) throws ServletException</div></li><li class="li1"><div class="de1">    {</div></li><li class="li1"><div class="de1">        super.init(config);</div></li><li class="li1"><div class="de1">        this.ip = new HashMap();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            String requestIp = request.getRemoteAddr();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            if(this.ip.containsKey(requestIp)){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                //redirect html - resta de vegades</div></li><li class="li1"><div class="de1">                response.sendRedirect(&quot;resta_vegades.html&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            else{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">                //redirectHTML  -  1a vegada</div></li><li class="li1"><div class="de1">                response.sendRedirect(&quot;1a_vegada.html&quot;);</div></li><li class="li1"><div class="de1">                this.ip.put(requestIp, &quot;&quot;);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Igual que abans, s’utilitza el mètode <code>init</code> per inicialitzar les variables privades. En aquest exemple s’han tret les variables de comptadors de visites i l’<acronym title="Uniform Resource Locator">URL</acronym> del patrocinador. En aquest cas, el patrocinador s’ha afegit directament en la pàgina redirigida.
+</p>
+
+<p>
+El mètode <code>service</code> s’ha reduït considerablement. Ara ja no cal que s’escrigui la pàgina resultant, sinó que pot enviar l’usuari a una web o a una altra depenent de si és la primera vegada o no. La propietat <code>ip</code> permet fer aquesta distinció.
+</p>
+
+<p>
+Per redirigir a una altra pàgina s’utilitza el mètode <code>sendRedirect</code> de l’objecte <code>response</code>. Aquesta funció redirigeix a un altre recurs, la qual cosa obliga el client (navegador) a fer automàticament una petició al nou recurs. Les redireccions poden ser internes (del mateix servidor) o externes (a un altre servidor). El client veurà a l’<acronym title="Uniform Resource Locator">URL</acronym> del navegador el nou recurs on s’ha accedit.
+</p>
+
+<p>
+Un altre mètode per redireccionar és utilitzant el <em>request dispatching</em>. En aquest cas, en comptes d’utilitzar l’objecte <code>response</code> s’empra l’objecte <code>request</code> per reenviar la mateixa petició a un altre recurs. Així, el client no ha de demanar el nou recurs. De fet, no sabrà la pàgina li ha donat un altre recurs, ja que l’<acronym title="Uniform Resource Locator">URL</acronym> del navegador no canviarà.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">sendRedirect versus forward</p>
+<p>
+S’utilitza el mètode <em>sendRedirect</em> quan es vol dirigir l’usuari a una altra pàgina d’un altre domini o servidor. En canvi, quan la redirecció es fa cap a una pàgina del mateix servidor o domini s’utilitza el mètode <em>forward</em>.
+</p>
+</div></div>
+<p>
+Un exemple d’utilització del <em>request dispatching</em> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">RequestDispatcher rs = request.getRequestDispatcher(&quot;nouRecurs.html&quot;);</div></li><li class="li1"><div class="de1">rs.forward(request,response);</div></li></ol></pre>
+
+<p>
+Proveu de canviar l’exemple anterior utilitzant el mètode <code>getRequestDispatcher</code> de l’objecte <code>request</code>.
+</p>
+
+</div>
+
+<h3><a id="exemple_endevinacolor" >Exemple EndevinaColor</a></h3>
+<div class="level3">
+
+<p>
+Intenteu canviar el <em>servlet</em> EndevinaColor creat anteriorment. Creeu un altre <em>servlet</em> anomenat EndevinaColor2 i afegiu-hi les següents modificacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si és la primera vegada, ha de mostrar el llistat d’enllaços amb els colors (el que abans era la pàgina EndevinaColor.html).</div>
+</li>
+<li class="level1"><div class="li"> Si és la segona vegada, ha de mostrar el resultat de la comparació, és a dir, informar si s’ha endevinat el color.</div>
+</li>
+</ul>
+
+<p>
+En aquest cas, en comptes de sobreescriure el mètode <code>service</code> pots utilitzar el mètode <code>processRequest</code> que crea l’IDE NetBeans.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private String colorInicial;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Override</div></li><li class="li1"><div class="de1">public void init (ServletConfig config) throws ServletException</div></li><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    super.init(config);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    //Color configurat com a paràmetre inicial. És el color a endevinar.</div></li><li class="li1"><div class="de1">    this.colorInicial = getServletConfig().getInitParameter(&quot;color&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">protected void processRequest(HttpServletRequest request, HttpServletResponse response)</div></li><li class="li1"><div class="de1">            throws ServletException, IOException {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></li><li class="li1"><div class="de1">    try (PrintWriter out = response.getWriter()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;html&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;title&gt;Endevina el color&lt;/title&gt;&quot;);            </div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/head&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;body&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        String colorUsuari = request.getParameter(&quot;color&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        if(colorUsuari != null &amp;&amp; !colorUsuari.equals(&quot;&quot;) ){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            crearPaginaGuanyador(colorUsuari, out); </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        else{</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            crearPaginaInicial(out);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/body&gt;&quot;);</div></li><li class="li1"><div class="de1">        out.println(&quot;&lt;/html&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">...</div></li></ol></pre>
+
+<p>
+Fixeu-vos que s’ha sobreescrit el mètode <code>init</code> per obtenir la configuració inicial del <em>servlet</em>. En concret, s’ha recuperat el color configurat en el fitxer web.xml. Recordeu que és aquest el color que s’ha d’endevinar.
+</p>
+
+<p>
+El mètode <code>processRequest</code> és el mètode que porta a terme la mateixa funció que <code>service</code>. Així, aquí farem tot el codi que s’ha d’executar a cada petició d’un client. 
+</p>
+
+<p>
+Bàsicament, es crea una resposta depenent de si és la primera vegada que s’hi accedeix o no. Per determinar si és o no la primera vegada s’accedeix al <em>request</em> de la petició cercant el color que proposa l’usuari. Si no proposa cap color s’executa la funció <code>crearPaginaInicial()</code>; si, en canvi, l’usuari proposa un color, es mira si ha guanyat o no amb la crida de la funció <code>crearPaginaGuanyador()</code>.
+</p>
+
+<p>
+El codi de les funcions és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private void crearPaginaGuanyador(String colorUsuari, PrintWriter out){</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    String endevinat = &quot;Llàstima, has perdut!&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if(this.colorInicial.toLowerCase().equals(colorUsuari.toLowerCase())){</div></li><li class="li1"><div class="de1">        endevinat = &quot;Felicitats! Has endevinat el color.&quot;;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;h1&gt;&quot; + endevinat +&quot;&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2'&gt;Tornar&lt;a/&gt;&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">private void crearPaginaInicial(PrintWriter out) {</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;h1&gt;Endevina el color configurat:&lt;/h1&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=white'&gt;blanc&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=red'&gt;vermell&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=blue'&gt;blau&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=yellow'&gt;groc&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=green'&gt;verd&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">    out.println(&quot;&lt;a href='EndevinaColor2?color=black'&gt;negre&lt;/a&gt;&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Ara ja no us cal cap pàgina <acronym title="HyperText Markup Language">HTML</acronym> addicional. El mateix <em>servlet</em> crea la pàgina que necessita veure l’usuari depenent de la petició que ha fet.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat l’alumne ha après:
+</p>
+<ul>
+<li class="level1"><div class="li"> La creació i configuració d’un <em>servlet</em>.</div>
+</li>
+<li class="level1"><div class="li"> El cicle de vida d’un <em>servlet</em> (<code>ini</code>, <code>service</code>, <code>destroy</code>). </div>
+</li>
+<li class="level1"><div class="li"> Classes associades als <em>servlets</em>, com poden ser <code>ServletContext</code>, <code>HttpServletRequest</code> i <code>HttpServletResponse</code>.</div>
+</li>
+<li class="level1"><div class="li"> La redirecció d’una petició utilitzant la mateixa petició original o creant-ne una de nova.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en aquests llenguatges es recomana la realització de les activitats associades a aquest apartat. Una vegada realitzades, l’alumne estarà preparat per continuar amb l’aprenentatge dels <em>servlets</em>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

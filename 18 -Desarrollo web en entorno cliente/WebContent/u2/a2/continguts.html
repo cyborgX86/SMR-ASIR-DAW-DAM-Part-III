@@ -1,0 +1,1731 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Estructures definides pel programador</a></li><li>Programació amb col·leccions</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_amb_col_leccions"> Programació amb col·leccions </a></h1>
+    	
+<p>
+
+<p>
+Les col·leccions són tipus de dades compostos que ens permeten treballar amb grups de dades en lloc de treballar amb dades individuals. Per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// dades individuals</div></li><li class="li1"><div class="de1">let persona1 = {nom: &quot;Joan&quot;, poblacio: &quot;Barcelona&quot;};</div></li><li class="li1"><div class="de1">let persona2 = {nom: &quot;Maria&quot;, poblacio: &quot;Lleida&quot;};</div></li><li class="li1"><div class="de1">let persona3 = {nom: &quot;Pere&quot;, poblacio: &quot;Tarragona&quot;};</div></li><li class="li1"><div class="de1">let persona4 = {nom: &quot;Lluisa&quot;, poblacio: &quot;Girona&quot;};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// col·leció</div></li><li class="li1"><div class="de1">let persones = [persona1, persona2, persona3, persona4];</div></li></ol></pre>
+
+<p>
+Quan s’ha de treballar amb grups de dades no és viable treballar amb variables, ja que això requereix crear una nova variable per a cada valor i es dificulta el processament, ja que s’ha de modificar cada variable individualment.
+</p>
+
+<p>
+En canvi, una col·lecció consisteix en un grup de dades, la qual cosa permet afegir dinàmicament a una mateixa col·lecció qualsevol quantitat de dades i processar tota la col·lecció completa a partir d’una única variable (a la qual està assignada la col·lecció).
+</p>
+
+<p>
+Ampliant l’exemple anterior, a partir de la variable <code>persones</code>, a la quals s’ha assignat un <em>array</em> d’objectes, podem accedir a qualsevol dels elements. Per exemple, es poden recórrer tots els elements:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (let persona of persones) {</div></li><li class="li1"><div class="de1">	console.log(`${persona.nom} viu a ${persona.poblacio}`);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest cas es recorren tots els elements de la col·lecció <code>persones</code> i s’assigna l’element actual a <code>persona</code> (aquest valor s’actualitza en cada iteració del bucle). Seguidament es mostra per la consola el missatge amb el nom i la població de l’element.
+</p>
+
+<p>
+Una alternativa fent servir variables individuals podria ser la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(`${persona1.nom} viu a ${persona1.poblacio}`);</div></li><li class="li1"><div class="de1">console.log(`${persona2.nom} viu a ${persona2.poblacio}`);</div></li><li class="li1"><div class="de1">console.log(`${persona3.nom} viu a ${persona3.poblacio}`);</div></li><li class="li1"><div class="de1">console.log(`${persona4.nom} viu a ${persona4.poblacio}`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PoNwEXd?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PoNwEXd?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/PoNwEXd?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, d’aquesta manera es duplica el codi per cada element. És a dir, si afegim 10 persones més, també hauríem d’afegir 10 línies més.
+</p>
+
+<p>
+Vegem un altre exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Utilitzant variables individuals</div></li><li class="li1"><div class="de1">let nota1 = 6;</div></li><li class="li1"><div class="de1">let nota2 = 4;</div></li><li class="li1"><div class="de1">let nota3 = 5;</div></li><li class="li1"><div class="de1">let nota4 = 8;</div></li><li class="li1"><div class="de1">let nota5 = 7;</div></li><li class="li1"><div class="de1">let nota6 = 4;</div></li><li class="li1"><div class="de1">let nota7 = 9;</div></li><li class="li1"><div class="de1">let nota8 = 8;</div></li><li class="li1"><div class="de1">let nota9 = 5;</div></li><li class="li1"><div class="de1">let nota10 = 6;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let mitjana = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 + nota10) / 10;</div></li><li class="li1"><div class="de1">console.log(`Nota mitjana: ${mitjana} (variables)`)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Utilitzant una col·lecció</div></li><li class="li1"><div class="de1">let notes = [6, 4, 5, 8, 7, 4, 9, 8, 5, 6];</div></li><li class="li1"><div class="de1">let acumulat = 0;</div></li><li class="li1"><div class="de1">for (let nota of notes) {</div></li><li class="li1"><div class="de1">  acumulat += nota;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">console.log(`Nota mitjana: ${acumulat/notes.length} (col·leció)`);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qBZEpJm?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qBZEpJm?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/qBZEpJm?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, quan treballem amb col·leccions el codi és molt més entenedor i s’eviten repeticions. A més a més, aquest codi és escalable, ja que, si afegim nous valors a la col·lecció <code>notes</code> (per exemple, utilitzant un formulari <acronym title="HyperText Markup Language">HTML</acronym>), el codi continuaria processant les dades correctament; en canvi utilitzant variables individuals això no seria possible.
+</p>
+
+<h2><a id="col_leccions" >Col·leccions</a></h2>
+<div class="level2">
+
+<p>
+Per treballar amb col·leccions, JavaScript ens proporciona els objectes predefinits Array, Map i Sets:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Diccionaris i Map/Object</p>
+<p>
+Un diccionari és una col·lecció desordenada que fa servir parelles de clau i valor per accedir als seus elements. Per aquest motiu, es pot considerar que tant Map com Object (quan s’utilitza en aquest context) són diccionaris.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Array</strong>: un <em>array</em> és una llista de valors ordenats on cada valor és <strong>accessible mitjançant un índex</strong>. Aquest índex sempre és un nombre enter igual o superior a 0.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Map</strong>: és una col·lecció desordenada que permet associar parells de clau i valor. La clau pot ser qualsevol cosa (incloent-hi funcions, objectes i tipus primitius).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Set</strong>: és una col·lecció de valors únics on es pot iterar sobre els elements en ordre d’inserció, s’hi pot afegir elements, se n’hi pot eliminar i es pot comprovar si hi existeixen; no es pot, però, modificar la seva posició ni accedir-hi directament, ja que no existeix ni un índex ni una clau: és referèncien directament els valors.</div>
+</li>
+</ul>
+
+<p>
+Addicionalment, el comportament dels objectes de JavaScript ens permet utilitzar-los d’una forma similar a un Map, ja que es pot utilitzar el nom de la propietat com a clau i el valor com a valor de l’element.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Altres col·leccions</p>
+<p>
+Existeixen també els objectes WeakSet i WeakMap que són variants de Set i Map amb uns usos molt més concrets, podeu trobar més informació al següent enllaç: <a href="https://developer.mozilla.org/ca/docs/Web/JavaScript/Guide/Keyed_collections" class="urlextern" title="https://developer.mozilla.org/ca/docs/Web/JavaScript/Guide/Keyed_collections"  rel="nofollow">mzl.la/3gDAnRR</a>.
+</p>
+</div></div>
+<p>
+Veiem un exemple de cada tipus de col·lecció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let exempleArray = [&quot;Verd&quot;, &quot;Ambar&quot;, &quot;Vermell&quot;, &quot;Vermell&quot;];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let exempleSet = new Set();</div></li><li class="li1"><div class="de1">exempleSet.add(&quot;verd&quot;);</div></li><li class="li1"><div class="de1">exempleSet.add(&quot;ambar&quot;);</div></li><li class="li1"><div class="de1">exempleSet.add(&quot;vermell&quot;);</div></li><li class="li1"><div class="de1">exempleSet.add(&quot;vermell&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let exempleMap = new Map();</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;verd&quot;, &quot;Passar&quot;);</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;ambar&quot;, &quot;Compte!&quot;);</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;vermell&quot;, &quot;Prohibit&quot;);</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;vermell&quot;, &quot;No passar!&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let exempleObject = {</div></li><li class="li1"><div class="de1">  verd: &quot;Passar&quot;,</div></li><li class="li1"><div class="de1">  ambar: &quot;Compte!&quot;,</div></li><li class="li1"><div class="de1">  vermell: &quot;Prohibit&quot;,</div></li><li class="li1"><div class="de1">  vermell: &quot;No passar!&quot;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(exempleArray, exempleArray.length);</div></li><li class="li1"><div class="de1">console.log(exempleSet, exempleSet.size);</div></li><li class="li1"><div class="de1">console.log(exempleMap, exempleMap.size);</div></li><li class="li1"><div class="de1">console.log(exempleObject, Object.keys(exempleObject).length);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWNwQVE?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWNwQVE?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/QWNwQVE?editors=0012</a>.
+</p>
+
+<p>
+Com es pot apreciar, l’única col·lecció que permet elements repetits és l’Array, tots els altres tipus es descarten els valors duplicats conservant l’última assignació.
+</p>
+
+<p>
+Fixeu-vos que en el cas de l’objecte no existeix una propietat o mètode per obtenir la mida directament, hem hagut d’utilitzar la funció estàtica <code>Object.keys()</code> per obtenir un <em>array</em> amb totes les propietats i llavors consultar el valor de la propietat <code>length</code> d’aquest <em>array</em>.
+</p>
+
+<p>
+A continuació podeu veure les diferents maneres d’iterar sobre aquestes col·leccions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(&quot;Iteració array: utilitzant l'índex&quot;);</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; exempleArray.length; i++) {</div></li><li class="li1"><div class="de1">  console.log(exempleArray[i]);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració array: accedint directament al valor&quot;);</div></li><li class="li1"><div class="de1">for (let element of exempleArray) {</div></li><li class="li1"><div class="de1">  console.log(element);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració set&quot;);</div></li><li class="li1"><div class="de1">for (let element of exempleSet) {</div></li><li class="li1"><div class="de1">  console.log(element);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració object&quot;);</div></li><li class="li1"><div class="de1">for (let nom in exempleObject) {</div></li><li class="li1"><div class="de1">  console.log(exempleObject[nom]);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració map&quot;);</div></li><li class="li1"><div class="de1">for (let element of exempleMap) {</div></li><li class="li1"><div class="de1">  console.log(element);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(&quot;Iteració map: desesctructurat&quot;);</div></li><li class="li1"><div class="de1">for (let [clau, valor] of exempleMap) {</div></li><li class="li1"><div class="de1">  console.log(`Clau: ${clau}, valor: ${valor}`);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per iterar sobre els valors d’un <em>array</em> es pot utilitzar un bucle <code>for</code> que recorri els índexs des de 0 fins a l’últim valor de l’<em>array</em> (mida de l’<em>array</em> -1) o es pot utilitzar un bucle <code>for…of</code> per recórrer directament els valors de l’<em>array</em>.
+</p>
+
+<p>
+Utilitzar un tipus de bucle o un altre dependrà de si necessitem utilitzar l’índex o només el valor, o si l’ordre és important. Per exemple, amb un bucle <code>for</code> es poden recórrer els elements en ordre invers.
+</p>
+
+<p>
+Per iterar sobre els valors d’un map o un set cal utilitzar <code>for…of</code>, aquest tipus de bucle funciona només amb col·leccions iterables (com Array, Map i Set) i per aquest motiu no es pot utilitzar amb objectes, ja que els objectes no són iterables.
+</p>
+
+<p>
+Com es pot apreciar, quan s’iteren els elements d’un mapa el valor de l’element és el parell clau i valor, per consegüent es poden desestructurar i assignar a variables independents (en aquest exemple anomenades <code>clau</code> i <code>valor</code>).
+</p>
+
+<p>
+Finalment, per iterar sobre les propietats d’un objecte cal utilitzar <code>for…in</code>, el nom de la propietat s’assigna a la variable i per accedir al valor hem de fer la consulta utilitzant claudàtors, com si és tractés d’un <em>array</em>.
+</p>
+
+</div>
+
+<h3><a id="arrays" >Arrays</a></h3>
+<div class="level3">
+
+</div>
+
+</p>
+
+<p>
+Als <em>arrays</em>, tot i ser un tipus de dades que s’utilitza amb molta freqüència en tots els llenguatges de programació, existeixen diferencies en la seva utilització. Aquestes diferències es mostren amb claredat quan es compara JavaScript amb Java. 
+</p>
+
+<p>
+A Java, els <em>arrays</em> s’han d’inicialitzar amb la seva mida, en canvi, a JavaScript la mida d’un <em>array</em> pot variar en qualsevol moment. Una altre diferència és que els <em>arrays</em> de JavaScript poden emmagatzemar elements de qualsevol tipus (Integet, Boolean, String, etc.) i poden estar emmagatzemats en posicions no consecutives; de fet, poden tenir com a índex d’accés un valor no numèric.
+</p>
+
+<p>
+
+<p>
+Un programador en JavaScript ha de conèixer totes les singularitats que aporta aquest llenguatge quan fa ús d’aquest tipus de dades. Conèixer aquestes singularitats és bàsic per desenvolupar programes simples i eficients, per això, un bon programador ha de conèixer les següents propietats i mètodes dels <em>arrays</em> (i un que retornen un <em>array</em>: <code>split()</code>):
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Podeu trobar una llista exhaustiva amb tots els mètodes dels <em>arrays</em> en el següent enllaç: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="urlextern" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"  rel="nofollow">mzl.la/33Dyr8k</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>length</code>: nombre d’elements que conté l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>concat(nouarray1, nouarray2, …)</code>: crea un nou <em>array</em> amb els elements de dos o més <em>arrays</em> diferents.</div>
+</li>
+<li class="level1"><div class="li"> <code>push(element1, element2, …)</code>: agrega un o més elements al final de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>unshift(element1, element2, …</code>: afegeix un o més elements a l’inici de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>pop()</code>: elimina l’últim element de l’<em>array</em> i el retorna.</div>
+</li>
+<li class="level1"><div class="li"> <code>shift()</code>: elimina el primer element de l’<em>array</em> i el retorna.</div>
+</li>
+<li class="level1"><div class="li"> <code>sort([funció])</code>: ordena alfabèticament els elements d’un <em>array</em>. Es pot passar una funció com argument per realitzar ordenacions avançades.</div>
+</li>
+<li class="level1"><div class="li"> <code>split(separador[, limit])</code>: converteix una cadena de text en un <em>array</em> de cadenes de text.</div>
+</li>
+<li class="level1"><div class="li"> <code>join([separador])</code>: uneix tots els elements d’un <em>array</em> en una cadena de text utilitzant un caràcter d’unió.</div>
+</li>
+<li class="level1"><div class="li"> <code>reverse()</code>: modifica un <em>array</em> col·locant els seus elements en l’ordre invers a la seva posició original.</div>
+</li>
+<li class="level1"><div class="li"> <code>indexOf(elementAcercar[, posicioInical])</code>: retorna la posició de l’<em>array</em> on es troba la primera ocurrència del valor cercat.</div>
+</li>
+<li class="level1"><div class="li"> <code>lastIndexOf(elementAcercar[, posici´ó inicial]</code>: retorna la posició de l’<em>array</em> on es troba l’última ocurrència del valor cercat.</div>
+</li>
+<li class="level1"><div class="li"> <code>every(funció)</code>: executa la funció passada com argument i comprova que el resultat de la funció aplicada a tots els valors de l’<em>array</em> sigui cert.</div>
+</li>
+<li class="level1"><div class="li"> <code>some(funció)</code>: executa la funció passada com argument i comprova que almenys un dels resultats de la funció aplicada als elements de l’<em>array</em> sigui cert.</div>
+</li>
+<li class="level1"><div class="li"> <code>filter(funció)</code>: executa la funció per a tots els elements de l’<em>array</em> i retorna un nou <em>array</em> amb tots els elements als quals la funció hagi retornat cert.</div>
+</li>
+<li class="level1"><div class="li"> <code>slice(inici, final)</code>: retorna un nou <em>array</em> amb els valors que es troben des de l’índex inici fins a l’índex final.</div>
+</li>
+<li class="level1"><div class="li"> <code>splice(inici, comptadorEliminar[, element1, element2, …]</code>: afegeix i elimina elements a partir d’una posició de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>fill(valor [, posInicial, posFinal])</code>: omple un <em>array</em> amb el valor indicat; opcionalment es pot indicar una posició d’inici i una de final.</div>
+</li>
+<li class="level1"><div class="li"> <code>includes(elementCercat[, desdePosicio])</code>: retorna cert si l’<em>array</em> inclou el valor passat com argument.</div>
+</li>
+<li class="level1"><div class="li"> <code>forEach(funció)</code>: itera sobre tots els elements de l’<em>array</em> i executa la funció passada com argument per a tots els elements de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>map(funció)</code>: executa la funció sobre tots els elements de l’<em>array</em> i retorna un nou <em>array</em> amb els resultats.</div>
+</li>
+</ul>
+
+<p>
+A banda d’aquests mètodes, l’objecte Array inclou també les següents funcions estàtiques:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>Array.from(arrayOIterable[, funció])  </code>: genera un nou <em>array</em> a partir d’un altre <em>array</em> o objecte iterable (per exemple, un <em>set</em>). Opcionalment es pot afegir una funció per processar cada element.</div>
+</li>
+<li class="level1"><div class="li"> <code>Array.isArray()</code>: retorna cert si l’element passat com a argument és un <em>array</em>.</div>
+</li>
+</ul>
+
+<h3><a id="maps" >Maps</a></h3>
+<div class="level3">
+
+<p>
+Els mapes ens permeten crear col·leccions desordenades d’elements de manera que podem accedir als valors directament utilitzant una clau.
+</p>
+
+<p>
+Al contrari del que passa amb els <em>arrays</em> o els objectes no es pot accedir directament als elements utilitzant claudàtors, ja que en utilitzar la sintaxi de claudàtors el que es modifica o consulta són les propietats de l’objecte i no pas el contingut del mapa. Cal utilitzar els mètodes <code>set()</code> i <code>get()</code> per assignar i recuperar els valors respectivament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let exempleMap = new Map();</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;verd&quot;, &quot;Passar&quot;);</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;ambar&quot;, &quot;Compte!&quot;);</div></li><li class="li1"><div class="de1">exempleMap.set(&quot;vermell&quot;, &quot;Prohibit&quot;);</div></li><li class="li1"><div class="de1">exempleMap[&quot;groc&quot;] = &quot;desconegut&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// verd no és una propietat de l'objecte, és un valor del mapa</div></li><li class="li1"><div class="de1">console.log(exempleMap[&quot;verd&quot;]);</div></li><li class="li1"><div class="de1">// groc és una propietat de l'objecte</div></li><li class="li1"><div class="de1">console.log(exempleMap[&quot;groc&quot;]);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// verd és un element del mapa</div></li><li class="li1"><div class="de1">console.log(exempleMap.get(&quot;verd&quot;));</div></li><li class="li1"><div class="de1">// groc no és un element del mapa</div></li><li class="li1"><div class="de1">console.log(exempleMap.get(&quot;groc&quot;));</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/YzqPjgq?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/YzqPjgq?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/YzqPjgq?editors=0012</a>.
+</p>
+
+<p>
+Els mapes es poden manipular utilitzant les següents propietats i mètodes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>size</code>: mida del mapa.</div>
+</li>
+<li class="level1"><div class="li"> <code>clear()</code>: buida el contingut del mapa.</div>
+</li>
+<li class="level1"><div class="li"> <code>delete(clau)</code>: elimina l’element del mapa.</div>
+</li>
+<li class="level1"><div class="li"> <code>forEach(funció)</code>: recorre el mapa i executa la funció per a cada element.</div>
+</li>
+<li class="level1"><div class="li"> <code>get(clau)</code>: retorna el valor associat a la clau passada com argument.</div>
+</li>
+<li class="level1"><div class="li"> <code>has(clau)</code>: retorna cert si el mapa conté la clau passada com argument.</div>
+</li>
+<li class="level1"><div class="li"> <code>set(clau, valor)</code>: assigna un valor a una clau.</div>
+</li>
+</ul>
+
+<p>
+Una diferència important amb la utilització d’objectes com a diccionaris és que les claus d’un mapa poden ser qualsevol mena d’objecte incloent funcions i tipus primitius, mentre que el nom de les propietats d’un objecte només poden ser cadenes de text (encara que aquests noms no es trobin entre cometes es continuen considerant cadenes de text).
+</p>
+
+</div>
+
+<h3><a id="sets" >Sets</a></h3>
+<div class="level3">
+
+<p>
+Quan no és necessari que la col·lecció sigui ordenada i aquesta no ha d’admetre elements duplicats, cal considerar utilitzar un <em>set</em> en lloc d’un <em>array</em>.
+</p>
+
+<p>
+Hi ha dos avantatges importants quan s’utilitza un set en lloc d’un <em>array</em>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Eliminar <em>arrays</em> per valor és molt lent: array.splice(array.indexOf(valor)), en canvi eliminar-los d’un set és immediat: set.delete(valor).</div>
+</li>
+<li class="level1"><div class="li"> No s’ha de controlar que hi hagin duplicats, ja que els valors d’un set sempre són únics.</div>
+</li>
+</ul>
+
+<p>
+Els sets es poden manipular utilitzant les següents propietats i mètodes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>size</code>: mida del set.</div>
+</li>
+<li class="level1"><div class="li"> <code>clear()</code>: buida el contingut del set.</div>
+</li>
+<li class="level1"><div class="li"> <code>delete(valor)</code>: elimina l’element del set.</div>
+</li>
+<li class="level1"><div class="li"> <code>forEach(funció)</code>: recorre el set i executa la funció per a cada element.</div>
+</li>
+<li class="level1"><div class="li"> <code>has(valor)</code>: retorna cert si el mapa conté la clau passada com argument.</div>
+</li>
+</ul>
+
+<p>
+Fixeu-vos que al contrari del que passa amb els mapes, no existeix un mètode <code>get()</code>, ja que un set només conté una llista de valors i només podem comprovar si el set conté un valor o no mitjançant el mètode <code>has()</code>.
+</p>
+
+</div>
+
+</p>
+
+<h2><a id="gestio_de_l_estoc_d_una_botiga" >Gestió de l&#039;estoc d&#039;una botiga</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Una bona manera de veure com s’utilitzen les funcionalitats de les col·leccions és a través de l’ús que se’n fa en un exemple concret, com pot ser la gestió de l’estoc d’una botiga.
+</p>
+
+</p>
+
+<p>
+Es vol tenir enregistrat l’estoc dels productes d’una botiga. De moment, és una botiga petita i només tenen deu productes, però es venen molt. Per això hem de controlar l’estoc de cadascun d’ells per tal que sempre els tinguem disponibles. 
+</p>
+
+<p>
+El botiguer ens ha demanat un llistat amb tot l’estoc dels seus productes.
+</p>
+
+<p>
+
+<p>
+I aquesta ha estat la nostra implementació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let productes = new Array(10);</div></li><li class="li1"><div class="de1">productes.fill(50)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function veureEstoc(){</div></li><li class="li1"><div class="de1">    let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">    for(let i = 0; i &lt; productes.length; i++){</div></li><li class="li1"><div class="de1">        llistat += `&lt;li&gt;El producte número ${i} té ${productes[i]} unitats`;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;llistat&quot;).innerHTML=llistat;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">veureEstoc();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XWdJKqG" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XWdJKqG"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/XWdJKqG</a>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Codi HTML i CSS dels exemples</p>
+<p>
+El codi <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> utilitzat per aquests exemples es pot trobar als enllaços a CodePen.
+</p>
+</div></div>
+</p>
+
+<p>
+Si observeu el codi anterior s’ha utilitzat un <em>array</em> per guardar l’estoc de cada producte. Cada posició de l’<em>array</em> <code>productes</code> correspon a un dels productes de la botiga. L’<em>array</em> conté el número d’unitats que hi ha de cadascun d’ells. Inicialment, l’<em>array</em> s’omple 
+</p>
+
+<p>
+
+<p>
+amb el número 50.
+</p>
+
+</p>
+
+<p>
+<strong>Per crear un <em>array</em> s’ha utilitzat la instrucció</strong>:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let productes = new Array(10);</div></li></ol></pre>
+
+</p>
+
+<p>
+
+<p>
+Amb aquesta instrucció es crea un <em>array</em> inicialitzat amb 10 posicions, però també ho podíem haver assignat literalment:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let productes = [];</div></li></ol></pre>
+
+</p>
+
+<p>
+<strong>Quina diferència existeix entre les dues maneres de crear un <em>array</em>?</strong>
+</p>
+
+<p>
+A priori, sembla que són iguals però no, mireu el següent exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = [],            // aquests són iguals</div></li><li class="li1"><div class="de1">    b = new Array(),   // a i b son arrays amb longitud 0</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    c = ['foo', 'bar'],           // aquests també són iguals</div></li><li class="li1"><div class="de1">    d = new Array('foo', 'bar'),  // c i d són arrays amb dos strings</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Aquí hi ha la diferència:</div></li><li class="li1"><div class="de1">    e = new Array(3),   // e.length == 3, e[0] == undefined</div></li><li class="li1"><div class="de1">    f = [3]             // f.length == 1, f[0] == 3</div></li><li class="li1"><div class="de1">;</div></li></ol></pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La diferència entre crear un <em>array</em> amb el seu constructor o crear-lo de manera literal és que si s’utilitza el constructor es pot definir una mida inicial a l’<em>array</em>.
+</p>
+</div></div>
+<p>
+
+<p>
+Podem definir, amb el constructor, un <em>array</em> d’una mida concreta. En canvi, si utilitzem l’assignació literal <code>[]</code> per crear <em>arrays</em>, no podem definir la mida inicial. Si afegim en un <em>array</em> literal un número, aquest serà el primer element de l’<em>array</em> i no la seva mida.
+</p>
+
+</p>
+
+<p>
+La sintaxi és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> [element0, element1, ..., elementN]</div></li><li class="li1"><div class="de1"> new Array(element0, element1[, ...[, elementN]])</div></li><li class="li1"><div class="de1"> new Array(mida)</div></li></ol></pre>
+
+<p>
+L’<em>array</em> s’inicialitza amb els elements donats excepte si només hi ha un element. En aquests cas, aquest element simbolitza la mida de l’<em>array</em> només si s’utilitza la creació de l’<em>array</em> amb la paraula reservada <code>new</code>.
+</p>
+
+<p>
+
+<p>
+Un cop creat l’<em>array</em> l’omplim amb el valor 50:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">productes.fill(50)</div></li></ol></pre>
+
+<p>
+Amb el mètode <code>fill()</code> s’assigna el valor 50 a tots els elements de l’<em>array</em>. Cal destacar que si l’<em>array</em> és buit, invocar aquest mètode no tindrà cap efecte.
+</p>
+
+<p>
+Si en lloc de fer servir un valor estàtic volguéssim generar els valors aleatòriament, ho podríem fer utilitzant el mètode <code>map()</code> per crear un nou <em>array</em> a partir d’una funció i assignant-lo a l’<em>array</em> <code>productes</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">productes = productes.map(() =&gt; Math.floor(Math.random() * 100));</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZEWYOmV" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZEWYOmV"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ZEWYOmV</a>.
+</p>
+
+<p>
+Fixeu-vos que al mètode <code>map()</code> se li ha passat com a argument una funció de fletxa que retorna un nombre aleatori entre 0 i 99:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">() =&gt; Math.floor(Math.random() * 100)</div></li></ol></pre>
+
+<p>
+És important recordar que la funció <code>map()</code> només s’aplica als valors assignats, ja sigui mitjançant el mètode <code>fill()</code> o assignant els valors manualment.
+</p>
+
+<p>
+La funció <code>veureEstoc()</code>, recorre l’<em>array</em> <code>productes</code> i mostra per pantalla la informació de cadascun d’ells dins de l’etiqueta amb identificador <code>llistat</code> (al codi <acronym title="HyperText Markup Language">HTML</acronym>).
+</p>
+
+</p>
+
+<p>
+
+</p>
+
+<p>
+Només queda veure el funcionament de la funció <code>veureEstoc()</code>:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function veureEstoc(){</div></li><li class="li1"><div class="de1">    let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">    for(let i = 0; i &lt; productes.length; i++){</div></li><li class="li1"><div class="de1">        llistat += `&lt;li&gt;El producte número ${i} té ${productes[i]} unitats`;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;llistat&quot;).innerHTML=llistat;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta funció la invoquem directament des de JavaScript i és l’encarregada de generar el llistat que es visualitza a la pantalla.
+</p>
+
+</p>
+
+<p>
+Tot i que sabem que només hi ha 10 productes, no s’ha utilitzat aquest número com a condició de control. És molt més útil accedir a la propietat <code>length</code> de l’<em>array</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La propietat <code>length</code> d’un <em>array</em> ens dóna el nombre d’elements que conté.
+</p>
+</div></div>
+<p>
+Veiem un altre exemple de creació d’un <em>array</em> i accés a la seva mida:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let vocals = [&quot;a&quot;, &quot;i&quot;, &quot;i&quot;, &quot;o&quot;, &quot;o&quot;];</div></li><li class="li1"><div class="de1">console.log(`Nombre de vocals: ${vocals.length}`); // Nombre de vocals: 5</div></li></ol></pre>
+
+</p>
+
+<p>
+Tornem a l’exemple. La funció <code>veureEstoc()</code> utilitza una variable local anomenada <code>llistat</code> que es va omplint poc a poc a mesura que el bucle va donant voltes. A cada volta del bucle la variable recull les dades del producte en curs. Finalment, quan s’arriba al final de l’<em>array</em>, la variable conté la informació desitjada per l’usuari.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">llistat += `&lt;li&gt;El producte número ${i} té ${productes[i]} unitats`;</div></li></ol></pre>
+
+</p>
+
+<p>
+Només falta mostrar la informació a l’usuari. Utilitzem l’objecte <code>document</code> de JavaScript per accedir al codi <acronym title="HyperText Markup Language">HTML</acronym> de la pàgina web. 
+</p>
+
+<p>
+Cerquem l’etiqueta identificada amb <code>id=llistat</code> i l’assignem el nou codi <acronym title="HyperText Markup Language">HTML</acronym> que volem que tingui. Així, podem canviar el codi <acronym title="HyperText Markup Language">HTML</acronym> de la pàgina i donar la informació que desitgem.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.getElementById(&quot;llistat&quot;).innerHTML=llistat;</div></li></ol></pre>
+
+</div>
+
+<h2><a id="ampliacio_del_numero_de_productes_de_la_botiga" >Ampliació del número de productes de la botiga</a></h2>
+<div class="level2">
+
+<p>
+Volem ampliar el número de productes de la botiga. Cada vegada que pitgem un botó, s’ha d’ampliar el número de productes. Tant el número de productes com l’estoc han de ser aleatoris.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ampliarEstoc(){</div></li><li class="li1"><div class="de1">  let nouEstoc = demanarProductes();</div></li><li class="li1"><div class="de1">  productes.push(...nouEstoc);</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function demanarProductes(num){</div></li><li class="li1"><div class="de1">  if(arguments.length === 0){</div></li><li class="li1"><div class="de1">    num = Math.floor((Math.random() * 5) + 1);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let nousProductes = new Array(num);</div></li><li class="li1"><div class="de1">  nousProductes.fill();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return nousProductes.map(() =&gt; Math.floor((Math.random() * 100)))</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/abNzmvO?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/abNzmvO?editors=1010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/abNzmvO?editors=1010</a>.
+</p>
+
+<p>
+En aquest exemple s’han afegit dos botons al codi <acronym title="HyperText Markup Language">HTML</acronym> que criden a les funcions <code>veureEstoc()</code> i <code>ampliarEstoc()</code>. Si observeu el codi <acronym title="HyperText Markup Language">HTML</acronym> dels botons, veureu que l’event <code>onclick</code> dels botons ten assignada les crides a les seves respectives funcions. 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;veureEstoc()&quot;&gt;Veure estoc&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;ampliarEstoc()&quot;&gt;Ampliar estoc&lt;/button&gt;</div></li></ol></pre>
+
+</p>
+
+<p>
+Observeu que s’han creat dues noves funcions: <code>ampliarEstoc()</code> i <code>demanarProductes(num)</code>. Aquesta última funció s’ha creat per fer refacció del codi. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Fer refacció</strong> (<em>Code Refactoring</em>) vol dir, en programació, reestructurar el codi per tal de millorar-lo i reduir la seva complexitat sense canviar les funcionalitats que hi havien fins al moment. 
+</p>
+</div></div>
+<p>
+No s’han canviat les funcionalitats, sinó que s’han aprofitat millor. De fet, la funció <code>demanarProductes(num)</code> s’utilitza per dues coses: inicialitzar l’<em>array</em> productes i, a més a més, per demanar productes nous. Fem un cop d’ull a la funció.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function demanarProductes(num){</div></li><li class="li1"><div class="de1">  if(arguments.length === 0){</div></li><li class="li1"><div class="de1">    num = Math.floor((Math.random() * 5) + 1);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let nousProductes = new Array(num);</div></li><li class="li1"><div class="de1">  nousProductes.fill();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return nousProductes.map(() =&gt; Math.floor((Math.random() * 100)))</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+La funció admet un paràmetre anomenat <code>num</code>. Aquest paràmetre és opcional. Si s’envia el paràmetre crearà un <em>array</em> amb el nombre de productes demanats. En canvi, si no s’envia el número de productes que es crearan serà aleatori.
+</p>
+
+<p>
+Aquesta funcionalitat s’aconsegueix preguntant el número de paràmetres enviats a la funció. En concret, amb <code>argument.length</code> podem saber exactament el número de paràmetres enviats. Si la mida és <code>1</code> significa que la variable <code>num</code> està plena i ens demanen un <em>array</em> amb aquesta mida. En canvi, si la mida és <code>0</code> vol dir que ens demanen un <em>array</em> amb una mida indeterminada. Aquesta mida l’haurem de calcular aleatòriament.
+</p>
+
+<p>
+
+<p>
+La resta de la funció ja és coneguda. Només s’ha canviat el punt del codi on es realitza la inicialització i la mida inicial, en lloc de crear l’<em>array</em> directament es fa la crida a <code>demanarProductes()</code> i s’assigna com a <em>array</em> inicial el retorn d’aquesta funció.
+</p>
+
+</p>
+
+<p>
+Llavors, per inicialitzar l’<em>array productes</em> es fa una crida a aquesta funció. 
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">productes = demanarProductes(10);</div></li></ol></pre>
+
+</p>
+
+<p>
+Com que inicialment es volen 10 productes, s’envia la mida de l’<em>array</em> desitjat a la funció. La funció crearà un <em>array</em> temporal que s’assignarà a la variable <code>productes</code>.
+</p>
+
+<p>
+La funció <code>demanarProductes(num)</code> ha estat creada per utilitzar-la també en el cas que es vulgui ampliar l’oferta de productes de la botiga.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ampliarEstoc(){</div></li><li class="li1"><div class="de1">  let nouEstoc = demanarProductes();</div></li><li class="li1"><div class="de1">  productes.push(...nouEstoc);</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}}</div></li></ol></pre>
+
+</p>
+
+<p>
+Per ampliar aleatòriament tant el nombre de productes com l’estoc utilitzarem la funció <code>demanarProductes()</code> sense enviar cap paràmetre. Si executem la funció sense paràmetres, ens retornarà un <em>array</em> amb les característiques desitjades.
+</p>
+
+<p>
+Una vegada tenim l’<em>array</em> amb els nous productes s’han d’afegir a l’<em>array</em> <code>productes</code>. 
+</p>
+
+<p>
+
+<p>
+Per afegir els elements retornats hem fet servir l’operador de propagació <code>…nouEstoc</code> i els hem afegit mitjançant el mètode <code>push()</code>.
+</p>
+
+<p>
+Cal recordar que aquest mètode afegeix un o més elements al final d’un <em>array</em> i que aquests elements han d’estar separats per comes. És per aquest motiu que es fa servir l’operador de propagació, ja que fa la conversió d’un <em>array</em> a una llista de valors separats per coma.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode <strong>push</strong> afegeix un o més elements al final de l’<em>array</em>. L’<em>array</em> original es modifica i augmenta la seva longitud. També és possible afegir els elements a l’inici de l’<em>array</em> amb el mètode <strong>unshift</strong>.
+</p>
+</div></div>
+<p>
+La sintaxi del mètode <code>push()</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">array.push(element1, ..., elementN)</div></li></ol></pre>
+
+<p>
+Tots els elements que es passen com a paràmetre del mètode <code>push()</code> s’afegeixen al final de l’<em>array</em>.
+</p>
+
+<p>
+En cas d’haver invocat el mètode passant com argument <code>nouEstoc</code>, el resultat hauria estat diferent, ja que, en lloc d’afegir tots els valors un a un, s’hauria afegit tot l’<em>array</em> com un únic element.
+</p>
+
+<p>
+Fixeu-vos en els dos casos representats en els següents exemples:
+Primer exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = [1, 2, 3];</div></li><li class="li1"><div class="de1">let b = [4, 5, 6];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">a.push(b);</div></li><li class="li1"><div class="de1">console.log(a)</div></li></ol></pre>
+
+<p>
+Amb aquest cas el contingut de l’<em>array</em> seria el següent:
+</p>
+<pre class="code">1
+2
+3
+[4, 5, 6]</pre>
+
+<p>
+Com es pot apreciar el quart element de l’<em>array</em> és un <em>array</em> amb 3 valors.
+Segon exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = [1, 2, 3];</div></li><li class="li1"><div class="de1">let b = [4, 5, 6];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">a.push(...b);</div></li><li class="li1"><div class="de1">console.log(a)</div></li></ol></pre>
+
+<p>
+La sortida en aquest cas seria la següent:
+</p>
+<pre class="code">1
+2
+3
+4
+5
+6</pre>
+
+<p>
+Com es pot apreciar, en aquest cas el resultat és el desitjat, s’han afegit els continguts de l’<em>array</em> <code>b</code> a l’<em>array</em> <code>a</code> que ara té una mida de 6.
+</p>
+
+<p>
+Alternativament es podria haver fet servir la funció <code>concat()</code> per crear un <em>array</em> nou afegint el nou estoc al final de l’<em>array</em> <code>productes</code>. Aquest nou <em>array</em> creat s’ha assignat a la variable <code>productes</code>, ja que la funció <code>concat()</code> no altera l’<em>array</em> sobre el qual es crida:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">productes = productes.concat(nouEstoc);</div></li></ol></pre>
+
+<p>
+Podeu provar l’exemple amb <code>concat()</code> a: <a href="https://codepen.io/ioc-daw-m06/pen/dyMPpNv?editors=10" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dyMPpNv?editors=10"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/dyMPpNv?editors=10</a>.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La funció <strong>concat</strong> es fa servir per crear un nou <em>array</em> amb els elements de dos arrays diferents.
+</p>
+</div></div>
+<p>
+
+<p>
+Cal tenir en compte que en aquest cas la utilització del mètode <code>concat()</code> és menys eficient que la utilització de <code>push()</code>, ja que el primer crea un <em>array</em> addicional mentre que el segon només afegeix els valors d’un <em>array</em> a un altre.
+</p>
+
+</p>
+
+<p>
+La sintaxi de la funció és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arrayNou = arrayAntic.concat(valor1[, valor2[, ...[, valorN]]])</div></li></ol></pre>
+
+<p>
+
+<p>
+La funció <code>concat()</code> retorna una còpia dels valors de l’<em>array</em> <code>arrayAntic</code>, afegint-hi els valors passats com argument, que poden ser valors individuals o altres <em>arrays</em>.
+</p>
+
+</p>
+
+<p>
+Un altre exemple de l’ús de la funció <code>concat()</code> és: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array1 = [1, 2, 3];</div></li><li class="li1"><div class="de1">array2 = array1.concat(4, 5, 6); // array2 = [1, 2, 3, 4, 5, 6]</div></li><li class="li1"><div class="de1">array3 = array1.concat([4, 5, 6]); // array3 = [1, 2, 3, 4, 5, 6]</div></li></ol></pre>
+
+<p>
+Veiem, que amb la funció <code>concat()</code> podem concatenar <em>arrays</em> o valors individuals. Utilitzarem la que millor ens convingui segons el tipus de dades que tinguem.
+</p>
+
+</div>
+
+<h2><a id="ranquing_amb_els_productes_mes_venuts" >Rànquing amb els productes més venuts</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat volem afegir unes quantes funcionalitats addicionals per fer la botiga més interactiva. La idea és que es puguin comprar i vendre productes i poder tenir un rànquing ordenat dels productes més venuts. 
+</p>
+
+<p>
+En concret, les funcionalitats que volem tenir són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Funcionalitats del botiguer</strong></div>
+<ul>
+<li class="level2"><div class="li">Afegir 1 producte: afegir només un producte al catàleg de productes disponibles a la venda. Aquest producte tindrà un nombre d’estoc aleatori.</div>
+</li>
+<li class="level2"><div class="li"> Eliminar 1 producte: eliminar l’últim producte afegit al catàleg de productes. Elimina tot l’estoc disponible del producte.</div>
+</li>
+<li class="level2"><div class="li"> Ordenar els productes segons l’estoc que queda: ordena els productes segons el seu estoc. El número de producte associat a l’estoc pot canviar.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Funcionalitats del comprador</strong></div>
+<ul>
+<li class="level2"><div class="li"> Comprar un producte: el comprador pot comprar un producte dels disponibles en el catàleg de productes. Cada vegada que es compra un producte es reordena i es visualitza el rànquing de productes més venuts.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let productes = [];</div></li><li class="li1"><div class="de1">let vendes = new Map();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function veureEstoc() {</div></li><li class="li1"><div class="de1">  let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">  for (let i in productes) {</div></li><li class="li1"><div class="de1">    llistat += `&lt;li&gt;El producte ${i} té ${productes[i]} unitats`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;llistat&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function ampliarEstoc() {</div></li><li class="li1"><div class="de1">  let nouEstoc = demanarProductes();</div></li><li class="li1"><div class="de1">  productes.push(...nouEstoc);</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function demanarProductes(num) {</div></li><li class="li1"><div class="de1">  if (arguments.length === 0) {</div></li><li class="li1"><div class="de1">    num = Math.floor(Math.random() * 5 + 1);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let nousProductes = new Array(num);</div></li><li class="li1"><div class="de1">  nousProductes.fill();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return nousProductes.map(() =&gt; Math.floor(Math.random() * 100));</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function comprar(numproducte) {</div></li><li class="li1"><div class="de1">  if (productes[numproducte] !== undefined &amp;&amp; productes[numproducte] &gt; 0) {</div></li><li class="li1"><div class="de1">    let quantitat = 0</div></li><li class="li1"><div class="de1">    if (vendes.has(numproducte)) {</div></li><li class="li1"><div class="de1">      quantitat = vendes.get(numproducte);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    quantitat++;</div></li><li class="li1"><div class="de1">    vendes.set(numproducte, quantitat);</div></li><li class="li1"><div class="de1">    productes[numproducte]--;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    ranquing();</div></li><li class="li1"><div class="de1">    veureEstoc();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function nouProducte() {</div></li><li class="li1"><div class="de1">  productes.push(Math.floor(Math.random() * 100));</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function eliminarProducte() {</div></li><li class="li1"><div class="de1">  productes.pop();</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function ordenarProductes() {</div></li><li class="li1"><div class="de1">  productes.sort((a, b) =&gt; a - b);</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// funció per ordenar el producte segons les unitats venudes</div></li><li class="li1"><div class="de1">function sortProducte(a, b) {</div></li><li class="li1"><div class="de1">  const aa = a.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  const bb = b.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  return aa - bb;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function ranquing() {</div></li><li class="li1"><div class="de1">  let aux = [];</div></li><li class="li1"><div class="de1">  // array auxiliar per no perdre el numproducte després de la ordenació</div></li><li class="li1"><div class="de1">  // s'afegeix el numproducte juntament amb les unitats venudes del producte</div></li><li class="li1"><div class="de1">  // com a valor del nou array</div></li><li class="li1"><div class="de1">  // numproducte: Numero del producte venut</div></li><li class="li1"><div class="de1">  // vendes.get(numproducte): unitats venudes del producte numproducte</div></li><li class="li1"><div class="de1">  for (let [numproducte, quantitat] of vendes) {</div></li><li class="li1"><div class="de1">    aux.push(quantitat + &quot;-&quot; + numproducte);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  // ordenar els productes segons les unitats venudes</div></li><li class="li1"><div class="de1">  // s'ha creat una funció d'ordenació per separar les unitats venudes</div></li><li class="li1"><div class="de1">  // del numproducte.</div></li><li class="li1"><div class="de1">  aux.sort(sortProducte).reverse();</div></li><li class="li1"><div class="de1">  // llistar els productes ordenats</div></li><li class="li1"><div class="de1">  let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">  for (let valor of aux) {</div></li><li class="li1"><div class="de1">    // Tallem la cadena pel simbol d'unió '-'.</div></li><li class="li1"><div class="de1">    // a la posició [0] el numero d'unitats venudes del producte</div></li><li class="li1"><div class="de1">    // a la posició [1] tenim el numero de producte</div></li><li class="li1"><div class="de1">    let [stockProducte, codiProducte] = valor.split(&quot;-&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    llistat += `&lt;li&gt;s´ha venut ${stockProducte} unitats del producte ${codiProducte}&lt;/li&gt;`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;venuts&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">productes = demanarProductes(10);</div></li><li class="li1"><div class="de1">veureEstoc();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOyaXd" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOyaXd"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOyaXd</a>.
+</p>
+
+</p>
+
+<p>
+Totes aquestes funcionalitats s’han aconseguit utilitzant funcions del llenguatge JavaScript que treballen amb <em>arrays</em> i modifiquen la informació que contenen.
+</p>
+
+</div>
+
+<h3><a id="afegir_un_producte" >Afegir un producte</a></h3>
+<div class="level3">
+
+<p>
+Per afegir un producte al catàleg de productes s’ha utilitzat el codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function nouProducte() {</div></li><li class="li1"><div class="de1">    productes.push(Math.floor((Math.random() * 100)));</div></li><li class="li1"><div class="de1">    veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el codi <acronym title="HyperText Markup Language">HTML</acronym> associat a aquesta funció és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;nouProducte()&quot; &gt;Afegir 1 producte&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+
+<p>
+Com podeu veure, en afegir un nou element amb aquest mètode només s’ha de calcular l’estoc d’aquest producte ja que aquest s’afegeix al final de l’<em>array</em> i, per tant, el número de producte es calcularà automàticament. Es fa la crida a la funció <code>veureEstoc()</code> per fer més interactiu el programa, així es veu al moment que s’ha actualitzat els productes del catàleg.
+</p>
+
+</p>
+
+<p>
+La sintaxi de la funció <code>unshift()</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">array.unshift([element1[, ...[, elementN]]])</div></li></ol></pre>
+
+<p>
+Tots els elements que es passen com a paràmetre de la funció <code>unshift()</code> s’afegeixen al principi de l’<em>array</em>.
+</p>
+
+<p>
+Veiem un exemple d’utilització de la funció <code>unshift()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let productes = [&quot;Llegums&quot;, &quot;Tomàquet&quot;, &quot;Ceba&quot;, &quot;patata&quot;];</div></li><li class="li1"><div class="de1">let nousProductes = [&quot;all&quot;, &quot;pebrot&quot;];</div></li><li class="li1"><div class="de1">let numProductes = productes.unshift(&quot;Pastanaga&quot;, ...nousProductes);</div></li><li class="li1"><div class="de1">console.log(productes);</div></li><li class="li1"><div class="de1">console.log(numProductes);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLOyrpW?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLOyrpW?editors=1111"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/yLOyrpW?editors=1111</a>.
+</p>
+
+<p>
+Com es pot apreciar, es pot barrejar la inserció d’elements individuals (<code>Pastanaga</code>) i els elements propagats (<code>…nousProductes</code>).
+</p>
+
+<p>
+Els mètodes <code>push()</code> o <code>unshift()</code> retornen la nova longitud de l’<em>array</em> i, si ens interessa, la podem emmagatzemar en una variable. En aquest cas, la variable utilitzada es diu <code>numproductes</code>.
+&lt;/newcontent&gt;
+</p>
+
+</div>
+
+<h3><a id="eliminar_un_producte" >Eliminar un producte</a></h3>
+<div class="level3">
+
+<p>
+Per eliminar un producte del catàleg de productes s’ha utilitzat el següent codi:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function eliminarProducte() {</div></li><li class="li1"><div class="de1">  productes.pop();</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+I el codi <acronym title="HyperText Markup Language">HTML</acronym> associat a aquesta funció és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;delProducte()&quot; &gt;Eliminar 1 producte&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+
+<p>
+La sintaxi del mètode <code>pop()</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let element = array.pop()</div></li></ol></pre>
+
+<p>
+El mètode <code>pop()</code> esborra l’últim element de l’<em>array</em> però el retorna per poder utilitzar-lo.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+
+<p>
+Per eliminar un nou producte utilitzem el mètode <strong>pop</strong>. Aquest mètode elimina l’últim element de l’<em>array</em>. L’<em>array</em> original es modifica i decreix la seva longitud en 1 element. També és possible eliminar el primer element de l’<em>array</em> si utilitzem el mètode <strong>shift</strong> , en comptes d’utilitzar el mètode <code>pop()</code>.
+</p>
+
+</p>
+</div></div>
+<p>
+
+<p>
+Com es pot apreciar, només cal invocar el mètode <code>pop()</code> de l’<em>array</em> per eliminar l’últim element i seguidament invoquem la funció <code>veureEstoc()</code> per refrescar les dades al document <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+&lt;newcontent&gt;
+Veiem ara el mateix exemple però utilitzant <code>shift()</code>:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function delProducte() {</div></li><li class="li1"><div class="de1">  productes.shift();</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+La sintaxi del mètode <code>shift()</code> és la següent:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let element = array.shift()</div></li></ol></pre>
+
+<p>
+
+<p>
+El mètode <code>shift()</code> elimina el primer element de l’<em>array</em> i mou tots els altres per tal que l’índex de l’<em>array</em> continuï començant per 0. L’element eliminat de l’<em>array</em> es retorna per poder utilitza-lo en el programa si fos necessari.
+</p>
+
+<p>
+Tant si s’utilitza el mètode <code>pop()</code> com si s’utilitza el mètode <code>shift()</code> es pot recuperar l’element extret i guardar-lo en una variable. Per exemple:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function delProducte() {</div></li><li class="li1"><div class="de1">  let produteEliminat = productes.pop();</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+Tot i que en aquest cas no fem res amb el valor retornat, us trobareu casos en els quals serà interessant portar a terme alguna acció sobre l’element eliminat o caldrà retornar-lo. Per exemple, per notificar a l’usuari quin element ha estat eliminat.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="ordenar_productes_segons_l_estoc" >Ordenar productes segons l&#039;estoc</a></h3>
+<div class="level3">
+
+<p>
+Aquesta funcionalitat permet ordenar els productes segons l’estoc que tenen. Els productes amb poc estoc seran els primers. El codi associat a aquesta funcionalitat és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ordenarProductes() {</div></li><li class="li1"><div class="de1">  productes.sort((a, b) =&gt; a - b);</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi <acronym title="HyperText Markup Language">HTML</acronym> associat a aquesta funció és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;ordenarProductes()&quot; &gt;Ordenar Productes segons l'estoc que queda&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+En utilitzar la funció <code>ordenarProductes()</code> ha d’aparèixer un llistat semblant a aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Llistat de productes:</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">El producte 0 té 6 unitats</div></li><li class="li1"><div class="de1">El producte 1 té 11 unitats</div></li><li class="li1"><div class="de1">El producte 2 té 35 unitats</div></li><li class="li1"><div class="de1">El producte 3 té 35 unitats</div></li><li class="li1"><div class="de1">El producte 4 té 51 unitats</div></li><li class="li1"><div class="de1">El producte 5 té 58 unitats</div></li><li class="li1"><div class="de1">El producte 6 té 59 unitats</div></li><li class="li1"><div class="de1">El producte 7 té 70 unitats </div></li><li class="li1"><div class="de1">El producte 8 té 73 unitats</div></li><li class="li1"><div class="de1">El producte 9 té 98 unitats</div></li></ol></pre>
+
+<p>
+
+<p>
+Si ens hi fixem, per ordenar només necessitem el mètode <code>sort()</code>  que ens proporciona la biblioteca JavaScript.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+
+<p>
+El mètode <code>sort()</code>,per defecte, ordena alfabèticament, és a dir, com si tot fos una <em>string</em>.
+</p>
+
+</p>
+</div></div>
+<p>
+
+<p>
+La sintaxi del mètode <code>sort()</code> és la següent:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">array.sort([funcioComparacio])</div></li></ol></pre>
+
+<p>
+
+<p>
+El mètode <code>sort()</code> permet ordenar els elements de l’<em>array</em>. El comportament per defecte del mètode és ordenar els elements de l’<em>array</em> utilitzant el codi <em>Unicode</em> dels caràcters de l’<em>array</em> a ordenar. Si es vol canviar aquest comportament existeix la possibilitat d’enviar una funció d’ordenació com a paràmetre.
+</p>
+
+</p>
+
+<p>
+Per exemple, per ordenar números no ens interessa aquest comportament: si els números s’ordenen com si fossin <em>strings</em>, “25” seria major que “100”, ja que “2” és més gran que “1”.
+</p>
+
+<p>
+
+<p>
+Per solucionar aquest inconvenient, el mètode <code>sort()</code> permet canviar el seu comportament si li proporcionem la funció que ha d’utilitzar per fer l’ordenació.
+</p>
+
+<p>
+Com es pot apreciar, en aquest cas s’ha passat com argument del mètode <code>sort()</code> una funció de fletxa (aquest és un cas d’ús molt habitual per les funcions de fletxa):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">(a, b) =&gt; a - b</div></li></ol></pre>
+
+</p>
+
+<p>
+Quan la funció <code>sort()</code> ha de comparar dos valors per determinar quin és més gran, envia aquests dos valors a la funció de comparació i aquesta ha de retornar un valor negatiu, un zero o un valor positiu, depenent dels paràmetres.
+</p>
+
+<p>
+Per exemple, si es compara el número 40 i el 100, la funció <code>sort()</code> crida a la funció de comparació amb els paràmetres (40, 100). La funció de comparació calcula <code>40 - 100</code> i retorna <code>-60</code> (un número negatiu).
+</p>
+
+<p>
+
+<p>
+El mètode <code>sort()</code> determina que 40 és més petit que 100 i ordenarà els valors segons aquesta informació.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="comprar_un_producte" >Comprar un producte</a></h3>
+<div class="level3">
+
+<p>
+La funcionalitat <em>comprar producte</em> és indispensable si volem fer un rànquing dels productes més venuts. La funcionalitat que es vol implementar és que el comprador informi sobre el producte desitjat i que decreixi el número d’estoc del producte. En aquest cas, el comprador ha de dir el número de producte que vol comprar. 
+</p>
+
+<p>
+El codi JavaScript associat a aquesta funcionalitat el podeu veure en el codi següent:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function comprar(numproducte) {</div></li><li class="li1"><div class="de1">  if (productes[numproducte] !== undefined &amp;&amp; productes[numproducte] &gt; 0) {</div></li><li class="li1"><div class="de1">    let quantitat = 0</div></li><li class="li1"><div class="de1">    if (vendes.has(numproducte)) {</div></li><li class="li1"><div class="de1">      quantitat = vendes.get(numproducte);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    quantitat++;</div></li><li class="li1"><div class="de1">    vendes.set(numproducte, quantitat);</div></li><li class="li1"><div class="de1">    productes[numproducte]--;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    ranquing();</div></li><li class="li1"><div class="de1">    veureEstoc();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+A continuació es mostra la crida <acronym title="HyperText Markup Language">HTML</acronym> des del botó comprar producte. Des de la pàgina <acronym title="HyperText Markup Language">HTML</acronym> es fa el pas de paràmetre amb el valor que l’usuari introdueixi en el <em>textbox</em>. Aquest valor ha de coincidir amb un número de producte vàlid.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;numProducte&quot; size=&quot;10&quot;/&gt; </div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;comprar(document.getElementById('numProducte').value);&quot; &gt;Comprar Producte&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+L’<em>event</em> <code>onclick</code> del botó fa la crida a la funció JavaScript <code>comprar()</code> però aquesta funció necessita del número de producte que es vol comprar. Així, des de la pàgina web s’accedeix a l’element <code>numProducte</code>, que és el <em>textbox</em> que utilitza l’usuari per informar del producte que vol comprar, i s’agafa el valor. Aquest valor s’envia per paràmetre a la funció <code>comprar()</code>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Una vegada es realitza la crida a la funció <code>comprar()</code> aquesta ha de realitzar les accions següents:
+</p>
+
+<p>
+<ul>
+<li class="level1"><div class="li"> Comprovar que l’estoc del producte s’hagi definit i aquest sigui superior a 0: <code>if (productes[numproducte] !== undefined &amp;&amp; productes[numproducte] &gt; 0)</code>.</div>
+</li>
+<li class="level1"><div class="li"> Comprovar si el producte ja es troba al mapa <code>vendes</code>; si és així, recuperem el valor associat a la clau <code>numproducte</code> i, en cas contrari, assignem 0 a la quantitat: <code>if (vendes.has(numproducte))</code>.</div>
+</li>
+<li class="level1"><div class="li"> Incrementar en un la quantitat venuda.</div>
+</li>
+<li class="level1"><div class="li"> Assignar el nou valor a <code>vendes</code>: <code>vendes.set(numproducte, quantitat);</code></div>
+</li>
+<li class="level1"><div class="li"> Reduïm el nombre de productes en estoc en un: <code>productes[numproducte]-</code><code>-;</code>.</div>
+</li>
+<li class="level1"><div class="li"> En qualsevol cas, es mostra el rànquing i s’actualitza el llistat de productes per pantalla.</div>
+</li>
+</ul>
+
+<p>
+Fixeu-vos que <code>vendes</code> és un <em>map</em> i no pas un <em>array</em>, així que es tracta d’una col·leccio desordenada i s’afegeixen els elements indicant la clau i el valor amb el mètode <code>set()</code>, es recuperan amb <code>get()</code> i es comprova si la clau existeix amb <code>has()</code>.
+</p>
+
+<p>
+En aquest cas hem optat per fer servir un diccionari de dades perquè l’ordre en què s’afegeixen els elements no és important i, en cas que s’eliminés algun valor del mapa, no volem que les claus canviïn (cosa que passa quan s’elimina un element d’un <em>array</em>, ja que els índexs de tots els elements posteriors s’actualitzen per continuar sent consecutius).
+</p>
+
+<p>
+La clau de <code>vendes</code> ha de coincidir amb l’índex de <code>productes</code> i, per consegüent, és més segur fer servir un mapa.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="mostrar_el_ranquing_dels_productes_mes_venuts" >Mostrar el rànquing dels productes més venuts</a></h3>
+<div class="level3">
+
+<p>
+La funció que calcula el rànquing dels productes més venuts es basa en un <em>array</em> on hi ha emmagatzemats els productes que ha comprat l’usuari. Aquest <em>array</em> es va omplint a mesura que l’usuari utilitza la funció <code>compra(numProducte)</code>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+El codi per obtenir un rànquing ordenat de major a menor és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//funció per ordenar el producte segons les unitats venudes</div></li><li class="li1"><div class="de1">function sortProducte(a, b) {</div></li><li class="li1"><div class="de1">  const aa = a.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  const bb = b.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  return aa - bb;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function ranquing() {</div></li><li class="li1"><div class="de1">  let aux = [];</div></li><li class="li1"><div class="de1">  //array auxiliar per no perdre el numproducte després de la ordenació</div></li><li class="li1"><div class="de1">  //s'afegeix el numproducte juntament amb les unitats venudes del producte</div></li><li class="li1"><div class="de1">  //com a valor del nou array</div></li><li class="li1"><div class="de1">  //numproducte: Numero del producte venut</div></li><li class="li1"><div class="de1">  //vendes.get(numproducte): unitats venudes del producte numproducte</div></li><li class="li1"><div class="de1">  for (let [numproducte, quantitat] of vendes) {</div></li><li class="li1"><div class="de1">    aux.push(quantitat + &quot;-&quot; + numproducte);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  //ordenar els productes segons les unitats venudes</div></li><li class="li1"><div class="de1">  //s'ha creat una funció d'ordenació per separar les unitats venudes</div></li><li class="li1"><div class="de1">  // del numproducte.</div></li><li class="li1"><div class="de1">  aux.sort(sortProducte).reverse();</div></li><li class="li1"><div class="de1">  //llistar els productes ordenats</div></li><li class="li1"><div class="de1">  let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">  for (let valor of aux) {</div></li><li class="li1"><div class="de1">    //Tallem la cadena pel simbol d'unió '-'.</div></li><li class="li1"><div class="de1">    //a la posició [0] el numero d'unitats venudes del producte</div></li><li class="li1"><div class="de1">    //a la posició [1] tenim el numero de producte</div></li><li class="li1"><div class="de1">    let [stockProducte, codiProducte] = valor.split(&quot;-&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    llistat += `&lt;li&gt;s´ha venut ${stockProducte} unitats del producte ${codiProducte}&lt;/li&gt;`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;venuts&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+El mapa <code>vendes</code> utilitza la seva clau com a número de producte.
+</p>
+
+</p>
+
+<p>
+És important remarcar aquest fet ja que a l’hora de fer l’ordenació, la funció <code>sort()</code> posa a la primera posició de l’<em>array</em> el major número d’unitats venudes i perdrem a quin producte correspon. 
+</p>
+
+<p>
+
+<p>
+Per generar el rànquing de vendes ens trobem amb dos problemes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>vendes</code> és un <em>map</em> i els mapes no es poden ordenar.</div>
+</li>
+<li class="level1"><div class="li"> si el convertim en un <em>array</em> i l’ordenem mitjançant el mètode <code>sort()</code>, es perd la correspondència “índex-clau” amb l’<em>array</em> de productes, ja que fem servir l’índex de <code>productes</code> com identificador per a cada producte.</div>
+</li>
+</ul>
+
+</p>
+
+<p>
+Ens hem d’inventar una manera de no perdre la referència al producte. Per sort, sabem que la funció d’ordenació la podem canviar. La idea és la següent: per no perdre la referència al producte, després de fer la ordenació, aquest ha d’estar dins del valor juntament amb les unitats venudes. Així, podem crear una cadena de text on, una part de la cadena siguin les unitats venudes i una altra part correspongui al producte associat. Per exemple, si tenim 50 unitats venudes del producte 3, podem construir una cadena de text semblant a “50-3”. I així, amb tots els productes venuts.
+</p>
+
+<p>
+Veieu el codi utilitzat per crear un nou <em>array</em> on guardem les cadenes de text amb el número d’unitats venudes i el seu producte.
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (let [numproducte, quantitat] of vendes) {</div></li><li class="li1"><div class="de1">  aux.push(quantitat + &quot;-&quot; + numproducte);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que s’ha utilitzat <code>for…of</code> per recorrer el mapa de <code>vendes</code>, desestructurant l’element, de manera que la clau queda assignada a <code>numproducte</code> i el valor a <code>quantitat</code>. 
+</p>
+
+<p>
+Una vegada obtingudes les varibles, les concatenem per generar la cadena de text i les afegim a l’<em>array</em> auxiliar i, seguidament, l’ordenem mitjançant el mètode <code>sort()</code>, passant com a argument la funció <code>sortProducte()</code>. Aquesta es la funció que es passa com argument:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function sortProducte(a, b) {</div></li><li class="li1"><div class="de1">  const aa = a.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  const bb = b.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  console.log(aa, bb);</div></li><li class="li1"><div class="de1">  return aa - bb;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest cas, en lloc de passar la funció <code>sortProducte()</code> podríem haver utilitzat una funció de fletxa, però, com que aquesta funció d’ordenació és una mica llarga, s’ha optat per implementar-la com una funció estàndard; d’aquesta manera el codi resulta menys enrevessat.
+</p>
+
+<p>
+Cal recordar que, per defecte, el mètode <code>sort()</code> fa l’ordenació alfabèticament, però això no ens interessa perquè s’interpretaria que 5 és major que 100, ja que en ordenar cadenes de text es fa la comparació del codi cada caràcter i no s’interpreta com a número.
+</p>
+
+<p>
+Tot i que en aquest exemple hem fet servir <code>const</code> per indicar que els valors de <code>aa</code> i <code>bb</code> no canviaran, això no és necessari. Es podria haver fet servir <code>let</code>.
+</p>
+
+</p>
+
+<p>
+Totes les funcions d’ordenació han de retornar un nombre positiu si el segon valor és més petit, un nombre negatiu si el primer valor és més petit i 0 si són iguals. Per fer el rànquing dels productes més venuts s’ha de comparar les unitats venudes de dos productes. En aquest cas, <code>a</code> té la forma <em>unitatsVenudesDe-producteA</em> i <code>b</code> té la forma <em>unitatsVenudesDe-producteB</em>. Hem de separar les unitats venudes del número de producte. 
+</p>
+
+<p>
+
+<p>
+Per separar una cadena de text podem utilitzar el mètode <code>split()</code>. A aquest mètode li podem passar un caràcter o una <em>string</em> i trencarà la cadena de text cada vegada que trobi aquest caràcter o <em>string</em>.
+</p>
+
+</p>
+
+<p>
+La sintaxi de la funció <code>split()</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nou_array = cadena.split([separador[, limit]])</div></li></ol></pre>
+
+<p>
+El primer paràmetre és opcional i especifica el caràcter a utilitzar per separar la cadena de text. Cada cadena de text separada de l’original s’emmagatzemarà en una posició de l’<em>array</em> retornat. El segon paràmetre indica el nombre de vegades que es separarà com a màxim la cadena de text utilitzant el separador.
+</p>
+
+<p>
+
+<p>
+En definitiva, si invoquem el mètode <code>split()</code>, als paràmetres de la funció tenim que, a la primera posició, <em>[0]</em>, estem accedint al nombre d’unitats venudes i, a la segona posició, <em>[1]</em>, al producte associat.
+</p>
+
+<p>
+&lt;newcontent&gt;Només s’ha d’agafar la primera posició, després d’invocar el mètode <code>split()</code>, per obtenir les unitats venudes:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let aa = a.split(&quot;-&quot;)[0];</div></li></ol></pre>
+
+<p>
+També existeix la funció inversa anomenada <code>join()</code>. La sintaxi de la funció és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let cadena = array.join([separador = ','])</div></li></ol></pre>
+
+<p>
+
+<p>
+El mètode <code>join()</code> uneix tots els elements d’un <em>array</em> i els converteix en una cadena de text. Si s’especifica un separador, aquest s’utilitza per fer la unió entre els diferents elements de l’<em>array</em>.
+</p>
+
+<p>
+Vegem un exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [&quot;hola&quot;, &quot;món&quot;];</div></li><li class="li1"><div class="de1">let missatge = array.join(&quot;&quot;); // missatge = &quot;holamón&quot;</div></li><li class="li1"><div class="de1">console.log(missatge);</div></li><li class="li1"><div class="de1">missatge = array.join(&quot; &quot;); // missatge = &quot;hola món&quot;</div></li><li class="li1"><div class="de1">console.log(missatge);</div></li></ol></pre>
+
+</p>
+
+<p>
+Una vegada tinguem l’<em>array</em> ordenat tindrem ordenats els valors (sencers, sense fer l´<em>split</em>) on a la posició <code>aux[0]</code> hi haurà el producte amb menys vendes. Per fer un rànquing, ens interessa que estigui a l’inrevés, és a dir, a la posició <code>aux[0]</code> hi hauria d’haver el producte amb més unitats venudes. Es podia haver tingut en compte a l’hora de realitzar la funció de comparació de la funció <code>sort()</code>, però és interessant que conegueu la funció <code>reverse()</code>, que inverteix l’ordre dels elements de l’<em>array</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">aux.sort(sortProducte).reverse();</div></li></ol></pre>
+
+<p>
+
+<p>
+La sintaxi del mètode és la següent:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">array.reverse()</div></li></ol></pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+
+<p>
+El mètode <code>split()</code> converteix una cadena de text en un <em>array</em> de cadenes de text. La funció divideix la cadena de text determinant els seus trossos a partir del caràcter separador indicat.
+</p>
+
+</p>
+
+<p>
+
+<p>
+El mètode <code>join()</code> uneix tots els elements d’un <em>array</em> en una cadena de text utilitzant el caràcter d’unió.
+</p>
+
+<p>
+El mètode <code>reverse()</code> modifica un <em>array</em> col·locant els seus elements en l’ordre invers a la seva posició original.
+</p>
+
+</p>
+</div></div>
+<p>
+Exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [1, 2, 3];</div></li><li class="li1"><div class="de1">array.reverse();</div></li><li class="li1"><div class="de1">console.log(array); // ara array = [3, 2, 1]</div></li></ol></pre>
+
+<p>
+
+<p>
+En aquest punt ja tenim l’<em>array</em> amb el rànquing dels productes més venuts. Només cal llistar-lo per pantalla. Veieu el codi que permet fer el llistat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  //llistar els productes ordenats</div></li><li class="li1"><div class="de1">  let llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">  for (let valor of aux) {</div></li><li class="li1"><div class="de1">    //Tallem la cadena pel simbol d'unió '-'.</div></li><li class="li1"><div class="de1">    //a la posició [0] el numero d'unitats venudes del producte</div></li><li class="li1"><div class="de1">    //a la posició [1] tenim el numero de producte</div></li><li class="li1"><div class="de1">    let [stockProducte, codiProducte] = valor.split(&quot;-&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    llistat += `&lt;li&gt;s´ha venut ${stockProducte} unitats del producte ${codiProducte}&lt;/li&gt;`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;venuts&quot;).innerHTML = llistat;</div></li></ol></pre>
+
+</p>
+
+<p>
+S’utilitza la variable <code>llistat</code> per emmagatzemar tot l’<acronym title="HyperText Markup Language">HTML</acronym> que es mostrarà a l’usuari. Una vegada contingui totes les dades amb els productes més venuts es mostrarà per pantalla utilitzant la línia de codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">document.getElementById(&quot;venuts&quot;).innerHTML = llistat;</div></li></ol></pre>
+
+<p>
+Com ja hem vist en altres ocasions, s’utilitza l’objecte <code>document</code> per accedir a l’element de la pàgina identificat amb la paraula <code>venuts</code> i introduït l’<acronym title="HyperText Markup Language">HTML</acronym> que ha de mostrar. En aquest cas, l’<acronym title="HyperText Markup Language">HTML</acronym> serà el rànquing dels productes més venuts que conté la variable <code>llistat</code>.
+</p>
+
+</div>
+
+<h2><a id="funcionalitats_addicionals" >Funcionalitats addicionals</a></h2>
+<div class="level2">
+
+<p>
+En aquest codi s’han ampliat les funcionalitats del programa. Concretament es vol:
+</p>
+<ul>
+<li class="level1"><div class="li"> Saber quin és el primer producte que té <em>X</em> unitats d’estoc. </div>
+</li>
+<li class="level1"><div class="li"> Saber l’últim producte que té <em>X</em> unitats d’estoc.</div>
+</li>
+<li class="level1"><div class="li"> Comprovar si tots els productes tenen més de 10 unitats d’estocs.  </div>
+</li>
+<li class="level1"><div class="li"> Comprovar si algun producte té 0 unitats d’estoc. </div>
+</li>
+<li class="level1"><div class="li"> Saber quins productes tenen 0 unitats d’estoc. </div>
+</li>
+<li class="level1"><div class="li"> Un llistat de l’estoc des del producte X al producte Y.</div>
+</li>
+<li class="level1"><div class="li"> Afegir 1 producte a partir d’una posició determinada de l’<em>array</em> <code>productes</code>.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Volem saber quin és el primer producte té //X// unitats d'estoc (indexOf)</div></li><li class="li1"><div class="de1">function primerProducte(unitats) {</div></li><li class="li1"><div class="de1">  let index = productes.indexOf(parseInt(unitats));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (index !== -1) {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = index;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = `No hi ha cap producte amb ${unitats} unitats.`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Volem saber l'últim producte que té //X// unitats d'estoc (lastIndexOf()</div></li><li class="li1"><div class="de1">function ultimProducte(unitats) {</div></li><li class="li1"><div class="de1">  let index = productes.lastIndexOf(parseInt(unitats));</div></li><li class="li1"><div class="de1">  if (index !== -1) {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = index;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = `No hi ha cap producte amb ${unitats} unitats.`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Volem comprovar si tots els productes tenen més de 10 unitats d'estoc  (every)</div></li><li class="li1"><div class="de1">function minDeuUnitats() {</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML =</div></li><li class="li1"><div class="de1">    `Tots els productes tenen més de 10 unitats? ${productes.every(unitats =&gt; unitats &gt;= 10)}`;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Volem comprovar si algun producte té 0 unitats d'estoc (some)</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function senseEstoc() {</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML =</div></li><li class="li1"><div class="de1">    `Hi ha productes sense estoc? ${productes.some(unitats =&gt; unitats === 0)}`;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Volem saber quins productes tenen 0 unitats d'estoc (filter)</div></li><li class="li1"><div class="de1">function checkBuitSplit(unitats) {</div></li><li class="li1"><div class="de1">  let aa = unitats.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  return parseInt(aa) === 0;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">function llistatProductesSenseEstoc() {</div></li><li class="li1"><div class="de1">  let llistat = &quot;No hi ha productes sense estoc.&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (productes.some(unitats =&gt; unitats === 0)) {</div></li><li class="li1"><div class="de1">    let aux = [];</div></li><li class="li1"><div class="de1">    let arr = [];</div></li><li class="li1"><div class="de1">    llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">    for (let numproducte in productes) {</div></li><li class="li1"><div class="de1">      arr.push(productes[numproducte] + &quot;-&quot; + numproducte);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    aux = arr.filter(checkBuitSplit);</div></li><li class="li1"><div class="de1">    for (let index in aux) {</div></li><li class="li1"><div class="de1">      llistat +=</div></li><li class="li1"><div class="de1">        `&lt;li&gt;El producte ${aux[index].split(&quot;-&quot;)[1]} no té estoc.&lt;/li&gt;`;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//  Volem un llistat de l'estoc des del producte X al producte Y (slice)</div></li><li class="li1"><div class="de1">function llistatParcialdEstoc() {</div></li><li class="li1"><div class="de1">  let ini = parseInt(document.getElementById(&quot;valor1&quot;).value);</div></li><li class="li1"><div class="de1">  let fin = parseInt(document.getElementById(&quot;valor2&quot;).value);</div></li><li class="li1"><div class="de1">  let estoc = productes.slice(ini, fin);</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML = estoc.toString();</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//  Volem afegir 1 producte a partir d'una posició X de l'array productes(splice).</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function afegirEstocPosicioValor1() {</div></li><li class="li1"><div class="de1">  let ini = parseInt(document.getElementById(&quot;valor1&quot;).value);</div></li><li class="li1"><div class="de1">  productes.splice(ini, 0, Math.floor(Math.random() * 100));</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RwaNjRN" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RwaNjRN"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/RwaNjRN</a>.
+</p>
+
+</div>
+
+<h3><a id="primer_i_ultim_producte_amb_x_unitats_d_estoc" >Primer i últim producte amb X unitats d&#039;estoc</a></h3>
+<div class="level3">
+
+<p>
+Es vol saber quin és el primer producte i quin és l’últim producte que té <em>X</em> unitats d’estoc, on <em>X</em> és un valor que ha introduït l’usuari.
+</p>
+
+<p>
+El codi per saber quin és el primer producte amb <em>X</em> unitats d’estoc és el següent:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function primerProducte(unitats) {</div></li><li class="li1"><div class="de1">  let index = productes.indexOf(parseInt(unitats));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (index !== -1) {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = index;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = `No hi ha cap producte amb ${unitats} unitats.`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+I l’<acronym title="HyperText Markup Language">HTML</acronym> associat a aquesta funció és el següent: 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;unitats&quot; size=&quot;10&quot;/&gt; </div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;primerProducte(document.getElementById('unitats').value);&quot; &gt;</div></li><li class="li1"><div class="de1">   Primer producte amb X unitats d'estoc</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+
+<p>
+El mètode que ens retorna el primer índex de l’<em>array</em> que coincideix el seu valor amb el passat per paràmetre es diu <code>indexOf()</code>.
+</p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La funció <code>indexOf()</code> retorna la posició de l’<em>array</em> on es troba la primera ocurrència del valor cercat. Si no es troba el valor cercat, la funció retorna el valor -1.
+</p>
+
+<p>
+En canvi, la funció <code>lastIndexOf()</code> retorna la posició de l’<em>array</em> on es troba l’última ocurrència del valor cercat.
+</p>
+
+<p>
+
+<p>
+En tots dos casos, si no és troba el valor cercat retornen -1.
+</p>
+
+</p>
+</div></div>
+<p>
+
+<p>
+El mètode <code>indexOf()</code> té la següent sintaxi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let index = array.indexOf(elementCercat[, inici = 0])</div></li></ol></pre>
+
+<p>
+Aquest mètode retorna el primer índex de l’<em>array</em> que coincideix el valor d’aquesta posició amb el paràmetre de la funció.
+</p>
+
+<p>
+En canvi, el mètode <code>lastIndexOf()</code> retorna l’últim índex i té la següent sintaxi:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let index = arr.lastIndexOf(elementCercat[, inici = arr.length - 1])</div></li></ol></pre>
+
+<p>
+El codi per saber quin és l’últim producte amb <em>X</em> unitats d’estoc és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ultimProducte(unitats) {</div></li><li class="li1"><div class="de1">  let index = productes.lastIndexOf(parseInt(unitats));</div></li><li class="li1"><div class="de1">  if (index !== -1) {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = index;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = `No hi ha cap producte amb ${unitats} unitats.`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el codi <acronym title="HyperText Markup Language">HTML</acronym> associat és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;unitats&quot; size=&quot;10&quot;/&gt; </div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;ultimProducte(document.getElementById('unitats').value);&quot; &gt;</div></li><li class="li1"><div class="de1">    Últim producte amb X unitats d'estoc</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+</div>
+
+<h3><a id="comprovar_si_tots_els_productes_tenen_10_unitats_d_estoc" >Comprovar si tots els productes tenen 10 unitats d&#039;estoc</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+Es vol comprovar si tots els productes tenen com a mínim 10 unitats d’estoc. Es pot fer recorrent l’<em>array</em> amb un bucle tipus <code>for</code>, però existeix una funcionalitat que ho fa per nosaltres: el mètode <code>every()</code>.
+</p>
+
+<p>
+Es pot crear una funció condicional o, com hem fet nosaltres, utilitzar una funció de fletxa per passar com argument. Aquesta funció és la que s’utilitzarà per comprovar si tots els elements acompleixen amb el requeriment (en el nostre cas, que hi hagi almenys 10 unitats).
+</p>
+
+</p>
+
+<p>
+El codi corresponent a aquesta funcionalitat és el següent:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Volem comprovar si tots els productes tenen més de 10 unitats d'estoc  (every)</div></li><li class="li1"><div class="de1">function minDeuUnitats() {</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML =</div></li><li class="li1"><div class="de1">    `Tots els productes tenen més de 10 unitats? ${productes.every(unitats =&gt; unitats &gt;= 10)}`;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+La funció de fletxa comprova si una unitat és més gran que 10 i es passa com a argument al mètode <code>every()</code> per comprovar si l’estoc de cada producte és més gran que 10.
+</p>
+
+<p>
+Fixeu-vos que, com només hi ha un argument, es pot prescindir dels parèntesis a la funció de fletxa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">unitats =&gt; unitats &gt;= 10</div></li></ol></pre>
+
+<p>
+És a dir, per cada element de l’<em>array</em> es cridarà a la funció de fletxa:
+</p>
+<ul>
+<li class="level1"><div class="li"> S’assignarà a <code>unitats</code> el valor de l’element</div>
+</li>
+<li class="level1"><div class="li"> La funció de fletxa retornarà cert si <code>unitats &gt;= 10</code> o fals en cas contrari.</div>
+</li>
+<li class="level1"><div class="li"> Si la funció de fletxa retorna fals en algun cas, el mètode <code>every()</code> retornarà fals.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode <code>every(funció)</code> comprova, element a element, si tots els valors de l’<em>array</em> compleixen la funció passada com a argument. Si tots els valors la compleixen retorna <code>true</code>, però si hi ha algun valor que no ho fa retorna <code>false</code>.
+</p>
+</div></div>
+<p>
+La sintaxi del mètode <code>every()</code> és la següent:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">resultat = arr.every(funcióComparacio[, parametres])</div></li></ol></pre>
+
+</div>
+
+<h3><a id="comprovar_si_hi_ha_algun_producte_sense_estoc" >Comprovar si hi ha algun producte sense estoc</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+Es vol comprovar si hi ha algun producte sense estoc. Es pot fer amb un bucle <code>for</code> o bé utilitzar un mètode d’<em>arrays</em> que comprova si existeix algun valor que compleix un requisit. Aquesta funció s’anomena <code>some()</code>. La funció rep per paràmetre una  funció que realitza la comprovació. En aquest cas, es vol que la quantitat d’un producte sigui 0 per saber si hi ha o no estoc.&lt;newcontent&gt;
+Veieu el codi associat a aquesta funcionalitat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function senseEstoc() {</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML =</div></li><li class="li1"><div class="de1">    `Hi ha productes sense estoc? ${productes.some(unitats =&gt; unitats === 0)}`;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+&lt;newcontent&gt;
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode <code>some(funció)</code> comprova si hi ha algun element que compleix la funció que es passa com a argument. Si és així, la funció retorna <code>true</code>, si no, <code>false</code>.
+</p>
+</div></div>
+<p>
+El mètode <code>some()</code> té la següent sintaxi:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let resultat = array.some(funcioComparacio[, parametres])</div></li></ol></pre>
+
+</div>
+
+<h3><a id="a_quins_productes_se_ls_ha_esgotat_l_estoc" >A quins productes se&#039;ls ha esgotat l&#039;estoc?</a></h3>
+<div class="level3">
+
+<p>
+Aquesta funcionalitat és una modificació de l’anterior. No només volem saber si hi ha algun producte, sinó que volem saber quins són aquests productes.
+</p>
+
+<p>
+
+<p>
+El mètode que ens permet extreure una part d’un <em>array</em> segons una condició es diu <code>filter()</code>. Com que volem, a part dels valors, el número de producte, utilitzarem, igual que es va fer amb el rànquing dels productes més venuts, la cadena de text “unitats-producte” com a valor de l’<em>array</em> sobre el que utilitzarem el mètode <code>filter()</code>.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos en el codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Volem saber quins productes tenen 0 unitats d'estoc (filter)</div></li><li class="li1"><div class="de1">function checkBuitSplit(unitats) {</div></li><li class="li1"><div class="de1">  let aa = unitats.split(&quot;-&quot;)[0];</div></li><li class="li1"><div class="de1">  return parseInt(aa) === 0;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">function llistatProductesSenseEstoc() {</div></li><li class="li1"><div class="de1">  let llistat = &quot;No hi ha productes sense estoc.&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (productes.some(unitats =&gt; unitats === 0)) {</div></li><li class="li1"><div class="de1">    let aux = [];</div></li><li class="li1"><div class="de1">    let arr = [];</div></li><li class="li1"><div class="de1">    llistat = &quot;&quot;;</div></li><li class="li1"><div class="de1">    for (let numproducte in productes) {</div></li><li class="li1"><div class="de1">      arr.push(productes[numproducte] + &quot;-&quot; + numproducte);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    aux = arr.filter(checkBuitSplit);</div></li><li class="li1"><div class="de1">    for (let index in aux) {</div></li><li class="li1"><div class="de1">      llistat +=</div></li><li class="li1"><div class="de1">        `&lt;li&gt;El producte ${aux[index].split(&quot;-&quot;)[1]} no té estoc.&lt;/li&gt;`;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    document.getElementById(&quot;info&quot;).innerHTML = llistat;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+::important:
+El mètode <code>filtre(funció)</code> retorna un nou <em>array</em> amb tots els elements pels quals la funció ha retornat <code>true</code>.
+::
+El mètode <code>filter()</code> té la següent sintaxi:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">resultat = //array//.filter(funcioComprovacio[, parametres])</div></li></ol></pre>
+
+<p>
+La funció <code>filter()</code> crea un nou <em>array</em> amb els elements que passen la funció de comprovació proporcionada a la funció.
+</p>
+
+</div>
+
+<h3><a id="llistat_dels_estocs_del_producte_x_al_producte_y" >Llistat dels estocs del producte X al producte Y</a></h3>
+<div class="level3">
+
+<p>
+
+<p>
+Es vol obtenir el llistat dels estocs, des d’una posició de l’<em>array</em> fins a una altra. Les dues posicions les escull l’usuari.
+</p>
+
+</p>
+
+<p>
+Fixeu-vos en el codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Volem un llistat de l'estoc des del producte X al producte Y (slice)</div></li><li class="li1"><div class="de1">function llistatParcialdEstoc() {</div></li><li class="li1"><div class="de1">  let ini = parseInt(document.getElementById(&quot;valor1&quot;).value);</div></li><li class="li1"><div class="de1">  let fin = parseInt(document.getElementById(&quot;valor2&quot;).value);</div></li><li class="li1"><div class="de1">  let estoc = productes.slice(ini, fin);</div></li><li class="li1"><div class="de1">  document.getElementById(&quot;info&quot;).innerHTML = estoc.toString();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode <code>slice(inici, final)</code> retorna un nou <em>array</em> amb els valors que es troben des de l’índex <code>inici</code> fins a l’última posició de l’<em>array</em> o fins a l’índex <code>final</code> si s’ha passat el segon argument.
+</p>
+</div></div>
+<p>
+El mètode <code>slice()</code> té la següent sintaxi:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">nouArray = array.slice([començament[, final]])</div></li></ol></pre>
+
+<p>
+
+<p>
+Com es pot veure, la funció <code>llistatParcialdEstoc()</code> assigna a les variables <code>ini</code> i <code>fin</code> els valors introduïts per l’usuari a les caixes de text. A continuació es fan servir aquestes variables per invocar al mètode <code>slice()</code>, que retorna un nou <em>array</em> amb els valors de <code>productes</code> compresos entre aquests dos indexs i, finalment, és mostra aquest nou <em>array</em> a la pàgina convertint-los en una cadena de text mitjançant el mètode <code>string()</code>.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="afegir_un_producte_a_partir_d_una_posicio" >Afegir un producte a partir d&#039;una posició</a></h3>
+<div class="level3">
+
+<p>
+
+</p>
+
+<p>
+Es vol afegir un producte a partir d’una posició donada de l’<em>array</em> <code>productes</code>. Tots els productes que hi hagi després de l’índex d’inserció es desplaçaran tantes unitats com productes afegits.
+</p>
+
+<p>
+Veieu l’exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//  Volem afegir 1 producte a partir d'una posició X de l'array productes(splice).</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function afegirEstocPosicioValor1() {</div></li><li class="li1"><div class="de1">  let ini = parseInt(document.getElementById(&quot;valor1&quot;).value);</div></li><li class="li1"><div class="de1">  productes.splice(ini, 0, Math.floor(Math.random() * 100));</div></li><li class="li1"><div class="de1">  veureEstoc();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+<p>
+Com es pot apreciar, primerament obtenim la informació introduïda per l’usuari, la convertim en nombre enter i l’assignem a la variable <code>ini</code>. Aquest serà el punt d’inserció.
+</p>
+
+<p>
+No volem eliminar cap element, així que com a segon argument de la funció posem <code>0</code> i, finalment, generem un valor pseudoaleatori entre 0 i 99, que passem com a tercer paràmetre:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">productes.splice(ini, 0, Math.floor(Math.random() * 100));</div></li></ol></pre>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+
+<p>
+El mètode <code>splice(inici, eliminats, valor1, valor2,… valorN)</code> afegeix i elimina elements a partir d’una posició de l’<em>array</em>.
+</p>
+
+</p>
+</div></div>
+<p>
+
+<p>
+Com que <code>splice()</code> accepta qualsevol quantitat de valors separats per comes, es pot utilitzar l’operador de propagació per inserir un <em>array</em> en aquesta posició, per exemple:
+</p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = ['a', 'b', 'c', 'd'];</div></li><li class="li1"><div class="de1">let b = [1, 2, 3, 4];</div></li><li class="li1"><div class="de1">a.splice(1,0, ...b); // insereix a la segona posició tots els elements de b</div></li></ol></pre>
+
+<p>
+En concret, els paràmetres de la funció son els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>inici</em>: és la posició on començarà a afegir o eliminar.</div>
+</li>
+<li class="level1"><div class="li"> <em>eliminats</em>: és el nombre d’elements que es volen esborrar a partir del paràmetre <em>inici</em>. Si posem un 0, només afegirà valors.</div>
+</li>
+<li class="level1"><div class="li"> <em>valor1, valor2,… valorN</em>: són els valor que volem afegir.</div>
+</li>
+</ul>
+
+<p>
+
+<p>
+A continuació podeu veure un exemple amb els diferents resultats d’utilitzar el mètode <code>splice()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [1, 2, 3, 4, 5];</div></li><li class="li1"><div class="de1">array.splice(1, 3);</div></li><li class="li1"><div class="de1">// Ara 'array elimina 3 elements a partir de la posició 1,  i queda així: [1, 5]</div></li><li class="li1"><div class="de1">console.log(`Contingut de l'array (1): ${array}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">array = [1, 2, 3, 4, 5];</div></li><li class="li1"><div class="de1">array.splice(2, 0, 2.5);</div></li><li class="li1"><div class="de1">// Ara 'array' afegeix l'element 2.5 a partir de la posició 2 i queda així: [1, 2, 2.5, 3, 4, 5]</div></li><li class="li1"><div class="de1">console.log(`Contingut de l'array (2): ${array}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">array = [1, 2, 3, 4, 5, 6];</div></li><li class="li1"><div class="de1">array.splice(2, 3);</div></li><li class="li1"><div class="de1">// Ara 'array' elimina 3 elements a partir del segon element (no inclòs) i queda així: [1, 2, 6]</div></li><li class="li1"><div class="de1">console.log(`Contingut de l'array (3): ${array}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">array = [1, 2, 3, 4, 5];</div></li><li class="li1"><div class="de1">array.splice(1, 3, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;);</div></li><li class="li1"><div class="de1">// Ara 'array' elimina 3 elements a partir del primer element (no inclòs) i s'afegeixen </div></li><li class="li1"><div class="de1">// 'two', 'three' i 'four' i queda així: [1, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, 5]</div></li><li class="li1"><div class="de1">console.log(`Contingut de l'array (4): ${array}`);</div></li></ol></pre>
+
+</p>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LYNEKQK?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYNEKQK?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/LYNEKQK?editors=0012</a>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

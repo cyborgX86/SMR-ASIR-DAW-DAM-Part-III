@@ -1,0 +1,1661 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Tallafocs i servidors intermediaris</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Tallafocs</a><span class="buttonexp"></span></p><ul><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#definicions_importants">Definicions importants</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#caracteristiques_i_tipus_de_tallafocs">Característiques i tipus de tallafocs</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#funcions_principals_del_tallafoc">Funcions principals del tallafoc</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#configuracio_i_utilitzacio_del_tallafoc">Configuració i utilització del tallafoc</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#exemples_de_tallafoc">Exemples de tallafoc</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Servidors intermediaris</a><span class="buttonexp"></span></p><ul><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#caracteristiques_i_tipus_de_servidors_intermediaris">Característiques i tipus de servidors intermediaris</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#funcions_principals_dels_servidors_intermediaris">Funcions principals dels servidors intermediaris</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#configuracio_i_utilitzacio_de_servidors_intermediaris">Configuració i utilització de servidors intermediaris</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tallafocs i servidors intermediaris</a></li><li>Servidors intermediaris</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="servidors_intermediaris"> Servidors intermediaris </a></h1>
+    	
+<p>
+Una xarxa informàtica pot arribar a assolir un nivell de complexitat que faci que la seva gestió i manteniment es converteixi en un problema. Quan s’arriba a aquesta situació, la persona responsable de la xarxa ha de buscar solucions, ja que si no ho redreça pot esdevenir un caos organitzatiu. La utilització de màquines amb funcions específiques de centralització de gestions, capaces d’assumir determinades funcions abans encarregades a equips de xarxa sobrecarregats, és una solució molt interessant.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari</strong> és un programa o un equip capaç d’assumir les funcions d’un altre equip.
+</p>
+</div></div>
+<p>
+La <span class="figref"><a href="#Figura42"><span>figura</span></a></span> mostra un servidor intermediari en una xarxa petita. No és necessari treballar amb una gran estructura o una xarxa molt complexa per utilitzar un servidor intermediari. De servidors intermediaris n’hi ha diversos tipus. 
+</p>
+<div class="iocfigure"><a name="Figura42"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Servidor intermediari en una xarxa petita
+
+</figcaption><img src="../media/u3_resum_image_36.png" alt="" /></figure>
+</div>
+<p>
+Les funcions més habituals d’un servidor intermediari són controlar l’accés a serveis o a recursos, proporcionar memòria cau per a determinats serveis, registrar esdeveniments de xarxa i un llarg etcètera.
+</p>
+
+<h2><a id="caracteristiques_i_tipus_de_servidors_intermediaris" >Característiques i tipus de servidors intermediaris</a></h2>
+<div class="level2">
+
+<p>
+Els servidors intermediaris es caracteritzen per interceptar les connexions de xarxa que un client emet cap a un servidor de destinació. 
+</p>
+
+<p>
+El servidor intermediari més conegut és el servidor intermediari de web. Aquest equip té com a missió interceptar totes les peticions dels clients que sol·liciten pàgines web. Per què s’utilitza un servidor intermediari per consultar un web? En principi, això sembla que no tingui sentit, ja que l’accés es ralentitza, però el servidor intermediari web ofereix seguretat i rendiment, i permet ocultar identificacions, entre altres coses.
+</p>
+
+<p>
+A part del servidors intermediaris web existeixen els servidors intermediaris ARP, els servidors intermediaris <acronym title="File Transfer Protocol">FTP</acronym> i els servidors de patró de disseny (presents en entorns de programació).
+</p>
+
+<p>
+Els servidors intermediaris es poden classificar depenent de qui desitgi implementar la política a aplicar: servidors intermediaris locals o servidors intermediaris externs.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En un <strong>servidor intermediari local</strong> implementa la política el mateix equip que realitza la petició.
+</p>
+</div></div>
+<p>
+Parlar d’un servidor intermediari local vol dir que el mateix client pugui establir regles de filtratge, control de trànsit o gestió d’accessos des de la màquina amb què treballa i realitza peticions de serveis.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En un <strong>servidor intermediari extern</strong> implementa la política un equip diferent al que realitza la petició.
+</p>
+</div></div>
+<p>
+Habitualment, els servidors intermediaris externs s’utilitzen per gestionar memòries cau, trànsit de xarxa o compartició de serveis i recursos. Els avantatges més destacats que ofereix la utilització de servidors intermediaris externs són la possibilitat de limitar l’accés als usuaris, forçant-los a passar pel servidor, restringir drets d’usuaris, estalviar recursos, millorar la velocitat de resposta dels serveis, filtrar el trànsit prohibit o modificar informació segons les necessitats. Però també presenta una sèrie d’inconvenients, ja que pot tenir un excés de càrrega que ralentitzi les connexions, pot generar situacions d’intromissió o es pot lliurar informació no actualitzada.
+</p>
+
+</div>
+
+<h2><a id="funcions_principals_dels_servidors_intermediaris" >Funcions principals dels servidors intermediaris</a></h2>
+<div class="level2">
+
+<p>
+Són diverses les funcions dels servidors intermediaris. La gestió de peticions, la gestió de la velocitat de resposta, el filtratge de continguts, l’emmascarament d’identitat o la gestió de continguts a demanda són possiblement els casos més utilitzats. 
+</p>
+
+</div>
+
+<h3><a id="gestio_de_peticions" >Gestió de peticions</a></h3>
+<div class="level3">
+
+<p>
+Gestionar les peticions a un determinat servei o recurs és sens dubte una de les funcionalitats estrella dels servidors intermediaris. Aquesta acció permet reduir dràsticament el trànsit que es genera en una xarxa quan els recursos o serveis són limitats i s’han de compartir.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Optimitzar els recursos</p>
+<p>
+En determinades ocasions un lloc web és consultat per molts equips en una franja de temps petita. Si no se’n fa la gestió oportuna, això pot provocar la pèrdua de l’accés a Internet. Imagineu un nombre elevat d’equips sol·licitant consultar el mateix web: arribarà un moment en què l’accés a Internet no podrà oferir una qualitat de servei correcta. Solució: instal·lar un servidor intermediari que mantingui en la memòria les parts més sol·licitades del web que s’està consultant. Ara els equips de xarxa consultaran el web a la velocitat de la xarxa interna sense haver de sortir a Internet i provocar el col·lapse de la línia d’accés a l’exterior.
+</p>
+</div></div>
+<p>
+Com es pot observar en la <span class="figref"><a href="#Figura43"><span>figura</span></a></span>, l’equip del client demana al servidor intermediari que demani l’hora a una altra màquina. La màquina que informa de l’hora es comunica amb el servidor intermediari, el qual envia les dades a l’equip client.
+</p>
+<div class="iocfigure"><a name="Figura43"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Servidor intermediari gestor de peticions
+
+</figcaption><img src="../media/u3_resum_image_37.png" alt="" /></figure>
+</div>
+<p>
+Com que la memòria dels servidors intermediaris que gestionen peticions no és infinita, requereixen l’ús d’algorismes que s’encarreguen d’anar renovant les entrades.
+</p>
+
+</div>
+
+<h3><a id="gestio_de_la_velocitat_de_resposta" >Gestió de la velocitat de resposta</a></h3>
+<div class="level3">
+
+<p>
+És habitual estar constantment enviant i rebent dades d’Internet, però potser no té gaire sentit anar moltes vegades a buscar una mateixa informació a l’exterior. Una manera eficient de treballar és descarregar els continguts d’Internet una vegada i distribuir-los a la velocitat de la xarxa interna. La velocitat és un dels factors que surt guanyant en aquest cas.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan fa temps que un lloc web no és sol·licitat s’allibera la memòria que s’utilitzava per emmagatzemar les seves dades, i així queda disponible per a noves consultes.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Aprofitar la xarxa local</p>
+<p>
+Amb periodicitat semestral apareixen distribucions millorades del sistema operatiu Ubuntu. Per actualitzar les màquines no es permet que accedeixin totes a Internet, sinó que l’actualització es baixa a una màquina local de la xarxa i la resta d’equips hi accedeixen a la velocitat de la xarxa interna.
+La gestió de la velocitat de resposta és sens dubte un dels punts forts dels servidors intermediaris.
+</p>
+</div></div>
+</div>
+
+<h3><a id="filtratge" >Filtratge</a></h3>
+<div class="level3">
+
+<p>
+Els servidors intermediaris permeten realitzar el filtratge de continguts, com per exemple determinats tipus de fitxers. És força comú que les xarxes corporatives no permetin el trànsit de correu que contingui fitxers adjunts o que determinats perfils d’usuari no accedeixin a continguts externs a la intranet.
+</p>
+
+</div>
+
+<h3><a id="emmascarar_la_identitat" >Emmascarar la identitat</a></h3>
+<div class="level3">
+
+<p>
+En ocasions pot resultar útil amagar a un servidor la identitat d’una màquina que sol·licita un servei. El servidor que ofereix un recurs o un servei detecta que un servidor intermediari està realitzant una petició i no reconeix quina és la màquina que realment fa la sol·licitud.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un mètode per tal d’evitar introduir virus a la xarxa d’una empresa és no permetre l’entrada de correus que continguin fitxers adjunts.
+</p>
+</div></div>
+</div>
+
+<h3><a id="continguts_a_demanda" >Continguts a demanda</a></h3>
+<div class="level3">
+
+<p>
+Determinats servidors intermediaris s’utilitzen per modificar la presentació de la informació. Depenent del dispositiu (tauleta, PDA, telèfon intel·ligent, PC…) o del navegador utilitzat hi ha continguts que requereixen una modificació per poder ser visualitzats correctament.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">La importància de la imatge</p>
+<p>
+Si es consulta el web de segons quins diaris des de diferents plataformes es pot comprovar que el format de la pàgina s’adapta per oferir la màxima llegibilitat en cadascuna d’elles.
+</p>
+</div></div>
+</div>
+
+<h2><a id="configuracio_i_utilitzacio_de_servidors_intermediaris" >Configuració i utilització de servidors intermediaris</a></h2>
+<div class="level2">
+
+<p>
+Parlar de servidor intermediari en general no té gaire sentit. Els servidors intermediaris són dispositius o programes que realitzen unes funcions determinades segons els seus objectius, que poden ser molts i variats. Això fa que la seva configuració i utilització variïn.
+</p>
+
+</div>
+
+<h3><a id="tipus_de_servidors_intermediaris" >Tipus de servidors intermediaris</a></h3>
+<div class="level3">
+
+<p>
+Actualment el mercat ofereix tot de servidors intermediaris específics per complir determinades funcionalitats. La identificació d’aquestes funcions permet crear etiquetes com ara servidor intermediari de web, servidor intermediari <em>proxy</em>, servidor intermediari transparent, servidor intermediari SOCKS, servidor intermediari invers, servidor intermediari obert i servidor intermediari d’emmascarament.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_de_web" >Servidor intermediari de web</a></h4>
+<div class="level4">
+
+<p>
+A vegades es necessita disposar d’un mecanisme per concentrar l’accés a una intranet o a Internet des d’una xarxa informàtica i, alhora, quan el trànsit és elevat i hi ha moltes peticions a continguts cal evitar la baixada de la velocitat d’accés.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>servidors intermediaris de web</strong> possibiliten l’accés al web i ofereixen memòria cau per millorar la velocitat d’accés a continguts.
+</p>
+</div></div>
+<p>
+El funcionament d’aquest servidors és molt senzill i alhora molt productiu. Quan un usuari vol realitzar una consulta al web, primer passa pel servidor intermediari. Si la informació que busca s’ha consultat amb anterioritat, en comptes d’anar a la web original, el servidor web intermediari mostra els continguts emmagatzemats en la seva memòria. En resum, no cal sortir al web per accedir a uns continguts que un altre usuari ha consultat recentment. La velocitat de resposta del servidor intermediari web és molt més alta que la que possibilita el servidor públic.
+</p>
+
+<p>
+L’ús de servidors intermediaris web, però, presenta un inconvenient: pot passar que una informació emmagatzemada en la memòria del servidor intermediari canviï en el servidor web original, la qual cosa farà que les dades que lliuri el servidor intermediari no es corresponguin amb la informació real que es vol consultar.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_proxy" >Servidor intermediari proxy</a></h4>
+<div class="level4">
+
+<p>
+
+</p>
+
+<p>
+Les xarxes en les quals conviuen molts equips o en les quals cal filtrar tots els requeriments a un servei requereixen la utilització d’un servidor intermediari <em>proxy</em> per millorar l’eficàcia de funcionament de la xarxa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari <em>proxy</em></strong> s’interposa entre els usuaris i l’accés a un servei. Generalment es facilita l’accés al servei mitjançant una aplicació web.
+</p>
+</div></div>
+<p>
+No s’ha de confondre un servidor intermediari <em>proxy</em> amb un servidor intermediari web, ja que el segon ofereix l’accés a un recurs determinat: el web. En canvi, el servidor intermediari <em>proxy</em> està obert a qualsevol tipus de recurs o servei.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_transparent" >Servidor intermediari transparent</a></h4>
+<div class="level4">
+
+<p>
+Quan es parla d’utilitzar recursos transparents ens referim a fer ús d’equips sense que l’usuari hagi de realitzar cap modificació en la seva configuració. Utilitzar equips no transparents implica que en un moment o un altre, l’usuari, que tindrà més o menys coneixements, haurà de realitzar algun tipus d’acció en el seu equip. Això genera dos grans problemes: el primer és que un usuari inexpert no pugui accedir al recurs o serveis, i el segon, que els usuaris experts i no autoritzats obtinguin informació sobre la configuració i detecten vulnerabilitats.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari transparent</strong> ofereix accés a recursos i serveis sense que l’usuari hagi de fer cap canvi de configuració.
+</p>
+</div></div>
+<p>
+Un exemple de l’ús de servidors intermediaris transparents és el que fan les empreses proveïdores d’Internet: quan contracten un servei d’accés a Internet l’únic que cal fer és connectar l’equip d’accés, generalment un encaminador preconfigurat, i deixar tots les opcions de l’equip en automàtic.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_socks" >Servidor intermediari SOCKS</a></h4>
+<div class="level4">
+
+<p>
+En ocasions el nivell de seguretat de les comunicacions entre ordinadors ha de ser molt alt. Per aconseguir-ho, una opció és permetre l’accés a un servidor extern únicament a un equip determinat.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari SOCKS</strong> és l’únic equip que té accés a un servidor extern. Qualsevol usuari que desitgi accedir a aquest servidor extern ha d’establir prèviament connexió amb el servidor intermediari SOCKS.
+</p>
+</div></div>
+<p>
+L´ús de servidors intermediaris SOCKS està molt vinculat a aplicacions que ofereixen connexions segures, com per exemple <em>PuTTY</em>. El servidor intermediari SOCKS utilitza un protocol de la capa 5 que s’anomena SOCKS. Quan s’estableix la comunicació entre l’equip de l’usuari i el servidor intermediari SOCKS, el client demana tot el que li cal al servidor intermediari, que s’encarrega de fer les peticions a l’exterior.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_invers" >Servidor intermediari invers</a></h4>
+<div class="level4">
+
+<p>
+Si la raó de ser dels servidors intermediaris és estar al mig del camí de l’accés d’un equip intern a una xarxa externa, a vegades cal fer el mateix, però a la inversa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari invers</strong> intercepta el trànsit de l’exterior que va cap a un servidor intern.
+</p>
+</div></div>
+<p>
+Interceptar el trànsit d’entrada a la xarxa n’augmenta la seguretat: el servidor intermediari invers ofereix una capa més a l’estratègia de seguretat implantada. Una altra raó per al seu ús, també lligada amb la seguretat, és que si es necessita xifrar la comunicació de l’exterior cap a un equip de l’interior de la xarxa, per exemple amb SSH, el servidor intermediari invers s’encarregarà de permetre la sessió SSH. Un servidor d’aquest tipus també podria repartir la càrrega cap a diferents equips interns, o fer de servidor cau per a la xarxa interna.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_obert" >Servidor intermediari obert</a></h4>
+<div class="level4">
+
+<p>
+L’usuari habitual de serveis com Internet coneix conceptes com <em>llista negra</em>. Estar en una llista negra implica que se’ns negui l’accés a diversos continguts o s’interceptin correus electrònics lligats a un determinat domini. Quan s’investiga per què s’ha afegit el nostre domini en una llista negra la resposta més comú és que enviem correu brossa o que els nostres equips s’utilitzen com a plataforma de salt. Si no és així, acostuma a ser degut a una gestió deficient d’un servidor intermediari obert.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari obert</strong> accepta les peticions d’equips que no tenen per què formar part de la seva xarxa.
+</p>
+</div></div>
+<p>
+Quan un equip que no forma part de la xarxa es connecta al servidor intermediari obert i fa qualsevol petició, a ulls externs la petició l’ha realitzat el servidor, per tant, sigui el que sigui el que estigui fent l’usuari, es vincularà al servidor intermediari obert i, en conseqüència, a l’administrador del servidor.
+</p>
+
+</div>
+
+<h4><a id="servidor_intermediari_d_emmascarament" >Servidor intermediari d&#039;emmascarament</a></h4>
+<div class="level4">
+
+<p>
+El funcionament habitual d’una xarxa informàtica és que els equips que en formen part de la xarxa local tinguin una adreça privada i accedeixin a l’exterior de la <acronym title="Local Area Network">LAN</acronym> amb una única IP pública. Això és possible gràcies a un pas previ: l’emmascarament.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari d’emmascarament</strong> s’encarrega de permetre als equips d’una xarxa interior l’accés a l’exterior utilitzant una adreça pública.
+</p>
+</div></div>
+<p>
+La utilització d’un servidor intermediari d’emmascarament afegeix seguretat a la xarxa, ja que els equips de la xarxa interna no queden exposats a atacs perpetrats des de l’exterior.
+</p>
+
+</div>
+
+<h3><a id="exemples_de_servidors_intermediaris" >Exemples de servidors intermediaris</a></h3>
+<div class="level3">
+
+<p>
+Al mercat es poden trobar diversos exemples molt interessants de servidors intermediaris. Cada vegada més la seva instal·lació està esdevenint una pràctica habitual a causa de la facilitat d’administració i la gran quantitat de possibilitats que ofereixen.
+</p>
+
+<p>
+Servidors intermediaris com ara Squid, Ziproxy o Polipo són casos prou coneguts que cada vegada més són presents a les xarxes informàtiques. 
+</p>
+
+</div>
+
+<h4><a id="squid" >Squid</a></h4>
+<div class="level4">
+
+<p>
+Un dels servidors intermediaris més populars en entorns Unix és Squid. Aquest programari implementa un servidor intermediari i un domini per a memòria cau de llocs web.
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/u3_resum_image_38.jpg" class="imgB" title="Logotip del programa Squid/-12" alt="Logotip del programa Squid/-12" /></li><li><small>Logotip del programa Squid</small></li>
+</ul></div>
+
+</p>
+
+<p>
+Squid disposa de la majoria de funcionalitats pròpies dels servidors intermediaris:
+</p>
+<ul>
+<li class="level1"><div class="li"> Permet l’accés web a màquines privades que no estan connectades directament a Internet.</div>
+</li>
+<li class="level1"><div class="li"> Registra el trànsit web que surt de la xarxa local.</div>
+</li>
+<li class="level1"><div class="li"> Controla l’accés web utilitzant regles.</div>
+</li>
+<li class="level1"><div class="li"> Funciona com a memòria cau de pàgines web.</div>
+</li>
+<li class="level1"><div class="li"> Controla el contingut web consultat.</div>
+</li>
+<li class="level1"><div class="li"> Controla les descàrregues que es realitzen.</div>
+</li>
+<li class="level1"><div class="li"> Implementa una memòria cau per a les connexions fallides.</div>
+</li>
+<li class="level1"><div class="li"> Emmagatzema en la memòria cau les peticions <acronym title="Domain Name System">DNS</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> És compatible amb el protocol ICP.</div>
+</li>
+<li class="level1"><div class="li"> Registra totes les peticions realitzades.</div>
+</li>
+</ul>
+
+<p>
+Squid s’ha d’instal·lar en una màquina que se situarà entre les màquines dels usuaris i una altra xarxa (per exemple Internet). Squid farà de frontera entre xarxes, separant-les i permetent accelerar l’accés a llocs web o restringint l’accés a continguts.
+</p>
+
+<p>
+Squid permet centralitzar el trànsit de la xarxa local cap a una altra xarxa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Només</strong> la màquina que té instal·lat Squid ha de disposar d’accés a la xarxa d’Internet.
+</p>
+</div></div>
+<p>
+Un detall molt important a tenir en compte és que la màquina que tingui instal·lat Squid ha de tenir dues interfícies de xarxa per tal de poder exercir de frontera. Una interfície s’utilitza per tenir accés a la xarxa local i l’altra per proporcionar accés a Internet.
+</p>
+
+<p>
+No hem de confondre Squid amb un servidor web. Squid emmagatzema les dades que sol·liciten els clients i així les pot oferir a altres peticions a gran velocitat, però no ofereix pàgines web per sí mateix. Squid només permet accedir a les pàgines originals si detecta que s’hi han produït modificacions.
+</p>
+
+<p>
+Existeixen programes que ajuden a configurar i a operar amb squid, com per exemple Gadmin-Squid.
+</p>
+
+</div>
+
+<h4><a id="ziproxy" >Ziproxy</a></h4>
+<div class="level4">
+
+<p>
+El servidor intermediari Ziproxy permet reduir la mida d’imatges JPG i comprimir fitxers <acronym title="HyperText Markup Language">HTML</acronym>. Aquestes accions optimitzen la navegació i accés a dades. A més, aquest servidor intermediari optimitza la càrrega d’<acronym title="HyperText Markup Language">HTML</acronym>, JavaScript i <acronym title="Cascading Style Sheets">CSS</acronym>.
+</p>
+
+<p>
+No necessita programari client i dóna resultats en qualsevol navegador i sistema operatiu.
+</p>
+
+</div>
+
+<h4><a id="polipo" >Polipo</a></h4>
+<div class="level4">
+
+<p>
+Polipo és un servidor intermediari de memòria cau per a navegació. Es tracta d’un programa molt lleuger que no presenta cap complicació en la instal·lació ni en la configuració.
+</p>
+
+<p>
+Polipo està als repositoris oficials d’Ubuntu i es configura mitjançant el fitxer /etc/polipo/config. El canvi de configuració no s’aplicarà fins que no es reinicii el programa. 
+</p>
+
+</div>
+
+<h3><a id="instal_lacio_de_servidors_intermediaris" >Instal·lació de servidors intermediaris</a></h3>
+<div class="level3">
+
+<p>
+La instal·lació física dels servidors intermediaris és bàsica per aconseguir la màxima eficiència de la xarxa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor intermediari</strong> s’ha de situar entre la màquina de l’usuari i la xarxa externa, generalment Internet.
+</p>
+</div></div>
+<p>
+Només d’aquesta manera es pot centralitzar el trànsit de la xarxa local cap a l’exterior. Totes les peticions cap a l’exterior dels equips de la xarxa local hauran de passar per el servidor intermediari.
+</p>
+
+</div>
+
+<h4><a id="instal_lacio_d_squid" >Instal·lació d&#039;Squid</a></h4>
+<div class="level4">
+
+<p>
+La instal·lació d’Squid es pot fer des dels repositoris oficials d’Ubuntu amb la línia:
+</p>
+<pre class="code">sudo apt-get install squid</pre>
+
+<p>
+Els directoris amb els quals s’ha de treballar són:
+</p>
+<ul>
+<li class="level1"><div class="li"> /usr/bin/: directori executable</div>
+</li>
+<li class="level1"><div class="li"> /var/run/: directori amb el PID del procés</div>
+</li>
+<li class="level1"><div class="li"> /var/log/squid/: directori de registres</div>
+</li>
+<li class="level1"><div class="li"> /var/spool/squid/: directori de memòria cau</div>
+</li>
+<li class="level1"><div class="li"> /etc/squid/: fitxers de configuració</div>
+</li>
+<li class="level1"><div class="li"> /usr/lib/squid/: complements</div>
+</li>
+<li class="level1"><div class="li"> /usr/share/doc/squid/: documentació</div>
+</li>
+</ul>
+
+<p>
+Després d’instal·lar Squid caldrà canviar-ne la configuració per poder treure-li rendiment. El fitxer de configuració d’Squid és squid.conf. Els paràmetres més importants a considerar són:
+</p>
+<ul>
+<li class="level1"><div class="li"> http_port: indica el port que s’utilitzarà per escoltar el servidor. Per defecte aquest valor és 3128.</div>
+</li>
+<li class="level1"><div class="li"> cache_mem: defineix la memòria RAM que s’utilitzarà per emmagatzemar les dades que més se sol·licitin.</div>
+</li>
+<li class="level1"><div class="li"> cache_swap_low: indica el nivell d’espai mínim que s’ha de mantenir en l’àrea d’intercanvi.</div>
+</li>
+<li class="level1"><div class="li"> cache_swap_high: indica el nivell d’espai màxim que s’ha de mantenir en l’àrea d’intercanvi.</div>
+</li>
+<li class="level1"><div class="li"> maximum_object_size: indica la mida màxima que poden tenir els objectes que s’emmagatzemen en la memòria cau.</div>
+</li>
+<li class="level1"><div class="li"> hierarchy_stoplist: indica els caràcters que s’utilitzaran com a filtre. Si els caràcters es detecten en una adreça web es carrega directament el contingut des de la memòria cau.</div>
+</li>
+<li class="level1"><div class="li"> visible_hostname: indica el nom de l’equip.</div>
+</li>
+<li class="level1"><div class="li"> cache_dir: estableix la mida que es reservarà en el disc per a la memòria cau.</div>
+</li>
+<li class="level1"><div class="li"> access_log: indica el directori en què s’emmagatzemaran els accessos a Squid.</div>
+</li>
+<li class="level1"><div class="li"> cache_log: estableix la ruta en què s’emmagatzemaran els missatges de <em>log</em> d’Squid.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="configuracio_de_filtres" >Configuració de filtres</a></h3>
+<div class="level3">
+
+<p>
+Els filtres que es configuren en els servidors intermediaris utilitzen majoritàriament llistes de control d’accés, conegudes com a <acronym title="Access Control List">ACL</acronym>.
+</p>
+
+<p>
+Les llistes <acronym title="Access Control List">ACL</acronym> realitzen una acció sobre els paquets que tinguin determinades característiques. Una <acronym title="Access Control List">ACL</acronym> s’ha d’identificar amb un nom o un número i cada regla especifica una condició i una acció. Les accions que es poden executar són permetre o denegar tots els paquets que acompleixin una condició.
+</p>
+<pre class="code">acl nom_o_numero acció condició</pre>
+
+<p>
+Si un paquet compleix la condició se li aplicarà l’acció. Les accions són només permetre o negar, i les condicions depenen del tipus d’<acronym title="Access Control List">ACL</acronym>. Les <acronym title="Access Control List">ACL</acronym> més senzilles, anomenades <em>estàndard</em>, especifiquen valors per comparar amb l’adreça IP d’origen del paquet, mentre que en les <acronym title="Access Control List">ACL</acronym> anomenades <em>extenses</em> les condicions permeten especificar valors per comparar IP d’origen, IP de destinació, protocols de capa 4, ports, indicadors de TCP…
+</p>
+
+</div>
+
+<h4><a id="configuracio_de_filtres_amb_squid" >Configuració de filtres amb Squid</a></h4>
+<div class="level4">
+
+<p>
+Hi ha disponibles diversos elements per treballar amb <acronym title="Access Control List">ACL</acronym>. És imprescindible fer una petita descripció de cadascun d’ells per tal d’aplicar les regles amb la lògica amb la qual han estat dissenyades:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>src</code>: especifica una o diverses adreces de xarxa o un segment de la xarxa amb la seva màscara corresponent.<br/>
+Una regla anomenada “xarxa_servidors” que té assignada la subxarxa 192.168.10.0/24 seria:<br/>
+<pre class="code"> acl xarxa_servidors src 192.168.10.0/24</pre>
+
+<p>
+ <br/>
+Per indicar un conjunt d’adreces de xarxa s’utilitzaria també l’ordre src:<br/>
+
+</p>
+<pre class="code">acl equips_publics src 192.168.10.5 192.168.10.7 192.168.10.27</pre>
+
+<p>
+ <br/>
+I fins i tot es poden indicar les adreces des d’un fitxer:<br/>
+
+</p>
+<pre class="code">acl produccio src “/etc/squid/p_produccio”</pre>
+
+<p>
+<br/>
+Per a una sola adreça IP:<br/>
+
+</p>
+<pre class="code">acl administrador src 192.168.1.10/255.255.255.255</pre>
+
+<p>
+<br/>
+O bé:<br/>
+
+</p>
+<pre class="code">acl administrador src 192.168.1.10/32</pre>
+
+<p>
+<br/>
+Per definir una subxarxa:<br/>
+
+</p>
+<pre class="code">acl xarxa_inf src 192.168.1.0/255.255.255.0</pre>
+
+<p>
+<br/>
+Per definir una llista d’adreces:<br/>
+
+</p>
+<pre class="code">acl programadors src 192.168.1.11 192.168.1.12 192.168.1.13</pre>
+
+<p>
+<br/>
+La llista d’adreces de xarxa pot estar escrita en un fitxer i ser carregada:<br/>
+
+</p>
+<pre class="code">acl programadors src “/etc/squid/programadors.acl”</pre>
+
+<p>
+<br/>
+Per crear una llista basada en un rang d’adreçes IP:<br/>
+
+</p>
+<pre class="code">acl programadors src 192.168.1.11-192.168.1.13</pre>
+
+<p>
+<br/>
+“tothom”: s’utilitza per filtrar tots els equips d’una xarxa.<br/>
+
+</p>
+<pre class="code">acl tothom src 0.0.0.0/0.0.0.0</pre>
+
+<p>
+<br/>
+La mateixa màquina d’origen: la nostra màquina serà l’origen de les connexions.<br/>
+
+</p>
+<pre class="code">acl localhost src 127.0.0.1/255.255.255.255</pre>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> A més de treballar amb adreces IP es poden crear regles d’accés basades en ports, dominis, adreces web i tipus MIME:<br/>
+<pre class="code">acl ports_segurs port 8080 23 443 1025-65535</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>dts</code>: s’utilitza per indicar l’adreça de destinació en format IP i màscara o el nom de la destinació. Per exemple es podria declarar una regla que fes referència a adreces de xarxa de la nostra subxarxa:<br/>
+acl ips_departament dst 192.168.3.5 192.168.3.6 192.168.3.7<br/>
+O fins i tot de servidors de correu habituals:<br/>
+<pre class="code">acl correus dst www.gmail.com www.hotmail.com www.webmail.com</pre>
+
+<p>
+<br/>
+La mateixa màquina com a destinació.<br/>
+
+</p>
+<pre class="code">acl localhost_destinacio dst 127.0.0.0/255.255.255.255</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>srcdomain</code>: serveix per donar accés a dominis determinats. Aquesta regla no funcionarà si no es disposa d’un <acronym title="Domain Name System">DNS</acronym> local. El cas següent indicaria els noms d’equip que pertanyen a la xarxa:<br/>
+<pre class="code">acl equips srcdomain servidorweb.lamevaxarxa.com servidorcorreu.lamevaxarxa.com repositori.lamevaxarxa.com</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>dstdomain</code>: estableix els permisos sobre els dominis web de destinació. Per exemple, es podria utilitzar per etiquetar els dominis prohibits:<br/>
+<pre class="code">acl dominis_prohibits dstdomain .messenger.com live.com jocs.com</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>srcdom_regex</code>: és la responsable d’avaluar text d’entrada a la xarxa. Si, per exemple, volem analitzar les paraules “examen” que circulin per la nostra xarxa farem:<br/>
+<pre class="code">acl xarxa_local srcdom_regex -i examen\..*</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>dstdom_regex</code>: s’encarrega d’avaluar text de sortida de la xarxa. Si per exemple volem analitzar totes les paraules de sortida que continguin “google” s’aplicarà:<br/>
+<pre class="code">acl consulta_google dstdom_regex -i google\..*</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>time</code>: marca el temps límit de connexió dins d’una setmana. S’utilitza un paràmetre per indicar cada dia de la setmana segons la <span class="tabref"><a href="#Taula9"><span>taula</span></a></span>. I les hores s’utilitzen seguint el format de vint-i-quatre hores. Si, per exemple, es vol habilitar una regla per als dissabtes i diumenges de vuit del vespre a onze de la nit:<br/>
+<pre class="code">acl caps_setmana_nit time AS 20:00-23:00</pre>
+</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El tipus MIME d’un fitxer és una descripció del fitxer. Generalment s’utilitzen a la banda dels servidors perquè el gestor esculli la millor manera de mostrar l’element.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="Taula9"><span>Taula: </span></a>Paràmetre que indica el dia de la setmana amb Squid</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> Dia de la setmana </td><td class="col1"> Paràmetre </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> Dilluns           </td><td class="col1 leftalign"> M         </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Dimarts           </td><td class="col1 leftalign"> T         </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> Dimecres          </td><td class="col1 leftalign"> W         </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> Dijous            </td><td class="col1 leftalign"> H         </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> Divendres         </td><td class="col1 leftalign"> F         </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> Dissabte          </td><td class="col1 leftalign"> A         </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> Diumenge          </td><td class="col1 leftalign"> S         </td>
+	</tr>
+</table></div>
+</div><ul>
+<li class="level1"><div class="li"> <code>url_regex</code>: permet especificar text que aparegui en adreces web i interceptar la informació. El més habitual és emmagatzemar en un fitxer les paraules a les quals volem aplicar el filtre:<br/>
+<pre class="code">acl webs_prohibits url_regex “/etc/squid/webs/prohibits.txt”</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>urlpath_regex</code>: s’utilitza per poder administrar el trànsit de dades utilitzant l’extensió dels fitxers. És habitual utilitzar un fitxer per emmagatzemar les extensions a considerar:<br/>
+<pre class="code">acl pelis urlpath_regex “etc/squid/filtres/peelis.txt”</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>req_mime</code>: amb aquest tipus de regla es comprova el tipus de petició MIME realitzada per un client. Per filtrar trànsit del programa Messenger de Microsoft:<br/>
+<pre class="code">acl messenger req_mime type application/x-msn-messenger</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>macaddress</code>: permet realitzar l’administració utilitzant les adreces MAC dels equips. Per exemple, per controlar els equips de direcció utilitzant les seves adreces MAC:<br/>
+<pre class="code">acl mac_direccio arp 1C:75:08:AC:**:** 1C:75:08:AD:**:** 1C:75:08:AD:**:**</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <code>password</code>: pot controlar l’accés a Internet utilitzant un nom d’usuari i una contrasenya. </div>
+</li>
+</ul>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Utilització d&#039;usuari i contrasenya per accedir a un servei</p>
+<p>
+L’exemple següent mostra pas a pas el procediment a seguir per establir autenticació per accedir a un servei:
+</p>
+<ol>
+<li class="level1"><div class="li"> Crear un fitxer que contingui les claus d’accés:<br/>
+<code>vi claus</code></div>
+</li>
+<li class="level1"><div class="li"> Donar permís d’escriptura i lectura:<br/>
+<code>chmod 600 claus</code></div>
+</li>
+<li class="level1"><div class="li"> Canviar el propietari:<br/>
+<code>chown squid.squid claus</code></div>
+</li>
+<li class="level1"><div class="li"> Crear l’usuari i la contrasenya per accedir a Internet:<br/>
+<code>htpasswd claus clients</code></div>
+</li>
+<li class="level1"><div class="li"> Modificar el paràmetre “auth_param”:<br/>
+<code>auth_param basic program</code><br/>
+<code>/usr/lib/squid/ncsa_auth /etc/squid/claus</code></div>
+</li>
+<li class="level1"><div class="li"> Habilitar la regla:<br/>
+<code>acl password proxy_auth REQUIRED</code></div>
+</li>
+</ol>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>http_access</code>: el control d’accés es realitza amb <code>http_access</code>. Per permetre l’accés als equips vinculats a la regla “estudiants” escriurem:<br/>
+<pre class="code">http_access allow estudiants</pre>
+
+<p>
+<br/>
+I per no permetre l’accés als equips vinculats a la regla “visitants” afegirem:<br/>
+
+</p>
+<pre class="code">http_access deny visitants</pre>
+
+<p>
+<br/>
+Permetre o negar l’accés a una o més <acronym title="Access Control List">ACL</acronym>: amb el paràmetre <code>allow</code> es permet l’<acronym title="Access Control List">ACL</acronym> i amb <code>deny</code> es denega. En l’exemple següent se’ns permet l’accés encara que no siguem programadors:<br/>
+
+</p>
+<pre class="code">http_access allow ! Programadors</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="configuracio_de_l_emmagatzematge_en_memoria_cau_d_un_servidor_intermediari" >Configuració de l&#039;emmagatzematge en memòria cau d&#039;un servidor intermediari</a></h3>
+<div class="level3">
+
+<p>
+Un dels problemes més habituals dels servidors intermediaris és la gestió de l’emmagatzematge en memòria cau. En alguns servidors, com per exemple Polipo, gestionar deficientment la memòria pot provocar deixar sense memòria la màquina que allotja el servidor. Aquest problema es reprodueix en la resta de servidors i Squid no n’és l’excepció. Utilitzarem Squid com a exemple de dos processos: esborrar la memòria cau i evitar el servidor intermediari per realitzar determinades consultes.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El símbol ! indica que l’<acronym title="Access Control List">ACL</acronym> no es verifica.
+</p>
+</div></div>
+</div>
+
+<h4><a id="esborrar_la_memoria_cau_d_squid" >Esborrar la memòria cau d&#039;Squid</a></h4>
+<div class="level4">
+
+<p>
+Una de les tasques que s’han de realitzar dins els procediments de manteniment d’un servidor intermediari Squid és netejar la seva memòria cau. Tot i que es tracta d’una acció molt senzilla i que a priori pugui semblar una tasca secundària, no és aquest el cas. Una mala gestió de la memòria cau pot inhabilitar el servidor.
+</p>
+
+<p>
+Abans de fer cap acció vinculada a la memòria cau cal parar el dimoni d’Squid:
+</p>
+<pre class="code">sudo service squid stop</pre>
+
+<p>
+Per comprovar que efectivament Squid està aturat:
+</p>
+<pre class="code">sudo service squid status </pre>
+
+<p>
+Per eliminar el contingut emmagatzemat a la memòria cau d’Squid es pot utilitzar la línia:
+</p>
+<pre class="code">sudo rm -rf /var/spool/squid/*</pre>
+
+<p>
+Sovint, la informació emmagatzemada a la memòria cau d’Squid pot aportar dades que ajuden a interpretar problemes de la xarxa. Una bona opció per no perdre aquesta informació és fer-ne una còpia abans d’eliminar-la:
+</p>
+<pre class="code">sudo mkdir /var/spool/squid/copia/
+sudo mv /var/spool/squid/ /var/spool/squid/copia/</pre>
+
+<p>
+I ara només cal reiniciar el dimoni:
+</p>
+<pre class="code">sudo squid start</pre>
+
+</div>
+
+<h4><a id="exemple_de_com_no_utilitzar_la_memoria_cau_amb_squid" >Exemple de com no utilitzar la memòria cau amb Squid</a></h4>
+<div class="level4">
+
+<p>
+El servidor intermediari Squid és una bona solució per millorar l’accés a Internet, però en determinades ocasions pot ser un problema.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Error en la visualització de dades </p>
+<p>
+Suposem que estem esperant la publicació de la nota d’un examen. Cada cinc minuts consultem el web on s’ha de publicar la nota i aquesta no apareix. Se’ns ocorre trucar a un amic i aquest ens comunica que les notes s’han publicat fa un parell d’hores. Amb neguit tornem a consultar la pàgina web i res de res. Hi haurà algun problema amb la meva nota? No! El que passa és que des de la xarxa on estic fent la consulta hi ha un servidor Squid que no m’està mostrant l’última versió del web. El que no paro de consultar és una pàgina descarregada en local que no reflecteix els canvis!
+</p>
+</div></div>
+<p>
+El servidor intermediari Squid permet indicar dominis que no s’emmagatzemaran en memòria cau:
+</p>
+<pre class="code">sudo vi /etc/squid/dominis_no_cache</pre>
+
+<p>
+Aquests dominis s’inclouran en un fitxer de text:
+</p>
+<pre class="code">ioc.xtec.cat
+gmail.com
+hotmail.com</pre>
+
+<p>
+Una solució molt enginyosa que ofereix Squid és que permet indicar equips que no utilitzin la memòria cau del servidor intermediari. Aquesta acció es realitza mitjançant l’adreça MAC dels equips:
+</p>
+<pre class="code">acl equip_sense_cau arp 1C-75-08-AC-**-**</pre>
+
+<p>
+I aquesta línia s’afegeix al fitxer de configuració 
+</p>
+<pre class="code">/etc/squid/squid.conf</pre>
+
+<p>
+Perquè aquest procediment tingui efecte caldrà reiniciar el dimoni amb:
+</p>
+<pre class="code">sudo squid restart</pre>
+
+</div>
+
+<h4><a id="exemple_de_fitxer_squidconf" >Exemple de fitxer squid.conf</a></h4>
+<div class="level4">
+
+<p>
+A continuació es mostra part del contingut del fitxer squid.conf, en el qual s’utilitzen alguns dels conceptes bàsics d’aquest programa:
+</p>
+
+<p>
+Una opció molt interessant és donar un nom propi a Squid perquè aquest sigui més reconeixedor a la xarxa:
+</p>
+<pre class="code">visible_hostname servidor_intermediari</pre>
+
+<p>
+A continuació es defineixen les diferents xarxes a tractar amb <acronym title="Access Control List">ACL</acronym>:
+</p>
+<pre class="code">acl xarxa_local src 192.168.0.0/24</pre>
+
+<p>
+També es marca l’horari de treball:
+</p>
+<pre class="code">acl jornada_laboral time M T W H F 8:30-22:00</pre>
+
+<p>
+Per decissió administrativa s’ha decidit restringir una màquina de la xarxa:
+</p>
+<pre class="code">acl maquina_restringida src 192.168.0.15</pre>
+
+<p>
+Per fer efectiva la restricció en la màquina anterior:
+</p>
+<pre class="code">http_access deny maquina_restringida</pre>
+
+<p>
+I per permetre l’accés a la xarxa local durant les hores de feina:
+</p>
+<pre class="code">http_access allow xarxa_local jornada_laboral</pre>
+
+<p>
+A causa del mal ús que es fa de la xarxa es decideix que no es pugui accedir a determinats continguts. S’editarà el fitxer webs_prohibits amb:
+</p>
+<pre class="code">#fitxer: /usr/local/etc/webs_prohibits
+www.webprohibit1.com
+www.webprohibit2.com
+www.webprohibitN.com</pre>
+
+<p>
+També es pot indicar en un fitxer quins són els llocs web permesos, i titular-lo, perexemple, webs_permesos:
+</p>
+<pre class="code">#fitxer: /usr/local/etc/webs_permesos
+ioc.xtec.cat</pre>
+
+<p>
+I ara només caldrà especificar les corresponents <acronym title="Access Control List">ACL</acronym> en el fitxer de configuració d’Squid:
+</p>
+<pre class="code">acl WebsPermesos dstdomain “/usr/local/etc/webs_permesos”
+acl WebsProhibits dstdomain “/usr/local/etc/webs_prohibits”</pre>
+
+<p>
+També es podria combinar amb http_access la xarxa local, l’horari d’oficina i els llocs web permesos:
+</p>
+<pre class="code">http_access allow xarxa_local jornada_laboral WebsPermesos</pre>
+
+</div>
+
+<h3><a id="metodes_d_autenticacio_d_un_servidor_intermediari" >Mètodes d&#039;autenticació d&#039;un servidor intermediari</a></h3>
+<div class="level3">
+
+<p>
+En funció del servidor intermediari que s’utilitzi es disposarà d’un ventall més o menys gran de possibilitats per treballar amb modes d’autenticació. Per entendre els modes d’autenticació bàsics caldrà comprendre dos conceptes molt importants: el tipus de desafiament (<em>type of challenge)</em> i les credencials substitutes (<em>surrogate credentials</em>).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El <strong>tipus de desafiament</strong> indica el tipus de desafiament que es trobarà un client.
+</p>
+</div></div>
+<p>
+En el món de la informàtica el tipus de desafiament consisteix a plantejar una pregunta a l’usuari, que ha de respondre adequadament per poder continuar. Es tracta d’un protocol d’actuació molt utilitzat des de fa molt de temps.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les <strong>credencials substitutes</strong> consisteixen a utilitzar unes determinades credencials fictícies en comptes d’utilitzar les reals. 
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El <em>tipus de desafiament</em> més simple és demanar confirmar una contrasenya.
+</p>
+</div></div>
+<p>
+Els modes d’autenticació més habituals són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Auto</strong>: el mode d’autenticació <em>auto</em> o <em>default</em> se selecciona en funció del que el client sol·liciti. Depèn del tipus de connexió i la configuració d’autenticació dels equips.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Proxy-IP</strong>: el servidor intermediari utilitza un <em>type of challenge</em> de manera explícita i la IP de l’equip client com a credencials substitutes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Origin</strong>: el servidor intermediari treballa com si es tractés d’un servidor de comunicacions en temps real. Quan s’autentica la connexió es pot utilitzar com a credencial substituta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Origin-IP</strong>: el servidor intermediari treballa com si es tractés d’un servidor de comunicacions en temps real i, a més, pot generar i presentar al client desafiaments.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Origin-Cookie</strong>: el servidor intermediari actua com un Origin-IP, però és capaç de generar una galeta (<em>cookie</em>) com a credencial substituta. És més segur que Origin-IP. S’ha de destacar que aquesta configuració permet treballar en servidor invers.  Cal tenir en compte que només HTTP i HTTPS admeten galetes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Origin-cookie-redirect</strong>: en aquest cas es redirigeix el client cap a una adreça virtual on es realitzarà el procés d’autenticació. Les galetes s’utilitzaran com a credencials substitutes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>SGOS 3.0</strong>: fent ús de regles predefinides al sistema, permet establir comunicacions segures.</div>
+</li>
+<li class="level1"><div class="li"> <strong>From-IP</strong>: realitza un cerca de les credencials d’usuari. Quan caduca una credencial, busca la correspondència amb l’usuari i fa una cerca de noves credencials.</div>
+</li>
+<li class="level1"><div class="li"> <strong>From-Cookie</strong>: es realitza una recerca de credencials vinculades a un usuari. Les galetes es relacionen amb un servidor intermediari i l’usuari adquireix un perfil específic per a cada domini.</div>
+</li>
+<li class="level1"><div class="li"> <strong>From-Cookie-Redirect</strong>: en aquest cas s’envia la sol·licitud de l’usuari a una adreça virtual. L’usuari haurà de superar un <em>type of challenge</em> quan les credencials expirin.</div>
+</li>
+<li class="level1"><div class="li"> <strong>From-IP_Redirect</strong>: aquest mode treballa gairebé igual que el From-IP, excepte que en aquest cas l’usuari és enviat a una adreça virtual abans de ser presentat.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="instal_lacio_i_configuracio_de_clients_de_servidors_intermediaris" >Instal·lació i configuració de clients de servidors intermediaris</a></h3>
+<div class="level3">
+
+<p>
+La utilització de servidors intermediaris comporta un pas previ: configurar els equips dels usuaris perquè utilitzin el servidor intermediari. En determinats casos, si la màquina del client està configurada per adquirir configuracions automàticament, no caldrà fer-hi cap canvi, però en d’altres és necessari configurar els navegadors.
+</p>
+
+<p>
+Els navegadors més utilitzats són Internet Explorer, Firefox i Chrome. Per tant, caldrà estudiar com es configuren manualment els servidors intermediaris en aquests programes.
+</p>
+
+</div>
+
+<h4><a id="configurar_el_servidor_intermediari_amb_internet_explorer" >Configurar el servidor intermediari amb Internet Explorer</a></h4>
+<div class="level4">
+
+<p>
+Més de la meitat dels usuaris domèstics utilitzen Microsoft Internet Explorer per navegar per Internet. La configuració del servidor intermediari és habitual quan l’usuari s’ha de connectar a Internet utilitzant una xarxa corporativa, i es dóna el cas que en general Internet Explorer detecta automàticament la configuració del servidor intermediari.
+</p>
+
+<p>
+Si Internet Explorer no detecta la configuració caldrà seguir els passos següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Obrir el Microsoft Internet Explorer.</div>
+</li>
+<li class="level1"><div class="li"> Prémer <em>Eines</em>.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic a <em>Opcions d’Internet</em>.</div>
+</li>
+<li class="level1"><div class="li"> Activar la fitxa <em>Connexions</em>.</div>
+</li>
+<li class="level1"><div class="li"> Anar a <em>Configuració de <acronym title="Local Area Network">LAN</acronym></em>.</div>
+</li>
+<li class="level1"><div class="li"> Al quadre <em>Adreça</em> indicar l’adreça del servidor intermediari.</div>
+</li>
+<li class="level1"><div class="li"> Al quadre <em>Port</em> indicar el port escaient.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic a <em>Acceptar</em> per guardar els canvis.</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura45"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració del servidor intermediari a Internet Explorer de Microsoft Windows
+
+</figcaption><img src="../media/u3_resum_image_39.png" alt="" /></figure>
+</div>
+<p>
+La interfície de configuració que utilitza Internet Explorer de Microsoft Windows és molt intuïtiva, tal com mostra la <span class="figref"><a href="#Figura45"><span>figura</span></a></span>. En moltes ocasions la caixa <em>Detectar la configuració automàticament</em> estarà marcada i no caldrà fer cap canvi en la configuració.
+</p>
+
+</div>
+
+<h4><a id="configurar_el_servidor_intermediari_amb_firefox" >Configurar el servidor intermediari amb Firefox</a></h4>
+<div class="level4">
+
+<p>
+Els passos a seguir per configurar el servidor intermediari en Firefox són els següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Obrir el navegador Firefox.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic a <em>Edita</em>.</div>
+</li>
+<li class="level1"><div class="li"> Prémer <em>Preferències</em>.</div>
+</li>
+<li class="level1"><div class="li"> Activar la pestanya <em>Avançat</em>.</div>
+</li>
+<li class="level1"><div class="li"> Activar la pestanya <em>Xarxa</em>.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic a <em>Paràmetres</em>.</div>
+</li>
+<li class="level1"><div class="li"> Marcar <em>Configuració manual del servidor intermediari</em>.</div>
+</li>
+<li class="level1"><div class="li"> Indicar l’adreça i port del servidor intermediari.</div>
+</li>
+<li class="level1"><div class="li"> Si fos el cas, deixar marcat el quadre <em>Utilitza aquest servidor intermediari per a aquesta xarxa</em>.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic al botó <em>D’acord</em>.</div>
+</li>
+<li class="level1"><div class="li"> Tancar el quadre de menús.</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura46"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració del servidor intermediari a Firefox
+
+</figcaption><img src="../media/u3_resum_image_40.png" alt="" /></figure>
+</div>
+<p>
+Com es pot observar en la <span class="figref"><a href="#Figura46"><span>figura</span></a></span>, en aquest cas els paràmetres de connexió permeten configurar una màquina com a servidor intermediari genèric i evitar que determinades consultes passin pel servidor intermediari.
+</p>
+
+</div>
+
+<h4><a id="configurar_el_servidor_intermediari_amb_chrome" >Configurar el servidor intermediari amb Chrome</a></h4>
+<div class="level4">
+
+<p>
+El navegador Google Chrome és el tercer en percentatge d’ús a nivell mundial. La configuració del servidor intermediari es realitza seguint els passos següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Obrir el navegador Chrome.</div>
+</li>
+<li class="level1"><div class="li"> Fer clic a la clau que apareix a la cantonada superior dreta: <em>Personalitza i controla Google Chrome</em>.</div>
+</li>
+<li class="level1"><div class="li"> Prémer <em>Configuració</em>.</div>
+</li>
+<li class="level1"><div class="li"> Anar a la part baixa de la finestra i fer clic a M<em>ostra la configuració avançada</em>.</div>
+</li>
+<li class="level1"><div class="li"> Dins de <em>Xarxa</em>, ferclic a <em>Canvia la configuració de proxy…</em></div>
+</li>
+<li class="level1"><div class="li"> Anar a <em>Configuració de <acronym title="Local Area Network">LAN</acronym></em>.</div>
+</li>
+<li class="level1"><div class="li"> Indicar l’adreça del servidor intermediari i el port que utilitzi.</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura47"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració del servidor intermediari a Chrome
+
+</figcaption><img src="../media/u3_resum_image_41.png" alt="" /></figure>
+</div>
+<p>
+En el cas de Google Chrome cal destacar que, tal com es mostra en la <span class="figref"><a href="#Figura47"><span>figura</span></a></span>, el navegador utilitza en última instància les finestres d’interacció amb l’usuari del sistema operatiu instal·lat. La imatge ha estat capturada en un sistema operatiu Microsoft Windows.
+</p>
+
+</div>
+
+<h4><a id="configurar_servidor_intermediari_amb_safari" >Configurar servidor intermediari amb Safari</a></h4>
+<div class="level4">
+
+<p>
+El navegador d’Apple també ofereix la possibilitat de configurar un servidor intermediari. Els passos a seguir són:
+</p>
+<ol>
+<li class="level1"><div class="li"> Seleccioneu el menú <em>Safari</em>.</div>
+</li>
+<li class="level1"><div class="li"> Anar a <em>Preferències</em>.</div>
+</li>
+<li class="level1"><div class="li"> Activar la pestanya <em>Avançat</em>.</div>
+</li>
+<li class="level1"><div class="li"> A <em>Proxies</em> fer clic a <em>Canviar preferències</em>.</div>
+</li>
+<li class="level1"><div class="li"> A <em>Configurar Proxies</em> seleccionar <em>Configurar manualment</em>.</div>
+</li>
+<li class="level1"><div class="li"> Activar el quadre de protocol que es necessiti.</div>
+</li>
+<li class="level1"><div class="li"> Indicar l’adreça IP del servidor intermediari i el port que s’utilitzi.</div>
+</li>
+<li class="level1"><div class="li"> Prémer <em>OK</em> per guardar la configuració.</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura48"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració del servidor intermediari a Safari
+
+</figcaption><img src="../media/u3_resum_image_42.png" alt="" /></figure>
+</div>
+<p>
+El navegador Safari ofereix la possibilitat, igual que Firefox, de configurar diversos servidors intermediaris relacionant-los a diferents protocols. En la <span class="figref"><a href="#Figura48"><span>figura</span></a></span> s’assigna al servidor intermediari d’<acronym title="File Transfer Protocol">FTP</acronym> un port diferent de l’usual.
+</p>
+
+</div>
+
+<h3><a id="interpretacio_i_utilitzacio_de_documentacio_tecnica" >Interpretació i utilització de documentació tècnica</a></h3>
+<div class="level3">
+
+<p>
+Per considerar que un sistema està operatiu primer cal que passi pels entorns de proves, preproducció i producció. A més, cal generar documentació per poder fer el procés repetible, registrar els procediments associats al servei i establir un sistema de monitoratge perquè les fallades del servei siguin detectades.
+</p>
+
+</div>
+
+<h4><a id="instal_lacio_i_posada_en_marxa_d_un_sistema" >Instal·lació i posada en marxa d&#039;un sistema</a></h4>
+<div class="level4">
+
+<p>
+Des del punt de vista de la seguretat, un sistema ha de passar per tres fases abans de posar-se en funcionament. Aquestes fases han de correspondre a l’estat de la instal·lació del sistema per evitar que una mala configuració d’un sistema de proves pugui ser la porta d’entrada d’un intrús.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Cal evitar que un entorn de proves estigui exposat a atacs externs per mitjà de la publicació de serveis.
+</p>
+</div></div>
+<p>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Entorn de proves</strong>. Primer de tot, cal disposar d’un entorn adequat per poder fer les primeres proves de funcionament del sistema. Convé que aquest entorn estigui el més aïllat possible, ja que en aquesta fase no es pot esperar que els serveis estiguin configurats correctament ni que els usuaris hagin de fer servir contrasenyes fortes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Entorn de preproducció</strong>. En una segona fase, el sistema ja està configurat com si estigués a punt de posar-se en producció. En aquesta fase, és possible que personal extern de l’organització hagi de poder accedir al sistema per fer-hi unes primeres proves abans de validar-lo i passar-lo a producció. Així, doncs, cal que el sistema tingui els serveis definitius, configurats correctament, publicats, però amb l’accés limitat. Un cop el sistema està validat, la documentació del sistema, els procediments per operar-hi i les degudes mesures de seguretat aplicades, es pot passar a l’entorn de producció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Entorn de producció</strong>. Un cop superades les fases anteriors, el sistema està llest per posar-se en funcionament. Això el farà més sensible a atacs, ja que tindrà menys restriccions d’accés. En aquest punt, s’hi ha de limitar l’accés i els registres s’han de controlar de manera periòdica per verificar-ne el funcionament sense incidències.</div>
+</li>
+</ol>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un entorn de producció ha d’estar documentat i monitorat correctament. Igualment, ha de tenir les polítiques de seguretat adequades.
+</p>
+</div></div>
+</div>
+
+<h4><a id="documentacio_del_sistema" >Documentació del sistema</a></h4>
+<div class="level4">
+
+<p>
+Per tal d’instal·lar el sistema correctament, cal consultar la documentació del producte. Acostuma a estar en anglès.
+</p>
+
+<p>
+És habitual fer cerques amb cercadors per trobar configuracions predefinides. D’aquesta manera no s’ha de començar de zero. Tot i que la informació que es pot trobar a Internet pot ser molt útil, sempre cal comprovar-la i contrastar-la. És possible que les dades que es trobin continguin problemes de seguretat accidentals o intencionats. Si són intencionats, l’atacant espera que algú faci servir les dades i, després, aprofita la mala configuració del sistema per accedir-hi.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’anglès s’ha convertit en la llengua més utilitzada per a la documentació tècnica.
+</p>
+</div></div>
+<p>
+Durant el procés, cal documentar-ho tot, però especialment les fonts que utilitzem. Si emmagatzemem les dades en un sistema de gestió del coneixement, evitarem haver de repetir tot l’esforç que hem fet per posar el sistema en funcionament. D’aquesta manera, podrem repetir el procés seguint la documentació que hem generat prèviament.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>MediaWiki</strong> és un programa de font pública que pot funcionar com a sistema gestor del coneixement.
+</p>
+</div></div>
+</div>
+
+<h4><a id="procediments_del_sistema" >Procediments del sistema</a></h4>
+<div class="level4">
+
+<p>
+Un cop el sistema s’ha instal·lat correctament, també cal documentar com cal operar-lo per mantenir-lo en funcionament. A continuació, s’exposen uns quants procediments bàsics que permeten operar qualsevol sistema.
+</p>
+
+<p>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Arrencada</strong>. Un dels procediments més importants és saber com cal arrencar un servei determinat. Alguns sistemes poden ser tan simples que només faci falta prémer el botó d’arrencada per fer-los funcionar. Tanmateix, en altres sistemes, el procediment pot ser més complex. Per exemple, per arrencar un clúster compost per un conjunt de balancejos de càrrega, un conjunt de servidors web i un conjunt de servidors de bases de dades, primer s’haurien d’arrencar les bases de dades, després els servidors web i finalment els balancejos. Si es fes a l’inrevés, les primeres capes saturarien les segones, que encara no estarien preparades, i l’arrencada podria fallar o trigar molt més temps.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Comprovació del funcionament</strong>. Un cop arrencat el sistema, cal poder validar que funciona correctament. S’ha de comprovar que els components funcionen separadament i conjuntament. Per exemple, es pot comprovar separadament el funcionament d’un servidor web i el de la base de dades, però no es pot estar segur que funcionen en conjunt si no es fa una petició a la base de dades amb el servidor web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Comprovació de la configuració</strong>. En l’operació de qualsevol servei, el més normal és que s’hagin d’aplicar canvis en la configuració o que calgui afegir-hi entrades a mesura que passi el temps. Per això, cal saber com verificar la configuració abans d’aplicar-la.<br/>
+Aplicar una configuració sense cap verificació (error d’operació) sol ser una de les causes de caiguda dels serveis. Per això és important tenir ben documentats els passos que s’han de seguir per modificar-ne les configuracions i la manera adequada de verificar-hi els canvis.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Aturada</strong>. L’aturada d’un servei, com l’arrencada, pot ser molt simple en la majoria dels casos, però, quan l’entorn és complex, pot ser més complicat. Seguim l’exemple del clúster: si primer s’apaga la base de dades i els servidors web continuen rebent peticions, aquestes peticions inacabables els poden saturar perquè no hi ha base de dades. Així doncs, en un entorn com aquest, el més adequat seria redirigir primer les peticions a un altre entorn en els balanceig de càrrega, apagar els servidors web i, finalment, les bases de dades.</div>
+</li>
+</ol>
+
+</div>
+
+<h4><a id="monitoratge_del_sistema" >Monitoratge del sistema</a></h4>
+<div class="level4">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+No es pot considerar que un sistema complex funciona correctament només pel bon funcionament, separadament, de les parts que l’integren, ja que el programari que fa interactuar aquests components també pot fallar.
+</p>
+</div></div>
+<p>
+És important que un sistema estigui monitorat constantment abans que passi a producció. D’aquesta manera, les fallades es detectaran quan es produeixin i es podran solucionar el més aviat possible.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+És important monitorar els serveis per assegurar que es troben dins dels paràmetres del nivell de servei establert (també conegut com a SLA o <em>Service Level Agreement</em>).
+</p>
+</div></div>
+</div>
+
+<h4><a id="disponibilitat_del_sistema" >Disponibilitat del sistema</a></h4>
+<div class="level4">
+
+<p>
+La disponibilitat del sistema es compta com el percentatge del temps durant el qual el servei ha estat disponible. En cas de càlcul anual, per als percentatges de disponibilitat que es mostren a continuació, el temps d’aturada seria el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> 99%: 87 hores anuals (7 hores mensuals) d’aturada</div>
+</li>
+<li class="level1"><div class="li"> 99,9%: 8 hores anuals (43 minuts mensuals) d’aturada</div>
+</li>
+<li class="level1"><div class="li"> 99,99%: 52 minuts anuals (4 minuts mensuals) d’aturada</div>
+</li>
+<li class="level1"><div class="li"> 99,999%: 5 minuts anuals (26 segons mensuals) d’aturada</div>
+</li>
+<li class="level1"><div class="li"> 99,9999%: 30 segons anuals d’aturada</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="supervisio_i_monitors_reactius" >Supervisió i monitors reactius</a></h4>
+<div class="level4">
+
+<p>
+Per millorar la disponibilitat del sistema, és habitual disposar d’un programa que supervisi els dimonis que hi pugui haver, ja sigui en un clúster o només en un node.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Daemontools</strong> és un programa de font pública que reinicia automàticament els dimonis quan s’aturen.
+</p>
+</div></div>
+<p>
+Aquest tipus de supervisió dels dimonis redueix considerablement el temps de caiguda dels serveis, ja que, en alguns casos, el problema se soluciona quan, simplement, el dimoni es torna a posar en funcionament.
+</p>
+
+<p>
+Si el problema no és simplement un dimoni que té un error intern i s’atura, sinó que es tracta d’un procés que, tot i estar actiu, ha deixat de respondre, cal tenir un monitor configurat amb una acció definida que ha de dur a terme en cas que això passi.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Monit</strong> és un programa de font pública dedicat a la gestió de processos i sistemes de fitxers que permet fer tasques de manteniment de manera automàtica: permet configurar monitors reactius.
+</p>
+</div></div>
+</div>
+
+<h4><a id="realitzacio_d_informes_d_incidencies_de_seguretat" >Realització d&#039;informes d&#039;incidències de seguretat</a></h4>
+<div class="level4">
+
+<p>
+Quan hi ha un incident de seguretat, cal notificar l’incident als responsables dels sistemes involucrats i procedir amb cautela.
+</p>
+
+<p>
+És bastant habitual entrar als equips involucrats i començar a remenar-los sense saber exactament què s’hi busca. D’aquesta manera, es poden destruir pistes que podrien ajudar a entendre què ha passat. Per tant, el primer que s’ha de fer és conservar la calma i seguir les recomanacions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> S’ha d’informar del possible incident de seguretat al responsable corresponent.</div>
+</li>
+<li class="level1"><div class="li"> Cal esbrinar si es tracta realment d’un incident de seguretat. Moltes vegades, un mal funcionament d’un sistema pot ser degut a una sobrecàrrega legítima o a una mala programació.</div>
+</li>
+<li class="level1"><div class="li"> Si realment és un incident, cal obtenir tota la informació possible per si pot servir de prova.</div>
+</li>
+<li class="level1"><div class="li"> S’ha d’intentar contenir l’incident per evitar que es propagui, sempre s’han d’intentar reduir els danys. Pot ser que calgui bloquejar l’accés a l’equip o al conjunt d’equips involucrats.</div>
+</li>
+<li class="level1"><div class="li"> Cal aplicar un pla per reduir o eliminar el risc que l’incident es torni a produir.</div>
+</li>
+<li class="level1"><div class="li"> Finalment, cal documentar tant l’incident com el procés i la metodologia seguida.</div>
+</li>
+</ul>
+
+<p>
+L’informe sobre l’incident ha d’incloure els punts següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Descripció</div>
+</li>
+<li class="level1"><div class="li"> Resum</div>
+</li>
+<li class="level1"><div class="li"> Anàlisi</div>
+</li>
+</ol>
+
+</div>
+
+<h5><a id="descripcio" >Descripció</a></h5>
+<div class="level5">
+
+<p>
+El document ha de començar amb una introducció sobre l’incident i un conjunt de dades bàsiques. Són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Breu descripció de l’incident a manera de títol.</div>
+</li>
+<li class="level1"><div class="li"> Personal implicat.</div>
+</li>
+<li class="level1"><div class="li"> Data i hora de l’inici de l’incident.</div>
+</li>
+<li class="level1"><div class="li"> Data i hora en què es dóna per finalitzat l’incident.</div>
+</li>
+<li class="level1"><div class="li"> Nivell d’afectació: es poden tenir diferents nivells amb diferents criteris, però això depèn de l’organització. De manera genèrica, es poden fer servir els nivells següents:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>Greu</strong>: implica un problema de seguretat que ha causat danys en els sistemes afectats. Per tant, cal resoldre’l el més aviat possible i de manera ininterrompuda. Per exemple, si la base de dades principal de l’entitat queda fora de línia, caldrà una dedicació total per resoldre-ho.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Moderada</strong>: implica un problema que només ha degradat el servei o n’ha afectat parts no crítiques. Això sol indicar que la resolució s’ha de dur a terme durant la jornada laboral següent. Per exemple, si arran d’un atac de denegació de servei un sistema intern queda aturat, es pot resoldre quan la jornada laboral es reprengui.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Lleu</strong>: implica un problema que s’ha detectat, però no ha tingut cap impacte en els sistemes. Sol demanar un temps de resolució més llarg, per exemple, durant la setmana següent a la detecció. Quan apareix un error de programació en algun programa, cal aplicar els pedaços adients durant els dies següents.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="resum" >Resum</a></h5>
+<div class="level5">
+
+<p>
+A continuació de la descripció, cal fer un resum breu del problema, l’afectació, les causes i la solució perquè no es repeteixi. Mitjançant aquest resum, una persona sense coneixements d’informàtica hauria de ser capaç d’entendre què ha passat i quines mesures s’han pres per evitar que l’incident es repeteixi.
+</p>
+
+</div>
+
+<h5><a id="analisi" >Anàlisi</a></h5>
+<div class="level5">
+
+<p>
+L’anàlisi de l’incident ha de ser el cos del document i s’hi ha de poder seguir, pas a pas, què ha passat i com s’ha solucionat. Per això cal dividir aquesta anàlisi en tres parts diferenciades. Són les següents: procediment i metodologia, documentació i annexos.
+</p>
+
+<p>
+<strong>1) Procediment i metodologia</strong>. És important definir com s’ha actuat envers l’incident per poder entendre, posteriorment, les decisions que s’han pres durant l’actuació. Tot i que el resultat pot ser el mateix, el mètode utilitzat pot invalidar les conclusions. Per exemple, si no s’ha comprovat la integritat d’un fitxer de registre, aquest fitxer pot haver estat alterat.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un cop recollides les dades, cal poder verificar la validesa de totes les dades recollides.
+</p>
+</div></div>
+<p>
+Per poder estar segurs que les dades que mostra el sistema són reals, convé tenir les eines necessàries compilades estàticament (sense llibreries del sistema que hagin pogut ser manipulades). Aquests fitxers s’han de transmetre al sistema de manera que impedeixi que es puguin modificar, per exemple, mitjançant un CD-ROM.
+</p>
+
+<p>
+Amb aquests fitxers d’anàlisi cal anar escrivint els resultats en un sistema remot que tingui un sistema de comprovació, per exemple, l’MD5 o el SHA1.
+</p>
+
+<p>
+Per conservar l’estat del sistema adequadament, és útil obtenir la informació següent:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’MD5 i el SHA1 són dos algorismes que generen un número de longitud fixa, que permet detectar si un fitxer ha estat modificat després de la seva creació.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Hora del sistema</strong>: permet identificar l’hora real dels registres. Si el sistema tingués una hora diferent de la real, els fitxers de registre també la tindrien modificada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Taules amb informació volàtil</strong>: per exemple, pot ser interessant obtenir la taula ARP i la taula d’encaminament del sistema.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Connexions de xarxa</strong>: si l’atacant està connectat al sistema o envia ordres asincrònicament (sense mantenir una connexió activa) pot ser important tenir el conjunt de connexions actives i pendents.</div>
+</li>
+</ul>
+
+<p>
+A continuació, cal obtenir una còpia de totes les dades que puguin aportar alguna pista, com les dades i les metadades en disc. Convé obtenir aquesta informació mitjançant una imatge completa del disc.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La taula ARP conté les adreces físiques dels equips als quals el sistema està directament connectat.
+</p>
+</div></div>
+<p>
+Seguidament, es poden investigar els processos del sistema. Així, primer de tot cal esbrinar els mòduls que té carregats per si n’hi ha algun que pugui interferir en l’anàlisi. A continuació, pot ser útil verificar els processos actius, quins fitxers tenen oberts i quines crides al sistema estan fent.
+</p>
+
+<p>
+Mitjançant totes aquestes dades, es pot obtenir una imatge bastant clara de l’estat d’un sistema.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El sistema de fitxers proc de Linux pot ajudar a fer una anàlisi dels processos actius.
+</p>
+</div></div>
+<p>
+<strong>2) Documentació</strong>. Durant la resolució d’un incident, el més normal és consultar documentació sobre el tema en qüestió, ja que és impossible tenir totes les dades al cap per poder actuar. Convé, doncs, apuntar tota la documentació, tant interna com externa.
+</p>
+
+<p>
+En cas que sigui documentació interna, és especialment recomanable identificar quina s’ha fet servir per, després, poder-la corregir o adequar si és necessari.
+</p>
+
+<p>
+Contràriament, si s’ha fet servir documentació externa, posteriorment es podrà contrastar la informació per veure si s’ha procedit adequadament i generar, després, documentació interna per poder actuar més ràpidament i no haver de dependre de tercers.
+</p>
+
+<p>
+Existeixen una sèrie d’ítems que han d’estar sempre presents a la base de dades d’incidències:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Incidències detectades</strong>. Finalment, cal destacar la incidència o conjunt d’incidències detectades. Quan s’investiga un incident determinat, no és estrany detectar altres punts d’accés al sistema.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pla d’acció</strong>. Un cop s’ha entès el problema, convé prendre mesures per evitar que es repeteixi en el futur. En determinar un pla d’acció, és possible trobar diverses situacions. A continuació, se n’exposen unes quantes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Una mala configuració</strong>. Si el problema ha estat una configuració deficient, cal verificar tota la configuració del servei implicat, ja que s’hi podrien detectar altres problemes de configuració.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Un error sense pedaç disponible</strong>. Si el problema detectat és un error (<em>bug</em>) en la programació del servei que necessita un pedaç que encara no ha estat disponible, convindrà considerar diverses opcions.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Si és possible desactivar el servei fins que se solucioni el problema, es pot deixar desactivat per evitar futures intrusions mentre els desenvolupadors corregeixen el problema. En cas contrari, si el servei no es pot desactivar, caldrà veure si és possible mitigar el risc mitjançant alguna tècnica. 
+</p>
+</div></div>
+<p>
+Generalment, s’utilitza una gàbia mitjançant el chroot per evitar que una fallada en un servei afecti tot el sistema.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Un error amb un pedaç disponible</strong>. És possible que un cop investigat un incident, es detecti que cal aplicar un pedaç al sistema per corregir la porta d’entrada que s’ha fet servir per atacar-lo.<br/>
+</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El chroot permet aïllar un servei de la resta del sistema.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+En aquest cas, cal deixar especificat el pedaç que s’hi ha d’aplicar per comprovar-lo en un entorn de proves abans d’aplicar-lo al sistema de producció.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Un mal ús dels serveis de xarxa</strong>. També és possible que es tracti d’un mal ús dels serveis publicats. Per tant, en aquest cas convindrà veure si és possible establir una política d’ús màxim del recurs per evitar que, en un futur, el mal ús del recurs per part d’un usuari provoqui la fallada del sistema per a tots els usuaris.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En alguns casos, és possible que el problema no sigui un mal ús de la xarxa ni un abús per part de l’usuari, sinó que el protocol mateix permeti comportaments no desitjats. Un exemple molt clar és el protocol SMTP i el problema del correu no desitjat. El lliurament d’un correu electrònic es basa en els dominis que té el servidor destinació i no hi ha manera de comprovar l’autenticitat de l’emissor. Per l’arquitectura del correu electrònic, un servidor qualsevol no es pot saber a priori si és un intermediari legítim o un servidor que envia correu no desitjat.
+</p>
+</div></div>
+<p>
+El problema se sol mitigar mitjançant llistes de servidors coneguts que envien correu no desitjat i un sistema de puntuacions heurístiques.
+</p>
+
+<p>
+<strong>3) Annexos</strong>. Finalment, en els annexos es fan constar totes les dades que es creguin rellevants per entendre l’informe, com parts dels registres o ordres que s’han executat que puguin ser útils de cara a una anàlisi posterior.
+</p>
+
+<p>
+Sol ser útil incloure-hi el registre complet de la sessió, perquè la resta de personal implicat en la resolució de la incidència el pugui veure.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>guió</strong> (<em>script</em> en anglès) és una eina present en la majoria de distribucions Linux que permet enregistrar una sessió de consola.
+</p>
+</div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

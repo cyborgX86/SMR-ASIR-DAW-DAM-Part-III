@@ -1,0 +1,494 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Introducció als llenguatges de servidor</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Entorns a punt per desenvolupar aplicacions web</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_webhola_mon">El vostre primer projecte web: 'Hola, Món'</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_phphola_mon">El vostre primer projecte PHP: 'Hola, Món'</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a2annexos"><a href="../../../WebContent/u1/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_amb_php">Descrivint una persona amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_php">Gestionant un hotel amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_a_jsp_jstl">Descrivint una persona a JSP, JSTL</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_jsp">Gestionant un hotel amb JSP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Introducció als llenguatges de servidor</a></li><li><a href="continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="una_agenda_amb_php" >Una agenda amb PHP</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és proporcionar a l’estudiant un marc de treball on desenvolupar la seva creativitat, utilitzant el llenguatge PHP, per aprofundir en el seu estudi i tenir un coneixement més ampli del mateix. Es recomana haver fet l’apartat 1 i l’apartat 2 d’aquesta unitat per poder desenvolupar l’activitat.
+</p>
+
+<p>
+Utilitzant el llenguatge de programació PHP, es vol crear una aplicació que permeti tenir una agenda on guardar les cites del dia seleccionat. Es recomana l’ús de classes PHP i la creació de fitxers en el servidor per guardar la informació.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució de l’exercici està dividida en tres fitxers PHP. Els podeu descarregar en aquest <div class="mediaf filezip"><div class="mediacontent"><a href="../media/agendaphp.zip">enllaç</a><span> ( 3.2 KB )</span></div></div>.
+</p>
+<ul>
+<li class="level1"><div class="li"> agenda.php</div>
+</li>
+<li class="level1"><div class="li"> calendari.php</div>
+</li>
+<li class="level1"><div class="li"> store.php</div>
+</li>
+</ul>
+
+<p>
+La pàgina principal de l’aplicació és agenda.php, i fa les crides als fitxers calendari.php i store.php.
+</p>
+
+<p>
+La pàgina principal fa de vista de l’aplicació, és la pàgina que veurà sempre l’usuari al seu navegador i segons les opcions que utilitzi es cridaran a les funcions de les altres pàgines.
+</p>
+
+<p>
+Aquesta aplicació està orientada a objectes; per tant, els utilitzeu per donar una solució a l’exercici. 
+</p>
+
+<p>
+Primer començareu creant un projecte nou a NetBeans (<em>File / New Project / PHP / PHP Application</em>). Tot seguit li doneu un nom al projecte, per exemple <em>Activitat1</em>. Si voleu, podeu esborrar el fitxer index.php, ja que s’ha creat automàticament en crear el nou projecte PHP. 
+</p>
+
+<p>
+A continuació, importeu el fitxer descarregat (agendaphp.zip) amb la solució de l’exercici (<em>File / Import project / From ZIP</em>). Quan importeu el fitxer .zip heu d’especificar el directori del projecte destí (vegeu la figura <span class="figref"><a href="#php-import-project"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="php-import-project"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Importar la solució a l’IDE Netbeans
+
+</figcaption><img src="../media/a1-php-import-project.png" title="Importar la solució a l&#039;IDE Netbeans" alt="Importar la solució a l&#039;IDE Netbeans" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En acabar el procés, segurament us donarà l’error <em>No NetBeans projects Added</em>. És normal, atès que els fitxers s’han importat correctament, però us informa que no és un projecte sencer (per això heu hagut de crear-ne un de nou). Una vegada teniu els tres fitxers podeu continuar amb l’activitat.
+</p>
+
+<p>
+El fitxer calendari.php és on es troba la classe <code>Calendari</code>, que us permet visualitzar el calendari d’un determinat mes (any-mes-dia) i interaccionar amb aquest. Aquest calendari té una funció que us permet obtenir la seva representació gràfica en <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+El fitxer store.php és on es troba la classe <code>Store</code>, que us permet guardar un arxiu o recuperar la informació guardada anteriorment en un arxiu. Aquesta classe és una classe estàtica, és a dir, només existeix un objecte d’aquesta classe per a tota l’aplicació PHP, i és el mateix objecte per a tots. No es poden crear més objectes d’aquesta classe. Permet, d’una manera molt ràpida, poder utilitzar les seves funcions i poder realitzar les peticions de l’usuari sense instanciar-la cada vegada. Aquesta classe <em>serialitza</em> els objectes que es volen guardar (és a dir, els converteix a <em>string</em>) i els guarda en un fitxer al disc dur. És una classe genèrica que podríeu utilitzar per guardar <em>arrays</em> o qualsevol altre tipus de dades.
+</p>
+
+<p>
+Finalment, com hem dit al principi, el fitxer principal de l’aplicació és qui orquestrarà les dues classes i qui donarà a l’usuari les eines necessàries per poder programar una cita a la seva agenda. Doneu un cop d’ull a aquest fitxer:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">&lt;?php</div></li><li class="li1"><div class="de1">require_once('Calendari.php');</div></li><li class="li1"><div class="de1">require_once('Store.php');</div></li><li class="li1"><div class="de1">?&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;?php</div></li><li class="li1"><div class="de1">        //creem el calendari. Si l'usuari ha clicat en alguna</div></li><li class="li1"><div class="de1">        //data especial, s'agafa; si no, el calendari utilitzarà</div></li><li class="li1"><div class="de1">        //la data actual</div></li><li class="li1"><div class="de1">        $c = new Calendari($_REQUEST[&quot;data&quot;]);</div></li><li class="li1"><div class="de1">        $data = $c-&gt;getdata();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        //Mirem si l'usuari ha afegit una cita a la data seleccionada</div></li><li class="li1"><div class="de1">        if (isset($_REQUEST[&quot;cites&quot;])) {</div></li><li class="li1"><div class="de1">            //Agafem el contingut de la cita </div></li><li class="li1"><div class="de1">            $dadesAModificar = $_REQUEST[&quot;cites&quot;];</div></li><li class="li1"><div class="de1">            //La guardem a un fitxer en el servidor.</div></li><li class="li1"><div class="de1">            Store::save($dadesAModificar, $data);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        //Mirem les cites que hi ha a la data seleccionada</div></li><li class="li1"><div class="de1">        $dadesAMostrar = Store::restore($data);</div></li><li class="li1"><div class="de1">        ?&gt;</div></li><li class="li1"><div class="de1">        &lt;!--Mostrem el calendari (la taula)--&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;&lt;?php $c-&gt;view(); ?&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;</div></li><li class="li1"><div class="de1">            &lt;!--Mostrem el formulari amb un text àrea on podem</div></li><li class="li1"><div class="de1">                modificar les cites del dia seleccionat--&gt;</div></li><li class="li1"><div class="de1">            Amb la data seleccionada al calendari tens les següents cites:&lt;br&gt;</div></li><li class="li1"><div class="de1">            &lt;!--El text àrea està lligat al formulari però </div></li><li class="li1"><div class="de1">            no ha d'estar dintre de les etiquetes perquè </div></li><li class="li1"><div class="de1">            funcioni correctament--&gt;</div></li><li class="li1"><div class="de1">            &lt;textarea form =&quot;citesform&quot; name=&quot;cites&quot; id=&quot;cites&quot; cols=&quot;35&quot; wrap=&quot;soft&quot;&gt;&lt;?php print $dadesAMostrar; ?&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">            &lt;form method=&quot;POST&quot; action=&quot;agenda.php&quot; id=&quot;citesform&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;!--En utilitzar el formulari per enviar les dades</div></li><li class="li1"><div class="de1">                hem de saber el dia seleccionat. Enviem també el dia</div></li><li class="li1"><div class="de1">                amb un text ocult--&gt;</div></li><li class="li1"><div class="de1">                &lt;input type=&quot;hidden&quot; name=&quot;data&quot; value=&quot;&lt;?php echo $data ?&gt;&quot;&gt;</div></li><li class="li1"><div class="de1">                &lt;input type=&quot;submit&quot; /&gt;</div></li><li class="li1"><div class="de1">            &lt;/form&gt; </div></li><li class="li1"><div class="de1">        &lt;/div&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Observeu que accediu al <strong><em>request</em></strong> de la petició per saber les opcions que ha enviat l’usuari mitjançant el navegador web. Aquestes opcions poden ser:
+</p>
+<ul>
+<li class="level1"><div class="li"> Data: s’utilitza per saber la data que l’usuari ha escollit, ja sigui per guardar la informació o per veure-la. Aquesta informació és opcional; si no s’envia, s’agafa el dia actual.</div>
+</li>
+<li class="level1"><div class="li"> Cites: s’utilitza per emmagatzemar la informació que ha introduït l’usuari al text àrea al dia escollit. Si no s’escull dia, s’agafa el dia actual. Si aquesta variable no s’envia, llavors es vol llegir i no es guarda res.</div>
+</li>
+</ul>
+
+<p>
+El primer que fa l’agenda, a part d’escriure el codi <acronym title="HyperText Markup Language">HTML</acronym> per confeccionar un document vàlid per al navegador, és crear la classe <code>Calendari</code> amb la data que ha seleccionat l’usuari. Aquest calendari s’utilitzarà més endavant per mostrar-lo per pantalla quan sigui el moment.
+</p>
+
+<p>
+Tot seguit, es mira si l’usuari ha enviat dades mitjançant el text àrea del formulari. Aquesta informació es guarda a la variable <em>cites</em> de la petició (<em>$_REQUEST</em>). Si ha enviat alguna informació es guarda utilitzant la classe <code>Store</code>. No s’ha de fer cap <em>new</em> de la classe, perquè només hi ha un objecte en tota l’aplicació d’aquesta classe. S’ha implementat fent-la estàtica. Llavors, s’accedeix als seus mètodes utilitzant els dos punts després del nom de la classe (<strong>::</strong>). 
+</p>
+
+<p>
+La funció <em>save</em> de la classe <code>Store</code> guarda un fitxer en el disc dur. El nom del fitxer es correspon amb el dia que l’usuari ha seleccionat, i dintre d’aquest fitxer es guarda la informació que l’usuari ha introduït al text àrea.
+</p>
+
+<p>
+Sempre es mira si existeix un fitxer que porta com a nom la data seleccionada per l’usuari (o la data actual). Si es troba, s’agafa la informació, amb el mètode <em>restore</em> de la classe <code>Store</code>, i es guarda en una variable que després s’utilitzarà per omplir el text àrea del formulari. Així, l’usuari sempre podrà modificar afegint o traient informació.
+</p>
+
+<p>
+A continuació es mostra el calendari, que és interactiu i s’hi pot clicar als dies o en el més anterior o següent de l’escollit. Sempre que utilitzeu el calendari s’envia una petició amb la data seleccionada. Si es canvia de mes es manté el dia i l’any. De fet, no es dóna opció a canviar d’any si no es va a l’últim més de l’any i es passa al següent mes.
+</p>
+
+<p>
+Finalment, es mostra el formulari per poder canviar les cites del dia seleccionat. Aquest formulari us proporciona un botó per guardar qualsevol canvi que hagueu introduït en un dia del calendari.
+</p>
+
+<p>
+A la figura <span class="figref"><a href="#u2-a1-agenda"><span>figura</span></a></span> podeu veure l’aparença que té aquesta aplicació.
+</p>
+<div class="iocfigure"><a name="figure:u2-a1-agenda"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Aplicació: una agenda amb PHP
+
+</figcaption><img src="../media/u2-a1-agenda.png" title="Una agenda amb PHP" alt="Una agenda amb PHP" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="llegint_dades_xml_amb_jsp_i_jstl" >Llegint dades XML amb JSP i JSTL</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és mostrar a l’estudiant una utilitat dels fitxers XML i com fer el seu tractament amb JSP o JSTL. 
+</p>
+
+<p>
+Es volen utilitzar les dades de temperatura proporcionades pel <a href="http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml" class="urlextern" title="http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml"  rel="nofollow">servei meteorològic</a>, que normalment estan en format XML, i mostrar la informació en una pàgina web. Aquestes dades també podrien ser produïdes per una estació meteorològica casolana, i amb aquest programa es podrien agafar les dades i mostrar-les d’una manera més amigable.
+</p>
+
+<p>
+Si voleu una altra província podeu descarregar-vos l’XML de la següent <a href="http://www.aemet.es/es/eltiempo/prediccion/comunidades?k=cat&amp;w=&amp;o=pais" class="urlextern" title="http://www.aemet.es/es/eltiempo/prediccion/comunidades?k=cat&amp;w=&amp;o=pais"  rel="nofollow">pàgina web</a>.
+.
+</p>
+
+<p>
+Donat el següent fitxer XML, feu una pàgina amb JSP i una altra amb JSTL per mostrar les dades a l’usuari:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;root id=&quot;08&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;elaborado&gt;2016-03-23T14:01:11&lt;/elaborado&gt;</div></li><li class="li1"><div class="de1">&lt;validez_ini&gt;2016-03-23T00:00:00&lt;/validez_ini&gt;</div></li><li class="li1"><div class="de1">&lt;validez_fin&gt;2016-03-24T00:00:00&lt;/validez_fin&gt;</div></li><li class="li1"><div class="de1">&lt;actualizacion/&gt;</div></li><li class="li1"><div class="de1">&lt;prediccion&gt;</div></li><li class="li1"><div class="de1">    &lt;txt_prediccion&gt;</div></li><li class="li1"><div class="de1">        &lt;p&gt;</div></li><li class="li1"><div class="de1">            Poco nuboso en general, salvo algunas nubes altas. Temperaturas mínimas en descenso, y sin cambios las máximas. Heladas débiles en el Prepirineo y algún punto del interior. Viento variable flojo con predominio de los oestes.</div></li><li class="li1"><div class="de1">        &lt;/p&gt;</div></li><li class="li1"><div class="de1">    &lt;/txt_prediccion&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908298&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Vic&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;1&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;18&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908121&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Mataró&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;8&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;17&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908102&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Igualada&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;4&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;18&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908307&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Vilanova i la Geltrú&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;7&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;20&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908113&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Manresa&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;3&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;19&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908187&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Sabadell&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;5&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;19&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">    &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">        &lt;id&gt;6908019&lt;/id&gt;</div></li><li class="li1"><div class="de1">        &lt;nombre&gt;Barcelona&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">        &lt;minima&gt;9&lt;/minima&gt;</div></li><li class="li1"><div class="de1">        &lt;maxima&gt;17&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">    &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">&lt;/prediccion&gt;</div></li><li class="li1"><div class="de1">&lt;/root&gt;</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució de l’activitat està realitzada de dues maneres diferents. La primera amb JSTL i la segona amb JSP. Podeu baixar-vos la solució en aquest <div class="mediaf filezip"><div class="mediacontent"><a href="../media/llegirxml.zip">enllaç</a><span> ( 2.4 KB )</span></div></div>.
+</p>
+
+<p>
+Primer començareu creant un projecte amb Maven (<em>File / New Project / Maven / Web Application</em>). Li poseu un nom de projecte, per exemple <em>Activitat2</em>, i seleccioneu GlassFish com a servidor d’aplicacions. 
+</p>
+
+<p>
+Tot seguit copieu els dos fitxers (llegintjsp.jsp i llegintjstl.jsp) al directori <em>webapp</em> que podeu trobar dintre del directori <em>src / main</em> del projecte NetBeans. Per exemple: <em>home / alex / NetBeansProjects / Activitat2 / src / main / webapp.</em> Podeu esborrar el fitxer index.jsp, ja que s’ha creat automàticament quan s’ha creat el projecte.
+</p>
+
+<p>
+Us apareixeran els dos fitxers al programa NetBeans. Executeu-los (botó dret del ratolí <em>Run File</em>), i Maven baixarà les dependències que necessiten els fitxers per funcionar.
+</p>
+
+<p>
+A continuació s’explicaran les parts més importants de cadascuna de les dues solucions. Començarem explicant la solució realitzada amb JSTL.
+</p>
+
+<p>
+Extracte de la solució:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">    &lt;c:import var=&quot;xmltext&quot; url=&quot;http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;h1&gt;Lectura de dades XML amb JSTL&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;x:parse xml=&quot;${xmltext}&quot; var=&quot;output&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;h2&gt;Predicció per a la província de Barcelona:&lt;/h2&gt;</div></li><li class="li1"><div class="de1">    &lt;p&gt;</div></li><li class="li1"><div class="de1">    &lt;x:out select=&quot;$output/root/prediccion/txt_prediccion&quot; /&gt;</div></li><li class="li1"><div class="de1">    &lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;ul class=&quot;list&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;x:forEach select=&quot;$output/root/prediccion/ciudad&quot; var=&quot;item&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Ciutat: &lt;x:out select=&quot;$item/nombre&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;ul&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Màx.:&lt;x:out select=&quot;$item/maxima&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;li&gt;Mín.:&lt;x:out select=&quot;$item/minima&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">            &lt;/ul&gt;</div></li><li class="li1"><div class="de1">        &lt;/x:forEach&gt;</div></li><li class="li1"><div class="de1">    &lt;/ul&gt;</div></li></ol></pre>
+
+<p>
+A la solució anterior accediu directament a la <acronym title="Uniform Resource Locator">URL</acronym> de la pàgina on es troben les dades en format XML. Si ho preferiu podeu afegir directament el fitxer XML de la següent manera:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;c:set var=&quot;xmltext&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;root id=&quot;08&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;elaborado&gt;2016-03-23T14:01:11&lt;/elaborado&gt;</div></li><li class="li1"><div class="de1">            &lt;validez_ini&gt;2016-03-23T00:00:00&lt;/validez_ini&gt;</div></li><li class="li1"><div class="de1">            &lt;validez_fin&gt;2016-03-24T00:00:00&lt;/validez_fin&gt;</div></li><li class="li1"><div class="de1">            &lt;actualizacion/&gt;</div></li><li class="li1"><div class="de1">            &lt;prediccion&gt;</div></li><li class="li1"><div class="de1">                &lt;txt_prediccion&gt;</div></li><li class="li1"><div class="de1">                    &lt;p&gt;</div></li><li class="li1"><div class="de1">                        Poco nuboso en general, salvo algunas nubes altas. Temperaturas mínimas en descenso, y sin cambios las máximas. Heladas débiles en el Prepirineo y algún punto del interior. Viento variable flojo con predominio de los oestes.</div></li><li class="li1"><div class="de1">                    &lt;/p&gt;</div></li><li class="li1"><div class="de1">                &lt;/txt_prediccion&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908298&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Vic&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;1&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;18&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908121&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Mataró&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;8&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;17&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908102&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Igualada&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;4&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;18&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908307&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Vilanova i la Geltrú&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                        &lt;minima&gt;7&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;20&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908113&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Manresa&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;3&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;19&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908187&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Sabadell&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;5&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;19&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">                &lt;ciudad&gt;</div></li><li class="li1"><div class="de1">                    &lt;id&gt;6908019&lt;/id&gt;</div></li><li class="li1"><div class="de1">                    &lt;nombre&gt;Barcelona&lt;/nombre&gt;</div></li><li class="li1"><div class="de1">                    &lt;minima&gt;9&lt;/minima&gt;</div></li><li class="li1"><div class="de1">                    &lt;maxima&gt;17&lt;/maxima&gt;</div></li><li class="li1"><div class="de1">                &lt;/ciudad&gt;</div></li><li class="li1"><div class="de1">            &lt;/prediccion&gt;</div></li><li class="li1"><div class="de1">        &lt;/root&gt;</div></li><li class="li1"><div class="de1">    &lt;/c:set&gt;</div></li></ol></pre>
+
+<p>
+Si escolliu aquesta opció heu d’eliminar la línia:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;c:import var=&quot;xmltext&quot; url=&quot;http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml&quot;/&gt;</div></li></ol></pre>
+
+<p>
+Com obteniu el fitxer XML no té importància, la qüestió és què feu una vegada el teniu. Hem de saber com està construït per poder obtenir les dades correctament, i hem de mirar la seva estructura i decidir com recórrer-la.
+</p>
+
+<p>
+Per poder recórrer aquest XML heu de transformar-lo en una estructura amb nodes. Existeix una funció de JSTL que donat un <em>string</em> que conté un XML vàlid crea una estructura en forma d’arbre, molt semblant a l’<acronym title="HyperText Markup Language">HTML</acronym>, però que conté els nodes XML de l’<em>string</em>. La instrucció és la següent:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;x:parse xml=&quot;${xmltext}&quot; var=&quot;output&quot;/&gt;</div></li></ol></pre>
+
+<p>
+Una vegada creat l’arbre amb tots els nodes, XML el guarda a la variable anomenada <em>output</em>. A partir d’ara utilitzareu aquesta variable per accedir a la informació del document XML.
+</p>
+
+<p>
+Si observeu l’XML veureu que es repeteixen sempre les etiquetes <em>ciutat</em> amb la informació que us interessa, sempre de la mateixa manera.
+</p>
+
+<p>
+Podeu utilitzar un bucle per poder obtenir la informació. En aquest cas utilitzeu un bucle de tipus <em>foreach</em>:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;x:forEach select=&quot;$output/root/prediccion/ciudad&quot; var=&quot;item&quot;&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;Ciutat: &lt;x:out select=&quot;$item/nombre&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;ul&gt;</div></li><li class="li1"><div class="de1">         &lt;li&gt;Màx.:&lt;x:out select=&quot;$item/maxima&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">         &lt;li&gt;Mín.:&lt;x:out select=&quot;$item/minima&quot; /&gt;&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;/ul&gt;</div></li><li class="li1"><div class="de1"> &lt;/x:forEach&gt;</div></li></ol></pre>
+
+<p>
+Aquest bucle accedeix al node <em>ciutat</em> mitjançant la variable <em>output</em> i donat el camí fins a arribar als nodes <em>ciutat</em>. Llavors, per cada node <em>ciutat</em> seleccioneu el nom i la temperatura màxima i la mínima. Les mostreu a l’usuari en forma de llista <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+A més a més, us interessa donar la descripció del temps que farà el dia de la predicció. Torneu a utilitzar l’etiqueta <em>output</em> per accedir al text de la predicció de la següent manera:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;x:out select=&quot;$output/root/prediccion/txt_prediccion&quot; /&gt;</div></li></ol></pre>
+
+<p>
+Com veieu, és molt fàcil utilitzar JSTL per tractar la informació d’un fitxer XML. Podeu veure la figura <span class="figref"><a href="#u1-a2-2-xml-jstl"><span>figura</span></a></span> per comprovar el resultat de l’execució de la pàgina JSTL.
+</p>
+<div class="iocfigure"><a name="u1-a2-2-xml-jstl"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de mostrar les dades d’un fitxer XML amb JSTL
+
+</figcaption><img src="../media/u1-a2-2-jstl.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A continuació es mostrarà la solució amb JSP. Vegeu un extracte de la solució:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();</div></li><li class="li1"><div class="de1">DocumentBuilder db = dbf.newDocumentBuilder();</div></li><li class="li1"><div class="de1">Document doc = db.parse(&quot;http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml&quot;);</div></li><li class="li1"><div class="de1">Element root = doc.getDocumentElement(); //root element</div></li><li class="li1"><div class="de1">//Obtenim tots els nodes de tipus ciutat</div></li><li class="li1"><div class="de1">NodeList llistaCiutats = root.getElementsByTagName(&quot;ciudad&quot;);</div></li><li class="li1"><div class="de1">//Recorrem tots els nodes ciutat, un per un</div></li><li class="li1"><div class="de1">for (int i = 0; i &lt; llistaCiutats.getLength(); i++) {</div></li><li class="li1"><div class="de1">    //Agafem el primer node ciutat ciutat</div></li><li class="li1"><div class="de1">    Node ciutat = llistaCiutats.item(i);</div></li><li class="li1"><div class="de1">    //Agafem tots els nodes on cadascun té les dades de la ciutat (nom, id, màxima, mínima...)</div></li><li class="li1"><div class="de1">    NodeList dades = ciutat.getChildNodes();</div></li><li class="li1"><div class="de1">    //Recorrem tots els nodes de dades</div></li><li class="li1"><div class="de1">    for (int j = 0; j &lt; dades.getLength(); j++) {</div></li><li class="li1"><div class="de1">        //Agafem el primer node</div></li><li class="li1"><div class="de1">        Node n = dades.item(j);</div></li><li class="li1"><div class="de1">        (..mostrar informació de les ciutats..)</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com veieu, no té res a veure amb JSTL. En aquest cas hem de conèixer a la perfecció l’estructura de l’XML, ja que sou vosaltres qui ha de recórrer l’arbre creat.
+</p>
+
+<p>
+Per recórrer l’arbre de nodes XML heu d’accedir a la web on es troba l’XML i convertir-lo en un arbre amb nodes XML per poder tractar amb ell. Això es fa realitzant aquestes instruccions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();</div></li><li class="li1"><div class="de1">DocumentBuilder db = dbf.newDocumentBuilder();</div></li><li class="li1"><div class="de1">Document doc = db.parse(&quot;http://www.aemet.es/xml/provincias/20160323_Provincias_6908.xml&quot;);</div></li></ol></pre>
+
+<p>
+A partir d’ara ja teniu l’arbre creat a la variable <em>doc</em>. Heu de jugar amb aquest arbre fins a obtenir les dades que us interessa mostrar a la pàgina web. Vegeu que les funcions que us proporciona la classe <code>Document</code> de Java són molt semblants a les funcions del DOM que crea un navegador web en obtenir un <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+Utilitzant la variable <em>doc</em> accediu al node principal de l’arbre, i mitjançant aquest node podeu accedir al llistat de nodes <em>ciutat</em>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Element root = doc.getDocumentElement(); //root element</div></li><li class="li1"><div class="de1">//Obtenim tots els nodes de tipus ciutat</div></li><li class="li1"><div class="de1">NodeList llistaCiutats = root.getElementsByTagName(&quot;ciudad&quot;);</div></li></ol></pre>
+
+<p>
+Per accedir al llistat de nodes <em>ciutat</em> observeu que s’utilitza la funció <em>getElementsByTagName</em>, que dóna un llistat amb tots els nodes que tenen com a nom d’etiqueta XML la paraula <em>ciutat</em>.
+</p>
+
+<p>
+Una vegada teniu tots els nodes <em>ciutat</em> aneu ciutat per ciutat (node a node) per agafar els nodes fills d’una ciutat. Els nodes fills, si veieu l’XML, us donen la informació de les temperatures d’una ciutat determinada.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">for (int i = 0; i &lt; llistaCiutats.getLength(); i++) {</div></li><li class="li1"><div class="de1">    //Agafem el primer node ciutat ciutat</div></li><li class="li1"><div class="de1">    Node ciutat = llistaCiutats.item(i);</div></li><li class="li1"><div class="de1">    //Agafem tots els nodes on cadascun té les dades de la ciutat (nom, id, màxima, mínima...)</div></li><li class="li1"><div class="de1">    NodeList dades = ciutat.getChildNodes();</div></li></ol></pre>
+
+<p>
+Ara que ja heu accedit a les dades d’una ciutat les heu de mostrar per pantalla a l’usuari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Si és un node buit o bé és l'identificador del node, passem al següent.</div></li><li class="li1"><div class="de1">if (isTextNode(n) || n.getNodeName().equals(&quot;id&quot;)) // skip nodes</div></li><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">    continue;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">//Si és el node &quot;nombre&quot; posem la paraula ciutat i després el seu valor.</div></li><li class="li1"><div class="de1">//A més a més, afegim un nou llistat (subllistat) (&lt;ul&gt;) per posar les temperatures</div></li><li class="li1"><div class="de1">if (n.getNodeName().equals(&quot;nombre&quot;)) {</div></li><li class="li1"><div class="de1">%&gt; </div></li><li class="li1"><div class="de1">&lt;%=&quot;&lt;li&gt;Ciutat:&quot; + n.getFirstChild().getNodeValue() + &quot;&lt;/li&gt;&lt;ul&gt;&quot;%&gt;                           </div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">} else {</div></li><li class="li1"><div class="de1">    //És el node &quot;mínima o màxima&quot;. Mostrem els seus noms seguit dels seus valors.</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">         &lt;%=&quot;&lt;li&gt;&quot; + n.getNodeName() + &quot;:&quot; + n.getFirstChild().getNodeValue() + &quot;&lt;/li&gt;&quot;%&gt;                           </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">if (n.getNodeName().equals(&quot;maxima&quot;)) {</div></li><li class="li1"><div class="de1">//Si és l'ultim node (és a dir, el node màxima) tanquem el subllistat de temperatures.</div></li><li class="li1"><div class="de1">%&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;%=&quot;&lt;/ul&gt;&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;%</div></li><li class="li1"><div class="de1">}   </div></li></ol></pre>
+
+<p>
+Al principi feu unes petites comprovacions per tal que el node sigui el que us interessa. Per exemple, no voleu mostrar l’<em>id</em> d’una ciutat, i llavors compareu el nom del node amb el nom de l’etiqueta XML <em>id</em>; si coincideix, es descarta.
+</p>
+
+<p>
+També comproveu si el nom del node correspon a l’etiqueta XML <em>nombre</em>. Si és així, mostreu per pantalla el nom de <em>ciutat</em> en comptes de <em>nombre</em>. 
+</p>
+
+<p>
+Finalment, es mostren les temperatures màximes i mínimes de la ciutat.
+</p>
+
+<p>
+A la figura <span class="figref"><a href="#u1-a2-2-xml-jsp"><span>figura</span></a></span> podeu veure el resultat de l’execució de la pàgina JSP.
+</p>
+<div class="iocfigure"><a name="u1-a2-2-xml-jsp"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de mostrar les dades d’un fitxer XML amb JSP
+
+</figcaption><img src="../media/u1-a2-2-xml-jsp.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a2/continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

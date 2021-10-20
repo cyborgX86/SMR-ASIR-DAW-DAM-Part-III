@@ -1,0 +1,1640 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Seguretat física, lògica i legislació</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Seguretat informàtica</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a1annexos"><a href="../../../WebContent/u1/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#conceptes_de_seguretat_informaticafiabilitat_confidencialitat_integritat_i_disponibilitat">Conceptes de seguretat informàtica: fiabilitat, confidencialitat, integritat i disponibilitat</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#elements_vulnerablesmaquinari_programari_i_dades">Elements vulnerables: maquinari, programari i dades</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_de_les_principals_vulnerabilitats_d_un_sistema_informatic">Anàlisi de les principals vulnerabilitats d'un sistema informàtic</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_fisica_i_ambiental">Seguretat física i ambiental</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_logica">Seguretat lògica</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#amenaces">Amenaces</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_forense_en_sistemes_informatics">Anàlisi forense en sistemes informàtics</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Legislació sobre seguretat, protecció de dades i Codi Penal</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_penal">Marc jurídic penal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_extrapenal">Marc jurídic extrapenal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#legislacio_sobre_els_serveis_de_societat_de_la_informacio_i_el_comerc_electronic">Legislació sobre els serveis de societat de la informació i el comerç electrònic</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Seguretat física, lògica i legislació</a></li><li>Seguretat informàtica</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="seguretat_informatica"> Seguretat informàtica </a></h1>
+    	
+<p>
+El concepte de seguretat informàtica és difús i pràcticament inabastable, per la qual cosa ens centrarem en el que podríem anomenar <strong>fiabilitat</strong>, entesa com a garantia de qualitat de servei d’un sistema informàtic. La fiabilitat es pot veure compromesa de moltes maneres, no només en la mesura que tots els components d’un sistema informàtic tenen vulnerabilitats inherents, sinó també per l’acció d’elements externs al propi sistema (des de catàstrofes naturals, fins a l’acció d’intrusos). Malgrat l’aparent feblesa extrema dels sistemes informàtics, el cert és que l’administrador disposa de molts recursos i eines que l’ajuden a assegurar i mantenir la fiabilitat del sistema, així com a detectar les seves mancances de seguretat. Finalment, en cas que es produeixi un problema de seguretat, existeix una disciplina de creació recent, la <strong>informàtica forense</strong>, que pot ser determinant per saber, una vegada produït l’incident, què ha passat i qui n’ha estat l’autor.
+</p>
+
+<h2><a id="conceptes_de_seguretat_informaticafiabilitat_confidencialitat_integritat_i_disponibilitat" >Conceptes de seguretat informàtica: fiabilitat, confidencialitat, integritat i disponibilitat</a></h2>
+<div class="level2">
+
+<p>
+Encara que sigui d’una manera intuïtiva, tots entenem que un sistema informàtic es considera <strong>segur</strong> si es troba lliure de tot risc o dany. Tot i que no resulta gaire senzill formalitzar el concepte de <strong>seguretat informàtica</strong>, entendrem com a tal la implantació d’un conjunt de mesures tècniques que determinen que els accessos als recursos d’un sistema informàtic siguin duts a terme exclusivament pels elements autoritzats a fer-ho. Atès que és impossible garantir la seguretat o inviolabilitat absoluta d’un sistema informàtic, és preferible fer servir el terme <strong>fiabilitat</strong> en lloc de l’inabastable concepte de seguretat. 
+</p>
+
+<p>
+En general, doncs, direm que un sistema informàtic és fiable quan se satisfan les tres propietats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Confidencialitat:</strong> només poden accedir als recursos que integren el sistema els elements autoritzats a fer-ho. Per recursos del sistema no s’entén solament la informació, sinó qualsevol recurs en general: impressores, processador, etc.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Integritat</strong>: els recursos del sistema només poden ser modificats o alterats pels elements autoritzats a fer-ho. La modificació inclou diverses operacions, com ara l’esborrament i la creació, a més de totes les possibles alteracions que es puguin fer sobre un objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Disponibilitat</strong>: els recursos del sistema han de romandre accessibles als elements autoritzats.</div>
+</li>
+</ul>
+
+<p>
+Com podem suposar, és difícil trobar un sistema informàtic que maximitzi les tres propietats. Normalment, i segons l’orientació del sistema, se’n prioritzarà alguna. Per exemple, en un sistema que emmagatzemi dades de caràcter policial, l’element que cal prioritzar és la confidencialitat de la informació (és a dir, mantenir el seu caràcter “secret” o confidencial), tot i que també cal tenir molt en compte la preservació (en la mesura que es pugui) de la integritat i la disponibilitat. Observem que no serveix de res garantir la confidencialitat mitjançant algun mètode criptogràfic si permetem que un intrús pugui esborrar fàcilment la informació emmagatzemada en el disc dur del servidor (atac contra la integritat). D’altra banda, és absolutament necessari que les dades contingudes en una base de dades policial puguin ésser disponibles en el decurs d’una actuació policial, per la qual cosa tampoc podem descuidar la propietat de disponibilitat en un sistema d’aquestes característiques.
+</p>
+
+<p>
+En general, cal entendre que la seguretat total no és possible i que les polítiques de gestió sempre són un compromís entre el nivell de seguretat que hom pot o vol assumir i el cost econòmic que això implica.
+</p>
+
+<p>
+La <strong>criptografia</strong> és un mètode secret d’escriptura.
+</p>
+<div class="iocfigure"><a name="Figura1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+La seguretat informàtica com a compromís entre disponibilitat, integritat i confidencialitat 
+
+</figcaption><img src="../media/m11_pdfindex_image_0.png" alt="" /></figure>
+</div>
+<p>
+Segons la norma ISO/IEC 27001, estàndard elaborat per la International Organization for Standardization (ISO) i per la International Electrotechnical Comission (IEC), la <strong>seguretat informàtica</strong> consisteix en la implantació d’un conjunt de mesures tècniques destinades a preservar la confidencialitat, la integritat i la disponibilitat de la informació, abastant altres propietats, com l’autenticitat, la responsabilitat, la fiabilitat i el no repudi (no poder negar la intervenció en una operació o comunicació). 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Vegeu l’apartat “Seguretat lògica” d’aquesta unitat, per conèixer més sobre la criptografia.
+</p>
+</div></div>
+</div>
+
+<h2><a id="elements_vulnerablesmaquinari_programari_i_dades" >Elements vulnerables: maquinari, programari i dades</a></h2>
+<div class="level2">
+
+<p>
+Sabem que és necessari protegir el nostre sistema informàtic, la pregunta que ens podem formular és: quins són els elements del sistema que ens cal protegir? A grans trets, és fàcil adonar-se que qualsevol component d’un sistema informàtic ha de pertànyer a un dels grups següents: maquinari, programari i dades.
+</p>
+<ul>
+<li class="level1"><div class="li"> Maquinari: són els elements tangibles o físics del nostre sistema. L’ordinador, els perifèrics, els dispositius d’emmagatzemament, els cables…</div>
+</li>
+<li class="level1"><div class="li"> Programari: són els elements lògics del sistema. El sistema operatiu, però també els programes, sense els quals el maquinari no seria funcional.</div>
+</li>
+<li class="level1"><div class="li"> Dades: estan constituïdes per aquella informació lògica que processen els programes (elements lògics) fent ús del maquinari (elements físics) com, per exemple, una base de dades de clients. </div>
+</li>
+</ul>
+
+<p>
+Existeix una altra categoria, els recursos fungibles, és a dir, aquells que s’usen i es gasten, com ara tòners, CD, cintes de còpia de seguretat… Tot i que no formen part, pròpiament parlant, del sistema informàtic, cal tenir present la seva seguretat. Per exemple, cal decidir on s’han d’emmagatzemar (i a quines mesures de seguretat s’han de sotmetre), elements fungibles tan importants com els suports informàtics que contenen les còpies de seguretat.
+</p>
+
+<p>
+Ara bé, de tots aquests recursos o <strong>actius</strong>, quins són els més crítics, és a dir, aquells que necessiten un major grau de protecció? Si bé les inversions en maquinari i programari poden representar despeses milionàries per a una empresa, aquests elements són, al cap i a la fi, normalment substituïbles, a diferència de les dades. Per exemple, què passaria si una gran empresa perdés, sense possibilitat de recuperació, totes les dades relatives als seus treballadors? Com podem comprendre fàcilment, aquesta pèrdua tindria conseqüències catastròfiques per a l’empresa, i per això es diu que <strong>els actius més crítics d’un sistema informàtic són les dades</strong>. Sortosament, qualsevol organització té, avui en dia, polítiques adequades de generació i de recuperació de còpies de seguretat (<em>backup</em>), que minimitzen l’impacte d’una pèrdua eventual.
+</p>
+
+</div>
+
+<h2><a id="analisi_de_les_principals_vulnerabilitats_d_un_sistema_informatic" >Anàlisi de les principals vulnerabilitats d&#039;un sistema informàtic</a></h2>
+<div class="level2">
+
+<p>
+Extrapolant les definicions anteriors, s’arriba fàcilment a determinar què és una <strong>vulnerabilitat</strong>. És qualsevol punt feble que pugui posar en perill la seguretat d’un sistema informàtic. Aquesta feblesa s’ha d’entendre com una qüestió interna. Pot ser aprofitada per un atacant per violar la seguretat del sistema informàtic, o simplement pot provocar danys de manera no intencionada (per exemple, un error de programació pot fer que un programari tingui comportaments insospitats).
+</p>
+
+<p>
+Una <strong>vulnerabilitat</strong> és qualsevol punt feble <em>intern</em> que pugui posar en perill la seguretat d’un sistema informàtic. En canvi, les <strong>amenaces</strong> exploten les vulnerabilitats i, per tant, poden ser considerades com a <em>exteriors</em> al sistema. 
+</p>
+
+<p>
+En general, segons el seu origen, les vulnerabilitats es poden classificar de la manera següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats d’origen físic</strong>. Es relacionen amb l’accés físic a les instal·lacions que contenen el sistema informàtic. Si l’organització no manté una bona política d’accés al sistema, provocaria l’aparició d’una vulnerabilitat que podria ser aprofitada per una persona que, sense tenir cap accés autoritzat, en podria extreure dades o provocar danys.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats d’origen natural</strong>. El caràcter imprevisible i inevitable dels fenòmens naturals fa que difícilment puguem evitar-ne les conseqüències. Si més no, cal intentar minimitzar el seu impacte i disposar de mitjans per recuperar, en la mesura del possible, l’estat original del sistema informàtic. Aquestes vulnerabilitats són conseqüència de no haver pres les mesures adequades davant de la possibilitat que es produeixin fenòmens meteorològics o catàstrofes naturals. Si, per exemple, l’organització es troba ubicada en un lloc on sovint es pateixen inundacions, és clar que si no s’ha pres cap mesura les pluges poden provocar danys molt importants al sistema informàtic.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats que tenen l’origen en el maquinari</strong>. Estan relacionades amb el mal funcionament dels elements físics del sistema, el qual pot tenir diverses causes: mal disseny dels components, desgast, mal ús, errors de fabricació… Com a conseqüència, el sistema informàtic pot deixar de ser operatiu o funcionar de forma inesperada. Un atacant podria aprofitar aquesta vulnerabilitat per malmetre el sistema.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats que tenen l’origen en el programari</strong>. Aquestes són les més evidents i conegudes. Es basen en errors de programació o de disseny tant de sistemes operatius com de programes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats que tenen l’origen en la xarxa</strong>. Les xarxes són elements molt vulnerables, ja que estan constituïdes per una suma de maquinaris i programaris interconnectats (que, a més, poden presentar vulnerabilitats físiques i naturals). Els principals problemes que poden sorgir arran de les vulnerabilitats en una xarxa són la intercepció de la informació circulant, així com l’accés no autoritzat a un sistema informàtic (o a diversos) a través de la xarxa. Un element molt condicionant en l’aparició de vulnerabilitats és la tria de la topologia de la xarxa (segons quina es triï serem més sensibles a unes o altres amenaces).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Vulnerabilitats que tenen l’origen en el factor humà</strong>. Sol ser la baula més feble i més incontrolable de totes. Ja sigui per manca de formació, de conscienciació o per mala fe, l’element humà és difícilment controlable. No tenim cap poder de decisió sobre les persones que volen cometre atacs contra sistemes informàtics (robatori d’informació, eliminació de fitxers, destrucció de dispositius físics…), però, en canvi, sí és possible, mitjançant una política adequada de formació i conscienciació, evitar moltes conductes causades per la desinformació que podrien posar en perill la seguretat del sistema informàtic d’una organització (per exemple, una bona política de gestió de contrasenyes d’accés).  </div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Exemple de vulnerabilitat d&#039;origen físic</p>
+<p>
+Cal evitar que els dispositius d’emmagatzematge que contenen la informació siguin fàcilment accessibles, o qualsevol usuari en podria extreure les dades de manera no autoritzada.
+</p>
+</div></div>
+<p>
+Una de les maneres d’explotar les vulnerabilitats d’origen humà és l’anomenada <strong>enginyeria social</strong>. Consisteix a obtenir informació confidencial manipulant els usuaris legítims.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les vulnerabilitats del programari es troben directament relacionades amb l’aparició de les <strong>amenaces de programari</strong>, les quals es veuran a l’apartat, “Amenaces”, d’aquesta mateixa unitat.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Mals hàbits</p>
+<p>
+Usar contrasenyes fàcils d’esbrinar, tipus “1234”, o deixar-les anotades en una etiqueta adhesiva penjada al monitor de l’ordinador.
+</p>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple d&#039;enginyeria social</p>
+<p>
+Algú que es fa passar per l’administrador del sistema informàtic truca un treballador i li sol·licita, amb qualsevol pretext, la contrasenya d’accés al sistema.
+</p>
+</div></div>
+<p>
+Una de les formes més conegudes d’enginyera social és la <strong>pesca electrònica</strong> (<em>phishing</em>). Aquest tipus de frau es basa en l’enviament de correus electrònics fraudulents (aparentment enviats des d’un origen fiable) en els quals se sol·liciten dades sobre targetes de crèdit, codis d’accés per operar amb comptes bancaris o altres tipus d’informació personal.
+</p>
+
+</div>
+
+<h2><a id="seguretat_fisica_i_ambiental" >Seguretat física i ambiental</a></h2>
+<div class="level2">
+
+<p>
+L’adopció de mesures de seguretat <strong>externes</strong> (<em>físiques</em> i <em>ambientals</em>) és essencial a l’hora de protegir l’actiu més important de qualsevol organització: les dades. Aquestes mesures també ens han de servir per protegir l’element habitualment més car de tot sistema informàtic: el maquinari. Les mesures que es veuran proporcionen protecció davant de fenòmens meteorològics i davant d’incidents amb component humà, com ara robatoris o sabotatges.
+</p>
+
+<p>
+Les mesures de seguretat física són uns dels aspectes que més es descuida, però cal anar amb molt de compte, ja que una persona no autoritzada que accedeix al sistema pot causar pèrdues enormes per a l’organització: robatori d’ordinadors, introducció de programari maliciós en el servidor (per exemple, un cavall de Troia o un <em>keylogger</em>), destrucció de dades…
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Cavalls de Troia</p>
+<p>
+Els <strong>cavalls de Troia</strong> són fragments de codi inserits en el programari que habitualment s’utilitza en el sistema. Aquest codi es manté ocult i duu a terme tasques sense que l’usuari o l’administrador se n’adonin. Camuflats sota l’aparença d’un programari útil o habitual, no solen ocasionar efectes destructius. Generalment, capturen contrasenyes i altres dades confidencials i les envien per correu electrònic a la persona que ha introduït el cavall de Troia dins del sistema atacat.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Un <strong>enregistrador de teclat</strong> o <em>keylogger</em> és un programa o equip que enregistra l’activitat d’un teclat d’una estació de treball. 
+</p>
+</div></div>
+</div>
+
+<h3><a id="ubicacio_fisica_i_condicions_ambientals_dels_equips_i_servidors" >Ubicació física i condicions ambientals dels equips i servidors</a></h3>
+<div class="level3">
+
+<p>
+No tots els components d’un sistema informàtic tenen la mateixa rellevància i, per tant, hauran d’estar sotmesos a diferents mesures de seguretat, segons la seva importància i funcionalitat. Per exemple, una <strong>estació de treball</strong> pot ésser fàcilment reemplaçable i pot no allotjar programari o dades gaire rellevants. No obstant això, podria esdevenir una porta d’entrada a tot el sistema informàtic. En aquest cas, doncs, convé que els accessos físics a l’estació només puguin ésser duts a terme pel personal autoritzat. En canvi, els <strong>servidors </strong> es troben contínuament en funcionament i són l’eix central del sistema informàtic. Cal, doncs, protegir especialment els seus accessos físics, així com garantir les condicions ambientals en les quals aquests components han de funcionar. 
+</p>
+
+<p>
+Per tant, sembla lògic que els servidors s’ubiquin en llocs especialment protegits i específicament dissenyats per treballar en unes condiciones ambientals determinades (temperatura, humitat, altitud, interferències electromagnètiques, vibracions…). Aquests espais (normalment sales grans o edificis sencers) reben el nom de <strong>centres de processament de dades</strong> (CPD) i concentren al seu interior els recursos informàtics necessaris per al processament de les dades d’una organització.
+</p>
+
+<p>
+Entre les mesures de control ambiental de què han de disposar els CDP destaquen els sistemes contra incendis i inundacions (extintors, portes ignífugues, drenatges i vies d’evacuació) i els sistemes de control de temperatura (no s’haurien de superar els 30º).
+</p>
+
+</div>
+
+<h4><a id="sistemes_d_alimentacio_ininterrompuda" >Sistemes d&#039;alimentació ininterrompuda</a></h4>
+<div class="level4">
+
+<p>
+Els sistemes d’alimentació ininterrompuda són un altre element especialment important en relació al servidor. 
+</p>
+
+<p>
+La importància d’un bon corrent per als servidors es deu al fet que un tall de corrent no li permetrà aturar-se correctament. Això farà que les memòries intermèdies (<em>cache</em>) es perdin, no s’actualitzin en el disc i quedin fitxers oberts. Així, és possible que quan es torni a posar en marxa el sistema no es pugui engegar correctament i es perdi informació o fitxers. Si algun d’aquests fitxers és una base de dades, les conseqüències poden ser desastroses: s’ha de recuperar de la còpia de seguretat, tenint en compte però, que es perdrà la informació introduïda des que es va fer la còpia fins al moment en què s’ha produït el tall.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El <strong>sistema d’alimentació ininterrompuda</strong> (SAI) protegeix els servidors de talls de corrent i d’altres problemes relacionats amb la tensió.
+</p>
+</div></div>
+<p>
+Un SAI subministra corrent quan la xarxa elèctrica no en proporciona, de manera que l’ordinador continua funcionant correctament, sense veure’s afectat pel fet que no hi ha subministrament elèctric general. Això permet apagar els sistemes amb seguretat.
+</p>
+<div class="iocfigure"><a name="Figura2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Esquema de xarxa amb SAI
+
+</figcaption><img src="../media/m11_pdfindex_image_1.png" alt="" /></figure>
+</div>
+<p>
+Les característiques més rellevants d’un SAI són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Potència que cal subministrar</strong>. És la potència en watts que pot proporcionar el SAI quan no hi ha corrent d’entrada. Determina el nombre de servidors que s’hi poden connectar.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Temps de durada de les bateries</strong>. Els SAI porten bateries que es carreguen amb el corrent elèctric i són les que després proporcionen electricitat quan falla el corrent general. El nombre de bateries determina el temps que podran subministrar corrent abans d’exhaurir-se.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Temps de vida de les bateries</strong>. Un SAI serveix de ben poc si falla quan hauria de funcionar. Les bateries tenen una vida útil determinada. Després d’aquest temps, no hi ha garanties que funcionin i responguin correctament quan sigui necessari. És el fabricant del SAI qui determina cada quants anys s’han de canviar les bateries.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Avís al servidor</strong>. Actualment, els SAI porten una línia (USB o sèrie) que arriba a l’ordinador. D’aquesta manera, quan entra en funcionament, és capaç d’enviar un senyal al servidor que, amb el programari adient (subministrat amb el SAI), sap que es manté amb l’alimentació elèctrica del SAI. S’estableix un diàleg que informa de l’estat de les bateries del SAI i de la seva durada. Quan falta poc per a esgotar la càrrega de les bateries, el SAI n’informa al servidor i pot procedir a enviar missatges als usuaris i a fer una aturada correcta, ordenada i automàtica de l’ordinador. Els servidors acostumen a estar preparats per arrencar sols, sense intervenció de l’administrador, per la qual cosa quan es restableixi el subministrament elèctric normal, el servidor s’engegarà i tot tornarà a funcionar correctament.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="proteccio_fisica_dels_sistemes_informatics" >Protecció física dels sistemes informàtics</a></h3>
+<div class="level3">
+
+<p>
+Les mesures de protecció física abasten el control d’accessos, no només pel que fa a la identificació dels usuaris, sinó també al control físic dels accessos, així com diverses mesures de caire preventiu.
+</p>
+
+<p>
+Pel que fa al control físic dels accessos, podem parlar de la utilització de diverses mesures, relativament allunyades del món informàtic, per la qual cosa no se’n farà gaire esment: personal de seguretat, detectors de metalls… Algunes d’aquestes mesures es poden combinar amb la identificació de l’usuari mitjançant mètodes informàtics, els quals sí que ens interessen, per la qual cosa s’explicaran detalladament. No obstant això, abans veurem diverses mesures de prevenció que poden ser d’utilitat a l’hora de configurar la seguretat física de l’edifici:
+</p>
+<ul>
+<li class="level1"><div class="li"> Mantenir els servidors i tots els elements centrals del sistema en una zona d’accés físic restringit.</div>
+</li>
+<li class="level1"><div class="li"> Mantenir els dispositius d’emmagatzemament en un lloc diferent de la resta del maquinari.</div>
+</li>
+<li class="level1"><div class="li"> Dur a terme inventaris o registres de tots els elements del sistema informàtic (útil en casos de robatori).</div>
+</li>
+<li class="level1"><div class="li"> Protegir i aïllar el cablatge de la xarxa (tant per a protegir-lo de danys físics com de l’espionatge).</div>
+</li>
+<li class="level1"><div class="li"> Instal·lar càmeres de videovigilància (cal tenir present la normativa que en regula la instal·lació).</div>
+</li>
+<li class="level1"><div class="li"> Triar una topologia de xarxa adequada a les nostres necessitats.</div>
+</li>
+<li class="level1"><div class="li"> Garantir la seguretat del maquinari de xarxa (encaminadors, connectors, concentradors i mòdems).</div>
+</li>
+<li class="level1"><div class="li"> Proveir mecanismes d’autenticació als usuaris que volen accedir al sistema.</div>
+</li>
+</ul>
+
+<p>
+De mecanismes d’autenticació n’hi ha de molts tipus diferents, des dels més barats i senzills (com, per exemple, un nom d’usuari i una contrasenya) fins als més cars i complexos (com, per exemple, un analitzador de retina). Com sempre, segons els objectius i el pressupost de l’organització, cal triar els que més s’ajustin a les nostres necessitats. També cal tenir en compte que molts  d’aquests mecanismes són complementaris i es poden utilitzar alhora. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+S’anomena <strong>autenticació</strong> el mecanisme de verificació de la identitat d’una persona o d’un procés que vol accedir als recursos d’un sistema informàtic.
+</p>
+</div></div>
+</div>
+
+<h4><a id="mecanismes_d_autenticacio_d_usuaris" >Mecanismes d&#039;autenticació d&#039;usuaris</a></h4>
+<div class="level4">
+
+<p>
+Podem classificar els mecanismes d’autenticació d’usuaris de la manera següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> Sistemes basats en elements coneguts per l’usuari.</div>
+</li>
+<li class="level1"><div class="li"> Sistemes basats en elements que té l’usuari.</div>
+<ol>
+<li class="level2"><div class="li"> Sistemes basats en targetes intel·ligents i testimonis (<em>tokens</em>) de seguretat.</div>
+</li>
+<li class="level2"><div class="li"> Sistemes biomètrics.</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<strong>1. Sistemes basats en elements coneguts per l’usuari</strong>
+</p>
+
+<p>
+Els principals mecanismes dins d’aquest tipus d’autenticació són els sistemes basats en contrasenyes. És un dels mètodes que es fan servir més sovint per autenticar els usuaris que volen accedir a un sistema. Òbviament, és el mètode més barat, però també és el més vulnerable, ja que encara que la paraula de pas o contrasenya hauria de ser personal i intransferible, sovint acaba en poder de persones no autoritzades. D’altra banda, encara que les contrasenyes s’emmagatzemin xifrades en un fitxer, és possible desxifrar-les emprant múltiples tècniques.
+</p>
+
+<p>
+Tot i que l’ús de contrasenyes s’ha de basar en el sentit comú, no és sobrer fer les recomanacions següents:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Xifra</p>
+<p>
+Una <strong>xifra o criptosistema</strong> és un mètode secret d’escriptura mitjançant el qual un text en clar es transforma en un text xifrat o criptograma, il·legible si no es disposa de la clau de xifratge.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Memoritzar-la i no portar-la escrita.</div>
+</li>
+<li class="level1"><div class="li"> Canviar-la periòdicament (amb caràcter mensual, per exemple).</div>
+</li>
+<li class="level1"><div class="li"> No usar la mateixa contrasenya en comptes diferents.</div>
+</li>
+<li class="level1"><div class="li"> No llençar documents amb contrasenyes a la paperera.</div>
+</li>
+<li class="level1"><div class="li"> Evitar utilitzar paraules de diccionari. Hi ha tècniques de descobriment de contrasenyes basades en la comparació amb diccionaris sencers de paraules, per idiomes, de temes concrets com esports… Aquestes tècniques reben el nom d’<em>atacs de diccionari</em>. </div>
+</li>
+<li class="level1"><div class="li"> Evitar utilitzar dades que puguin ésser conegudes per altres persones (per exemple, nom i cognom de l’usuari, repetir el mateix nom que l’identificador, el DNI, la data de naixement, el número de mòbil…).</div>
+</li>
+<li class="level1"><div class="li"> Fer servir contrasenyes d’un mínim de vuit caràcters.</div>
+</li>
+<li class="level1"><div class="li"> Evitar la reutilització de contrasenyes antigues.</div>
+</li>
+<li class="level1"><div class="li"> No utilitzar contrasenyes exclusivament numèriques.</div>
+</li>
+<li class="level1"><div class="li"> Afavorir l’aparició de caràcters especials (!, *, ?…).</div>
+</li>
+<li class="level1"><div class="li"> No enviar contrasenyes per SMS o correu ni dir-les per telèfon.</div>
+</li>
+<li class="level1"><div class="li"> No utilitzar seqüències de teclat del tipus “qwerty” o “1234” (són seqüències que s’assagen en els atacs de diccionari).</div>
+</li>
+<li class="level1"><div class="li"> Fer servir sistemes mnemotècnics per recordar les contrasenyes (per exemple, “Cada dia al matí canta el gall quiquiriquic” donaria lloc a la contrasenya “CDAMCEGC”).</div>
+</li>
+</ul>
+
+<p>
+Molts sistemes informàtics forcen els usuaris a escollir contrasenyes amb un cert nivell de robustesa: obliguen a canviar la contrasenya cada cert temps, que tingui un cert nombre de caràcters, només ofereixen un cert nombre d’intents…
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Molts usuaris poc curosos apunten les contrasenyes en notes adhesives penjades al monitor de l’ordinador. 
+</p>
+</div></div>
+<p>
+<strong>2. Sistemes basats en elements que té l’usuari</strong>
+</p>
+
+<p>
+En aquest cas, l’autenticació no es fa d’acord amb el que un usuari recorda o coneix, sinó a partir d’un dispositiu que porta al damunt (el qual també pot requerir la introducció d’una contrasenya o d’un PIN), o bé a partir de les pròpies característiques físiques de l’usuari (<strong>sistemes biomètrics</strong>).
+</p>
+
+<p>
+<strong>a) Sistemes basats en targetes intel·ligents i testimonis (<em>tokens</em>) de seguretat</strong>
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">PIN</p>
+<p>
+El PIN (<em>Personal Identification Number</em>) és una contrasenya numèrica, sovint formada per quatre xifres, com, per exemple, el codi numèric que ens demana el caixer automàtic.
+</p>
+</div></div>
+<p>
+Una targeta intel·ligent (<em>smartcard</em>) és similar a una targeta de crèdit, però a diferència d’aquesta, les targetes intel·ligents compten amb un microprocessador (i memòria) que les dota de les capacitats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Capacitat per fer càlculs criptogràfics sobre la informació que emmagatzemen.</div>
+</li>
+<li class="level1"><div class="li"> Emmagatzematge xifrat de la informació.</div>
+</li>
+<li class="level1"><div class="li"> Protecció física i lògica (mitjançant una clau d’accés) a la informació emmagatzemada.</div>
+</li>
+<li class="level1"><div class="li"> Capacitat per emmagatzemar claus de signatura digital i xifratge. </div>
+</li>
+</ul>
+
+<p>
+És un mètode d’autenticació que cada vegada fan servir més les organitzacions, tot i el cost d’adaptació de la infraestructura als dispositius que permeten la lectura de les targetes. Un exemple de targeta intel·ligent és el DNI (document nacional d’identitat) electrònic espanyol, també anomenat DNIe. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Per comprendre millor els conceptes de <strong>criptografia</strong> i <strong>signatura digital</strong>, vegeu l’apartat “Seguretat lògica”, d’aquesta mateixa unitat.
+</p>
+</div></div>
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/m11_pdfindex_image_2.jpg" class="imgB" title="Dispositiu de lectura de targetes intel·ligents incorporat en un teclat d&#039;ordinador." alt="Dispositiu de lectura de targetes intel·ligents incorporat en un teclat d&#039;ordinador." /></li><li><small>Dispositiu de lectura de targetes intel·ligents incorporat en un teclat d&#039;ordinador.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+A més, les targetes intel·ligents poden ser de <strong>contacte </strong> (és a dir que han de ser inserides en la ranura d’un lector perquè puguin ser llegides) o <strong>sense contacte</strong>. Aquest segon tipus de targetes s’empra amb èxit en diversos països com a sistema de pagament en el transport públic.
+</p>
+
+<p>
+Un altre mecanisme d’autenticació, força popular en el sector empresarial, és l’anomenat <strong>testimoni de seguretat</strong> (<em>security token</em>). Solen ser dispositius físics de mida reduïda (alguns inclouen un teclat per introduir una clau numèrica o PIN), similars a un clauer, que calculen contrasenyes d’un únic ús (canvien a cada sessió o cada cert temps). També poden emmagatzemar claus criptogràfiques com, per exemple, la signatura digital o mesures biomètriques.
+</p>
+
+<p>
+<strong>b) Sistemes biomètrics</strong>
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">RFID</p>
+<p>
+RFID (<em>Radio Frequency Identification</em>o identificació per radiofreqüència) és un sistema d’emmagatzematge i de recuperació de dades remot que usen uns dispositius anomenats <em>etiquetes RFID</em>. Aquests dispositius es poden col·locar, per exemple, a la roba d’una persona (o en qualsevol altre objecte) amb finalitats d’autenticació.
+</p>
+</div></div>
+<p>
+Els sistemes biomètrics es basen en les característiques físiques de l’usuari que s’ha d’autenticar (o en patrons característics que puguin ser reconeguts, com per exemple, la signatura manual). Com a avantatge principal, l’usuari no ha de recordar cap contrasenya ni cal que porti cap testimoni o targeta al damunt. Solen ser més cars que els mètodes anteriors. Per això encara no es fan servir gaire, tot i que alguns d’aquests mètodes ofereixen un alt nivell de fiabilitat a un preu raonable (per exemple, el reconeixement dactilar). Entre les característiques que es poden utilitzar per identificar un usuari mitjançant mesures biomètriques destaquem les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Veu</div>
+</li>
+<li class="level1"><div class="li"> Escriptura i signatura</div>
+</li>
+<li class="level1"><div class="li"> Empremtes dactilars</div>
+</li>
+<li class="level1"><div class="li"> Patrons de la retina o de l’iris</div>
+</li>
+<li class="level1"><div class="li"> Geometria de la mà</div>
+</li>
+<li class="level1"><div class="li"> Estructura facial (2D i 3D)</div>
+</li>
+<li class="level1"><div class="li"> Traçat de les venes</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Mesures biomètriques</p>
+<p>
+Les mesures biomètriques són dades personals i caldrà que s’emmagatzemin segons determina la Llei Orgànica de protecció de dades personals (LOPDP).
+</p>
+</div></div>
+<p>
+Els sistemes biomètrics es componen de dos mòduls no interconnectats:
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/m11_pdfindex_image_3.jpg" class="imgB" title="Lector d&#039;empremtes dactilars incorporat en un ordinador portàtil." alt="Lector d&#039;empremtes dactilars incorporat en un ordinador portàtil." /></li><li><small>Lector d&#039;empremtes dactilars incorporat en un ordinador portàtil.</small></li>
+</ul></div>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Mòdul d’inscripció</strong>. A partir de les dades proporcionades pels sensors, s’extreuen els trets característics de la mesura biomètrica de l’usuari (per exemple, una empremta dactilar) i s’emmagatzemen en una base de dades. L’usuari només haurà de fer aquesta operació una vegada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Mòdul d’identificació</strong>. Quan l’usuari es vol autenticar, els sensors extreuen els trets característics de l’usuari i es compara el patró obtingut amb les dades emmagatzemades pel mòdul d’inscripció. Si el patró obtingut coincideix amb l’emmagatzemat, l’usuari és identificat positivament.</div>
+</li>
+</ul>
+
+<p>
+Un dels problemes més importants dels sistemes biomètrics és la generació de falsos positius, és a dir, persones que tot i no estar autoritzades pel sistema, són identificades positivament i, per tant, són autoritzades a entrar en el sistema. Aquest és, òbviament, un problema greu. Per solucionar-ho, es pot incrementar la sensibilitat del sistema biomètric, però aleshores també es produirà un increment dels falsos negatius, és a dir, de les persones que tot i estar autoritzades, no són identificades correctament i no poden entrar al sistema. En termes generals, no és possible minimitzar els falsos positius sense incrementar els falsos negatius, de manera que cal arribar a una solució de compromís a l’hora d’ajustar la sensibilitat del sistema biomètric.
+</p>
+
+<p>
+Una altra qüestió important pel que fa a l’ús de les mesures biomètriques és el possible rebuig social que puguin patir: per exemple, les persones poden ser reticents a enregistrar el seu ull en un control d’accessos, no només pel fet en si mateix, sinó també per la incertesa de l’ús que podria tenir la recollida de dades tan sensibles com aquestes.
+</p>
+
+</div>
+
+<h2><a id="seguretat_logica" >Seguretat lògica</a></h2>
+<div class="level2">
+
+<p>
+En contraposició a la <strong>seguretat física</strong> (externa), la <strong>seguretat lògica</strong> fa referència a totes aquelles mesures tècniques i administratives, i, per tant, de caire intern, que hom pot adoptar amb l’objectiu de mantenir la fiabilitat del sistema informàtic.
+</p>
+
+</div>
+
+<h3><a id="criptografia_i_funcions_hash" >Criptografia i funcions hash</a></h3>
+<div class="level3">
+
+<p>
+Per aconseguir que la informació només sigui accessible als usuaris autoritzats i evitar que la informació en clar (és a dir, sense xifrar) que circula per una xarxa pugui ser interceptada per un espia, es poden usar els anomenats mètodes criptogràfics. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>xifra o criptosistema</strong> és un mètode secret d’escriptura que permet la transformació d’un text en clar en un <strong>text xifrat o criptograma</strong>. Aquest procés de transformació s’anomena <strong>xifratge</strong>, i el procés invers, és a dir, la transformació del text xifrat en text en clar, <strong>desxifratge</strong>. Tant el xifratge com el desxifratge són controlats per una o més claus criptogràfiques.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Amb la criptografia es pretenen evitar els atacs contra la confidencialitat.
+</p>
+</div></div>
+<p>
+S’anomena <strong>criptografia</strong> a la ciència i l’estudi de l’escriptura secreta. Juntament amb la <strong>criptoanàlisi</strong> (tècnica que té com a objectiu esbrinar la clau d’un criptograma a partir del text en clar i del text xifrat) formen el que es coneix amb el nom de <strong>criptologia</strong>. 
+</p>
+
+<p>
+Per protegir la confidencialitat de les dades (emmagatzemades o que circulen per la xarxa) es poden fer servir criptosistemes de <strong>clau privada</strong> (simètrics) o de <strong>clau pública</strong> (asimètrics). 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Podeu trobar un exemple excel·lent i divertit de criptoanàlisi en el relat “L’escarabat d’or” d’Edgar Allan Poe.
+</p>
+</div></div>
+</div>
+
+<h3><a id="criptosistemes_de_clau_privada_o_simetrics" >Criptosistemes de clau privada o simètrics</a></h3>
+<div class="level3">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>criptosistemes de clau privada o compartida</strong> (o simètrics) són aquells en els quals emissor i receptor comparteixen una única clau. És a dir, el receptor podrà desxifrar el missatge rebut només si coneix la clau amb la qual l’emissor ha xifrat el missatge.
+</p>
+</div></div>
+<p>
+
+Notem que aquests criptosistemes permeten enviar missatges confidencials (per exemple, un correu electrònic) entre un emissor i un receptor, el qual només podrà desxifrar el missatge si coneix la clau amb què ha estat xifrat, però a més, també permeten que un únic usuari emmagatzemi, de forma xifrada, informació en un disc dur, de manera que aquesta només pugui ser recuperada (desxifrada) emprant la clau amb què va ser xifrada.
+</p>
+
+<p>
+Un exemple molt entenedor és el <strong>xifratge de substitució</strong> basat en la <span class="tabref"><a href="#Taula1"><span>taula</span></a></span>.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula1"><span>Taula: </span></a>Xifratge de l’alfabet mitjançant una taula de conversió</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">       </th><th class="col1"> A </th><th class="col2"> B </th><th class="col3"> C </th><th class="col4"> D </th><th class="col5"> E </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <strong>A</strong> </td><td class="col1"> A </td><td class="col2"> B </td><td class="col3"> C </td><td class="col4"> D </td><td class="col5"> E </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <strong>B</strong> </td><td class="col1"> F </td><td class="col2"> G </td><td class="col3"> H </td><td class="col4"> I </td><td class="col5"> J </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <strong>C</strong> </td><td class="col1"> K </td><td class="col2"> L </td><td class="col3"> M </td><td class="col4"> N </td><td class="col5"> O </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <strong>D</strong> </td><td class="col1"> P </td><td class="col2"> Q </td><td class="col3"> R </td><td class="col4"> S </td><td class="col5"> T </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <strong>E</strong> </td><td class="col1"> U </td><td class="col2"> V </td><td class="col3"> X </td><td class="col4"> Y </td><td class="col5"> Z </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Les lletres de l’alfabet es disposen dins de la taula, de manera que cada caràcter del text que es vulgui xifrar se substituirà pel parell (fila i columna) de la lletra en qüestió. Per exemple, la paraula AVUI quedaria codificada com AAEBEABD (és a dir, AA-EB-EA-BD). Naturalment, si emissor i receptor comparteixen aquesta taula, els serà molt senzill xifrar i desxifrar missatges. A la pràctica, els criptosistemes reals són molt més complexos i no és gens senzill desxifrar-los, ni tan sols amb l’ajut dels ordinadors més potents.
+</p>
+
+<p>
+L’algorisme més representatiu dels criptosistemes de clau privada és el <em>Data Encryption Standard</em> (DES), que data de l’any 1977. Actualment es troba en desús, ja que no és segur. En lloc del DES s’utilitza una variant anomenada Triple DES, o altres algorismes com, per exemple, IDEA, CAST o Blowfish. No obstant això, l’estàndard actual (des de l’any 2002), adoptat com a tal pel Govern dels Estats Units, és l’anomenat <em>Advanced Encryption Standard</em> (AES), representat per l’algorisme Rijndael.
+</p>
+
+</div>
+
+<h3><a id="criptosistemes_de_clau_publica" >Criptosistemes de clau pública</a></h3>
+<div class="level3">
+
+<p>
+A diferència dels criptosistemes de clau privada, molt intuïtius però amb força desavantatges, els de clau pública són conceptualment molt enginyosos, elegants i aporten més funcionalitats que els asimètrics. No obstant això, són força lents comparats amb els simètrics, i moltes vegades no s’utilitzen per xifrar, sinó per intercanviar claus criptogràfiques en els protocols de comunicacions. La criptografia de clau pública va ser introduïda per Diffie i Hellman l’any 1976.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>criptosistemes de clau pública</strong> (o asimètrics) són un tipus de criptosistemes en què cada usuari <em>u</em> té associada una parella de claus &lt;<em>Pu</em>, <em>Su</em>&gt;. La clau pública, <em>Pu</em>, és accessible per tots els usuaris de la xarxa i apareix en un directori públic, mentre que la clau privada, <em>Su</em>, tan sols és coneguda per l’usuari <em>u</em> (és a dir, l’usuari propietari del parell de claus).
+</p>
+</div></div>
+<p>
+Quan un usuari A vol enviar un missatge a un usuari B, xifra el missatge fent servir la clau pública de B (recordeu que aquesta clau és coneguda per tots els usuaris del criptosistema). Quan el receptor rebi el missatge, únicament el podrà desxifrar ell mateix, utilitzant la seva pròpia clau privada (la qual es troba exclusivament en el seu poder, convenientment protegida). Podeu veure descrit aquest mecanisme en la <span class="figref"><a href="#Figura3"><span>figura</span></a></span>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Criptosistemes de clau pública</p>
+<p>
+Donada qualsevol clau del parell &lt;<em>Pu</em>, <em>Su</em>&gt;, no és possible esbrinar-ne una a partir de l’altra. És a dir, a partir del coneixement de la clau pública (visible per tothom), <em>Pu</em>, no és possible obtenir la clau privada 
+</p>
+</div></div><div class="iocfigure"><a name="Figura3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Xifratge i desxifratge d’un missatge en un criptosistema de clau pública
+
+</figcaption><img src="../media/m11_pdfindex_image_4.png" alt="" /></figure>
+</div>
+<p>
+A: usuari A
+</p>
+
+<p>
+Sa: clau secreta de l’usuari A.
+</p>
+
+<p>
+Sb: clau secreta de l’usuari B.
+</p>
+
+<p>
+Pa: clau pública de l’usuari A.
+</p>
+
+<p>
+Pb: clau pública de l’usuari B.
+</p>
+
+<p>
+m: missatge a enviar 
+</p>
+
+<p>
+Pb(m): el resultat d’aplicar el xifratge al missatge m, usant la clau pública de l’usuari B. S’obté un nou missatge c, xifrat, que necessita de la clau secreta de B per a poder ser llegit.
+</p>
+
+<p>
+Sb©: el resultat d’aplicar el desxifratge al missatge c, usant la clau privada de l’usuari B. S’obté el missatge original, m. Ara ja pot ser llegit.
+</p>
+
+<p>
+A més, l’usuari A podrà signar el seu missatge mitjançant la seva clau privada (només coneguda per ell), que acredita la seva identitat davant de l’usuari receptor del missatge. En el procés de verificació, el receptor (l’usuari B) emprarà la clau pública de l’usuari A, coneguda per tots els usuaris del criptosistema. 
+</p>
+
+<p>
+El criptosistema de clau pública més conegut és l’anomenat RSA, però n’hi ha d’altres com, per exemple, el <em>Digital Signature Algorithm</em> (DSA).
+</p>
+
+<p>
+Un avantatge molt important del criptosistema de clau pública és que permet la incorporació d’una <strong>signatura digital</strong>. Cada usuari podrà signar digitalment el seu missatge amb la seva clau privada i aquesta signatura podrà ser verificada més tard, de manera que l’usuari que l’ha originat no pugui negar que s’ha produït (<strong>propietat de no-repudi</strong>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El criptosistema <strong>RSA</strong> va ser ideat per Rivest, Shamir i Adlerman l’any 1978.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Certificat digital</p>
+<p>
+A l’hora d’utilitzar la clau pública d’un usuari, com podem saber que és autèntica? Per resoldre aquest problema es requereix la participació d’una tercera part (anomenada autoritat de certificació) que confirmi l’autenticitat de la clau pública d’un usuari amb l’expedició d’un certificat digital. Aquest document, signat digitalment per un prestador de serveis de certificació, vincula unívocament unes dades de verificació de signatura al titular, que en confirma la identitat en qualsevol transacció telemàtica que es pugui fer. 
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">DSS</p>
+<p>
+El <strong>Digital Signature Standard (DSS)</strong> és un sistema de signatura digital adoptat com a estàndard pel National Institute of Standards and Technology (NIST). Utilitza l’algorisme DSA. 
+</p>
+</div></div>
+</div>
+
+<h4><a id="les_funcions_hash_o_funcions_resum" >Les funcions hash o funcions resum</a></h4>
+<div class="level4">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>funció <em>hash</em></strong> o funció resum és una funció matemàtica que fa correspondre una representació de mida fixa a un missatge <em>m</em> de mida variable. Aquesta representació té de 128 a 512 bits (segons la funció que s’empri) i s’anomena <em>valor resum del missatge</em>.
+</p>
+</div></div>
+<p>
+Per exemple, el que es pot veure a continuació és el resultat d’aplicar una funció resum a un fitxer anomenat Hola.txt:
+</p>
+
+<p>
+Hola.txt  89736DF30DC47A7D5AC22662DC3B5E9C
+</p>
+
+<p>
+El valor <em>hash</em> identifica, pràcticament de manera unívoca, un fitxer qualsevol. Podríem dir, doncs, que exerceix de codi ADN de fitxers. No obstant això, cal fer una matisació important: existeix una probabilitat, encara que molt petita, que dos fitxers <strong>diferents</strong> tinguin el mateix valor <em>hash</em> (<strong>col·lisió</strong>). A la pràctica, les col·lisions observades pels matemàtics s’han produït, no pas de manera accidental, sinó que s’han cercat de manera expressa. 
+</p>
+
+<p>
+Els algorismes <strong>MD5</strong> (<em>Message Digest</em>, desenvolupat per Ron Rivest i amb resums de 128 bits, qüestionat des de l’any 2004) i <strong>SHA-1</strong> (<em>Secure Hash Algorithm</em>, desenvolupat per la NSA (<em>National Security Agency</em>) agència de seguretat nord-americana i amb resums de 160 bits) són els que més es fan servir per implementar les funcions resum. Malgrat el problema de les col·lisions i certes vulnerabilitats que pateix la funció MD5, és ràpida i encara útil a efectes de verificació.
+</p>
+
+<p>
+Una característica molt important de les funcions <em>hash</em> és que qualsevol canvi que es produeixi sobre el fitxer comporta un canvi total i impredictible del valor <em>hash</em>. Així, doncs, n’hi ha prou canviant un únic píxel d’una fotografia perquè el valor <em>hash</em> canviï completament. Per tant, si, per exemple, obrim qualsevol fotografia amb el programa Paint del sistema operatiu Windows i el sobreescrivim amb el mateix programa, el seu valor <em>hash</em> es veurà completament alterat a causa de les dades que el programa afegeix a la fotografia en el moment de sobreescriure-la. Qualsevol alteració en un fitxer comporta el canvi radical del valor <em>hash</em>. Això vol dir que continguts idèntics poden estar representats per valors <em>hash</em> diferents. En l’exemple següent (<span class="figref"><a href="#Figura4"><span>figura</span></a></span>) podem observar el càlcul del valor <em>hash</em> (MD4) d’una fotografia i de la seva equivalent comprimida (la compressió, com qualsevol canvi, també provoca una variació del valor <em>hash)</em>. 
+</p>
+<div class="iocfigure"><a name="Figura4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Càlcul del valor hash (MD4) d’una imatge i de la imatge comprimida
+
+</figcaption><img src="../media/m11_pdfindex_image_5.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="llistes_de_control_d_acces" >Llistes de control d&#039;accés</a></h3>
+<div class="level3">
+
+<p>
+La confidencialitat vetlla perquè només les persones autoritzades accedeixin als recursos. Això es fa usant llistes de control d’accés. 
+</p>
+
+</div>
+
+<h4><a id="control_d_acces" >Control d&#039;accés</a></h4>
+<div class="level4">
+
+<p>
+Una de les qüestions fonamentals en el disseny de l’entorn de l’usuari és aconseguir que aquest accedeixi únicament a allò que necessiti. Aquesta regla s’anomena <em>principi de privilegi mínim</em>. Quan un usuari necessita accedir a un recurs del sistema informàtic, primer de tot s’identifica (s’autentica). Una vegada s’ha identificat, el sistema controla (autoritza) l’accés als recursos del sistema informàtic tot registrant (auditant) com s’utilitza cada recurs. En la <span class="figref"><a href="#Figura5"><span>figura</span></a></span> es pot veure de manera gràfica.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Autenticació</strong>: mecanisme de verificació de la identitat d’una persona o d’un procés que vol accedir als recursos d’un sistema informàtic. Habitualment es fa mitjançant nom de l’usuari i contrasenya o testimoni (<em>token</em>) del procés.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Autorització</strong>: procés mitjançant el qual el sistema autoritza a l’usuari identificat a accedir als recursos d’un sistema informàtic. L’autorització determina quin accés es permet a cada entitat. L’autenticació és el procés de verificar la identitat d’una persona, mentre que l’autorització és el procés de verificació, que una persona determinada té l’autoritat per realitzar certa operació. L’autenticació, per tant, ha de precedir l’autorització.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Registre</strong>: informació de registre (<em>log</em>) de l’ús que l’usuari fa dels recursos del sistema informàtic.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Principi de privilegi mínim</p>
+<p>
+Consisteix a atorgar a l’usuari el conjunt de privilegis més restrictiu (l’autorització més baixa) necessari perquè pugui dur a terme la seva tasca. 
+</p>
+</div></div>
+<p>
+El <strong>control d’accés</strong>, per tant, determina quins privilegis té un usuari dins del sistema informàtic i a quins recursos té accés.
+</p>
+<div class="iocfigure"><a name="Figura5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Procés de validació
+
+</figcaption><img src="../media/m11_pdfindex_image_6.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="matriu_de_control_d_acces" >Matriu de control d’accés</a></h4>
+<div class="level4">
+
+<p>
+Els recursos als quals té accés una entitat es determinen mitjançant la <strong>matriu de control d’accés o matriu d’accés</strong>. És un model formal de seguretat computacional (usat en sistemes informàtics) que inventaria els drets de cada subjecte respecte als objectes del sistema. Els objectes són entitats que contenen informació, poden ser físics o abstractes. Els subjectes accedeixen als objectes, i poden ser usuaris, processos, programes o altres entitats.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Taula2"><span>Taula: </span></a>Matriu de control d’accés</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Objecte<br/>
+Domini </th><th class="col1 leftalign"> Fitxer   </th><th class="col2 leftalign"> Directori                       </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>D1</strong>           </td><td class="col1 leftalign"> Lectura  </td><td class="col2"> Lectura<br/>
+Escriptura<br/>
+Execució </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>D2</strong>           </td><td class="col1"> Execució </td><td class="col2 leftalign"> Lectura<br/>
+Escriptura            </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>D3</strong>           </td><td class="col1"> Execució </td><td class="col2 leftalign"> Lectura                         </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Les files de la matriu representen dominis (o subjectes) i les columnes representen objectes. Les entrades de la matriu consisteixen en una sèrie de drets d’accés. Per exemple, l’entrada corresponent al domini D2 sobre un directori de la <span class="tabref"><a href="#Taula2"><span>taula</span></a></span> defineix el conjunt d’operacions que un procés, executant-se en el domini D2, pot invocar sobre un objecte O situat dins del directori.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els drets d’accés més comuns són l’accés de lectura (L), l’accés d’escriptura (E) i l’accés d’execució (X).
+</p>
+</div></div>
+</div>
+
+<h4><a id="llista_de_control_d_acces_acl" >Llista de control d’accés (ACL)</a></h4>
+<div class="level4">
+
+<p>
+Els sistemes informàtics no acostumen a guardar la matriu, ja que pot ser molt gran. Gran part dels dominis no tenen cap accés a la majoria dels objectes, de manera que l’emmagatzematge d’una matriu enorme gairebé buida seria un malbaratament d’espai de disc. El que es fa és associar a cada objecte una llista (ordenada) amb tots els dominis que poden tenir-hi accés i la forma de fer-ho. Aquesta llista s’anomena <em>llista de control d’accés</em> (<acronym title="Access Control List">ACL</acronym>).
+</p>
+
+</div>
+
+<h3><a id="politiques_d_emmagatzematge" >Polítiques d&#039;emmagatzematge</a></h3>
+<div class="level3">
+
+<p>
+Per poder mantenir d’una manera segura i eficaç els sistemes d’emmagatzematge és important especificar quines són les polítiques que tots els usuaris han de seguir per evitar que augmenti l’ús de la capacitat d’emmagatzematge de manera desordenada, amb la consegüent manca de control o pèrdua d’informació. Així, tal i com es pot veure a la <span class="figref"><a href="#Figura6"><span>figura</span></a></span>, existeixen quatre polítiques bàsiques d’emmagatzematge, depenent d’on siguin les dades.
+</p>
+<div class="iocfigure"><a name="Figura6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Ubicació de les dades en un sistema informàtic
+
+</figcaption><img src="../media/m11_pdfindex_image_7.png" alt="" /></figure>
+</div>
+<p>
+(A) Polítiques d’emmagatzematge local en els equips de treball.
+</p>
+
+<p>
+(B) Política d’emmagatzematge a la xarxa corporativa.
+</p>
+
+<p>
+(C) Política sobre l’ús de dispositius externs.
+</p>
+
+<p>
+(D) Política de còpies de seguretat.
+</p>
+
+</div>
+
+<h4><a id="politiques_d_emmagatzematge_local_en_els_equips_de_treball" >Polítiques d&#039;emmagatzematge local en els equips de treball</a></h4>
+<div class="level4">
+
+<p>
+S’estableixen unes normes d’emmagatzematge per als equips de treball de l’empresa (equips de sobretaula, equips portàtils, telèfons i altres dispositius) que els usuaris han de complir. Aquesta política inclou almenys els aspectes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quin tipus d’informació es pot emmagatzemar en els equips locals.</div>
+</li>
+<li class="level1"><div class="li"> Quant de temps ha de romandre aquesta informació en els equips.</div>
+</li>
+<li class="level1"><div class="li"> Permanència de la informació en la xarxa local un cop transmesa als servidors corporatius.</div>
+</li>
+<li class="level1"><div class="li"> Ubicació dins de l’arbre de directoris de l’equip.</div>
+</li>
+<li class="level1"><div class="li"> Utilització de sistemes de xifratge d’informació en els documents empresarials.</div>
+</li>
+<li class="level1"><div class="li"> Normativa d’emmagatzematge de documents personals, fitxers de música, fotografies…, i en concret relativa a fitxers protegits per drets d’autor. </div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="politica_d_emmagatzematge_a_la_xarxa_corporativa" >Política d&#039;emmagatzematge a la xarxa corporativa</a></h4>
+<div class="level4">
+
+<p>
+A la xarxa corporativa és necessari distingir entre la informació de l’empresa que han d’utilitzar tots els usuaris i la informació dels treballadors emmagatzemada en aquesta xarxa:
+</p>
+<ul>
+<li class="level1"><div class="li"> Els servidors d’emmagatzematge disponibles a la xarxa corporativa estan configurats per poder emmagatzemar i compartir la informació de l’empresa que ha de ser utilitzada pels treballadors. Els controls d’accés són definits per la direcció i el responsable de sistemes, amb l’objectiu de destriar qui pot accedir i on, mentre que el contingut de la informació emmagatzemada es determina mitjançant una política d’ús específica que ha de cobrir almenys els aspectes següents:</div>
+<ul>
+<li class="level2"><div class="li"> Tipus d’informació emmagatzemada, moment de l’emmagatzematge i ubicació dins dels directoris del sistema.</div>
+</li>
+<li class="level2"><div class="li"> Persones encarregades de l’actualització d’aquesta informació en cas de modificació.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Els treballadors poden disposar de bústies o carpetes personals dins de la xarxa corporativa. En aquestes carpetes s’emmagatzema informació que, si bé té relació amb el seu treball, no és necessàriament compartida per altres membres de l’equip. Per controlar aquesta informació s’han d’especificar polítiques que determinin els mateixos aspectes que en el cas de l’emmagatzematge local. </div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="politica_sobre_l_us_de_dispositius_externs" >Política sobre l&#039;ús de dispositius externs</a></h4>
+<div class="level4">
+
+<p>
+Especialment important són les normes relatives a l’ús d’equips externs que, connectats als equips de treball, permeten l’emmagatzematge extra d’informació per tal de transportar-la a una altra ubicació o simplement de disposar d’una còpia de seguretat personal. Aquesta política inclou almenys els aspectes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si està permès o no l’ús d’aquests dispositius.</div>
+</li>
+<li class="level1"><div class="li"> En cas afirmatiu, quin tipus d’informació no es permet emmagatzemar en cap cas, com, per exemple, dades personals de clients.</div>
+</li>
+<li class="level1"><div class="li"> Quins mètodes d’esborrat s’han de fer servir quan aquesta informació ja no es necessita.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="politica_de_copies_de_seguretat" >Política de còpies de seguretat</a></h4>
+<div class="level4">
+
+<p>
+Una còpia de seguretat, també coneguda com a <em>backup</em>, és un duplicat de fitxers o aplicacions contingudes en un ordinador que es realitza per recuperar les dades en el cas que el sistema d’informació pateixi danys o pèrdues accidentals de les dades emmagatzemades. Tot pla de contingència d’una empresa ha de comptar amb una planificació adequada de les còpies de seguretat que es realitzen, ja que la pèrdua de dades pot posar en perill la continuïtat del negoci.
+</p>
+
+<p>
+Alguns dels requisits que ha de complir la planificació de còpies de seguretat són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Identificar les dades que han de ser preservades. Són aquelles la pèrdua de les quals afectaria la continuïtat del negoci.</div>
+</li>
+<li class="level1"><div class="li"> Establir la freqüència amb què es faran les còpies. Aquesta freqüència influeix en la quantitat d’informació que es pot perdre pel que fa a la font original. Aquest paràmetre és molt important i requereix una anàlisi exhaustiva.</div>
+</li>
+<li class="level1"><div class="li"> Per exemple, si es realitza una còpia cada nit i el suport s’espatlla a les dotze del migdia tota la informació generada des de la nit anterior fins a les dotze no serà a la còpia de seguretat.</div>
+</li>
+<li class="level1"><div class="li"> Disposar el magatzem físic per a les còpies. Aquest magatzem es determina en funció de la seguretat que requereix la informació. Pot ser un magatzem situat al mateix edifici o en un edifici extern. Per exemple, si es produeix un incendi a l’edifici de l’empresa, la informació emmagatzemada en un magatzem remot segueix estant disponible.</div>
+</li>
+<li class="level1"><div class="li"> Cercar la probabilitat d’error mínima. Assegurar-se que les dades són copiades íntegrament de l’original i en uns suports fiables i en bon estat. No s’han d’utilitzar suports que estiguin al final de la seva vida útil per evitar que fallin quan s’intenti recuperar la informació.</div>
+</li>
+<li class="level1"><div class="li"> Controlar els suports que contenen les còpies. Guardar-los en un lloc segur i només permetre’n l’accés a les persones autoritzades.</div>
+</li>
+<li class="level1"><div class="li"> Planificar la restauració de les còpies:</div>
+<ul>
+<li class="level2"><div class="li"> Formar els tècnics encarregats de realitzar-les.</div>
+</li>
+<li class="level2"><div class="li"> Disposar de suports per restaurar la còpia diferents dels de producció.</div>
+</li>
+<li class="level2"><div class="li"> Establir els mitjans per disposar d’aquesta còpia en el menor temps possible.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Provar el sistema exhaustivament per comprovar la seva correcta planificació i l’eficàcia dels mitjans disposats.</div>
+</li>
+<li class="level1"><div class="li"> Definir la vigència de les còpies establint un període en què aquesta còpia deixa de tenir validesa i s’ha de substituir per una informació més actualitzada.</div>
+</li>
+<li class="level1"><div class="li"> Controlar l’obsolescència dels dispositius d’emmagatzematge. Per al cas d’aquelles còpies que emmagatzemen informació històrica de l’organització, per exemple projectes ja tancats, s’ha de tenir en compte el tipus de dispositiu en el qual s’ha realitzat la còpia, per evitar que en el moment que es requereixi la restauració de aquesta informació ja no existeixin lectors adequats per al dispositiu.</div>
+</li>
+<li class="level1"><div class="li"> Quan es rebutgin els suports d’emmagatzematge perquè hagin arribat al límit de vida útil fixat en la política de còpies de seguretat, és important realitzar un procés d’esborrat assegurança o destrucció per assegurar que la informació que conté no podrà ser recuperada posteriorment.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="copies_de_seguretat_i_imatges_de_suport" >Còpies de seguretat i imatges de suport</a></h3>
+<div class="level3">
+
+<p>
+Una bona política de còpies de seguretat és clau per tenir segura la informació de l’organització. Alguns motius per fer còpies de seguretat són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Protegir la informació contra una fallada del sistema o algun desastre natural.</div>
+</li>
+<li class="level1"><div class="li"> Protegir la informació dels usuaris (els fitxers) contra esborraments accidentals.</div>
+</li>
+<li class="level1"><div class="li"> Protegir la informació dels usuaris i de l’organització contra atacs per part de tercers.</div>
+</li>
+<li class="level1"><div class="li"> Duplicar la informació dels usuaris per a casos d’ús incorrecte que la deixin inconsistent o la modifiquin incorrectament.</div>
+</li>
+<li class="level1"><div class="li"> Possibilitar el traspàs de la informació quan s’actualitza o es reinstal·la el sistema.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="tipus_de_copies_de_seguretat" >Tipus de còpies de seguretat</a></h4>
+<div class="level4">
+
+<p>
+Depenent de la quantitat de fitxers que es guardin, podem distingir els tipus de còpia de seguretat següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Còpia de seguretat completa</strong>: també es coneix amb el nom de <em>còpia de seguretat total</em> o <em>còpia ‘full dump’</em>. Es fa una còpia de tota la partició del disc en cinta (generalment es fa així, tot i que no és l’únic suport possible). Sovint, la còpia es fa atenent a l’estructura del dispositiu i sense tenir en compte el sistema de fitxers, ja que només cal conèixer la taula de particions del disc i en quina part hi ha la partició per duplicar-la en un dispositiu de cinta. En aquests casos, la restauració no pot ser selectiva: s’ha de restaurar tota la partició i no es pot seleccionar només un fitxer. Es pot fer també una còpia de seguretat completa del sistema de fitxers, la qual sí que és pot restaurar selectivament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Còpia de seguretat incremental</strong>: en aquest cas es guarden només els fitxers que s’han modificat des de l’ultima còpia de seguretat que s’ha fet. Les còpies de seguretat incrementals s’utilitzen conjuntament amb les còpies de seguretat completes en el que s’anomenen <em>polítiques de còpies de seguretat</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Còpia de seguretat selectiva</strong>: també és possible fer una còpia de només uns fitxers determinats. Normalment això es duu a terme amb fitxers de comandes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Còpia de seguretat diferencial</strong>: aquest sistema realitza una còpia de tots els fitxers que s’han modificat des de la darrera còpia total. Així, si realitzem una còpia total cada dissabte i diferencial la resta de dies, la còpia de divendres contindrà tots els fitxers modificats des de dissabte.</div>
+</li>
+</ul>
+
+<p>
+La còpia diferencial té diversos avantatges respecte de la còpia total. El primer és que requereix menys espai, i el segon, associat al primer, és que redueix el temps o finestra de còpia.
+</p>
+
+<p>
+Respecte a la còpia incremental aporta l’avantatge que en el procés de recuperació només necessitarem l’última còpia total i l’última còpia diferencial. Tanmateix, a partir del segon dia, la còpia diferencial requerirà més espai i més temps de còpia. La diferència entre la còpia de seguretat incremental i diferencial es pot veure a la <span class="figref"><a href="#Figura7"><span>figura</span></a></span> i a la <span class="figref"><a href="#Figura8"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figura7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Copia de seguretat incremental
+
+</figcaption><img src="../media/m11_pdfindex_image_8.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="Figura8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Copia de seguretat diferencial
+
+</figcaption><img src="../media/m11_pdfindex_image_9.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="politiques_de_copies_de_seguretat" >Polítiques de còpies de seguretat</a></h4>
+<div class="level4">
+
+<p>
+L’estratègia de les còpies de seguretat és crítica per garantir que el procés es faci correctament i que la informació es pugui restaurar quan calgui.
+</p>
+
+<p>
+La necessitat d’elaborar estratègies de còpia de seguretat deriva del fet que actualment en els servidors els discos tenen molta capacitat i contenen molta informació, que no cap en un sol dispositiu de sortida (en una sola cinta, per exemple). A més, la transferència pot durar hores i, per tant, s’han de buscar solucions per optimitzar el procés.
+</p>
+
+<p>
+Analitzem la variabilitat de la informació. A primera vista podem adonar-nos que no sembla gaire encertat copiar-ho tot diàriament. En conseqüència, hem de fer una classificació de la informació:
+</p>
+<ul>
+<li class="level1"><div class="li"> Informació que varia diàriament</div>
+</li>
+<li class="level1"><div class="li"> Informació no variable</div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> <strong>Informació que varia diàriament.</strong> Cal fer una còpia diària de la informació que varia cada dia. Aquesta informació es pot trobar en els servidors o distribuïda per tota l’organització. En aquest escenari, guardarem la primera còpia total de cada mes. D’aquesta manera, sempre és possible recuperar les dades de mesos anteriors. Això té uns avantatges:</div>
+<ul>
+<li class="level2"><div class="li"> La còpia és ràpida perquè no hi ha còpies totals diàriament i les incrementals només copien els fitxers modificats durant el dia, que són pocs.</div>
+</li>
+<li class="level2"><div class="li"> S’estalvien cintes, ja que les còpies incrementals ocupen poc en relació amb les totals.<br/>
+Però també presenta alguns problemes:</div>
+</li>
+<li class="level2"><div class="li"> Recuperar un fitxer requereix temps, perquè s’ha de passar pel conjunt de cintes que van des de l’ultima còpia total i per totes les incrementals fins al fitxer de la data que es busca.</div>
+</li>
+<li class="level2"><div class="li"> Si falla una cinta incremental no es pot recuperar cap dada de les còpies incrementals posteriors.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Informació no variable.</strong> Hi ha informació que es modifica molt poc al llarg del temps. Aquesta informació necessita uns altres criteris de valoració pel que fa a la còpia de seguretat. L’estratègia que s’acostuma a seguir és la següent:</div>
+<ul>
+<li class="level2"><div class="li"> Informació de sistema. La informació de sistema dels servidors (les particions amb els operatius) es considera essencial. Perdre-la implica una fallada crítica de l’estructura informàtica. Per tant, com que els fitxers de registre també varien, s’acostumen a considerar informació variable i se’n fa una còpia diària.</div>
+</li>
+<li class="level2"><div class="li"> Aplicacions. Les aplicacions dels usuaris no són dades que variïn amb gaire freqüència, per la qual cosa fer-ne una còpia diària carregaria molt el sistema. Per tant, normalment només se’n fa una còpia manual (controlada pels administradors) quan hi ha modificacions en el contingut.</div>
+</li>
+<li class="level2"><div class="li"> Estacions de treball. També tenen informació de sistema, dades i aplicacions. Normalment, la informació de sistema (el sistema operatiu) i d’aplicacions és pràcticament igual en totes les estacions. Fer-ne una còpia diària desbordaria el sistema de còpies i col·lapsaria la xarxa per guardar pràcticament la mateixa informació. En cas de desastre es pot recórrer a la restauració a partir d’imatges de les estacions de treball. A més, en principi a les estacions no hi hauria d’haver informació, però si n’hi ha ja es fa, com s’ha explicat en el punt anterior, una còpia diària exclusivament d’aquesta informació de l’estació de treball.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Hi ha informació de la qual no cal fer còpia de seguretat (els fitxers temporals, per exemple).
+</p>
+
+<p>
+Aquí teniu algunes recomanacions sobre on guardar les còpies de seguretat:
+</p>
+<ul>
+<li class="level1"><div class="li"> Sempre hi ha d’haver una còpia de seguretat fora de l’organització. La freqüència en què cal actualitzar-la dependrà de la política de còpia de seguretat implementada. Pot estar en una caixa forta d’un banc o en mans d’alguna persona de la direcció, per exemple. En cas de desastre tindrem bona part de la informació, no s’haurà perdut tot.</div>
+</li>
+<li class="level1"><div class="li"> En cas que l’organització tanqui en alguns períodes com, per exemple, durant les vacances o, en general, en períodes en què la seguretat global de l’edifici es relaxa, és molt important que hi hagi una còpia fora de l’organització per prevenir un desastre.</div>
+</li>
+<li class="level1"><div class="li"> Actualment hi ha empreses que es dediquen a emmagatzemar còpies de seguretat seguint protocols de seguretat i acords de confidencialitat pactats amb els seus clients. És una opció que pot ser útil per a algunes organitzacions.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="mitjans_d_emmagatzematge" >Mitjans d&#039;emmagatzematge</a></h3>
+<div class="level3">
+
+<p>
+Guardar la informació sempre ha estat un problema. Per aquest motiu els mitjans d’emmagatzematge han variat considerablement al llarg de la història de la informàtica. Els principals sistemes usats han estat els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Targetes perforades</strong>. És una cartolina rectangular amb un codi binari fet amb perforacions en llocs concrets. Aquests van ser els primers mitjans utilitzats per introduir informació i instruccions en sistemes informàtics cap als anys 1960 i 1970.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Cintes perforades</strong>. És el pas lògic següent a les targetes perforades. És una tira llarga de paper en la qual es realitzen forats per emmagatzemar les dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Cintes magnètiques.</strong> És un suport d’emmagatzematge de dades en què es grava sobre una banda plàstica amb un material magnetitzat (generalment òxid de ferro). El tipus d’informació que es pot emmagatzemar en les cintes magnètiques tant pot ser analògic (àudio o vídeo) com digital (dades o programes). Actualment aquest sistema d’emmagatzematge és molt usat com a mitjà per guardar còpies de seguretat. Existeix una gran varietat de cintes magnètiques:</div>
+</li>
+<li class="level1"><div class="li"> <strong>DAT</strong>. Els DAT (Digital Audio Tape) són molt habituals, generalment són SCSI (Small Computers System Interface), i n’hi ha de diverses capacitats, que poden arribar fins a uns 20 <acronym title="Gigabyte">GB</acronym> per cinta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DLT</strong>. Les cintes DLT (Digital Linear Tape) també són generalment SCSI i n’hi ha de diferents capacitats, que poden anar dels 20 als 100 <acronym title="Gigabyte">GB</acronym> (sense compressió), fent servir SDLT (Super DLT).</div>
+</li>
+<li class="level1"><div class="li"> <strong>AIT</strong>. Les cintes AIT (Advanced Intelligent Tape) també són generalment SCSI i poden tenir entre 25 i 100 <acronym title="Gigabyte">GB</acronym> de capacitat (amb AIT3). La capacitat depèn de la generació de cinta i tecnologia de compressió.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LTO</strong>. Les cintes LTO (Linear Tape Open) són una nova tecnologia desenvolupada per Hewlett-Packard, IBM i Seagate. Aquests tipus de cintes han anat evolucionant ràpidament. Mentre que a l’any 2000 parlàvem de LTO 1, que permetia fins a 100 <acronym title="Gigabyte">GB</acronym> de còpia per cinta, actualment la capacitat de les cintes LTO4 arriba fins a 800 <acronym title="Gigabyte">GB</acronym> sense compressió (1,6 TB amb compressió). La seva velocitat de còpia pot arribar a 120 Mb/s, i ja estan planificades les versions LTO5 i LTO6, que permetran emmagatzemar fins a 3,2 TB a una velocitat de 270 Mb/s.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Targetes perforades al tèxtil</p>
+<p>
+Les targetes perforades han estat utilitzades també per Joseph Marie Jacquard en els telers. De fet, la informàtica va agafar la idea de les targetes perforades de la indústria tèxtil. 
+</p>
+</div></div>
+<p>
+Hi ha altres cintes magnètiques, com per exemple l’Hexabyte, però aquestes quatre són les més esteses. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan es parla de capacitat de les unitats de cinta ens referim a capacitat sense compressió. Aplicant compressió, la capacitat es pot duplicar o més.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Discos magnètics o disquets</strong>. Estan composats per una peça circular de material magnètic, fina i flexible (d’aquí en ve la denominació) tancada en una coberta de plàstic quadrada o rectangular. Ja no s’utilitzen. N’hi havia de varies mides (3, 3 1/2, 5 1/4 i 8 polzades).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Discs durs</strong>. És un dispositiu d’emmagatzematge de dades. Utilitza un sistema de gravació magnètica per emmagatzemar dades digitals. Està fabricat amb un o més discos rígids (anomenats plats), units per un mateix eix que gira a gran velocitat dins d’una caixa metàl·lica segellada. En cadascuna de les cares de cada plat (superior i inferior) hi ha un capçal de lectura/escriptura que sura sobre una fina làmina d’aire generada per la rotació dels discos (efecte Bernoulli).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Discs durs externs</strong>. És un disc dur que és fàcilment transportable arreu sense necessitat de consumir energia elèctrica o bateria. Es connecten als ordenadors personals pel port USB (bus sèrie universal).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Discs òptics o CD</strong>. Suport digital òptic utilitzat per emmagatzemar diferents tipus d’informació (àudio, imatges, vídeo, dades, programes). Els CD estàndard tenen un diàmetre de 12 centímetres i poden emmagatzemar fins a 80 minuts d’àudio (o 700 <acronym title="Megabyte">MB</acronym> de dades).</div>
+</li>
+<li class="level1"><div class="li"> <strong>DVD</strong>. És, com el CD, un suport digital òptic. L’emmagatzematge es pot fer de diverses maneres. Així, trobem el DVD-ROM (dispositiu només de lectura), DVD-R i DVD + R (només es possible escriure-hi una vegada), DVD -RW i DVD + RW (permeten gravar i esborrar dades les vegades que es vulgui).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Blu-ray</strong>. És un nou format de disc òptic. El Blu-ray és un disc de la mateixa mida que un DVD (12 cm) i amb una capacitat de 25 <acronym title="Gigabyte">GB</acronym> per cara (50 <acronym title="Gigabyte">GB</acronym> en total a una velocitat de 36 Mbit/s). Existeixen ja el BD-R i el BD-RE (gravable i regravable respectivament).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Memòria Flash</strong>. És un sistema d’emmagatzematge digital basat en semiconductors. Té moltes similituds amb la memòria RAM, però el seu contingut (informació) no es destrueix quan manca corrent. Per la seva elevada velocitat, durabilitat i baix consum d’energia, la memòria Flash s’usa en càmeres digitals, telèfons mòbils, impressores, PDA, ordinadors portàtils i dispositius que emmagatzemen i reprodueixen so, com els reproductors d’MP3. Aquest tipus de dispositiu no utilitza elements mecànics. Aquest factor n’augmenta molt la velocitat i la vida útil i disminueix considerablement el consum d’energia. Existeixen diversos formats de targetes de memòria, com Compact Flash, Secure Digital (anomenades SD), Memory Stick, MMC (MultimediaCard) o xD Picture Card. La diferència entre ells (a part d’aspectes mecànics com l’encapsulat o els connectors) rau en la velocitat de transferència.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Discs d’estat sòlid (SSD)</strong>. És l’evolució natural dels dispositius d’emmagatzematge de dades perquè no utilitza components mecànics. La seva capacitat és comparable a les dels discs durs mecànics amb una velocitat de transferència més elevada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Llibreries de còpia</strong>. Ens podem trobar que la nostra organització manipuli quantitats de dades que ocupin diverses cintes de còpia al dia. En aquest cas, una sola persona es passaria el dia fent còpies de seguretat i no acabaria mai. Quina és la solució per a aquests volums d’informació tan grans? Hi ha uns dispositius anomenats <em>llibreries de còpia</em>. Són externs, disposen de braços articulats i contenen de 20 a 2.000 cintes de còpia de seguretat. Són com robots.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Tendències</p>
+<p>
+Gràcies a la proliferació de xarxes SAN (Storage Area Network) o dispositius NAS (Network Attached Storage), que ofereixen una gran quantitat d’espai per emmagatzemar, s’utilitzen cada cop més els discos com a dispositiu de còpia. Els mateixos proveïdors de maquinari ofereixen eines específiques que permeten fer aquestes còpies sense interrompre el normal funcionament del sistema .
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Còpia disc a disc </p>
+<p>
+En sistemes crítics, i més tenint en compte el cost i la capacitat actual d’aquests dispositius, no s’ha de descartar la possibilitat de fer una còpia de seguretat (o fins i tot de copiar tota la informació) en un altre disc dur només dedicat a aquesta funció. L’estratègia és fer una primera còpia de seguretat en un disc dur (es pot fer amb un procediment automàtic i diverses vegades al dia, si cal), i d’aquest disc, posteriorment, fer-ne una còpia de seguretat en un altre dispositiu (que pot ser una cinta). 
+</p>
+</div></div>
+<p>
+Amb el programari adient, l’usuari veu, per exemple, una unitat de 400 TB de capacitat. El programa sap en quina cinta està emmagatzemada la còpia i quines cintes estan plenes, i executa la política de substitució de cintes. Les llibreries de còpia només tenen sentit per a organitzacions de grans dimensions o bé que gestionen quantitats d’informació molt grans.
+</p>
+
+</div>
+
+<h2><a id="amenaces" >Amenaces</a></h2>
+<div class="level2">
+
+<p>
+Les <strong>amenaces</strong> són esdeveniments externs que poden causar danys al sistema informàtic. A diferència de les vulnerabilitats, que són factors interns, les amenaces representen accions malicioses que poden provocar danys. Així, una amenaça pot explotar una determinada vulnerabilitat per causar dany al sistema. Les <strong>contramesures</strong> són les accions que es poden dur a terme per evitar una amenaça determinada.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Llibreries de còpia comercials</p>
+<p>
+Hi ha diverses fabricants de maquinari que comercialitzen llibreries de còpia en col·laboració amb marques de programari, perquè puguin funcionar correctament amb els servidors en què s’instal·lin. Algunes d’aquestes marques són Qualstar, Adic, Hewlett-Packard, StorageTek o Quantum (ATL).
+</p>
+</div></div>
+</div>
+
+<h3><a id="amenaces_fisiques" >Amenaces físiques</a></h3>
+<div class="level3">
+
+<p>
+Les amenaces físiques tenen a veure amb els factors ambientals en els quals operen els equipaments informàtics. Podem esmentar els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Temperatura ambiental.</strong> Els ordinadors haurien de funcionar en ambients que tinguin temperatures entre els 10 i els 35 ºC. Cal garantir, doncs, que els ordinadors estiguin adequadament ventilats i que les condicions ambientals (pel que fa a la temperatura) no siguin extremes. En cas contrari, alguns xips poden deixar de funcionar.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Humitat</strong>. L’excessiva humitat també pot provocar danys a l’ordinador (curtcircuits, corrosió dels components metàl·lics, degradació de les propietats dels components interns…). Els aparells d’aire condicionat poden ajudar a mantenir un nivell acceptable d’humitat a les zones de treball (una humitat relativa del 20-80%). També pot ser útil instal·lar humidificadors.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pols i partícules diverses</strong>. Aquestes partícules poden interferir en el funcionament dels components mecànics de l’ordinador. Per exemple, si hi ha pols a la unitat lectora de CD, en pot dificultar el funcionament, l’acumulació de pols pot produir problemes de ventilació… </div>
+</li>
+<li class="level1"><div class="li"> <strong>Altitud</strong>. Els components elèctrics poden funcionar malament si l’altitud en què ens trobem és excessiva (ara bé, aquest problema és molt difícil que el trobem a la pràctica).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Impactes i vibracions</strong>. Els impactes directes poden malmetre de manera evident un ordinador, tant pel que fa a la seva aparença externa, com als components interns que, a causa del cop, es poden desprendre o espatllar-se. També cal tenir en compte les vibracions a què està sotmès contínuament un ordinador en funcionament.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Descàrregues electrostàtiques </strong> (en anglès, <em>electrostatic discharge</em> o ESD). Es produeix quan una persona que té una càrrega elèctrica estàtica toca un component d’un ordinador. Pot passar en ambients secs, amb humitats relatives menors al 50%, i pot produir danys en xips i fins i tot en discs durs (si els manipulem amb les mans). Per evitar aquest problema hi ha diverses solucions, una de les qual és l’ús de braçalets antiestàtics.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Interferències electromagnètiques i de radiofreqüència</strong>. Aquestes interferències es poden produir pels dispositius que hi ha al voltant del nostre sistema (o bé, per exemple, per una antena en un edifici proper), i poden ocasionar el funcionament defectuós d’algun component de l’ordinador mentre dura la interferència (per exemple, alteracions de la imatge en el monitor). I a la inversa, el nostre sistema informàtic també pot produir interferències sobre altres dispositius, com ara telèfons mòbils o aparells de televisió. Per solucionar-ho cal mantenir, en la mesura del possible, la separació d’aquests dispositius amb l’ordinador que les provoca, emprar cables blindats per connectar perifèrics, i fer funcionar l’ordinador amb la coberta instal·lada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Magnetisme</strong>. Cal tenir present que les superfícies magnètiques dels plats giratoris dels discs durs són susceptibles de patir alteracions arran de les seves propietats magnètiques (per exemple, si han de passar per sota de l’arc de seguretat d’un jutjat).</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La <strong>humitat relativa</strong> és el percentatge de la humitat total (quantitat de vapor d’aigua) que pot contenir l’aire a la temperatura a la qual ens trobem.
+</p>
+</div></div>
+</div>
+
+<h3><a id="amenaces_logiques" >Amenaces lògiques</a></h3>
+<div class="level3">
+
+<p>
+En aquest apartat considerem tots aquells programaris que, amb independència de la voluntat amb què van ser creats, poden produir danys en un sistema informàtic. Es poden classificar de la manera següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Solid State Drive</p>
+<p>
+Una <strong>unitat d’estat sòlid</strong> (SSD o <em>Solid State Drive</em>) és un dispositiu d’emmagatzematge de dades que utilitza una memòria per a emmagatzemar dades, en lloc dels plats giratoris que es troben als discs durs convencionals. Tècnicament no són discs durs, tot i que sovint els anomenen d’aquesta manera. 
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Virus</strong>. És una seqüència de codi que s’insereix en un fitxer executable (anomenat amfitrió o <em>host</em>). El virus no es pot executar per si mateix (no és un programa independent), de manera que necessita l’amfitrió per executar-se i, quan ho fa, normalment replica el codi viral (o una modificació) en altres programes, que van estenent la infecció arreu. És, per tant, molt semblant a un virus biològic, del qual en rep el nom.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Cuc</strong> (<em>worm</em>). La principal característica dels cucs és la seva capacitat de duplicació i difusió a través de la xarxa. Poden ser relativament inofensius i només consumir, per exemple, molta amplada de banda de la xarxa, però també es poden programar per produir danys, com per exemple, llançar un atac de denegació de servei (<em>denial of service</em> o DoS) o instal·lar un virus en el sistema atacat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Cavall de Troia</strong>. Programari que, aparentment, realitza una tasca útil per l’usuari, però que en realitat realitza altres funcions que van en detriment del sistema afectat, com ara donar el control remot del sistema a un usuari no autoritzat o enviar dades a l’exterior. A diferència dels virus, les activitats dels quals solen ser ben visibles per l’usuari, els cavalls de Troia solen romandre inadvertits. Es basen en una estructura client-servidor i en moltes ocasions s’instal·len amb tècniques d’enginyeria social o es descarreguen d’Internet, camuflats com a aplicacions útils.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Codi maliciós</strong> (<em>malware</em>). És el nom genèric que designa tots aquells programes que poden provocar efectes nocius en el sistema informàtic que els allotja. El nom prové de l’abreviació de les paraules angleses (<em>malicious software</em>). Els virus, cucs i cavalls de Troia són exemples típics de codis maliciosos.</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>Exploit</strong></em>. Programa maliciós que aprofita una vulnerabilitat (coneguda o no) d’un programa informàtic, conseqüència d’un error de programació. No existeix un <em>exploit</em> general, sinó que cada programari, a causa dels gairebé inevitables errors de programació, té les seves peculiars vulnerabilitats, les quals poden ser hàbilment aprofitades o explotades pels programadors experimentats (si bé a Internet es poden trobar <em>exploits </em>per violar la seguretat de tota mena d’aplicacions i sistemes operatius sense necessitat de tenir coneixements de programació).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Bomba lògica</strong>. Tipus de <em>malware</em> similar als cavalls de Troia caracteritzat per activar-se, amb efectes nocius per al sistema afectat, en certes condicions (per exemple, en una data determinada).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Porta del darrere</strong> (<em>backdoor</em>). Codi en un programa que permet, a qui en coneix l’existència i funcionament, evitar els mecanismes d’autenticació (per exemple, existia el rumor que el conegut programari de xifratge PGP tenia un <em>backdoor</em>). Pot permetre l’accés remot il·lícit a un sistema informàtic.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Programa espia</strong> (<em>spyware</em>). Programa que recull informació sobre els hàbits dels usuaris sense el seu consentiment. Aquesta recaptació es pot dur a terme amb finalitat publicitària o per obtenir informació personal per a qualsevol ús.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Programari de publicitat</strong> (<em>adware</em>). Programari que mostra publicitat. Per exemple, les versions de demostració d’alguns programes poden ensenyar publicitat diversa (d’aquí ve que siguin gratuïtes o de demostració).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Falsa alarma</strong> (<em>hoax</em>). Missatge que es difon per mitjà del correu electrònic en el qual s’adverteix de l’existència (falsa) de virus o <em>malware</em> similar en el sistema. Per exemple, rebem un correu en què se’ns demana que esborrem un fitxer del nostre sistema perquè és un virus molt perillós. En realitat, aquest presumpte nom de virus podria correspondre a un arxiu necessari pel bon funcionament del sistema operatiu, per la qual cosa la seva eliminació podria produir danys importants en el sistema.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Enregistrador de teclat</strong> (<em>keylogger</em>). Captura les pulsacions del teclat de l’ordinador infectat. Es pot utilitzar, per exemple, per obtenir informació d’accés a un compte bancari.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Eina d’intrusió</strong> (<em>rootkit</em>). El terme prové d’unir la paraula anglesa “root” (nom assignat a Unix al compte de màxims privilegis) i “kit” (que significa conjunt d’eines o programes). És una eina informàtica, normalment emprada amb finalitats malicioses (com ara l’obtenció d’informació), que permet l’accés al sistema per part d’un atacant remot. Fa servir tècniques per ocultar la seva presència i la d’altres processos que puguin estar realitzant accions malicioses sobre el sistema. Els <em>rootkits</em> poden atorgar privilegis d’administrador a l’atacant i, per tant, són molt perillosos perquè li cedeixen el control del sistema.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="analisi_forense_en_sistemes_informatics" >Anàlisi forense en sistemes informàtics</a></h2>
+<div class="level2">
+
+<p>
+La generalització de l’ús de les tecnologies de la informació ha incrementat el valor de la informació digital, la qual cosa ha generat, al seu temps, la necessitat de protegir-la davant d’atacs malintencionats o atribuïbles al desconeixement d’aquestes noves tecnologies. En qualsevol cas, les empremtes que podrien revelar la realització d’un fet determinat (amb independència de si és o no constitutiu de delicte) es troben emmagatzemades en suports digitals i s’anomenen genèricament evidències digitals. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Existeixen molts tipus d’<em>exploits</em>: <em>buffer overflow,</em><em>race condition</em>, <em>cross-site scripting</em>, <em>SQL injection</em>…
+</p>
+</div></div>
+<p>
+L’evidència digital presenta, bàsicament, les propietats següents:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Definició d&#039;evidència</p>
+<p>
+En la comissió d’una conducta delictiva, s’anomena evidència a tot aquell element que proporciona informació que condueix a alguna conclusió relacionada amb el fet que s’investiga.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Es pot modificar o eliminar fàcilment.</div>
+</li>
+<li class="level1"><div class="li"> És possible obtenir una còpia exacta d’un fitxer sense deixar cap empremta d’aquesta acció.</div>
+</li>
+<li class="level1"><div class="li"> L’obtenció de l’evidència digital pot suposar l’alteració dels suports digitals originals.</div>
+</li>
+</ul>
+
+<p>
+L’anàlisi forense informàtic va aparèixer a causa de la necessitat d’aportar elements rellevants en els processos judicials en què les noves tecnologies de la informació hi tenien un paper destacat, ja fos com a objecte final (per exemple, una intrusió amb danys en un sistema informàtic) o com a mitjà (per exemple, l’enviament d’amenaces per correu electrònic a un personatge públic). La finalitat d’aquesta anàlisi, en qualsevol cas, segueix la clàssica línia argumental policíaca: buscar respondre <em>què</em>, <em>quan</em>, <em>on</em>, <em>qui</em>, <em>com</em> i <em>per què</em>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Fragilitat de l&#039;evidència digital</p>
+<p>
+Encara que obrim un fitxer de text per veure’n el contingut i no hi fem cap modificació, l’atribut de darrer accés al fitxer s’actualitza amb la data i hora en què s’ha efectuat aquesta operació.
+</p>
+</div></div>
+<p>
+Preguntes clau:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Què</em> s’ha comès?</div>
+</li>
+<li class="level1"><div class="li"> <em>Quan</em> ha passat?</div>
+</li>
+<li class="level1"><div class="li"> <em>On</em> s’ha comès?</div>
+</li>
+<li class="level1"><div class="li"> <em>Qui</em> ho ha comès?</div>
+</li>
+<li class="level1"><div class="li"> <em>Com </em>s’ha dut a terme?</div>
+</li>
+<li class="level1"><div class="li"> <em>Per què</em> s’ha comès?</div>
+</li>
+</ul>
+
+<p>
+Més precisament, es podria definir l’anàlisi forense informàtica com el procés d’aplicar el mètode científic als sistemes informàtics amb la finalitat d’<strong>identificar, recollir, adquirir, preservar i analitzar</strong> l’evidència digital, de manera que sigui acceptada en un procés judicial.
+</p>
+
+<p>
+Naturalment, la informàtica forense va més enllà dels processos judicials i, en moltes ocasions, els informes elaborats pels experts analistes no tindran com a objectiu final la seva presentació davant dels tribunals, sinó que romandran en l’àmbit de l’empresa privada (aprenentatge, auditoria…). No obstant això, el cas judicial és el més restrictiu i el que més mesures de preservació exigeix, per la qual cosa pot ser extensible a qualsevol tipus d’anàlisi informàtica. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’estàndard <strong>ISO/IEC 27037</strong> defineix aquestes etapes, tot i que hi ha bibliografia diversa en què les etapes difereixen de les indicades en aquest text.
+</p>
+</div></div>
+</div>
+
+<h3><a id="assegurament_de_l_evidencia_digital" >Assegurament de l&#039;evidència digital</a></h3>
+<div class="level3">
+
+<p>
+La fase d’identificació conté una sèrie d’<strong>accions prèvies</strong> que, al més pur estil policial, permeten <strong>protegir l’escena de l’incident</strong>, de manera similar a com caldria protegir l’escena d’un crim. Les recomanacions següents permeten preservar l’evidència digital i facilitar-ne l’anàlisi:
+</p>
+<ul>
+<li class="level1"><div class="li"> Identificar l’escena on s’ha produït el fet i establir un perímetre de seguretat.</div>
+</li>
+<li class="level1"><div class="li"> Realitzar una llista amb els equips involucrats en el succés.</div>
+</li>
+<li class="level1"><div class="li"> Restringir l’accés de persones i equipaments informàtics a l’interior del perímetre.</div>
+</li>
+<li class="level1"><div class="li"> Fotografiar o enregistrar en vídeo l’escena del succés També pot ser útil representar esquemàticament la topografia de la xarxa d’ordinadors.</div>
+</li>
+<li class="level1"><div class="li"> Desconnectar les connexions de xarxa.</div>
+</li>
+<li class="level1"><div class="li"> Comprovar i desconnectar les connexions sense fils, ja que podrien permetre connexions remotes als equips objecte d’investigació.</div>
+</li>
+<li class="level1"><div class="li"> Si hi ha impressores en funcionament, permetre que acabin la impressió.</div>
+</li>
+<li class="level1"><div class="li"> Anotar la data i hora del sistema abans d’apagar-lo. Aquestes dades també es poden fotografiar o enregistrar en vídeo.</div>
+</li>
+<li class="level1"><div class="li"> Etiquetar cables i components. Cal tenir present que alguns dispositius requereixen d’un cablatge específic, sense el qual no serà possible analitzar l’aparell en el laboratori, ja que no es podrà posar en funcionament.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="identificacio_de_l_evidencia_digital" >Identificació de l’evidència digital</a></h3>
+<div class="level3">
+
+<p>
+S’anomena <em>identificació de l’evidència digital</em> al <strong>procés d’identificació i localització de les evidències</strong> que s’han de recollir per ser analitzades posteriorment. Hi ha fonts d’evidència digital que ens resulten evidents, com per exemple, un disc dur, però n’hi ha d’altres que no ho són tant: càmeres de vídeo, enregistradors de veu o de vídeo (càmeres de seguretat), dispositius GPS, impressores (moltes ja contenen discs durs, susceptibles d’ésser analitzats), telèfons mòbils…
+</p>
+
+<p>
+A més, el procés d’identificació no és tan trivial com pot semblar a primera vista, ja que tot sovint l’expert es trobarà configuracions de sistemes complexos amb molts dispositius (cas de locutoris o empreses, per exemple) o, simplement, usuaris que guarden molts suports susceptibles de ser analitzats (per exemple, un particular addicte a emmagatzemar qualsevol programari descarregat d’Internet en milers de CD i DVD). En conseqüència, l’analista haurà de trobar una solució de compromís entre la qualitat de les evidències que pugui obtenir, el valor de la prova i el temps de què disposa per recollir-les.
+</p>
+
+<p>
+En primer lloc, l’expert haurà d’identificar el sistema informàtic (un únic PC, una xarxa local, un sistema IBM AS/400, un RAID…) amb la finalitat de saber on es poden trobar les evidències digitals que poden ser d’utilitat per a l’anàlisi. Aquestes poden estar en ordinadors locals, en suports com CD, DVD o dispositius USB, en servidors remots i fins i tot en la memòria RAM dels equips en funcionament. Aquest darrer tipus d’evidències, les <strong>volàtils</strong> (en essència, aquelles que desapareixen en absència d’alimentació elèctrica), són les que haurà d’intentar preservar en primera instància. 
+</p>
+
+<p>
+En aquesta primera instància també convindrà valorar la possibilitat de realitzar una <strong>anàlisi in situ</strong> a la recerca d’evidències que d’altra forma es perdrien en aturar el sistema (per exemple, els processos en execució). No obstant això, cal tenir present que aquesta mena d’anàlisi pot comportar la pèrdua d’altres evidències, així com la invalidació de la prova en un procediment judicial, ja que l’anàlisi in situ implica la manipulació del dispositiu original, i si no es fa amb les eines forenses adients es pot alterar l’evidència.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El contingut de la RAM pot ser d’interès per esbrinar la contrasenya d’un fitxer determinat (s’hi emmagatzema en text en clar).
+</p>
+</div></div>
+</div>
+
+<h3><a id="recollida_de_les_evidencies_digitals" >Recollida de les evidències digitals</a></h3>
+<div class="level3">
+
+<p>
+En la fase de recollida de les evidències digitals es produeix la recollida dels dispositius físics (de la seva localització original) que poden contenir l’evidència digital, documentant tots els dispositius recollits i els passos realitzats. L’evidència digital pot ser fàcilment destruïda si la recollida no s’efectua amb prou cura.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La manipulació de l’evidència en el lloc dels fets se sol realitzar en presència de terceres parts, normalment notaris o secretaris judicials.
+</p>
+</div></div>
+</div>
+
+<h4><a id="recollida_d_ordinadors_en_funcionament" >Recollida d&#039;ordinadors en funcionament</a></h4>
+<div class="level4">
+
+<p>
+
+En general, la manera més segura d’actuar pel que fa a un ordinador en funcionament és <strong>desendollar el cable de corrent</strong>. No obstant això, si l’evidència que cerquem es troba visible a la pantalla de l’ordinador (per exemple, un document de text amb contingut rellevant) o pot estar en la memòria (processos en execució, connexions de xarxa actives, contingut de la memòria RAM…), cal mantenir l’ordinador en funcionament i documentar (fotografiar la pantalla, per exemple) o obtenir les evidències (extreure la memòria RAM, per exemple).
+</p>
+
+<p>
+Malgrat tot el que hem exposat, en les situacions següents <strong>no seria recomanable desendollar el cable de corrent</strong>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El protocol de recollida d’altres dispositius com, per exemple, telèfons mòbils pot diferir del protocol aplicat als ordinadors.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Quan hi ha sospites o hi ha activitat en la pantalla que indica que la informació s’està esborrant o sobreescrivint.</div>
+</li>
+<li class="level1"><div class="li"> Quan hi ha algun procés que indica que s’està destruint algun dispositiu d’emmagatzematge (format d’un disc dur, execució de programaris d’esborrament segur o <em>wipe</em>…).</div>
+</li>
+<li class="level1"><div class="li"> Quan sospitem que l’ordinador, quan efectua el procediment d’aturada normal, pot iniciar un script de format de disc dur o similar.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="recollida_d_ordinadors_apagats" >Recollida d&#039;ordinadors apagats</a></h4>
+<div class="level4">
+
+<p>
+En aquest cas, cal dur a terme les accions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Documentar i fotografiar l’equip, totes les seves connexions i perifèrics.</div>
+</li>
+<li class="level1"><div class="li"> Desendollar el cable de corrent des de la part posterior de l’ordinador. Si es tracta d’un ordinador portàtil, també cal extreure la bateria. Alguns portàtils s’encenen en aixecar la tapa. L’extracció de la bateria evita que el dispositiu es pugui posar en funcionament de manera accidental.</div>
+</li>
+<li class="level1"><div class="li"> Desendollar la resta de connexions, tot indicant-les en la documentació adjunta.</div>
+</li>
+<li class="level1"><div class="li"> Documentar el model i el número de sèrie de l’ordinador.</div>
+</li>
+<li class="level1"><div class="li"> Precintar l’ordinador.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="obtencio_i_preservacio_d_evidencies_digitals" >Obtenció i preservació d&#039;evidències digitals</a></h3>
+<div class="level3">
+
+<p>
+Atesa la facilitat amb la qual les evidències digitals es poden modificar o eliminar, aquesta fase es converteix en la baula més crítica de tot el procediment. És evident que és impossible obtenir una “instantània” completa de tot un sistema informàtic en un moment concret, encara que, sortosament per a l’analista, en la gran majoria d’ocasions les proves determinants es troben emmagatzemades en el sistema de fitxers, el qual continuarà conservant les evidències malgrat la manca d’alimentació elèctrica. A diferència d’altres proves (per exemple, una anàlisi biològica d’ADN), l’evidència digital es pot duplicar o clonar de manera exacta (a nivell de bits), incloent els fitxers ocults, eliminats i no sobreescrits, i fins i tot l’espai dels clústers que queda sense utilitzar a l’hora de desar-hi els fitxers, l’anomenat “’espai desaprofitat” (<em>file slack</em>), al qual ens referirem posteriorment, possibles particions ocultes, o l’espai no assignat del disc dur. En virtut d’aquesta característica, i també com a garantia de preservació de la prova, l’analista actuant acabarà realitzant un clon de l’evidència, ja sigui en l’escena del succés o en les dependències del laboratori. 
+</p>
+
+<p>
+A primera vista resulta temptador ajornar la clonació dels suports informàtics al moment en què aquests arribin al laboratori (ja que és on es podrà fer el procés amb tota mena de garanties i sense presses), però això no sempre és possible. Si, per exemple, les evidències es localitzen en el servidor d’una empresa, no és possible precintar l’equipament perquè aleshores l’empresa hauria d’aturar la seva activitat. En aquests casos és preferible aturar momentàniament l’activitat de l’empresa i obtenir un clon allà mateix, per reprendre tot seguit l’activitat empresarial, o bé realitzar una anàlisi in situ, amb els inconvenients que ja s’han explicat. 
+</p>
+
+<p>
+La còpia o clon s’efectuarà, normalment, en dispositius (DVD, discs durs…) aportats per l’analista. L’elecció d’un o altre mitjà (normalment es fa sobre discs durs) dependrà de la quantitat d’informació continguda en els suports originals. Finalment, el programari o maquinari emprat per a l’obtenció del clon calcularà un valor <em>hash</em> que haurà de ser el mateix per al disc dur d’origen que per al de destinació, garantint d’aquesta manera que el procés de còpia s’ha fet correctament. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Recordem que la mera observació del contingut d’un disc dur pot alterar o eliminar evidències (sobreescriptura de fitxers eliminats, alteració dels atributs de darrer accés dels fitxers…).
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Cada vegada més, les evidències es poden trobar en núvol (per exemple, al servidor de Dropbox) o en altres elements de la xarxa.
+</p>
+</div></div>
+<p>
+La clonació es pot fer amb programes específics (Linen, l’ordre <strong><em>dd</em></strong> d’Unix…), tot i que també hi ha dispositius de maquinari que la poden realitzar, com per exemple, el que mostra la <span class="figref"><a href="#Figura9"><span>figura</span></a></span>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Recordeu la definició de la funció <em>hash</em> de l’apartat “Criptografia i funcions <em>hash</em>”, d’aquesta mateixa unitat.
+</p>
+</div></div><div class="iocfigure"><a name="Figura9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Dispositiu de clonació
+
+</figcaption><img src="../media/m11_pdfindex_image_10.jpg" alt="" /></figure>
+</div>
+<p>
+La imatge mostra un dispositiu de clonació: el disc dur de destinació es col·loca dins de l’aparell, mentre que el disc dur original és que el podem veure a l’exterior. El disc dur de destinació ha d’haver estat esborrat mitjançant procediments d’esborrament segur (<em>wipe</em>) per evitar que pugui contenir informació latent d’altres casos anteriors, o bé ha de ser un disc dur nou, específicament comprat per a l’ocasió.
+</p>
+
+<p>
+Una vegada obtingut el clon, el suport original romandrà precintat i protegit, i el clon és el dispositiu que s’analitzarà, mitjançant eines específiques que permetran el seu estudi sense necessitat d’alterar-ne el contingut. Sovint, es genera un segon clon, que és el que realment s’empra per a l’anàlisi, mentre que el primer clon serveix perquè, en cas de necessitat, es pugui generar un nou clon idèntic a l’original. Sovint, el suport original es manté protegit i precintat en dipòsit (per exemple, en seu judicial), d’on es podrà reclamar en cas que es desitgi efectuar una prova contrapericial. 
+</p>
+
+<p>
+A més de l’adquisició de l’evidència, en aquesta etapa també cal documentar qui ha preservat l’evidència, on i com s’ha fet i quan. Tot seguit cal empaquetar les evidències, identificant-les de manera inequívoca. Aquest procés es duu a terme embalant els paquets amb material protector que protegeixi les evidències de cops, pluja o qualsevol altre element que les pugui malmetre. Aquesta fase acabarà amb el transport de les evidències a un lloc segur o a les dependències del laboratori on hagin de ser analitzades. L’embalatge i el transport de les evidències és l’inici de la denominada <strong>cadena de custòdia</strong>, la qual permet garantir la integritat de les proves, des de la seva obtenció fins a la seva disposició a l’autoritat judicial o al laboratori on hagin de ser analitzades. La documentació de la cadena de custòdia permet saber en qualsevol moment del procés on han estat emmagatzemades les evidències i qui hi ha tingut accés.
+</p>
+
+</div>
+
+<h3><a id="analisi_de_les_evidencies_digitals" >Anàlisi de les evidències digitals</a></h3>
+<div class="level3">
+
+<p>
+En aquesta fase, l’expert haurà de respondre les preguntes “policials” introduïdes a l’inici d’aquest capítol. Aquest estudi es fonamenta, sobretot, en l’anàlisi del contingut dels fitxers (<em><strong>dades</strong></em>) i de la informació sobre aquests fitxers (<em><strong>metadades</strong></em>).
+</p>
+
+<p>
+Normalment no es fan anàlisis exhaustives dels suports objecte d’interès (seria una tasca inabastable), sinó que els informes pericials es limiten a respondre aquells extrems plantejats en l’anàlisi.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un exemple de metadada podria ser, per exemple, el camp “Autor” d’un fitxer DOC.
+</p>
+</div></div>
+<p>
+Bàsicament hi ha quatre categories diferents de dades susceptibles de ser analitzades:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Dades lògicament accessibles.</strong> Són les dades contingudes en fitxers directament accessibles. Aquesta anàlisi pot ser complicada a causa de la dificultat de discriminar la informació rellevant entre molts milers de fitxers, o, entre altres raons, a causa de l’existència de fitxers xifrats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Dades situades en l’anomenat</strong> <em><strong>ambient data</strong></em>. És a dir, aquelles dades que apareixen en localitzacions no directament visibles i que requereixen l’ús de programes específics per ser recuperades. Un bon exemple d’aquest tipus de dades és la informació residual que es pot trobar en clústers no assignats a cap fitxer, o aquella informació localitzada en l’espai desaprofitat del darrer clúster assignat a un fitxer (<em>file </em><em>slack</em>), és a dir, l’espai entre el final lògic i el final físic d’un fitxer. Vegeu la <span class="figref"><a href="#Figura10"><span>figura</span></a></span>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació gràfica de l’espai desaprofitat (file slack)
+
+</figcaption><img src="../media/uf1_11.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong>Dades que han estat esborrades o eliminades</strong>, però que encara no han estat sobreescrites per altres fitxers i que, per tant, són susceptibles de ser recuperades.</div>
+</li>
+</ul>
+
+<p>
+Per fer l’anàlisi de les evidències es poden emprar diverses eines. Una de les més conegudes és possiblement Encase, de codi propietari, que abasta, amb una interfície molt amigable, totes les fases de l’anàlisi forense, des de l’adquisició dels suports originals i l’anàlisi fins a la generació automàtica de l’informe final. Una altra eina molt coneguda és l’eina de font pública The Sleuth Kit (TSK), i el seu frontal web gràfic Autopsy.
+</p>
+
+</div>
+
+<h3><a id="presentacio_i_informe" >Presentació i informe</a></h3>
+<div class="level3">
+
+<p>
+En l’informe elaborat per l’expert es presentaran les evidències relacionades amb el cas, la justificació del procediment emprat i, el més important, les conclusions. En moltes ocasions, l’informe serà ratificat en presència del jutge o bé serà lliurat a empreses i advocats. No obstant això, en cap cas els destinataris de les anàlisis pericials han de disposar necessàriament de coneixements informàtics per comprendre l’informe en profunditat. Per tant, en general no s’ha d’emprar un llenguatge gaire tècnic i, quan calgui fer-ho, serà necessari afegir notes explicatives a peu de pàgina o redactar glossaris tècnics, que es poden afegir a l’annex de l’informe. En els casos en què els informes hagin de ser defensats davant del jutge, l’analista, a més de tenir rigor tècnic, ha de ser prou hàbil per comunicar el resultat de l’anàlisi de manera concisa i clara. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+The Sleuth Kit i Autopsy es poden trobar en moltes distribucions forenses gratuïtes, com Caine, DEFT o Backtrack, per exemple.
+</p>
+</div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

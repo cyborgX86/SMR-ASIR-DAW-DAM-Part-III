@@ -1,0 +1,465 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Estructures definides pel programador</a></li><li><a href="continguts.html">Programació amb funcions</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="dibuixar_un_triangle_funcions_niades" >Dibuixar un triangle (funcions niades)</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és crear una funció JavaScript que utilitzi funcions niades per dibuixar un triangle d’asteriscs.
+</p>
+
+<p>
+A l’activitat ha d’aparèixer una funció que donat un número enter (‘num’) dibuixi un triangle rectangle, on cadascuna de les cares del triangle ha de tenir ‘num’ asteriscs. Per realitzar aquesta activitat s’ha d’utilitzar una estructura niada de funcions.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/gOMvdEL?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gOMvdEL?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/gOMvdEL?editors=0010</a>
+</p>
+
+</p>
+
+<p>
+El codi de la solució és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function triangle(num) {</div></li><li class="li1"><div class="de1">  for (let i = 1; i &lt;= num; i++) {</div></li><li class="li1"><div class="de1">    dibuixarLinia(i);</div></li><li class="li1"><div class="de1">    document.write(&quot;&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function dibuixarLinia(rep) {</div></li><li class="li1"><div class="de1">    for (let j = 0; j &lt; rep; j++) {</div></li><li class="li1"><div class="de1">      document.write(&quot;*&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">triangle(5);</div></li></ol></pre>
+
+<p>
+Per crear una estructura de funcions niades s’ha decidit crear dues funcions. La funció <code>triangle()</code> que és la funció principal i la funció <code>Dibuixarlinia()</code> que és la funció que dibuixa cadascuna de les files del triangle. 
+</p>
+
+<p>
+La funció principal <code>triangle()</code> té un bucle per dibuixar cadascuna de les línies del triangle. La funció <code>dibuixarLinia()</code> dibuixa tants asteriscs com repeticions li passem per paràmetre. El número de repeticions, és a dir, d’asterics, correspon amb el número de línia que s’està dibuixant.
+El resultat de l’execució del codi anterior és:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">*</div></li><li class="li1"><div class="de1">**</div></li><li class="li1"><div class="de1">***</div></li><li class="li1"><div class="de1">****</div></li><li class="li1"><div class="de1">*****</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="parquing_memoize" >Pàrquing (memoize)</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és crear una funció que memoritzi els valors calculats prèviament.
+</p>
+
+<p>
+A l’activitat ha d’aparèixer una funció que memoritzi els diners que ha de pagar un conductor segons el temps que ha estat estacionat el cotxe en el pàrquing. El temps (minuts) que ha estacionat un cotxe s’envia per paràmetre a la funció. Cada minut que un cotxe es troba estacionat en el pàrquing paga 0.05 cèntims.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/eYzVLwb?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYzVLwb?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/eYzVLwb?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function parquing(temps) {</div></li><li class="li1"><div class="de1">  if (!parquing.cache) parquing.cache = {};</div></li><li class="li1"><div class="de1">  if (parquing.cache[temps] != null) {</div></li><li class="li1"><div class="de1">    return `Cache: ${parquing.cache[temps]}`;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  let diners = temps * 0.05;</div></li><li class="li1"><div class="de1">  parquing.cache[temps] = diners;</div></li><li class="li1"><div class="de1">  return `Calculat: ${diners}`;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">document.write(parquing(60) + &quot; euros&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(parquing(60) + &quot; euros&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(parquing(120) + &quot; euros&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(parquing(60) + &quot; euros&lt;br&gt;&quot;);</div></li><li class="li1"><div class="de1">document.write(parquing(120) + &quot; euros&lt;br&gt;&quot;);</div></li></ol></pre>
+
+</p>
+
+<p>
+La funció <code>parquing()</code> rep el temps, en minuts, que un cotxe ha estacionat dins del pàrquing. La funció comprova si ja havia calculat el valor anteriorment i així s’estalvia tornar a calcular-ho.
+</p>
+
+<p>
+Primer comprova que estigui creada la <em>cache</em>. Si s’ha creat, comprova que s’hagi calculat prèviament els diners segons el temps que ha estat estacionat el cotxe. En el cas que s’hagi calculat, es retorna aquest càlcul i s’acaba la funció.
+</p>
+
+<p>
+Si és la primera vegada que hi ha estat un cotxe durant aquest temps llavors es calcula els diners que costa el seu estacionament. Es retorna els diners al mateix temps que es guarda en memòria de la funció.
+El resultat de l’execució és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">Calculat: 3 euros</div></li><li class="li1"><div class="de1">Cache: 3 euros</div></li><li class="li1"><div class="de1">Calculat: 6 euros</div></li><li class="li1"><div class="de1">Cache: 3 euros</div></li><li class="li1"><div class="de1">Cache: 6 euros</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="rellotge_settimeout_i_funcions_definides_pel_programador" >Rellotge (setTimeout i funcions definides pel programador)</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és crear un rellotge utilitzant funcions definides pel programador i la funció <code>setTimeout()</code>.
+</p>
+
+<p>
+A l’activitat ha d’aparèixer una funció que escrigui l’hora actual per pantalla. Cada mig segon s’ha d’actualitzar per donar la sensació que realment estem visualitzant un rellotge. Aquest rellotge ha de tenir el format següent: HH:MM:SS
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/BazYqBd?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BazYqBd?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/BazYqBd?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function rellotge() {</div></li><li class="li1"><div class="de1">  let temps = new Date();</div></li><li class="li1"><div class="de1">  let h = temps.getHours();</div></li><li class="li1"><div class="de1">  let m = temps.getMinutes();</div></li><li class="li1"><div class="de1">  let s = temps.getSeconds();</div></li><li class="li1"><div class="de1">  h = afegirZeros(h);</div></li><li class="li1"><div class="de1">  m = afegirZeros(m);</div></li><li class="li1"><div class="de1">  s = afegirZeros(s);</div></li><li class="li1"><div class="de1">  document.body.innerHTML = `${h}:${m}:${s}`;</div></li><li class="li1"><div class="de1">  setTimeout(rellotge, 500);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function afegirZeros(i) {</div></li><li class="li1"><div class="de1">  return String(i).padStart(2, '0');</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">rellotge();</div></li></ol></pre>
+
+</p>
+
+<p>
+La funció principal es diu <code>rellotge()</code>. Aquesta funció calcula l’hora, els minuts i els segons actuals. Aquests càlculs s’emmagatzemen en variable per tal de mostrar-los com ens diu l’enunciat.
+</p>
+
+<p>
+El primer problema amb què ens trobem és que sempre hem de mostrar dos números, encara que les hores, els minuts o els segons calculats només hi hagi un dígit. Llavors s’ha d’afegir un ‘0’ al començament,
+</p>
+
+<p>
+
+<p>
+la solució és convertir el nombre en una cadena de text i fer servir el mèdote <code>padStart()</code> de l’objecte <code>String</code> que ens permet omplir la mida de la cadena amb el caràcter indicat.
+</p>
+
+</p>
+
+<p>
+Una vegada s’ha solucionat el problema ja el podem escriure al document.
+</p>
+
+<p>
+S’ha de tornar a repetir aquesta funció cada mig segon per tal de poder mostrar correctament l’hora. Llavors es fa ús de la funció <code>setTimeOut()</code> per programar la següent execució de la funció.
+El resultat de l’execució és el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">00:03:06</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="rellotge_funcio_de_fletxa" >Rellotge (funció de fletxa)</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+L’objectiu d’aquesta activitat és crear un rellotge mitjançant una funció de fletxa com a <em>callback</em> de la funció <code>setInterval()</code>.
+</p>
+
+<p>
+A l’activitat ha d’aparèixer una funció que escrigui l’hora actual per pantalla. Cada mig segon s’ha d’actualitzar per donar la sensació que realment estem visualitzant un rellotge. Aquest rellotge ha de tenir el format següent: HH:MM:SS
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/BazYqjm?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BazYqjm?editors=0010"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/BazYqjm?editors=0010</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function afegirZeros(i) {</div></li><li class="li1"><div class="de1">  return String(i).padStart(2, &quot;0&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">setInterval(() =&gt; {</div></li><li class="li1"><div class="de1">  let temps = new Date();</div></li><li class="li1"><div class="de1">  let h = afegirZeros(temps.getHours());</div></li><li class="li1"><div class="de1">  let m = afegirZeros(temps.getMinutes());</div></li><li class="li1"><div class="de1">  let s = afegirZeros(temps.getSeconds());</div></li><li class="li1"><div class="de1">  document.body.innerHTML = `${h}:${m}:${s}`;</div></li><li class="li1"><div class="de1">}, 500);</div></li></ol></pre>
+
+<p>
+Com es pot apreciar, en lloc d’indicar el nom de la funció com a paràmetre s’utilitza una funció de fletxa: <code>() ⇒ {<em>cos}&#039;&#039;, i aquesta serà invocada automàticament cada 500 ms. Aquest és un cas d’ús molt habitual per les funcions de fletxa, ja que es tracta d’una funció que no cal invocar-la des de cap altre punt del programa i es fa servir com a </em>callback<em> d’una altra funció.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="processador_d_accions_propagacio" >Processador d&#039;accions (propagació)</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Es vol crear una funció que permeti processar accions que seran passades com objectes declarats literalment amb la següent estructura:
+</p>
+<pre class="code">accio = {
+  font: &quot;font&quot;,
+  accio: &quot;acció&quot;,
+  objectiu: &quot;objectiu&quot;
+}</pre>
+
+<p>
+L’objectiu és opcional i el seu valor per defecte ha de ser <em>desconegut</em> (es recomana utilitzar paràmetres amb nom).
+</p>
+
+<p>
+A banda d’aquestes propietats els objectes poden incloure altres propietats però no cal tenir-les en compte.
+</p>
+
+<p>
+Per demostrar el correcte funcionament la funció només cal que mostreu per la consola un missatge indicant la font, l’acció i l’objectiu.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A continuació podeu veure la solució proposada. S’ha fet servir la desestructuració de l’objecte per extreure els paràmetres i assignar el valor per defecte.
+</p>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/bGeLmKx?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGeLmKx?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/bGeLmKx?editors=0012</a>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function processar({ font, accio, objectiu = &quot;desconegut&quot; }) {</div></li><li class="li1"><div class="de1">  console.log(`${font} executa ${accio} sobre ${objectiu}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let menjar = {</div></li><li class="li1"><div class="de1">  font: &quot;Pere&quot;,</div></li><li class="li1"><div class="de1">  accio: &quot;menjar&quot;,</div></li><li class="li1"><div class="de1">  objectiu: &quot;pastanaga&quot;</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let caminar = {</div></li><li class="li1"><div class="de1">  font: &quot;Maria&quot;,</div></li><li class="li1"><div class="de1">  accio: &quot;caminar&quot;,</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">processar(menjar);</div></li><li class="li1"><div class="de1">processar(caminar);</div></li></ol></pre>
+
+<p>
+Fixeu-vos que l’execució és correcta tant si es passen paràmetres de més (en el cas de <code>menjar</code>) com si no es passa l’objectiu, ja que s’assigna un valor per defecte a aquest paràmetre.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="divisio_sencera_desestructuracio" >Divisió sencera (desestructuració)</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+S’ha de crear una funció que retorni el resultat d’una divisió sencera com un objecte distingint entre el quocient i el mòdul, per exemple:
+</p>
+<pre class="code">Divisió de 4 entre 3:
+
+resultat = {
+  quocient: 1,
+  modul: 3
+}</pre>
+
+<p>
+Es demana també una demostració del funcionament assignant automàticament els valors de <code>quocient</code> i <code>modul</code> a dos variables amb el mateix nom.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La solució proposada és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function dividir(dividend, divisor) {</div></li><li class="li1"><div class="de1">  let quocient = Math.floor(dividend / divisor);</div></li><li class="li1"><div class="de1">  let modul = divisor % dividend;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return {</div></li><li class="li1"><div class="de1">    quocient: quocient,</div></li><li class="li1"><div class="de1">    modul: modul</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let dividend = 4;</div></li><li class="li1"><div class="de1">let divisor = 3;</div></li><li class="li1"><div class="de1">let { modul, quocient } = dividir(dividend, divisor);</div></li><li class="li1"><div class="de1">console.log(`${dividend} entre ${divisor}: quocient ${quocient} i mòdul ${modul}`);</div></li></ol></pre>
+
+<p>
+Podeu provar aquesta activitat a: <a href="https://codepen.io/ioc-daw-m06/pen/dyXdQpd?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dyXdQpd?editors=0012"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/dyXdQpd?editors=0012</a>
+</p>
+
+<p>
+Fixeu-vos que s’ha aprofitat la propagació per assignar automàticament a les variables <code>modul</code> i <code>quocient</code> el valor de les propietats de l’objecte retornat per la funció <code>dividir</code>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a1/continguts.html">Programació amb funcions</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,1251 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Alta disponibilitat</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Alta disponibilitat</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#l_alta_disponibilitat_en_els_sistemes_informatics">L'alta disponibilitat en els sistemes informàtics</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#com_mesurar_l_alta_disponibilitat">Com mesurar l'alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#solucions_d_alta_disponibilitat">Solucions d'alta disponibilitat</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Virtualització</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#objectius_de_la_virtualitzacio">Objectius de la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_de_servidors">Virtualització de servidors</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_escriptoris">Virtualització d'escriptoris</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_d_aplicacions">Virtualització d'aplicacions</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#eines_per_a_la_virtualitzacio">Eines per a la virtualització</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#configuracio_i_utilitzacio_de_les_maquines_virtuals">Configuració i utilització de les màquines virtuals</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#migracio_en_calent">Migració en calent</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#virtualitzacio_i_alta_disponibilitat">Virtualització i alta disponibilitat</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#informatica_en_nuvol">Informàtica en núvol</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#contenidors">Contenidors</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Alta disponibilitat</a></li><li>Virtualització</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="virtualitzacio"> Virtualització  </a></h1>
+    	
+<p>
+Sovint, les empreses instal·len un servidor per cada servei a oferir. Aquesta és la opció més fàcil i segura, i garanteix una bona qualitat de servei. Podem trobar empreses que disposen d’un servidor específic per a l’allotjament web, que està en espera la gran part del dia i té un temps d’ús del 5-10%. I el mateix passa amb el servidor de correu, el de la base de dades…
+</p>
+
+<p>
+Des de fa uns anys moltes empreses han utilitzat solucions de virtualització per millorar el rendiment del seu maquinari, a banda d’altres avantatges d’aquesta tecnologia, com per exemple l’alta disponibilitat.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>virtualització</strong> consisteix a crear amb un programa específic una capa d’abstracció sobre una màquina física perquè els seus recursos puguin ser compartits i utilitzats per múltiples usuaris. Es poden virtualitzar servidors, sistemes d’emmagatzematge, connexions de xarxa, estacions de treball, aplicacions i sistemes operatius. 
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Inicis de la virtualització</p>
+<p>
+En els últims anys s’ha potenciat molt la virtualització a les empreses a causa dels nombrosos avantatges que ofereix. No obstant això, no es tracta de cap tecnologia nova, ja que en els anys 60 ja s’utilitzaven solucions d’aquest tipus. En aquell moment les empreses disposaven d’un únic supercomputador i virtualitzaven el sistema per tal que cada treballador pogués treballar amb una part d’aquest com si es tractés d’un ordinador independent.
+</p>
+</div></div>
+<p>
+No obstant això, l’ús principal de la virtualització és la creació de múltiples ordinadors o servidors completament independents, coneguts com a <em>màquines virtuals</em>, en un sol ordinador físic. Tot i que les màquines treballen de forma independent, comparteixen els mateixos recursos de maquinari (processador, memòria, disc dur i interfícies de xarxa). Això és possible gràcies a l’<strong>hipervisor</strong>, també anomenat <strong>monitor de les màquines virtuals</strong> o VMM (de l’anglès <em>Virtual Machine Monitor</em>), que és el programa que arbitra i gestiona dinàmicament aquests recursos entre totes les màquines virtuals. 
+</p>
+
+<h2><a id="objectius_de_la_virtualitzacio" >Objectius de la virtualització</a></h2>
+<div class="level2">
+
+<p>
+Enumerem a continuació alguns dels principals avantatges i objectius de les empreses que utilitzen la virtualització:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Millorar els índexs d’utilització del maquinari</strong>: avui podem trobar molts servidors que tenen índexs d’utilització del 10 o el 15%. Això suposa una inutilització dels sistemes i, per tant, una pèrdua de diners en la inversió realitzada. Aplicant tècniques de virtualització podem oferir més d’un servei en una mateixa màquina física. D’aquesta manera aconseguirem índexs d’utilització d’un 70 o 90% i aconseguim fer més eficients les inversions realitzades.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Problemes d’espai en els centres de processament de dades</strong>: en els últims anys ha augmentat molt el volum de dades digitals que han de tractar les empreses, ja que molts processos que abans eren manuals i es feien en paper ara estan digitalitzats. Altrament, també han augmentat els serveis de què disposen: servidors de pàgines web, intranets, correu electrònic… i, sovint, les sales de servidors havien estat dimensionades per a una altra realitat. Unificant processos gràcies la virtualització es poden pal·liar aquests problemes d’espai i evitar haver de fer reformes o crear nous CPD, ja que són molt costosos.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Reduir costos en el subministrament elèctric</strong>: cada cop les empreses destinen més diners al subministrament elèctric a causa de l’increment de les tarifes i sobretot de l’increment del nombre d’aparells electrònics. Amb la virtualització es pot reduir el nombre de servidors físics i, per tant, la despesa en energia, contribuint a la conservació del medi ambient, moviment que en anglès s’anomena <em>green IT.</em></div>
+</li>
+<li class="level1"><div class="li"> <strong>Reduir costos d’operació</strong>: els ordinadors no són autònoms del tot, necessiten ser monitorats, actualitzats, reparats i revisats pel personal tècnic de l’empresa. La virtualització ajuda a reduir els costos en aquestes operacions.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Afegir flexibilitat i escalabilitat</strong>: les empreses canvien i ho fan molt ràpid. D’altra banda, els sistemes d’informació sovint són rígids i és difícil adaptar-los a les noves necessitats de l’empresa. Amb la virtualització, aquests canvis son molt més ràpids i els problemes d’escalabilitat desapareixen.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pla de recuperació en cas de desastre</strong>: una de les millors solucions en cas de desastre és disposar d’un centre de processament de dades secundari que pugui entrar en funcionament quan es produeixi una caiguda en el servei. No obstant això, aquesta solució és molt costosa i poc eficient, ja que si no es produeix cap caiguda el centre secundari estarà infrautilitzat. Algunes empreses sense tants recursos veuen en la virtualització una solució, ja que permet restaurar, crear o transferir màquines virtuals i continuar amb l’activitat de negoci en pocs minuts.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Compatibilitat d’aplicacions</strong>: sovint, quan es realitzen actualitzacions en els sistemes, algunes aplicacions una mica antigues poden deixar de funcionar, ja que no estan pensades per treballar amb un sistema operatiu tan modern. Això pot suposar un problema en el funcionament de l’empresa ja que sovint es tracta d’aplicacions pròpies que van costar molts diners i que encara funcionen correctament. Amb la virtualització podem simular màquines més antigues per tal que aquestes aplicacions puguin continuar executant-se. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Entorn de proves</strong>: abans de donar per vàlid un programa, els desenvolupadors necessiten executar-lo en un entorn el més semblant possible al servidor de producció. Per contra, s’ha de tenir present que en tractar-se d’un programa en fase de desenvolupament pot ser que encara no estigui prou depurat i que pugui produir algun problema en el funcionament del sistema. Per aquest motiu les proves es realitzen en un entorn controlat. La virtualització permet proveir un entorn de proves econòmic, que es pot restaurar de forma ràpida en cas de fallada sense interrompre el funcionament del sistema productiu.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="virtualitzacio_de_servidors" >Virtualització de servidors</a></h2>
+<div class="level2">
+
+<p>
+La virtualització de servidors consisteix en la creació de màquines virtuals amb el seu propi sistema operatiu que funcionen com si es tractessin de servidors totalment independents. D’aquesta manera, en un únic servidor físic es poden allotjar diferents servidors virtuals, els quals poden funcionar amb diferents sistemes operatius. Dins de la virtualització de servidors podem trobar diferents tècniques: la virtualització nativa, la virtualització allotjada i la paravirtualització.
+</p>
+
+</div>
+
+<h3><a id="virtualitzacio_nativa" >Virtualització nativa</a></h3>
+<div class="level3">
+
+<p>
+L’hipervisor s’executa directament en el maquinari físic per controlar l’assignació de recursos i memòria entre les diferents màquines virtuals, a més de proporcionar una interfície per a l’administració a alt nivell i eines per monitorar. Tal com s’observa en la <span class="figref"><a href="#Figura9"><span>figura</span></a></span>, les màquines virtuals s’executen de manera simultània en un nivell superior.
+</p>
+<div class="iocfigure"><a name="Figura9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura d’un sistema de virtualització natiu
+
+</figcaption><img src="../media/a1_continguts_image_8.png" alt="" /></figure>
+</div>
+<p>
+
+</p>
+
+<p>
+L’hipervisor s’executa en l’anell 0 de la CPU i, per tant, els sistemes operatius de les màquines virtuals hauran d’estar modificats i utilitzar anells superiors. Això complica la virtualització nativa, ja que la majoria del sistemes operatius estan dissenyats perquè s’ubiquin en l’anell 0, perquè hi ha algunes tasques que només es poden realitzar en aquest nivell, com per exemple l’execució d’instruccions amb privilegis a la CPU o l’accés directe a la memòria.
+</p>
+
+<p>
+D’altra banda, depenent de l’arquitectura, l’hipervisor pot disposar o no dels controladors necessaris per a la gestió dels recursos de maquinari o bé pot ser el mateix sistema operatiu de la màquina virtual el que els té prèviament instal·lats. En la <span class="figref"><a href="#Figura10"><span>figura</span></a></span> podem observar aquestes dues situacions.
+</p>
+<div class="iocfigure"><a name="Figura10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura dels hipervisors
+
+</figcaption><img src="../media/u4_introduccio_image_09.png" alt="" /></figure>
+</div>
+<p>
+Com que l’hipervisor té accés directe al maquinari, sempre oferirà un millor rendiment que la virtualització allotjada, ja que utilitza menys recursos. 
+</p>
+
+<p>
+
+</p>
+
+<p>
+Alguns exemples de virtualització nativa són VMware ESXi, VMware ESX, Xen, Citrix XenServer i Microsoft Hyper-V Server.
+</p>
+
+</div>
+
+<h3><a id="virtualitzacio_allotjada" >Virtualització allotjada</a></h3>
+<div class="level3">
+
+<p>
+En la virtualització allotjada, l’hipervisor s’executa sobre un sistema operatiu convencional per després virtualitzar diferents sistemes operatius. En aquesta arquitectura, l’hipervisor proporciona a cada màquina virtual tots els recursos de la màquina física, incloent una BIOS virtual i una memòria virtual. Aquesta situació fa que el sistema allotjat tingui la sensació que s’està executant directament en la màquina física en lloc d’en una màquina virtual dins d’una aplicació.
+</p>
+
+<p>
+En la <span class="figref"><a href="#Figura11"><span>figura</span></a></span> podem observar l’estructura d’un sistema de virtualització allotjada. 
+</p>
+<div class="iocfigure"><a name="Figura11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura d’un sistema de virtualització allotjada
+
+</figcaption><img src="../media/a1_continguts_image_10.png" alt="" /></figure>
+</div>
+<p>
+La virtualització se situa en una capa més allunyada del programari que en la virtualització nativa, fet que afecta al rendiment de l’hipervisor.
+</p>
+
+<p>
+Alguns exemples de virtualització allotjada són VirtualBox, VMware Workstation, VMware Server, VMware Player, QEMU, Microsoft Virtual PC i Microsoft Virtual Server.
+</p>
+
+</div>
+
+<h3><a id="paravirtualitzacio" >Paravirtualització</a></h3>
+<div class="level3">
+
+<p>
+En la paravirtualització, l’hipervisor està allotjat sobre el maquinari de la màquina física, és a dir que es tracta d’un sistema de virtualització nativa. Tal com es fa en la virtualització nativa, les màquines virtuals es creen sobre l’hipervisor, que és específic i més simple que els de virtualització nativa, ja que en la paravirtualització les màquines virtuals disposen de privilegis que els permeten accedir directament a alguns recursos de la màquina física. 
+</p>
+
+<p>
+
+Que les màquines virtuals puguin accedir directament a alguns recursos del sistema té com a objectiu millorar el temps d’execució, ja que algunes tasques són molt més difícils d’executar si es realitzen des d’un entorn virtualitzat que si es realitzen directament en la màquina nativa. Els sistemes operatius utilitzats en les màquines virtuals d’un sistema de paravirtualització han de ser creats específicament per a aquesta utilitzat.
+</p>
+
+<p>
+Per exemple, Xen ofereix una solució d’aquest tipus en la qual el rendiment de les màquines virtuals només es veu afectat entre un 2 i un 8% respecte del que obtindrien si estiguessin funcionant directament en la màquina física. Aquest projecte s’anomena XenWindowsGplPv.
+</p>
+
+</div>
+
+<h2><a id="virtualitzacio_d_escriptoris" >Virtualització d&#039;escriptoris</a></h2>
+<div class="level2">
+
+<p>
+Els servidors no són els únics dispositius que es poden beneficiar dels avantatges de la virtualització en una empresa. També es poden virtualitzar els escriptoris, els sistemes d’emmagatzematge, aplicacions i xarxes. 
+</p>
+
+<p>
+La majoria d’empreses i organitzacions disposen de multitud de dispositius. En moltes companyies gairebé cada treballador disposa d’un ordinador, a part d’altres dispositius d’accés al sistema com ordinadors portàtils o dispositius mòbils. La gestió d’aquest volum de dispositius genera una càrrega de feina molt gran per al personal informàtic de l’empresa, ja que ha de realitzar tasques de manteniment, còpies de seguretat de les dades i actualitzar el sistemes operatius, els antivirus, les aplicacions o els pedaços de seguretat de cadascun d’aquests dispositius. No fer-ho podria causar grans problemes de seguretat. Per solucionar aquests problemes, les empreses comencen a implantar solucions de virtualització d’escriptoris.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>virtualització d’escriptoris</strong> trenca amb la concepció que l’escriptori són tots els programes i les dades ubicats en una màquina física, i el defineix com el conjunt d’aplicacions i dades amb què un usuari treballa, independentment del dispositiu amb què hi accedeixi.
+</p>
+</div></div>
+<p>
+Quan els usuaris treballen en un escriptori virtual, tots els programes i dades estan emmagatzemats en un servidor compartit on s’emmagatzemen i executen de manera centralitzada. Això permet als usuaris accedir als seus escriptoris des de qualsevol dispositiu, com un ordinador, un portàtil, un telèfon intel·ligent o un client lleuger. Sovint s’acostuma a utilitzar aquesta última opció, ja que els clients lleugers són més econòmics i fiables que els ordinadors convencionals, perquè en no disposar de discos d’emmagatzematge local redueixen la probabilitat de fallar.
+</p>
+
+<p>
+En aquest tipus de virtualització és necessària una bona connexió entre el servidor i els clients. Si aquesta connexió és deficient, pot provocar problemes en el rendiment del sistema. S’ha desenvolupat una variant de virtualització d’escriptoris anomenada <em>Check In Check Out</em> en què els clients descarreguen a l’inici de la sessió el seu sistema i hi treballen en local sense necessitat de connectar-se constantment al servidor. Al final de la sessió tornen a fer un bolcat de l’escriptori al servidor principal, cosa que deixar el dispositiu utilitzat completament net. S’acostuma a utilitzar aquesta variant en connexions poc fiables, com per exemple connexions d’usuaris que treballen des de casa o que estan de viatge.
+</p>
+
+<p>
+En les primeres solucions de virtualització d’escriptoris es creava en el servidor una imatge de disc per a cada usuari de l’empresa. Això suposava un gran volum de dades emmagatzemades en el disc del servidor, la qual cosa podia provocar problemes d’espai. En canvi, avui en dia s’emmagatzema una única imatge que es pot clonar per a cada usuari i només s’emmagatzemen de manera separada les configuracions personals. Quan un usuari acaba la sessió, totes les dades i modificacions de configuració es tornen a emmagatzemar en el servidor i no queda cap informació en el dispositiu. 
+</p>
+
+<p>
+La virtualització d’escriptoris ofereix molts avantatges a les empreses:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Augment de la seguretat</strong>: els usuaris executen un escriptori virtual ubicat en el centre de processament de dades. D’aquesta manera, els usuaris finals no poden ni instal·lar ni modificar el programari del seu escriptori. Són els administradors els encarregats de definir un perfil per a cada tipus de treballador i d’assignar-los únicament aquelles aplicacions que necessiten. Així, els administradors poden gestionar de manera centralitzada els escriptoris en comptes de fer-ho físicament, assegurant que els usuaris no puguin modificar res del sistema operatiu i que a més es realitzen totes les actualitzacions de seguretat i d’antivirus.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Seguretat de les dades</strong>: les dades estan centralitzades en el servidor de l’empresa, la qual cosa impedeix als usuaris treballar amb fitxers ubicats en el seu disc local. Això facilita la realització de còpies de seguretat i garanteix que tota la informació compleix la normativa de seguretat de l’empresa. A més, evita que es puguin produir fuites o malversacions de dades confidencials. Amb la virtualització d’escriptoris és més difícil poder extreure documents de la empresa i, en cas de pèrdua o robatori d’un ordinador portàtil, no s’haurà de patir pel seu contingut, ja que no contindrà cap informació compromesa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Reducció de costos</strong>: la virtualització d’escriptoris permet reduir costos de manteniment per part del personal d’informàtica, ja que es podran mantenir tots els ordinadors de la empresa de manera centralitzada, sense necessitat de desplaçar-se físicament. D’altra banda, també permet reduir costos en maquinari. Com que les aplicacions s’executen en el servidor. no es necessiten estacions de treball d’última tecnologia. Sovint, amb un client lleuger (més barat que un ordinador convencional) connectat al servidor n’hi haurà prou. A més, la vida útil d’aquest tipus de dispositius és del voltant d’uns sis anys, mentre que la d’un ordinador normal és de tres.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Respecte al medi ambient</strong>: en centralitzar tots els càlculs en el servidor, el consum elèctric dels clients lleugers és molt inferior que si s’executessin les aplicacions de forma distribuïda. És calcula que pot suposar un estalvi energètic d’entre el 50 i el 90%.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Continuïtat de negoci</strong>: la virtualització d’escriptoris és una solució senzilla i eficient a implantar en un pla de recuperació en cas de desastre. Les empreses que disposen d’aquesta tecnologia podran continuar la seva activitat des de qualsevol dispositiu que tingui connexió amb el servidor. </div>
+</li>
+<li class="level1"><div class="li"> R<strong>educció del temps d’inactivitat</strong>: en cas de fallada del maquinari o el programari, en pocs minuts es pot restaurar l’escriptori i continuar treballant amb el que s’estava fent en el mateix dispositiu o des d’un altre, la qual cosa redueix de manera significativa el temps d’inactivitat dels usuaris finals.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Millora de la productivitat</strong>: en tractar-se d’escriptoris restringits, els treballadors no poden instal·lar programari no permès. D’aquesta manera es pot garantir que els usuaris només tenen accés a les aplicacions autoritzades per la empresa i que, per tant, dediquen tot el seu temps a la feina, sense distraccions que puguin reduir la seva productivitat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Escalabilitat</strong>: la virtualització d’escriptoris facilita gestionar el creixement d’una empresa i, en definitiva, l’escalabilitat dels seus sistemes. Quan un nou treballador entra a l’empresa, en pocs minuts pot disposar d’un escriptori amb totes les aplicacions necessàries. </div>
+</li>
+</ul>
+
+<p>
+Tot i el gran ventall d’avantatges que ofereix la virtualització d’escriptoris, encara són poques les empreses que han optat per implantar solucions d’aquest tipus. En canvi la majoria d’empreses s’han beneficiat dels avantatges de la virtualització de servidors ja que són solucions que aporten molts avantatges, relativament fàcils d’implantar, no requereixen una gran inversió i ofereixen beneficis immediats. 
+</p>
+
+<p>
+A la llarga, implantar solucions de virtualització d’escriptoris suposarà una reducció de costos per a l’empresa (manteniment, consum elèctric, vida útil dels dispositius). No obstant això, en el moment de la implantació s’ha de fer una inversió econòmica important en l’estructura de xarxa i servidors. A part, suposa canviar la filosofia de treball i el funcionament de tota l’empresa. Per tant, no es tracta únicament d’un canvi en el departament de sistemes, sinó que cal implicar tota la organització.
+</p>
+
+</div>
+
+<h2><a id="virtualitzacio_d_aplicacions" >Virtualització d&#039;aplicacions</a></h2>
+<div class="level2">
+
+<p>
+A diferència de la virtualització d’escriptoris remots, en la virtualització d’aplicacions no es recrea totalment un ordinador, sinó que es virtualitza només una aplicació en concret. En aquest cas, cal interpretar la virtualització d’aplicacions com la separació dels llocs on s’executa l’aplicació i on es mostren les dades al usuari. Les aplicacions estan allotjades en el servidor principal, on s’executen a petició dels usuaris a través d’un terminal client. Dins de la virtualització d’aplicacions existeix una variant en què les aplicacions no s’executen en el servidor, sinó que es descarreguen i s’instal·len en el client cada cop que s’han d’utilitzar.
+</p>
+
+<p>
+Aquest sistema pot semblar repetitiu, però permet als administradors controlar millor les aplicacions, assegurar-se que tots els usuaris utilitzen la última versió i que disposen dels pedaços de seguretat instal·lats. Aquesta tècnica s’acostuma a utilitzar en organitzacions amb molts usuaris que han d’utilitzar diferents aplicacions, com per exemple els estudiants d’una universitat.
+</p>
+
+</div>
+
+<h2><a id="eines_per_a_la_virtualitzacio" >Eines per a la virtualització</a></h2>
+<div class="level2">
+
+<p>
+Actualment existeixen eines per virtualitzar tant de pagament com gratuïtes. És important seleccionar el producte que més s’adeqüi a les nostres necessitats i que sigui compatible amb el programari a utilitzar.
+</p>
+
+</div>
+
+<h3><a id="sistemes_propietaris" >Sistemes propietaris</a></h3>
+<div class="level3">
+
+<p>
+A continuació es detallen els principals fabricants d’eines de virtualització.
+</p>
+
+<p>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>VMware</strong>: és la empresa líder del mercat de la virtualització. És la que porta més anys dedicant-se aquesta tecnologia i controla una gran part del mercat. La clau del seu èxit és oferir un bon producte i un excel·lent servei de suport. No obstant això, en els últims anys són moltes les empreses que ofereixen tecnologies similars a un preu més baix o fins i tot gratuïtament. Disposa d’un gran ventall de productes destinats a oferir solucions específiques a cada necessitat. La majoria d’ells són de pagament, tot i que també ofereix alguns productes de forma gratuïta. </div>
+<ul>
+<li class="level2"><div class="li"> <strong>Virtualització de centres de processament de dades</strong>: VMware vSphere, Go, vCloud, ESX Server</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’escriptoris</strong>: VMware View, ThinApp, ACE, Workstation, Zimbra, MVP (Mobile Virtualization Platform) i Horizon</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’aplicacions</strong>: família de productes VMware vFabric</div>
+</li>
+<li class="level2"><div class="li"> <strong>Productes de seguretat</strong>: família de productes VMware vShield</div>
+</li>
+<li class="level2"><div class="li"> <strong>Sistemes de gestió</strong>: família de productes VMware vCenter (gestió d’aplicacions, infraestructures i operacions)</div>
+</li>
+<li class="level2"><div class="li"> <strong>Productes per a MAC</strong>: VMware Fusion</div>
+</li>
+<li class="level2"><div class="li"> <strong>Productes gratuïts</strong>:VMware vSphere Hypervisor, Server, Player i ESXi</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Microsoft</strong>: empresa líder en el terreny dels sistemes operatius, va entrar en el món de la virtualització més tard, però ho ha fet amb empenta i s’ha guanyat un lloc en el mercat. A diferència de Vmware, Microsoft ha orientat els seus productes a les petites i mitjanes empreses, i es calcula que l’any 2012 Microsoft controlava al voltant del 85% del mercat de la virtualització en aquest sector. A més, Microsoft disposa d’un sistema operatiu propi i pot oferir una solució completa. Per acabar, el seu sistema operatiu Windows 8 inclou per defecte l’Hyper-V. A continuació s’enumeren els principals productes de virtualització de Microsoft.</div>
+<ul>
+<li class="level2"><div class="li"> <strong>Virtualització de servidors</strong>: Hyper-V a Windows Server 2008 R2</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització per a la creació de núvols privats</strong>: Microsoft Dynamic Data Center Toolkit i Windows Azure</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’aplicacions</strong>: Microsoft Application Virtualization</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’escriptoris</strong>: Microsoft Enterprise Desktop Virtualization i Microsoft Virtual Desktop Virtualization</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Citrix</strong>: empresa multinacional fundada l’any 1989, subministra programari de virtualització de servidors, escriptoris, aplicacions i xarxa. Des del juny de 2009, el seu producte de virtualització de servidors anomenat XenServer pot ser descarregat de forma gratuïta des del seu web.</div>
+<ul>
+<li class="level2"><div class="li"> <strong>Virtualització de servidors</strong>: XenServer</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’escriptoris remots</strong>: XenDesktop, XenClient, VDI-in-a-Box i XenReceiver.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Virtualització d’aplicacions</strong>: XenApp </div>
+</li>
+<li class="level2"><div class="li"> <strong>Gestió de les màquines virtuals</strong>: NetScaler</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="sistemes_lliures" >Sistemes lliures</a></h3>
+<div class="level3">
+
+<p>
+De mica en mica, han anat sorgint solucions de virtualització de distribució lliure. Algunes d’aquestes versions gratuïtes són més limitades que les seves versions de pagament, no obstant això, n’hi ha molta varietat i s’hi troben eines força completes, especialment les dissenyades per ser utilitzades en entorns Linux.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Sovint, les grans empreses opten per solucions empresarials, ja que ofereixen un millor suport, és més fàcil trobar-ne documentació i estan més esteses. Les eines de virtualització lliures es destinen majoritàriament a entorns de proves o a l’aprenentatge. 
+</p>
+
+<p>
+Gràcies a l’aparició d’aquestes eines de virtualització gratuïtes, s’ha pogut apropar la virtualització a tots tipus d’usuaris.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>VMware</strong>: és la empresa líder en el mercat, i tot i que les seves solucions acostumen a ser de pagament, ha llançat al mercat alguns productes de distribució lliure: </div>
+<ul>
+<li class="level2"><div class="li"> <strong>VMware Server</strong>:és una eina dissenyada per ser utilitzada tant a Windows com a Linux. És fàcil d’utilitzar i serveix perquè les empreses s’iniciïn en el món de la virtualització de servidors, optimitzant la utilització dels seus dispositius. Tot i que encara s’utilitza, a finals de 2011 VMware va anunciar que deixava de donar suport tècnic a aquest producte i que llançava altres eines de virtualització més específiques.</div>
+</li>
+<li class="level2"><div class="li"> <strong>VMware vSphere</strong>: evolució del VMware Server, és un producte fàcil d’utilitzar, pensat perquè les empreses s’iniciïn en la virtualització de servidors de manera gratuïta en pocs minuts. Pot executar fins a 100 màquines virtuals i centralitzar-ne la gestió. </div>
+</li>
+<li class="level2"><div class="li"> <strong>VMware Player</strong>: es tracta d’un petit programari de virtualització que permet reproduir màquines virtuals ja creades. És una manera ben senzilla d’entrar en el món de la virtualització a nivell d’usuari. </div>
+</li>
+<li class="level2"><div class="li"> <strong>VirtualBox</strong>: eina de virtualització amb llicència GNU/<acronym title="GNU General Public License">GPL</acronym> d’Oracle per a professionals i per a ús domèstic que permet disposar de més d’un sistema operatiu en un mateix ordinador. Ara mateix existeixen versions de VirtualBox per als principals sistemes operatius (Windows, Linux, Mac i Solaris) i s’hi poden virtualitzar un gran nombre de sistemes operatius: Windows (NT 4.0, 2000, XP, Server 2003, Vista, Windows 7, DOS/Windows 3.x, Linux (2.4 i 2.6), Solaris, OpenSolaris, <acronym title="Operating System">OS</acronym>/2 i OpenBSD.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Virtual PC</strong>: programa gestor de virtualització desenvolupat per Connectix i posteriorment adquirit per Windows. És una eina similar a VirtualBox amb la qual els usuaris poden disposar de més d’un sistema operatiu en un ordinador. Pot ser instal·lat en la majoria de versions del sistema operatiu Windows (7, Vista, XP, Server 2003, Server 2008) i pot allotjar els sistemes operatius següents: Server 2003 i 2008, NT, Vista, XP, 2000, <acronym title="Operating System">OS</acronym>/2, Me, MS-DOS, 98 6.22, 3.1, 3.11, 2.03, 1.01.</div>
+</li>
+<li class="level1"><div class="li"> <strong>QEMU</strong>: és un emulador d’arquitectures basades en x86 amb dos modes de funcionament: emulació del sistema complet i emulació en mode usuari.</div>
+<ul>
+<li class="level2"><div class="li"> <strong>Mode complet</strong>: emula un equip sencer, incloent-hi múltiples processadors i perifèrics. Aquest mode s’utilitza per executar sistemes operatius complets. En les últimes versions, el programa accepta fins a 15 arquitectures diferents.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Mode usuari</strong>: el programa pot executar aplicacions compilades per a un processador concret en un sistema que funciona sobre un processador diferent. Pot servir per solucionar problemes d’incompatibilitat entre arquitectures de 32 i 64 bits.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>KVM (Kernel Virtual Machine)</strong>: solució de virtualització completa en què s’utilitza el nucli de Linux com a hipervisor, de manera que tant el control dels dispositius com la planificació de les tasques i la gestió de la memòria del sistema les realitza el nucli, en anglès <em>kernel</em>. En aquest model, les màquines virtuals no deixen de ser un simple procés en el sistema. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Linux-Vserver</strong>: sistema de virtualització a nivell de sistema operatiu que s’implementa com una sèrie de modificacions del nucli de Linux. Proporciona les eines necessàries per crear múltiples entorns d’usuari independents entre ells. Com que aquesta tecnologia no està lligada a cap arquitectura concreta, pot executar-se en microprocessadors (x86, x86-64, PowerPC, ARM…).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Xen</strong>: solució de paravirtualització i que, per tant, compta amb un hipervisor que s’executa en el nivell més privilegiat de la màquina i que s’encarrega bàsicament de la planificació de tasques i de la gestió de la memòria. Tot i que sovint s’utilitza en entorns Linux, Xen no és un sistema de virtualització lligat al nucli de Linux, sinó que també pot ser utilitzat en versions modificades de NetBSD, Solaris, FreeBSD i Plan9.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="maquinari_especific_per_virtualitzar" >Maquinari específic per virtualitzar</a></h3>
+<div class="level3">
+
+<p>
+Es poden implementar solucions de vitualització en qualsevol servidor. Ara bé, això no vol dir que tots siguin iguals pel que fa a la virtualització; els seus rendiments poden variar considerablement. Per treure el millor partit a aquesta tecnologia, alguns proveïdors de components de maquinari ofereixen solucions orientades a la virtualització. Els dos proveïdors que més han despuntat en aquest camp són Hewlett-Packard i Dell.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Hewlett-Packard</strong>: la gama de servidors ProLiant ofereix un gran ventall de solucions de virtualització amb diversos proveïdors: VMware, Citrix, Microsoft, Linux i Solaris. Amb VMware porten més de 10 anys treballant conjuntament. Són considerats líders en aquest sector gràcies a la gran integració entre els dos productes, que ofereix un excel·lent rendiment i un ús eficient de l’emmagatzematge, i evita problemes d’escalabilitat. Entre d’altres, ofereixen solucions per a la virtualització de servidors, escriptoris i fins i tot solucions en núvol. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Dell</strong>: ha dissenyat la família de servidors PowerEdge per obtenir el millor rendiment possible en virtualització. Ha optimitzat alguns dels seus productes per tal d’adaptar-los a les necessitats de virtualització: densitat, flexibilitat i rendiment. Dell ha implementat solucions VMware des del primer hipervisor, que es va comercialitzar l’any 2001. No obstant això, en els últims anys han signat acords amb fabricants com Citrix i Microsoft per tal d’oferir un ventall més ampli de possibilitats en el món de la virtualització.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="configuracio_i_utilitzacio_de_les_maquines_virtuals" >Configuració i utilització de les màquines virtuals</a></h2>
+<div class="level2">
+
+<p>
+En els últims anys moltes empreses han optat per implantar solucions de virtualització en els seus servidors. Però implantar una solució d’aquest tipus no és una tasca fàcil, ja que els administradors han de disposar de coneixements sobre el tema, cosa que no sempre passa. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Significat de la nomenclatura de Dell</p>
+<p>
+Dell utilitza per a la gamma PowerEdge una nomenclatura pròpia basada en una lletra i tres dígits. La lletra indica el tipus de servidor: (R) bastidor o <em>rack</em>, (M) modular, (T) torre. El primer dígit indica el nombre de sòcols del sistema: del 1 al 3 per a un sòcol, del 4 al 7 per a dos sòcols, 9 per a quatre sòcols i 8 per a dos o quatre sòcols, dependrà del processador. El segon dígit fa referència a la generació: 0 per a la generació 10, 1 per a la generació 11… El tercer dígit indica el fabricant del processador: 0 per a Intel i 5 per a AMD.
+</p>
+</div></div>
+<p>
+Primer cal establir uns objectius clars sobre quina és la finalitat d’aplicar aquesta tecnologia. Un cop es tingui clar l’objectiu, caldrà analitzar tots els productes que hi ha al mercat, tant de pagament com de programari lliure, per veure quin dóna millors resultats. No s’usa el mateix el programari per virtualitzar un servidor que per virtualitzar escriptoris.
+</p>
+
+<p>
+Un cop s’ha escollit el tipus de virtualització i el producte que s’implantarà, cal comprovar que el nostre maquinari compleix els requeriments tècnics. Abans d’instal·lar el programa en el servidor de producció, cal fer un simulacre en un entorn de proves per poder valorar el seu funcionament. Si les proves realitzades són satisfactòries, es pot procedir a la instal·lació del programa en els sistemes productius, prenent totes les mesures de precaució necessàries.
+</p>
+
+</div>
+
+<h2><a id="migracio_en_calent" >Migració en calent</a></h2>
+<div class="level2">
+
+<p>
+Un dels grans avantatges de la virtualització és la gran flexibilitat que ofereix tant per la creació, eliminació i modificació dels recursos de les màquines virtuals com per al canvi de màquina física. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>migració en calent</strong> (en anglès, <em>live migration</em>) consisteix a poder traslladar una màquina virtual des d’una màquina física a una altra sense que l’usuari se n’adoni. S’anomena <em>migració en calent</em> ja que mentre s’està movent d’un lloc a un altre la màquina virtual continua estant operativa.
+</p>
+</div></div>
+<p>
+Els principals fabricants (VMware, Microsoft i Citrix) ja disposen de solucions que permeten aquest tipus de migracions.
+</p>
+
+<p>
+La migració en calent pot canviar una màquina virtual d’un servidor físic a un altre de manera que el temps d’inactivitat sigui de mil·lisegons. No obstant això, no és una tasca fàcil, ja que s’ha de traslladar el contingut de la memòria, del disc dur, l’estat del processador i les connexions de xarxa. A continuació es detalla cadascun d’aquests aspectes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Migració de la memòria</strong>: es tracta d’un procés complicat, ja que mentre es transfereix aquesta informació del node origen al de destinació, la màquina continua fent modificacions. Aquest traspàs d’informació es pot realitzar de moltes maneres diferents, però sempre s’ha de prioritzar la que permeti minimitzar el temps d’inactivitat i el temps total de la migració.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Migració del disc dur</strong>: és força similar al procés de migració de la memòria, tot i que en aquest cas el volum de dades que s’han de transmetre és major i per tant el temps de migració és superior. Per solucionar aquest problema, els fabricants utilitzen sistemes d’emmagatzematge centralitzat com per exemple SAN, NFS o iSCSI. D’aquesta manera, tots els servidors físics estan connectats a un mateix sistema d’emmagatzematge i quan una màquina virtual es mogui de servidor no serà necessària la migració del disc dur i es reduirà així considerablement el temps d’inactivitat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Migració de connexions de xarxa</strong>: per facilitar la migració de connexions de xarxa cal que tots els servidors formin part de la mateixa subxarxa. D’aquesta manera les adreces IP que utilitzin estaran dins del mateix rang. Quan una màquina virtual vulgui canviar de servidor físic, només haurà d’enviar un missatge ARP a l’adreça de difusió indicant l’adreça MAC de la nova targeta de xarxa. Com que aquest canvi només afecta a nivell físic, les connexions que la màquina virtual tenia establertes no es veuran afectades, ja que la seva adreça IP continuarà sent la mateixa. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Migració del processador</strong>: en canviar de processador és quan realment es produeix la migració. Per aquest motiu ha de ser l’últim recurs que canviem de lloc. Primer passarem les dades, tant les del disc dur com les de la memòria, després les connexions i per acabar el processador, juntament amb alguna dada que hagi estat modificada amb posterioritat a la seva còpia. Cal tenir present el tipus de processadors dels servidors, ja que poden haver-hi incompatibilitats entre processadors de diferents fabricants.</div>
+</li>
+</ul>
+
+<p>
+La migració en calent permet millorar la gestió de rendiment de les màquines, ja que és una eina molt potent per als administradors de clústers. Permet separar el programari del maquinari on es troba allotjat i gestionar un clúster de servidors com si es tractés d’un domini. 
+</p>
+
+<p>
+La virtualització en calent ofereix molts avantatges. Entre d’altres, redueix el temps d’inactivitat en cas de fallada del maquinari, permet fer un repartiment de càrrega de màquines virtuals, afavoreix l’escalabilitat de les aplicacions i serveis i permet fer un ús més eficient del sistemes.
+</p>
+
+<p>
+Aquests són alguns dels productes que permeten la migració en calent: VMware ESX, Hyper-V Windows Server 2008 R2, Xen, KVM i OpenVZ.
+</p>
+
+</div>
+
+<h2><a id="virtualitzacio_i_alta_disponibilitat" >Virtualització i alta disponibilitat</a></h2>
+<div class="level2">
+
+<p>
+La virtualització és una de les tècniques més eficients i més econòmiques per garantir l’alta disponibilitat en els sistemes d’informació. Pel gran nombre d’avantatges que ofereix, i no només en termes d’alta disponibilitat, és una de les solucions més adoptades per les empreses. En els últims anys han estat moltes les companyies que han apostat per aquesta tecnologia i es preveu que en un futur proper encara seran més les que apostaran per la virtualització.
+</p>
+
+<p>
+A continuació es detallen els principals avantatges que aporta la virtualització en termes d’alta disponibilitat:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Alta disponibilitat de totes les aplicacions</strong>: la virtualització ofereix una solució d’alta disponibilitat completa, ja que protegeix la continuïtat de negoci tant a nivell físic com a nivell lògic.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Repartiment de càrrega</strong>: permet gestionar de manera eficient la càrrega dels servidors físics i evitar que es puguin saturar i entrar en fallada. Fa un ús eficient de les màquines físiques i aconsegueix un procés d’optimització continua.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Recuperació en cas de desastre</strong>: simplifica i automatitza els fluxos de recuperació en cas de desastre (prevenció, actuació i recuperació). Converteix algunes instruccions manuals de recuperació en processos automatitzats. Fins i tot permet centralitzar la gestió del pla en cas de desastre des d’una plataforma de gestió.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Protecció i gestió dels escriptoris corporatius</strong>: la virtualització d’escriptoris permet poder oferir als usuaris finals solucions d’alta disponibilitat. En cas de fallada del terminal d’accés, l’usuari podrà iniciar sessió en pocs segons des de qualsevol altre dispositiu connectat a la xarxa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Flexibilitat i escalabilitat</strong>: depenent de la demanda d’un servei, les màquines es podran readaptar per fer front a les diferents necessitats. La flexibilitat és molt més alta que en els models convencionals. S’aconsegueix que les màquines s’adaptin a la demanda real i s’evita així que hi pugui haver una sobresaturació i, per tant, una caiguda del sistema.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="informatica_en_nuvol" >Informàtica en núvol</a></h2>
+<div class="level2">
+
+<p>
+En els últims anys ha sorgit una nou concepte anomenat <em>informàtica en núvol</em> (en anglès, <em>cloud computing</em>), que permet a les empreses disposar de serveis o aplicacions d’alta disponibilitat sense necessitat de desplegar cap tipus d’infraestructura addicional. Aquesta solució ràpidament va ser adoptada per empreses de nova creació o amb pressupostos ajustats. I els seus bons resultats han fet que cada cop siguin més les companyies que estan adoptant solucions d’aquest tipus.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La informàtica en núvol és un sistema d’emmagatzematge i ús de recursos informàtics basat en el servei en xarxa, que consisteix a oferir a l’usuari un espai virtual, generalment a Internet, en què pot disposar de les versions més actualitzades de maquinari i programari.
+</p>
+</div></div>
+<p>
+És un nou model de negoci que permet als usuaris accedir a un catàleg de serveis adaptables i flexibles a les necessitats de les empreses. Els usuaris paguen als proveïdors d’aquests serveis per l’ús que en fan. Aquests serveis es poden adaptar totalment a les demandes de negoci i se’n pot sol·licitar un augment o disminució si es produeix un pic o una davallada de feina. D’aquesta manera, les empreses disposen de serveis totalment flexibles sense haver-se de preocupar del maquinari, el manteniment o les actualitzacions.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Google Apps al Departament d&#039;Ensenyament</p>
+<p>
+L’any 2010 el Departament d’Ensenyament de Catalunya va fer la migració del seu correu intern XTEC a Google Apps, el servei de correu electrònic ofert per Google a les empreses. D’aquesta manera, els usuaris poden accedir al correu des de qualsevol dispositiu com si es tractés d’un compte de Gmail.
+</p>
+</div></div>
+<p>
+Les empreses que ofereixen aquest tipus de serveis disposen d’una infraestructura basada en l’alta disponibilitat. La seva línia de negoci es basa en oferir serveis a uns clients distribuïts arreu del món i no es poden permetre una caiguda dels seus sistemes, per petita que sigui. Per evitar aquests temps d’inactivitat tenen implantats sistemes per garantir l’alta disponibilitat com la redundància en la xarxa, les xarxes d’emmagatzematge, la redundància de servidors, la redundància en el subministrament elèctric, els plans de contingència i la virtualització. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">EyeOS</p>
+<p>
+L’any 2006, un grup de joves programadors catalans van llançar al mercat el primer escriptori virtual en núvol. La idea va ser tot un èxit i en pocs mesos van tenir una gran acceptació arreu del món. L’objectiu era que els usuaris accedeixin a les seves aplicacions com si es tractés d’un sistema operatiu des de qualsevol lloc del món. Per defecte, eyeOS porta un gran nombre d’aplicacions, però a més se n’hi poden incloure d’altres i, si s’és programador, programar-ne de noves.
+</p>
+</div></div>
+<p>
+El concepte d’informàtica en núvol és molt ampli i engloba diferents models de negoci. Aquests es poden classificar de la manera següent (<span class="figref"><a href="#Figura12"><span>figura</span></a></span>):
+</p>
+<div class="iocfigure"><a name="Figura12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tipus d’informàtica en núvol
+
+</figcaption><img src="../media/a1_continguts_image_11.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong>Programari com a servei (SAAS)</strong>: en anglès, <em>software as a service</em>. Es caracteritza per oferir com a servei una aplicació completa a la carta. Els usuaris es connecten a través d’una xarxa, habitualment Internet, al servidor del proveïdor. En aquest model de negoci no es paguen llicències de programari sinó que es paga per ús que se’n fa. Les aplicacions estan situades en una infraestructura pública. El proveïdor líder en solucions de programari com a servei és Salesforce, amb el seu CRM <em>customer relationship management</em> distribuït. No obstant això, en els últims anys han sorgit noves empreses que ofereixen aquest tipus de servei com Google Apps, Dropbox, Evernote, Basecamp o Workday.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Plataforma com a servei (PAAS)</strong>: en anglès, <em>platform as a service</em>. És una solució intermèdia en què no només s’ofereix el maquinari, sinó que també contempla els elements bàsics per poder instal·lar una aplicació com són el sistema operatiu, els sistemes gestors de bases de dades i servidors d’aplicacions. Això permetrà al client instal·lar les seves pròpies aplicacions i despreocupar-se del manteniment del maquinari i del programari base. Un dels principals proveïdors de servei és Google App Engine, entre d’altres com Microsoft Azure o Force.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Infraestructura com a servei (IAAS)</strong>: en anglès, <em>infrastructure as a service</em>. En aquesta capa s’ofereix com a servei la capacitat de procés i d’emmagatzematge, normalment mitjançant un plataforma de virtualització. En comptes d’adquirir servidors i habilitar centres de processament de dades, les empreses lloguen aquests recursos a un proveïdor extern. El principal proveïdor en el mercat és Amazon, amb Amazon EC2, tot i que de mica en mica van sorgint altres empreses com GoGrid o l’empresa catalana Abiquo.</div>
+</li>
+</ul>
+
+<p>
+Els objectius principals d’aquesta tecnologia són augmentar la flexibilitat, millorar l’accessibilitat, reduir els costos i millorar l’alta disponibilitat:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Microsoft Office 365</p>
+<p>
+Microsoft no ha volgut perdre el seu lideratge en paquets ofimàtics i l’any 2011 va llançar al mercat un nou producte d’informàtica en núvol, anomenat Microsoft Office 365. Aquest producte disposa de les eines ofimàtiques Excel, Word, PowerPoint, Outlook, Exchange, Sharepoint i un sistema de conferències de vídeo i àudio. Els usuaris no han d’instal·lar cap d’aquestes aplicacions, sinó que hi accedeixen per Internet i paguen una quota mensual.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Alta disponibilitat</strong>: permet a les empreses disposar de solucions d’alta disponibilitat a un preu reduït, molt per sota del que haurien d’invertir si implantessin solucions pròpies.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Reducció de costos</strong>: com que l’empresa no disposa de servidors propis, no ha de realitzar la inversió inicial de tota aquesta infraestructura, que té un cost molt elevat i que, sovint, en petites i mitjanes empreses es troba infrautilitzada. A més, en no disposar de servidors propis, l’empresa no ha de destinar recursos al seu manteniment. Únicament cal adquirir uns terminals per accedir aquests serveis sense grans requisits tècnics, ja que el procés es realitza en el servidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Accessibilitat</strong>: el fet d’utilitzar aquest tipus de solucions permet més flexibilitat en els usuaris, ja que poden accedir als recursos des de diferents tipus de dispositius, sistemes operatius i situació geogràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Flexibilitat</strong>: permet adaptar ràpidament els sistemes de l’empresa a les necessitats de negoci. Davant d’un creixement molt ràpid es pot donar resposta en qüestió d’hores quan en un sistema convencional es requeririen mesos de planificació i uns costos molt més elevats.</div>
+</li>
+</ul>
+
+<p>
+No obstant això, com qualsevol sistema que està en fase d’implantació també genera algunes incerteses en els usuaris, com, per exemple, el control del nivell de servei acordat, la dependència que genera amb el proveïdor de servei i la ubicació i seguretat de les dades.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Nivell de servei</strong>: les empreses proveïdores s’han de comprometre a oferir un determinat nivell de servei prèviament acordat amb els usuaris. Sorgeixen dubtes sobre de quina manera s’estableix el nivell de servei a complir per part de les empreses proveïdores i com es pot verificar i controlar que s’estigui treballant dins dels nivells acordats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Dependència</strong>: implantar una solució d’aquest tipus genera una gran dependència amb el proveïdor de servei. Òbviament el grau de dependència dependrà del tipus d’informàtica en núvol que s’estigui aplicant, sent les solucions de programari com a servei, les PAAS, les més dependents. Sovint, en utilitzar solucions d’aquest tipus les empreses han d’adaptar la seva manera de treballar als productes oferts.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Ubicació de la informació</strong>: una de les principals pors que tenen les empreses a l’hora d’implantar solucions d’aquest tipus és el fet que les dades no es trobin allotjades en la mateixa empresa, sinó que sigui una empresa externa la que tingui aquesta informació i la gestioni. Això genera als administradors incerteses sobre l’ús, la gestió i el compliment de la normativa associada a les dades.</div>
+</li>
+</ul>
+
+<p>
+Algunes de les solucions d’informàtica en núvol que més utilitzen les empreses són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Google Apps</strong>: és un servei de Google que ofereix a les empreses versions personalitzades dels seus propis productes: Gmail, Google Groups, Google Calendar, Google Talk, Google Docs i Google Sites. Alguns dels seus principals avantatges:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>Estalvi de costos</strong>: les solucions de Google Apps permeten reduir costos de gestió i manteniment a les empreses. Es calcula que es poden reduir a una tercera part del que suposaria la implantació d’un servidor de correu propi. A <a href="https://gsuite.google.com/intl/es/pricing.html" class="urlextern" title="https://gsuite.google.com/intl/es/pricing.html"  rel="nofollow">goo.gl/HCOqv</a> es detallen els càlculs de l’estalvi que suposaria una solució d’aquest tipus. </div>
+</li>
+<li class="level2"><div class="li"> <strong>Espai d’emmagatzematge superior</strong>: la capacitat d’emmagatzematge de les bústies de correu és de 25 <acronym title="Gigabyte">GB</acronym>, molt superior als sistemes convencionals.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Accés a través del mòbil</strong>: permet accedir a l’aplicatiu des de dispositius mòbils Blackberry, iPhone, Windows Mobile i Android.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Alta disponibilitat</strong>: Google garanteix una disponibilitat dels seus serveis del 99,9% i utilitza la replicació síncrona de les dades entre diferents centres de dades.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Control total i administratiu de les dades</strong>: els administradors poden personalitzar totalment Google Apps per cobrir les necessitats que puguin tenir en relació a l’aparença, aspectes tècnics i empresarials.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Assistència 24/7</strong>: tot i ser molt intuïtiu i fàcil d’utilitzar ofereix assistència als administradors tots els dies de l’any les vint-i-quatre hores del dia.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Compliment de la normativa i seguretat de la informació</strong>: s’implanten les mateixes mesures de seguretat que en els serveis de Google i es garanteix la confidencialitat de les dades.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Dropbox</strong>: sistema d’allotjament de fitxers multiplataforma. El servei permet emmagatzemar i sincronitzar fitxers en línia per ser consultats des de diferents dispositius. A més, també permet la compartició de fitxers entre diferents usuaris. Dropbox permet crear comptes gratuïts amb una capacitat de fins a 2 <acronym title="Gigabyte">GB</acronym> i de pagament fins a 1 TB per a grups de treball.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Evernote</strong>: eina informàtica multiplataforma per a la gestió d’informació personal a base de notes. És una eina ideal per a executius, ja que permet centralitzar i gestionar de manera eficient informació rellevant com notes, imatges, idees… Disposa de versió gratuïta i de versió de pagament amb un capacitat d’emmagatzematge més alta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Salesforce</strong>: ofereix solucions de CRM per a la gestió dels clients, gestió d’oportunitats i campanyes de màrqueting, entre d’altres. A més, les seves funcionalitats es poden ampliar amb més de 1.000 aplicacions addicionals.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Endeve</strong>: sistema de facturació en línia que permet a les empreses portar la gestió de la comptabilitat de l’empresa de manera eficient i centralitzada. Permet crear factures des de qualsevol lloc i dispositiu.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Google Drive</strong>: paquet ofimàtic per treballar des de qualsevol dispositiu en l’elaboració de documents de text, fulls de càlcul, presentacions i dibuixos. Permet l’emmagatzematge i la compartició de documents entre diferents usuaris.</div>
+</li>
+</ul>
+
+<p>
+
+</p>
+
+</div>
+
+<h2><a id="contenidors" >Contenidors</a></h2>
+<div class="level2">
+
+<p>
+Una alternativa a la virtualització és l’ús de contenidors. Aquests permeten configurar els entorns de desplegament de manera que poden reproduir-se de forma idèntica en qualsevol màquina, independentment del sistema operatiu i la configuració de l’amfitrió.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Tot i que la utilització de <strong>contenidors i màquines virtuals</strong> pot semblar molt similar, no es tracta del mateix concepte.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Els <strong>contenidors</strong> són molt més lleugers i pràcticament no afecten el rendiment de l’aplicació. El motiu és que utilitzen el mateix nucli del sistema operatiu. A més a més, l’espai que ocupa en disc és molt reduït, ja que només s’hi han d’afegir els fitxers específics que requereix l’aplicació que s’executa en el contenidor.</div>
+</li>
+<li class="level1"><div class="li"> Les <strong>màquines virtuals</strong> són instal·lacions completes del sistema operatiu i afegeixen capes extres a l’execució dels programes, ja que cada instrucció ha de passar pel sistema operatiu virtualitzat, el programari de virtualització, el maquinari de virtualització de l’equip hoste i el nucli del sistema operatiu hoste. Això té un cost  significatiu en el rendiment. La preparació de la màquina virtual també és més costosa, en haver-se de fer una instal·lació completa i, també, requreix més espai al disc. Un avantatge de la virtualització és que es poden fer servir màquines virtuals amb diferents sistemes operatius independentment de quin estigui instal·lat a la màquina hoste (per exemple, una màquina virtual amb Linux pot executar-se en una màquina hoste amb Windows).</div>
+</li>
+</ul>
+
+<p>
+En el cas de sistemes distribuïts (una aplicació desplegada a múltiples màquines), és molt útil utilitzar contenidors, ja que només cal preparar el contenidor una vegada i instal·lar-lo en tants servidors com sigui necessari. Aquest és un dels motius pels quals Google fa servir contenidors per desplegar les seves aplicacions en lloc d’haver de configurar milers d’equips individualment. Un inconvenient, però, d’aquesta tecnologia és que no poden fer-se servir contenidors que utilitzen un sistema operatiu en una màquina amb un sistema operatiu diferent (per exemple, no es pot utilitzar un contenidor de Linux en una màquina amb Windows).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Informació addicional sobre contenidors</p>
+<p>
+Podeu trobar-ne més informació a l’enllaç següent: <a href="https://es.wikipedia.org/wiki/Virtualizaci%C3%B3n_a_nivel_de_sistema_operativo" class="urlextern" title="https://es.wikipedia.org/wiki/Virtualizaci%C3%B3n_a_nivel_de_sistema_operativo"  rel="nofollow">goo.gl/N44YOg</a>.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Contenidors en entorns virtualitzats</p>
+<p>
+En cas d’haver de treballar amb contenidors en ordinadors amb un sistema operatiu diferent del del contenidor, es pot recórrer a la utilització de màquines virtuals. Cal tenir en compte que es perd part de l’eficiència proporcionada per aquesta tecnologia, però és habitual treballar d’aquesta manera en entorns de desenvolupament, ja que l’equip de programadors pot treballar amb el sistema operatiu que s’adapti més bé a les seves necessitats. A més a més, en aquests casos, la pèrdua de rendiment no és crítica.
+</p>
+</div></div>
+<p>
+Tot i que aquesta tecnologia dels contenidors es troba disponible des dels anys 80 al sistema operatiu UNIX, fins a l’aparició de Docker, l’any 2013, no era gaire popular. Actualment és fàcil trobar proveïdors de serveis d’allotjament que admeten Docker i permeten fer el desplegament de les aplicacions automàticament (per exemple, Amazon Web Services i Google Cloud).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Docker és un sistema de contenidors amb llicència de programari lliure.
+</p>
+</div></div>
+<p>
+
+</p>
+
+</div>
+
+<h3><a id="linux_containers" >Linux Containers</a></h3>
+<div class="level3">
+
+<p>
+Linux Containers és el nom del projecte darrere les tecnologies LXC, LXD i LXCFS que té com a objectiu proporcionar un entorn neutral per al desenvolupament de les tecnologies de contenidors a Linux.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>LXC</strong> és un conjunt d’eines per a la creació de contenidors sobre Linux.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LXD</strong> proporciona una nova interfície per treballar amb LXC mitjançant una única eina de línia d’ordres i una forma de treballar més similar a la que s’utilitza habitualment amb màquines virtuals.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LXCFS</strong> és un sistema de fitxer per noms d’usuari (FUSE, en anglès) que soluciona alguns problemes amb què es troben els usuaris que fan servir un sistema de contenidors.</div>
+</li>
+</ul>
+
+<p>
+Quan es treballa amb aquestes tecnologies es recomana utilitzar la distribució de Linux Ubuntu, ja que inclou totes les dependències necessàries, i Cannonical Ltd inclou suport a llarg termini (LTS o <em>long term support</em>, en anglès) per a LXC a les seves pròpies distribucions de tipus <em>LTS</em>.
+</p>
+
+<p>
+El component LXC és la base del sistema de contenidors i el seu objectiu és crear un entorn el més proper possible a una instal·lació estàndard de Linux, però fent servir el mateix nucli del sistema operatiu de la màquina on s’executa.
+</p>
+
+<p>
+Per altra banda, el component LXD fa servir la implementació de LXC internament, però afegeix un sistema de càrrega d’imatges per crear els contenidors. Els contenidors es gestionen de manera similar a com es faria si fossin màquines virtuals i permet realitzar aquestes operacions a través de la xarxa.
+</p>
+
+<p>
+Un altre avantatge de fer servir LXD és que pot utilitzar-se conjuntament amb OpenStack (mitjançant el connector nova-lxd), de manera que es pot treballar al núvol tant amb contenidors com amb màquines virtuals de forma transparent de cara als usuaris. Això obre la porta a fer servir sistemes més avançats que incloguin servidors de càrrega i la creació automatitzada d’instàncies, per exemple, per augmentar el nombre de contenidors que serveixen una determinada aplicació segons el nombre d’usuaris connectats al sistema.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">OpenStack</p>
+<p>
+OpenStack és un sistema operatiu per a núvols que permet controlar una gran quantitat de recursos mitjançant un centre de dades. Se’n pot trobar més informació a l’enllaç següent: <a href="https://www.openstack.org/software/" class="urlextern" title="https://www.openstack.org/software/"  rel="nofollow">goo.gl/SZWz5s</a>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="contenidorsdocker" >Contenidors: Docker</a></h3>
+<div class="level3">
+
+<p>
+Docker és un sistema de contenidors basat en el nucli de Linux. Es tracta de programari lliure i entre els principals col·laboradors hi ha empreses com Google, IBM, Cisco, Microsoft i Red Hat.
+</p>
+
+<p>
+Com que es tracta d’un contenidor basat en Linux, no pot utilitzar-se directament a màquines amb altres sistemes operatius, però és possible utilitzar-lo en altres entorns de desenvolupament mitjançant la virtualització. Al seu web hi ha enllaços a instal·ladors que simplifiquen aquesta tasca i inclouen tots els fitxers necessaris per instal·lar Docker a Linux, Mac i Windows.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Anteriorment, per utilitzar Docker en sistemes operatius no basats en Linux, s’utilitzava Docker Toolbox. Aquesta eina, però, es troba obsoleta i no s’ha d’utilitzar amb els sistemes operatius actuals.
+</p>
+</div></div>
+<p>
+Alguns avantatges de desplegar una aplicació utilitzant Docker són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> L’aplicació funciona igual en el servidor de proves que en el de producció perquè l’entorn és el mateix.</div>
+</li>
+<li class="level1"><div class="li"> Cada aplicació es troba aïllada de la resta d’aplicacions, en el seu propi contenidor.</div>
+</li>
+<li class="level1"><div class="li"> No cal instal·lar cap altre component, a banda de Docker, per executar l’aplicació en un altre equip. L’aplicació funciona directament en instal·lar el contenidor, perquè totes les dependències es troben al contenidor.</div>
+</li>
+</ul>
+
+<p>
+Els contenidors de Docker són instàncies d’una imatge que conté tots els fitxers necessaris empaquetats per crear el contenidor en un sol fitxer. Al seu torn, aquesta imatge és construïda a partir d’un fitxer anomenat Dockerfile, que conté totes les ordres necessàries per assemblar-la (vegeu la <span class="figref"><a href="#figura1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Procés d’execució d’un contenidor
+
+</figcaption><img src="../media/proces-execucio-contenidor.png" alt="" /></figure>
+</div>
+<p>
+El primer pas per treballar amb contenidors de Docker és instal·lar-lo fent servir l’enllaç següent: <a href="https://www.docker.com/community-edition#/download" class="urlextern" title="https://www.docker.com/community-edition#/download"  rel="nofollow">goo.gl/n7d5qg</a>. En aquesta pàgina es pot trobar l’instal·lador per utilitzar Docker amb Mac, Windows i diferents distribucions de Linux. La instal·lació és molt simple en tots els sistemes operatius, però en cas de dubte recordeu que podeu trobar tota la informació necessària a la mateixa pàgina de descàrrega.
+</p>
+
+<p>
+Una vegada instal·lat, cal executar-lo. En la majoria de sistemes operatius, es necessiten permisos d’administrador per poder gestionar la xarxa. Per comprovar que s’ha instal·lat amb èxit, obriu una finestra amb la terminal o el símbol del sistema (segons quin sistema operatiu feu servir) i escriviu-hi <em>docker -v</em>.
+</p>
+
+<p>
+El resultat ha de ser similar al següent:
+</p>
+<pre class="code">~ $ docker -v
+Docker version 17.03.1-ce, build c6d412e</pre>
+
+</div>
+
+<h3><a id="creacio_i_desplegament_d_un_contenidor_amb_docker" >Creació i desplegament d&#039;un contenidor amb Docker</a></h3>
+<div class="level3">
+
+<p>
+Per veure el funcionament d’un contenidor, cal crear-ne un per executar una aplicació en PHP que mostri per pantalla el missatge: “Hola món!”. Primer, creeu un directori anomenat <em>prova-docker</em>, on es desaran tots els fitxers d’aquest projecte. Dintre d’aquest directori, creeu-ne un altre anomenat <em>src</em> amb un fitxer de text pla anomenat index.php i el contingut següent:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1"><span class="kw2">&lt;?php</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">echo</span> <span class="st0">&quot;Hola món!&quot;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per poder executar aquesta aplicació és necessari un sistema operatiu, un servidor web (per exemple, Apache) i PHP. Per indicar a Docker que ha d’incloure la imatge, creeu un fitxer de text pla dins del directori <em>prova-docker</em> anomenat Dockerfile.
+</p>
+
+<p>
+Docker requereix el nom d’una imatge per fer-la servir com a base. Aquestes imatges inclouen els fitxers propis de la distribució (per exemple, Ubuntu o Debian) i en alguns casos algunes aplicacions preinstal·lades com PHP o MySql.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Repositori d&#039;imatges per Docker</p>
+<p>
+Podeu trobar imatges de Docker fiables per utilitzar com a base a l’enllaç  següent: <a href="https://hub.docker.com" class="urlextern" title="https://hub.docker.com"  rel="nofollow">hub.docker.com</a>. En aquest repositori hi ha tant imatges oficials (més fiables) com públiques.
+</p>
+</div></div>
+<p>
+L’enllaç a la imatge de Docker oficial per a PHP es troba a l’enllaç següent: <a href="https://hub.docker.com/_/php/" class="urlextern" title="https://hub.docker.com/_/php/"  rel="nofollow">hub.docker.com/_/php/</a>. Al principi de la pàgina hi ha la llista d’imatges disponibles (vegeu la <span class="figref"><a href="#figura u3a1-2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura u3a1-2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Imatge de Docker oficial PHP
+
+</figcaption><img src="../media/01-docker-imatges-base.png" alt="" /></figure>
+</div>
+<p>
+Com es pot apreciar, el llistat és força extens. Si voleu més informació sobre cadascuna de les opcions, podeu consultar la mateixa pàgina. En aquest exemple es fa servir el servidor web Apache i, per consegüent, la imatge base correspon a la fila “7.1.3-apache, 7.1-apache, 7-apache, apache”.
+</p>
+
+<p>
+Fixeu-vos que a cada fila es mostren, d’esquerra a dreta, les opcions disponibles, de la més concreta a la més genèrica. És a dir, si s’especifica <code>7.1.3-apache</code> es farà servir la imatge amb la versió 7.1.3 de PHP i Apache, mentre que si s’especifica en el fitxer <code>7-apache</code> es farà servir una versió de PHP 7, però no sabreu quina (habitualment la més recent que s’hagi afegit a aquest repositori). En un cas encara més extrem, si només s’especifica <code>apache</code>, la versió de PHP podria ser qualsevol (per exemple, PHP 8 o 9). 
+</p>
+
+<p>
+Per aquests motius es recomana fer servir sempre una versió concreta. En cas contrari, es poden produir incompatibilitats en les aplicacions i, fins i tot, pot passar que a partir d’una mateixa imatge base es generin diferents imatges, ja que la versió pot canviar en qualsevol moment.
+</p>
+
+<p>
+Habitualment els números de versió d’un programa indiquen les diferències següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> El primer indica el número de la versió, i no acostuma a ser completament compatible amb l’anterior (per exemple, PHP 7.0 no és compatible amb PHP 5.6).</div>
+</li>
+<li class="level1"><div class="li"> El segon número s’utilitza quan s’afegeixen noves funcionalitats.</div>
+</li>
+<li class="level1"><div class="li"> El tercer número indica correccions.</div>
+</li>
+</ul>
+
+<p>
+Així doncs, a l’hora de seleccionar una imatge, normalment només cal indicar els dos primers números de versió. Per exemple, si s’indica <code>7.1</code> com a versió, s’inclou la versió més recent amb totes les correccions actualitzades.
+</p>
+
+<p>
+Per indicar a Docker la imatge base, es fa amb l’ordre FROM seguida del nom del repositori (php), dos punts (:) i el nom de la imatge (per exemple, <code>7.1-apache</code>):
+</p>
+<pre class="code">FROM php:7.1-apache</pre>
+
+<p>
+Com que es vol copiar l’aplicació dins del contenidor, cal utilitzar l’ordre COPY indicant la ruta d’origen i la ruta de destí:
+</p>
+<pre class="code">COPY src/ /var/www/html</pre>
+
+<p>
+Aquesta és la ruta que utilitza aquesta imatge en concret, que està basada en la distribució de Debian de Linux. Per saber a quina distribució pertany una imatge i tot el que conté, només cal clicar l’enllaç a la dreta de cada fila per accedir al fitxer Dockfile utilitzat per crear-la.
+</p>
+
+<p>
+Finalment, cal indicar a Docker que cal exposar el port 80 del contenidor per poder accedir a la pàgina web. Per fer-ho s’utilitza l’ordre <code>EXPOSE</code>:
+</p>
+<pre class="code">EXPOSE 80</pre>
+
+<p>
+Així doncs, el contingut del fitxer Dockerfile per crear la imatge ha de ser:
+</p>
+<pre class="code">FROM php:7.1-apache
+COPY src/ /var/www/html
+EXPOSE 80</pre>
+
+<p>
+Una vegada creat el fitxer Dockerfile i desat dintre de la carpeta <em>prova-docker</em>, per generar la imatge heu d’escriure a la línia d’ordres:
+</p>
+<pre class="code">docker build -t hola-mon .</pre>
+
+<p>
+El paràmetre <code>-t</code> es fa servir per indicar el nom de la imatge (en aquest cas, “hola-mon”) i el punt final indica que es crearà en el mateix directori. Una vegada es premi la tecla retorn, començaran a descarregar-se els fitxers necessaris per crear la imatge.
+</p>
+
+<p>
+El resultat ha de ser similar al següent:
+</p>
+<pre class="code">~/prova-docker $ docker build -t hola-mon .
+Sending build context to Docker daemon 3.584 kB
+Step 1/3 : FROM php:7.1-apache
+7.1-apache: Pulling from library/php
+6d827a3ef358: Pull complete
+87fe8fbc743a: Pull complete
+f6d1a8d304ab: Pull complete
+caf3547d9b73: Pull complete
+1004db2760ff: Pull complete
+66e2d66a547e: Pull complete
+bbfaa62c234a: Pull complete
+19ce8807f4d1: Pull complete
+63f8d35ca798: Pull complete
+a5594b4d2a52: Pull complete
+42f1cbd038cf: Pull complete
+a739656e85cb: Pull complete
+97b6a5f245a1: Pull complete
+Digest: sha256:c865c723fbe6a41ccc9006c6c3f3c0225ad06f3ab69c752419d6cd8f7ca51e5e
+Status: Downloaded newer image for php:7.1-apache
+ ---&gt; b177bfebca36
+Step 2/3 : COPY src/ /var/www/html
+ ---&gt; a021f0647910
+Removing intermediate container 4db2b286aeca
+Step 3/3 : EXPOSE 80
+ ---&gt; Running in f1da636d83b5
+ ---&gt; e991d0ca6063
+Removing intermediate container f1da636d83b5
+Successfully built e991d0ca6063</pre>
+
+<p>
+Seguidament, per executar el contenidor, heu d’escriure des de la línia d’ordres:
+</p>
+<pre class="code">docker run -p 80:80 hola-mon </pre>
+
+<p>
+L’opció <code>run</code> indica que es vol executar una instància de la imatge “hola-mon”. Fixeu-vos que el nom de la imatge ha d’anar al final de l’ordre. L’opció <code>-p</code> indica la redirecció de ports (és el primer el port de la màquina hoste i el segon el port del contenidor). És a dir, s’executarà el contenidor “hola-mon” i es podrà accedir al seu port 80 des del port 80 de la màquina hoste.
+</p>
+
+<p>
+El resultat d’executar-lo ha de ser similar al següent:
+</p>
+<pre class="code">AH00558: apache2: Could not reliably determine the server&#039;s fully qualified domain name, using 172.17.0.2. Set the &#039;ServerName&#039; directive globally to suppress this message
+AH00558: apache2: Could not reliably determine the server&#039;s fully qualified domain name, using 172.17.0.2. Set the &#039;ServerName&#039; directive globally to suppress this message
+[Sat Apr 08 12:36:18.758692 2017] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.10 (Debian) PHP/7.1.3 configured -- resuming normal operations
+[Sat Apr 08 12:36:18.758735 2017] [core:notice] [pid 1] AH00094: Command line: &#039;apache2 -D FOREGROUND&#039;</pre>
+
+<p>
+Tot i que es mostren missatges d’advertència d’Apache, l’aplicació ha de funcionar correctament. Per comprovar-ho només heu d’obrir el vostre navegador i introduir com a <acronym title="Uniform Resource Locator">URL</acronym> “localhost”. Hauria de mostrar-se per pantalla el missatge “Hola món!”.
+</p>
+
+<p>
+En cas de voler utilitzar un port diferent de la màquina hoste (per exemple, el 8080, per accedir des de l’<acronym title="Uniform Resource Locator">URL</acronym> <code>localhost:8080</code>), només cal executar la imatge canviant aquest port, tal com es mostra en l’exemple següent:
+</p>
+<pre class="code">docker run -p 8080:80 hola-mon </pre>
+
+<p>
+Si proveu de modificar el fitxer index.php i actualitzeu la pàgina al navegador, veureu que els canvis no s’hi veuen reflectits. Això és d’esperar, perquè l’aplicació s’ha copiat dins del contenidor. Si es vol actualitzar l’aplicació, cal tornar a construir el contenidor.
+</p>
+
+<p>
+Hi ha casos en què aquest comportament no és el desitjat (per exemple, durant el desenvolupament). Per solucionar aquest problema, Docker ofereix l’opció de muntar volums que funcionaran com a directoris compartits entre la màquina hoste i el contenidor.
+</p>
+
+<p>
+Per muntar un volum, s’ha de fer des de la línia d’ordres utilitzant l’opció <code>-v</code> i indicant el nom del directori de la màquina hoste, dos punts (:), i el nom del directori al contenidor.
+</p>
+<pre class="code">docker run -p 80:80 -v /provar-docker/src/:/var/www/html/ hola-mon</pre>
+
+<p>
+Cal destacar que s’ha d’utilitzar la ruta absoluta. No és vàlid fer servir <code>~</code> per indicar que es tracta de la carpeta de l’usuari actual a Linux o Unix, ni <code>..</code> per indicar que es tracta del directori pare.
+</p>
+
+<p>
+Fixeu-vos que, per muntar un contenidor, s’ha de fer des de la línia d’ordres i no al fitxer Dockerfile: d’aquesta manera s’evita que es trenqui la portabilitat. Com que es tracta de recursos externs al contenidor, Docker no pot assegurar que aquests estiguin disponibles en qualsevol equip.
+</p>
+
+<p>
+Si llisteu el contingut del vostre directori, no veureu la imatge creada enlloc. Això és normal: no forma part de la vostra aplicació i no tindria sentit que es mostrés en aquest directori. Per veure un llistat de les imatges instal·lades, s’utilitza l’ordre docker images i el resultat serà similar al següent:
+</p>
+<pre class="code">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hola-mon            latest              e991d0ca6063        56 minutes ago      387 MB
+php                 7.1-apache          b177bfebca36        2 weeks ago         387 MB</pre>
+
+<p>
+Per poder desplegar l’aplicació l’heu de pujar al repositori d’imatges de Docker. Per fer-ho, necessiteu crear un compte a Docker Hub (<a href="http://hub.docker.com" class="urlextern" title="http://hub.docker.com"  rel="nofollow">hub.docker.com</a>). Una vegada creat el compte i confirmat mitjançant l’enllaç rebut al correu, podeu connectar amb la pàgina (vegeu la <span class="figref"><a href="#figura u3a1-3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura u3a1-3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina principal d’usuari a Docker Hub
+
+</figcaption><img src="../media/01-docker-hub-1.png" alt="" /></figure>
+</div>
+<p>
+Per poder pujar la imatge al repositori, heu d’autenticar-vos amb el nom d’usuari i la contrasenya des de la línia d’ordres, fent servir l’ordre <code>docker login</code>. No cal passar cap paràmetre, però us demanarà el nom d’usuari i la contrasenya. El resultat serà similar al següent:
+</p>
+<pre class="code">~/prova-docker $ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don&#039;t have a Docker ID, head over to https://hub.docker.com to create one.
+Username: iocm08
+Password:
+Login Succeeded</pre>
+
+<p>
+El següent pas és etiquetar la imatge per pujar-la al repositori. Per fer-ho, cal saber l’identificador (ID) de la imatge i fer servir l’ordre <code>docker tag</code> seguida de l’ID, l’espai de noms (que es correspon amb el nom d’usuari de Docker Hub), el nom del repositori, dos punts (:) i l’etiqueta (<em>tag</em>, en anglès).
+</p>
+
+<p>
+Podeu veure l’identificador de la imatge executant l’ordre docker images, que us mostrarà el llistat d’imatges amb el seu repositori, l’etiqueta, l’identificador, quant fa que es va crear i la mida.
+</p>
+
+<p>
+Per exemple, per poder pujar el contenidor amb identificador “0991d0ca6063” al repositori “iocmo8/hola-mon”, cal executar l’ordre següent:
+</p>
+<pre class="code">docker tag e991d0ca6063 iocm08/hola-mon:latest</pre>
+
+<p>
+En executar docker images, el resultat serà similar al següent:
+</p>
+<pre class="code">~/prova-docker $ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+hola-mon              latest              e991d0ca6063        2 hours ago         387 MB
+iocm08/hola-mon       latest              e991d0ca6063        2 hours ago         387 MB
+php                   7.1-apache          b177bfebca36        2 weeks ago         387 MB</pre>
+
+<p>
+Fixeu-vos que a banda de la imatge utilitzada com a base i la imatge del contenidor creat originalment, s’ha afegit una nova imatge que inclou l’espai de noms, però conserva l’identificador original.
+</p>
+
+<p>
+Seguidament, podeu pujar la imatge a Docker Hub fent servir l’ordre <code>docker push</code>, i el resultat serà similar al següent:
+</p>
+<pre class="code">The push refers to a repository [docker.io/iocm08/hola-mon]
+2c16acb979ce: Pushed
+1c6da1b67140: Mounted from library/php
+524998ac985c: Mounted from library/php
+b0048e0cd0f0: Mounted from library/php
+0739f0fe8939: Mounted from library/php
+8f3f5d50c083: Mounted from library/php
+46af8a5b5036: Mounted from library/php
+4b63183c9b32: Mounted from library/php
+5e34f9b1cc0a: Mounted from library/php
+882b0937fe95: Mounted from library/php
+6b42159d1088: Mounted from library/php
+0e985d879eb0: Mounted from library/php
+2b6ca8b57a27: Mounted from library/php
+5d6cbe0dbcf9: Mounted from library/php
+latest: digest: sha256:bd3d069c537bdadc9587e52d9a88e1c06b7d4bd56c3b304cbb590fbbdb36dfaf size: 3242</pre>
+
+<p>
+Si actualitzeu la pàgina web amb l’usuari autenticat a Docker Hub, veureu com ha aparegut el repositori “hola-mon”, tal com apareix a la <span class="figref"><a href="# figura u3a1-4"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura u3a1-4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina principal d’usuari a Docker Hub
+
+</figcaption><img src="../media/01-docker-hub-2.png" alt="" /></figure>
+</div>
+<p>
+Per poder provar que el contenidor s’ha pujat correctament, podeu descarregar-lo i provar de posar-lo en marxa, però primer heu d’eliminar la imatge creada. Per eliminar una imatge o un <em>tag</em>, s’ha d’utilitzar l’ordre <code>docker rmi</code>, indicant el nom de la imatge i l’etiqueta en cas que aquesta no sigui “latest” (que fa referència a l’última).
+</p>
+
+<p>
+És possible que alguna de les imatges o etiquetes siguin utilitzades per algun contenidor (encara que els contenidors s’hagin aturat). Per forçar-ne l’eliminació, s’ha de fer servir l’opció <code>–force</code>. Així doncs, per eliminar la imatge “hola-mon” i l’etiqueta “iocm08/hola-mon”, suposant que la segona estigui sent utilitzada, es fa de la manera següent:
+</p>
+<pre class="code">docker rmi hola-mon
+docker rmi iocm08/hola-mon --force</pre>
+
+<p>
+El resultat serà similar al següent:
+</p>
+<pre class="code">Untagged: hola-mon:latest
+Untagged: iocm08/hola-mon:latest
+Untagged: iocm08/hola-mon@sha256:bd3d069c537bdadc9587e52d9a88e1c06b7d4bd56c3b304cbb590fbbdb36dfaf
+Deleted: sha256:e991d0ca60632dcf5795cb8e18da70f3aa814b0309539c003ad0bbb468686f7d
+Deleted: sha256:a021f0647910f846584fdd047aa9e4ec5fb9aebfcbfa2e0ff08c843ac7f10ada</pre>
+
+<p>
+Si executeu l’ordre <code>docker images</code>, comprovareu que només hi ha la imatge base utilitzada per crear la vostra imatge:
+</p>
+<pre class="code">~/prova-docker $ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+php                   7.1-apache          b177bfebca36        2 weeks ago         387 MB</pre>
+
+<p>
+Per acabar, podeu descarregar la imatge utilitzant l’ordre <code>docker pull</code> i indicant el repositori on es troba (espai de noms i nom del repositori). Aquesta informació també es pot trobar a la pàgina d’usuari de Docker Hub fent clic al repositori que vulgueu descarregar. Per exemple, per descarregar la imatge del repositori “iocm08/hola-mon”, heu d’utilitzar l’ordre següent:
+</p>
+<pre class="code">docker pull iocm08/hola-mon</pre>
+
+<p>
+El resultat que obtindreu serà similar al següent:
+</p>
+<pre class="code">~/prova-docker $ docker pull iocm08/hola-mon
+Using default tag: latest
+latest: Pulling from iocm08/hola-mon
+6d827a3ef358: Already exists
+87fe8fbc743a: Already exists
+f6d1a8d304ab: Already exists
+caf3547d9b73: Already exists
+1004db2760ff: Already exists
+66e2d66a547e: Already exists
+bbfaa62c234a: Already exists
+19ce8807f4d1: Already exists
+63f8d35ca798: Already exists
+a5594b4d2a52: Already exists
+42f1cbd038cf: Already exists
+a739656e85cb: Already exists
+97b6a5f245a1: Already exists
+a8f59612df6a: Already exists
+Digest: sha256:bd3d069c537bdadc9587e52d9a88e1c06b7d4bd56c3b304cbb590fbbdb36dfaf
+Status: Downloaded newer image for iocm08/hola-mon:latest</pre>
+
+<p>
+Un cop més, podeu utilitzar l’ordre <code>docker images</code> per comprovar que la imatge és al sistema i que pot executar-se amb <code>docker run</code>. Per exemple, en el cas del contenidor “iocm08/hola-mon” el resultat seria el següent:
+</p>
+<pre class="code">~/prova-docker $ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+iocm08/hola-mon     latest              e991d0ca6063        2 hours ago         387 MB
+php                 7.1-apache          b177bfebca36        2 weeks ago         387 MB</pre>
+
+<p>
+I per executar-lo es faria servir aquesta ordre:
+</p>
+<pre class="code">docker run iocm08/hola-mon</pre>
+
+<p>
+Fixeu-vos que tot i que el contenidor original no feia servir cap espai de noms, quan s’utilitza una imatge descarregada s’ha d’incloure. En cas contrari, Docker no la troba.
+</p>
+
+<p>
+Com heu pogut comprovar, començar a utilitzar Docker no és excessivament complicat, però dominar totes les seves opcions i els desplegaments a una escala major és força complex. Cal tenir en compte que aquí només s’ha presentat un exemple molt simple, però que us pot servir per iniciar-vos en la utilització de contenidors.
+</p>
+
+<p>
+Altres aspectes de la utilització de Docker que cal tenir en compte són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quan acaba la tasca que s’està executant al contenidor, el contenidor s’atura automàticament.</div>
+</li>
+<li class="level1"><div class="li"> Cada aplicació s’executa en un contenidor diferent, ja que cada contenidor està lligat a un únic procés.</div>
+</li>
+<li class="level1"><div class="li"> Un mateix equip pot tenir múltiples contenidors funcionant al mateix temps. Per veure els contenidors en execució es pot fer servir l’ordre <code>docker ps</code>.</div>
+</li>
+<li class="level1"><div class="li"> Docker fa servir un sistema de capes per generar les imatges; aquestes capes es corresponen amb les línies del fitxer Dockerfile.</div>
+</li>
+<li class="level1"><div class="li"> Per automatitzar el desplegament s’acostuma a utilitzar altres eines i serveis de desplegament com Kubernetes (<a href="https://kubernetes.io" class="urlextern" title="https://kubernetes.io"  rel="nofollow">kubernetes.io</a>) o Ansible (<a href="https://www.ansible.com" class="urlextern" title="https://www.ansible.com"  rel="nofollow">www.ansible.com</a>).</div>
+</li>
+</ul>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

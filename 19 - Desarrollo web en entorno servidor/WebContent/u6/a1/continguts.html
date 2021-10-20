@@ -1,0 +1,820 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../../WebContent/u6/introduccio.html">6. Serveis web amb Spring</a></p><ul class="expander"><li id="u6introduccio"><a href="../../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../../WebContent/u6/a1/continguts.html">Serveis web SOAP amb Spring Web Services</a><span class="buttonexp"></span></p><ul><li id="u6a1exercicis"><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a1annexos"><a href="../../../WebContent/u6/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a1/continguts.html#escrivint_un_servei_web_soap_de_consulta_de_dades_d_empreses_amb_spring-ws">Escrivint un servei web SOAP de consulta de dades d’empreses amb Spring-WS</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#fent_servir_la_consulta_de_dades_d_empreses_des_d_una_aplicacio_java_stand-alone">Fent servir la consulta de dades d’empreses des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../../WebContent/u6/a2/continguts.html">Serveis web RESTful amb Spring. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a2annexos"><a href="../../../WebContent/u6/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#testejant_el_servei_web_hello_world">Testejant el servei web '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#el_servei_web_de_gestio_d_equips_de_futbol_operacions_crud">El servei web de gestió d'equips de futbol. Operacions CRUD</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a3" class="tocsection"><p id='u6a3continguts'><a class="section" href="../../../WebContent/u6/a3/continguts.html">Serveis web RESTful amb Spring. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a3activitats"><a href="../../../WebContent/u6/a3/activitats.html">Activitats</a></li><li id="u6a3exercicis"><a href="../../../WebContent/u6/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a3annexos"><a href="../../../WebContent/u6/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_java_per_al_servei_web_restful_hello_world">Un client Java per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#tests_d_integracio_per_al_servei_web_restful_hello_world">Tests d’integració per al servei web RESTful '"Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_javascript_per_al_servei_web_restful_hello_world">Un client JavaScript per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Spring</a></li><li>Serveis web SOAP amb Spring Web Services</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_soap_amb_spring_web_services"> Serveis web SOAP amb Spring Web Services </a></h1>
+    	
+<p>
+Mitjançant una aplicació d’exemple, veurem els conceptes més rellevants dels serveis web SOAP desenvolupats amb Spring Web Services (Spring-WS). Aprendreu a crear-ne, a fer-ne el desplegament i a codificar diferents tipus de clients capaços de consumir els serveis web creats. 
+</p>
+
+<p>
+Els serveis web, ja siguin SOAP o REST, són una peça clau en el desenvolupament d’arquitectures de programari orientades a serveis (SOA, per les sigles en anglès) i, més recentment, per a la creació d’arquitectures basades en microserveis.
+</p>
+
+<p>
+Quan es descriu una arquitectura SOA ens referim a arquitectures basades en un conjunt de serveis que es despleguen a Internet mitjançant serveis web.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servei web</strong> és una tecnologia que fa servir un conjunt de protocols i estàndards per tal d’intercanviar dades entre aplicacions.
+</p>
+</div></div>
+<p>
+Podeu veure els serveis web com components d’aplicacions distribuïdes que estan disponibles de forma externa i que es poden fer servir per integrar aplicacions escrites en diferents llenguatges (Java, .NET, PHP, etc.) i que s’executen en plataformes diferents (Windows, Linux, etc.). <strong>La seva característica principal és, doncs, la interoperabilitat</strong>. 
+</p>
+
+<p>
+Un servei web publica una lògica de negoci exposada com a servei als clients. La diferència més gran entre una lògica de negoci exposada com a servei web i, per exemple, una lògica de negoci exposada amb un mètode d’un EJB és que els serveis web SOAP proporcionen una interfície poc acoblada als clients. Això permet comunicar aplicacions que s’executin en diferents sistemes operatius, desenvolupades amb diferents tecnologies i amb diferents llenguatges de programació. 
+</p>
+
+<p>
+<strong>Spring</strong> és un bastiment (<em>framework</em>, en anglès) amb mòduls basat en Java Enterprise Edition. La principal característica del seu <em>core</em> és la utilització del patró de disseny d’inversió de control (de l’anglès <em>Inversion of Control</em>) i també la injecció de dependències (de l’anglès <em>Dependency Injection</em>), un tipus d’IoC. Spring ofereix també un conjunt de projectes/mòduls per desenvolupar serveis web SOAP i RESTful.
+</p>
+
+<p>
+Els serveis web i, per tant, les aplicacions orientades a serveis es poden implementar amb diferents tecnologies. Tant Java EE 7 com Spring proporcionen implementacions per treballar amb serveis web SOAP i serveis web RESTful.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>SOAP</strong> (de l’anglès <em>Simple Object Access Protocol</em>) és un protocol que permet la interacció de serveis web basats en XML. L’especificació de SOAP inclou la sintaxi amb la qual s’han de definir els missatges, les regles de codificació dels tipus de dades i les regles de codificació que regiran les comunicacions entre aquests serveis web.
+</p>
+</div></div>
+<p>
+L’especificació de Java EE 7 inclou diverses especificacions que donen complet suport a la creació i el consum de serveis web SOAP; la més destacada és JAX-WS (de l’anglès <em>Java <acronym title="Application Programming Interface">API</acronym> for XML-Based Web Services</em>), que utilitza missatges XML seguint el protocol SOAP i oculta la complexitat d’aquest protocol proporcionant una <acronym title="Application Programming Interface">API</acronym> senzilla per al desenvolupament, el desplegament i el consum de serveis web SOAP amb Java EE. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JAX-WS</strong> és l’API estàndard que defineix Java EE per desenvolupar i desplegar serveis web SOAP.
+</p>
+</div></div>
+<p>
+Spring també proporciona un projecte anomenat Spring-WS (de l’anglès <em>Spring Web Services</em>) enfocat a la creació i el consum de serveis web SOAP. Spring-WS es basa completament en Spring i porta inherent al seu model molts dels conceptes clau a Spring, com poden ser la inversió del control i la injecció de dependències.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Spring-WS</strong> és el projecte que ofereix Spring per desenvolupar i desplegar serveis web SOAP.
+</p>
+</div></div>
+<p>
+JAX-WS no pressuposa un model de desenvolupament per als serveis web i el desenvolupador pot triar tant una estratègia <em>Code First</em> (també anomenada <em>Contract Last</em>) com una estratègia <em>Contract First</em>, tot i que el més habitual és utilitzar l’estratègia <em>Code First</em>. 
+</p>
+
+<p>
+Spring-WS, en canvi, només suporta la creació de serveis web SOAP seguint una estratègia <em>Contract First</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>WSDL</strong> és un document XML que descriu un servei web SOAP. Descriu on es localitza un servei, quines operacions proporciona, el format dels missatges que han de ser intercanviats i com cal cridar el servei.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Per què &#039;Contract First&#039;?</p>
+<p>
+Si voleu saber les motivacions que té Spring per suportar tan sols una estratègia <em>Contract First</em> ho podeu fer consultant aquesta <acronym title="Uniform Resource Locator">URL</acronym>: <a href="http://docs.spring.io/spring-ws/docs/2.4.0.RELEASE/reference/htmlsingle/#why-contract-first" class="urlextern" title="http://docs.spring.io/spring-ws/docs/2.4.0.RELEASE/reference/htmlsingle/#why-contract-first"  rel="nofollow">bit.ly/2niObVu</a>.
+</p>
+</div></div>
+<p>
+Quan parlem de serveis web, una estratègia <em>Code First</em> vol dir crear primer les classes Java que implementaran el servei i, a partir d’aquestes, generar els documents WSDL de definició del servei.
+</p>
+
+<p>
+Una estratègia <em>Contract First</em> vol dir exactament el contrari: fer primer la definició del servei abans d’implementar-lo. Això vol dir descriure els paràmetres i tipus de retorn del servei amb XSD (de l’anglès <em>XML Schema Definitions</em>), després utilitzar aquest XSD per generar el document WSDL que serà el contracte públic del servei i, finalment, generar les classes Java que implementaran el servei d’acord amb aquest contracte.
+</p>
+
+<p>
+L’elecció entre JAX-WS i Spring-WS a l’hora de desenvolupar serveis web SOAP amb Java no és senzilla i no hi ha cap de les dues tecnologies que sigui una clara guanyadora; alguns dels motius per utilitzar Spring-WS són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Per disseny, una estratègia <em>Contract First</em> promou un baix acoblament entre el contracte i la implementació del servei web.</div>
+</li>
+<li class="level1"><div class="li"> Suport més ampli amb les llibreries de tractament XML.</div>
+</li>
+<li class="level1"><div class="li"> Suport més ampli i flexible en els mapatges entre XML i objectes Java.</div>
+</li>
+<li class="level1"><div class="li"> Permet reutilitzar tot el coneixement que tingueu en Spring.</div>
+</li>
+<li class="level1"><div class="li"> Suporta WS-Security i permet integrar-ho amb Spring Security.</div>
+</li>
+</ul>
+
+<h2><a id="escrivint_un_servei_web_soap_de_consulta_de_dades_d_empreses_amb_spring-ws" >Escrivint un servei web SOAP de consulta de dades d’empreses amb Spring-WS</a></h2>
+<div class="level2">
+
+<p>
+Veurem els conceptes referents a la definició de serveis web SOAP amb Spring-WS desenvolupant un servei web SOAP amb Spring-WS que permeti consultar les dades d’una empresa per CIF.
+</p>
+
+<p>
+Spring-WS ens obliga a utilitzar una estratègia <em>Contract First</em> per crear serveis web SOAP, això vol dir que primer descriurem els paràmetres i tipus de retorn del servei amb XSD, després utilitzarem aquest XSD per generar el document WSDL que serà el contracte públic del servei i, finalment, generarem les classes Java que implementaran el servei d’acord amb aquest contracte.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Quan desenvolupeu un servei amb una estratègia <em>Contract First</em> us heu de centrar a <strong>concretar el XML</strong> que definirà el servei, el codi Java que ho implementarà passa a segon terme!
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte ja té el pom.xml preparat per poder desenvolupar el servei web amb Spring-WS; concretament, s’hi ha afegit aquestes dues dependències:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">	&lt;artifactId&gt;spring-boot-starter-ws&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">	&lt;groupId&gt;wsdl4j&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">	&lt;artifactId&gt;wsdl4j&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+Farem el desplegament del servei web creant una aplicació executable. Per fer el desplegament creant una aplicació executable que s’executarà al contenidor de <em>servlets</em> que Spring porta incorporat cal crear una classe Java anotada amb <code>@SpringBootApplication</code>  amb un mètode <code>main</code> que cridi el mètode <code>run</code> de <code>SpringApplication</code>. Per fer-ho ja us hem creat la classe <code>Application</code> al paquet <code>cat.xtec.ioc.service.impl</code> amb el següent codi: 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springsoapemptioc” en l’estat inicial d’aquest apartat en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.boot.SpringApplication;</div></li><li class="li1"><div class="de1">import org.springframework.boot.autoconfigure.SpringBootApplication;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@SpringBootApplication</div></li><li class="li1"><div class="de1">public class Application {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        SpringApplication.run(Application.class, args);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El fet d’anotar la classe amb <code>@SpringBootApplication</code> afegeix tota la configuració necessària per tal que l’aplicació pugui funcionar de forma autònoma.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_del_servei_web_soap" >Creació del servei web SOAP</a></h3>
+<div class="level3">
+
+<p>
+El servei web SOAP que volem crear és molt senzill, tan sols ens ha de permetre consultar la informació d’una empresa d’un repositori d’empreses.
+</p>
+
+<p>
+Com que crearem el servei web seguint una estratègia <em>Contract First</em>, el primer que ens cal fer és crear el document XSD que definirà el model de domini. El model de domini es defineix amb un fitxer d’esquema XML que després Spring-WS s’encarregarà d’exportar a WSDL.
+</p>
+
+<p>
+La part principal del nostre model del domini serà l’entitat <code>Company</code>, que representarà les dades d’una empresa i la modelarem amb un document XSD. Per fer-ho creeu un fitxer anomenat company.xsd al directori <em>/src/main/resources</em>/ amb el següent contingut:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://cat.xtec.ioc/domain/company&quot;</div></li><li class="li1"><div class="de1">           targetNamespace=&quot;http://cat.xtec.ioc/domain/company&quot; elementFormDefault=&quot;qualified&quot;&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;company&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;cif&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;employees&quot; type=&quot;xs:int&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;web&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/xs:schema&gt;</div></li></ol></pre>
+
+<p>
+Fixeu-vos que es defineix un tipus XML complex per construir el model del domini; en aquest cas, un objecte <code>company</code> que conté el CIF, el nom, el nombre de treballadors, el correu i la pàgina web de l’empresa.
+</p>
+
+<p>
+Un cop definida la nostra entitat del domini ens cal concretar els tipus de les peticions i les respostes del servei web que permetrà consultar la informació de l’empresa per CIF. Per fer-ho creeu un fitxer anomenat companyoperations.xsd al directori <em>/src/main/resources</em>/ amb el següent contingut:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Modularitat en XSD</p>
+<p>
+Es podria definir l’entitat del domini i les operacions en un únic document XSD, però és molt més modular fer-ho en documents separats i utilitzar la capacitat de fer importacions que proporciona XSD.
+</p>
+</div></div><pre class="code xml"><ol><li class="li1"><div class="de1">&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://cat.xtec.ioc/domain/company/services&quot;</div></li><li class="li1"><div class="de1">           targetNamespace=&quot;http://cat.xtec.ioc/domain/company/services&quot; xmlns:company=&quot;http://cat.xtec.ioc/domain/company&quot; elementFormDefault=&quot;qualified&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:import namespace=&quot;http://cat.xtec.ioc/domain/company&quot; schemaLocation=&quot;company.xsd&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:complexType&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">                &lt;xs:element name=&quot;cif&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:element&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;xs:element name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:complexType&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">                &lt;xs:element name=&quot;company&quot; type=&quot;company:company&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:element&gt;    </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/xs:schema&gt;</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> S’importa la definició del tipus complex <code>company</code> que ha de tornar la resposta.</div>
+</li>
+<li class="level1"><div class="li"> Es defineix la petició com un tipus XML complex que conté la cadena on passarem el CIF de l’empresa de la qual volem consultar les dades.</div>
+</li>
+<li class="level1"><div class="li"> Es defineix la resposta també com un tipus XML complex que conté la informació de l’empresa consultada.</div>
+</li>
+</ul>
+
+<p>
+Per tal d’utilitzar els tipus que hem definit als fitxers XSD ens cal generar les classes Java per a aquests tipus. Spring-WS serà capaç de generar la classe Java <code>Company</code> que representa el model de domini i les classes Java que modelaran la petició (<code>GetCompanyRequest</code>) i la resposta (<code>GetCompanyResponse</code>) del servei web.
+</p>
+
+<p>
+Aquesta és una part fonamental als serveis web SOAP: la conversió dels missatges SOAP d’XML cap a Java i a l’inrevés. Aquesta tasca no seria senzilla si l’haguéssiu de fer a mà, però Spring ho fa fàcil utilitzant el bastiment (<em>framework</em>, en anglès) JAXB, i ho farem en temps de construcció del projecte.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+JAXB (de l’anglès <em>Java Architecture for XML Binding</em>) és un bastiment que permet fer la conversió entre documents XML i objectes Java, i a l’inrevés.
+</p>
+</div></div>
+<p>
+Això es pot fer de diverses formes; una manera senzilla és que ho faci el <em>plugin</em> de Maven <code>jaxb-maven-plugin</code> en temps de construcció del projecte. Afegiu les següents línies al fitxer pom.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;plugin&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;jaxb2-maven-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;1.6&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;executions&gt;</div></li><li class="li1"><div class="de1">        &lt;execution&gt;</div></li><li class="li1"><div class="de1">            &lt;id&gt;xjc&lt;/id&gt;</div></li><li class="li1"><div class="de1">            &lt;goals&gt;</div></li><li class="li1"><div class="de1">                &lt;goal&gt;xjc&lt;/goal&gt;</div></li><li class="li1"><div class="de1">            &lt;/goals&gt;</div></li><li class="li1"><div class="de1">        &lt;/execution&gt;</div></li><li class="li1"><div class="de1">    &lt;/executions&gt;</div></li><li class="li1"><div class="de1">    &lt;configuration&gt;</div></li><li class="li1"><div class="de1">        &lt;schemaDirectory&gt;${project.basedir}/src/main/resources/&lt;/schemaDirectory&gt;</div></li><li class="li1"><div class="de1">        &lt;outputDirectory&gt;${project.basedir}/src/main/java&lt;/outputDirectory&gt;</div></li><li class="li1"><div class="de1">        &lt;clearOutputDir&gt;false&lt;/clearOutputDir&gt;</div></li><li class="li1"><div class="de1">    &lt;/configuration&gt;</div></li><li class="li1"><div class="de1">&lt;/plugin&gt;</div></li></ol></pre>
+
+<p>
+Si recarregueu el pom.xml fent clic amb el botó dret damunt el nom del projecte i prement l’opció <em>Reload POM</em> del menú contextual i després feu <em>Clean and Build</em>, també al menú contextual de NetBeans, veureu com a la fase de generació el <em>plugin</em> <code>xjc</code> ha generat, a partir dels documents XSD de definició de servei, la classe Java que modela el domini i les classes Java que modelen la petició i la resposta del servei web (vegeu la <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Classes Java generades
+
+</figcaption><img src="../media/fig1.1.png" alt="" /></figure>
+<div class="footfigure"></div></div><pre class="code">--- jaxb2-maven-plugin:1.6:xjc (xjc) @ springsoapemptioc ---
+Generating source...
+Analizando un esquema...
+Compilando un esquema...
+ioc\xtec\cat\domain\company\services\GetCompanyRequest.java
+ioc\xtec\cat\domain\company\services\GetCompanyResponse.java
+ioc\xtec\cat\domain\company\services\ObjectFactory.java
+ioc\xtec\cat\domain\company\services\package-info.java
+ioc\xtec\cat\domain\company\Company.java
+ioc\xtec\cat\domain\company\ObjectFactory.java
+ioc\xtec\cat\domain\company\package-info.java</pre>
+
+<p>
+Ara toca crear el repositori d’on el servei ha de consultar la informació de les empreses. En el nostre cas, per simplicitat,  farem servir un repositori <em>in memory</em> que tindrà una llista precarregada d’empreses i un mètode <code>findCompany</code> que permet consultar una de les empreses per CIF. Òbviament, en un projecte real la definició del servei serà molt més complexa!
+</p>
+
+<p>
+Per fer-ho creeu una classe Java anomenada <code>InMemoryCompanyRepository</code> al paquet <code>cat.xtec.ioc.domain.repository.impl</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.domain.repository.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import ioc.xtec.cat.domain.company.Company;</div></li><li class="li1"><div class="de1">import java.util.ArrayList;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">import javax.annotation.PostConstruct;</div></li><li class="li1"><div class="de1">import org.springframework.stereotype.Repository;</div></li><li class="li1"><div class="de1">import org.springframework.util.Assert;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Repository</div></li><li class="li1"><div class="de1">public class InMemoryCompanyRepository {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final List&lt;Company&gt; companies = new ArrayList&lt;Company&gt;();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @PostConstruct</div></li><li class="li1"><div class="de1">    public void initData() {</div></li><li class="li1"><div class="de1">        Company oracle = new Company();</div></li><li class="li1"><div class="de1">        oracle.setCif(&quot;XXXXXXXX&quot;);</div></li><li class="li1"><div class="de1">        oracle.setName(&quot;Oracle&quot;);</div></li><li class="li1"><div class="de1">        oracle.setEmployees(5000);</div></li><li class="li1"><div class="de1">        oracle.setEmail(&quot;oracle@oracle.com&quot;);</div></li><li class="li1"><div class="de1">        oracle.setWeb(&quot;http://www.oracle.com&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        companies.add(oracle);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Company ms = new Company();</div></li><li class="li1"><div class="de1">        ms.setCif(&quot;YYYYYYYY&quot;);</div></li><li class="li1"><div class="de1">        ms.setName(&quot;Microsoft&quot;);</div></li><li class="li1"><div class="de1">        ms.setEmployees(10000);</div></li><li class="li1"><div class="de1">        ms.setEmail(&quot;microsoft@microsoft.com&quot;);</div></li><li class="li1"><div class="de1">        ms.setWeb(&quot;http://www.microsoft.com&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        companies.add(ms);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        Company redhat = new Company();</div></li><li class="li1"><div class="de1">        redhat.setCif(&quot;ZZZZZZZZ&quot;);</div></li><li class="li1"><div class="de1">        redhat.setName(&quot;Red Hat&quot;);</div></li><li class="li1"><div class="de1">        redhat.setEmployees(2000);</div></li><li class="li1"><div class="de1">        redhat.setEmail(&quot;redhat@redhat.com&quot;);</div></li><li class="li1"><div class="de1">        redhat.setWeb(&quot;http://www.redhat.com&quot;);</div></li><li class="li1"><div class="de1">        companies.add(redhat);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Company findCompany(String cif) {</div></li><li class="li1"><div class="de1">        Assert.notNull(cif);</div></li><li class="li1"><div class="de1">        Company result = null;</div></li><li class="li1"><div class="de1">        for (Company company : companies) {</div></li><li class="li1"><div class="de1">            if (cif.equals(company.getCif())) {</div></li><li class="li1"><div class="de1">                result = company;</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        return result;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+Amb tot això ja estem preparats per crear l’<em>endpoint</em> del servei web SOAP que tornarà la informació de les empreses. Noteu que, per sota, hi ha un <em>servlet</em> que s’encarrega de recollir les peticions SOAP que vagin al servei i les envia a l’<em>endpoint</em> per tal de processar-les.
+</p>
+
+<p>
+Creeu una classe Java anomenada <code>CompanyEndpoint</code> al paquet <code>cat.xtec.ioc.service.impl</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.impl.InMemoryCompanyRepository;</div></li><li class="li1"><div class="de1">import ioc.xtec.cat.domain.company.services.GetCompanyRequest;</div></li><li class="li1"><div class="de1">import ioc.xtec.cat.domain.company.services.GetCompanyResponse;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.ws.server.endpoint.annotation.Endpoint;</div></li><li class="li1"><div class="de1">import org.springframework.ws.server.endpoint.annotation.PayloadRoot;</div></li><li class="li1"><div class="de1">import org.springframework.ws.server.endpoint.annotation.RequestPayload;</div></li><li class="li1"><div class="de1">import org.springframework.ws.server.endpoint.annotation.ResponsePayload;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Endpoint</div></li><li class="li1"><div class="de1">public class CompanyEndpoint {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String NAMESPACE_URI = &quot;http://cat.xtec.ioc/domain/company/services&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private InMemoryCompanyRepository companyRepository;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    public CompanyEndpoint(InMemoryCompanyRepository companyRepository) {</div></li><li class="li1"><div class="de1">        this.companyRepository = companyRepository;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @PayloadRoot(namespace = NAMESPACE_URI, localPart = &quot;getCompanyRequest&quot;)</div></li><li class="li1"><div class="de1">    @ResponsePayload</div></li><li class="li1"><div class="de1">    public GetCompanyResponse getCompany(@RequestPayload GetCompanyRequest request) {</div></li><li class="li1"><div class="de1">        GetCompanyResponse response = new GetCompanyResponse();</div></li><li class="li1"><div class="de1">        response.setCompany(companyRepository.findCompany(request.getCif()));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        return response;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Hem injectat el repositori d’empreses al constructor del servei amb Spring.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat la classe amb <code>@Endpoint</code> per indicar a Spring que aquesta classe correspon a un <em>endpoint</em> d’un servei web SOAP i tindrà mètodes que serviran peticions SOAP. <code>@Endpoint</code> és una versió especialitzada de l’anotació <code>@Component</code>.</div>
+</li>
+<li class="level1"><div class="li"> TARGET_NAMESPACE representa l’espai de noms que heu definit anteriorment al document XSD. Es fa servir per mapar les peticions a mètodes específics de l’<em>endpoint</em>.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode <code>getCompany</code> amb l’anotació <code>@PayloadRoot</code> on es defineix l’espai de noms i el mètode que servirà les peticions de cerca d’empreses per CIF.</div>
+</li>
+<li class="level1"><div class="li"> El missatge SOAP que consulti una empresa per CIF haurà de fer referència al <code>PayloadRoot</code> especificat.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode amb <code>@ResponsePayload</code> per indicar que el mètode tornarà un objecte de tipus <code>GetCompanyResponse</code> amb la informació de l’empresa. Spring s’encarregarà de convertir aquest objecte a XML.</div>
+</li>
+<li class="level1"><div class="li"> El paràmetre del mètode l’hem anotat amb <code>@RequestPayload</code> per indicar que el missatge d’entrada serà de tipus <code>GetCompanyRequest</code>. Spring s’encarregarà de convertir el missatge XML d’entrada a un objecte d’aquest tipus.</div>
+</li>
+<li class="level1"><div class="li"> Tant el tipus de retorn com el paràmetre corresponen a classes generades automàticament en el procés de construcció a partir de la definició del fitxer d’esquema XML companyoperations.xsd.</div>
+</li>
+</ul>
+
+<p>
+Un cop creat l’<em>endpoint</em> del servei web SOAP tan sols ens queda configurar Spring per carregar tota la configuració. Això ho podeu fer de diverses maneres, ja sigui amb fitxers de configuració o amb anotacions a classes Java de configuració. A l’exemple utilitzarem aquesta darrera tècnica.
+</p>
+
+<p>
+Creeu una classe Java anomenada <code>WebServiceConfig</code> al paquet <code>cat.xtec.ioc.service.impl</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service.impl;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.boot.web.servlet.ServletRegistrationBean;</div></li><li class="li1"><div class="de1">import org.springframework.context.ApplicationContext;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.ComponentScan;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.core.io.ClassPathResource;</div></li><li class="li1"><div class="de1">import org.springframework.ws.config.annotation.EnableWs;</div></li><li class="li1"><div class="de1">import org.springframework.ws.config.annotation.WsConfigurerAdapter;</div></li><li class="li1"><div class="de1">import org.springframework.ws.transport.http.MessageDispatcherServlet;</div></li><li class="li1"><div class="de1">import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;</div></li><li class="li1"><div class="de1">import org.springframework.xml.xsd.SimpleXsdSchema;</div></li><li class="li1"><div class="de1">import org.springframework.xml.xsd.XsdSchema;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@EnableWs</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">@ComponentScan(&quot;cat.xtec.ioc.service.imp, cat.xtec.ioc.domain.repository.impl&quot;)</div></li><li class="li1"><div class="de1">public class WebServiceConfig extends WsConfigurerAdapter {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {</div></li><li class="li1"><div class="de1">        MessageDispatcherServlet servlet = new MessageDispatcherServlet();</div></li><li class="li1"><div class="de1">        servlet.setApplicationContext(applicationContext);</div></li><li class="li1"><div class="de1">        servlet.setTransformWsdlLocations(true);</div></li><li class="li1"><div class="de1">        return new ServletRegistrationBean(servlet, &quot;/soapws/*&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean(name = &quot;companyoperations&quot;)</div></li><li class="li1"><div class="de1">    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema companiesSchema) {</div></li><li class="li1"><div class="de1">        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();</div></li><li class="li1"><div class="de1">        wsdl11Definition.setPortTypeName(&quot;CompaniesPort&quot;);</div></li><li class="li1"><div class="de1">        wsdl11Definition.setLocationUri(&quot;/soapws&quot;);</div></li><li class="li1"><div class="de1">        wsdl11Definition.setTargetNamespace(&quot;http://cat.xtec.ioc/domain/company/services&quot;);</div></li><li class="li1"><div class="de1">        wsdl11Definition.setSchema(companiesSchema);</div></li><li class="li1"><div class="de1">        return wsdl11Definition;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public XsdSchema companiesSchema() {</div></li><li class="li1"><div class="de1">        return new SimpleXsdSchema(new ClassPathResource(&quot;companyoperations.xsd&quot;));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean(name = &quot;company&quot;)</div></li><li class="li1"><div class="de1">    public XsdSchema companySchema() {</div></li><li class="li1"><div class="de1">        return new SimpleXsdSchema(new ClassPathResource(&quot;company.xsd&quot;));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Spring fa servir un <em>servlet</em> especial de tipus <code>MessageDispatcherServlet</code> per servir peticions SOAP, i cal que el registreu al <code>ApplicationContext</code> de l’aplicació.</div>
+</li>
+<li class="level1"><div class="li"> El mètode <code>defaultWsdl11Definition</code> s’encarrega de configurar el document WSDL de definició del servei web a partir del document XSD especificat.</div>
+</li>
+<li class="level1"><div class="li"> L’ús de <code>DefaultWsdl11Definition</code> permet la generació automàtica del document WSDL.</div>
+</li>
+<li class="level1"><div class="li"> El mètode <code>defaultWsdl11Definition</code> també defineix l’<acronym title="Uniform Resource Identifier">URI</acronym> i l’espai de noms que caldrà que utilitzeu per cridar el servei web i que estarà disponible en el document WSDL de definició del servei.</div>
+</li>
+</ul>
+
+<p>
+Aquesta és tota la feina que ens cal fer per implementar el servei web de consulta de dades d’empreses; ara tan sols ens manca fer el desplegament i provar-lo.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_soap" >Desplegament del servei web SOAP</a></h3>
+<div class="level3">
+
+<p>
+Un cop creat el servei web cal que el desplegueu per tal de fer-lo accessible als clients.
+</p>
+
+<p>
+El desplegament del servei web es pot fer de diverses maneres, entre les quals:
+</p>
+<ul>
+<li class="level1"><div class="li"> Desplegant l’aplicació Java EE que el conté mitjançant els mecanismes normals de desplegament de qualsevol aplicació Java EE.</div>
+</li>
+<li class="level1"><div class="li"> Creant una aplicació executable que s’executarà amb un contenidor de <em>servlets</em> Tomcat que Spring porta incorporat.</div>
+</li>
+</ul>
+
+<p>
+Farem el desplegament del servei web creant una aplicació executable. Per fer el desplegament creant una aplicació executable que s’executarà al contenidor de <em>servlets</em> que Spring porta incorporat tan sols ens cal una classe Java anotada amb <em>@SpringBootApplication</em>  amb un mètode <code>main</code> que cridi el mètode <code>run</code> de <code>SpringApplication</code>. Al projecte inicial ja teniu una classe <code>Application</code> al paquet <code>cat.xtec.ioc.service.impl</code> que permet que l’aplicació pugui funcionar de forma autònoma.
+</p>
+
+<p>
+Poseu-vos damunt la classe <code>Application</code>, feu clic amb el botó dret del ratolí i seleccioneu l’opció <em>Run</em> (també podeu executar el <em>goal</em> de Maven <code>spring-boot:run</code>). Veureu que apareix una finestra a NetBeans amb l’execució de l’aplicació amb Spring (vegeu la <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Prerequisits per a l&#039;execució</p>
+<p>
+Abans d’executar la classe cal que us assegureu de tenir el servidor Glassfish parat, ja que, si no, no podrà arrencar el servei Tomcat on desplegarem l’aplicació per un conflicte amb els ports. Tant Glassfish com Tomcat estan configurats per utilitzar el port 8080 per defecte.
+</p>
+</div></div><div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució de l’aplicació amb el servei web
+
+</figcaption><img src="../media/fig1.2.png" alt="" /></figure>
+</div>
+<p>
+Podeu provar que el desplegament ha anat bé consultant el document WSDL generat a l’enllaç <a href="http://localhost:8080/soapws/companyoperations.wsdl" class="urlextern" title="http://localhost:8080/soapws/companyoperations.wsdl"  rel="nofollow">localhost:8080/soapws/companyoperations.wsdl</a> amb qualsevol navegador, i heu de veure el document WSDL de definició del servei generat:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:definitions targetNamespace=&quot;http://cat.xtec.ioc/domain/company/services&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:types&gt;&lt;/wsdl:types&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:message name=&quot;getCompanyRequest&quot;&gt;&lt;/wsdl:message&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:message name=&quot;getCompanyResponse&quot;&gt;&lt;/wsdl:message&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:portType name=&quot;CompaniesPort&quot;&gt;&lt;/wsdl:portType&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:binding name=&quot;CompaniesPortSoap11&quot; type=&quot;tns:CompaniesPort&quot;&gt;&lt;/wsdl:binding&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:service name=&quot;CompaniesPortService&quot;&gt;&lt;/wsdl:service&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:definitions&gt;</div></li></ol></pre>
+
+</div>
+
+<h3><a id="prova_del_servei_web" >Prova del servei web</a></h3>
+<div class="level3">
+
+<p>
+Si tot ha anat bé ja teniu el servei web desplegat i a punt per provar-lo. Però com ho fem? Quin format han de tenir els missatges? 
+</p>
+
+<p>
+Quan es desplega el servei web SOAP es genera un fitxer WSDL de definició del servei web. El fitxer WSDL està forma per elements XML que descriuen completament el servei web i com s’ha de consumir. 
+</p>
+
+<p>
+El fitxer WSDL té una secció abstracta per definir els ports, els missatges i els tipus de dades de les operacions, i una part concreta que defineix la instància on hi ha aquestes operacions. Aquesta estructura permet reutilitzar la part abstracta del document. 
+</p>
+
+<p>
+A la part abstracta hi tenim els següents elements: 
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>types</em></div>
+</li>
+<li class="level1"><div class="li"> <em>message</em></div>
+</li>
+<li class="level1"><div class="li"> <em>portType</em></div>
+</li>
+</ul>
+
+<p>
+Els tipus de dades, tant d’entrada com de sortida, de les operacions es defineixen amb XSD a l’etiqueta <code>&lt;types&gt;</code>:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:types&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://cat.xtec.ioc/domain/company/services&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:import namespace=&quot;http://cat.xtec.ioc/domain/company&quot; schemaLocation=&quot;company.xsd&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:element name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:complexType&gt;</div></li><li class="li1"><div class="de1">                &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">                    &lt;xs:element name=&quot;cif&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">                &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:element&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:element name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:complexType&gt;</div></li><li class="li1"><div class="de1">                &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">                    &lt;xs:element name=&quot;company&quot; type=&quot;company:company&quot;/&gt;</div></li><li class="li1"><div class="de1">                &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:element&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:schema&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:types&gt;</div></li></ol></pre>
+
+<p>
+Per exemple, si us hi fixeu, defineix que les peticions a l’operació <code>getCompanyRequest</code> reben un paràmetre de tipus <code>string</code> i a les respostes es torna un tipus de dades complex anomenat <code>company</code> que està format per un <em>int</em> i quatre <em>string</em> (<em>cif</em>, <em>name</em>, <em>employees</em>, <em>email</em> i <em>web</em>).
+</p>
+
+<p>
+La definició del tipus complex <code>company</code> s’importa d’un fitxer XSD separat que té la definició del model del domini.
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;xs:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://cat.xtec.ioc/domain/company&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;xs:complexType name=&quot;company&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;xs:sequence&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;cif&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;employees&quot; type=&quot;xs:int&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">            &lt;xs:element name=&quot;web&quot; type=&quot;xs:string&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/xs:sequence&gt;</div></li><li class="li1"><div class="de1">    &lt;/xs:complexType&gt;</div></li><li class="li1"><div class="de1">&lt;/xs:schema&gt;</div></li></ol></pre>
+
+<p>
+Després de la definició dels tipus de dades trobem els elements <code>&lt;message&gt;</code> amb la definició dels missatges que es poden intercanviar les operacions del servei web, amb una entrada per a la petició i una altra per a la resposta: 
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:message name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:part element=&quot;tns:getCompanyRequest&quot; name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/wsdl:part&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:message&gt;</div></li><li class="li1"><div class="de1">&lt;wsdl:message name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:part element=&quot;tns:getCompanyResponse&quot; name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/wsdl:part&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:message&gt;</div></li></ol></pre>
+
+<p>
+I després, els elements <code>&lt;portType&gt;</code> ens defineixen les operacions que es poden fer al servei web amb els seus paràmetres i el tipus de retorn: 
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:portType name=&quot;CompaniesPort&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:operation name=&quot;getCompany&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;wsdl:input message=&quot;tns:getCompanyRequest&quot; name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/wsdl:input&gt;</div></li><li class="li1"><div class="de1">        &lt;wsdl:output message=&quot;tns:getCompanyResponse&quot; name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;/wsdl:output&gt;</div></li><li class="li1"><div class="de1">    &lt;/wsdl:operation&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:portType&gt;</div></li></ol></pre>
+
+<p>
+Veiem, per exemple, que l’operació <code>getCompanyRequest</code>  rep com a paràmetre d’entrada un <code>tns:getCompanyRequest</code> i que retorna un <code>tns:getCompanyResponse</code>. Aquests tipus de dades han estat definides completament en el document XSD que hem creat per definir el servei.
+</p>
+
+<p>
+A la part concreta hi tenim els següents elements:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>binding</code></div>
+</li>
+<li class="level1"><div class="li"> <code>service</code></div>
+</li>
+</ul>
+
+<p>
+L’element <code>&lt;binding&gt;</code> defineix el protocol i el format en què es poden fer les operacions; en el nostre cas, les operacions es faran per HTTP i amb un estil de <em>Document</em>. 
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:binding name=&quot;CompaniesPortSoap11&quot; type=&quot;tns:CompaniesPort&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:operation name=&quot;getCompany&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;soap:operation soapAction=&quot;&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;wsdl:input name=&quot;getCompanyRequest&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;soap:body use=&quot;literal&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/wsdl:input&gt;</div></li><li class="li1"><div class="de1">        &lt;wsdl:output name=&quot;getCompanyResponse&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;soap:body use=&quot;literal&quot;/&gt;</div></li><li class="li1"><div class="de1">        &lt;/wsdl:output&gt;</div></li><li class="li1"><div class="de1">    &lt;/wsdl:operation&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:binding&gt;</div></li></ol></pre>
+
+<p>
+L’element <code>&lt;service&gt;</code>, per la seva part, defineix el lloc físic on hi ha el servei web (adreça <acronym title="Uniform Resource Locator">URL</acronym>). 
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;wsdl:service name=&quot;CompaniesPortService&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;wsdl:port binding=&quot;tns:CompaniesPortSoap11&quot; name=&quot;CompaniesPortSoap11&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;soap:address location=&quot;http://localhost:8080/soapws&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/wsdl:port&gt;</div></li><li class="li1"><div class="de1">&lt;/wsdl:service&gt;</div></li></ol></pre>
+
+<p>
+En el nostre cas, el servei web es a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/soapws" class="urlextern" title="http://localhost:8080/soapws"  rel="nofollow">localhost:8080/soapws</a>.
+</p>
+
+<p>
+Amb tot això ja sabem el format dels missatges SOAP que cal enviar per accedir al servei web i on cal enviar-los; creeu un fitxer anomenat request.xml, que representarà el missatge SOAP de petició, amb el següent contingut:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</div></li><li class="li1"><div class="de1">				  xmlns:gs=&quot;http://cat.xtec.ioc/domain/company/services&quot;&gt;</div></li><li class="li1"><div class="de1">   &lt;soapenv:Header/&gt;</div></li><li class="li1"><div class="de1">   &lt;soapenv:Body&gt;</div></li><li class="li1"><div class="de1">      &lt;gs:getCompanyRequest&gt;</div></li><li class="li1"><div class="de1">         &lt;gs:cif&gt;XXXXXXXX&lt;/gs:cif&gt;</div></li><li class="li1"><div class="de1">      &lt;/gs:getCompanyRequest&gt;</div></li><li class="li1"><div class="de1">   &lt;/soapenv:Body&gt;</div></li><li class="li1"><div class="de1">&lt;/soapenv:Envelope&gt;</div></li></ol></pre>
+
+<p>
+I ja tan sols ens queda fer una petició al servei web per provar-ho. La nostra proposta és que feu servir cURL, que és una eina molt útil per fer peticions HTTP de diferents tipus i que és multiplataforma. Si feu servir Linux possiblement ja la tingueu instal·lada al sistema, i en cas que utilitzeu Windows la podeu descarregar del següent enllaç: <a href="https://curl.haxx.se/download.html" class="urlextern" title="https://curl.haxx.se/download.html"  rel="nofollow">curl.haxx.se/download.html</a>.
+</p>
+
+<p>
+La sintaxi de cURL per fer peticions és molt senzilla; per exemple, per consultar les dades de l’empresa que té per CIF XXXXXXXX  feu un <code>command prompt</code>:
+</p>
+<pre class="code">curl --header &quot;content-type: text/xml&quot; -d @request.xml http://localhost:8080/soapws/</pre>
+
+<p>
+Indiquem que la petició s’envia al fitxer request.xml amb el tipus MIME <em>text/xml</em>. Aquest fitxer és el que acabeu de crear amb el missatge SOAP de petició, i l’<acronym title="Uniform Resource Locator">URL</acronym> és l’<acronym title="Uniform Resource Locator">URL</acronym> on escolta el servei web.
+</p>
+
+<p>
+Si executeu la comanda anterior i tot ha anat correctament, veureu la resposta del servei web amb les dades de l’empresa que té per CIF XXXXXXXX:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;SOAP-ENV:Header/&gt;</div></li><li class="li1"><div class="de1">    &lt;SOAP-ENV:Body&gt;</div></li><li class="li1"><div class="de1">        &lt;ns3:getCompanyResponse xmlns:ns2=&quot;http://cat.xtec.ioc/domain/company&quot; xmlns:ns3=&quot;http://cat.xtec.ioc/domain/company/services&quot;&gt;</div></li><li class="li1"><div class="de1">            &lt;ns3:company&gt;</div></li><li class="li1"><div class="de1">                &lt;ns2:cif&gt;XXXXXXXX&lt;/ns2:cif&gt;</div></li><li class="li1"><div class="de1">                &lt;ns2:name&gt;Oracle&lt;/ns2:name&gt;</div></li><li class="li1"><div class="de1">                &lt;ns2:employees&gt;5000&lt;/ns2:employees&gt;</div></li><li class="li1"><div class="de1">                &lt;ns2:email&gt;oracle@oracle.com&lt;/ns2:email&gt;</div></li><li class="li1"><div class="de1">                &lt;ns2:web&gt;http://www.oracle.com&lt;/ns2:web&gt;</div></li><li class="li1"><div class="de1">            &lt;/ns3:company&gt;</div></li><li class="li1"><div class="de1">        &lt;/ns3:getCompanyResponse&gt;</div></li><li class="li1"><div class="de1">    &lt;/SOAP-ENV:Body&gt;</div></li><li class="li1"><div class="de1">&lt;/SOAP-ENV:Envelope&gt;</div></li></ol></pre>
+
+<p>
+I això és tot! Hem vist els passos que us cal fer per desenvolupar, desplegar i provar un servei web SOAP amb Spring-WS seguint una estratègia <em>Contract First</em>.
+</p>
+
+</div>
+
+<h2><a id="fent_servir_la_consulta_de_dades_d_empreses_des_d_una_aplicacio_java_stand-alone" >Fent servir la consulta de dades d’empreses des d&#039;una aplicació Java &#039;stand-alone&#039;</a></h2>
+<div class="level2">
+
+<p>
+Crearem una aplicació Java que consumeixi el servei web de consulta de dades d’empreses i ho farem desenvolupant un client Java <em>stand-alone</em> que accedirà al servei web amb Spring-WS.
+</p>
+
+<p>
+Els passos generals per fer un client amb Spring-WS són els següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Generar els artefactes necessaris per poder consumir el servei web a partir de la definició del servei en format WSDL.</div>
+</li>
+<li class="level1"><div class="li"> Codificar la classe que farà la crida al servei web heretant de la classe <code>WebServiceGatewaySupport</code> que proporciona Spring-WS.</div>
+</li>
+<li class="level1"><div class="li"> Compilar i executar el client.</div>
+</li>
+</ol>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El procediment que expliquem <strong>és genèric i serveix per a qualsevol servei web SOAP</strong>, estigui o no codificat amb Spring-WS. Només ens cal la definició WSDL del servei.
+</p>
+</div></div>
+<p>
+El client que farem consultarà les dades de les empreses d’un servei web SOAP desenvolupat amb Spring-WS. Descarregueu el codi del servei web que consultarem en el següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/springsoapemptioc_final.zip">enllaç</a><span> ( 15.3 KB )</span></div></div> i importeu-lo a NetBeans.
+</p>
+
+<p>
+Quan tingueu el projecte importat a NetBeans cal que desplegueu el servei web que conté; per exemple, creant una aplicació executable que s’executarà amb un contenidor de <em>servlets</em> Tomcat que Spring porta incorporat. Ho podeu fer de diverses maneres, una és fent clic amb el botó dret damunt de la classe <code>Application</code> del paquet <code>cat.xtec.ioc.client</code> i seleccionant <em>Run File</em> (vegeu la <span class="figref"><a href="#fig1.3"><span>figura</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Prerequisits per a l&#039;execució</p>
+<p>
+Abans d’executar la classe cal que us assegureu de tenir el servidor Glassfish parat, ja que, si no, no podrà arrencar el servei Tomcat on desplegarem l’aplicació per un conflicte amb els ports, ja que tant Glassfish com Tomcat estan configurats per utilitzar el port 8080 per defecte.
+</p>
+</div></div><div class="iocfigure"><a name="fig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució del servei web SOAP de consulta d’empreses
+
+</figcaption><img src="../media/fig1.3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+També ho podeu fer executant el <em>goal</em> de Maven <code>spring-boot:run</code>. Amb qualsevol de les dues opcions veureu que apareix una finestra a NetBeans amb l’execució de l’aplicació amb Spring (vegeu 
+la <span class="figref"><a href="#fig1.4"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Finestra d’execució del servei web SOAP de consulta d’empreses
+
+</figcaption><img src="../media/fig1.4.png" alt="" /></figure>
+</div>
+<p>
+Podeu provar que el desplegament ha anat bé consultant el document WSDL generat a l’enllaç <a href="http://localhost:8080/soapws/companyoperations.wsdl" class="urlextern" title="http://localhost:8080/soapws/companyoperations.wsdl"  rel="nofollow">localhost:8080/soapws/companyoperations.wsdl</a> amb qualsevol navegador, i heu de veure el document WSDL de definició del servei.
+</p>
+
+<p>
+Després de desplegar el servei web que volem consultar ens cal crear el client Java que el consultarà amb Spring-WS.
+</p>
+
+<p>
+El primer que cal fer és generar els artefactes necessaris per poder consumir el servei web des d’aquest client a partir de la seva definició en format WSDL. Això es pot fer de diverses formes, i una manera senzilla és que ho faci un <em>plugin</em> de Maven en temps de construcció del projecte. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springsoapempclientioc” en l’estat inicial d’aquest apartat en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+Afegiu les següents línies al fitxer pom.xml  i feu un <em>Reload POM</em> del projecte:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><pre class="code xml"><ol><li class="li1"><div class="de1">&lt;plugin&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.jvnet.jaxb2.maven2&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;maven-jaxb2-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;0.13.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;executions&gt;</div></li><li class="li1"><div class="de1">        &lt;execution&gt;</div></li><li class="li1"><div class="de1">            &lt;goals&gt;</div></li><li class="li1"><div class="de1">                &lt;goal&gt;generate&lt;/goal&gt;</div></li><li class="li1"><div class="de1">            &lt;/goals&gt;</div></li><li class="li1"><div class="de1">        &lt;/execution&gt;</div></li><li class="li1"><div class="de1">    &lt;/executions&gt;</div></li><li class="li1"><div class="de1">    &lt;configuration&gt;</div></li><li class="li1"><div class="de1">        &lt;schemaLanguage&gt;WSDL&lt;/schemaLanguage&gt;</div></li><li class="li1"><div class="de1">        &lt;generatePackage&gt;cat.xtec.ioc.domain.companies.wsdl&lt;/generatePackage&gt;</div></li><li class="li1"><div class="de1">        &lt;schemas&gt;</div></li><li class="li1"><div class="de1">            &lt;schema&gt;</div></li><li class="li1"><div class="de1">                &lt;url&gt;http://localhost:8080/soapws/companyoperations.wsdl&lt;/url&gt;</div></li><li class="li1"><div class="de1">            &lt;/schema&gt;</div></li><li class="li1"><div class="de1">        &lt;/schemas&gt;</div></li><li class="li1"><div class="de1">    &lt;/configuration&gt;</div></li><li class="li1"><div class="de1">&lt;/plugin&gt;</div></li></ol></pre>
+
+<p>
+Aquest <em>plugin</em> generarà automàticament les classes necessàries per consultar el servei web de consulta de dades d’empreses en temps de compilació i les deixarà al paquet <code>cat.xtec.ioc.domain.companies.wsdl</code>. Fixeu-vos també que estem especificant en la configuració del <em>plugin</em> la localització del document WSDL amb la definició del servei.
+</p>
+
+<p>
+Si feu clic amb el botó dret damunt el projecte “Springsoapempclientioc” i feu <em>Clean and Build</em> veureu que el <em>plugin</em> genera, entre d’altres, les següents classes a partir del document WSDL de definició de servei:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per tal que el projecte funcioni cal que l’executeu amb JDK 1.8; podeu canviar el JDK a les propietats del projecte, a l’apartat <em>Build</em> / <em> Compile </em> / <em> Java Plattform </em>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>Company.java</code></div>
+</li>
+<li class="level1"><div class="li"> <code>GetCompanyRequest.java</code></div>
+</li>
+<li class="level1"><div class="li"> <code>GetCompanyResponse.java</code></div>
+</li>
+</ul>
+
+<p>
+Un cop generats els artefactes necessaris cal que creeu la classe Java que farà la crida al servei web. Creeu-la, per exemple, al paquet <code>cat.xtec.ioc.client</code> i anomeneu-la <code>CompaniesClient</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.companies.wsdl.GetCompanyRequest;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.companies.wsdl.GetCompanyResponse;</div></li><li class="li1"><div class="de1">import org.springframework.ws.client.core.support.WebServiceGatewaySupport;</div></li><li class="li1"><div class="de1">import org.springframework.ws.soap.client.core.SoapActionCallback;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class CompaniesClient extends WebServiceGatewaySupport {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public GetCompanyResponse getCompanyInformation(String cif) {</div></li><li class="li1"><div class="de1">        GetCompanyRequest request = new GetCompanyRequest();</div></li><li class="li1"><div class="de1">        request.setCif(cif);</div></li><li class="li1"><div class="de1">        GetCompanyResponse response = (GetCompanyResponse) getWebServiceTemplate()</div></li><li class="li1"><div class="de1">                .marshalSendAndReceive(request,</div></li><li class="li1"><div class="de1">                        new SoapActionCallback(&quot;http://localhost:8080/soapws/getCompanyResponse&quot;));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        return response;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta classe hereta d’una classe que proporciona Spring anomenada <code>WebServiceGatewaySupport</code> i utilitza les classes generades per fer una crida al servei web mitjançant un <em>template</em> que proporciona la seva classe base.
+</p>
+
+<p>
+També ens cal crear una classe de configuració per indicar a Spring que faci servir JAXB per fer les transformacions de missatge SOAP a objecte Java, i a la inversa. Creeu aquesta classe Java també al paquet <code>cat.xtec.ioc.client</code> i anomeneu-la <code>ClientAppConfig</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Bean;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.Configuration;</div></li><li class="li1"><div class="de1">import org.springframework.oxm.jaxb.Jaxb2Marshaller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Configuration</div></li><li class="li1"><div class="de1">public class ClientAppConfig {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public Jaxb2Marshaller marshaller() {</div></li><li class="li1"><div class="de1">        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();</div></li><li class="li1"><div class="de1">        marshaller.setContextPath(&quot;cat.xtec.ioc.domain.companies.wsdl&quot;);</div></li><li class="li1"><div class="de1">        return marshaller;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Bean</div></li><li class="li1"><div class="de1">    public CompaniesClient companiesClient(Jaxb2Marshaller marshaller) {</div></li><li class="li1"><div class="de1">        CompaniesClient client = new CompaniesClient();</div></li><li class="li1"><div class="de1">        client.setDefaultUri(&quot;http://localhost:8080/soapws/companies.wsdl&quot;);</div></li><li class="li1"><div class="de1">        client.setMarshaller(marshaller);</div></li><li class="li1"><div class="de1">        client.setUnmarshaller(marshaller);</div></li><li class="li1"><div class="de1">        return client;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Finalment, creeu una classe Java, també al paquet <code>cat.xtec.ioc.client</code>, i l’anomeneu <code>RunCompaniesClient</code>, amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.client;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.companies.wsdl.GetCompanyResponse;</div></li><li class="li1"><div class="de1">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public class RunCompaniesClient {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();</div></li><li class="li1"><div class="de1">        ctx.register(ClientAppConfig.class);</div></li><li class="li1"><div class="de1">        ctx.refresh();</div></li><li class="li1"><div class="de1">        CompaniesClient companiesClient = ctx.getBean(CompaniesClient.class);</div></li><li class="li1"><div class="de1">        System.out.println(&quot;For Company XXXXXXXX&quot;);</div></li><li class="li1"><div class="de1">        GetCompanyResponse response = companiesClient.getCompanyInformation(&quot;XXXXXXXX&quot;);</div></li><li class="li1"><div class="de1">        System.out.println(&quot;CIF: &quot; + response.getCompany().getCif());</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Name: &quot; + response.getCompany().getName());</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Num. employees: &quot; + response.getCompany().getEmployees());</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Email: &quot; + response.getCompany().getEmail());</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Web: &quot; + response.getCompany().getWeb());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta classe té un mètode <code>main</code> que s’encarrega de crear un objecte de tipus <code>CompaniesClient</code> amb la configuració especificada a <code>ClientAppConfig</code>, fer una petició al servei web de consulta de dades d’empreses per recuperar les dades de l’empresa que té el CIF XXXXXXXX amb aquesta classe i mostrar els resultats per a la sortida estàndard.
+</p>
+
+<p>
+Ara ja podem executar el client; per fer-ho, poseu-vos damunt de la classe <code>RunCompaniesClient</code> i feu <em>Run File</em> a NetBeans (vegeu la <span class="figref"><a href="#fig1.5"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Execució del client del servei web SOAP de consulta d’empreses
+
+</figcaption><img src="../media/fig1.5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+I obtindreu per consola les dades de l’empresa que té el CIF XXXXXXXX: 
+</p>
+<pre class="code">CIF: XXXXXXXX
+Name: Oracle
+Num. employees: 5000
+Email: oracle@oracle.com
+Web: http://www.oracle.com</pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Heu vist les bases per al desenvolupament dels serveis web SOAP amb Spring-WS i les heu treballat de forma pràctica mitjançant exemples. 
+</p>
+
+<p>
+Concretament, heu après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les nocions bàsiques dels serveis web SOAP amb Spring-WS.</div>
+</li>
+<li class="level1"><div class="li"> La diferència entre <em>Contract First</em> i <em>Code First</em>.</div>
+</li>
+<li class="level1"><div class="li"> Les diferències bàsiques entre JAX-WS i Spring-WS.</div>
+</li>
+<li class="level1"><div class="li"> Desenvolupar, desplegar i provar un servei web SOAP amb Spring-WS.</div>
+</li>
+<li class="level1"><div class="li"> Desenvolupar i provar un client Java que consulti un servei web SOAP mitjançant Spring-WS.</div>
+</li>
+</ul>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u6/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

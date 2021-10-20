@@ -1,0 +1,377 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Tècniques d’accés a dades</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Bibliografia bàsica</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Accés a dades amb JDBC</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#importar_un_projecte_de_maven_a_netbeans">Importar un projecte de Maven a Netbeans</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#la_primera_connexio_a_una_base_de_dades">La primera connexió a una base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#millorant_el_codifitxers_de_propietats_i_tests_unitaris">Millorant el codi: fitxers de propietats i tests unitaris</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#tests_unitaris_amb_junit">Tests unitaris amb JUnit</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#fent_consultes_a_la_base_de_dades">Fent consultes a la base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#operacions_crud">Operacions CRUD</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#injeccio_sql">Injecció SQL</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Accés a dades amb Java Enterprise Edition</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a2annexos"><a href="../../../WebContent/u4/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#socioc__dialogant_amb_clients_amb_jpa">"SocIoc". Dialogant amb clients amb JPA</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#servidor_d_aplicacions_glassfish">Servidor d'aplicacions Glassfish</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a3" class="tocsection"><p id='u4a3continguts'><a class="section" href="../../../WebContent/u4/a3/continguts.html">Accés a dades amb Spring i Hibernate</a><span class="buttonexp"></span></p><ul><li id="u4a3activitats"><a href="../../../WebContent/u4/a3/activitats.html">Activitats</a></li><li id="u4a3exercicis"><a href="../../../WebContent/u4/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a3annexos"><a href="../../../WebContent/u4/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_amb_spring_i_hibernate">"SocIoc". Dialogant amb usuaris amb Spring i Hibernate</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_preguntes_i_respostes">"SocIoc". Dialogant amb preguntes i respostes</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_rangs_i_vots">"SocIoc". Dialogant amb usuaris, rangs i vots</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tècniques d’accés a dades</a></li><li><a href="continguts.html">Accés a dades amb Java Enterprise Edition</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="modificar_les_dades_d_un_usuari" >Modificar les dades d&#039;un usuari</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és escriure un test que comprovi que el codi té la capacitat de modificar les dades d’un usuari correctament.
+</p>
+
+<p>
+Com podeu veure a la classe <code>UserServiceImpl</code>, el mètode de l’especificació JPA que s’utilitza per modificar dades és <code>merge</code>. Aquesta és la documentació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    /**</div></li><li class="li1"><div class="de1">     * Merge the state of the given entity into the</div></li><li class="li1"><div class="de1">     * current persistence context.</div></li><li class="li1"><div class="de1">     * @param entity  entity instance</div></li><li class="li1"><div class="de1">     * @return the managed instance that the state was merged to</div></li><li class="li1"><div class="de1">     * @throws IllegalArgumentException if instance is not an</div></li><li class="li1"><div class="de1">     *         entity or is a removed entity</div></li><li class="li1"><div class="de1">     * @throws TransactionRequiredException if there is no transaction when</div></li><li class="li1"><div class="de1">     *         invoked on a container-managed entity manager of that is of type </div></li><li class="li1"><div class="de1">     *         &lt;code&gt;PersistenceContextType.TRANSACTION</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li">/    </div>
+</li>
+</ul>
+
+<p>
+    public &lt;T&gt; T merge(T entity);
+&lt;/code&gt;
+</p>
+
+<p>
+Com podeu veure, el mètode retorna l’objecte modificat. A partir del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/daw-m07-u4-a2-04.zip">codi</a><span> ( 7.9 KB )</span></div></div>, modifiqueu el mètode <code>edit</code> de la interfície <code>UserService</code>, la seva implementació i afegiu el test <code>editUser</code> al test <code>UserServiceTest</code>, que comprovi que les dades es modifiquen correctament.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent"><pre class="code java"><ol><li class="li1"><div class="de1">public interface UserService {</div></li><li class="li1"><div class="de1">    public void create(User user);</div></li><li class="li1"><div class="de1">    public User edit(User user);</div></li><li class="li1"><div class="de1">    public void remove(User user);</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">    @PersistenceContext</div></li><li class="li1"><div class="de1">    private EntityManager entityManager;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User edit(User user) {</div></li><li class="li1"><div class="de1">       return entityManager.merge(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+La resta del codi que no ha canviat no hi està inclòs.
+</p>
+
+<p>
+Test a afegir a <code>UserServiceTest</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">   @Test</div></li><li class="li1"><div class="de1">    public void editUser() {</div></li><li class="li1"><div class="de1">      User user = new User();</div></li><li class="li1"><div class="de1">      user.setActive(true);</div></li><li class="li1"><div class="de1">      user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">      user.setEmail(&quot;user1@test.com&quot;);</div></li><li class="li1"><div class="de1">      user.setName(&quot;John&quot;);</div></li><li class="li1"><div class="de1">      user.setPassword(&quot;secret&quot;);</div></li><li class="li1"><div class="de1">      user.setRank(100);</div></li><li class="li1"><div class="de1">      user.setUsername(&quot;user1&quot;);</div></li><li class="li1"><div class="de1">      userService.create(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(user.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      String newEmail = &quot;user1@gmail-test.com&quot;;</div></li><li class="li1"><div class="de1">      user.setEmail(newEmail);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      User modifiedUser = userService.edit(user);</div></li><li class="li1"><div class="de1">      Assert.assertEquals(&quot;user1@gmail-test.com&quot;, modifiedUser.getEmail());</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="eliminar_un_usuari" >Eliminar un usuari</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és escriure un test que comprovi que el codi té la capacitat d’eliminar un usuari de la base de dades.
+</p>
+
+<p>
+A partir del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/daw-m07-u4-a2-04.zip">codi</a><span> ( 7.9 KB )</span></div></div>, afegiu el test <code>removeUser</code> al test <code>UserServiceTest</code>, que comprovi que un usuari s’esborra correctament. 
+</p>
+
+<p>
+Quan escriviu el codi us trobareu dos problemes. El primer és que quan s’intenti esborrar l’usuari hi haurà el següent error:
+</p>
+<pre class="code">Caused by: java.lang.IllegalArgumentException: Entity must be managed to call remove: org.ioc.daw.user.User@59655457, try merging the detached and try the remove again.</pre>
+
+<p>
+Una pista: el problema és que per poder esborrar una entitat ha de ser part de la sessió, i això s’aconsegueix amb el mètode <code>merge</code>.
+</p>
+
+<p>
+Un cop solucioneu això us trobareu un altre problema: en executar el test es llançarà una excepció:
+</p>
+<pre class="code">Caused by: javax.persistence.NoResultException: getSingleResult() did not retrieve any entities.</pre>
+
+<p>
+Aquí teniu la documentació del mètode <code>getSingleResult</code>.
+</p>
+<pre class="code">  /**
+   * Execute a SELECT query that returns a single untyped result.
+   * @return the result
+   * @throws NoResultException if there is no result
+   * @throws NonUniqueResultException if more than one result
+   * @throws IllegalStateException if called for a Java
+   *         Persistence query language UPDATE or DELETE statement
+   * @throws QueryTimeoutException if the query execution exceeds
+   *         the query timeout value set and only the statement is
+   *         rolled back
+   * @throws TransactionRequiredException if a lock mode other than
+   *         &lt;code&gt;NONE&lt;/code &gt; has been set and there is no transaction
+   *         or the persistence context has not been joined to the transaction
+   * @throws PessimisticLockException if pessimistic locking
+   *         fails and the transaction is rolled back
+   * @throws LockTimeoutException if pessimistic locking
+   *         fails and only the statement is rolled back
+   * @throws PersistenceException if the query execution exceeds 
+   *         the query timeout value set and the transaction 
+   *         is rolled back 
+   */
+  Object getSingleResult();</pre>
+
+<p>
+Modifiqueu el mètode <code>findUserByUsername</code> perquè retorni <em>null</em> si no troba cap resultat a la base de dades.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent"><pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public void remove(User user) {</div></li><li class="li1"><div class="de1">        user = entityManager.merge(user);</div></li><li class="li1"><div class="de1">        entityManager.remove(user);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Override</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) {</div></li><li class="li1"><div class="de1">      try{</div></li><li class="li1"><div class="de1">      return (User) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">                &quot;where o.username = :username&quot;)</div></li><li class="li1"><div class="de1">                .setParameter(&quot;username&quot;, username)</div></li><li class="li1"><div class="de1">                .getSingleResult();</div></li><li class="li1"><div class="de1">      } catch(NoResultException e){</div></li><li class="li1"><div class="de1">          return null;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+La resta del codi que no ha canviat no hi està inclòs.
+</p>
+
+<p>
+Test que comprova que un usuari s’esborra correctament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  public void removeUser() {</div></li><li class="li1"><div class="de1">      User user = new User();</div></li><li class="li1"><div class="de1">      user.setActive(true);</div></li><li class="li1"><div class="de1">      user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">      user.setEmail(&quot;user2@test.com&quot;);</div></li><li class="li1"><div class="de1">      user.setName(&quot;John&quot;);</div></li><li class="li1"><div class="de1">      user.setPassword(&quot;secret&quot;);</div></li><li class="li1"><div class="de1">      user.setRank(1);</div></li><li class="li1"><div class="de1">      user.setUsername(&quot;user2&quot;);</div></li><li class="li1"><div class="de1">      userService.create(user);</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(user.getUserId());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      userService.remove(user);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      User removedUser = userService.findUserByUsername(&quot;user1&quot;);</div></li><li class="li1"><div class="de1">      Assert.assertNull(removedUser);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="trobar_els_usuaris_actius" >Trobar els usuaris actius</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és escriure el codi i un test que permeti trobar els usuaris actius.
+</p>
+
+<p>
+Modifiqueu <code>UserService</code> i <code>UserServiceImpl</code> i afegiu-hi un test.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent"><pre class="code java"><ol><li class="li1"><div class="de1">public interface UserService {</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findActiveUsers();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">  @Override</div></li><li class="li1"><div class="de1">  public List&lt;User&gt; findActiveUsers() {</div></li><li class="li1"><div class="de1">      try{</div></li><li class="li1"><div class="de1">          return (List&lt;User&gt;) entityManager.createQuery(&quot;select object(o) from User o &quot; +</div></li><li class="li1"><div class="de1">                  &quot;where o.active= true&quot;)</div></li><li class="li1"><div class="de1">                  .getResultList();</div></li><li class="li1"><div class="de1">      } catch(NoResultException e){</div></li><li class="li1"><div class="de1">          return null;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el test:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void findActiveUsers() {</div></li><li class="li1"><div class="de1">    String username = &quot;jdoe&quot;;</div></li><li class="li1"><div class="de1">    User user = new User();</div></li><li class="li1"><div class="de1">    user.setActive(true);</div></li><li class="li1"><div class="de1">    user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">    user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">    user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">    user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">    user.setRank(100);</div></li><li class="li1"><div class="de1">    user.setUsername(username);</div></li><li class="li1"><div class="de1">    User user1 = new User();</div></li><li class="li1"><div class="de1">    user1.setActive(false);</div></li><li class="li1"><div class="de1">    user1.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">    user1.setEmail(&quot;test1@test.com&quot;);</div></li><li class="li1"><div class="de1">    user1.setName(&quot;Joe&quot;);</div></li><li class="li1"><div class="de1">    user1.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">    user1.setRank(100);</div></li><li class="li1"><div class="de1">    user1.setUsername(&quot;joeTest&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    userService.create(user);</div></li><li class="li1"><div class="de1">    userService.create(user1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    List&lt;User&gt; activeUsers= userService.findActiveUsers();</div></li><li class="li1"><div class="de1">    Assert.assertNotNull(activeUsers);</div></li><li class="li1"><div class="de1">    Assert.assertEquals(1, activeUsers.size());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="rank_d_un_usuari" >&#039;Rank&#039; d&#039;un usuari</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és escriure el codi i un test que permeti trobar l’usuari amb el <em>rank</em> més gran.
+</p>
+
+<p>
+Modifiqueu <code>UserService</code> i <code>UserServiceImpl</code> i afegiu-hi un test.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent"><pre class="code java"><ol><li class="li1"><div class="de1">public interface UserService {</div></li><li class="li1"><div class="de1">  public User findUserWithHighestRank();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Stateless</div></li><li class="li1"><div class="de1">public class UserServiceImpl implements UserService {</div></li><li class="li1"><div class="de1">  @Override</div></li><li class="li1"><div class="de1">  public User findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">      try {</div></li><li class="li1"><div class="de1">          return (User) entityManager.createQuery(&quot;select object(o) from User o order by o.rank DESC&quot;)</div></li><li class="li1"><div class="de1">                  .setMaxResults(1)</div></li><li class="li1"><div class="de1">                  .getSingleResult();</div></li><li class="li1"><div class="de1">      } catch (NoResultException e) {</div></li><li class="li1"><div class="de1">          return null;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el test:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void findUserWithHighestRank() {</div></li><li class="li1"><div class="de1">    String username = &quot;jdoe&quot;;</div></li><li class="li1"><div class="de1">    User user = new User();</div></li><li class="li1"><div class="de1">    user.setActive(true);</div></li><li class="li1"><div class="de1">    user.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">    user.setEmail(&quot;test@test.com&quot;);</div></li><li class="li1"><div class="de1">    user.setName(&quot;Jane&quot;);</div></li><li class="li1"><div class="de1">    user.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">    user.setRank(50);</div></li><li class="li1"><div class="de1">    user.setUsername(username);</div></li><li class="li1"><div class="de1">    User user1 = new User();</div></li><li class="li1"><div class="de1">    user1.setActive(false);</div></li><li class="li1"><div class="de1">    user1.setCreatedOn(new Timestamp(new Date().getTime()));</div></li><li class="li1"><div class="de1">    user1.setEmail(&quot;test1@test.com&quot;);</div></li><li class="li1"><div class="de1">    user1.setName(&quot;Joe&quot;);</div></li><li class="li1"><div class="de1">    user1.setPassword(&quot;password&quot;);</div></li><li class="li1"><div class="de1">    user1.setRank(100);</div></li><li class="li1"><div class="de1">    user1.setUsername(&quot;joeTest&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    userService.create(user);</div></li><li class="li1"><div class="de1">    userService.create(user1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    User highestRankUser = userService.findUserWithHighestRank();</div></li><li class="li1"><div class="de1">    Assert.assertEquals(&quot;joeTest&quot;, highestRankUser.getUsername());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a2/continguts.html">Accés a dades amb Java Enterprise Edition</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

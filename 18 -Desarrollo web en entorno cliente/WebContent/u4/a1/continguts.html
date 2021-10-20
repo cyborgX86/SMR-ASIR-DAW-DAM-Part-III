@@ -1,0 +1,1734 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Model d'objectes del document</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Programació amb el DOM (Document Object Model)</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#estructura_del_dom_interficies_principals">Estructura del DOM. Interfícies principals</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficies_del_dom">Interfícies del DOM</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficie_node">Interficie 'Node'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#interficie_document">Interficie 'Document'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#la_interficie_element">La interfície 'Element'</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Programació amb el DOM i la biblioteca jQuery</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#introduccio_a_jquery">Introducció a jQuery</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#selectors">Selectors</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#crear_i_manipular_elements">Crear i manipular elements</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#utilitzar_events_amb_jquery">Utilitzar Events amb jQuery</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#model-vista-controlador_mvc">Model-vista-controlador (MVC)</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Esdeveniments. Manejament de formularis</a></li><li>Programació d'events</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_d_events"> Programació d'events </a></h1>
+    	
+<p>
+Dominar la programació d’<em>events</em> és una destresa imprescindible per qualsevol desenvolupador web, ja que tots els elements d’<acronym title="HyperText Markup Language">HTML</acronym> disposen de diversos <em>events</em> que poden ser detectats per la vostra aplicació i executar diferents funcions.
+</p>
+
+<p>
+Gràcies a aquest sistema és possible crear aplicacions interactives que responguin a les accions de l’usuari, o l’estat de l’aplicació. Per exemple, és possible detectar quan s’ha fet clic sobre un botó o un enllaç, quan ha finalitzat la descàrrega d’una imatge, o quan s’ha mogut el cursor del ratolí sobre una àrea concreta de la pàgina.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">&#039;Events&#039; o esdeveniments?</p>
+<p>
+Encara que la traducció al català seria ‘esdeveniment’, ens hi referim amb el seu nom en anglès perquè no hi hagi confusions.
+</p>
+</div></div>
+<p>
+Altres tipus d’<em>events</em> menys habituals, però que és interessant conèixer, són els relacionats amb les Web <acronym title="Application Programming Interface">API</acronym>, ja que en molts casos són imprescindibles per poder implementar correctament les aplicacions que les utilitzen. Per exemple, la Web <acronym title="Application Programming Interface">API</acronym> encarregada de gestionar les peticions AJAX (peticions asíncrones enviades a un servidor) depèn dels esdeveniments per determinar quin codi executar una vegada es rep la resposta del servidor.
+</p>
+
+<h2><a id="que_es_un_event" >Què és un event?</a></h2>
+<div class="level2">
+
+<p>
+Per entendre en què consisteix el sistema d’<em>events</em> caldria fer una petita introducció als <strong>patrons de disseny</strong> i, més específicament, al patró <strong>observador</strong> (en anglès, <em>observer</em>).
+</p>
+
+<p>
+Els patrons de disseny són solucions reutilitzables a problemes que ocorren sovint. No es tracta d’algorismes ni implementacions concretes, més aviat és una explicació clara de com resoldre un problema concret. Per exemple, en el llibre original sobre patrons de disseny podem trobar una descripció del problema, una solució en forma de diagrama UML i una implementació en C++ o Smalltalk.
+</p>
+
+<p>
+No es tracta, com en un receptari, d’agafar el codi que posen i enganxar-lo al nostre programa, sinó d’entendre quin és el problema, com aplicar una solució provada que funciona i quins són els pros i contres d’aplicar-la-hi.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+A les referències bibliogràfiques, trobareu uns llibres que tracten a fons els patrons de disseny.
+</p>
+</div></div>
+<p>
+Un altre avantatge que té conèixer els patrons de disseny és que és molt útil per comunicar-se; per exemple: en lloc de descriure el problema i la solució que hi has aplicat, que generalment seria una explicació molt llarga, pots dir simplement: “He aplicat el patró de disseny X”; i si l’altra persona també els coneix, tindrà clar a què et refereixes sense haver d’afegir més detalls.
+</p>
+
+<p>
+El cas que ens ocupa, el sistema d’<em>events</em>, és una implementació del patró observador. En la <span class="figref"><a href="#figura u4a1-01"><span>figura</span></a></span>, podeu veure amb més detall una versió simplificada de com funciona aquest patró.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Patró Publicador-Subscriptor</p>
+<p>
+El patró <em>Publicador-Subscriptor</em> és una variant del patró observador i en molts casos es poden fer servir de forma intercanviable.
+</p>
+</div></div><div class="iocfigure"><a name="figura u4a1-01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama del patró observador
+
+</figcaption><img src="../media/daw_m06_u4_02_ggrafisme.png" alt="" /></figure>
+</div>
+<p>
+Aquest patró s’utilitza quan necessitem un sistema capaç d’indicar quan s’ha produït un esdeveniment i de comunicar-lo només als interessats, que s’han de poder afegir i eliminar dinàmicament.
+</p>
+
+<p>
+Tot i que el diagrama no indica que es passi cap paràmetre a l’operació <code>notificar()</code>, normalment es passarà la informació del subjecte als observadors fent servir aquest paràmetre.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple d&#039;aplicació del patró observador</p>
+<p>
+Si volem seguir l’IOC (@ioc) a Twitter, el que faríem és registrar-nos com a observadors al compte de l’IOC, que seria el subjecte. Llavors, quan l’@ioc publiqués un nou tuit (<em>tweet</em>), recorreria la seva llista d’observadors registrats i faria arribar aquesta informació a través de l’operació <code>notificar()</code> de cadascun dels observadors, passant el tuit com a paràmetre.
+</p>
+
+<p>
+Dins d’aquesta operació, cada observador farà una cosa o altra amb aquesta piulada segons la seva implementació. Per exemple, en el cas dels usuaris, rebrien una notificació indicant que l’@ioc ha publicat una piulada; un administrador podria afegir-lo a una llista històrica, o en el cas d’un programari especialitzat d’automatització, podria retuitejar-lo (tornar-lo a publicar).
+</p>
+
+<p>
+Si més endavant volem deixar de rebre notificacions, el que faríem és desregistrar-nos com a observador del subjecte, de manera que ja no rebríem més notificacions.
+</p>
+</div></div>
+<p>
+Aquesta seria una implementació d’aquest patró en JavaScript:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let subjecte = {</div></li><li class="li1"><div class="de1">  observadorsRegistrats: [],</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  registrarObservador: function(observador) {</div></li><li class="li1"><div class="de1">    this.observadorsRegistrats.push(observador);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  desregistrarObservador: function(observador) {</div></li><li class="li1"><div class="de1">    let index = this.observadorsRegistrats.indexOf(observador);</div></li><li class="li1"><div class="de1">    this.observadorsRegistrats.splice(index, 1);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  notificaObservadors: function(missatge) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Iniciem la notificació del missatge als observadors&quot;);</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; this.observadorsRegistrats.length; i++) {</div></li><li class="li1"><div class="de1">      this.observadorsRegistrats[i].notificar(missatge);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    console.log(&quot;Fi de les notificacions&quot;);</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  saludar: function() {</div></li><li class="li1"><div class="de1">    this.notificaObservadors('Hola mon');</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let observador1 = {</div></li><li class="li1"><div class="de1">  notificar: function(missatge) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Soc l'observador 1 i he rebut el missatge: &quot; + missatge);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let observador2 = {</div></li><li class="li1"><div class="de1">  notificar: function(missatge) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Soc l'observador 2 i també mostro el missatge : &quot; + missatge);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Enregistrem els dos observadors del subjecte</div></li><li class="li1"><div class="de1">subjecte.registrarObservador(observador1);</div></li><li class="li1"><div class="de1">subjecte.registrarObservador(observador2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Comprovem que funciona enviant un missatge</div></li><li class="li1"><div class="de1">subjecte.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Desenregistrem a un observador i tornem a saludar</div></li><li class="li1"><div class="de1">subjecte.desregistrarObservador(observador1);</div></li><li class="li1"><div class="de1">subjecte.saludar();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Desenregistrem a un observador i tornem a saludar; com que ja no hi ha més observadors, no farà res</div></li><li class="li1"><div class="de1">subjecte.desregistrarObservador(observador2);</div></li><li class="li1"><div class="de1">subjecte.saludar();</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vNrpXx?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vNrpXx?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vNrpXx?editors=1011</a>. Tingueu en compte que si voleu provar l’exemple amb Internet Explorer, haureu de gravar la pàgina web al disc per després obrir-lo amb aquest navegador.
+</p>
+
+<p>
+Una cosa semblant és el que fa el sistema d’<em>events</em>, però en aquest cas els Subjectes són els elements de la pàgina, per exemple els botons, les imatges, els paràgrafs… I els observadors, en lloc de ser objectes complets, només són funcions que compleixen el mateix paper que l’operació notificar; en lloc de cridar aquesta operació, el que fa el subjecte és invocar aquestes funcions.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En JavaScript i en altres llenguatges, aquestes funcions que passen a altres objectes es diuen <strong><em>callbacks</em></strong>. Sempre que vegeu aquest terme heu de tenir en compte que el que s’espera és una funció que serà executada en un altre punt del programa.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Funcions: objectes de primera classe</p>
+<p>
+En JavaScript les funcions són objectes de primera classe i, com a tals, es poden tractar igual que altres objectes i guardar-los en variables i <em>arrays</em>.
+</p>
+</div></div>
+<p>
+En el cas dels navegadors, un <em>event</em> és el que es produeix quan el navegador detecta determinats esdeveniments; per exemple, quan es clica a un enllaç, s’activa un botó o es carrega una pàgina.
+</p>
+
+<p>
+Actualment hi ha una gran quantitat d’<em>events</em> estàndards associats als elements <acronym title="HyperText Markup Language">HTML</acronym>; els hem agrupat de la manera següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Llista d&#039;events</p>
+<p>
+Podeu trobar una llista exhaustiva dels <em>events</em> disponibles a <a href="https://developer.mozilla.org/es/docs/Web/Reference/Events" class="urlextern" title="https://developer.mozilla.org/es/docs/Web/Reference/Events"  rel="nofollow">www.goo.gl/sSVjnG</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>DOM</strong>: <em>events</em> activats per accions sobre el DOM (Document Object Model), per exemple, si s’ha enviat un formulari, si s’ha canviat de camp o si s’ha produït cap canvi en un text que havíem introduït. Podem classificar-los en:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>MouseEvent</strong>: <em>events</em> que es produeixen en detectar-se accions relacionades amb el ratolí.</div>
+</li>
+<li class="level2"><div class="li"> <strong>KeyboardEvent</strong>: <em>events</em> produïts en detectar-se accions de teclat.</div>
+</li>
+<li class="level2"><div class="li"> <strong>UIEvent</strong>: <em>events</em> relacionats amb els canvis a la interfície, com és el fet de carregar una pàgina o canviar la mida de la finestra.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>HTML5</strong>: <em>events</em> específics d’HTML5 que no són compatibles amb versions anteriors; ens permeten treballar amb <em>events</em> addicionals, que fan que puguem detectar quan es comença a arrossegar un element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>HTML5 media</strong>: aquests <em>events</em> els produeixen els elements <em>media</em>, com l’àudio i el vídeo, i permeten conèixer el seu estat (si està a l’espera, si està cercant, si ha finalitzat…).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Web <acronym title="Application Programming Interface">API</acronym></strong>: a banda dels <em>events</em> proporcionats que formen part de l’especificació d’HTML5, s’han creat moltes <acronym title="Application Programming Interface">API</acronym> que són admeses pels navegadors i afegeixen funcionalitats molt importants. Aquestes <acronym title="Application Programming Interface">API</acronym> també fan servir el sistema d’<em>events</em> per comunicar-nos quan es produeixen canvis a l’emmagatzematge local, si s’ha rebut un missatge d’un <em>web worker</em> indicant que ha finalitzat la tasca, o si s’han detectat canvis a la càrrega de la bateria.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Les Web API</p>
+<p>
+Encara que existeixen moltes Web <acronym title="Application Programming Interface">API</acronym>, s’ha de tenir en compte que no totes són estàndard; per exemple vosaltres mateixos en podríeu crear una. Les estàndard són les que es troben a les especificacions web oficials. A l’enllaç següent, podeu veure quins són aquests <em>events</em> estàndard i, en cada cas, a quina especificació de Web <acronym title="Application Programming Interface">API</acronym> pertanyen: <a href="https://developer.mozilla.org/es/docs/Web/API" class="urlextern" title="https://developer.mozilla.org/es/docs/Web/API"  rel="nofollow">www.goo.gl/wXGpNN</a>.
+</p>
+
+<p>
+Encara que aquestes Web <acronym title="Application Programming Interface">API</acronym> es troben a la llista d’especificacions del <acronym title="World Wide Web Consortium">W3C</acronym>, es desenvolupen de manera paral·lela a l’estàndard HTML5.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Web worker</p>
+<p>
+Un <em>web worker</em> és un tipus de procés que permet realitzar tasques en paral·lel a l’execució principal.
+</p>
+</div></div>
+<p>
+Alguns exemples de Web <acronym title="Application Programming Interface">API</acronym> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Web Workers</strong>: tot i que els navegadors no permeten la programació multifil amb suport per múltiples nuclis, amb aquesta <acronym title="Application Programming Interface">API</acronym> es poden programar tasques que s’executen de manera concurrent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Web Storage</strong>: ens permet emmagatzemar dades en el nostre navegador de manera que no s’han de descarregar cada vegada; és semblant al que es fa amb les galetes però amb un límit molt més gran (el volum depèn del navegador).</div>
+</li>
+<li class="level1"><div class="li"> <strong>XMLHttpRequest</strong>: aquesta és l’<acronym title="Application Programming Interface">API</acronym> que ens permet fer servir crides AJAX des del navegador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>WebSocket</strong>: fent servir aquesta <acronym title="Application Programming Interface">API</acronym> és possible mantenir una connexió bidireccional amb servidors, cosa que permet crear aplicacions tipus xat o jocs “multijugador” al navegador.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="gestio_d_events" >Gestió d&#039;events</a></h2>
+<div class="level2">
+
+<p>
+Un dels problemes de JavaScript és que es poden fer les mateixes coses de moltes maneres i, com passa habitualment en aquests casos, algunes són millors que d’altres. En aquesta secció veurem les diverses maneres de treballar amb <em>events</em> amb JavaScript.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">AJAX</p>
+<p>
+AJAX és un conjunt de tecnologies que permeten actualitzar els continguts d’una pàgina web sense haver de carregar una altra pàgina. 
+</p>
+</div></div><div class="iocreference"><div class="ioccontent">
+<p>
+Podeu veure amb més detall el funcionament d’AJAX a la secció “<acronym title="Application Programming Interface">API</acronym> XMLHttpRequest” d’aquest mateix apartat.
+</p>
+</div></div>
+<p>
+Començarem veient com podem registrar-nos com a observadors d’un <em>event</em>, en aquest cas el paper de l’operació <code>notificar()</code> el realitza la funció <em>alert</em>; el subjecte és el botó que ens notificarà el moment que es dispari l’<em>event</em> <code>click</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;alert('clic a l'element');&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic aquí!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Fixeu-vos que s’ha afegit a l’element <code>button</code> un atribut, <code>onclick</code> amb el valor <code>alert(‘clic a l’element’)</code>. Aquest valor és un fragment de codi JavaScript que serà executat en detectar-se l’<em>event</em> <code>click</code> sobre el botó. Aquesta és la manera més simple d’afegir la detecció d’<em>events</em> a un element, tot i que no és la més adient.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Tot i que és possible afegir codi per reaccionar a <em>events</em> directament incrustats al codi <acronym title="HyperText Markup Language">HTML</acronym>, <strong>es considera una mala pràctica</strong>. Sempre hem d’intentar separar el codi <acronym title="Cascading Style Sheets">CSS</acronym>, <acronym title="HyperText Markup Language">HTML</acronym> i JavaScript en blocs diferents i no fer-los <em>inline</em>. A més, és preferible carregar-los com a fitxers externs.
+</p>
+</div></div>
+<p>
+Veieu a continuació un altre exemple més complexe on s’ha substituït el codi JavaScript per una crida a una funció pròpia:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    let i = 0;</div></li><li class="li1"><div class="de1">    function mostraMissatge() {</div></li><li class="li1"><div class="de1">      ++i;</div></li><li class="li1"><div class="de1">      alert('Has fet clic a l'element ' + i + ' vegades');</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;mostraMissatge();&quot;&gt;</div></li><li class="li1"><div class="de1">    Fes clic aquí!</div></li><li class="li1"><div class="de1">  &lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/YyeJLP?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/YyeJLP?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/YyeJLP?editors=1010</a>.
+</p>
+
+<p>
+Si analitzem aquest exemple pas a pas, el funcionament seria el següent:
+</p>
+<ol>
+<li class="level1"><div class="li"> Quan el navegador processa el codi <acronym title="HyperText Markup Language">HTML</acronym> i  troba l’atribut <code>onclick</code> a l’element <code>button</code>.</div>
+</li>
+<li class="level1"><div class="li"> El navegador enregistra aquesta funció (<code>mostraMissatge()</code>) per ser executada quan es dispari l’<em>event</em> <code>click</code>. És a dir, la funció serà invocada quan es detecti un clic sobre aquest element.</div>
+</li>
+<li class="level1"><div class="li"> Quan el navegador detecta que s’ha disparat un <em>event</em> de tipus <code>click</code> sobre el botó:</div>
+<ol>
+<li class="level2"><div class="li"> Recorre la llista d’observadors registrats per l’<em>event</em> <code>click</code> d’aquest subjecte.</div>
+</li>
+<li class="level2"><div class="li"> Els “notifica” invocant a la funció corresponent passada com argument (el <em>callback</em>), en aquest cas <code>mostrarMissatge()</code>, amb la informació de l’<em>event</em> com a paràmetre.</div>
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+Aquesta és una versió lleugerament modificada per comprovar que, efectivament, la funció <code>mostrarMissage()</code> rep la informació que li passa el navegador:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    function mostraMissatge(e) {</div></li><li class="li1"><div class="de1">      console.log(e);</div></li><li class="li1"><div class="de1">      alert('Detectat un event de tipus: ' + e.type);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">  &lt;button onclick=&quot;mostraMissatge(event);&quot;&gt;</div></li><li class="li1"><div class="de1">    Fes clic aquí!</div></li><li class="li1"><div class="de1">  &lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qOxJZL?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qOxJZL?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/qOxJZL?editors=1011</a>.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Eines per a desenvolupadors</p>
+<p>
+La informació que li passa el navegador es mostra a través de la consola. S’hi accedeix amb les eines per a desenvolupadors que faciliten els navegadors. Cada navegador té les seves pròpies eines, però algunes, com la consola -que és fonamental-, les inclouen tots els navegadors.
+</p>
+</div></div>
+<p>
+En aquest cas hem fet servir <code>console.log(e)</code> per mostrar, per la consola del navegador (a la qual es pot accedir des de les eines per a desenvolupadors), el contingut total de l’<em>event</em> que hem rebut; com es pot veure a la <span class="figref"><a href="#figura u4a1-02"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figura u4a1-02"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple d’informació de l’event ‘click’
+
+</figcaption><img src="../media/u4_1_-_exemple_event_click.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="afegir_funcions_als_events" >Afegir funcions als events</a></h3>
+<div class="level3">
+
+<p>
+Una manera correcta d’afegir aquestes funcions sense haver de contaminar el codi <acronym title="HyperText Markup Language">HTML</acronym> és la següent:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La funció <code>document.getElementById()</code> no és pròpia de JavaScript, sinó que és afegida per la interfície DOM que implementen els navegadors.
+</p>
+</div></div><ol>
+<li class="level1"><div class="li"> El primer pas és obtenir una referència als elements. En aquest cas, per simplificar, farem servir la propietat <code>id</code>. Aquesta propietat no pot repetir-se en cap altre element de la pàgina.</div>
+</li>
+<li class="level1"><div class="li"> Podem tractar aquests elements com a objectes i, per tant, podem definir-hi un mètode i assignar-los una funció (anònima en aquest cas). Per exemple, creem un mètode <code>onclick</code> tant al primer com al segon element. </div>
+</li>
+<li class="level1"><div class="li"> Quan es dispari un <em>event</em> de tipus <code>click</code> sobre els subjectes, aquests ho notificaran als seus observadors i s’invocarà la funció associada amb la informació de l’<em>event</em>.</div>
+</li>
+</ol>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  // Guardem els elements en variables</div></li><li class="li1"><div class="de1">  let primerElement = document.getElementById('primer'),</div></li><li class="li1"><div class="de1">    segonElement = document.getElementById('segon');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assignem a cada element una funció que serà cridada quan s'hi faci clic</div></li><li class="li1"><div class="de1">  primerElement.onclick = function (e) {</div></li><li class="li1"><div class="de1">    alert('Clic al primer element de tipus: ' + e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  segonElement.onclick = function(e) {</div></li><li class="li1"><div class="de1">    alert('Clic al segon element de tipus: ' + e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic al primer element!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button&gt;</div></li><li class="li1"><div class="de1">  Aquí no fa res, no té cap id per referir-nos</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;segon&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic al segon element!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;tercer&quot;&gt;</div></li><li class="li1"><div class="de1">  Aquí sí que tenim id, però no hi hem afegit cap funció</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ojEQbb?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ojEQbb?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ojEQbb?editors=1010</a>.
+</p>
+
+<p>
+Fixeu-vos que hem afegit més elements dels necessaris a l’<acronym title="HyperText Markup Language">HTML</acronym>. Això ho hem fet per comprovar que, efectivament, l’element que no té associada cap “id” i l’element que sí que la té (però que no l’hem lligat a cap funció) no responen als clics que fem sobre ells.
+</p>
+
+<p>
+Vegeu el mateix exemple, però usant la notació fletxa de les funcions. Aquesta notació és molt útil sobretot quan el cos de les funcions és curt. Al material s’utilitzaran les dues notacions de manera indiferent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  // Guardem els elements en variables</div></li><li class="li1"><div class="de1">  let primerElement = document.getElementById('primer'),</div></li><li class="li1"><div class="de1">    segonElement = document.getElementById('segon');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assignem a cada element una funció que serà cridada quan s'hi faci clic</div></li><li class="li1"><div class="de1">  primerElement.onclick = e =&gt; alert('Clic al primer element de tipus: ' + e.type);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  segonElement.onclick = e =&gt; alert('Clic al segon element de tipus: ' + e.type);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic al primer element!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button&gt;</div></li><li class="li1"><div class="de1">  Aquí no fa res, no té cap id per referir-nos</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;segon&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic al segon element!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;tercer&quot;&gt;</div></li><li class="li1"><div class="de1">  Aquí sí que tenim id, però no hi hem afegit cap funció</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jOBjByG?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOBjByG?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jOBjByG?editors=1010</a>.
+</p>
+
+<p>
+La manera d’assignar events vista als exemples anteriors, encara que sigui correcta, presenta un inconvenient: només hi pot haver un observador per a cada tipus d’<em>event</em>. Si intentem afegir-n’hi un altre, l’anterior queda eliminat; com podeu provar amb aquest exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  // Guardem l'element en una variable</div></li><li class="li1"><div class="de1">  let primerElement = document.getElementById('primer');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assignem a l'element una funció que serà cridada quan s'hi faci clic</div></li><li class="li1"><div class="de1">  primerElement.onclick = () =&gt; alert('Primera funció');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assignem una altra funció l'element que també serà cridada quan s'hi faci clic</div></li><li class="li1"><div class="de1">  primerElement.onclick = e =&gt; alert('Segona funció');</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic aquí!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QjQJpV?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QjQJpV?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QjQJpV?editors=1010</a>.
+</p>
+
+<p>
+Com podeu veure, no funciona correctament: la segona funció sobreescriu la primera, així que només es notifica la segona.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Si en lloc d’usar una funció anònima per a l’assignació, voleu assignar-li una funció creada en alguna altra part del codi, cal posar el nom d’aquesta funció sense els parèntesis, ja que si no, en comptes d’assignar la funció a l’esdeveniment, el que faria seria executar la funció i assignar el resultat d’aquesta.
+</p>
+</div></div>
+<p>
+És a dir:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  // Guardem l'element en una variable</div></li><li class="li1"><div class="de1">  let primerElement = document.getElementById('primer');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Assignem a l'element una funció que serà cridada quan s'hi faci clic</div></li><li class="li1"><div class="de1">  primerElement.onclick = notificacio;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificacio() {</div></li><li class="li1"><div class="de1">    alert('Primera funció');</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic aquí!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+</div>
+
+<h4><a id="afegir_multiples_observadors_per_a_un_mateix_subjecte" >Afegir múltiples observadors per a un mateix subjecte</a></h4>
+<div class="level4">
+
+<p>
+És molt possible que necessitem afegir dos o més observadors a un subjecte pel mateix <em>event</em> o que ho hàgim de fer més endavant, així que la <strong>forma més recomanable</strong> de fer-ho és <strong>amb el mètode <code>addEventListener()</code></strong>, com us mostrem en l’exemple següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> addEventListener() a IE 8 i versions anteriors</p>
+<p>
+La funció <code>addEventListener()</code> no s’ha afegit al navegador de Microsoft fins a la versió 9. Per a versions anteriors cal fer servir <code>attachEvent()</code>, que té la mateixa funcionalitat, però Internet Explorer 11 ja no l’admet. 
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  // Guardem l'element en una variable</div></li><li class="li1"><div class="de1">  let primerElement = document.getElementById('primer');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Creem les funcions que volem que siguin cridades</div></li><li class="li1"><div class="de1">  function mostrarMissatge1() {</div></li><li class="li1"><div class="de1">    alert(&quot;primera funció&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function mostrarMissatge2() {</div></li><li class="li1"><div class="de1">    alert(&quot;segona funció&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Subscrivim l'element perquè respongui amb les dues funcions</div></li><li class="li1"><div class="de1">  primerElement.addEventListener('click', mostrarMissatge1);  </div></li><li class="li1"><div class="de1">  primerElement.addEventListener('click', mostrarMissatge2);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  Fes clic aquí!</div></li><li class="li1"><div class="de1">&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qOxQXZ?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qOxQXZ?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/qOxQXZ?editors=1010</a>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La signatura del mètode <code>addEventListener()</code> és la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">target.addEventListener(type, listener[, useCapture]);</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> <strong><code>target</code></strong> és l’element al qual s’ha de disparar l’<em>event</em> perquè aquest sigui detectat pel <strong>subjecte</strong>. És a dir, si volem detectar quan s’ha disparat l’<em>event</em> <code>click</code> sobre un botó, el <code>target</code> seria el botó. Fixeu-vos que amb aquest sistema es pot observar qualsevol element del DOM i molts dels elements de les Web <acronym title="Application Programming Interface">API</acronym>, no només dels elements <acronym title="HyperText Markup Language">HTML</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>type</code></strong> és una cadena amb el tipus d’<em>event</em> que volem escoltar, per exemple: <code>click</code>, <code>dblclick</code>, <code>load</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>listener</code></strong> aquesta és la funció <em>callback</em> que serà cridada quan es dispari l’<em>event</em> observat. Fixeu-vos que aquesta funció és la que és <strong>notificada</strong> quan es produeix l’<em>event</em> al subjecte. Correspon a la funció <code>notificar()</code> en la <span class="figref"><a href="#figura u4a1-02"><span>figura</span></a></span>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>useCapture</code></strong> és un paràmetre opcional que no farem servir en aquests materials, per tant, el considerem sempre fals. En cas que fos cert, canviaria la forma amb què es despatxen els <em>events</em>.</div>
+</li>
+</ul>
+
+<p>
+En podeu trobar més informació al següent enllaç: <a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener" class="urlextern" title="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener"  rel="nofollow">www.goo.gl/a8LqGS</a>.
+</p>
+</div></div>
+<p>
+Ara ja hem vist com podeu afegir la detecció d’<em>events</em> a un element i com podeu invocar la funció que us interessi. Segurament us deveu haver adonat que descriure els processos és una mica enrevessat. Per aquest motiu, a partir d’ara ens referirem als elements i a les diferents accions de la següent manera:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>Event</em></strong>. Pot fer referencia tant a un tipus com a a un objecte:</div>
+<ul>
+<li class="level2"><div class="li"> Un tipus, com pot ser <code>click</code>, <code>dblclick</code> o <code>load</code>.</div>
+</li>
+<li class="level2"><div class="li"> Un objecte que conté tota la informació de l’esdeveniment que s’ha disparat.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Disparar un <em>event</em></strong> (en anglès <em>trigger</em> o <em>fire</em>). Significa que s’ha produït un esdeveniment. Per exemple, quan el navegador finalitza la càrrega del codi <acronym title="HyperText Markup Language">HTML</acronym> es produeix l’esdeveniment <code>load</code>. En aquest cas diríem que s’ha disparat l’<em>event</em> <code>load</code>, i aquesta informació seria notificada als observadors registrats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Despatxar un <em>event</em></strong> (en anglès <em>dispatch</em>). Continuem amb el mateix exemple: quan el navegador finalitza la càrrega de la pàgina, despatxa l’<em>event</em> <code>load</code>. És a dir, quan quelcom és responsable de comunicar que s’ha produït algun esdeveniment, el que fa és despatxar l’<em>event</em>. Quan es despatxa un <em>event</em> es passa un objecte com a paràmetre que conté tota la informació corresponent. Per exemple, en el cas dels <em>events</em> del ratolí, els botons clicats o la posició del cursor es passen a la pantalla com a coordenades cartesianes. Quan es despatxa un <em>event</em> el que es fa és notificar tots els observadors registrats per aquest tipus d’<em>event</em>.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per eliminar la detecció d’<em>events</em> d’un element cal invocar el mètode <code>removeEventListener()</code> i passar com a arguments el tipus d’<em>event</em> i la funció que es vol eliminar.
+</p>
+</div></div>
+</div>
+
+<h3><a id="events_del_ratoli_mouseevents" >Events del ratolí (&#039;MouseEvents&#039;)</a></h3>
+<div class="level3">
+
+<p>
+Aquests són els <em>events</em> que es disparen quan canvia l’estat del ratolí (vegeu la <span class="tabref"><a href="#taula u4a1-01"><span>taula</span></a></span>), per exemple, quan es prem un botó del dispositiu o quan es deixa anar.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-01"><span>Taula: </span></a>Events relacionats amb els botons del ratolí</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">click</td><td class="col1">onclick</td><td class="col2">Es dispara en fer clic amb qualsevol botó del ratolí</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">dblclick</td><td class="col1">ondblclick</td><td class="col2">Es dispara en fer doble clic amb qualsevol botó del ratolí</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">mousedown</td><td class="col1">onmousedown</td><td class="col2">Es dispara en prémer qualsevol botó del ratolí</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">mouseup</td><td class="col1">onmouseup</td><td class="col2">Es dispara en deixar anar qualsevol botó del ratolí</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Per comprovar com funciona podríeu escriure un codi així:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;console.log('click');&quot;&gt;test clic&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button ondblclick=&quot;console.log('dblclick');&quot;&gt;test doble clic&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button onmousedown=&quot;console.log('mousedown');&quot;&gt;test prémer botó del ratolí&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;button onmouseup=&quot;console.log('mouseup');&quot;&gt;test deixar anar botó del ratolí&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/BoVxGO?editors=1000" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BoVxGO?editors=1000"  rel="nofollow">codepen.io/ioc-daw-m06/pen/BoVxGO?editors=1000</a>.
+</p>
+
+<p>
+Fixeu-vos que cada botó mostra el missatge a la consola sota unes condicions diferents.
+</p>
+
+<p>
+Un altre punt interessant és saber en quin ordre es disparen aquests <em>events</em>; què passa si hem registrat un observador per a cada <em>event</em> d’un sol botó?
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per detectar el botó del ratolí que s’ha polsat es pot fer servir la propietat <code>button</code> de l’objecte <code>event</code>, de manera que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Botó esquerre: <code>event.button = 0</code></div>
+</li>
+<li class="level1"><div class="li"> Botó central: <code>event.button = 1</code></div>
+</li>
+<li class="level1"><div class="li"> Botó dret: <code>event.button = 2</code></div>
+</li>
+</ul>
+
+<p>
+Aquesta propietat només funciona amb els events <code>mouseup</code> i <code>mousedown</code>.
+</p>
+</div></div>
+<p>
+En aquest cas, recordeu que haurem de fer servir forçosament <code>addEventListerner()</code>, així que els afegirem mitjançant JavaScript. 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let button = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('click', notificaObservadorClick);</div></li><li class="li1"><div class="de1">  button.addEventListener('dblclick', notificaObservadorDblClick);</div></li><li class="li1"><div class="de1">  button.addEventListener('mousedown', notificaObservadorMouseDown);</div></li><li class="li1"><div class="de1">  button.addEventListener('mouseup', notificaObservadorMouseUp);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservadorClick() {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat l'event Click&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservadorDblClick() {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat l'event DblClick&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservadorMouseDown() {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat l'event Mouse Down&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservadorMouseUp() {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat l'event Mouse Up&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test&quot;&gt;test de múltiples events&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bVKMJz?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bVKMJz?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/bVKMJz?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos en quin ordre es disparen els <em>events</em>:
+</p>
+<ol>
+<li class="level1"><div class="li"> El primer de ser disparat és <code>mousedown</code>.</div>
+</li>
+<li class="level1"><div class="li"> A continuació es dispara <code>mouseup</code>, quan es deixa anar el botó.</div>
+</li>
+<li class="level1"><div class="li"> I finalment es dispara <code>click</code>. És a dir, fins que no es deixi anar el botó no es confirmarà que s’ha produït un clic sobre l’element.</div>
+</li>
+</ol>
+
+<p>
+Si el que fem és un doble clic, fixeu-vos com canvia la seqüència:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>mousedown</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mouseup</code></div>
+</li>
+<li class="level1"><div class="li"> <code>click</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mousedown</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mouseup</code></div>
+</li>
+<li class="level1"><div class="li"> <code>click</code></div>
+</li>
+<li class="level1"><div class="li"> <code>dblclick</code></div>
+</li>
+</ol>
+
+<p>
+Això s’ha de tenir molt en compte, perquè si tenim un element al qual hem lligat la detecció d’<em>events</em> com <code>click</code> o <code>mousedown</code> al mateix temps que <code>dblclick</code>, també es dispararan quan es faci un doble clic, i segurament no és la nostra intenció.
+</p>
+
+<p>
+Vegem ara una variant del codi anterior. Aquesta vegada, a les funcions de notificació els arriba un paràmetre; en lloc de fer servir una funció per a cada <em>event</em>, farem servir la mateixa funció <code>notificarObservador()</code> per a totes.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Objectes com a paràmetres</p>
+<p>
+En JavaScript és molt freqüent fer servir objectes que només tenen propietats per passar-les a mètodes o funcions. En altres llenguatges, això s’anomenaria <em>diccionari de dades</em>, <em>array associatiu</em> o simplement <em>array</em>. Un exemple d’aquests tipus d’objectes seria <code>{x: 10, y:20}</code>.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+El subjecte sempre ens enviarà la informació de l’<em>event</em> com un objecte. És important entendre que aquest paràmetre <strong>l’envia el subjecte que observem</strong>, i que no importa el nom que li posem nosaltres, perquè aquest nom només ens serveix de referència a la nostra funció. <strong>Si no el fem servir, no cal declarar-lo com a paràmetre</strong>, simplement serà ignorat.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let button = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('click', notificaObservador);</div></li><li class="li1"><div class="de1">  button.addEventListener('dblclick', notificaObservador);</div></li><li class="li1"><div class="de1">  button.addEventListener('mouseup', notificaObservador);</div></li><li class="li1"><div class="de1">  button.addEventListener('mousedown', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat un event de tipus: &quot;, e.type, &quot;amb aquesta informació: &quot;, e);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test&quot;&gt;test de múltiples events&lt;/button&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WQyJqW?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WQyJqW?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WQyJqW?editors=1011</a>.
+</p>
+
+<p>
+En aquest exemple podeu veure que obtenim el tipus d’<em>event</em> de la propietat <code>type</code> de l’<em>event</em> que ens arriba per paràmetre, i a continuació es mostra tota la informació que conté en aquest objecte (com poden ser les coordenades, en quin element s’ha produït l’<em>event</em>, si s’està prement cap tecla modificadora -majúscules o control, per exemple-…).
+</p>
+
+</div>
+
+<h4><a id="variacions_segons_el_navegador" >Variacions segons el navegador</a></h4>
+<div class="level4">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Segons en quin navegador s’executi el codi <strong>alguns comportaments poden ser diferents</strong>. Per exemple, en el cas del navegador Chrome, si es fa clic amb el botó dret del ratolí, només es dispara l’<em>event</em> <code>mousedown</code>, en canvi, en Firefox es dispara també l’<em>event</em> <code>mouseup</code>.
+</p>
+</div></div>
+<p>
+Aquesta discrepància es produeix perquè en fer clic amb el botó dret tots dos disparen l’<em>event</em> <code>contextmenu</code> (vegeu la <span class="tabref"><a href="#taula u4a1-02"><span>taula</span></a></span>), com s’indica a l’especificació d’HTML5, però disparar o no l’<em>event</em> <code>mouseup</code> o <code>keyup</code> -segons el cas- depèn del navegador i de la plataforma que faci servir l’usuari. Inclús un mateix navegador, en diferents sistemes operatius, pot tenir comportaments diferents perquè l’especificació només obliga que es dispari l’<em>event</em> <code>contextmenu</code>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Especificació HTML5</p>
+<p>
+Podeu trobar el document actualitzat amb l’especificació d’HTML5 en què es basa la implementació dels navegadors web a: <a href="https://html.spec.whatwg.org/multipage/forms.html" class="urlextern" title="https://html.spec.whatwg.org/multipage/forms.html"  rel="nofollow">bit.ly/3tMEmTr</a>
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-02"><span>Taula: </span></a>Events relacionats amb el menú contextual</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">contextmenu</td><td class="col1">oncontextmenu</td><td class="col2">Es dispara quan es mostra el menú contextual del navegador</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Si proveu aquest exemple en Chrome, veureu que efectivament la resta d’<em>events</em> es disparen, ja que la seqüència s’interromp quan es llença el menú contextual. En canvi, si ho proveu amb Firefox, l’<em>event</em> <code>mouseup</code> es dispara a continuació de l’<em>event</em> <code>contextmenu</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let button = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('click', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('contextmenu', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('mouseup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  button.addEventListener('mousedown', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat un event de tipus: &quot;, e.type, &quot;amb aquesta informació: &quot;, e);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test&quot;&gt;test de múltiples events&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NGzzPV?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NGzzPV?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NGzzPV?editors=1011</a>.
+</p>
+
+<p>
+Aquí, la seqüència per a Chrome:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>mousedown</code></div>
+</li>
+<li class="level1"><div class="li"> <code>contexmenu</code></div>
+</li>
+</ol>
+
+<p>
+Mentre que per a Firefox serà aquesta:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>mousedown</code></div>
+</li>
+<li class="level1"><div class="li"> <code>contexmenu</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mouseup</code></div>
+</li>
+</ol>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+S’ha de tenir en compte que l’especificació d’HTML5 no és exhaustiva. Per això hi ha casos com aquests en què el comportament serà diferent segons el navegador que s’utilitzi. En aquests casos hem de decidir entre:
+</p>
+<ul>
+<li class="level1"><div class="li"> Evitar fer servir elements que puguin presentar conflictes entre navegadors i plataformes.</div>
+</li>
+<li class="level1"><div class="li"> Fer una implementació que cobreixi tots els casos per als navegadors i les plataformes en què vulguem que el nostre codi funcioni correctament.</div>
+</li>
+<li class="level1"><div class="li"> Fer servir una llibreria que s’encarregui de normalitzar aquests comportaments, per exemple <em>jQuery</em>.</div>
+</li>
+</ul>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">jQuery</p>
+<p>
+jQuery és una biblioteca molt popular que inclou moltes funcionalitats que s’usen habitualment com a  crides AJAX, manipulació del DOM (Document Object Model), enregistrament a <em>events</em> i animacions d’elements. Les versions més recents han deixat de banda el suport per a navegadors antics.
+</p>
+</div></div>
+</div>
+
+<h4><a id="moviments_del_ratoli" >Moviments del ratolí</a></h4>
+<div class="level4">
+
+<p>
+A banda dels <em>events</em> que es disparen en prémer els botons del ratolí, també podem detectar els que es produeixen en moure’l. Aquesta és la llista de tipus d’<em>events</em> observables (vegeu la <span class="tabref"><a href="#taula u4a1-03"><span>taula</span></a></span>).
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-03"><span>Taula: </span></a>Altres events relacionats amb els botons del ratolí</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">mouseenter</td><td class="col1">onmouseenter</td><td class="col2">Es dispara quan el cursor entra dins de l’àrea ocupada pel subjecte</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">mouseleave</td><td class="col1">onmouseleave</td><td class="col2">Es dispara quan el cursor abandona l’àrea ocupada pel subjecte</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">mousemove</td><td class="col1">onmousemove</td><td class="col2">Es dispara cada vegada que el cursor es mou per sobre del subjecte</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">mouseout</td><td class="col1">onmouseout</td><td class="col2">Es dispara quan el cursor abandona l’àrea ocupada pel subjecte o per algun dels seus fills</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">mouseover</td><td class="col1">onmouseover</td><td class="col2">Es dispara quan el cursor entra dins de l’àrea ocupada pel subjecte o per algun dels seus fills </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Com podeu veure, la diferència principal entre <code>onmouseenter</code> i <code>onmouseover</code> és que el primer no diferencia els fills del subjecte i el segon sí que ho fa, i passa el mateix amb <code>onmouseout</code> i <code>onmouseleave</code>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Fixeu-vos en aquest exemple; el quadre més petit és fill del quadre més gran, i hi podeu veure:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div {</div></li><li class="li1"><div class="de1">    width: 150px;</div></li><li class="li1"><div class="de1">    height: 150px;</div></li><li class="li1"><div class="de1">    background-color: red;</div></li><li class="li1"><div class="de1">    margin: 50px auto;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  div&gt;div {</div></li><li class="li1"><div class="de1">    position:relative;</div></li><li class="li1"><div class="de1">    top:-25px;</div></li><li class="li1"><div class="de1">    width: 50px;</div></li><li class="li1"><div class="de1">    height: 50px;</div></li><li class="li1"><div class="de1">    background-color: blue;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">  element.addEventListener('mouseenter', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('mouseleave', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('mousemove', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('mouseout', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('mouseover', notificaObservador);</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;test&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZbRRbQ?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZbRRbQ?editors=1111"  rel="nofollow">https://codepen.io/ioc-daw-m06/pen/ZbRRbQ?editors=1111</a>
+</p>
+
+<p>
+En entrar al quadre gran o al petit des de fora es disparen:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>mouseover</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mouseenter</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mousemove</code>, múltiples vegades, mentre el cursor estigui en moviment sobre el quadre.</div>
+</li>
+<li class="level1"><div class="li"> <code>mouseout</code> en sortir del quadre gran</div>
+</li>
+<li class="level1"><div class="li"> <code>mouseleave</code> en sortir del quadre gran</div>
+</li>
+</ol>
+
+<p>
+La diferència la trobem quan tenim el cursor a sobre d’un dels dos quadres i passem a l’altre; per exemple, amb el cursor sobre el quadre vermell passem al quadre blau. En aquest cas, veurem a la consola la següent seqüència (ignorant els <code>mousemove</code> és clar):
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>mouseout</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mouseover</code></div>
+</li>
+</ol>
+
+<p>
+És a dir, es detecta la transició entre els dos elements, cosa que no passa amb <code>mouseenter</code> i <code>mouseleave</code>.
+</p>
+
+</div>
+
+<h4><a id="events_per_a_pantalla_tactil" >Events per a pantalla tàctil</a></h4>
+<div class="level4">
+
+<p>
+Els <strong>TouchEvent</strong> són similars als <strong>MouseEvent</strong> però pertanyen a una altra especificació diferent (vegeu la <span class="tabref"><a href="#taula u4a1-04"><span>taula</span></a></span>). Són els <em>events</em> disparats quan s’interactua tocant una pantalla tàctil, com podria ser la d’un mòbil o una tauleta.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Combinar els EventTouch i MouseTouch</p>
+<p>
+Com que aquest és un problema molt comú, generalment ja està resolt o es poden trobar llibreries que adaptin el funcionament que necessitem. Per exemple: els dispositius mòbils interpreten els tocs de pantalla com a clics automàticament, però si voleu afegir coses més específiques com el reconeixement de textos, haureu de fer servir una llibreria especialitzada.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-04"><span>Taula: </span></a>Events relacionats amb l’especificació TouchEvent</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">touchstart</td><td class="col1">ontouchstart</td><td class="col2">Es dispara quan es toca la pantalla encara que ja s’estigui tocant en un altre punt</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">touchend</td><td class="col1">ontouchend</td><td class="col2">Es dispara quan es deixa de tocar la pantalla en un punt, encara que hi hagi altres punts pressionats</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">touchmove</td><td class="col1">ontouchmove</td><td class="col2">Es dispara quan un dels dits es mou sobre la pantalla</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">touchcancel</td><td class="col1">ontouchcancel</td><td class="col2">Es dispara quan es produeix una disrupció d’una manera específica, com podria ser que hi haguessin més punts tocats dels que admet el dispositiu</td>
+	</tr>
+</table></div>
+</div>
+<p>
+L’exemple següent canviarà de color quan es disparin els <em>events</em> de toc a la pantalla; el <code>touchstart</code> farà que es posi verd, el <code>touchmove</code> de color groc i <code>touchend</code> de color gris. L’<em>event</em> <code>touchcancel</code> normalment no es dispara.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div {</div></li><li class="li1"><div class="de1">    position: absolute;</div></li><li class="li1"><div class="de1">    top: 0;</div></li><li class="li1"><div class="de1">    bottom: 0;</div></li><li class="li1"><div class="de1">    left: 0;</div></li><li class="li1"><div class="de1">    right: 0;</div></li><li class="li1"><div class="de1">    background-color: orange;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.addEventListener('touchcancel', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('touchstart', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('touchend', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('touchmove', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    switch (e.type) {</div></li><li class="li1"><div class="de1">      case 'touchstart':</div></li><li class="li1"><div class="de1">        element.style['background-color'] = 'green';</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      case 'touchend':</div></li><li class="li1"><div class="de1">        element.style['background-color'] = 'grey';</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      case 'touchmove':</div></li><li class="li1"><div class="de1">        element.style['background-color'] = 'yellow';</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      case 'touchcancel':</div></li><li class="li1"><div class="de1">        element.style['background-color'] = 'red';</div></li><li class="li1"><div class="de1">        break;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;test&quot;&gt;&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+Podeu provar-ne l’exemple en aquest <acronym title="Uniform Resource Locator">URL</acronym>: <a href="https://codepen.io/ioc-daw-m06/pen/avKKJy" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/avKKJy"  rel="nofollow">codepen.io/ioc-daw-m06/pen/avKKJy</a>. Però en aquest cas ho haureu de fer des de un dispositiu amb pantalla tàctil, com un mòbil o una tauleta, ja que a l’ordinador aquests <em>events</em> no es disparen.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Podem fer servir una única funció per gestionar totes les notificacions i llavors, depenent del tipus d’<em>event</em> (<code>Event.type</code>), fer una cosa o altra amb un selector <code>switch-case</code>; com per exemple canviar el color de la pantalla.
+</p>
+</div></div>
+</div>
+
+<h3><a id="events_del_teclat_keyboardevents" >Events del teclat (&#039;keyboardEvents&#039;)</a></h3>
+<div class="level3">
+
+<p>
+Els <em>events</em> de teclat són els que ens permeten reaccionar quan es dispara un <em>event</em> relacionat amb el teclat, com per exemple prémer una tecla o deixar-la anar.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name=""><span>Taula: </span></a>Events relacionats amb el teclat</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Tipus </th><th class="col1"> Operació </th><th class="col2"> Descripció </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> keydown </td><td class="col1"> onkeydown </td><td class="col2"> Es dispara quan es prem una tecla </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> keypress </td><td class="col1"> onkeypress </td><td class="col2"> Es dispara quan es prem una tecla, i la tecla produeix un valor corresponent a un caràcter </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> keyup </td><td class="col1"> onkeyup </td><td class="col2"> Es dispara quan es deixa anar la tecla </td>
+	</tr>
+</table></div>
+</div>
+<p>
+D’entrada això pot semblar una mica estrany; per exemple, es pot observar un element de tipus <code>&lt;div&gt;</code> per l’<em>event</em> <code>keydown</code>, però en quines circumstàncies es rebria la notificació? Vegem-ho amb un primer exemple amb dos elements, un és un <code>&lt;div&gt;</code> i l’altre, un botó:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element1 = document.getElementById('test1');</div></li><li class="li1"><div class="de1">  let element2 = document.getElementById('test2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element1.addEventListener('keypress', notificaObservador);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keydown', notificaObservador);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keyup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element2.addEventListener('keypress', notificaObservador);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keydown', notificaObservador);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keyup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;S'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;test1&quot;&gt;Aquest element no pot rebre el focus, així que no dispara events de teclat&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test2&quot;&gt;Quan tinc el focus puc disparar els events de teclat&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vNraNq?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vNraNq?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vNraNq?editors=1011</a>.
+</p>
+
+<p>
+Com podeu veure no és possible fer que l’element <code>&lt;div&gt;</code> dispari els <em>events</em> de teclat; en canvi, veiem que quan el botó té el <em>focus</em>, aquest sí que els dispara i mostra els missatges a la consola. Però si el <em>focus</em> és en un altre element de la pàgina, deixa de disparar-los.
+</p>
+
+<p>
+Vegem un altre cas, aquesta vegada amb un element capaç de rebre el <em>focus</em> dins del <code>&lt;div&gt;</code>; per exemple, un altre botó:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Focus</p>
+<p>
+L’element que té el <em>focus</em> és el que està seleccionat en un moment determinat i només pot haver-hi un element amb <em>focus</em>. Es distingeix normalment perquè surt envoltat per una brillantor (botons, quadres de text…) o per una línia puntejada (enllaços). L’estil depèn del navegador.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element1 = document.getElementById('test1');</div></li><li class="li1"><div class="de1">  let element2 = document.getElementById('test2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element1.addEventListener('keypress', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keydown', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keyup', notificaObservador1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element2.addEventListener('keypress', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keydown', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keyup', notificaObservador2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador1(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;div&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador2(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;button&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;test1&quot;&gt;Aquest és el div observat que conté un botó &lt;button&gt;Aquest es un botó que no està essent observat&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test2&quot;&gt;Aquest és el botó que està essent observat&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/bVKjew?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bVKjew?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/bVKjew?editors=1011</a>.
+</p>
+
+<p>
+En aquest cas, encara que el botó que hi ha a dins del <code>&lt;div&gt;</code> no estigui essent observat, sí que es disparen els <em>events</em> corresponents al <code>&lt;div&gt;</code>: quan aquest botó té el <em>focus</em> i es prem alguna tecla (feu un clic a sobre perquè rebi el <em>focus</em> i premeu qualsevol tecla). De tot això podem deduir quines són les regles perquè es puguin detectar o no si s’ha premut alguna tecla.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per poder disparar <em>events</em> de teclat, un element ha de complir alguna de les següens condicions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Ha de ser capaç de rebre el <em>focus</em>.</div>
+</li>
+<li class="level1"><div class="li"> Ha de contenir un element fill capaç de rebre el <em>focus</em>.</div>
+</li>
+</ul>
+
+<p>
+Si s’acompleixen alguna d’aquestes condicions i l’element, o algun dels seus descendents, és el <em>focus</em> llavors dispararà els <em>events</em> de teclat.
+</p>
+</div></div>
+</div>
+
+<h4><a id="l_element_body" >L&#039;element &#039;body&#039;</a></h4>
+<div class="level4">
+
+<p>
+Un cas interessant és el de l’element <code>&lt;body&gt;</code>: encara que no tingui el <em>focus</em>, si s’afegeix un observador per als <em>events</em> de teclat, són capturats igualment.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Capturar events</p>
+<p>
+Quan un element dispara un <em>event</em> i un altre és notificat, direm que l’<em>event</em> ha estat capturat. El fet de ser notificat és el mateix que capturar l’<em>event</em>.
+</p>
+</div></div>
+<p>
+En l’exemple següent podeu veure que no cal incloure cap altre element per fer que es detectin els <em>events</em> de teclat:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.addEventListener('keypress', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keydown', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keyup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;body&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/MaXBbr?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/MaXBbr?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/MaXBbr?editors=1011</a>.
+</p>
+
+<p>
+Aprofitem aquest exemple per analitzar el comportament d’aquests <em>events</em>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si premem la tecla <em>a</em> (o qualsevol altre caràcter imprimible) i la deixem premuda, es dispararan alternativament els <em>events</em> <code>keydown</code> i <code>keypress</code> fins que deixem de prémer-la.</div>
+</li>
+<li class="level1"><div class="li"> Si premem la tecla <em>control</em>, només es dispararà l’<em>event</em> <code>keydown</code>.</div>
+</li>
+<li class="level1"><div class="li"> Quan deixem de prémer qualsevol tecla, es dispararà l’<em>event</em> <code>keyup</code>.</div>
+</li>
+</ul>
+
+<p>
+Fixeu-vos que encara que <code>keydown</code> i <code>keypress</code> es repeteixin mentre la tecla estigui premuda, no passa el mateix amb <code>keyup</code>, que només es dispara una vegada per tecla.
+</p>
+
+<p>
+Llavors, què passa si estem observant un element i al mateix temps afegim un altre observador per a algun dels seus fills? Es cridaran tots dos? Es cridarà només un d’ells? Vegem-ho amb un exemple ampliat:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element1 = document.getElementById('test1');</div></li><li class="li1"><div class="de1">  let element2 = document.getElementById('test2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element1.addEventListener('keypress', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keydown', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keyup', notificaObservador1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element2.addEventListener('keypress', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keydown', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keyup', notificaObservador2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador1(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;body&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador2(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;textarea&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;textarea id=&quot;test2&quot;&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ZbRjex?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZbRjex?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ZbRjex?editors=1011</a>.
+</p>
+
+<p>
+Efectivament, es dispararà l’<em>event</em> a tots dos elements, tant al <code>&lt;textarea&gt;</code> com al <code>&lt;body&gt;</code>, i sempre en aquest ordre. Aquest efecte es produeix gràcies a l’<em>efervescència</em> (<em>event bubbling</em> en anglès): quan a un element es dispara un <em>event</em>, aquest es propaga (per exemple, com les bombolles d’un cava) cap als diferents observadors i cap als elements que els contenen. És a dir, quan es dispara l’<em>event</em> al <code>&lt;textarea&gt;</code> aquest és enviat també a l’element que el conté, l’element <code>&lt;body&gt;</code>.
+</p>
+
+<p>
+Per solucionar aquest problema només cal invocar el mètode <strong><code>Event.stopPropagation()</code></strong> de l’<em>event</em> que arriba com a paràmetre.
+</p>
+
+<p>
+En aquest exemple veiem que, en interrompre la propagació de l’<em>event</em> al <code>textarea</code>, no arriba mai a ser notificat l’element <code>&lt;body&gt;</code>:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> El flux d&#039;events</p>
+<p>
+Podeu trobar més informació sobre el flux d’<em>events</em> a <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-flow-h2" class="urlextern" title="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-flow-h2"  rel="nofollow">www.goo.gl/vFVGS3</a> (DOM2) i <a href="http://www.w3.org/TR/DOM-Level-3-Events/#h-event-flow" class="urlextern" title="http://www.w3.org/TR/DOM-Level-3-Events/#h-event-flow"  rel="nofollow">www.goo.gl/zJBRcf</a> (Esborrany DOM3)
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element1 = document.getElementById('test1');</div></li><li class="li1"><div class="de1">  let element2 = document.getElementById('test2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element1.addEventListener('keypress', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keydown', notificaObservador1);</div></li><li class="li1"><div class="de1">  element1.addEventListener('keyup', notificaObservador1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element2.addEventListener('keypress', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keydown', notificaObservador2);</div></li><li class="li1"><div class="de1">  element2.addEventListener('keyup', notificaObservador2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador1(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;body&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador2(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Des del &lt;textarea&gt; s'ha disparat un event de tipus: &quot;, e.type);</div></li><li class="li1"><div class="de1">    e.stopPropagation();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;textarea id=&quot;test2&quot;&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WQyKOj?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WQyKOj?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WQyKOj?editors=1011</a>.
+</p>
+
+</div>
+
+<h4><a id="deteccio_de_pulsacions_de_tecles" >Detecció de pulsacions de tecles</a></h4>
+<div class="level4">
+
+<p>
+A banda de detectar si s’ha pres o s’ha deixat anar una tecla, per saber quina és la tecla en qüestió hem de comprovar la propietat <code>EventKeyboard.key</code> a Google Chrome i Safari, o <code>EventKeyboard.keyIdentifier</code> a Internet Explorer i Firefox:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Event.keyCode</p>
+<p>
+Abans es podia fer servir la propietat <code>keyCode</code> d’un <em>event</em> per determinar quina tecla s’havia premut, però no tots els navegadors retornaven el mateix codi; finalment, aquesta propietat s’ha declarat obsoleta.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.addEventListener('keypress', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keydown', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keyup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Disparat &quot;, e.type, &quot; per la tecla amb codi: &quot;, e.key || e.keyIdentifier);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test&quot;&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vNraWE?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vNraWE?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vNraWE?editors=1011</a>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Operador lògic ||</p>
+<p>
+En JavaScript es pot fer servir l’operador lògic ||, de manera que si el primer valor és <code>null</code> o <code>undefined</code> ho prova amb el següent valor fins que en troba un que sigui vàlid, i llavors retorna o s’assigna aquest valor.
+</p>
+</div></div>
+<p>
+El codi retornat serà, per exemple, en prémer la tecla ‘a’ us mostrarà per la consola:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>Disparat keydown per la tecla amb codi: a</code></div>
+</li>
+<li class="level1"><div class="li"> <code>Disparat keypress per la tecla amb codi: a</code></div>
+</li>
+<li class="level1"><div class="li"> <code>Disparat keyup per la tecla amb codi: a</code></div>
+</li>
+</ol>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Formats de codificació</p>
+<p>
+Un format de codificació és el que ens permet identificar un caràcter a partir d’un codi. Dos dels més utilitzats són el codi <acronym title="American Standard Code for Information Interchange">ASCII</acronym> i Unicode.
+</p>
+
+<p>
+La versió original de <acronym title="American Standard Code for Information Interchange">ASCII</acronym> creada el 1963 admetia 128 caràcters (7 bits) però van crear-se variacions que són conegudes com a <em><acronym title="American Standard Code for Information Interchange">ASCII</acronym> Estès</em>, que admeten fins a 256 i inclouen altres caràcters com són les vocals accentuades, la <em>ç</em>…
+</p>
+
+<p>
+La codificació Unicode va ser creada a finals del 1987 i suporta una quantitat de caràcters molt més gran, fins a 1.114.112 (0x10FFFF) i es representen afegint-hi el prefix <code>U+</code> i el codi corresponent en hexadecimal. Aquest codi és compatible amb altres codificacions com ASCII7 o ISO 8859-1.
+</p>
+</div></div>
+<p>
+En realitat tots dos retornan el mateix caràcter, però en el cas de Google Chrome el retorna amb codificació Unicode en lloc de mostrar-lo com a <acronym title="American Standard Code for Information Interchange">ASCII</acronym>.
+</p>
+
+<p>
+Si ho proveu amb la tecla <code>control</code>, veureu que tots dos mostren el mateix:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>Disparat  keydown  per la tecla amb codi: Control</code></div>
+</li>
+<li class="level1"><div class="li"> <code>Disparat  keyup  per la tecla amb codi: Control</code></div>
+</li>
+</ol>
+
+<p>
+En el cas de les tecles no representables com a caràcter no es dispara l’<em>event</em> <code>keypress</code>.
+</p>
+
+<p>
+Normalment els dos casos principals en què ens interessarà capturar els <em>events</em> de teclat serà dins dels elements que formen els formularis per determinar si s’està introduint un valor vàlid en una caixa de text, per exemple, i quan tractem amb experiències interactives, com poden ser jocs o <em>tours</em> virtuals que reaccionin amb el teclat.
+</p>
+
+<p>
+En aquest segon cas, però, ens trobarem amb un problema: si us hi fixeu, quan es deixa polsada una tecla només es repeteix aquesta tecla i, per exemple, seria impossible fer un moviment en diagonal.
+</p>
+
+<p>
+D’altra banda, els <em>events</em> són disparats en qualsevol moment i no en el punt del joc on els necessitem, és per això que interessa tenir un objecte al qual poder consultar l’estat del botó.
+</p>
+
+<p>
+Per aquesta raó s’han de fer servir llibreries específiques o s’ha d’implementar un controlador d’entrada propi que guardi les tecles premudes i pugui ser consultat pel motor del joc o l’aplicació.
+</p>
+
+<p>
+En alguns casos ens pot interessar evitar que es dispari l’<em>event</em> que per defecte està associat a una acció; això és possible fent servir el mètode <strong><code>Event.preventDefault()</code></strong>. Per exemple, això ens permet aturar l’enviament d’un formulari en prémer el botó d’enviar i, en comptes d’això, realitzar una crida asíncrona.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Evitar que es realitzi l&#039;acció habitual</p>
+<p>
+En alguns casos, amb <code>Event.preventDefault()</code> no n’hi ha prou, i pot funcionar fer que la nostra funció retorni el valor <code>false</code>, però depèn de l’element i el navegador amb els quals estiguem treballant.
+</p>
+</div></div>
+<p>
+Es veu més clarament en aquest exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.addEventListener('keypress', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keydown', notificaObservador);</div></li><li class="li1"><div class="de1">  element.addEventListener('keyup', notificaObservador);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  function notificaObservador(e) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Disparat &quot;, e.type, &quot; per la tecla amb codi: &quot;, e.key || e.keyIdentifier);</div></li><li class="li1"><div class="de1">    e.preventDefault();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;textarea&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/EVRdXX?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/EVRdXX?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/EVRdXX?editors=1011</a>.
+</p>
+
+<p>
+Com podeu veure no és possible escriure en el <code>textarea</code> i, com que el caràcter no es mostra, tampoc no es dispara l’<em>event</em> <code>keypress</code>.
+</p>
+
+</div>
+
+<h3><a id="altres_events_del_dom" >Altres events del DOM</a></h3>
+<div class="level3">
+
+<p>
+Hi ha dos subjectes en què ens interessa observar habitualment l’<em>event</em> <code>load</code> (vegeu la <span class="tabref"><a href="#taula u4a1-05"><span>taula</span></a></span>): són l’element <code>&lt;body&gt;</code> i l’element <code>&lt;img&gt;</code>. El primer cas és més habitual, ja que no és recomanable fer segons quines operacions abans que s’hagi acabat de carregar tot el fitxer <acronym title="HyperText Markup Language">HTML</acronym>, per exemple si volem afegir o eliminar elements del document.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-05"><span>Taula: </span></a>Events relacionats amb la càrrega i descàrrega</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">load</td><td class="col1">onload</td><td class="col2">Es dispara quan es finalitza la càrrega de la pàgina o d’algun recurs com per exemple una imatge</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">unload</td><td class="col1">onunload</td><td class="col2">Es dispara quan s’està descarregant el document o un recurs</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">error</td><td class="col1">onerror</td><td class="col2">Es dispara si es produeix un error</td>
+	</tr>
+</table></div>
+</div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;body onload=&quot;alert('Document carregat');&quot;&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XmYxye?editors=1000" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XmYxye?editors=1000"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XmYxye?editors=1000</a> (s’executarà cada vegada que canvieu alguna cosa en el panell <acronym title="HyperText Markup Language">HTML</acronym>, ja que el recarrega periòdicament).
+</p>
+
+<p>
+L’altre cas en què ens interessa detectar quan es dispara aquest <em>event</em> és quan treballem amb imatges, ja que encara que el document s’hagi carregat completament i l’element <code>&lt;body&gt;</code> dispari l’<em>event</em> <code>load</code> no vol dir que les imatges s’hagin carregat, això només indica que el codi per carregar-les és present.
+</p>
+
+<p>
+Això ens porta a trobar-nos amb casos en què volem realitzar alguna acció només quan les imatges s’hagin carregat completament, per exemple per reorganitzar-les segons la seva mida o per esperar a inicialitzar un joc en HTML5 perquè fins que no acaben de descarregar les imatges no s’ha de poder iniciar.
+</p>
+
+<p>
+Hi ha un altre <em>event</em> relacionat directament amb el <code>load</code>: si quan es carrega una imatge es produeix un error, no es disparà l’<em>event</em> <code>load</code> sinó l’<em>event</em> <code>error</code>, cosa que ens permet reaccionar en conseqüència.
+</p>
+
+<p>
+L’exemple següent és força complex: el <strong>gestor de descàrregues</strong> del joc <strong>IOC Puzzle Lite</strong>, que està implementat amb HTML5. No us espanteu, que no cal que entengueu tot el codi ara per ara!, però és interessant que us feu una idea de com funciona, ja que la major part d’informació ja l’hem tractat, i en l’exemple es veu com utilitzar els <em>events</em> <code>load</code> i <code>error</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let DownloadManager = function() {</div></li><li class="li1"><div class="de1">  this.successCount = 0;</div></li><li class="li1"><div class="de1">  this.errorCount = 0;</div></li><li class="li1"><div class="de1">  this.downloadQueue = [];</div></li><li class="li1"><div class="de1">  this.cache = {</div></li><li class="li1"><div class="de1">    images: {}</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.queueDownload = function(imageData) {</div></li><li class="li1"><div class="de1">    if (Array.isArray(imageData)) {</div></li><li class="li1"><div class="de1">      for (let i = 0; i &lt; imageData.length; i++) {</div></li><li class="li1"><div class="de1">        this.downloadQueue.push(imageData[i]);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      this.downloadQueue.push(imageData);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.downloadAll = function(callback, args) {</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; this.downloadQueue.length; i++) {</div></li><li class="li1"><div class="de1">      let path = this.downloadQueue[i].path,</div></li><li class="li1"><div class="de1">        id = this.downloadQueue[i].id,</div></li><li class="li1"><div class="de1">        img = new Image();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      img.addEventListener(&quot;load&quot;, function() {</div></li><li class="li1"><div class="de1">        this.successCount += 1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        if (this.isDone()) {</div></li><li class="li1"><div class="de1">          callback(args);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }.bind(this), false);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      img.addEventListener(&quot;error&quot;, function() {</div></li><li class="li1"><div class="de1">        this.errorCount += 1;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        if (this.isDone()) {</div></li><li class="li1"><div class="de1">          callback(args);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }.bind(this), false);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      img.src = path;</div></li><li class="li1"><div class="de1">      this.cache.images[id] = img;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.isDone = function() {</div></li><li class="li1"><div class="de1">    return (this.downloadQueue.length == this.successCount + this.errorCount);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.getImage = function(id) {</div></li><li class="li1"><div class="de1">    return this.cache.images[id];</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zvamep?editors=0010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zvamep?editors=0010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/zvamep?editors=0010</a> (però com que només és una classe aïllada no fa res per si mateixa).
+</p>
+
+<p>
+
+Es tracta d’una classe JavaScript que pot ser instanciada amb <code>new</code> d’aquesta manera: <code>let downloadManager = new DownloadManager()</code>;
+</p>
+
+<p>
+Una vegada instanciada, ens exposa les següents operacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>queueDownload(<em>imageData</em>)</strong>: afegeix una imatge (o <em>array</em> d’imatges) a la cua per ser descarregada. <code>imageData</code> conté la informació de la imatge (amb la <code>id</code> que li volem assignar per recuperar-la després) i la ruta, per exemple: <code>{id:“piece-0”, path: “img/puzzle-piece-0.png”}</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>downloadAll(<em>callback</em>, <em>args</em>)</strong>: inicia la descàrrega de tots els elements afegits a la cua i, quan acaba, crida la funció passada com a <code>callback</code> i <code>args</code> com a arguments. Això permet passar de la fase de descàrrega de recursos a la d’iniciar el joc.</div>
+</li>
+<li class="level1"><div class="li"> <strong>isDone()</strong>: aquest es fa servir internament; retorna “cert” si ha finalitzat la descàrrega de totes les imatges.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getImage(<em>id</em>)</strong>: aquest mètode ens retorna la imatge amb l’identificador passat com a argument. Aquesta imatge la recupera del <em>cache</em> (memòria cau), on les hem anat descarregant. D’aquesta manera, encara que hi hagi múltiples imatges iguals no cal descarregar-les més d’una vegada.</div>
+</li>
+</ul>
+
+<p>
+Fer servir aquesta classe és molt fàcil:
+</p>
+<ol>
+<li class="level1"><div class="li"> Creem una nova instància: <code>let donwloadManager = new DownloadManager();</code></div>
+</li>
+<li class="level1"><div class="li"> Hi afegim els fitxers que vulguem descarregar: <code>donwloadManager.queueDownload([{id:‘cotxe’, patch:‘imgs/imatge1.png’}, {id:‘tren’, patch:‘imgs/imatge2.png’}]);</code></div>
+</li>
+<li class="level1"><div class="li"> Iniciem la descàrrega indicant la funció que s’ha d’invocar quan s’hagin descarregat totes les imatges: <code>donwloadManager.downloadAll(startGame)</code>. El segon paràmetre és opcional, pot ser qualsevol cosa que necessitem, per exemple, el nivell.</div>
+</li>
+<li class="level1"><div class="li"> Per accedir a les imatges descarregades només hem d’invocar <code>downloadManager.getImage(‘tren’)</code> i obtindrem la imatge, que podrem afegir a la pàgina o a un element de tipus <code>&lt;canvas&gt;</code>.</div>
+</li>
+</ol>
+
+<p>
+Ara veiem com funciona internament:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quan cridem <code>queueDownload()</code> la informació que li passem es guarda en un <em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> Quan cridem <code>downloadAll()</code> es recorre aquest <em>array</em>, crea un objecte de classe <code>Image</code> (element d’HTML5) per a cada element de l’<em>array</em> i hi afegeix dos observadors: un per a l’<em>event</em> <code>load</code> i un altre per a l’<em>event</em> <code>error</code>.</div>
+</li>
+<li class="level1"><div class="li"> Per cada imatge que es descarrega amb èxit o error s’augmenta en 1 el comptador intern d’èxits o errors, segons correspongui.</div>
+</li>
+<li class="level1"><div class="li"> Quan la suma de descàrregues amb èxit o error és igual al nombre d’elements a l’<em>array</em> d’imatges, sabem que la descàrrega de tots els elements ha finalitzat, així que passem a invocar la funció <em>callback</em>, que podria ser, per exemple, la càrrega del nivell o l’inici del joc.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Quan implementem un gestor de descàrregues no s’ha d’oblidar gestionar els errors, ja que si només controléssim els casos d’èxit i una imatge donés error, el joc es bloquejaria perquè mai arribaria a finalitzar les descàrregues.
+</p>
+</div></div>
+<p>
+Això ens porta a un altre problema comú al treballar amb <em>events</em> i <em>callbacks</em>: el context en què s’executen les funcions no és el mateix en què es van originar; així que, si hem de fer referència a aquest context amb <code>this</code>, ens trobem amb problemes. Serà necessari trobar altres solucions, com guardar el context en una altra variable o utilitzar el mètode <code>bind()</code> comú a tots els objectes de JavaScript.
+</p>
+
+</div>
+
+<h4><a id="context_d_origen_this_i_context_d_execucio_that" >Context d&#039;origen (&#039;this&#039;) i context d&#039;execució (&#039;that&#039;)</a></h4>
+<div class="level4">
+
+<p>
+
+</p>
+
+<p>
+Quan treballem amb <em>events</em> i <em>callbacks</em>, pot ocórrer que el context en què s’executen les funcions no sigui el mateix en què es van originar. En aquest cas, si hem de fer referència a aquest context amb <code>this</code>, ens trobarem amb problemes.
+</p>
+
+<p>
+Per exemple, en el cas de la detecció d’<em>events</em> el context d’execució serà l’element en que s’ha disparat l’<em>event</em> i no pas la funció (o objecte) en el que es va afegir el detector. És a dir, si s’afegeix un detector per l’<em>event</em> <code>load</code> d’una imatge, el context de la funció que serà invocada quan la imatge acabi de carregar serà l’element imatge que l’ha disparat. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ClasseA() {</div></li><li class="li1"><div class="de1">  // Aquí this fa referència a la instància de ClasseA</div></li><li class="li1"><div class="de1">  let img = new Image();</div></li><li class="li1"><div class="de1">    img.addEventListener(&quot;load&quot;, function () {</div></li><li class="li1"><div class="de1">      // En aquest exemple this fa referència a la imatge creada</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">function ClasseB() {</div></li><li class="li1"><div class="de1">  // Aquí this fa referència a la instància de ClasseB</div></li><li class="li1"><div class="de1">  let img = new Image();</div></li><li class="li1"><div class="de1">    img.addEventListener(&quot;load&quot;, function () {</div></li><li class="li1"><div class="de1">      // En aquest exemple this fa referència a la instància de ClasseB</div></li><li class="li1"><div class="de1">    }.bind(this));</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Una altra solució habitual per a aquest problema és crear una variable en què guardem la referència a <code>this</code>. Aquesta variable acostuma a anomenar-se <code>that</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function ClasseC() {</div></li><li class="li1"><div class="de1">  let that = this;</div></li><li class="li1"><div class="de1">  // Aquí this i that fan referència a la instància de ClasseB</div></li><li class="li1"><div class="de1">  let img = new Image();</div></li><li class="li1"><div class="de1">    img.addEventListener(&quot;load&quot;, function () {</div></li><li class="li1"><div class="de1">      // En aquest exemple this fa referència a la imatge creada</div></li><li class="li1"><div class="de1">      // Però that conserva la referència a la instància de ClasseB, així que podem fer-la servir si dins d'aquesta funció ens cal accedir a ClasseB.</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+En altres casos és precisament aquest el comportament que volem: que la referència a <code>this</code> sigui a l’objecte on s’està executant la funció, per exemple, per modificar algun atribut d’aquest objecte.
+</p>
+
+</div>
+
+<h4><a id="l_event_unload" >L&#039;event &#039;unload&#039;</a></h4>
+<div class="level4">
+
+<p>
+L’<em>event</em> <code>unload</code> té la característica que és disparat quan es descarrega la pàgina, així que és una mica més difícil veure’l en funcionament.
+</p>
+
+<p>
+Una particularitat és que <strong>no es poden mostrar alertes</strong> quan es vol reaccionar a aquest <em>event</em>, per tant, farem servir els missatges per la consola (que pot visualitzar-se activant les eines de desenvolupador). Això, però, també té un inconvenient: generalment, en recarregar una pàgina s’esborra el <em>log</em> de la consola, així que hem de marcar la casella <em>‘preserve log’</em> (o l’opció de configuració equivalent segons el navegador) a les eines per a desenvolupadors. Vegem-ho:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.onunload = () =&gt; console.log(&quot;descarregant el document&quot;);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;body id=&quot;test&quot;&gt;&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LprXVM?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LprXVM?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/LprXVM?editors=1011</a> (Recordeu que heu d’activar l’opció per preservar el <em>log</em> o s’esborrarà abans de carregar la pàgina següent).
+</p>
+
+<p>
+Per disparar l’<em>event</em> només heu de recarregar la pàgina o modificar el codi <acronym title="HyperText Markup Language">HTML</acronym> a l’entorn codepen.io (provoca que només es recarregui la visualització del resultat).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una vegada s’ha disparat l’<em>event</em> <code>unload</code>, <strong>el procés és irreversible</strong>; per exemple, no es pot mostrar un missatge d’avís per indicar que no s’han guardat els canvis. Per altra banda, és possible  mostrar un avís abans de recarregar la pàgina observant l’<em>event</em> <code>beforeunload</code>. 
+</p>
+</div></div>
+<p>
+A la <span class="tabref"><a href="#taula u4a1-06"><span>taula</span></a></span> veureu una llista dels <em>events</em> relacionats amb els formularis.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-06"><span>Taula: </span></a>Events relacionats amb els formularis</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">select</td><td class="col1">onselect</td><td class="col2">Es dispara quan se selecciona un text</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">change</td><td class="col1">onchange</td><td class="col2">Es dispara quan ha canviat el valor del subjecte i aquest ha perdut el focus</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">submit</td><td class="col1">onsubmit</td><td class="col2">Es dispara quan es pressiona un botó per enviar un formulari</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">reset</td><td class="col1">onreset</td><td class="col2">Es dispara quan es pressiona un botó de reinicialitzar un formulari</td>
+	</tr>
+</table></div>
+</div><div class="iocimportant"><div class="ioccontent">
+<p>
+S’ha de tenir en compte que l’<em>event</em> <code>change</code> no es dispara en fer canvis a l’element, sinó <strong>quan perd el <em>focus</em></strong>. És a dir, mentre escrivim text en un <code>textarea</code>, aquest <em>event</em> no es dispara, només es dispararà quan canviem a un altre element; per exemple, quan cliquem en un botó o polsem la tecla de tabulació per canviar a l’element següent.
+</p>
+</div></div>
+<p>
+Un fet que haurem de tenir en compte és que quan es dispara l’<em>event</em> <code>submit</code> serà el moment que podrem fer canvis en la informació que s’enviarà en el formulari, ja sigui afegint més dades,  validant les que hi ha o cancel·lant l’enviament si les dades no són correctes.
+</p>
+
+</div>
+
+<h4><a id="els_events_focus_blur_i_resize" >Els events &#039;focus&#039;, &#039;blur&#039; i &#039;resize&#039;</a></h4>
+<div class="level4">
+
+<p>
+Tal com mostra la <span class="tabref"><a href="#taula u4a1-07"><span>taula</span></a></span>, els <em>events</em> <code>focus</code> i <code>blur</code> són complementaris. 
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-07"><span>Taula: </span></a>Altres events destacables del DOM</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">focus</td><td class="col1">onfocus</td><td class="col2">Es dispara quan un element rep el <em>focus</em></td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">blur</td><td class="col1">onblur</td><td class="col2">Es dispara quan un element perd el <em>focus</em></td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">resize</td><td class="col1">onresize</td><td class="col2">Es dispara quan es canvia la mida de l’element</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Quan un element rep el <em>focus</em>, just abans l’element que el tenia dispara l’<em>event</em> <strong><code>blur</code></strong> i a continuació l’element que l’ha rebut dispara l’<em>event</em> <strong><code>focus</code></strong>; la seqüència serà la següent:
+</p>
+<ol>
+<li class="level1"><div class="li"> Cliquem un element que no té el focus</div>
+</li>
+<li class="level1"><div class="li"> L’element que té el <em>focus</em> dispara l’<em>event</em> <code>blur</code></div>
+</li>
+<li class="level1"><div class="li"> L’element que hem clicat rep el focus i dispara l’<em>event</em> <code>focus</code></div>
+</li>
+</ol>
+
+<p>
+Es pot veure en aquest exemple amb dos quadres de text:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Com es rep el focus?</p>
+<p>
+Les dues maneres més habituals per les quals un element rep el <em>focus</em> són: perquè s’ha clicat l’element o perquè s’ha premut la tecla de tabulació. Amb la tecla de tabulació es van recorrent tots els elements de la pàgina capaços de rebre el <em>focus</em>.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let text1 = document.getElementById('test1');</div></li><li class="li1"><div class="de1">  let text2 = document.getElementById('test2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  text1.onfocus = e =&gt; console.log(e.type, &quot;El primer quadre de text té el focus&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  text2.onfocus = e =&gt; console.log(e.type, &quot;El segon quadre de text té el focus&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  text1.onblur = e =&gt; console.log(e.type, &quot;El primer quadre de text ha perdut el focus&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  text2.onblur = e =&gt; console.log(e.type, &quot;El segon quadre de text ha perdut el focus&quot;);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;test1&quot; /&gt;</div></li><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;test2&quot; /&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LprqNz?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LprqNz?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/LprqNz?editors=1011</a>.
+</p>
+
+<p>
+Hi ha dos quadres de text, inicialment cap dels dos elements té el focus, així que no es dispara l’<em>event</em> focus de cap d’ells; i si anem alternant entre l’un i l’altre veurem a la consola:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>focus El primer quadre de text té el focus</code></div>
+</li>
+<li class="level1"><div class="li"> <code>blur El primer quadre de text ha perdut el focus</code></div>
+</li>
+<li class="level1"><div class="li"> <code>focus El segon quadre de text té el focus</code></div>
+</li>
+<li class="level1"><div class="li"> <code>blur El segon quadre de text ha perdut el focus</code></div>
+</li>
+<li class="level1"><div class="li"> etc.</div>
+</li>
+</ol>
+
+<p>
+Si cliquem a l’espai en blanc de la pàgina, es pot veure que es llença un últim <code>blur</code> quan el quadre de text perd el focus.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Els objectes window i document</p>
+<p>
+Els elements <code>window</code> i <code>document</code> no són propis de JavaScript sinó que els proporciona el navegador. L’objecte <code>document</code> representa el document <acronym title="HyperText Markup Language">HTML</acronym> i l’objecte <code>window</code>, la finestra on es mostra.
+</p>
+
+<p>
+A més a més, <code>document</code> és part de l’objecte <code>window</code> i és possible accedir-hi també com a <code>window.document</code> (encara que no té sentit fer-ho perquè podem accedir-hi directament com a <code>document</code>).
+</p>
+</div></div>
+<p>
+Només hi ha un element al qual podem registrar-nos com a observadors per l’<em>event</em> <strong><code>resize</code></strong>, i ser notificats d’alguna cosa, es tracta de l’element <code>window</code>, que representa la finestra del navegador on es mostra la pàgina.
+</p>
+
+<p>
+Vegem-ho en aquest exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div {</div></li><li class="li1"><div class="de1">    position:absolute;</div></li><li class="li1"><div class="de1">    top: 0;</div></li><li class="li1"><div class="de1">    bottom:0;</div></li><li class="li1"><div class="de1">    left:0;</div></li><li class="li1"><div class="de1">    right:0;</div></li><li class="li1"><div class="de1">    background-color:red</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  window.onresize = e =&gt; {</div></li><li class="li1"><div class="de1">    let width = window.innerWidth;</div></li><li class="li1"><div class="de1">    let height = window.innerHeight;</div></li><li class="li1"><div class="de1">    console.log(e.type, &quot;nova mida: &quot; + width + &quot;px x &quot; + height + &quot;px&quot;);</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.onresize = e =&gt; console.log(&quot;S'ha disparat l'esdeveniment resize del &lt;div&gt;!&quot;);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;test&quot;&gt;&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/meKvMQ?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/meKvMQ?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/meKvMQ?editors=1111</a>.
+</p>
+
+<p>
+Com deveu haver vist, no obtenim la nova mida a partir de l’<em>event</em> sinó que el traiem del mateix objecte <code>window</code>. Ho fem així perquè aquesta informació no ens la proporciona l’<em>event</em>, així que no hi ha cap altra manera de fer-ho.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+No tots els navegadors proporcionen aquesta informació de la mateixa manera, tot i que les versions actuals de Mozilla Firefox i Chrome sí que ho fan. Si volem assegurar-nos que obtenim la mida correcta, hem de fer una implementació més complexa tenint en compte les diferents opcions o recórrer a alguna llibreria com <strong>jQuery</strong>, que ja afegeix la nova mida dins de l’objecte <em>event</em>,
+</p>
+</div></div>
+<p>
+També deveu haver notat que tot i que la mida de l’element <code>div</code> sí que canvia (perquè ocupa tota la finestra), no es dispara l’<em>event</em> <code>resize</code>. Recordeu que aquest <em>event</em> només es dispara per l’objecte <code>window</code>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+No hi ha cap <em>event</em> que es dispari quan un element del document canvia de mida; per exemple, si no s’ha definit una mida fixa per a una imatge, quan es descarrega, canviarà la mida que té per la mida real, i aquest canvi no és detectable.
+</p>
+
+<p>
+L’<em>event</em> <strong><code>resize</code></strong> només es dispara quan canvia la mida de la finestra; és a dir, quan redimensionem la finestra o canviem l’amplada de la secció de les eines del desenvolupador, perquè només es considera com a finestra del navegador la secció on es mostra la pàgina web.
+</p>
+
+<p>
+Així que, en cas de necessitar fer aquestes comprovacions, l’única manera de fer-ho és <strong>crear un temporitzador</strong> que periòdicament comprovi la mida dels elements que ens interessi i, si ha canviat, reaccioni en conseqüència.
+</p>
+</div></div>
+</div>
+
+<h3><a id="events_d_html5_i_html5_media" >Events d&#039;HTML5 i HTML5 media</a></h3>
+<div class="level3">
+
+<p>
+Exposem aquí una llista d’<em>events</em> categoritzats com a HTML5 i HTML5 <em>media</em>, i només entrarem en detalls en aquells que presentin alguna peculiaritat. Comencem amb els tipus d’<em>events</em> generals que podeu trobar a la <span class="tabref"><a href="#taula u4a1-08"><span>taula</span></a></span>. 
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-08"><span>Taula: </span></a>Events d’HTML5 generals</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">beforeunload</td><td class="col1">onbeforeunload</td><td class="col2">Es dispara abans de descarregar la pàgina i ens permet cancel·lar l’operació</td>
+	</tr>
+</table></div>
+</div>
+<p>
+L’<em>event</em> <code>beforeunload</code> ens permet evitar que una pàgina sigui descarregada. Es dispara abans que l’<em>event</em> <code>unload</code> i, si dins de la funció que és notificada que s’ha disparat aquest <em>event</em> retornem un missatge, el mostrarà i demanarà confirmació abans de continuar.
+</p>
+
+<p>
+Vegem-ne un primer exemple molt senzill perquè quedi clar:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Trobareu més informació sobre l’<em>event</em> <code>beforeundload</code> en aquest mateix apartat.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  window.onbeforeunload = e =&gt; 'Estàs segur que vols abandonar la pàgina?';</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Recarrega la pàgina per veure el missatge de confirmació.&lt;/p&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/YyvgzM?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/YyvgzM?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/YyvgzM?editors=1010</a>.
+</p>
+
+<p>
+Si proveu de recarregar la pàgina, us mostrarà un missatge demanant confirmació abans de sortir. Tingueu en compte que als navegadors més moderns no es pot configurar el text del missatge i en surt un per defecte.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Segons la versió del navegador, <strong>el missatge pot ser que no es mostri</strong>, ja que el fet de mostrar o no el missatge de confirmació abans de sortir no forma part de l’especificació d’HTML5. Així doncs, hi ha navegadors com Chrome que mostren el missatge, mentre que d’altres com Mozilla Firefox no el mostren.
+</p>
+</div></div>
+<p>
+S’ha de tenir en compte que el valor que es retorna és irrellevant, perquè <strong>sempre que es retorni quelcom</strong> es mostrarà el diàleg, encara que sigui el valor <em>fals</em>.
+</p>
+
+<p>
+Comprovareu que això és cert amb aquest exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  window.onbeforeunload = e =&gt; false;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Recarrega la pàgina per veure el missatge de confirmació.&lt;/p&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XmYGbZ?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XmYGbZ?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XmYGbZ?editors=1010</a>.
+</p>
+
+<p>
+En canvi recordeu que, si no es retorna res, no es mostrarà el diàleg:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">window.onbeforeunload = function(e) {</div></li><li class="li1"><div class="de1">  console.log(&quot;No es mostra el diàleg&quot;);</div></li><li class="li1"><div class="de1">};</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;p&gt;Recarrega la pàgina, però no veuràs cap diàleg.&lt;/p&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ojyVXJ?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ojyVXJ?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ojyVXJ?editors=1011</a> (Recordeu que heu d’activar l’opció per preservar el <em>log</em> o s’esborrarà abans de carregar la pàgina següent).
+</p>
+
+<p>
+Això ens dóna molt de joc, perquè ens permet fer diverses coses, com comprovar si s’ha fet alguna modificació quan volem recarregar la pàgina o demanar confirmació només si s’han produït canvis, tal  com es pot veure en l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let comptador = 0;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.onclick = () =&gt; {</div></li><li class="li1"><div class="de1">    comptador++;</div></li><li class="li1"><div class="de1">    console.log(&quot;Comptador:&quot;, comptador);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  window.onbeforeunload = e =&gt; {</div></li><li class="li1"><div class="de1">    if (comptador&gt;0) {</div></li><li class="li1"><div class="de1">      return &quot;El comptador ha canviat, segur que vols sortir?&quot;;    </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;button id=&quot;test&quot;&gt;Augmenta comptador&lt;/button&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/pjKYjP?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/pjKYjP?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/pjKYjP?editors=1010</a>.
+</p>
+
+<p>
+Si proveu de recarregar la pàgina sense prémer el botó, no us demanarà confirmació perquè el comptador serà igual a 0; en canvi, en el moment en què el cliqueu, el comptador augmentarà i sí que us demanarà confirmació per recarregar la pàgina.
+</p>
+
+<p>
+Vegem un exemple de quan es dispara l’<em>event</em> <code>input</code> (vegeu la <span class="tabref"><a href="#taula u4a1-09"><span>taula</span></a></span>) amb un quadre de text:
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-09"><span>Taula: </span></a>Events d’HTML5 relacionats amb els formularis</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">input</td><td class="col1">oninput</td><td class="col2">Es dispara cada vegada que es produeix un canvi a l’element</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">invalid</td><td class="col1">oninvalid</td><td class="col2">Es dispara quan s’intenta enviar un formulari i l’element no compleix amb els requisits que s’han imposat</td>
+	</tr>
+</table></div>
+</div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let element = document.getElementById('test');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  element.addEventListener('input', e =&gt; console.log(&quot;S'han produït canvis al quadre de text&quot;, e));</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;input type=&quot;text&quot; id=&quot;test&quot;/&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gaKEPb?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gaKEPb?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/gaKEPb?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos que cada vegada que premeu una tecla o enganxeu, elimineu o retalleu el text, aquest <em>event</em> es dispara.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’<em>event</em> <code>input</code> és molt similar a <code>change</code>, però <code>input</code> es dispara quan es produeix qualsevol canvi, mentre que <code>change</code> només es dispara si el contingut ha canviat en perdre el focus. Així que <strong> l’<em>event</em> <code>input</code> es dispararà molt més sovint que <code>change</code></strong>.
+</p>
+</div></div>
+<p>
+S’ha de tenir en compte que no tots els elements disparen els <em>events</em> <code>input</code>, només ho fan aquells que tenen la propietat <code>contenteditable</code> i aquesta propietat té el valor de <em>cert</em>.
+</p>
+
+</div>
+
+<h4><a id="html5_media" >HTML5 media</a></h4>
+<div class="level4">
+
+<p>
+Amb HTML5 es van afegir molts elements per millorar la gestió d’elements multimèdia (àudio i vídeo), i, juntament amb aquests elements, es van afegir també una gran quantitat d’<em>events</em> que poden servir-nos per millorar-ne el control; vegeu a la <span class="tabref"><a href="#taula u4a1-10"><span>taula</span></a></span> un petit extracte d’aquests <em>events</em>:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+L’<em>event</em> <code>invalid</code> el veurem detalladament a l’apartat “Programació amb formularis”, junt amb la resta d’<em>events</em> relacionats amb els formularis.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-10"><span>Taula: </span></a>Events d’HTML5 media</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">canplay</td><td class="col1">oncanplay</td><td class="col2">Es dispara quan és possible començar la reproducció del recurs d’àudio o vídeo</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">ended</td><td class="col1">onended</td><td class="col2">Es dispara quan finalitza la reproducció del recurs</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">pause</td><td class="col1">onpause</td><td class="col2">Es dispara quan es posa en pausa la reproducció</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">play</td><td class="col1">onplay</td><td class="col2">Es dispara quan s’inicia la reproducció del recurs</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">waiting</td><td class="col1">onwaiting</td><td class="col2">Es dispara quan es pausa la reproducció perquè hi ha una falta temporal de dades (per exemple, si la reproducció és en <em>streaming</em> i encara no s’ha acabat de descarregar el recurs sencer)</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Com que el tractament d’elements multimèdia queda fora de l’abast d’aquests materials no en veurem cap exemple.
+</p>
+
+<p>
+Per acabar, és interessant saber que hi ha una sèrie d’<em>events</em> relacionats amb la funcionalitat <strong>Drag&amp;Drop</strong>, però no n’hem afegit detalls ni exemples perquè no està completament implementada de manera homogènia a tots els navegadors.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Drag&amp;Drop</p>
+<p>
+La funcionalitat Drag&amp;Drop ens permet arrossegar elements per reorganitzar-los a la pàgina, per exemple, per canviar l’ordre d’una sèrie de fotos. És recomanable fer servir llibreries com jQuery si necessitem aquesta funcionalitat, ja que ens permeten aplicar-la amb molt poc esforç.
+</p>
+</div></div>
+</div>
+
+<h3><a id="events_de_les_web_api_estandard" >Events de les Web API estàndard</a></h3>
+<div class="level3">
+
+<p>
+Encara que la llista de les Web <acronym title="Application Programming Interface">API</acronym> estàndard és força extensa, en aquesta secció ens centrarem a comentar els <em>events</em> relacionats amb algunes de les Web <acronym title="Application Programming Interface">API</acronym> més utilitzades. 
+</p>
+
+<p>
+Les quatre Web <acronym title="Application Programming Interface">API</acronym> que veurem són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>XMLHttpRequest</strong>: permet fer peticions asíncrones al servidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Web Storage</strong>: permet emmagatzemar dades de forma persistent al navegador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>WebSocket</strong>: permet crear una connexió TCP amb un servidor, per exemple, per crear una aplicació de xat o un joc multijugador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Web Workers</strong>: tot i que els navegadors no permeten fer programes que aprofitin les possibilitats multifil dels ordinadors amb més d’un processador, gràcies a aquesta <acronym title="Application Programming Interface">API</acronym> sí que és possible treballar amb programació multifil, creant tasques que es realitzaran de forma paral·lela sense bloquejar el fil principal de la interfície.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="api_xmlhttprequest" >API XMLHttpRequest</a></h4>
+<div class="level4">
+
+<p>
+Normalment, quan es realitza una petició via <strong>AJAX</strong>, el servidor ens retorna una resposta amb una sèrie de dades. Quan parlem de <em>descàrrega de dades</em> ens referim a aquestes dades (vegeu la <span class="tabref"><a href="#taula u4a1-11"><span>taula</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Programació multifil</p>
+<p>
+Programació que crea tasques que es realitzaran de forma paral·lela.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-11"><span>Taula: </span></a>Events de l’<acronym title="Application Programming Interface">API</acronym> XMLHttpRequest</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">abort</td><td class="col1">onabort</td><td class="col2">Es dispara quan es cancel·la la descàrrega de dades</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">error</td><td class="col1">onerror</td><td class="col2">Es dispara quan es produeix un error durant la descàrrega</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">load</td><td class="col1">onload</td><td class="col2">Es dispara quan finalitza la descàrrega amb èxit</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">loadend</td><td class="col1">onloadend</td><td class="col2">Es dispara quan s’atura la descàrrega, sigui quina sigui la raó (<code>error</code>, <code>abort</code> o <code>load</code>)</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">loadstart</td><td class="col1">onloadstart</td><td class="col2">Es dispara quan s’inicia la descàrrega de dades</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">readystatechange</td><td class="col1">onreadystatechange</td><td class="col2">Es dispara quan canvia la propietat <code>readyState</code>. Aquesta propietat és la que ens indica si s’ha completat amb èxit o no la petició.</td>
+	</tr>
+</table></div>
+</div>
+</div>
+
+<h4><a id="api_web_storage" >API Web Storage</a></h4>
+<div class="level4">
+
+<p>
+Aquest <acronym title="Application Programming Interface">API</acronym> permet guardar informació al navegador, de forma semblant a les galetes, però amb una capacitat d’emmagatzemage molt superior (vegeu la <span class="tabref"><a href="#taula u4a1-12"><span>taula</span></a></span>). S’ha de tenir en compte que aquest magatzem de dades és gestionat pel navegador i, per consegüent, si obriu la mateixa pàgina amb dos navegadors diferents, cadascun utilitzarà el seu magatzem independent.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-12"><span>Taula: </span></a>Events de l’<acronym title="Application Programming Interface">API</acronym> Web Storage</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">storage</td><td class="col1">onstorage</td><td class="col2">Es dispara quan hi ha canvis al magatzem de dades</td>
+	</tr>
+</table></div>
+</div>
+<p>
+Cal destacar que la detecció de canvis en el magatzem de dades no es dispara a la pestanya on es produeixen els canvis (ja que l’aplicació responsable de fer canvis ha de saber, forçosament, què ha canviat), sinó que aquests són detectat per altres pestanyes obertes al mateix navegador.
+</p>
+
+<p>
+Una altra peculiaritat és que, per escoltar els <em>events</em> del <code>Web Storage</code>, s’ha d’afegir la detecció d’<em>events</em> a l’objecte <code>window</code> i no pas al magatzem: <code>window.addEventListener(‘storage’, callback);</code>.
+</p>
+
+</div>
+
+<h4><a id="api_websocket" >API WebSocket</a></h4>
+<div class="level4">
+
+<p>
+Aquesta <acronym title="Application Programming Interface">API</acronym> ens permet connectar amb un servidor via TCP. És una opció relativament recent, ja que abans d’HTML5, això no era possible i s’havien de fer servir altres tecnologies, com Flash o Java (vegeu la <span class="tabref"><a href="#taula u4a1-13"><span>taula</span></a></span>). 
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-13"><span>Taula: </span></a>Events de l’<acronym title="Application Programming Interface">API</acronym> WebSocket</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">open</td><td class="col1">onopen</td><td class="col2">Es dispara quan s’estableix una connexió</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">close</td><td class="col1">onclose</td><td class="col2">Es dispara quan es tanca la connexió</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">message</td><td class="col1">onmessage</td><td class="col2">Es dispara quan es rep un missatge a través del WebSocket</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">error</td><td class="col1">error</td><td class="col2">Es dispara quan s’ha tancat la connexió amb perjudici, per exemple, amb pèrdua de dades</td>
+	</tr>
+</table></div>
+</div>
+</div>
+
+<h4><a id="api_web_workers" >API Web Workers</a></h4>
+<div class="level4">
+
+<p>
+L’<acronym title="Application Programming Interface">API</acronym> Web Workers només té un <em>event</em> propi que podem observar (vegeu la <span class="tabref"><a href="#taula u4a1-14"><span>taula</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Connexions TCP</p>
+<p>
+TCP és un protocol que permet establir connexions entre aplicacions client i servidor. En podeu trobar més informació al següent enllaç: <a href="https://ca.wikipedia.org/wiki/Transmission_Control_Protocol" class="urlextern" title="https://ca.wikipedia.org/wiki/Transmission_Control_Protocol"  rel="nofollow">www.goo.gl/Ibd0k3</a>.
+</p>
+</div></div><div class="ioctable ">
+<div class="titletable"><a name="taula u4a1-14"><span>Taula: </span></a>Events de l’<acronym title="Application Programming Interface">API</acronym> Web Workers</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Tipus</th><th class="col1">Operació</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">message</td><td class="col1">onmessage</td><td class="col2">Es dispara al <em>web worker</em> quan hi ha un missatge per comunicar a l’aplicació</td>
+	</tr>
+</table></div>
+</div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

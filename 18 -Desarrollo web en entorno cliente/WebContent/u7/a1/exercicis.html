@@ -1,0 +1,1263 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u7" class="parentnode"><p><a class="unit" href="../../../WebContent/u7/introduccio.html">7. Desenvolupament de casos pràctics</a></p><ul class="expander"><li id="u7introduccio"><a href="../../../WebContent/u7/introduccio.html">Introducció</a></li><li id="u7resum"><a href="../../../WebContent/u7/resum.html">Resum</a></li><li id="u7resultats"><a href="../../../WebContent/u7/resultats.html">Resultats d'aprenentatge</a></li><li id="u7referencies"><a href="../../../WebContent/u7/referencies.html">Referències</a></li><li id="u7a1" class="tocsection"><p id='u7a1continguts'><a class="section" href="../../../WebContent/u7/a1/continguts.html">Desenvolupament de casos pràctics</a><span class="buttonexp"></span></p><ul><li id="u7a1activitats"><a href="../../../WebContent/u7/a1/activitats.html">Activitats</a></li><li id="u7a1exercicis"><a href="../../../WebContent/u7/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u7a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_amb_nodejs">Desenvolupament amb Node.js</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#aplicacions_amb_la_biblioteca_leaflet">Aplicacions amb la biblioteca Leaflet</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_de_jocs_amb_html5">Desenvolupament de jocs amb HTML5</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament de casos pràctics</a></li><li><a href="continguts.html">Desenvolupament de casos pràctics</a></li><li>Exercicis d'autoavaluació</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="exercicis_d_autoavaluacio"> Exercicis d'autoavaluació </a></h1>
+    	
+<h2><a id="exercici_1" >Exercici 1</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_ae77b651766f08940bc70bd19a7b9326" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ El llenguatge emprat per programar a Node.js és JavaScript. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Node.js s’executa al navegador. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ A Node.js les funcions dels navegadors no són disponibles. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Node.js només funciona sota Windows. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,V,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_2" >Exercici 2</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_ba8cd187050761f4daaeddb0b0e49a93" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ L’ordre ‘nodejs -v’ mostra la versió de Node.js a Windows.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ L’ordre ‘npm -v’ mostra el llistat de mòduls instal·lats.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ L’ordre ‘nodejs programa.js’ executa el codi del fitxer ‘programa.js’. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ L’ordre ‘node -v’ mostra la versió de Node.js a Linux.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="3"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_3" >Exercici 3</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents: 
+</p>
+<div id="id_relations_13a4b32d68b643db36159212475d9f9f" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ El mòdul http: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">............................................................</option>
+<option value="sol_4">permet analitzar les cadenes de paràmetres d’una petició</option>
+<option value="sol_2">permet crear un servidor HTTP avançat</option>
+<option value="sol_1">permet crear un servidor HTTP simple</option>
+<option value="sol_5">permet crear un servidor de sòcols</option>
+<option value="sol_6">permet generar respostes XML</option>
+<option value="sol_3">permet llegir i desar fitxers</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ El mòdul express: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">............................................................</option>
+<option value="sol_4">permet analitzar les cadenes de paràmetres d’una petició</option>
+<option value="sol_2">permet crear un servidor HTTP avançat</option>
+<option value="sol_1">permet crear un servidor HTTP simple</option>
+<option value="sol_5">permet crear un servidor de sòcols</option>
+<option value="sol_6">permet generar respostes XML</option>
+<option value="sol_3">permet llegir i desar fitxers</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ El mòdul fs: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">............................................................</option>
+<option value="sol_4">permet analitzar les cadenes de paràmetres d’una petició</option>
+<option value="sol_2">permet crear un servidor HTTP avançat</option>
+<option value="sol_1">permet crear un servidor HTTP simple</option>
+<option value="sol_5">permet crear un servidor de sòcols</option>
+<option value="sol_6">permet generar respostes XML</option>
+<option value="sol_3">permet llegir i desar fitxers</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ El mòdul querystring: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">............................................................</option>
+<option value="sol_4">permet analitzar les cadenes de paràmetres d’una petició</option>
+<option value="sol_2">permet crear un servidor HTTP avançat</option>
+<option value="sol_1">permet crear un servidor HTTP simple</option>
+<option value="sol_5">permet crear un servidor de sòcols</option>
+<option value="sol_6">permet generar respostes XML</option>
+<option value="sol_3">permet llegir i desar fitxers</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="6"></input><input type="hidden" name="qsol" value="permet crear un servidor HTTP simple,permet crear un servidor HTTP avançat,permet llegir i desar fitxers,permet analitzar les cadenes de paràmetres d’una petició,permet crear un servidor de sòcols,permet generar respostes XML"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_4" >Exercici 4</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents referents al gestor de paquets npm: 
+</p>
+<div id="id_relations_39c07b0867ad7df1994c19bcc6cd3059" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Permet instal·lar nous mòduls: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_5">add</option>
+<option value="sol_1">install</option>
+<option value="sol_7">list</option>
+<option value="sol_4">ls</option>
+<option value="sol_6">purge</option>
+<option value="sol_3">remove</option>
+<option value="sol_2">update</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Permet actualitzar els mòduls instal·lats: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_5">add</option>
+<option value="sol_1">install</option>
+<option value="sol_7">list</option>
+<option value="sol_4">ls</option>
+<option value="sol_6">purge</option>
+<option value="sol_3">remove</option>
+<option value="sol_2">update</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Permet eliminar un mòdul instal·lat: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_5">add</option>
+<option value="sol_1">install</option>
+<option value="sol_7">list</option>
+<option value="sol_4">ls</option>
+<option value="sol_6">purge</option>
+<option value="sol_3">remove</option>
+<option value="sol_2">update</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Permet llistar tots els mòduls: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_5">add</option>
+<option value="sol_1">install</option>
+<option value="sol_7">list</option>
+<option value="sol_4">ls</option>
+<option value="sol_6">purge</option>
+<option value="sol_3">remove</option>
+<option value="sol_2">update</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="install,update,remove,ls,add,purge,list"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_5" >Exercici 5</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_c17377fe1e29538c931e3df797430159" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ Node.js permet utilitzar eines des de la línia d’ordres a més de crear servidors <select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_1">asíncrons</option>
+<option value="sol_5">dinàmics</option>
+<option value="sol_7">editors</option>
+<option value="sol_6">estàtics</option>
+<option value="sol_4">precompiladors</option>
+<option value="sol_3">processadors</option>
+<option value="sol_2">síncrons</option>
+</select> (servidors web o serveis web REST, per exemple) i <select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_1">asíncrons</option>
+<option value="sol_5">dinàmics</option>
+<option value="sol_7">editors</option>
+<option value="sol_6">estàtics</option>
+<option value="sol_4">precompiladors</option>
+<option value="sol_3">processadors</option>
+<option value="sol_2">síncrons</option>
+</select> (com sales de xat o jocs multijugador).
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Hi ha moltes eines basades en Node.js que els desenvolupadors web fan servir cada dia, com per exemple: <select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_1">asíncrons</option>
+<option value="sol_5">dinàmics</option>
+<option value="sol_7">editors</option>
+<option value="sol_6">estàtics</option>
+<option value="sol_4">precompiladors</option>
+<option value="sol_3">processadors</option>
+<option value="sol_2">síncrons</option>
+</select> de JavaScript, <select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_1">asíncrons</option>
+<option value="sol_5">dinàmics</option>
+<option value="sol_7">editors</option>
+<option value="sol_6">estàtics</option>
+<option value="sol_4">precompiladors</option>
+<option value="sol_3">processadors</option>
+<option value="sol_2">síncrons</option>
+</select> de <acronym title="Cascading Style Sheets">CSS</acronym> i els automatitzadors de tasques.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_6" >Exercici 6</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_0677b676d406775f9d015ff8a9b75668" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Node.js permet crear servidors que implementen mecanismes CORS. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Els servidors creats amb Node.js només admeten els mètodes ‘GET’ i ‘POST’. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ No és possible determinar l’<acronym title="Uniform Resource Locator">URL</acronym> a través del qual s’ha accedit a un servidor amb Node.js. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Node.js no permet la creació de servidors web avançats. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,F,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_7" >Exercici 7</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_d88111977612b9623ecb94c30eb71c04" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ El mètode ‘POST’ s’utilitza per enviar peticions de creació. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El mètode ‘GET’ s’utilitza per enviar peticions d’eliminació.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ No hi ha diferència entre la utilització dels mètodes ‘PATCH’ i ‘PUT’.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ El mètode ‘DELETE’ no és admès pels servidors creats amb Node.js.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_8" >Exercici 8</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents referents als mètodes HTTP: 
+</p>
+<div id="id_relations_e7fd91fa35386dd04edfacc511523e8a" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Utilitzat per rebre dades: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_5">DELETE</option>
+<option value="sol_1">GET</option>
+<option value="sol_6">NEW</option>
+<option value="sol_3">PATCH</option>
+<option value="sol_2">POST</option>
+<option value="sol_4">PUT</option>
+<option value="sol_8">REMOVE</option>
+<option value="sol_7">UPDATE</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Utilitzat per afegir dades:  
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_5">DELETE</option>
+<option value="sol_1">GET</option>
+<option value="sol_6">NEW</option>
+<option value="sol_3">PATCH</option>
+<option value="sol_2">POST</option>
+<option value="sol_4">PUT</option>
+<option value="sol_8">REMOVE</option>
+<option value="sol_7">UPDATE</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Utilitzat per modificar dades: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_5">DELETE</option>
+<option value="sol_1">GET</option>
+<option value="sol_6">NEW</option>
+<option value="sol_3">PATCH</option>
+<option value="sol_2">POST</option>
+<option value="sol_4">PUT</option>
+<option value="sol_8">REMOVE</option>
+<option value="sol_7">UPDATE</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Utilitzat per reemplaçar dades: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_5">DELETE</option>
+<option value="sol_1">GET</option>
+<option value="sol_6">NEW</option>
+<option value="sol_3">PATCH</option>
+<option value="sol_2">POST</option>
+<option value="sol_4">PUT</option>
+<option value="sol_8">REMOVE</option>
+<option value="sol_7">UPDATE</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ Utilitzat per eliminar dades: 
+</p>
+</td><td><select name="sol_5"><option value="sol_0">....................</option>
+<option value="sol_5">DELETE</option>
+<option value="sol_1">GET</option>
+<option value="sol_6">NEW</option>
+<option value="sol_3">PATCH</option>
+<option value="sol_2">POST</option>
+<option value="sol_4">PUT</option>
+<option value="sol_8">REMOVE</option>
+<option value="sol_7">UPDATE</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="8"></input><input type="hidden" name="qsol" value="GET,POST,PATCH,PUT,DELETE,NEW,UPDATE,REMOVE"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_9" >Exercici 9</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_54c5a73f07d393312a0d3a56c6bf1808" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ El mòdul <select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_6">ajax</option>
+<option value="sol_4">fs</option>
+<option value="sol_5">http</option>
+<option value="sol_7">querystring</option>
+<option value="sol_1">socket.io</option>
+<option value="sol_2">sòcols</option>
+<option value="sol_3">usuaris</option>
+</select> permet crear servidors utilitzant <select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_6">ajax</option>
+<option value="sol_4">fs</option>
+<option value="sol_5">http</option>
+<option value="sol_7">querystring</option>
+<option value="sol_1">socket.io</option>
+<option value="sol_2">sòcols</option>
+<option value="sol_3">usuaris</option>
+</select>. Aquests servidors permeten la connexió simultània de múltiples <select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_6">ajax</option>
+<option value="sol_4">fs</option>
+<option value="sol_5">http</option>
+<option value="sol_7">querystring</option>
+<option value="sol_1">socket.io</option>
+<option value="sol_2">sòcols</option>
+<option value="sol_3">usuaris</option>
+</select>.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Gràcies al mòdul <select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_6">ajax</option>
+<option value="sol_4">fs</option>
+<option value="sol_5">http</option>
+<option value="sol_7">querystring</option>
+<option value="sol_1">socket.io</option>
+<option value="sol_2">sòcols</option>
+<option value="sol_3">usuaris</option>
+</select> és possible llegir i escriure fitxers al servidor.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_10" >Exercici 10</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_35ddf081f6bc22c779c499cb68ff7f71" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Les connexions a servidors mitjançant sòcols són síncrones. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Els xats i jocs multijugador són exemples d’aplicacions que utilitzen connexions amb sòcols. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La implementació d’un servidor de sòcols amb Node.js és molt complexa. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ El mòdul socket.io forma part dels mòduls propis de Node.js. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,V,F,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_11" >Exercici 11</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_3c4131414bc6d1715a2af4873b3479fa" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Per implementar el client d’una aplicació amb ‘socket.io’ cal utilitzar l’<acronym title="Application Programming Interface">API</acronym> WebSockets directament.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El mòdul socket.io utilitza un sistema d’<em>events</em> per gestionar la comunicació entre els clients i el servidor. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Només poden connectar-se dos usuaris simultàniament a un servidor de Node.js.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ El mètode <code>socol.broadcast.emit()</code> permet enviar un missatge a tots els usuaris, inclòs al client que l’envia.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+<p>
+
+<h2><a id="exercici_12" >Exercici 12</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents referents a la biblioteca Leaflet: 
+</p>
+<div id="id_relations_f192996d1619d19f7bdabb78d6b9437c" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Centra el mapa en unes coordenades i zoom concretes: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_8">addTo</option>
+<option value="sol_4">bindPopUp</option>
+<option value="sol_7">map</option>
+<option value="sol_3">marker</option>
+<option value="sol_6">maxZoom</option>
+<option value="sol_5">openPopUp</option>
+<option value="sol_1">setView</option>
+<option value="sol_2">tileLayer</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Aplica un format de tessel·la al mapa: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_8">addTo</option>
+<option value="sol_4">bindPopUp</option>
+<option value="sol_7">map</option>
+<option value="sol_3">marker</option>
+<option value="sol_6">maxZoom</option>
+<option value="sol_5">openPopUp</option>
+<option value="sol_1">setView</option>
+<option value="sol_2">tileLayer</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Marca una localització al mapa: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_8">addTo</option>
+<option value="sol_4">bindPopUp</option>
+<option value="sol_7">map</option>
+<option value="sol_3">marker</option>
+<option value="sol_6">maxZoom</option>
+<option value="sol_5">openPopUp</option>
+<option value="sol_1">setView</option>
+<option value="sol_2">tileLayer</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Conté la informació que es mostrarà al fer clic al marcador: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_8">addTo</option>
+<option value="sol_4">bindPopUp</option>
+<option value="sol_7">map</option>
+<option value="sol_3">marker</option>
+<option value="sol_6">maxZoom</option>
+<option value="sol_5">openPopUp</option>
+<option value="sol_1">setView</option>
+<option value="sol_2">tileLayer</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ Obre automàticament la finestra d’informació d’un marcador: 
+</p>
+</td><td><select name="sol_5"><option value="sol_0">....................</option>
+<option value="sol_8">addTo</option>
+<option value="sol_4">bindPopUp</option>
+<option value="sol_7">map</option>
+<option value="sol_3">marker</option>
+<option value="sol_6">maxZoom</option>
+<option value="sol_5">openPopUp</option>
+<option value="sol_1">setView</option>
+<option value="sol_2">tileLayer</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="8"></input><input type="hidden" name="qsol" value="setView,tileLayer,marker,bindPopUp,openPopUp,maxZoom,map,addTo"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+</p>
+
+<p>
+
+<h2><a id="exercici_13" >Exercici 13</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_4d93d856e0103cb2de3bbace0f28459a" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ La biblioteca Leaflet permet la creació de <select name="sol_1"><option value="sol_0">.........................</option>
+<option value="sol_3">finestres d’informació</option>
+<option value="sol_5">funcionalitats</option>
+<option value="sol_1">mapes</option>
+<option value="sol_2">marcadors</option>
+<option value="sol_6">mètodes</option>
+<option value="sol_8">quadres de diàleg</option>
+<option value="sol_4">tessel·les</option>
+<option value="sol_7">àrees</option>
+</select> incrustats a una aplicació web. Aquests poden contenir múltiples <select name="sol_2"><option value="sol_0">.........................</option>
+<option value="sol_3">finestres d’informació</option>
+<option value="sol_5">funcionalitats</option>
+<option value="sol_1">mapes</option>
+<option value="sol_2">marcadors</option>
+<option value="sol_6">mètodes</option>
+<option value="sol_8">quadres de diàleg</option>
+<option value="sol_4">tessel·les</option>
+<option value="sol_7">àrees</option>
+</select> que en ser clicats mostren <select name="sol_3"><option value="sol_0">.........................</option>
+<option value="sol_3">finestres d’informació</option>
+<option value="sol_5">funcionalitats</option>
+<option value="sol_1">mapes</option>
+<option value="sol_2">marcadors</option>
+<option value="sol_6">mètodes</option>
+<option value="sol_8">quadres de diàleg</option>
+<option value="sol_4">tessel·les</option>
+<option value="sol_7">àrees</option>
+</select>.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Aquesta biblioteca conté una gran quantitat de tipus de <select name="sol_4"><option value="sol_0">.........................</option>
+<option value="sol_3">finestres d’informació</option>
+<option value="sol_5">funcionalitats</option>
+<option value="sol_1">mapes</option>
+<option value="sol_2">marcadors</option>
+<option value="sol_6">mètodes</option>
+<option value="sol_8">quadres de diàleg</option>
+<option value="sol_4">tessel·les</option>
+<option value="sol_7">àrees</option>
+</select> i moltes altres <select name="sol_5"><option value="sol_0">.........................</option>
+<option value="sol_3">finestres d’informació</option>
+<option value="sol_5">funcionalitats</option>
+<option value="sol_1">mapes</option>
+<option value="sol_2">marcadors</option>
+<option value="sol_6">mètodes</option>
+<option value="sol_8">quadres de diàleg</option>
+<option value="sol_4">tessel·les</option>
+<option value="sol_7">àrees</option>
+</select> que permeten als desenvolupadors ajustar-la a les seves necessitats.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+</p>
+
+<p>
+
+<h2><a id="exercici_14" >Exercici 14</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_7ecd21d147c1d69e6bdea394b1f510a8" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Leaflet permet usar vàries capes de tessel·les en el mateix mapa. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Per utilitzar la biblioteca Leaflet es requereix una clau vinculada al desenvolupador. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Els mapes generats amb Leaflet són estàtics. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Els mapes generats amb Leaflet només poden mostrar un marcador en cada moment. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,F,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+</p>
+
+</div>
+
+<h2><a id="exercici_15" >Exercici 15</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_c84859614706b1e6df2626386741f001" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Totes les fonts de dades obertes poden utilitzar-se mitjançant AJAX.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Les dades obertes només poden obtenir-se amb format XML.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Per accedir a dades obertes cal demanar permís a l’organització que les gestiona.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Per poder utilitzar una font de dades obertes ha de ser una que implementi mecanismes CORS o JSONP. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="4"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_16" >Exercici 16</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents referents als motors de joc: 
+</p>
+<div id="id_relations_ffd3d9b73bbf46ad1713b763dc34eb43" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ És un motor de jocs de tercers que es programa amb C# però exporta a WebAssembly: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_2">Construct 2</option>
+<option value="sol_4">Flash</option>
+<option value="sol_3">IOC Invaders</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_1">Unity</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ És un motor de jocs HTML5 de tercers: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_2">Construct 2</option>
+<option value="sol_4">Flash</option>
+<option value="sol_3">IOC Invaders</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_1">Unity</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ És un joc HTML5 que fa servir un motor propi: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_2">Construct 2</option>
+<option value="sol_4">Flash</option>
+<option value="sol_3">IOC Invaders</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_1">Unity</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Tecnologia que s’utilitzava per desenvolupar jocs però que ara és inservible: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_2">Construct 2</option>
+<option value="sol_4">Flash</option>
+<option value="sol_3">IOC Invaders</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_1">Unity</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="Unity,Construct 2,IOC Invaders,Flash,Mario Bros,Unreal Engine,JavaScript"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_17" >Exercici 17</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_585ee23e4213b11f8de1c6bdaafb644f" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Es pot utilitzar <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> per afegir efectes a més de dibuixar al <em>canvas</em>.  
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El <em>canvas</em> només admet dibuixar imatges en 2 dimensions.  
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ El nombre de <em>frames</em> per segon recomanat per desenvolupar jocs fluids és 30 FPS. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ És possible programar jocs HTML5 en 3D però es recomana utilitzar motors de tercers. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_18" >Exercici 18</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_9595761a1de8d129b9cd4ef4fe2a065b" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ És important <select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_3">afegir</option>
+<option value="sol_4">eliminar</option>
+<option value="sol_1">encapsular</option>
+<option value="sol_2">fer modificacions</option>
+<option value="sol_6">ofuscar</option>
+<option value="sol_5">publicar</option>
+</select> el joc per evitar que els jugadors puguin <select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_3">afegir</option>
+<option value="sol_4">eliminar</option>
+<option value="sol_1">encapsular</option>
+<option value="sol_2">fer modificacions</option>
+<option value="sol_6">ofuscar</option>
+<option value="sol_5">publicar</option>
+</select> dinàmicament.
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Es pot utilitzar <acronym title="HyperText Markup Language">HTML</acronym> per <select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_3">afegir</option>
+<option value="sol_4">eliminar</option>
+<option value="sol_1">encapsular</option>
+<option value="sol_2">fer modificacions</option>
+<option value="sol_6">ofuscar</option>
+<option value="sol_5">publicar</option>
+</select> informació extra del joc, com per exemple: les puntuacions, els crèdits i el títol.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_19" >Exercici 19</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents referents als gestors de recursos: 
+</p>
+<div id="id_vf_14b4c90652192684dae9a284a11aa712" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Tant les dades com els recursos es gestionen de la mateixa manera. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Cal implementar un gestor de descàrregues per controlar quan han finalitzat de descarregar els recursos. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Els dipòsits de dades acostumen a fer operacions extres sobre les dades que emmagatzemen en desar-les o retornar-les. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Les dades emmagatzemades en un dipòsit són privades i només pot accedir-se a través d’un mètode públic com ‘get’. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="F,V,V,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_20" >Exercici 20</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_a9336fdeed31c633855a3067ebb1612f" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Tots els navegadors implementen de la mateixa manera la resposta del teclat.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ És imprescindible implementar un gestor d’entrada per normalitzar les entrades del teclat i el ratolí. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Tots els navegadors implementen de la mateixa manera la resposta del ratolí.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ No és possible calcular la posició del cursor en clicar sobre un <em>canvas</em>.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_21" >Exercici 21</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Relacioneu els conceptes següents referents als elements representables al joc <em>IOC-Invaders</em>: 
+</p>
+<div id="id_relations_fa5e63f19a9395fa9542d6b3e5cbb3b1" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Classe que conté la informació sobre el fons a mostrar en el joc: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_1">Background</option>
+<option value="sol_3">Col·lisió</option>
+<option value="sol_2">GameObject</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_4">Sprite</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ Classe pare de les naus, explosions i bales: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_1">Background</option>
+<option value="sol_3">Col·lisió</option>
+<option value="sol_2">GameObject</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_4">Sprite</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Efecte provocat quan dos objectes se superposen: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_1">Background</option>
+<option value="sol_3">Col·lisió</option>
+<option value="sol_2">GameObject</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_4">Sprite</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Classe que emmagatzema una o més imatges que poden ser animades: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_1">Background</option>
+<option value="sol_3">Col·lisió</option>
+<option value="sol_2">GameObject</option>
+<option value="sol_7">JavaScript</option>
+<option value="sol_5">Mario Bros</option>
+<option value="sol_4">Sprite</option>
+<option value="sol_6">Unreal Engine</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="Background,GameObject,Col·lisió,Sprite,Mario Bros,Unreal Engine,JavaScript"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</p>
+
+</div>
+
+<h2><a id="exercici_22" >Exercici 22</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_7305679e2e43dc22c086b287496a5f3d" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ El mètode ‘update’ dels objectes de joc és invocat a cada iteració del bucle principal. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ La funci´ó  ‘window.requestAnimationFrame’ és invocada a cada iteració del bucle principal. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Un ‘sprite’ ha d’estar format obligatòriament per més d’una imatge. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ L’ordre en què es dibuixen les capes del fons és indiferent. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Estructurar bé la jerarquia d’objectes permet evitar la duplicació de codi. 
+</p>
+</td><td><input type="radio" value="V" name="sol_5"></input></td><td><input type="radio" value="F" name="sol_5"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="5"></input><input type="hidden" name="qsol" value="F,V,F,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_23" >Exercici 23</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_1bbd8ffd183b4f2d4d10d05fe15cc7cf" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Per determinar si una imatge ha acabat de descarregar-se, s’ha de detectar l’<em>event</em> ‘finished’.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El gestor de recursos al joc <em>IOC Invaders</em> realitza també la funció de gestor de descàrregues. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Només cal crear un únic element ‘audio’ per cada so diferent.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ La propietat ‘loop’ dels recursos d’àudio permet establir el volum.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_24" >Exercici 24</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_291add5e30985a0fa0766c9cbdd99df2" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Els <em>pools</em> permeten reutilitzar els objectes i evitar crides innecessàries al recol·lector de brossa. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Els navegadors moderns no tenen problemes de memòria. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ El rendiment de l’aplicació quan s’activa el recol·lector de brossa no es veu afectat. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Un <em>pool</em> es crea amb una quantitat d’objectes igual a la màxima quantitat que es pugui requerir simultàniament. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="V,F,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_25" >Exercici 25</a></h2>
+<div class="level2">
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_2c4cf873739fbe04ccc916e04e73b513" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Tots els motors de joc tenen les mateixes funcionalitats.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El cicle de vida i el bucle principal del joc és controlat pel motor del joc. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La interfície d’usuari del joc <em>IOC Invaders</em> només s’encarrega d’augmentar la puntuació del jugador.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ L’ordre en què es carreguen les dades a JavaScript és indiferent perquè les crides AJAX són síncrones i sempre es carreguen en el mateix ordre.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_26" >Exercici 26</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents referents als motors de joc: 
+</p>
+<div id="id_relations_47abb6402c85e19917df1b46fb6f6078" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Acció que es porta a terme inicialment per poder configurar les entitats i els nivells: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">.........................</option>
+<option value="sol_2">Bucle principal del joc</option>
+<option value="sol_1">Càrrega de dades</option>
+<option value="sol_4">Detecció de col·lisions</option>
+<option value="sol_5">Entrada de teclat</option>
+<option value="sol_6">Inici de l’aplicació</option>
+<option value="sol_3">Interfície d’usuari</option>
+<option value="sol_7">Pintar el fons</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ És invocat abans de repintar el <em>canvas</em>: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">.........................</option>
+<option value="sol_2">Bucle principal del joc</option>
+<option value="sol_1">Càrrega de dades</option>
+<option value="sol_4">Detecció de col·lisions</option>
+<option value="sol_5">Entrada de teclat</option>
+<option value="sol_6">Inici de l’aplicació</option>
+<option value="sol_3">Interfície d’usuari</option>
+<option value="sol_7">Pintar el fons</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Permet mostrar missatges, enfosquir la pantalla en canviar de nivell i actualitzar la puntuació: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">.........................</option>
+<option value="sol_2">Bucle principal del joc</option>
+<option value="sol_1">Càrrega de dades</option>
+<option value="sol_4">Detecció de col·lisions</option>
+<option value="sol_5">Entrada de teclat</option>
+<option value="sol_6">Inici de l’aplicació</option>
+<option value="sol_3">Interfície d’usuari</option>
+<option value="sol_7">Pintar el fons</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ Encarregat de comprovar si alguna bala ha impactat o una nau ha xocat: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">.........................</option>
+<option value="sol_2">Bucle principal del joc</option>
+<option value="sol_1">Càrrega de dades</option>
+<option value="sol_4">Detecció de col·lisions</option>
+<option value="sol_5">Entrada de teclat</option>
+<option value="sol_6">Inici de l’aplicació</option>
+<option value="sol_3">Interfície d’usuari</option>
+<option value="sol_7">Pintar el fons</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="Càrrega de dades,Bucle principal del joc,Interfície d’usuari,Detecció de col·lisions,Entrada de teclat,Inici de l’aplicació,Pintar el fons"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_27" >Exercici 27</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents: 
+</p>
+<div id="id_vf_9334f4d2918e8b4c4ff4ffef89d45f76" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Els fitxers de dades del joc <em>IOC Invaders</em> es troben en format XML. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Utilitzar fitxers de dades amb el contingut dels nivells i entitats permet ampliar el joc externament. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La detecció de col·lisions utilitzant rectangles és la menys costosa pel processador. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Els fitxers de dades en format JSON no permeten la utilització d’<em>arrays</em>. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="F,V,V,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u7/a1/activitats.html">Activitats</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

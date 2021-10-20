@@ -1,0 +1,1250 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Introducció als llenguatges de servidor</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Entorns a punt per desenvolupar aplicacions web</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_webhola_mon">El vostre primer projecte web: 'Hola, Món'</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_phphola_mon">El vostre primer projecte PHP: 'Hola, Món'</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a2annexos"><a href="../../../WebContent/u1/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_amb_php">Descrivint una persona amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_php">Gestionant un hotel amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_a_jsp_jstl">Descrivint una persona a JSP, JSTL</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_jsp">Gestionant un hotel amb JSP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Introducció als llenguatges de servidor</a></li><li>Entorns a punt per desenvolupar aplicacions web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="entorns_a_punt_per_desenvolupar_aplicacions_web"> Entorns a punt per desenvolupar aplicacions web </a></h1>
+    	
+<p>
+Java és important. Els desenvolupadors web necessiten un coneixement exhaustiu del llenguatge que fa que les aplicacions web cobrin vida. Per poder començar a codificar en aquest llenguatge és important disposar d’un entorn de desenvolupament on pugueu realitzar totes les tasques associades a la programació:
+</p>
+<ul>
+<li class="level1"><div class="li"> editar codi</div>
+</li>
+<li class="level1"><div class="li"> compilar-lo</div>
+</li>
+<li class="level1"><div class="li"> executar-lo</div>
+</li>
+<li class="level1"><div class="li"> depurar-lo</div>
+</li>
+</ul>
+
+<p>
+L’IDE (<em>Integrated Development Environment</em>) Netbeans us permet, d’una manera senzilla, elaborar programes complexos portant a terme totes les tasques abans esmentades. Per això, us animem a fer la primera activitat que tracta la instal·lació del IDE NetBeans (<span class="figref"><a href="#fig1.0X"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.0X"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+IDE Netbeans
+
+</figcaption><img src="../media/uf1-a1-netbeans.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En aquesta unitat posareu les bases de l’aprenentatge d’aplicacions web amb Java, tot abordant els següents continguts:
+</p>
+<ul>
+<li class="level1"><div class="li"> Com crear un projecte web amb NetBeans i Maven. </div>
+</li>
+<li class="level1"><div class="li"> Quina diferència hi ha entre un servidor web i un servidor d’aplicacions.</div>
+</li>
+<li class="level1"><div class="li"> Com interacciona un navegador amb el servidor web.</div>
+</li>
+<li class="level1"><div class="li"> El protocol HTTP.</div>
+</li>
+<li class="level1"><div class="li"> Els diferents tipus de tecnologies que poden aparèixer en una aplicació web.</div>
+</li>
+</ul>
+
+<p>
+A més a més, es donarà una pinzellada al llenguatge de programació PHP, tot estudiant els següents aspectes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Com instal·lar i configurar un servidor PHP.</div>
+</li>
+<li class="level1"><div class="li"> Com configurar NetBeans per treballar amb un servidor PHP remot.</div>
+</li>
+<li class="level1"><div class="li"> Com interacciona un navegador web amb el servidor PHP.</div>
+</li>
+<li class="level1"><div class="li"> Com crear una pàgina senzilla amb aquest llenguatge.</div>
+</li>
+</ul>
+
+<p>
+Tots els conceptes tractats s’explicaran sempre partint de l’exemple. Quan acabeu aquesta unitat estareu preparats per endinsar-vos en la programació amb Java Servlets.
+</p>
+
+<h2><a id="el_vostre_primer_projecte_webhola_mon" >El vostre primer projecte web: &#039;Hola, Món&#039;</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat veureu com crear un projecte web amb Netbeans utilitzant Maven, què és un servidor web, com interaccionen els navegadors amb els servidors web, quins tipus de servidors existeixen i quines tecnologies s’executen al servidor i quines al navegador.
+</p>
+
+</div>
+
+<h3><a id="creacio_d_un_projecte_amb_maven" >Creació d&#039;un projecte amb Maven</a></h3>
+<div class="level3">
+
+<p>
+Utilitzareu Maven per administrar els projectes que creareu al llarg d’aquest mòdul. Maven és una eina d’administració de projectes que engloba tot el cicle de vida d’una aplicació, des de la seva creació fins als binaris amb el quals distribuir el projecte.
+</p>
+
+<p>
+Per crear un nou projecte amb Maven i Netbeans és molt senzill, només heu d’anar a <em>File / New Project / Maven / Web Application</em> (vegeu la figura <span class="figref"><a href="#fig1.0"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.0"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’una aplicació web utilitzant Maven
+
+</figcaption><img src="../media/maven-new-project.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu posar com a nom de projecte <em>Hola, Món</em>, i com a identificador de grup <em>cat.xtec.ioc</em>, tal com podeu veure a la figura <span class="figref"><a href="#fig1.0.1"><span>figura</span></a></span>
+</p>
+<div class="iocfigure"><a name="fig1.0.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Propietats de Maven
+
+</figcaption><img src="../media/maven-properties.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, a l’última pantalla escollireu <strong>GlassFish</strong> com a servidor d’aplicacions.
+</p>
+
+<p>
+Un projecte Maven es defineix mitjançant un fitxer anomenat <strong>POM</strong> (<em>Project Object Model</em>). Aquest fitxer s’utilitza per definir les instruccions per compilar el projecte, les dependències del projecte (llibreria), etc. En Maven, l’execució d’un fitxer POM sempre genera un <strong>artefacte</strong>. Aquest artefacte pot ser qualsevol cosa: un fitxer <em>jar</em>, un fitxer <em>swf</em> de Flash, un fitxer <em>zip</em> o el mateix fitxer <em>pom</em>.
+</p>
+
+<p>
+Un exemple de fitxer POM podeu trobar-lo a la carpeta <em>ProjectFiles</em>:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;cat.xtec.ioc&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;holamon&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;1.0&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;packaging&gt;war&lt;/packaging&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;name&gt;holamon&lt;/name&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;properties&gt;</div></li><li class="li1"><div class="de1">        &lt;endorsed.dir&gt;${project.build.directory}/endorsed&lt;/endorsed.dir&gt;</div></li><li class="li1"><div class="de1">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div></li><li class="li1"><div class="de1">    &lt;/properties&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;dependencies&gt;</div></li><li class="li1"><div class="de1">        &lt;dependency&gt;</div></li><li class="li1"><div class="de1">            &lt;groupId&gt;javax&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">            &lt;artifactId&gt;javaee-web-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">            &lt;version&gt;7.0&lt;/version&gt;</div></li><li class="li1"><div class="de1">            &lt;scope&gt;provided&lt;/scope&gt;</div></li><li class="li1"><div class="de1">        &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependencies&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;build&gt;</div></li><li class="li1"><div class="de1">        &lt;plugins&gt;</div></li><li class="li1"><div class="de1">            &lt;plugin&gt;</div></li><li class="li1"><div class="de1">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">                &lt;version&gt;3.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">                &lt;configuration&gt;</div></li><li class="li1"><div class="de1">                    &lt;source&gt;1.7&lt;/source&gt;</div></li><li class="li1"><div class="de1">                    &lt;target&gt;1.7&lt;/target&gt;</div></li><li class="li1"><div class="de1">                    &lt;compilerArguments&gt;</div></li><li class="li1"><div class="de1">                        &lt;endorseddirs&gt;${endorsed.dir}&lt;/endorseddirs&gt;</div></li><li class="li1"><div class="de1">                    &lt;/compilerArguments&gt;</div></li><li class="li1"><div class="de1">                &lt;/configuration&gt;</div></li><li class="li1"><div class="de1">            &lt;/plugin&gt;</div></li><li class="li1"><div class="de1">            &lt;plugin&gt;</div></li><li class="li1"><div class="de1">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">                &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">                &lt;version&gt;2.3&lt;/version&gt;</div></li><li class="li1"><div class="de1">                &lt;configuration&gt;</div></li><li class="li1"><div class="de1">                    &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;</div></li><li class="li1"><div class="de1">                &lt;/configuration&gt;</div></li><li class="li1"><div class="de1">            &lt;/plugin&gt;</div></li><li class="li1"><div class="de1">            &lt;plugin&gt;</div></li><li class="li1"><div class="de1">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">                &lt;version&gt;2.6&lt;/version&gt;</div></li><li class="li1"><div class="de1">                &lt;executions&gt;</div></li><li class="li1"><div class="de1">                    &lt;execution&gt;</div></li><li class="li1"><div class="de1">                        &lt;phase&gt;validate&lt;/phase&gt;</div></li><li class="li1"><div class="de1">                        &lt;goals&gt;</div></li><li class="li1"><div class="de1">                            &lt;goal&gt;copy&lt;/goal&gt;</div></li><li class="li1"><div class="de1">                        &lt;/goals&gt;</div></li><li class="li1"><div class="de1">                        &lt;configuration&gt;</div></li><li class="li1"><div class="de1">                            &lt;outputDirectory&gt;${endorsed.dir}&lt;/outputDirectory&gt;</div></li><li class="li1"><div class="de1">                            &lt;silent&gt;true&lt;/silent&gt;</div></li><li class="li1"><div class="de1">                            &lt;artifactItems&gt;</div></li><li class="li1"><div class="de1">                                &lt;artifactItem&gt;</div></li><li class="li1"><div class="de1">                                    &lt;groupId&gt;javax&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">                                    &lt;artifactId&gt;javaee-endorsed-api&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">                                    &lt;version&gt;7.0&lt;/version&gt;</div></li><li class="li1"><div class="de1">                                    &lt;type&gt;jar&lt;/type&gt;</div></li><li class="li1"><div class="de1">                                &lt;/artifactItem&gt;</div></li><li class="li1"><div class="de1">                            &lt;/artifactItems&gt;</div></li><li class="li1"><div class="de1">                        &lt;/configuration&gt;</div></li><li class="li1"><div class="de1">                    &lt;/execution&gt;</div></li><li class="li1"><div class="de1">                &lt;/executions&gt;</div></li><li class="li1"><div class="de1">            &lt;/plugin&gt;</div></li><li class="li1"><div class="de1">        &lt;/plugins&gt;</div></li><li class="li1"><div class="de1">    &lt;/build&gt;</div></li><li class="li1"><div class="de1">&lt;/project&gt;</div></li></ol></pre>
+
+<p>
+Les etiquetes més importants del fitxer POM són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>groupId</em></strong>: és com el paquet del projecte. Normalment es posa el nom de l’empresa, ja que tots els projectes amb un <em>groupId</em> pertanyen a una sola empresa.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>artifactId</em></strong>: és el nom del projecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>version</em></strong>: nombre de versió del projecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>packaging</em></strong>: tipus de fitxer generat en compilar el projecte Maven.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="exemple_hola_mon" >Exemple &#039;Hola, Món&#039;</a></h3>
+<div class="level3">
+
+<p>
+Una vegada s’ha creat el projecte, veieu que Maven genera un fitxer anomenat index.html dintre de la carpeta <em>Web Pages</em>, semblant a aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Start Page&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;h1&gt;Hello World!&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Noteu que heu canviat el text “Hello World!” per “Hola, Món”. Aquest últim apareixerà com a contingut de la pàgina <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+<p>
+Quan executeu el projecte anterior apareix en el navegador l’<acronym title="HyperText Markup Language">HTML</acronym> anterior (vegeu la figura <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del projecte ‘Hola, Món’
+
+</figcaption><img src="../media/uf1-a1-4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Fixeu-vos en la <acronym title="Uniform Resource Locator">URL</acronym> de la pàgina que ha executat el navegador: <code><a href="http://localhost:8080/HolaMon/" class="urlextern" title="http://localhost:8080/HolaMon/"  rel="nofollow">http://localhost:8080/HolaMon/</a></code>.
+</p>
+
+<p>
+Intenteu contestar a les següents preguntes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Què és <em>http:/localhost:8080</em>?</div>
+</li>
+<li class="level1"><div class="li"> I <em>Hola, Món</em> què significa, a què fa referència?</div>
+</li>
+</ul>
+
+<p>
+Abans de saber la resposta de les preguntes anteriors, cerqueu al vostre PC el fitxer index.html que heu creat anteriorment. Feu la cerca amb l’explorador de fitxers. Hauríeu de trobar-lo dintre de la carpeta <em>NetBeansProject/HolaMon/web</em> (vegeu la figura <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fitxers del projecte ‘Hola, Món’
+
+</figcaption><img src="../media/uf1-a1-5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si obriu amb un navegador web el fitxer index.html es veurà correctament? Proveu-ho (vegeu la figura <span class="figref"><a href="#fig1.3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del fitxer index.html directament al navegador
+
+</figcaption><img src="../media/uf1-a1-6.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Observeu que el fitxer s’ha visualitzat exactament igual. No hi ha cap dubte que és la mateixa pàgina web. L’únic que ha canviat respecte a l’execució anterior és la <acronym title="Uniform Resource Locator">URL</acronym> del navegador. En aquest cas, es mostra la ruta des de l’arrel del sistema fins al fitxer que es veu en el navegador:
+</p>
+<pre class="code">file:///home/alex/NetBeansProjects/HolaMon/web/index.html</pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una pàgina <strong>web estàtica</strong> és aquella pàgina enfocada principalment a mostrar una informació permanent, on el navegant es limita a obtenir aquesta informació.
+</p>
+</div></div>
+<p>
+Llavors, quina és la diferència entre aquesta execució i l’execució de la figura <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>?
+</p>
+
+<p>
+Aquesta vegada el navegador ha llegit directament el fitxer, per això a la <acronym title="Uniform Resource Locator">URL</acronym> apareix la seva localització exacta. No hi ha cap altra intervenció. Ha obert el fitxer, ho ha interpretat (<acronym title="HyperText Markup Language">HTML</acronym>) i l’ha tancat.
+</p>
+
+<p>
+Per explicar que succeeix a la figura <span class="figref"><a href="#fig1.1"><span>figura</span></a></span> ha arribat el moment de contestar a les preguntes abans formulades:
+</p>
+<ul>
+<li class="level1"><div class="li"> Què és <em>http:/localhost:8080</em>?</div>
+</li>
+<li class="level1"><div class="li"> I <em>Hola, Món</em> què significa, a què fa referència?</div>
+</li>
+</ul>
+
+<p>
+Com podeu suposar, el navegador no està obrint cap fitxer. El navegador, mitjançant el protocol HTTP, ha demanat un recurs a un servidor web. Aquest recurs és un fitxer <acronym title="HyperText Markup Language">HTML</acronym> que ha llegit el servidor web i l’ha enviat al navegador a través de la xarxa fent servir el protocol HTTP.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor web</strong> serveix contingut estàtic a un navegador, carrega un arxiu i el serveix a través de la xarxa al navegador d’un usuari. Aquest intercanvi d’informació entre el navegador i el servidor es produeix perquè parlen l’un amb l’altre mitjançant HTTP.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Tecnologies al servidor</p>
+<p>
+Es poden utilitzar diverses tecnologies per augmentar la potència del servidor més enllà de la seva capacitat de lliurar pàgines <acronym title="HyperText Markup Language">HTML</acronym>; aquestes inclouen <em>scripts</em>, CGI, PHP, ASP, Java Servlets…
+</p>
+</div></div>
+<p>
+I el paràmetre <strong>:8080</strong>? Aquest paràmetre fa referència al port d’escolta del servidor web. Normalment, el paràmetre no el veieu quan accediu a una pàgina web que està allotjada en un servidor públic, perquè s’accedeix a un port d’escolta estàndard (el 80 per a pàgines no segures o el 443 per a pàgines segures). En aquest cas, l’entorn de desenvolupament NetBeans us proporciona un servidor integrat anomenat <strong>GlassFish</strong> que escolta les peticions pel port <em>8080</em>. A més a més, com que està funcionant en el mateix PC des d’on s’està executant NetBeans, el nom del servidor és el mateix PC, o en altres paraules, <em>localhost</em>. Podeu veure les propietats si aneu a la finestra <em>Services</em> i després a les propietats del servidor (vegeu la figura <span class="figref"><a href="#fig1.4"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Propietats del servidor GlassFish
+
+</figcaption><img src="../media/uf1-a1-7.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si us hi fixeu, hi ha un paràmetre del servidor anomenat <em>HTTP Port</em> on s’especifica el port utilitzat per escoltar peticions HTTP, i un altre anomenat <em>HOST</em> on s’especifica que el servidor és el mateix PC (<em>localhost</em>).  Recordeu que quan vàreu crear el projecte <em>Hola, Món</em> vàreu configurar-lo perquè utilitzés el servidor web GlassFish, que ve integrat amb NetBeans.
+</p>
+
+<p>
+I <em>Hola, Món</em> què significa, a què fa referència?
+</p>
+
+<p>
+<em>Hola, Món</em> identifica, dintre del servidor GlassFish, el <strong>recurs web</strong> que es vol visualitzar. Penseu que GlassFish pot publicar molts projectes alhora i que ha de tenir una manera per identificar cadascun. Una vegada ha estat identificat el projecte, GlassFish mostra la pàgina principal (index.html). Si veieu la figura <span class="figref"><a href="#fig1.5"><span>figura</span></a></span> comprovareu on s’especifica el nom d’aquest recurs (<em>context path</em>).
+</p>
+<div class="iocfigure"><a name="fig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Propietats del projecte ‘Hola, Món’
+
+</figcaption><img src="../media/uf1-a1-8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Però perquè mostra la pàgina <em>index.html</em>? Per defecte, els servidors web cerquen aquest fitxer, però podeu canviar aquest comportament creant un arxiu <strong>web.xml</strong> dintre de la carpeta <em>WEB-INF</em>. Per crear-lo podeu anar a <em>New / Other / Standard Deployment Descriptor</em>, i aquí li podeu dir un altre arxiu d’inici de l’aplicació amb, per exemple:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;welcome-file-list&gt;</div></li><li class="li1"><div class="de1">    &lt;welcome-file&gt;pagina_principal.html&lt;/welcome-file&gt;</div></li><li class="li1"><div class="de1">&lt;/welcome-file-list&gt;</div></li></ol></pre>
+
+<p>
+Falta veure com es comunica el navegador amb el servidor web. Com hem dit abans, aquesta comunicació es fa mitjançant el protocol HTTP. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El protocol de transferència d’hipertext o <strong>HTTP</strong> (<em>HyperText Transfer Protocol</em>) estableix el protocol per a l’intercanvi de documents d’hipertext i multimèdia al web. 
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+HTTP disposa d’una variant xifrada mitjançant SSL anomenada HTTPS.
+</p>
+</div></div>
+<p>
+Molt bé, ara activareu la monitorització d’aquest protocol amb el servidor Glassfish. Accediu a les propietats del servidor i activeu la monitorització (vegeu la figura <span class="figref"><a href="#fig1.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Activació del monitoratge HTTP
+
+</figcaption><img src="../media/uf1-a1-9.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En activar el monitoratge HTTP s’ha de reiniciar el servidor, i finalment s’ha de compilar el projecte un altre cop (vegeu la figura <span class="figref"><a href="#fig1.8"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Reiniciar el servidor web
+
+</figcaption><img src="../media/uf1-a1-restart-server.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada heu compilat el projecte podeu obrir-lo al navegador i us apareixerà una finestra al Netbeans amb els missatges HTTP intercanviats (vegeu les figures <span class="figref"><a href="#fig1.9"><span>figura</span></a></span> i <span class="figref"><a href="#fig1.10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Obrir el recurs web en el navegador
+
+</figcaption><img src="../media/uf1-a1-openinbrowser.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocfigure"><a name="fig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Missatge HTTP Get
+
+</figcaption><img src="../media/uf1-a1-13-httpmonitor-get.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+
+</p>
+
+<p>
+El propòsit del protocol HTTP és permetre la transferència d’arxius (principalment, en format <acronym title="HyperText Markup Language">HTML</acronym>) entre un navegador (el client) i un servidor web. La comunicació entre el navegador i el servidor es duu a terme en dues etapes:
+</p>
+<ul>
+<li class="level1"><div class="li"> El navegador realitza una sol·licitud HTTP.</div>
+</li>
+<li class="level1"><div class="li"> El servidor processa la sol·licitud i després envia una resposta HTTP.</div>
+</li>
+</ul>
+
+<p>
+Una <strong>sol·licitud HTTP</strong> és un conjunt de línies que el navegador envia al servidor. Inclou:
+</p>
+<ul>
+<li class="level1"><div class="li"> Una línia de sol·licitud: és una línia que especifica el tipus de document sol·licitat, el mètode que s’aplicarà i la versió del protocol utilitzada. La línia està formada per tres elements que han d’estar separats per un espai:</div>
+<ul>
+<li class="level2"><div class="li"> el mètode</div>
+</li>
+<li class="level2"><div class="li"> l’adreça <acronym title="Uniform Resource Locator">URL</acronym></div>
+</li>
+<li class="level2"><div class="li"> la versió del protocol utilitzada pel client (en general, HTTP/1.1)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Els camps de l’encapçalat de sol·licitud: és un conjunt de línies opcionals que permeten aportar informació addicional sobre la sol·licitud i/o el client (navegador, sistema operatiu, etc.). Cadascuna d’aquestes línies està formada per un nom que descriu el tipus d’encapçalat, seguit de dos punts (:) i el valor de l’encapçalat.</div>
+</li>
+<li class="level1"><div class="li"> El cos de la sol·licitud: és un conjunt de línies opcionals que han d’estar separades de les línies precedents per una línia en blanc i, per exemple, permeten que s’enviïn dades per una comanda POST durant la transmissió de dades al servidor utilitzant un formulari.</div>
+</li>
+</ul>
+
+<p>
+Per tant, una sol·licitud HTTP posseeix la següent sintaxi:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">GET http://ioc.xtec.cat HTTP/1.1</div></li><li class="li1"><div class="de1">Accept : Text/html </div></li><li class="li1"><div class="de1">If-Modified-Since : Friday, 11-December-2015 14:37:11 GMT </div></li><li class="li1"><div class="de1">User-Agent : Mozilla/4.0 (compatible; MSIE 5.0; Windows 95)</div></li></ol></pre>
+
+<p>
+Les comandes HTTP més importants per fer una sol·licitud són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>GET</strong>: s’utilitza per recollir qualsevol tipus d’informació del servidor. S’empra sempre que es prem sobre un enllaç o es tecleja directament a una <acronym title="Uniform Resource Locator">URL</acronym>. Com a resultat, el servidor HTTP envia el document corresponent a la <acronym title="Uniform Resource Locator">URL</acronym> seleccionada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>HEAD</strong>: sol·licita informació sobre un objecte (fitxer): grandària, tipus, data de modificació… És utilitzat pels gestors de <em>cache</em> (memòria cau) de pàgines o els servidors <em>proxy</em> per conèixer quan és necessari actualitzar la còpia que es manté d’un fitxer.</div>
+</li>
+<li class="level1"><div class="li"> <strong>POST</strong>: serveix per enviar informació al servidor, per exemple les dades contingudes en un formulari. El servidor passarà aquesta informació a un procés encarregat del seu tractament (generalment una aplicació CGI/PHP/ASP…). L’operació que es realitza amb la informació proporcionada depèn de la <acronym title="Uniform Resource Locator">URL</acronym> utilitzada. S’utilitza sobretot en els formularis.</div>
+</li>
+</ul>
+
+<p>
+Una <strong>resposta HTTP</strong> és un conjunt de línies que el servidor envia al navegador. Està constituïda per:
+</p>
+<ul>
+<li class="level1"><div class="li"> Una línia d’estat: és una línia que especifica la versió del protocol utilitzada i l’estat de la sol·licitud en procés mitjançant un text explicatiu i un codi. La línia està composta de tres elements que han d’estar separats per un espai: </div>
+<ul>
+<li class="level2"><div class="li"> la versió del protocol utilitzada</div>
+</li>
+<li class="level2"><div class="li"> el codi d’estat</div>
+</li>
+<li class="level2"><div class="li"> el significat del codi</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Els camps de l’encapçalat de resposta: és un conjunt de línies opcionals que permeten aportar informació addicional sobre la resposta i/o el servidor. Cadascuna d’aquestes línies està composta d’un nom que qualifica el tipus d’encapçalat, seguit de dos punts (:) i del valor de l’encapçalat.</div>
+</li>
+<li class="level1"><div class="li"> El cos de la resposta: conté el document sol·licitat.</div>
+</li>
+</ul>
+
+<p>
+Exemple de resposta d’una petició GET a un servidor web:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">HTTP/1.1 200 OK</div></li><li class="li1"><div class="de1">Server: Microsoft-IIS/5.0\r\n</div></li><li class="li1"><div class="de1">Content-Location: http://www.microsoft.com/default.htm\r\n</div></li><li class="li1"><div class="de1">Date: Fri, 10 Dec 2015 19:33:18 GMT\r\n</div></li><li class="li1"><div class="de1">Content-Type: text/html\r\n</div></li><li class="li1"><div class="de1">Accept-Ranges: bytes\r\n</div></li><li class="li1"><div class="de1">Last-Modified: Thu, 9 Dec 2015 20:27:23 GMT\r\n</div></li><li class="li1"><div class="de1">Content-Length: 26812\r\n</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">....//pàgina html que es veurà en el navegador</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+La manera de funcionar que des d’un navegador us permet accedir a la informació que existeix en un servidor es diu <strong>arquitectura client-servidor</strong>. 
+</p>
+<div class="iocfigure"><a name="fig1.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Arquitectura client-servidor
+
+</figcaption><img src="../media/uf1-a1-client-servidor.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Penseu diverses aplicacions que utilitzeu diàriament i fan servir l’arquitectura client-servidor.
+</p>
+
+<p>
+A les aplicacions client-servidor, al client se’l coneix amb el terme <em>front-end</em> o interfície d’usuari. La part client té les següents responsabilitats:
+</p>
+<ul>
+<li class="level1"><div class="li"> Interaccionar amb l’usuari.</div>
+</li>
+<li class="level1"><div class="li"> Manipular les dades que introdueix l’usuari.</div>
+</li>
+<li class="level1"><div class="li"> Enviar les peticions del usuari al servidor.</div>
+</li>
+<li class="level1"><div class="li"> Rebre el resultat del processament de les dades enviades al servidor.</div>
+</li>
+<li class="level1"><div class="li"> Interpretar la resposta del servidor i mostrar-la a l’usuari.</div>
+</li>
+</ul>
+
+<p>
+En canvi, el servidor, també anomenat <em>back-end</em>, porta a terme les següents funcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Processar la lògica del programa necessària per donar resposta a la petició del client.</div>
+</li>
+<li class="level1"><div class="li"> Realitzar les validacions necessàries a la base de dades.</div>
+</li>
+<li class="level1"><div class="li"> Accedir a la base de dades, si fos necessari, per donar una solució als requeriments de la petició enviada pel client.</div>
+</li>
+<li class="level1"><div class="li"> Formatar les dades per enviar-les al client.</div>
+</li>
+</ul>
+
+<p>
+Per donar a l’usuari una experiència molt més agradable i dinàmica a l’hora d’utilitzar aplicacions client-servidor s’han desenvolupat diferents tecnologies que s’executen o bé al <em>front-end</em> o bé al <em>back-end</em>.
+</p>
+
+<p>
+Proveu el següent codi i digueu si s’executa al <em>front-end</em> o al <em>back-end</em>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;TODO supply a title&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;exemple.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;link href=&quot;estils.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;HolaMón&lt;/div&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;hola();&quot; value=&quot;salutació&quot;&gt;salutació&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com veieu, en l’<acronym title="HyperText Markup Language">HTML</acronym> anterior utilitzeu dos fitxers addicionals: <code>estils.css</code> i <code>exemple.js</code>. A continuació teniu el contingut del fitxer <code>exemple.js</code>:
+</p>
+<pre class="code">function hola(){
+    alert(&quot;hola&quot;);
+}</pre>
+
+<p>
+Aquest és el contingut del fitxer “estils.css”:
+</p>
+<pre class="code css"><ol><li class="li1"><div class="de1">div{</div></li><li class="li1"><div class="de1">    color:blue;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una manera que teniu per determinar si el codi Javascript i el codi <acronym title="Cascading Style Sheets">CSS</acronym> s’executen al servidor o al navegador és executar el codi sense la intervenció del servidor. Igual que heu fet anteriorment, executeu el codi directament fent doble clic al fitxer. La <acronym title="Uniform Resource Locator">URL</acronym> que veureu en el navegador és la localització exacta del fitxer en el disc dur (vegeu la figura <span class="figref"><a href="#fig1.12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del projecte directament al navegador
+
+</figcaption><img src="../media/uf1-a1-tecnologies-client.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En aquest cas, com podeu comprovar, funciona tot exactament igual que abans. Significa que tant el <acronym title="Cascading Style Sheets">CSS</acronym> com el programa en Javascript són tecnologies que s’executen exclusivament en el client. No cal un servidor web perquè funcionin.
+</p>
+
+<p>
+Intenteu descobrir quines de les següents tecnologies s’executen al client o al servidor: Java, PHP, CGI, FLASH, JSF, <em>applets</em>, <acronym title="Cascading Style Sheets">CSS</acronym>, ASP i Javascript.
+</p>
+
+</div>
+
+<h3><a id="pagines_dinamiques_i_servidors_d_aplicacions" >Pàgines dinàmiques i servidors d&#039;aplicacions</a></h3>
+<div class="level3">
+
+<p>
+Creareu una pàgina nova, però en comptes de ser de tipus <acronym title="HyperText Markup Language">HTML</acronym> la creareu de tipus <em>JSP</em> (Java Server Pages) i l’anomenareu index.jsp. La creareu utilitzant el mateix projecte de l’apartat anterior mitjançant l’opció <em>File / New File / Web / JSP</em> del menú principal (vegeu la figura <span class="figref"><a href="#fig.1.13.0"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig.1.13.0"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nova pàgina JSP
+
+</figcaption><img src="../media/newjsp.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+
+</p>
+
+<p>
+Modifiqueu-la  amb el següent codi i digueu si s’executa al <em>front-end</em> o al <em>back-end</em>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Pàgina JSP&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;exemple.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;link href=&quot;estils.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;Hola, Món!&lt;/div&gt;</div></li><li class="li1"><div class="de1">         &lt;button onclick=&quot;hola();&quot; value=&quot;salutació&quot;&gt;salutació&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            out.println(&quot;La teva IP és: &quot; + request.getRemoteAddr());</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Si l’executeu des del programa NetBeans fent servir el servidor web veieu que s’executa tot el codi correctament, fins i tot el codi que hi ha dintre de les etiquetes “&lt;%” (vegeu la figura <span class="figref"><a href="#fig1.13"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució de la pàgina index.jsp utilitzant el servidor GlassFish
+
+</figcaption><img src="../media/uf1-a1-execucio-jsp1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Però s’ha executat tot en el <em>front-end</em> o hi ha algun tros de codi que s’ha executat en el <em>back-end</em>?
+</p>
+
+<p>
+En comptes d’anar directament al fitxer i fer doble clic, us proposo que mireu el codi font <acronym title="HyperText Markup Language">HTML</acronym> que ha interpretat el navegador. Podeu veure-ho fent clic amb el botó esquerre i després seleccionant del menú l’opció <em>Visualitza l’origen de la pàgina</em>, sempre que el ratolí estigui posicionat dintre de la finestra del navegador. 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Pàgina JSP&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;exemple.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;link href=&quot;estils.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;Hola, Món!&lt;/div&gt;</div></li><li class="li1"><div class="de1">         &lt;button onclick=&quot;hola();&quot; value=&quot;salutació&quot;&gt;salutació&lt;/button&gt;</div></li><li class="li1"><div class="de1">        La teva IP és: 127.0.0.1</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Noteu que tot el codi que hi havia entre les etiquetes “&lt;%” i “%&gt;” no apareix. En el seu lloc apareix el resultat de la seva execució. Quan el servidor ha volgut respondre a la petició <em>HTTP GET</em> del client ha hagut d’executar el codi que hi ha dintre de les etiquetes “&lt;%” i ha enviat un missatge <em>HTTP Response</em> amb el codi <acronym title="HyperText Markup Language">HTML</acronym> substituint les etiquetes “&lt;%” pel resultat de l’execució.
+</p>
+
+<p>
+
+</p>
+
+<p>
+És a dir, el navegador no ha tingut l’oportunitat de veure que s’havia d’executar codi perquè ni tan sols l’ha rebut. De fet, el servidor web ha fet alguna cosa més del que feia fins ara. El servidor web s’ha transformat en un <strong>servidor d’aplicacions</strong> on ha hagut de transformar la pàgina web original.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>servidor d’aplicacions</strong> és un servidor web i un <em>framework</em> de programari on es poden executar aplicacions. És a dir, és un servidor web que permet l’execució d’un programa en el mateix servidor amb les dades proporcionades per una aplicació client.
+</p>
+</div></div>
+<p>
+Com que el servidor ha executat codi JSP, la pàgina <acronym title="HyperText Markup Language">HTML</acronym> ha canviat (l’encerclat per “&lt;% %&gt;”). Qualsevol usuari que es connecti amb el navegador veurà una pàgina diferent. No totalment diferent però sí parcialment, perquè cadascú visualitzarà la seva IP quan accedeixi a aquesta pàgina.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Servidor d&#039;aplicacions Tomcat</p>
+<p>
+NetBeans disposa, a més del servidor GlassFish, del servidor d’aplicacions Tomcat. <strong>Tomcat</strong> és un servidor d’aplicacions d’Apache Software Foundation que executa <em>servlets</em> Java i mostra pàgines web que inclouen la codificació Java Server Page. Tomcat és <em>open source</em> i està disponible en el lloc web d’Apache.
+</p>
+
+<p>
+Tomcat implementa un contenidor de <em>servlets</em> i JSP, que és el que la majoria de les aplicacions web necessiten, però no és un motor de Java EE  (Java Enterprise Edition). La seva instal·lació i configuració és molt fàcil, i sovint es pot fer en 10-20 minuts. En ser Tomcat simple i fàcil d’usar, no té diverses característiques importants del Java Enterprise.
+</p>
+
+<p>
+Tot i que NetBeans inclou el servidor Tomcat, podeu veure com instal·lar-lo en una màquina Ubuntu en aquest enllaç: <a href="https://help.ubuntu.com/lts/serverguide/tomcat.html" class="urlextern" title="https://help.ubuntu.com/lts/serverguide/tomcat.html"  rel="nofollow">https://help.ubuntu.com/lts/serverguide/tomcat.html</a>.
+</p>
+
+<p>
+Tomcat és només un contenidor de <em>servlets</em>, és a dir, que només implementa l’especificació de <em>servlets</em> i JSP. En canvi, <strong>Glassfish</strong> és un  servidor de Java EE complet (interpretant tecnologies com EJB, JMS…). Amb Glassfish teniu la implementació de tota la pila Java EE (Java EE stack, vegeu la figura <span class="figref"><a href="#fig1.14"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pila de components Java 7 EE
+
+</figcaption><img src="../media/uf1-a1-java7ee-stack.jpg" alt="" /></figure>
+<div class="footfigure">Font: Oracle (public)</div></div>
+<p>
+
+</p>
+</div></div>
+<p>
+Proveu el següent exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Pàgina JSP&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;exemple.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;link href=&quot;estils.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;Hola, Món!&lt;/div&gt;</div></li><li class="li1"><div class="de1">         &lt;button onclick=&quot;hola();&quot; value=&quot;salutació&quot;&gt;salutació&lt;/button&gt;</div></li><li class="li1"><div class="de1">         &lt;p&gt;Avui és &lt;%= new java.util.Date() %&gt; &lt;/p&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Cada vegada que actualitzeu la pàgina anterior, us retorna la data i l’hora actualitzada. El servidor Glassfish està canviant la pàgina cada vegada que la demanem. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>web dinàmica</strong> és aquella que conté aplicacions dins de la mateixa web, atorgant major interactivitat amb el navegant.
+</p>
+</div></div>
+<p>
+Exemples d’aplicacions dinàmiques són enquestes i votacions, fòrums de suport, llibres de visita, enviament de correus electrònics intel·ligents, reserva de productes, comandes <em>on line</em>, atenció al client personalitzada…
+</p>
+
+<p>
+És important no confondre multimèdia i interactivitat amb pàgines dinàmiques. Una pàgina web estàtica pot ser multimèdia (contenir diversos tipus de vídeos, sons, imatges…) i interactiva a través d’enllaços i hipervincles, sense ser dinàmica per aquestes característiques.
+</p>
+
+<p>
+A les pàgines dinàmiques, el contingut sol generar-se al moment de visualitzar-se, poden variar, mentre que en les estàtiques el contingut sol estar predeterminat.
+</p>
+
+<p>
+L’important d’aquesta classificació entre dinàmiques i estàtiques és que una pàgina web estàtica la podeu emmagatzemar fàcilment, mentre que en una dinàmica no serà així.
+</p>
+
+</div>
+
+<h3><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h3>
+<div class="level3">
+
+<p>
+Fins a aquest moment heu après a instal·lar l’entorn de desenvolupament NetBeans. Heu creat el vostre primer projecte amb Maven i heu après el funcionament de la tecnologia de comunicacions client-servidor.
+</p>
+
+<p>
+També heu de ser capaços de diferenciar entre un servidor web i un servidor d’aplicacions. S’ha fet una primera aproximació al llenguatge JSP i s’ha explicat la diferència entre una pàgina estàtica i una altre de dinàmica. 
+</p>
+
+<p>
+Per tal de ser més àgils i autònoms a l’hora de programar, és recomanable fer les activitats d’ampliació on s’explica com depurar el codi des del mateix IDE i com veure la comunicació client-servidor amb eines instal·lades en el navegador web.
+</p>
+
+<p>
+Resumint, en aquest apartat s’ha après a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Instal·lar i configurar l’entorn de desenvolupament NetBeans.</div>
+</li>
+<li class="level1"><div class="li"> Crear un projecte amb Maven.</div>
+</li>
+<li class="level1"><div class="li"> Comprendre la comunicació client-servidor, és a dir, el protocol HTTP.</div>
+</li>
+<li class="level1"><div class="li"> Configurar el servidor Glassfish.</div>
+</li>
+<li class="level1"><div class="li"> Diferenciar una pàgina estàtica d’una dinàmica.</div>
+</li>
+</ul>
+
+<p>
+Arribats a aquest punt, hauríeu de ser autònoms a l’hora d’utilitzar l’entorn de desenvolupament NetBeans, així com saber preparar un projecte creat amb Maven. Hauríeu de ser capaços de reconèixer els avantatges de la programació de pàgines web dinàmiques en contraposició a les estàtiques. Finalment, hauríeu de ser capaços d’entendre la comunicació client-servidor amb el protocol HTTP.
+</p>
+
+</div>
+
+<h2><a id="el_vostre_primer_projecte_phphola_mon" >El vostre primer projecte PHP: &#039;Hola, Món&#039;</a></h2>
+<div class="level2">
+
+<p>
+Tot i que en aquest mòdul utilitzarà el llenguatge Java com a llenguatge vehicular al llarg de les diferents unitats, és interessant que vegeu algunes pinzellades del llenguatge PHP (<em>PHP Hypertext Preprocessor</em>), ja que és àmpliament utilitzat en el món empresarial.
+</p>
+
+<p>
+En aquest apartat veureu com crear un projecte web PHP amb NetBeans, com instal·lar el programari necessari per posar a punt un servidor PHP i com crear una pàgina molt senzilla.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>PHP</strong> és un llenguatge de codi obert molt popular, especialment adient per al desenvolupament web, que pot ser afegit directament al codi <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+</div></div>
+<p>
+Utilitzareu una màquina virtual amb Ubuntu Server per emprar-la com a servidor web. En aquesta màquina instal·lareu el servidor PHP i utilitzareu el programa Netbeans per crear pàgines web directament al servidor.
+</p>
+
+</div>
+
+<h3><a id="posar_a_punt_el_servidor_web" >Posar a punt el servidor web</a></h3>
+<div class="level3">
+
+<p>
+L’IDE NetBeans no té un servidor web PHP instal·lat, heu de crear-vos nosaltres un servidor a part. Teniu dues opcions: la primera és instal·lar en la mateixa màquina on teniu l’IDE el mateix servidor web (amb un XAMPP, per exemple), i la segona és utilitzar una màquina virtual on instal·lar el servidor i fer que l’IDE NetBeans treballi directament amb aquesta.
+</p>
+
+<p>
+És molt més real fer-ho de la segona manera. Instal·lareu pas a pas un servidor PHP a una màquina virtual i hi connectareu l’IDE.
+</p>
+
+</div>
+
+<h4><a id="instal_lacio_del_sistema_operatiu" >Instal·lació del sistema operatiu</a></h4>
+<div class="level4">
+
+<p>
+En aquest apartat suposeu que teniu instal·lat el programa de màquines virtuals <strong>VirtualBox</strong> i sabeu com crear una màquina nova i com instal·lar un sistema operatiu.
+</p>
+
+<p>
+Utilitzareu el servidor Ubuntu Server LTS 14.04. Podeu descarregar-lo de l’adreça: <a href="http://www.ubuntu.com/download/server" class="urlextern" title="http://www.ubuntu.com/download/server"  rel="nofollow">www.ubuntu.com/download/server</a>. 
+</p>
+
+<p>
+Creareu una màquina virtual nova amb Virtualbox amb les següents característiques (vegeu la figura <span class="figref"><a href="#php-1"><span>figura</span></a></span>):
+</p>
+<ul>
+<li class="level1"><div class="li"> nom: servidor PHP</div>
+</li>
+<li class="level1"><div class="li"> 512 <acronym title="Megabyte">MB</acronym> de RAM</div>
+</li>
+<li class="level1"><div class="li"> 100 <acronym title="Gigabyte">GB</acronym> de disc dur</div>
+</li>
+<li class="level1"><div class="li"> xarxa amb adaptador pont </div>
+</li>
+</ul>
+<div class="iocfigure"><a name="php-1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració servidor PHP amb VBox
+
+</figcaption><img src="../media/php-vbox-ubuntuserver-settings.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Utilitzeu la ISO que heu descarregat dels servidors d’Ubuntu per instal·lar el sistema operatiu. Poseu-la al CD virtual de la màquina “Servidor PHP” (vegeu la figura <span class="figref"><a href="#php-instalacio-server"><span>figura</span></a></span>) i comenceu la instal·lació.
+</p>
+<div class="iocfigure"><a name="php-instalacio-server"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Selecció de la ISO d’Ubuntu Server al programa Virtualbox
+
+</figcaption><img src="../media/php-cd-instalacio.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Les característiques per instal·lar el sistema operatiu (vegeu la figura <span class="figref"><a href="#php-instalar-ubuntu-server"><span>figura</span></a></span>) són les característiques per defecte. No cal instal·lar, en aquest punt, res addicional.
+</p>
+<div class="iocfigure"><a name="php-instalar-ubuntu-server"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pantalla d’instal·lació d’Ubuntu Server
+
+</figcaption><img src="../media/php-instalar-ubuntu-server.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En finalitzar aquest punt s’ha de tenir una màquina virtual amb el sistema operatiu Ubuntu Server instal·lat.
+</p>
+
+</div>
+
+<h4><a id="instal_lacio_del_servidor_web" >Instal·lació del servidor web</a></h4>
+<div class="level4">
+
+<p>
+Una vegada teniu preparat el sistema operatiu Ubuntu Server heu de convertir-lo en un servidor web. Per fer-ho heu d’instal·lar una sèrie de paquets, i és molt més còmode si us connecteu via SSH a la màquina virtual; per tant, això és el primer que fareu: instal·lareu el servei SSH.
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">sudo apt-get update</div></li><li class="li1"><div class="de1">sude apt-get install openssh-server</div></li></ol></pre>
+
+<p>
+A continuació us connectareu via SSH a la màquina virtual. Per poder-vos connectar heu de saber quina adreça IP té el servidor. La podeu esbrinar executant la següent comanda directament al servidor:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">L&#039;intèrpret d&#039;ordres segur SSH</p>
+<p>
+SSH (acrònim de <em>Secure Shell</em>, ‘intèrpret d’ordres segur’) és un protocol que permet accedir de manera segura a un ordinador des d’un altre. Permet administrar totalment l’ordinador remot sempre i quan l’usuari tingui els permisos per fer-ho.
+</p>
+</div></div><pre class="code">ifconfig</pre>
+
+<p>
+Una vegada sabeu l’adreça IP del servidor, podeu utilitzar un terminal de la màquina real i continuar instal·lant els paquets. Per fer la connexió SSH des de la màquina real a la màquina virtual executem:
+</p>
+<pre class="code">ssh usuari_servidor_linux@ip_servidor_linux
+exemple:
+ssh alex@192.168.56.101</pre>
+
+<p>
+A continuació instal·lareu el servidor Apache2:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">sudo apt-get install apache2</div></li></ol></pre>
+
+<p>
+I finalment, instal·lareu el mòdul PHP:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">sudo apt-get install php5</div></li><li class="li1"><div class="de1">sudo apt-get install libapache2-mod-php5</div></li></ol></pre>
+
+<p>
+Només queda configurar els permisos perquè el programa NetBeans pugui escriure a una carpeta propietària de <em>root</em>. No configurareu ara els permisos i els usuaris o els grups que tenen permisos per accedir-hi, ja que no és l’objectiu de l’assignatura. Per això, canviareu els permisos perquè tothom pugui entrar a escriure, llegir o executar. En concret, executareu la següent comanda en el terminal d’Ubuntu:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">sudo chmod 777 /var/www/html</div></li></ol></pre>
+
+<p>
+Una vegada s’ha complert aquest punt ja esteu preparats per crear un nou projecte PHP directament al servidor PHP. Comproveu que ha sortit tot correctament accedint, mitjançant un navegador web des de la màquina real, al servidor PHP. En el vostre cas, per exemple, la IP del servidor és 192.168.56.101 i, com podeu veure a la figura <span class="figref"><a href="#php-apache-ok"><span>figura</span></a></span>, hi podeu accedir via web.
+</p>
+<div class="iocfigure"><a name="php-apache-ok"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Servidor Apache funcionant
+
+</figcaption><img src="../media/php-apache-ok.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="creacio_d_un_projecte_php_en_un_servidor_remot" >Creació d&#039;un projecte PHP en un servidor remot</a></h3>
+<div class="level3">
+
+<p>
+Fareu la connexió de l’IDE NetBeans amb el servidor PHP. Com podeu imaginar, funcionaria igual si el servidor tingués una adreça IP pública i vosaltres volguéssiu modificar o crear alguna pàgina PHP.
+</p>
+
+<p>
+En crear un nou projecte de tipus PHP, NetBeans dóna tres opcions (vegeu la figura <span class="figref"><a href="#php-new-remote-project"><span>figura</span></a></span>):
+</p>
+<ul>
+<li class="level1"><div class="li"> aplicació PHP</div>
+</li>
+<li class="level1"><div class="li"> aplicació PHP amb fitxers ja creats</div>
+</li>
+<li class="level1"><div class="li"> aplicació PHP des d’un servidor remot</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="php-new-remote-project"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nou projecte remot amb PHP
+
+</figcaption><img src="../media/php-new-remote-project.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Les dues primeres opcions són vàlides quan el projecte PHP es troba en la mateixa màquina que l’IDE NetBeans. L’única diferència és si es vol crear de zero (primera opció) o ja està creat i es vol afegir o modificar alguna cosa de l’aplicació (segona opció).
+</p>
+
+<p>
+L’última opció és la que fareu servir, aplicació PHP des d’un servidor remot. En el vostre cas, el servidor remot és la màquina virtual (servidor PHP). Una vegada heu escollit aquesta opció, us demana la informació típica d’un projecte:
+</p>
+<ul>
+<li class="level1"><div class="li"> nom del projecte (per exemple: <em>Hola, Món</em>)</div>
+</li>
+<li class="level1"><div class="li"> carpeta amb els fitxers originals</div>
+</li>
+<li class="level1"><div class="li"> versió PHP, etc.</div>
+</li>
+</ul>
+
+<p>
+A continuació us demana la configuració per a la connexió amb el servidor remot (vegeu la figura <span class="figref"><a href="#php-remote-con1"><span>figura</span></a></span>). Haureu de crear primer la connexió per després configurar la carpeta del servidor que voleu utilitzar per copiar els fitxers creats.
+</p>
+<div class="iocfigure"><a name="php-remote-con1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nova aplicació PHP des d’un servidor remot
+
+</figcaption><img src="../media/php-remote-connection1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per crear la connexió anireu a <em>Administrar</em> (<em>Manage</em>). Afegireu una connexió nova de tipus SFTP i li posareu un nom per identificar la connexió, per exemple <em>Servidor PHP</em> (vegeu la figura <span class="figref"><a href="#php-remote-con2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="php-remote-con2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Administrar les connexions als servidors PHP
+
+</figcaption><img src="../media/php-remote-connection2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada creada la connexió s’ha de configurar afegint la IP del servidor, així com l’usuari del servidor PHP que té permisos per escriure al disc dur. En aquest cas pot ser l’usuari que vau crear en instal·lar el sistema operatiu (vegeu la figura <span class="figref"><a href="#php-remote-con3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="php-remote-con3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configurar els paràmetres de la connexió al servidor PHP
+
+</figcaption><img src="../media/php-remote-connection3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu provar la connexió clicant al botó <em>Test Connection</em>. Hauria d’aparèixer una finestra semblant a la de la figura <span class="figref"><a href="#php-remote-con4"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="php-remote-con4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Provar la connexió creada
+
+</figcaption><img src="../media/php-remote-connection4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Penseu que si no heu instal·lat el servei SSH al servidor PHP no funcionarà. El servei SSH també instal·la el servei de transferència segura de fitxers SFTP, necessari per establir la connexió entre NetBeans i el servidor PHP.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Finalment, omplireu la finestra que va sortir abans de configurar la connexió amb les dades adients (vegeu la figura <span class="figref"><a href="#php-remote-con5"><span>figura</span></a></span>):
+</p>
+<ul>
+<li class="level1"><div class="li"> <acronym title="Uniform Resource Locator">URL</acronym> del projecte: la IP del servidor PHP. Per exemple: <a href="http://192.168.56.101" class="urlextern" title="http://192.168.56.101"  rel="nofollow">http://192.168.56.101</a>.</div>
+</li>
+<li class="level1"><div class="li"> Connexió remota: seleccioneu la connexió que acabeu de crear (servidor PHP).</div>
+</li>
+<li class="level1"><div class="li"> Directori de pujada: directori del servidor PHP on es pujaran els fitxers creats amb el programa NetBeans. Normalment és el mateix directori que utilitza Apache per servir els fitxers web, per exemple <em>/var/www</em>. Si poseu “/” ja utilitza aquest directori.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="php-remote-con5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració dels paràmetres de la connexió al servidor PHP
+
+</figcaption><img src="../media/php-remote-connection5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada heu realitzat tots els passos anteriors, NetBeans detecta que existeix la carpeta <acronym title="HyperText Markup Language">HTML</acronym> i la baixa perquè pugueu crear les pàgines PHP dintre d’aquesta (vegeu la figura <span class="figref"><a href="#php-new-remote-project-2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="php-new-remote-project-2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Detecció de Netbeans de la carpeta <acronym title="HyperText Markup Language">HTML</acronym>
+
+</figcaption><img src="../media/php-new-remote-project-2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Arribats a aquest punt, ja teniu el projecte preparat per començar a desenvolupar remotament una aplicació PHP.
+</p>
+
+</div>
+
+<h3><a id="exemple_hola_mon1" >Exemple &#039;Hola, Món&#039;</a></h3>
+<div class="level3">
+
+<p>
+Creareu un nou arxiu dintre de la carpeta <acronym title="HyperText Markup Language">HTML</acronym> del servidor remot. Aquest arxiu ha de ser de tipus PHP, i utilitzareu el menú de NetBeans per crear-lo. Aneu a  <em>File / New File / PHP / PHP Web Page</em>. 
+</p>
+
+<p>
+El nom del fitxer serà index.php (vegeu la figura <span class="figref"><a href="#php-new-php"><span>figura</span></a></span>). 
+</p>
+<div class="iocfigure"><a name="php-new-php"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nou fitxer PHP
+
+</figcaption><img src="../media/php-new-php.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Com veieu, a l’hora de crear un fitxer primer es crea a l’ordinador local, és a dir, on està instal·lat l’entorn de desenvolupament. Si us hi fixeu, s’ha creat una còpia del projecte del servidor dintre de la carpeta de projectes locals amb el mateix nom que al servidor. Podeu saber on es troba veient la configuració del paràmetre <em>Created File</em> de la figura <span class="figref"><a href="#php-new-php"><span>figura</span></a></span>. 
+</p>
+
+<p>
+En tenir una còpia al vostre ordinador heu de saber gestionar correctament les versions del projecte, ja que periòdicament haureu de pujar la nova versió al servidor per veure els resultats de la modificació. Com veureu, Netbeans simplifica l’administració de les versions, permetent pujar o baixar del servidor tot el projecte o una part del mateix.
+</p>
+
+<p>
+De fet, el servidor no té encara el fitxer creat. Si aneu a la màquina virtual i llisteu els fitxers que hi ha a la carpeta <em>/var/www/html</em> veureu que només existeix el fitxer index.html que té per defecte el servidor Apache. Podeu veure la figura <span class="figref"><a href="#php-llistat-fitxers"><span>figura</span></a></span> per comprovar-ho.
+</p>
+<div class="iocfigure"><a name="php-llistat-fitxers"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Llistat del fitxers del servidor PHP
+
+</figcaption><img src="../media/php-llistat-fitxers.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Llavors heu de pujar aquest fitxer al servidor. Si feu clic amb el botó dret del ratolí damunt del fitxer index.php veureu un menú semblant al de la figura <span class="figref"><a href="#php-menu-upload"><span>figura</span></a></span>. Cliqueu a <em>Upload</em>.
+</p>
+<div class="iocfigure"><a name="php-menu-upload"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Menú per pujar o baixar un fitxer del servidor PHP
+
+</figcaption><img src="../media/php-menu-upload-dwnld.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquest menú permet executar:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>Upload</em></strong>: per pujar un fitxer o una carpeta al servidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Download</em></strong>: per baixar una carpeta o fitxer del servidor al PC local.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Synchronize</em></strong>: obre una finestra que us permet escollir si voleu pujar o baixar fitxers del servidor. </div>
+</li>
+</ul>
+
+<p>
+Intenteu crear un fitxer nou directament a la màquina virtual i baixeu-lo amb NetBeans utilitzant l’opció <em>Syncronize</em> o <em>Download</em> del menú anterior.
+</p>
+
+<p>
+En aquest punt ja heu de tenir el fitxer index.php creat des de NetBeans pujat al servidor PHP. El fitxer index.php ha de ser semblant a aquest:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;?php</div></li><li class="li1"><div class="de1">        // put your code here</div></li><li class="li1"><div class="de1">        ?&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+De moment, aquest fitxer no té codi PHP. Només s’han creat dues etiquetes específiques de PHP que permeten escriure codi PHP dintre d’aquestes.
+</p>
+
+<p>
+PHP és un llenguatge de programació que coexisteix dintre del llenguatge de marques <acronym title="HyperText Markup Language">HTML</acronym>. L’etiqueta <strong><em>&lt;?php</em></strong> és l’etiqueta d’inici d’aquest llenguatge, i l’etiqueta <em><strong>?&gt;</strong></em> és l’etiqueta de tancament. Tot el codi dintre d’aquestes etiquetes no l’interpreta el servidor web Apache2, sinó que el compila i executa el mòdul PHP que s’ha instal·lat a la màquina.
+</p>
+
+<p>
+El resultat de l’execució d’aquestes instruccions és el que es mostrarà en comptes del codi que hi ha entre les etiquetes d’inici i fi del llenguatge PHP.
+</p>
+
+<p>
+Per exemple, voleu escriure la frase “Hola, Món” des de PHP i que es vegi a la pàgina <acronym title="HyperText Markup Language">HTML</acronym>. El codi que hauríeu d’afegir seria aquest:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">echo &quot;Hola, Món&quot;;</div></li></ol></pre>
+
+<p>
+També podríeu afegir etiquetes de títol (<em>Heading</em>), per exemple:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">echo &quot;&lt;h1&gt;Hola, Món&lt;/h1&gt;&quot;;</div></li></ol></pre>
+
+<p>
+Com podeu observar, per enviar informació des de PHP a la pàgina <acronym title="HyperText Markup Language">HTML</acronym> s’utilitza la instrucció <strong><em>echo</em></strong>, que envia una cadena de text directament a la pàgina <acronym title="HyperText Markup Language">HTML</acronym> en la mateixa posició on es troben les etiquetes PHP dintre de la pàgina.
+</p>
+
+<p>
+La pàgina “index.php” resultant, després d’afegir la instrucció anterior, seria:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;?php</div></li><li class="li1"><div class="de1">            echo &quot;&lt;h1&gt;Hola, Món&lt;/h1&gt;&quot;;</div></li><li class="li1"><div class="de1">        ?&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Guardeu el fitxer anterior i pugeu-lo al servidor.
+</p>
+
+<p>
+Com veieu en el navegador web el fitxer index.php? Heu d’accedir a l’adreça del servidor PHP i afegir el recurs que voleu obtenir; en aquest cas, el fitxer index.php. Per exemple, en el vostre cas, en el navegador web haureu d’escriure: <a href="http://192.168.56.101/index.php" class="urlextern" title="http://192.168.56.101/index.php"  rel="nofollow">192.168.56.101/index.php</a> (vegeu la figura <span class="figref"><a href="#php-execucio-pagina"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="php-execucio-pagina"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució de la pàgina index.php
+
+</figcaption><img src="../media/php-execucio-pagina.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara fixeu-vos en el codi font que us mostra el navegador web (vegeu la figura <span class="figref"><a href="#php-codifont-pagina"><span>figura</span></a></span>). Veieu que no hi ha cap rastre que indiqui que aquest és un fitxer PHP, no apareixen les etiquetes pròpies d’aquest llenguatge. En el seu lloc, apareix el text que heu posat a la instrucció <em>echo</em>.
+</p>
+<div class="iocfigure"><a name="php-codifont-pagina"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Codi font de la pàgina index.php
+
+</figcaption><img src="../media/php-codifont-pagina.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Observeu que en comunicar-se el navegador amb el servidor PHP aquest no solament ha enviat el codi <acronym title="HyperText Markup Language">HTML</acronym> de la pàgina index.php, sinó que ha hagut de compilar-la i executar-la tal com vam veure amb les pàgines JSP. En aquest cas, el compilador ha estat el mòdul <em>php5</em> instal·lat a la màquina virtual.
+</p>
+
+</div>
+
+<h3><a id="que_s_ha_apres1" >Què s&#039;ha après?</a></h3>
+<div class="level3">
+
+<p>
+Heu après que existeixen diferents llenguatges de programació que coexisteixen dintre d’una pàgina web. En aquest cas, heu vist com s’interpreta el llenguatge PHP. 
+</p>
+
+<p>
+Resumint, heu après a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Instal·lar i configurar un servidor PHP.</div>
+</li>
+<li class="level1"><div class="li"> Configurar NetBeans per treballar amb un servidor PHP remot.</div>
+</li>
+<li class="level1"><div class="li"> Com interacciona un navegador web amb el servidor PHP.</div>
+</li>
+<li class="level1"><div class="li"> Crear una pàgina senzilla amb aquest llenguatge.</div>
+</li>
+</ul>
+
+<p>
+Ja esteu preparats per començar les activitats proposades en aquest apartat per tal de poder endinsar-vos en el món de la programació amb JSP i PHP.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

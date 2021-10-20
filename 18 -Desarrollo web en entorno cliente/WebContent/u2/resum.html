@@ -1,0 +1,346 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="introduccio.html">Estructures definides pel programador</a></li><li>Resum</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="resum"> Resum </a></h1>
+    	
+<p>
+És important conèixer les diferents funcions que ens proporciona el llenguatge JavaScript. Les funcions més importants per tractar cadenes de text són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>lenght</em>: calcula la longitud d’una cadena de text.</div>
+</li>
+<li class="level1"><div class="li"> <em>concat</em>: uneix diverses cadenes de text.</div>
+</li>
+<li class="level1"><div class="li"> <em>toUpperCase</em>: transforma tots els caràcters de la cadena als seus corresponents caràcters en majúscules.</div>
+</li>
+<li class="level1"><div class="li"> <em>toLowerCase</em>: transforma tots els caràcters de la cadena als seus corresponents caràcters en minúscules.</div>
+</li>
+<li class="level1"><div class="li"> <em>charAt</em>:  obté el caràcter que es troba en una posició.</div>
+</li>
+<li class="level1"><div class="li"> <em>indexOf</em>: calcula la posició en la qual es troba el caràcter indicat dins de la cadena de text</div>
+</li>
+<li class="level1"><div class="li"> <em>lastIndexOf</em>: calcula l’última posició en la qual es troba el caràcter indicat dins de la cadena de text.</div>
+</li>
+<li class="level1"><div class="li"> <em>substring</em>: extreu una porció d’una cadena de text. </div>
+</li>
+<li class="level1"><div class="li"> <em>split</em>: converteix una cadena de text en un <em>array</em> de cadenes de text. </div>
+</li>
+</ul>
+
+<p>
+Les funcions predefinides de nombres que s’expliquen són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>NaN</em>: s’utilitza per indicar un valor numèric no definit.</div>
+</li>
+<li class="level1"><div class="li"> <em>isNaN</em>: funció que permet protegir l’aplicació de possibles valors numèrics no definits.</div>
+</li>
+<li class="level1"><div class="li"> <em>Infinity</em>: fa referència a un valor numèric infinit i positiu.</div>
+</li>
+<li class="level1"><div class="li"> <em>toFixed</em>: funció que retorna el nombre original amb punts decimals i realitza els arrodoniments necessaris.</div>
+</li>
+</ul>
+
+<p>
+Altres funcions importants de la biblioteca JavaScript són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>alert</em>: funció que s’utilitza quan es vol donar una informació a l’usuari sense esperar cap resposta d’ell.</div>
+</li>
+<li class="level1"><div class="li"> <em>confirm</em>: funció que s’utilitza quan es vol donar l’opció a l’usuari de confirmar o no l’execució d’una tasca del programa.</div>
+</li>
+<li class="level1"><div class="li"> <em>prompt</em>: funció que s’utilitza per demanar a l’usuari alguna informació. </div>
+</li>
+<li class="level1"><div class="li"> <em>parseInt</em>: funció que converteix el seu primer argument en un enter.</div>
+</li>
+<li class="level1"><div class="li"> <em>parseFloat</em>: funció que converteix un <em>string</em> a un número de punt flotant sempre que sigui possible.</div>
+</li>
+<li class="level1"><div class="li"> <em>setTimeout</em>: executa una funció després d’un instant de temps.</div>
+</li>
+<li class="level1"><div class="li"> <em>setInterval</em>: executa una funció indefinidament.</div>
+</li>
+</ul>
+
+<p>
+Qui programa també pot definir diferents tipus de funcions.
+</p>
+
+<p>
+Els àmbits de les variables són una mica diferents dels altres llenguatges de programació. L’àmbit d’una declaració creada dins d’un bloc no acaba (com passa en altres llenguatges) al final del bloc. Un bloc pot ser una estructura de control com per exemple un bucle del tipus <em>for</em>.
+</p>
+
+<p>
+L’àmbit d’una variable és la zona del programa en la qual es defineix la variable. JavaScript defineix dos àmbits per a les variables: global i local. En JavaScript, les funcions són les que declaren els àmbits i no els blocs.
+</p>
+
+<p>
+Totes les funcions pertanyen a algun objecte, fins i tot les declarades a l’inici del programa. L’objecte ‘pare’ és l’objecte <em>window</em>. Aquest objecte té com a propietat totes les variables declarades com a globals i com a mètodes totes les funcions declarades pel programador. S’ha d’intentar no declarar funcions que no tinguin sentit com a mètode d’aquest objecte. Per aquest motiu, apareix el concepte de funcions sense nom o funcions autoexecutables. 
+</p>
+
+<p>
+És un llenguatge funcional on les funcions són la base del llenguatge. Una funció es pot invocar fora del seu àmbit de declaració. Per exemple, la funció <em>setInterval</em> permet executar qualsevol funció independentment de si utilitza o no variables globals o locals. Per solucionar aquest problema, JavaScript, ha creat les clausures.
+</p>
+
+<p>
+Les clausures són com bombolles de seguretat de les funcions. JavaScript és un llenguatge funcional i les funcions  poden ser executades fora del seu context, per això, necessita que les variables a les quals té accés quan es declara existeixin quan s’executa. Aquest és un dels punts clau a l’hora d’entendre aquest llenguatge. Les funcions es poden executar fora del seu context i per tant les variables a les quals hauria de tenir accés podrien no existir. Les clausures evita que aquestes variables no existeixin. Les variables poden viure més enllà del seu context si es preveu que una funció hauria de poder accedir al contingut de la variable.
+</p>
+
+<p>
+Per crear un <em>array</em> existeixen dues maneres, utilitzant el constructor o de manera literal. La diferència és que, si s’utilitza el constructor, es pot definir una mida inicial a l’<em>array</em>.
+</p>
+
+<p>
+Les principals propietats i funcions que s’expliquen dels <em>arrays</em> són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>length</em>: dóna el nombre d’elements que conté.</div>
+</li>
+<li class="level1"><div class="li"> <em>concat</em>: funció que es fa servir per crear un nou <em>array</em> amb els elements de dos <em>arrays</em> diferents.</div>
+</li>
+<li class="level1"><div class="li"> <em>push</em>: funció que afegeix un element al final de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>unshift</em>: funció que afegeix els elements a l’inici de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>pop</em>: funció que elimina l’últim element de l’<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>shift</em>: funció que elimina el primer element de l’array.</div>
+</li>
+<li class="level1"><div class="li"> <em>sort</em>: funció que ordena alfabèticament els elements d’un<em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>split</em>: converteix una cadena de text en un <em>array</em> de cadenes de text.</div>
+</li>
+<li class="level1"><div class="li"> <em>join</em>: funció que uneix tots els elements d’un <em>array</em> en una cadena de text utilitzant un caràcter d’unió.</div>
+</li>
+<li class="level1"><div class="li"> <em>reverse</em>: funció que modifica un <em>array</em> col·locant els seus elements en l’ordre invers a la seva posició original.</div>
+</li>
+<li class="level1"><div class="li"> <em>indexOf</em>: retorna la posició de l’<em>array</em> on es troba la primera ocurrència del valor cercat. </div>
+</li>
+<li class="level1"><div class="li"> <em>lastIndexOf</em>: retorna la posició de l’<em>array</em> on es troba l’última ocurrència del valor cercat.</div>
+</li>
+<li class="level1"><div class="li"> <em>every(function test())</em>: funció que comprova, element a element, si tots els valors emmagatzemats a l’<em>array</em> compleixen la funció <em>test</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>some(function test())</em>: funció que comprova si hi ha algun element que compleix la funció <em>test</em> que es passa a la funció.</div>
+</li>
+<li class="level1"><div class="li"> <em>filter(function test(){})</em>: crea un <em>array</em> i l’omple amb els valors que satisfan la funció <em>test</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>slice(inici, final)</em>: funció que retorna un nou <em>array</em> amb els valors que es troben des de l’índex inici fins a l’índex final.</div>
+</li>
+<li class="level1"><div class="li"> <em>splice</em>: funció que afegeix i elimina elements a partir d’una posició de l’array.</div>
+</li>
+</ul>
+
+<p>
+Quan s’utilitzen les funcions anteriors per augmentar la funcionalitat del programa ens veiem amb la necessitat de modificar el codi per tal de no repetir fragments o per reaprofitar les funcions creades. Aquesta reestructuració del codi s’anomena fer refacció. Fer refacció (<em>Code Refactoring</em>) vol dir, en programació, reestructurar el codi per tal de millorar-lo i reduir la seva complexitat sense canviar les funcionalitats que hi havia fins al moment. Aquest procés és indispensable en qualsevol etapa que impliqui millorar o incorporar noves característiques a l’aplicació.
+</p>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../WebContent/u2/introduccio.html">Introducció</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

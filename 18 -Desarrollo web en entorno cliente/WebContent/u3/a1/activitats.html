@@ -1,0 +1,546 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Esdeveniments. Manejament de formularis</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Programació d'events</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#que_es_un_event">Què és un event?</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#gestio_d_events">Gestió d'events</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Programació amb formularis</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#que_es_un_formulari">Què és un formulari?</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#estructura_d_un_formulari">Estructura d'un formulari</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#modificacio_d_aparenca_i_comportament">Modificació d'aparença i comportament</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#validacio">Validació</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#expressions_regulars">Expressions regulars</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#utilitzacio_de_galetes_i_web_storage">Utilització de galetes i Web Storage</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Objectes definits pel programador</a></li><li><a href="continguts.html">Objectes definits pel programador</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="us_d_objectes" >Ús d&#039;objectes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és practicar la creació d’objectes de forma literal, actualitzar-los, augmentar-los i eliminar-ne propietats i mètodes.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL està treballant en un joc de zombis i us ha demanat que genereu una estructura de dades per representar els jugadors. Com que es tracta d’una versió alfa no cal que us preocupeu per l’encapsulament de la informació, els interessa que sigui el més simple possible.
+</p>
+
+<p>
+L’estructura de dades ha de tenir les propietats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Nom</div>
+</li>
+<li class="level1"><div class="li"> Cognom</div>
+</li>
+<li class="level1"><div class="li"> Ocupació</div>
+</li>
+<li class="level1"><div class="li"> Nivell</div>
+</li>
+<li class="level1"><div class="li"> Facció</div>
+</li>
+</ul>
+
+<p>
+També us demanen que creeu una llista (<em>array</em>) de jugadors amb dos jugadors d’exemple, fent servir aquesta estructura.
+</p>
+
+<p>
+Per facilitar la comprovació de les dades dels jugadors ús demanen que afegiu un mètode <code>toString()</code> a l’estructura de dades per poder veure la informació en una sola línia i demostreu que funciona correctament.
+</p>
+
+<p>
+Finalment, es considera que un jugador podrà abandonar la seva facció, així que us demanen que elimineu la facció del segon jugador i en demostreu el funcionament correcte.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Com que es demana expressament la implementació més simple possible i no cal preocupar-se per l’encapsulament la millor opció és fer servir un objecte declarat literalment:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let jugador = {</div></li><li class="li1"><div class="de1">  nom: 'Nom del jugador',</div></li><li class="li1"><div class="de1">  cognom: 'Cognom del jugador',</div></li><li class="li1"><div class="de1">  ocupacio: 'Sense ocupació',</div></li><li class="li1"><div class="de1">  nivell: 0,</div></li><li class="li1"><div class="de1">  faccio: 'Sense facció',</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A continuació s’ha de crear  un <em>array</em> de jugadors i seguidament creem dues còpies d’aquest objecte amb <code>Object.create()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let jugadors = [];</div></li><li class="li1"><div class="de1">jugadors.push(Object.create(jugador));</div></li><li class="li1"><div class="de1">jugadors.push(Object.create(jugador));</div></li></ol></pre>
+
+<p>
+Podeu afegir la línia <code>console.log(jugadors);</code> per comprovar que s’han afegit dues instàncies de jugador. Com que us demanen que siguin dos jugadors d’exemple, les seves dades han de ser diferents, així doncs s’han d’actualitzar. Podeu aprofitar l’índex per obtenir la referència de l’objecte dins de l’<em>array</em>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">jugadors[0].nom = 'Ricard';</div></li><li class="li1"><div class="de1">jugadors[0].cognom = 'Ensutjs';</div></li><li class="li1"><div class="de1">jugadors[0].ocupacio = 'Policia';</div></li><li class="li1"><div class="de1">jugadors[0].nivell = 1;</div></li><li class="li1"><div class="de1">jugadors[0].faccio = &quot;Blaus de Cambrils&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">jugadors[1].nom = 'Patrici';</div></li><li class="li1"><div class="de1">jugadors[1].cognom = 'Montnegre';</div></li><li class="li1"><div class="de1">jugadors[1].ocupacio = 'Delinqüent';</div></li><li class="li1"><div class="de1">jugadors[1].nivell = 2;</div></li><li class="li1"><div class="de1">jugadors[1].faccio = &quot;Vermells de Reus&quot;;</div></li></ol></pre>
+
+<p>
+Com que els dos jugadors es creen a partir de <code>jugador</code>, el més pràctic és afegir el mètode <code>toString()</code> a aquest objecte, de manera que serà accessible per tots els jugadors.
+</p>
+
+<p>
+La implementació és molt simple, només s’ha de generar una cadena de text amb la informació i una vegada implementada només cal cridar el mètode i mostrar-lo per la consola per demostrar que funciona correctament:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">jugador.toString = function() {</div></li><li class="li1"><div class="de1">  let dadesFormatades = `${this.nom} ${this.cognom}. ${this.ocupacio} , nivell ${this.nivell} (´ ${this.faccio})`;</div></li><li class="li1"><div class="de1">  return dadesFormatades;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(jugadors[0].toString());</div></li><li class="li1"><div class="de1">console.log(jugadors[1].toString());</div></li></ol></pre>
+
+</p>
+
+<p>
+Per eliminar una propietat només cal fer servir l’operador <code>delete</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">delete (jugadors[1].faccio);</div></li></ol></pre>
+
+<p>
+Tal com es pot comprovar, en eliminar la facció del jugador es mostra el valor de la propietat de l’objecte original: <code>jugador</code>. Per tant, es mostrarà: <em>Sense facció</em>.
+</p>
+
+<p>
+Podeu veure aquesta activitat completa en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/eYzVwBZ?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/eYzVwBZ?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/eYzVwBZ?editors=0012</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="funcionament_dels_prototipus" >Funcionament dels prototipus</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és comprovar el funcionament de la propietat <code>prototype</code> i el comportament de la cadena de prototipus.
+</p>
+
+<p>
+L’empresa Entreteniments IOC, SL vol ampliar el tipus de zombis del seu pròxim llançament. Compten amb un constructor de zombis per generar un tipus bàsic que els permet canviar algunes propietats bàsiques, però volen implementar diferents monstres amb comportaments diferents.
+</p>
+
+<p>
+Us demanen que codifiqueu nous objectes que aprofitin el constructor ja implementat i permetin crear monstres amb les següents característiques:
+</p>
+<ul>
+<li class="level1"><div class="li"> Monstres aquàtics que puguin nadar.</div>
+</li>
+<li class="level1"><div class="li"> Abominacions que puguin atacar diverses vegades.</div>
+</li>
+</ul>
+
+<p>
+Aquestes característiques s’han de poder afegir a qualsevol monstre ja generat, de manera que no han de formar part d’un constructor.
+</p>
+
+<p>
+Us proporcionen el codi següent, amb una demostració del comportament actual:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let Zombi = function(nom, puntsVida, potencia) {</div></li><li class="li1"><div class="de1">  this.nom = nom;</div></li><li class="li1"><div class="de1">  this.puntsVida = puntsVida;</div></li><li class="li1"><div class="de1">  this.maxVida = puntsVida;</div></li><li class="li1"><div class="de1">  this.potencia = potencia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Zombi.prototype.atacar = function(objectiu) {</div></li><li class="li1"><div class="de1">  console.log(this.nom + &quot; ataca a &quot; + objectiu + &quot; i li causa &quot; + this.potencia + &quot; punts de dany&quot;);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Zombi.prototype.moure = function(tipusTerreny) {</div></li><li class="li1"><div class="de1">  if (tipusTerreny === &quot;aigua&quot;) {</div></li><li class="li1"><div class="de1">    console.log(this.nom + &quot;No es pot moure a través d'aquest tipus de terreny&quot;);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(this.nom + &quot; es mou a través del &quot; + tipusTerreny);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let zombi = new Zombi('Bob', 2, 3);</div></li><li class="li1"><div class="de1">zombi.atacar('Ricard');</div></li><li class="li1"><div class="de1">zombi.moure('bosc');</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+El primer que s’ha de fer és generar les noves funcions amb el comportament indicat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let nadar = function(tipusTerreny) {</div></li><li class="li1"><div class="de1">  if (tipusTerreny === &quot;aigua&quot;) {</div></li><li class="li1"><div class="de1">    console.log(this.nom + &quot; es mou a través del &quot; + tipusTerreny);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(this.nom + &quot; no es pot moure a través d'aquest tipus de terreny&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let atacMultiple = function(objectiu) {</div></li><li class="li1"><div class="de1">  let nombreAtacs = 3;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; nombreAtacs; i++) {</div></li><li class="li1"><div class="de1">    Zombi.prototype.atacar.apply(this, arguments);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En el primer cas es reescriu la funció sense fer cap comprovació, però en el segon cas reaprofita el comportament original invocant el mètode <code>atacar()</code> del prototipus de <code>Zombi</code> diverses vegades. Com que es fa servir el mètode <code>apply()</code> s’ha de passar el context (<code>this</code>) i els <code>arguments</code>.
+</p>
+
+<p>
+A continuació s’ha de generar una instància d’un objecte fent servir el constructor zombi, augmentem l’objecte afegint un mètode <code>moure()</code> al qual assignem la funció <code>nadar()</code>. Recordeu que la instància de l’objecte no té cap mètode, s’han afegit al prototipus del constructor:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let popZombi = new Zombi('Pau, el pop zombi', 15, 3);</div></li><li class="li1"><div class="de1">popZombi.moure = nadar;</div></li><li class="li1"><div class="de1">popZombi.moure('aigua');</div></li><li class="li1"><div class="de1">popZombi.atacar('Ricard');</div></li></ol></pre>
+
+<p>
+Com es pot comprovar en el cas de <code>moure()</code> es fa servir el mètode de l’objecte, però a atacar es fa servir el mètode del prototipus de <code>Zombi</code>.
+</p>
+
+<p>
+Seguidament s’actualitza el mètode <code>atacar()</code> amb la funció <code>atacMultiple()</code> i se’n comprova el funcionament:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">popZombi.atacar = atacMultiple;</div></li><li class="li1"><div class="de1">popZombi.atacar('Ricard');</div></li></ol></pre>
+
+<p>
+Tal com es pot apreciar, ara l’objecte compta amb dos mètodes propis i, per tant, ja no crida els mètodes del prototipus.
+</p>
+
+<p>
+Podeu veure aquesta activitat completa en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qBNxzmP?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qBNxzmP?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/qBNxzmP?editors=0012</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_d_objectes" >Creació d&#039;objectes</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és reforçar els coneixements sobre els patrons de construcció d’objectes i aplicar el més adient als requeriments especificats.
+</p>
+
+<p>
+El joc de zombis en el que està treballant Entreteniments IOC, SL està a punt d’entrar en fase beta, és a dir, començarà a ser provat per persones alienes a l’empresa. Per aquesta raó cal encapsular la informació per evitar que usuaris malintencionats puguin modificar les dades.
+</p>
+
+<p>
+Us han encarregat que utilitzeu alguna tècnica (patró de generació) per adaptar l’estructura de dades del jugador per evitar que aquestes puguin ser manipulades externament, però ha de ser possible accedir al nom i al mètode <code>toString()</code> i heu de demostrar-ne el funcionament.
+</p>
+
+<p>
+A continuació podeu veure l’estructura que us proporcionen per adaptar:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let jugador = {</div></li><li class="li1"><div class="de1">  nom: 'Nom del jugador',</div></li><li class="li1"><div class="de1">  cognom: 'Cognom del jugador',</div></li><li class="li1"><div class="de1">  ocupacio: 'Sense ocupació',</div></li><li class="li1"><div class="de1">  nivell: 0,</div></li><li class="li1"><div class="de1">  faccio: 'Sense facció',</div></li><li class="li1"><div class="de1">  incrementarNivell: function() {</div></li><li class="li1"><div class="de1">    nivell++</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  toString: function() {</div></li><li class="li1"><div class="de1">    let dadesFormatades = `${this.nom} ${this.cognom}. ${this.ocupacio}, ${nivell} ${this.nivell} (${this.faccio})`;</div></li><li class="li1"><div class="de1">    return dadesFormatades;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Com que es demana poder encapsular la informació hi ha dues opcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Aplicar el patró funcional.</div>
+</li>
+<li class="level1"><div class="li"> Aplicar el patró constructor.</div>
+</li>
+</ul>
+
+<p>
+Qualsevol de les dues tècniques es pot fer servir per resoldre aquesta activitat. En aquesta solució s’ha optat per fer servir el patró constructor.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let Jugador = function(_nom, _cognom, _ocupacio) {</div></li><li class="li1"><div class="de1">  let _faccio = 'Sense facció';</div></li><li class="li1"><div class="de1">  let _nivell = 0;</div></li><li class="li1"><div class="de1">  let _incrementarNivell = function() {</div></li><li class="li1"><div class="de1">    nivell++;</div></li><li class="li1"><div class="de1">  };</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.getNom = function() {</div></li><li class="li1"><div class="de1">    return _nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  this.toString = function()  {</div></li><li class="li1"><div class="de1">    let dadesFormatades = `${_nom} ${_cognom}. ${_ocupacio}, ${nivell} ${_nivell} (${_faccio})`;</div></li><li class="li1"><div class="de1">    return dadesFormatades;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let ricard = new Jugador('Ricard', 'Enjuts', 'Policia');</div></li><li class="li1"><div class="de1">console.log(ricard.getNom());</div></li><li class="li1"><div class="de1">console.log(ricard.toString());</div></li></ol></pre>
+
+<p>
+Fixeu-vos que s’ha fet servir el prefix ‘_’ perquè sigui més clar quines variables i paràmetres seran considerats privats: <code>_nom</code>, <code>_cognom</code>, <code>_ocupacio</code>, <code>_faccio</code>, <code>_nivell</code> i el mètode <code>_incrementarNivell()</code>.
+</p>
+
+<p>
+Per altra banda, tenim dos mètodes públics: <code>getNom()</code> i <code>toString()</code>. Com que es tracta de mètodes públics han d’anar prefixats per <code>this</code>, per fer referència a la mateixa instància de l’objecte.
+</p>
+
+<p>
+Gràcies a la clausura que es crea al constructor, tots dos mètodes públics continuen tenint accés a les variables i paràmetres de la funció, encara que l’execució del constructor hagi finalitzat.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="herencia_protipus" >Herència (protipus)</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+L’objectiu d’aquesta activitat és aplicar alguna de les tècniques d’herència conegudes per crear una jerarquia d’objectes mitjançant la herència per prototipus.
+</p>
+
+</p>
+
+<p>
+Us han proporcionat el següent constructor d’objectes de tipus <code>Consumible</code>. Volen poder generar consumibles de diferents tipus, de manera que cada un podrà tenir efectes completament diferents. Us han proporcionat un objecte per comprovar quin ha de ser el funcionament. El codi és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let Consumible = function(_nom, _efecte) {</div></li><li class="li1"><div class="de1">  this.getNom = function() {</div></li><li class="li1"><div class="de1">    return _nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.getEfecte = function() {</div></li><li class="li1"><div class="de1">    return _efecte;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Consumible.prototype.consumir = function(personatge) {</div></li><li class="li1"><div class="de1">  console.log(`${personatge.nom} consumeix ${this.getNom()} i ${this.getEfecte()}`);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let poma = new Consumible('Poma', 'no té cap efecte');</div></li><li class="li1"><div class="de1">let ricard = {</div></li><li class="li1"><div class="de1">  nom: 'Ricard',</div></li><li class="li1"><div class="de1">  potencia: 1,</div></li><li class="li1"><div class="de1">  puntsVida: 8,</div></li><li class="li1"><div class="de1">  maxPuntsVida: 10,</div></li><li class="li1"><div class="de1">  consumir: function(consumible) {</div></li><li class="li1"><div class="de1">    consumible.consumir(this);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(poma);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest codi en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ExyQBoX?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ExyQBoX?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ExyQBoX?editors=0012</a>. 
+</p>
+<ul>
+<li class="level1"><div class="li"> El primer tipus d’objecte ha de permetre generar objectes que recuperin punts de vida fins la quantitat definida per paràmetre al constructor i respectant el màxim de punts de vida del personatge.</div>
+</li>
+<li class="level1"><div class="li"> El segon tipus d’objecte ha d’augmentar la potència del personatge però, per contra, abaixar el màxim de punts de vida i ajustar els punts de vida actuals a aquest nou màxim si és necessari.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Primerament es crea un nou constructor, anomenat <code>RecuperadorVida()</code>. Dins del constructor s’invoca el constructor <code>Consumible()</code>, passant com a arguments <code>_nom</code> i <code>_efecte</code>. Com que s’ha afegit una nova propietat privada, cal afegir un mètode per accedir-hi, que s’ha anomenat <code>getPotencia()</code>.
+</p>
+
+<p>
+A continuació cal modificar el prototipus de <code>RecuperadorVida</code> perquè sigui igual al de <code>Consumible</code>. Recordeu que s’ha de crear una còpia amb <code>Object.create()</code> per evitar que qualsevol canvi al prototipus afecti també a <code>Consumible</code>. A més, s’ha de corregir el constructor i guardem una referència al pare (<code>parent</code>). En aquest cas sí que ha de ser una referència al prototipus de <code>Consumible</code> directament, ja que aquesta propietat s’ha de tractar com si fos de només lectura perquè s’utilitzarà exclusivament per accedir als mètodes del constructor pare.
+</p>
+
+<p>
+Finalment s’afegeix el nou comportament que comprova si els punts de vida ja es troben al màxim. Si són menors, els augmenta segons la potència i el màxim possible i en cas contrari mostra un missatge.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let RecuperadorVida = function(_nom, _efecte, _potencia) {</div></li><li class="li1"><div class="de1">  Consumible.call(this, _nom, _efecte);    </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.getPotencia = function() {</div></li><li class="li1"><div class="de1">    return _potencia;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">RecuperadorVida.prototype = Object.create(Consumible.prototype);</div></li><li class="li1"><div class="de1">RecuperadorVida.prototype.constructor = RecuperadorVida;</div></li><li class="li1"><div class="de1">RecuperadorVida.prototype.parent = Consumible.prototype;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">RecuperadorVida.prototype.consumir = function(personatge) {</div></li><li class="li1"><div class="de1">  if (personatge.puntsVida &lt; personatge.maxPuntsVida) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    personatge = Math.min(personatge.puntsVida + this.getPotencia(), personatge.maxPuntsVida)</div></li><li class="li1"><div class="de1">    RecuperadorVida.prototype.parent.consumir.call(this, personatge)</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log(`${personatge.puntsVida} ja ha recuperat tota la salut.`);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let plantaCurativa = new RecuperadorVida('Planta curativa', 'recupera punts de vida', 2);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li></ol></pre>
+
+<p>
+Podeu veure aquesta activitat resolta en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/pobaXLg?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/pobaXLg?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/pobaXLg?editors=0012</a>. 
+</p>
+
+<p>
+Implementar el següent element de la jerarquia de classes és encara més simple. Com que tant <code>Enfurismador()</code> com <code>RecuperadorVida()</code> tenen la mateixa signatura (es passen els mateixos paràmetres) podem fer que el primer hereti de <code>RecuperadorVida()</code> (tot i que <strong>seria més adient canviar el nom del constructor per algun altre de més genèric</strong>).
+</p>
+
+<p>
+Com que en la implementació del nou mètode <code>consumir()</code> no cal cridar al pare, no cal guardar-ne cap referència i es pot implementar el mètode directament:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let Enfurismador = function(_nom, _efecte, _potencia) {</div></li><li class="li1"><div class="de1">  RecuperadorVida.apply(this, arguments);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Enfurismador.prototype = Object.create(RecuperadorVida.prototype);</div></li><li class="li1"><div class="de1">Enfurismador.prototype.constructor = Enfurismador;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Enfurismador.prototype.consumir = function(personatge) {</div></li><li class="li1"><div class="de1">  if (personatge.maxPuntsVida &gt; 1) {</div></li><li class="li1"><div class="de1">    personatge.maxPuntsVida--;</div></li><li class="li1"><div class="de1">    personatge.puntsVida = Math.min(personatge.puntsVida, personatge.maxPuntsVida);</div></li><li class="li1"><div class="de1">    personatge.potencia += this.getPotencia();</div></li><li class="li1"><div class="de1">    console.log(`Grgrgrgr! ${personatge.nom} consumeix ${this.getNom()} i s\´enfurisma (potencia: ${personatge.potencia})`);</div></li><li class="li1"><div class="de1">  } else {</div></li><li class="li1"><div class="de1">    console.log('No te cap efecte');</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let banyaSegol = new Enfurismador('Banya del sègol', 's\´enfuria', 1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li></ol></pre>
+
+<p>
+Podeu veure aquesta activitat resolta en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/wvWyLQw?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wvWyLQw?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wvWyLQw?editors=0012</a>. 
+</p>
+
+<p>
+Recordeu que els objectes es passen per referència, per aquesta raó el mètode <code>consumir()</code> en rebre com a paràmetre un objecte de tipus <code>Personatge</code> pot modificar-lo i aquests canvis afecten l’objecte original.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="herencia_classes" >Herència (classes)</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+L’objectiu d’aquesta activitat és crear una jerarquía de classes. 
+</p>
+
+<p>
+Us han proporcionat les següent classes <code>Consumible</code> i <code>Persona</code>. Volen poder generar consumibles de diferents tipus, de manera que cada un podrà tenir efectes completament diferents. Us han proporcionat un objecte per comprovar quin ha de ser el funcionament. El codi és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Consumible {</div></li><li class="li1"><div class="de1">  constructor(nom, efecte) {</div></li><li class="li1"><div class="de1">    this._nom = nom;</div></li><li class="li1"><div class="de1">    this._efecte = efecte;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get nom() {</div></li><li class="li1"><div class="de1">    return this._nom;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get efecte() {</div></li><li class="li1"><div class="de1">    return this._efecte;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  consumir(personatge) {</div></li><li class="li1"><div class="de1">    console.log(`${personatge.nom} consumeix ${this.nom} i ${this.efecte}`);    </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">class Persona {</div></li><li class="li1"><div class="de1">  constructor(nom, potencia, puntsVida, maxPuntsVida) {</div></li><li class="li1"><div class="de1">    this.nom = nom;</div></li><li class="li1"><div class="de1">    this.potencia = potencia;</div></li><li class="li1"><div class="de1">    this.puntsVida = puntsVida;</div></li><li class="li1"><div class="de1">    this.maxPuntsVida = maxPuntsVida;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  consumir(consumible) {</div></li><li class="li1"><div class="de1">    consumible.consumir(this);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let poma = new Consumible('Poma', 'no té cap efecte');</div></li><li class="li1"><div class="de1">let ricard = new Persona('Ricard', 1, 8, 10);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(poma);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest codi en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NWryZQx?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NWryZQx?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NWryZQx?editors=0012</a>.
+</p>
+<ul>
+<li class="level1"><div class="li"> El primer tipus de classe ha de permetre generar objectes que recuperin punts de vida fins a la quantitat definida per un nou paràmetre que tindrà el constructor, però, a la vegada, respectant el màxim de punts de vida del personatge.</div>
+</li>
+<li class="level1"><div class="li"> El segon tipus de classe ha d’augmentar la potència del personatge però, a la vegada, abaixar el màxim de punts de vida en una unitat i ajustar els punts de vida actuals a aquest nou màxim si és necessari.</div>
+</li>
+</ul>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Primerament es crea una nova classe, anomenada <code>RecuperadorVida</code> com a subclasse de <code>Consumible</code>. Al constructor se li passen els paràmetres <code>nom</code>, <code>efecte</code> i <code>potencia</code>. Els dos primers es passen al constructor de la classe pare i <code>potencia</code> es desa com a propietat d’aquesta classe.
+</p>
+
+<p>
+Seguidament, afegim la funció <code>consumir()</code>, que reemplaçarà a la funció <code>consumir()</code> original. Fixeu-vos que, un cop es realitza la recuperació de punts de vida, es crida al mètode de la classe pare per mostrar el missatge.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class RecuperadorVida extends Consumible {</div></li><li class="li1"><div class="de1">  constructor(nom, efecte, potencia) {</div></li><li class="li1"><div class="de1">    super(nom, efecte);</div></li><li class="li1"><div class="de1">    this._potencia = potencia;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get potencia() {</div></li><li class="li1"><div class="de1">    return this._potencia;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  consumir(personatge) {</div></li><li class="li1"><div class="de1">    if (personatge.puntsVida &lt; personatge.maxPuntsVida) {</div></li><li class="li1"><div class="de1">      personatge.puntsVida = Math.min(</div></li><li class="li1"><div class="de1">        personatge.puntsVida + this.potencia,</div></li><li class="li1"><div class="de1">        personatge.maxPuntsVida</div></li><li class="li1"><div class="de1">      );</div></li><li class="li1"><div class="de1">      super.consumir(personatge);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log(`${personatge.puntsVida} ja ha recuperat tota la salut.`);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let plantaCurativa = new RecuperadorVida(</div></li><li class="li1"><div class="de1">  &quot;Planta curativa&quot;,</div></li><li class="li1"><div class="de1">  &quot;recupera punts de vida&quot;,</div></li><li class="li1"><div class="de1">  2</div></li><li class="li1"><div class="de1">);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li><li class="li1"><div class="de1">ricard.consumir(plantaCurativa);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest codi en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yLJvmoP?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLJvmoP?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yLJvmoP?editors=0012</a>.
+</p>
+
+<p>
+A continuació implementem la classe <code>Enfurismador</code>. En aquest cas podríem haver-hi fet servir com a classe pare <code>RecuperadorVida</code>, ja que el constructor de totes dues classes inclou la potència, però això podria portar a confusió, ja que si s’invoqués el mètode <code>consumir()</code> del pare (com es fa a <code>RecuperadorVida</code> per mostrar el missatge) s’aplicaria l’efecte restaurador de vida.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">class Enfurismador extends Consumible {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  constructor (nom, efecte, potencia) {</div></li><li class="li1"><div class="de1">    super(nom, efecte);</div></li><li class="li1"><div class="de1">    this._potencia = potencia;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  get potencia() {</div></li><li class="li1"><div class="de1">    return this._potencia;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  consumir(personatge) {</div></li><li class="li1"><div class="de1">    if (personatge.maxPuntsVida &gt; 1) {</div></li><li class="li1"><div class="de1">      personatge.maxPuntsVida--;</div></li><li class="li1"><div class="de1">      personatge.puntsVida = Math.min(personatge.puntsVida, personatge.maxPuntsVida);</div></li><li class="li1"><div class="de1">      personatge.potencia += this.potencia;</div></li><li class="li1"><div class="de1">      console.log(`Grgrgrgr! ${personatge.nom} consumeix ${this.nom} i s\´enfurisma (potencia: ${personatge.potencia})`);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      console.log('No te cap efecte');</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let banyaSegol = new Enfurismador('Banya del sègol', 's\'enfuria', 1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li><li class="li1"><div class="de1">ricard.consumir(banyaSegol);</div></li></ol></pre>
+
+<p>
+Podeu veure aquest codi en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/dyXdxgb?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dyXdxgb?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/dyXdxgb?editors=0011</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

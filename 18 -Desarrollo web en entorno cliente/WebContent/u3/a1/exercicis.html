@@ -1,0 +1,772 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Esdeveniments. Manejament de formularis</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Programació d'events</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#que_es_un_event">Què és un event?</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#gestio_d_events">Gestió d'events</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Programació amb formularis</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#que_es_un_formulari">Què és un formulari?</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#estructura_d_un_formulari">Estructura d'un formulari</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#modificacio_d_aparenca_i_comportament">Modificació d'aparença i comportament</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#validacio">Validació</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#expressions_regulars">Expressions regulars</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#utilitzacio_de_galetes_i_web_storage">Utilització de galetes i Web Storage</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Objectes definits pel programador</a></li><li><a href="continguts.html">Objectes definits pel programador</a></li><li>Exercicis d'autoavaluació</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="exercicis_d_autoavaluacio"> Exercicis d'autoavaluació </a></h1>
+    	
+<h2><a id="exercici_1" >Exercici 1</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents:
+</p>
+<div id="id_vf_5ab54987d8d7b0e0ca4bb63ed11dbf6b" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ JavaScript és un llenguatge clàssic 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ JavaScript és un llenguatge prototípic 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ A JavaScript no és possible encapsular la informació 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ A JavaScript és molt complicat aplicar el polimorfisme (modificar el comportament d’un mètode d’un objecte fill) 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Les propietats i mètodes poden eliminar-se d’un objecte en qualsevol moment a través de l’operador <code>delete</code>
+</p>
+</td><td><input type="radio" value="V" name="sol_5"></input></td><td><input type="radio" value="F" name="sol_5"></input></td></tr><tr><td>6</td><td>
+<p>
+ Els <em>arrays</em> i les funcions són objectes 
+</p>
+</td><td><input type="radio" value="V" name="sol_6"></input></td><td><input type="radio" value="F" name="sol_6"></input></td></tr><tr><td>7</td><td>
+<p>
+ Els nombres i les cadenes de text són objectes 
+</p>
+</td><td><input type="radio" value="V" name="sol_7"></input></td><td><input type="radio" value="F" name="sol_7"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="V,V,F,F,V,V,F"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_2" >Exercici 2</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents:
+</p>
+<div id="id_vf_a19faa8bfb22aa0c62a4e10278f3419c" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ El prototipus d’un objecte és també un objecte 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Quan s’aplica la cadena de prototipus només es comprova la propietat del pare i, si no es troba, es produeix un error 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La propietat <code>prototype</code> conté una referència al prototipus de l’objecte pare quan s’utilitza el patró constructor 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ La propietat <code>prototype</code> conté una referència al prototipus de l’objecte pare quan s’utilitza el patró prototípic o funcional 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Es pot augmentar el prototip dels objectes predefinits com <code>Number</code> i <code>String</code>
+</p>
+</td><td><input type="radio" value="V" name="sol_5"></input></td><td><input type="radio" value="F" name="sol_5"></input></td></tr><tr><td>6</td><td>
+<p>
+ L’objecte <code>Object</code> no té prototipus 
+</p>
+</td><td><input type="radio" value="V" name="sol_6"></input></td><td><input type="radio" value="F" name="sol_6"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="6"></input><input type="hidden" name="qsol" value="V,F,V,F,V,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_3" >Exercici 3</a></h2>
+<div class="level2">
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents:
+</p>
+<div id="id_vf_29a5abb1192ec8d3745e6f98d5014992" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Només es pot aplicar l’herència entre objectes si es fa servir el patró constructor   
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ En els objectes declarats literalment només es pot accedir a un mètode o propietat fent servir un mètode d’accés 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Per implementar l’encapsulament s’aprofiten les clausures creades per les funcions 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Un objecte pot heretar d’un altre objecte 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ No és necessari fer servir l’operador <code>new</code> quan es crea un objecte fent servir un constructor 
+</p>
+</td><td><input type="radio" value="V" name="sol_5"></input></td><td><input type="radio" value="F" name="sol_5"></input></td></tr><tr><td>6</td><td>
+<p>
+ A l’especificació d’ES6 s’ha afegit un sistema de classes, més similar als dels llenguatges clàssics 
+</p>
+</td><td><input type="radio" value="V" name="sol_6"></input></td><td><input type="radio" value="F" name="sol_6"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="6"></input><input type="hidden" name="qsol" value="F,F,V,V,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_4" >Exercici 4</a></h2>
+<div class="level2">
+
+<p>
+Trieu la/les opcions correctes:
+</p>
+<div id="id_choice_33c79a9954efce3dffaf652be8b72e8f" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ JavaScript no és un llenguatge <em>clàssic</em>
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ JavaScript és un llenguatge basat en prototips   
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Les funcions a JavaScript són objectes i per tant tenen mètodes i propietats 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Els nombres a JavaScript són objectes
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Les cadenes de text de JavaScript no són objectes perquè són immutables 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_5"></input></td></tr><tr><td>6</td><td>
+<p>
+ JavaScript permet implementar l’herència de moltes maneres   
+</p>
+</td><td><input type="checkbox" value="V" name="sol_6"></input></td></tr><tr><td>7</td><td>
+<p>
+ No existeix el concepte d’herència a JavaScript
+</p>
+</td><td><input type="checkbox" value="V" name="sol_7"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="2,3,5,6"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_5" >Exercici 5</a></h2>
+<div class="level2">
+
+<p>
+Trieu la/les opcions correctes:
+</p>
+<div id="id_choice_9f9a71990bec5abbd7f1373c55a6e410" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Només es pot aplicar l’herència si es fa servir el patró constructor
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ El patró constructor facilita l’accés al prototipus mitjançant la propietat <code>prototype</code>
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La declaració literal d’objectes és la manera més simple de crear un objecte 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ El patró funcional permet encapsular la informació 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Per encapsular la informació dins d’un objecte s’han de fer servir clausures 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_5"></input></td></tr><tr><td>6</td><td>
+<p>
+ A JavaScript es poden declarar mètodes públics i privats
+</p>
+</td><td><input type="checkbox" value="V" name="sol_6"></input></td></tr><tr><td>7</td><td>
+<p>
+ A ES6 es poden declarar mètodes públics i privats
+</p>
+</td><td><input type="checkbox" value="V" name="sol_7"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="7"></input><input type="hidden" name="qsol" value="2,3,4,5"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_6" >Exercici 6</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents: 
+</p>
+<div id="id_relations_a1d0015b0be991515727ec990c552772" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ L’herència permet: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................................................................................</option>
+<option value="sol_5" title="accedir al contingut d’una funció encara que la seva execució hagi finalitzat">accedir al contingut d’una funció encara que la seva execució hagi finalitzat...</option>
+<option value="sol_2">amagar la informació</option>
+<option value="sol_8">ficar el codi en càpsules</option>
+<option value="sol_4">modelar el món real</option>
+<option value="sol_3">modificar el comportament d’un mètode</option>
+<option value="sol_6">mutar</option>
+<option value="sol_7">organitzar el codi de qualsevol manera</option>
+<option value="sol_1">reaprofitar el codi</option>
+<option value="sol_9">tancar un bloc</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ L’encapsulament permet: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................................................................................</option>
+<option value="sol_5" title="accedir al contingut d’una funció encara que la seva execució hagi finalitzat">accedir al contingut d’una funció encara que la seva execució hagi finalitzat...</option>
+<option value="sol_2">amagar la informació</option>
+<option value="sol_8">ficar el codi en càpsules</option>
+<option value="sol_4">modelar el món real</option>
+<option value="sol_3">modificar el comportament d’un mètode</option>
+<option value="sol_6">mutar</option>
+<option value="sol_7">organitzar el codi de qualsevol manera</option>
+<option value="sol_1">reaprofitar el codi</option>
+<option value="sol_9">tancar un bloc</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ El polimorfisme consisteix en: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................................................................................</option>
+<option value="sol_5" title="accedir al contingut d’una funció encara que la seva execució hagi finalitzat">accedir al contingut d’una funció encara que la seva execució hagi finalitzat...</option>
+<option value="sol_2">amagar la informació</option>
+<option value="sol_8">ficar el codi en càpsules</option>
+<option value="sol_4">modelar el món real</option>
+<option value="sol_3">modificar el comportament d’un mètode</option>
+<option value="sol_6">mutar</option>
+<option value="sol_7">organitzar el codi de qualsevol manera</option>
+<option value="sol_1">reaprofitar el codi</option>
+<option value="sol_9">tancar un bloc</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ L’abstracció consisteix en: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................................................................................</option>
+<option value="sol_5" title="accedir al contingut d’una funció encara que la seva execució hagi finalitzat">accedir al contingut d’una funció encara que la seva execució hagi finalitzat...</option>
+<option value="sol_2">amagar la informació</option>
+<option value="sol_8">ficar el codi en càpsules</option>
+<option value="sol_4">modelar el món real</option>
+<option value="sol_3">modificar el comportament d’un mètode</option>
+<option value="sol_6">mutar</option>
+<option value="sol_7">organitzar el codi de qualsevol manera</option>
+<option value="sol_1">reaprofitar el codi</option>
+<option value="sol_9">tancar un bloc</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ Una clausura es produeix quan un objecte pot: 
+</p>
+</td><td><select name="sol_5"><option value="sol_0">....................................................................................</option>
+<option value="sol_5" title="accedir al contingut d’una funció encara que la seva execució hagi finalitzat">accedir al contingut d’una funció encara que la seva execució hagi finalitzat...</option>
+<option value="sol_2">amagar la informació</option>
+<option value="sol_8">ficar el codi en càpsules</option>
+<option value="sol_4">modelar el món real</option>
+<option value="sol_3">modificar el comportament d’un mètode</option>
+<option value="sol_6">mutar</option>
+<option value="sol_7">organitzar el codi de qualsevol manera</option>
+<option value="sol_1">reaprofitar el codi</option>
+<option value="sol_9">tancar un bloc</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="9"></input><input type="hidden" name="qsol" value="reaprofitar el codi,amagar la informació,modificar el comportament d’un mètode,modelar el món real,accedir al contingut d’una funció encara que la seva execució hagi finalitzat,mutar,organitzar el codi de qualsevol manera,ficar el codi en càpsules,tancar un bloc"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_7" >Exercici 7</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents: 
+</p>
+<div id="id_relations_4089c4661bef2fee4362f85a614d30e7" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ La generalització d’un objecte consisteix en: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ L’especialització d’un objecte consisteix en: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ Els nombres, cadenes de text, <code>true</code>, <code>false</code>, <code>null</code> i <code>undefined</code> no són objectes perquè són: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ El patró prototípic permet: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ El patró funcional evita: 
+</p>
+</td><td><select name="sol_5"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr><tr><td>6</td><td>
+<p>
+ El patró constructor permet: 
+</p>
+</td><td><select name="sol_6"><option value="sol_0">....................................................................................</option>
+<option value="sol_6" title="aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>">aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototy...</option>
+<option value="sol_5">haver de preocupar-se per l’operador <code>new</code></option>
+<option value="sol_3">immutables</option>
+<option value="sol_2">implementar un objecte fill</option>
+<option value="sol_1">implementar un objecte pare</option>
+<option value="sol_7">mutables</option>
+<option value="sol_8">organitzar el codi de qualsevol manera</option>
+<option value="sol_9">posar el codi en càpsules</option>
+<option value="sol_10">tancar un bloc</option>
+<option value="sol_4">utilitzar els objectes creats inmediatament</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="10"></input><input type="hidden" name="qsol" value="implementar un objecte pare,implementar un objecte fill,immutables,utilitzar els objectes creats inmediatament,haver de preocupar-se per l’operador <code>new</code>,aplicar la cadena de prototipus i accedir fàcilment a la propietat <code>prototype</code>,mutables,organitzar el codi de qualsevol manera,posar el codi en càpsules,tancar un bloc"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_8" >Exercici 8</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_ba834996f31e37e59d4d7c1428d7224b" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ JavaScript és un llenguatge prototípic perquè un objecte pot heretar d’altre <select name="sol_1"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select> que fa servir com a prototipus
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Generalment la propietat <select name="sol_2"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select> només és accessible si s’utilitza el patró <select name="sol_3"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select>
+</p>
+</td></tr><tr><td>3</td><td>
+<p>
+ No és recomanable utilitzar el <select name="sol_4"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select>, és preferible utilitzar un <select name="sol_5"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select> o aplicar el <select name="sol_6"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select>
+</p>
+</td></tr><tr><td>4</td><td>
+<p>
+ El mètode més recomanable per treballar amb herència és el <select name="sol_7"><option value="sol_0">........................</option>
+<option value="sol_3"><code>constructor</code></option>
+<option value="sol_2"><code>prototype</code></option>
+<option value="sol_10">classic</option>
+<option value="sol_7">clàssic</option>
+<option value="sol_8">espai comú</option>
+<option value="sol_5">espai de noms</option>
+<option value="sol_4">espai global</option>
+<option value="sol_1">objecte</option>
+<option value="sol_9">patró factoria</option>
+<option value="sol_6">patró mòdul</option>
+</select>, ja que és més senzill.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_9" >Exercici 9</a></h2>
+<div class="level2">
+
+<p>
+Completeu les frases següents:
+</p>
+<div id="id_complete_bc07480098acda14440068920d15c6e4" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th></tr><tr><td>1</td><td>
+<p>
+ Les propietats i <select name="sol_1"><option value="sol_0">....................</option>
+<option value="sol_8">els atributs</option>
+<option value="sol_7">els constructors</option>
+<option value="sol_1">els mètodes</option>
+<option value="sol_4">els objectes</option>
+<option value="sol_2">els prototipus</option>
+<option value="sol_9">les classes</option>
+<option value="sol_3">les clausures</option>
+<option value="sol_6">les funcions</option>
+</select> de la instància de l’objecte tenen prioritat sobre les de <select name="sol_2"><option value="sol_0">....................</option>
+<option value="sol_8">els atributs</option>
+<option value="sol_7">els constructors</option>
+<option value="sol_1">els mètodes</option>
+<option value="sol_4">els objectes</option>
+<option value="sol_2">els prototipus</option>
+<option value="sol_9">les classes</option>
+<option value="sol_3">les clausures</option>
+<option value="sol_6">les funcions</option>
+</select>
+</p>
+</td></tr><tr><td>2</td><td>
+<p>
+ Tot i que és un concepte avançat, l’ús de <select name="sol_3"><option value="sol_0">....................</option>
+<option value="sol_8">els atributs</option>
+<option value="sol_7">els constructors</option>
+<option value="sol_1">els mètodes</option>
+<option value="sol_4">els objectes</option>
+<option value="sol_2">els prototipus</option>
+<option value="sol_9">les classes</option>
+<option value="sol_3">les clausures</option>
+<option value="sol_6">les funcions</option>
+</select> és molt útil i permet encapsular la informació de <select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_8">els atributs</option>
+<option value="sol_7">els constructors</option>
+<option value="sol_1">els mètodes</option>
+<option value="sol_4">els objectes</option>
+<option value="sol_2">els prototipus</option>
+<option value="sol_9">les classes</option>
+<option value="sol_3">les clausures</option>
+<option value="sol_6">les funcions</option>
+</select>, evitant que pugui ser manipulada per agents malintencionats
+</p>
+</td></tr><tr><td>3</td><td>
+<p>
+ Amb l’arribada de ES6 és possible implementar la generació de <select name="sol_4"><option value="sol_0">....................</option>
+<option value="sol_8">els atributs</option>
+<option value="sol_7">els constructors</option>
+<option value="sol_1">els mètodes</option>
+<option value="sol_4">els objectes</option>
+<option value="sol_2">els prototipus</option>
+<option value="sol_9">les classes</option>
+<option value="sol_3">les clausures</option>
+<option value="sol_6">les funcions</option>
+</select> de forma similar als llenguatges clàssics com Java.
+</p>
+</td></tr></table><input type="hidden" name="qtype" value="complete"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_10" >Exercici 10</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Marqueu si són vertaderes (V) o falses (F) les opcions següents:
+</p>
+<div id="id_vf_9d5a5d2581b72e97ac4f9c1814864db0" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>V</th><th>F</th></tr><tr><td>1</td><td>
+<p>
+ Mitjançant les classes de JavaScript es poden definir mètodes estàtics. 
+</p>
+</td><td><input type="radio" value="V" name="sol_1"></input></td><td><input type="radio" value="F" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Amb la paraula clau <code>class</code> és possible declarar mètodes públics i privats. 
+</p>
+</td><td><input type="radio" value="V" name="sol_2"></input></td><td><input type="radio" value="F" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Les classes de JavaScript no són admeses per tots els navegadors actuals. 
+</p>
+</td><td><input type="radio" value="V" name="sol_3"></input></td><td><input type="radio" value="F" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Els objectes creats mitjançant classes no tenen prototipus. 
+</p>
+</td><td><input type="radio" value="V" name="sol_4"></input></td><td><input type="radio" value="F" name="sol_4"></input></td></tr><tr><td>5</td><td>
+<p>
+ Tot i que JavaScript no admet l’herència múltiple, és possible implementar-la utilitzant mixins. 
+</p>
+</td><td><input type="radio" value="V" name="sol_5"></input></td><td><input type="radio" value="F" name="sol_5"></input></td></tr></table><input type="hidden" name="qtype" value="vf"></input><input type="hidden" name="qnum" value="5"></input><input type="hidden" name="qsol" value="V,F,F,F,V"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

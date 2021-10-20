@@ -1,0 +1,854 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Seguretat activa i accés remot</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">Mecanismes de seguretat activa</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Mecanismes de seguretat activa</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a1annexos"><a href="../../../WebContent/u2/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#sistemes_personals_atacs_i_contramesures">Sistemes personals. Atacs i contramesures</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#eines_preventives">Eines preventives</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#eines_pal_liatives">Eines pal·liatives</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#actualitzacio_de_sistemes_i_aplicacions">Actualització de sistemes i aplicacions</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#seguretat_en_la_xarxa_corporativa">Seguretat en la xarxa corporativa</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#les_xarxes_publiques_seguretat_en_la_connexio">Les xarxes públiques. Seguretat en la connexió</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Implantació de tècniques d'accés remot</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Implantació de tècniques d'accés remot</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#seguretat_perimetrica">Seguretat perimètrica</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#xarxes_privades_virtuals_vpn">Xarxes privades virtuals. VPN</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#servidors_d_acces_remot">Servidors d'accés remot</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Seguretat activa i accés remot</a></li><li>Implantació de tècniques d'accés remot</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="implantacio_de_tecniques_d_acces_remot"> Implantació de tècniques d'accés remot </a></h1>
+    	
+<p>
+Existeix un conjunt de configuracions de seguretat, ja siguin de programari, de maquinari o mixtes, que permeten l’accés segur a la xarxa d’informació des de l’exterior. Sense aquesta possibilitat, la xarxa perdria un dels seus aspectes essencials i no hi hauria la possibilitat d’usar o compartir els seus recursos des de localitzacions remotes. A més de poder efectuar aquesta connexió, cal que les tècniques que s’usin puguin garantir que l’accés remot sigui segur.
+</p>
+
+<h2><a id="seguretat_perimetrica" >Seguretat perimètrica</a></h2>
+<div class="level2">
+
+<p>
+Qualsevol xarxa de comunicacions està interconnectada amb altres. El punt on s’enllacen dues xarxes és un dels seus punts més dèbils. Per tant, s’ha de tenir especial cura a assegurar aquestes zones.
+</p>
+
+<p>
+Amb l’establiment de seguretat perimètrica es busca:
+</p>
+<ul>
+<li class="level1"><div class="li"> Rebutjar connexions a serveis crítics.</div>
+</li>
+<li class="level1"><div class="li"> Permetre només determinat trànsit (com per exemple, el correu electrònic) o només entre determinats nodes.</div>
+</li>
+<li class="level1"><div class="li"> Proveir la xarxa d’un únic punt d’interconnexió amb l’exterior.</div>
+</li>
+<li class="level1"><div class="li"> Tenir un control i dirigir el trànsit entrant exclusivament als sistemes adients dins de la intranet.</div>
+</li>
+<li class="level1"><div class="li"> Ocultar sistemes o serveis vulnerables que poden ser complicats de protegir dels atacs de l’exterior.</div>
+</li>
+<li class="level1"><div class="li"> Auditar el trànsit entre l’exterior i l’interior.</div>
+</li>
+<li class="level1"><div class="li"> Dificultar l’accés a informació que permeti saber coses de la xarxa com ara noms de sistemes, topologia de la xarxa, tipus de dispositius de xarxa o comptes d’usuaris interns. </div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>seguretat perimètrica</strong> és un dels mètodes de defensa d’una xarxa. Es basa en l’establiment de recursos de seguretat en la zona de contacte de la xarxa amb l’exterior de l’organització. Això permet l’accés d’usuaris interns o externs a determinats serveis.
+</p>
+</div></div>
+</div>
+
+<h3><a id="elements_basics_de_la_seguretat_perimetrica" >Elements bàsics de la seguretat perimètrica</a></h3>
+<div class="level3">
+
+<p>
+Els elements bàsics que configuren la seguretat perimètrica, que es poden veure a la <span class="figref"><a href="#Figura24"><span>figura</span></a></span>, són els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Zona de risc o xarxa externa</strong>. És aquella part que es considera que pot posar en risc el sistema informàtic. Usualment es considera Internet com la zona de risc.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Zona segura o xarxa interna</strong>. És la part que volem protegir: els usuaris finals de sistemes, els servidors que contenen dades privades i tots els altres sistemes que no volem que siguin coneguts pel “món exterior”.També se’n diu <em>xarxa protegida</em>, <em>xarxa de confiança</em> o <em>xarxa interna</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Perímetre de xarxa o tallafoc</strong>. El perímetre de xarxa és la part que separa la zona segura de la de risc. Genèricament s’anomena <em>tallafoc</em> al perímetre de xarxa. Entenem per tallafoc, per tant, un sistema o xarxa que aïlla una xarxa d’una altra.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura24"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Elements de seguretat de xarxa
+
+</figcaption><img src="../media/u2_pdfindex_image_24.png" alt="" /></figure>
+</div>
+<p>
+Partint d’aquesta definició, doncs, un tallafoc pot ser un encaminador, un equip que executa un programa especial o qualsevol altre dispositiu o xarxa de dispositius en què es duu a terme un conjunt d’activitats per controlar el trànsit entrant i sortint. Així, les funcions del tallafoc les poden dur a terme dispositius com programes, encaminadors o ordinadors dedicats exclusivament a les tasques de filtració de paquets (servidors intermediaris o <em>proxy</em>). 
+</p>
+
+<p>
+La creació d’aquesta zona perimètrica o tallafoc s’ha de fer tenint en compte tant l’estructura de la xarxa com els serveis que han de quedar disponibles per als usuaris. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Equip bastió</p>
+<p>
+L’equip que està directament connectat a altres xarxes, com per exemple Internet, s’anomena <em>equip bastió</em> (<em>host bastion</em> en anglès). És el més vulnerable, i per tant la primera línia de defensa de la xarxa.
+</p>
+</div></div>
+<p>
+Els tallafocs són, probablement, un dels elements més importants per a la seguretat de la nostra xarxa, i hem de considerar, a l’hora d’instal·lar-los, els aspectes següents: 
+</p>
+<ul>
+<li class="level1"><div class="li"> No s’han d’emprar en lloc d’altres eines, sinó conjuntament amb aquestes. Hem de tenir en compte que el tallafoc serà el punt que rebrà tots els atacs sobre el nostre sistema.</div>
+</li>
+<li class="level1"><div class="li"> En centralitzar una bona part de les mesures de seguretat de la xarxa en un únic sistema (no cal que sigui un únic dispositiu), si aquest es veu compromès, la xarxa quedarà exposada als atacs dels intrusos.</div>
+</li>
+<li class="level1"><div class="li"> Pot proporcionar una falsa sensació de seguretat. No per instal·lar un tallafoc podem assumir que la xarxa és segura i prescindir de vigilar els equips interns de la xarxa. </div>
+</li>
+</ul>
+
+<p>
+Un sistema tallafoc realitza les activitats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Filtrat de trànsit d’entrada i sortida</strong>. Aquest filtrat es pot fer tant a nivell de connexió, de la capa de xarxa (conegut com a <em>filtrat de paquets</em>) o de la capa d’aplicació. Es realitza una inspecció de les capçaleres dels paquets IP. El criteri per deixar-los passar es basa principalment en una combinació de la seva adreça IP d’origen, adreça IP de destinació, port d’origen i port de destinació (de servei). </div>
+</li>
+<li class="level1"><div class="li"> <strong>Ocultació</strong> de la configuració de la xarxa a l’exterior.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Servidor intermediari</strong>. Es un programari o dispositiu que actua en nom d’un altre. Per exemple, si un ordenador A fa una petició a un ordenador C de fora de la xarxa, no li ho demana directament. A fa la petició a un ordinador B (<em>proxy</em>) i aquest la fa a C. Aquesta funcionalitat permet tenir una memòria cau, control d’accés i registre de trànsit.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Monitoratge</strong>. Com que tot el trànsit d’entrada i sortida passa pel sistema tallafoc, és possible motoritzar moltes coses, com per exemple connexions, adreces IP, ports o llocs web. Amb el monitoratge es busca descobrir els intents d’atacs i trames sospitoses i registrar els tipus de paquets rebuts, així com la freqüència de paquets, adreces font i destinació, intents d’ús de protocols protegits, intents de falsificació, trames rebudes des d’encaminadors desconeguts… Com que la quantitat de fitxers de registre generats pot ser molt gran, cal considerar l’ús d’eines que automatitzin el monitoratge.</div>
+</li>
+</ul>
+
+<p>
+En general, cal prendre unes decisions bàsiques en la configuració d’un tallafoc.
+</p>
+
+<p>
+En primer lloc, cal definir una política de seguretat i implementar el nivell de monitoratge i de control desitjat en l’organització. S’ha d’indicar bàsicament què s’ha de permetre i què s’ha de denegar. Existeix la possibilitat d’emprar una política restrictiva, en què es denega tot allò que explícitament no es permet o una política amb permís, en la qual es permet tot, excepte el que s’ha negat explícitament.
+</p>
+
+<p>
+D’altra banda, la configuració i el nivell de seguretat potencial del tallafoc depèn de l’ús del dispositiu. Així, si connecta dues subxarxes diferents la política serà diferent que si ha de filtrar els paquets de l’organització amb l’exterior.
+</p>
+
+<p>
+Per últim, cal tenir en compte que la inversió ha d’ésser proporcional al valor estimat del que desitgem protegir. Un sistema de tallafoc pot ser molt barat o costar milers d’euros.
+</p>
+
+</div>
+
+<h3><a id="perimetres_de_xarxa_zones_desmilitaritzades" >Perímetres de xarxa. Zones desmilitaritzades</a></h3>
+<div class="level3">
+
+<p>
+El perímetre de xarxa, com hem comentat, conté el que genèricament s’anomena <em>sistema tallafoc.</em> Aquest, però, pot ser un o més dispositius amb diverses configuracions d’arquitectures de seguretat possibles.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>Tallafoc de filtrat de paquets</em></strong>. És la configuració més simple, tal com es veu a la <span class="figref"><a href="#Figura25"><span>figura</span></a></span>. Es col·loca un dispositiu que disposa d’una única interfície de xarxa. L’encaminador extern està configurat per enviar les dades al dispositiu i els clients interns hi envien també les dades de sortida. L’encaminador avalua les dades segons unes regles de seguretat. Aquest sistema és conegut en anglès com a <em>screeneing router</em>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura25"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració de filtrat de paquets
+
+</figcaption><img src="../media/u2_pdfindex_image_25.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong><em>Amfitrió de dues bases (dual-homed host)</em></strong>. En aquesta arquitectura s’instal·la un dispositiu que té almenys dues interfícies de xarxa. L’avantatge d’usar aquest esquema és que crea una ruptura entre les xarxa externa i interna, la qual cosa permet que tot el trànsit d’entrada i sortida passi per l’equip. El sistema necessita un servidor intermediari per a cadascun dels serveis que vulguem tenir actius. L’esquema bàsic es pot veure a la <span class="figref"><a href="#Figura26"><span>figura</span></a></span>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura26"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració dual-homed
+
+</figcaption><img src="../media/u2_pdfindex_image_26.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong><em>Amfitrió multi-base (multihomed host bastion)</em></strong>. L’evolució del cas anterior significa tenir més d’una interfície de xarxa en el dispositiu. Habitualment una interfície de xarxa va a la xarxa externa i la resta a la xarxa interna. Aquesta arquitectura permet distribuir el trànsit per les diferents interfícies de xarxa depenent de la destinació. Afegeix un nivell més alt de seguretat, tal com es pot veure a la <span class="figref"><a href="#Figura27"><span>figura</span></a></span>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura27"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració multihomed
+
+</figcaption><img src="../media/u2_pdfindex_image_27.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong><em>Amfitrió de monitoratge (screened host)</em></strong>. Com es pot veure a la <span class="figref"><a href="#Figura28"><span>figura</span></a></span>, combina dos elements de seguretat. Un encaminador, connectat a la xarxa insegura i que realitza un filtrat de paquets, i un equip, accessible des de l’exterior on hi ha el servidor intermediari de la xarxa. D’aquesta manera, el filtrat es fa en un equip, protegint la xarxa, i l’accés als serveis es fa en un segon nivell, amb el sistema <em>proxy</em>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura28"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració screened host
+
+</figcaption><img src="../media/u2_pdfindex_image_28.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong><em>Subxarxa protegida (screened subnet)</em></strong>. Un pas més en l’arquitectura de seguretat consisteix en que entre la xarxa interna i l’externa hi hagi tot un subsistema que incorpori seguretat d’entrada, seguretat de sortida i el conjunt de serveis que es vol que siguin visibles des de l’exterior. No només aïlla la xarxa interna i externa, sinó que es crea una xarxa intermèdia. Afegeix una xarxa perimetral que aïlla la xarxa interna d’Internet. Aquesta xarxa intermèdia s’anomena <strong>DMZ o zona desmilitaritzada</strong>.<br/>
+L’objectiu d’una DMZ és que les connexions que provenen de la xarxa interna i les que provenen de la xarxa externa estiguin permeses. En canvi, les connexions des de la DMZ només estan permeses cap a la xarxa externa. Per tant, els equips (<em>hosts</em>) de la DMZ no poden connectar amb la xarxa interna. Això permet que els equips de la DMZ puguin donar serveis a la xarxa externa i a la vegada protegeixen la xarxa interna en el cas que intrusos comprometin la seguretat dels equips situats a la zona desmilitaritzada.<br/>
+D’aquesta manera es redueixen considerablement els efectes d’un atac al sistema. En les arquitectures anteriors, tota la seguretat estava centrada en l’equip bastió i si la seguretat es veia compromesa, la resta de la xarxa queda automàticament exposada. Com que l’equip bastió és un objectiu interessant per a molts atacants, l’arquitectura DMZ és un intent d’aïllar-la en una xarxa perimètrica de manera que l’intrús que accedeixi a aquesta màquina no aconsegueixi un accés total a la subxarxa protegida. L’esquema bàsic és a la <span class="figref"><a href="#Figura29"><span>figura</span></a></span>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura29"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració screened subnet
+
+</figcaption><img src="../media/u2_pdfindex_image_29.png" alt="" /></figure>
+</div>
+<p>
+En aquesta xarxa perimetral es poden incloure sistemes que facin molt ús de connexió a la xarxa externa. Poden ser, entre altres, servidors de correu, servidors web o <acronym title="Domain Name System">DNS</acronym>. Aquests dispositius seran els únics elements visibles des de l’exterior. D’aquesta manera un atacant hauria de trencar la seguretat d’ambdós encaminadors per accedir a la xarxa protegida. També, si és necessari, es poden definir diverses xarxes perimetrals en sèrie. En aquest escenari, els serveis de menor fiabilitat es posaran a les xarxes més externes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les arquitectures <strong>DMZ</strong> són les més usades per la seguretat que proporcionen, tot i que són les més complexes de gestionar.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Les regles de filtrat han de ser diferents en cada nivell. Altrament, no obtindríem major seguretat, ja que si s’aconsegueix trencar-ne una es poden trencar totes.
+</p>
+</div></div>
+</div>
+
+<h3><a id="arquitectura_feble_de_subxarxa_protegida" >Arquitectura feble de subxarxa protegida</a></h3>
+<div class="level3">
+
+<p>
+Existeixen diverses arquitectures DMZ. L’arquitectura feble de subxarxa protegida n’és una. Els elements es col·loquen tal com mostra la <span class="figref"><a href="#Figura30"><span>figura</span></a></span>.
+</p>
+
+<p>
+S’utilitzen dos encaminadors, anomenats <em>exterior</em> i <em>interior</em>, connectats a la xarxa perimètrica. En aquesta xarxa perimètrica, que constitueix el sistema tallafoc, s’inclou l’equip bastió i també s’hi poden incloure sistemes que requereixin un accés controlat, com el servidor web o el servidor de correu. Aquests seran els únics elements visibles des de fora de la xarxa. L’encaminador exterior bloqueja el trànsit no desitjat entre la xarxa perimètrica i la xarxa externa, mentre que l’interior fa el mateix però amb el trànsit entre la xarxa interna i la perimètrica. Un atacant hauria de trencar la seguretat d’ambdós encaminadors per accedir a la xarxa protegida.
+</p>
+<div class="iocfigure"><a name="Figura30"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració d’arquitectura feble de subxarxa protegida
+
+</figcaption><img src="../media/u2_pdfindex_image_30.png" alt="" /></figure>
+</div>
+<p>
+Alguns dels avantatges d’aquesta arquitectura són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Evitar l’existència d’un un únic punt dèbil. Ara cal trencar més d’un element de seguretat per accedir a la xarxa interna.</div>
+</li>
+<li class="level1"><div class="li"> Els serveis que s’han de veure des d’Internet estan a la DMZ.</div>
+</li>
+<li class="level1"><div class="li"> La xarxa interna està oculta i no és visible des de la xarxa externa.</div>
+</li>
+</ul>
+
+<p>
+L’arquitectura, però, no està exempta de problemes:
+</p>
+<ul>
+<li class="level1"><div class="li"> És possible implementar una zona desmilitaritzada amb un únic encaminador que tingui tres o més interfícies de xarxa. Aquesta arquitectura no és gens recomanable perquè si es compromet aquest element es trenca tota la nostra seguretat. La idea de la DMZ és que cal comprometre dos encaminadors, tant l’extern com l’intern. </div>
+</li>
+<li class="level1"><div class="li"> Tota la seguretat està basada en els dos encaminadors. Existeixen arquitectures amb elements més segurs que un encaminador.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="arquitectura_forta_de_subxarxa_protegida" >Arquitectura forta de subxarxa protegida</a></h3>
+<div class="level3">
+
+<p>
+L’arquitectura DMZ es basa en dos encaminadors. El principal problema és que els encaminadors són menys segurs que un conjunt de dispositius correctament configurats. És a dir, un tallafoc. En la <span class="figref"><a href="#Figura31"><span>figura</span></a></span> podem veure com es col·loquen els elements per configurar l’arquitectura de seguretat.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La configuració de DMZ amb un únic encaminador amb tres interfícies de xarxa s’anomena <em>three-legged firewall</em>.
+</p>
+</div></div><div class="iocfigure"><a name="Figura31"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tallafoc en configuració d’arquitectura forta de subxarxa protegida
+
+</figcaption><img src="../media/u2_pdfindex_image_31.png" alt="" /></figure>
+</div>
+<p>
+La complexitat d’aquesta arquitectura comporta problemes com la gestió, el cost o el rendiment del trànsit amb la xarxa externa. Alguns dels avantatges són la seva elevada modularització i l’augment de seguretat que comporta.
+</p>
+
+</div>
+
+<h2><a id="xarxes_privades_virtuals_vpn" >Xarxes privades virtuals. VPN</a></h2>
+<div class="level2">
+
+<p>
+Una <strong>xarxa privada virtual </strong>o VPN (<em>Virtual Private Network)</em> és una xarxa privada que s’estén a diferents punts remots mitjançant l’ús d’infraestructures públiques de transport (com per exemple, Internet). La transmissió de paquets de dades es realitza mitjançant un procés d’encapsulació i, per seguretat, de xifrat, ja que no cal oblidar que les dades circulen durant un temps per trams de xarxa pública. Aquests paquets de dades de la xarxa privada viatgen a través d’un “túnel” definit a la xarxa pública. És a dir, s’aprofita el baix cost de l’accés a Internet, s’afegeixen tècniques de xifratge fort per aconseguir seguretat i se simulen les clàssiques connexions punt a punt. 
+</p>
+
+<p>
+Així, un usuari (una sucursal de l’organització, un teletreballador, un representant comercial…) connectat a través d’Internet a la xarxa corporativa de l’organització, establint un túnel VPN, pot funcionar com si estigués dins de l’organització a tots els efectes de connectivitat. 
+</p>
+
+<p>
+En el cas d’accés remot des d’un equip, la VPN permet a l’usuari accedir a la seva xarxa corporativa i li assigna al seu ordinador remot les adreces i privilegis d’aquesta xarxa, encara que la connexió s’hagi efectuat mitjançant una xarxa pública com Internet. 
+</p>
+
+<p>
+La característica que converteix la connexió “pública” en “privada” és el que s’anomena un <em>túnel</em>, terme referit a que únicament ambdós extrems són capaços de veure el que es transmet pel túnel, convenientment xifrat i protegit de la resta d’Internet. La tecnologia de túnel xifra i encapsula els protocols de xarxa que s’utilitzen en els extrems sobre el protocol IP. D’aquesta manera podem operar com si es tractés d’un enllaç dedicat convencional, de forma transparent per a l’usuari. 
+</p>
+
+</div>
+
+<h3><a id="beneficis_i_inconvenients_de_les_vpn_envers_les_linies_dedicades" >Beneficis i inconvenients de les VPN envers les línies dedicades</a></h3>
+<div class="level3">
+
+<p>
+Una connexió VPN permet tenir una connexió de xarxa amb totes les característiques de la xarxa privada a la qual ens volem connectar. El client VPN passa a ser un equip igual que la resta dels connectats al sistema. Tindrà, per tant, tots els permisos i directrius de seguretat d’un ordenador de la xarxa. Tot plegat té un seguit d’avantatges i alguns inconvenients.
+</p>
+
+<p>
+Avantatges:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Seguretat</strong>: és possible assegurar diversos serveis amb aquest mecanisme.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Mobilitat</strong>: tenim una connexió segura entre usuaris mòbils i la nostra xarxa fixa, amb independència de la localització geogràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Transparència</strong>: permet la interconnexió d’ordenadors en un sistema informàtic, però també de diferents xarxes. Tot de manera transparent per a l’usuari final, ja que la configuració es pot fer només en l’entorn de passarel·la (sistema de maquinari i programari per interconnectar dues xarxes que utilitzen protocols diferents).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Simplicitat</strong>: una VPN aconsegueix que l’equip sigui vist per tota la xarxa, incloent servidors, la qual cosa simplifica l’administració d’equips remots.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Estalvi econòmic</strong>: el trànsit segur de paquets per xarxes públiques té un cost econòmic sensiblement menor que la creació d’una xarxa dedicada. </div>
+</li>
+</ul>
+
+<p>
+Inconvenients:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Fiabilitat</strong>: la dependència del proveïdor de xarxa (ISP) pot produir fallades en la xarxa que poden deixar incomunicats recursos de la nostra VPN.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Confiança</strong>: si la seguretat d’un node o subxarxa que forma part d’una VPN queda compromesa es veurà afectada la seguretat de tots els components de la xarxa.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="nivell_de_xarxa_a_vpnssl_tls_i_ipsec" >Nivell de xarxa a VPN: SSL, TLS i IPSec</a></h3>
+<div class="level3">
+
+<p>
+Com hem comentat, per implementar una VPN necessitem un protocol que xifri les comunicacions per evitar que puguin ser vistes per terceres persones. Existeixen diversos protocols criptogràfics per fer comunicacions punt a punt (VPN) a través d’Internet.
+</p>
+
+</div>
+
+<h4><a id="ssl" >SSL</a></h4>
+<div class="level4">
+
+<p>
+El <em>Secure Sockets Layer</em> o SSL ens dona autenticació i privacitat de la informació entre extrems a Internet mitjançant l’ús de criptografia. Habitualment, només s’autentica (es garanteix la seva identitat) el servidor, mentre que el client es manté sense autenticar.
+</p>
+
+<p>
+Etapes bàsiques de l’SSL:
+</p>
+<ul>
+<li class="level1"><div class="li"> Negociar entre les parts l’algorisme que s’utilitzarà en la comunicació. En aquesta etapa, client i servidor negocien els algorismes criptogràfics a utilitzar. Alguns dels algorismes més usats són RSA, Diffie-Hellman, DSA, RC2, RC4, IDEA (<em>International Data Encryption Algorithm</em>), DES (<em>Data Encryption Standard)</em>, Triple DES i AES (<em>Advanced Encryption Standard</em>) o SHA.</div>
+</li>
+<li class="level1"><div class="li"> Intercanviar les claus.</div>
+</li>
+<li class="level1"><div class="li"> Fer la transmissió.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="tls" >TLS</a></h4>
+<div class="level4">
+
+<p>
+El <em>Transport Layer Security</em> o TLS és una evolució del protocol SSL. La connexió es fa mitjançant un canal xifrat entre el client i servidor. D’aquesta manera l’intercanvi d’informació es realitza en un entorn segur i lliure d’atacs. Normalment, el servidor és l’únic que és autenticat, garantint així la seva identitat. El client es manté sense autenticar, ja que per a l’autenticació mútua es necessita una infraestructura de claus públiques.
+</p>
+
+</div>
+
+<h4><a id="ipsec" >IPSec</a></h4>
+<div class="level4">
+
+<p>
+L’<em>Internet Protocol Security</em> o (IPSec) és un conjunt d’estàndards industrials que comproven, autentiquen i xifren les dades en els paquets IP. IPSec aporta diverses propietats: confidencialitat mitjançant el xifratge de trànsit IP, autenticació i prevenció contra els atacs de reproducció i integritat mitjançant el rebuig del trànsit modificat. L’IPSec utilitza certificats (signats digitalment per una entitat emissora de certificats) per comprovar la identitat d’un usuari, equip o servei, que enllacen de forma segura una clau pública a l’entitat que disposa de la clau privada corresponent.
+</p>
+
+</div>
+
+<h3><a id="nivell_d_aplicacio_a_vpn_l_ssh" >Nivell d&#039;aplicació a VPN. L&#039;SSH</a></h3>
+<div class="level3">
+
+<p>
+El <em>Secure Shell</em> o SSH és un protocol que permet als equips establir una connexió segura, de manera que un client (un usuari o fins i tot un equip) pot obrir una sessió interactiva en una màquina remota (servidor) per enviar ordres o fitxers a través d’un canal segur.
+</p>
+<ul>
+<li class="level1"><div class="li"> Les dades que circulen entre el client i el servidor estan <strong>xifrades</strong>, la qual cosa en garanteix la confidencialitat (ningú més que el servidor i el client poden llegir la informació que s’envia per la xarxa).</div>
+</li>
+<li class="level1"><div class="li"> <strong>El client i el servidor s’autentifiquen mútuament</strong> per assegurar que les dues màquines que es comuniquen són, de fet, aquelles que les altres parts creuen que són. L’intrús informàtic ja no pot adoptar la identitat del client o del servidor.</div>
+</li>
+</ul>
+
+<p>
+Una connexió SSH s’estableix en diverses fases:
+</p>
+<ul>
+<li class="level1"><div class="li"> Es determina la <strong>identitat</strong> del servidor i del client per establir un canal segur (capa segura de transport). El client inicia sessió en el servidor.</div>
+</li>
+<li class="level1"><div class="li"> Establiment d’un <strong>canal segur</strong>. L’establiment d’una capa segura de transport comença amb la fase de negociació entre el client i el servidor per posar-se d’acord en els mètodes de xifratge que volen utilitzar. El protocol SSH està dissenyat per treballar amb un gran nombre d’algorismes de xifrat, per això, tant el client com el servidor han d’acordar primer els algoritmes que admeten.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Autenticació</strong>. Un cop s’ha establert la connexió segura entre el client i el servidor, el client s’ha de connectar al servidor per obtenir un dret d’accés. Hi ha diversos mètodes:</div>
+</li>
+<li class="level1"><div class="li"> El mètode més conegut és la <strong>contrasenya</strong> tradicional. El client envia un nom d’accés i una contrasenya al servidor mitjançant la connexió segura i el servidor verifica que l’usuari en qüestió té accés a l’equip i que la contrasenya subministrada és vàlida.</div>
+</li>
+<li class="level1"><div class="li"> Un mètode menys conegut, però més flexible, és l’ús de <strong>claus públiques</strong>. Si el client tria la clau d’autenticació, el servidor crearà un desafiament (<em>challenge)</em> i donarà accés al client si aquest és capaç de desxifrar el desafiament amb la seva clau privada.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="servidors_d_acces_remot" >Servidors d&#039;accés remot</a></h2>
+<div class="level2">
+
+<p>
+Un <strong>servidor d’accés remot</strong> és un equip que permet a altres equips connectar-s’hi i a través seu permet l’accés a dispositius o informació que estan a la xarxa. La connexió es pot fer, per exemple, per via telefònica o per Internet.
+</p>
+
+<p>
+El servidor RAS controla les línies d’accés, com per exemple mòdems o altres canals de comunicació de la xarxa, perquè les peticions connectin amb la xarxa. El servidor reconeix la petició de la xarxa i realitza l’autenticació i els procediments necessaris per registrar un usuari a la xarxa i permetre-li l’accés als recursos.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els servidors d’accés remot també s’anomenen <em>servidors de comunicacions</em>. El terme anglès es <em>Remote Access Server</em> (RAS).
+</p>
+</div></div>
+<p>
+Una vegada l’usuari s’ha autenticat, pot accedir a les unitats i impressores compartides com si estigués connectat físicament a la xarxa de l’organització. El servidor RAS conté múltiples canals de comunicació junts. Els canals són bidireccionals i, per tant, diversos equips es poden connectar a un únic recurs o un únic equip es pot connectar a múltiples recursos. 
+</p>
+
+<p>
+En la <span class="figref"><a href="#Figura33"><span>figura</span></a></span> es poden veure els passos necessaris per accedir als recursos de la xarxa.
+</p>
+<div class="iocfigure"><a name="Figura33"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Passos per poder accedir a recursos remots des d’un client
+
+</figcaption><img src="../media/u2_pdfindex_image_32.png" alt="" /></figure>
+</div><ol>
+<li class="level1"><div class="li"> El primer pas (tal com es veu a la <span class="figref"><a href="#Figura33"><span>figura</span></a></span>) és la connexió a l’equip. Es pot fer via mòdem (ja obsolet) o per una xarxa pública com Internet.</div>
+</li>
+<li class="level1"><div class="li"> L’autenticació es realitza mitjançant un servidor d’autenticació, que garanteix que els elements són qui diuen que són. Aquest servidor d’autenticació pot ser un procés dins del mateix servidor d’accés remot, pot ser un altre servidor de l’organització o fins i tot un servidor aliè. Aquest darrer cas s’aplica amb els dipòsits de claus en estructura de clau asimètrica.</div>
+</li>
+<li class="level1"><div class="li"> El servidor d’autenticació dona el vistiplau a les entitats, i envia al servidor d’accés remot els privilegis i credencials que la connexió, ara amb l’usuari conegut, té.</div>
+</li>
+<li class="level1"><div class="li"> El servidor d’accés remot notifica al client que ha estat correctament identificat i que pot iniciar les peticions de recursos remots.</div>
+</li>
+<li class="level1"><div class="li"> Una vegada autenticades les entitats, el servidor d’accés remot proveeix la comunicació entre el client i els recursos sol·licitats (la xarxa interna).</div>
+</li>
+</ol>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les xarxes de banda ample com ADSL han deixat obsolet l’ús dels mòdems a través de la línia telefònica.
+</p>
+</div></div>
+</div>
+
+<h3><a id="protocols_d_autenticacio" >Protocols d&#039;autenticació</a></h3>
+<div class="level3">
+
+<p>
+La major part dels sistemes informàtics i xarxes mantenen de una manera o altra una relació d’identitats personals (usuaris) associades normalment amb un perfil de seguretat, rols i permisos. L’autenticació d’usuaris és el pas més crític en la connexió a un servidor d’accés remot ja que cal verificar la identitat de l’entitat que demana permís per accedir als recursos. Els sistemes d’autenticació permeten a aquests sistemes assumir amb una seguretat raonable que qui s’està connectant és qui diu ser. Això, posteriorment, permet que les accions que s’executin en el sistema puguin relacionar-se amb aquesta identitat i aplicar els mecanismes d’autorització i d’auditoria oportuns.
+</p>
+
+<p>
+Un protocol d’autenticació és un tipus de protocol criptogràfic que té el propòsit d’autenticar (identificar) de manera unívoca entitats que desitgen comunicar-se de forma segura. Els protocols d’autenticació es negocien immediatament després de determinar la qualitat de l’enllaç i abans de negociar el nivell de xarxa.
+</p>
+
+<p>
+El procés general d’autenticació consta dels passos següents:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’autenticació és el pas preliminar per tenir accés als recursos remots.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> L’usuari sol·licita accés al sistema.</div>
+</li>
+<li class="level1"><div class="li"> El sistema demana a l’usuari que s’autentiqui.</div>
+</li>
+<li class="level1"><div class="li"> L’usuari aporta les credencials que l’identifiquen i permeten verificar l’autenticitat de la identificació.</div>
+</li>
+<li class="level1"><div class="li"> El sistema valida segons les seves regles si les credencials aportades són suficients per donar accés a l’usuari o no.</div>
+</li>
+</ul>
+
+<p>
+Alguns dels protocols d’autenticació més usats són PAP, CHAP, EAP, PEAP i Kerberos. 
+</p>
+
+</div>
+
+<h4><a id="pap" >PAP</a></h4>
+<div class="level4">
+
+<p>
+El PAP (<em>Password Authentication Protocol</em>) és un protocol d’autenticació simple en el qual el nom d’usuari i la contrasenya s’envien al servidor d’accés remot en text clar (sense xifrar). No es recomana utilitzar PAP, ja que les contrasenyes es poden llegir fàcilment. El PAP només s’usa per connectar a servidors d’accés remot antics basats en Unix que no admeten mètodes d’autenticació més segurs.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">SPAP</p>
+<p>
+El SPAP (<em>Shiva Password Authentication</em>) és el protocol d’autenticació de contrasenya de Shiva. És una variant del PAP. El client envia una contrasenya xifrada al servidor d’accés remot. Aquest desxifra la contrasenya i contesta en clar per autenticar al client d’accés remot.
+</p>
+</div></div>
+</div>
+
+<h4><a id="chap" >CHAP</a></h4>
+<div class="level4">
+
+<p>
+El CHAP (<em>Challenge Handshake Authentication Protocol</em>) és un mètode d’autenticació usat per servidors als quals s’accedeix a través del protocol PPP (<em>Point-to-Point Protocol</em>). El CHAP verifica la identitat del client amb un procés de tres etapes. Periòdicament repeteix el procés de verificació.
+</p>
+<ul>
+<li class="level1"><div class="li"> S’estableix l’enllaç i l’autenticador envia un missatge per demanar a l’usuari que s’identifiqui.</div>
+</li>
+<li class="level1"><div class="li"> L’equip usuari respon amb un valor calculat, una funció resum d’un sol sentit, com per exemple la suma de comprovació MD5.</div>
+</li>
+<li class="level1"><div class="li"> L’autenticador verifica la resposta amb el resultat d’un càlcul propi del <em>hash</em>. Si el valor coincideix, l’autenticador informa de la verificació, si no, anul·la la connexió.</div>
+</li>
+<li class="level1"><div class="li"> Cada cert temps, a l’atzar, l’autenticador realitza una nova comprovació de veracitat, tot repetint el procés.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’MS-CHAP és una variant del protocol d’autenticació CHAP usat per Microsoft.
+</p>
+</div></div>
+</div>
+
+<h4><a id="eapautenticacio_extensible" >EAP: autenticació extensible</a></h4>
+<div class="level4">
+
+<p>
+L’EAP (<em>Extensible Authentication Protocol</em>) és un protocol per donar suport a mecanismes d’autenticació. Ofereix funcions per poder negociar els mecanismes d’autenticació escollits. Aquests mecanismes són anomenats mètodes EAP. Està definit en el memoràndum <acronym title="Request for Comments">RFC</acronym> 3748.
+</p>
+
+</div>
+
+<h4><a id="peapprotocol_d_autenticacio_extensible_protegit" >PEAP: protocol d&#039;autenticació extensible protegit</a></h4>
+<div class="level4">
+
+<p>
+El PEAP (<em>Protected Extensible Authentication Protocol)</em> és un protocol de la família de protocols EAP. Utilitza seguretat de nivell de transport (TLS) per crear un canal xifrat entre un client d’autenticació PEAP (com un equip amb connexió sense fill) i un autenticador PEAP (per exemple un servei d’autenticació remota com RADIUS). 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’EAP s’ha fet molt popular en xarxes sense fil, com per exemple l’estàndard IEEE 802.11, WPA o WPA2.
+</p>
+</div></div>
+<p>
+Per millorar els protocols EAP així com la seguretat de xarxa, el PEAP proporciona:
+</p>
+<ul>
+<li class="level1"><div class="li"> Protecció de la negociació del mètode EAP. Aquesta es realitza entre el client i el servidor usant un canal TLS. D’aquesta manera s’impedeix que un intrús insereixi paquets entre el client i el servidor. El canal TLS xifrat també ajuda a evitar atacs per denegació de servei.</div>
+</li>
+<li class="level1"><div class="li"> Autenticació mútua.</div>
+</li>
+<li class="level1"><div class="li"> Protecció contra la creació d’un punt d’accés sense fils (WAP) no autoritzat.</div>
+</li>
+<li class="level1"><div class="li"> Reconnexió ràpida, que redueix el temps de retard entre la sol·licitud d’autenticació d’un client i la resposta del servidor d’autenticació.</div>
+</li>
+</ul>
+
+<p>
+El procés d’autenticació PEAP entre el client i l’autenticador PEAP es fa en dues etapes. Primer es configura un canal segur entre el client i el servidor d’autenticació. En la segona es produeix l’autenticació EAP entre el client i l’autenticador EAP. 
+</p>
+
+</div>
+
+<h4><a id="kerberos" >Kerberos</a></h4>
+<div class="level4">
+
+<p>
+Kerberos és un protocol d’autenticació de xarxes basat en el protocol de Needham-Schroeder. Permet a dos ordinadors en una xarxa insegura demostrar la seva identitat. Kerberos es basa en criptografia de clau simètrica i necessita d’una tercera part de confiança.
+</p>
+
+<p>
+La tercera part de confiança s’anomena <em>centre de distribució de claus</em> o KDC. Consta de dues parts lògiques separades. Un servidor d’autenticació i un servidor de tiquets. Els tiquets usen per demostrar la identitat dels usuaris. El sistema manté una base de dades de claus secretes. Cada entitat, ja sigui client o servidor la comparteix i és coneguda només per ell i Kerberos. El coneixement d’aquesta clau serveix per provar la identitat de l’entitat i assegurar la comunicació.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El procediment usat per Kerberos s’anomena <em>autenticació mútua</em>. Tant el client com el servidor verifiquen la identitat de l’altre.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Hi ha extensions del protocol Kerberos que permeten utilitzar criptografia de clau asimètrica.
+</p>
+</div></div>
+<p>
+El funcionament, bàsicament, és el següent. El client s’autentica a sí mateix contra el servidor d’autenticació. El client rep la verificació i l’utilitza per demostrar al servidor de tiquets la seva identitat. El servidor de tiquets crea un tiquet, l’encripta amb les claus de l’usuari i li envia. A partir d’aquest moment ja es pot fer ús del servei.
+</p>
+
+<p>
+El tiquet es configura perquè caduqui al cap d’un temps, habitualment unes hores. Un tiquet compromès, per tant, només serviria a l’intrús durant un breu període de temps.
+</p>
+
+</div>
+
+<h3><a id="configuracio_de_parametres_d_acces" >Configuració de paràmetres d&#039;accés</a></h3>
+<div class="level3">
+
+<p>
+La connexió d’un equip client a una xarxa necessita diversos paràmetres per assegurar que la connexió es realitza correctament. Aquests paràmetres bàsicament han de contenir els elements per autenticar-se i els elements que ens permeten establir la connexió amb l’equip d’accés remot. Serà l’equip remot, usant el servidor d’autenticació, el que gestionarà els nostres privilegis efectius dins de la xarxa de l’organització.
+</p>
+
+<p>
+En l’equip client és necessari:
+</p>
+<ul>
+<li class="level1"><div class="li"> El protocol de comunicació que haurà d’usar el client per connectar-se al servidor d’accés remot. A vegades l’equip client no té el controlador amb el protocol i cal instal·lar-lo. Passa , per exemple, amb l’IPSec en Windows XP.</div>
+</li>
+<li class="level1"><div class="li"> Els elements d’autenticació de l’entitat, que usualment són l’usuari i la contrasenya.</div>
+</li>
+<li class="level1"><div class="li"> El nom o la IP de l’equip d’accés remot amb qui farem la connexió.</div>
+</li>
+<li class="level1"><div class="li"> Elements addicionals, com per exemple el certificat digital si s’utilitzen protocols que requereixin criptografia de clau pública.</div>
+</li>
+</ul>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Al web d’aquesta unitat podeu consultar l’annex “Xarxes Privades Virtuals” on s’explica pas a pas la configuració d’una xarxa pública virtual o VPN.
+</p>
+</div></div>
+</div>
+
+<h3><a id="servidors_d_autenticacio" >Servidors d&#039;autenticació</a></h3>
+<div class="level3">
+
+<p>
+El servidor d’autenticació és un dispositiu que controla qui pot accedir a una xarxa informàtica. Ha de proveir a la xarxa les funcions d’autorització, privacitat i no repudi. L’autorització determina els privilegis atorgats a una entitat o usuari i, per tant, a quins objectes o dades l’usuari pot tenir accés. La privacitat assegura que la informació es divulgui només a persones autoritzades. El no repudi es refereix al fet que el servidor d’autenticació pot registrar tots els accessos a la xarxa i les dades d’identificació. D’aquesta manera, un usuari no pot negar que ha accedit a un equip o que n’ha modificat les dades. Molt sovint, el no repudi és un requisit legal.
+</p>
+
+<p>
+El servidor d’autenticació verifica mitjançant un protocol d’autenticació la identitat de l’equip que desitja connectar-se. Una vegada feta l’autenticació, llavors un servidor d’accés remot subministra els recursos.
+</p>
+
+<p>
+El servidor d’autenticació conté un “diposit” (algun tipus de base de dades) amb els usuaris, permisos i credencials que el servidor d’accés remot usarà per saber el nivell de privilegis a assignar a la connexió.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Servidor d&#039;autenticació</p>
+<p>
+Un servidor d’autenticació pot estar en un servidor d’accés a la xarxa informàtica, una part d’un tallafoc o un altre tipus de maquinari per controlar l’accés a la xarxa. Independentment del tipus de màquina que allotja el programa d’autenticació, el terme servidor d’autenticació continua sent generalment utilitzat per referir-se a la combinació de maquinari i programari que realitza la funció d’autenticació.
+</p>
+</div></div>
+<p>
+Per tant, independent del protocol d’autenticació usat, el servidor d’autenticació ha de tenir emmagatzemada informació relacionada amb l’entitat (ja sigui un usuari o un equip remot). Existeixen, des d’aquest punt de vista, diferents servidors d’autenticació.
+</p>
+
+<p>
+Entre els servidors d’autenticació més coneguts trobem:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em>OpenLDAP</em></strong>: és una implementació lliure i de font pública del protocol <em>Lightweight Directory Access Protocol</em> (LDAP) desenvolupada pel projecte OpenLDAP. L’LDAP és un protocol de comunicació independent de la plataforma.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Active Directory</em></strong>: és el nom utilitzat per Microsoft com a magatzem centralitzat d’informació d’un dels seus dominis d’administració.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Novell Directory Services</em></strong>: també conegut com eDirectory, és la implementació de Novell utilitzada per gestionar l’accés a recursos en diferents servidors i ordinadors d’una xarxa.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Red Hat Directory Server</em></strong>: és un servidor basat en l’LDAP que centralitza la configuració d’aplicacions, perfils d’usuaris, informació de grups i polítiques, així com informació de control d’accés, dins d’un sistema operatiu independent de la plataforma.</div>
+</li>
+</ul>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a2/activitats.html">Implantació de tècniques d'accés remot</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

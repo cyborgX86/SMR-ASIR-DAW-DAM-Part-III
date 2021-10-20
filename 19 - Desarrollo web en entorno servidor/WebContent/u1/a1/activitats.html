@@ -1,0 +1,687 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Introducció als llenguatges de servidor</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Entorns a punt per desenvolupar aplicacions web</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_webhola_mon">El vostre primer projecte web: 'Hola, Món'</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_vostre_primer_projecte_phphola_mon">El vostre primer projecte PHP: 'Hola, Món'</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">PHP i VDL a Java EE: dades, estructures de control i 'arrays'</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a2annexos"><a href="../../../WebContent/u1/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_amb_php">Descrivint una persona amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_php">Gestionant un hotel amb PHP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#descrivint_una_persona_a_jsp_jstl">Descrivint una persona a JSP, JSTL</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#gestionant_un_hotel_amb_jsp">Gestionant un hotel amb JSP</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Introducció als llenguatges de servidor</a></li><li><a href="continguts.html">Entorns a punt per desenvolupar aplicacions web</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<p>
+rea
+</p>
+
+<h2><a id="instal_lacio_de_netbeans" >Instal·lació de NetBeans</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és dotar l’estudiant de les eines necessàries perquè pugui implementar les activitats i els exercicis necessaris per al seu aprenentatge. 
+</p>
+
+<p>
+En concret, es vol que l’estudiant configuri i instal·li l’entorn de desenvolupament d’aplicacions anomenat Netbeans. La solució utilitzarà el sistema operatiu Ubuntu com a exemple d’un sistema operatiu lliure on instal·lar aquesta aplicació. Es recorda a l’estudiant que ha de tenir instal·lat el motor Java per poder executar l’entorn de desenvolupament Netbeans.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+<strong>Descarregar el motor Java JDK</strong>
+</p>
+
+<p>
+Heu de baixar-vos el motor Java JDK. Aquest programa el podeu trobar en dues versions, la versió de 32 bits i la de 64 bits. Comproveu quina de les dues necessiteu. Per fer-ho podeu anar als <em>Paràmetres del sistema / Detalls</em>. En aquesta finestra, el sistema operatiu Ubuntu ens informa de la versió instal·lada. 
+</p>
+
+<p>
+Ara ja podeu anar a <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" class="urlextern" title="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"  rel="nofollow">aquesta pàgina</a> i descarregueu el motor apropiat per al nostre sistema operatiu (<span class="figref"><a href="#fig-a1-1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a1-1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pàgina de descàrregues del programa JDK 
+
+</figcaption><img src="../media/u1-a1-activitat1-1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+<strong>Extreure el programa</strong>
+</p>
+
+<p>
+Una vegada heu descarregat el programa comprimit, l’heu de descomprimir a la carpeta <em>/usr/local/bin</em>:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">cd ~/Baixades$ </div></li><li class="li1"><div class="de1">sudo tar xf jdk-8u65-linux-i586.tar.gz -C /usr/local/bin</div></li></ol></pre>
+
+<p>
+Ara heu d’instal·lar l’entorn de desenvolupament NetBeans:
+</p>
+
+<p>
+<strong>Descarregar l’entorn de desenvolupament Netbeans</strong>
+</p>
+
+<p>
+Accediu a la pàgina de descàrregues del programa Netbeans (<span class="figref"><a href="#fig-a1-2"><span>figura</span></a></span>) i descarregueu la versió completa del programa, és a dir, la versió amb tots els <em>bundles</em>.
+</p>
+<div class="iocfigure"><a name="fig-a1-2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Versions de l’entorn de desenvolupament
+
+</figcaption><img src="../media/u1-a1-activitat1-2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+<strong>Instal·lar l’entorn de desenvolupament Netbeans</strong>
+</p>
+
+<p>
+Tot seguit, ja esteu en condicions d’instal·lar el programa utilitzant les següents comandes:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">chmod +x netbeans-8.1-linux.sh</div></li><li class="li1"><div class="de1">./netbeans-8.1-linux.sh --javahome /usr/local/bin/jdk1.8.0_65/</div></li></ol></pre>
+
+<p>
+La primera és per donar a l’arxiu els permisos necessaris per poder executar el programa. La segona comanda executa l’instal·lador i informa on s’ha instal·lat el motor Java.
+</p>
+
+<p>
+Una vegada s’ha executat el fitxer anterior, apareixerà un ajudant per instal·lar l’entorn de desenvolupament.
+</p>
+
+<p>
+A l’hora d’instal·lar el programa només us heu de fixar d’instal·lar el servidor Apache Tomcat. Així, abans de començar la instal·lació escollireu també aquesta opció (<span class="figref"><a href="#fig-a1-3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a1-3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Instal·lador del programa Netbeans
+
+</figcaption><img src="../media/netbeans.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A partir d’aquí només heu de seguir les instruccions que apareixen a les diferents finestres per instal·lar el programa amb els paràmetres per defecte.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="depuracio_de_codi_amb_netbeans" >Depuració de codi amb Netbeans</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és conèixer el <em>debugger</em> que ens proporciona l’entorn de desenvolupament NetBeans. 
+</p>
+
+<p>
+Utilitzareu el codi de l’apartat 1: <em>Hola, Món</em>. Afegireu un fitxer Javascript i un fitxer d’estils, així com un botó amb una crida a una funció Javascript per poder utilitzar l’eina de <em>debugger</em> del NetBeans.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Pàgina JSP&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script src=&quot;exemple.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">        &lt;link href=&quot;estils.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;div&gt;Hola, Món!&lt;/div&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;hola();&quot; value=&quot;salutació&quot;&gt;salutació&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;%</div></li><li class="li1"><div class="de1">            String ip = request.getRemoteAddr();</div></li><li class="li1"><div class="de1">            out.println(&quot;La teva IP és: &quot; + ip);</div></li><li class="li1"><div class="de1">        %&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Com veieu en la pàgina JSP anterior utilitzeu dos fitxers addicionals: <code>estils.css</code> i <code>exemple.js</code>. A continuació teniu el contingut del fitxer <code>exemple.js</code>:
+</p>
+<pre class="code">function hola(){
+    alert(&quot;hola&quot;);
+}</pre>
+
+<p>
+I el contingut del fitxer estils.css:
+</p>
+<pre class="code">div{
+    color:blue;
+}</pre>
+
+<p>
+Utilitzant el codi anterior, intenteu:
+</p>
+<ol>
+<li class="level1"><div class="li"> Executar el codi font pas a pas.</div>
+</li>
+<li class="level1"><div class="li"> Executar mètodes del JDK pas a pas.</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar <em>breakpoints</em> (punts d’interrupció) per detenir l’execució del programa i poder observar l’estat de les variables.</div>
+</li>
+<li class="level1"><div class="li"> Conèixer el valor que pren cada variable o expressió segons es van executant les línies de codi.</div>
+</li>
+<li class="level1"><div class="li"> Modificar el valor d’una variable sobre la marxa i continuar l’execució.</div>
+</li>
+</ol>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+<strong>Instal·lar l’extensió de NetBeans al navegador Google Chrome</strong>
+</p>
+
+<p>
+Primer s’ha d’instal·lar el connector de NetBeans en el navegador on depurareu el codi. Per fer-ho cal seleccionar, del desplegable, el navegador a utilitzar de l’opció <em>With Netbeans Connector</em>. En el vostre cas, utilitzareu el navegador Google Chrome (<span class="figref"><a href="#fig-a2.1"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a2.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pantalla on seleccioneu el navegador que utilitzarà Netbeans per depurar el codi
+
+</figcaption><img src="../media/u1-activitat1.2-connector-chrome.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada ho heu seleccionat, en executar el programa Netbeans us demanarà (<span class="figref"><a href="#fig-a2.2"><span>figura</span></a></span>) que instal·leu la seva extensió en el navegador. 
+</p>
+<div class="iocfigure"><a name="fig-a2.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra d’informació de Netbeans per instal·lar la seva extensió en el navegador
+
+</figcaption><img src="../media/u1-a1-activitat2.2-instal_lacioconnector.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aneu a la <em>web store</em> amb el navegador Google Chrome i afegiu l’extensió recomanada (<span class="figref"><a href="#fig-a2.3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a2.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Afegir l’extensió de Netbeans a Google Chrome
+
+</figcaption><img src="../media/u1-a1-activitat2.3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+<strong>Executar el <em>debugger</em></strong>
+</p>
+
+<p>
+Per executar-lo podeu utilitzar la combinació de tecles <strong>Ctrl+F5</strong> o bé amb la icona de la <span class="figref"><a href="#fig-a2.4"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-a2.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Icona per iniciar el mode de depuració
+
+</figcaption><img src="../media/u1-activitat2-a3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Amb aquestes dues opcions, el programa s’executa normalment fins al primer <em>breakpoint</em>. En el cas que no s’hagi establert cap <em>breakpoint</em>, el programa s’executarà normalment fins al final.
+</p>
+
+<p>
+E<strong>xecutar el <em>debugger</em> fins on es trobi el cursor</strong>
+</p>
+
+<p>
+Es pot iniciar el programa i fer que es pari on es trobi posicionat el cursor. Exemple: posicioneu el cursor a la línia on es troba declarada la variable <em>IP</em>. Després, premeu la tecla F4 (<span class="figref"><a href="#fig-a2.5"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a2.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de depuració de programa fins on es troba el cursor (F4)
+
+</figcaption><img src="../media/u1-a1-activitat2-4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada iniciada la depuració i el depurador es para, la següent línia de codi que s’executarà apareix en verd, amb una fletxa del mateix color a la seva esquerra.
+</p>
+
+<p>
+<strong>Barra d’eines per depurar el programa</strong>
+</p>
+
+<p>
+Ara provareu les eines que ens proporciona Netbeans per depurar un programa. Les eines son les que es poden veure a la figura <span class="figref"><a href="#fig-a2.6"><span>figura</span></a></span>, i estan explicades a la <span class="tabref"><a href="#tab-a2-1"><span>taula</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-a2.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Barra d’eines de depuració
+
+</figcaption><img src="../media/u1-a1-activitat2-5-barra_d_eines.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="ioctable ">
+<div class="titletable"><a name="tab-a2-1"><span>Taula: </span></a>Accions per depurar un programa</div>
+<div class="table tabminheight"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">Icona       </th><th class="col1 leftalign"> Significat  </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-stepover.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Step over</em> (F8)</strong>: executa una línia de codi. Si la instrucció és una crida a un mètode, executa el mètode sense entrar dins del codi del mètode.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-stepoverexpression.png" width="70" alt="" /></div>
+ </td><td class="col1"><strong><em>Step Over Expresion</em> (majúscules F8)</strong>: veieu el valor de cada mètode que forma l’expressió en la finestra de <em>Variables</em>. Cada vegada que utilitzeu la comanda <em>Step Over Expression</em>, el depurador avança al següent mètode en l’expressió i se subratlla el mètode completat. <em>Step Over Expression</em> es comporta com <em>Step Over</em> quan no hi ha crides a mètodes addicionals.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-stepinto.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Step into</em> (F7)</strong>: executa una línia de codi. Si la instrucció és una crida a un mètode, salta al mètode i continua l’execució per la primera línia del mètode.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-stepout.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Step out</em> (Ctrl + F7)</strong>: executa una línia de codi. Si la línia de codi actual es troba dins d’un mètode, s’executaran totes les instruccions que quedin del mètode i es torna a la instrucció des de la qual es va cridar al mètode.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-runtocursor.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Run to cursor</em> (F4)</strong>: s’executa el programa fins a la instrucció on es troba el cursor.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-continue.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Continue</em> (F5)</strong>: l’execució del programa continua fins al següent <em>breakpoint</em>. Si no existeix un <em>breakpoint</em> s’executa fins al final.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"><div class="imgelem">
+<img src="../media/u1-a1-activitat2-finish.png" width="70" alt="" /></div>
+        </td><td class="col1"><strong><em>Finish</em> (majúscules + F5)</strong>: acaba la depuració del programa.</td>
+	</tr>
+</table></div>
+</div>
+<p>
+<strong>Punts d’interrupció (<em>breakpoints</em>)</strong>
+</p>
+
+<p>
+Un <em>breakpoint</em> o punt d’interrupció és una marca que indica al depurador que ha de detenir-se quan l’execució del programa arribi a ella. Quan el programa es deté en un <em>breakpoint</em> podeu examinar els valors actuals de les variables, detectar quan es crea un objecte o continuar la depuració línia a línia del programa.
+</p>
+
+<p>
+Per fixar un <em>breakpoint</em> es prem sobre el nombre de línia on es desitja col·locar (<span class="figref"><a href="#fig-a2.7"><span>figura</span></a></span>). La línia queda ressaltada en color vermell amb una marca del mateix color en el marge esquerre.
+</p>
+<div class="iocfigure"><a name="fig-a2.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fixar un ‘breakpoint’
+
+</figcaption><img src="../media/u1-a1-activitat2-6-breakpoint.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per eliminar un <em>breakpoint</em> es prem sobre el quadrat vermell. Si teniu molts <em>breakpoints</em> i voleu eliminar-los podeu fer-ho des de la finestra de <em>breakpoints</em> (<span class="figref"><a href="#fig-a2.8"><span>figura</span></a></span>). Damunt de la finestra podeu fer un clic al botó dret, i en el menú seleccionar <em>Delete all</em>. En canvi, si voleu deshabilitar-los cliqueu a <em>Disable all</em>.
+</p>
+<div class="iocfigure"><a name="fig-a2.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra de ‘breakpoints’
+
+</figcaption><img src="../media/u1-a1-activitat2-breakpoint2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+<strong>Finestra de variables</strong>
+</p>
+
+<p>
+Es poden veure les variables, el seu tipus i el seu valor actual. Ho podem fer mitjançant la finestra <em>Variables</em>. Podeu activar aquesta finestra mitjançant l’opció <em>Window / Debugging</em> del menú principal (<span class="figref"><a href="#fig-a2.9"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a2.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra de variables
+
+</figcaption><img src="../media/u1-a1-activitat2-8-finestravariables.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una de les coses interessants que ens permet fer aquesta finestra és la modificació del valor d’una variable en temps d’execució. Executeu el codi i poseu un <em>breakpoint</em> a la línia: <em>16</em>.
+</p>
+
+<p>
+En aquest moment canviareu la variable IP que té el valor “127.0.0.1” (vegeu la figura <span class="figref"><a href="#fig-a2.10"><span>figura</span></a></span>); pel valor “10”, com a la figura <span class="figref"><a href="#fig-a2.11"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig-a2.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra ‘Variables’ on veieu la variable IP
+
+</figcaption><img src="../media/activitat2-8-variables.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocfigure"><a name="fig-a2.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Modificació en temps d’execució de la variable IP
+
+</figcaption><img src="../media/activitat2-8-variables2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, permeteu avançar l’execució del programa fins al final del codi utilitzant el botó <em>Continue</em>. Veureu que a la pàgina apareix el valor canviat (vegeu la figura <span class="figref"><a href="#fig-a2.12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig-a2.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Resultat de la modificació de la variable IP
+
+</figcaption><img src="../media/activitat2-8-resultatvariables3.png" alt="" /></figure>
+<div class="footfigure"></div></div></div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="depuracio_de_codi_php_amb_firebug" >Depuració de codi PHP amb Firebug</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és conèixer el depurador Firebug, que podeu instal·lar directament en el navegador Firefox per depurar codi PHP. 
+</p>
+
+<p>
+En concret, es vol que l’estudiant configuri i instal·li el programa Firebug i FirePHP al navegador Mozilla Firefox. Utilitzeu la màquina virtual anomenada <em>servidor PHP</em>, que es va configurar a l’apartat <a href="/doku.php?id=fp:daw:m07:u1:a1:continguts#posar_a_punt_el_servidor_web" class="wikilink1" title="fp:daw:m07:u1:a1:continguts">El meu projecte PHP, &#039;Hola, Món&#039;</a> per instal·lar les llibreries necessàries per depurar codi PHP. Feu un petit exemple de depuració amb la pàgina index.php creada a l’apartat esmentat. 
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per depurar el codi escrit al servidor PHP primer s’ha de configurar l’entorn. En aquest cas, s’han d’instal·lar dues extensions al navegador Mozilla Firebug.
+La primera extensió s’anomena Firebug. Molts de vosaltres ja la coneixeu, perquè és molt utilitzada per depurar codi del costat client, normalment Javascript. En el nostre cas, la utilitzareu per depurar codi de servidor amb alguna ajuda més. Però primer instal·lareu el programa Firebug al navegador Mozilla Firefox. Podeu descarregar-vos l’extensió de la següent <a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/" class="urlextern" title="https://addons.mozilla.org/en-US/firefox/addon/firebug/"  rel="nofollow">adreça</a>.
+</p>
+
+<p>
+Tot seguit instal·lareu la primera ajuda per depurar PHP, l’extensió FirePHP. Aquesta extensió només es pot instal·lar si prèviament teniu instal·lat Firebug. La podeu descarregar i instal·lar de la següent <a href="https://addons.mozilla.org/en-US/firefox/addon/firephp/" class="urlextern" title="https://addons.mozilla.org/en-US/firefox/addon/firephp/"  rel="nofollow">adreça</a>.
+</p>
+
+<p>
+Si veieu les extensions instal·lades al navegador Firefox haurien d’aparèixer almenys aquestes dues. Vegeu la figura <span class="figref"><a href="#u1-a1-3-extensions"><span>figura</span></a></span> per comprovar que les teniu instal·lades.
+</p>
+<div class="iocfigure"><a name="u1-a1-3-extensions"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Extensions instal·lades al Firefox
+
+</figcaption><img src="../media/u1-a1-3-firephp-instalat.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per descomptat, encara no heu fet res. Encara no podeu depurar codi al servidor, ja que només heu instal·lat programes al client. Haureu d’instal·lar alguna llibreria al servidor. La llibreria és FirePHP, però del costat servidor. La podeu descarregar <a href="https://github.com/firephp/firephp-core/archive/v0.4.0.zip" class="urlextern" title="https://github.com/firephp/firephp-core/archive/v0.4.0.zip"  rel="nofollow">aquí</a>.
+</p>
+
+<p>
+El contingut d’aquest arxiu s’ha de descomprimir a la carpeta <acronym title="HyperText Markup Language">HTML</acronym> de la màquina virtual de l’apartat: <a href="/doku.php?id=fp:daw:m07:u1:a1:continguts#posar_a_punt_el_servidor_web" class="wikilink1" title="fp:daw:m07:u1:a1:continguts">El meu projecte PHP, &#039;Hola, Món&#039;.</a>.
+</p>
+
+<p>
+Realitzareu la instal·lació de la llibreria de la següent manera. Enviareu l’arxiu comprimit a la màquina virtual amb la comanda:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">scp firephp-core-0.4.0.zip willy@192.168.56.101:.</div></li></ol></pre>
+
+<p>
+A la comanda anterior se suposa que el fitxer <code>firephp-core-0.4.0.zip</code> es troba en el directori actual des d’on s’executa la comanda, així com l’usuari de la màquina virtual es diu <em>Willy</em> i la IP de la màquina anomenada <em>servidor PHP</em> és la 192.168.56.101. Modifiqueu la comanda anterior segons les vostres necessitats.
+</p>
+
+<p>
+Una vegada realitzada la comanda anterior, ja teniu el fitxer al servidor PHP. S’ha de descomprimir i enviar el seu contingut a la carpeta <em>/var/www/html</em>.
+</p>
+
+<p>
+Accediu via SSH a la màquina servidor PHP i realitzeu les comandes següents:
+</p>
+<pre class="code bash"><ol><li class="li1"><div class="de1">ssh willy@192.168.56.101</div></li><li class="li1"><div class="de1">sudo apt-get update</div></li><li class="li1"><div class="de1">sudo apt-get install unzip</div></li><li class="li1"><div class="de1">unzip firephp-core-0.4.0.zip </div></li><li class="li1"><div class="de1">mv firephp-core-0.4.0/lib/FirePHPCore /var/www/html/FirePHPCore</div></li></ol></pre>
+
+<p>
+Veieu que només ens interessa la carpeta <em>FirePHPCore</em>, on es troben les llibreries per depurar l’aplicació web escrita en PHP (vegeu la figura <span class="figref"><a href="#u1-a1-3-firephp"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="u1-a1-3-firephp"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Instal·lar FirePHP al servidor PHP
+
+</figcaption><img src="../media/u1-a1-3-mv-firephp.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Una vegada s’ha instal·lat (s’ha copiat al servidor) s’ha d’incloure a les pàgines PHP que necessiteu depurar. Per exemple, l’incloureu a la pàgina index.php utilitzada en l’apartat 1 d’aquesta unitat. Per incloure’l afegireu la següent línia al principi del document:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">require_once('FirePHPCore/fb.php');</div></li></ol></pre>
+
+<p>
+A més a més, s’ha d’activar el <em>buffer</em> de PHP perquè funcioni la llibreria FirePHP. Aquesta s’activa amb la instrucció:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">ob_start();</div></li></ol></pre>
+
+<p>
+Aquesta instrucció s’ha d’escriure just després de realitzar la inclusió de la llibreria FirePHP. Una vegada fetes aquestes modificacions ja podeu utilitzar les instruccions de la llibreria FirePHP per depurar l’aplicació. Per exemple, feu la següent modificació a la pàgina index.php:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">&lt;?php</div></li><li class="li1"><div class="de1">require_once('FirePHPCore/fb.php');</div></li><li class="li1"><div class="de1">ob_start();</div></li><li class="li1"><div class="de1">?&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;?php</div></li><li class="li1"><div class="de1">            $var = &quot;&lt;h1&gt;Hola, Món&lt;/h1&gt;&quot;;</div></li><li class="li1"><div class="de1">            fb($var);</div></li><li class="li1"><div class="de1">            fb($var, &quot;Una variable&quot;);</div></li><li class="li1"><div class="de1">            fb($var, FirePHP::WARN);</div></li><li class="li1"><div class="de1">            fb($var, FirePHP::INFO);</div></li><li class="li1"><div class="de1">            fb($var, 'Una variable amb un error de tipus', FirePHP::ERROR);</div></li><li class="li1"><div class="de1">            echo $var;</div></li><li class="li1"><div class="de1">        ?&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Per activar en el navegador la depuració del codi PHP s’ha d’accedir a la pàgina PHP que es vol depurar i clicar en la icona del programa Firebug. Després cal tornar a executar la pàgina PHP; normalment, amb F5 ja tindreu el resultat esperat.
+</p>
+
+<p>
+La depuració de l’execució anterior es guarda en un arxiu temporal (<em>buffer</em>) que llegeix el programa client Firebug per mostrar-la per pantalla. La informació resultant de la depuració del codi la podeu veure a la consola del mateix Firebug. Vegeu la <span class="figref"><a href="#u1-a1-3-firebug-console"><span>figura</span></a></span> per comprovar el resultat.
+</p>
+<div class="iocfigure"><a name="u1-a1-3-firebug-console"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Depuració d’una variable amb Firebug i FirePHP
+
+</figcaption><img src="../media/u1-a1-3-firebug-error.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Com veieu, la funció <strong><em>fb</em></strong> de la llibreria <strong>FirePHP</strong> ens permet escriure a la consola del programa Firebug. Podeu mostrar el contingut d’una variable en un moment donat i podem forçar que la informació que mostra la consola sigui de tipus informatiu (<em>FirePHP::INFO</em>), de tipus alerta (<em>FirePHP::WARN</em>) o de tipus error (<em> FirePHP::ERROR</em>). Aquests tipus ens poden ser molt útils per discriminar les alertes.
+</p>
+
+<p>
+També podeu veure les crides a les diverses funcions que s’han realitzat fins a arribar al punt que ens interessa depurar del codi. Per exemple, modifiqueu el fitxer anterior amb aquest:
+</p>
+<pre class="code php"><ol><li class="li1"><div class="de1">&lt;?php</div></li><li class="li1"><div class="de1">require_once('FirePHPCore/fb.php');</div></li><li class="li1"><div class="de1">ob_start();</div></li><li class="li1"><div class="de1">?&gt;</div></li><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;?php</div></li><li class="li1"><div class="de1">            $var = &quot;&lt;h1&gt;Hola, Món&lt;/h1&gt;&quot;;</div></li><li class="li1"><div class="de1">            fb($var);</div></li><li class="li1"><div class="de1">            fb($var, &quot;Una variable&quot;);</div></li><li class="li1"><div class="de1">            fb($var, FirePHP::WARN);</div></li><li class="li1"><div class="de1">            fb($var, FirePHP::INFO);</div></li><li class="li1"><div class="de1">            fb($var, 'Una variable amb un error de tipus', FirePHP::ERROR);</div></li><li class="li1"><div class="de1">            echo $var;</div></li><li class="li1"><div class="de1">            function hola() {</div></li><li class="li1"><div class="de1">                fb('Hola, Món!', FirePHP::TRACE);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            function salutacio() {</div></li><li class="li1"><div class="de1">                hola();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">            salutacio();</div></li><li class="li1"><div class="de1">        ?&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+El resultat que veureu per consola del programa Firebug el podeu veure a la figura <span class="figref"><a href="#u1-a1-3-traça-firephp"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="u1-a1-3-traça-firephp"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Traça de depuració amb diverses funcions
+
+</figcaption><img src="../media/u1-a1-3-firephp-trace.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Observeu que veieu totes les funcions que s’han executat fins a arribar al codi depurat.
+</p>
+
+<p>
+Existeixen moltes més opcions, però, com sempre, s’han explicat les més importants. Podeu anar a la <a href="https://github.com/firephp/firephp-core" class="urlextern" title="https://github.com/firephp/firephp-core"  rel="nofollow">pàgina oficial</a> per saber-ne més.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/continguts.html">Entorns a punt per desenvolupar aplicacions web</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

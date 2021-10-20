@@ -1,0 +1,650 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u7" class="parentnode"><p><a class="unit" href="../../../WebContent/u7/introduccio.html">7. Desenvolupament de casos pràctics</a></p><ul class="expander"><li id="u7introduccio"><a href="../../../WebContent/u7/introduccio.html">Introducció</a></li><li id="u7resum"><a href="../../../WebContent/u7/resum.html">Resum</a></li><li id="u7resultats"><a href="../../../WebContent/u7/resultats.html">Resultats d'aprenentatge</a></li><li id="u7referencies"><a href="../../../WebContent/u7/referencies.html">Referències</a></li><li id="u7a1" class="tocsection"><p id='u7a1continguts'><a class="section" href="../../../WebContent/u7/a1/continguts.html">Desenvolupament de casos pràctics</a><span class="buttonexp"></span></p><ul><li id="u7a1activitats"><a href="../../../WebContent/u7/a1/activitats.html">Activitats</a></li><li id="u7a1exercicis"><a href="../../../WebContent/u7/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u7a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_amb_nodejs">Desenvolupament amb Node.js</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#aplicacions_amb_la_biblioteca_leaflet">Aplicacions amb la biblioteca Leaflet</a></li><li><a href="../../../WebContent/u7/a1/continguts.html#desenvolupament_de_jocs_amb_html5">Desenvolupament de jocs amb HTML5</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Desenvolupament de casos pràctics</a></li><li><a href="continguts.html">Desenvolupament de casos pràctics</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<h2><a id="creacio_d_una_aplicacio_per_a_la_linia_d_ordres_amb_nodejs" >Creació d&#039;una aplicació per a la línia d&#039;ordres amb Node.js</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a crear una aplicació amb Node.js que es pugui utilitzar des de la línia d’ordres.
+</p>
+
+<p>
+Cerqueu a internet la manera d’accedir als arguments introduïts a la línia d’ordres quan s’executa una aplicació amb Node.js, per exemple, si l’ordre és <code>node activitat1.js “Hola món”</code> l’argument és “Hola món”.
+</p>
+
+<p>
+Seguidament, implementeu una aplicació que en ser executada desi –acumulativament– el primer argument obtingut de la línia d’ordres en un fitxer anomenat <em>activitat1.txt</em>.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Si se cerca a Google sobre els arguments de Node.js per a la línia d’ordres es troba fàcilment que la propietat <code>process.argv</code> (<a href="https://goo.gl/wsbXZN" class="urlextern" title="https://goo.gl/wsbXZN"  rel="nofollow">www.goo.gl/wsbXZN</a>) és la que dona accés als arguments.
+</p>
+
+<p>
+Es tracta d’un <em>array</em> en el qual el primer element és la ruta d’execució de node, el segon la ruta d’execució del programa i els següents (des de l’índex 2 en endavant) corresponen als arguments.
+</p>
+
+<p>
+Per poder desar dades cal utilitzar el mòdul <code>fs</code> (<em>file system</em>) i el codi generat serà el següent (el nom del fitxer amb el codi és <em>activitat1.js</em>):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let fs = require ('fs');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let primerArgument = process.argv[2];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">fs.appendFile('activitat1.txt', primerArgument, function(error) {</div></li><li class="li1"><div class="de1">	let missatge;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if (error) {</div></li><li class="li1"><div class="de1">    	throw error; // No continuarà l'execució</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    console.log('Dades afegides al fitxer correctament: ' + primerArgument);</div></li><li class="li1"><div class="de1">});</div></li></ol></pre>
+
+<p>
+Per comprovar-ne el funcionament s’ha de posar a la línia d’ordres: <code>node activitat1.js “Hola món”</code> i s’afegirà <code>Hola món</code> al fitxer <em>activitat1.txt</em>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="cerca_i_utilitzacio_de_moduls_de_nodejs_mitjancant_npm" >Cerca i utilització de mòduls de Node.js mitjançant npm</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és cercar un mòdul que permeti convertir objectes de JavaScript en XML i utilitzar-lo per desenvolupar una aplicació.
+</p>
+
+<p>
+Cerqueu a <a href="https://www.npmjs.com/" class="urlextern" title="https://www.npmjs.com/"  rel="nofollow">www.npmjs.com</a> un mòdul que serveixi per convertir objectes de JavaScript en XML, instal·leu-lo i implementeu una aplicació que mostri per la terminal el següent objecte en format XML:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let alumne = {</div></li><li class="li1"><div class="de1">  nom: &quot;Maria&quot;,</div></li><li class="li1"><div class="de1">  cognom: &quot;Campmany&quot;,</div></li><li class="li1"><div class="de1">  assignatures: [&quot;m01&quot;, &quot;m03b&quot;, &quot;m02&quot;]</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li></ol></pre>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Un dels mòduls que permeten convertir objectes a format XML és <code>data2xml</code>. El podeu trobar a  l’enllaç següent: <a href="https://www.npmjs.com/package/data2xml" class="urlextern" title="https://www.npmjs.com/package/data2xml"  rel="nofollow">www.npmjs.com/package/data2xml</a>.
+</p>
+
+<p>
+Per instal·lar-lo s’ha de posar a la línia d’ordres <code>npm install data2xml</code> (és possible que es mostrin missatges d’avís per no haver generat un fitxer package.json per a l’aplicació).
+</p>
+
+<p>
+El codi de l’aplicació serà el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data2xml = require('data2xml');</div></li><li class="li1"><div class="de1">let convert = data2xml();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let alumne = {</div></li><li class="li1"><div class="de1">  nom: &quot;Maria&quot;,</div></li><li class="li1"><div class="de1">  cognom: &quot;Campmany&quot;,</div></li><li class="li1"><div class="de1">  assignatures: [&quot;m01&quot;, &quot;m03b&quot;, &quot;m02&quot;]</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log (convert('alumne', alumne));</div></li></ol></pre>
+
+<p>
+I el resultat en executar l’aplicació és el que trobeu a continuació (s’ha afegit el sagnat):
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;alumne&gt;</div></li><li class="li1"><div class="de1">  &lt;nom&gt;Maria&lt;/nom&gt;</div></li><li class="li1"><div class="de1">  &lt;cognom&gt;Campmany&lt;/cognom&gt;</div></li><li class="li1"><div class="de1">  &lt;assignatures&gt;m01&lt;/assignatures&gt;</div></li><li class="li1"><div class="de1">  &lt;assignatures&gt;m03b&lt;/assignatures&gt;</div></li><li class="li1"><div class="de1">  &lt;assignatures&gt;m02&lt;/assignatures&gt;</div></li><li class="li1"><div class="de1">&lt;/alumne&gt;</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+<p>
+
+<h2><a id="cerca_i_utilitzacio_d_api_de_mapes_estatics" >Cerca i utilització d&#039;API de mapes estàtics</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a mostrar un mapa estàtic.
+</p>
+
+<p>
+Creeu una pàgina usant Leaflet que mostri la localització de la seu de l’IOC (lat: 41.375106,lng: 2.168342) amb un marcador, i quan es faci clic sobre aquest marcador, es mostri certa informació d’aquesta seu, com el nom i una foto del logo de l’IOC.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per generar el mapa usant Leaflet es faria servir el codi següent:
+</p>
+<pre class="code">&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.css&quot;
+   integrity=&quot;sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==&quot;
+   crossorigin=&quot;&quot;/&gt;
+   &lt;script src=&quot;https://unpkg.com/leaflet@1.7.1/dist/leaflet.js&quot;
+   integrity=&quot;sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==&quot;
+   crossorigin=&quot;&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Element on es mostrarà el mapa --&gt;
+  &lt;div id=&quot;mapid&quot; style=&quot;height:600px&quot;&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    //Afegim el mapa centrat en les coordenades concretes i un zoom (13)
+    let elMeuMapa = L.map(&#039;mapid&#039;).setView([41.375106, 2.168342], 13);
+
+    //Afegim el tipus de tessel·les desitjat
+    L.tileLayer(&#039;http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#039;, {
+        attribution: &#039;Map data &amp;copy; &lt;a href=&quot;http://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href=&quot;http://cloudmade.com&quot;&gt;CloudMade&lt;/a&gt;&#039;,
+        maxZoom: 18
+    }).addTo(elMeuMapa);
+
+    //Afegim el marcador a les coordenades demanades i amb el missatge que volem que surti quan es cliqui
+    let marcador = L.marker([41.375106, 2.168342]).addTo(elMeuMapa);
+    marcador.bindPopup(&#039;&lt;h3&gt;Seu de l\&#039;&lt;i&gt;IOC&lt;/i&gt;&lt;/h3&gt;&lt;img width=&quot;80px&quot; src=&quot;https://pbs.twimg.com/profile_images/1046722856929947649/hytXqKH0_400x400.jpg&quot;&gt;&#039;);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent:<a href="https://codepen.io/ioc-daw-m06/pen/XWMzrZO?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XWMzrZO?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XWMzrZO?editors=1010</a>.
+</p>
+
+<p>
+Fixeu-vos que Leaflet necessita que carreguem inicialment dues llibreries. 
+</p>
+
+<p>
+Al fitxer html solament faria falta crear un element per contenir el mapa.
+</p>
+
+<p>
+Finalment, al codi JavaScript, haurem de centrar el mapa en unes coordenades concretes, afegir el tipus de tessel·la que desitgem d’entre les disponibles a Leaflet, i finalment afegir el marcador i el contingut que s’ha de mostrar el fer clic.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+</p>
+
+<p>
+
+<h2><a id="cerca_i_utilitzacio_d_api_de_geocodificacio" >Cerca i utilització d&#039;API de geocodificació</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aprendre a cercar i utilitzar <acronym title="Application Programming Interface">API</acronym> amb capacitats de geocodificació.
+</p>
+
+<p>
+Cerqueu què és la geocodificació i trobeu una <acronym title="Application Programming Interface">API</acronym> basada en les dades d’OpenStreetMap que permeti realitzar geocodificació. Desenvolupeu una petita aplicació amb JavaScript que a partir d’un text introduït en un quadre de text mostri per la consola la informació obtinguda.
+</p>
+
+<p>
+<strong>Nota</strong>: s’haurà de fer una petició AJAX i es pot utilitzar la biblioteca jQuery per simplificar el codi.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+La geocodificació és el procés de convertir una adreça en unes coordenades geogràfiques. La geocodificació inversa consisteix a fer el contrari, convertir coordenades en una adreça.
+</p>
+
+<p>
+Al següent lloc web es pot trobar tota informació sobre Nominatim <acronym title="Application Programming Interface">API</acronym> (<a href="https://nominatim.org/release-docs/latest/api/Search/" class="urlextern" title="https://nominatim.org/release-docs/latest/api/Search/"  rel="nofollow">https://nominatim.org/release-docs/latest/api/Search/</a>), que és la que permet fer aquestes operacions, a més de retornar molta informació sobre el punt geogràfic.
+</p>
+
+<p>
+Per utilitzar aquesta <acronym title="Application Programming Interface">API</acronym> cal utilitzar l’<acronym title="Uniform Resource Locator">URL</acronym> següent: <a href="https://nominatim.openstreetmap.org/search.php" class="urlextern" title="https://nominatim.openstreetmap.org/search.php"  rel="nofollow">https://nominatim.openstreetmap.org/search.php</a>, afegint el paràmetre <code>format</code> amb el valor del format desitjat i el paràmetre <code>q</code> assignant l’adreça que cal cercar.
+</p>
+
+<p>
+El codi del programa per buscar la informació a partir d’una adreça utilitzant jQuery seria el següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  Adreça: &lt;input id=&quot;adreca&quot; value=&quot;Martorell&quot;/&gt;</div></li><li class="li1"><div class="de1">  &lt;button id=&quot;cercar&quot;&gt;cercar&lt;/button&gt;</div></li><li class="li1"><div class="de1">  &lt;hr/&gt;</div></li><li class="li1"><div class="de1">  &lt;label for=&quot;lat&quot;&gt;&lt;/label&gt;Latitud: &lt;span id=&quot;lat&quot;&gt;&lt;/span&gt;</div></li><li class="li1"><div class="de1">  &lt;br/&gt;</div></li><li class="li1"><div class="de1">  &lt;label for=&quot;lon&quot;&gt;&lt;/label&gt;Longitud: &lt;span id=&quot;lon&quot;&gt;&lt;/span&gt;</div></li><li class="li1"><div class="de1">  &lt;hr/&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  &lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">  let $adreca = $('#adreca');</div></li><li class="li1"><div class="de1">  let $cercar = $('#cercar');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  $cercar.on('click', function(e) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    $.ajax( {</div></li><li class="li1"><div class="de1">      url: 'https://nominatim.openstreetmap.org/search.php?format=json&amp;q=' + $adreca.val(),</div></li><li class="li1"><div class="de1">      dataType: 'json',</div></li><li class="li1"><div class="de1">      success: function(data) {</div></li><li class="li1"><div class="de1">        $('#lat').text(data[0].lat);</div></li><li class="li1"><div class="de1">        $('#lon').text(data[0].lon);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    });</div></li><li class="li1"><div class="de1">  });</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/OWYLKm?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/OWYLKm?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/OWYLKm?editors=1010</a>.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+<h2><a id="cerca_d_un_llistat_de_museus_d_un_open_data" >Cerca d&#039;un llistat de museus d&#039;un Open Data</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és aprendre a cercar i obtenir informació d’una font de dades obertes.
+</p>
+
+<p>
+Cerqueu a les dades obertes de l’Observatori de dades culturals de Barcelona (<a href="http://barcelonadadescultura.bcn.cat/dades-obertes/" class="urlextern" title="http://barcelonadadescultura.bcn.cat/dades-obertes/"  rel="nofollow">www.barcelonadadescultura.bcn.cat/dades-obertes</a>) el llistat de museus corresponents al districte de l’Eixample. Aquesta informació ha d’incloure la latitud i la longitud.
+</p>
+
+<p>
+Indiqueu els passos seguits i l’<acronym title="Uniform Resource Locator">URL</acronym> final que s’ha de demanar per obtenir aquestes dades.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent"><ol>
+<li class="level1"><div class="li"> Entreu a la pàgina següent: <a href="http://barcelonadadescultura.bcn.cat/dades-obertes/" class="urlextern" title="http://barcelonadadescultura.bcn.cat/dades-obertes/"  rel="nofollow">www.barcelonadadescultura.bcn.cat/dades-obertes</a>.</div>
+</li>
+<li class="level1"><div class="li"> Feu clic sobre l’enllaç al document XML que conté la informació del catàleg: <a href="http://dades.eicub.net/doc" class="urlextern" title="http://dades.eicub.net/doc"  rel="nofollow">www.dades.eicub.net/doc</a>.</div>
+</li>
+<li class="level1"><div class="li"> Cerqueu <em>museus</em> al document i comproveu els diversos conjunts de dades. Només n’hi ha un que inclou la latitud i la longitud: <em>museusexposicions-inventari</em>, que es pot consultar a l’<acronym title="Uniform Resource Locator">URL</acronym> següent: <a href="http://dades.eicub.net/api/1/museusexposicions-inventari" class="urlextern" title="http://dades.eicub.net/api/1/museusexposicions-inventari"  rel="nofollow">www.dades.eicub.net/api/1/museusexposicions-inventari</a>.</div>
+</li>
+<li class="level1"><div class="li"> Per filtrar el resultat per districte cal que afegiu el paràmetre <code>Districte</code> amb el valor que volem filtrar.</div>
+</li>
+<li class="level1"><div class="li"> Per conèixer el valor correcte pel districte de l’Eixample només cal que visiteu el llistat complet i feu una cerca per <code>Eixample</code>. El codi que trobareu és <code>02. Eixample</code>.</div>
+</li>
+</ol>
+
+<p>
+Així doncs, l’<acronym title="Uniform Resource Locator">URL</acronym> per realitzar la consulta és el següent: <a href="http://dades.eicub.net/api/1/museusexposicions-inventari?Districte=02.%20Eixample" class="urlextern" title="http://dades.eicub.net/api/1/museusexposicions-inventari?Districte=02.%20Eixample"  rel="nofollow">www.dades.eicub.net/api/1/museusexposicions-inventari?Districte=02.%20Eixample</a> (fixeu-vos que s’ha codificat l’<acronym title="Uniform Resource Locator">URL</acronym> i s’ha reemplaçat l’espai per <code>%20</code>).
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="comparacio_de_motors_de_joc_html5" >Comparació de motors de joc HTML5</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és conèixer els motors de joc de tercers que hi ha al mercat i les seves característiques.
+</p>
+
+<p>
+Cerqueu un motor de joc per a HTML5 que admeti WebVR i un altre que admeti WebGL. Compareu quines diferències trobeu entre tots dos segons els criteris següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Gràfics</div>
+</li>
+<li class="level1"><div class="li"> Preu</div>
+</li>
+<li class="level1"><div class="li"> Documentació</div>
+</li>
+<li class="level1"><div class="li"> Comunitat</div>
+</li>
+<li class="level1"><div class="li"> Opcions multijugador</div>
+</li>
+<li class="level1"><div class="li"> Altres</div>
+</li>
+</ul>
+
+<p>
+<strong>Nota</strong>: Podeu cercar els motors de joc més populars a l’enllaç següent: <a href="https://ssiddique.info/best-html5-game-engines.html" class="urlextern" title="https://ssiddique.info/best-html5-game-engines.html"  rel="nofollow">ssiddique.info/best-html5-game-engines.html</a>.
+</p>
+
+<p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+A l’any 2021 principis del 2017 l’únic motor de jocs per generar continguts WebVR és PlayCanvas (<a href="https://playcanvas.com/" class="urlextern" title="https://playcanvas.com/"  rel="nofollow">www.playcanvas.com</a>). Entre els motors que utilitzen WebGL el més popular és Construct 3 (<a href="https://www.construct.net/" class="urlextern" title="https://www.construct.net/"  rel="nofollow">www.construct.net</a>).
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Gràfics</strong>: tots dos funcionen amb WebGL i permeten crear jocs en 3D. PlayCanvas és l’únic que pot generar contingut per a realitat virtual, però Construct 3 pot generar continguts en 2D (més simples i lleugers).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Preu</strong>: tots dos ofereixen un mode de prova gratuït però cal adquirir una llicència per usos professionals. Tots dos fan servir un model de subscripci´ó, PlayCanvas per 15 €/mes mínim i Construct per 16.49€/mes  o 99,99 €/any.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Documentació</strong>: all lloc web de PlayCanvas és pot trobar molta informació però hi ha pocs recursos externs; en canvi, per a Construct 3 es poden trobar centenars de tutorials al seu lloc web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Comunitat</strong>: la comunitat de PlayCanvas és petita i no es troba pràcticament cap contingut fora del seu lloc web; en canvi, per a Construct 3 es poden trobar centenars de vídeos tutorials a YouTube.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Opcions multijugador</strong>: la documentació sobre aquest aspecte a PlayCanvas és molt poca i només indica que s’ha de fer servir un servidor implementat amb Node.js. Construct 3 ofereix les opcions multijugador només als usuaris amb llicència de pagament però inclou tutorials i exemples de jocs, a més d’una biblioteca de xarxa més avançada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Altres</strong>: Construct 3 permet desenvolupar jocs amb uns coneixements de programació més reduïts. PlayCanvas ofereix un editor en línia, de manera que no cal descarregar cap programari; es treballa directament sobre la web, els jocs generats tenen un pes molt més reduït i afirmen estar molt optimitzats, de manera que s’aconsegueix una més fluïdesa.</div>
+</li>
+</ul>
+
+<p>
+En conclusió, es pot determinar que amb Construct 3 és molt més fàcil desenvolupar jocs i trobar tot tipus d’informació. Per altra banda, PlayCanvas requereix uns coneixements més avançats però permet utilitzar una tecnologia que no està a l’abast dels altres (WebVR) i produir jocs més optimitzats.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</p>
+
+</div>
+
+<h2><a id="modificacio_del_joc_ioc_invaders_utilitzant_les_dades" >Modificació del joc &quot;IOC Invaders&quot; utilitzant les dades</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és entendre com funcionen les estructures de dades i aprendre a modificar-les per afegir un nou nivell al joc <em>IOC Invaders</em>.
+</p>
+
+<p>
+Creeu un nou nivell del joc <em>IOC Invaders</em> amb les característiques següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Nom del nivell: <code>Nivell 4</code>.</div>
+</li>
+<li class="level1"><div class="li"> Descripció: <code>Aquest és el quart nivell del joc</code>.</div>
+</li>
+<li class="level1"><div class="li"> Música: <code>star-commander</code>.</div>
+</li>
+<li class="level1"><div class="li"> Capes: el doble de velocitat que el nivell anterior i les imatges següents: <code>bg_layer_1_green</code>,<code>bg_layer_2</code>, <code>bg_layer_3_green</code>, <code>bg_layer_4</code>.</div>
+</li>
+<li class="level1"><div class="li"> 2 onades de 5 enemics (de qualsevol tipus): la primera ha d’aparèixer als 200 punts de distància i la següent als 400 punts.</div>
+</li>
+<li class="level1"><div class="li"> El nivell acaba en arribar a 600 punts de distància.</div>
+</li>
+</ul>
+
+<p>
+Recordeu que podeu trobar el codi complet del joc <em>IOC Invaders</em> a l’enllaç següent: <a href="https://github.com/XavierGaro/ioc-invaders" class="urlextern" title="https://github.com/XavierGaro/ioc-invaders"  rel="nofollow">www.github.com/XavierGaro/ioc-invaders</a>.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per afegir un nivell nou s’ha d’afegir l’estructura de dades al final del fitxer <em>level-data.json</em>. Fixeu-vos que ha de quedar dins de l’<em>array</em> <code>levels</code>.
+</p>
+
+<p>
+El codi per generar el nivell indicat (que s’ha d’afegir al fitxer) és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">  &quot;name&quot;: &quot;Nivell 4&quot;,</div></li><li class="li1"><div class="de1">  &quot;description&quot;: &quot;Aquest és el quart nivell del joc.&quot;,</div></li><li class="li1"><div class="de1">  &quot;music&quot;: &quot;star-commander&quot;,</div></li><li class="li1"><div class="de1">  &quot;background&quot;: {</div></li><li class="li1"><div class="de1">    &quot;layers&quot;: [</div></li><li class="li1"><div class="de1">      {</div></li><li class="li1"><div class="de1">        &quot;id&quot;: &quot;bg_layer_1_green&quot;,</div></li><li class="li1"><div class="de1">        &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">          &quot;x&quot;: -120,</div></li><li class="li1"><div class="de1">          &quot;y&quot;: 0</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      },</div></li><li class="li1"><div class="de1">      {</div></li><li class="li1"><div class="de1">        &quot;id&quot;: &quot;bg_layer_2&quot;,</div></li><li class="li1"><div class="de1">        &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">          &quot;x&quot;: -240,</div></li><li class="li1"><div class="de1">          &quot;y&quot;: 0</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      },</div></li><li class="li1"><div class="de1">      {</div></li><li class="li1"><div class="de1">        &quot;id&quot;: &quot;bg_layer_3_green&quot;,</div></li><li class="li1"><div class="de1">        &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">          &quot;x&quot;: -480,</div></li><li class="li1"><div class="de1">          &quot;y&quot;: 0</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      },</div></li><li class="li1"><div class="de1">      {</div></li><li class="li1"><div class="de1">        &quot;id&quot;: &quot;bg_layer_4&quot;,</div></li><li class="li1"><div class="de1">        &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">          &quot;x&quot;: -960,</div></li><li class="li1"><div class="de1">          &quot;y&quot;: 0</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    ]</div></li><li class="li1"><div class="de1">  },</div></li><li class="li1"><div class="de1">  &quot;waves&quot;: [</div></li><li class="li1"><div class="de1">    {</div></li><li class="li1"><div class="de1">      &quot;distance&quot;: 200,</div></li><li class="li1"><div class="de1">      &quot;spawns&quot;: [</div></li><li class="li1"><div class="de1">        {</div></li><li class="li1"><div class="de1">          &quot;type&quot;: &quot;alien_a&quot;,</div></li><li class="li1"><div class="de1">          &quot;formation&quot;: {</div></li><li class="li1"><div class="de1">            &quot;type&quot;: &quot;row&quot;,</div></li><li class="li1"><div class="de1">            &quot;amount&quot;: 5,</div></li><li class="li1"><div class="de1">            &quot;spacer&quot;: 50</div></li><li class="li1"><div class="de1">          },</div></li><li class="li1"><div class="de1">          &quot;position&quot;: {</div></li><li class="li1"><div class="de1">            &quot;x&quot;: 1024,</div></li><li class="li1"><div class="de1">            &quot;y&quot;: 100</div></li><li class="li1"><div class="de1">          },</div></li><li class="li1"><div class="de1">          &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">            &quot;x&quot;: -120,</div></li><li class="li1"><div class="de1">            &quot;y&quot;: 0</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      ]</div></li><li class="li1"><div class="de1">    },</div></li><li class="li1"><div class="de1">    {</div></li><li class="li1"><div class="de1">      &quot;distance&quot;: 400,</div></li><li class="li1"><div class="de1">      &quot;spawns&quot;: [</div></li><li class="li1"><div class="de1">        {</div></li><li class="li1"><div class="de1">          &quot;type&quot;: &quot;alien_b&quot;,</div></li><li class="li1"><div class="de1">          &quot;formation&quot;: {</div></li><li class="li1"><div class="de1">            &quot;type&quot;: &quot;column&quot;,</div></li><li class="li1"><div class="de1">            &quot;amount&quot;: 5,</div></li><li class="li1"><div class="de1">            &quot;column_height&quot;: 1000,</div></li><li class="li1"><div class="de1">            &quot;spacer&quot;: 50</div></li><li class="li1"><div class="de1">          },</div></li><li class="li1"><div class="de1">          &quot;position&quot;: {</div></li><li class="li1"><div class="de1">            &quot;x&quot;: 800,</div></li><li class="li1"><div class="de1">            &quot;y&quot;: -200</div></li><li class="li1"><div class="de1">          },</div></li><li class="li1"><div class="de1">          &quot;speed&quot;: {</div></li><li class="li1"><div class="de1">            &quot;x&quot;: 0,</div></li><li class="li1"><div class="de1">            &quot;y&quot;: 120</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      ]</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  ],</div></li><li class="li1"><div class="de1">  &quot;end&quot;: 600</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="creacio_d_un_nou_tipus_de_formacio" >Creació d&#039;un nou tipus de formació</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és aprendre a ampliar un component ja existent afegint-hi una nova opció.
+</p>
+
+<p>
+
+<p>
+Examineu el funcionament de la funció <code>spawnFormation()</code> de la classe <code>GameEngine</code> i afegiu-hi un nou tipus anomenat <code>random</code> que faci servir la propietat <code>spacer</code> per determinar els límits en què es pot instanciar la nau.
+</p>
+
+</p>
+
+<p>
+És a dir, si el valor d<code>‘spacer</code> és 100 i la posició central és (100,100) la posició de cada nau es col·locarà aleatòriament entre 0 i 200 tant per  l’eix <code>x</code> com per l’eix <code>y</code>.
+</p>
+
+<p>
+Recordeu que les formacions s’estableixen al fitxer de dades <em>level-data.json</em> i podeu comprovar el funcionament de la nova formació substituint-la als enemics del primer nivell d’aquest fitxer.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Al fitxer <em>ioc-invader</em>, dintre de l’objecte <code>gameEngineContructor</code> es troba la funció <code>spawnFormation()</code>. Dintre del <code>switch</code> s’ha d’afegir el codi següent (abans de <code>default:</code>):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">case &quot;random&quot;:</div></li><li class="li1"><div class="de1">  originPosition = {x: wave.position.x, y: wave.position.y};</div></li><li class="li1"><div class="de1">  spacer = wave.formation.spacer;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (i = 0; i &lt; wave.formation.amount; i++) {</div></li><li class="li1"><div class="de1">    this.enemyPool.instantiate(wave.type, {</div></li><li class="li1"><div class="de1">      x: originPosition.x + Math.random() * (spacer * 2) - spacer,</div></li><li class="li1"><div class="de1">      y: originPosition.y + Math.random() * (spacer * 2) - spacer</div></li><li class="li1"><div class="de1">    }, wave.speed);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  break;</div></li></ol></pre>
+
+<p>
+Per comprovar el funcionament de la nova formació podeu modificar el primer enemic que s’instancia en el lloc (en el fitxer <em>level-data.json</em>) per un codi similar al següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">{</div></li><li class="li1"><div class="de1">  &quot;type&quot;: &quot;alien_a&quot;,</div></li><li class="li1"><div class="de1">  &quot;formation&quot;: {</div></li><li class="li1"><div class="de1">    &quot;type&quot;: &quot;random&quot;,</div></li><li class="li1"><div class="de1">    &quot;amount&quot;: 10,</div></li><li class="li1"><div class="de1">    &quot;spacer&quot;: 100</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="afegir_una_nova_accio_al_jugador" >Afegir una nova acció al jugador</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu de l’activitat és aprendre com ampliar el gestor d’entrada d’un joc i implementar una nova funcionalitat.
+</p>
+
+<p>
+Afegiu una nova acció per al jugador que permeti destruir tots els enemics del joc. Com que es tracta d’una funcionalitat de prova no cal afegir cap limitació i podrà ser utilitzada sense limitacions. S’ha d’assignar aquesta nova acció a la tecla <code>enter</code> i el nom de la funció ha de ser <code>specialAttack()</code>. Tampoc no caldrà augmentar la puntuació del jugador.
+</p>
+
+<p>
+<strong>Nota</strong>. Aquesta funció pot afegir-se als objectes de tipus <code>Player</code>, això permetria crear diferents tipus de nau per als jugadors amb diferents atacs especials mitjançant l’herència.
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Per una banda s’ha de modificiar el mòdul <code>InputManager</code> per afegir la nova tecla (<code>Enter</code> correspon al codi 13):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">const KEY_CODES = {</div></li><li class="li1"><div class="de1">    32: 'Space',</div></li><li class="li1"><div class="de1">    37: 'ArrowLeft',</div></li><li class="li1"><div class="de1">    38: 'ArrowUp',</div></li><li class="li1"><div class="de1">    39: 'ArrowRight',</div></li><li class="li1"><div class="de1">    40: 'ArrowDown',</div></li><li class="li1"><div class="de1">    13: 'Enter'</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+<p>
+El pas següent és implementar la funció <code>specialAttack()</code> dins 
+</p>
+
+<p>
+
+<p>
+de la classe <code>Player</code> al mòdul <code>gameObjects</code>. Però com que no hi ha cap manera d’obtenir una llista d’enemics actius, primer caldrà augmentar funcionalitat de la classe <code>GameEngine</code> afegint el mètode <code>getActiveEnemies()</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">getActiveEnemies = function() {</div></li><li class="li1"><div class="de1">  let enemies = this.enemyPool.pool.slice(0, this.enemyPool.actives);</div></li><li class="li1"><div class="de1">  return enemies;</div></li><li class="li1"><div class="de1">};</div></li></ol></pre>
+
+</p>
+
+<p>
+A continuació es pot afegir la funció <code>specialAttack()</code>:
+</p>
+
+<p>
+<pre class="code java"><ol><li class="li1"><div class="de1">specialAttack(enemies) {</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;enemies.length; i++) {</div></li><li class="li1"><div class="de1">    enemies[i].isDestroyed = true;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Finalment cal afegir la importació del mòdul <code>inputController</code> i la detecció dins del mètode <code>update()</code> de la classe <code>GameEngine</code> per comprovar si s’ha pres <code>Enter</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import {KEY_STATUS} from &quot;./inputController.js&quot;;</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">update(gameTime) {</div></li><li class="li1"><div class="de1">  window.requestAnimationFrame(this.update.bind(this));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Comprovem si ha passat suficient temps entre actualitzacions per limitar el nombre de</div></li><li class="li1"><div class="de1">    // quadres per segon</div></li><li class="li1"><div class="de1">    if (!this.isUpdateRequired(gameTime)) {</div></li><li class="li1"><div class="de1">      return;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Diferencia de temps entre quadres en ms</div></li><li class="li1"><div class="de1">    let deltaTime = (gameTime - this.previousGameTime)/1000;</div></li><li class="li1"><div class="de1">    this.previousGameTime = gameTime;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    // Detectem si s'ha pres la tecla enter i activem l'acció especial</div></li><li class="li1"><div class="de1">    if (KEY_STATUS.Enter) {</div></li><li class="li1"><div class="de1">      this.player.specialAttack(this.getActiveEnemies());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  this.updateWaves();</div></li><li class="li1"><div class="de1">  // resta del codi original ...</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu trobar el codi del joc <em>IOC Invaders</em> modificat amb la solució de les activitats a l’enllaç següent (branca SolucioActivitats): <a href="https://goo.gl/9p6Glt" class="urlextern" title="https://goo.gl/9p6Glt"  rel="nofollow">www.goo.gl/9p6Glt</a>.
+</p>
+
+<p>
+Cal tenir en compte que aquesta no és la millor solució, ja que la gestió de l’entrada de tecles s’hauria de gestionar a la classe <code>Player</code>, però en aquesta implementació no comptem amb cap mecanisme per accedir a la classe <code>GameEngine</code> directament des de <code>Player</code>, així que per simplificar hem optat per implementar-lo dins del mètode <code>update()</code> del <code>GameEngine</code>.
+</p>
+
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u7/a1/continguts.html">Desenvolupament de casos pràctics</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u7/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

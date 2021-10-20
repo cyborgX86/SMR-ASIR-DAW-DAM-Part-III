@@ -1,0 +1,1287 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a href="../../../WebContent/u4/introduccio.html">4. Interfícies gràfiques d'usuari. Fluxos i  fitxers</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4mapa"><a href="../../../WebContent/u4/mapa.html">Mapa conceptual</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Referències</a></li><li id="u4a1" class="tocsection"><p id="u4a1continguts"><a href="../../../WebContent/u4/a1/continguts.html">Interfícies gràfiques d'usuari</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><li id="u4a2" class="tocsection"><p id="u4a2continguts"><a href="../../../WebContent/u4/a2/continguts.html">Fluxos i fitxers</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Interfícies gràfiques d'usuari. Fluxos i  fitxers</a></li><li>Fluxos i fitxers</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="fluxos_i_fitxers"> Fluxos i fitxers </a></h1>
+    	
+<p>
+Per poder dur a terme operacions d’entrada i de sortida, de manera que sigui possible llegir o escriure dades, el Java disposa d’un mecanisme unificat, independent de l’origen o la destinació de les dades: els fluxos (<em>stream</em>). Aquest sistema no és exclusiu del Java, sinó que està suportat en altres llenguatges també, perquè es tracta en realitat d’una funcionalitat dels sistemes operatius. Aquest apartat se centrarà en l’ús de fluxos per al cas de l’accés a dades dins fitxers, en ser el més senzill i intuïtiu. Ara bé, cal tenir present que el mecanisme de fluxos no està vinculat exclusivament a interaccions amb el sistema de fitxers, sinó que és extrapolable a qualsevol operació en què s’efectuen operacions de lectura o d’escriptura seqüencial de dades. Per exemple, operacions amb <em>buffers</em> de memòria o comunicacions en xarxa.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un <strong>flux</strong> (<em>stream</em>) és el terme abstracte usat per referir-se al mecanisme que permet a un conjunt de dades <strong>seqüencials</strong> transmetre’s des d’un origen de dades (<em>data source</em>) a una destinació de dades (<em>data sink</em>).
+</p>
+</div></div>
+<p>
+Des del punt de vista de l’aplicació, es poden generar dos tipus de fluxos: d’entrada i de sortida. Els fluxos d’entrada serveixen per llegir dades des d’un origen (per exemple, seria el cas de llegir un fitxer), per tal de ser processades, mentre que els de sortida són els responsables d’enviar les dades a una destinació (per a un fitxer, seria el cas d’escriure-hi). La <span class="figref"><a href="#Figure26"><span>figura</span></a></span> resumeix com una aplicació transmet o rep dades mitjançant fluxos.
+</p>
+<div class="iocfigure"><a name="Figure26"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fluxos d’entrada i de sortida
+
+</figcaption><img src="../media/ic10m03u4_40.png" alt="" /></figure>
+</div><div class="iocnote"><div class="ioccontent">
+<p>
+FIFO són les inicials de first in first out (primer a entrar, primer a sortir).
+</p>
+</div></div>
+<p>
+L’aspecte més important del funcionament dels fluxos és que les dades sempre es transmeten i es processen seqüencialment. En el cas dels fluxos de lectura, això vol dir que un cop s’ha llegit un conjunt de dades, ja no és possible tornar enrere per llegir-lo de nou. En el cas dels fluxos d’escriptura, aquest fet implica que les dades s’escriuen, en la destinació, exactament en el mateix ordre que es transmeten, no es poden fer salts. Aquest comportament seqüencial també fa que l’ordre en què es llegeixen les dades d’un origen sigui sempre exactament el mateix que l’ordre en què es van escriure en el seu moment. El primer <em>byte</em> que es llegeix és el primer que es va escriure, després el segon… Tot el sistema es comporta sempre com una estructura FIFO. La <span class="figref"><a href="#Figure27"><span>figura</span></a></span> mostra un esquema d’aquest fet.
+</p>
+<div class="iocfigure"><a name="Figure27"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Les dades s’escriuen i es llegeixen seqüencialment.
+
+</figcaption><img src="../media/ic10m03u4_41.png" alt="" /></figure>
+</div>
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u4_42.png" class="imgB" title="Un flux de dades és com un tub, on, en lloc d&#039;aigua, es transmeten dades entre dos extrems. Un cop passa l&#039;aigua, ja no es pot fer enrere./5" alt="Un flux de dades és com un tub, on, en lloc d&#039;aigua, es transmeten dades entre dos extrems. Un cop passa l&#039;aigua, ja no es pot fer enrere./5" /></li><li><small>Un flux de dades és com un tub, on, en lloc d&#039;aigua, es transmeten dades entre dos extrems. Un cop passa l&#039;aigua, ja no es pot fer enrere.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+Dins el Java, hi ha dos tipus de flux. D’una banda, hi ha els <strong>fluxos orientats a dades</strong>, que són aquells en què les dades que es transmeten són purament binàries, amb una interpretació totalment dependent de l’aplicació. D’altra banda, hi ha els <strong>fluxos orientats a caràcter</strong>, en què les dades processades sempre es poden interpretar com a text. Tot i que estrictament es pot considerar que els segons són més aviat un subconjunt dels primers, ja que en ordinador, en darrera instància, sempre s’acaba representant tot en cadenes de <em>bytes</em>, fer aquesta diferenciació val la pena per entendre algunes de les particularitats del sistema de fluxos que proporciona el Java. Un exemple d’aquestes particularitats és que mentre que els primers operen sempre amb el tipus primitiu <em>byte</em>, els segons ho fan amb el tipus <code>char</code>.
+</p>
+
+<p>
+Totes les classes vinculades a l’entrada/sortida en Java es troben definides dins el <em>package</em> <code>java.io</code>. Dins aquest mateix paquet també es defineix el tipus d’excepció vinculada a errors sorgits durant el procés de lectura i escriptura de dades: <code>IOException</code>. Pràcticament tots els mètodes més importants poden generar aquesta excepció, per la qual cosa és imprescindible capturar-la. Complementant <code>IOException</code>, també hi ha definit un gran nombre de subclasses que aporten informació més concreta sobre l’error que ha tingut lloc.
+</p>
+
+<h2><a id="gestio_de_fitxers" >Gestió de fitxers</a></h2>
+<div class="level2">
+
+<p>
+Abans d’aprofundir en el funcionament dels fluxos de dades, val la pena veure com es gestiona el sistema de fitxers, ja que en la majoria de casos els fluxos s’utilitzaran per accedir-hi. Dins la biblioteca java.io, la classe que representa un fitxer a Java és <code>File</code>. Aquesta permet al desenvolupador manipular qualsevol aspecte vinculat al sistema de fitxers. Es pot usar tant per manipular fitxers de dades com directoris.
+</p>
+
+<p>
+
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La classe <strong>File</strong> indica, més concretament, una ruta dins el sistema de fitxers.
+</p>
+</div></div>
+<p>
+Si bé disposa de diversos constructors, el més típicament usat és:
+</p>
+<pre class="code">public File (String ruta)</pre>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">El format de la ruta</p>
+<p>
+Cal tenir sempre present que el format que ha de tenir la cadena de text que conforma la ruta pot ser diferent segons el sistema operatiu sobre el qual s’executa l’aplicació. Per exemple, el Windows inicia les rutes per un nom d’unitat (C:, D:, etc.), mentre que l’Unix sempre usa una barra (”/”). A més a més, els diferents sistemes operatius usen diferents separadors dins les rutes. Per exemple, l’Unix usa la barra (”/”) mentre que el Windows la contrabarra (“\”).
+</p>
+
+<p>
+Ruta Unix: /usr/bin <br/>
+Ruta Windows: C:\Windows\System32
+</p>
+
+<p>
+Per generar aplicacions portables a diferents sistemes, la classe File ofereix una constant que és recomanable usar per especificar separadors de ruta dins una cadena de text: File.separator. Aquesta sempre pren la forma adequada d’acord amb el sistema operatiu en què s’estigui executant l’aplicació en aquell moment.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> f <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a><span class="br0">&#40;</span><span class="st0">&quot;usr&quot;</span> <span class="sy0">+</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a>.<span class="me1">separator</span> <span class="sy0">+</span> <span class="st0">&quot;bin&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+De fet, en sistemes Windows cal ser especialment acurat amb aquest fet, ja que la contrabarra no és un caràcter permès dins una cadena de text, en servir per declarar valors especials d’escapament (\n salt de línia, \t tabulador, etc.).
+</p>
+
+<p>
+Un altre aspecte molt important que també cal tenir sempre present és si el sistema operatiu distingeix entre majúscules i minúscules o no. El Java és totalment neutral en aquest aspecte, actuant tal com especifiqui el sistema operatiu.
+</p>
+</div></div>
+<p>
+L’element final de la ruta pot existir realment o no, però això no impedeix de cap manera poder instanciar File. Les seves instàncies es comporten com una declaració d’intencions sobre quina ruta del sistema de fitxers es vol interactuar. No és fins que es criden els diferents mètodes definits a File
+, o fins que es s’hi escriuen o llegeixen dades, que realment s’accedeix al sistema de fitxers i es processa la informació. Si s’intenten llegir dades des d’una ruta que en realitat no existeix, es produeix un error, i es llança una FileNotFoundException.
+</p>
+
+<p>
+La classe File ofereix tot un seguit de mètodes que permeten realitzar operacions amb la ruta especificada. Alguns dels més significatius per entendre’n les funcionalitats són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>public boolean exists()</code>. Indica si la ruta especificada realment existeix en el sistema de fitxers.</div>
+</li>
+<li class="level1"><div class="li"> <code>public boolean isFile()/isDirectory()</code>. Aquests dos mètodes serveixen per identificar si la ruta correspon a un fitxer, o bé a un directori.</div>
+</li>
+</ul>
+
+<p>
+Els mètodes següents només es poden cridar sobre rutes que especifiquen fitxers o, en cas contrari, no faran res:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>public long length()</code>. Retorna la mida del fitxer.</div>
+</li>
+<li class="level1"><div class="li"> <code>public boolean createNewFile()</code>. Crea un nou fitxer buit en aquesta ruta, si encara no existeix. Retorna si l’operació ha tingut èxit.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Gestionant el sistema de fitxers</p>
+<p>
+Per exemple, suposem que es vol crear un nou fitxer, sempre que aquest encara no existeixi. El codi que realitzaria aquesta acció seria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>file.<span class="me1">exists</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1"> file.<span class="me1">createNewFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+El fitxer no es crea realment en el sistema de fitxers fins a executar el mètode createNewFile. Fins llavors, l’objecte referenciat per file només indica una ruta dins el sistema de fitxers amb la qual es pot operar, però no un fitxer real.
+</p>
+</div></div>
+<p>
+En contraposició, els mètodes següents només es poden cridar sobre rutes que especifiquen directoris:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>public boolean mkdir()</code>. Crea el directori, si no encara existeix. Retorna si l’operació ha tingut èxit.</div>
+</li>
+<li class="level1"><div class="li"> <code>public String[] list()</code>. En retorna el contingut en forma d’<em>array</em> de cadenes de text.</div>
+</li>
+<li class="level1"><div class="li"> <code>public String[] list(FilenameFilter filter)</code>. Mitjançant el paràmetre addicional filter, és possible filtrar el resultat, de manera que només es retorna el conjunt de fitxers i directoris que compleixen certs criteris. <code>FilenameFilter</code>és una <em>interface</em>, per la qual cosa és responsabilitat del desenvolupador proporcionar la implementació adequada d’acord amb les condicions en les quals es vol llistar el contingut del directori. Només té un mètode:</div>
+</li>
+<li class="level1"><div class="li"> <code>boolean accept(File dir, String name)</code>. Cada cop que es crida el mètode list(), aquest crida internament accept per cada fitxer o directori contingut. El paràmetre dir indica el directori en què està ubicat el fitxer o directori processat, mentre que name n’indica el nom. Retorna cert o fals segons si es vol, o no, que sigui inclòs en la llista retornada per la crida al mètode list().</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Llistant fitxers .png</p>
+<p>
+Un exemple de com s’usa un FilenameFilter per llistar fitxers amb una extensió concreta dins un directori podria ser:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">file.<span class="me1">list</span><span class="br0">&#40;</span> <span class="kw1">new</span> FileNameFilter<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1"> <span class="kw1">public</span> <span class="kw4">boolean</span> accept<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> f, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> name<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>name.<span class="me1">endsWith</span><span class="br0">&#40;</span><span class="st0">&quot;.png&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1">   <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span> </div></li><li class="li1"><div class="de1">  <span class="kw1">else</span></div></li><li class="li1"><div class="de1">   <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> <span class="br0">&#125;</span> </div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Fixeu-vos que en aquest exemple s’ha usat una classe anònima per definir el filtre. Atès que els filtres no se solen reusar molt dins el codi, és un altre cas en què val la pena usar classes anònimes.
+</p>
+</div></div>
+</div>
+
+<h2><a id="fluxos_orientats_a_dades" >Fluxos orientats a dades</a></h2>
+<div class="level2">
+
+<p>
+El Java ofereix un sistema d’accés homogeni al mecanisme de fluxos orientats a dades mitjançat, per descomptat, una jerarquia de classes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les superclasses <strong>InputStream</strong> i <strong>OutputStream</strong> especifiquen els mètodes relatius al comportament comú a qualsevol flux, i cada subclasse s’encarrega llavors de sobreescriure’ls, o afegir-ne de nous, segons les seves particularitats. Tots els fluxos a Java hereten d’alguna d’aquestes dues classes.
+</p>
+</div></div>
+<p>
+El fet de que tots els fluxos a Java hereten alguna de les superclasses <code>InputStream</code> i <code>OutputStream</code> té sentit, ja que, per exemple, independentment del format de l’origen de les dades, sempre hi ha l’opció de llegir, però les tasques que cal fer internament per a això són totalment diferents segons l’origen de dades concret. No és el mateix llegir d’un fitxer que d’un <em>buffer</em> de memòria. Hi ha una subclasse per cada tipus d’origen o destinació de dades.
+</p>
+
+<p>
+La classe <code>InputStream</code> ofereix els mètodes descrits a continuació per llegir dades des de l’origen mitjançant un flux d’entrada. Un aspecte a destacar és que en una operació de lectura mai no es pot garantir quants bytes es llegiran realment, independentment que es conegui per endavant el nombre de bytes disponibles a l’origen (i, per tant, <em>a priori</em>, es pugui suposar aquesta garantia). Sempre cal crear algoritmes que tinguin en compte el valor de retorn dels diferents mètodes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>int available()</strong>. Retorna tots els bytes que hi ha en el flux pendents de ser llegits. En un fitxer, seria el nombre de bytes que ocupa i encara no s’han processat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>int read()</strong>. Llegeix exactament un byte. Aquest mètode retorna un enter, ja que fa ús del valor de retorn -1 per indicar que ja no queden més dades per llegir en l’origen. Per obtenir realment el byte llegit cal fer un <em>cast</em> del valor retornat sobre una variable de tipus byte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>int read(byte[] b)</strong>. Intenta llegir tants bytes com la longitud de l’<em>array</em> passat com a paràmetre, on els emmagatzema a partir de l’índex 0. Retorna el nombre de bytes llegits realment. Cal tenir molt present que si s’ha llegit un nombre de bytes N, inferior a <code>b.length</code>, les dades emmagatzemades entre <code>N</code> i <code>b.length - 1</code> no són vàlides, ja que no corresponen a la lectura. Retorna -1 si no queden més dades per llegir en l’origen.</div>
+</li>
+<li class="level1"><div class="li"> <strong>int read (byte[] b, int offset, int len)</strong>. Intenta llegir len bytes, que emmagatzema dins de l’<em>array</em> <code>b</code> a partir de l’índex indicat pel valor <code>offset</code>. Com en el cas anterior, retorna el nombre real de bytes llegits i -1 si no queden més dades per llegir en l’origen.</div>
+</li>
+</ul>
+
+<p>
+Al mateix temps, la classe <code>OutputStream</code> ofereix els mètodes complementaris per escriure dades cap al destinació mitjançant un flux de sortida:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void write(int b)</strong>. Escriu exactament un byte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void write(byte[] b)</strong>. Escriu tots els bytes emmagatzemats a <code>b</code>, de manera ordenada des de l’índex 0 a <code>b.length - 1</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void write (byte[] b, int offset, int len)</strong>. Escriu tots els bytes emmagatzemats a <code>b</code>, de manera ordenada des de l’índex <code>offset</code> a <code>offset + length - 1</code>.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Flush</p>
+<p>
+La traducció literal de “flush” és “tirar de la cadena”. Una manera molt explícita de dir que es fa net al flux, i una nova referència a l’analogia entre un flux i un tub.
+</p>
+</div></div>
+<p>
+Quan les operacions de lectura o escriptura sobre un flux han finalitzat, és imprescindible tancar-lo. En fer-ho, s’informa el sistema operatiu que ja no s’hi vol realitzar cap operació més i que pot alliberar tot un seguit de recursos que li ha calgut reservar prèviament per gestionar el flux. En el cas dels fluxos de sortida, tancar-lo també serveix per forçar l’escriptura real de les dades cap a la destinació, el que s’anomena <strong>fer un  flush</strong>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per tancar qualsevol flux de dades es disposa del mètode <code>close()</code>.
+</p>
+</div></div>
+<p>
+En els sistemes operatius moderns, les escriptures són asíncrones. Això vol dir que no es pot garantir que en el mateix instant en què es fa un <code>write</code>, les dades realment s’hagin enviat a la destinació. Hi pot haver un retard, més o menys llarg. Només en tancar un flux es pot garantir que absolutament qualsevol dada escrita ja es troba realment a la destinació. Això implica que es pot donar el cas que durant el procés d’escriptura en un fitxer, immediatament després de retornar d’una crida a un mètode <code>write</code> s’obri el fitxer per veure’n el contingut (per exemple, amb un editor), però tot i així, les dades encara no hi siguin.
+</p>
+
+</div>
+
+<h3><a id="origen_i_destinacio_en_fitxers" >Origen i destinació en fitxers</a></h3>
+<div class="level3">
+
+<p>
+Dins la jerarquia de fluxos orientats a dades, les classes responsables de crear fluxos vinculats a fitxers, aquestes són les classes <code>FileInputStream</code> (per lectura, origen) i <code>FileOutputStream</code> (per escriptura, destinació). Aquestes dues classes no afegeixen gaires mètodes addicionals respecte als definits per InputStream i OutputStream. Ambdues disposen de constructors que tenen com a paràmetre d’entrada o bé una instància de File, o directament una cadena de text amb la ruta del fitxer:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> fitxer<span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ruta<span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> fitxer<span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ruta<span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> fitxer, <span class="kw4">boolean</span> append<span class="br0">&#41;</span> </div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> ruta, <span class="kw4">boolean</span> append<span class="br0">&#41;</span></div></li></ol></pre>
+
+<p>
+Sempre que es genera un flux de sortida sobre un fitxer ja existent, aquest se sobreescriu, de manera que es perden absolutament totes les dades emmagatzemades anteriorment. L’única excepció d’aquest comportament són els constructors amb el paràmetre append. Aquest permet indicar, si es crida amb el valor true, que es volen concatenar les dades tot just a partir del final del fitxer actual.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Còpia d&#039;un fitxer</p>
+<p>
+Com exemple del funcionament dels fluxos orientats a dades vinculats a fitxers, a continuació es mostra el fragment de codi que realitzaria una còpia del fitxer ubicat a ruta, escrivint-lo a novaRuta exactament igual. En l’exemple, les dades es llegeixen en blocs de 100 bytes consecutius, si bé cal tenir molt present que mai es pot donar per garantit el nombre de bytes llegits realment en una crida del mètode read. Per aquest motiu, és imprescindible controlar que només s’escrigui a la destinació exactament el mateix nombre de bytes que s’ha llegit.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstream"><span class="kw3">InputStream</span></a> in <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>novaRuta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">copiaDades<span class="br0">&#40;</span>in, out<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">void</span> copiaDades<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstream"><span class="kw3">InputStream</span></a> in, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dades <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw4">byte</span><span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">int</span> llegits <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">!=</span> <span class="br0">&#40;</span>llegits <span class="sy0">=</span> in.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">     out.<span class="me1">write</span><span class="br0">&#40;</span>dades,<span class="nu0">0</span>,llegits<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    out.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    in.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> ... <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">IOException</p>
+<p>
+En operar amb fluxos, és imprescindible capturar les possibles excepcions en el procés d’entrada/sortida.
+</p>
+</div></div>
+</div>
+
+<h3><a id="origen_i_destinacio_en_buffers_de_memoria" >Origen i destinació en buffers de memòria</a></h3>
+<div class="level3">
+
+<p>
+Un altre parell de classes molt útils quan es processen dades mitjançant fluxos són les relatives a orígens i destinacions de dades vinculats a <em>buffers</em> de memòria dinàmics: <code>ByteArrayInputStream</code> i <code>ByteArrayOutputStream</code>.
+</p>
+
+<p>
+En el cas del flux d’entrada, permet llegir dades des d’un <em>array</em> de bytes (<code>byte[]</code>) seqüencialment, en lloc d’haver d’accedir per índex. Per aquest motiu, en el seu constructor cal indicar quin és l’<em>array</em> origen de les dades:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>ByteArrayInputStream(byte[] buf)</strong>. En el cas del flux de sortida, les dades escrites s’emmagatzemen en un bloc indeterminat de la memòria del programa, que augmenta la mida dinàmicament a mesura que s’escriuen noves dades. No hi ha cap límit excepte la memòria física de l’ordinador, si bé es recomana no usar-los per a quantitats molt grans de dades. Un cop ha finalitzat l’escriptura, és possible obtenir totes les dades emmagatzemades mitjançant el mètode específic:</div>
+</li>
+<li class="level1"><div class="li"> <strong>byte[] toByteArray()</strong>. En la posició 0 de l’<em>array</em> hi ha el primer byte escrit en el flux, i així successivament fins a trobar el darrer escrit en la posició <code>length - 1</code>.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Canviant la destinació o l&#039;origen de les dades</p>
+<p>
+Per observar els avantatges que ofereix l’abstracció mitjançant fluxos, suposem que es vol canviar la destinació de les dades del tros de codi que serveix per copiar un fitxer i, en lloc d’un fitxer, es vol escriure sobre un <em>buffer</em> de memòria dinàmic. En aquest cas, l’única modificació en el fragment de codi seria, en crear el flux de sortida a la segona línia, simplement instanciar <code>ByteArrayOutputStream</code> classe en lloc de <code>FileOutputStream</code>. La resta del codi queda exactament igual. Passa el mateix si es canvia l’origen.
+</p>
+
+<p>
+El codi següent escriuria un <em>array</em> de bytes en un fitxer:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> array <span class="sy0">=</span> ...</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstream"><span class="kw3">InputStream</span></a> in <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bytearrayinputstream"><span class="kw3">ByteArrayInputStream</span></a><span class="br0">&#40;</span>array<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>novaRuta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">copiaDades<span class="br0">&#40;</span>in, out<span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+El codi següent llegiria el contingut en un array de bytes:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstream"><span class="kw3">InputStream</span></a> in <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bytearrayoutputstream"><span class="kw3">ByteArrayOutputStream</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">copiaDades<span class="br0">&#40;</span>in, out<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> array <span class="sy0">=</span> out.<span class="me1">toByteArray</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per tant, el codi del mètode <code>copiaDades</code> es manté exactament igual. Amb aquest sistema, el processament de les dades és absolutament transparent en el seu origen o destinació real. I un cop més, tot plegat gràcies a l’aplicació correcta del polimorfisme.
+</p>
+</div></div>
+</div>
+
+<h2><a id="fluxos_orientats_a_caracter" >Fluxos orientats a caràcter</a></h2>
+<div class="level2">
+
+<p>
+La particularitat principal dels fluxos orientats a caràcter, en contraposició amb els orientats a dades, és que els mètodes de les seves classes operen amb el tipus primitiu char en lloc de byte. La decisió de crear un subconjunt de classes amb aquesta propietat no va ser arbitrària, i depèn d’un seguit de motius de pes.
+</p>
+
+<p>
+En menor mesura, al contrari que amb els bytes, hi ha caràcters amb un cert significat especial. Saber que les dades que s’estan transmetent són caràcters permet processar-les correctament i poder detectar ubicacions concretes dins els text. El cas més clar d’aquest fet és el salt de línia, que permet distingir entre línies diferents dins un text.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<acronym title="American Standard Code for Information Interchange">ASCII</acronym> és l’acrònim d’<em>american standard code for information interchange</em> (codi estàndard americà per a l’intercanvi d’informació).
+</p>
+</div></div>
+<p>
+En major mesura, la diferenciació entre bytes i caràcters permet la internacionalització d’aplicacions. Tradicionalment, el sistema per codificar caràcters ha estat, i en moltes aplicacions encara ho és, el sistema <acronym title="American Standard Code for Information Interchange">ASCII</acronym>, formalitzat inicialment l’any 1963, que es basa en caràcters d’un sol byte. Aquest sistema conforma una taula en què a cada valor possible representable amb un byte s’assigna un caràcter concret (per exemple, la <em>A</em> majúscula es representa amb el valor hexadecimal 41).
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u4_43.png" class="imgB" title="Part de la taula ASCII./5" alt="Part de la taula ASCII./5" /></li><li><small>Part de la taula ASCII.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+A pesar de l’enorme acceptació, aquest sistema té un problema molt important: es basa totalment en l’alfabet llatí i, encara més concretament, en el llenguatge anglès. Per tant, qualsevol llenguatge no representable en aquest alfabet no es pot representar en <acronym title="American Standard Code for Information Interchange">ASCII</acronym>: grec, rus, pràcticament totes les llengües orientals, etc. En aquests països es van desenvolupar altres sistemes de codificació totalment incompatibles amb l’<acronym title="American Standard Code for Information Interchange">ASCII</acronym>, en assignar a un byte determinat una simbologia diferent, cosa que feia molt complicat fer aplicacions fàcilment portables independentment de l’idioma del sistema en què s’executi. Per resoldre aquest problema es va crear la codificació Unicode al final de la dècada dels vuitanta. Aquesta codificació es basa en 16 bits i és capaç d’englobar una gran quantitat d’alfabets. Per permetre la retrocompatibilitat amb el codi <acronym title="American Standard Code for Information Interchange">ASCII</acronym>, els valors Unicode 0 0000-0 007F, quan el byte de més pes és 0, es corresponen exactament amb els valors definits per <acronym title="American Standard Code for Information Interchange">ASCII</acronym>. La <span class="figref"><a href="#Figure28"><span>figura</span></a></span> mostra un bocí de la seva gran taula, en aquest cas per caràcters japonesos.
+</p>
+<div class="iocfigure"><a name="Figure28"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Rang de la taula Unicode pel sil.labari japonès hiragana.
+
+</figcaption><img src="../media/ic10m03u4_44.png" alt="" /></figure>
+</div>
+<p>
+El Java es basa totalment en l’Unicode, els tipus primitius char ocupen 2 bytes, cosa que permet que una aplicació Java s’executi sobre qualsevol plataforma, independentment de l’idioma. Novament, es pot veure com el Java es va crear pensant en Internet.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Les classes <strong>Reader</strong> i <strong>Writer</strong> representen les superclasses associades a fluxos orientats a caràcter. Sempre que es treballa amb caràcters cal usar la seva jerarquia de classes.
+</p>
+</div></div>
+<p>
+La filosofia dels fluxos orientats a caràcter és exactament igual que en els fluxos orientats a dades, i només canvia tota ocurrència de byte a <code>char</code>.
+</p>
+
+<p>
+Per cada origen o destinació de dades també hi ha una classe concreta, <code>FileReader</code> i <code>FileWriter</code> per processar fitxers. Fins i tot el nombre, nom i format dels mètodes són idèntics (<code>write</code>, <code>read</code>).
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Còpia de fitxers de text</p>
+<p>
+Les diferències de la còpia de fitxers de text són mínimes respecte a la manera d’operar dels fluxos orientats a dades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+reader"><span class="kw3">Reader</span></a> in <span class="sy0">=</span> <span class="kw1">new</span> Filereader<span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+writer"><span class="kw3">Writer</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+filewriter"><span class="kw3">FileWriter</span></a><span class="br0">&#40;</span>novaRuta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">copiaDades<span class="br0">&#40;</span>in, out<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">void</span> copiaDades<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+reader"><span class="kw3">Reader</span></a> in, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+writer"><span class="kw3">Writer</span></a> out<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">char</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dades <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw4">char</span><span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">int</span> llegits <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">!=</span> <span class="br0">&#40;</span>llegits <span class="sy0">=</span> in.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">      out.<span class="me1">write</span><span class="br0">&#40;</span>dades,<span class="nu0">0</span>,llegits<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    out.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    in.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> ... <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+</div></div>
+<p>
+
+</p>
+
+<p>
+De manera homònima als fluxos relatius a <em>buffers</em> de memòria, també hi ha classes per gestionar <em>buffers</em> de caràcters: <code>CharArrayReader</code> i <code>CharArrayWriter</code>. En aquest cas, el constructor del flux d’entrada té com a paràmetre una variable de tipus <code>char[]</code> i el de sortida permet obtenir les dades emmagatzemades usant el mètode <code>toCharArray()</code>.
+</p>
+
+</div>
+
+<h2><a id="modificadors_de_fluxos" >Modificadors de fluxos</a></h2>
+<div class="level2">
+
+<p>
+Hi ha situacions en les quals haver de processar qualsevol informació binària directament a un nivell tan baix com de byte o de caràcter pot ser una feina pesada per al desenvolupador. Suposem que es vol emmagatzemar un valor enter, un tipus primitiu <code>int</code>. Amb el funcionament per defecte dels fluxos orientats a dades, això implica haver de fer un conjunt de tasques prèvies abans que no es pugui escriure realment: conèixer la mida exacta d’un enter en Java (32 bits), dividir-lo d’alguna manera en bytes independents, i tot seguit escriure’l com una cadena de bytes. Llavors, en llegir-lo, cal fer el procés invers.
+</p>
+
+<p>
+Per a casos com aquest, en què les dades requereixen una transformació, la biblioteca <code>java.io</code> proporciona un conjunt de classes anomenades<em>modificadores</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>classe modificadora d’un flux</strong> altera el seu funcionament per defecte, i proporciona mètodes addicionals que permeten el pre-procés de dades complexes abans d’escriure o llegir-les del flux. Aquest preprocés el realitza de manera transparent el desenvolupador.
+</p>
+</div></div>
+<p>
+La <span class="figref"><a href="#Figure29"><span>figura</span></a></span> mostra un esquema del comportament d’aquestes classes partint de la problemàtica exposada a l’inici. El que vol el desenvolupador és simplement poder disposar d’un mecanisme per escriure enters en el flux, i deixar-lo que s’encarregui de totes les transformacions necessàries per convertir-lo en una cadena de bytes.
+</p>
+<div class="iocfigure"><a name="Figure29"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Modificació del comportament d’un flux de sortida.
+
+</figcaption><img src="../media/ic10m03u4_45.png" alt="" /></figure>
+</div>
+<p>
+Les classes modificadores més significatives són els fluxos de tipus de dades, els fluxos amb <em>buffer</em> intermedi, la sortida amb format, la compressió de dades, la transformació del flux orientat a caràcter de dades i la lectura per línies. En tots els casos, el seus constructors tenen com a paràmetre el flux que es vol modificar.
+</p>
+
+</div>
+
+<h3><a id="fluxos_de_tipus_de_dades" >Fluxos de tipus de dades</a></h3>
+<div class="level3">
+
+<p>
+Les classes <code>DataInputStream</code> i <code>DataOutputStream</code> serveixen per resoldre exactament el problema proposat a l’inici d’aquest apartat. Proporcionen un seguit de mètodes addicionals que permeten escriure directament tipus primitius sense que el desenvolupador s’hagi de preocupar de com cal codificar-los en bytes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>void writeInt(int i)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>int readInt()</code></div>
+</li>
+<li class="level1"><div class="li"> <code>void writeBoolean(boolean b)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>boolean readBoolean()</code></div>
+</li>
+<li class="level1"><div class="li"> <code>void writeDouble(double d)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>double readDouble()</code></div>
+</li>
+<li class="level1"><div class="li"> etc.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Escriptura i lectura de tipus primitius</p>
+<p>
+Un exemple d’utilització d’aquest modificador, en què s’escriu directament un valor enter, seria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+dataoutputstream"><span class="kw3">DataOutputStream</span></a> dos <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+dataoutputstream"><span class="kw3">DataOutputStream</span></a><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dos.<span class="me1">writeInt</span><span class="br0">&#40;</span>enter<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dos.<span class="me1">writeBoolean</span><span class="br0">&#40;</span>boolea1<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dos.<span class="me1">writeBoolean</span><span class="br0">&#40;</span>boolea2<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dos.<span class="me1">writeDouble</span><span class="br0">&#40;</span>doble<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dos.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+En usar aquest tipus de flux cal anar amb molt de compte de llegir dades en exactament l’ordre invers en què s’han escrit, ja que en cas contrari el programa serà erroni. Així, doncs, per llegir el fitxer anterior correctament cal fer:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+datainputstream"><span class="kw3">DataInputStream</span></a> dis <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+datainputstream"><span class="kw3">DataInputStream</span></a><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">double</span> d <span class="sy0">=</span> dis.<span class="me1">readDouble</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">boolean</span> b1 <span class="sy0">=</span> dis.<span class="me1">readBoolean</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">boolean</span> b2 <span class="sy0">=</span> dis.<span class="me1">readBoolean</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">int</span> i <span class="sy0">=</span> dis.<span class="me1">readInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">dis.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+</div></div>
+</div>
+
+<h3><a id="fluxos_amb_buffer_intermedi" >Fluxos amb buffer intermedi</a></h3>
+<div class="level3">
+
+<p>
+La classe <code>BufferedInputStream</code> proporciona la capacitat de disposar d’un <em>buffer</em> de memòria intermedi entre l’aplicació i un flux d’entrada orientat a dades. A efectes pràctics, això significa que permet tornar enrera en qualsevol moment de la lectura o l’escriptura, al contrari del que normalment es permet. Per assolir aquesta fita, disposa de mètodes addicionals:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void mark(int limit)</strong>. Marca una posició del flux. La posició marcada es conserva sempre que no es llegeixin més de <code>limit</code> bytes (que correspondria a la mida del <em>buffer</em> intermedi). En cas que això succeeixi, la marca es perd. Si bé aquest mètode es pot cridar diverses vegades al llarg de la vida del flux, com a màxim hi pot haver una única marca vàlida. Aquesta sempre serà la corresponent a la darrera crida d’aquest mètode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void reset()</strong>. El flux retrocedeix el processament de dades de nou fins a la posició marcada. En les lectures següents, es tornaran a obtenir exactament les mateixes dades que es van obtenir tot just després de cridar mark.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Retrocedint en la lectura d&#039;un flux</p>
+<p>
+Un tros de codi mostrant el seu funcionament seria el següent. En aquest es llegeixen els primers 200 bytes i llavors, tot seguit, es tornen a llegir. El paràmetre del mètode mark indica quina és la mida del <em>buffer</em> i, per tant, el límit de bytes que es poden llegir fins que la marca deixa de ser vàlida i es perd:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bufferedinputstream"><span class="kw3">BufferedInputStream</span></a> bis <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bufferedinputstream"><span class="kw3">BufferedInputStream</span></a><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dades <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw4">int</span><span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">mark</span><span class="br0">&#40;</span><span class="nu0">500</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//Marca. El buffer serà de 500 bytes</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 0-99 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 100-199 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">reset</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>     <span class="co1">//Tornem a la marca</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 0-99 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 100-199 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 200-299 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 300-399 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Llegim els bytes 400-499 del fitxer</span></div></li><li class="li1"><div class="de1">bis.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//La marca es perd. Ja no es pot fer reset()</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="me1">bis</span>.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+</div></div>
+<p>
+També existeix una classe <code>BufferedOutputStream</code>, tot i que aquesta té un comportament absolutament diferent. Simplement serveix per optimitzar alguns dels processos d’escriptura de dades del sistema operatiu. A part d’això, no aporta cap altre funcionalitat en forma de nous mètodes.
+</p>
+
+</div>
+
+<h3><a id="sortida_amb_format" >Sortida amb format</a></h3>
+<div class="level3">
+
+<p>
+La classe <code>PrintStream</code> és imprescindible dins de qualsevol aplicació que ha d’escriure cadenes de test dins d’un flux, ja que es tracta d’un modificador de fluxos de sortida que proporciona dos mètodes, sobrecarregats per poder tractar paràmetres de qualsevol tipus primitiu o objecte:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void print(…)</strong>. Escriu la representació en forma de cadena de text del paràmetre d’entrada. Per exemple, si el paràmetre és un booleà a cert, escriu la cadena de text ”<em>true</em>”, si és el número 24, escriu la cadena de text “24”, etc.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void println(…)</strong>. Escriu la representació en forma de cadena de text del paràmetre d’entrada i al final fa un salt de línia.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">toString</p>
+<p>
+Si aquest mètode no ha estat redefinit a la classe de l’objecte a representar, s’executarà el mètode definit a la classe , que simplement mostra per pantalla la referència de l’objecte: <code>Test$MyClass@13e205f</code>.
+</p>
+</div></div>
+<p>
+Així, doncs, aquests mètodes transformen qualsevol cosa en una cadena de bytes d’acord amb la seva representació com a cadena de text (un objecte <code>String</code>). En cas que el paràmetre sigui un objecte, la transformació en cadena de text es realitza mitjançant la crida interna del mètode <code>toString()</code>. Atès que aquest mètode està definit en la mateixa classeObject
+Object, sempre es pot garantir que és possible cridar-lo.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<code>System.out</code> és un <code>PrintStream</code>. Per això per escriure línies de text per pantalla s’usa: <code>System.out.println(…)</code>.
+</p>
+</div></div>
+<p>
+Tot i ser una mica estrany, en tractar-se d’un flux que transforma dades en cadenes de text, es considera orientat a dades i no a caràcter. <code>PrintStream</code> també és un cas especial en el fet que disposa de constructors addicionals en què es poden especificar directament alguns tipus de destinacions de dades.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>PrintStream(File fitxer)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>PrintStream(OutputStream out)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>PrintStream(String nomFitxer)</code></div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Mostrant enters</p>
+<p>
+En el fragment de codi que es mostra tot seguit es veu un exemple senzill de les funcionalitats dePrintStream, mitjançant el qual és possible imprimir línies de text amb un format complex:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+printstream"><span class="kw3">PrintStream</span></a> ps <span class="sy0">=</span>   <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+printstream"><span class="kw3">PrintStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span>            </div></li><li class="li1"><div class="de1"><span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">10</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  ps.<span class="me1">println</span><span class="br0">&#40;</span> i <span class="sy0">+</span> <span class="st0">&quot;. i val 5? &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>i <span class="sy0">==</span> <span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">... </div></li><li class="li1"><div class="de1"><span class="me1">ps</span>.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+El resultat és:
+</p>
+<pre class="code">1. i val 5? false
+2. i val 5? false
+3. i val 5? false
+4. i val 5? false
+5. i val 5? true
+6. i val 5? false
+7. i val 5? false
+8. i val 5? false
+9. i val 5? false
+10. i val 5? false</pre>
+</div></div>
+</div>
+
+<h3><a id="compressio_de_dades" >Compressió de dades</a></h3>
+<div class="level3">
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Compressió zip</p>
+<p>
+Uns altres tipus de fluxos, una mica més complexos, que permeten tractar dades comprimides són <code>ZipInputStream</code> i <code>ZipOutputStream</code>
+</p>
+</div></div>
+<p>
+El Java incorpora dins la biblioteca de fluxos la possibilitat de transmetre i llegir dades comprimides de manera transparent. La manera més simple de ferho és mitjançant les classes <code>GzipInputStream</code> i <code>GzipOutputStream</code>, que usen l’algorisme de compressió GZIP. Cap de les dues classes inclou nous mètodes fora dels definits en les superclasses <code>InputStream</code> i <code>OutputStream</code>. A mesura que s’escriuen o es llegeixen dades amb els mètodes <code>write</code> o <code>read</code>, aquestes es comprimeixen automàticament sense que sigui necessari fer cap altra tasca addicional.
+</p>
+
+<p>
+Al contrari que la resta de classes, aquestes pertanyen al paquet <code>java.util.zip</code>.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Compressió i descompressió de dades</p>
+<p>
+Tot seguit es mostra un exemple senzill dels mecanismes de compressió de dades. Com es pot veure, tot és igual a escriure o llegir dades d’un flux qualsevol.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1"> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+gzipinputstream"><span class="kw3">GZIPInputStream</span></a>  gis <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+gzipinputstream"><span class="kw3">GZIPInputStream</span></a><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>outFilename<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> <span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dades <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw4">byte</span><span class="br0">&#91;</span><span class="nu0">1024</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> <span class="kw4">int</span> llegits <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"> <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">!=</span> <span class="br0">&#40;</span>llegits <span class="sy0">=</span> in.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>                  </div></li><li class="li1"><div class="de1">  out.<span class="me1">write</span><span class="br0">&#40;</span>dades,<span class="nu0">0</span>,llegits<span class="br0">&#41;</span><span class="sy0">;</span>                  </div></li><li class="li1"><div class="de1"> gis.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>                        </div></li><li class="li1"><div class="de1"> out.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> ... <span class="br0">&#125;</span></div></li></ol></pre>
+</div></div>
+</div>
+
+<h3><a id="traduccio_de_flux_orientat_a_caracter_a_dades" >Traducció de flux orientat a caràcter a dades</a></h3>
+<div class="level3">
+
+<p>
+Dins el conjunt de classes modificadores, també hi ha dues classes que permeten traduir un flux orientat a dades a un orientat a caràcter, de manera que es pot operar a nivell de char en lloc de byte. Es tracta de les classes <code>InputStreamReader</code> i <code>OutputStreamWriter</code>.
+</p>
+
+<p>
+Totes aquestes classes modificadores, de fet, són subclasses de <code>InputStream</code> i <code>OutputStream</code>, ja que també es consideren fluxos per si mateixes.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">D&#039;InputStream a Reader</p>
+<p>
+A continuació es mostra com un flux orientat a dades amb origen en un fitxer es pot processar com un flux orientat a caràcter, sempre que se sàpiga <em>a priori</em> que el fitxer conté text.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a> fis <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a> <span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a> fos <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a> <span class="br0">&#40;</span>novaRuta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">void</span> copiaText<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstream"><span class="kw3">InputStream</span></a> in, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstream"><span class="kw3">OutputStream</span></a> out<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">try</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+reader"><span class="kw3">Reader</span></a> rd <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstreamreader"><span class="kw3">InputStreamReader</span></a><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+writer"><span class="kw3">Writer</span></a> wr <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+outputstreamwriter"><span class="kw3">OutputStreamWriter</span></a><span class="br0">&#40;</span>out<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">char</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dades <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw4">char</span><span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw4">int</span> llegits <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">!=</span> <span class="br0">&#40;</span>llegits <span class="sy0">=</span> rd.<span class="me1">read</span><span class="br0">&#40;</span>dades<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">      wr.<span class="me1">write</span><span class="br0">&#40;</span>dades,<span class="nu0">0</span>,llegits<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    wr.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    rd.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> ... <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+</div></div>
+</div>
+
+<h3><a id="lectura_per_linies" >Lectura per línies</a></h3>
+<div class="level3">
+
+<p>
+La classe més útil entre els modificadors de fluxos orientats a caràcter és <code>BufferedReader</code>, que permet la lectura de línies completes de text mitjançant el mètode <code>readLine()</code>, que retorna directament un <code>String</code>. Ella sola s’encarrega de llegir automàticament tots els caràcters necessaris fins a trobar un salt de línia. Aquesta classe també es considera un <code>Reader</code>, perquè és una subclasse seva.     
+</p>
+
+<p>
+Tot seguit es mostra com es pot usar amb un bocí de codi d’exemple, en què es mostra per pantalla el contingut d’un fitxer de text, llegint-lo línia a línia:
+</p>
+<pre class="code">BufferedReader br = new BufferedReader (new FileReader(ruta));
+String linia = null;
+//Es mostra tot el contingut per pantalla
+while (null != (linia = br.readLine()))
+  System.out.println(linia);
+br.close();</pre>
+
+</div>
+
+<h2><a id="operacions_avancades" >Operacions avançades</a></h2>
+<div class="level2">
+
+<p>
+Els fluxos proporcionen un mecanisme genèric per al processament de grans volums d’informació de manera seqüencial. Tot i que és el cas més intuïtiu, els fluxos no solament es limiten a operar amb fitxers. En aquest apartat es descriuran un seguit de casos particulars de funcionalitats més complexes que ens ofereixen els fluxos o que només poden ser usades quan es treballa exclusivament amb fitxers. Aquestes operacions aporten una solució relativament senzilla davant problemes típics en desenvolupar certes aplicacions, o al menys molt més simples que haver de gestionar les dades byte a byte.
+</p>
+
+</div>
+
+<h3><a id="fitxers_de_propietats" >Fitxers de propietats</a></h3>
+<div class="level3">
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Carpetes</p>
+<p>
+Un exemple de dades que val la pena desar entre execucions són les carpetes en què es desen certs fitxers importants amb lloc d’emmagatzemament variable (biblioteques, directoris de treball, etc.).
+</p>
+</div></div>
+<p>
+Un cas molt concret de fitxer que freqüentment s’utilitza en diverses aplicacions és el cas dels fitxers de propietats. En aquesta mena de fitxers s’emmagatzema informació relativa a la configuració de l’aplicació, de manera que es conservi el seu comportament entre diferents execucions.
+</p>
+
+<p>
+Conceptualment, un fitxer de preferències consisteix en una successió d’elements, en què cadascun es compon d’una clau, en format cadena de text, i un valor associat, que pot ser tant una cadena de text com un tipus primitiu. Per exemple:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Normalment, cal evitar usar espais en blanc en les claus i els valors.
+</p>
+</div></div><pre class="code">DirTreball = \home\usuari\dirTreball
+HoraDarreraExecucio = 05/09/2011-17:00:03
+ErrorsPendents = 4</pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Properties</p>
+<p>
+Tot i que aquesta classe permet generar estructures molt més complexes, el text d’aquest apartat se centrarà a explicar com es pot generar una successió de claus i valors.
+</p>
+</div></div>
+<p>
+Si bé res no impedeix usar directament la classe <code>File</code> i fluxos orientats a caràcter com un <code>BufferedReader</code> per anar llegint línia a línia i processar-ne el contingut, el Java ofereix una classe que permet processar aquesta mena d’informació i llegir-la o escriure-la fàcilment en un fitxer.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La classe que gestiona directament conjunts propietats en el Java s’anomena <strong>Properties</strong>, dins el paquet <code>java.util</code>.
+</p>
+</div></div>
+<p>
+Per generar un nou conjunt de propietats partint de zero, és suficient de cridar el constructor per defecte <code>Properties()</code>. Un cop s’instancia un conjunt de propietats, és possible consultar i modificar els valors emmagatzemats mitjançant mètodes molt semblants als utilitzats per la classe <code>Map</code>, ja que un fitxer de propietats té exactament la mateixa estructura. Tot i així, només és possible operar amb cadenes de text, no objectes. Aquests mètodes són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Object setProperty(String key, String value)</strong>. Assigna a la propietat <code>key</code> el valor <code>value</code>. Si no existeix, la crea.</div>
+</li>
+<li class="level1"><div class="li"> <strong>String getProperty(String key)</strong>. Consulta el valor d’una propietat. Retorna <code>null</code>, si no existeix.</div>
+</li>
+</ul>
+
+<p>
+Totes les dades modificades a l’objecte <code>Properties</code> només tenen representació en la memòria. Per aconseguir-ne la persistència cal desar-les (normalment, en un fitxer). Els mètodes que permeten fer-ho són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void store (OutputStream os, String comment)</strong>. Desa un fitxer de preferències al flux de sortida <code>os</code>. En la primera línia s’afegeix el text addicional, només a efectes informatius per a qualsevol persona que obrís el fitxer amb un editor de textos, <code>comment</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void store (Writer wr, String comment)</strong>. Idèntic a l’anterior, però opera sobre el flux orientat a caràcter <code>wr</code>.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Generant i desant propietats</p>
+<p>
+Un exemple senzill de generar i desar propietats és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+properties"><span class="kw3">Properties</span></a> prop <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+properties"><span class="kw3">Properties</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">prop.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="st0">&quot;DirTreball&quot;</span>,<span class="st0">&quot;/home/usuari/DirTreball&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">prop.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="st0">&quot;HoraDarreraExecucio&quot;</span>,<span class="st0">&quot;05/09/2009-17:00:03&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">prop.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="st0">&quot;ErrorsPendents&quot;</span>,<span class="st0">&quot;4&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">prop.<span class="me1">store</span><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span>,<span class="st0">&quot;Fitxer de configuració&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+El resultat seria el fitxer:
+</p>
+<pre class="code">#Fitxer de configuració
+#Tue Mar 24 09:45:50 JST 2009
+HoraDarreraExecucio=05/09/2009-17\:00\:03
+ErrorsPendents=4
+DirTreball=/home/usuari/DirTreball</pre>
+</div></div>
+<p>
+Excepte a la primera vegada que s’executi l’aplicació, normalment el que es farà es carregar un fitxer de propietats. Igual que existeixen uns mètodes per desar dades, hi ha els següents per carregar-les:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void load (InputStream is)</strong>. Carrega un fitxer de preferències des del flux d’entrada <code>is</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>void load (Reader rd)</strong>. Carrega un fitxer de preferències des del flux d’entrada orientat a caràcter <code>rd</code>.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>propertyNames</code> permet obtenir una <code>Enumeration</code> amb els noms de totes les propietats disponibles.
+</p>
+</div></div>
+<p>
+En qualsevol cas, el flux d’entrada sempre ha de ser un fitxer de propietats correctament formatat, d’acord amb el resultat d’una crida <code>store</code>, pel que  les dades contingudes sempre són text. Aquest fitxer es pot modificar mitjançant qualsevol editor de text simple, però sempre cal anar amb compte de mantenir el format. Les línies totalment en blanc o que comencen amb el caràcter # s’ignoren en carregar un fitxer de propietats.
+</p>
+
+<p>
+Normalment, amb el format de text simple proporcionat pels mètodes <code>store</code> i <code>load</code> és més que suficient per gestionar un conjunt de propietat. Tot i així, la classe <code>Properties</code> també proporciona els mètodes <code>storeToXML</code> i <code>loadfromXML</code>, que emmagatzemen les dades en format XML, un llenguatge de marques jeràrquic. Tot i així, en aquest cas, la seva funcionalitat és idèntica, i usar XML no aporta cap capacitat addicional.
+</p>
+
+<p>
+L’exemple anterior en format XML seria:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">&quot;1.0&quot;</span> <span class="re0">encoding</span>=<span class="st0">&quot;UTF-8&quot;</span> <span class="re0">standalone</span>=<span class="st0">&quot;no&quot;</span><span class="re2">?&gt;</span></span></div></li><li class="li1"><div class="de1"><span class="sc0">&lt;!DOCTYPE properties SYSTEM</span></div></li><li class="li1"><div class="de1"><span class="sc0">  &quot;http://java.sun.com/dtd/properties.dtd&quot;&gt;</span></div></li><li class="li1"><div class="de1">  <span class="sc3"><span class="re1">&lt;properties<span class="re2">&gt;</span></span></span></div></li><li class="li1"><div class="de1">    <span class="sc3"><span class="re1">&lt;comment<span class="re2">&gt;</span></span></span>Fitxer de configuració<span class="sc3"><span class="re1">&lt;/comment<span class="re2">&gt;</span></span></span></div></li><li class="li1"><div class="de1">    <span class="sc3"><span class="re1">&lt;entry</span> <span class="re0">key</span>=<span class="st0">&quot;ErrorsPendents&quot;</span><span class="re2">&gt;</span></span>4<span class="sc3"><span class="re1">&lt;/entry<span class="re2">&gt;</span></span></span></div></li><li class="li1"><div class="de1">    <span class="sc3"><span class="re1">&lt;entry</span> <span class="re0">key</span>=<span class="st0">&quot;HoraDarreraExecucio&quot;</span><span class="re2">&gt;</span></span>05/09/2009-17:00:03<span class="sc3"><span class="re1">&lt;/entry<span class="re2">&gt;</span></span></span></div></li><li class="li1"><div class="de1">    <span class="sc3"><span class="re1">&lt;entry</span> <span class="re0">key</span>=<span class="st0">&quot;DirTreball&quot;</span><span class="re2">&gt;</span></span>/home/usuari/DirTreball<span class="sc3"><span class="re1">&lt;/entry<span class="re2">&gt;</span></span></span></div></li><li class="li1"><div class="de1">  <span class="sc3"><span class="re1">&lt;/properties<span class="re2">&gt;</span></span></span></div></li></ol></pre>
+
+</div>
+
+<h3><a id="seriacio_d_objectes" >Seriació d&#039;objectes</a></h3>
+<div class="level3">
+
+<p>
+Hi ha situacions en què el desenvolupador pot decidir que no vol haver de pensar quines dades concretes cal emmagatzemar dins un fitxer, o haver d’especificar quin format han de tenir i processar-les en format binari o de text. Simplement, el que vol és agafar el mapa d’objectes del Model exactament tal com està representat en la memòria i fer un abocament directe. El Java ofereix la possibilitat de fer aquesta acció mitjançant el mecanisme de seriació d’objectes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+S’anomena <strong>seriació d’objectes</strong> el procés d’escriptura d’un objecte sobre una destinació de dades en forma de cadena de bits a partir de la seva representació en memòria, de manera que a partir de les dades resultants posteriorment es pugui restaurar en exactament el mateix estat.
+</p>
+</div></div>
+<p>
+Perquè un objecte es pugui seriar, cal que la seva classe implementi la<em>interface</em> Java  <code>java.io.Serializable</code>. Aquesta és una <em>interface</em> molt especial, ja que no obliga a implementar absolutament cap mètode, només serveix per indicar que les instàncies d’una classe són seriables.
+</p>
+
+<p>
+Per tant, si tenim la classe:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Model <span class="br0">&#123;</span>...<span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Per seriar-ne els objectes, l’única modificació que cal fer és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.io.Serializable</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Model <span class="kw1">implements</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+serializable"><span class="kw3">Serializable</span></a> <span class="br0">&#123;</span>...<span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Una de les propietats que fa especialment potent el mecanisme de seriació d’objectes del Java és el fet que, en seriar un objecte, se segueixen totes les seves referències a altres objectes, els quals, al mateix temps, també se serien. Aquest procés es produeix iterativament en els nous objectes seriats fins que ja no es troben més referències. Per tant, és possible seriar un mapa d’objectes complet simplement indicant que cal seriar l’objecte de nivell més alt. En restaurar l’objecte seriat, amb ell és recupera el mapa d’objectes complet. Aquest fet es veu representat en la <span class="figref"><a href="#Figure30"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure30"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Seriació d’una estructura d’objectes complet a partir d’un únic objecte inicial.
+
+</figcaption><img src="../media/ic10m03u4_46.png" alt="" /></figure>
+</div>
+<p>
+Si un mapa d’objectes es compon d’instàncies de diferents classes, com serà el cas freqüentment, cal que totes implementin <code>Serializable</code>. En cas contrari, en intentar seriar una instància d’una classe que no la implementa, es produirà una excepció tipus <code>java.io.NotSerializableException</code>.
+</p>
+
+<p>
+Els tipus de fluxos de dades associats a la seriació d’objectes són <code>java.io.ObjectOutputStream</code> i <code>java.io.ObjectInputStream</code>, per llegir i escriure respectivament. Ambdues classes ofereixen un ventall de mètodes per escriure de manera seqüencial tota mena de tipus de dades (en lloc de només bytes o caràcters). Per seriar objectes, els mètodes que cal usar són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>public void writeObject(Object o)</strong>. Escriu un objecte en un flux de dades <code>ObjectOutputStream</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>public Object readObject()</strong>. Llegeix un objecte d’un flux de dades <code>ObjectInputStream</code>.</div>
+</li>
+</ul>
+
+<p>
+A continuació es mostra un exemple de seriació d’objectes a fitxer. La classe <code>Model</code> pot ser tan complexa com calgui i referenciar als seus atributs instàncies de qualsevol altra classe. Mentre aquestes també implementin <code>Serializable</code>, l’estructura d’objectes completa s’escriurà a disc:
+</p>
+
+<p>
+
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Model m <span class="sy0">=</span> <span class="kw1">new</span> Model<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> f <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectoutputstream"><span class="kw3">ObjectOutputStream</span></a> oos <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectoutputstream"><span class="kw3">ObjectOutputStream</span></a> <span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileoutputstream"><span class="kw3">FileOutputStream</span></a><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">oos.<span class="me1">writeObject</span><span class="br0">&#40;</span>m<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">oos.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Tot seguit també es mostra l’exemple associat a la recuperació de l’objecte seriat anteriorment. En recuperar l’objecte <code><em class="u">m:Model</em></code> serialitzat, també s’ha recuperat tot el seu mapa d’objectes subjacent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a> f <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+file"><span class="kw3">File</span></a><span class="br0">&#40;</span>ruta<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectinputstream"><span class="kw3">ObjectInputStream</span></a> ois <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectinputstream"><span class="kw3">ObjectInputStream</span></a> <span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+fileinputstream"><span class="kw3">FileInputStream</span></a><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">Model m <span class="sy0">=</span> <span class="br0">&#40;</span>Model<span class="br0">&#41;</span>ois.<span class="me1">readObject</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">ois.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Fixeu-vos que, com que el mètode <code>readObject</code> retorna un <code>Object</code>, cal fer un <em>cast</em> per assignar la instància retornada a una referència de tipus <code>Model</code>. Això implica que el desenvolupador ha de saber exactament quin tipus d’objecte es va emmagatzemar, o en cas contrari es produeix un error en fer aquest <em>cast</em>, una <code>ClassCastException</code>. Evidentment, també s’ha de complir que totes les classes seriades, els seus fitxers .class, estiguin instal·lades en l’ordinador en què s’executa aquest codi, ja que en cas contrari es produeix una <code>ClassNotFoundException</code>. Per tant, cal anar amb compte quan hi ha un intercanvi d’objectes seriats entre diferents màquines.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Recuperant diverses vegades objectes seriats</p>
+<p>
+Suposem que en el codi que recupera l’objecte seriat, el fitxer es torna a llegir i s’aboca el resultat de recuperar l’objecte sobre una variable diferent, <code><em class="u">m2: Model</em></code>. Que passa si un mapa d’objectes es restaura diverses vegades des d’un mateix origen de dades sobre variables diferents?
+</p>
+
+<p>
+La resposta es que obtenim dues copies diferents del mapa d’objectes original, cadascuna amb objectes absolutament independents els uns dels altres.
+</p>
+</div></div>
+<p>
+L’única excepció dins dels mecanismes de seriació per defecte del Java són els atributs estàtics (<em>static</em>), que no se serien.
+</p>
+
+<p>
+Com es pot apreciar pels exemples, el mecanisme de seriació d’objectes és relativament fàcil d’usar, ja que el Java s’encarrega automàticament de tots els detalls interns sobre la representació dels objectes seriats i la seva instanciació a memòria un cop restaurats.
+</p>
+
+</div>
+
+<h4><a id="seriacio_personalitzada" >Seriació personalitzada</a></h4>
+<div class="level4">
+
+<p>
+Hi ha situacions en què el desenvolupador vol poder especificar de manera més concreta com se serien els objectes. Per exemple, suposem una aplicació en què, en algun objecte, es desa informació privilegiada (com pot ser una contrasenya), que no es vol escriure en el flux de dades en seriar-lo a un fitxer, ja que llavors seria lliurement accessible per a qualsevol amb accés al fitxer.
+</p>
+
+<p>
+En casos com aquest, en què es vol més control sobre el procés de seriació, el Java ofereix diferents opcions.
+</p>
+
+<p>
+
+</p>
+
+<p>
+L’opció més senzilla, si bé també la menys potent, és definir un atribut com a <strong>transitori</strong> amb la paraula clau transient. Els atributs marcats d’aquesta manera són ignorats completament pel procés de seriació. En restaurar un objecte serialitzat amb atributs transitoris, aquests són inicialitzats a zero o <code>null</code>, segons el tipus. En la majoria de casos, aquesta via és més que suficient.
+</p>
+
+<p>
+Atès que els atributs no seriats es restauren amb un valor segurament invàlid, és important no oblidar que és responsabilitat del desenvolupador generar el codi que els assigni un valor correcte, de manera que l’objecte estigui amb tots els atributs correctament inicialitzats abans de seguir l’execució de l’aplicació. Per exemple, en el cas de la contrasenya, un cop recuperat l’objecte serialitzat caldria preguntar-la immediatament a l’usuari.
+</p>
+
+<p>
+Una opció més complexa, però que ofereix molt més poder al desenvolupador, és establir exactament de quina manera se serien realment els objectes. Per fer-ho, cal afegir un seguit de mètodes a cada classe que implementa <code>Serializable</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>private void writeObject(ObjectOutputStream out) throws IOException</strong>. Aquest mètode és el responsable final de seriar. Si s’implementa, el codi que s’executa realment en cridar el mètode writeObject sobre un ObjectOutputStream, que és el paràmetre d’entrada out proporcionat automàticament pel Java, és aquest. Per realitzar aquesta tasca, és possible cridar sobre out tot un seguit de mètodes capaços de seriar qualsevol tipus primitiu o abocar qualsevol tipus de dades binàries. Tots aquests mètodes es troben definits en la classe <code>DataOutput</code>.<br/>
+Si és necessari, en qualsevol moment és possible cridar el mecanisme de seriació per defecte de l’objecte en curs mitjançant la crida del mètode <code>out.defaultWriteObject()</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException</strong>. Aquest és el mètode invers a <code>writeObject</code>. Es disposa com a paràmetre d’entrada el flux a partir del qual cal anar recuperant tots els camps de l’objecte d’acord amb la manera en què s’ha realitzat en seriar-lo. Novament, el paràmetre d’entrada in disposa d’un seguit de mètodes auxiliars per recuperar qualsevol tipus primitiu o llegir dades binàries, definits en la classe <code>DataInput</code>. També és possible cridar <code>in.defaultReadObject</code> per cridar el mecanisme de recuperació per defecte.</div>
+</li>
+</ul>
+
+<p>
+A continuació es mostra un exemple de seriació personalitzada. En aquest cas s’ha decidit que, en lloc d’usar els mecanismes proporcionats per defecte pel Java, cada atribut de la classe es codifica com a simple cadena de text separada per salts de línia. A l’hora de recuperar l’objecte, els valors s’han de restaurar en el mateix ordre en què s’han escrit i descodificar-los d’acord amb el format en què s’han emmagatzemat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.io.*</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> CustomSerialization <span class="kw1">implements</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+serializable"><span class="kw3">Serializable</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">int</span> valorEnter <span class="sy0">=</span> <span class="nu0">3</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">boolean</span> valorBoolea <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> valorString <span class="sy0">=</span> <span class="st0">&quot;Valor String&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">void</span> writeObject<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectoutputstream"><span class="kw3">ObjectOutputStream</span></a> out<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+printstream"><span class="kw3">PrintStream</span></a> ps <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+printstream"><span class="kw3">PrintStream</span></a><span class="br0">&#40;</span>out<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ps.<span class="me1">println</span><span class="br0">&#40;</span>valorEnter<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ps.<span class="me1">println</span><span class="br0">&#40;</span>valorBoolea<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    ps.<span class="me1">println</span><span class="br0">&#40;</span>valorString<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  <span class="kw1">private</span> <span class="kw4">void</span> readObject<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+objectinputstream"><span class="kw3">ObjectInputStream</span></a> in<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+ioexception"><span class="kw3">IOException</span></a>, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+classnotfoundexception"><span class="kw3">ClassNotFoundException</span></a> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bufferedreader"><span class="kw3">BufferedReader</span></a> br <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+bufferedreader"><span class="kw3">BufferedReader</span></a><span class="br0">&#40;</span><span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+inputstreamreader"><span class="kw3">InputStreamReader</span></a><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> s <span class="sy0">=</span> br.<span class="me1">readLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    valorEnter <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+integer"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    s <span class="sy0">=</span> br.<span class="me1">readLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    valorBoolea <span class="sy0">=</span> <span class="br0">&#40;</span><span class="st0">&quot;true&quot;</span>.<span class="me1">equals</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">?</span><span class="kw2">true</span><span class="sy0">:</span><span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    s <span class="sy0">=</span> br.<span class="me1">readLine</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    valorString <span class="sy0">=</span> s<span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span> </div></li></ol></pre>
+
+<p>
+El contingut de les dades seriades es mostra en l’exemple següent. En negreta es remarquen les parts que s’han generat de manera personalitzada amb el codi anterior. La resta són camps necessaris perquè el Java sigui capaç de reconèixer els noms dels diferents atributs:
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de dades serialitzades.</p><pre class="code">sr! !CustomSerialization i2 Z
+LL
+valorBooleaI valorEnterL valorStringtLjava/lang/String;xpw¶3 true Valor String</pre>
+</div></div>
+<p>
+Res no impedeix al desenvolupador decidir no seriar algun dels atributs i, en el moment de la restauració, assignar el valor que cregui convenient o preguntar-lo a l’usuari en el mateix moment.
+</p>
+
+<p>
+Com es pot tornar a veure, la <em>interface</em> <code>Serializable</code> és un cas molt especial, ja que, estranyament, els mètodes a afegir són privats, però, tot i així, el Java és capaç de cridar-los correctament per seriar l’objecte d’acord amb el seu codi. No cal donar-hi més importància.
+</p>
+
+</div>
+
+<h3><a id="acces_aleatori" >Accés aleatori</a></h3>
+<div class="level3">
+
+<p>
+Una de les característiques essencials de la gestió de dades emmagatzemades dins un fitxer mitjançant fluxos és el caràcter seqüencial en les operacions tant de lectura com d’escriptura. En tractar-se d’un mecanisme genèric, es va definir el denominador comú a qualsevol operació d’entrada sortida. Tot i així, per al cas concret d’un fitxer, es pot garantir que totes les dades són en una ubicació concreta, de manera que s’hi pot accedir de manera aleatòria.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Accés aleatori</p>
+<p>
+Amb aquest nom es denomina la capacitat de llegir dades en qualsevol ubicació dins una seqüència, sense haver de processar prèviament les dades anteriors.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Per poder accedir de manera aleatòria a un <strong>fitxer</strong>, el Java ofereix la classe <code>RandomAccessFile</code>.
+</p>
+</div></div>
+<p>
+Els seus constructors són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>RandomAccessFile(File fitxer, String mode)</code></div>
+</li>
+<li class="level1"><div class="li"> <code>RandomAccessFile(String ruta, String mode)</code></div>
+</li>
+</ul>
+
+<p>
+Novament, el constructor està sobrecarregat per acceptar tant un objecte <code>File</code> com directament la ruta del fitxer per mitjà dels paràmetres fitxer o ruta. El paràmetre mode indica en quin mode es vol obrir el fitxer. Els diferents modes possibles són:
+</p>
+<ul>
+<li class="level1"><div class="li"> r <strong>:</strong> Mode escriptura. Qualsevol intent d’escriure en el fitxer, incloent-hi el fet que no existeixi, causarà una excepció.</div>
+</li>
+<li class="level1"><div class="li"> rw: Mode escriptura-lectura. Si el fitxer no existeix, se’n crearà un de nou, buit.</div>
+</li>
+<li class="level1"><div class="li"> rws: Igual que el cas rw, però, addicionalment, es força l’actualització al sistema de fitxers cada cop que es fa una modificació en les dades del fitxer o les seves metadades. Aquest comportament és semblant a fer un <em>flush</em> cada cop que es fa una escriptura en el fitxer.</div>
+</li>
+<li class="level1"><div class="li"> rwd:Igual que el cas anterior, però només es força l’actualització per al cas de dades, i no metadades.</div>
+</li>
+</ul>
+
+<p>
+L’accés a un <code>RandomAccessFile</code> es basa en un apuntador intern que és possible desplaçar arbitràriament a qualsevol posició, partint del fet que la posició 0 correspon al primer byte del fitxer. Tots els increments en la posició d’aquest apuntador són en nombre de bytes. Per gestionar la posició d’aquest apuntador, la classe defineix amb els mètodes específics següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>void seek(long pos)</code>. Ubica l’apuntador exactament en la posició especificada pel paràmetre pos, en bytes de manera que qualsevol accés a les dades serà sobre aquest byte. No hi ha cap restricció en el valor d’aquest paràmetre, i és possible ubicar l’apuntador molt més enllà del final real del fitxer. En aquest cas, la mida del fitxer es veurà incrementada fins a pos bytes en el moment en què es faci alguna escriptura.</div>
+</li>
+<li class="level1"><div class="li"> <code>long getFilePointer()</code>. Retorna la posició exacta de l’apuntador, en nombre de bytes, des de l’inici del fitxer.</div>
+</li>
+<li class="level1"><div class="li"> <code>int skipBytes(int n)</code>. Salta n bytes a partir de la posició actual de l’apuntador, de manera que aquest passa a valer (apuntador + n). Retorna el nombre real de bytes saltats, ja que si s’arriba al final del fitxer, el desplaçament de l’apuntador s’atura.</div>
+</li>
+<li class="level1"><div class="li"> <code>void setLength(long len)</code>. Assigna una nova longitud al fitxer. Si la nova longitud és menor que l’actual, el fitxer es trunca.</div>
+</li>
+</ul>
+
+<p>
+La <span class="figref"><a href="#Figure31"><span>figura</span></a></span> mostra un esquema de posicionament de l’apuntador del fitxer d’acord amb crides successives als mètodes <code>seek</code> (posicionament absolut) o <code>skipBytes</code> (posicionament relatiu respecte al darrer valor de l’apuntador).
+</p>
+<div class="iocfigure"><a name="Figure31"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Posicionament d el’apuntador a un fitxer d’accés aleatori.
+
+</figcaption><img src="../media/ic10m03u4_47.png" alt="" /></figure>
+</div>
+<p>
+Un cop ubicats en una posició concreta dins el fitxer, és possible llegir o escriure dades utilitzant tot un seguit de mètodes de lectura i escriptura definits, havent-n’hi una per cada tipus primitiu (<code>read/writeBoolean</code>, <code>read/writeInt</code>, etc.). En aquest aspecte, <code>RandomAccessFile</code> es comporta com les classes <code>DataInputStream</code> i <code>DataOutputStream</code> i totes les consideracions esmentades per a aquestes classes també s’apliquen en el cas d’accés aleatori. El nombre de bytes escrits dependrà de la mida associada al tipus primitiu a Java.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si en llegir dades l’apuntador acaba més enllà de la mida del fitxer, es llança aquesta excepció. Gairebé sempre succeeix per una situació d’error en el codi.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Cada cop que es fa una operació de <strong>lectura o escriptura</strong>, l’apuntador es desplaça el mateix nombre de bytes que el nombre al qual s’ha accedit.
+</p>
+</div></div>
+</div>
+
+<h4><a id="acces_aleatori_en_un_fitxer_d_enters_i_reals" >Accés aleatori en un fitxer d&#039;enters i reals</a></h4>
+<div class="level4">
+
+<p>
+En aquest exemple es mostra com es gestiona un fitxer relativament senzill en què un cert nombre de valors són de tipus enter (valorsInt), i tot seguit hi ha un altre conjunt de valors de tipus real (valorsDouble).
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">int</span><span class="br0">&#91;</span><span class="br0">&#93;</span> valorsInt <span class="sy0">=</span> ...<span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">double</span><span class="br0">&#91;</span><span class="br0">&#93;</span> valorsDouble <span class="sy0">=</span> ...<span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per generar un fitxer amb aquests valors, n’hi ha prou d’ubicar l’apuntador en la posició inicial del fitxer i anar escrivint els valors usant el mètode <code>writeXXX</code> adequat.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;rw&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> valorsInt.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> file.<span class="me1">writeInt</span><span class="br0">&#40;</span>valors<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> valorsDouble.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> file.<span class="me1">writeDouble</span><span class="br0">&#40;</span>valors<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per modificar un valor qualsevol, cal ubicar l’apuntador fins a l’inici del valor adequat. Ara bé, per a això s’ha de calcular el desplaçament correcte d’acord amb el nombre de bytes que ocupa cadascun dels valors emmagatzemats. Un <code>int</code> en el Java ocupa 4 bytes mentre que un <code>double</code> n’ocupa 8.
+</p>
+
+<p>
+Aquest exemple modifica el tercer real emmagatzemat en el fitxer. Per fer-ho, cal saltar els bytes associats a tots els enters i els dos primers reals.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">double</span> nouValorDouble <span class="sy0">=</span> ...<span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;rw&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">seek</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="sy0">*</span>valorsInt.<span class="me1">length</span> <span class="sy0">+</span> <span class="nu0">8</span><span class="sy0">*</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">writeDouble</span><span class="br0">&#40;</span>nouValorDouble<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Per llegir valors, cal ubicar l’apuntador a l’inici de cada un i anar fent crides al mètode <code>readXXX</code> associat al tipus primitiu esperat. Novament, si es volen llegir posicions no consecutives, cal anar recalculant els desplaçaments correctes dins el fitxer. En aquest tros de codi es mostren els primers quatre valors per cada cas.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Int &quot;</span> <span class="sy0">+</span> i <span class="sy0">+</span> <span class="st0">&quot; = &quot;</span> <span class="sy0">+</span> file.<span class="me1">readInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  file.<span class="me1">seek</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="sy0">*</span>valorsInt.<span class="me1">length</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Double &quot;</span> <span class="sy0">+</span> i <span class="sy0">+</span> <span class="st0">&quot; = &quot;</span> <span class="sy0">+</span> file.<span class="me1">readDouble</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Tal com es desprèn dels exemples, un dels aspectes amb què cal anar amb més cura en usar l’accés aleatori és el fet que el posicionament de l’apuntador dins el fitxer es realitza comptant en nombre de bytes, però totes les escriptures i lectures es realitzen directament en tipus primitius. Això implica que el desenvolupador que està generant codi, per accedir a un fitxer ha de saber exactament la seva estructura interna i recordar la mida exacta de cada tipus primitiu de Java, per poder fer els salts a les posicions exactes en què comença cada dada emmagatzemada. En cas contrari, si es comet un error es llegiran o se sobreescriuran parcialment dades incorrectes.
+</p>
+
+</div>
+
+<h4><a id="escriptures_i_lectures_incorrectes" >Escriptures i lectures incorrectes</a></h4>
+<div class="level4">
+
+<p>
+Què passa si no es calculen correctament els desplaçaments en accedir a un fitxer de manera aleatòria? Suposem que els <em>arrays</em> de valors emmagatzemats tenen deu elements, per la qual cosa el fitxer conté primer deu valors enters (4 bytes cadascun) i deu valors reals (8 bytes cadascun). La mida total del fitxer és, per tant, de 4*10 + 8*10 = 120 bytes. Si, per exemple, es fa:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si només es fan lectures i escriptures de bytes, el problema de saber la mida exacta de cada tipus primitiu de Java desapareix.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">double</span> nouValorDouble <span class="sy0">=</span> ...<span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;rw&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">seek</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="sy0">*</span><span class="nu0">3</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">writeDouble</span><span class="br0">&#40;</span>nouValorDouble<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Abans de l’escriptura, l’apuntador del fitxer en realitat es troba sobre el quart enter. Atès que <code>writeDouble</code> escriu 8 bytes (la mida d’un real), se sobreescriuran el cinquè i sisè enter amb la representació binària d’un real. És a dir, un valor totalment incorrecte.
+</p>
+
+<p>
+De la mateixa manera, si es fes:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> file <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Int &quot;</span> <span class="sy0">+</span> i <span class="sy0">+</span> <span class="st0">&quot; = &quot;</span> <span class="sy0">+</span> file.<span class="me1">readInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">skipBytes</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="sy0">*</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Double &quot;</span> <span class="sy0">+</span> i <span class="sy0">+</span> <span class="st0">&quot; = &quot;</span> <span class="sy0">+</span> file.<span class="me1">readDouble</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+Al final del primer bucle l’apuntador és a l’inici del cinquè enter. Atès que cada enter ocupa 4 bytes, el mètode <code>skipBytes</code> deixa l’apuntador a l’inici del desè enter. Llavors, en fer el primer <code>readDouble</code> i llegir 8 bytes (la mida d’un real), en realitat el que es llegirà són els 4 bytes del darrer enter i els primers 4 bytes del primer real. Per pantalla es mostrarà el valor que equival a interpretar com un real aquests 8 bytes incorrectes. Successivament, llavors el bucle llegirà tres cops els darrers 4 bytes d’un real i els primers 4 bytes del següent. Les situacions descrites en l’exemple de lectures i escriptures incorrectes es troben esquematitzades en la <span class="figref"><a href="#Figure32"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure32"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple d’escriptura incorrecte en accés aleatori
+
+</figcaption><img src="../media/ic10m03u4_48.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="fitxers_mapats_en_la_memoria" >Fitxers mapats en la memòria</a></h3>
+<div class="level3">
+
+<p>
+Hi ha situacions en què es vol tractar amb fitxers de dades molt grans, de manera que l’aplicació, o bé es ressent en el rendiment, o directament la màquina virtual del Java retorna una excepció en forma d’una <code>OutofMemoryError</code>. Simplement, no és viable carregar totes les dades en la memòria per processar-les.
+</p>
+
+<p>
+Una altra opció és usar directament fitxers d’accés aleatori, però aquesta via és ineficient, ja que l’accés directe a un disc sobre fitxers molt grans és força lent.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El paquet <code>java.nio</code> només existeix des de la versió 1.4 del Java.
+</p>
+</div></div>
+<p>
+La solució és usar algun mecanisme que permeti carregar només la part del fitxer que es vol tractar en la memòria, de manera que es pot operar de manera eficient sense haver de tenir totes les dades en la memòria. Un cop fetes les lectures o escriptures pertinents, només cal desar aquest bloc en un disc. Com que si el desenvolupador hagués de fer aquesta gestió seria una tasca molt pesada, el Java ja ofereix un mecanisme transparent, si bé d’una certa complexitat, dins el seu paquet avançat d’entrada/sortida, <code>java.nio</code>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La classe <strong>MappedByteBuffer</strong> permet operar amb regions d’un fitxer de mida arbitrària com si aquest estigués directament emmagatzemat en la memòria.
+</p>
+</div></div>
+<p>
+Aquesta classe ofereix una <em>interface</em> per fer escriptures i lectures sobre parts d’un fitxer de mida arbitrària, de manera que el Java, internament, ja gestiona la càrrega en la memòria de les parts que realment s’estan utilitzant i d’anar-les escrivint automàticament en el fitxer en cas que es modifiquin. L’escriptura es fa de la manera més eficient possible pel sistema operatiu en què s’executi l’aplicació.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els canals disponibles en el Java estan definits en el paquet <code>java.nio.channels</code>.
+</p>
+</div></div>
+<p>
+Per usar aquesta classe, primer de tot cal obtenir un <strong>canal</strong> (<em>channel</em>) a partir d’un fitxer d’accés aleatori, usant el mètode <code>getChannel()</code>. Un canal representa una connexió a qualsevol dispositiu d’entrada/sortida, de manera que es pugui llegir o escriure-hi. Les particularitats dels canals i les operacions que permeten són una mica complexes, per això aquest text se centrarà en el seu ús per al mapatge de fitxers a memòria. N’hi ha prou de saber que la diferència principal dels canals respecte als fluxos és que no són seqüencials i permeten l’accés aleatori (sempre que tingui sentit per al dispositiu final). En el cas que s’està tractant, concretament s’obté una instància de <code>FileChannel</code>, atès que s’opera amb fitxers.
+</p>
+
+<p>
+Un cop es disposa d’un canal cap al fitxer a accedir, ja és possible mapar una secció del fitxer (o tot sencer) a memòria cridant sobre el canal el mètode:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">MappedByteBuffer map<span class="br0">&#40;</span>FileChannel.<span class="me1">MapMode</span> mode, <span class="kw4">long</span> position, <span class="kw4">long</span> size<span class="br0">&#41;</span>.</div></li></ol></pre>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Una de les capacitats avançades dels canals és la possibilitat de gestionar accés concurrent a un fitxer per part de diverses aplicacions.
+</p>
+</div></div>
+<p>
+Permet processar un fragment d’un fitxer, des de la posició <code>position</code> i amb una mida de size bytes, directament, com si estigués ubicat en la memòria. El paràmetre mode indica el mode d’accés d’acord amb un conjunt de constants definides en la classe <code>FileChannel.MapMode</code>: <code>READ_ONLY</code>, només lectura, i <code>READ_WRITE</code>, lectura i escriptura. El mode hauria de coincidir amb l’utilitzat en instanciar el fitxer d’accés aleatori<code>RandomAccessFile</code>.
+</p>
+
+<p>
+Una visió esquemàtica de tot aquest procés es mostra en la <span class="figref"><a href="#Figure33"><span>figura</span></a></span>. En aquesta figura es mapa un fragment d’intermedi 50 Mb, donat un fitxer de 200 Mb de llargària.
+</p>
+<div class="iocfigure"><a name="Figure33"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fragment de fitxer mapat en la memòria.
+
+</figcaption><img src="../media/ic10m03u4_49.png" alt="" /></figure>
+</div>
+<p>
+Mitjançant la instància a <code>MappedByteBuffer</code> es pot operar amb aquest fragment de fitxer usant-ne els mètodes associats, heretats de la seva superclasse <code>ByteBuffer</code>. Com als <code>RandomAccessFile</code>, hi ha un apuntador intern que indica des d’on es realitzaran els accessos a les dades, el qual s’incrementa automàticament cada cop que es fa un accés.
+</p>
+
+<p>
+Hi ha diversos mètodes sobrecarregats, però cadascun es correspon amb alguna de les categories següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Mètodes get o put amb posicionament absolut</strong>. Només operen amb un byte, però permeten establir el desplaçament exacte dins el <code>MappedByteBuffer</code> sobre el qual es farà l’operació.</div>
+<ul>
+<li class="level2"><div class="li"> <code>byte get(int posicio)</code></div>
+</li>
+<li class="level2"><div class="li"> <code>void put(int posicio, byte b)</code></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Mètodes get en bloc</strong>, de manera que es llegeix cert nombre de bytes consecutivament, escrits sobre un <em>array</em> de bytes.</div>
+<ul>
+<li class="level2"><div class="li"> <code>void get(byte[] destinacio). Łvoid get(byte[] destinacio, int offset, int len)</code></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Mètodes put en bloc</strong>, de manera que s’escriu un cert nombre de bytes consecutivament, proporcionats mitjançant un <em>array</em> de bytes.</div>
+<ul>
+<li class="level2"><div class="li"> <code>void put(byte[] origen). Łvoid put(byte[] origen, int offset, int len)</code></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Mètodes get i put tant absoluts com relatius</strong>, per accedir a valors representats amb tipus primitius. En aquest aspecte, el seu comportament és idèntic a l’explicat per la classe <code>RandomAccessFile</code>.</div>
+<ul>
+<li class="level2"><div class="li"> <code>void putInt(int valor)</code> </div>
+</li>
+<li class="level2"><div class="li"> <code>void putInt(int posicio, int valor)</code></div>
+</li>
+<li class="level2"><div class="li"> <code>int getInt()</code> </div>
+</li>
+<li class="level2"><div class="li"> <code>int getInt(int posicio)</code> </div>
+</li>
+<li class="level2"><div class="li"> etc.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Per desplaçar un apuntador dins l’objecte <code>MappedByteBuffer</code>, de manera que es pugui triar a partir de quin punt s’accedirà a les dades en els mètodes relatius, s’utilitza:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>void rewind()</strong>. Retorna a la posició zero.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Buffer position(int pos</strong>). Desplaça l’apuntador a la posició pos.</div>
+</li>
+</ul>
+
+<p>
+Cal tenir molt present que, com en el cas dels fluxos, els canvis efectuats sobre la porció mapada a memòria no es transmeten immediatament al fitxer físic. Si es vol forçar un <em>flush</em>, cal cridar el mètode <code>force()</code>.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Treballant amb 256 Mb</p>
+<p>
+Suposem que es vol generar un fitxer de 256 Mb i treballar-hi. Mitjançant la classe MappedByteBuffer és possible accedir-hi en la seva totalitat sense que internament impliqui haver de carregar-lo sencer a memòria.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">int</span> mb <span class="sy0">=</span> <span class="nu0">1024</span><span class="sy0">*</span><span class="nu0">1024</span><span class="sy0">;</span> <span class="co1">// 1 Mb</span></div></li><li class="li1"><div class="de1"><span class="kw4">int</span> length <span class="sy0">=</span> <span class="nu0">256</span><span class="sy0">*</span>mb<span class="sy0">;</span> <span class="co1">// 256 Mb</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> raf <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;rw&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">FileChannel ch <span class="sy0">=</span> raf.<span class="me1">getChannel</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">MappedByteBuffer mbb <span class="sy0">=</span> ch.<span class="me1">map</span><span class="br0">&#40;</span>FileChannel.<span class="me1">MapMode</span>.<span class="me1">READ_WRITE</span>,<span class="nu0">0</span>,length<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> length<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  mbb.<span class="me1">put</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">byte</span><span class="br0">&#41;</span><span class="st0">'a'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co1">//Ubiquem l'apuntador a la meitat</span></div></li><li class="li1"><div class="de1">mbb.<span class="me1">position</span><span class="br0">&#40;</span><span class="nu0">128</span><span class="sy0">*</span>mb<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> length<span class="sy0">/</span><span class="nu0">2</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span>out.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+</div></div><div class="iocexample"><div class="ioccontent"><p class="ioctitle">El fitxer que es copia en part a si mateix</p>
+<p>
+Per acabar de veure com funciona un MappedByteBuffer i quina utilitat té poder accedir concurrentment a diferents parts d’un mateix fitxer gran, intenteu entendre el fragment de codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">int</span> mb <span class="sy0">=</span> <span class="nu0">1024</span><span class="sy0">*</span><span class="nu0">1024</span><span class="sy0">;</span> <span class="co1">// 1 Mb</span></div></li><li class="li1"><div class="de1"><span class="kw4">int</span> length <span class="sy0">=</span> <span class="nu0">128</span><span class="sy0">*</span>mb<span class="sy0">;</span> <span class="co1">// 128 Mb</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a> raf <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+randomaccessfile"><span class="kw3">RandomAccessFile</span></a><span class="br0">&#40;</span>ruta, <span class="st0">&quot;rw&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">FileChannel ch <span class="sy0">=</span> raf.<span class="me1">getChannel</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">MappedByteBuffer mbb1 <span class="sy0">=</span> ch.<span class="me1">map</span><span class="br0">&#40;</span>FileChannel.<span class="me1">MapMode</span>.<span class="me1">READ_ONLY</span>,<span class="nu0">0</span>,length<span class="sy0">/</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">MappedByteBuffer mbb2 <span class="sy0">=</span> ch.<span class="me1">map</span><span class="br0">&#40;</span>FileChannel.<span class="me1">MapMode</span>.<span class="me1">READ_WRITE</span>,length<span class="sy0">/</span><span class="nu0">2</span>, length<span class="sy0">/</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> length<span class="sy0">/</span><span class="nu0">2</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw4">byte</span> b <span class="sy0">=</span> mbb1.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  mbb2.<span class="me1">put</span><span class="br0">&#40;</span>b<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Aquest codi copia la primera meitat d’un fitxer de 128 Mb a la seva segona meitat. Realitzar aquesta tasca d’aquesta manera, mapant zones diferenciades del fitxer a memòria, és molt més eficient que usar directament un <code>RandomAcessFile</code>, ja que es disposa de dos apuntadors: un llegeix de l’origen i l’altre escriu a la destinació. En cas contrari, abans de cada lectura i escriptura caldria reposicionar l’apuntador en la seva ubicació correcta. Això implica estar movent constantment l’apuntador sobre un fitxer molt gran, amb la ineficiència resultant.
+</p>
+</div></div>
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

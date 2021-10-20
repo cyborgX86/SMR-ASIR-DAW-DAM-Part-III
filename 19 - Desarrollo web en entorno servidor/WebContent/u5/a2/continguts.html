@@ -1,0 +1,830 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u5" class="parentnode"><p><a class="unit" href="../../../WebContent/u5/introduccio.html">5. Serveis web amb Java EE 7</a></p><ul class="expander"><li id="u5introduccio"><a href="../../../WebContent/u5/introduccio.html">Introducció</a></li><li id="u5resum"><a href="../../../WebContent/u5/resum.html">Resum</a></li><li id="u5resultats"><a href="../../../WebContent/u5/resultats.html">Resultats d'aprenentatge</a></li><li id="u5referencies"><a href="../../../WebContent/u5/referencies.html">Referències</a></li><li id="u5a1" class="tocsection"><p id='u5a1continguts'><a class="section" href="../../../WebContent/u5/a1/continguts.html">Serveis web SOAP amb Java EE 7</a><span class="buttonexp"></span></p><ul><li id="u5a1activitats"><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></li><li id="u5a1exercicis"><a href="../../../WebContent/u5/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a1annexos"><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a1/continguts.html#gestio_de_reserva_de_places_a_concerts_com_a_servei_web_soap">Gestió de reserva de places a concerts com a servei web SOAP</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_java_stand-alone">Fent servir la gestió de reserva de places a concerts des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#fent_servir_la_gestio_de_reserva_de_places_a_concerts_des_d_una_aplicacio_web">Fent servir la gestió de reserva de places a concerts des d'una aplicació web</a></li><li><a href="../../../WebContent/u5/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a2" class="tocsection"><p id='u5a2continguts'><a class="section" href="../../../WebContent/u5/a2/continguts.html">Serveis web RESTful amb Java EE7. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a2activitats"><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></li><li id="u5a2exercicis"><a href="../../../WebContent/u5/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a2annexos"><a href="../../../WebContent/u5/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta "Hello World!!!"</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#el_servei_web_de_dades_de_llibres_operacions_crud">El servei web de dades de llibres. Operacions CRUD</a></li><li><a href="../../../WebContent/u5/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u5a3" class="tocsection"><p id='u5a3continguts'><a class="section" href="../../../WebContent/u5/a3/continguts.html">Serveis web RESTful amb Java EE7. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u5a3activitats"><a href="../../../WebContent/u5/a3/activitats.html">Activitats</a></li><li id="u5a3exercicis"><a href="../../../WebContent/u5/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u5a3annexos"><a href="../../../WebContent/u5/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u5a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u5/a3/continguts.html#un_client_per_al_servei_web_restful_que_contesta_hola">Un client per al servei web RESTful que contesta "Hola"</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#el_servei_web_de_dades_de_llibres_consum_i_testeig">El servei web de dades de llibres. Consum i testeig</a></li><li><a href="../../../WebContent/u5/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Java EE 7</a></li><li>Serveis web RESTful amb Java EE7. Escrivint serveis web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_restful_amb_java_ee7_escrivint_serveis_web"> Serveis web RESTful amb Java EE7. Escrivint serveis web </a></h1>
+    	
+<p>
+Explicarem, mitjançant exemples, els conceptes més rellevants dels serveis web RESTful (de l’anglès REpresentational State Transfer), aprendreu a crear-ne i a fer-ne el desplegament mitjançant exemples.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>REST</strong> no és un protocol, sinó un conjunt de regles i principis que permeten desenvolupar serveis web fent servir HTTP com a protocol de comunicacions entre el client i el servei web, i es basa a definir <strong>accions sobre recursos</strong> mitjançant l’ús dels mètodes <code>GET</code>, <code>POST</code>, <code>PUT</code> i <code>DELETE</code> inherents d’HTTP. 
+</p>
+</div></div>
+<p>
+Per a REST, qualsevol cosa que es pugui identificar amb un <acronym title="Uniform Resource Identifier">URI</acronym> (de l’anglès Uniform Resource Identifier) es considera un recurs, i, per tant, es pot manipular mitjançant accions (també anomenades verbs) especificades a la capçalera HTTP de les peticions seguint el següent conjunt de regles i principis que regeixen REST:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>POST</code>: crea un recurs nou.</div>
+</li>
+<li class="level1"><div class="li"> <code>GET</code>: consulta el recurs i n’obté la representació.</div>
+</li>
+<li class="level1"><div class="li"> <code>DELETE</code>: esborra un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>PUT</code>: modifica un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>HEAD</code>: obté metainformació del recurs.</div>
+</li>
+</ul>
+
+<p>
+REST es basa en l’ús d’estàndards oberts en totes les seves parts; així, fa servir <acronym title="Uniform Resource Identifier">URI</acronym> per a la localització de recursos, HTTP com a protocol de transport, els verbs HTTP per especificar les accions sobre els recursos i els tipus MIME per a la representació dels recursos (XML, JSON, XHTML, <acronym title="HyperText Markup Language">HTML</acronym>, PDF, GIF, JPG, PNG, etc.).
+</p>
+
+<p>
+En una comparació ràpida entre REST i SOAP veiem que REST fa servir gairebé sempre HTTP com a mecanisme de comunicació i XML o JSON per intercanviar dades. Un servei REST no té estat i cada <acronym title="Uniform Resource Identifier">URI</acronym> representa un recurs sobre el qual s’opera amb verbs HTTP. Un servei web REST no requereix de missatges SOAP/XML ni de descripcions del servei amb documents WDSL de definició de servei.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Format JSON</p>
+<p>
+JSON (de l’anglès Java Script Object Notation) és un format lleuger d’intercanvi de dades. És fàcil de llegir i escriure per als éssers humans i, per a les màquines, d’analitzar i generar. Això el fa ideal per representar els recursos en arquitectures REST. Un dels principals problemes dels serveis web basats en SOAP és la mida dels missatges d’intercanvi; l’ús de JSON permet minimitzar la informació a enviar.
+</p>
+</div></div>
+<p>
+Als serveis web SOAP tota la infraestructura es basa en XML i les operacions cal que les defineixi el desenvolupador del servei; són força més complexos, però proporcionen certes capacitats a nivell de seguretat i transaccionalitat que, a vegades, els fan l’única alternativa viable, sobretot en aplicacions empresarials. Tot això fa que REST sigui molt més lleuger i fàcil d’utilitzar que SOAP i, per a determinades arquitectures, sigui una millor opció.
+</p>
+
+<p>
+Ens centrarem en la creació i el desplegament de serveis web RESTful amb Java EE 7 i ho farem mitjançant l’API <strong>JAX-RS</strong>. Noteu que per escriure un servei web RESTful tan sols us caldria un client i un servidor que es puguin comunicar per HTTP, però hauríeu de fer a mà tota la configuració, el parseig de les peticions segons el verb HTTP emprat, el mapatge entre el format de dades de la petició i els objectes Java que representen el domini i enviar les respostes amb el tipus MIME que s’especifiqui a la capçalera de la petició; JAX-RS us estalviarà tota aquesta feina proporcionant-vos un petit conjunt d’anotacions que us permetran desenvolupar còmodament serveis web RESTful.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JAX-RS</strong> (de l’anglès Java <acronym title="Application Programming Interface">API</acronym> for RESTful Web Services) és l’API que inclou l’especificació de Java EE 7 per crear i consumir serveis web basats en REST.
+</p>
+</div></div>
+<h2><a id="un_servei_web_restful_que_contesta_hello_world" >Un servei web RESTful que contesta &quot;Hello World!!!&quot;</a></h2>
+<div class="level2">
+
+<p>
+Veurem els diferents conceptes bàsics dels serveis web RESTful amb el típic exemple que sempre trobeu als manuals: farem un “<em>Hello World!!!</em>” i el publicarem com a servei web RESTful utilitzant l’API que JAX-RS que proporciona Java EE 7 per fer-ho.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+Com que es tracta d’un exemple molt senzill, no ens cal cap projecte de partida; simplement, creeu a NetBeans un nou projecte Maven de tipus <em>Web Application</em>. Per fer-ho, feu <em>File / New Project</em> i us apareixerà l’assistent de creació de projectes. A l’assistent, seleccioneu <em>Maven</em> i <em>Web Application</em>, tal com es veu en la <span class="figref"><a href="#xbfig1.1"><span>figura</span></a></span>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Hem triat per a l’exemple un projecte web amb Maven, però és perfectament vàlid fer-ho amb qualsevol altre tipus de projecte web.
+</p>
+</div></div><div class="iocfigure"><a name="xbfig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació de projectes a NetBeans
+
+</figcaption><img src="../media/yig1.1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En la següent pantalla (vegeu la <span class="figref"><a href="#xbfig1.2"><span>figura</span></a></span>) triarem el nom del projecte i el paquet per defecte on anirà el codi font. El podeu anomenar “Resthelloioc” i posar el codi font a <code>cat.xtec.ioc.resthelloioc</code>. 
+</p>
+<div class="iocfigure"><a name="xbfig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nom del nou projecte
+
+</figcaption><img src="../media/yig1.2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En la següent pantalla (vegeu la <span class="figref"><a href="#xbfig1.3"><span>figura</span></a></span>) de l’assistent deixeu els valors per defecte i polseu <em>Finish</em>.
+</p>
+<div class="iocfigure"><a name="xbfig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Configuració del nou projecte
+
+</figcaption><img src="../media/yig1.3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="creacio_del_servei_web_restful" >Creació del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Ja tenim el projecte que ens servirà de base creat. Ara cal que codifiqueu el servei web RESTful que ens ha de tornar la salutació “<em>Hello World!!!</em>”; per fer-ho ens cal decidir primer dues coses: amb quin dels verbs HTTP ha de respondre el servei web i quin <acronym title="Uniform Resource Identifier">URI</acronym> farem servir per cridar-lo.
+</p>
+
+<p>
+Aquest servei web el que ha de fer és <strong>obtenir una representació del recurs</strong> en format <acronym title="HyperText Markup Language">HTML</acronym>; per tant, haurà de respondre al verb <code>GET</code>.
+</p>
+
+<p>
+La decisió sobre quin <acronym title="Uniform Resource Identifier">URI</acronym> utilitzar és força arbitrària en aquest cas; utilitzarem, per exemple, <em>/hello</em>.
+</p>
+
+<p>
+Per tant, a les peticions d’aquest tipus:
+</p>
+<pre class="code">GET http://localhost:8080/resthelloioc/hello</pre>
+
+<p>
+Ha de respondre amb:
+</p>
+<pre class="code">Hello World!!!</pre>
+
+<p>
+Un cop decidit el funcionament del nostre servei, el següent que us cal fer és codificar una classe Java que implementi la funcionalitat demanada. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els serveis web RESTful són <strong>POJO</strong> (de l’anglès Plain Old Java Object) que tenen almenys un mètode anotat amb l’anotació <code>@Path</code>.
+</p>
+</div></div>
+<p>
+Creeu una classe Java que implementarà aquesta funcionalitat, anomeneu-la <code>HelloWorldService</code> i la creeu al paquet <code>cat.xtec.ioc.resthelloioc.service</code>.
+</p>
+
+<p>
+Anoteu la classe amb l’anotació <code>@Path(“/hello”)</code> i hi creeu un mètode anomenat, per exemple, <code>sayHello</code>, i l’anoteu amb <code>@GET</code> i <code>@Produces(“text/html”)</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.resthelloioc.service;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ws.rs.GET;</div></li><li class="li1"><div class="de1">import javax.ws.rs.Path;</div></li><li class="li1"><div class="de1">import javax.ws.rs.Produces;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@Path(&quot;/hello&quot;) </div></li><li class="li1"><div class="de1">public class HelloWorldService {</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Produces(&quot;text/html&quot;)</div></li><li class="li1"><div class="de1">    public String sayHello() {</div></li><li class="li1"><div class="de1">        return &quot;Hello World!!!&quot;;</div></li><li class="li1"><div class="de1">    }    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Hem anotat la classe amb <code>@Path(“/hello”)</code> per indicar que respondrà a les peticions que arribin a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/resthelloworld/hello" class="urlextern" title="http://localhost:8080/resthelloworld/hello"  rel="nofollow">localhost:8080/resthelloworld/hello</a>.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode <code>sayHello</code> amb <em>@GET</em> per indicar que respondrà a les peticions HTTP que es facin mitjançant el verb <code>GET</code>.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode <code>sayHello</code> amb <code>@Produces(“text/html”)</code> per indicar que respondrà a les peticions HTTP en les quals a la capçalera s’indiqui “text/html” com a tipus MIME, i ho farà produint <acronym title="HyperText Markup Language">HTML</acronym> com a representació del recurs.</div>
+</li>
+</ul>
+
+<p>
+I aquesta és tota la feina que ens cal fer per implementar el servei web, JAX-RS farà la resta. Ara tan sols ens manca fer-ne el desplegament al servidor d’aplicacions i provar-lo.
+</p>
+
+</div>
+
+<h3><a id="desplegament_del_servei_web_restful" >Desplegament del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Un cop creat el servei web cal que el desplegueu per tal de fer-lo accessible als clients i poder-lo provar. 
+</p>
+
+<p>
+El procés de desplegament del servei web es fa desplegant l’aplicació Java EE que el conté mitjançant els mecanismes normals de desplegament de qualsevol aplicació Java EE.
+</p>
+
+<p>
+El desplegament del servei web com a part de l’aplicació Java EE que el conté és molt senzill: simplement cal que feu <em>Clean and Build</em> i després <em>Run</em> a NetBeans (vegeu la <span class="figref"><a href="#xbfig1.4"><span>figura</span></a></span>) i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte.
+</p>
+<div class="iocfigure"><a name="xbfig1.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ ‘Run’ a NetBeans
+
+</figcaption><img src="../media/yig1.4.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si ho feu i el proveu accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> que hem configurat: <a href="http://localhost:8080/resthelloioc/hello" class="urlextern" title="http://localhost:8080/resthelloioc/hello"  rel="nofollow">localhost:8080/resthelloioc/hello</a> veureu que el desplegament falla (vegeu la <span class="figref"><a href="#xbfig1.5"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xbfig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Error 404 en desplegar
+
+</figcaption><img src="../media/yig1.5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Això és degut al fet que ens cal indicar quines són les classes que ha de tractar com a recursos REST. Això es pot fer de moltes maneres, i una d’elles és crear una classe de configuració anomenada <code>ApplicationConfig</code> al paquet <code>cat.xtec.ioc.resthelloioc.service</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.resthelloioc.service;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ws.rs.core.Application;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@javax.ws.rs.ApplicationPath(&quot;rest&quot;)</div></li><li class="li1"><div class="de1">public class ApplicationConfig extends Application {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si la classe <code>ApplicationConfig</code> no es crea al paquet on hi ha les classes que formen els serveis web ens cladrà afegir cada una de les classes a una col·leccio que té la classe <code>Application</code> de la qual hereta.
+</p>
+</div></div>
+<p>
+On s’indica que cal afegir “/rest” (o el que vulgueu posar) abans del nom del servei web per cridar-lo.
+</p>
+
+<p>
+Si proveu ara accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/resthelloioc/rest/hello" class="urlextern" title="http://localhost:8080/resthelloioc/rest/hello"  rel="nofollow">localhost:8080/resthelloioc/rest/hello</a> veureu que el servei web us torna la salutació (vegeu la <span class="figref"><a href="#xbfig1.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xbfig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Servei web desplegat
+
+</figcaption><img src="../media/yig1.6.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si utilitzeu les eines de <em>debug</em> de Google Chrome, per exemple, podreu veure la petició HTTP feta i la resposta rebuda (vegeu la <span class="figref"><a href="#xbfig1.7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="xbfig1.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Petició i resposta HTTP
+
+</figcaption><img src="../media/yig1.7.png" alt="" /></figure>
+</div>
+</div>
+
+<h2><a id="el_servei_web_de_dades_de_llibres_operacions_crud" >El servei web de dades de llibres. Operacions CRUD</a></h2>
+<div class="level2">
+
+<p>
+Veurem els conceptes referents a la creació de serveis web RETSful amb Java EE 7 desenvolupant un servei web RESTful que permeti treballar sobre un catàleg de llibres. Hi farem les operacions típiques CRUD i dues operacions de cerca: la que ens tornarà tots els llibres i una que ens permetrà fer cerques per títol.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+CRUD és l’acrònim en anglès per a les operacions de creació (Create), lectura (Read), actualització (Update) i esborrat (Delete).
+</p>
+</div></div>
+<p>
+Concretament, el servei web que farem tindrà les següents operacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Consulta d’un llibre mitjançant l’ISBN (operació <code>Read</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Creació d’un llibre al catàleg (operació <code>Create</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Actualització de les dades d’un llibre (operació <code>Update</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Esborrar un llibre del catàleg (operació <code>Delete</code> CRUD).</div>
+</li>
+<li class="level1"><div class="li"> Llistar tots els llibres del catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Cercar llibres per títol.</div>
+</li>
+</ul>
+
+<p>
+Per fer-ho farem servir una aplicació web ja desenvolupada que segueixi una arquitectura per capes i hi afegireu una capa de serveis on creareu i publicareu el servei web de gestió del catàleg com a servei web RESTful. La representació que farem servir per als llibres en tot l’exemple serà JSON.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte1" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+L’aplicació de la qual partirem s’anomena “Restbooksioc” i ens servirà per veure com podem exposar algunes funcionalitats de la capa de serveis d’una aplicació mitjançant serveis web RESTful. Es tracta d’un projecte Spring MVC senzill que segueix una arquitectura típica per capes per tal d’aconseguir una alta reusabilitat, un baix acoblament i una alta cohesió en l’aplicació.
+</p>
+
+<p>
+El projecte consta de quatre capes:
+</p>
+<ul>
+<li class="level1"><div class="li"> capa de presentació</div>
+</li>
+<li class="level1"><div class="li"> capa de domini</div>
+</li>
+<li class="level1"><div class="li"> capa de serveis</div>
+</li>
+<li class="level1"><div class="li"> capa de persistència</div>
+</li>
+</ul>
+
+<p>
+En l’exemple no farem servir la capa de presentació, ja que l’objectiu no és proporcionar una interfície d’usuari a l’aplicació sinó publicar els mètodes de negoci com a serveis web.
+</p>
+
+<p>
+El model de domini ja el teniu implementat i és molt senzill, només hi ha una entitat <code>Book</code> que representa els llibres del catàleg (vegeu la <span class="figref"><a href="#xbfig1.8"><span>figura</span></a></span>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Format JSON</p>
+<p>
+A l’exemple us demanem que treballeu amb una representació JSON. La simplicitat, la lleugeresa i la facilitat de lectura fan ideal aquesta representació per treballar amb aplicacions i dispositius que tenen restriccions pel que fa al volum de dades a intercanviar. Les aplicacions mòbils que consumeixin dades de serveis web RESTful són un molt bon exemple en aquest sentit; la quantitat d’informació que s’intercanviaran client i servidor per fer les operacions és molt menor en una aproximació JSON + RESTful que en una aproximació XML + SOAP.
+</p>
+</div></div><div class="iocfigure"><a name="xbfig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Entitat Book
+
+</figcaption><img src="../media/daw_m07_u5_05.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La representació en JSON d’un recurs llibre és la següent:
+</p>
+<pre class="code">{	
+  &quot;isbn&quot;:&quot;9788425343537&quot;,
+  &quot;author&quot;:&quot;Ildefonso Falcones&quot;,
+  &quot;title&quot;:&quot;La catedral del mar&quot;
+}</pre>
+
+<p>
+Per fer la transformació entre objectes Java i JSON i a l’inrevés cal que importeu <code>Jersey</code> i <code>Jackson</code> com a artefactes al pom.xml. Aquesta tasca ja l’hem fet per vosaltres a la configuració inicial del projecte; les línies afegides al pom.xml són aquestes:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;            </div></li><li class="li1"><div class="de1">  &lt;groupId&gt;org.glassfish.jersey.core&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-server&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;2.22.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;com.sun.jersey&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-json&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;1.19&lt;/version&gt;</div></li><li class="li1"><div class="de1">  &lt;/dependency&gt;        </div></li><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;org.glassfish.jersey.media&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;jersey-media-json-jackson&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;2.22.1&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+La capa de serveis serà la que treballarem i haurà de proporcionar <strong>un servei web RESTful</strong> que permeti als clients fer les següents operacions sobre un catàleg de llibres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Llistar tots els llibres del catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Consulta d’un llibre mitjançant l’ISBN.</div>
+</li>
+<li class="level1"><div class="li"> Creació d’un llibre al catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Actualització de les dades d’un llibre.</div>
+</li>
+<li class="level1"><div class="li"> Esborrar un llibre del catàleg.</div>
+</li>
+<li class="level1"><div class="li"> Cercar llibres per títol.</div>
+</li>
+</ul>
+
+<p>
+La capa de persistència també la teniu implementada i conté l’objecte repositori que permet mapar les dades de la font de dades amb l’objecte de domini. En el nostre cas, per simplicitat, farem servir un repositori <em>in memory</em> que tindrà una llista precarregada amb els llibres del catàleg.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Repository &#039;in memory&#039;</p>
+<p>
+Tot i que podríem haver optat per fer l’exemple amb un repositori connectat a una font de dades persistent com una base de dades relacional i utilitzar l’API JPA per definir les entitats del projecte, s’ha considerat que això afegeix “soroll” a l’exemple i us faria portar a terme algunes tasques de configuració que no són pròpies de l’objectiu principal. Per aquest motiu, farem servir un repositori <em>in memory</em>.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> &#039;Bug&#039; a la versió 4.1.1 de Glassfish</p>
+<p>
+Si teniu la versió 4.1.1 de Glassfish sembla que hi ha un error en treballar amb JAX-RS que fa que quan crideu operacions que involucren la transformació entre JSON i les representacions com a objecte Java de les entitats del domini obtingueu la següent excepció:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">java.lang.NoClassDefFoundError: </div></li><li class="li1"><div class="de1">Could not initialize class org.eclipse.persistence.jaxb.BeanValidationHelper</div></li></ol></pre>
+
+<p>
+Per solucionar-ho cal que descarregueu el fitxer org.eclipse.persistence.moxy.jar que trobareu enllaçat als annexos de la unitat, li tragueu l’extensió .zip, substituïu el que teniu amb el mateix nom al Glassfish, a la carpeta <em>&lt;GLASSFISH_HOME&gt;\glassfish\modules</em>, i reinicieu el servidor.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_i_prova_del_servei_web_restful" >Creació i prova del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Primer ens cal indicar quines són les classes que ha de tractar com a recursos REST. Això es pot fer de moltes maneres, una d’elles és crear una classe de configuració anomenada <code>ApplicationConfig</code> al paquet <code>cat.xtec.ioc.service</code> amb el següent codi:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Restbooksioc” de l’enllaç que trobareu als annexos de la unitat, i importeu-lo a NetBeans.
+</p>
+
+<p>
+Tot i que també podeu descarregar-vos el projecte en l’estat final des dels annexos, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.service;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import javax.ws.rs.core.Application;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@javax.ws.rs.ApplicationPath(&quot;rest&quot;)</div></li><li class="li1"><div class="de1">public class ApplicationConfig extends Application {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+On s’indica que cal afegir “/rest” (o el que vulgueu posar) abans del nom del servei web per cridar-lo.
+</p>
+
+<p>
+Un cop fet, crearem una classe que exposarà les operacions que volem; anomenarem la classe <code>BooksRestService</code>, la crearem al paquet <code>cat.xtec.ioc.service</code> i l’anotarem amb <code>@Path(“/books”)</code> i amb <code>@Singleton</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Path(&quot;/books&quot;)</div></li><li class="li1"><div class="de1">@Singleton</div></li><li class="li1"><div class="de1">public class BooksRestService {    </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan NetBeans us demani quins imports voleu afegir especifiqueu els del paquet <code>javax.ws.rs</code>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> L’anotació <code>@Path(“/books”)</code> indica que el recurs estarà accessible a l’<acronym title="Uniform Resource Identifier">URI</acronym> <code>/books</code>. Accedirem, doncs, als recursos amb l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a>. </div>
+</li>
+<li class="level1"><div class="li"> L’anotació <code>@Singleton</code> ens cal, pel fet que estem utilitzant una repositori <em>in memory</em> i necessitem que el servei web no s’inicialitzi cada vegada que es fa una petició, per tal de no perdre els canvis que anem fent al catàleg de llibres. Si féssiu servir una font de dades persistent no us caldria aquesta anotació, ja que els canvis persistirien a cada petició.</div>
+</li>
+</ul>
+
+<p>
+Un cop creada la classe cal que hi afegiu una referència al repositori del catàleg de llibres amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private BookRepository bookRepository = new InMemoryBookRepository();</div></li></ol></pre>
+
+<p>
+I ja podem començar a codificar el primer servei que volem oferir; per exemple, la consulta de tots els llibres del catàleg. Per fer-ho creeu un mètode anomenat <code>getAll</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@GET</div></li><li class="li1"><div class="de1">@Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public List&lt;Book&gt; getAll() {</div></li><li class="li1"><div class="de1">    return this.bookRepository.getAll();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Hem anotat el mètode amb l’anotació <code>@GET</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>GET</code>.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode amb <code>@Produces(MediaType.APPLICATION_JSON)</code> per indicar que el resultat del mètode serà del tipus MIME <em>“application/json”</em>, ja que tornarem la llista de llibres en format JSON.</div>
+</li>
+</ul>
+
+<p>
+Per provar si funciona, desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a>; si tot ha anat bé veureu la representació JSON del catàleg de llibres al navegador:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot;Ildefonso Falcones&quot;,&quot;title&quot;:&quot;La catedral del mar&quot;},
+{&quot;isbn&quot;:&quot;9788467009477&quot;,&quot;author&quot;:&quot;Jose Maria Peridis Perez&quot;,&quot;title&quot;:&quot;La luz y el misterio de las catedrales&quot;}]</pre>
+
+<p>
+Passem a crear ara el servei de consulta de llibres per ISBN (l’operació <code>Read</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>find</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@GET</div></li><li class="li1"><div class="de1">@Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">@Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public Book find(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">    return this.bookRepository.get(isbn);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem anotat el mètode amb l’anotació <code>@GET</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>GET</code>.
+</p>
+
+<p>
+Hem anotat el mètode amb <em>@Produces(MediaType.APPLICATION_JSON)</em> per indicar que el resultat del mètode serà del tipus MIME “application/json”, ja que tornarem la informació del llibre en format JSON.
+</p>
+
+<p>
+Hem anotat el mètode amb l’anotació <code>@Path(“{isbn}”)</code> per indicar que la informació del llibre la tornarem quan ens arribin peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <code>/books/{isbn}</code>; és a dir, el que posem darrere de <code>/books</code> serà l’ISBN del llibre que volem consultar. Les anotacions <code>@Path</code> dels mètodes sempre s’afegeixen a l’anotació de l’arrel del recurs que heu definit a la classe.
+</p>
+
+<p>
+El paràmetre que rep el mètode s’ha anotat amb l’anotació <code>@PathParam(“isbn”)</code>. Aquesta és la forma que proporciona JAX-RS per extreure els paràmetres d’una petició. En aquest cas estem extraient un paràmetre del <em>path</em>, de l’<acronym title="Uniform Resource Identifier">URI</acronym>, i el passem com a <em>String</em> al mètode <code>find</code>.
+</p>
+
+<p>
+JAX-RS proporciona un ampli conjunt d’anotacions per fer aquesta tasca fàcil, entre elles destaquem <code>@PathParam</code>, <code>@QueryParam</code>, <code>@MatrixParam</code>, <code>@CookieParam</code>, <code>@HeaderParam</code> i <code>@FormParam</code>.
+</p>
+
+<p>
+Per exemple, podríem utilitzar <code>@QueryParam(“year”)</code> per extreure un paràmetre que vingués en una petició d’aquesta forma: <a href="http://localhost:8080/restbooksioc/rest/books?year=2016" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books?year=2016"  rel="nofollow">localhost:8080/restbooksioc/rest/books?year=2016</a>.
+</p>
+
+<p>
+Per provar si funciona, desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books/9788425343537" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books/9788425343537"  rel="nofollow">localhost:8080/restbooksioc/rest/books/9788425343537</a>; si tot ha anat bé, veureu la representació JSON del llibre consultat al navegador:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot;Ildefonso Falcones&quot;,&quot;title&quot;:&quot;La catedral del mar”}]</pre>
+
+<p>
+Creem ara el servei que permeti donar d’alta un llibre al catàleg (l’operació <code>Create</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>create</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@POST</div></li><li class="li1"><div class="de1">@Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public void create(Book book) {</div></li><li class="li1"><div class="de1">    this.bookRepository.add(book);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem anotat el mètode amb l’anotació <code>@POST</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>POST</code>.
+</p>
+
+<p>
+Hem anotat el mètode amb <code>@Consumes(MediaType.APPLICATION_JSON)</code> per indicar que la informació del llibre que es vol donar d’alta vindrà en format JSON.
+</p>
+
+<p>
+Fixeu-vos que tan sols amb aquesta informació JAX-RS és capaç, quan rep una petició <code>POST</code> a l’ <acronym title="Uniform Resource Identifier">URI</acronym> <code>/books</code> amb una representació JSON d’un llibre, de crear un objecte de tipus <code>Book</code> i passar-lo al mètode <code>create</code>. No és fantàstic?
+</p>
+
+<p>
+Ara tocaria provar aquesta funcionalitat, però tenim un problema: com podem enviar peticions <code>POST</code> sense fer una aplicació web amb un formulari? Per fer una petició <code>GET</code> tan sols hem de posar l’<acronym title="Uniform Resource Locator">URL</acronym> al navegador i ja ho tenim, però per fer peticions <code>POST</code> ens caldrà alguna utilitat extra. La nostra proposta és que feu servir <strong>cURL</strong>, que és una eina molt útil per fer peticions HTTP de diferents tipus i és multiplataforma. Si feu servir Linux possiblement ja la tingueu instal·lada al sistema; en cas que utilitzeu, Windows la podeu descarregar en el següent enllaç: <a href="https://curl.haxx.se/download.html" class="urlextern" title="https://curl.haxx.se/download.html"  rel="nofollow">curl.haxx.se/download.html</a>, o bé aconseguir un .msi que us faciliti la instal·lació.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Swagger i Postman</p>
+<p>
+Per documentar i provar <acronym title="Application Programming Interface">API</acronym> RESTful teniu moltes alternatives, entre elles destaquem Swagger <a href="http://swagger.io/" class="urlextern" title="http://swagger.io/"  rel="nofollow">swagger.io</a> i Postman <a href="https://www.getpostman.com/" class="urlextern" title="https://www.getpostman.com/"  rel="nofollow">www.getpostman.com</a>, que és una extensió per al navegador Google Chrome.
+&lt;/note&gt;
+</p>
+</div></div>
+<p>
+La sintaxi de cURL per fer peticions és molt senzilla; per exemple, per consultar tots els llibres del catàleg feu un <em>command prompt</em>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Afegiu el paràmete <code>-v</code> (<em>verbose</em>) a les crides a cURL si voleu veure més informació sobre les peticions i respostes que feu.
+</p>
+</div></div><pre class="code">curl localhost:8080/restbooksioc/rest/books</pre>
+
+<p>
+Per provar la funcionalitat que permet afegir un llibre al catàleg desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>POST</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> especificant la informació del llibre amb JSON; això ho podeu fer amb cURL i la següent comanda:
+</p>
+<pre class="code">curl -H &quot;Content-Type: application/json&quot; -X POST -d &quot;{\&quot;isbn\&quot;:\&quot;9788499301518\&quot;,\&quot;author\&quot;:\&quot;J.K. Rowling\&quot;,\&quot;title\&quot;:\&quot;Harry Potter y la piedra filosofal\&quot;}&quot; http://localhost:8080/restbooksioc/rest/books</pre>
+
+<p>
+Fixeu-vos-hi: li diem que farem una petició <code>POST</code> amb el paràmetre <code>-X</code>, li especifiquem el format JSON del llibre amb el paràmetre <code>-d</code> i indiquem que el format és JSON especificant-ho a la capçalera amb el paràmetre <code>-H</code>.
+</p>
+
+<p>
+Executeu la comanda anterior i després consulteu el llistat de llibres amb:
+</p>
+<pre class="code">curl localhost:8080/restbooksioc/rest/books</pre>
+
+<p>
+Si tot ha anat bé, veureu que el nou llibre s’ha afegit al catàleg de llibres:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788499301518&quot;,&quot;author&quot;:&quot;J.K. Rowling&quot;,&quot;title&quot;:&quot;Harry Potter y la piedra filosofal&quot;},
+{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot;Ildefonso Falcones&quot;,&quot;title&quot;:&quot;La catedral del mar&quot;},
+{&quot;isbn&quot;:&quot;9788467009477&quot;,&quot;author&quot;:&quot;Jose Maria Peridis Perez&quot;,&quot;title&quot;:&quot;La luz y el misterio de las catedrales&quot;}]</pre>
+
+<p>
+Creem ara el servei que permeti modificar la informació d’un llibre del catàleg (l’operació <code>Update</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>update</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@PUT</div></li><li class="li1"><div class="de1">@Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public void edit(Book book) {</div></li><li class="li1"><div class="de1">    this.bookRepository.update(book);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les consideracions en aquest cas són les mateixes que hem vist per al cas de la creació de llibres, l’únic que canvia és que farem servir el verb <code>PUT</code> en lloc del verb <code>POST</code>.
+</p>
+
+<p>
+Per provar la funcionalitat que permet modificar la informació d’un llibre del catàleg desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>PUT</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> especificant la nova informació del llibre amb JSON; això ho podeu fer amb cURL i la següent comanda:
+</p>
+<pre class="code">curl -H &quot;Content-Type: application/json&quot; -X PUT -d &quot;{\&quot;isbn\&quot;:\&quot;9788425343537\&quot;,\&quot;author\&quot;:\&quot; Ildefonso Falcones\&quot;,\&quot;title\&quot;:\&quot; LA CATEDRAL DEL MAR \&quot;}&quot; http://localhost:8080/restbooksioc/rest/books</pre>
+
+<p>
+Executeu la comanda anterior i després consulteu la informació del llibre que heu modificat amb:
+</p>
+<pre class="code">curl localhost:8080/restbooksioc/rest/books/9788425343537</pre>
+
+<p>
+Si tot ha anat bé, veureu que el títol del llibre ha canviat a majúscules:
+</p>
+<pre class="code">{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot; Ildefonso Falcones&quot;,&quot;title&quot;:&quot; LA CATEDRAL DEL MAR &quot;}</pre>
+
+<p>
+Creem ara el servei que permeti esborrar un llibre del catàleg (l’operació <code>Delete</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>remove</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@DELETE</div></li><li class="li1"><div class="de1">@Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">public void remove(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">    this.bookRepository.delete(isbn);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les consideracions en aquest cas són les mateixes que hem vist per al cas de la consulta de llibres per ISBN, l’únic que canvia és que farem servir el verb <code>DELETE</code> en lloc del verb <code>GET</code>.
+</p>
+
+<p>
+Per provar la funcionalitat que permet esborrar un llibre del catàleg desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>DELETE</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books"  rel="nofollow">localhost:8080/restbooksioc/rest/books</a> especificant l’ISBN del llibre que volem esborrar; això ho podeu fer amb cURL i la següent comanda:
+</p>
+<pre class="code">curl -X DELETE http://localhost:8080/restbooksioc/rest/books/9788425343537</pre>
+
+<p>
+Executeu la comanda anterior i després consulteu el llistat de llibres amb:
+</p>
+<pre class="code">curl localhost:8080/restbooksioc/rest/books</pre>
+
+<p>
+Si tot ha anat bé, veureu que el llibre ja no el teniu al catàleg de llibres:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788467009477&quot;,&quot;author&quot;:&quot;Jose Maria Peridis Perez&quot;,&quot;title&quot;:&quot;La luz y el misterio de las catedrales&quot;}]</pre>
+
+<p>
+Finalment, codificarem una operació que ens permeti cercat llibres per títol; per fer-ho, creeu un mètode anomenat <code>findByTitle</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@GET</div></li><li class="li1"><div class="de1">@Path(&quot;findByTitle/{title}&quot;)</div></li><li class="li1"><div class="de1">@Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">public List&lt;Book&gt; findByTitle(@PathParam(&quot;title&quot;) String title) {</div></li><li class="li1"><div class="de1">    return this.bookRepository.findByTitle(title);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les consideracions en aquest cas són les mateixes que hem vist per al cas d’un llibre per ISBN, l’únic que canvia és que l’anotació <code>@Path</code> ara comença amb <code>findByTitle</code> i després té el paràmetre <code>{title}</code> per indicar que la consulta de llibres per títol la tornarem quan ens arribin peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <code>/books/findByTitle/{title}</code>, és a dir, el que posarem darrere del <code>/books/findByTitle/</code> serà el títol que volem cercar.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si voleu cercar títols de llibre que continguin espais en blanc amb cURL ho haureu de fer posant %20 enlloc de l’espai en blanc.
+</p>
+</div></div>
+<p>
+Per provar la funcionalitat que permet cercar un llibre del catàleg per títol desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>GET</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/restbooksioc/rest/books/findByTitle" class="urlextern" title="http://localhost:8080/restbooksioc/rest/books/findByTitle"  rel="nofollow">localhost:8080/restbooksioc/rest/books/findByTitle</a> especificant el títol que volem cercar; això ho podeu fer amb cURL i la següent comanda (cercarem tots els llibres que tenen la paraula “catedral” al títol):
+</p>
+<pre class="code">curl http://localhost:8080/restbooksioc/rest/books/findByTitle/catedral</pre>
+
+<p>
+Executeu la comanda anterior i, si tot ha anat bé, veureu que us torna els dos llibres del catàleg que tenen la paraula “catedral” al títol:
+</p>
+<pre class="code">[{&quot;isbn&quot;:&quot;9788467009477&quot;,&quot;author&quot;:&quot;Jose Maria Peridis Perez&quot;,&quot;title&quot;:&quot;La luz y el misterio de las catedrales&quot;},
+{&quot;isbn&quot;:&quot;9788425343537&quot;,&quot;author&quot;:&quot;Ildefonso Falcones&quot;,&quot;title&quot;:&quot;La catedral del mar&quot;}] </pre>
+
+<p>
+I amb això ja heu codificat i provat el servei web RESTful que us permet treballar amb el catàleg de llibres. 
+</p>
+
+<p>
+El codi final de la classe <code>BooksRestService</code> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Path(&quot;/books&quot;)</div></li><li class="li1"><div class="de1">@Singleton</div></li><li class="li1"><div class="de1">public class BooksRestService {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private BookRepository bookRepository = new InMemoryBookRepository();   </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">    public List&lt;Book&gt; getAll() {</div></li><li class="li1"><div class="de1">        return this.bookRepository.getAll();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">    @Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">    public Book find(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">        return this.bookRepository.get(isbn);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @GET</div></li><li class="li1"><div class="de1">    @Path(&quot;findByTitle/{title}&quot;)</div></li><li class="li1"><div class="de1">    @Produces(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">    public List&lt;Book&gt; findByTitle(@PathParam(&quot;title&quot;) String title) {</div></li><li class="li1"><div class="de1">        return this.bookRepository.findByTitle(title);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @POST</div></li><li class="li1"><div class="de1">    @Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">    public void create(Book book) {</div></li><li class="li1"><div class="de1">        this.bookRepository.add(book);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @PUT</div></li><li class="li1"><div class="de1">    @Consumes(MediaType.APPLICATION_JSON)</div></li><li class="li1"><div class="de1">    public void edit(Book book) {</div></li><li class="li1"><div class="de1">        this.bookRepository.update(book);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @DELETE</div></li><li class="li1"><div class="de1">    @Path(&quot;{isbn}&quot;)</div></li><li class="li1"><div class="de1">    public void remove(@PathParam(&quot;isbn&quot;) String isbn) {</div></li><li class="li1"><div class="de1">        this.bookRepository.delete(isbn);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat heu vist les bases pel desenvolupament dels serveis web RESTful amb Java EE 7 i les heu treballat de forma pràctica mitjançant exemples. 
+</p>
+
+<p>
+Concretament, heu après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les nocions bàsiques dels serveis web RESTful amb Java EE.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar, desplegar i provar un servei web RESTful senzill amb Java EE.</div>
+</li>
+<li class="level1"><div class="li"> A desenvolupar, desplegar i provar un servei web RESTful complex amb Java EE que inclou operacions CRUD sobre un recurs.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en aquests conceptes i veure com us pot ajudar NetBeans en la creació i el consum de serveis web RESTful us recomanem la realització de les activitats associades a aquest apartat.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

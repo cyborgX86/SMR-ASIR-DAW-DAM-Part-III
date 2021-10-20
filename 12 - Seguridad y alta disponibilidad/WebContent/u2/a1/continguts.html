@@ -1,0 +1,1919 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a class="unit" href="../../../WebContent/u2/introduccio.html">2. Seguretat activa i accés remot</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id='u2a1continguts'><a class="section" href="../../../WebContent/u2/a1/continguts.html">Mecanismes de seguretat activa</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Mecanismes de seguretat activa</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a1annexos"><a href="../../../WebContent/u2/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a1/continguts.html#sistemes_personals_atacs_i_contramesures">Sistemes personals. Atacs i contramesures</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#eines_preventives">Eines preventives</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#eines_pal_liatives">Eines pal·liatives</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#actualitzacio_de_sistemes_i_aplicacions">Actualització de sistemes i aplicacions</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#seguretat_en_la_xarxa_corporativa">Seguretat en la xarxa corporativa</a></li><li><a href="../../../WebContent/u2/a1/continguts.html#les_xarxes_publiques_seguretat_en_la_connexio">Les xarxes públiques. Seguretat en la connexió</a></li></ul></div></div><li id="u2a2" class="tocsection"><p id='u2a2continguts'><a class="section" href="../../../WebContent/u2/a2/continguts.html">Implantació de tècniques d'accés remot</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Implantació de tècniques d'accés remot</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u2a2annexos"><a href="../../../WebContent/u2/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u2a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u2/a2/continguts.html#seguretat_perimetrica">Seguretat perimètrica</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#xarxes_privades_virtuals_vpn">Xarxes privades virtuals. VPN</a></li><li><a href="../../../WebContent/u2/a2/continguts.html#servidors_d_acces_remot">Servidors d'accés remot</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Seguretat activa i accés remot</a></li><li>Mecanismes de seguretat activa</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="mecanismes_de_seguretat_activa"> Mecanismes de seguretat activa </a></h1>
+    	
+<p>
+La protecció de la informació és la conseqüència de l’aplicació d’un conjunt de mecanismes o estratègies de seguretat. A grans trets, aquestes estratègies han de considerar els principis següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> La seguretat ha de ser un objectiu global.</div>
+</li>
+<li class="level1"><div class="li"> La seguretat s’ha de dissenyar com quelcom que és part de l’organització, tenint en compte tots aquells aspectes que la puguin conformar.</div>
+</li>
+<li class="level1"><div class="li"> El marc legal s’ha de considerar, des de l’inici, com una part més del disseny de les polítiques de seguretat.</div>
+</li>
+</ul>
+
+<p>
+La gestió i planificació de tota la seguretat és clau. En cas contrari, res del que es faci tindrà un objectiu final, i per tant, només millorarà parcialment la seguretat. A més, la gestió no només és necessària en la implantació de la seguretat, sinó també en el seu control i manteniment. 
+</p>
+
+<p>
+Entenem per <strong>seguretat activa</strong> tots aquells mecanismes i mesures (físics i lògics) que permeten prevenir i detectar possibles intents de comprometre els components d’un sistema informàtic.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Tallafoc</p>
+<p>
+Un tallafoc és un exemple de <strong>seguretat activa</strong>. Filtra l’accés a certs serveis en determinades connexions per bloquejar un intent d’atac. Un altre exemple de seguretat activa pot ser l’ús de contrasenyes.
+</p>
+</div></div>
+<p>
+Per <strong>seguretat passiva</strong> entenem el conjunt de mesures implementades en els sistemes per minimitzar els efectes d’un incident i mantenir informats els administradors sobre les incidències que puguin comprometre la seguretat.
+</p>
+
+<h2><a id="sistemes_personals_atacs_i_contramesures" >Sistemes personals. Atacs i contramesures</a></h2>
+<div class="level2">
+
+<p>
+Amb la revolució tecnològica dels darrers anys els sistemes personals han esdevingut part de la nostra vida. Les tauletes tàctils, els mòbils, les PDA, els ordinadors portàtils i, fins i tot, els equips personals de sobretaula estan, d’una o altra manera, connectats a xarxes de transmissió d’informació i són, per tant, susceptibles de patir atacs per part de tercers.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Són exemples de <strong>seguretat passiva</strong> un sistema de detecció d’intrusos o la realització de còpies de seguretat.
+</p>
+</div></div>
+</div>
+
+<h3><a id="classificacio_dels_atacs" >Classificació dels atacs</a></h3>
+<div class="level3">
+
+<p>
+La protecció d’un sistema informàtic no només s’ha d’adreçar al maquinari i al programari, sinó també a les dades, tant si es troben circulant per una xarxa com si estan emmagatzemades en un disc dur o en altres suports. Pensem que si bé gairebé sempre és possible substituir el maquinari o el programari, les dades, objectiu primordial de tot sistema informàtic, no tenen substitut en cas que es perdin definitivament.
+</p>
+
+<p>
+Els atacs que es poden produir en un sistema informàtic es poden classificar segons l’objectiu de l’atac, segons la forma de l’atac i segons el tipus d’atacant, entre d’altres formes.
+</p>
+
+</div>
+
+<h4><a id="classificacio_segons_l_objectiu_de_l_atac" >Classificació segons l&#039;objectiu de l&#039;atac</a></h4>
+<div class="level4">
+
+<p>
+Els atacs que pot patir el maquinari, el programari i les dades es poden classificar en quatre grans grups:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Interrupció</strong>: atac contra la disponibilitat en el qual es destrueix, o queda no disponible, un recurs del sistema (per exemple, tallar una línia de comunicació o deshabilitar el sistema de fitxers del servidor).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Intercepció</strong>: atac contra la confidencialitat en el qual un element no autoritzat aconsegueix l’accés a un recurs. Aquest tipus d’atac no es limita a possibles usuaris que actuïn com a espies en la comunicació entre emissor i receptor. Per exemple, un procés que s’executa subreptíciament en un ordinador i que emmagatzema en un fitxer les tecles que prem l’usuari que utilitza el terminal (<em>keylogger</em>), també constituiria un atac d’intercepció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Modificació</strong>: atac contra la integritat en el qual, a més d’aconseguir l’accés no autoritzat a un recurs, també s’aconsegueix modificar-lo, esborrar-lo o alterar-lo de qualsevol manera. Els atacs fets pels intrusos (esborrament de bases de dades, alteració de pàgines web…) són exemples d’aquesta modalitat d’atac.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fabricació</strong>: atac contra la integritat en el qual un element aconsegueix crear o inserir objectes falsificats en el sistema (per exemple, afegir de manera no autoritzada un nou usuari i la contrasenya corresponent al fitxer d’usuaris).</div>
+</li>
+</ul>
+
+<p>
+A la <span class="figref"><a href="#Figura1"><span>figura</span></a></span> es pot observar una representació gràfica d’aquesta classificació. 
+</p>
+<div class="iocfigure"><a name="Figura1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tipus d’atacs que pot patir la comunicació entre emissor i receptor
+
+</figcaption><img src="../media/u2_pdfindex_image_0.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="classificacio_segons_la_forma_de_l_atac" >Classificació segons la forma de l&#039;atac</a></h4>
+<div class="level4">
+
+<p>
+Els atacs provinents de persones es poden classificar en dos grans grups:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Atac de denegació de servei</p>
+<p>
+Un exemple característic d’atac d’interrupció és l’atac de denegació de servei, en el qual s’inutilitza el maquinari o programari de manera que no siguin accessibles des de la xarxa.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Atacs passius</div>
+</li>
+<li class="level1"><div class="li"> Atacs actius</div>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="atacs_passius" >Atacs passius</a></h5>
+<div class="level5">
+
+<p>
+L’atacant no modifica ni destrueix cap recurs del sistema informàtic, simplement l’observa, normalment amb la finalitat d’obtenir alguna informació confidencial.
+</p>
+
+<p>
+Sovint, aquest atac es produeix sobre la informació que circula per una xarxa. L’atacant no altera la comunicació, sinó que senzillament l’escolta i obté la informació que es transmet entre l’emissor i el receptor. Com que la informació que es transmet no resulta alterada, la detecció d’aquest tipus d’atac no és fàcil. Una manera molt eficaç de resoldre aquest problema és usar tècniques criptogràfiques per fer que la informació no es transmeti en text clar i no sigui comprensible per als espies.
+</p>
+
+</div>
+
+<h5><a id="atacs_actius" >Atacs actius</a></h5>
+<div class="level5">
+
+<p>
+En una acció d’aquest tipus, l’atacant altera o destrueix algun recurs del sistema.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Criptografia</p>
+<p>
+La criptografia és la ciència i estudi de l’escriptura secreta. 
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Un espia que monitora una xarxa podria causar problemes molt seriosos, com els que exposem a continuació:
+</p>
+
+<p>
+<strong>Suplantació d’identitat</strong>: l’espia pot suplantar la identitat d’una persona i enviar missatges en nom seu.
+</p>
+
+<p>
+<strong>Reactuació</strong>: un o diversos missatges legítims són interceptats i reenviats diverses vegades per produir un efecte no desitjat (per exemple, intentar repetir diverses vegades un ingrés en un compte bancari).
+</p>
+
+<p>
+<strong>Degradació fraudulenta del servei</strong>: l’espia evita el funcionament normal dels recursos del sistema informàtic. Per exemple, podria interceptar i eliminar tots els missatges que s’adrecen a un usuari determinat.
+</p>
+
+<p>
+<strong>Modificació de missatges</strong>: es modifica una part del missatge interceptat i es reenvia a la persona a qui anava adreçat originalment.
+</p>
+</div></div>
+</div>
+
+<h4><a id="classificacio_segons_el_tipus_d_atacant" >Classificació segons el tipus d&#039;atacant</a></h4>
+<div class="level4">
+
+<p>
+La major part dels atacs que pot patir un sistema informàtic es produeixen en mans de persones que, amb diversos objectius, intenten accedir a informació confidencial, destruir-la o aconseguir el control absolut del sistema atacat. Cal tenir present que un atac pot provenir tant de l’interior de la xarxa (<em>insiders</em>) com de l’exterior (<em>outsiders</em>). Es pot veure esquemàticament a la <span class="figref"><a href="#Figura2"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figura2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació esquemàtica de com es realitzen els atacs per part d’insiders i outsiders
+
+</figcaption><img src="../media/u2_pdfindex_image_1.png" alt="" /></figure>
+</div><div class="iocimportant"><div class="ioccontent">
+<p>
+Acostumem a pensar que la gran majoria dels atacs provenen de l’exterior de l’organització i que són escassos, però les estadístiques demostren tot el contrari. La realitat és que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Els atacs externs són més nombrosos que els interns.</div>
+</li>
+<li class="level1"><div class="li"> El percentatge d’èxit en els atacs interns és més elevat.</div>
+</li>
+<li class="level1"><div class="li"> El dany causat per atacs interns és molt més gran que el provocat per atacs externs.</div>
+</li>
+</ul>
+</div></div>
+<p>
+Conèixer els objectius dels atacants i les seves motivacions és essencial per prevenir-ne i detectar-ne les accions. Els principals possibles atacants d’un sistema informàtic són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Personal de la mateixa organització</div>
+</li>
+<li class="level1"><div class="li"> Antics treballadors</div>
+</li>
+<li class="level1"><div class="li"> Intrusos informàtics (<em>hackers</em>)</div>
+</li>
+<li class="level1"><div class="li"> Intrusos remunerats</div>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="personal_de_la_mateixa_organitzacio" >Personal de la mateixa organització</a></h5>
+<div class="level5">
+
+<p>
+Tot i que normalment el personal intern gaudeix de la confiança de l’organització, cal tenir en compte que alguns atacs es poden produir des de dins mateix de la institució. Sovint no cal que aquests atacs siguin intencionats (tot i que, quan ho són, són els més devastadors que es poden produir); poden ser accidents provocats pel desconeixement del personal (per exemple, el formatat accidental d’un disc dur).
+</p>
+
+<p>
+
+</p>
+
+<p>
+Les tècniques bàsiques o contramesures per minimitzar els riscos d’atacs d’aquest tipus són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Assegurar-se que els usuaris amb permisos administratius són persones de confiança.</div>
+</li>
+<li class="level1"><div class="li"> Limitar la quantitat de permisos que una única persona posseeix.</div>
+</li>
+<li class="level1"><div class="li"> Limitar al màxim el nombre de persones amb permisos de confiança.</div>
+</li>
+<li class="level1"><div class="li"> Cercar escletxes de seguretat en els permisos.</div>
+</li>
+<li class="level1"><div class="li"> Definir una bona política de formació (pel que fa a la seguretat) per a tot el personal de l’organització.</div>
+</li>
+<li class="level1"><div class="li"> Impossibilitar que els usuaris sense privilegis puguin instal·lar programes (la majoria d’usuaris d’una organització no necessiten instal·lar programes, ja que per a la seva feina només necessiten els recursos o programes que els proporciona l’organització).</div>
+</li>
+<li class="level1"><div class="li"> Deshabilitar el ports USB per evitar la fuita d’informació (o proveir mecanismes criptogràfics que evitin l’extracció en text clar de la informació del sistema).</div>
+</li>
+</ul>
+<div class="iocfigure"><a name=""></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Percentatge i tipus d’atacs en una organització (<a href="http://www.cybsec.com" class="urlextern" title="http://www.cybsec.com"  rel="nofollow">www.cybsec.com</a>)
+
+</figcaption><img src="../media/u2_pdfindex_image_2.png" alt="" /></figure>
+.</div>
+</div>
+
+<h5><a id="antics_treballadors" >Antics treballadors</a></h5>
+<div class="level5">
+
+<p>
+Una part molt important dels atacs a sistemes informàtics són els fets per antics treballadors que, abans de marxar acomiadats o descontents per les condicions laborals, instal·len programes maliciosos com, per exemple, virus o bombes lògiques que s’activen en la seva absència (per exemple, quan arriba una data determinada). La presència d’aquest tipus de programa no sempre és fàcil de detectar, però almenys sí que es poden evitar els atacs que l’antic treballador pugui dur a terme des de fora amb el nom d’usuari i la contrasenya de què disposava quan encara treballava a l’organització (aquesta situació és més freqüent del que ens pensem). Per tant, una bona contramesura per a aquest problema és donar de baixa tots els comptes de l’extreballador i canviar les contrasenyes d’accés el sistema al més aviat possible. Així mateix, es poden proveir mecanismes d’autenticació més forts que no pas l’ús de només un nom d’usuari i contrasenya, per exemple, mitjançant un testimoni de seguretat.
+</p>
+
+</div>
+
+<h5><a id="intrusos_informatics_hackers" >Intrusos informàtics (hackers)</a></h5>
+<div class="level5">
+
+<p>
+Els intrusos informàtics normalment duen a terme atacs passius destinats a obtenir informació confidencial (per exemple, un examen d’un curs) o amb la finalitat de posar-se a prova per obtenir el control del sistema atacat. Si l’atacant és prou hàbil, fins i tot pot esborrar les empremtes de les seves accions en els fitxers que les enregistren. Com que aquest tipus d’accions no produeixen cap efecte visible, no són fàcilment detectables.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Testimonis de seguretat</p>
+<p>
+Els testimonis de seguretat o <em>security tokens</em> són dispositius físics de mida reduïda (alguns inclouen un teclat per introduir una clau numèrica o PIN), similars a un clauer, que calculen contrasenyes d’un únic ús (canvien a cada inici de sessió o cada cert temps).
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Hackers i crackers</p>
+<p>
+Quan la finalitat de la intrusió és destructiva, la persona que fa l’acció rep el nom de <em>cracker</em> (pirata). La nostra intenció no és diferenciar entre <em>hackers</em> i <em>crackers</em>, de manera que s’utilitzarà el terme intrús en relació amb qualsevol tipus d’intrusió, sigui o no destructiva. La mera intrusió en un sistema informàtic pot ésser considerada un delicte, amb independència que es produeixin o no danys en el sistema.
+</p>
+</div></div>
+<p>
+Els intrusos solen aprofitar les vulnerabilitats conegudes de sistemes operatius i programaris per aconseguir el control de tot el sistema informàtic. Per dur a terme aquest tipus d’accions n’hi ha prou d’executar diversos programes que es poden obtenir a Internet i que automatitzen els atacs als sistemes informàtics sense que l’intrús necessiti disposar de gaires coneixements tècnics.
+</p>
+
+<p>
+A vegades, l’únic interès de l’intrús és deixar una empremta de la seva “habilitat” per introduir-se en els sistemes sense autorització. Així, és relativament freqüent que modifiqui, per exemple, un lloc web (<em>defacement</em>) i hi deixi el seu pseudònim. No oblidem, però, que aquesta activitat és un delicte de danys recollit en el Codi Penal.
+</p>
+
+<p>
+A més d’eines de caràcter tècnic, els intrusos disposen d’altres estratègies més senzilles (almenys des del punt de vista informàtic), però igual d’efectives. Per exemple, poden fer una senzilla recerca de contrasenyes escrites en papers entre la brossa continguda en una paperera (<em>trashing</em>) o en les notes adhesives que hom sol enganxar al monitor d’un terminal de treball, o emprar qualsevol tècnica d’enginyeria social.
+</p>
+
+</div>
+
+<h5><a id="intrusos_remunerats" >Intrusos remunerats</a></h5>
+<div class="level5">
+
+<p>
+Tot i no ser gaire freqüent, també val la pena tenir en compte l’atac d’intrusos remunerats. En aquest cas, els intrusos estan perfectament organitzats (poden estar en diferents localitzacions geogràfiques fins i tot) i ataquen de manera coordinada una entitat determinada. Disposen de molts mitjans tècnics i reben remuneracions molt elevades de l’organisme rival que dirigeix l’atac, sovint amb l’ànim d’accedir a informació confidencial (un nou disseny, un nou programari…) o bé de provocar un dany important en la imatge de l’entitat atacada.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Enginyeria social</p>
+<p>
+L’enginyeria social és la pràctica d’obtenir informació confidencial mitjançant la manipulació i engany dels posseïdors legítims d’aquesta informació.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Atacs distribuïts</p>
+<p>
+La preparació i realització d’un atac informàtic consta de diverses fases, algunes d’elles molt tècniques. Per aquest motiu, alguns atacs es realitzen de forma distribuïda, de manera que cada membre de la coalició efectua unes determinades fases o accions de l’atac.
+</p>
+</div></div>
+</div>
+
+<h3><a id="anatomia_dels_atacs" >Anatomia dels atacs</a></h3>
+<div class="level3">
+
+<p>
+Els atacs informàtics solen constar d’un cicle de cinc fases (<span class="figref"><a href="#Figura3"><span>figura</span></a></span>):
+</p>
+
+<p>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Reconeixement</div>
+</li>
+<li class="level1"><div class="li"> Escaneig</div>
+</li>
+<li class="level1"><div class="li"> Accés al sistema</div>
+</li>
+<li class="level1"><div class="li"> Manteniment accés</div>
+</li>
+<li class="level1"><div class="li"> Esborrat empremtes</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fases d’un atac informàtic 
+
+</figcaption><img src="../media/u2_pdfindex_image_3.png" alt="" /></figure>
+</div>
+<p>
+El coneixement del funcionament intern d’un atac informàtic ens ajuda a avançar-nos als esdeveniments i preveure activitats que podrien comprometre el nostre sistema informàtic.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Cal diferenciar entre l<strong>‘atac informàtic</strong> i el <strong>delicte informàtic</strong>. No obstant això, les conseqüències dels atacs informàtics poden estar recollides en el Codi Penal.
+</p>
+</div></div>
+</div>
+
+<h4><a id="fase_1reconeixement" >Fase 1: reconeixement</a></h4>
+<div class="level4">
+
+<p>
+Aquesta primera fase té caràcter preparatori i consisteix en la recopilació, per part de l’atacant, de tota la informació possible del sistema que pretén comprometre. No oblidem que l’atacant pot tenir tot el temps del món per preparar la seva estratègia, mentre que nosaltres només ens podem preparar de forma general per evitar i minimitzar les conseqüències d’un atac.
+</p>
+
+<p>
+L’atacant pot utilitzar diverses tècniques a l’hora de reconèixer un sistema. Per exemple, pot emprar enginyeria social o <em>trashing</em>, amb la finalitat d’aconseguir informació valuosa per accedir al sistema. Fixem-nos que, en cas d’emprar tècniques d’enginyeria social, l’atacant ni tan sols hauria hagut d’emprar cap mètode informàtic per obtenir la informació que desitja.
+</p>
+
+<p>
+Altres tècniques pròpies d’aquesta fase són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Fer recerques a Internet (notem que, normalment, la informació corporativa de la nostra organització, ha de ser visible a la xarxa per motius comercials i, per tant, es pot localitzar fàcilment). En tot cas, cal ser curós amb la informació que es mostra a la xarxa i deixar, en la mesura del possible, només aquella que sigui necessària pel funcionament de l’organització i que no pugui comprometre la seguretat del sistema.</div>
+</li>
+<li class="level1"><div class="li"> Capturar el trànsit de xarxa (<em>sniffing</em>).</div>
+</li>
+<li class="level1"><div class="li"> Utilitzar l’ordre whois per esbrinar dades relatives al sistema que volem investigar (per exemple, l’empresa que va enregistrat un domini determinat, o la seva adreça). Les bases de dades consultades per whois (la consulta també es pot fer mitjançant diversos webs) són públiques i, tot i que aquesta informació es podria emprar de forma maliciosa, pot ser molt útil, per exemple, per saber si un domini determinat està disponible.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Sniffing</p>
+<p>
+El monitoratge d’una xarxa (<em>sniffing</em>) no és, en si mateix, una conducta delictiva. No oblidem que aquests tipus d’eines són emprades lícitament pels administradors de sistemes informàtics.
+</p>
+</div></div>
+</div>
+
+<h4><a id="fase_2escaneig" >Fase 2: escaneig</a></h4>
+<div class="level4">
+
+<p>
+En aquesta fase, l’atacant utilitzarà tota la informació obtinguda en l’apartat anterior per sondejar el sistema que pretén atacar i detectar una vulnerabilitat (o vulnerabilitats) específica, que pugui aprofitar per accedir al sistema (per exemple, una vulnerabilitat del sistema operatiu que usa el sistema objectiu, una vulnerabilitat d’una aplicació…). 
+</p>
+
+<p>
+En definitiva, l’atacant intentarà, principalment, obtenir informació dels comptes d’usuari, de les versions del sistema operatiu i de les aplicacions, així com els ports oberts. Moltes eines d’administració de sistemes es poden emprar en aquesta fase amb finalitats il·lícites, com per exemple els escàners de xarxa o de ports (<strong><em>nmap</em></strong> executat a la <span class="figref"><a href="#Figura4"><span>figura</span></a></span>). 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Vulnerabilitat</p>
+<p>
+S’entén per <em>vulnerabilitat</em> qualsevol punt feble que pugui posar en perill la seguretat d’un sistema informàtic. Aquesta feblesa s’ha d’entendre com una qüestió interna (latent) del sistema. Pot ser aprofitada per un atacant per violar la seguretat del sistema informàtic o simplement pot provocar danys de manera no intencionada (per exemple, un error de programació pot fer que un programari tingui comportaments irregulars i insospitats).
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Exploits</p>
+<p>
+Els exploits són programes maliciosos (entren dins de la categoria de les anomenades amenaces lògiques) que aprofiten una vulnerabilitat (coneguda o no) d’un programari informàtic, conseqüència d’un error de programació. No existeix un exploit general, sinó que cada programa, a causa dels gairebé inevitables errors de programació, té les seves peculiars vulnerabilitats, que poden ser hàbilment explotades pels programadors experimentats (si bé a Internet es poden trobar exploits per violar la seguretat de tota mena d’aplicacions i sistemes operatius sense necessitat de tenir coneixements de programació).
+</p>
+</div></div><div class="iocfigure"><a name="Figura4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple d’ús de l’ordre nmap
+
+</figcaption><img src="../media/u2_pdfindex_image_4.png" alt="" /></figure>
+</div>
+<p>
+L’eina <em>nmap</em> no serveix únicament per conèixer els ports que té oberts una màquina, sinó que també es pot emprar per identificar la seva adreça MAC o el sistema operatiu que utilitza, entre altres utilitats.
+</p>
+
+<p>
+Hi ha moltes més eines que es poden emprar en aquesta fase. D’entre elles, podríem destacar, per exemple, les ordres <strong><em>tracert</em></strong> en entorns Windows o <strong><em>traceroute</em></strong> en entorns Linux/Unix. Aquesta ordre es pot emprar per esbrinar els canvis de xarxa que realitzen els paquets per la xarxa fins arribar a la seva destinació. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Port</p>
+<p>
+Un port és un punt pel qual entra o surt la informació d’un ordinador. Els protocols relatius a Internet (<acronym title="File Transfer Protocol">FTP</acronym>, Telnet…) utilitzen emissor i receptor, un port de sortida i recepció comú en ambdós extrems de la comunicació. 
+</p>
+</div></div>
+<p>
+Cal tenir en compte que aquestes eines, vistes aquí amb finalitats malicioses, tenen moltíssima utilitat per l’administrador del sistema i que, per tant, el seu ús principal és lícit.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Nessus</p>
+<p>
+Nessus és un conegut programa d’escaneig de vulnerabilitats. Escaneja els ports i prova exploits per atacar el sistema que s’està escanejant.
+</p>
+</div></div>
+</div>
+
+<h4><a id="fase_3obtencio_de_l_acces" >Fase 3: obtenció de l&#039;accés</a></h4>
+<div class="level4">
+
+<p>
+Aquesta és la fase en la qual es duu a terme l’atac de manera efectiva, aprofitant les vulnerabilitats localitzades a la fase anterior. 
+</p>
+
+<p>
+Sovint, aquesta fase es desenvolupa atacant, des de la xarxa, l’equip objectiu, però poden haver-hi parts de l’atac que s’efectuïn localment, en el sistema de l’atacant (per exemple, el trencament d’un fitxer de contrasenyes).
+</p>
+
+<p>
+La realització d’un atac no sempre requereix coneixements elevats: Internet proveeix molta informació i <em>exploits</em>, que es poden, malauradament, emprar sense necessitat de saber programar o de tenir grans coneixements informàtics. Òbviament, les mesures de seguretat de què disposi l’equip objectiu són essencials per evitar l’èxit dels atacants. Si hom té un sistema molt assegurat i actualitzat, la informació d’ús comú a la xarxa serà clarament insuficient per perpetrar una intrusió amb èxit.
+</p>
+
+</div>
+
+<h4><a id="fase_4manteniment_de_l_acces" >Fase 4: manteniment de l&#039;accés</a></h4>
+<div class="level4">
+
+<p>
+Una vegada l’intrús ha obtingut l’accés al sistema, intentarà preservar la possibilitat d’efectuar nous accessos en el futur. En aquesta tasca l’ajudaran diversos programes de codi maliciós, com els cavalls de Troia i els <em>rootkits</em>. No és només la possibilitat de causar danys evidents al sistema (esborrat de fitxers, per exemple) el que ens ha d’inquietar; l’atac també pot servir per instal·lar <em>malware</em> que monitori les accions que estem fent (<em>keylogger</em>), per capturar tot el trànsit de la xarxa (<em>sniffing</em>), instal·lar un <acronym title="File Transfer Protocol">FTP</acronym> de contingut il·lícit o utilitzar el sistema atacat com a plataforma per atacar altres sistemes informàtics. 
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Rootkits</p>
+<p>
+Els <em>rootkits</em> (terme que prové d’unir la paraula anglesa root, que és el nom assignat a Unix al compte de màxims privilegis i kit que significa conjunt d’eines o programes) són eines informàtiques emprades normalment amb finalitats malicioses (com l’obtenció d’informació) que permeten l’accés il·lícit al sistema per part d’un atacant remot. Fan servir tècniques per ocultar la seva presència i la d’altres processos que puguin estar realitzant accions malicioses sobre el sistema. Els <em>rootkits</em> són molt perillosos, perquè cedeixen el control del sistema a l’atacant remot.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Una xarxa de zombis</p>
+<p>
+Una xarxa de zombis o botnet està formada per un grup d’ordinadors (fins i tot milers) connectats a la xarxa, infectats per codi maliciós que permet el seu control remot per part d’un atacant o grup d’atacants. Les botnets poden ésser emprades per realitzar accions sense l’autorització dels propietaris de les màquines infectades, com ara atacs massius sobre altres sistemes informàtics (atacs de denegació de servei distribuït o DDoS).
+</p>
+</div></div>
+</div>
+
+<h4><a id="fase_5esborrat_de_les_empremtes" >Fase 5: esborrat de les empremtes</a></h4>
+<div class="level4">
+
+<p>
+És vital per a l’intrús esborrar les empremtes del que ha fet en el sistema. Moltes de les accions que ha dut a terme segurament hauran quedat, amb independència del sistema operatiu emprat, enregistrades en fitxers de registre (<em>log</em>). Alguns d’ells són fàcilment editables, però d’altres no ho són tant, ja que no són fitxers de text. En definitiva, el que intentarà l’intrús és eliminar totes aquestes entrades del fitxers de <em>log</em> i registres d’alarmes de les eines de detecció d’intrusos (IDS) amb la finalitat que els administradors del sistema no puguin descobrir que algú s’hi ha introduït de manera no autoritzada. 
+</p>
+
+</div>
+
+<h3><a id="analisi_de_programari_malicios" >Anàlisi de programari maliciós</a></h3>
+<div class="level3">
+
+<p>
+Per <em>programari maliciós</em> s’entén qualsevol programa que pugui tenir efectes perniciosos en el sistema informàtic que l’allotja. El seu nom anglès, <em>malware</em>, prové de la contracció de <em>malicious software</em>. Els virus, cucs i cavalls de Troia són exemples típics de programari maliciós.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Els <strong>detectors d’intrusos</strong> o IDS s’expliquen amb més detall en l’apartat “Intents de penetració. Detecció d’intrusos” d’aquesta mateixa unitat formativa.
+</p>
+</div></div>
+<p>
+Sovint, el codi maliciós s’insereix dins d’un programa “autoritzat” i executa una sèrie d’accions desconegudes per l’usuari, les quals actuen normalment en detriment seu. El codi maliciós pot estar ocult i provocar tota mena de danys com, per exemple, l’esborrament de dades o l’enviament d’informació confidencial de l’usuari per correu electrònic. En altres ocasions, el codi maliciós no s’insereix dins d’un programa autoritzat, sinó que es presenta com un nou programa que desenvolupa alguna funció útil. L’usuari l’executa, esperant que implementi aquesta funció, però el programa, en canvi, duu a terme accions desconegudes i normalment pernicioses per a l’usuari.
+</p>
+
+<p>
+Si bé s’ha de retrocedir fins a l’any 1972 per trobar el que s’ha considerat el primer virus de la història (anomenat Creeper, infectava màquines de l’Arpanet, xarxa antecedent de l’actual Internet), no va ser fins a la dècada dels anys vuitanta que es van començar a desenvolupar i a convertir en un greu problema de seguretat. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Amenaces lògiques</p>
+<p>
+El codi maliciós, en totes les seves múltiples variants, es pot enquadrar dins el que s’anomenen amenaces lògiques.
+</p>
+</div></div>
+<p>
+Fins a l’any 2005, el codi maliciós es va estendre per la xarxa sobretot en forma de virus, cucs i cavalls de Troia. El seu objectiu era, simplement, causar danys o aportar als seus creadors un cert reconeixement públic. No obstant això, a partir d’aquell moment, apareix un nou objectiu: guanyar diners. Així, els cavalls de Troia sovint persegueixen la captura de les dades bancàries de les operacions efectuades en els ordinadors personals infectats. A més de conceptes nous, com els programes de publicitat (<em>adware</em>) i els programes espia (<em>spyware</em>), apareix un nou tipus d’engany, la pesca electrònica (<em>phishing</em>), també centrada en l’obtenció de diners, però basada en l’enginyeria social. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Programari de publicitat</p>
+<p>
+Es defineix com programari de publicitat o <em>adware</em> el programari que mostra publicitat. Per exemple, les versions de demostració d’alguns programaris poden ensenyar publicitat diversa (d’aquí ve que siguin gratuïtes o de demostració). Encara que normalment s’instal·len sense el consentiment de l’usuari, no són maliciosos.
+</p>
+</div></div>
+<p>
+Els cavalls de Troia bancaris es propaguen normalment, fins i tot en l’actualitat, per mitjà del correu electrònic (encara que es poden difondre d’altres formes, com per exemple a través de dispositius USB) i es basen en l’enginyeria social per persuadir l’usuari que executi el fitxer maliciós. Les dades capturades pel codi maliciós s’envien per correu electrònic a l’atacant, que intentarà fer-ne ús en benefici propi. Per obtenir un guany econòmic significatiu, cal que l’atacant o grup d’atacants infecti el major nombre possible de màquines, de forma completament indiscriminada. Altres codis maliciosos, però, tenen un objectiu molt més concret i específic (una determinada organització, per exemple). En aquests casos es poden arribar a dissenyar de manera específica. Això suposa un elevat cost de desenvolupament, si bé el benefici econòmic esperat pot arribar a ser molt elevat. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Programa espia</p>
+<p>
+Es defineix com programa espia o <em>spyware</em> el programa que recull informació sobre els hàbits dels usuaris sense el seu consentiment. Aquesta recaptació es pot dur a terme amb finalitat publicitària o bé per capturar informació personal. 
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Pesca electrònica</p>
+<p>
+La pesca electrònica o <em>phishing</em> és una estratègia d’enginyeria social, en la qual s’usa la suplantació de correus electrònics o llocs web per intentar obtenir informació confidencial de l’usuari.
+</p>
+</div></div>
+<p>
+
+</p>
+
+<p>
+El sistema operatiu que més ha patit l’atac del codi maliciós és Windows, si bé també se n’ha desenvolupat per a la resta de sistemes, no tan majoritaris com aquesta plataforma. Darrerament s’observa una clara tendència al desplaçament d’aquest problema de seguretat als terminals de telefonia mòbil, cada vegada més sofisticats i vulnerables a l’acció del codi maliciós.
+</p>
+
+</div>
+
+<h4><a id="deteccio_del_codi_malicios" >Detecció del codi maliciós</a></h4>
+<div class="level4">
+
+<p>
+A continuació estudiarem algunes de les tècniques que es poden fer servir per detectar i prevenir la presència de codi maliciós en el nostre sistema informàtic. Segons la configuració del sistema, la detecció del codi (normalment fitxers compilats) serà més o menys complicat. Per exemple, si es coneix la darrera data d’actualització del sistema i es localitza algun fitxer de sistema posterior a aquesta data, es pot pensar en la presència de codi maliciós. En aquest sentit, pot ser de molta ajuda l’observació dels paràmetres següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Darrera data de modificació dels fitxers.</div>
+</li>
+<li class="level1"><div class="li"> Data de creació dels fitxers.</div>
+</li>
+<li class="level1"><div class="li"> Mida dels fitxers.</div>
+</li>
+</ul>
+
+<p>
+Malauradament, les dates i mides dels fitxers es poden alterar amb facilitat i, per tant, no són una font d’informació segura. Les funcions <em>hash</em> ens poden ser de molta utilitat per garantir la integritat del sistema. 
+</p>
+
+<p>
+Així, l’administrador pot generar en qualsevol moment una instantània o empremta <em>única</em> del sistema informàtic fent servir funcions <em>hash</em>. Qualsevol alteració d’un fitxer, per mínima que sigui, provocarà que quan l’administrador torni a calcular la funció <em>hash</em>, obtingui un resultat diferent. L’eina més coneguda per dur a terme aquesta funció rep el nom de <strong>Tripwire</strong> (és una eina de font pública basada en Linux/Unix). El seu funcionament és el següent: una vegada s’ha instal·lat el sistema operatiu, s’obté un valor <em>hash</em> per a cadascun dels fitxers rellevants i s’emmagatzema en una base de dades, l’accés a la qual està protegit per contrasenya.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les <strong>funcions resum o <em>hash</em></strong> permeten obtenir el que podríem anomenar una <em>empremta</em> única d’un fitxer o conjunt de fitxers (com un ADN del fitxer). Podeu trobar més informació a l’apartat de criptografia de la unitat “Seguretat física, lògica i legislació”
+</p>
+</div></div>
+<p>
+Quan l’administrador vol comprovar la integritat del sistema, executa Tripwire i si s’ha produït algun canvi en algun fitxer, es generarà el senyal d’avís corresponent en el fitxer de sortida de l’aplicació. El funcionament correcte d’aquest procediment només es pot garantir si la base de dades on es guarden les sortides resum no és modificable per cap usuari. Això es pot aconseguir fent que la base de dades tingui atribut de només lectura, o emmagatzemant-la en un suport que no admeti reescriptures com, per exemple, un DVD.
+</p>
+
+<p>
+Amb eines com Tripwire es poden detectar els fitxers de sistema als quals s’ha inserit codi maliciós, és a dir que es pot garantir la integritat dels fitxers del sistema, però no ens permet analitzar en línia la presència de programari maliciós, ni ens permet fer una anàlisi, per exemple, dels programes que ens descarreguem d’Internet. Per a aquest tipus d’anàlisis caldrà recórrer als antivirus.
+</p>
+
+</div>
+
+<h4><a id="analisi_del_codi_malicios" >Anàlisi del codi maliciós</a></h4>
+<div class="level4">
+
+<p>
+Un dels problemes més greus que podem trobar a l’hora d’analitzar un determinat <em>malware</em> és la possibilitat que la mateixa anàlisi impliqui la infecció d’altres equips a través de la xarxa. A grans trets, es realitza preparant l’entorn, recollint la informació i finalment analitzant i documentant el que s’ha recollit.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Els <strong>antivirus</strong> són objecte d’estudi a l’apartat “Eines pal·liatives” d’aquesta mateixa unitat.
+</p>
+</div></div>
+</div>
+
+<h5><a id="preparacio_d_un_medi_d_analisi_controlat" >Preparació d&#039;un medi d&#039;anàlisi controlat</a></h5>
+<div class="level5">
+
+<p>
+Així, doncs, abans d’iniciar l’anàlisi és important disposar dels mitjans que ens permetin veure quines accions realitza el codi maliciós sense possibilitat d’afectar cap altre equip. Per aquest motiu, procurarem que la màquina amb la qual hem de provar el presumpte codi maliciós estigui desconnectada de la nostra xarxa de treball habitual. No cal disposar d’ordinadors específics i construir una xarxa dedicada a l’anàlisi, ja que, sortosament, els programes de virtualització ens permeten crear un laboratori de màquines i xarxes virtuals sense gaire dificultat i amb un alt grau de control. No obstant això, si disposem dels recursos suficients, sempre podem definir una xarxa específica i aïllada de la resta d’ordinadors.
+</p>
+
+<p>
+Cal, doncs, definir dues o més màquines virtuals, en xarxa, amb una instal·lació bàsica de sistema operatiu, una de les quals, la que actua de màquina atacada, allotja el presumpte codi maliciós. A més, han de tenir instal·lades diverses eines que ens permetran analitzar què està passant quan s’activi el codi maliciós. Per exemple, un programa de monitoratge de trànsit de xarxa, com ara <strong>Wireshark</strong>, pot ser de molta utilitat.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els dos programes de virtualització d’ús més freqüent són VMWare i VirtualBox.
+</p>
+</div></div>
+<p>
+Abans d’iniciar l’anàlisi, també és interessant recollir certes dades del sistema, prèvies a la infecció, com ara quins són els ports oberts, els processos en execució, usuaris i grups definits, quins són els recursos compartits…
+</p>
+
+</div>
+
+<h5><a id="recollida_d_informacio" >Recollida d&#039;informació</a></h5>
+<div class="level5">
+
+<p>
+Una vegada s’ha executat el <em>malware</em>, s’efectua una nova recollida d’informació, adreçada a l’estudi del codi maliciós i als efectes que provoca. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Eines com Sysinternals o <strong><em>nmap</em></strong> ens poden ajudar en aquesta tasca.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Recollida estàtica</strong>. Relacionada directament amb el codi malicós objecte d’estudi: nom del fitxer, versió, com és la interfície gràfica (si és que en té)…</div>
+</li>
+<li class="level1"><div class="li"> <strong>Recollida dinàmica</strong>. Es basa en els efectes que produeix el codi maliciós: anàlisi del trànsit de xarxa, processos en execució, canvis en el sistema de fitxers…</div>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="analisi_i_documentacio_de_la_informacio" >Anàlisi i documentació de la informació</a></h5>
+<div class="level5">
+
+<p>
+Totes les proves efectuades s’han d’analitzar (tinguem present que hi pot haver un volum d’informació molt gran) i documentar amb la finalitat que els resultats obtinguts serveixen per prevenir atacs de <em>malware</em> com l’estudiat o semblant.
+</p>
+
+<p>
+Aquesta metodologia, centrada en l’estudi en un medi controlat, no és el que habitualment ens trobarem. L’escenari habitual és un sistema informàtic que, de vegades, ni tan sols sabrem si es troba o no infectat, tot i que una sèrie d’indicis ens ho fan pensar. No obstant això, la metodologia explicada també resulta de molta utilitat en aquests casos.
+</p>
+
+</div>
+
+<h2><a id="eines_preventives" >Eines preventives</a></h2>
+<div class="level2">
+
+<p>
+Per <em>eines preventives</em> entenem totes aquelles eines i mecanismes que ens ajudin a reforçar la seguretat i a detectar febleses en el nostre sistema.
+</p>
+
+</div>
+
+<h3><a id="instal_lacio_i_configuracio" >Instal·lació i configuració</a></h3>
+<div class="level3">
+
+<p>
+Els danys que es poden produir en el cas d’un atac poden ser desastrosos. Així doncs, és necessari instal·lar eines i configurar mecanismes amb l’objectiu de minimitzar els atacs reeixits. Aquests mecanismes i eines poden anar orientats a l’usuari, a l’equip o al sistema informàtic.
+</p>
+
+</div>
+
+<h4><a id="politiques_de_seguretat_de_contrasenyes" >Polítiques de seguretat de contrasenyes</a></h4>
+<div class="level4">
+
+<p>
+Quan hem de triar una contrasenya per a un compte d’usuari, sovint la definim de la forma més òbvia i senzilla de recordar per nosaltres. Hem de tenir en compte, però, que en fer-ho així, podem comprometre la seguretat del sistema informàtic. Per definir correctament una contrasenya, hauríem de prendre les precaucions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Memoritzar-la i no portar-la escrita.</div>
+</li>
+<li class="level1"><div class="li"> Canviar-la periòdicament (amb caràcter mensual, per exemple).</div>
+</li>
+<li class="level1"><div class="li"> No repetir la mateixa contrasenya en comptes diferents.</div>
+</li>
+<li class="level1"><div class="li"> No llençar documents amb contrasenyes a la paperera.</div>
+</li>
+<li class="level1"><div class="li"> Evitar utilitzar paraules de diccionari. Hi ha tècniques de descobriment de contrasenyes basades en la comparació amb diccionaris sencers de paraules, per idiomes, de temes concrets com esports… Aquestes tècniques reben el nom d’<strong>atacs de diccionari</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Evitar utilitzar dades que puguin ser conegudes per altres persones (per exemple, nom i cognom de l’usuari, repetir el mateix nom que l’identificador, el DNI, la data de naixement, el número de mòbil…).</div>
+</li>
+<li class="level1"><div class="li"> Fer servir contrasenyes d’un mínim de vuit caràcters.</div>
+</li>
+<li class="level1"><div class="li"> Evitar la reutilització de contrasenyes antigues.</div>
+</li>
+<li class="level1"><div class="li"> No utilitzar contrasenyes exclusivament numèriques.</div>
+</li>
+<li class="level1"><div class="li"> Afavorir l’aparició de caràcters especials (!, *, ?, …).</div>
+</li>
+<li class="level1"><div class="li"> No enviar contrasenyes per SMS o correu, ni dir-les per telèfon.</div>
+</li>
+<li class="level1"><div class="li"> No utilitzar seqüències de teclat del tipus “qwerty” o “1234” (són seqüències que s’assagen en els atacs de diccionari).</div>
+</li>
+<li class="level1"><div class="li"> Fer servir regles mnemotècniques per recordar les contrasenyes (per exemple, “Cada dia al matí canta el gall quiquiriquic” donaria lloc a la contrasenya “CDAMCEGK”).</div>
+</li>
+</ul>
+
+<p>
+A més d’aquestes recomanacions sobre la tria de les contrasenyes, també és important disposar d’eines que en permetin el control.
+</p>
+
+<p>
+Per exemple, mitjançant <strong>eines de comprovació proactiva</strong> es pot evitar que una mala contrasenya entri a formar part de la base de dades de contrasenyes del sistema. Així, si un usuari tria una contrasenya que apareix en el filtre de l’eina (és a dir que es tracta d’una mala contrasenya) serà rebutjada automàticament. 
+</p>
+
+<p>
+En general, aquestes eines poden permetre, per exemple:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un exemple d’eina de comprovació proactiva és <strong><em><code>npasswd</code></em></strong>, substitut de l’ordre <strong><em><code>passwd</code></em></strong> en entorns Linux/Unix.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Registrar totes les sessions i els errors que s’han produït (normalment existeix un límit al nombre d’intents que es poden fer).</div>
+</li>
+<li class="level1"><div class="li"> Especificar regles diverses: les contrasenyes han de tenir un nombre mínim de caràcters, no poden consistir en la mateixa contrasenya però a l’inrevés, no poden ser exclusivament numèriques…</div>
+</li>
+<li class="level1"><div class="li"> Enviar un missatge a l’usuari que intenti crear una contrasenya feble, segons les regles que s’han definit.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="contrasenya_del_bios_i_diferents_nivells_de_contrasenyes" >Contrasenya del BIOS i diferents nivells de contrasenyes</a></h4>
+<div class="level4">
+
+<p>
+Les contrasenyes no apareixen només en els inicis de sessió; les podem trobar en diferents nivells del sistema informàtic, començant per el BIOS.
+</p>
+
+<p>
+La utilització de contrasenyes del BIOS en els ordinadors és un aspecte que sovint es descuida, tot i que, si no la posem, l’intrús podria modificar la configuració d’arrencada, de manera que l’ordinador s’iniciés des d’un dispositiu USB, un CD o un DVD. D’aquesta manera, l’intrús podria robar informació, eliminar-la o introduir qualsevol codi maliciós al sistema.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">BIOS</p>
+<p>
+El sistema bàsic d’entrada/sortida o BIOS (<em>Basic Input-Output System</em>) és un programa emmagatzemat en un xip ROM que s’ocupa, en el moment en què l’ordinador s’inicia, de carregar el sistema operatiu en la memòria de l’ordinador i de comprovar els dispositius que té connectats.
+</p>
+
+<p>
+Els nivells en els quals situar un mecanisme d’autenticació en una estació de treball són: BIOS, sector d’arrencada de l’equip, sistema operatiu o, fins i tot, sol·licitat per un programa.
+</p>
+</div></div>
+<p>
+A més del BIOS, també és necessari afegir contrasenyes als gestors d’arrencada, com per exemple GRUB. Així podem evitar que els intrusos puguin modificar les opcions d’inici dels diferents sistemes operatius que controla el gestor.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Debilitats en BIOS</p>
+<p>
+Notem que el BIOS es pot reconfigurar mitjançant els ponts (<em>jumpers</em>) allotjats a la placa base, o desconnectant la bateria CMOS (petita memòria que conté la informació de la configuració del sistema i que necessita una bateria per conservar-la). Per tant, si no protegim l’apertura de la carcassa de l’ordinador, un intrús, si té accés físic a l’ordinador, pot saltar-se fàcilment la contrasenya del BIOS.
+</p>
+</div></div>
+<p>
+A la <span class="figref"><a href="#Figure5"><span>figura</span></a></span> i la <span class="figref"><a href="#Figura6"><span>figura</span></a></span> s’observa com editant el fitxer menu.lst podem introduir una contrasenya en el GRUB (per a més seguretat, cal xifrar aquesta contrasenya). A més, és possible definir una contrasenya per cadascun dels sistemes operatius que controli el gestor.
+</p>
+<div class="iocfigure"><a name="Figura5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Edició del fitxer menu.lst
+
+</figcaption><img src="../media/u2_pdfindex_image_5.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="Figura6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Definició de la contrasenya “iocioc” dins del fitxer menu.lst
+
+</figcaption><img src="../media/u2_pdfindex_image_6.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="definicio_de_politiques_d_usuaris_i_grups" >Definició de polítiques d&#039;usuaris i grups</a></h4>
+<div class="level4">
+
+<p>
+La definició dels permisos dels usuaris (és a dir, la determinació de les tasques i accions que poden dur a terme en un sistema informàtic) és una excel·lent mesura preventiva que evita que els usuaris no puguin fer més que allò que necessiten per a la seva feina. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">GNU GRUB</p>
+<p>
+El GNU GRUB (<em>Grand Unifier Bootloader</em>) és un gestor d’arrencada per a entorns Linux que s’usa per iniciar un o més sistemes operatius instal·lats en el mateix equip (per exemple, Linux i Windows). 
+</p>
+</div></div>
+<p>
+En termes generals, l’administrador desenvolupa aquesta tasca de definició en quatre nivells:
+</p>
+<ol>
+<li class="level1"><div class="li"> En primer lloc, crea i gestiona i els comptes de usuari (individuals).</div>
+</li>
+<li class="level1"><div class="li"> A continuació defineix els grups d’usuaris segons les similituds de les tasques que han de dur a terme i en funció de les seves necessitats d’accés. Un usuari pot pertànyer a més d’un grup.</div>
+</li>
+<li class="level1"><div class="li"> Una vegada definits els grups, l’administrador assigna els drets sobre fitxers i directoris (per exemple, podem fer que tots els membres d’un grup anomenat Professors, tinguin permís de lectura i escriptura sobre un directori anomenat Examen).</div>
+</li>
+<li class="level1"><div class="li"> Finalment, es poden acabar de perfilar els drets individuals de cadascun dels usuaris, ja que dins d’un mateix grup, poden haver-hi necessitats diferents.</div>
+</li>
+</ol>
+
+<p>
+Tot seguit, i a tall d’exemple, veurem molt breument com dur a terme aquestes operacions en el sistema operatiu Linux/Unix. 
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Definició d’usuaris</strong>. Cada entrada del fitxer /etc/passwd (<span class="figref"><a href="#Figura7"><span>figura</span></a></span>) conté informació del compte d’un usuari. Entre altres dades, conté el nom d’usuari, el grup primari al qual pertany i el seu directori principal. Les contrasenyes, normalment, no s’emmagatzemen en aquest fitxer, sinó que es troben xifrades en un altre fitxer anomenat /etc/shadow. Per afegir nous usuaris es pot emprar, com a usuari administrador, l’ordre <code>useradd nom_usuari</code> (o <strong><em>adduser</em></strong>).</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Descripció dels camps d’una entrada del fitxer /etc/passwd
+
+</figcaption><img src="../media/u2_pdfindex_image_7.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> <strong>Definició de grups</strong>. La gestió dels grups es realitza de manera similar a la dels usuaris. Les dades dels grups s’emmagatzemen en el fitxer /etc/group, l’estructura del qual és similar a la d’/etc/passwd. Cada línia o entrada del fitxer conté, entre altra informació, el nom del grup, l’identificador del grup (<em>group ID</em>) i la llista d’usuaris que en són membres. Per afegir un nou membre, n’hi ha prou d’editar el fitxer /etc/group/ i afegir el nou membre al final de la llista. En cas que hi hagi ocultació de dades, hi haurà un equivalent al fitxer /etc/shadow anomenat /etc/gshadow. De forma similar a la creació de nous usuaris, l’ordre <code>groupadd nom_usuari</code> (o addgroup) permet la definició d’un nou grup.</div>
+</li>
+<li class="level1"><div class="li"> Ens queda però, veure com ho podem fer perquè un fitxer o un directori <strong>canviï de propietari</strong>. Perquè canviï d’usuari es pot emprar l’ordre <code>chown nom_usuari nom_fitxer</code>. De manera similar, amb l’ordre <code>chgrp nom_usuari nom_fitxer</code> podem definir que un grup sigui propietari d’un fitxer o directori. A la <span class="figref"><a href="#Figura8"><span>figura</span></a></span> podem comprovar que el grup propietari del directori <em>Examen</em> després d’executar <code>chgrp</code> passa a ser ioc.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els fitxers /etc/shadow i /etc/gshadow només són accessibles per l’usuari arrel.
+</p>
+</div></div><div class="iocfigure"><a name="Figura8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució de la instrucció chgrp ioc examen
+
+</figcaption><img src="../media/u2_pdfindex_image_8.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> A Linux/Unix, l’accés del usuaris i grups als fitxers i directoris es determina mitjançant permisos. Hi ha tres tipus de permisos: accés de lectura ®, accés d’escriptura (w) i accés d’execució (x). Així, si observem els atributs del directori <em>Examen</em> a la <span class="figref"><a href="#Figura8"><span>figura</span></a></span> veurem el que es mostra a la <span class="figref"><a href="#Figura9"><span>figura</span></a></span>.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Permisos del directori Examen
+
+</figcaption><img src="../media/u2_pdfindex_image_9.png" alt="" /></figure>
+</div>
+<p>
+A més, per millorar la seguretat dels fitxers i directoris, es poden emprar les anomenades <strong>llistes de control d’accés</strong> (<acronym title="Access Control List">ACL</acronym>), amb les quals es poden individualitzar els privilegis que té un usuari sobre un determinat fitxer, sense tenir en compte el grup al qual pertany.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per executar segons quines ordres ens cal disposar de permisos d’usuari supervisor.
+</p>
+</div></div><div class="iocfigure"><a name="Figura10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Assignació d’espai de quota sobre una partició anomenada Usuari
+
+</figcaption><img src="../media/u2_pdfindex_image_10.png" alt="" /></figure>
+<div class="footfigure">Encara que la captura de pantalla correspon a un Windows XP amb el pedaç de català instal·lat, observem que hi ha parts de la interfície que no estan en català, com la corresponent a la imatge.</div></div>
+<p>
+Finalment, també és habitual assignar una <strong>quota de disc dur</strong> als usuaris, de manera que no puguin ocupar indiscriminadament tot l’espai de disc dur. Per exemple, en el sistema operatiu Windows XP podem activar la quota de disc des de les propietats de la partició (ha d’estar en format NTFS) sobre la qual volem definir les quotes d’usuari. En la <span class="figref"><a href="#Figura10"><span>figura</span></a></span> podem veure les opcions que tenim per gestionar la quota i denegar l’espai de disc als usuaris que hagin excedit la seva quota. En aquest cas establiríem una quota idèntica per a tots els usuaris, però emprant l’opció <em>Valors de quota</em> podríem personalitzar el límit de cadascun dels usuaris. Com podem veure a la imatge, també existeix l’opció d’enregistrar els esdeveniments que excedeixin la capacitat de quota. Després es podran consultar amb el visor d’esdeveniments. En el cas de <em>windows</em> és el gestor de consola eventvwr.msc.
+</p>
+
+</div>
+
+<h4><a id="us_de_tecniques_criptografiques" >Ús de tècniques criptogràfiques</a></h4>
+<div class="level4">
+
+<p>
+La utilització de la criptografia, tant pel que fa a la informació emmagatzemada (per exemple, creant una partició xifrada) com a la informació circulant (per exemple, usant SSH o Telnet segur), permet mantenir la confidencialitat de les dades i impedeix que puguin ser interceptades per intrusos. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En els sistemes Linux es poden establir quotes d’usuari amb l’eina de configuració de sistema <strong>Webmin</strong>.
+</p>
+</div></div>
+</div>
+
+<h2><a id="eines_pal_liatives" >Eines pal·liatives</a></h2>
+<div class="level2">
+
+<p>
+Per <em>eines pal·liatives</em> entenem aquelles eines i mecanismes que bloquegen els intents de trencar la seguretat de l’equip i eviten els danys provocats pel codi maliciós.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+A l’annex d’aquesta unitat trobareu un tutorial del programa de criptografia TrueCrypt. 
+</p>
+</div></div>
+</div>
+
+<h3><a id="instal_lacio_i_configuracio1" >Instal·lació i configuració</a></h3>
+<div class="level3">
+
+<p>
+Tal com passa amb els eines preventives, les eines i mecanismes pal·liatius poden anar orientats a l’usuari, a l’equip o al sistema informàtic.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Hi ha moltes eines i mecanismes que pertanyen alhora a la categoria d’eines preventives i a la d’eines pal·liatives. 
+</p>
+</div></div>
+</div>
+
+<h4><a id="antivirus" >Antivirus</a></h4>
+<div class="level4">
+
+<p>
+Arran de la proliferació experimentada pels virus informàtics durant la dècada dels vuitanta, van aparèixer els anomenats <em>antivirus</em>, és a dir, programes que tenen com a objectiu detectar i eliminar els virus.
+</p>
+
+<p>
+En l’actualitat, els programes antivirus poden detectar, blocar i eliminar els virus informàtics que trobin, però, a més poden reconèixer altres codis maliciosos.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Antivirus i codi maliciós</p>
+<p>
+El codi maliciós, en totes les seves variants, es pot enquadrar dins del que s’anomenen amenaces lògiques, els elements més representatius de les quals són els virus, els cucs i els cavalls de Troia.
+</p>
+</div></div>
+<p>
+Els antivirus tenen una part resident en la memòria de l’equip que els permet comprovar en temps real els fitxers que s’executen, creen o modifiquen. També poden revisar, per exemple, els elements adjunts als correus electrònics, així com els scripts o guions que s’executen des dels navegadors web. Per aquest motiu, els antivirus alenteixen l’arrencada i el funcionament normal del sistema, ja que consumeixen molts recursos per realitzar aquestes comprovacions i mantenir actualitzada la <strong>base de dades de firmes</strong> (patrons binaris que s’utilitzen per identificar possibles virus). No obstant això, òbviament, és molt recomanable, sinó imprescindible, tenir un antivirus instal·lat en el nostre sistema informàtic.
+</p>
+
+<p>
+Sovint, els creadors dels virus realitzen modificacions dels virus originals per tal de dificultar-ne la detecció. Malgrat això, els antivirus són capaços de reconèixer la firma genèrica que identifica tota la família, sense necessitat d’actualitzar la base de dades de firmes (pensem que si s’haguessin d’identificar tots els virus de forma individual, la mida de la base de dades podria ser enorme). 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Les tècniques que utilitzen els antivirus per reconèixer nous virus que no apareixen a la seva base de dades s’anomenen <strong>heurístiques</strong>.
+</p>
+</div></div>
+<p>
+L’ús d’aquestes tècniques d’identificació pot comportar que es produeixin <strong>falsos positius</strong>, és a dir, fitxers que s’identifiquen falsament com a codi maliciós. De tota manera, el més preocupant, pel que fa a la seguretat del sistema, és que es produeixin <strong>falsos negatius</strong>, és a dir, fitxers que no s’han identificat com a maliciosos, però que ho són. 
+</p>
+
+<p>
+De vegades, l’antivirus no està instal·lat al sistema, sinó que hi accedeix mitjançant un navegador d’Internet (<strong>antivirus en línia</strong>). En aquest cas, ja que hi accedeix directament al fabricant, la base de dades de firmes sempre està actualitzada. D’altra banda, el fet de treballar via web, fa que no calgui instal·lar el programa i que puguem provar fàcilment antivirus de diferents fabricants. No obstant això, cal tenir en compte que no ofereixen una protecció permanent, a diferència dels <strong>antivirus fora de línia</strong>, els instal·lats en l’equip informàtic. Els antivirus en línia es poden considerar un complement dels fora de línia, si bé no són tan fiables com aquests. 
+</p>
+
+<p>
+A més de la solució en línia hi ha altres formes d’usar un antivirus sense necessitat d’instal·lar-lo en el sistema. Hi ha antivirus portables (als quals podem accedir, per exemple, des d’un dispositiu USB), i fins i tot <strong>CD autònoms </strong> o <em>live CD</em> (és a dir, un CD des de qual podem iniciar el sistema) amb antivirus inclosos, opció molt interessant, ja que evita iniciar el sistema operatiu de la màquina i eludeix, per tant, les tècniques d’ocultació que utilitzen alguns codis maliciosos.
+</p>
+
+</div>
+
+<h4><a id="programes_antiespia" >Programes antiespia</a></h4>
+<div class="level4">
+
+<p>
+A més dels antivirus, existeixen solucions específiques per a la detecció i desinfecció de programes espia i codi maliciós en general, que es poden combinar amb l’antivirus i el tallafoc que fem servir habitualment. 
+</p>
+
+<p>
+L’objectiu dels programes espia és capturar informació del sistema infectat, bé per conèixer els hàbits de navegació de l’usuari o bé per apropiar-se de la seva informació personal (dades bancàries, per exemple). En qualsevol cas, la instal·lació d’aquest tipus de codi maliciós sempre es fa sense el consentiment de l’usuari afectat. Precisament a causa del seu objectiu de captació, aquest tipus de codi maliciós es troba contínuament en funcionament i pot arribar a alentir considerablement el funcionament del sistema informàtic. 
+</p>
+
+<p>
+La difusió de l’<em>spyware</em> es pot realitzar de moltes maneres. Tenim tendència a pensar que, si no executem cap programari “estrany” no podem ser víctimes de cap codi maliciós. En l’actualitat però, alguns tipus de programa espia no requereixen pràcticament cap acció per part de l’usuari (per exemple, la infecció es pot produir visitant un lloc web) o bé es poden trobar ocults en programes suposadament segurs (com, per exemple, en un controlador de dispositiu).
+</p>
+
+<p>
+El comportament de l’<em>spyware</em> difereix molt del dels virus i, per aquest motiu, als ulls dels antivirus, pot semblar innocu. Així, és habitual combinar solucions d’antivirus amb programes antiespia, perquè, de fet, no ataquen el mateix problema.
+</p>
+
+<p>
+Per evitar l’acció dels enregistradors de teclat que solen incloure els programes espia, s’han desenvolupat teclats virtuals (per exemple, solen aparèixer als web de les entitats bancàries) que eviten que l’usuari hagi d’usar el teclat a l’hora d’introduir dades. Com podem veure a la <span class="figref"><a href="#Figura11"><span>figura</span></a></span>, els teclats virtuals són teclats gràfics en els quals els usuaris poden seleccionar les lletres amb un clic del ratolí en lloc de prémer una tecla. No obstant això, alguns <em>keyloggers</em> poden capturar la pantalla a cada clic, per la qual cosa els teclats virtuals tampoc es poden considerar completament segurs. Per evitar aquest problema, alguns teclats virtuals introdueixen el caràcter quan el ratolí es mou, durant uns segons, sobre la lletra en qüestió, en lloc d’introduir-la amb un clic.
+</p>
+<div class="iocfigure"><a name="Figura11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Aparença d’un teclat virtual
+
+</figcaption><img src="../media/u2_pdfindex_image_11.png" alt="" /></figure>
+</div>
+<p>
+Finalment, com es pot imaginar, no hi ha cap eina que pugui garantir que un sistema informàtic estigui completament lliure de codi maliciós, de manera que el fet que no s’hagi pogut detectar no vol dir que no hi sigui. En tot cas, és essencial que totes les eines pal·liatives tinguin les seves bases de dades actualitzades i que el sistema operatiu i els programaris estiguin actualitzats amb els darrers pedaços publicats. 
+</p>
+
+</div>
+
+<h4><a id="eines_de_bloqueig_web" >Eines de bloqueig web</a></h4>
+<div class="level4">
+
+<p>
+Com s’acaba de veure, la simple navegació web pot comprometre la seguretat d’un sistema informàtic. Per aquest motiu és important que puguem bloquejar els llocs webs que puguin suposar una amenaça per a la seguretat.
+</p>
+
+<p>
+De fet, molts navegadors d’Internet es poden configurar perquè bloquin les finestres emergents (filtres <em>pop-up</em>) o evitin els adreçaments a llocs de <em>phishing</em> (filtres <em>antiphishing</em>). Per exemple, a la <span class="figref"><a href="#Figura12"><span>figura</span></a></span> podem veure les pestanyes de configuració del navegador Firefox, on podem definir aquests bloquejos (entre d’altres opcions).
+</p>
+<div class="iocfigure"><a name="Figura12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Pestanyes de configuració del navegador Firefox
+
+</figcaption><img src="../media/u2_pdfindex_image_12.png" alt="" /></figure>
+</div>
+<p>
+A més dels navegadors, els antivirus també tenen opcions de bloqueig dels llocs d’Internet que consideren perillosos.
+</p>
+
+</div>
+
+<h2><a id="actualitzacio_de_sistemes_i_aplicacions" >Actualització de sistemes i aplicacions</a></h2>
+<div class="level2">
+
+<p>
+L’actualització de sistemes i aplicacions és una faceta sovint poc atesa. Com qualsevol programa d’ordinador, el sistema operatiu i les aplicacions tenen errors o omissions que poden plantejar problemes de seguretat. En el cas del sistema operatiu és especialment important, ja que és la base a partir de la qual permet el funcionament de la resta de programes instal·lats a l’equip.
+</p>
+
+</div>
+
+<h3><a id="per_que_cal_actualitzar_el_sistema_operatiu_i_les_aplicacions" >Per què cal actualitzar el sistema operatiu i les aplicacions?</a></h3>
+<div class="level3">
+
+<p>
+Les actualitzacions de sistemes operatius i aplicacions tenen les motivacions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Corregir les vulnerabilitats detectades. Els intrusos solen aprofitar les vulnerabilitats (tant dels sistemes operatius, com de les aplicacions) per accedir sense autorització al sistema. Per tant, és essencial que les actualitzacions s’instal·lin el més aviat possible per intentar tancar les escletxes de seguretat provocades per aquestes vulnerabilitats. De vegades, encara que no hi hagi ningú dirigint un atac, l’usuari pot executar un programa maliciós que, aprofitant una vulnerabilitat, causi algun dany al sistema. Per tant, com en el cas de l’atac premeditat, convé tenir el sistema operatiu i les aplicacions sempre al dia, amb les darreres actualitzacions publicades.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent">
+<p>
+Un <em><strong>exploit 0-day</strong></em> implica l’existència d’una vulnerabilitat d’un programa, generalment desconeguda per la comunitat i per la qual encara no s’ha desenvolupat cap actualització. Normalment aquesta vulnerabilitat és desconeguda pel desenvolupador del programari, tot i que de vegades es coneix però no es considera perillosa, i per aquest motiu no es desenvolupa l’actualització que solucionaria el problema. Aquesta manca de resposta fa que els <em>exploits 0-day</em> es propaguin amb molta facilitat per tota la xarxa i constitueixen un greu problema de seguretat.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Permetre la gestió del nou maquinari que, de forma periòdica, va apareixent al mercat.</div>
+</li>
+<li class="level1"><div class="li"> Afegir noves funcionalitats i millores a les versions anteriors. Si bé la motivació anterior és més important que aquesta, cal tenir present que les actualitzacions sovint comporten l’afegit de noves funcions i millores en relació a les antigues versions. </div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="com_actualitzar" >Com actualitzar?</a></h3>
+<div class="level3">
+
+<p>
+Hem vist la importància de mantenir el sistema operatiu i les aplicacions completament actualitzades. Ara bé, com es duu a terme aquesta actualització?
+</p>
+
+<p>
+Pel que fa a les aplicacions, moltes es poden configurar perquè, quan detectin l’existència d’una nova actualització a través d’Internet, preguntin a l’usuari si vol baixar-la i, en cas afirmatiu, la descarreguin automàticament. 
+</p>
+
+<p>
+Pel que fa a les actualitzacions del sistema operatiu, Windows té activada per defecte una opció (Windows Update) que permet descarregar de forma automàtica les actualitzacions del sistema operatiu. L’usuari pot desactivar aquesta opció i també pot triar si les actualitzacions descarregades s’instal·len automàticament, o si vol veure primer quines són i decidir per si mateix quines vol instal·lar (en general és recomanable veure la descripció de l’actualització i no instal·lar-la per defecte). 
+</p>
+
+<p>
+A més d’aquesta opció d’actualització individual (per a cada equip), els administradors poden gestionar de forma centralitzada la distribució de les actualitzacions a tota la xarxa mitjançant l’anomenat Windows Server Update Services (WSUS). Amb aquest servei s’aconsegueix que les descàrregues es realitzin des del servidor central i evitar així que cada equip s’hagi de connectar individualment al web de Microsoft.
+</p>
+
+<p>
+El sistema operatiu Linux (per exemple, en la distribució Ubuntu) té un gestor d’actualitzacions que funciona de manera similar al de Windows. Com en aquest sistema, permet veure la descripció de les actualitzacions i decidir quines volem instal·lar. També podem comprovar en qualsevol moment si hi ha cap actualització pendent. 
+</p>
+
+<p>
+També es pot comprovar l’existència d’actualitzacions i ordenar-ne la instal·lació des de la línia d’ordre:
+</p>
+<pre class="code">sudo apt-get update &amp;&amp; sudo apt-get upgrade</pre>
+
+<p>
+Així mateix, amb l’ordre <strong><em>apt-get</em></strong> (o <strong><em>aptitude</em></strong>), executada com a usuari arrel, podem instal·lar nous paquets. Per exemple, amb l’ordre següent instal·laríem el conjunt d’eines The Sleuth Kit, molt emprat en informàtica forense:
+</p>
+<pre class="code">apt-get install sleuthkit </pre>
+
+<p>
+Continuant amb l’exemple d’Ubuntu, també podem afegir o eliminar aplicacions mitjançant un entorn gràfic, en lloc de fer-ho des de línia d’ordres, emprant el gestor de paquets Synaptic.
+</p>
+
+</div>
+
+<h2><a id="seguretat_en_la_xarxa_corporativa" >Seguretat en la xarxa corporativa</a></h2>
+<div class="level2">
+
+<p>
+La seguretat de la xarxa inclou totes les eines i polítiques adoptades per l’administrador del sistema per prevenir i controlar l’accés no autoritzat, mal ús, modificació o inhabilitació d’una xarxa informàtica i els seus recursos.
+</p>
+
+</div>
+
+<h3><a id="monitoratge_del_transit_de_xarxes" >Monitoratge del trànsit de xarxes</a></h3>
+<div class="level3">
+
+<p>
+El monitoratge de la xarxa consisteix a supervisar i analitzar el trànsit que hi circula per tal de detectar els incidents de seguretat que s’hi puguin produir, així com per mantenir la qualitat del servei dins dels llindars previstos.
+</p>
+
+<p>
+El monitoratge es pot dur a terme amb dues aproximacions diferents, complementàries i no excloents:
+</p>
+
+<p>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Monitoratge passiu:</strong> es basa en l’escolta i anàlisi del trànsit real de la xarxa. A diferència de l’aproximació activa, en aquesta no s’injecta trànsit a la xarxa, només es recull la informació i s’analitza. En aquesta aproximació s’usen els anomenats <em>detectors</em> o <em>sniffers</em>, que es poden trobar en diverses ubicacions com ara encaminadors, commutadors. Amb aquestes tècniques es pot caracteritzar el trànsit de xarxa i veure quin ús se’n fa. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Monitoratge actiu:</strong> l’aproximació activa consisteix a injectar paquets de prova a la xarxa, o enviar-ne als servidors i aplicacions, i a mesurar el temps de resposta obtingut. Es pot emprar per supervisar el rendiment de la xarxa, encara que, mitjançant eines actives com els escàners també es poden detectar vulnerabilitats. A diferència de l’aproximació passiva, en el monitoratge actiu s’afegeix trànsit a la xarxa. </div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="eines_passives" >Eines passives</a></h4>
+<div class="level4">
+
+<p>
+Abans de poder emprar cap eina d’anàlisi passiva, cal instal·lar un detector per poder monitorar el trànsit de xarxa. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+S’anomenen <strong>detectors (<em>sniffers</em>)</strong> els programes que permeten la captura i l’enregistrament de la informació que circula per una xarxa. 
+</p>
+</div></div>
+<p>
+El seu funcionament es basa en l’activació del mode promiscu de les interfícies de xarxa (la interfície escolta tot el tràfic de la xarxa enlloc d’estar atenta només a les dades que li envien) de les estacions de treball. Amb l’activació d’aquest mode, l’estació de treball podrà monitorar, a més dels paquets d’informació que s’hi adrecen d’una manera explícita, el trànsit sencer de la xarxa. Això inclou, per exemple, la captura de noms d’usuari i contrasenyes (en cas que circulin en text clar, sense xifrar), o fins i tot la intercepció de correus electrònics o de qualsevol altre document confidencial.
+</p>
+
+<p>
+Si bé els detectors es poden emprar com a eines de supervisió (comptabilització del trànsit, identificació d’aplicacions…) per l’administrador de la xarxa, també poden ser emprats maliciosament amb altres finalitats. L’activitat dels detectors és difícilment detectable perquè no deixen empremtes. No podem tenir constància de la informació que pot haver estat interceptada pels detectors (si no és de manera indirecta, per mitjà dels atacs que pot patir el sistema informàtic). Això sí, com que no hi ha cap raó, normalment, perquè una targeta estigui treballant en mode promiscu, una manera d’esbrinar si hi ha detectors és cercar la presència de targetes en mode promiscu. Això es pot fer amb diverses eines: <strong><em>ifconfig</em></strong>, <strong><em>ifstatus</em></strong> o Network Promiscous Ethernet Detector (NEPED)…
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’ús dels detectors com a eines de supervisió de la xarxa és perfectament lícit, però la captura d’informació personal és una activitat clarament il·lícita.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El detector més conegut és <strong>Wireshark</strong>, conegut antigament com Ethereal.
+</p>
+</div></div>
+<p>
+A més de les mesures de detecció de possibles <em>sniffers</em> es poden fer servir mesures de protecció d’abast més general. Per exemple, si es xifren els documents que s’envien per la xarxa amb PGP, encara que puguin ser interceptats, molt difícilment podran ser desxifrats per l’espia. Malauradament, les eines criptogràfiques protegeixen la informació que circula, però no permeten establir connexions segures. Per això és de vital importància la instal·lació d’altres eines com, per exemple, un servidor de <em>Secure Shell</em> (SSH) i les respectives utilitats dels clients. <em>Secure Shell</em> permet l’establiment d’inicis de sessió segurs i es pot fer servir com a substitut de l’ordre <code>telnet</code>. 
+</p>
+
+</div>
+
+<h4><a id="eines_actives" >Eines actives</a></h4>
+<div class="level4">
+
+<p>
+Les eines actives són aquelles que utilitzen la xarxa per descobrir informació a través d’enviar peticions als dispositius de xarxa com ara estacions de treball, servidors o encaminadors.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Pretty Good Privacy (PGP) és un conegut programa de criptografia que empra tècniques de criptografia de clau pública i privada.
+</p>
+</div></div>
+</div>
+
+<h5><a id="escaners" >Escàners</a></h5>
+<div class="level5">
+
+<p>
+Els escàners de <strong>xarxa</strong> analitzen els serveis i ports disponibles d’ordinadors remots a la recerca de debilitats conegudes que puguin aprofitar els atacants (en certa manera, doncs, automatitzen les tasques que duria a terme un intrús remot). 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>escàners</strong> són eines de seguretat que serveixen per detectar les vulnerabilitats d’un sistema informàtic. 
+</p>
+</div></div>
+<p>
+L’anomenat <strong>escaneig de ports</strong> consisteix a esbrinar els ports TCP/UDP que estan oberts en una màquina remota pertanyent a una xarxa determinada. Els ports oberts constitueixen una informació molt interessant per als possibles intrusos, ja que les vulnerabilitats dels processos que estan en funcionament poden permetre l’accés no autoritzat al sistema. 
+</p>
+<div class="ioctextl"><div class="ioccontent">
+<p>
+L’assignació dels ports no és arbitrària, sinó que és determinada per la Internet Assigned Numbers Authority (IANA). Aquests són alguns exemples d’assignació de ports a serveis d’Internet:
+</p>
+<ul>
+<li class="level1"><div class="li"> Port TCP/UDP 20: <acronym title="File Transfer Protocol">FTP</acronym> (dades)</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 21: <acronym title="File Transfer Protocol">FTP</acronym> (control)</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 23: Telnet</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 25: SMTP</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 53: <acronym title="Domain Name System">DNS</acronym></div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 80: HTTP</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 110: POP3</div>
+</li>
+<li class="level1"><div class="li"> Port TCP/UDP 194: <acronym title="Internet Relay Chat">IRC</acronym></div>
+</li>
+</ul>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">TCP i UPD</p>
+<p>
+TCP és la sigla de Transmission Control Protocol, i UPD, la de User Datagram Protocol. Són els protocols que comparteixen tots els ordinadors connectats a Internet per poder-se connectar entre ells.
+</p>
+</div></div>
+<p>
+Els ports 1024 a 65535 s’anomenen <em>ports registrats</em>, no estan sota el control de la IANA i poden ser utilitzats per determinades aplicacions. Per exemple, una aplicació client d’una eina de control remot maliciosa podria utilitzar un port d’aquest rang per realitzar les seves tasques i passar desapercebuda per l’usuari local o l’administrador del sistema. 
+</p>
+
+<p>
+Tots els escàners comparteixen, en trets generals, un esquema de funcionament similar, que podem veure representat en la <span class="figref"><a href="#Figura13"><span>figura</span></a></span>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Port</p>
+<p>
+Un <strong>port</strong> és un punt pel qual entra o surt la informació d’un ordinador. Els protocols relatius a Internet (<acronym title="File Transfer Protocol">FTP</acronym>, Telnet…) utilitzen ports emissors i receptors, un port de sortida i recepció comú en els dos extrems de la comunicació.
+</p>
+</div></div><div class="iocfigure"><a name="Figura13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Diagrama de flux d’un escàner de xarxa
+
+</figcaption><img src="../media/u2_pdfindex_image_13.png" alt="" /></figure>
+</div>
+<p>
+Tot i que els escàners són eines de molta utilitat per als administradors dels sistemes informàtics, també els intrusos en poden fer un ús maliciós. Els escàners permeten l’automatització de centenars de proves per localitzar les vulnerabilitats d’un sistema. D’altra banda, no cal que l’intrús conegui amb precisió les vulnerabilitats del sistema; pot utilitzar simplement la informació que li proporciona l’escàner, sense necessitat de ser un expert informàtic.
+</p>
+
+</div>
+
+<h5><a id="ordres_de_sistema" >Ordres de sistema</a></h5>
+<div class="level5">
+
+<p>
+Per a una diagnosi ràpida de possibles errors en la comunicació, és recomanable utilitzar les ordres <code>ping</code> i <code>traceroute</code>. Amb <code>ping</code> es pot determinar si una màquina està connectada o no a la xarxa. Amb <code>traceroute</code> es pot obtenir una descripció del camí que es va seguint per arribar a una determinada màquina, de manera que en cas que una estació no respongui es pot determinar el lloc on es produeix el problema.
+</p>
+
+</div>
+
+<h3><a id="seguretat_en_els_protocols_per_a_comunicacions_sense_fil" >Seguretat en els protocols per a comunicacions sense fil</a></h3>
+<div class="level3">
+
+<p>
+
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Al mercat hi ha moltes eines que faciliten el monitoratge de la xarxa, com per exemple MRTG (Multi Router Traffic Grapher) o el conegut Nagios.
+</p>
+</div></div>
+<p>
+Les comunicacions sense fil, basades en ones de ràdio o infraroges, permeten connectar-se a la xarxa des de qualsevol lloc de l’organització i en qualsevol moment sense necessitat d’estendre cap cablejat, la qual cosa permet la possibilitat d’ampliar les dimensions de la xarxa amb molta facilitat.
+</p>
+
+<p>
+Les xarxes locals sense fil poden operar en <strong>mode <em>ad hoc</em></strong> o en <strong>mode infraestructura</strong>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<strong>Wi-Fi</strong> significa <em>wireless fidelity</em> (fidelitat sense fil). Les xarxes locals sense fils s’anomenen <strong>WLAN</strong> (<em>Wireless Local Area Network</em>).
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Mode ad hoc</strong> (client a client). Totes les màquines que es troben dins de la mateixa àrea es poden comunicar entre si directament. No és habitual, encara que és pràctic, per exemple, per enviar informació entre dos ordinadors.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Mode infraestructura</strong> (client a punt d’accés). Les estacions es comuniquen amb els anomenats <strong>punts d’accés</strong>, que actuen de repetidors i difonen la informació a la resta de la xarxa.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Mode d’operació de les xarxes sense fil
+
+</figcaption><img src="../media/u2_pdfindex_image_14.png" alt="" /></figure>
+</div>
+<p>
+Com que la informació no necessita cap mitjà determinat per circular, aquestes xarxes presenten problemes de seguretat importants. Per exemple, en una configuració normal de xarxa, el tallafoc sol ser un element crític de la seguretat i reuneix una part important de les mesures de protecció als atacs exteriors. En una xarxa sense fil però, els atacants ja no necessiten passar pel tallafoc i poden atacar directament altres dispositius de xarxa. Per aquest motiu, inicialment es va preveure la utilització d’un protocol de xifratge anomenat WEP (<em>Wired Equivalent Protocol</em>), que forma part de l’especificació de la norma IEEE 802.11. Amb aquest protocol, una clau WEP predeterminada se situava en cada punt d’accés i en cada client, de manera que només als clients amb la mateixa clau se’ls permetia l’accés. No obstant això, aquest mecanisme no és segur i en l’actualitat es pot desxifrar sense massa problemes. El protocol WEP es basa en un algorisme de xifrat, anomenat RC4, que és molt feble. Es pot desxifrar interceptant un determinat volum de paquets en circulació (per exemple, amb l’eina Aircrack). 
+</p>
+
+<p>
+Arran dels problemes de seguretat provocats pel protocol WEP, es va desenvolupar un altre sistema, anomenat WPA (<em>Wi-Fi Protected Access</em>), que forma part de l’especificació IEEE 802.11 i, millora l’anterior i proveeix mecanismes d’autenticació. El WPA també utilitza l’algorisme de xifratge RC4, però presenta certes diferències en relació a WEP pel que fa a la gestió de claus.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">IEEE</p>
+<p>
+L’Institute of Electrical and Electronic Engineers (IEEE) és un organisme que data de l’any 1980 i que va elaborar les normes IEEE 802.X, que defineixen els estàndards de funcionament de les xarxes d’àrea local.
+</p>
+</div></div>
+<p>
+L’especificació IEEE 802.11 i es va continuar desenvolupant fins a produir el sistema WPA2, que utilitza l’algorisme criptogràfic estàndard de clau privada AES (<em>Advanced Encryption Standard</em>) en lloc de l’RC4. 
+</p>
+
+<p>
+Tant el WPA com el WPA2 presenten vulnerabilitats i es poden atacar. Això és conseqüència del fet que, malgrat les millores criptogràfiques, el mecanisme d’associació d’un client a la xarxa sense fil és molt semblant, amb independència del sistema de seguretat que es triï (WEP, WPA o WPA2).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Cal tenir present que les xarxes locals sense fil requereixen, a causa de la seva natura intrínseca, unes mesures de seguretat més grans que les que s’adoptarien en una xarxa cablejada. 
+</p>
+</div></div>
+<p>
+Vist a grans trets el funcionament de les xarxes sense fil, passem a fer algunes recomanacions per millorar la seguretat de les WLAN:
+</p>
+<ul>
+<li class="level1"><div class="li"> Canviar la contrasenya per defecte (pensem que els fabricants solen emprar la mateixa contrasenya per a tots els seus equips).</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tauler d’administració d’un punt d’accés
+
+</figcaption><img src="../media/u2_pdfindex_image_15.png" alt="" /></figure>
+</div><ul>
+<li class="level1"><div class="li"> Activar el filtrat d’adreces MAC de manera que només es puguin connectar els dispositius especificats (totes les recomanacions que estem veient es duen a terme des de menús similars a la <span class="figref"><a href="#Figura15"><span>figura</span></a></span>). Aquest mecanisme no autentica l’usuari, sinó la interfície del terminal que s’hi connecta. No obstant això, cal tenir present que les adreces MAC poden ésser falsificades fàcilment.</div>
+</li>
+<li class="level1"><div class="li"> Activar el xifratge WEP/WPA.</div>
+</li>
+<li class="level1"><div class="li"> Desactivar, si no hi ha cap raó tècnica per mantenir-la, l’assignació d’IP per DHCP (d’aquesta manera caldrà assignar la IP de forma manual).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Els punts d’accés fan per defecte la difusió (<em>broadcast</em>) del SSID, és a dir, del nom lògic associat a la xarxa. Per evitar els accessos no desitjats es pot eliminar aquesta difusió.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+DHCP és l’acrònim de <em>Dynamic Host Configuration Protocol</em>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="riscos_potencials_dels_serveis_de_xarxa" >Riscos potencials dels serveis de xarxa</a></h3>
+<div class="level3">
+
+<p>
+Una xarxa és un conglomerat de molts elements heterogenis. Per tant, la seva seguretat, així com els riscos a què pot estar exposada, s’ha de cercar en primer lloc en els dispositius individuals que la conformen, i després en les interrelacions existents entre tots aquests dispositius i en la globalitat de la xarxa. Els servidors i les estacions de treball són elements essencials de la xarxa, no obstant això, en aquest apartat ens centrarem en l’estudi de la seguretat dels elements de la xarxa.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">SSID</p>
+<p>
+El SSID (<em>Service Set Identifier</em>) és un codi format com a màxim per 32 caràcters que han de compartir tots els dispositius que es connecten entre si en una xarxa sense fils. També es coneix com a nom de la xarxa.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+<strong><em>Broadcast</em></strong> és la difusió d’informació d’un node emissor a una multitud de nodes receptors de forma simultània.
+</p>
+</div></div>
+</div>
+
+<h4><a id="seguretat_dels_elements_de_xarxa" >Seguretat dels elements de xarxa</a></h4>
+<div class="level4">
+
+<p>
+Quan parlem de seguretat dels elements de xarxa hem de tenir en compte les possibles vulnerabilitats de tots els elements que la constitueixen: la topologia, la seguretat del maquinari o els sistemes d’autenticació.
+</p>
+
+</div>
+
+<h5><a id="seguretat_de_les_topologies_i_els_tipus_de_xarxa" >Seguretat de les topologies i els tipus de xarxa</a></h5>
+<div class="level5">
+
+<p>
+Per <em>topologia</em> s’entén la forma o estructura de la xarxa des del punt de vista lògic, que pot diferir del seu disseny físic. Vegem a la <span class="figref"><a href="#Figura16"><span>figura</span></a></span> alguns exemples de topologia de xarxa. Notem que, segons la topologia, els riscos que assumeix la xarxa poden ser diferents.
+</p>
+
+<p>
+Per exemple, una topologia d’estrella és especialment resistent a la caiguda de les estacions de treball (a diferència de les altres dues), però en canvi té un punt crític, l’element central, que si és atacat o cau per qualsevol motiu pot provocar la caiguda de tota la xarxa. 
+</p>
+<div class="iocfigure"><a name="Figura16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Tipus de topologies de xarxes
+
+</figcaption><img src="../media/u2_pdfindex_image_16.png" alt="" /></figure>
+</div>
+</div>
+
+<h5><a id="seguretat_del_maquinari_de_xarxa" >Seguretat del maquinari de xarxa</a></h5>
+<div class="level5">
+
+<p>
+Pel que fa a la seguretat dels commutadors, concentradors i encaminadors, cal prendre les precaucions següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Activació del xifratge (en cas que els dispositius ho admetin).</div>
+</li>
+<li class="level1"><div class="li"> En cas que no sigui necessari, cal desactivar el control remot d’administració.</div>
+</li>
+<li class="level1"><div class="li"> Canviar les contrasenyes d’administració predeterminades d’aquests dispositius.</div>
+</li>
+<li class="level1"><div class="li"> Usar llistes d’accés que permetin només els protocols, ports i adreces IP que la xarxa i els usuaris necessitin. Denegar la resta. </div>
+</li>
+</ul>
+
+<p>
+Com podem veure en la <span class="figref"><a href="#Figura17"><span>figura</span></a></span>, l’encaminador pot esdevenir el punt més crític d’una xarxa des del punt de vista de possibles atacs externs. Al ser l’encaminador el dispositiu que permet el tràfic entre dues xarxes (molt sovint Internet és una d’elles), aquest element és visible per tothom. Representa, per tant, el punt d’entrada per atacants externs i el primer dispositiu a comprometre ja que és públic. 
+</p>
+<div class="iocfigure"><a name="Figura17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+L’encaminador com a element de risc de la xarxa
+
+</figcaption><img src="../media/u2_pdfindex_image_17.png" alt="" /></figure>
+</div>
+</div>
+
+<h5><a id="control_d_acces_a_la_xarxa_basat_en_autenticacio" >Control d&#039;accés a la xarxa basat en autenticació</a></h5>
+<div class="level5">
+
+<p>
+A més de les polítiques de contrasenyes d’usuari i tècniques de xifratge de la informació, també cal considerar els mètodes de control d’accés dels dispositius que es volen connectar a la xarxa. Aquest mètode requereix tres components i es basa en l’adreça MAC del dispositiu:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Client</strong>: dispositiu (per exemple un portàtil) que desitja connectar-se a la <acronym title="Local Area Network">LAN</acronym> mitjançant una xarxa de telecomunicacions.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Autenticador</strong>: és l’element que controla l’accés físic al medi, basant-se en l’estat d’autenticació del client. L’estat inicial dels ports de l’autenticador és “no controlat”. Si el procés d’autenticació finalitza afirmativament, el port canvia el seu estat a “controlat” i el dispositiu és autoritzat a accedir al medi.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Servidor d’autenticació</strong>: és el dispositiu de “confiança” que s’encarrega d’efectuar la validació de la identitat del client. Notifica el resultat a l’autenticador.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">IEEE 802.1X</p>
+<p>
+L’IEEE 802.1X és un protocol creat per l’IEEE per al control d’accés a la xarxa basat en ports. Utilitza l’EAPOL (EAP sobre la xarxa d’àrea local) i és utilitzat per transportar les credencials del client a l’autenticador.
+</p>
+</div></div>
+</div>
+
+<h5><a id="atacs_als_serveis_de_xarxa" >Atacs als serveis de xarxa</a></h5>
+<div class="level5">
+
+<p>
+Els serveis de xarxa poden ser víctimes de diversos tipus d’atacs, entre els quals podem destacar:
+</p>
+<ol>
+<li class="level1"><div class="li"> Atacs de denegació de servei</div>
+</li>
+<li class="level1"><div class="li"> Atacs de falsejament d’identitat (<em>spoofing</em>)</div>
+</li>
+</ol>
+
+<p>
+<strong>a) Atacs de denegació de servei</strong>
+</p>
+
+<p>
+S’anomena <em>atac de denegació de servei (denial of service)</em> tota acció iniciada per una persona o entitat que inutilitza el maquinari o programari de manera que els recursos del sistema no siguin accessibles des de la xarxa. Els atacs de denegació de servei (DoS) poden atacar el maquinari de la xarxa, el sistema operatiu fins i tot les aplicacions del sistema. Els atacs DoS poden implicar altres ordinadors intermediaris (fins i tot milers), amb la qual cosa s’aconsegueix un dany encara més gran. A més, l’atacant pot ocultar la seva adreça IP gràcies als ordinadors pont (anomenats <em>zombis</em>). Aquest tipus d’atac s’anomena atac <em>DoS distribuït</em> (DDoS o <em>distributed denial of service</em>).
+</p>
+
+<p>
+Vegem un exemple d’atac de denegació de servei: l’atac SYN. Aquest atac consisteix en l’enviament d’un gran nombre de sol·licituds de connexió per segon. El sistema atacat respon correctament les sol·licituds de connexió, però en no obtenir resposta del sistema atacant, es col·lapsa i no pot atendre les sol·licituds de connexió legítimes. Aquest atac es basa en el <em>modus operandi</em> del protocol d’establiment de sessió entre client i servidor:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els atacs de denegació de servei són atacs <strong>contra la disponibilitat</strong> dels recursos d’un sistema informàtic.
+</p>
+</div></div><ol>
+<li class="level1"><div class="li"> L’ordinador client envia una sol·licitud de sincronització (SYN) al servidor.</div>
+</li>
+<li class="level1"><div class="li"> El servidor respon amb un missatge ACK (<em>acknowledgement</em>) i un missatge de sincronització al client.</div>
+</li>
+<li class="level1"><div class="li"> En resposta a la sol·licitud de sincronització, l’ordinador client envia una resposta ACK al servidor.</div>
+</li>
+</ol>
+<div class="iocfigure"><a name="Figura18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Protocol d’establiment de sessió en tres passos
+
+</figcaption><img src="../media/u2_pdfindex_image_18.png" alt="" /></figure>
+</div>
+<p>
+El servidor manté en cua d’espera tots els paquets SYN que va rebent, fins que són cancel·lats per l’enviament del corresponent ACK per part del client (o bé expira el temps d’espera establert per un temporitzador). L’atac SYN es produeix quan els paquets enviats per l’emissor contenen adreces IP falses i, en conseqüència, el servidor no podrà rebre mai el paquet ACK que alliberaria la cua de recepció. Així, quan aquesta s’omple, les noves (i legítimes) sol·licituds de connexió no es poden servir i es produeix la denegació de servei.
+</p>
+
+<p>
+<strong>b) Atacs de falsejament d’identitat (<em>spoofing</em>)</strong>
+</p>
+
+<p>
+En els atacs d’<em>spoofing</em> l’intrús fa servir tècniques de suplantació d’identitat. Les formes més conegudes d’aquests atacs són el <strong>falsejament d’IP</strong>, el <strong>falsejament d’ARP</strong> i el <strong>falsejament de <acronym title="Domain Name System">DNS</acronym></strong>.
+</p>
+
+<p>
+En el cas del falsejament d’IP, l’atacant obté accés no autoritzat a una xarxa suplantant la seva adreça IP per la d’un equip en el qual es confia dins de la xarxa. Un dels camps de la capçalera IP conté l’adreça d’origen. Aquest tipus d’atac substitueix l’adreça i fa veure que s’ha enviat des d’una màquina diferent. Com a anècdota, aquest tipus d’atac va convertir a Kevin Mitnick en el <em>hacker</em> més conegut del món. Mesos més tard, va ser arrestat per l’FBI per robatori de fitxers.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Observem que amb tècniques de falsejament d’identitat es poden aconseguir atacs de denegació de servei.
+</p>
+</div></div>
+<p>
+Les tècniques de falsejament d’ARP es poden fer servir per realitzar els anomenats <em>atacs man-in-the-middle</em>.
+</p>
+
+<p>
+
+En aquest tipus d’atac, l’atacant vol conèixer tot el trànsit de xarxa entre l’usuari A i B i viceversa, però, com es pot veure en la <span class="figref"><a href="#Figura19"><span>figura</span></a></span>, no és possible perquè es troben connectats mitjançant un commutador (element de xarxa que controla el tràfic de xarxa en base a la informació de l’adreça de cada paquet). De manera molt resumida, l’atacant aconsegueix que tant l’usuari A com el B usin la seva adreça MAC (conservant les adreces IP respectives), per la qual cosa pot espiar el trànsit de xarxa entre els dos. 
+</p>
+<div class="iocfigure"><a name="Figura19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Atac man-in-the-middle
+
+</figcaption><img src="../media/u2_pdfindex_image_19.png" alt="" /></figure>
+</div><div class="iocfigure"><a name="Figura20"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Esquema d’un atac de desencaminament
+
+</figcaption><img src="../media/u2_pdfindex_image_20.png" alt="" /></figure>
+</div>
+<p>
+Amb la tècnica del <strong>falsejament de <acronym title="Domain Name System">DNS</acronym></strong> es pot realitzar un tipus d’atac anomenat <em>desencaminament (pharming)</em>, en el qual la màquina atacada, quan sol·licita una adreça IP determinada al seu servidor <acronym title="Domain Name System">DNS</acronym> (per exemple, <a href="http://www.el_meu_banc.es" class="urlextern" title="http://www.el_meu_banc.es"  rel="nofollow">www.el_meu_banc.es</a>), rep una adreça falsa. Així, continuant amb l’exemple, la víctima suposarà que està accedint al seu banc, mentre que en realitat ho fa al lloc web proporcionat per l’atacant, on es capturaran les claus d’accés de l’usuari a la seva entitat financera (<span class="figref"><a href="#Figura20"><span>figura</span></a></span>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’atac <em>man-in-the-middle</em> (MITM) és un atac contra la confidencialitat i la integritat.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Pharming i phishing</p>
+<p>
+No s’ha de confondre el desencaminament (<em>pharming</em>) amb la pesca (<em>phishing</em>). El desencaminament és un atac molt tècnic, mentre que la pesca és una estratègia d’enginyeria social dissenyada perquè les víctimes accedeixen a llocs web falsos, on capturaran les seves claus personals. Si són reeixits, tots dos atacs acaben, però, amb el mateix resultat.
+</p>
+</div></div>
+</div>
+
+<h3><a id="intents_de_penetracio_deteccio_d_intrusions" >Intents de penetració. Detecció d&#039;intrusions</a></h3>
+<div class="level3">
+
+<p>
+Actualment les xarxes informàtiques tenen algun punt que les connecta amb altres xarxes (típicament Internet). Així doncs, la xarxa d’una organització rebrà informació externa com per exemple correus electrònics, peticions de pàgines web al seu servidor, o actualitzacions de programari de les aplicacions i sistemes operatius instal·lats. En aquest escenari, és inevitable qüestionar-se si tota la informació externa que viatja per la xarxa de l’organització és maliciosa. Si n’hi ha que no ho és, com es pot esbrinar?
+</p>
+
+</div>
+
+<h4><a id="sistemes_de_deteccio_d_intrusos" >Sistemes de detecció d&#039;intrusos</a></h4>
+<div class="level4">
+
+<p>
+
+</p>
+
+<p>
+Els sistemes de detecció d’intrusos (IDS) monitoren els continguts del flux d’informació de la xarxa a la recerca i rebuig de possibles atacs. Poden combinar maquinari i programari, i normalment s’instal·len en els dispositius més externs de la xarxa, com ara tallafocs. Admeten diferents tipus de classificacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Segons la font de la informació</div>
+</li>
+<li class="level1"><div class="li"> Segons el tipus d’anàlisi que realitzen</div>
+</li>
+<li class="level1"><div class="li"> Segons el tipus de resposta de l’IDS</div>
+</li>
+</ul>
+
+</div>
+
+<h5><a id="segons_la_font_de_la_informacio" >Segons la font de la informació</a></h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <strong>Basats en xarxa</strong> (<em>Network IDS</em>). Monitoren una xarxa a la recerca d’elements que puguin indicar un atac contra algun dels seus components. Són elements passius que no injecten trànsit a la xarxa (actuen en mode promiscu, escoltant tot el trànsit de xarxa).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Basats en màquina</strong> (<em>Host IDS</em>). Monitoren una màquina (o diverses, en el qual cas s’anomenen <em>multihost</em>) i recullen dades del sistema operatiu (per exemple, el registre d’esdeveniments). Consumeixen recursos de la màquina en la qual s’han instal·lat. Com que treballen amb el sistema operatiu i el sistema de fitxers de la màquina, poden detectar atacs que els IDS de xarxa no detecten. Solen incloure mecanismes de verificació de la integritat de fitxers.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Basats en aplicacions</strong>. Monitoren els fitxers de registre d’una aplicació específica per detectar activitats sospitoses (per exemple, els <em>logs</em> d’un servidor de l’<acronym title="File Transfer Protocol">FTP</acronym>). Consumeixen molts recursos de la màquina. </div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un <em>Network IDS</em> de font oberta molt conegut és l’anomenat <strong>Snort</strong>, usat tant en plataformes Windows com a Linux.
+</p>
+</div></div>
+</div>
+
+<h5><a id="segons_el_tipus_d_analisi_que_realitzen" >Segons el tipus d’anàlisi que realitzen</a></h5>
+<div class="level5">
+
+<p>
+Una vegada recollida la informació, cal analitzar-la. Segons el tipus d’anàlisi que es realitzi, també tenim diferents tipus d’IDS (no són mútuament excloents):
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+L’eina Tripwire, descrita en l’apartat “Detecció de codi maliciós” d’aquesta mateixa unitat, és un IDS basat en màquina.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Basats en firmes</strong>. L’anàlisi s’efectua cercant firmes (<strong>patrons d’atac</strong>) que permetin identificar un atac ja conegut. Aquests tipus de IDS requereixen que les bases de dades de firmes siguin actualitzades constantment. A la <span class="figref"><a href="#Figura21"><span>figura</span></a></span> es pot veure l’arquitectura bàsica d’aquest tipus IDS.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Basats en anomalies</strong>. En aquest cas, l’IDS cerca comportaments anòmals a la xarxa (un escaneig de ports, paquets mal formats…).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Segons el tipus de resposta de l’IDS:</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong>Resposta passiva</strong>. L’IDS enregistra l’alarma generada o avisa el responsable.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Resposta activa</strong>. Aquest IDS, a més de les accions de la resposta passiva, té capacitat de reacció i pot bloquejar les accions intrusives.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura21"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Esquema general d’un IDS basat en firmes
+
+</figcaption><img src="../media/u2_pdfindex_image_21.png" alt="" /></figure>
+</div>
+<p>
+Els IDS poden enviar i obtenir informació d’altres elements (tallafocs, encaminadors…) de la xarxa (<strong>propietat d’interoperabilitat</strong>) i són capaços de relacionar esdeveniments independents i que vistos de forma aïllada poden no significar cap amenaça pel sistema (<strong>propietat de correlació</strong>). 
+</p>
+
+<p>
+En la <span class="figref"><a href="#Figura22"><span>figura</span></a></span> podem veure una ubicació típica d’un IDS en una xarxa amb concentrador.
+</p>
+<div class="iocfigure"><a name="Figura22"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Ubicació d’un IDS en una xarxa
+
+</figcaption><img src="../media/u2_pdfindex_image_22.png" alt="" /></figure>
+</div>
+<p>
+L’anàlisi dels registres dels IDS és clau quan es realitza un <strong>test de penetració</strong>. El personal que duu a terme aquestes proves analitza els <em>logs</em> que enregistren els IDS quan el sistema és sotmès a diversos atacs i extreu conclusions per millorar la seguretat del sistema. Més formalment, els tests de penetració són proves que avaluen la seguretat d’un sistema informàtic simulant que és atacat per personal extern de l’organització (<em>outsiders</em>) així com per personal intern (<em>insiders</em>). Al personal extern se’l suposa no autoritzat (i, per tant, s’estudia com pot accedir un usuari no autoritzat), mentre que al personal intern se’l suposa algun permís d’accés.
+</p>
+
+<p>
+Els tests de penetració es poden realitzar des de dos vessants diferents (o bé un terme mig de tots dos):
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els <strong>sistemes de prevenció d’intrusos (IPS)</strong> permeten establir polítiques de seguretat per protegir la xarxa dels atacs. Es poden considerar una extensió dels IDS.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Proves de <strong>caixa negra</strong> (<em>black box</em>): s’assumeix que no es té cap coneixement previ del sistema que s’ha de testar.</div>
+</li>
+<li class="level1"><div class="li"> Proves de <strong>caixa blanca</strong> (<em>white box</em>): s’assumeix el coneixement total del sistema a testar.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="esquers_honeypots_i_honeynets" >Esquers (honeypots i honeynets)</a></h4>
+<div class="level4">
+
+<p>
+Un <em>honeypot</em> és un sistema informàtic (o programa) que es posa de manera deliberada a l’accés públic per estudiar les pautes dels seus possibles atacants. Aquests sistemes no poden contenir cap informació important i necessiten eines passives d’auditoria que permetin conèixer, amb posterioritat a l’atac, què ha passat en el sistema. Freqüentment, aquests sistemes també contenen directoris o noms de fitxers amb identificacions llamineres, que despertin la curiositat dels atacants. A més de la seva finalitat d’anàlisi, també poden utilitzar-se per distreure l’atenció dels possibles atacants del veritable sistema, que no ha de ser accessible a través del sistema utilitzat com a esquer. Els <em>honeypots</em> no es troben, en general, completament protegits, i les aplicacions i dispositius es configuren amb les opcions per defecte i solen presentar múltiples forats de seguretat. 
+</p>
+
+<p>
+La translació del concepte de <em>honeypot</em> a una xarxa s’anomena <em>honeynet</em>. En aquest cas, els atacants, a més de servidors no completament assegurats, també poden trobar dispositius perifèrics a la xarxa, com encaminadors o tallafocs. 
+</p>
+
+</div>
+
+<h2><a id="les_xarxes_publiques_seguretat_en_la_connexio" >Les xarxes públiques. Seguretat en la connexió</a></h2>
+<div class="level2">
+
+<p>
+Una xarxa pública és una xarxa de comunicacions que pot ser usada per qualsevol a un preu molt reduït. Aquesta xarxa està gestionada per una operadora de telecomunicacions i, per tant, la informació que hi viatja és susceptible de ser ‘observada’ durant el seu trànsit fins al destí. Cal prendre mesures per evitar-ho.
+</p>
+
+<p>
+Per garantir la impossibilitat que la informació pugui ésser interceptada, les dades no haurien de viatjar a través de les xarxes públiques. Les xarxes no públiques s’anomenen connexions dedicades, les quals són molt costoses i poc flexibles als canvis. No obstant això, és possible usar xarxes públiques i alhora impedir que la informació pugui ésser interceptada, fent que sigui incomprensible (mitjançant tècniques de xifrat), excepte pel receptor autoritzat.
+</p>
+
+</div>
+
+<h3><a id="pautes_i_practiques_segures" >Pautes i pràctiques segures</a></h3>
+<div class="level3">
+
+<p>
+L’ús de les xarxes públiques requereix l’establiment de relacions de confiança en un entorn gairebé anònim i intangible per definició. En el cas del comerç electrònic, aquesta relació de confiança no només ha de servir per protegir la nostra privacitat, sinó per conformar un espai de seguretat en què les transaccions econòmiques siguin viables. Aquesta és la principal motivació de la <strong>signatura electrònica</strong>. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+La <strong>signatura electrònica</strong>, basada en la criptografia de clau pública, permet que un emissor pugui enviar missatges a un receptor complint les tres propietats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Autenticitat</strong>: la signatura d’un missatge per l’emissor permet que el receptor estigui segur de la identitat del remitent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Integritat</strong>: certesa que el missatge no s’ha modificat durant la transmissió.</div>
+</li>
+<li class="level1"><div class="li"> <strong>No repudi</strong>: l’emissor d’un missatge no pot repudiar o negar que l’ha enviat (per exemple, podria argumentar que l’ha enviat una tercera persona). La inclusió d’una signatura digital evita aquesta possibilitat.</div>
+</li>
+</ul>
+</div></div>
+<p>
+Aquestes tres propietats són essencials perquè la signatura digital gaudeixi de confiança en un entorn tan intangible com Internet. Si volem fer activitats tan delicades, com, per exemple, participar en unes votacions electròniques, és imprescindible garantir les tres propietats abans esmentades. Observem que moltes vegades l’entorn en què se signa un document de manera <strong>manuscrita</strong> ofereix en realitat menys garanties que els criptosistemes de clau pública, que presenten una gran robustesa. Suposem, per exemple, el cas de les votacions electròniques. En el món real, el votant introdueix físicament una papereta de vot dins d’una urna electoral. Pot veure com cau dins de l’urna i confia que l’urna només serà oberta al final del procés per les persones autoritzades i que el seu vot serà comptabilitzat correctament. Malgrat tot, aquest procés té tantes baules, punts febles i possibles errors humans, que, en el fons, podria ser tan qüestionat (o més, fins i tot) com el seu homòleg electrònic. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre els <strong>esquemes de clau pública</strong> en la unitat “Seguretat física, lògica i legislació”.
+</p>
+</div></div>
+</div>
+
+<h4><a id="funcionament_d_un_criptosistema_de_clau_publica" >Funcionament d&#039;un criptosistema de clau pública</a></h4>
+<div class="level4">
+
+<p>
+Quan un usuari A vol <strong>enviar un missatge</strong> a un usuari B, xifra el missatge fent servir la clau pública de B (aquesta clau és coneguda per tots els usuaris del criptosistema). Quan el receptor rebi el missatge, únicament el podrà desxifrar ell mateix, utilitzant la seva pròpia clau privada (que només ell té). 
+</p>
+
+<p>
+Quan l’usuari emissor vol <strong>signar un missatge</strong>, empra la seva clau privada (només coneguda per ell), que acredita la seva identitat davant de l’usuari receptor del missatge. En el procés de verificació dut a terme per l’usuari B, utilitzarà la clau pública de l’usuari A (coneguda per tots els usuaris del criptosistema).
+</p>
+
+<p>
+Fixem-nos que el punt feble d’aquest protocol es produeix quan hem de fer ús d’una clau pública. Per exemple, quan l’usuari B de l’exemple (el receptor) vol comprovar la identitat de l’emissor mitjançant la clau pública de l’usuari A, com pot saber que la clau que utilitza pertany realment a A?
+</p>
+
+</div>
+
+<h4><a id="autoritats_de_certificacio" >Autoritats de certificació</a></h4>
+<div class="level4">
+
+<p>
+Per resoldre el problema de la identitat de l’emissor, es requereix la participació d’una tercera part (anomenada <strong>autoritat de certificació</strong>) que confirmi l’autenticitat de la clau pública d’un usuari determinat. Aquesta certificació s’aconsegueix mitjançant l’expedició d’un <strong>certificat digital</strong>. Aquest document, signat digitalment per un <strong>prestador de serveis de certificació</strong>, vincula unívocament unes dades de verificació de signatura al titular i confirma la seva identitat en qualsevol transacció.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Totes les claus públiques s’obtenen d’un directori públic i, per tant, no podem garantir a qui pertanyen efectivament.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">No repudi</p>
+<p>
+És important observar que, una vegada s’ha signat un missatge, quan la signatura sigui verificada per l’usuari receptor, l’usuari emissor no podrà negar l’emissió del missatge (propietat de no repudi). Les autoritats de certificació, a més d’emetre certificats, també els poden revocar.
+</p>
+</div></div>
+<p>
+Les autoritats de certificació s’estructuren de forma jeràrquica, de manera que l’autoritat de certificació arrel és autosignada (és a dir que no té cap altra autoritat que la certifiqui) i a cada nivell inferior s’hi poden trobar autoritats de certificació (una o més) que poden signar certificats d’entitat final (persones, aplicacions de programari) o certificats d’altres autoritats de certificació subordinades.
+</p>
+
+</div>
+
+<h4><a id="obtencio_d_una_identificacio_electronica" >Obtenció d&#039;una identificació electrònica</a></h4>
+<div class="level4">
+
+<p>
+Com a usuaris, és possible obtenir un certificat digital que ens permeti identificar-nos a la xarxa i efectuar operacions diverses, com per exemple, fer tràmits amb l’administració a través de les seves oficines virtuals (sense necessitat d’haver-hi d’anar en persona), signar correus i realitzar, entre d’altres, transaccions segures per Internet.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El protocol que descriu tots els processos organitzatius que calen per gestionar els certificats digitals s’anomena <strong>Infraestructura de Clau Pública</strong> (PKI). 
+</p>
+</div></div>
+<p>
+Hi ha diversos organismes autoritzats per expedir aquestes identificacions electròniques, entre els quals cal esmentar l’<strong>Agència Catalana de Certificació</strong>.
+</p>
+
+<p>
+Quan anem personalment a la seu física d’aquesta entitat ens proporcionen un programari en un dispositiu com el que podeu veure a la <span class="figref"><a href="#Figura23"><span>figura</span></a></span>. Seguint les instruccions adjuntes, el podrem instal·lar als nostres ordinadors i començar a utilitzar la nostra signatura digital. Tot i que, com s’ha vist, la teoria dels criptosistemes de clau pública no és senzilla, per usar el nostre certificat no necessitem tenir cap coneixement criptogràfic.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Per a més informació sobre la identificació electrònica visiteu el web <a href="http://www.idcat.cat/" class="urlextern" title="http://www.idcat.cat/"  rel="nofollow">www.idcat.cat</a>.
+</p>
+</div></div><div class="iocfigure"><a name="Figura23"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Clauer idCAT: llapis de memòria que conté la identificació electrònica d’un usuari
+
+</figcaption><img src="../media/u2_pdfindex_image_23.png" alt="" /></figure>
+</div>
+</div>
+
+<h4><a id="llei_de_signatura_electronica" >Llei de signatura electrònica</a></h4>
+<div class="level4">
+
+<p>
+A Espanya, la Llei 59/2003 de signatura electrònica, reconeix tres tipus de signatura electrònica:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Simple</strong>: permet identificar el firmant (autenticació).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Avançada</strong>: permet identificar la persona que signa i detectar qualsevol modificació en les dades signades (autenticació i integritat).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Reconeguda</strong>: és la signatura més completa. Es basa en un certificat reconegut i es genera mitjançant un dispositiu segur de creació de signatures. S’equipara a la signatura manuscrita.</div>
+</li>
+</ul>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/activitats.html">Mecanismes de seguretat activa</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

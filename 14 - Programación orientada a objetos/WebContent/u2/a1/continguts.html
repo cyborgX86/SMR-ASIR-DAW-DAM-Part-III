@@ -1,0 +1,1668 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a href="../../../WebContent/u2/introduccio.html">2. Utilització avançada de classes</a></p><ul class="expander"><li id="u2introduccio"><a href="../../../WebContent/u2/introduccio.html">Introducció</a></li><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2mapa"><a href="../../../WebContent/u2/mapa.html">Mapa conceptual</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id="u2a1continguts"><a href="../../../WebContent/u2/a1/continguts.html">Creació d'aplicacions escalables</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Utilització avançada de classes</a></li><li>Creació d'aplicacions escalables</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="creacio_d_aplicacions_escalables"> Creació d'aplicacions escalables </a></h1>
+    	
+<p>
+Existeixen diferents mecanismes bàsics per garantir l’escalabilitat de les aplicacions. D’una banda, hi ha el principi d’encapsulació i ocultació d’informació, a partir del qual els mòduls de què es compon una aplicació es generen com una capsa negra, on es defineixen les seves funcionalitats però no com les duen a terme internament. Aquesta important estratègia és aplicable a qualsevol tipus de llenguatge, i no està vinculada exclusivament a l’orientació a objectes, si bé ens centrarem en la seva aplicació en aquesta metodologia i en com usar-la en la definició de classes. 
+</p>
+
+<p>
+D’altra banda, l’orientació a objectes proporciona dos mecanismes exclusius, i especialment potents, per desenvolupar aplicacions fàcilment extensibles: l’herència i el polimorfisme. La seva particularitat principal és que només poden ser implementats amb un llenguatge que suporti orientació a objectes; no es poden implementar mitjançant altres llenguatges. Per aquest motiu, és en aquests mecanismes on es fa especial èmfasi.
+</p>
+
+<p>
+Entre els seus avantatges més importants trobem:
+</p>
+<ul>
+<li class="level1"><div class="li"> Ofereixen una manera fàcil de minimitzar la duplicació de codi.</div>
+</li>
+<li class="level1"><div class="li"> Tenen capacitat d’afegir noves funcionalitats, de manera senzilla, a classes ja definides.</div>
+</li>
+<li class="level1"><div class="li"> Es poden definir operacions en què es poden passar com a paràmetre objectes de classes que encara no s’han definit en el moment d’especificar l’operació.</div>
+</li>
+<li class="level1"><div class="li"> Aporten noves vies a la idea de poder manipular i organitzar els objectes de manera més semblant al pensament humà.</div>
+</li>
+</ul>
+
+<p>
+Aquests mecanismes són d’enorme utilitat quan es desenvolupa programari de certa complexitat, que s’ha de poder ampliar en el futur de manera ràpida i senzilla. De fet, actualment, tant l’herència com el polimorfisme són considerades característiques indispensables en qualsevol llenguatge orientat a objectes.
+</p>
+
+<h2><a id="encapsulacio" >Encapsulació</a></h2>
+<div class="level2">
+
+<p>
+
+</p>
+
+<p>
+Una aplicació generada mitjançant l’orientació a objectes té molt en comú amb una altra que s’ha generat mitjançant un llenguatge clàssic: en darrera instància, tot està format per un conjunt de variables en les quals es desa l’estat del programa i un seguit de blocs de sentències que en componen la lògica. Així és com realment es representen els atributs i les operacions en el programa. L’aspecte diferencial és l’estratègia d’organització del programa, que distribueix aquestes variables i blocs de sentències dins de classes, de manera que sigui molt més entenedora per a la manera de pensar humana i permeti maximitzar la reutilització de codi; dit d’una altra manera, es converteix el programa en una simulació. Ara bé, a fi de generar programari de qualitat, hi ha un principi que cal tenir molt present i aplicar acuradament durant l’etapa de disseny: el <strong>principi d’encapsulació</strong>. Si bé també cal tenir-lo present en el procés de desenvolupament de programari mitjançant llenguatges clàssics, és especialment beneficiós dins el camp de l’orientació a objectes.
+</p>
+
+<p>
+En aplicar l’orientació a objectes, les classes s’han d’especificar de manera que actuïn com a caixes negres. Algú que no ha participat en el seu procés de disseny o de desenvolupament ha de poder usar-les sense que li calgui saber-ne l’estructura interna: com s’emmagatzema l’estat dels objectes (els atributs) o de quina manera s’ha decidit implementar cert mètode. En aquest aspecte, es pot considerar que la manera ideal d’operar d’una classe ha de ser com ho faria un aparell autònom com, per exemple, un caixer automàtic: la persona que el fa servir pot treure’n profit sense haver de saber com funciona internament. El cas és que, donada una interacció possible amb l’aparell, aquest compleix l’ordre de la manera esperada i res més, per molt complex que sigui dur-la a terme internament. Per a qui l’està usant, aquesta complexitat necessària per dur a terme la tasca o accedir al que hi ha a dins del caixer són qüestions irrellevants, sempre que els diners acabin sortint al final del procés.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Un mètode és la implementació, el codi que s’executa, d’una operació.
+</p>
+</div></div>
+<p>
+Quan es defineix una classe, només s’ha de mostrar <em>què</em> poden fer els seus objectes, però no <em>com</em> ho fan, o mitjançant quines dades.
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u2_01.png" class="imgB" title="Un microxip, un exemple clàssic d&#039;encapsulació i ocultació en informàtica." alt="Un microxip, un exemple clàssic d&#039;encapsulació i ocultació en informàtica." /></li><li><small>Un microxip, un exemple clàssic d&#039;encapsulació i ocultació en informàtica.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+Els objectius d’aplicar aquest principi són en gran mesura els següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Minimitzar les implicacions de qualsevol modificació posterior a una classe, fent que aquest canvi es propagui el mínim possible dins de tot el programari desenvolupat.</div>
+</li>
+<li class="level1"><div class="li"> Permetre aplicar <strong>programació defensiva</strong>: forçar un major control d’errors, de manera que s’eviti que un objecte estigui en un estat que es pugui considerar invàlid o inconsistent.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El principi <strong>d’encapsulació</strong>, o d’<strong>ocultació d’informació</strong>, es basa en l’ocultació de les decisions de disseny, de manera que canvis en una classe afectin al mínim possible el programari ja desenvolupat.
+</p>
+</div></div>
+<p>
+Si bé en les publicacions s’usen els termes <em>encapsulació</em> i <em>ocultació d’informació</em> de manera indistinta, hi ha una certa discòrdia sobre si realment són exactament el mateix concepte. El principal motiu és la relació que hi ha entre els termes: l’encapsulació és un dels principis necessaris per assolir l’ocultació d’informació. Mentre que el segon es pot considerar la fita, el primer és la tècnica emprada.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Interfície d’una classe és el conjunt d’operacions que ofereix.
+</p>
+</div></div>
+<p>
+Un dels mecanismes bàsics per obtenir classes encapsulades correctament és establir una interfície estable en cada classe i no exposar cap camp de dades de manera que sigui directament accessible. Això vol dir que, per defecte, tots els atributs d’una classe cal que siguin sempre privats, a menys que hi hagi un motiu molt bo per no fer-ho. Només ha de ser possible accedir als atributs per mitjà d’operacions accessores, tant per a la seva lectura com per modificar-ne el valor.
+</p>
+
+</div>
+
+<h3><a id="minimitzacio_dels_efectes_de_canvis" >Minimització dels efectes de canvis</a></h3>
+<div class="level3">
+
+<p>
+Suposem el cas en què es vol definir una classe en què s’emmagatzema una data concreta: la classe <code>Data</code>. Una de les decisions que el dissenyador ha de prendre en algun moment en definir-la és com s’emmagatzema la informació associada a un objecte d’aquesta classe, en forma d’atributs d’un tipus concret. Hi ha diverses estratègies per emmagatzemar una data, com per exemple:
+</p>
+<ul>
+<li class="level1"><div class="li"> Tres atributs independents de tipus enter: dia, mes i any.</div>
+</li>
+<li class="level1"><div class="li"> Un únic atribut <code>String</code> amb un format concret, per exemple: “dia-mes-any”.</div>
+</li>
+<li class="level1"><div class="li"> El nombre de dies que han passat des d’una data concreta. Tot i que aquesta opció sembla molt rebuscada, el llenguatge Java usa un sistema molt semblant per a la seva classe Date.</div>
+</li>
+</ul>
+
+<p>
+Si mantenim de manera estricta el principi d’ocultació d’informació oferint un conjunt d’operacions que ens permetin obtenir la informació necessària a cada moment, aquesta decisió serà irrellevant a l’hora de fer ús dels objectes de la classe <code>Data</code> i cridar operacions. Així, doncs, si es defineix un mètode getAny(): enter, quan s’implementi el mètode associat:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si s’ha triat la primera opció, n’hi ha prou de consultar l’atribut en què es guarda l’any.</div>
+</li>
+<li class="level1"><div class="li"> Si s’ha triat la segona, cal processar la cadena de text, recuperar l’any i transformar-la en enter.</div>
+</li>
+<li class="level1"><div class="li"> Amb la darrera opció, caldrà fer el càlcul de quants anys han passat, controlant els anys de traspàs, i retornar el resultat.</div>
+</li>
+</ul>
+
+<p>
+En qualsevol cas, per als objectes que criden el mètode <code>getAny</code>, el resultat és que s’obté l’any representat per aquell objecte de la classe <code>Data</code>, sense haver de preocupar-se de la complexitat real del procés ni de la seva estructura interna.
+</p>
+
+<p>
+Un cop presa aquesta decisió, implementada la classe i utilitzada en diferents aplicacions, arriba el dia en què el dissenyador es veu forçat a canviar els tipus dels atributs per algun motiu. Un bon exemple, que va passar en la realitat, va ser l’efecte 2000.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">L&#039;efecte 2000</p>
+<p>
+En una gran quantitat de sistemes informàtics, des de feia temps, la informació relativa a l’any, a les dates, s’emmagatzemava només en dues xifres, per tal d’estalviar espai de memòria (per exemple: 17 de maig del 1984, 17/05/84). En el seu moment, aquesta decisió era lògica, ja que la memòria era escassa i cara. Però aquesta decisió va provocar que, en apropar-se l’any 2000, s’haguessin de modificar tots els sistemes, ja que el dia 1 de gener del 2000 no serien capaços de distingir entre aquesta data o l’1 de gener del 1900, amb conseqüències incertes. Si bé s’anunciava un futur catastròfic, afortunadament al final no n’hi va haver per tant (tot i que molts programadors van estar molt entretinguts durant una bona temporada). Aquest esdeveniment es va anomenar <em>l’efecte 2000</em>.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">L&#039;efecte 2038</p>
+<p>
+Els sistemes Unix emmagatzemen la data comptant el nombre de segons des de l’1 de gener del 1970. Donat que en aquests sistemes la xifra més alta que es pot representar és un nombre enter de 32 bits, quan el nombre de segons arribés a aquest màxim representable el comptador es desbordaria; això està previst que succeeixi l’any 2038.
+</p>
+</div></div>
+<p>
+Suposem que en la classe <code>Data</code> s’ha fet una elecció en què l’efecte 2000 té implicacions directes (per exemple, la segona opció). Si s’ha aplicat ocultació i només s’hi accedeix mitjançant la crida de mètodes, canviar el contingut de la classe <code>Data</code> és suficient. Caldrà modificar el tipus dels atributs i el codi dels mètodes accessors de manera que, mantenint el valor de retorn de les operacions, ara funcionin amb els nous tipus dels atributs. El canvi serà transparent per al codi de qualsevol programa en què s’usi la classe <code>Data</code>
+<em>.</em> Davant la crida del mètode <code>getAny</code>, se segueix obtenint exactament el mateix resultat, un enter amb l’any.
+</p>
+
+<p>
+Si no s’ha aplicat ocultació i en el codi de totes les aplicacions s’ha accedit lliurement als atributs de la classe <code>Data</code>, en haver-los declarat públics, els desenvolupadors, a més de canviar els atributs d’aquesta classe, hauran de repassar tot el codi de tots els programes i modificar les línies en què s’accedeix a l’atribut d’acord amb el nou tipus. Això és moltíssima més feina.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Els que hagin decidit emmagatzemar la nova data en només quatre xifres tornaran a trobar el problema l’any 10000.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Mai</strong> no podem assumir que l’estructura interna d’una classe no canviarà en el futur.
+</p>
+</div></div>
+<p>
+Aquest cas també s’aplica en operacions, no de consulta, sinó de modificació d’atributs. Per exemple, el dissenyador pot haver decidit especificar una operació <code>setAny(any: enter)</code> per assignar un any a una data, com també haver especificat que la informació es desi en un únic atribut corresponent als dies que han passat des d’una data concreta. En aquest cas, el mètode a implementar haurà de preveure tots els càlculs necessaris en el codi, de manera que el valor final de l’atribut sigui correcte. Novament, la complexitat del procés queda totalment oculta.
+</p>
+
+</div>
+
+<h3><a id="programacio_defensiva" >Programació defensiva</a></h3>
+<div class="level3">
+
+<p>
+Una altra de les motivacions per ocultar la informació emmagatzemada dins els objectes és la programació defensiva.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Programar defensivament</strong> implica garantir que l’estat d’un objecte sempre serà consistent i els seus atributs tindran assignats valors considerats correctes.
+</p>
+</div></div>
+<p>
+Cal garantir aquesta consistència independentment dels paràmetres amb què es cridin les seves operacions. S’utilitza aquest terme perquè la consistència s’ha de garantir fins i tot en el cas imaginari que les operacions es cridessin usant paràmetres expressament incorrectes amb l’únic objectiu de deixar l’objecte en un estat inconsistent, i no simplement per error involuntari. Tot i que aquest cas no sempre té sentit, sempre cal desenvolupar programari com si es considerés cert.
+</p>
+
+<p>
+Aquest objectiu s’assoleix exclusivament en l’àmbit de la implementació, no del disseny, ja que es fa mitjançant el control dels paràmetres en el codi dels mètodes accessors. La seva ubicació aquí és coherent amb el principi d’ocultació d’informació, ja que el format real dels atributs d’un objecte és ocult i, per tant, el format que es considera correcte per a cada atribut només es pot saber internament en la classe. En darrera instància, el codi de cada classe és el responsable final de controlar quins valors es consideren correctes o incorrectes per a cada atribut, i ha de garantir que mai no s’assignarà cap valor incorrecte.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La programació defensiva té molt sentit quan es vol garantir la seguretat d’un sistema.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Programació defensiva de la classe &#039;&#039;Data&#039;&#039;</p>
+<p>
+En l’exemple de la classe <code>Data</code>, hi ha un gran nombre de valors que es consideren incorrectes: valors negatius, els números de mes que no estan entre 1 i 12, dies superiors a 30 per a alguns mesos, o superiors a 28, 29 o 31 per a d’altres, etc. Cal evitar que, per cap concepte, s’arribi a propagar cap d’aquests valors als atributs dels objectes de la classe <code>Data</code>, sigui quin sigui el format final amb què el dissenyador ha triat representar una data internament. Per tant, cada mètode accessor ha de contenir codi que faci aquest control abans de modificar definitivament el valor de cap atribut.
+</p>
+</div></div>
+</div>
+
+<h3><a id="aplicacio_d_ocultacio_de_dades" >Aplicació d&#039;ocultació de dades</a></h3>
+<div class="level3">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Un dels objectius de la programació orientada a objectes és l’<strong>encapsulació</strong> de dades i de mètodes de manera que els programadors usuaris d’una classe només poden accedir a les dades mitjançant els mètodes que la mateixa classe proporciona.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">Ocultació de mètodes</p>
+<p>
+Pot tenir sentit l’ocultació de mètodes? La resposta és afirmativa, ja que en el disseny d’una classe pot interessar desenvolupar un mètode intern per ser cridat en el disseny d’altres mètodes de la classe i no es vol donar a conèixer a la comunitat de programadors que utilitzaran la classe.
+</p>
+</div></div>
+<p>
+Amb l’encapsulació de dades i de mètodes s’aconsegueix:
+</p>
+<ul>
+<li class="level1"><div class="li"> Protegir les dades de modificacions impròpies.</div>
+</li>
+<li class="level1"><div class="li"> Facilitar el manteniment de la classe, ja que si per algun motiu es creu que cal efectuar alguna reestructuració de dades o de funcionament intern, es podran efectuar els canvis pertinents sense afectar les aplicacions desenvolupades (sempre que no es modifiquin els prototipus dels mètodes existents).</div>
+</li>
+</ul>
+
+<p>
+Així, doncs, ens interessa ocultar les dades i, potser, alguns mètodes.
+</p>
+
+<p>
+Donada la següent classe Persona, si desenvolupem un programa que instanciï objectes de la classe, no hauríem de tenir accés directe a les dades dni, nom i edat. Però, hi tenim accés?
+</p>
+<pre class="code">//Fitxer Persona.java
+
+public class Persona {
+   public String dni;
+   public String nom;
+   public short edat;
+   
+   // Retorna: 0 si s&#039;ha pogut canviar el dni
+   //          1 si el nou dni no és correcte - No s&#039;efectua el canvi
+   public int setDni(String nouDni) {
+      // Aquí hi podria haver una rutina de verificació del dni
+      // i actuar en conseqüència. Com que no la incorporem, 
+      // retornem sempre 0
+      dni = nouDni;
+      return 0;
+   }
+
+   public  void setNom(String nouNom) {
+      nom = nouNom;
+   }
+   
+   // Retorna: 0 si s&#039;ha pogut canviar l&#039;edat
+   //          1 : Error per passar una edat negativa
+   //          2 : Error per passar una edat &quot;enorme&quot;
+
+   public  int setEdat(int novaEdat) {
+      if (novaEdat&lt;0) return 1;
+      if (novaEdat&gt;Short.MAX_VALUE) return 2;
+      edat = (short)novaEdat;
+      return 0;
+   }
+   
+   public String getDni() { return dni; }
+   
+   public String getNom() { return nom; }
+   
+   public short getEdat() { return edat; }
+   
+   public void visualitzar() {
+      System.out.println(&quot;Dni...........:&quot; + dni);
+      System.out.println(&quot;Nom...........:&quot; + nom);
+      System.out.println(&quot;Edat..........:&quot; + edat);
+   }
+   
+   public static void main(String args[]) {
+      Persona p1 = new Persona();
+      Persona p2 = new Persona();
+      p1.setDni(&quot;00000000&quot;);
+      p1.setNom(&quot;Pepe Gotera&quot;);
+      p1.setEdat(33);
+      System.out.println(&quot;Visualització de persona p1:&quot;);
+      p1.visualitzar();
+      System.out.println(&quot;El dni de p1 és &quot; + p1.getDni());
+      System.out.println(&quot;El nom de p1 és &quot; + p1.getNom());
+      System.out.println(&quot;L&#039;edat de p1 és &quot; + p1.getEdat());
+      System.out.println(&quot;Visualització de persona p2:&quot;);
+      p2.visualitzar();
+   }
+}</pre>
+
+<p>
+Per comprovar si es garanteix l’ocultació de dades en aquesta classe, considerem el programa següent en què es creen objectes de la classe Persona dissenyada en l’arxiu Persona.java.
+</p>
+<pre class="code">//Fitxer CridaPersona.java
+
+public class CridaPersona{ 
+   public static void main(String args[]) {
+      Persona p = new Persona();
+      p.dni = &quot;--$%#@--&quot;;
+      p.nom = &quot;&quot;;
+      p.edat = -23;
+      System.out.println(&quot;Visualització de la persona p:&quot;);
+      p.visualitzar();
+   }
+}</pre>
+
+<p>
+En aquest cas estem en un programa extern a la classe Persona i es veu com accedim directament a les dades “dni”, “nom” i “edat” de la persona creada, i podem fer autèntiques animalades. El compilador no es queixa (cal haver compilat també l’arxiu Persona.java en el mateix directori) i l’execució dóna el resultat:
+</p>
+<pre class="code">Visualització de la persona p:
+Dni...........:--$%#@--
+Nom...........:
+Edat..........:-23</pre>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Paquets o &quot;packages&quot;</p>
+<p>
+Les classes es poden organitzar en paquets i aquesta possibilitat s’acostuma a utilitzar quan tenim un conjunt de classes relacionades entre elles. Totes les classes no incloses explícitament en cap paquet i que estan situades en un mateix directori es consideren d’un mateix paquet.
+</p>
+</div></div>
+<p>
+Acabem de veure, doncs, que la nostra versió de la classe <code>Persona</code> no oculta les dades i això és perquè en la definició d’aquestes dades no s’ha posat al davant el modificador adequat que controla l’ocultació. És a dir, la definició d’una dada i/o un mètode pot incloure un modificador que indiqui el tipus d’accés que es permet a la dada i/o mètode, segons la sintaxi següent:
+</p>
+<pre class="code">[&lt;modificadorAccés&gt;] [&lt;altresModificadors&gt;] &lt;tipusDada&gt; &lt;nomDada&gt;;
+
+[&lt;modificadorAccés&gt;] [&lt;altresModificadors&gt;] &lt;tipusRetorn&gt; &lt;nomMètode&gt; (&lt;llistaArgs&gt;)
+{...}</pre>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u2_02.png" class="imgB" title="Notació d&#039;una classe" alt="Notació d&#039;una classe" /></li><li><small>Notació d&#039;una classe</small></li>
+</ul></div>
+
+</p>
+
+<p>
+El modificador d’accés pot prendre quatre valors:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>public</strong>, que dóna accés a tothom;</div>
+</li>
+<li class="level1"><div class="li"> <strong>private</strong>, que prohibeix l’accés a tothom menys pels mètodes de la pròpia classe;</div>
+</li>
+<li class="level1"><div class="li"> <strong>protected</strong>, que es comporta com a public per a les classes derivades de la classe i com a private per a la resta de classes;</div>
+</li>
+<li class="level1"><div class="li"> <strong>sense modificador</strong>, que es comporta com a public per a les classes del mateix paquet i com a private per a la resta de classes.</div>
+</li>
+</ul>
+
+<p>
+La classe <code>Persona</code> ha usat el modificador <code>public</code> per especificar els seus atributs. Per tant, la classe <code>CridaPersona</code> hi ha tingut accés total. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Notació</p>
+<p>
+A la notació per a una classe s’aprecien dues zones:
+</p>
+<ul>
+<li class="level1"><div class="li"> Zona per a les dades.</div>
+</li>
+<li class="level1"><div class="li"> Zona per als mètodes.</div>
+</li>
+</ul>
+
+<p>
+Notació per als modificadors d’accés als membres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Prefix - per als privats.</div>
+</li>
+<li class="level1"><div class="li"> Prefix + per als públics.</div>
+</li>
+<li class="level1"><div class="li"> Prefix # per als protegits.</div>
+</li>
+</ul>
+</div></div>
+<p>
+Sembla lògic, doncs, fer evolucionar la versió actual de la classe Persona cap a una classe que tingui les dades declarades com a privades i els mètodes com a públics. Fixem-nos que el mètode <code>main</code> per comprovar el funcionament d’una classe sempre ha estat declarat public.
+</p>
+
+<p>
+A continuació presentem una versió evolucionada de la classe Persona que inclou els modificadors d’accés adequats: dades a private i mètodes a public.
+</p>
+<pre class="code">//Fitxer Persona.java
+
+public class Persona
+{
+   private String dni;
+   private String nom;
+   private short edat;
+
+   ...</pre>
+
+<p>
+Amb aquesta versió de la classe <code>Persona</code>, vegem què succeeix quan intentem compilar la classe <code>CridaPersona</code> que crea una persona i intenta accedir directament a les dades:
+</p>
+<pre class="code">CridaPersona.java:11: dni has private access in Persona
+   p.dni = &quot;--$%#@--&quot;;
+   ^
+CridaPersona.java:12: nom has private access in Persona
+   p.nom = &quot;&quot;;
+   ^
+CridaPersona.java:13: edat has private access in Persona
+   p.edat = -23;
+   ^
+3 errors</pre>
+
+<p>
+Fixem-nos que el compilador ja detecta que no hi ha accés a les dades. Hem aconseguit el nostre objectiu: protegir les dades tot ocultant-les a qui no les ha de veure.
+</p>
+
+</div>
+
+<h2><a id="herencia" >Herència</a></h2>
+<div class="level2">
+<div class="iocnote"><div class="ioccontent">
+<p>
+La paraula taxonomia prové del grec <em>taxis</em> que vol dir divisió i <em>nomos</em> que significa d’acord al que el que està establert, a la llei.
+</p>
+</div></div>
+<p>
+Una eina molt útil per fer aplicacions escalables és l’herència. Aquest concepte està força vinculat a la taxonomia, la ciència de la classificació mitjançant l’organització dels elements en grups segons les seves relacions de similitud. Això és molt útil en el camp de la biologia en la classificació dels éssers vius. Quan s’usa en aquest camp, sol tenir una estructura jeràrquica en funció d’espècies, gèneres, famílies, etc. La <span class="figref"><a href="#Figure1"><span>figura</span></a></span> mostra un exemple senzill d’aquest concepte, sense cap intenció de ser complet.
+</p>
+
+<p>
+Crear taxonomies és útil perquè permet definir les característiques d’un conjunt d’elements partint d’una descripció general i, a poc a poc, concretar fins a arribar als elements més concrets. En la figura, es parteix des de l’esquerra, amb el major grau de generalització, i a mesura que ens desplacem cap a la dreta s’arriba a un major grau de concreció. Dins un mateix nivell de la taxonomia, cada conjunt es distingeix dels altres per certes diferències, però tots comparteixen les propietats del nivell anterior. Així, doncs, un gat comú (<em>Felis catus</em>) comparteix tot un conjunt de característiques amb un linx ibèric (<em>Lynx pardinus</em>): és un mamífer placentari, té pupil·les verticals per veure de nit i urpes, etc. Totes aquestes característiques comunes venen donades pel fet que ambdós pertanyen a la família dels felins. Però, tot i així, hi ha certes diferències: la mida, costums d’alimentació, hàbitat, període de gestació, etc. Per aquest motiu els biòlegs han decidit que pertanyen a espècies diferents. El resultat final és que, un cop establertes les característiques d’un felí, ja no cal tornar-les a especificar per als nivells més concrets, es donen per conegudes. Igualment, donat un gat comú i un linx, i independentment de les diferències, es considera que tots dos pertanyen a la família dels felins.
+</p>
+<div class="iocfigure"><a name="Figure1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Una taxonomia per classificar felins
+
+</figcaption><img src="../media/ic10m03u2_03.png" alt="" /></figure>
+</div>
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u2_04.png" class="imgB" title="Un gat és alhora un felí." alt="Un gat és alhora un felí." /></li><li><small>Un gat és alhora un felí.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+Atès que l’orientació a objectes es basa en la descomposició d’un problema en conjunts d’elements d’acord amb les seves propietats i el seu comportament, no és descabellada la idea d’aprofitar aquesta estratègia per obtenir exactament els mateixos beneficis que en la biologia. Concretament, se’n fa ús a l’hora d’especificar classes.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+S’anomena <strong>herència</strong> la capacitat de definir una classe tan sols especificant-ne les diferències respecte a una altra classe prèviament definida. En la resta d’aspectes, es considera que es comporta exactament igual.
+</p>
+</div></div>
+</div>
+
+<h3><a id="disseny_amb_herencia" >Disseny amb herència</a></h3>
+<div class="level3">
+
+<p>
+L’herència normalment es plasma de manera gràfica establint un esquema tal com es mostra en la <span class="figref"><a href="#Figure2"><span>figura</span></a></span>. Quan s’aplica herència des d’una classe a una altra, es diu que la segona classe, la del nivell inferior, <strong>hereta</strong> de la primera. En la figura, per exemple, les classes <code>Música</code> i <code>Vídeo</code> hereten de la classe <code>Mèdia</code>. També se sol dir que, quan s’aplica herència, hi ha un cas o una relació de <strong>generalització/especialització</strong>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+MP3 i Ogg són dos formats diferents per codificar música. Mentre que el primer és propietari, el segon és lliure.
+</p>
+</div></div><div class="iocfigure"><a name="Figure2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació gràfica d’herència
+
+</figcaption><img src="../media/ic10m03u2_05.png" alt="" /></figure>
+</div>
+<p>
+És possible definir diferents nivells d’herència, com també tenir diverses classes que hereten de la mateixa, de manera que es crea una <strong>jerarquia de classes</strong>. Els nivells superiors dins una jerarquia d’herència solen correspondre a descripcions més generals dels elements, mentre que els nivells inferiors corresponen a elements més concrets o especialitzats.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+En l’herència també se sol dir que una superclasse és una classe pare i que una subclasse és una classe filla.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Donada una classe concreta dins la jerarquia, tota classe més general és la seva <strong>superclasse</strong>, mentre que en el cas d’una classe més concreta, es tracta de la <strong>subclasse</strong>.
+</p>
+</div></div>
+<p>
+Tant <code>Música</code> com <code>Mèdia</code> són superclasses de les classes <code>MP3</code> i <code>Ogg</code>. Recíprocament, aquestes dues classes són subclasses tant de <code>Música</code> com de <code>Mèdia</code>. <code>Vídeo</code> només és subclasse de <code>Mèdia</code>.
+</p>
+
+<p>
+Crear una jerarquia de classes té dues conseqüències immediates a efectes pràctics, tant en el disseny com en la implementació. Aquests efectes són exactament els mateixos que s’han observat en la taxonomia de felins, però traduïts a classes i objectes:
+</p>
+
+<p>
+<strong>1)</strong> Per una banda, qualsevol propietat o comportament definit en una classe es propaga a totes les seves subclasses. Això significa que qualsevol atribut o operació definida en una superclasse es considerarà que també existeix implícitament en totes les seves subclasses, sense necessitat de tornar-los a especificar en cada una. La propietat inversa no és certa: les operacions especificades en una subclasse no existeixen necessàriament en les superclasses.
+</p>
+
+<p>
+
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple: la classe &#039;&#039;Mèdia&#039;&#039;</p>
+<p>
+En la classe <code>Mèdia</code> s’han especificat l’atribut i l’operació accessora associada:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>- durada: enter</code></div>
+</li>
+<li class="level1"><div class="li"> <code>+ getDurada(): enter</code></div>
+</li>
+</ul>
+
+<p>
+Es considera que automàticament també existeixen en les classes <code>Música</code>, <code>MP3</code> i <code>Ogg</code>, sense que calgui especificar-ho en la llista d’atributs i operacions d’aquestes classes. Per tant, és possible cridar l’operació <code>getDurada</code> sobre l’objecte <strong>laMevaCançó: MP3</strong>.
+</p>
+</div></div>
+<p>
+La propagació de propietats dins la jerarquia de classes també s’aplica a les relacions entre classes definides en el diagrama estàtic UML. Això és lògic atès que, en darrera instància, aquestes s’implementen com a atributs.
+</p>
+
+<p>
+Aquesta propietat de l’herència resulta ideal quan es volen estendre les funcionalitats d’una classe a partir d’una altra que ja està creada. Només caldrà definir la nova classe com a subclasse de la primera i afegir els fets diferencials (nous atributs i operacions). Això permet un cert grau de reaprofitament de feina. Un dels avantatges principals d’aplicar herència per assolir aquesta fita és que, per heretar d’una classe (en el disseny o a la implementació), no cal haver participat en la creació de la superclasse. No cal saber res més que el nom de la classe i quines operacions públiques ofereix. En el cas de la implementació, per heretar d’una classe ni tan sols en cal el codi font.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+AAC són els inicials d’advanced audio coding, un format destinat en el seu dia a reemplaçar l’MP3.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: nous formats de música</p>
+<p>
+Si un dia es crea una nova classe per suportar nous formats de música en el reproductor multimèdia, per exemple la classe <code>AAC</code>, n’hi haurà prou de fer que aquesta nova classe hereti de <code>Música</code> per reaprofitar tota la feina feta tant en la classe <code>Música</code> com en la classe <code>Mèdia</code>. Tots els atributs i operacions de totes dues classes s’hereten.
+</p>
+</div></div>
+<p>
+Quan es genera una jerarquia d’herència, des de zero o partint d’una ja existent, cal estudiar quins atributs i operacions són comuns als diferents conjunts de subclasses i definir-los sempre en la classe més general possible. L’herència ja fa que aquesta definició es propagui a les subclasses. D’acord amb la jerarquia de la <span class="figref"><a href="#Figure2"><span>figura</span></a></span>, la classe en què s’especifiquen els atributs “nom” i “durada” i, implícitament, les seves operacions accessores, és <code>Mèdia</code>, ja que són una propietat que té qualsevol arxiu de mèdia. Seria incorrecte especificar-ho repetidament en totes les classes de la jerarquia. De manera general, si al crear una aplicació orientada a objectes apareixen classes amb moltes de les seves característiques repetides, és senyal que hi manca aplicar una herència per agrupar-les.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’herència permet fer “factor comú” en especificar classes.
+</p>
+</div></div>
+<p>
+Així, doncs, l’herència també serveix com a mecanisme per evitar la duplicació d’operacions idèntiques i, per extensió, a l’hora d’implementar-les, de codi.
+</p>
+
+<p>
+<strong>2)</strong> D’altra banda, un aspecte molt important i útil que aporta l’herència és la capacitat de disposar d’objectes que pertanyen a diverses classes alhora: objectes amb més d’un tipus. Donat un objecte d’una classe concreta, aquest objecte no solament serà del tipus que marca la seva classe, sinó que també ho serà de totes les seves superclasses.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Donada la jerarquia de classes de la <span class="figref"><a href="#Figure2"><span>figura</span></a></span>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Els objectes de la classe <code>MP3</code> pertanyen a tres classes alhora: <code>MP3</code>, <code>Música</code> i <code>Mèdia</code>.</div>
+</li>
+<li class="level1"><div class="li"> Els objectes de la classe <code>Vídeo</code> pertanyen a dues classes: <code>Vídeo</code> i <code>Mèdia</code>.</div>
+</li>
+<li class="level1"><div class="li"> Els objectes de la classe <code>Mèdia</code> pertanyen a una única classe: <code>Mèdia</code>.</div>
+</li>
+</ul>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: la classe Lector</p>
+<p>
+Suposem que es disposa dels següents atribut i operació definits en una classe Lector, que processa arxius de mèdia:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>- mediaActual: Mèdia</code>. </div>
+</li>
+<li class="level1"><div class="li"> <code>+ reproduir (m: Mèdia)</code>.</div>
+</li>
+</ul>
+
+<p>
+Donat un atribut, igual que amb totes les variables en qualsevol llenguatge de programació, orientat a objectes o no, sols és possible assignar-hi valors d’acord amb el tipus especificat. Per tant, a aquest atribut només es pot assignar un objecte de la classe Mèdia. El mecanisme d’herència permet assignar objectes que no són directament instàncies de la classe Mèdia (el tipus definit per l’atribut) i tot i així complir aquesta premissa: és possible assignar objectes que són instància de qualsevol subclasse de Mèdia, ja que es consideren objectes de la seva classe i Música alhora. Per tant, és correcte assignar tant l’objecte <strong>unaMedia:Mèdia</strong> com <strong>unaCanço:Música</strong>, <strong>unaCançoMp3: MP3</strong>, <strong>unaCançoOgg:Ogg</strong> o <strong>unVideo:Vídeo</strong>.
+</p>
+
+<p>
+Aquest cas és aplicable també a crides de l’operació reproduir. Aquesta operació es pot cridar passant com a paràmetre qualsevol objecte de les classes <code>Mèdia</code>, <code>Música</code>, <code>Vídeo</code>, <code>MP3</code> i <code>Ogg</code> sense estar infringint cap norma respecte la concordança del tipus en el paràmetre d’entrada.
+</p>
+</div></div>
+</div>
+
+<h3><a id="modificadors_d_acces_i_herencia" >Modificadors d&#039;accés i herència</a></h3>
+<div class="level3">
+
+<p>
+Quan els modificadors d’accés defineixen atributs i operacions mantenen la seva validesa estrictament, fins i tot entre classes que hereten una de l’altra. Una superclasse pot continuar (i hauria de continuar) operant com una caixa negra amb vista a les seves subclasses sense cap problema. Aquest fet té una implicació interessant: si un atribut de la superclasse s’ha definit com a privat, la classe filla no podrà accedir-hi directament. Així, doncs, s’arriba a la situació que els objectes de la subclasse contenen els atributs de la superclasse, però no poden gestionar-los directament. La manera correcta és usar els mètodes accessors per fer-ho.
+</p>
+
+<p>
+En el cas dels mètodes privats, tot i que també s’hereten, serà impossible cridar-los. Per tant, es tracta d’un altre cas especial, ja que tot i que es considera que la classe té l’operació especificada, no pot cridar-la.
+</p>
+
+<p>
+Hi ha un tipus de visibilitat vinculat a les relacions d’herència: un <strong>atribut o operació protegit</strong>, associat a la paraula clau <code>protected</code> i que s’identifica amb el símbol #. Normalment, els llenguatges de programació interpreten aquesta visibilitat com si es considerés pública per a totes les subclasses i privada per a la resta. Per tant, totes les instàncies de subclasses poden accedir directament a l’atribut o cridar l’operació lliurement, però instàncies de qualsevol altra classe (incloent-hi superclasses), no.
+</p>
+
+<p>
+Estrictament parlant, usar visibilitat protegida també va en contra del principi d’encapsulació. L’herència no és excusa per obviar que és molt millor que, per defecte, tots els atributs es defineixin com a privats i es generin les classes com a caixes negres.
+</p>
+
+</div>
+
+<h3><a id="classes_abstractes" >Classes abstractes</a></h3>
+<div class="level3">
+
+<p>
+Si es torna a fer una ullada a les taxonomies d’animals, hom es pot adonar d’una circumstància destacable: donada una classificació total, des del cas més general possible als més concrets de tots, en el món real només hi ha realment els elements de les classificacions més concretes. Així, doncs, hi ha gats perses, però no existeix cap animal que simplement sigui un felí i prou. Tot felí que existeix al món sempre és, en realitat i en darrera instància, algun cas més concret (un linx ibèric, un tigre de bengala, etc.). La majoria dels conjunts definits serveixen com a recull de propietats comunes, però no existeix cap element que pertanyi únicament i exclusivament als conjunts més generals.
+</p>
+
+<p>
+Aquesta circumstància especial també es pot aplicar quan s’usa l’herència dins l’orientació a objectes: és possible definir classes que especifiquin un conjunt d’atributs i d’operacions, però de les quals no existeixin objectes. És a dir, classes que no es poden instanciar. Pel que fa a la implementació, qualsevol intent d’instanciar-les provocarà un error. Aquestes classes s’anomenen <strong>classes abstractes</strong> i el seu objectiu és facilitar la creació de jerarquies d’herència útils, que representin idees de les quals, si bé es pot definir un conjunt de propietats, no existeixen elements com a tals.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>classe abstracta</strong> no es pot instanciar, ja que representa un concepte abstracte. Està pensada per operar com a superclasse d’altres classes en qualsevol nivell dins una jerarquia.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: música i dades en format &#039;&#039;Ogg&#039;&#039;</p>
+<p>
+En una aplicació de reproducció de multimèdia que suporti els formats d’àudio MP3 i Ogg, tota la música que gestiona sempre serà o bé un conjunt de dades en format <code>MP3</code> o en format <code>Ogg</code>. És a dir, o bé un objecte de la classe <code>MP3</code> o un de la classe <code>Ogg</code>, però mai gestionarà objectes de la classe <code>Música</code> i prou. Per tant, <code>Música</code> es pot especificar com una classe abstracta. Fins i tot si se suporten nous formats de dades, els objectes sempre seran d’un format concret, mai simplement “de música”.
+</p>
+</div></div>
+<p>
+Una classe abstracta es representa gràficament posant el seu nom en cursiva, d’acord amb la representació de la <span class="figref"><a href="#Figure3"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Representació gràfica de classe abstracta
+
+</figcaption><img src="../media/ic10m03u2_06.png" alt="" /></figure>
+</div>
+<p>
+L’existència de les classes abstractes en els nivells més generals d’una jerarquia no s’ha d’interpretar com que qualsevol superclasse ha de ser forçosament abstracta. Només ho serà quan es vulgui representar un concepte general, amb el qual es poden classificar altres elements, però que realment no existeix com a tal. En molts casos, al contrari que en una taxonomia, sí que té sentit que existeixin superclasses no abstractes.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+DRM són les inicials de digital rights management (gestió de drets digitals).
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El format Fairplay de la companyia informàtica Apple és una versió amb DRM del format AAC.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: extensió de la classe &#039;&#039;Ogg&#039;&#039;</p>
+<p>
+Suposem que a l’aplicació de reproducció de música es vol afegir la funcionalitat d’interpretar un format nou de dades basat en l’Ogg, però amb sistemes de protecció de drets d’autor (DRM) incorporat. Un fitxer de música protegit per sistemes DRM està xifrat, de manera que un cop carregat dins un reproductor ja no és possible traspassar-lo a un altre mitjà de cap manera. Aquest nou format s’anomenarà <code>OggProtegit</code> i caldrà representar-lo amb una nova classe.
+</p>
+
+<p>
+En aquest cas, el dissenyador pot decidir que aquest nou format no és res més que el format Ogg, ja que disposa exactament de les mateixes funcionalitats, però amb certes propietats addicionals: les dades estan xifrades i tenen una clau que les protegeix, calen operacions per xifrar/desxifrar les dades, etc. Per tant, és un cas ideal per aplicar herència, de manera que es reaprofita la feina feta a la classe <code>Ogg</code>. De fet, per fer-ho ni tan sols és necessari que el dissenyador hagi estat el creador original de la classe <code>Ogg</code>.
+</p>
+
+<p>
+En la <span class="figref"><a href="#Figure4"><span>figura</span></a></span> es mostra com quedaria la nova jerarquia de classes per a aquest cas concret. Dins el programa podrien existir instàncies tant de la classe <code>Ogg</code>, que representarien peces musicals no protegides amb DRM, com de la classe <code>OggProtegit</code>, que representarien peces de música protegides. El que mai no hi ha són instàncies de les classes Música o Mèdia, ja que es tracta de classes abstractes.
+</p>
+</div></div><div class="iocfigure"><a name="Figure4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Superclasses abstractes i no abstractes en diferents  nivells d’una jerarquia.
+
+</figcaption><img src="../media/ic10m03u2_07.png" alt="" /></figure>
+</div>
+<p>
+Atès que una classe abstracta no es pot instanciar, mai no hi haurà objectes d’aquesta classe sobre els quals cridar operacions. Tot i així, especificar-hi operacions no és un fet il·lògic, ja que cal recordar que totes són heretades per les respectives subclasses i, si aquestes no són abstractes, es poden cridar. Aquest és, en definitiva, l’objectiu final de definir una classe abstracta.
+</p>
+
+</div>
+
+<h3><a id="perdua_d_identitat" >Pèrdua d&#039;identitat</a></h3>
+<div class="level3">
+
+<p>
+En el moment en què un objecte pertany a més d’una classe alhora apareix la problemàtica anomenada <strong>pèrdua d’identitat d’un objecte</strong>. Aquesta està especialment vinculada a la implementació i, en conseqüència, és el programador qui haurà de tenir-la en compte. Per tant, es deixa momentàniament la visió del dissenyador i s’entra en la del programador (tot i que un dissenyador també ha de saber que existeix).
+</p>
+
+<p>
+Atès que sota una jerarquia de classes un objecte té diversos tipus, és possible assignar-lo a qualsevol variable “x” d’algun dels tipus als qual pertany: la seva classe directament o qualsevol de les seves superclasses. Si x està definida com de la mateixa classe que l’objecte, no passa res; però en el moment en què “x” ha estat definida com d’una de les superclasses de l’objecte, el que passa és que, a nivell de codi, aquest objecte passa a comportar-se exactament com un objecte de tipus igual al de la variable. Tot i que internament l’objecte no ha variat, s’ha perdut la capacitat d’operar-hi amb totes les seves funcionalitats originals.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+La implementació d’una operació s’anomena un <em>mètode</em>.
+</p>
+</div></div>
+<p>
+Aquesta particularitat s’entén molt millor amb un exemple concret:
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: &#039;&#039;Mèdia&#039;&#039; i les seves subclasses</p>
+<p>
+Suposem que existeix una classe <code>Lector</code>, que s’encarrega de processar arxius de mèdia, on s’ha especificat l’operació següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>+reproduir (m: Mèdia)</code></div>
+</li>
+</ul>
+
+<p>
+Respecte a aquesta operació, es compleix el següent:
+</p>
+
+<p>
+a) Donada aquesta definició, en implementar-la, dins el codi del mètode associat hi haurà una variable m, que serà de la classe Mèdia. Dins el codi es podrà manipular l’objecte passat com a paràmetre per mitjà d’aquesta variable (bàsicament, cridar operacions). Això no és específic de l’orientació a objectes, passa en tots els llenguatges de programació.
+</p>
+
+<p>
+b) Atès que m està definida com de la classe Mèdia, a través de m
+només es poden cridar operacions disponibles en aquesta classe (especificades directament o heretades de les seves superclasses).
+</p>
+
+<p>
+c) Per les propietats de multiplicitat de tipus del mecanisme d’herència, a aquest mètode se li pot passar com a paràmetre un objecte de les classes <code>Música</code>, <code>Vídeo</code>, <code>MP3</code> o <code>Ogg</code> (o <code>OggProtegit</code>). En fer-ho, aquest objecte queda assignat a la variable “m”.
+</p>
+
+<p>
+Arribat a aquest punt, pels apartats b) i c) es pot veure que hi ha una circumstància especial: tot i que en la variable “m” hi ha assignat un objecte de tipus <code>Música</code>, <code>Vídeo</code>, <code>MP3</code> o <code>Ogg</code>, només es poden cridar les operacions disponibles per a la classe <code>Mèdia</code>. Les operacions que només existeixen en altres classes es tornen inaccessibles, tot i que els objectes internament no han canviat de classe.
+</p>
+
+<p>
+L’objecte passat a través del paràmetre “m” ha “perdut la seva identitat”.
+</p>
+</div></div>
+<p>
+La pèrdua d’identitat dels objectes és una conclusió lògica, ja que quan es disposa d’una variable “x” definida com d’una classe concreta és impossible saber <em>a priori</em> la classe real de l’objecte assignat quan hi ha herència implicada. Per tant, no ha de ser possible cridar operacions de subclasses, en no poder garantir el tipus de l’objecte realment assignat. Només es pot garantir que, sigui quin sigui l’objecte, almenys serà de la classe exacta amb què s’ha definit la variable “x”. Aquesta suposició ha de ser certa per força, ja que en cas contrari hi hauria una assignació errònia de tipus i el compilador hauria generat un error. Mai no s’arribaria a poder executar el programa sense complir aquesta condició.
+</p>
+
+<p>
+De totes maneres, la majoria dels llenguatges orientats a objectes ofereixen mecanismes per esbrinar la classe original dels objectes assignats a una variable.
+</p>
+
+</div>
+
+<h3><a id="herencia_multiple" >Herència múltiple</a></h3>
+<div class="level3">
+
+<p>
+De la mateixa manera que una classe pot tenir diverses subclasses a un nivell immediatament inferior dins una jerarquia, res no impedeix el cas exactament invers. Aquest cas s’anomena herència múltiple, ja que una classe hereta directament de múltiples superclasses.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+L’<strong>herència múltiple</strong> descriu la situació en què una classe hereta directament de més d’una classe.
+</p>
+</div></div>
+<p>
+En un cas com aquest, totes les propietats de l’herència es mantenen: les successives subclasses hereten les propietats de totes les seves superclasses, independentment que sigui per una única via totalment lineal o per diversos camins.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: el karaoke</p>
+<p>
+Afegint noves funcionalitats a un reproductor d’arxius multimèdia, el dissenyador decideix la possibilitat d’interpretar dades que codifiquin una cançó de karaoke. Com a decisió de disseny, considera que aquest element és una unió de les propietats d’un vídeo (una pista d’imatges en moviment, un director, un idioma, etc.) i les propietats d’una peça musical (d’un cert cantant i estil, amb una pista d’àudio independent, etc.). A més a més, té les seves característiques exclusives que el fan diferent d’aquestes dues classes ja definides (unes lletres sincronitzades en la pista d’àudio).
+</p>
+
+<p>
+Per tant, té sentit aplicar herència múltiple per reaprofitar tota la feina ja feta en les classes <code>Música</code> i <code>Vídeo</code>, tal com es mostra en la <span class="figref"><a href="#Figure5"><span>figura</span></a></span>. D’acord amb aquesta figura, les instàncies de la classe <code>Karaoke</code> tenen tots els atributs definits en cadascuna de les quatre classes.
+</p>
+</div></div><div class="iocfigure"><a name="Figure5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple d’herència múltiple.
+
+</figcaption><img src="../media/ic10m03u2_08.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="definicio_de_subclasses" >Definició de subclasses</a></h3>
+<div class="level3">
+
+<p>
+En el llenguatge Java, la definició de subclasses s’efectua amb la paraula reservada <code>extends</code> en la declaració de la classe, seguint la sintaxi següent:
+</p>
+<pre class="code">[final] [public] class &lt;NomClasse&gt; extends &lt;NomClasseBase&gt;
+{
+&lt;CosDeLaClasse&gt;
+}</pre>
+
+<p>
+De manera automàtica, tots els membres (dades i mètodes) que té la classe base també resideixen en les subclasses, amb excepció del(s) constructor(s), el(s) qual(s), en cas de ser necessari(s), s’haura(n) de dissenyar en les classes derivades.
+</p>
+
+<p>
+Només hi ha dues maneres perquè una classe tingui constructor(s): que s’hi defineixi(n) o que, per manca de definició, la classe incorpori el constructor per defecte que proporciona el llenguatge Java.
+</p>
+
+<p>
+La definició d’una subclasse ha d’incloure les dades, els iniciadors i els mètodes adequats a l’especialització de subclasse respecte a la classe base i s’afegeixen a les dades i mètodes heretats de la classe base.
+</p>
+
+<p>
+En la definició de les dades i els mètodes d’una subclasse cal aplicar els modificadors d’accés (<code>private</code>, <code>public</code>, <code>protected</code> o inexistent) que corresponguin.
+</p>
+
+<p>
+Recordem que el codi incorporat en una subclasse (iniciadors i mètodes) té accés a tots els membres <code>public</code> i <code>protected</code> de la classe base i, si ambdues classes estan en el mateix paquet, també tindrà accés a tots els membres que no incorporen cap modificador d’accés.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Indepedentment que, al generar una classe, s’usi la sentència <code>extends</code> per incloure-la dins una jerarquia d’herència, totes les classes del Java sempre hereten d’una classe especial, inclosa a les llibreries principals de Java. Java ho fa automàticament. Es tracta de la classe <strong>Object</strong>. Aquesta és la superclasse més general de qualsevol classe al Java.
+</p>
+</div></div>
+</div>
+
+<h3><a id="inicialitzacio_de_subclasses" >Inicialització de subclasses</a></h3>
+<div class="level3">
+
+<p>
+Els passos que segueix la màquina virtual en la construcció d’un objecte amb l’execució de l’operador <code>new</code> són els següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Reserva memòria per desar el nou objecte i totes les seves dades són inicialitzades amb valor zero pels tipus enters, reals i caràcter, amb valor <code>false</code> pel tipus booleà, i amb valor <code>null</code> per les variables referència.</div>
+</li>
+<li class="level1"><div class="li"> S’executen les inicialitzacions explícites.</div>
+</li>
+<li class="level1"><div class="li"> S’executen els iniciadors (blocs de codi sense nom) que existeixin dins la classe seguint l’ordre d’aparició dins la classe.</div>
+</li>
+<li class="level1"><div class="li"> S’executa el constructor indicat en la construcció de l’objecte amb l’operador <code>new</code>.</div>
+</li>
+</ol>
+
+<p>
+Com incideix l’herència en aquest procés quan es crea un objecte d’una classe derivada? El model de seguretat de Java obliga a executar les tres darreres fases en cada classe implicada, seguint l’ordre que marca la jerarquia de classes i començant per la classe de dalt. És a dir, en una situació en què la classe C deriva de la classe B, i aquesta de la classe A, en la construcció d’un objecte de la classe C, primer es reserva memòria per a totes les dades (fase 1) i després s’executen les fases 2-3-4 per la part de l’objecte provinent de l’herència de la classe A, posteriorment les fases 2-3-4 per la part de l’objecte provinent de l’herència de la classe B, i finalment les fases 2-3-4 per la part de l’objecte provinent de les dades declarades en la classe C.
+</p>
+
+<p>
+En dissenyar el constructor d’una classe derivada, apareix el problema de com podem indicar quin dels constructors de la classe base s’ha d’executar i amb quins paràmetres.
+</p>
+
+<p>
+El llenguatge Java proporciona la paraula reservada super a utilitzar com a nom de mètode per cridar un constructor de la classe base, seguint la sintaxi: 
+</p>
+<pre class="code">super(&lt;llistaParàmetres&gt;)</pre>
+
+<p>
+La utilització de la paraula reservada <code>super</code> com a mètode per cridar un constructor de la classe base en el disseny d’un constructor en la classe derivada només es pot efectuar en la primera sentència del nou constructor.
+</p>
+
+<p>
+Si en el disseny del constructor de la classe derivada, enlloc d’efectuar una crida a <code>super(…)</code>, s’efectua una crida a <code>this(…)</code>, Java traspassa tota la responsabilitat de construcció al constructor cridat amb la crida <code>this(…)</code>, el qual pot contenir una altra crida <code>this(…)</code> o una crida <code>super (…)</code> o cap de les dues.
+</p>
+
+<p>
+Si en el disseny d’un constructor no s’explicita cap crida <code>super(…)</code> ni cap crida <code>this(…)</code>, Java crida implícitament el constructor per defecte de la classe base (constructor sense arguments) i, si no existeix, el compilador genera un error.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Disseny de la classe Alumne derivada de la classe Persona</p>
+<p>
+Es vol dissenyar la classe <code>Alumne</code> com una especificació de la classe <code>Persona</code> afegint-hi el concepte corresponent al nivell d’estudis que cursa l’estudiant, el qual ha de permetre la gestió dels valors següents: B per a batxillerat, M per als cicles formatius de grau mitjà, S per als cicles formatius de grau superior, i ? per al cas en què el nivell d’estudis sigui desconegut. A continuació, proposem un possible disseny, que incorpora molts constructors per exemplificar la <code>Persona</code> utilització de les crides super(…) i <code>this(…)</code>. Així mateix, s’ha cregut oportú fer evolucionar la darrera versió de la classe Persona cap a una classe que tingui les dades declarades com a <code>protected</code>, de manera que la classe <code>Alumne</code> hi té accés directe i en el disseny no ens veiem obligats a utilitzar les funcions accessores (<em>getter</em> i <em>setter</em>).
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="co1">//Fitxer Persona.java</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Persona <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <span class="kw4">short</span> edat<span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Persona <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Persona <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sDni, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sNom, <span class="kw4">int</span> nEdat<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      dni <span class="sy0">=</span> sDni<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      nom <span class="sy0">=</span> sNom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>nEdat<span class="sy0">&gt;=</span><span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> nEdat<span class="sy0">&lt;=</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+short"><span class="kw3">Short</span></a>.<span class="me1">MAX_VALUE</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">         edat <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">short</span><span class="br0">&#41;</span>nEdat<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Persona <span class="br0">&#40;</span>Persona p<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">this</span> <span class="br0">&#40;</span>p.<span class="me1">dni</span>, p.<span class="me1">nom</span>, p.<span class="me1">edat</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Persona clonar <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> <span class="kw1">new</span> Persona <span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="co1">// Retorna: 0 si s'ha pogut canviar el dni</span></div></li><li class="li1"><div class="de1">   <span class="co1">//          1 si el nou dni no és correcte - No s'efectua el canvi</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">int</span> setDni<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nouDni<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="co1">// Aquí hi podria haver una rutina de verificació del dni</span></div></li><li class="li1"><div class="de1">      <span class="co1">// i actuar en conseqüència. Com que no la incorporem, retornem sempre 0</span></div></li><li class="li1"><div class="de1">      dni <span class="sy0">=</span> nouDni<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> setNom<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> nouNom<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      nom <span class="sy0">=</span> nouNom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="co1">// Retorna: 0 si s'ha pogut canviar l'edat</span></div></li><li class="li1"><div class="de1">   <span class="co1">//          1 : Error per passar una edat negativa</span></div></li><li class="li1"><div class="de1">   <span class="co1">//          2 : Error per passar una edat &quot;enorme&quot;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">int</span> setEdat<span class="br0">&#40;</span><span class="kw4">int</span> novaEdat<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>novaEdat<span class="sy0">&lt;</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>novaEdat<span class="sy0">&gt;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+short"><span class="kw3">Short</span></a>.<span class="me1">MAX_VALUE</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">2</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      edat <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">short</span><span class="br0">&#41;</span>novaEdat<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getDni<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> dni<span class="sy0">;</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> getNom<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> nom<span class="sy0">;</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">short</span> getEdat<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> edat<span class="sy0">;</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> visualitzar<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Dni...........:&quot;</span> <span class="sy0">+</span> dni<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Nom...........:&quot;</span> <span class="sy0">+</span> nom<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Edat..........:&quot;</span> <span class="sy0">+</span> edat<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">final</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+object"><span class="kw3">Object</span></a> obj<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw1">this</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="kw1">instanceof</span> Persona<span class="br0">&#41;</span> <span class="kw1">return</span> dni.<span class="me1">equals</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="br0">&#40;</span>Persona<span class="br0">&#41;</span>obj<span class="br0">&#41;</span>.<span class="me1">dni</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">int</span> hashCode<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw4">int</span> hash <span class="sy0">=</span> <span class="nu0">3</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        hash <span class="sy0">=</span> <span class="nu0">89</span> <span class="sy0">*</span> hash <span class="sy0">+</span> Objects.<span class="me1">hashCode</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">dni</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">return</span> hash<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> toString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> dni <span class="sy0">+</span> <span class="st0">&quot; - &quot;</span> <span class="sy0">+</span> nom<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="co1">//Fitxer Alumne.java</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Alumne <span class="kw1">extends</span> Persona <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">private</span> <span class="kw4">char</span> nivell <span class="sy0">=</span> <span class="st0">'?'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="co3">/** Valors vàlids: </span></div></li><li class="li1"><div class="de1"><span class="co3">&nbsp;      B = Batxillerat</span></div></li><li class="li1"><div class="de1"><span class="co3">&nbsp;      M = Cicle Fromatiu Mitjà</span></div></li><li class="li1"><div class="de1"><span class="co3">&nbsp;      S = Cicle Formatiu Superior</span></div></li><li class="li1"><div class="de1"><span class="co3">&nbsp;      ? = Desconegut</span></div></li><li class="li1"><div class="de1"><span class="co3">&nbsp;  */</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Alumne <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Alumne <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sDni, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sNom, <span class="kw4">int</span> nEdat, <span class="kw4">char</span> cNivell<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">super</span> <span class="br0">&#40;</span>sDni, sNom, nEdat<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      nivell <span class="sy0">=</span> validarNivell <span class="br0">&#40;</span>cNivell<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">public</span> Alumne <span class="br0">&#40;</span>Persona p, <span class="kw4">char</span> cNivell<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">super</span> <span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      nivell <span class="sy0">=</span> validarNivell <span class="br0">&#40;</span>cNivell<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Alumne <span class="br0">&#40;</span>Persona p<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">this</span> <span class="br0">&#40;</span>p, <span class="st0">'?'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Alumne <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sDni, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> sNom, <span class="kw4">int</span> nEdat<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">this</span> <span class="br0">&#40;</span>sDni, sNom, nEdat, <span class="st0">'?'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> Alumne <span class="br0">&#40;</span>Alumne a<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">this</span> <span class="br0">&#40;</span>a.<span class="me1">dni</span>, a.<span class="me1">nom</span>, a.<span class="me1">edat</span>, a.<span class="me1">nivell</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> setNivell <span class="br0">&#40;</span><span class="kw4">char</span> nouNivell<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      nivell <span class="sy0">=</span> validarNivell <span class="br0">&#40;</span>nouNivell<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co3">/** Valida el &quot;nivell&quot; passat per paràmetre, de manera que retorna el valor</span></div></li><li class="li1"><div class="de1"><span class="co3">vàlid i en majúscula. Si no era vàlid, retorna '?'. */</span></div></li><li class="li1"><div class="de1">   <span class="kw1">private</span> <span class="kw4">char</span> validarNivell <span class="br0">&#40;</span><span class="kw4">char</span> nivell<span class="br0">&#41;</span>  <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      nivell <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+character"><span class="kw3">Character</span></a>.<span class="me1">toUpperCase</span><span class="br0">&#40;</span>nivell<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span>nivell<span class="sy0">!=</span><span class="st0">'B'</span> <span class="sy0">&amp;&amp;</span> nivell<span class="sy0">!=</span><span class="st0">'S'</span> <span class="sy0">&amp;&amp;</span> nivell<span class="sy0">!=</span><span class="st0">'M'</span><span class="br0">&#41;</span> nivell<span class="sy0">=</span><span class="st0">'?'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> nivell<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">char</span> getNivell <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> nivell<span class="sy0">;</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> visualitzar <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">super</span>.<span class="me1">visualitzar</span> <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Nivell........:&quot;</span> <span class="sy0">+</span> nivell<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> toString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> s <span class="sy0">=</span> <span class="st0">&quot;Dni: &quot;</span> <span class="sy0">+</span> dni <span class="sy0">+</span> <span class="st0">&quot; - Nom: &quot;</span> <span class="sy0">+</span> nom <span class="sy0">+</span> <span class="st0">&quot; - Edat: &quot;</span> <span class="sy0">+</span> edat <span class="sy0">+</span> <span class="st0">&quot; - Nivell: &quot;</span><span class="sy0">;</span> </div></li><li class="li1"><div class="de1">      <span class="kw1">switch</span> <span class="br0">&#40;</span>nivell<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">case</span> <span class="st0">'B'</span><span class="sy0">:</span> s <span class="sy0">=</span> s <span class="sy0">+</span> <span class="st0">&quot;Batxillerat&quot;</span><span class="sy0">;</span> <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">case</span> <span class="st0">'M'</span><span class="sy0">:</span> s <span class="sy0">=</span> s <span class="sy0">+</span> <span class="st0">&quot;Cicle F. Mitjà&quot;</span><span class="sy0">;</span> <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">case</span> <span class="st0">'S'</span><span class="sy0">:</span> s <span class="sy0">=</span> s <span class="sy0">+</span> <span class="st0">&quot;Cicle F. Superior&quot;</span><span class="sy0">;</span> <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">         <span class="kw1">default</span> <span class="sy0">:</span> s <span class="sy0">=</span> s <span class="sy0">+</span> <span class="st0">&quot;???&quot;</span><span class="sy0">;</span> <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">return</span> s<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      Alumne t<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span>,<span class="st0">&quot;Pepe Gotera&quot;</span>,<span class="nu0">33</span>,<span class="st0">'b'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span>,<span class="st0">&quot;Pepe Gotera&quot;</span>,<span class="nu0">33</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span><span class="kw1">new</span> Persona<span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span>,<span class="st0">&quot;Pepe Gotera&quot;</span>,<span class="nu0">33</span><span class="br0">&#41;</span>,<span class="st0">'b'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span><span class="kw1">new</span> Persona<span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span>,<span class="st0">&quot;Pepe Gotera&quot;</span>,<span class="nu0">33</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      t<span class="br0">&#91;</span><span class="nu0">5</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw1">new</span> Alumne<span class="br0">&#40;</span>t<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>t.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>t<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Com es veu, aquesta classe <code>Alumne</code> conté un munt de constructors. La quantitat de constructors possiblement és excessiva i n’hi ha d’innecessaris, però s’han incorporat per exemplificar la utilització de les crides super(…) i <code>this(…)</code>, i el mètode <code>main()</code> que inclou la classe <code>Alumne</code> efectua la creació de sis objectes de la classe per comprovar el funcionament de tots els constructors dissenyats. Si executem aquesta classe passa això:
+</p>
+<pre class="code">Dni: null - Nom: null - Edat: 0 - Nivell: ???
+Dni: 00000000 - Nom: Pepe Gotera - Edat: 33 - Nivell: Batxillerat
+Dni: 00000000 - Nom: Pepe Gotera - Edat: 33 - Nivell: ???
+Dni: 00000000 - Nom: Pepe Gotera - Edat: 33 - Nivell: Batxillerat
+Dni: 00000000 - Nom: Pepe Gotera - Edat: 33 - Nivell: ???
+Dni: 00000000 - Nom: Pepe Gotera - Edat: 33 - Nivell: Batxillerat</pre>
+</div></div>
+</div>
+
+<h2><a id="polimorfisme" >Polimorfisme</a></h2>
+<div class="level2">
+
+<p>
+Com s’ha pogut veure, la idea darrera del mecanisme d’herència és poder definir fàcilment noves classes a partir de la suposició que un seguit de propietats comunes, especificades en una superclasse, es propaguen automàticament a tot el conjunt de les subclasses. A partir d’aquest punt, en la nova classe només cal definir-ne els trets diferencials que la concreten.
+</p>
+
+<p>
+Fins aquest moment, s’ha assumit que aquests trets diferencials són incrementals: s’especifiquen nous atributs o noves operacions en la classe, que se sumen als heretats. Però, què passa si la diferenciació que es vol fer és modificar el comportament d’una operació ja prèviament definida en una superclasse perquè es comporti de manera diferent? En aquesta situació és quan entra en joc el mecanisme del polimorfisme.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mot <em>polimorfisme</em> prové del grec <em>poly</em>, que significa ‚moltes’, i <em>morfos</em> que significa ‚formes’. Per tant, significa “moltes formes”.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+El <strong>polimorfisme</strong> consisteix en la possibilitat d’aplicar una mateixa operació a objectes de diferents classes, però cridant una implementació diferent segons la classe a la qual pertanyi l’objecte sobre el qual es crida.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Els felins i els polimorfisme</p>
+<p>
+Un exemple del concepte de polimorfisme de caràcter molt general és el següent. Si es pren la taxonomia dels felins, tots tenen la capacitat d’emetre sons amb la boca; tots comparteixen aquest comportament. Tot i així, el resultat d’aquesta propietat és diferent segons quin felí concret l’executa: els gats miolen i les panteres o els lleons rugeixen. El motiu és que es usen un os especial (l’hioide) que les panteres i els lleons tenen en forma de cartílag. No és una simple qüestió de to o volum.<strong>Com</strong> emeten l’efecte sonor és diferent. Per tant, la capacitat d’emetre sons dels felins és polimòrfica: es fa de maneres diferents segons a quin tipus pertany l’individu que l’executa.
+</p>
+</div></div>
+</div>
+
+<h3><a id="sobreescriptura_d_operacions" >Sobreescriptura d&#039;operacions</a></h3>
+<div class="level3">
+
+<p>
+
+El primer pas per veure com s’aplica aquest mecanisme dins una jerarquia de classes és entendre el concepte de <strong>sobreescriptura</strong> d’operacions (<em>override</em>, en el terme original anglès).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Sobreescriure</strong> una operació vol dir tornar-la a definir en una subclasse, de manera que el mètode associat i, per tant, el codi que s’executa, tingui un comportament diferent al de la superclasse.
+</p>
+</div></div>
+<p>
+Atès que s’està parlant de mètodes, els efectes del polimorfisme es veuen reflectits exclusivament en la implementació. De totes maneres, en el disseny cal indicar que una operació s’ha sobreescrit. Això es fa tornant-la a especificar en les subclasses, exactament igual, tot i ja existir en una superclasse. Un cop una operació ha estat sobreescrita, les subclasses successives, a mesura que es descendeix per la jerarquia, hereten la darrera versió, a menys que elles també decideixin sobreescriure-la. No hi ha límit al nombre de vegades que una operació pot ser sobreescrita dins una jerarquia de classes.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Classes abstractes</p>
+<p>
+Mai no es donarà el cas que es cridi una operació sobre un objecte de la classe <code>Música</code>, ja que és abstracta i no es pot instanciar.
+</p>
+</div></div><div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: la jerarquia de formats de música</p>
+<p>
+Per exemple, segons la classe <code>Mèdia</code> a la <span class="figref"><a href="#Figure6"><span>figura</span></a></span>, l’operació <code>obtéDades</code>, s’ha redefinit en la classe <code>Ogg</code>. Aquest exemple té sentit, ja que segons el format de les dades a tractar, aquestes s’han de processar de diferent manera per tal d’extreure un bloc d’una durada concreta. Així, doncs, el mètode que realment s’executa quan es crida aquesta operació sobre un objecte de la classe <code>Ogg</code> és diferent del que s’ha definit en la classe Mèdia. La classe Música conserva l’especificació i el mètode de Mèdia, heretats. En la classe <code>OggProtegit</code> s’ha tornat a redefinir i, per tant, el mètode associat és novament diferent.
+</p>
+</div></div><div class="iocfigure"><a name="Figure6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sobreescriptura d’operacions.
+
+</figcaption><img src="../media/ic10m03u2_09.png" alt="" /></figure>
+</div>
+<p>
+Mitjançant la redefinició, és possible usar herència sense estar forçats a usar tot el comportament heretat de les superclasses tal com s’ha especificat en aquestes. És possible mantenir només una part, indicant quines són les diferències respecte al comportament inicial.
+</p>
+
+</div>
+
+<h3><a id="operacions_polimorfiques" >Operacions polimòrfiques</a></h3>
+<div class="level3">
+
+<p>
+Quan sobre un objecte donat es crida una operació que la seva classe ha sobreescrit, el mètode que s’executa sempre és el definit en la classe a què pertany l’objecte, independentment del tipus de la variable on estigui contingut. Aquest comportament és el que es coneix com a <em>polimorfisme</em> dins l’orientació a objectes.
+</p>
+
+<p>
+La propietat polimòrfica de les operacions és especialment rellevant quan un objecte ha perdut la identitat: ha estat assignat a una variable definida amb el tipus d’una superclasse, de manera que només és possible cridar operacions especificades en aquesta superclasse. Tot i aquesta circumstància, quan es crida una operació polimòrfica, el codi que s’acaba executant és el relatiu al tipus real de l’objecte, no el de la superclasse.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Exemple: el lector de formats de música</p>
+<p>
+En la classe <code>Lector</code>, encarregada de processar arxius de mèdia,  s’ha especificat l’operació següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>+ reproduir (m: Mèdia)</code></div>
+</li>
+</ul>
+
+<p>
+Independentment del tipus d’objecte que es passi com a paràmetre, aquest queda emmagatzemat en una variable de tipus Mèdia (la variable m). Pel fenomen de la pèrdua d’identitat, només és possible cridar sobre aquesta variable operacions especificades en la classe Mèdia independentment del tipus real de l’objecte, però atès que l’operació <code>obtéDades</code> està especificada en la classe <code>Mèdia</code>, és possible cridar-la. Quan això es fa, succeeix el següent, prenent com a referència la <span class="figref"><a href="#Figure6"><span>figura</span></a></span>:
+</p>
+
+<p>
+Si l’objecte emmagatzemat en m és de tipus <code>Ogg</code>, quan es cridi <code>obtéDades</code> s’executarà <code>Mètode2</code>.
+</p>
+
+<p>
+Si l’objecte emmagatzemat en m és de tipus <code>OggProtegit</code>, quan es cridi <code>obtéDades</code>, s’executarà <code>Mètode3</code>.
+</p>
+
+<p>
+En cap cas s’executa <code>Mètode1</code>, tot i que m està definida de tipus <code>Mèdia</code> en l’operació. Perquè s’executés el codi de <code>Mètode1</code> caldria passar un objecte o bé de tipus <code>Mèdia</code>, bé de tipus <code>Música</code> (en heretar el mètode, ja que no el sobreescriu), però en aquest exemple concret mai no serà possible, ja que són classes abstractes i no es poden instanciar.
+</p>
+
+<p>
+Així, doncs, tot i que l’objecte està emmagatzemat en una variable de tipus Mèdia i l’operació que s’ha cridat és una d’especificada en aquesta classe, mitjançant polimorfisme, el mètode que realment s’executa és l’associat al tipus real de l’objecte emmagatzemat.
+</p>
+</div></div>
+<p>
+Així, doncs, el mecanisme de polimorfisme es fonamenta en el fet que, donada una mateixa operació especificada a diferents classes, tot i no saber el tipus real d’un objecte sobre la qual es crida (a causa de la pèrdua d’identitat) fa que s’executi el mètode.
+</p>
+
+<p>
+És interessant saber que en les publicacions també es considera polimorfisme la propietat dels objectes de poder ser usats en operacions en què el tipus dels paràmetres pertany a alguna de les seves superclasses: la capacitat que un objecte tingui més d’un tipus i, per tant, “moltes formes”. Es considera una mena especial de polimorfisme, anomenada <strong>polimorfisme paramètric</strong>. En contraposició, el cas vinculat a la crida d’operacions es pot anomenar <strong>polimorfisme ad hoc</strong>. Tot i així, quan es parla simplement de polimorfisme, sense especificar res més, normalment es fa referència a polimorfisme <em>ad hoc</em>.
+</p>
+
+</div>
+
+<h3><a id="operacions_abstractes" >Operacions abstractes</a></h3>
+<div class="level3">
+
+<p>
+Al implementar mètodes polimòrfics donada una jerarquia d’herència, pot donar-se una circumstància un xic estranya. Suposem que ha arribat el moment d’implementar el mètode associat a l’operació <code>obtéDades</code> de la classe <code>Música</code>. Què hauria de fer el seu codi? En principi, processar les dades depèn del format final de la música, de manera que aquesta és una pregunta que no té resposta quan es parla de música com a concepte general. Només és possible respondre-la per a les subclasses que indiquen un format concret de les dades: <code>Ogg</code>, <code>OggProtegit</code>, <code>MP3</code>, etc. En casos com aquest és possible especificar una operació com a abstracta.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Llenguatges orientats a objectes</p>
+<p>
+Cada llenguatge orientat a objectes té la seva sintaxi per indicar que un mètode correspon a una operació abstracta, i, per tant, no s’ha de codificar.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+En especificar una <strong>operació</strong> com a <strong>abstracta</strong>, s’indica que no té cap mètode associat, és a dir, que a l’hora d’implementar-la no es codifica. El codi a executar s’obtindrà a partir de la sobreescriptura duta a terme per alguna de les seves subclasses.
+</p>
+</div></div>
+<p>
+Una operació abstracta s’especifica escrivint-la en cursiva:
+</p>
+
+<p>
+<em>+obtéDades(inici: enter, segons: enter): byte[]</em>
+</p>
+
+<p>
+Tota classe que conté alguna operació abstracta s’ha d’especificar com a classe abstracta. Atès que no és possible instanciar objectes d’una classe abstracta, s’impedeix que es doni el cas que una operació sense cap mètode associat es pugui cridar.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Error en la programació</p>
+<p>
+Si no es sobreescriuen totes les operacions abstractes heretades, el compilador del llenguatge de programació sempre retorna un error.
+</p>
+</div></div>
+<p>
+En el moment d’especificar una subclasse d’una classe amb operacions abstractes, hi ha dues opcions: o bé se sobreescriuen totes les operacions abstractes heretades, o bé només es fa per a una part d’elles (o per a cap). En el darrer cas, atès que es considera que conté les operacions abstractes heretades, s’ha d’especificar aquesta classe també com a abstracta. Un cop una operació abstracta s’ha sobreescrit amb una versió no abstracta dins la jerarquia de classes, les subclasses successives ja no estan obligades a sobreescriure-la.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Mai</strong> no es pot donar el cas que sigui possible instanciar una classe que no té un mètode associat per a cadascuna de les seves operacions.
+</p>
+</div></div>
+</div>
+
+<h3><a id="polimorfisme_i_herencia_multiple" >Polimorfisme i herència múltiple</a></h3>
+<div class="level3">
+
+<p>
+Tot i que l’herència múltiple pot servir per multiplicar la capacitat d’estendre codi i reaprofitar feina, hi ha un problema greu en usar-la quan es permeten mètodes polimòrfics: el problema del diamant. Aquest problema consisteix en la incapacitat de determinar quin mètode cal executar realment quan hi ha duplicitat de noms en una operació redefinida dins una jerarquia de classes.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">El problema del diamant</p>
+<p>
+L’origen del nom del problema del diamant prové del fet que el conjunt de línies que representen les relacions d’herència múltiple en notació UML formen la figura d’un rombe.
+</p>
+</div></div>
+<p>
+En la <span class="figref"><a href="#Figure7"><span>figura</span></a></span> es pot apreciar aquesta problemàtica. Tant en la classe <code>Música</code> com en la classe <code>Vídeo</code> l’operació <code>vistaPrèvia</code> especificada originalment en <code>Mèdia</code> ha esta sobreescrita. Per a cada cas el mètode associat és diferent, ja que cal fer una acció diferent per generar la imatge resultant (per exemple, la informació sobreimpresa depèn dels atributs de cadascú). Per herència, és possible cridar aquesta operació sobre els objectes de la classe <code>Karaoke</code>. El problema és que, en aquesta situació, resulta impossible decidir quin dels dos mètodes cal executar realment.
+</p>
+<div class="iocfigure"><a name="Figure7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+El problema del diamant.
+
+</figcaption><img src="../media/ic10m03u2_10.png" alt="" /></figure>
+</div><div class="iocnote"><div class="ioccontent">
+<p>
+Per implementar herència múltiple en Java s’utilitza el que s’anomenen <em>interfaces</em>.
+</p>
+</div></div>
+<p>
+En conseqüència, cal tenir molt present aquesta problemàtica quan s’utilitza l’herència múltiple. Una manera senzilla de resoldre-la és sobreescriure novament l’operació conflictiva en la subclasse en què dóna problemes (<code>Karaoke</code>, a la figura), de manera que aquesta estigui associada a un tercer mètode diferent. Tot i existir aquesta solució, no tots els llenguatges orientats a objectes suporten herència múltiple directament, cosa que pot comportar bastants problemes a l’hora de fer la implementació. Per exemple, si bé C++ la suporta, fer-ho pot arribar a tenir un cert grau de complexitat. Altres llenguatges, com el Java, directament no la suporten, i ofereixen mecanismes alternatius per obtenir una funcionalitat semblant (si bé no igual). Sempre val la pena valorar si realment la solució creada només es pot fer mitjançant herència múltiple.
+</p>
+
+</div>
+
+<h3><a id="aplicacions_del_polimorfisme" >Aplicacions del polimorfisme</a></h3>
+<div class="level3">
+
+<p>
+Un cop s’ha presentat la manera d’utilitzar el concepte de polimorfisme, val la pena veure amb un exemple concret com la seva aplicació correcta aporta una gran escalabilitat a un sistema, a la vegada que permet seguir fàcilment els principis de cohesió i d’ocultació d’informació.
+</p>
+
+<p>
+Suposem el cas d’un reproductor multimèdia, amb una classe <code>Lector</code> que processa arxius de mèdia de diferents formats. Si, sense necessitat d’entrar a nivell de codi, es reflexiona sobre l’operació <code>reproduir</code> de la classe <code>Lector</code>, bàsicament el que fa és anar obtenint dades des de la classe <code>Mèdia</code> mitjançant l’operació <code>obtéDades</code> en un format que és capaç d’entendre. Aquestes dades les va recuperant a poc a poc en blocs d’una durada concreta i les va enviant als altaveus.
+</p>
+
+<p>
+Suposem que es vol donar suport progressivament a diferents formats de mèdia. De fet, no solament de música, sinó també de vídeo. Atès que cada format de dades és diferent, l’operació <code>obtéDades</code> ha de fer tasques diferents segons quines dades està processant. Per tant, en darrera instància, el mètode associat serà un enorme bloc condicional. Cada cop que es vulgui suportar un nou format, caldrà tenir el codi font de la classe Mèdia i afegir una nova condició al codi. El resultat és:
+</p>
+<ul>
+<li class="level1"><div class="li"> Poca cohesió, ja que hi ha una classe que fa moltes coses molt diferents (gestiona molts formats de dades diferents).</div>
+</li>
+<li class="level1"><div class="li"> Cal tenir el codi font per afegir funcionalitats.</div>
+</li>
+</ul>
+
+<p>
+Si s’aplica herència i polimorfisme, es pot crear una aplicació més escalable. En aquest cas, quan es vulgui suportar un nou format de dades, n’hi ha prou de generar una nova classe que hereti de <code>Música</code>. Atès que la nova classe hereta de <code>Mèdia</code>, els seus objectes també són d’aquest tipus i, per tant, la nova classe pot ser passada com a paràmetre al mètode reproduir de <code>Lector</code>. Aquesta nova classe sobreescriurà l’operació <code>obtéDades</code>, i assignarà un mètode que tractarà les dades segons el nou format. Atès que <code>obtéDades</code> s’ha especificat com a operació abstracta en <code>Música</code>, es garanteix que la nova classe l’haurà de sobreescriure forçosa- ment si vol ser instanciada. Per tant, el codi associat a reproduir pot garantir que sempre existeix un mètode associat a <code>obtéDades</code> per a qualsevol instància d’una subclasse de Mèdia. El resultat és:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un gran manteniment dels principis de cohesió i d’ocultació d’informació. Cada classe vinculada a un format de música gestiona únicament i exclusivament el seu format de música sense haver de conèixer res de la resta.</div>
+</li>
+<li class="level1"><div class="li"> Si es vol donar suport a un nou format, es genera una nova classe, però no cal modificar en absolut cap de les classes ja existents. Això vol dir que ni tan sols cal el codi font de totes les parts ja programades per afegir funcionalitats al programa.</div>
+</li>
+</ul>
+
+<p>
+Aquest darrer punt és especialment important, ja que s’està assolint una operació (reproduir) que pot ser codificada de manera que funcioni fins i tot amb classes que encara no s’han generat, ja que ni tan sols han estat ideades. Aquesta és la potència del polimorfisme: d’una banda, les operacions abstractes permeten garantir que, donada una classe, totes les seves subclasses també la tindran sempre. D’altra banda, la multiplicitat de tipus de l’herència permet processar instàncies de classes concretes (<code>Ogg</code>, <code>MP3</code>) a partir de paràmetres definits com de classes generals (<code>Mèdia</code>).
+</p>
+
+</div>
+
+<h3><a id="exemples_de_sobreescriptura_de_metodes" >Exemples de sobreescriptura de mètodes</a></h3>
+<div class="level3">
+
+<p>
+En el llenguatge Java, per tal d’aplicar sobreescriptura d’algun mètode a una subclasse cal recordar les següents regles, que cal tenir en compte:
+</p>
+<ul>
+<li class="level1"><div class="li"> El nom i la llista i ordre dels arguments han de ser iguals al del mètode de la classe base que es vol sobreescriure.</div>
+</li>
+<li class="level1"><div class="li"> El tipus de retorn de tots dos mètodes ha de ser igual.</div>
+</li>
+<li class="level1"><div class="li"> El mètode de la classe derivada no pot ser menys accessible que el de la classe pare.</div>
+</li>
+<li class="level1"><div class="li"> El mètode de la classe derivada no pot provocar més excepcions que el mètode del pare.</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Polimorfisme de dades</p>
+<p>
+Quan es pot accedir a un objecte d’una classe amb una variable de referència d’una classe situada per damunt de segons la jerarquia de classes, es diu que les variables de referència són polimòrfiques.
+</p>
+</div></div>
+<p>
+Com a resultat, la versió heretada d’un mètode sobreescrit desapareix en la classe derivada, però no desapareixen els mètodes heretats que eren sobrecàrregues del mètode sobreescrit. Respecte a l’accés als mètodes, hem de tenir en compte també que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si dins una classe cal accedir a la versió de la superclasse per un mètode sobreescrit, disposem de la paraula reservada <code>super</code> amb la sintaxi: <code>super.nomMètode(&lt;paràmetres&gt;)</code>.</div>
+</li>
+<li class="level1"><div class="li"> En el llenguatge Java, els mètodes són polimòrfics. Sobre un objecte d’una classe <code>Z</code> al qual s’accedeix amb una variable de referència d’una classe <code>X</code> situada per damunt de <code>Z</code> segons la jerarquia de classes, es pot cridar qualsevol mètode dels definits en la classe <code>X</code> (a la qual pertany la variable de referència) però s’executarà la versió del mètode existent en la classe <code>Z</code> (a la qual pertany l’objecte).</div>
+</li>
+</ul>
+
+<p>
+És a dir, quin mètode s’executa en les quatre darreres línies del fragment de codi següent?
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> X <span class="br0">&#123;</span>   </div></li><li class="li1"><div class="de1">  met1 <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>...<span class="me1">codi</span> X...<span class="br0">&#125;</span> </div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> Z <span class="kw1">extends</span> X <span class="br0">&#123;</span>   </div></li><li class="li1"><div class="de1">  met1 <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>...<span class="me1">codi</span> Z...<span class="br0">&#125;</span> <span class="co1">// Sobreescriptura de met1() d'X</span></div></li><li class="li1"><div class="de1">  met2 <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>...<span class="br0">&#125;</span>  <span class="co1">// Mètode inexistent a la classe X</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">X ox <span class="sy0">=</span> <span class="kw1">new</span> X <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">X oz <span class="sy0">=</span> <span class="kw1">new</span> Z <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">ox.<span class="me1">met1</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">// (1)</span></div></li><li class="li1"><div class="de1">oz.<span class="me1">met1</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">// (2)</span></div></li><li class="li1"><div class="de1">ox.<span class="me1">met2</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">// (3)</span></div></li><li class="li1"><div class="de1">oz.<span class="me1">met2</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">// (4)</span></div></li></ol></pre>
+
+<p>
+És clar que en la instrucció (1) s’executarà la versió de <code>met1()</code> de la classe <code>X</code>, ja que tant la variable de referència “ox” com l’objecte són de la classe <code>X</code>. En la instrucció (2) s’executarà la versió de <code>met(1)</code> de la classe <code>Z</code>, ja que preval la classe a la qual pertany l’objecte per damunt de la classe a la qual pertany la variable “oz” emprada per fer referència a l’objecte. Les instruccions (3) i (4) són errònies i el compilador no les accepta perquè, en la classe a què pertanyen les variables de referència “ox” i “oz”, no existeix cap mètode anomenat <code>met2()</code>. Si es vol aplicar el mètode <code>met2()</code> de la classe <code>Z</code> a l’objecte apuntat per “oz”, cal aplicar una conversió cast de la variable “oz” cap a la classe <code>Z</code> tot escrivint:
+</p>
+<pre class="code">((Z)oz).met2();</pre>
+
+<p>
+Per veure millor com funciona la sobreescriptura, el millor és estudiar alguns exemples concrets,. Primer veiem un exemple general. Tot seguit , és interessant conèixer quatre mètodes de la classe <code>Object</code> (heretats en totes les classes del Java) per als quals en pot ser necessària o convenient la sobreescriptura: <code>finalize()</code>, <code>equals()</code> i <code>toString()</code>.
+</p>
+
+</div>
+
+<h4><a id="exemple_general_de_sobreescriptura_de_dades_i_de_metodes" >Exemple general de sobreescriptura de dades i de mètodes</a></h4>
+<div class="level4">
+
+<p>
+El programa següent declara tres classes: <code>A</code>, <code>B</code> derivada d<code>‘A</code> i <code>C</code> derivada de <code>B</code>. La classe <code>A</code> conté la dada “d” i el mètode <code>xxx()</code>, que són sobreescrits en les classes <code>B</code> i <code>C</code>. La classe <code>A</code> també conté el mètode <code>xxx(int x)</code>, que no és sobreescrit en cap classe.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> A <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <span class="kw4">int</span> d <span class="sy0">=</span> <span class="nu0">10</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> xxx<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;d en A = &quot;</span> <span class="sy0">+</span> d<span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> xxx<span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw4">char</span> aux<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw1">this</span> <span class="kw1">instanceof</span> C<span class="br0">&#41;</span> aux <span class="sy0">=</span> <span class="st0">'C'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw1">this</span> <span class="kw1">instanceof</span> B<span class="br0">&#41;</span> aux <span class="sy0">=</span> <span class="st0">'B'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">else</span> aux <span class="sy0">=</span> <span class="st0">'A'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;Sóc xxx d'A aplicat sobre un objecte de la classe &quot;</span> <span class="sy0">+</span> aux <span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> B <span class="kw1">extends</span> A</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <span class="kw4">int</span> d<span class="sy0">=</span><span class="nu0">20</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> xxx<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;d en B = &quot;</span> <span class="sy0">+</span> d<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">super</span>.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> C <span class="kw1">extends</span> B</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">protected</span> <span class="kw4">int</span> d <span class="sy0">=</span> <span class="nu0">30</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw4">void</span> xxx<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;d en C = &quot;</span> <span class="sy0">+</span> d<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw1">super</span>.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> visibilitat <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;Des del mètode <span class="es0">\&quot;</span>visibilitat<span class="es0">\&quot;</span> en C:&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;d en C = &quot;</span> <span class="sy0">+</span> d<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;d en B = &quot;</span> <span class="sy0">+</span> <span class="kw1">super</span>.<span class="me1">d</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span>   </div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <span class="kw4">int</span> aux<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      A oa <span class="sy0">=</span> <span class="kw1">new</span> A<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      A ob <span class="sy0">=</span> <span class="kw1">new</span> B<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      A oc <span class="sy0">=</span> <span class="kw1">new</span> C<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="br0">&#40;</span><span class="br0">&#40;</span>C<span class="br0">&#41;</span>oc<span class="br0">&#41;</span>.<span class="me1">visibilitat</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (1)</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Crides al mètode xxx() existent a les tres classes:&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      oa.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (2)</span></div></li><li class="li1"><div class="de1">      ob.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (3)</span></div></li><li class="li1"><div class="de1">      oc.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (4)</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Crides al mètode xxx(int x) existent a les tres classes:&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      oa.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (5)</span></div></li><li class="li1"><div class="de1">      ob.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (6)</span></div></li><li class="li1"><div class="de1">      oc.<span class="me1">xxx</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// (7)</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+En el mètode <code>main()</code> de la classe <code>C</code> declarem un objecte per a cadascuna de les classes <code>A</code>, <code>B</code> i <code>C</code>, apuntat cada un per variables de la classe <code>A</code>.
+</p>
+
+<p>
+El mètode <code>visibilitat()</code> de la classe <code>C</code> exemplifica com es pot utilitzar la paraula super per accedir a una dada heretada sobreescrita. La seva execució (1) ens ho demostra.
+</p>
+
+<p>
+En cridar (2) el mètode <code>xxx()</code> per a l’objecte de la classe <code>A</code> apuntat per “oa” s’executa el mètode <code>xxx()</code> de la classe <code>A</code>.
+</p>
+
+<p>
+En cridar (3) el mètode <code>xxx()</code> per a l’objecte de la classe <code>B</code> apuntat per “ob” s’executa el mètode <code>xxx()</code> de la classe <code>B</code> el qual, al seu torn, mitjançant la paraula <code>super</code>, crida el mètode <code>xxx()</code> de la classe <code>A</code>.
+</p>
+
+<p>
+En cridar (4) el mètode <code>xxx()</code> per a l’objecte de la classe <code>C</code> apuntat per “oc” s’executa el mètode <code>xxx()</code> de la classe <code>C</code> el qual, al seu torn, mitjançant paraula super, crida el mètode <code>xxx()</code> de la classe <code>B</code>, que mitjançant la paraula super, crida el mètode <code>xxx()</code> de la classe <code>A</code>.
+</p>
+
+<p>
+Les crides (5), (6) i (7) del mètode <code>xxx(int x)</code> executen, en qualsevol cas, el mètode <code>xxx(int x)</code> de la classe <code>A</code>, heretat en les classes <code>B</code> i <code>C</code>.
+</p>
+
+<p>
+Per demostrar totes aquestes afirmacions només cal compilar i executar el fitxer i observar els missatges que es visualitzen:
+</p>
+<pre class="code">Des del mètode &quot;visibilitat&quot; en C:
+d en C = 30
+d en B = 20
+Crides al mètode xxx() existent a les tres classes:
+d en A = 10
+d en B = 20
+d en A = 10
+d en C = 30
+d en B = 20
+d en A = 10
+Crides al mètode xxx(int x) existent a les tres classes:
+Sóc xxx d&#039;A aplicat sobre un objecte de la classe A
+Sóc xxx d&#039;A aplicat sobre un objecte de la classe B
+Sóc xxx d&#039;A aplicat sobre un objecte de la classe C</pre>
+
+</div>
+
+<h4><a id="sobreescriptura_del_metode_finalize" >Sobreescriptura del mètode finalize()</a></h4>
+<div class="level4">
+
+<p>
+El mètode <code>finalize()</code>, definit en la classe <code>Object</code> i, per tant, existent per herència en totes les classes, és cridat de manera automàtica pel recuperador de memòria just abans de destruir un objecte i cal sobreescriure’l en les classes en què pertoqui efectuar alguna actuació abans de destruirne els objectes.
+</p>
+
+<p>
+Si, a banda d’indicar-hi les instruccions corresponents a l’actuació que pertoqui, cal mantenir les instruccions de finalització que hi pogués haver dissenyades en la classe base, cal dissenyar el mètode de manera similar a:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw4">void</span> finalize<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="sy0">&lt;</span>codi_corresponent_a_l<span class="st0">'actuació&gt;</span></div></li><li class="li1"><div class="de1"><span class="st0">  super.finalize();</span></div></li><li class="li1"><div class="de1"><span class="st0">}</span></div></li></ol></pre>
+
+</div>
+
+<h4><a id="sobreescriptura_del_metode_equals" >Sobreescriptura del mètode equals()</a></h4>
+<div class="level4">
+
+<p>
+El llenguatge Java proporciona l’operador de comparació ”==”, que, aplicat sobre dades de tipus primitius, compara si les dues dades contenen el mateix valor, i aplicat sobre referències a objectes compara si les dues referències fan referència a un mateix objecte. Aquest operador s’ha d’usar amb una mica més de cura quan s’opera amb objectes.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple de comparació de cadenes mitjançant l&#039;operador de comparació</p>
+<p>
+Sovint tindrem la necessitat de comparar cadenes. Considerem, com a exemple, el programa següent, en el qual tenim diferents dni i volem comparar-los:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> CompararStringsViaOperadorComparacio</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni1 <span class="sy0">=</span> <span class="st0">&quot;00000000&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni2 <span class="sy0">=</span> <span class="st0">&quot;00000000&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni3 <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw4">char</span> t<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span><span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni4 <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 : &quot;</span> <span class="sy0">+</span> dni1<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni2 : &quot;</span> <span class="sy0">+</span> dni2<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni3 : &quot;</span> <span class="sy0">+</span> dni3<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni4 : &quot;</span> <span class="sy0">+</span> dni4<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni2 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni3 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni3<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni4 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni3 == dni4 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni3 <span class="sy0">==</span> dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Si executem el programa, obtenim:
+</p>
+<pre class="code">dni1 : 00000000
+dni2 : 00000000
+dni3 : 00000000
+dni4 : 00000000
+dni1 == dni2 : true
+dni1 == dni3 : false
+dni1 == dni4 : false
+dni3 == dni4 : false</pre>
+
+<p>
+Les quatre primeres visualitzacions ens deixen clar, per si teníem algun dubte, que les quatre referències “dni1”, “dni2”, “dni3” i “dni4” a objectes <code>String</code> fan referència a objectes amb el mateix contingut (“00000000”). Però, com ens expliquem els resultats de les quatre comparacions posteriors?
+</p>
+
+<p>
+La resposta està en que cal tenir en compte que l’operador de comparació ”==” compara el valor de les referències als objectes i dóna resultat cert únicament si les referències comparades apunten el mateix objecte. Però no el contingut dels objectes en si. Per tant, és lògic el resultat <code>false</code> de les tres darreres comparacions (“dni1 == dni3” i “dni1 == dni4” i “dni3 == dni4”), ja que les referències “dni3” i “dni4” apunten a objectes <code>String</code> creats amb l’operador <code>new</code>, fet que provoca que veritablement s’estigui creant un nou objecte <code>String</code> a partir del paràmetre indicat. Segurament de vegades ens interessarà comparar el contingut de les cadenes, de manera que el resultat de les quatre darreres comparacions sigui cert.
+</p>
+
+<p>
+Així, doncs, donat el funcionament de l’operador ”==”, el resultat de les tres darreres comparacions és correcte, però, per què la comparació “dni1 == dni2” dóna resultat <code>true</code>? La resposta és que davant l’aparició, en un codi font, d’un literal <code>String</code> com ha succeït en l’exemple (“00000000”), el compilador crea un objecte per al literal i totes les aparicions del literal es converteixen en referències a l’objecte. Per aquest motiu, dni1 i dni2 estan apuntant al mateix objecte. Aquest comportament no és perillós en el llenguatge Java, ja que cal recordar que els objectes <code>String</code> són immutables, és a dir, no es poden canviar una vegada creats.
+</p>
+
+<p>
+Sembla que ja tenim clar el funcionament de l’operador  ”==”. Ara ens cal algun mecanisme per poder comparar el contingut dels objectes apuntats per referències enlloc de les referències pròpiament.
+</p>
+</div></div>
+<p>
+És clar que en moltes classes (per no dir totes) pot ser necessari disposar d’algun mecanisme per comprovar si dos objectes són iguals o no, a partir d’un criteri determinat respecte al seu contingut, i això no ho proporciona l’operador ”==”. Amb aquest propòsit, Java proporciona un mètode a la classe <code>Object</code>, que s’hereta en totes les classes i ens proposa la seva utilització en les diverses classes després de la sobreescriptura. És el mètode següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+object"><span class="kw3">Object</span></a> obj<span class="br0">&#41;</span></div></li></ol></pre>
+
+<p>
+La implementació d’aquest mètode en la classe <code>Object</code> (que és la que s’hereta en cas de no sobreescriure’l) retorna el resultat de la comparació ”==” entre la referència que apunta l’objecte sobre el qual s’aplica el mètode i la referència passada com a paràmetre. És a dir, si no se sobreescriu, resulta que <code>x.equals(y)</code> dóna el mateix resultat que “x == y”.
+</p>
+
+<p>
+La classe <code>String</code> incorpora una versió del mètode <code>equals()</code> que haurem d’utilitzar sempre que necessitem saber si el contingut dels objectes apuntats per dues referències a <code>String</code> coincideix o no.  Per exemple, el següent programa ens mostra la utilització del mètode <code>equals()</code> per comparar cadenes i la diferència de resultats respecte la utilització de l’operador ”==”.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> CompararStringsViaMetodeEquals <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni1 <span class="sy0">=</span> <span class="st0">&quot;00000000&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni2 <span class="sy0">=</span> <span class="st0">&quot;00000000&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni3 <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <span class="kw4">char</span> t<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span><span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span>,<span class="st0">'0'</span><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> dni4 <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 : &quot;</span> <span class="sy0">+</span> dni1<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni2 : &quot;</span> <span class="sy0">+</span> dni2<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni3 : &quot;</span> <span class="sy0">+</span> dni3<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;dni4 : &quot;</span> <span class="sy0">+</span> dni4<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni2 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es0">\t</span>dni1.equals(dni2) : &quot;</span> <span class="sy0">+</span> dni1.<span class="me1">equals</span><span class="br0">&#40;</span>dni2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni3 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni3<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es0">\t</span>dni1.equals(dni3) : &quot;</span> <span class="sy0">+</span> dni1.<span class="me1">equals</span><span class="br0">&#40;</span>dni3<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;dni1 == dni4 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni1 <span class="sy0">==</span> dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es0">\t</span>dni1.equals(dni4) : &quot;</span> <span class="sy0">+</span> dni1.<span class="me1">equals</span><span class="br0">&#40;</span>dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">&quot;dni3 == dni4 : &quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>dni3 <span class="sy0">==</span> dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es0">\t</span>dni3.equals(dni4) : &quot;</span> <span class="sy0">+</span> dni3.<span class="me1">equals</span><span class="br0">&#40;</span>dni4<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Si executem el programa, obtenim els resultats esperats:
+</p>
+<pre class="code">dni1 : 00000000
+dni2 : 00000000
+dni3 : 00000000
+dni4 : 00000000
+dni1 == dni2 : truedni1.equals(dni2) : true
+dni1 == dni3 : falsedni1.equals(dni3) : true
+dni1 == dni4 : falsedni1.equals(dni4) : true
+dni3 == dni4 : falsedni3.equals(dni4) : true</pre>
+
+<p>
+Com a primera aplicació de la sobreescriptura del mètode <code>equals()</code>, podem pensar en la seva sobreescriptura en una classe anomenada <code>Persona</code>, tenint en compte que considerarem que dos objectes Persona són iguals si tenen el mateix dni:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+object"><span class="kw3">Object</span></a> obj<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw1">this</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span> <span class="br0">&#40;</span><span class="nu0">3</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj.<span class="me1">getClass</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw1">this</span>.<span class="me1">getClass</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span> <span class="co1">// (1)</span></div></li><li class="li1"><div class="de1">  <span class="kw1">return</span> dni.<span class="me1">equals</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="br0">&#40;</span>Persona<span class="br0">&#41;</span>obj<span class="br0">&#41;</span>.<span class="me1">dni</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// (2)</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Veiem que, perquè es tracti de la sobreescriptura del mètode <code>equals</code> heretat, cal que el paràmetre es declari de la classe Object, fet que fa possible la comparació d’un objecte de la nostra classe (<code>Persona</code>) amb un objecte apuntat per una referència a qualsevol classe.
+</p>
+
+<p>
+Però, llavors, es necessita comprovar si els dos objectes són de la mateixaget classe (1), utilitzant el mètode <code>getClass()</code> de la classe <code>Object</code>, i si ho són cal fer la conversió <code>cast</code> (2) de la referència a <code>Object</code> passada per paràmetre per tractar l’objecte apuntat com un objecte de la classe <code>Persona</code> i poder accedir al seu dni.
+</p>
+
+<p>
+També és important no oblidar les comprovacions sobre si la referència passada per paràmetre és <code>null</code> (3), ja que no comprovar-ho provocaria un error en temps d’execució si el valor del paràmetre fos <code>null</code>.
+</p>
+
+<p>
+Però, la implementació presentada us sembla correcta? Suposem que tenim la classe <code>Alumne</code>, que hereta de la classe <code>Persona</code>, i plantegem-nos el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Persona p <span class="sy0">=</span> <span class="kw1">new</span> Persona <span class="br0">&#40;</span>...<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">Alumne a <span class="sy0">=</span> <span class="kw1">new</span> Alumne <span class="br0">&#40;</span>...<span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+<p>
+Si en algun moment decidim cridar <code>p.equals(a)</code> per saber si tots dos objectes són iguals segons la definició convinguda (mateix dni), esperarem que el resultat sigui cert si ambdós objectes tenen el mateix dni, i fals en cas contrari. La implementació anterior del mètode <code>equals()</code> sempre donaria fals, ja que la comparació (1) referent a si són objectes de la mateixa classe té resultat fals. Per tant, si volem que la comparació de dni sigui efectiva en les classes derivades de <code>Persona</code>, cal canviar la implementació:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+object"><span class="kw3">Object</span></a> obj<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw1">this</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="kw1">instanceof</span> Persona<span class="br0">&#41;</span> <span class="kw1">return</span> dni.<span class="me1">equals</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="br0">&#40;</span>Persona<span class="br0">&#41;</span>obj<span class="br0">&#41;</span>.<span class="me1">dni</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Per acabar, cal comentar que també seria possible la implementació següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">final</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span>Persona obj<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw1">this</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">if</span> <span class="br0">&#40;</span>obj <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">return</span> dni.<span class="me1">equals</span><span class="br0">&#40;</span>obj.<span class="me1">dni</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Aquesta implementació difereix de l’anterior en el fet que el paràmetre és una referència a <code>Persona</code> i, per tant, no cal comprovar si l’objecte passat per paràmetre és comparable amb l’objecte sobre el qual s’està aplicant el mètode equals(). Però aquest mètode no és la sobreescriptura del mètode <code>equals()</code> de la classe <code>Object</code> i, per tant, amb aquesta implementació, la nostra classe disposaria de dos mètodes equals():
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+object"><span class="kw3">Object</span></a> obj<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Heretat d'Object</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">boolean</span> equals <span class="br0">&#40;</span>Persona obj<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Nou a la classe</span></div></li></ol></pre>
+
+<p>
+Normalment, s’aconsella sobreescriure el mètode <code>equals()</code> de la classe <code>Object</code> enlloc de crear nous mètodes <code>equals()</code>. En el cas de sobreescriure aquest mètode, la documentació oficial de Java recomana sobreescriure també el mètode <code>hashCode()</code> per assegurar que dos objectes que han resultat iguals amb <code>equals()</code>, donaran el mateix resultat amb <code>hashCode()</code>.
+</p>
+
+</div>
+
+<h4><a id="sobreescriptura_del_metode_tostring" >Sobreescriptura del mètode toString()</a></h4>
+<div class="level4">
+
+<p>
+¿Alguna vegada heu provat d’executar <code>System.out.println(obj)</code> en què “obj” fa referència a un objecte d’una classe qualsevol dissenyada per vosaltres, com la classe Persona? El compilador s’ho empassa? En cas afirmatiu, què es visualitza? Provem-ho!
+</p>
+
+<p>
+Dissenyem el mètode main()següent a la classe <code>Persona</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   Persona p <span class="sy0">=</span> <span class="kw1">new</span> Persona <span class="br0">&#40;</span><span class="st0">&quot;00000000&quot;</span>, <span class="st0">&quot;Pepe Gotera&quot;</span>, <span class="nu0">33</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Les ordres següents ens mostren que la compilació s’efectua sense problemes i l’execució també s’efectua, però visualitzant una informació desconeguda per nosaltres:
+</p>
+<pre class="code">Persona@3e25a5</pre>
+
+<p>
+El mètode <code>System.out.println()</code> està pensat per mostrar una cadena i, si com a paràmetre se li indica una referència a un objecte, la màquina virtual Java crea una representació String de l’objecte, aplicant automàticament sobre l’objecte el mètode <code>toString()</code> de la classe <code>Object</code> que, per herència, existeix en totes les classes dissenyades i que caldrà tenir sobreescrit en les diverses classes amb la implementació que correspongui.
+</p>
+
+<p>
+A banda que la màquina virtual cridi automàticament el mètode <code>toString()</code> sobre un objecte quan ho consideri convenient, sempre que es vulgui es pot cridar com un mètode qualsevol: <code>obj.toString()</code>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">El mètode toString</p>
+<p>
+Segons la documentació de Java, la implementació d’aquest mètode en la classe <code>Object</code> (que és la que s’hereta en cas de no sobreescriure’l) retorna una cadena igual al nom de la classe i la seva referència.
+</p>
+</div></div>
+<p>
+La màquina virtual Java utilitza el mètode <code>toString()</code> en qualsevol lloc on necessiti tenir una representació en cadena d’un objecte i, és clar, la conversió proporcionada pel mètode heretat de la classe Object no acostuma a ser útil. Ens convé, doncs, sobreescriure’l.
+</p>
+
+<p>
+La sobreescriptura del mètode <code>toString()</code> en la classe <code>Persona</code> podria ser la següent si convenim que la representació en cadena d’una persona sigui la concatenació del seu dni i del seu nom separats per un guió: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> toString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">  <span class="kw1">return</span> dni <span class="sy0">+</span> <span class="st0">&quot; - &quot;</span> <span class="sy0">+</span> nom<span class="sy0">;</span> </div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+</div>
+
+<h2><a id="interfaces_java" >Interfaces Java</a></h2>
+<div class="level2">
+
+<p>
+Suposem una situació en què ens interessa deixar constància que certes classes han d’implementar una funcionalitat teòrica determinada, diferent en cada classe afectada. Estem parlant, doncs, de la definició d’un mètode teòric que algunes classes hauran d’implementar.
+</p>
+
+<p>
+Un exemple real pot ser el mètode <code>calculImportJubilacio()</code> aplicable, de manera diferent, a moltes tipologies de treballadors i, per tant, podríem pensar a dissenyar una classe <code>Treballador</code> en què un dels seus mètodes fos <code>calculImportJubilacio()</code>. Aquesta solució és vàlida si estem dissenyant una jerarquia de classes a partir de la classe <code>Treballador</code> de la qual pengin les classes corresponents a les diferents tipologies de treballadors (metal·lúrgics, hostaleria, informàtics, professors…). A més, disposem del concepte de classe abstracta perquè cada subclasse implementi obligatòriament el mètode <code>calculImportJubilacio()</code>.
+</p>
+
+<p>
+Però, i si resulta que ja tenim les classes <code>Professor</code>, <code>Informatic</code>, <code>Hostaleria</code> en altres jerarquies de classes? La solució consistent a fer que aquestes classes derivessin de la classe <code>Treballador</code>, sense abandonar la derivació que poguessin tenir, seria factible en llenguatges orientats a objectes que suportessin l’herència múltiple, però això no és factible en el llenguatge Java.
+</p>
+
+<p>
+Per superar aquesta limitació, Java proporciona les <em>interfaces</em>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Una <strong>interface</strong> és una maqueta contenidora d’una llista de mètodes abstractes i dades membre (de tipus primitius o de classes). Els <strong>atributs</strong>, si existeixen, són implícitament considerades static i final. Els <strong>mètodes</strong>, si existeixen, són implícitament considerats public.
+</p>
+</div></div>
+<p>
+Per entendre en què ens poden ajudar les <em>interface</em>, ens cal saber:
+</p>
+<ul>
+<li class="level1"><div class="li"> Una <em>interface</em> pot ser implementada per múltiples classes, de manera similar a com una classe pot ser superclasse de múltiples classes.</div>
+</li>
+<li class="level1"><div class="li"> Les classes que implementen una <em>interface</em> estan obligades a sobreescriure tots els mètodes definits en la <em>interface</em>. Si la definició d’algun dels mètodes a sobreescriure coincideix amb la definició d’algun mètode heretat, aquest desapareix de la classe.</div>
+</li>
+<li class="level1"><div class="li"> Una classe pot implementar múltiples <em>interfaces</em>, a diferència de la derivació, que només es permet d’una única classe base.</div>
+</li>
+<li class="level1"><div class="li"> Una <em>interface</em> introdueix un nou tipus de dada, per la qual mai no hi haurà cap instància, però sí objectes usuaris de la <em>interface</em> -objectes de les classes que implementen la <em>interface</em>. Totes les classes que implementen una <em>interface</em> són compatibles amb el tipus introduït per la <em>interface</em>.</div>
+</li>
+<li class="level1"><div class="li"> Una <em>interface</em> no proporciona cap funcionalitat a un objecte (ja que la classe que implementa la <em>interface</em> és la que ha de definir la funcionalitat de tots els mètodes), però en canvi proporciona la possibilitat de formar part de la funcionalitat d’altres objectes (passant-la per paràmetre en mètodes d’altres classes).</div>
+</li>
+<li class="level1"><div class="li"> L’existència de les <em>interfaces</em> possibilita l’existència d’una jerarquia de tipus (que no s’ha de confondre amb la jerarquia de classes) que permet l’herència múltiple.</div>
+</li>
+<li class="level1"><div class="li"> Una <em>interface</em> no es pot instanciar, però sí s’hi pot fer referència.</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Així, si I és una <strong><em>interface</em></strong> i C és una classe que implementa la <em>interface</em>, es poden declarar referències al tipus I que apuntin objectes de C:
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">I obj <span class="sy0">=</span> <span class="kw1">new</span> C <span class="br0">&#40;</span><span class="sy0">&lt;</span>paràmetres<span class="sy0">&gt;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> Les <em>interfaces</em> poden heretar d’altres <em>interfaces</em> i, a diferència de la derivació de classes, poden heretar de més d’una <em>interface</em>.</div>
+</li>
+</ul>
+
+<p>
+Així, si dissenyem la <em>interface</em> <code>Treballador</code>, podem fer que les classes ja existents (<code>Professor</code>, <code>Informatic</code>, <code>Hostaleria</code>…) la implementin i, per tant, els objectes d’aquestes classes, a més de ser objectes de les superclasses respectives, passen a ser considerats objectes usuaris del tipus <code>Treballador</code>. Amb aquesta actuació ens veurem obligats a implementar el mètode <code>calculImportJubilacio()</code> a totes les classes que implementin la <em>interface</em>.
+</p>
+
+<p>
+Algú no experimentat en la gestió d’<em>interfaces</em> pot pensar: per què tan enrenou amb les <em>interfaces</em> si haguéssim pogut dissenyar directament un mètode anomenat <code>calculImportJubilacio()</code> a les classes afectades sense necessitat de definir cap <em>interface</em>?
+</p>
+
+<p>
+<div class="iocfigurec">
+<ul>
+<li>
+<img src="../media/ic10m03u2_11.png" class="imgB" title="Notació d&#039;una interface." alt="Notació d&#039;una interface." /></li><li><small>Notació d&#039;una interface.</small></li>
+</ul></div>
+
+</p>
+
+<p>
+La resposta rau en el fet que la declaració de la <em>interface</em> porta implícita la declaració del tipus <code>Treballador</code> i, per tant, podrem utilitzar els objectes de totes les classes que implementin la <em>interface</em> en qualsevol mètode de qualsevol classe que tingui algun argument referència al tipus Treballador com, per exemple, en un hipotètic mètode d’una hipotètica classe anomenada <code>Hisenda</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw4">void</span> enviarEsborranyIRPF<span class="br0">&#40;</span>Treballador t<span class="br0">&#41;</span> <span class="br0">&#123;</span>...<span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Pel fet d’existir la <em>interface</em> <code>Treballador</code>, tots els objectes de les classes que la implementen (<code>Professor</code>, <code>Informatica</code>, <code>Hostaleria</code>…) es poden passar com a paràmetre en les crides al mètode <code>enviarEsborranyIRPF (Treballador t)</code>.
+</p>
+
+<p>
+La sintaxis per declarar una <em>interface</em> és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="br0">&#91;</span><span class="kw1">public</span><span class="br0">&#93;</span> <span class="kw1">interface</span> <span class="sy0">&lt;</span>NomInterface<span class="sy0">&gt;</span> <span class="br0">&#91;</span><span class="kw1">extends</span> <span class="sy0">&lt;</span>Nominterface1<span class="sy0">&gt;</span>, <span class="sy0">&lt;</span>Nominterface2<span class="sy0">&gt;</span>...<span class="br0">&#93;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="sy0">&lt;</span>CosInterface<span class="sy0">&gt;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Les <em>interfaces</em> també es poden assignar a un paquet. La inexistència del modificador d’accés public fa que la <em>interface</em> sigui accessible a nivell del paquet.
+</p>
+
+<p>
+Per als noms de les <em>interfaces</em>, s’aconsella seguir el mateix criteri que per als noms de les classes. En la documentació de Java, les <em>interfaces</em> s’identifiquen ràpidament entre les classes perquè estan en cursiva.
+</p>
+
+<p>
+El cos de la <em>interface</em> és la llista de mètodes i/o constants que conté la <em>interface</em>. Per a les constants no cal indicar que són static i final i per als mètodes no cal indicar que són public. Aquestes característiques s’assignen implícitament.
+</p>
+
+<p>
+La sintaxi per declarar una classe que implementi una o més <em>interfaces</em> és:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="br0">&#91;</span><span class="kw1">final</span><span class="br0">&#93;</span> <span class="br0">&#91;</span><span class="kw1">public</span><span class="br0">&#93;</span> <span class="kw1">class</span> <span class="sy0">&lt;</span>NomClasse<span class="sy0">&gt;</span> <span class="br0">&#91;</span><span class="kw1">extends</span> <span class="sy0">&lt;</span>NomClasseBase<span class="sy0">&gt;</span><span class="br0">&#93;</span></div></li><li class="li1"><div class="de1">               <span class="kw1">implements</span> <span class="sy0">&lt;</span>NomInterfície1<span class="sy0">&gt;</span>, <span class="sy0">&lt;</span>NomInterfície2<span class="sy0">&gt;</span>... <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="sy0">&lt;</span>CosDeLaClasse<span class="sy0">&gt;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Els mètodes de les <em>interfaces</em> a implementar en la classe han de ser obligatòriament d’accés public.
+</p>
+
+<p>
+Per acabar, cal comentar que, com que per definició totes les dades membre que es defineixen en una <em>interface</em> són <code>static</code> i <code>final</code>, i atès que les <em>interface</em> no es poden instanciar, també resulten una bona eina per implantar grups de constants. Així, per exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">interface</span> DiesSetmana</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1"><span class="kw4">int</span> DILLUNS <span class="sy0">=</span> <span class="nu0">1</span>, DIMARTS<span class="sy0">=</span><span class="nu0">2</span>, DIMECRES<span class="sy0">=</span><span class="nu0">3</span>, DIJOUS<span class="sy0">=</span><span class="nu0">4</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw4">int</span> DIVENDRES<span class="sy0">=</span><span class="nu0">5</span>, DISSABTE<span class="sy0">=</span><span class="nu0">6</span>, DIUMENGE<span class="sy0">=</span><span class="nu0">7</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> <span class="br0">&#91;</span><span class="br0">&#93;</span> NOMS_DIES <span class="sy0">=</span> <span class="br0">&#123;</span><span class="st0">&quot;&quot;</span>, <span class="st0">&quot;Dilluns&quot;</span>, <span class="st0">&quot;Dimarts&quot;</span>, <span class="st0">&quot;Dimecres&quot;</span>,</div></li><li class="li1"><div class="de1">   <span class="st0">&quot;Dijous&quot;</span>, <span class="st0">&quot;Divendres&quot;</span>, <span class="st0">&quot;Dissabte&quot;</span>, <span class="st0">&quot;Diumenge&quot;</span><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+Aquesta definició ens permet utilitzar les constants declarades en qualsevol classe que implementi la <em>interface</em>, de manera tan simple com:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span>DiesSetmana.<span class="me1">NOMS_DIES</span><span class="br0">&#91;</span>DILLUNS<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre>
+
+</div>
+
+<h3><a id="exemple_de_disseny_d_interface_i_implementacio_en_una_classe" >Exemple de disseny d&#039;interface i implementació en una classe</a></h3>
+<div class="level3">
+
+<p>
+Es presenten un parell d’<em>interfaces</em> que incorporen dades (de tipus primitiu i de referència a classe) i mètodes i una classe que les implementa. En la declaració de la classe es veu que només implementa la <em>interface</em> B, però com que aquesta <em>interface</em> deriva de la <em>interface</em> A resulta que la classe està implementant les dues <em>interfaces</em> .
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"><span class="co1">//Fitxer: ExempleInterficie.java</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">import</span> <span class="co2">java.util.Date</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">interface</span> A <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a> DARRERA_CREACIO <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a><span class="br0">&#40;</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">// 1-1-1900</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw4">void</span> metodeA <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">interface</span> B <span class="kw1">extends</span> A</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw4">int</span> VALOR_B <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw4">void</span> metodeB <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw1">public</span> <span class="kw1">class</span> ExempleInterface <span class="kw1">implements</span> B</div></li><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">private</span> <span class="kw4">long</span> b<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a> dataCreacio <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+date"><span class="kw3">Date</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> ExempleInterface <span class="br0">&#40;</span><span class="kw4">int</span> factor<span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      b <span class="sy0">=</span> VALOR_B <span class="sy0">*</span> factor<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      DARRERA_CREACIO.<span class="me1">setTime</span><span class="br0">&#40;</span>dataCreacio.<span class="me1">getTime</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> metodeA <span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;En metodeA, DARRERA_CREACIO = &quot;</span> <span class="sy0">+</span> DARRERA_CREACIO<span class="br0">&#41;</span><span class="sy0">;</span>     </div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw4">void</span> metodeB <span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">&#40;</span><span class="st0">&quot;En metodeB, b = &quot;</span> <span class="sy0">+</span> b<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">   <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a> args<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">      <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Inicialment, DARRERA_CREACIO = &quot;</span> <span class="sy0">+</span> DARRERA_CREACIO<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      ExempleInterface obj <span class="sy0">=</span> <span class="kw1">new</span> ExempleInterface<span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      obj.<span class="me1">metodeA</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      obj.<span class="me1">metodeB</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">      A pa <span class="sy0">=</span> obj<span class="sy0">;</span></div></li><li class="li1"><div class="de1">      B pb <span class="sy0">=</span> obj<span class="sy0">;</span></div></li><li class="li1"><div class="de1">   <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre>
+
+<p>
+L’exemple serveix per il·lustrar uns quants punts:
+</p>
+<ul>
+<li class="level1"><div class="li"> Comprovem que les dades membre de les <em>interfaces</em> són <code>static</code>, ja que en el mètode <code>main()</code> fem referència a la dada membre <code>DARRERA_CREACIO</code> sense indicar cap objecte de la classe.</div>
+</li>
+<li class="level1"><div class="li"> Si haguéssim intentat modificar les dades <code>VALOR_B</code> o <code>DARRERA_CREACIO</code> no hauríem pogut perquè és final, però en canvi sí podem modificar el contingut de l’objecte Date apuntat per <code>DARRERA_CREACIO</code>, que correspon al moment temporal de la darrera creació d’un objecte i a cada nova creació se n’actualitza el contingut.</div>
+</li>
+<li class="level1"><div class="li"> En les dues darreres instruccions del mètode <code>main()</code> veiem que podem declarar variables “pa” i “pb” de les <em>interfaces</em> i utilitzar-les per fer referència a objectes de la classe <code>ExempleInterface</code>.</div>
+</li>
+</ul>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

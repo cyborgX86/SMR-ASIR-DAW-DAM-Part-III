@@ -1,0 +1,555 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació orientada a objectes</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació orientada a objectes">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="_/js/modernizr-1.7.min.js"></script>
+	<script src="_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="index.html">Programació orientada a objectes</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="presentacio" class="rootnode"><p><a href="presentacio.html">Presentació</a></p></li><li id="resultats" class="rootnode"><p><a href="resultats.html">Resultats d'aprenentatge</a></p></li><li id="material_pdf" class="rootnode"><p><a href="material_pdf.html">Continguts en PDF</a></p></li><li id="glossari" class="rootnode"><p><a href="glossari.html">Glossari</a></p></li><li id="" class="indexnode"><p><a href="index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li>Glossari</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="glossari"> Glossari </a></h1>
+    	<ul>
+<li class="level1"><div class="li"> <strong>abstract</strong> <em>m</em> Vegeu modificador abstract.</div>
+</li>
+<li class="level1"><div class="li"> <strong>abstract Windows toolkit</strong> <em>f</em> Vegeu AWT.</div>
+</li>
+<li class="level1"><div class="li"> <strong>accés aleatori</strong> <em>m</em> Possibilitat d’accedir a un conjunt de dades de manera no seqüencial.</div>
+</li>
+<li class="level1"><div class="li"> <strong>adaptador</strong> <em>m</em> Classe auxiliar que proporciona una implementació per defecte d’un tipus de <em>listener</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>agregació</strong> <em>f</em> Relació entre classes que especifica una relació del tipus “és part de”. Per exemple, un pupitre i una aula.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Application Programming Interface">API</acronym> de Java</strong> <em>m</em> Conjunt de classes facilitades pel llenguatge Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Application Programming Interface">API</acronym> de reflexió</strong> <em>m</em> Subconjunt de classes del llenguatge Java que permet accedir des d’un programa, en temps d’execució, a tota la seva informació així com a la informació de l’<acronym title="Application Programming Interface">API</acronym> del llenguatge i de les biblioteques a les quals tingui accés i, fins i tot, manipular les dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Application Programming Interface">API</acronym> d’input/output</strong> <em>m</em> Subconjunt de classes del llenguatge Java destinat a la gestió d’entrades i de sortides.</div>
+</li>
+<li class="level1"><div class="li"> <strong>applet</strong> <em>m</em> Aplicació Java que s’executa sobre un navegador web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>associació</strong> <em>f</em> Relació simple entre classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>associació reflexiva</strong> <em>f</em> Associació en què la mateixa classe es troba als dos extrems de la relació. La classe està relacionada amb ella mateixa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>atribut</strong> <em>m</em> Propietat d’un objecte. Normalment, pren la forma d’una variable interna.</div>
+</li>
+<li class="level1"><div class="li"> <strong>AWT</strong> <em>f</em> Biblioteca original usada per Java per generar interfícies gràfiques. Actualment en desús, en favor de Java Swing.</div>
+</li>
+<li class="level1"><div class="li"> <strong>base de dades orientada a objectes</strong>, <strong>BDOO</strong> <em>f</em> Mecanisme genèric per emmagatzemar dades de manera que aquestes s’estructuren tal com ho fa una aplicació orientada a objectes, mitjançant conjunts d’objectes enllaçats entre si.</div>
+</li>
+<li class="level1"><div class="li"> <strong>base de dades relacional</strong>, <strong>BDR</strong> <em>f</em> Mecanisme genèric per emmagatzemar dades de manera que aquestes s’estructuren com taules, amb un seguit de files i de columnes. </div>
+</li>
+<li class="level1"><div class="li"> <strong>BDOO</strong> <em>f</em> Vegeu base de dades orientada a objectes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>BDR</strong> <em>f</em> Vegeu base de dades relacional.</div>
+</li>
+<li class="level1"><div class="li"> <strong>caixa d’eines abstracta de finestres</strong>. <em>f</em> Vegeu AWT.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cardinalitat (d’una relació)</strong> <em>f</em> Nombre d’objectes de les classes implicades en l’associació que poden estar enllaçats entre si.</div>
+</li>
+<li class="level1"><div class="li"> <strong>carregador de classes</strong> <em>m</em> Classe Java encarregada de separar les classes que es carreguen en l’execució d’un programa Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>class file verifier</strong> <em>m</em> Vegeu verificador de classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>class loader</strong> <em>m</em> Vegeu carregador de classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe</strong> <em>f</em> Especificació formal de les propietats i del comportament esperat d’un conjunt d’objectes del mateix tipus.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe abstract</strong> <em>f</em> Classe no instanciable, és a dir, de la qual no es poden crear objectes, però sí derivar noves classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe abstracta</strong> <em>f</em> Classe no instanciable, normalment amb operacions abstractes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe associativa</strong> <em>f</em> Relació entre classes representada en forma de classe en lloc de mitjançant una associació, normalment amb l’objectiu d’especificar-hi atributs.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe basada en un model</strong> <em>f</em> Tipus de component sobre el qual no es pot interactuar directament per modificar-ne l’aspecte. Cal usar una classe auxiliar que correspon al seu model.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe contenidora</strong> <em>f</em> Classe que conté altres classes, anomenades classes internes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe Error</strong> <em>f</em> Classe de Java que engloba tots els errors que corresponen a situacions irrecuperables, que no tenen solució i que no depenen del programador, el qual no s’ha de preocupar de capturar ni resoldre. Deriva de la classe Throwable.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe Exception</strong> <em>f</em> Classe de Java que engloba tots els errors que corresponen a situacions excepcionals que els programes es poden trobar en temps d’execució, incloent-hi fins i tot els errors de programació. El programador pot preveure cada tipus d’excepció i escriure el codi adequat per gestionar l’error. Deriva de la classe Throwable.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe final</strong> <em>f</em> Classe no derivable.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe genèrica</strong> <em>f</em> Classe que encapsula dades i mètodes basats en tipus de dades genèrics i que serveix de plantilla per generar-ne de noves a partir de concretar els tipus de dades genèrics.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna</strong> <em>f</em> Classe definida dins una altra classe, anomenada classe contenidora.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna anònima</strong> <em>f</em> Classe interna que es declara en el moment d’invocar el constructor. Tenen un objecte (i només un).</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna de nivell superior</strong> <em>f</em> Vegeu classe interna static.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna imbricada</strong> <em>f</em> Vegeu classe interna static.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna local</strong> <em>f</em> Classe interna que es declara dins un bloc de codi de la classe contenidora.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna membre</strong> <em>f</em> Classe interna no <em>static</em> que es declara com si fos un membre de la classe contenidora.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe interna static</strong> <em>f</em> Classe interna que es declara com si fos un membre <em>static</em> de la classe contenidora.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe RuntimeException</strong> <em>f</em> Subclasse de la classe Exception que engloba tots els errors de programació, els quals no s’han de gestionar obligatòriament, ja que se suposa que no s’haurien de produir.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classe Throwable</strong> <em>f</em> Classe de Java que engloba la classe Error i la classe Exception.</div>
+</li>
+<li class="level1"><div class="li"> <strong>clau primària</strong> <em>f</em> Donada una taula d’una BDR, valor que identifica de manera única cada fila de la taula.</div>
+</li>
+<li class="level1"><div class="li"> <strong>clàusula extends</strong> <em>f</em> Clàusula ubicada en la capçalera d’una classe per indicar que és la classe derivada d’una altra classe, la qual s’afegeix a la dreta de la paraula (<em>extends</em>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>clàusula implements</strong> <em>f</em> Clàusula ubicada en la capçalera d’una classe per indicar que la classe implementa una o més interfícies, les quals s’afegeixen a la dreta de la paraula (<em>extends</em>) separades per comes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>codis de bytes de Java</strong> (en anglès, <em>bytecodes</em>) <em>m pl</em> Instruccions d’un programa Java, expressades en un codi binari indiferent de l’arquitectura, que són generades pel compilador del llenguatge Java i que són executades, en una màquina concreta, per la màquina virtual Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cohesió</strong> <em>f</em> Característica desitjable d’un disseny orientat a objectes, en què cada tipus dels elements del problema es representa amb una única classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>component</strong> <em>m</em> Manera genèrica d’anomenar qualsevol element d’una interfície gràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>composició</strong> <em>f</em> Especialització d’una agregació en què s’expressa que l’objecte compost no té sentit sense els seus integrants. Per exemple, una màquina i les seves peces.</div>
+</li>
+<li class="level1"><div class="li"> <strong>connectivitat Java a bases de dades</strong> <em>f</em> Vegeu JDBC.</div>
+</li>
+<li class="level1"><div class="li"> <strong>contenidor</strong> <em>m</em> Component que permet encapsular altres elements dins seu. L’exemple més típic és la finestra principal d’una aplicació gràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>controlador (del patró MVC)</strong> <em>m</em> Conjunt de classes que permeten la traducció d’esdeveniments a crides sobre el model. Se sol associar al conjunt de <em>listeners</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>dada final</strong> <em>f</em> Dada constant.</div>
+</li>
+<li class="level1"><div class="li"> <strong>delegar l’excepció</strong> <em>v tr</em> Possibilitat que el llenguatge Java facilita al programador per delegar l’excepció que es pugui produir en el mètode superior que invoqui el mètode actual. Es defineix amb la clàusula <em>throws</em> en la declaració del mètode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>diagrama estàtic UML</strong> <em>m</em> Esquema gràfic en què es plasmen les classes i les relacions que hi ha entre elles en un disseny orientat a objectes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>eina jar</strong> <em>f</em> Eina de consola, que incorpora JDK, per empaquetar fitxers .class en un arxiu JAR.</div>
+</li>
+<li class="level1"><div class="li"> <strong>eina java</strong> <em>f</em> Eina de consola, que incorpora JDK, per executar un fitxer .class que contingui un mètode main().</div>
+</li>
+<li class="level1"><div class="li"> <strong>eina javac</strong> <em>f</em> Eina de consola, que incorpora JDK, per compilar els fitxers JAVA.</div>
+</li>
+<li class="level1"><div class="li"> <strong>eina javadoc</strong> <em>f</em> Eina de consola, que incorpora JDK, per documentar els fitxers JAVA desenvolupats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>eina javap</strong> <em>f</em> Eina de consola, que incorpora JDK, per obtenir informació d’un fitxer .class.</div>
+</li>
+<li class="level1"><div class="li"> <strong>encapsulació</strong> <em>f</em> Característica desitjable d’un disseny orientat a objectes en què les decisions del disseny queden ocultes en la implementació final, de manera que els objectes actuen com si fossin capses negres. <em>sin.</em> ocultació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>enllaç</strong> <em>m</em> Vincle entre objectes que permet invocar operacions entre si. Sense un enllaç és impossible invocar operacions.</div>
+</li>
+<li class="level1"><div class="li"> <strong>equals()</strong> <em>m</em> Vegeu mètode equals().</div>
+</li>
+<li class="level1"><div class="li"> <strong>esdeveniment</strong> <em>m</em> En anglès, <em>event</em>. Avís intern de l’aplicació que es produeix cada cop que l’usuari interacciona amb la interfície gràfica. En Java, l’esdeveniment pren la forma d’un objecte en què s’encapsulen els detalls de la interacció. </div>
+</li>
+<li class="level1"><div class="li"> <strong>event</strong> <em>m</em> Vegeu esdeveniment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>extends</strong> <em>f</em> Vegeu clàusula extends.</div>
+</li>
+<li class="level1"><div class="li"> <strong>extensible markup language</strong> <em>m</em> Vegeu XML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>final</strong> <em>m</em> Vegeu modificador final.</div>
+</li>
+<li class="level1"><div class="li"> <strong>finalize()</strong> <em>m</em> Vegeu mètode finalize().</div>
+</li>
+<li class="level1"><div class="li"> <strong>framework de col·leccions</strong> <em>m</em> Conjunt d’interfícies, classes i algorismes destinat a gestionar col·leccions d’objectes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>garbage collector</strong> <em>m</em> Vegeu recuperador de memòria.</div>
+</li>
+<li class="level1"><div class="li"> <strong>gestió d’excepcions</strong> <em>f</em> Conjunt de mecanismes que un llenguatge de programació facilita per detectar i gestionar els errors que es puguin produir en temps d’execució.</div>
+</li>
+<li class="level1"><div class="li"> <strong>gestor de seguretat</strong> <em>m</em> Classe Java encarregada de controlar l’accés als recursos en l’execució d’un programa Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>graphical user interface</strong> <em>f</em> Vegeu <acronym title="Graphical User Interface">GUI</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Graphical User Interface">GUI</acronym></strong> <em>f</em> En anglès, <em>graphical user interface</em>. Mecanisme per controlar una aplicació basat en la interacció amb elements gràfics de diversa índole mostrats en la pantalla. </div>
+</li>
+<li class="level1"><div class="li"> <strong>hashCode()</strong> <em>m</em> Vegeu mètode hashCode().</div>
+</li>
+<li class="level1"><div class="li"> <strong>herència</strong> <em>f</em> Tipus de relació que permet definir noves classes només enumerant les diferències en relació amb una altra de ja preexistent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>herència múltiple</strong> <em>f</em> Capacitat d’heretar de més d’una classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>implements</strong> <em>m</em> Vegeu clàusula extends.</div>
+</li>
+<li class="level1"><div class="li"> <strong>import</strong> <em>f</em> Instrucció necessària en els fitxers JAVA abans de definir cap classe, que serveix per indicar les classes d’altres paquets a les quals es farà referència en les classes que incorpora el fitxer.</div>
+</li>
+<li class="level1"><div class="li"> <strong>iniciador</strong> <em>m</em> Bloc de codi sense nom que pot existir en una classe. Pot ser de dos tipus: <em>static</em>, si s’executa en la càrrega de la classe, i no <em>static</em>, si s’executa en la construcció de cada objecte de la classe, després de les inicialitzacions explícites de les dades de la classe i abans de l’execució del constructor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>instanceof</strong> <em>m</em> Operador que permet esbrinar si un objecte apuntat per una variable és una instància d’una determinada classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>instància</strong> <em>f</em> Vegeu objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>interfície</strong> <em>f</em> Maqueta contenidora d’una llista de mètodes abstractes i dades membres (de tipus primitius o de classes), que té per objectiu obligar les classes que implementen la interfície a sobreescriure tots els mètodes continguts en la interfície.</div>
+</li>
+<li class="level1"><div class="li"> <strong>interfície gràfica d’usuari</strong> <em>f</em> Vegeu <acronym title="Graphical User Interface">GUI</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java database connectivity</strong> <em>f</em> Vegeu JDBC.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java development kit</strong>, <strong>JDK</strong> <em>m</em> Conjunt d’eines imprescindibles per desenvolupar programes en el llenguatge Java i poder obtenir-ne compilats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java EE</strong> <em>f</em> Plataforma de programació que amplia la Java SE i permet desenvolupar i executar aplicacions Java amb arquitectura de N nivells i distribuïda, basada en components de programari modulars que s’executen sobre servidors d’aplicacions.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java enterprise edition</strong> <em>f</em> Vegeu Java EE.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java ME</strong> <em>f</em> Col·lecció d’<acronym title="Application Programming Interface">API</acronym> de Java per al desenvolupament de programari per a dispositius de recursos limitats, com ara PDA, telèfons mòbils i altres aparells de consum.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java micro edition</strong> <em>f</em> Vegeu Java ME.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java runtime environment</strong> <em>m</em> Entorn d’execució de Java que cal tenir instal·lat en els ordinadors en què es vulguin executar programes Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java SE</strong> <em>f</em> Paquet bàsic per desenvolupar aplicacions en llenguatge Java que no necessitin un servidor d’aplicacions que està format pels corresponents JDK i JRE de la versió.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java standard edition</strong> <em>f</em> Vegeu Java SE.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java Swing</strong> <em>f</em> Biblioteca de classes per defecte en Java per a la creació d’interfícies gràfiques.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Java virtual machine</strong> <em>f</em> Vegeu màquina virtual Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JDBC</strong> <em>f</em> Biblioteca que proporciona Java per interactuar amb bases de dades relacionals.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JDK</strong> <em>m</em> Vegeu Java development kit.</div>
+</li>
+<li class="level1"><div class="li"> <strong>jerarquia de classes</strong>. <em>f</em> Conjunt de classes relacionades entre si per herència.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JIT compiler</strong> <em>m</em> Vegeu Just in time compiler.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JRE</strong> <em>m</em> Vegeu Java runtime environment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Just in time compiler</strong> <em>m</em> Compilador incorporat per algunes màquines virtuals Java que tradueixen el codi de bytes a codi natiu optimitzat una sola vegada, de manera que cada vegada que la JVM torna a invocar el mateix codi s’executa directament la versió ja interpretada.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JVM</strong> <em>f</em> Vegeu màquina virtual Java.</div>
+</li>
+<li class="level1"><div class="li"> <strong>layout</strong> <em>m</em> Política d’assignació dinàmica usada per Java per ubicar i dimensionar automàticament en la pantalla els components d’una interfície gràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Listener</strong> <em>m</em> Classe capaç de capturar els esdeveniments, de manera que es pugui executar un codi específic per a cada tipus.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge de consultes estructurades</strong> <em>m</em> Vegeu SQL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge de descripció d’objectes</strong> <em>m</em> Vegeu ODL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge d’etiquetatge extensible</strong> <em>m</em> Vegeu XML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge de modelització unificat</strong> <em>m</em> Vegeu UML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>localització uniforme de recursos</strong> <em>f</em> Vegeu <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mapa d’objectes</strong> <em>m</em> Representació de l’estat de l’aplicació en un moment específic de la seva execució, que mostra quins són els objectes existents i els enllaços entre ells.</div>
+</li>
+<li class="level1"><div class="li"> <strong>màquina virtual Java</strong>, <strong>JVM</strong> <em>f</em> Aplicació informàtica que forma part del JRE i que simula una màquina encarregada de l’execució dels programes Java. És un programa natiu, és a dir, executable en una plataforma específica, que és capaç d’interpretar i d’executar instruccions expressades en un codi binari especial (el codi de bytes de Java), que són generades pel compilador del llenguatge Java. </div>
+</li>
+<li class="level1"><div class="li"> <strong>mecanisme try-catch</strong> <em>m</em> Mecanisme que facilita el llenguatge Java perquè el programador pugui capturar una excepció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode</strong> <em>m</em> Implementació d’una operació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode equals()</strong> <em>m</em> Mètode de la classe Object (per tant, heretat en totes les classes) que permet comparar els objectes de les classes pel que fa al contingut a diferència de l’operador ==, que compara adreces de memòria; és a dir, diu si les referències apunten al mateix objecte. És altament recomanable sobreescriure aquest mètode en totes les classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode final</strong> <em>m</em> Mètode que no es pot sobreescriure.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode finalize()</strong> <em>m</em> Mètode de la classe Object (per tant, heretat en totes les classes) que permet definir quines accions executar, de manera automàtica, sobre un objecte, just abans de ser destruït.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode hashCode()</strong> <em>m</em> Mètode de la classe Object (per tant, heretat en totes les classes) que facilita, per a cada objecte d’una classe, un valor enter, el qual pot ser utilitzat com a valor clau en tècniques <em>hashing</em>. Aquest mètode ha de ser coherent amb el mètode <em>equals</em>(), de manera que dos objectes iguals segons el mètode <em>equals</em>()també haurien de tenir el mateix valor <em>hashCode</em>. És altament recomanable sobreescriure aquest mètode en totes les classes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode toString()</strong> <em>m</em> Mètode de la classe Object (per tant, heretat en totes les classes) que facilita, per a cada objecte d’una classe, una representació en cadena. La màquina virtual Java l’utilitza quan necessita una representació en cadena d’un objecte de la classe (per exemple, quan apareix l’objecte dins una concatenació de cadenes).</div>
+</li>
+<li class="level1"><div class="li"> <strong>model del patró MVC</strong> <em>m</em> Conjunt de classes que representen l’estat intern de l’aplicació. Se sol associar a les classes del fruit de la fase de disseny.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador abstract</strong> <em>m</em> Modificador que, aplicat a una classe, fa que la classe sigui abstracta, és a dir, no es pot instanciar (crear objectes) i només serveix per derivar-ne noves classes. En canvi, aplicat a un mètode (de classe abstracta) obliga que el mètode sigui sobreescrit en qualsevol classe no abstracta derivada de la classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador d’accés private</strong> <em>m</em> Modificador d’accés que, aplicat a un membre (dada o mètode) d’una classe, prohibeix l’accés al membre des de qualsevol classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador d’accés protected</strong> <em>m</em> Modificador d’accés que, aplicat a un membre (dada o mètode) d’una classe, prohibeix l’accés al membre des de qualsevol classe que no sigui subclasse d’aquesta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador d’accés public</strong> <em>m</em> Modificador d’accés que, aplicat a un membre (dada o mètode) d’una classe, permet que el membre sigui accessible des de qualsevol classe. En canvi, aplicat a una classe, fa que la classe sigui visible fora del paquet al qual pertanyi.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador final</strong> <em>m</em> Modificador que pot tenir diverses aplicacions: aplicat a una classe, fa que la classe no es pugui derivar, aplicat a una variable, fa que la variable passi a ser constant o, aplicat a un mètode, fa que el mètode no es pugui sobreescriure en classes derivades de la classe a la qual pertany el mètode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>modificador static</strong> <em>m</em> Modificador que pot tenir diverses aplicacions. Aplicat a una dada d’una classe, fa que la dada passi a ser comuna per a tots els objectes de la classe. Aplicat a un mètode, fa que el mètode no necessiti un objecte per ser invocat. S’acostuma a utilitzar en mètodes que faciliten càlculs i funcionalitats genèriques. Aplicat a un iniciador, fa que l’iniciador s’executi només en carregar la classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>navegabilitat (d’una relació)</strong> <em>f</em> Propietat d’una relació entre dues classes que indica els objectes d’una classe que tenen enllaços cap als objectes de l’altra. S’indica en forma de fletxa de la classe dels objectes que tenen l’enllaç cap a la classe dels objectes enllaçats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>new</strong> <em>m</em> Vegeu operador new.</div>
+</li>
+<li class="level1"><div class="li"> <strong>null</strong> <em>m</em> Paraula reservada del llenguatge que indica que una variable que fa referència als objectes d’una classe no està apuntant a cap objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>object description language</strong> <em>m</em> Vegeu ODL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>object query language</strong> <em>m</em> Vegeu OQL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>objecte</strong> <em>m</em> Cadascun dels elements que interactuen per formar una aplicació orientada a objectes en execució.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ocultació</strong> <em>f</em> Vegeu encapsulació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ODL</strong> <em>m</em> Llenguatge per definir classes dins una BDOO.</div>
+</li>
+<li class="level1"><div class="li"> <strong>operació</strong> <em>f</em> Funció o transformació que es pot aplicar a tots els objectes d’una classe i en defineix el comportament comú.</div>
+</li>
+<li class="level1"><div class="li"> <strong>operació abstracta</strong> <em>f</em> Operació sense cap mètode associat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>operador new</strong> <em>m</em> Operador del llenguatge Java destinat a construir un objecte de la classe corresponent al nom xxx situat a la dreta de l’operador, tot invocant el constructor que correspongui segons els paràmetres que acompanyin el nom xxx.</div>
+</li>
+<li class="level1"><div class="li"> <strong>OQL</strong> <em>m</em> Llenguatge de consultes a objectes que equival a l’SQL per a BDOO.</div>
+</li>
+<li class="level1"><div class="li"> <strong>package</strong> <em>m</em> Conjunt de classes agrupades en un paquet. També, instrucció que se situa a l’inici d’un fitxer JAVA i va acompanyada d’un nom, per indicar que totes les classes del fitxer pertanyen al paquet indicat amb el nom.</div>
+</li>
+<li class="level1"><div class="li"> <strong>patró MVC</strong> <em>m</em> Estratègia per dividir les responsabilitats de les classes d’una interfície gràfica.</div>
+</li>
+<li class="level1"><div class="li"> <strong>persistència</strong> <em>f</em> Capacitat d’emmagatzemar les dades d’una aplicació, de manera que es mantenen al llarg d’execucions diferents.</div>
+</li>
+<li class="level1"><div class="li"> <strong>polimorfisme</strong> <em>m</em> Capacitat d’especificar una mateixa operació a diferents classes, però de manera que cadascuna tingui associat un mètode diferent.</div>
+</li>
+<li class="level1"><div class="li"> <strong>private</strong> <em>m</em> Vegeu modificador d’accés private.</div>
+</li>
+<li class="level1"><div class="li"> <strong>programació defensiva</strong> <em>f</em> Programació que garanteix que, absolutament sempre, els atributs d’un objecte tinguin valors consistents i correctes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>programació segura</strong> <em>f</em> Disciplina dins la programació que garanteix que no es produeixin errors quan es genera un programa que inadvertidament permeti a entitats no autoritzades accedir a les dades.</div>
+</li>
+<li class="level1"><div class="li"> <strong>protected</strong> <em>m</em> Vegeu modificador d’accés protected.</div>
+</li>
+<li class="level1"><div class="li"> <strong>public</strong> <em>m</em> Vegeu modificador d’accés public.</div>
+</li>
+<li class="level1"><div class="li"> <strong>recuperador de memòria</strong> <em>m</em> Procés que s’executa periòdicament de manera automàtica (tot i que també pot ser invocat manualment) i s’encarrega d’alliberar la memòria assignada a dades que ja no s’utilitzen.</div>
+</li>
+<li class="level1"><div class="li"> <strong>relació (entre classes)</strong> <em>f</em> Relació entre classes que permet establir entre quins objectes hi pot haver enllaços durant l’execució del programa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>security manager</strong> <em>m</em> Vegeu gestor de seguretat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>sobreescriptura d’operacions</strong> <em>f</em> Reassignació del mètode associat a una operació heretada d’una superclasse.</div>
+</li>
+<li class="level1"><div class="li"> <strong>SQL</strong> <em>m</em> Llenguatge estàndard que permet donar ordres a una BDR per interactuar-hi, de manera que es poden consultar dades, afegir-ne, fer modificacions…</div>
+</li>
+<li class="level1"><div class="li"> <strong>static</strong> <em>m</em> Vegeu modificador static.</div>
+</li>
+<li class="level1"><div class="li"> <strong>structured query language</strong> <em>m</em> Vegeu SQL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>subclasse</strong> <em>f</em> En una relació d’herència, la classe que hereta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>super</strong> <em>m</em> Paraula reservada del llenguatge que es pot utilitzar en la definició d’una classe derivada, amb dues utilitats possibles. En els mètodes no constructors, per fer referència a l’objecte de la classe base i, per tant, poder accedir a les dades heretades en cas que la classe derivada incorpori dades amb el mateix nom que les dades de la classe base. En els mètodes constructors, per invocar un constructor de la classe base. Ha de ser la primera instrucció del mètode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>superclasse</strong> <em>f</em> En una relació d’herència, la classe de la qual es parteix per definir-ne de noves.</div>
+</li>
+<li class="level1"><div class="li"> <strong>this</strong> <em>m</em> Paraula reservada del llenguatge amb dues utilitats possibles. En els mètodes no constructors, per fer referència a l’objecte actual sobre el qual s’executa el mètode. En els mètodes constructors, per invocar un altre constructor de la pròpia classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>throw</strong> <em>m</em> Paraula reservada que s’utilitza per llançar una excepció dins un mètode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>throws</strong> <em>m</em> Paraula reservada que s’utilitza en la definició dels mètodes per indicar les excepcions que el mètode delega al mètode superior que l’invoqui.</div>
+</li>
+<li class="level1"><div class="li"> <strong>toString()</strong> <em>m</em> Vegeu mètode toString().</div>
+</li>
+<li class="level1"><div class="li"> <strong>try-catch</strong> <em>m</em> Vegeu mecanisme try-catch.</div>
+</li>
+<li class="level1"><div class="li"> <strong>UML</strong> <em>m</em> Llenguatge que permet plasmar gràficament un disseny orientat a objectes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>unified modelling language</strong> <em>m</em> Vegeu UML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>uniform resource location</strong> <em>f</em> Vegeu <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Uniform Resource Locator">URL</acronym></strong> <em>f</em> Identificador de qualsevol recurs disponible a Internet. Normalment, s’usa per apuntar a serveis (web, bases de dades…).</div>
+</li>
+<li class="level1"><div class="li"> <strong>verificador d’arxius de classes</strong> <em>m</em> Component de la màquina virtual Java encarregat de validar els codis de bytes que s’han d’interpretar i d’executar.</div>
+</li>
+<li class="level1"><div class="li"> <strong>visibilitat</strong> <em>f</em> Capacitat d’accés directe sobre els atributs i les operacions dels objectes d’una classe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>vista (del patró MVC)</strong> <em>f</em> Conjunt de classes que representen els elements gràfics de la interfície. Se sol associar a tots els seus components.</div>
+</li>
+<li class="level1"><div class="li"> <strong>XML</strong> <em>m</em> Llenguatge d’etiquetes que permet definir gramàtiques per a la codificació de dades.</div>
+</li>
+</ul>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="material_pdf.html">Continguts en PDF</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

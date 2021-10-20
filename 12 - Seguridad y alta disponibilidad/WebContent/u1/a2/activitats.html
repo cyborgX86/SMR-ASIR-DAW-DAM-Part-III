@@ -1,0 +1,573 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Seguretat i alta disponibilitat</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Seguretat i alta disponibilitat">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Seguretat i alta disponibilitat</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Seguretat física, lògica i legislació</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Seguretat informàtica</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u1a1annexos"><a href="../../../WebContent/u1/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#conceptes_de_seguretat_informaticafiabilitat_confidencialitat_integritat_i_disponibilitat">Conceptes de seguretat informàtica: fiabilitat, confidencialitat, integritat i disponibilitat</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#elements_vulnerablesmaquinari_programari_i_dades">Elements vulnerables: maquinari, programari i dades</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_de_les_principals_vulnerabilitats_d_un_sistema_informatic">Anàlisi de les principals vulnerabilitats d'un sistema informàtic</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_fisica_i_ambiental">Seguretat física i ambiental</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#seguretat_logica">Seguretat lògica</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#amenaces">Amenaces</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#analisi_forense_en_sistemes_informatics">Anàlisi forense en sistemes informàtics</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Legislació sobre seguretat, protecció de dades i Codi Penal</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_penal">Marc jurídic penal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#marc_juridic_extrapenal">Marc jurídic extrapenal</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#legislacio_sobre_els_serveis_de_societat_de_la_informacio_i_el_comerc_electronic">Legislació sobre els serveis de societat de la informació i el comerç electrònic</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Seguretat física, lògica i legislació</a></li><li><a href="continguts.html">Legislació sobre seguretat, protecció de dades i Codi Penal</a></li><li>Activitats</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="activitats"> Activitats </a></h1>
+    	
+<p>
+
+</p>
+
+<h2><a id="allotjament_de_continguts_de_caire_personal_a_internet" >Allotjament de continguts de caire personal a Internet</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és reflexionar sobre l’ús de les noves tecnologies i el seu impacte en la preservació del dret a la intimitat personal. 
+</p>
+
+<p>
+Suposeu que, amb el vostre mòbil, enregistreu un vídeo en el què apareixen companys vostres i el “pengeu” en una xarxa social. Contesteu les preguntes següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Sota quines circumstàncies creieu que podeu allotjar aquests continguts a Internet?</div>
+</li>
+<li class="level1"><div class="li"> Raoneu quin tipus d’infracció podríeu cometre en cas de “penjar” el vídeo.</div>
+</li>
+<li class="level1"><div class="li"> En el cas de YouTube, quines eines ofereix el portal per poder eliminar continguts il·lícits? Els usuaris poden determinar quins continguts són susceptibles de ser eliminats?</div>
+</li>
+</ol>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Tot i que aquest tipus de comportament pot estar relacionat amb una gran diversitat de supòsits recollits fins i tot en el Codi Penal (com els relatius a la vulneració del dret a la intimitat), de manera molt genèrica podem dir que no s’han d’allotjar mai continguts de l’estil dels esmentats sense el consentiment dels afectats. En el cas de l’exercici proposat, YouTube permet que si un usuari detecta un contingut il·lícit el pugui marcar com a inadequat. Posteriorment serà revisat per decidir si cal eliminar-lo efectivament.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="protocol_d_actuacio_en_un_delicte_de_danys_en_sistemes_informatics" >Protocol d’actuació en un delicte de danys en sistemes informàtics</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és determinar la seqüència d’accions que cal realitzar una vegada s’ha produït un atac informàtic amb danys (recordeu que la intrusió en si mateixa encara no és cap delicte segons el codi penal vigent al nostre país).
+</p>
+
+<p>
+El lloc web del departament que administreu ha estat víctima d’un atac i ha estat substituït per un altre web. Què heu de fer per denunciar el fet a la policia? Quines mesures heu de prendre per restablir i protegir el sistema atacat?
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+El protocol d’actuació depèn en gran mesura dels danys provocats, així com del tipus de modificació que hagi sofert la pàgina. Per exemple, si la pàgina ha estat substituïda per continguts il·lícits (com ara, fotografies de pornografia infantil), caldrà actuar amb prestesa i denunciar el fet per evitar que el delicte es continuï produint (és a dir, a més dels possibles danys que s’hagin pogut produir, l’allotjament del nou contingut també seria un delicte en aquest supòsit). De manera molt genèrica, els investigadors necessitaran diversos tipus de dades: els <em>logs</em> locals que registrin l’atac produït, una valoració dels danys (per exemple, cost de restauració de la pàgina, pèrdues a causa de publicitat no emesa…), una còpia de la modificació realitzada, així com qualsevol altra que el personal tècnic pugui considerar rellevant per a la investigació. D’altra banda, abans de realitzar la restauració del sistema informàtic compromès, cal tenir en compte que és possible que mantenir-lo en funcionament (és a dir, sense restaurar-lo) podria facilitar la investigació del cas (però alhora podria permetre la continuació del delicte). En cas que el sistema es pugui restaurar, caldrà realitzar-ne un duplicat exacte previ a la restauració, el qual podria contenir traces essencials per poder investigar el cas. Una vegada preservada la prova, es podria restaurar el sistema a partir de les còpies de seguretat.
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="definicio_de_les_llicencies_creative_commons_i_la_seva_relacio_amb_l_us_de_programaris_d_igual_a_igual" >Definició de les llicències Creative Commons i la seva relació amb l&#039;ús de programaris d&#039;igual a igual</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat consisteix en dissociar l’ús dels programaris d’igual a igual de les descàrregues il·lícites de continguts amb drets d’autor, i veure com certs tipus de llicències poden permetre usos perfectament lícits dels esmentats programaris (com per exemple, eMule).
+</p>
+
+<p>
+Cerqueu a Internet informació relativa a les llicències Creative Commons i contesteu les preguntes següents:
+</p>
+<ol>
+<li class="level1"><div class="li"> Què és Creative Commons?</div>
+</li>
+<li class="level1"><div class="li"> Què són les llicències Creative Commons (CC)?</div>
+</li>
+<li class="level1"><div class="li"> Creieu que l’ús de programaris d’igual a igual és compatible amb l’intercanvi d’arxius sota llicències CC? </div>
+</li>
+<li class="level1"><div class="li"> Què significa DRM? És un tipus de llicència?</div>
+</li>
+<li class="level1"><div class="li"> Finalment, cerqueu a Internet la definició de <em>freeware</em> i <em>shareware</em>, i comenteu les diferències entre els dos conceptes.</div>
+</li>
+</ol>
+
+<p>
+<form action=""><div class="solution ioccontent"><ol>
+<li class="level1"><div class="li"> Creative Commons és una organització sense ànim de lucre orientada a la compartició de tota mena de treballs creatius. </div>
+</li>
+<li class="level1"><div class="li"> CC ofereix diferents tipus de llicències per a tota mena de treballs creatius (ja siguin temes musicals, llibres…). Aquestes llicències abracen des del sistema tradicional de drets d’autor fins al domini públic. Moltes obres CC poden ésser difoses sempre i quan es reconegui l’autoria del treball (hi ha fins a sis tipus de llicències diferents amb diverses restriccions).</div>
+</li>
+<li class="level1"><div class="li"> Atès que alguns materials gaudeixen de la llicència CC amb possibilitat de ser difosos lliurament, l’ús de programaris d’igual a igualamb aquest tipus d’arxius és perfectament lícit. Així, doncs, no tots els temes musicals que es descarreguin mitjançant un programari d’igual a igual són necessàriament “il·legals”: tan sols caldrà, amb l’ajut d’eines de recerca, discriminar aquells arxius d’Internet que gaudeixin de les llicències adequades.</div>
+</li>
+<li class="level1"><div class="li"> DRM (Digital Rights Management o gestió de drets digitals) és un terme que s’aplica a totes les tecnologies orientades a protegir els drets d’autor. Per tant, no és una llicència, sinó una tecnologia que permet protegir els drets de l’autor d’un determinat treball creatiu. Aquestes tecnologies, molt aplicades en el món de la música (tant pel que fa a les descàrregues d’Internet com a la música comprada en CD) o dels videojocs, han generat una forta polèmica, ja que eviten que els usuaris que han comprat els arxius originals puguin efectuar certes accions que ells consideren lògiques, com per exemple fer-ne una còpia. Fins i tot és possible trobar CD que es poden escoltar en un equip de música, però, en canvi, no es poden escoltar en un equip informàtic a causa dels sistemes DRM.</div>
+</li>
+<li class="level1"><div class="li"> El terme <em>freeware</em> s’aplica als programes que es poden distribuir i usar il·limitadament. Això no vol dir, però, que aquests programes no tinguin llicència. Normalment inclouen una llicència d’ús en la qual es pot especificar, per exemple, que el programa no es pot modificar ni vendre. D’altra banda, s’entén per <em>shareware</em> aquell programari que es pot usar i distribuir lliurement, però només durant un temps de prova (sovint, aquests programes tenen una funcionalitat limitada, si es compara amb la versió de compra del programa). </div>
+</li>
+</ol>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="dades_personals" >Dades personals</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és que l’estudiant comprengui què son les dades personals i conegui els conceptes relacionats amb la protecció de dades.
+</p>
+
+<p>
+Copieu la taula i empleneu la columna “Descripció” amb els continguts que creieu més adients:
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name=""><span>Taula: </span></a></div>
+<div class="table tabminheight"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">   </th><th class="col1 leftalign"> Concepte                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </th><th class="col2 leftalign"> Descripció                       </th><td class="col3"></td><td class="col4"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1 leftalign"> Indiqueu cinc exemples de dades personals. Expliqueu breument per què ho són.                                                                                                                                                                                                                                                                                                                                                                                                                               </td><td class="col2"> 1.1.<br/>
+1.2.<br/>
+1.3.<br/>
+1.4.<br/>
+1.5. </td><td class="col3"></td><td class="col4"></td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1"> La conversació telefònica següent vulnera algun dret? Quin?<br/>
+<strong>—</strong>Bon dia. És vostè el Sr. X?<br/>
+—Bon dia. Sí, sóc jo.<br/>
+<strong>—</strong>Sóc de la companyia ABC i li volem fer una oferta que li permetrà estalviar en la seva factura del telèfon. Té Internet a casa amb la companyia TL?<br/>
+—Sí, exactament.<br/>
+<strong>—</strong>Doncs nosaltres li oferim fins a un 40% de descompte en la seva factura i un encaminador sense fils gratuït en el qual podrà connectar diversos ordinadors. Quantes persones viuen a casa seva? </td><td class="col2 leftalign">                                  </td><td class="col3"></td><td class="col4"></td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 3 </td><td class="col1 leftalign"> Indiqueu els principis bàsics de l’RGPD.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </td><td class="col2 leftalign">                                  </td><td class="col3"></td><td class="col4"></td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 4 </td><td class="col1 leftalign"> Definiu:<br/>
+Dada de caràcter personal.<br/>
+Agència de protecció de dades.                                                                                                                                                                                                                                                                                                                                                                                                                            </td><td class="col2 leftalign">                                  </td><td class="col3 leftalign">                                                                                                                                                                                                                                                                                                                                                                                                                          </td><td class="col4 leftalign">                                  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 5 </td><td class="col1 leftalign"> Definiu el concepte d’autenticació i expliqueu breument els diferents mecanismes d’autenticació existents.                                                                                                                                                                                                                                                                                                                                                                                                  </td><td class="col2 leftalign">                                  </td><td class="col3"></td><td class="col4"></td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> 6 </td><td class="col1 leftalign"> Expliqueu la diferència entre criptosistemes de clau privada i criptosistemes de clau pública.                                                                                                                                                                                                                                                                                                                                                                                                              </td><td class="col2 leftalign">                                  </td><td class="col3"></td><td class="col4"></td>
+	</tr>
+</table></div>
+</div>
+<p>
+<form action=""><div class="solution ioccontent"><ol>
+<li class="level1"><div class="li"> En l’RGPD es defineix <em>dada personal</em> com qualsevol informació sobre una persona física identificada o identificable,  com ara un nom, un número d’identificació, dades de localització, un identificador en línia o un o diversos elements propis de la identitat física, fisiològica, genètica, psíquica, econòmica, cultural o social d’aquesta persona. De manera que una dada personal és una informació relativa a una persona concreta.</div>
+<ol>
+<li class="level2"><div class="li"> Nom i cognoms, data de naixement. Identifiquen una persona. Per tant, són dades personals.</div>
+</li>
+<li class="level2"><div class="li"> Veu. És una dada personal sempre que faci referència a una persona física identificada o identificable.</div>
+</li>
+<li class="level2"><div class="li"> Dades mèdiques. Són dades personals (identifiquen una personal), i especialment sensibles.</div>
+</li>
+<li class="level2"><div class="li"> Fotografia d’una persona. És una dada personal, ja que permet identificar una persona.</div>
+</li>
+<li class="level2"><div class="li"> IP. Segons una resolució de l’AEPD, mitjançant la IP es pot identificar una persona. Per tant, és una dada personal.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> L’article <a href="https://elpais.com/diario/2002/01/30/catalunya/1012356442_850215.html" class="urlextern" title="https://elpais.com/diario/2002/01/30/catalunya/1012356442_850215.html"  rel="nofollow">Riiing: ¡correo comercial!</a> d’El País us pot ajudar en aquest punt. Si l’empresa venedora ha recollit el nom i telèfon de fonts públiques no ha vulnerat cap dret. Nosaltres tenim el dret de conèixer, modificar o suprimir les nostres dades de la base de dades. Però en la pràctica pot ser difícil esbrinar de quina base de dades s’està extraient la informació. Ens trobem, per tant, davant d’un cas que jurídicament no està encara ben resolt.</div>
+</li>
+<li class="level1"><div class="li"> Principis bàsics del RGPD</div>
+<ul>
+<li class="level2"><div class="li"> Responsabilitat proactiva.</div>
+</li>
+<li class="level2"><div class="li"> Enfocament de risc.</div>
+</li>
+<li class="level2"><div class="li"> Qualitat de les dades.</div>
+</li>
+<li class="level2"><div class="li"> Finalitat expressa.</div>
+</li>
+<li class="level2"><div class="li"> Necessitat de consentiment.</div>
+</li>
+<li class="level2"><div class="li"> Actualitat de les dades.</div>
+</li>
+<li class="level2"><div class="li"> Exactitud de les dades.</div>
+</li>
+<li class="level2"><div class="li"> Deure d’informació a la persona afectada.</div>
+</li>
+<li class="level2"><div class="li"> Reconeixement dels drets: ARCO, a l’oblit, al consentiment clar i explícit, a la limitació del tractament i a la portabilitat de les dades.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Definir:</div>
+<ol>
+<li class="level2"><div class="li"> Dada de caràcter personal:<br/>
+Tota informació sobre una persona física identificada o identificable.</div>
+</li>
+<li class="level2"><div class="li"> Agència de protecció de dades:<br/>
+L’Agència Espanyola de Protecció de Dades (AEPD) és l’autoritat de control independent que vetlla pel compliment de la normativa sobre protecció de dades i garanteix i tutela el dret fonamental a la protecció de dades de caràcter personal.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> S’anomena <em>autenticació</em> al mecanisme de verificació de la identitat d’una persona o d’un procés que vol accedir als recursos d’un sistema informàtic.<br/>
+Hi ha sistemes basats en elements coneguts per l’usuari. En són un exemple les contrasenyes.<br/>
+Hi ha sistemes basats en elements que té l’usuari. És el cas de les targetes intel·ligents o la biometria.</div>
+</li>
+<li class="level1"><div class="li"> Els criptosistemes de clau privada o compartida (o simètrics) són aquells en els quals emissor i receptor comparteixen una única clau. És a dir, el receptor podrà desxifrar el missatge rebut només si coneix la clau amb la qual l’emissor ha xifrat el missatge.<br/>
+En canvi, els criptosistemes de clau pública (o asimètrics) són un tipus de criptosistemes en què l’usuari emissor xifra el missatge amb una clau pública, que coneix tothom, però només es possible desxifrar-lo amb una clau privada, que només té el receptor del missatge.</div>
+</li>
+</ol>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="aplicacio_de_l_rgpd_en_les_tecnologies_d_us_quotidia" >Aplicació de l&#039;RGPD en les tecnologies d&#039;ús quotidià</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és analitzar les conseqüències que té l’RGPD en la implantació quotidiana de les noves tecnologies.
+</p>
+
+<p>
+Cerqueu a Internet informació relacionada amb la implantació dels escàners de cos en els aeroports. Quines conseqüències pot tenir la implantació d’aquest tipus de tecnologia? Creieu que les dades proveïdes pels escàners de cos haurien d’emmagatzemar-se d’alguna manera determinada?
+</p>
+
+<p>
+<form action=""><div class="solution ioccontent">
+<p>
+Aquest exercici pretén que reflexioneu sobre una tecnologia que tot just ara s’està debatent. No hi ha una resposta única, ja que les legislacions dels diferents països divergeixen molt pel que fa a la protecció de les dades personals. Europa és, en termes generals, molt garantista pel que fa a la protecció d’aquest tipus de dades i cal trobar una solució de consens que equilibri la seguretat dels aeroports amb la protecció de la intimitat de les persones. Finalment, a més dels aspectes legals, caldria analitzar els aspectes estrictament tècnics de la implantació d’aquesta nova tecnologia, entre d’altres qüestions, com per exemple, si poden tenir cap efecte nociu sobre la salut de les persones. En tot cas, segons la legislació vigent a Espanya (segons una directiva europea), caldria emmagatzemar aquests dades segons les mesures proposades pel RGPD. 
+</p>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="lssi_i_signatura_electronica" >LSSI i signatura electrònica</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és comprendre diversos conceptes relacionats amb la legislació dels serveis de la societat de la informació i la signatura electrònica.
+</p>
+
+<p>
+Copieu la taula i empleneu la columna “Descripció” amb els continguts que creieu més adients:
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name=""><span>Taula: </span></a></div>
+<div class="table tabminheight"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> </th><th class="col1">Concepte</th><th class="col2">Descripció</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">1</td><td class="col1">Definiu <em>comerç electrònic</em>.</td><td class="col2"> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">2</td><td class="col1">Indiqueu cinc exemples d’activitats que es poden dur a terme mitjançant el comerç electrònic.</td><td class="col2">2.1.<br/>
+2.2.<br/>
+2.3.<br/>
+2.4.<br/>
+2.5.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">3</td><td class="col1"> Definiu <em>spam </em>i comenteu breument les sancions associades.</td><td class="col2"> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">4</td><td class="col1">Indiqueu les propietats de la signatura digital.</td><td class="col2"> </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">5</td><td class="col1">Expliqueu la diferència entre signatura digital i signatura electrònica.</td><td class="col2"> </td>
+	</tr>
+</table></div>
+</div>
+<p>
+<form action=""><div class="solution ioccontent"><ol>
+<li class="level1"><div class="li"> El comerç electrònic consisteix en la compra i venda de productes (per exemple, en botigues en línia) o de serveis (per exemple, contractar una tarifa plana d’Internet) a través de mitjans electrònics (Internet o qualsevol altra xarxa). L’abast del concepte actualment inclou també qualsevol transacció efectuada a través de mitjans electrònics.</div>
+</li>
+<li class="level1"><div class="li"> Compra d’una cançó a una botiga en línia (notem que en aquest cas el comprador no obté cap suport físic), compra d’un bitllet d’avió, venda d’un objecte en un portal de subhastes…</div>
+</li>
+<li class="level1"><div class="li"> El correu brossa o <em>spam</em> és qualsevol correu electrònic no sol·licitat, normalment de tipus publicitari. Cal remarcar que l’enviament de correu brossa no és una conducta constitutiva de delicte, tot i que l’LSSI preveu sancions de fins a 150.000 euros.</div>
+</li>
+<li class="level1"><div class="li"> Les propietats de la signatura digital s’orienten a l’obtenció de la confiança necessària perquè el comerç electrònic sigui viable. Aquestes propietats són les següents: autenticitat, integritat i no repudi. </div>
+</li>
+</ol>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+<h2><a id="rgpd_i_proteccio_de_dades" >RGPD i protecció de dades</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu d’aquesta activitat és aconseguir formar-se en l’RGPD i la protecció de dades.
+</p>
+<ol>
+<li class="level1"><div class="li"> Expliqueu que és l’RGPD.</div>
+</li>
+<li class="level1"><div class="li"> Expliqueu qui és el Delegat de Protecció de Dades.</div>
+</li>
+<li class="level1"><div class="li"> Expliqueu qui és el Responsable del Tractament.</div>
+</li>
+<li class="level1"><div class="li"> Expliqueu qui és l’Encarregat del Tractament.</div>
+</li>
+<li class="level1"><div class="li"> Quins són els drets ARCO?</div>
+</li>
+<li class="level1"><div class="li"> S’han de xifrar les dades personals, a més de guardar-les amb pseudònims (pseudomització) per tal que sigui més difícil d’identificar de qui són les dades segons l’RGPD?</div>
+</li>
+<li class="level1"><div class="li"> Quant temps hi ha per notificar una violació se seguretat a les autoritats?</div>
+</li>
+<li class="level1"><div class="li"> Qui ha de poder demostrar (<em>accountability</em>) que les dades personals siguin:</div>
+<ul>
+<li class="level2"><div class="li"> Adequades, pertinents i limitades al que és necessari en relació amb les finalitats per a les quals es tracten (minimització de dades).</div>
+</li>
+<li class="level2"><div class="li"> Conservades de manera que permetin identificar els interessats durant un període no superior al necessari per a les finalitats del tractament de dades personals.</div>
+</li>
+<li class="level2"><div class="li"> Exactes. Això implica que, quan sigui precís, s’hauran d’actualitzar. Cal adoptar les mesures raonables perquè es suprimeixin o es rectifiquin les dades personals que siguin inexactes amb les finalitats per a les quals es tracten (“exactitud”);</div>
+</li>
+<li class="level2"><div class="li"> Tractades de manera lícita, lleial i transparent en relació amb l’interessat (licitud, lleialtat i transparència).</div>
+</li>
+<li class="level2"><div class="li"> Recollides amb finalitats determinades, explícites i legítimes; posteriorment no s’han de tractar de manera incompatible amb aquestes finalitats. D’acord amb l’article 89, el tractament posterior de les dades personals amb finalitats d’arxiu en interès públic, amb finalitats de recerca científica i històrica o amb finalitats estadístiques no es considera incompatible amb les finalitats inicials (limitació de la finalitat).</div>
+</li>
+<li class="level2"><div class="li"> Tractades de manera que se’n garanteixi una seguretat adequada, inclosa la protecció contra el tractament no autoritzat o il·lícit i contra la seva pèrdua, destrucció o dany accidental, mitjançant l’aplicació de les mesures tècniques o organitzatives adequades (“integritat i confidencialitat”), fent copies de seguretat…</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Quines són les dades personals sensibles segons l’RGPD?</div>
+</li>
+<li class="level1"><div class="li"> Quines multes, de quin tipus i import poden haver-hi per no complir l’RGPD?</div>
+</li>
+</ol>
+
+<p>
+<form action=""><div class="solution ioccontent"><ol>
+<li class="level1"><div class="li"> És una norma d’àmbit europeu que protegeix les dades personals de tots els residents a la Unió Europea i garanteix el flux de dades entre els països de la Unió Europea. Aquest reglament estableix l’obligació de les organitzacions d’adoptar mesures destinades a garantir la protecció d’aquestes dades que afecten sistemes informàtics, fitxers, suports d’emmagatzematge, demanar el consentiment per usar les dades de caràcter personal i procediments operatius. Aquestes mesures han d’adoptar-les totes les organitzacions que operen amb residents a la Unió Europea, encara que no hi tinguin la seva seu.</div>
+</li>
+<li class="level1"><div class="li"> El delegat de protecció de dades és nomenat pel responsable i l’encarregat del tractament i se l’ha de nomenar quan es dona alguna d’aquestes condicions:</div>
+<ul>
+<li class="level2"><div class="li"> El tractament l’efectua una autoritat o un organisme públic, tret dels tribunals que actuen en l’exercici de la seva funció judicial.</div>
+</li>
+<li class="level2"><div class="li"> Les activitats principals del responsable o de l’encarregat consisteixen en operacions de tractament que requereixen una observació habitual i sistemàtica a gran escala.</div>
+</li>
+<li class="level2"><div class="li"> Les activitats principals del responsable o de l’encarregat consisteixen en el tractament a gran escala de categories especials de dades personals i de les dades relatives a condemnes i infraccions.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> És la persona física o jurídica, autoritat pública, servei o qualsevol altre organisme que, sol o juntament amb d’altres, determina les finalitats i els mitjans del tractament.</div>
+</li>
+<li class="level1"><div class="li"> L’encarregat és la persona física o jurídica, autoritat pública, servei o qualsevol altre organisme que tracta dades personals per compte del responsable del tractament. L’encarregat és únic i el nomena el responsable del tractament de les dades. L’encarregat del tractament pot, però, contractar a altres encarregats de tractament de dades amb el consentiment per escrit del responsable del tractament de dades. El tractament efectuat per l’encarregat s’ha de regir per un contracte o per un altre acte jurídic conforme al dret de la Unió o dels estats membres.</div>
+</li>
+<li class="level1"><div class="li"> El dret d’accés, rectificació, cancel·lació i oposició.</div>
+</li>
+<li class="level1"><div class="li"> Sí.</div>
+</li>
+<li class="level1"><div class="li"> La notificació de la fallada a les autoritats dins de les 72 hores següents a partir del moment al qual el responsable n’ha tingut constància pot ser objecte d’interpretacions variades. Normalment, es considera que se’n té constància quan hi ha certesa i coneixement suficient de les circumstàncies. La mera sospita no obliga a notificar ja que, en aquests casos, no és possible conèixer suficientment l’abast del succés.</div>
+</li>
+<li class="level1"><div class="li"> El Responsable del Tractament.</div>
+</li>
+<li class="level1"><div class="li"> Segons l’RGPD les dades personals sensibles són les que es refereixen a la nostra raça, opinions polítiques, a les conviccions religioses, a les afiliacions a partits polítics o a sindicats, a la nostra salut o orientació sexual, genètiques, biomètriques.</div>
+</li>
+<li class="level1"><div class="li"> Les multes poden ser administratives i poden arribar a ser d’entre 10 i 20 milions d’euros, o entre el 2 i el 4% del volumen de negoció anual global. Per determinar la quantitat de les sancions es mirarà el cas particular.</div>
+</li>
+</ol>
+</div><input class="btn_solution3" type="button" value="Mostra"></input></form>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a2/continguts.html">Legislació sobre seguretat, protecció de dades i Codi Penal</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

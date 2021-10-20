@@ -1,0 +1,1054 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u4" class="parentnode"><p><a class="unit" href="../../../WebContent/u4/introduccio.html">4. Tècniques d’accés a dades</a></p><ul class="expander"><li id="u4introduccio"><a href="../../../WebContent/u4/introduccio.html">Introducció</a></li><li id="u4resum"><a href="../../../WebContent/u4/resum.html">Resum</a></li><li id="u4resultats"><a href="../../../WebContent/u4/resultats.html">Resultats d'aprenentatge</a></li><li id="u4referencies"><a href="../../../WebContent/u4/referencies.html">Bibliografia bàsica</a></li><li id="u4a1" class="tocsection"><p id='u4a1continguts'><a class="section" href="../../../WebContent/u4/a1/continguts.html">Accés a dades amb JDBC</a><span class="buttonexp"></span></p><ul><li id="u4a1activitats"><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></li><li id="u4a1exercicis"><a href="../../../WebContent/u4/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a1annexos"><a href="../../../WebContent/u4/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a1/continguts.html#importar_un_projecte_de_maven_a_netbeans">Importar un projecte de Maven a Netbeans</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#la_primera_connexio_a_una_base_de_dades">La primera connexió a una base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#millorant_el_codifitxers_de_propietats_i_tests_unitaris">Millorant el codi: fitxers de propietats i tests unitaris</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#tests_unitaris_amb_junit">Tests unitaris amb JUnit</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#fent_consultes_a_la_base_de_dades">Fent consultes a la base de dades</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#operacions_crud">Operacions CRUD</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#injeccio_sql">Injecció SQL</a></li><li><a href="../../../WebContent/u4/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a2" class="tocsection"><p id='u4a2continguts'><a class="section" href="../../../WebContent/u4/a2/continguts.html">Accés a dades amb Java Enterprise Edition</a><span class="buttonexp"></span></p><ul><li id="u4a2activitats"><a href="../../../WebContent/u4/a2/activitats.html">Activitats</a></li><li id="u4a2exercicis"><a href="../../../WebContent/u4/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a2annexos"><a href="../../../WebContent/u4/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a2/continguts.html#socioc__dialogant_amb_clients_amb_jpa">"SocIoc". Dialogant amb clients amb JPA</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#servidor_d_aplicacions_glassfish">Servidor d'aplicacions Glassfish</a></li><li><a href="../../../WebContent/u4/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u4a3" class="tocsection"><p id='u4a3continguts'><a class="section" href="../../../WebContent/u4/a3/continguts.html">Accés a dades amb Spring i Hibernate</a><span class="buttonexp"></span></p><ul><li id="u4a3activitats"><a href="../../../WebContent/u4/a3/activitats.html">Activitats</a></li><li id="u4a3exercicis"><a href="../../../WebContent/u4/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u4a3annexos"><a href="../../../WebContent/u4/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u4a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_amb_spring_i_hibernate">"SocIoc". Dialogant amb usuaris amb Spring i Hibernate</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_preguntes_i_respostes">"SocIoc". Dialogant amb preguntes i respostes</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#socioc__dialogant_amb_usuaris_rangs_i_vots">"SocIoc". Dialogant amb usuaris, rangs i vots</a></li><li><a href="../../../WebContent/u4/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tècniques d’accés a dades</a></li><li>Accés a dades amb JDBC</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="acces_a_dades_amb_jdbc"> Accés a dades amb JDBC </a></h1>
+    	
+<p>
+Comencem a desenvolupar un projecte que anomenarem “SocIoc” (SOCial IOC) i que consisteix en una xarxa social de preguntes i respostes per a estudiants de l’IOC. La idea està basada en <a href="http://stackoverflow.com/" class="urlextern" title="http://stackoverflow.com/"  rel="nofollow">stackoverflow.com</a>, una xarxa social on els desenvolupadors de programari poden fer preguntes de desenvolupament que són contestades per altres desenvolupadors. La funcionalitat és simple: els estudiants de l’IOC poden fer i contestar preguntes i votar positiva o negativament les respostes a cada pregunta. Els estudiants que rebin vots positius a les respostes aniran guanyant punts.
+</p>
+
+<p>
+En aquesta unitat posem les bases de l’aprenentatge configurant una aplicació Java per establir connexions amb la BD, executar consultes SQL (Structured Query Language) i tancar la connexió. Explicarem:
+</p>
+<ul>
+<li class="level1"><div class="li"> Com fer connexions a la base de dades H2 utilitzant <em>drivers</em> JDBC.</div>
+</li>
+<li class="level1"><div class="li"> Com escriure tests unitaris per comprovar que el codi funciona correctament.</div>
+</li>
+<li class="level1"><div class="li"> Com fer operacions de lectura, escriptura, actualització i esborrat de base de dades.</div>
+</li>
+<li class="level1"><div class="li"> Com preveure injeccions malicioses de codi SQL quan fem consultes a les bases de dades.</div>
+</li>
+</ul>
+
+<h2><a id="importar_un_projecte_de_maven_a_netbeans" >Importar un projecte de Maven a Netbeans</a></h2>
+<div class="level2">
+
+<p>
+En la <span class="figref"><a href="#fig1.1"><span>figura</span></a></span> es mostra on és l’opció per obrir un projecte existent.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El projecte amb el qual treballareu el podeu trobar a l’apartat d’annexos de la unitat. Un cop descarregat el fitxer i descomprimit ja el podeu importar.
+</p>
+</div></div><div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Obrir un projecte
+
+</figcaption><img src="../media/dawm7u4_02.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Navegueu per les carpetes fins on teniu la carpeta amb el projecte. Com podeu veure en la <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>, Netbeans reconeixerà que és un projecte Maven.
+</p>
+<div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Seleccionar el projecte
+
+</figcaption><img src="../media/dawm7u4_03.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Finalment, un cop obert el projecte, Maven començarà a descarregar les dependències de JUnit i el <em>driver</em> d’H2. Hauríeu de veure un projecte amb l’estructura que es mostra en la <span class="figref"><a href="#fig1.3"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Estructura del projecte
+
+</figcaption><img src="../media/dawm7u4_04.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="la_primera_connexio_a_una_base_de_dades" >La primera connexió a una base de dades</a></h2>
+<div class="level2">
+
+<p>
+Apache Maven permet obtenir les llibreries necessàries per al projecte que veureu a continuació, on simplement fareu una connexió a la BD en memòria H2.
+</p>
+
+<p>
+En el fitxer pom.xml de Maven, les úniques dependències que us fan falta són la del <em>driver</em> de la BD H2 i de JUnit, que és un conjunt de llibreries que utilitzareu per escriure els tests unitaris.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;dependencies&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;com.h2database&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;h2&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;1.4.190&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">    &lt;!-- testing --&gt;</div></li><li class="li1"><div class="de1">    &lt;dependency&gt;</div></li><li class="li1"><div class="de1">        &lt;groupId&gt;junit&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">        &lt;version&gt;4.12&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;/dependency&gt;</div></li><li class="li1"><div class="de1">&lt;/dependencies&gt;</div></li></ol></pre>
+
+<p>
+Un cop Maven descarrega les dependències i les afegeix al <em>classpath</em>, ja podeu escriure la primera classe, que simplement establirà una connexió amb una base de dades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public Connection getConnection() {</div></li><li class="li1"><div class="de1">    Connection con = null;</div></li><li class="li1"><div class="de1">    try {</div></li><li class="li1"><div class="de1">        Class.forName(&quot;org.h2.Driver&quot;);</div></li><li class="li1"><div class="de1">        con = DriverManager.getConnection(&quot;jdbc:h2:mem:socioc_db&quot;, &quot;usuari&quot; , &quot;passwd&quot;);</div></li><li class="li1"><div class="de1">    } catch (ClassNotFoundException | SQLException e) {</div></li><li class="li1"><div class="de1">        e.printStackTrace();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return con;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Cada <em>driver</em> JDBC té una classe que s’encarrega d’inicialitzar el <em>driver</em> quan es carrega a memòria. En el cas d’una BD H2:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  		Class.forName(&quot;org.h2.Driver&quot;);</div></li></ol></pre>
+
+<p>
+Carregar el <em>driver</em> en memòria no és necessari, ja que des de la versió 6 de Java es fa automàticament. Això implica que com que estem utilitzant una versió de Java superioir a la 6, no fa falta que carreguem el <em>driver</em> explícitament. Quan, més tard, refactoritzarem el codi, podrem eliminar <em>Class.forName(“org.h2.Driver”);</em>.
+</p>
+
+<p>
+Un cop el <em>driver</em> està carregat en la memòria es pot procedir a connectar amb la BD. Per obrir una connexió amb la BD s’utilitza la classe <code>java.sql.DriverManager</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">      con = DriverManager.getConnection(&quot;jdbc:h2:mem:socioc_db&quot;);</div></li></ol></pre>
+
+<p>
+Fixeu-vos en el paràmetre que s’ha utilitzat per establir la connexió:
+</p>
+<pre class="code">  jdbc:h2:mem:socioc_db</pre>
+
+<p>
+Intenteu contestar a les següents preguntes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quina és l’estructura d’aquest paràmetre de connexió?</div>
+</li>
+<li class="level1"><div class="li"> Què representa el paràmetre <code>socioc_db</code>?</div>
+</li>
+</ul>
+
+<p>
+La resposta està relacionada amb el disseny de JDBC i amb la seva arquitectura, que té tres components principals que podeu veure en la <span class="figref"><a href="#fig1.4"><span>figura</span></a></span>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Algunes de les bases de dades compatibles amb JDBC són: DB2, H2, Informix, JavaDB/Derby, Microsoft SQL Server, Mimer SQL, MySQL, NuoDB, Oracle, PostgreSQL, SQLite, Sybase i Vertica.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Gestor de <em>drivers</em> (<code>DriverManager</code>): és el responsable de trobar el <em>driver</em> que l’aplicació necessita. Quan es sol·licita una connexió amb la BD es fa mitjançant un <acronym title="Uniform Resource Locator">URL</acronym> (Uniform Resource Locator), que descriu com ha de ser la connexió. </div>
+</li>
+<li class="level1"><div class="li"> Driver JDBC: cada <em>driver</em> present al sistema es carrega en la màquina virtual de Java (JVM Java Virtual Machine) i es registra amb el <code>DriverManager</code>. Quan una aplicació sol·licita una connexió amb una BD, el <code>DriverManager</code> s’encarrega de preguntar a cada <em>driver</em> present si pot connectar amb la BD amb l’<acronym title="Uniform Resource Locator">URL</acronym> de connexió especificat.</div>
+</li>
+<li class="level1"><div class="li"> Base de dades compatibles amb JDBC.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="fig1.4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura JDBC
+
+</figcaption><img src="../media/daw_m07_u4_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+L’<acronym title="Uniform Resource Locator">URL</acronym> de connexió amb una BD JDBC té el següent format:
+</p>
+<pre class="code">jdbc:Tipus_de_base_de_dades://&lt;Host&gt;:&lt;Port&gt;/&lt;Base_de_dades&gt;</pre>
+
+<p>
+Per tant, la <acronym title="Uniform Resource Locator">URL</acronym> de connexió <em>jdbc:h2:mem:socioc_db</em> indica el següent:
+</p>
+<ul>
+<li class="level1"><div class="li"> jdbc: indica que s’utilitzarà JDBC per fer la connexió.</div>
+</li>
+<li class="level1"><div class="li"> h2: és el tipus de servidor de BD amb el qual volem connectar. </div>
+</li>
+<li class="level1"><div class="li"> mem: en aquest cas, com que és una BD en memòria no s’ha d’especificar ni la IP ni el port on està corrent la BD.</div>
+</li>
+<li class="level1"><div class="li"> socioc_db: és el nom de l’esquema que s’utilitzarà.</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a id="millorant_el_codifitxers_de_propietats_i_tests_unitaris" >Millorant el codi: fitxers de propietats i tests unitaris</a></h2>
+<div class="level2">
+
+<p>
+Hi ha dues coses al codi de l’apartat 1.2 que podeu millorar. La primera és que no és necessari carregar el <em>driver</em> explícitament. La segona és que mai és una bona idea posar l’<acronym title="Uniform Resource Locator">URL</acronym> de connexió amb la BD directament a una classe. La gràcia d’utilitzar JDBC és que l’aplicació serà independent de la BD que utilitzem; si posem el valor de l’<acronym title="Uniform Resource Locator">URL</acronym> de connexió estarem trencant això, ja que en canviar de BD haurem de modificar la classe. Això es pot evitar creant un fitxer de propietats on es configurin els paràmetres de connexió amb la BD. El format del fitxer és PROPIETAT=VALOR, com podeu veure:
+</p>
+<pre class="code">DB_DRIVER_CLASS=org.h2.Driver
+DB_URL=jdbc:h2:mem:socioc_db
+DB_USERNAME=usuari
+DB_PASSWORD=passwd</pre>
+
+<p>
+El fitxer de propietats s’anomena db.properties i es troba a <em>src/main/resources</em>. Un cop el fitxer de propietats està definit ja el podeu utilitzar per llegir les propietats de configuració.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public Connection getConnection() throws SQLException, IOException {</div></li><li class="li1"><div class="de1">    Properties props = new Properties();</div></li><li class="li1"><div class="de1">    InputStream resourceAsStream = null;</div></li><li class="li1"><div class="de1">    Connection con = null;</div></li><li class="li1"><div class="de1">    try {</div></li><li class="li1"><div class="de1">        ClassLoader classLoader = getClass().getClassLoader();</div></li><li class="li1"><div class="de1">        URL urlResource = classLoader.getResource(&quot;db.properties&quot;);</div></li><li class="li1"><div class="de1">        if(urlResource != null){</div></li><li class="li1"><div class="de1">            resourceAsStream  = urlResource.openStream();</div></li><li class="li1"><div class="de1">            props.load(resourceAsStream);</div></li><li class="li1"><div class="de1">            con = DriverManager.getConnection(props.getProperty(&quot;DB_URL&quot;),</div></li><li class="li1"><div class="de1">          	props.getProperty(&quot;DB_USERNAME&quot;),</div></li><li class="li1"><div class="de1">        		props.getProperty(&quot;DB_PASSWORD&quot;));</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    } catch (IOException | ClassNotFoundException | SQLException e) {</div></li><li class="li1"><div class="de1">        e.printStackTrace();</div></li><li class="li1"><div class="de1">    } finally {</div></li><li class="li1"><div class="de1">        if (resourceAsStream != null) {</div></li><li class="li1"><div class="de1">            resourceAsStream.close();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return con;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si volguéssiu canviar la BD, l’únic que s’hauria de fer és canviar el contingut del fitxer de propietats. D’aquesta manera aconseguireu que el codi estigui feblement acoblat (<em>loosely coupled</em>) amb la configuració.
+</p>
+
+<p>
+Un cop s’ha llegit el fitxer que conté les propietats amb el codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  URL urlResource = classLoader.getResource(&quot;db.properties&quot;);</div></li></ol></pre>
+
+<p>
+La classe <code>java.util.Properties</code> permet recuperar el valor de les propietats:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  props.getProperty(NOM_DE_LA_PROPIETAT)</div></li></ol></pre>
+
+<p>
+Un cop tenim la classe, escriurem el test unitari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class DBConnectionTest {</div></li><li class="li1"><div class="de1">    DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    Connection connection;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setUp(){</div></li><li class="li1"><div class="de1">        dBConnection = new DBConnection();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @After</div></li><li class="li1"><div class="de1">    public void cleanUp() throws SQLException {</div></li><li class="li1"><div class="de1">        connection.close();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void connectarAmbLaBaseDeDades() throws IOException, SQLException {</div></li><li class="li1"><div class="de1">        connection = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;H2 JDBC Driver&quot;, connection.getMetaData().getDriverName());</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;SOCIOC_DB&quot;, connection.getCatalog());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+En aquest primer test només esteu comprovant dues coses: que el nom de l’esquema que hem definit a l’<acronym title="Uniform Resource Locator">URL</acronym> de connexió és SOCIOC_DB i que el <em>driver</em> que esteu utilitzant és el <em>driver</em> JDBC d’H2. El mètode <code>assertEquals</code> de JUnit permet comprovar que l’objecte esperat (primer argument) és igual que el que s’obté quan s’executa el nostre codi.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">    Assert.assertEquals(&quot;H2 JDBC Driver&quot;, connection.getMetaData().getDriverName());</div></li><li class="li1"><div class="de1">    Assert.assertEquals(&quot;SOCIOC_DB&quot;, connection.getCatalog());</div></li></ol></pre>
+
+<p>
+A Netbeans, els tests es poden executar de forma individual, és a dir, classe per classe o tots els del projecte. Tal com podeu veure en la <span class="figref"><a href="#fig1.5"><span>figura</span></a></span>, si feu clic amb el botó dret sobre una classe dins de la carpeta <em>Test Packages</em> podreu executar els tests per a la classe seleccionada.
+</p>
+<div class="iocfigure"><a name="fig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució dels tests d’una classe
+
+</figcaption><img src="../media/dawm7u4_05.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Per executar tots els tests d’un projecte, primer heu de designar com a projecte principal el projecte UDF4-A1-01, tal com podeu veure en la <span class="figref"><a href="#fig1.6"><span>figura</span></a></span>. A continuació podreu executar tots els tests del projecte, tal com s’indica en la <span class="figref"><a href="#fig1.7"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Selecció del projecte principal
+
+</figcaption><img src="../media/dawm7u4_06.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocfigure"><a name="fig1.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Selecció del projecte principal
+
+</figcaption><img src="../media/dawm7u4_07.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Quan executeu els tests de JUnit a Netbeans, els resultats es mostren a la finestra de resultats de la <span class="figref"><a href="#fig1.8"><span>figura</span></a></span>. Per mostrar aquesta finestra seguiu els passos mostrats en <span class="figref"><a href="#fig1.9"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra de resultat de tests
+
+</figcaption><img src="../media/dawm7u4_09.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocfigure"><a name="fig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Mostrar finestra de resultat de tests
+
+</figcaption><img src="../media/dawm7u4_08.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h2><a id="tests_unitaris_amb_junit" >Tests unitaris amb JUnit</a></h2>
+<div class="level2">
+
+<p>
+Els tests unitaris o proves de components són un tipus de proves de programari que consisteixen a fer proves sobre els components o unitats més petits del codi font d’una aplicació o d’un sistema. Això dóna la capacitat de verificar que les vostres funcions funcionen com s’esperava. És a dir, que per a qualsevol funció, i donat un conjunt d’entrades, podeu determinar si la funció retorna els valors adients i tracta correctament els errors.
+</p>
+
+<p>
+Això ajuda a identificar les falles en els nostres algoritmes i/o lògica i ajuda a millorar la qualitat del codi que comprèn una funció determinada. Absolutament tots els components d’una aplicació han de tenir tests unitaris, fet que permet, durant qualsevol moment durant el desenvolupament, verificar la qualitat del treball.
+</p>
+
+<p>
+Un segon avantatge de desenvolupar codi pensant sempre que s’ha de poder testejar és que el codi resultant és més fàcil de testejar. Com a resultat s’acaba estructurant el codi millor i es creen un major nombre de funcions més petites i especialitzades.
+</p>
+
+<p>
+Un tercer avantatge de tenir un conjunt de tests unitaris sòlids és que preveuen que futurs canvis al codi trenquin la funcionalitat. Si en fer un canvi i executar els tests hi ha un error és clar que els canvis han introduït un error a la part específica que el test unitari està comprovant.  
+Finalment, els tests unitaris proporcionen la millor documentació del sistema, ja que reflecteix exactament què s’espera que faci el codi. Els desenvolupadors que vulguin aprendre quina funcionalitat proporciona cada un dels components del sistema només han de llegir els tests unitaris.
+</p>
+
+</div>
+
+<h3><a id="el_framework_de_test_junit" >El &#039;framework&#039; de test JUnit</a></h3>
+<div class="level3">
+
+<p>
+JUnit en la versió 4.x és un <em>framework</em> de test que utilitza anotacions per identificar els mètodes que especifiquen un test. Un test unitari és un mètode que s’especifica en una classe que només s’utilitza per al test. Això s’anomena <em>classe de test</em>. Per definir un mètode de test amb el <em>framework</em> JUnit 4.x es fa amb l’anotació <code>@org.junit.Test</code>. En aquest mètode s’utilitza un mètode d’asserció en el qual es comprova el resultat esperat de l’execució de codi en comparació del resultat real. 
+</p>
+
+<p>
+Vegeu amb detall el test unitari del punt 1.3:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class DBConnectionTest {</div></li><li class="li1"><div class="de1">    DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    Connection connection;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setUp(){</div></li><li class="li1"><div class="de1">        dBConnection = new DBConnection();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @After</div></li><li class="li1"><div class="de1">    public void cleanUp() throws SQLException {</div></li><li class="li1"><div class="de1">        connection.close();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void connectarAmbLaBaseDeDades() throws IOException, SQLException {</div></li><li class="li1"><div class="de1">        connection = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;H2 JDBC Driver&quot;, connection.getMetaData().getDriverName());</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;SOCIOC_DB&quot;, connection.getCatalog());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A la línies 5-9 hi ha el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> @Before</div></li><li class="li1"><div class="de1">  public void setUp(){</div></li><li class="li1"><div class="de1">      dBConnection = new DBConnection();</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+L’anotació <code>@Before</code> serveix per marcar una funció que s’executarà abans de l’execució de cada test i serveix per assegurar que tots els tests sempre parteixen de les mateixes condicions per ser executats. De manera similar, les línies 10-13:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @After</div></li><li class="li1"><div class="de1">  public void cleanUp() throws SQLException {</div></li><li class="li1"><div class="de1">    connection.close();</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Sempre s’executaran en acabar cada un dels tests unitaris. En el vostre cas us assegurareu que en iniciar un test s’establirà connexió amb la base de dades, i en acabar es tancarà la connexió.
+</p>
+
+</div>
+
+<h3><a id="cobertura_dels_tests_unitaris" >Cobertura dels tests unitaris</a></h3>
+<div class="level3">
+
+<p>
+Una cosa fonamental és saber quina part del vostre codi està cobert pels tests unitaris. Idealment s’ha d’intentar aconseguir un 100%, però normalment es considera com a acceptable una cobertura de 80-90%. La versió 7 de Netbeans ja té incorporat un <em>plugin</em> que permet veure la cobertura de projectes Maven (<code>MavenCodeCoverage</code>). Afegiu el següent al final del fitxer pom.xml. 
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;plugin&gt;</div></li><li class="li1"><div class="de1">    &lt;groupId&gt;org.jacoco&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">    &lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">    &lt;version&gt;0.7.5.201505241946&lt;/version&gt;</div></li><li class="li1"><div class="de1">    &lt;executions&gt;</div></li><li class="li1"><div class="de1">        &lt;execution&gt;</div></li><li class="li1"><div class="de1">            &lt;goals&gt;</div></li><li class="li1"><div class="de1">                &lt;goal&gt;prepare-agent&lt;/goal&gt;</div></li><li class="li1"><div class="de1">            &lt;/goals&gt;</div></li><li class="li1"><div class="de1">        &lt;/execution&gt;</div></li><li class="li1"><div class="de1">        &lt;execution&gt;</div></li><li class="li1"><div class="de1">            &lt;id&gt;report&lt;/id&gt;</div></li><li class="li1"><div class="de1">            &lt;phase&gt;prepare-package&lt;/phase&gt;</div></li><li class="li1"><div class="de1">            &lt;goals&gt;</div></li><li class="li1"><div class="de1">                &lt;goal&gt;report&lt;/goal&gt;</div></li><li class="li1"><div class="de1">            &lt;/goals&gt;</div></li><li class="li1"><div class="de1">        &lt;/execution&gt;</div></li><li class="li1"><div class="de1">    &lt;/executions&gt;</div></li><li class="li1"><div class="de1">&lt;/plugin&gt;</div></li></ol></pre>
+
+<p>
+A continuació només fa falta dir a Netbeans que torni a carregar el pom.xml, com podeu veure en la <span class="figref"><a href="#fig1.10"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Recarregar pom.xml
+
+</figcaption><img src="../media/dawm7u4_10.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop fet això ja podeu accedir a la cobertura dels tests unitaris que teniu al projecte, tal com podeu veure en la <span class="figref"><a href="#fig1.11"><span>figura</span></a></span> i seleccionant <em>Show report</em>.
+</p>
+<div class="iocfigure"><a name="fig1.11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Cobertura
+
+</figcaption><img src="../media/dawm7u4_11.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Inicialment no hi ha informació, així que haureu d’executar tots els tests prenent el botó <em>Run All Tests</em> (vegeu la <span class="figref"><a href="#fig1.12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Report de cobertura inicial
+
+</figcaption><img src="../media/dawm7u4_12.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop el vostre test s’ha executat podeu veure que tenim una cobertura d’un 88.89% (vegeu la <span class="figref"><a href="#fig1.13"><span>figura</span></a></span>).
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per veure el resultat heu de tancar i tornar a obrir la pestanya on es mostren els resultats (<em>Code Coverage report</em>).
+</p>
+</div></div><div class="iocfigure"><a name="fig1.13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Report de cobertura inicial
+
+</figcaption><img src="../media/dawm7u4_13.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si feu clic a la classe que hem testejat (<code>DBConnection</code>) podeu veure les parts del codi que estan testejades i les que no (vegeu la <span class="figref"><a href="#fig1.14"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Report de cobertura inicial
+
+</figcaption><img src="../media/dawm7u4_14.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Podeu veure que la part de codi sense cobertura dels nostres tests és la que fa referència a com tractar les excepcions.
+</p>
+
+</div>
+
+<h3><a id="augmentant_la_cobertura_del_codi" >Augmentant la cobertura del codi</a></h3>
+<div class="level3">
+
+<p>
+El vostre següent objectiu és aconseguir un 100% de cobertura als tests unitaris. Per aconseguir això heu de canviar el codi, ja que heu de ser capaços de poder crear de manera controlada errors i assegurar-vos que es tracten correctament. 
+</p>
+
+<p>
+En el vostre cas, una forma fàcil de testejar les excepcions és, per exemple, crear un fitxer de propietats que contingui un nom de <em>driver</em> de base de dades incorrecte. Creeu el següent fitxer als recursos de test (<span class="figref"><a href="#fig1.15"><span>figura</span></a></span>) amb el contingut següent i amb el nom db_wrong_driver.properties:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del qual partireu el teniu disponible a l’apartat d’annexos de la unitat.
+</p>
+</div></div><pre class="code">#BD en memoria H2
+DB_DRIVER_CLASS=org.h2.WrongDriver
+DB_URL=jdbc:h2:mem:socioc_db
+DB_USERNAME=usuari
+DB_PASSWORD=passws</pre>
+<div class="iocfigure"><a name="fig1.15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fitxer de connexió amb la BD
+
+</figcaption><img src="../media/dawm7u4_15.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En aquest exemple,  la classe <code>org.h2.WrongDriver</code> no existeix, fet que provocarà un error quan s’intenti carregar el <em>driver</em> en memòria amb <code>Class.forName(props.getProperty(“DB_DRIVER_CLASS”));</code>. 
+</p>
+
+<p>
+Això presenta un problema: a la classe <code>DBConnection</code> no hi ha manera de seleccionar quin fitxer de propietats s’ha d’utilitzar. El primer que haureu de fer, doncs, és refactoritzar el mètode <code>getConnection</code> perquè accepti un paràmetre que us serveixi per passar a quin fitxer de propietats utilitzar.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Refactorització</strong> és el procés de reestructurar el codi d’una aplicació sense canviar la seva funcionalitat per tal de millorar la seva eficiència, estructura, llegibilitat o reutilització.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">public Connection getConnection(String dbProperties) throws SQLException, IOException {</div></li><li class="li1"><div class="de1">    Properties props = new Properties();</div></li><li class="li1"><div class="de1">    InputStream resourceAsStream = null;</div></li><li class="li1"><div class="de1">    Connection con = null;</div></li><li class="li1"><div class="de1">    try {</div></li><li class="li1"><div class="de1">      ClassLoader classLoader = getClass().getClassLoader();</div></li><li class="li1"><div class="de1">      URL urlResource = classLoader.getResource(dbProperties);</div></li><li class="li1"><div class="de1">      if (urlResource != null) {</div></li><li class="li1"><div class="de1">        resourceAsStream = urlResource.openStream();</div></li><li class="li1"><div class="de1">        props.load(resourceAsStream);</div></li><li class="li1"><div class="de1">        Class.forName(props.getProperty(&quot;DB_DRIVER_CLASS&quot;));</div></li><li class="li1"><div class="de1">        con = DriverManager.getConnection(props.getProperty(&quot;DB_URL&quot;),</div></li><li class="li1"><div class="de1">              props.getProperty(&quot;DB_USERNAME&quot;),</div></li><li class="li1"><div class="de1">              props.getProperty(&quot;DB_PASSWORD&quot;));</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    } catch (IOException | ClassNotFoundException | SQLException e) {</div></li><li class="li1"><div class="de1">      e.printStackTrace();</div></li><li class="li1"><div class="de1">    } finally {</div></li><li class="li1"><div class="de1">      if (resourceAsStream != null) {</div></li><li class="li1"><div class="de1">        resourceAsStream.close();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  return con;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Vegeu aquí un dels avantatges de fer tests unitaris, el fet de pensar com testejar el codi millora el diseny de la nostra <acronym title="Application Programming Interface">API</acronym>. En aquest cas, afegir aquest paràmetre us permetrà utilitzar el mateix codi amb diferents bases de dades, ja que l’únic que farà falta serà passar el fitxer de propietats adient. Ara afegireu un test que carregui el fitxer amb la configuració errònia:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void dbConnectionWrongDriver() throws IOException, SQLException {   </div></li><li class="li1"><div class="de1">    connection = dBConnection.getConnection(&quot;db_wrong_driver.properties&quot;);</div></li><li class="li1"><div class="de1">    Assert.assertNull(connection);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com que l’objecte <code>Connection</code> pot ser ara <em>null</em>, s’ha de canviar el que es fa després d’executar el test.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@After</div></li><li class="li1"><div class="de1">public void cleanUp() throws SQLException {</div></li><li class="li1"><div class="de1">  if(connection != null){</div></li><li class="li1"><div class="de1">    connection.close();   </div></li><li class="li1"><div class="de1">  }        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Comproveu vosaltres mateixos que ara tenim una cobertura dels tests unitaris del 100%.
+</p>
+
+</div>
+
+<h2><a id="fent_consultes_a_la_base_de_dades" >Fent consultes a la base de dades</a></h2>
+<div class="level2">
+
+<p>
+A continuació començareu a treballar amb la base de dades que utilitzareu per construir l’aplicació que anomenareu “SocIoc”. La idea general és desenvolupar una xarxa social on els estudiants pugueu preguntar i resoldre preguntes relacionades amb les assignatures que esteu cursant. Les millors respostes es votaran i anireu guanyant punts i creant-vos una reputació. Començareu per obtenir un llistat dels alumnes que hi ha al sistema. 
+</p>
+
+<p>
+Intenteu contestar a les següents preguntes:
+</p>
+<ul>
+<li class="level1"><div class="li"> Quines classes haurem d’afegir al sistema?</div>
+</li>
+<li class="level1"><div class="li"> Com obtindrem les dades de la base de dades?</div>
+</li>
+</ul>
+
+<p>
+Les bases de dades s’estructuren en taules que tenen una sèrie de registres amb informació. Quan vulgueu extraure una part d’aquesta informació fareu una consulta que us retornarà els registres adients. La vostra aplicació no entén de registres de bases de dades, i necessitareu expressar la informació que voleu guardar a la base de dades com una entitat que pugueu utilitzar a l’aplicació. Llavors, el primer que fareu serà definir una classe que representi un usuari del sistema. Com podeu veure en la <span class="figref"><a href="#fig1.16"><span>figura</span></a></span>, teniu un paquet <code>org.iow.daw</code> que és molt general, així que ara que afegireu més classes és necessari que comenceu a estructurar les classes en diferents paquets. 
+</p>
+<div class="iocfigure"><a name="fig1.16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Paquet org.ioc.daw
+
+</figcaption><img src="../media/dawm7u4_16.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Hi ha moltes formes de fer aquesta organització, i no n’hi cap de correcta o incorrecta mentre siguin consistents i ben organitzades. La millor estructura és organitzar els paquets en funció de les entitats de domini que hi hagi a la nostra aplicació. Per exemple, el paquet <code>org.ioc.daw.user</code> contindrà totes les classes amb funcionalitat relacionada amb els usuaris. Creeu aquest paquet i el paquet <code>org.ioc.daw.db</code> tal com es mostra en la <span class="figref"><a href="#fig1.17"><span>figura</span></a></span> i en la <span class="figref"><a href="#fig1.18"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Paquet org.ioc.daw
+
+</figcaption><img src="../media/dawm7u4_17.png" alt="" /></figure>
+<div class="footfigure"></div></div><div class="iocfigure"><a name="fig1.18"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Paquet org.ioc.daw
+
+</figcaption><img src="../media/dawm7u4_18.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A partir del codi de partida del present apartat, creeu la classe <code>User</code> amb el contingut que es mostra a continuació i moveu la classe <code>DBConnection</code> al paquet  <code>org.ioc.daw.db</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class User {</div></li><li class="li1"><div class="de1">    private int userId;</div></li><li class="li1"><div class="de1">    private String username;</div></li><li class="li1"><div class="de1">    private String name;</div></li><li class="li1"><div class="de1">    private String email;</div></li><li class="li1"><div class="de1">    private int rank;</div></li><li class="li1"><div class="de1">    private Timestamp createdOn;</div></li><li class="li1"><div class="de1">    private boolean active;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User(int userId, String username, String name, String email, int rank, Timestamp createdOn, boolean active) {</div></li><li class="li1"><div class="de1">        this.userId = userId;</div></li><li class="li1"><div class="de1">        this.username = username;</div></li><li class="li1"><div class="de1">        this.name = name;</div></li><li class="li1"><div class="de1">        this.email = email;</div></li><li class="li1"><div class="de1">        this.rank = rank;</div></li><li class="li1"><div class="de1">        this.createdOn = createdOn;</div></li><li class="li1"><div class="de1">        this.active = active;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getUserId() {</div></li><li class="li1"><div class="de1">        return userId;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getUsername() {</div></li><li class="li1"><div class="de1">        return username;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getName() {</div></li><li class="li1"><div class="de1">        return name;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getEmail() {</div></li><li class="li1"><div class="de1">        return email;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public int getRank() {</div></li><li class="li1"><div class="de1">        return rank;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Timestamp getCreatedOn() {</div></li><li class="li1"><div class="de1">        return createdOn;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public boolean isActive() {</div></li><li class="li1"><div class="de1">        return active;</div></li><li class="li1"><div class="de1">    }   </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com que aquesta classe no té cap lògica, no fa falta escriure un test unitari. Seguidament definireu una classe que s’encarregui de fer les operacions amb la base de dades. Normalment, a aquest tipus de classes se les anomena <em>Data Access Objects</em> (DAO, objectes d’accés a dades), per la qual cosa anomenareu la vostra classe <code>UserDAO</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Trobareu el codi de partida per al present apartat als annexos de la unitat.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findAllUsers() {</div></li><li class="li1"><div class="de1">        String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">        DBConnection dBConnection = new DBConnection();</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">        try (</div></li><li class="li1"><div class="de1">                Connection conn = dBConnection.getConnection(&quot;db.properties&quot;);</div></li><li class="li1"><div class="de1">                Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">                ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">            while (rs.next()) {</div></li><li class="li1"><div class="de1">                int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">                String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">                String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">                String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">                int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">                boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">                Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">                User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">                users.add(user);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return users;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una de les operacions fetes més comunament contra una base de dades és una consulta. Fer consultes de bases de dades utilitzant JDBC és bastant fàcil, encara que hi ha una mica de codi repetitiu que s’ha d’utilitzar cada vegada que s’executa una consulta. En primer lloc, es necessita obtenir un objecte de connexió amb la BD. Després es crea una una consulta i es guarda a una variable de tipus <em>string</em>. La línia 3 defineix la consulta que es farà a la base de dades. En aquesta estem demanant a la BD que retorni tots els registres de la taula “Users”.
+</p>
+<pre class="code sql"><ol><li class="li1"><div class="de1">select user_id, username, name, email, rank, active, created_on from users;</div></li></ol></pre>
+
+<p>
+A continuació s’utilitza una clàusula <code>try-with-resources</code> per crear els objectes que són necessaris per fer la consulta de la base de dades. Això farà que si hi ha qualsevol problema i el programa llença una excepció, tots els recursos es tancaran automàticament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  try (</div></li><li class="li1"><div class="de1">        Connection conn = dBConnection.getConnection(&quot;db.properties&quot;);</div></li><li class="li1"><div class="de1">        Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">        ResultSet rs = stmt.executeQuery(qry);) </div></li></ol></pre>
+
+<p>
+En aquest cas, si hi ha cap problema creant la connexió amb la BD, creant o executant la consulta, tancarem automàticament la connexió amb la BD.
+</p>
+
+<p>
+Com es pot veure, el mètode <code>executeQuery</code> accepta un <em>string</em> i retorna un objecte <code>ResultSet</code>. L’objecte <code>ResultSet</code> fa que sigui fàcil treballar amb els resultats de la consulta. Si observeu la següent línia de codi (línia 9), un bucle <em>while</em> es crea amb <code>rs.next()</code>. Aquest bucle recorrerà els continguts de l’objecte <code>ResultSet</code>, obtenint la següent fila que es retorna des de la consulta amb cada iteració. Una vegada totes les files retornades han estat processades, <code>rs.next()</code> retornarà <em>false</em> per indicar que no hi ha més resultats que processar.
+</p>
+
+<p>
+Dins del bucle <em>while</em>, l’objecte <code>ResultSet</code> s’utilitza per obtenir els valors dels noms de les columnes indicades amb cada passada. Observeu que si s’espera que la columna retorni un <em>string</em> heu d’utilitzar el mètode <code>ResultSet.getString</code>, passant el nom de la columna en format <em>string</em>. De la mateixa manera, si s’espera que la columna retorni un <em>int</em> haureu d’utilitzar el mètode <code>ResultSet.getInt</code>. Un cop tenim tota la informació necessària, es creen els objectes de tipus <code>User</code> i s’afegeixen a la llista de tots els usuaris (línies 18-19).
+</p>
+
+<p>
+
+</p>
+
+<p>
+A continuació necessiteu fer un test unitari per assegurar-vos que la classe <code>UserDAO</code> té el funcionament desitjat. Teniu un problema, però: el fitxer db.properties conté les dades d’accés a la BD principal o de producció. Per fer els tests voleu poder configurar la BD que utilitzareu, ja que això permetrà usar una BD específica per executar-los. Refactoritzareu el codi per tal que l’objecte <code>DBConnection</code> no es creï dintre de la classe <code>UserDAO</code>, sinó que es passi com a paràmetre. D’aquesta forma aconseguireu el desacoblament de la classe que fa consultes a la BD amb la qual s’encarrega de fer la connexió.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">    private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    public UserDAO(DBConnection dBConnection){</div></li><li class="li1"><div class="de1">        this.dBConnection = dBConnection;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findAllUsers() {</div></li><li class="li1"><div class="de1">        String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">        try (</div></li><li class="li1"><div class="de1">                Connection conn = getDBConnection().getConnection();</div></li><li class="li1"><div class="de1">                Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">                ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">            while (rs.next()) {</div></li><li class="li1"><div class="de1">                int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">                String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">                String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">                String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">                int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">                boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">                Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">                User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">                users.add(user);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return users;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public DBConnection getDBConnection(){</div></li><li class="li1"><div class="de1">        return this.dBConnection;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Una forma de fer això és declarar <code>DBConnection dBConnection</code> com un atribut de la classe <code>UserDAO</code> i fer que sigui necessari per a la creació de l’objecte.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">    private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    public UserDAO(DBConnection dBConnection){</div></li><li class="li1"><div class="de1">        this.dBConnection = dBConnection;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+A la classe <code>DBConnection</code>, el fitxer amb els paràmetres de connexió amb la base de dades és imprescindible, així que també refactoritzareu aquesta classe.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class DBConnection {</div></li><li class="li1"><div class="de1">    private String connectionFile;</div></li><li class="li1"><div class="de1">    public DBConnection(String connectionFile) {</div></li><li class="li1"><div class="de1">        this.connectionFile = connectionFile;</div></li><li class="li1"><div class="de1">    }</div></li></ol></pre>
+
+<p>
+A més a la classe <code>DBConnection</code> el mètode <code>getConnection</code> ha d’anar sense paràmetres perquè s’ha de fer servir <code>connectionFile</code>.
+</p>
+
+<p>
+Aquest últim canvi trencarà el test unitari, així que haureu de canviar la classe <code>DBConnectionTest</code>. 
+</p>
+
+<p>
+Ara ja podeu crear el test unitari per testejar la classe <code>UserDAO</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAOTest {</div></li><li class="li1"><div class="de1">    private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    private String connectionProperties = &quot;db-test.properties&quot;;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setUp(){</div></li><li class="li1"><div class="de1">        dBConnection = new DBConnection(connectionProperties);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Test</div></li><li class="li1"><div class="de1">    public void findAllUsers(){</div></li><li class="li1"><div class="de1">        UserDAO userDAO = new UserDAO(dBConnection);</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users  = userDAO.findAllUsers();</div></li><li class="li1"><div class="de1">        Assert.assertEquals(&quot;Hauriem de tenir 2 usuaris a la base de dades&quot;, 2, users.size());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Abans de poder executar el test, creareu el fitxer de connexió amb la BD de test. 
+</p>
+<pre class="code">DB_DRIVER_CLASS=org.h2.Driver
+DB_URL=jdbc:h2:mem:socioc_db;INIT=runscript from &#039;classpath:init.sql&#039;;
+DB_USERNAME=usuari
+DB_PASSWORD=passwd</pre>
+
+<p>
+Com que en aquest cas és una BD en memòria, no necessiteu canviar el nom de la BD. La part més important d’aquest fitxer és la segona línia, que executarà una sèrie d’instruccions SQL que asseguraran que la BD de test sempre estarà en el mateix estat. En la <span class="figref"><a href="#fig1.19"><span>figura</span></a></span> es mostren els fitxers que heu de tenir abans d’executar els tests unitaris.
+</p>
+<div class="iocfigure"><a name="fig1.19"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Fitxers pel test unitari de UserDAO
+
+</figcaption><img src="../media/dawm7u4_19.png" alt="" /></figure>
+<div class="footfigure"></div></div><pre class="code sql"><ol><li class="li1"><div class="de1">CREATE TABLE users(user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,</div></li><li class="li1"><div class="de1">                  username VARCHAR(10) NOT NULL,</div></li><li class="li1"><div class="de1">                  name  VARCHAR(20) NOT NULL,</div></li><li class="li1"><div class="de1">                  email VARCHAR(50) NOT NULL,</div></li><li class="li1"><div class="de1">                  rank INT DEFAULT 0,</div></li><li class="li1"><div class="de1">                  active BOOLEAN DEFAULT true,</div></li><li class="li1"><div class="de1">                  created_on TIMESTAMP AS CURRENT_TIMESTAMP NOT NULL);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">INSERT INTO users (username, name, email) VALUES ('user1', 'John Test', 'john@email.com');</div></li><li class="li1"><div class="de1">INSERT INTO users (username, name, email) VALUES ('user2', 'Paul Test', 'paul@email.com');</div></li></ol></pre>
+
+</div>
+
+<h2><a id="operacions_crud" >Operacions CRUD</a></h2>
+<div class="level2">
+
+<p>
+CRUD correspon a l’acrònim <em>Create Read Update Delete</em>: crear, recuperar , actualitzar i eliminar, i es refereix a les quatre funcions principals que implementareu quan desenvolupeu aplicacions de bases de dades. Les funcions CRUD són les que donen la capacitat a les aplicacions de comportar-se d’una manera dinàmica, ja que les dades podran ser canviades pels usuaris. Aquests podran crear, visualitzar, modificar i alterar les dades. Les operacions CRUD permeten accedir i manipular les entitats definides a les bases de dades. 
+</p>
+
+<p>
+Per exemple, a la taula d’usuaris definida a l’apartat 1.5, <em>Create</em> implicarà afegir un nou usuari; <em>Read</em>, accedir a les dades d’un o diversos estudiants; <em>Update</em> modificarà les dades dels usuaris i <em>Delete</em> eliminarà un o diversos registres de la base de dades.
+</p>
+
+<p>
+El primer que farem serà modificar la classe <code>UserDAO</code> per permetre recuperar les dades de la base de dades. Recordeu que l’objectiu és construir una aplicació que permeti preguntar i resoldre preguntes relacionades amb les assignatures que esteu cursant. Les millors respostes es votaran i anireu guanyant punts i creant-vos una reputació. Quines creieu, doncs, que seran el tipus d’informació que necessitareu extreure de la base de dades? Intenteu contestar a les següents preguntes:
+</p>
+<ul>
+<li class="level1"><div class="li"> En quines situacions necessitareu obtenir la informació d’un usuari?</div>
+</li>
+<li class="level1"><div class="li"> Per mostrar un llistat amb els alumnes que mostri un <em>ranking</em> dels alumnes més ben classificats, quina informació necessitareu?</div>
+</li>
+</ul>
+
+<p>
+Les operacions de lectura que haureu de dissenyar per a la vostra aplicació estaran totalment determinades per la seva funcionalitat. Tot i així, veureu amb la vostra experiència que hi haurà unes operacions que es repetiran i seran comuns per a moltes aplicacions. Per exemple, en el cas que us ocupa, una aplicació amb usuaris que es poden registrar i donar-se de baixa, moltes de les operacions que definim serviran per a la majoria d’aplicacions que us trobareu, des d’una botiga amb comerç electrònic, un joc <em>online</em> o una xarxa social. 
+</p>
+
+</div>
+
+<h3><a id="operacions_de_lectura" >Operacions de lectura</a></h3>
+<div class="level3">
+
+<p>
+Primer de tot, quan un usuari es registri en el sistema haurà d’introduir el seu nom, el nom d’usuari que desitja i el seu correu electrònic. Què passa si el nom d’usuari ja està en ús per part d’un altre usuari? I el correu electrònic? En aquests casos hauríem d’avisar l’usuari que ha d’escollir un altre nom d’usuari o correu electrònic. Ja tenim dues operacions de lectura que haurem d’implementar: trobar usuaris a partir del correu electrònic i a partir del nom d’usuari. Implementem-les:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public User findUserByEmail(String userEmail){</div></li><li class="li1"><div class="de1">  String qry = &quot;select * from users where email ='&quot; + userEmail +&quot;'&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  User user = null;</div></li><li class="li1"><div class="de1">  try (</div></li><li class="li1"><div class="de1">    Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">    Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">    ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">    while (rs.next()) {</div></li><li class="li1"><div class="de1">      int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">      String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">      String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">      String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">      int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">      boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">      Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">      user = new User(userId, username, name, email, rank, timestamp, active);                </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">    e.printStackTrace();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return user;</div></li></ol></pre>
+
+<p>
+La part més important és on es defineix la consulta que es farà a la base de dades:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  String qry = &quot;select * from users where email ='&quot; + userEmail +&quot;'&quot;;</div></li></ol></pre>
+
+<p>
+Aquesta és la consulta SQL que retornarà un usuari a partir del seu correu electrònic. Si no hi ha cap usuari registrat amb el correu electrònic retornarà <em>null</em>. Això es pot expressar amb el següent test unitari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  public void findUserByEmail(){</div></li><li class="li1"><div class="de1">      String existingEmail = &quot;john@email.com&quot;;</div></li><li class="li1"><div class="de1">      String unknownEmail = &quot;does.not@exist.com&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      UserDAO userDAO = new UserDAO(dBConnection);</div></li><li class="li1"><div class="de1">      User user = userDAO.findUserByEmail(existingEmail);</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(user);</div></li><li class="li1"><div class="de1">      user = userDAO.findUserByEmail(unknownEmail);</div></li><li class="li1"><div class="de1">      Assert.assertNull(user);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+<code>Assert.assertNotNull</code> verifica que un objecte no és <em>null</em>, és a dir, s’ha trobat un resultat a la base de dades. Al contrari, <code>Assert.assertNull</code> verifica que un objecte és <em>null</em>; en el vostre cas, que no s’ha trobat cap usuari a la base de dades amb un cert correu electrònic.
+</p>
+
+<p>
+A continuació implementareu un mètode que us permeti trobar usuaris a partir del nom d’usuari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public User findUserByUsername(String username){</div></li><li class="li1"><div class="de1">  String qry = &quot;select * from users where username ='&quot; + username +&quot;'&quot;;</div></li><li class="li1"><div class="de1">  User user = null;</div></li><li class="li1"><div class="de1">  try (</div></li><li class="li1"><div class="de1">          Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">          Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">          ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">      while (rs.next()) {</div></li><li class="li1"><div class="de1">          int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">          username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">          String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">          String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">          int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">          boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">          Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">          user = new User(userId, username, name, email, rank, timestamp, active);                </div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">  } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">      e.printStackTrace();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  return user;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el test unitari:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  @Test</div></li><li class="li1"><div class="de1">  public void findUserByUsername(){</div></li><li class="li1"><div class="de1">      String existingUsername = &quot;user1&quot;;</div></li><li class="li1"><div class="de1">      String unknownUsername = &quot;unknown&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">      UserDAO userDAO = new UserDAO(dBConnection);</div></li><li class="li1"><div class="de1">      User user = userDAO.findUserByUsername(existingUsername);</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(user);</div></li><li class="li1"><div class="de1">      user = userDAO.findUserByUsername(unknownUsername);</div></li><li class="li1"><div class="de1">      Assert.assertNull(user);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Doneu una ullada a la classe sencera, ja que hi ha codi repetit; símptoma inequívoc que és hora de refactoritzar el codi.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  public class UserDAO {</div></li><li class="li1"><div class="de1">  private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">  public UserDAO(DBConnection dBConnection){</div></li><li class="li1"><div class="de1">      this.dBConnection = dBConnection;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public List&lt;User&gt; findAllUsers() {</div></li><li class="li1"><div class="de1">      String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">      List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">          Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">          Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">          ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">        while (rs.next()) {</div></li><li class="li1"><div class="de1">          int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">          String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">          String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">          String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">          int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">          boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">          Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">          User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">          users.add(user);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return users;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public User findUserByEmail(String userEmail){</div></li><li class="li1"><div class="de1">      String qry = &quot;select * from users where email ='&quot; + userEmail +&quot;'&quot;;</div></li><li class="li1"><div class="de1">      User user = null;</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">          Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">          Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">          ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">        while (rs.next()) {</div></li><li class="li1"><div class="de1">          int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">          String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">          String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">          String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">          int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">          boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">          Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">          user = new User(userId, username, name, email, rank, timestamp, active);                </div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return user;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public User findUserByUsername(String username){</div></li><li class="li1"><div class="de1">      String qry = &quot;select * from users where username ='&quot; + username +&quot;'&quot;;</div></li><li class="li1"><div class="de1">      User user = null;</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">            Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">            Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">            ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">          while (rs.next()) {</div></li><li class="li1"><div class="de1">            int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">            username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">            String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">            String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">            int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">            boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">            Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">            user = new User(userId, username, name, email, rank, timestamp, active);                </div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return user;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si us hi fixeu, la part del codi que s’encarrega de fer la connexió amb la base de dades i extreure els resultats es repeteix, millor posar-la a un mètode. Per què? Imagineu la següent situació: més endavant, durant el desenvolupament de l’aplicació, volem afegir un altre atribut a la classe <code>User</code>, com per exemple la data de naixement. Tal com tenim el codi ara mateix, fer aquest canvi implicarà canviar tres mètodes: <code>findAllUsers</code>, <code>findUserByEmail</code> i <code>findUserByUsername</code>. Si aquest codi comú el poseu en un mètode separat, el canvi només l’haureu de fer en un lloc.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">  private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">  public UserDAO(DBConnection dBConnection){</div></li><li class="li1"><div class="de1">      this.dBConnection = dBConnection;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public List&lt;User&gt; findAllUsers() {</div></li><li class="li1"><div class="de1">      String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">      List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">              Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">              Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">              ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">          while (rs.next()) {</div></li><li class="li1"><div class="de1">              User user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">              users.add(user);</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return users;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public User findUserByEmail(String userEmail){</div></li><li class="li1"><div class="de1">      String qry = &quot;select * from users where email ='&quot; + userEmail +&quot;'&quot;;</div></li><li class="li1"><div class="de1">      User user = null;</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">              Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">              Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">              ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">          while (rs.next()) {</div></li><li class="li1"><div class="de1">              user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return user;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public User findUserByUsername(String username){</div></li><li class="li1"><div class="de1">      String qry = &quot;select * from users where username ='&quot; + username +&quot;'&quot;;</div></li><li class="li1"><div class="de1">      User user = null;</div></li><li class="li1"><div class="de1">      try (</div></li><li class="li1"><div class="de1">              Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">              Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">              ResultSet rs = stmt.executeQuery(qry);) {</div></li><li class="li1"><div class="de1">          while (rs.next()) {</div></li><li class="li1"><div class="de1">              user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">      } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">          e.printStackTrace();</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      return user;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  private User buildUserFromResultSet(ResultSet rs) throws SQLException{</div></li><li class="li1"><div class="de1">      int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">      String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">      String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">      String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">      int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">      boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">      Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">      User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">      return user;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem creat la funció <code>buildUserFromResultSet</code>, que s’encarrega de construir un objecte usuari a partir del resultat d’executar la consulta SQL. Un dels avantatges de tenir tests unitaris és que podeu assegurar-vos que la refactorització no ha trencat la funcionalitat del vostre codi. Si correu els tests a la classe <code>UserDAOTest</code> ha de continuar passant.
+</p>
+
+<p>
+Encara es pot refactoritzar més, ja que totes les funcions tenen la mateixa estructura:
+</p>
+<ul>
+<li class="level1"><div class="li"> Establir connexió amb la base de dades</div>
+</li>
+<li class="level1"><div class="li"> Executar una consulta</div>
+</li>
+<li class="level1"><div class="li"> Iterar sobre resultats i construir un o diversos objectes <code>User</code></div>
+</li>
+</ul>
+
+<p>
+L’única diferència és que hi haurà funcions que retornaran només un usuari o diversos. Això ho podem solucionar creant les següents funcions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">private User findUniqueResult(String query) throws Exception{</div></li><li class="li1"><div class="de1">    List&lt;User&gt; users = executeQuery(query);</div></li><li class="li1"><div class="de1">    if(users.isEmpty()){</div></li><li class="li1"><div class="de1">        return null;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if(users.size() &gt; 1){</div></li><li class="li1"><div class="de1">        throw new Exception(&quot;Only one result expected&quot;);</div></li><li class="li1"><div class="de1">    } </div></li><li class="li1"><div class="de1">    return users.get(0);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">private List&lt;User&gt; executeQuery(String query){</div></li><li class="li1"><div class="de1">    List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">    try (</div></li><li class="li1"><div class="de1">            Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">            Statement stmt = conn.createStatement();</div></li><li class="li1"><div class="de1">            ResultSet rs = stmt.executeQuery(query);) {</div></li><li class="li1"><div class="de1">        while (rs.next()) {</div></li><li class="li1"><div class="de1">            User user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">            if(user != null){</div></li><li class="li1"><div class="de1">                users.add(user);   </div></li><li class="li1"><div class="de1">            }            </div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">        e.printStackTrace();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return users;        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+La funció <code>executeQuery</code> s’encarrega d’establir la connexió amb la base de dades i retornar tots els usuaris que resultin d’executar la consulta. En aquest cas no sabem si retornarà un, diversos o cap resultat. Això es pot expressar amb el tipus de dades <em>List</em>; si la llista està buida voldrà dir que no hi ha cap resultat, i si n’hi ha, n’hi haurà tants com elements contingui la llista. Per altra part, la funció <code>findUniqueResult</code> examinarà la llista retornada per <code>executeQuery</code> i retornarà un objecte <em>null</em> si no hi ha cap resultat per a la consulta; un objecte <code>User</code>, si hi és, troba un resultat i es llençarà una excepció si hi ha un error. Per avisar la vostra aplicació que alguna cosa ha anat malament llençareu una excepció.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">if(users.size() &gt; 1){</div></li><li class="li1"><div class="de1">  throw new Exception(&quot;Only one result expected&quot;);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta excepció la propagareu a capes superiors de l’aplicació, on decidireu què fer. Les funcions que permeten obtenir informació sobre els usuaris quedaran molt més simplificades.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public List&lt;User&gt; findAllUsers() {</div></li><li class="li1"><div class="de1">    String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">    List&lt;User&gt; users = executeQuery(qry);</div></li><li class="li1"><div class="de1">    return users;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public User findUserByEmail(String userEmail) throws Exception{</div></li><li class="li1"><div class="de1">    String qry = &quot;select * from users where email ='&quot; + userEmail +&quot;'&quot;;</div></li><li class="li1"><div class="de1">    return findUniqueResult(qry);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public User findUserByUsername(String username) throws Exception{</div></li><li class="li1"><div class="de1">    String qry = &quot;select * from users where username ='&quot; + username +&quot;'&quot;;</div></li><li class="li1"><div class="de1">    return findUniqueResult(qry);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="operacions_d_escriptura" >Operacions d&#039;escriptura</a></h3>
+<div class="level3">
+
+<p>
+Hi ha dues formes diferents d’escriure dades: crear una nova entrada a la base de dades o actualitzar un registre existent.
+</p>
+
+<p>
+Contesteu a les següents preguntes:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Començareu a treballar a partir del codi que teniu disponible a l’apartat d’annexos de la unitat.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> Quines operacions necessitareu de creació de dades?</div>
+</li>
+<li class="level1"><div class="li"> Quines faran falta d’actualització?</div>
+</li>
+</ul>
+
+<p>
+Com podeu veure al codi, en aquest moment només heu definit els usuaris, llavors només podreu crear usuaris. Per altra part, respecte a l’actualització hi ha diverses operacions que caldrà fer:
+</p>
+<ul>
+<li class="level1"><div class="li"> Crear un usuari.</div>
+</li>
+<li class="level1"><div class="li"> Canviar el correu electrònic.</div>
+</li>
+<li class="level1"><div class="li"> Actualitzar el <em>ranking</em>.</div>
+</li>
+<li class="level1"><div class="li"> Actualitzar el nom.</div>
+</li>
+</ul>
+
+<p>
+La creació es fa mitjançant l’operació SQL <em>INSERT</em> i l’actualització amb <em>UPDATE</em>. Voleu crear un usuari a partir del nom, nom d’usuari i correu electrònic. Què passarà amb la resta d’atributs de l’objecte <code>User</code> (<code>userId</code>, <code>rank</code>, <code>createdOn</code> i <code>active</code>)? Les principals diferències amb el codi per llegir dades seran dues: la sentència SQL, que ara contindrà la paraula clau <em>INSERT</em>, i l’operació que cridarem en l’objecte <code>Statement</code>, que serà <code>executeUpdate</code> en lloc de <code>executeQuery</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public User createUser(String username, String name, String email) throws Exception {</div></li><li class="li1"><div class="de1">  String qry = &quot;INSERT INTO users (username, name, email) VALUES ('&quot;</div></li><li class="li1"><div class="de1">          + username + &quot;', '&quot;</div></li><li class="li1"><div class="de1">          + name + &quot;', '&quot;</div></li><li class="li1"><div class="de1">          + email + &quot;'&quot;</div></li><li class="li1"><div class="de1">          + &quot;);&quot;;</div></li><li class="li1"><div class="de1">  try (</div></li><li class="li1"><div class="de1">        Connection conn = dBConnection.getConnection();</div></li><li class="li1"><div class="de1">        Statement stmt = conn.createStatement()) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    int result = stmt.executeUpdate(qry);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    return findUserByUsername(username);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">      e.printStackTrace();</div></li><li class="li1"><div class="de1">      return null;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El mètode <code>executeUpdate</code> (línia 11) retornarà la quantitat de registres que s’han inserit en la base de dades. En alguns entorns, el resultat d’un insert pot retornar 0, per aquest motiu sempre s’ha de controlar l’èxit de l’operació amb excepcions. Finalment (línia 15), un cop creat el nou usuari voldreu retornar l’objecte <code>User</code> amb tots els seus atributs. Aprofiteu la funció <code>findUserByUsername</code> per recuperar l’usuari recentment creat de la base de dades. A continuació podeu veure el test corresponent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void createUser() throws Exception {</div></li><li class="li1"><div class="de1">    String username = &quot;testUser&quot;;</div></li><li class="li1"><div class="de1">    String name = &quot;Pete Test&quot;;</div></li><li class="li1"><div class="de1">    String email = &quot;pete@email.com&quot;;</div></li><li class="li1"><div class="de1">    UserDAO userDAO = new UserDAO(dBConnection);</div></li><li class="li1"><div class="de1">    User createdUser = userDAO.createUser(username, name, email);</div></li><li class="li1"><div class="de1">    Assert.assertNotNull(createdUser);</div></li><li class="li1"><div class="de1">    Assert.assertEquals(username, createdUser.getUsername());</div></li><li class="li1"><div class="de1">    Assert.assertNotEquals(0, createdUser.getUserId());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Primer comproveu que l’usuari creat no és <em>null</em>, que el nom d’usuari correspon al nom que hem passat a la funció <code>createUser</code> i que l’atribut <code>userId</code> del nou usuari no és 0.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Quan es va definir la taula, el camp “user_id” es va definir com <em>user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL</em>; llavors, si el nou usuari s’ha afegit correctament a la base de dades, es pot afirmar que el seu valor no serà <em>null</em>.
+</p>
+</div></div>
+<p>
+Quan executeu aquest test us trobareu que hi ha un error:
+</p>
+<pre class="code">org.h2.jdbc.JdbcSQLException: Table &quot;USERS&quot; already exists; SQL statement:
+CREATE TABLE users(user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+                  username VARCHAR(10) NOT NULL,
+                  name  VARCHAR(20) NOT NULL,
+                  email VARCHAR(50) NOT NULL,
+                  rank INT DEFAULT 0,
+                  active BOOLEAN DEFAULT true,
+                  created_on TIMESTAMP AS CURRENT_TIMESTAMP NOT NULL) [42101-190]
+  at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)</pre>
+
+<p>
+Què ha passat? A la funció <code>createUser</code>, després de definir la consulta a la base de dades, el que feu és establir una connexió amb la base de dades:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Connection conn = dBConnection.getConnection();</div></li></ol></pre>
+
+<p>
+Quan després crideu la funció <code>findUserByUsername</code>, s’executarà la mateixa funció. Recordeu que aquest mètode crea una connexió amb la base de dades de la següent manera:
+</p>
+<pre class="code sql"><ol><li class="li1"><div class="de1">con = DriverManager.getConnection(props.getProperty(&quot;DB_URL&quot;),</div></li><li class="li1"><div class="de1">        props.getProperty(&quot;DB_USERNAME&quot;),</div></li><li class="li1"><div class="de1">        props.getProperty(&quot;DB_PASSWORD&quot;));</div></li><li class="li1"><div class="de1">&nbsp;</div></li></ol></pre>
+
+<p>
+Aquestes propietats estan definides al fitxer de propietats de la base dades, en el cas dels tests (db_test.properties):
+</p>
+<pre class="code">DB_URL=jdbc:h2:mem:socioc_db;INIT=runscript from &#039;classpath:init.sql&#039;;
+DB_USERNAME=usuari
+DB_PASSWORD=passwd</pre>
+
+<p>
+La primera vegada que s’executa <code>dBConnection.getConnection()</code> s’executarà el fitxer init.sql, que crearà la taula “Users”. Afegireu l’usuari a la base de dades, i en executar <code>findUserByUsername</code> s’intentarà executar de nou init.sq, però com que  ja està creada l’aplicació llençarà aquest error.
+</p>
+
+<p>
+Això posa de rellevància un problema del vostre codi: no s’estan reutilitzant les connexions amb la base de dades. Fer una connexió amb la bases de dades és una operació molt cara en termes de recursos: primer s’ha de fer la connexió a través de la xarxa amb la base de dades; s’ha d’inicialitzar una sessió de connexió, que sovint requereix molt de temps de processament per fer l’autenticació d’usuari, establir contextos transaccionals i definir altres aspectes de la sessió que es requereixen per a l’ús de bases de dades subsegüent. En properes seccions veurem com solucionar aquest problema utilitzant <em>pools</em> de connexió. La idea és crear una sèrie de connexions amb la base de dades a l’inici de l’aplicació que es compartiran per a totes les operacions que es facin. De moment, però, refactoritzarem el nostre codi de <code>UserDAO</code> per permetre reutilitzar les connexions establertes amb la base de dades. Això implica afegir una nova propietat i modificar el mètode <code>executeQuery</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">  private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">  private Connection connection;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  private List&lt;User&gt; executeQuery(String query) {</div></li><li class="li1"><div class="de1">    List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    if (getConnection() == null) {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            setConnection(dBConnection.getConnection());</div></li><li class="li1"><div class="de1">        } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    try (</div></li><li class="li1"><div class="de1">            Statement stmt = getConnection().createStatement();</div></li><li class="li1"><div class="de1">            ResultSet rs = stmt.executeQuery(query)) {</div></li><li class="li1"><div class="de1">        while (rs.next()) {</div></li><li class="li1"><div class="de1">            User user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">            users.add(user);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    } catch (SQLException e) {</div></li><li class="li1"><div class="de1">        e.printStackTrace();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return users;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public Connection getConnection() {</div></li><li class="li1"><div class="de1">      return connection;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public void setConnection(Connection connection) {</div></li><li class="li1"><div class="de1">      this.connection = connection;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El que heu fet per solucionar el problema és afegir un atribut a la classe <code>UserDAO</code> i, abans de crear-ne un de nou, comprovar si hi ha objecte <code>Connection</code> vàlid; si és el cas, el reutilitzeu. Abans d’executar el test heu d’assegurar-vos que tanquem la connexió amb la base de dades per tal de a cada test hi hagi només les dades definides al fitxer init.sql. Un cop executat, us assegurareu que la connexió amb la base de dades es tanca de manera que cada vegada la base de dades es torni a crear de nou.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Before</div></li><li class="li1"><div class="de1">public void setUp() {</div></li><li class="li1"><div class="de1">    dBConnection = new DBConnection(connectionProperties);</div></li><li class="li1"><div class="de1">    userDAO = new UserDAO(dBConnection);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1"> @After</div></li><li class="li1"><div class="de1">  public void tearDown() throws IOException, SQLException {</div></li><li class="li1"><div class="de1">      userDAO.getConnection().close();</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+<p>
+Afegiu ara un altre test per comprovar què passaria en cas que hi hagi un error creant l’usuari. En aquest cas provoquem l’error introduint un nom d’usuari incorrecte:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test(expected = Exception.class)</div></li><li class="li1"><div class="de1">public void createUserWithError() throws Exception {</div></li><li class="li1"><div class="de1">    String username = &quot;sl','sls&quot;;</div></li><li class="li1"><div class="de1">    String name = &quot;Pete Test&quot;;</div></li><li class="li1"><div class="de1">    String email = &quot;pete@email.com&quot;;</div></li><li class="li1"><div class="de1">    User createdUser = userDAO.createUser(username, name, email);</div></li><li class="li1"><div class="de1">    Assert.assertNull(createdUser);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Per actualitzar un registre, l’únic que canvia respecte a l’escriptura és que s’utilitza la clàusula SQL <em>UPDATE</em> enlloc d’<em>INSERT</em>. Vegeu com podeu modificar el correu electrònic d’un usuari: afegireu la funció <code>executeUpdateQuery</code> a <code>UserDAO</code> i escriureu el corresponent test unitari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  private int executeUpdateQuery(String query) {</div></li><li class="li1"><div class="de1">    int result = 0;</div></li><li class="li1"><div class="de1">    if (getConnection() == null) {</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            setConnection(dBConnection.getConnection());</div></li><li class="li1"><div class="de1">        } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    try (</div></li><li class="li1"><div class="de1">            Statement stmt = getConnection().createStatement()) {</div></li><li class="li1"><div class="de1">        result = stmt.executeUpdate(query);</div></li><li class="li1"><div class="de1">    } catch (SQLException e) {</div></li><li class="li1"><div class="de1">        e.printStackTrace();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    return result;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&lt;/java&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;code java&gt;</div></li><li class="li1"><div class="de1"> public User updateUserEmail(String username, String newEmail) throws Exception {</div></li><li class="li1"><div class="de1">  String qry = &quot;UPDATE users &quot;</div></li><li class="li1"><div class="de1">          + &quot;SET email = '&quot; + newEmail + &quot;' &quot;</div></li><li class="li1"><div class="de1">          + &quot;WHERE username = '&quot; + username + &quot;' &quot;</div></li><li class="li1"><div class="de1">          + &quot;;&quot;;</div></li><li class="li1"><div class="de1">  int result = executeUpdateQuery(qry);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return findUserByUsername(username);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el test: primer creareu un usuari, modificareu el correu electrònic i comprovareu que és l’única informació que ha canviat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void updateUserEmail() throws Exception {</div></li><li class="li1"><div class="de1">    String username = &quot;testUser&quot;;</div></li><li class="li1"><div class="de1">    String name = &quot;Pete Test&quot;;</div></li><li class="li1"><div class="de1">    String email = &quot;pete@email.com&quot;;</div></li><li class="li1"><div class="de1">    User createdUser = userDAO.createUser(username, name, email);</div></li><li class="li1"><div class="de1">    Assert.assertNotNull(createdUser);</div></li><li class="li1"><div class="de1">    Assert.assertEquals(email, createdUser.getEmail());</div></li><li class="li1"><div class="de1">    User updatedUser = userDAO.updateUserEmail(createdUser.getUsername(), &quot;new@email.com&quot;);</div></li><li class="li1"><div class="de1">    Assert.assertEquals(createdUser.getUserId(), updatedUser.getUserId());</div></li><li class="li1"><div class="de1">    Assert.assertEquals(&quot;new@email.com&quot;, updatedUser.getEmail());</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si doneu una ullada a les funcions <code>updateUserEmail</code> i <code>createUser</code> veureu que són molt similars; l’únic que canvia és la consulta a la base de dades. Això vol dir que aquestes dues funcions són candidates per a la refactorització.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1"> public User createUser(String username, String name, String email) throws Exception {</div></li><li class="li1"><div class="de1">  String qry = &quot;INSERT INTO users (username, name, email) VALUES ('&quot;</div></li><li class="li1"><div class="de1">          + username + &quot;', '&quot;</div></li><li class="li1"><div class="de1">          + name + &quot;', '&quot;</div></li><li class="li1"><div class="de1">          + email + &quot;'&quot;</div></li><li class="li1"><div class="de1">          + &quot;);&quot;;</div></li><li class="li1"><div class="de1">  return createOrUpdateUser(username, qry);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public User updateUserEmail(String username, String newEmail) throws Exception {</div></li><li class="li1"><div class="de1">  String qry = &quot;UPDATE users &quot;</div></li><li class="li1"><div class="de1">          + &quot;SET email = '&quot; + newEmail + &quot;' &quot;</div></li><li class="li1"><div class="de1">          + &quot;WHERE username = '&quot; + username + &quot;' &quot;</div></li><li class="li1"><div class="de1">          + &quot;;&quot;;</div></li><li class="li1"><div class="de1">  return createOrUpdateUser(username, qry);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">private User createOrUpdateUser(String username, String query) throws Exception {</div></li><li class="li1"><div class="de1">  int result = executeUpdateQuery(query);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return findUserByUsername(username);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="eliminacio_de_dades" >Eliminació de dades</a></h3>
+<div class="level3">
+
+<p>
+L’eliminació de dades també es considera una actualització de la base de dades; en aquest cas, modificar-la per eliminar informació.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public void deleteUser(User user) throws Exception {</div></li><li class="li1"><div class="de1">    String query = &quot;DELETE FROM users WHERE user_id = '&quot; + user.getUserId() + &quot;' &quot;;</div></li><li class="li1"><div class="de1">    createOrUpdateUser(user.getUsername(), query);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A continuació creeu el test:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+La modificació de l’actualització de la base de dades per eliminar la informació es farà utilitzant el mètode <code>executeUpdate</code> de l’objecte <code>Statement</code>, per a la qual cosa es pot reutilitzar la funció <code>createOrUpdateUser</code> que heu creat en l’apartat “Operacions d’escriptura” i que podeu trobar a l’apartat d’annexos de la unitat.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1"> @Test</div></li><li class="li1"><div class="de1">  public void deleteUser() throws Exception {</div></li><li class="li1"><div class="de1">      String username = &quot;testUser&quot;;</div></li><li class="li1"><div class="de1">      String name = &quot;Pete Test&quot;;</div></li><li class="li1"><div class="de1">      String email = &quot;pete@email.com&quot;;</div></li><li class="li1"><div class="de1">      User createdUser = userDAO.createUser(username, name, email);</div></li><li class="li1"><div class="de1">      Assert.assertNotNull(createdUser);</div></li><li class="li1"><div class="de1">      userDAO.deleteUser(createdUser);</div></li><li class="li1"><div class="de1">      User deletedUser = userDAO.findUserByUsername(username);</div></li><li class="li1"><div class="de1">      Assert.assertNull(deletedUser);</div></li><li class="li1"><div class="de1">  }</div></li></ol></pre>
+
+</div>
+
+<h2><a id="injeccio_sql" >Injecció SQL</a></h2>
+<div class="level2">
+
+<p>
+Un atac d’injecció SQL és exactament el que el seu nom indica: és quan algú intenta “injectar” el seu codi SQL maliciós a la base de dades d’una altra persona, obligant aquesta base de dades a executar SQL que no estava previst. Això podria arruïnar les seves taules de bases de dades i fins i tot extreure informació valuosa o privada. Vegem-ne un exemple: aquesta és la consulta que hem utilitzat per trobar un usuari a partir del correu electrònic:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">String qry = &quot;select * from users where email ='&quot; + userEmail + &quot;'&quot;;</div></li></ol></pre>
+
+<p>
+ És a dir, que per al correu electrònic test@email.com utilitzaríeu la crida a la funció <code>findUserByEmail(“test@email.com”)</code>, amb la qual cosa la consulta SQL quedaria:
+</p>
+<pre class="code sql"><ol><li class="li1"><div class="de1">  select * from users where email ='test@email.com';</div></li></ol></pre>
+
+<p>
+Un atac d’injecció SQL consistiria a modificar aquest SQL. Com es pot fer? N’hi hauria prou amb modificar l’argument que s’utilitza en cridar la funció. Si executem <code>findUserByEmail(“test@email.com &#039; OR 1=1”)</code>, la consulta SQL que s’executaria seria:
+</p>
+<pre class="code sql"><ol><li class="li1"><div class="de1">select * from users where email ='test@email.com' OR '1'='1;</div></li></ol></pre>
+
+<p>
+La segona condició sempre es complirà; per tant, en lloc d’efectuar una consulta que retorni els usuaris amb el correu, retornarà un llistat de tots els usuaris. En aquest cas estaríeu exposant dades sense voler, però el codi SQL inserit podria ser fàcilment modificat per esborrar totes les dades.
+</p>
+
+<p>
+Seguint l’exemple de trobar un usuari a partir del correu electrònic:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  PreparedStatement stmt = connection.prepareStatement(&quot;select * from users where email =?&quot;);</div></li><li class="li1"><div class="de1">  stmt.setString(1, userEmail);</div></li></ol></pre>
+
+<p>
+Per poder utilitzar <code>PreparedStatements</code> refactoritzem el codi per tal de que <code>executeQuery</code>, <code>executeupdateQuery</code> i <code>findUniqueResult</code> no usin més una cadena de caràcters com a paràmetre. Fixeu-vos també que he introduït un nou mètode <code>getPreparedStatement</code> que s’encarrega d’obtenir un objecte <code>PreparedStatement</code> ja sigui reutilitzant una connexió existent o creant-ne una de nova:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class UserDAO {</div></li><li class="li1"><div class="de1">    private DBConnection dBConnection;</div></li><li class="li1"><div class="de1">    private Connection connection;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public UserDAO(DBConnection dBConnection) {</div></li><li class="li1"><div class="de1">        this.dBConnection = dBConnection;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public List&lt;User&gt; findAllUsers() throws SQLException {</div></li><li class="li1"><div class="de1">        String qry = &quot;select user_id, username, name, email, rank, active, created_on from users&quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users = executeQuery(preparedStatement);</div></li><li class="li1"><div class="de1">        return users;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User findUserByEmail(String userEmail) throws Exception {</div></li><li class="li1"><div class="de1">        String qry = &quot;select * from users where email = ?&quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(1, userEmail);</div></li><li class="li1"><div class="de1">        return findUniqueResult(preparedStatement);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User findUserByUsername(String username) throws Exception {</div></li><li class="li1"><div class="de1">        String qry = &quot;select * from users where username =?&quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(1, username);</div></li><li class="li1"><div class="de1">        return findUniqueResult(preparedStatement);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User createUser(String username, String name, String email) throws Exception {</div></li><li class="li1"><div class="de1">        String qry = &quot;INSERT INTO users (username, name, email) VALUES (?, ?, ?)&quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(1, username);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(2, name);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(3, email);</div></li><li class="li1"><div class="de1">        return createOrUpdateUser(username, preparedStatement);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public User updateUserEmail(User user, String newEmail) throws Exception {</div></li><li class="li1"><div class="de1">        String qry = &quot;UPDATE users SET email = ?  WHERE user_id = ? &quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        preparedStatement.setString(1, newEmail);</div></li><li class="li1"><div class="de1">        preparedStatement.setInt(2, user.getUserId());</div></li><li class="li1"><div class="de1">        return createOrUpdateUser(user.getUsername(), preparedStatement);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private User createOrUpdateUser(String username, PreparedStatement preparedStatement) throws Exception {</div></li><li class="li1"><div class="de1">        int result = executeUpdateQuery(preparedStatement);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        return findUserByUsername(username);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void deleteUser(User user) throws Exception {</div></li><li class="li1"><div class="de1">        String qry = &quot;DELETE FROM users WHERE user_id = ?&quot;;</div></li><li class="li1"><div class="de1">        PreparedStatement preparedStatement = getPreparedStatement(qry);</div></li><li class="li1"><div class="de1">        preparedStatement.setInt(1, user.getUserId());</div></li><li class="li1"><div class="de1">        createOrUpdateUser(user.getUsername(), preparedStatement);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private User findUniqueResult(PreparedStatement preparedStatement) throws Exception {</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users = executeQuery(preparedStatement);</div></li><li class="li1"><div class="de1">        if (users.isEmpty()) {</div></li><li class="li1"><div class="de1">            return null;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        if (users.size() &gt; 1) {</div></li><li class="li1"><div class="de1">            throw new Exception(&quot;Only one result expected&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return users.get(0);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private List&lt;User&gt; executeQuery(PreparedStatement preparedStatement) {</div></li><li class="li1"><div class="de1">        List&lt;User&gt; users = new ArrayList&lt;&gt;();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        try (</div></li><li class="li1"><div class="de1">                ResultSet rs = preparedStatement.executeQuery()) {</div></li><li class="li1"><div class="de1">            while (rs.next()) {</div></li><li class="li1"><div class="de1">                User user = buildUserFromResultSet(rs);</div></li><li class="li1"><div class="de1">                users.add(user);</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        } catch (SQLException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return users;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private PreparedStatement getPreparedStatement(String query) throws SQLException {</div></li><li class="li1"><div class="de1">        if (getConnection() == null) {</div></li><li class="li1"><div class="de1">            try {</div></li><li class="li1"><div class="de1">                setConnection(dBConnection.getConnection());</div></li><li class="li1"><div class="de1">            } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">                e.printStackTrace();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return getConnection().prepareStatement(query);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private int executeUpdateQuery(PreparedStatement preparedStatement) {</div></li><li class="li1"><div class="de1">        int result = 0;</div></li><li class="li1"><div class="de1">        if (getConnection() == null) {</div></li><li class="li1"><div class="de1">            try {</div></li><li class="li1"><div class="de1">                setConnection(dBConnection.getConnection());</div></li><li class="li1"><div class="de1">            } catch (SQLException | IOException e) {</div></li><li class="li1"><div class="de1">                e.printStackTrace();</div></li><li class="li1"><div class="de1">            }</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        try {</div></li><li class="li1"><div class="de1">            result = preparedStatement.executeUpdate();</div></li><li class="li1"><div class="de1">        } catch (SQLException e) {</div></li><li class="li1"><div class="de1">            e.printStackTrace();</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">        return result;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private User buildUserFromResultSet(ResultSet rs) throws SQLException {</div></li><li class="li1"><div class="de1">        int userId = rs.getInt(&quot;user_id&quot;);</div></li><li class="li1"><div class="de1">        String username = rs.getString(&quot;username&quot;);</div></li><li class="li1"><div class="de1">        String name = rs.getString(&quot;name&quot;);</div></li><li class="li1"><div class="de1">        String email = rs.getString(&quot;email&quot;);</div></li><li class="li1"><div class="de1">        int rank = rs.getInt(&quot;rank&quot;);</div></li><li class="li1"><div class="de1">        boolean active = rs.getBoolean(&quot;active&quot;);</div></li><li class="li1"><div class="de1">        Timestamp timestamp = rs.getTimestamp(&quot;created_on&quot;);</div></li><li class="li1"><div class="de1">        User user = new User(userId, username, name, email, rank, timestamp, active);</div></li><li class="li1"><div class="de1">        return user;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Connection getConnection() {</div></li><li class="li1"><div class="de1">        return connection;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public void setConnection(Connection connection) {</div></li><li class="li1"><div class="de1">        this.connection = connection;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+Heu après que JDBC és la tecnologia que permet a una aplicació Java connectar-se a diferents bases de dades utilitzant una única interfície de programació. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+A l’apartat d’annexos de la unitat podeu trobar el codi després de la refactorització.
+</p>
+</div></div>
+<p>
+Resumint, heu après a:
+</p>
+<ul>
+<li class="level1"><div class="li"> Conèixer la utilitat i l’arquitectura de JDBC</div>
+</li>
+<li class="level1"><div class="li"> Usar una base de dades en memòria per fer tests unitaris</div>
+</li>
+<li class="level1"><div class="li"> Escriure el codi Java per poder fer operacions CRUD amb la base de dades</div>
+</li>
+</ul>
+
+<p>
+Ja esteu preparats per començar les activitats proposades en aquest apartat per tal de poder endinsar-vos en el món de la programació amb Java i bases de dades.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u4/referencies.html">Bibliografia bàsica</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u4/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

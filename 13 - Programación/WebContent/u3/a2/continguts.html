@@ -1,0 +1,939 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Programació bàsica (ASX) \ Programació (DAM i DAW)</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Programació bàsica (ASX) \ Programació (DAM i DAW)">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Programació bàsica (ASX) \ Programació (DAM i DAW)</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Tipus de dades compostes</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats_d_aprenentatge"><a href="../../../WebContent/u3/resultats_d_aprenentatge.html">Resultats d'aprenentatge</a></li><li id="u3mapa"><a href="../../../WebContent/u3/mapa.html">Mapa conceptual</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Tipus de dades compostes: "arrays"</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_i_inicialitzacio_d_arrays">Declaració i inicialització d'"arrays"</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#manipulacio_de_dades_dins_d_arrays">Manipulació de dades dins d'"arrays"</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#emmagatzematge_de_l_entrada_de_dades_en_un_array">Emmagatzematge de l'entrada de dades en un "array"</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#esquemes_fonamentals_en_la_utilitzacio_d_arrays">Esquemes fonamentals en la utilització d'"arrays"</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#arrays_multidimensionals">"Arrays" multidimensionals</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#solucions_dels_reptes_proposats">Solucions dels reptes proposats</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Tractament de cadenes de text</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#la_classe_string">La classe "String"</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#entrada_de_cadenes_de_text">Entrada de cadenes de text</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#manipulacio_de_cadenes_de_text">Manipulació de cadenes de text</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#solucions_dels_reptes_proposats">Solucions dels reptes proposats</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Tipus de dades compostes</a></li><li>Tractament de cadenes de text</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="tractament_de_cadenes_de_text"> Tractament de cadenes de text </a></h1>
+    	
+<p>
+Fins ara, el tipus de dada caràcter no ha estat gaire rellevant a l’hora d’exposar exemples significatius de codi font de programes. És força habitual que en el vostre dia a dia tracteu amb conjunts de dades numèriques individuals, cadascuna independent de les altres: dates, distàncies, intervals de temps, quantitats, etc. Per tant, són dades que té sentit emmagatzemar i processar mitjançant un programa per automatitzar-ne el càlcul. En canvi, segurament no és gaire habitual que constantment useu conjunts de caràcters individuals i independents: lletres ‘a’, ‘b’, ‘c’, etc. La veritable utilitat dels caràcters és poder usar-los agrupats en forma de paraules o frases: un nom, una pregunta, un missatge, etc. Per tant, si un llenguatge de programació ha de ser útil, s’ha de tenir en compte aquesta circumstància.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El tipus de dada compost <strong>cadena de text</strong> o <strong>String</strong> serveix per representar i gestionar de manera senzilla una seqüència de caràcters.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle">String</p>
+<p>
+En Java, el tipus de dada compost cadena de text s’identifica amb la paraula clau <code>String</code>.
+</p>
+</div></div>
+<h2><a id="la_classe_string" >La classe &quot;String&quot;</a></h2>
+<div class="level2">
+
+<p>
+En llenguatge Java, la manipulació de qualsevol dada de tipus compost, incloent-hi les cadenes de text, té un seguit de particularitats i una terminologia força diferent de la dels tipus primitius o els <em>arrays</em>. Si bé no és necessari conèixer-ne tots els detalls, abans de veure com manipular cadenes de text o altres tipus de dades compostos és important aprendre un seguit de termes específics, ja que apareixen amb freqüència a la documentació de Java.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’ús dels termes classe i objecte està estretament lligat a la característica de llenguatge Java de ser orientat a objectes.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+En Java, exceptuant el cas de l’<em>array</em>, s’usa el terme <strong>classe</strong> per referir-se a un tipus de dada compost.
+</p>
+</div></div>
+<p>
+A les variables de tipus de dades compostos també els podem assignar directament valors, com a les de tipus primitius. Ara bé, amb algunes particularitats en la nomenclatura. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+ S’usa el terme <strong>objecte</strong> per referir-se al valor assignat a una variable d’un tipus de dades compost.
+</p>
+</div></div>
+<p>
+En llenguatge Java, la classe que representa una cadena de text s’anomena explícitament <code>String</code>. Així, doncs, a partir d’ara, en lloc de parlar del “tipus de dada compost <code>String</code>”, direm sempre “la classe <code>String</code>”, i en lloc de dir que una variable “és del tipus de dada compost <code>String</code>” es dirà que “és de la classe o que pertany a la classe <code>String</code>”. Per norma general, també es parlarà de “l’objecte assignat a la variable <code>holaMon</code>” en lloc d’“el valor assignat a la variable <code>holaMon</code>”, o d’“un objecte de la classe <code>String</code>” en lloc d’“un valor de tipus <code>String</code>”.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per convenció de codi, els noms de les classes al Java s’escriuen sempre usant <em>UpperCamelCase</em>.
+</p>
+</div></div>
+<p>
+En realitat, els conceptes de classe i objecte van molt més enllà del que s’ha exposat aquí, però això ja ens val per poder explicar com manipular cadenes de text de manera que se segueixi estrictament la terminologia Java tal com s’usa a les seves fonts de referència.
+</p>
+
+</div>
+
+<h3><a id="inicialitzacio_d_objectes_string" >Inicialització d&#039;objectes &quot;String&quot;</a></h3>
+<div class="level3">
+
+<p>
+Treballar amb classes no modifica en absolut la sintaxi per declarar una variable, però sí que pot tenir algunes implicacions a l’hora d’inicialitzar-la, ja que cal assignar un objecte. Com es representa un objecte pot variar depenent de la classe emprada. Afortunadament, en el cas de la classe <code>String</code>, la sintaxi per declarar i inicialitzar una variable és idèntica a com es faria amb un tipus primitiu qualsevol, ja que és possible representar un objecte mitjançant un literal directament. Els literals assignables a una variable de la classe <code>String</code> prenen la forma de qualsevol combinació de text envoltada entre cometes dobles, <code>“…”</code>. Un exemple de declaració i inicialització d’una variable que conté una cadena de text seria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  String holaMon = &quot;Hola, món!&quot;;</div></li></ol></pre>
+
+<p>
+Aquesta instrucció declara una variable anomenada <code>holaMon</code>, pertanyent a la classe <code>String</code>, i li assigna l’objecte que representa la cadena de text “Hola, món!”.
+</p>
+
+<p>
+Val la pena comentar que hi ha el concepte de cadena de text “buida”, és a dir, que no conté absolutament cap caràcter. Es representa simplement no posant res entre les cometes dobles. Expressat amb codi seria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">  String cadenaBuida = &quot;&quot;;</div></li></ol></pre>
+
+</div>
+
+<h3><a id="manipulacio_d_objectes" >Manipulació d&#039;objectes</a></h3>
+<div class="level3">
+
+<p>
+A diferència dels tipus primitius, qualsevol objecte emmagatzemat en una variable pertanyent a una classe (és a dir, qualsevol valor emmagatzemat en una variable d’un tipus de dada compost), no es pot manipular directament mitjançant operadors de cap tipus. No hi ha operadors que manipulin o comparin directament objectes.
+</p>
+
+<p>
+En alguns casos, la restricció en l’ús d’operacions ja pot resultar evident de manera intuïtiva. Aquest és el cas dels operadors aritmètics o lògics. Per exemple, amb quin resultat avaluaria una divisió de cadenes de text (objectes de la classe <code>String</code>) o la seva negació lògica? Ara bé, en el cas dels operadors relacionals, tot i que sí que pot tenir sentit intentar comparar dues cadenes de text, usar-los també és incorrecte. Per tant, les expressions següents no són vàlides.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>unString * unAltreString</code></div>
+</li>
+<li class="level1"><div class="li"> <code>unString &amp;&amp; unAltreString</code></div>
+</li>
+<li class="level1"><div class="li"> <code>unString &lt; unAltreString</code></div>
+</li>
+<li class="level1"><div class="li"> <code>unString == unAltreString</code></div>
+</li>
+<li class="level1"><div class="li"> etc.</div>
+</li>
+</ul>
+
+<p>
+En el cas de la igualtat cal tenir cura especial, ja que el compilador de Java no ho considera un error de sintaxi.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+En Java, la manipulació d’objectes es fa mitjançant la <strong>invocació de mètodes</strong> sobre les variables en què es troben emmagatzemats. 
+</p>
+</div></div>
+<p>
+La llista de mètodes que poden ser invocats sobre una variable on s’emmagatzema un objecte depèn exclusivament de la seva classe. Classes diferents permeten la invocació de diferents mètodes. Per exemple, la classe <code>String</code> especifica el conjunt de mètodes que és possible invocar sobre una variable on hi ha assignada una cadena de text. 
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Podeu trobar la llista de mètodes de la classe <code>String</code> en el web <a href="http://download.oracle.com/javase/6/docs/api/java/lang/String.html" class="urlextern" title="http://download.oracle.com/javase/6/docs/api/java/lang/String.html"  rel="nofollow">http://download.oracle.com/javase/6/docs/api/java/lang/String.html</a>.
+</p>
+</div></div>
+<p>
+Per generar una instrucció en què es crida un mètode, s’usa l’identificador de la variable, seguida d’un punt, i llavors el nom del mètode que volem, escollit entre la llista que ofereix la classe a la qual pertany la variable. Depenent del mètode utilitzat, pot ser necessari indicar un seguit d’informació addicional, en forma de llista de valors entre parèntesis, separats per comes <code>(…, …, …)</code>. Aquesta llista és el que s’anomenen els seus <strong>paràmetres</strong>. Si el mètode no requereix cap paràmetre, només cal obrir i tancar parèntesis, <code>()</code>. La sintaxi seria:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">identificadorVariable.nomMètode(paràmetre1, paràmetre2,..., paràmetreN);</div></li></ol></pre>
+
+<p>
+Escriure una invocació d’un mètode sobre una variable és equivalent a escriure una expressió que avalua un cert resultat. Cada mètode diferent fa una operació o transformació diferent sobre l’objecte emmagatzemat en aquella variable. Per saber què fa cadascun i a quin tipus de dada pertany el seu resultat, no queda més remei que mirar la documentació de Java.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per convenció de codi, els noms dels mètodes de les classes del Java estan escrits sempre usant <em>lowerCamelCase</em>.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+La invocació d’un mètode té la màxima precedència en avaluar una expressió.
+</p>
+</div></div>
+<p>
+La màxima precedència d’una invocació d’un mètode té especialment sentit en aquest cas, ja que fins que el seu resultat concret no s’ha avaluat, no es disposa de cap valor a partir del qual es pugui continuar avaluant una expressió més complexa. Per exemple, en el codi següent, en què s’usa el mètode <code>length()</code>, que avalua la mida d’un objecte de la classe <code>String</code>, el resultat és 43, per l’ordre de precedència dels operadors. Fins que no s’ha avaluat <code>length()</code> i s’ha esbrinat que la mida del text és 22, ni tant sols seria possible iniciar el càlcul de la multiplicació. Això evidencia que la seva precedència ha de ser la màxima.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Precedencia {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    //El text té una mida de 22 caràcters.</div></li><li class="li1"><div class="de1">    String text = &quot;Hi havia una vegada...&quot;;</div></li><li class="li1"><div class="de1">    //ordre: 1) mètode, 2) multiplicació, 3) resta.</div></li><li class="li1"><div class="de1">    int dobleMidaMenysUn = 2 * text.length() - 1;</div></li><li class="li1"><div class="de1">    System.out.println(dobleMidaMenysUn);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="acces_als_caracters_d_una_cadena_de_text" >Accés als caràcters d&#039;una cadena de text</a></h3>
+<div class="level3">
+
+<p>
+Per la manera com organitzen els conjunts de caràcters que contenen, les cadenes de text són molt semblants als <em>arrays</em>. En el fons, no deixen de ser una seqüència de tipus primitius, en aquest cas caràcters (<code>char</code>), en què cada lletra ocupa una posició concreta. Per tant, molts dels aspectes generals aplicables als <em>arrays</em> en el Java també es poden aplicar a les cadenes de text. Novament, l’accés es fa per l’índex de la posició que ocupa cada caràcter, començant des de 0 i fins a la seva llargària − 1. 
+</p>
+
+<p>
+Ara bé, atès que les cadenes de text s’emmagatzemen en Java en variables de la classe <code>String</code> en forma d’objectes, l’accés o manipulació de les seves dades s’ha de fer mitjançant la invocació d’algun dels mètodes definits en la classe <code>String</code>. Per al cas de l’accés a caràcters individuals, el mètode que cal usar és l’anomenat <code>charAt(numPosició)</code>. Aquest mètode requereix un únic paràmetre de tipus enter en què s’indica quina posició cal consultar, i avalua igual el caràcter en aquella posició.
+</p>
+
+<p>
+Per exemple, veure quin caràcter és a la tercera posició d’una cadena de text es faria de la manera següent. Fixeu-vos que la invocació d’un mètode és equivalent a avaluar una expressió:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">String holaMon = &quot;Hola, món!&quot;;</div></li><li class="li1"><div class="de1">char c = holaMon.charAt(3);</div></li><li class="li1"><div class="de1">//A la variable &quot;c&quot; hi ha el caràcter 'a'</div></li><li class="li1"><div class="de1">System.out.println(&quot;A la posició 3 hi ha el caràcter &quot; + c);</div></li><li class="li1"><div class="de1">...</div></li></ol></pre>
+
+<p>
+La <span class="figref"><a href="#Figure9"><span>figura</span></a></span> mostra el comportament de la invocació en el mètode <code>charAt</code>. Fixeu-vos que, en el fons, aquest és equivalent a avaluar una expressió. El seu resultat pot ser immediatament assignat a una variable, o usat en una altra expressió.
+</p>
+<div class="iocfigure"><a name="Figure9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Avaluació de la invocació del mètode charAt
+
+</figcaption><img src="../media/ic10mu3_13.png" alt="" /></figure>
+</div>
+<p>
+Com amb els <em>arrays</em>, la posició també ha de ser un valor vàlid o es produirà un error. Per evitar això, en Java les cadenes de text també incorporen un mecanisme per establir quina és la seva llargària, similar a l’atribut <code>length</code> dels <em>arrays</em>. Es tracta del mètode <code>length()</code>. Alerta, fixeu-vos que, en tractar-se d’un mètode sense paràmetres, immediatament al final porta dos parèntesis, <code>()</code>. En el cas dels <em>arrays</em>, aquests parèntesis no s’usen. 
+</p>
+
+<p>
+Per exemple, el codi següent escriu en línies diferents els caràcters individuals de la cadena de text “Hola, món!”. Proveu que és així.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Mostra els caràcters individuals en una cadena de text.</div></li><li class="li1"><div class="de1">public class MostraCaracters {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    String holaMon = &quot;Hola, món!&quot;;</div></li><li class="li1"><div class="de1">    //Es recorren les posicions de la cadena de text una per una.</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; holaMon.length(); i++) {</div></li><li class="li1"><div class="de1">      System.out.println(holaMon.charAt(i));    </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Finalment, heu de tenir en compte que un punt molt important de l’ús dels mètodes és el fet que aquests <strong>es comporten exactament igual que expressions</strong>. Per tant, no és possible fer assignacions sobre aquests. En el cas de les variables de la classe <code>String</code> pot ser fàcil confondre’s, ja que el seu comportament és molt semblant als <em>arrays</em>, però no del tot. Tot i que si partiu del funcionament d’un <em>array</em> podria semblar lògic fer el següent, en realitat és un error. Seria com si, operant amb valors enters, intentéssiu assignar un valor al resultat d’una expressió suma:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">...</div></li><li class="li1"><div class="de1">holaMon.charAt(3) = 'b'</div></li><li class="li1"><div class="de1">//Erroni. No és realment igual que fer &quot;array[3] = ...;&quot;.</div></li><li class="li1"><div class="de1">//Seria més aviat com intentar fer &quot;(3 + 4) = a;&quot;.</div></li><li class="li1"><div class="de1">...</div></li></ol></pre>
+
+<p>
+De fet, la classe <code>String</code> de Java no ofereix cap mètode per canviar el valor del caràcter en una posició determinada.
+
+<strong>Repte 1:</strong> feu un programa que mostri per pantalla una cadena de text, però escrita del revés. Per exemple, si es parteix de la cadena “Hola, món!”, per pantalla ha de mostrar “!nóm ,aloH”.
+</p>
+
+</div>
+
+<h3><a id="concatenacio_de_cadenes_de_text" >Concatenació de cadenes de text</a></h3>
+<div class="level3">
+
+<p>
+Si bé s’ha dit que els objectes no es poden manipular mitjançant operadors, únicament mitjançant la invocació de mètodes, això no és del tot cert. Hi ha un únic cas en què sí que és possible aplicar l’operació de suma entre objectes. Es tracta de la concatenació de cadenes de text (objectes de la  classe <code>String</code>). De fet, aquest és un cas realment molt excepcional, ja que, si us hi fixeu, també es permet fer aquesta operació entre cadenes de text i dades de diferents tipus primitius, cosa que en teoria tampoc està permesa. Cap altra mena d’objectes permet en Java aquesta mena de comportament. 
+</p>
+
+<p>
+El resultat de la concatenació amb cadenes de text sempre dóna com a resultat una nova cadena de text, que es pot usar tant per generar missatges mostrats directament per pantalla com per fer assignacions a variables de la classe <code>String</code>. Per tant, recordeu que es pot fer:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Mostra el resultat d'una divisió simple entre reals.</div></li><li class="li1"><div class="de1">public class Dividir{</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    double dividend = 18954.74;</div></li><li class="li1"><div class="de1">    double divisor = 549.12;</div></li><li class="li1"><div class="de1">    double resultatDivisio = dividend/divisor;</div></li><li class="li1"><div class="de1">    //S'assigna el resultat de la concatenació a una variable de la classe string.</div></li><li class="li1"><div class="de1">    String missatge = &quot;El resultat obtingut és &quot; + resultatDivisio + &quot;.&quot;;</div></li><li class="li1"><div class="de1">    System.out.println(missatge); </div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Cal que tingueu present que us trobeu davant una excepció, incorporada pels creadors del Java per facilitar la vostra tasca com a programadors a l’hora de crear missatges de text.
+</p>
+
+</div>
+
+<h3><a id="arrays_de_cadenes_de_text" >&quot;Arrays&quot; de cadenes de text</a></h3>
+<div class="level3">
+
+<p>
+De la mateixa manera que es poden declarar i usar <em>arrays</em> de tipus primitius, també es poden declarar i usar <em>arrays</em> d’objectes, com les cadenes de text. La sintaxi en aquest aspecte no varia en absolut, si bé heu de tenir en compte que la part de la instrucció vinculada a la definició del tipus ara indica el nom de la classe. Per exemple, per declarar un <em>array</em> amb capacitat per a 5 cadenes de text es faria de la manera següent, segons si s’usa el mecanisme amb valors concrets o per defecte:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Inicialització a valor concret.</div></li><li class="li1"><div class="de1">//Un literal d'una cadena de text es representa amb text entre cometes dobles.</div></li><li class="li1"><div class="de1">String[] arrayCadenaConcret= {&quot;Valor1&quot;, &quot;Valor2&quot;, &quot;Valor3&quot;, &quot;Valor4&quot;, &quot;Valor5&quot;};</div></li><li class="li1"><div class="de1">//Inicialització a valor per defecte.</div></li><li class="li1"><div class="de1">String[] arrayCadenaDefecte = new String[5];</div></li></ol></pre>
+
+<p>
+El cas de la inicialització a valors per defecte té una particularitat, i és que les posicions prenen un valor especial que indica que la posició està “buida”, anomenat <code>null</code>. Alerta, ja que aquest valor és un cas especial i no és equivalent a una cadena buida o sense text (representada amb el literal “”). Mentre una posició és “buida”, es compleix que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Si es mostra per pantalla, apareix el text: “null”.</div>
+</li>
+<li class="level1"><div class="li"> Qualsevol invocació d’un mètode sobre seu dóna un error.</div>
+</li>
+</ul>
+
+<p>
+Per accedir a una posició d’un <em>array</em> d’objectes, la sintaxi és igual que per als tipus primitius, usant un índex entre claus (<code>[i]</code>). Tot i així, els objectes tenen la particularitat de permetre la invocació de mètodes. En aquest aspecte, una posició es comporta com una variable qualsevol. Això es pot veure en l’exemple següent, especialment en el segon bucle, en què s’invoca el mètode <code>length()</code> directament sobre la cadena de text que hi ha a cada posició de l’<em>array</em>. Compileu-lo i executeu-lo per esbrinar què fa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class ArrayString {</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    String[] text = {&quot;Hi&quot;, &quot;havia&quot;, &quot;una&quot;, &quot;vegada...&quot;};</div></li><li class="li1"><div class="de1">    System.out.println(&quot;El text de l'array és:&quot;);</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; text.length; i++) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Posició &quot; + i + &quot;: &quot; + text[i]);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Les seves mides són:&quot;);</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; text.length; i++) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Posició &quot; + i + &quot;: &quot; + text[i].length());</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="entrada_de_cadenes_de_text" >Entrada de cadenes de text</a></h2>
+<div class="level2">
+
+<p>
+De la mateixa manera que pot ser necessari introduir dades de tipus primitius en el programa, de manera que s’hi pugui treballar, també pot ser necessària l’entrada de cadenes de text. Per al cas de l’entrada de cadenes de text, però, teniu dues possibilitats. 
+</p>
+
+<p>
+D’una banda, es pot usar el teclat tal com heu fet fins ara. De fet, aquesta és la finalitat més natural per a la qual s’empra el teclat, ja que es tracta d’un perifèric especialment dissenyat per escriure text. Per fer-ho cal que useu les instruccions de lectura que ja heu après anteriorment, però de manera que sigui possible llegir tant paraules individuals com frases de text completes.
+</p>
+
+<p>
+D’una altra banda, hi ha una possibilitat nova: l’entrada mitjançant arguments en el mètode principal. Sempre que s’executa un programa al vostre ordinador és possible incloure directament un seguit d’arguments addicionals en forma de text. Si bé en els sistemes operatius moderns, basats en entorns gràfics de finestres, aquesta circumstància queda oculta, aquesta opció està present. Java permet esbrinar si en executar el vostre programa s’han inclòs aquests arguments i, si és el cas, quins són.
+</p>
+
+</div>
+
+<h3><a id="lectura_des_de_teclat" >Lectura des de teclat</a></h3>
+<div class="level3">
+
+<p>
+El procés de lectura de cadenes de text des de teclat és molt semblant a la lectura de tipus primitius. Només cal saber quines són les instruccions adients per obtenir cadenes de text des de teclat, en aquest cas en forma d’objectes de la classe <code>String</code>. Abans de veure quines són aquestes instruccions, però, val la pena fer una petita revisió dels elements que intervenen en el procés de lectura de dades per teclat aprofitant que s’han introduït els conceptes de classe, objecte i mètode, sota una nova perspectiva.
+</p>
+
+</div>
+
+<h4><a id="revisio_de_la_lectura_per_teclat" >Revisió de la lectura per teclat</a></h4>
+<div class="level4">
+
+<p>
+Torneu a fer una ullada a un exemple simple de lectura de dades per teclat. Per exemple, un programa que llegeix un valor enter i el mostra per pantalla, comprovant abans que el tipus del valor escrit sigui el correcte.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Llegeix un enter, comprovant que sigui correcte.</div></li><li class="li1"><div class="de1">public class LecturaEnter {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    int valor = 0;</div></li><li class="li1"><div class="de1">    System.out.print(&quot;Escriu un valor enter: &quot;);</div></li><li class="li1"><div class="de1">    if (lector.hasNextInt()) {</div></li><li class="li1"><div class="de1">      valor = lector.nextInt();</div></li><li class="li1"><div class="de1">      System.out.println(&quot;El valor era &quot; + valor + &quot;.&quot;);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      lector.next();</div></li><li class="li1"><div class="de1">      System.out.print(&quot;El valor no era enter.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    lector.nextLine();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest codi té les particularitats següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>Scanner</code> és una classe. Aquesta ofereix mètodes per llegir dades des del teclat.</div>
+</li>
+<li class="level1"><div class="li"> <code>lector</code> és una variable en què s’emmagatzema un objecte pertanyent a aquesta classe.</div>
+</li>
+<li class="level1"><div class="li"> <code>hasNextInt()</code>, <code>nextInt()</code> i <code>next()</code> són mètodes, oferts per la classe <code>Scanner</code>. De fet, totes les instruccions <code>next…</code> i <code>hasNext…</code> vinculades a la lectura de dades pel teclat són mètodes d’aquesta classe. En invocar-los, provoquen que es faci una lectura des del teclat i avaluen la dada llegida. Segons el tipus de dada que es vol llegir, cal usar un mètode o un altre.</div>
+</li>
+</ul>
+
+<p>
+L’únic punt que encara és una incògnita ara mateix és com funciona la inicialització d’una variable de la classe <code>Scanner</code>, de manera que contingui un objecte. No és necessari que l’entengueu, simplement n’hi ha prou de saber que per a aquesta classe es fa així. Ara bé, és important tenir en compte que sense una correcta inicialització de la variable <code>lector</code> amb un objecte la lectura de dades no serà correcta.
+</p>
+
+</div>
+
+<h4><a id="lectura_de_paraules_individuals" >Lectura de paraules individuals</a></h4>
+<div class="level4">
+
+<p>
+Igual que fins ara s’han llegit tipus primitius individuals entrats per teclat, també és possible llegir paraules.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode de la classe <code>Scanner</code> vinculat a la lectura d’una cadena de text composta d’una única paraula és <code>next()</code>. 
+</p>
+</div></div>
+<p>
+El seu comportament és exactament el que heu vist fins al moment per llegir tipus primitius, amb l’única diferència que la invocació d’aquest mètode sobre un objecte de la classe <code>Scanner</code> avalua una cadena de text. Recordeu que si en una mateixa línia escriviu més d’una paraula, successives invocacions a aquest mètode no bloquejaran el programa, sinó que aniran avaluant les successives dades pendents de llegir. Aquest comportament queda esquematitzat a la <span class="figref"><a href="#Figure10"><span>figura</span></a></span>.
+</p>
+
+<p>
+Cal tenir en compte que, en aquest context, quan es parla de <em>paraula</em>, en realitat s’està referint a qualsevol combinació de lletres o nombres que no conté cap espai enmig. Per tant, aquest mètode pot llegir els textos individuals “Hola,”, “món!”, “1024”, “3.1426”, “base10”, etc. Ara bé, el resultat d’una lectura usant aquest mètode sempre avalua una cadena de text, mai un tipus numèric. Fins i tot quan el valor llegit és un nombre.
+</p>
+<div class="iocfigure"><a name="Figure10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Lectura de seqüències de paraules
+
+</figcaption><img src="../media/ic10mu3_14.png" alt="" /></figure>
+</div>
+<p>
+Un fet remarcable en el cas de l’entrada de cadenes de text des de teclat és que no cal fer cap comprovació de tipus prèvia a la lectura (mètodes <code>hasNext…</code>) , ja que tota dada escrita mitjançant el teclat sempre és pot interpretar com una cadena de text. Mai no es pot produir una errada en aquest sentit.
+</p>
+
+<p>
+La millor manera de veure’n el comportament és amb un exemple. Compileu i executeu el programa següent, que llegeix fins a 10 paraules i les va mostrant per pantalla. Proveu d’escriure més d’una paraula a cada línia (una frase sencera) i observeu com les llegeix totes una per una abans d’esperar novament una entrada de dades. Fixeu-vos que les paraules queden discriminades en la lectura, en estar separades amb espais.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Llegeix un cert nombre de paraules (en aquest cas, 10).</div></li><li class="li1"><div class="de1">public class LecturaParaules {</div></li><li class="li1"><div class="de1">  public static final int NUM_PARAULES = 10;</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu &quot; + NUM_PARAULES + &quot; paraules separades per espais.&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Les pots escriure en línies de text diferent, si vols.&quot;);</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; NUM_PARAULES; i++) {</div></li><li class="li1"><div class="de1">      //Es van llegint paraules una per una.</div></li><li class="li1"><div class="de1">      //Recordar el comportament lectura de seqüències de dades pel teclat.</div></li><li class="li1"><div class="de1">      String paraula = lector.next();</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Paraula &quot; + i + &quot;: Has escrit \&quot;&quot; + paraula + &quot;\&quot;.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Es llegeix la resta de la línia i s'ignora el contingut.</div></li><li class="li1"><div class="de1">    lector.nextLine();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h4><a id="lectura_de_caracters_individuals" >Lectura de caràcters individuals</a></h4>
+<div class="level4">
+
+<p>
+Hi ha casos en què només es vol llegir un caràcter, per tal de simplificar l’entrada de dades. Per exemple, com a sistema abreujat per escollir opcions d’un menú, o en un programa en què es donin diferents opcions etiquetades amb lletres individuals (com podria ser resoldre una pregunta de tipus test). En un cas com aquest, i atès que la classe <code>Scanner</code> no ofereix cap mètode per llegir caràcters individuals, el que cal fer és llegir l’entrada com una cadena de text, comprovar que aquesta només es compon d’un únic caràcter i extreure’l.
+</p>
+<ul>
+<li class="level1"><div class="li"> Per llegir una cadena de text hi ha el mètode <code>next()</code>, com tot just s’ha vist.</div>
+</li>
+<li class="level1"><div class="li"> Per establir la llargària d’una cadena de text es disposa del mètode <code>length()</code>. En aquest cas, cal veure si és 1.</div>
+</li>
+<li class="level1"><div class="li"> Per extreure un caràcter individual, tenim el mètode <code>charAt(numPosició)</code>. En aquest cas, la posició per consultar és la 0.</div>
+</li>
+</ul>
+
+<p>
+En el programa següent d’exemple cal escollir la resposta correcta entre quatre opcions etiquetades amb una lletra. Per simplificar el codi, només es permet un sol intent. Executeu-lo i observeu atentament cadascuna de les passes tot just descrites per veure si s’ha llegit realment una única lletra i extreure-la. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Mostra una pregunta tipus test i mira si s'endevina.</div></li><li class="li1"><div class="de1">public class LecturaCaracter{</div></li><li class="li1"><div class="de1">  public static final char RESPOSTA_CORRECTA = 'b';</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Endevina la pregunta.&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Quin dels següents no és un tipus primitiu?&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;a) Enter&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;b) Scanner&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;c) Caràcter&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;d) Booleà&quot;);</div></li><li class="li1"><div class="de1">    System.out.print(&quot;La teva resposta és l'opció: &quot;);</div></li><li class="li1"><div class="de1">    //Es llegeix la cadena de text.</div></li><li class="li1"><div class="de1">    String paraula = lector.next();</div></li><li class="li1"><div class="de1">    //És una paraula d'un únic caràcter?</div></li><li class="li1"><div class="de1">    if (paraula.length() == 1) {</div></li><li class="li1"><div class="de1">      //S'extreu el caràcter de la cadena de text.</div></li><li class="li1"><div class="de1">      char caracter = paraula.charAt(0);</div></li><li class="li1"><div class="de1">      //És un caràcter vàlid? (a, b, c o d)</div></li><li class="li1"><div class="de1">      if ((caracter &gt;= 'a')&amp;&amp;(caracter &lt;= 'd')) {</div></li><li class="li1"><div class="de1">        //La resposta final és correcta?</div></li><li class="li1"><div class="de1">        if (caracter == RESPOSTA_CORRECTA) {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;Efectivament, la resposta era '&quot; + RESPOSTA_CORRECTA + &quot;'.&quot;);</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;La resposta '&quot; + caracter + &quot;' és incorrecta.&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        System.out.println(&quot;'&quot; + caracter + &quot;' és una opció incorrecta.&quot;);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //No ho era.</div></li><li class="li1"><div class="de1">      System.out.println(&quot;\&quot;&quot; + paraula + &quot;\&quot; no és un caràcter individual.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    lector.nextLine();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 2:</strong> modifiqueu el programa anterior per permetre fins a tres intents de resposta en lloc d’un.
+</p>
+
+</div>
+
+<h4><a id="lectura_de_frases_senceres" >Lectura de frases senceres</a></h4>
+<div class="level4">
+
+<p>
+Fins al moment, només ha estat possible llegir elements individuals, un per un i separats per espais, dins d’una seqüència entrada per teclat. Ara bé, sovint és útil llegir frases senceres, compostes per un conjunt de paraules separades per espais. Per exemple, entrar un nom i cognoms, o una adreça postal. En aquest cas, voldríem desar tota la cadena de text dins d’una única variable.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El mètode de la classe <code>Scanner</code> vinculat a la lectura d’una cadena de text en forma de frase en què hi ha diverses paraules separades per espais és <code>nextLine()</code>.
+</p>
+</div></div>
+<p>
+Fins al moment, aquest mètode ha estat usat per descartar tota la llista d’elements pendents de llegir del teclat (en el cas que s’hagi escrit més d’un element en una única línia). En realitat, aquest mètode el que fa és llegir tots els elements pendents de llegir a la línia actual i avaluar la cadena de text que els conté tots. Per tant, serveix per llegir conjunts d’elements de cop, independentment dels espais en blanc que els separen.
+</p>
+
+<p>
+A efectes pràctics amb vista a la lectura de cadenes de text, si mai no es combina l’ús de <code>nextLine()</code> amb altres mètodes de lectura d’elements individuals (<code>next()</code>, <code>nextInt()</code>, etc.) és possible usar-lo per llegir frases senceres directament. Cada cop que s’invoca, el programa es bloqueja i espera que l’usuari entri una frase sencera i pitgi la tecla de retorn. Llavors, avalua tota la frase escrita (totes les paraules amb espais inclosos). En aquest cas, i al contrari que amb la resta de mètodes de lectura, no és possible escriure més d’un element dins una mateixa línia de text, ja que llegeix tota la línia al complet des de la darrera lectura fins a trobar un salt de línia. Aquest comportament s’esquematitza a la <span class="figref"><a href="#Figure11"><span>figura</span></a></span>. Contrasteu-lo amb el mostrat a la <span class="figref"><a href="#Figure10"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="Figure11"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Lectura de frases
+
+</figcaption><img src="../media/ic10mu3_15.png" alt="" /></figure>
+</div>
+<p>
+El programa d’exemple següent mostra com es llegeix una línia de text completa escrita pel teclat, de manera molt semblant a l’exemple anterior de llegir paraules individuals. Tot i així, fixeu-vos que hi ha algunes diferències en el codi i en el comportament. Concretament, mai no es donarà el cas que una lectura pel teclat no ocasioni el bloqueig del programa a l’espera que escriviu quelcom. Absolutament sempre s’aturarà a esperar que escriviu un text i pitgeu la tecla de retorn. Proveu el programa per comprovar que és així.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Llegeix frases escrites pel teclat.</div></li><li class="li1"><div class="de1">public class LecturaFrase {</div></li><li class="li1"><div class="de1">  public static final int NUM_FRASES = 4;</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu &quot; + NUM_FRASES + &quot; frases.&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Per acabar una frase, pitja la tecla de retorn.&quot;);</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; NUM_FRASES; i++) {</div></li><li class="li1"><div class="de1">      //Es van llegint frases una per una.</div></li><li class="li1"><div class="de1">      String frase = lector.nextLine();</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Frase &quot; + i + &quot;: Has escrit \&quot;&quot; + frase + &quot;\&quot;.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //Ara no cal llegir la resta de cap línia, ja que sempre es llegeixen</div></li><li class="li1"><div class="de1">    //línies senceres...</div></li><li class="li1"><div class="de1">  }    </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h3><a id="argument_del_metode_principal" >Argument del mètode principal</a></h3>
+<div class="level3">
+
+<p>
+Aquesta opció permet establir una entrada de dades al programa sense haver d’interrompre’n l’execució per haver de preguntar quelcom a l’usuari i esperar una entrada per teclat.
+</p>
+
+<p>
+Una pregunta que us podeu plantejar és quina és la utilitat d’aquest sistema quan ja hi ha l’entrada pel teclat. Un exemple de situació en què això és molt útil és en programes que es comportaran de manera diferent segons una entrada de dades, però en els quals no es vol, o no es pot, esperar que l’usuari estigui pendent. Per exemple, suposeu un programa que voleu que s’executi cada nit per fer còpies de seguretat d’un seguit de fitxers. D’una banda, no té sentit que el programa estigui sempre en marxa comprovant si ha arribat l’hora de fer la còpia. És més lògic programar-ne l’execució periòdica amb alguna eina oferta pel sistema operatiu. Ara bé, és evident que no és factible que algú estigui pendent del teclat cada vegada que s’executa, però perquè funcioni correctament ha de disposar de certa informació que tampoc no pot estar escrita dins el codi font, ja que el valor dependrà de cada usuari que l’utilitzi: la llista de directoris que es vol copiar, on es desa la còpia, etc. Per tant, és útil disposar d’una manera simple d’entrar dades en un programa sense que hagi de ser sempre pel teclat.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Exemples d’eines que permeten l’execució diferida de programes són les tasques programades en el Windows o la instrucció <code>cron</code> de Unix.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+Normalment, la llista d’arguments d’un programa s’introdueix com un conjunt de paraules a continuació del nom del fitxer executable, separades per espais.
+</p>
+</div></div>
+<p>
+La llista de paraules que conformen els arguments d’un programa en Java es pot obtenir directament a partir de la variable especial que es defineix en la declaració del mètode principal: <code>String[] args</code>. Concretament, pren la forma d’un <em>array</em> de cadenes de text, en què aquestes ocupen les posicions en el mateix ordre que s’han escrit els arguments en executar el programa, tal com mostra la <span class="figref"><a href="#Figure12"><span>figura</span></a></span>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Disposeu d’un annex en què us expliquem com cal incloure arguments en executar un programa mitjançant l’IDE que usareu al llarg del curs.
+</p>
+</div></div><div class="iocfigure"><a name="Figure12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Assignació d’arguments d’entrada en l’execució del programa “java” a la variable “args”
+
+</figcaption><img src="../media/ic10mu3_16.png" alt="" /></figure>
+</div>
+<p>
+
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Executar un programa amb arguments</p>
+<p>
+Normalment, els exemples bàsics de programes executats amb arguments són els vinculats a la línia d’ordres. Entre aquests, es pot trobar l’intèrpret del Java mateix, l’executable <code>java</code> (en sistemes Unix) o <code>java.exe</code> (en sistemes Windows). Si obriu una finestra de línia d’ordres i hi escriviu <code>java -help</code>, apareix una llista dels arguments possibles per executar-lo sense la necessitat d’un IDE: els fitxers amb <em>bytecode</em> Java que ha d’executar, si cal mostrar-ne la versió, si ha de mostrar informació de depuració addicional, etc. De fet, “-help” és un argument en si mateix.
+</p>
+
+<p>
+El vostre IDE automatitza l’execució i el pas d’arguments a aquest programa sense la necessitat d’haver-vos de preguntar res. Partint dels fitxers que heu generat, ell sol genera la llista d’arguments que cal usar.
+</p>
+</div></div>
+<p>
+Per saber amb quants arguments s’ha executat el programa cal usar l’atribut <code>length</code> associat als <em>arrays</em>. Si no s’ha passat cap argument, el seu valor serà 0. Aneu amb compte amb aquesta situació, ja que llavors qualsevol accés a una posició de l’<em>array</em> serà sempre incorrecte.
+</p>
+
+<p>
+A mode d’exemple, proveu el programa següent, que enumera els arguments amb els quals s’ha executat. A efectes pràctics, es tracta d’un recorregut sobre un <em>array</em>, si bé els elements emmagatzemats a les seves posicions ara són cadenes de text en lloc de valor numèrics.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Programa que escriu per pantalla els arguments d'un programa.</div></li><li class="li1"><div class="de1">public class LecturaArguments {</div></li><li class="li1"><div class="de1">  //Els arguments estan a la variable &quot;args&quot;. </div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    //Primer cal mirar si n'hi ha algun.</div></li><li class="li1"><div class="de1">    if (args.length &gt; 0) {</div></li><li class="li1"><div class="de1">      //N'hi ha. Es mostren per pantalla ordenadament.</div></li><li class="li1"><div class="de1">      for (int i = 0; i &lt; args.length; i++) {</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Argument &quot; + i + &quot;: &quot; + args[i]);    </div></li><li class="li1"><div class="de1">      }        </div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //No n'hi ha cap.</div></li><li class="li1"><div class="de1">      System.out.println(&quot;No hi ha cap argument.&quot;);  </div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="manipulacio_de_cadenes_de_text" >Manipulació de cadenes de text</a></h2>
+<div class="level2">
+
+<p>
+Tot i que una cadena de text organitza els caràcters que emmagatzema d’una manera molt semblant a com ho faria un <em>array</em>, en forma de seqüència ordenada en què cada element ocupa una posició identificada per un índex, hi ha dues diferències destacades en el seu comportament i que tenen gran incidència a l’hora de manipular-les.
+</p>
+
+<p>
+D’una banda, la classe <code>String</code> ofereix un ventall molt ampli de mètodes amb els quals es poden manipular, de manera que en la immensa majoria de casos no caldrà fer un tractament individual de cada posició (per exemple, mitjançant estructures de repetició). Normalment, tots els esquemes d’ús i manipulació de cadenes de text es basen simplement en la invocació del mètode adient.
+</p>
+
+<p>
+D’una altra banda, una altra particularitat que les diferencia dels <em>arrays</em> és que són immutables. La invocació d’un mètode pot consultar les dades dins d’una cadena de text, o pot generar una nova cadena de text amb certes modificacions respecte de l’original. Però mai no es veurà modificat el valor inicial de la cadena de text original. Si volem, aquesta nova cadena pot ser assignada a la variable original, de manera que es reemplaça el valor inicial pel nou.
+</p>
+
+<p>
+La <span class="figref"><a href="#Figure13"><span>figura</span></a></span> mostra aquest comportament per la invocació del mètode <code>replace(caracterNou, caracterVell)</code>, que reemplaça totes les aparicions d’un caràcter (<code>caràcterVell</code>) per un altre de diferent (<code>caràcterNou</code>).
+</p>
+<div class="iocfigure"><a name="Figure13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Els mètodes invocats sobre cadenes de text no en modifiquen el valor, en creen de noves modificades
+
+</figcaption><img src="../media/ic10mu3_17.png" alt="" /></figure>
+</div>
+</div>
+
+<h3><a id="cerca" >Cerca</a></h3>
+<div class="level3">
+
+<p>
+Normalment, el procés de cerca d’un valor concret dins d’un <em>array</em> s’hauria de fer amb una estructura de repetició que anés comprovant si aquest valor existeix en alguna de les posicions, fins a trobar-lo o arribar al final de l’<em>array</em>. Això es podria replicar amb les cadenes de text usant el mètode <code>charAt</code>. Per sort, la classe <code>String</code> ofereix dos mètodes que estalvien aquesta tasca, ja que avaluen directament la posició on es troba un caràcter o una subcadena de text concreta. 
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>indexOf(textACercar)</code> avalua la primera posició dins de la cadena de text on es troba el text per cercar.</div>
+</li>
+<li class="level1"><div class="li"> <code>lastIndexOf(textACercar)</code> avalua la darrera posició dins de la cadena de text on es troba el text per cercar.</div>
+</li>
+</ul>
+
+<p>
+En tots dos casos, <code>caràcterACercar</code> sempre ha de ser una cadena de text (ja sigui mitjançant un literal o una variable) i si el text cercat no existeix, avaluen a −1. Per tant, no solament és possible saber si existeix el valor cercat, sinó també establir directament posicions on es pot trobar.
+</p>
+
+<p>
+La <span class="figref"><a href="#Figure14"><span>figura</span></a></span> mostra el comportament dels dos mètodes si se cerca el caràcter <code>‘a</code>’ a la frase “Hi havia una vegada…”.
+</p>
+<div class="iocfigure"><a name="Figure14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Comportament dels mètodes “indexOf” i “lastIndexOf”
+
+</figcaption><img src="../media/ic10mu3_18.png" alt="" /></figure>
+</div>
+<p>
+El codi següent mostra un exemple de cerca d’un caràcter dins d’un text qualsevol (compost per diverses paraules). Compileu-lo, proveu-lo i estudieu-ne el comportament.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Cerca un caràcter concret dins d'una cadena de text qualsevol.</div></li><li class="li1"><div class="de1">public class CercaCaracter {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu una línia de text qualsevol i pitja retorn:&quot;);</div></li><li class="li1"><div class="de1">    String text = lector.nextLine();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Quin caràcter vols cercar? &quot;);</div></li><li class="li1"><div class="de1">    String charText = lector.next();</div></li><li class="li1"><div class="de1">    lector.nextLine();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    char charCerca = charText.charAt(0);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    int posInit = text.indexOf(charCerca);</div></li><li class="li1"><div class="de1">    int posFi = text.lastIndexOf(charCerca);</div></li><li class="li1"><div class="de1">    if (posInit &gt; -1){</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Les aparicions del caràcter '&quot; + charCerca + &quot;' són:&quot;);</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Primer cop - &quot; + posInit);</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Darrer cop - &quot; + posFi);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Aquest caràcter no es troba al text.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 3:</strong> feu un programa que, en un seguit de cadenes de text passades com a arguments al mètode principal, compti quantes contenen el caràcter ‘a’.
+</p>
+
+</div>
+
+<h3><a id="comparacio" >Comparació</a></h3>
+<div class="level3">
+
+<p>
+Una tasca que es fa molt sovint amb cadenes de text és veure si un text entrat per l’usuari correspon a una opció concreta entre les disponibles. Això és especialment freqüent en el cas d’entrada de dades via arguments del mètode principal, ja que en molts programes aquests arguments indiquen opcions per a l’execució.
+</p>
+
+<p>
+Malauradament, els objectes no accepten cap mena d’operació entre ells, i això inclou aquelles vinculades als operadors relacionals. Per tant, no es poden comparar directament tampoc, tal com es faria entre valors de tipus primitius. També cal usar algun mètode disponible a la classe a la qual pertanyen. Si la seva classe no ofereix cap mètode que us ajudi a comparar, llavors és impossible comparar-los.
+</p>
+
+<p>
+La classe <code>String</code> ofereix diferent mètodes per comparar cadenes de text.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">equalsIgnoreCase(text)</p>
+<p>
+Aquest altre mètode fa la mateixa funció, però ignorant majúscules i minúscules.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>equals(textPerComparar)</code> avalua un valor booleà (<code>true/false</code>) segons si la cadena de text continguda a la variable en què s’invoca i el text usat com a paràmetre són idèntics o no. El text usat com a paràmetre pot ser tant un literal, <code>“…”</code>, com una altra variable en què hi hagi emmagatzemada una altra cadena de text.<br/>
+Com a exemple, es pot comprovar si els arguments passats a un programa corresponen a alguna de les opcions possibles. En el programa següent, és possible detectar si els arguments corresponen a algun dels acceptats: <code>-version</code>, <code>-help</code> i <code>-server</code>. Per a cada cas, es fa una opció diferent. Si hi ha algun argument que no és cap d’aquests tres, el programa informa que hi ha un error en els arguments. Proveu que és així.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Comprova si els arguments es corresponen amb un conjunt preestablert.</div></li><li class="li1"><div class="de1">public class ComprovaArguments {</div></li><li class="li1"><div class="de1">  public static void main (String args[]) {</div></li><li class="li1"><div class="de1">    //No oblideu mai comprovar si l'array conté arguments!</div></li><li class="li1"><div class="de1">    if (args.length &gt; 0) {</div></li><li class="li1"><div class="de1">      //Es va recorrent l'array i es mira quin valor hi ha.</div></li><li class="li1"><div class="de1">      for (int i = 0; i &lt; args.length; i++) {</div></li><li class="li1"><div class="de1">        if (args[i].equals(&quot;-version&quot;)) {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;S'ha usat l'argument \&quot;-version\&quot;&quot;);</div></li><li class="li1"><div class="de1">        } else if (args[i].equals(&quot;-help&quot;)) {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;S'ha usat l'argument \&quot;-help\&quot;&quot;);</div></li><li class="li1"><div class="de1">        } else if (args[i].equals(&quot;-server&quot;)) {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;S'ha usat l'argument \&quot;-server\&quot;&quot;);</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;L'argument \&quot;&quot; + args[i] + &quot;\&quot; no és vàlid!&quot;);</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }  else {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;No hi havia cap argument.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+De vegades pot ser útil comparar dues cadenes de text des del punt de vista de l’ordre alfabètic, és a dir, de quina seria la seva posició relativa en un diccionari. Aquest tipus de comparació seria equivalent als operadors relacionals “major que” (<code>&gt;</code>) i “menor que” (<code>&lt;</code>).
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>compareTo(textPerComparar)</code> es comporta de manera semblant a <code>equals</code>, però en aquest cas avalua a 0, qualsevol valor positiu o qualsevol valor negatiu depenent de si la cadena emmagatzemada en la variable en què s’invoca el mètode és alfabèticament igual, major o menor (respectivament) que la usada com a paràmetre.<br/>
+La millor manera de veure-ho és amb un exemple. En el programa següent cal endevinar un text secret partint del fet que, per a cada resposta, el programa us diu com a pista quina és la posició relativa de la paraula secreta segons el seu ordre alfabètic. Reflexioneu sobre quines diferències hi ha entre aquest codi, que tracta cadenes de text, i un programa que fes exactament el mateix amb valors de tipus enter (en aquest cas, per ordre numèric).</div>
+</li>
+</ul>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">compareToIgnoreCase(text)</p>
+<p>
+Aquest mètode és l’equivalent ignorant majúscules i minúscules.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Joc d'endevinar una paraula, donant pistes del seu ordre alfabètic.</div></li><li class="li1"><div class="de1">public class EndevinaParaula {</div></li><li class="li1"><div class="de1">  //La paraula per endevinar és &quot;objecte&quot;.</div></li><li class="li1"><div class="de1">  public static final String PARAULA_SECRETA = &quot;java&quot;;</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Comencem el joc.&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Endevina el valor de la paraula del diccionari.&quot;);</div></li><li class="li1"><div class="de1">    boolean haEncertat = false;</div></li><li class="li1"><div class="de1">    while (!haEncertat) {</div></li><li class="li1"><div class="de1">      System.out.print(&quot;Quina paraula creus que és? &quot;);</div></li><li class="li1"><div class="de1">      String paraulaUsuari = lector.next();</div></li><li class="li1"><div class="de1">      lector.nextLine();</div></li><li class="li1"><div class="de1">      int posicio = paraulaUsuari.compareTo(PARAULA_SECRETA);</div></li><li class="li1"><div class="de1">      if (posicio &lt; 0) {</div></li><li class="li1"><div class="de1">        //La paraula de l'usuari és anterior a la secreta.</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Has fallat! La paraula va després...&quot;);</div></li><li class="li1"><div class="de1">      } else if  (posicio &gt; 0) {</div></li><li class="li1"><div class="de1">        //La paraula de l'usuari és posterior a la secreta</div></li><li class="li1"><div class="de1">        System.out.println(&quot;Has fallat! La paraula va abans...&quot;);</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        //Si val 0, és que s'ha encertat.</div></li><li class="li1"><div class="de1">        haEncertat = true;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Enhorabona. Has encertat!&quot;);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 4:</strong> usant el mètode <code>compareTo</code>, ordeneu un <em>array</em> de cadenes de text. Per facilitar l’entrada de les dades, aquest <em>array</em> pot estar determinat directament a partir d’arguments en l’execució del programa (la variable <code>args</code>).
+</p>
+
+</div>
+
+<h3><a id="creacio_de_subcadenes" >Creació de subcadenes</a></h3>
+<div class="level3">
+
+<p>
+El mètode <code>charAt</code> permet l’extracció de dades d’una cadena de text, però només de caràcters individuals. Tot i així, l’aplicabilitat d’aquest mecanisme és limitada. Molt sovint us trobareu que, en realitat, us resultaria més còmode poder extreure cadenes de text completes contingudes dins d’una altra cadena. Per exemple, parts d’una frase o paraules individuals. La classe <code>String</code> ofereix dos mètodes que permeten fer això.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>substring(posicióInicial, posicióFinal)</code> avalua una nova cadena de text composta pels caràcters que van des de <code>posicióInicial</code> fins a <code>posicióFinal</code> − 1.<br/>
+Heu d’anar amb compte en usar aquest mètode, ja que els valors han d’estar dins del rang permès. Si algun supera el valor de les posicions que ocupen els caràcters dins de la cadena de text, es produirà un error.<br/>
+La <span class="figref"><a href="#Figure15"><span>figura</span></a></span> mostra un esquema del comportament del mètode <code>substring</code> si s’extreu una subcadena de la frase “Hi havia una vegada…”.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Comportament del mètode “substring”
+
+</figcaption><img src="../media/ic10mu3_19.png" alt="" /></figure>
+</div>
+<p>
+Com a exemple del funcionament de la invocació d’aquest mètode, tot seguit trobareu el codi d’un programa que extreu la primera i la darrera paraula d’una frase i les mostra per pantalla. Això és equivalent a mostrar una subcadena de text entre el primer i el darrer espai en blanc. Si hi ha menys de tres paraules, llavors no mostra res.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Un programa que extreu tot el text d'una frase, excepte la primera i la darrera paraula.</div></li><li class="li1"><div class="de1">public class ExtreureParaules {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu una frase de text i pitja retorn:&quot;);</div></li><li class="li1"><div class="de1">    String text = lector.nextLine();</div></li><li class="li1"><div class="de1">    //Cerca el primer i el darrer espai en blanc.</div></li><li class="li1"><div class="de1">    int iniciSubcadena = text.indexOf(' ');</div></li><li class="li1"><div class="de1">    int fiSubcadena = text.lastIndexOf(' ');</div></li><li class="li1"><div class="de1">    System.out.println(&quot;El text sense la primera i la darrera paraula és:&quot;);</div></li><li class="li1"><div class="de1">    if  (iniciSubcadena == fiSubcadena) {</div></li><li class="li1"><div class="de1">      //O bé no hi ha espais (els dos mètode avaluen a -1).</div></li><li class="li1"><div class="de1">      //O bé només hi ha dues paraules (els dos mètodes avaluen la mateixa posició).</div></li><li class="li1"><div class="de1">      //No es mostra res.</div></li><li class="li1"><div class="de1">      System.out.println(&quot;(No hi ha res per escriure...)&quot;);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //Es mostra la cadena intermèdia.</div></li><li class="li1"><div class="de1">      //La segona paraula comença una posició després del primer espai en blanc.</div></li><li class="li1"><div class="de1">      //La darrera paraula comença una posició després del darrer espai en blanc.</div></li><li class="li1"><div class="de1">      String textFinal = text.substring(iniciSubcadena + 1, fiSubcadena);</div></li><li class="li1"><div class="de1">      System.out.println(textFinal);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 5:</strong> feu un programa que mostri per pantalla cadascuna de les paraules individuals d’una frase en línies diferents. Per fer-ho, abans haureu d’anar esbrinant les posicions on hi ha espais en blanc per poder delimitar on comença i acaba cada paraula.
+</p>
+
+<p>
+Per obtenir les paraules d’una frase, no cal cercar on hi ha espais i anar extraient el text entre aquests. Hi ha un altre mètode que facilita molt més la feina.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>split(textSeparació)</code> avalua un <em>array</em> de cadenes de text, en què en cada posició hi ha el resultat de fer el següent. S’agafa la cadena de text original i se separa en trossos usant com a divisor <code>textSeparació</code>. Cada tros, una nova cadena de text, s’ubica en una posició de l’<em>array</em>. El valor de <code>textSeparació</code> ha de ser una cadena de text.<br/>
+Per exemple, si com a text de separació d’aquest mètode s’usa un espai en blanc, “ ”, una frase es dividiria en paraules. El resultat seria un <em>array</em> de cadenes de text en què en cada posició hi ha cadascuna de les paraules. Ara bé, el separador pot ser qualsevol text que vulgueu (comes, punts, combinacions de lletres, etc.).<br/>
+La <span class="figref"><a href="#Figure16"><span>figura</span></a></span> mostra un esquema del comportament d’aquest mètode si es divideix la frase “Hi havia una vegada–” usant com a text de separació l’espai en blanc, de manera que queda dividida en paraules.</div>
+</li>
+</ul>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Recordeu que el contingut de la cadena original <strong>mai</strong> no es modifica.
+</p>
+</div></div><div class="iocfigure"><a name="Figure16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Comportament del mètode “split”
+
+</figcaption><img src="../media/ic10mu3_20.png" alt="" /></figure>
+</div>
+<p>
+Com a exemple, estudieu el codi font següent, que pertany un programa per invertir l’ordre de les paraules d’una frase. Proveu en el vostre entorn de treball que és així.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">//Programa que inverteix l'ordre de les paraules d'una frase.</div></li><li class="li1"><div class="de1">public class InverteixOrdreParaules {</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu una línia de text qualsevol i pitja retorn:&quot;);</div></li><li class="li1"><div class="de1">    String text = lector.nextLine();</div></li><li class="li1"><div class="de1">    //Dividim la frase en paraules, separades per espais.</div></li><li class="li1"><div class="de1">    String[] paraules = text.split(&quot; &quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;El text invertit és:&quot;);</div></li><li class="li1"><div class="de1">    //Imprimim les paraules en ordre invers.</div></li><li class="li1"><div class="de1">    for (int i = paraules.length - 1; i &gt;= 0 ; i--) {</div></li><li class="li1"><div class="de1">      System.out.print(paraules[i]);</div></li><li class="li1"><div class="de1">      //El mètode split elimina el text de separació (en aquest cas, els espais)</div></li><li class="li1"><div class="de1">      System.out.print(&quot; &quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 6:</strong> feu un programa que generi automàticament acrònims. Partint d’una frase determinada, ha de mostrar per pantalla el text compost per les inicials de cada paraula individual que forma la frase.
+</p>
+
+</div>
+
+<h3><a id="transformacions_entre_cadenes_de_text_i_tipus_primitius" >Transformacions entre cadenes de text i tipus primitius</a></h3>
+<div class="level3">
+
+<p>
+En molts casos, una part important dels programes es basa en les operacions fetes sobre dades de tipus primitius. Ara bé, amb vista a la interacció amb l’usuari, ja sigui tan per mostrar-les com per llegir-les, és necessari operar amb cadenes de text. Per tant, un mecanisme útil és el de la transformació de tipus primitius en cadenes de text i viceversa.
+</p>
+
+</div>
+
+<h4><a id="conversio_de_tipus_primitiu_a_cadena_de_text" >Conversió de tipus primitiu a cadena de text</a></h4>
+<div class="level4">
+
+<p>
+El cas més senzill és la transformació d’una dada de tipus primitiu a un objecte de la classe <code>String</code>. Si els valors que es volen representar formen part d’una frase o una cadena de text més llarga (per exemple: “El resultat és ”, i el valor), tan sols cal usar l’operació suma, com s’ha explicat a l’apartat 1.1.5. Java s’encarrega de fer la conversió de tipus automàticament si en algun dels operands dins d’una concatenació hi ha alguna dada de tipus primitiu. Per al cas de mostrar directament un valor per pantalla, la instrucció <code>System.out.println</code> també transforma directament qualsevol tipus primitiu que se li proporcioni en una cadena de text que serà mostrada per pantalla.
+</p>
+
+<p>
+Si només volem convertir un valor directament, sense que aquest hagi d’estar inclòs dins d’una frase o amb l’únic objectiu de mostrar-lo per pantalla posteriorment, llavors es pot usar la instrucció <code>String.valueOf(valor)</code>. On posa <code>valor</code> es pot usar qualsevol dada corresponent a qualsevol tipus primitiu, ja sigui una variable, un literal o una expressió. Aquesta instrucció avalua el seu equivalent a cadena de text.
+</p>
+
+<p>
+Ateses les capacitats innates de la concatenació i la impressió per pantalla per transformar dades de tipus primitius en cadenes de text automàticament, els casos on resulta aplicable l’ús de la instrucció <code>String.valueOf(valor)</code> és limitat. En la immensa majoria dels casos, si voleu convertir un tipus primitiu en cadena de text serà per mostrar-lo per pantalla, ja sigui sol o dins d’una frase. Tot i així, hi pot haver casos en què tractar una dada com a cadena de text en lloc de com a valor numèric pot facilitar la tasca del programador. Per exemple, quan es vol tractar aquest valor com una seqüència de dígits individuals.
+</p>
+
+<p>
+Suposeu un programa que mostra els dígits en ordre invers d’un nombre real de certa llargària, amb qualsevol nombre de decimals. Penseu-hi una mica i veureu que, tractant-lo com a valor numèric i usant operacions entre reals, no és un problema la resolució del qual resulti evident. Aquest és un cas en què l’algorisme per resoldre el problema és una mica més senzill si el valor per processar es tracta com una seqüència de caràcters que no pas si es tracta com un nombre. Només caldria fer un recorregut per cadascun dels caràcters individuals (les xifres) usant una estructura de repetició. Per tant, és útil transformar-lo en una cadena de text i processar-lo com a tal. 
+</p>
+
+<p>
+Proveu en el vostre entorn el codi font, mostrat tot seguit:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Mostra les xifres d'un nombre real en ordre invers.</div></li><li class="li1"><div class="de1">public class InverteixOrdre {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    float numero = 3.1415926535f;</div></li><li class="li1"><div class="de1">    //El convertim en una cadena de text.</div></li><li class="li1"><div class="de1">    String numeroText = String.valueOf(numero);</div></li><li class="li1"><div class="de1">    //Recorrem els seus dígits un per un, començant pel final.</div></li><li class="li1"><div class="de1">    for (int i = numeroText.length() - 1; i &gt;= 0; i--) {</div></li><li class="li1"><div class="de1">      //Imprimim cada dígit individual (inclòs el punt decimal).</div></li><li class="li1"><div class="de1">      System.out.print(numeroText.charAt(i));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h4><a id="conversio_de_cadena_de_text_a_tipus_primitiu" >Conversió de cadena de text a tipus primitiu</a></h4>
+<div class="level4">
+
+<p>
+Tot i que ja sabeu com cal llegir dades dels tipus primitius directament des del teclat, de vegades, partint d’una cadena de text, us interessaria transformar-la a un tipus primitiu (normalment, un valor numèric). Per exemple, aquest pot ser el cas d’un programa no interactiu que obté les dades d’entrada per al pas d’arguments al mètode principal. En aquest cas, sempre es parteix de valors en format cadena de text i, per tant, cal fer una conversió si algun dels arguments és un valor numèric amb el qual cal operar.
+</p>
+
+<p>
+Per a aquest cas, Java disposa d’un seguit d’instruccions, una per a cada tipus primitiu, que serveix per fer aquesta conversió. Ara bé, com passa amb les instruccions de lectura de tipus primitius per teclat, cal garantir que la cadena de text per convertir és correcta, ja que en cas contrari el programa donarà un error. Per exemple, no és possible convertir a un valor de tipus enter les cadenes de text “2,67334”, “1a88”, “true”, etc. Aquestes instruccions s’enumeren a la <span class="tabref"><a href="#Table8"><span>taula</span></a></span>. On diu <code>text</code> cal posar un objecte de tipus <code>String</code>, ja sigui mitjançant una variable, un literal o una concatenació de cadenes.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table8"><span>Taula: </span></a>Instruccions per convertir cadenes de text en tipus primitius</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">Instrucció  </th><th class="col1">Tipus de dada convertit </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <code>Byte.parseByte(text)</code>    </td><td class="col1 leftalign"> <code>byte</code>  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <code>Integer.parseInt(text)</code>  </td><td class="col1 leftalign"> <code>int</code>   </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <code>Double.parseDouble(text)</code></td><td class="col1"> <code>double</code></td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <code>Float.parseFloat(text)</code>  </td><td class="col1"> <code>float</code> </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <code>Long.parseLong(text)</code>    </td><td class="col1 leftalign"> <code>long</code>  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <code>Short.parseShort(text)</code>  </td><td class="col1"> <code>short</code> </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Per exemple, suposeu un programa que escriu una cadena de text un cert nombre de vegades. Per fer-ho, es basa en dos arguments en el mètode principal. El primer és la cadena de text per escriure, i el segon el nombre de vegades (un valor enter). Observeu-ne el codi, proveu-lo i executeu-lo en el vostre entorn. Observeu també què passa si el segon argument no és un valor de tipus enter.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Mostra una cadena de text N vegades, partint d'arguments d'entrada.</div></li><li class="li1"><div class="de1">public class MostraNVegades {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    //Es mira si hi ha els 2 arguments que corresponen.</div></li><li class="li1"><div class="de1">    if (args.length != 2) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;El nombre d'arguments no és correcte!&quot;);</div></li><li class="li1"><div class="de1">    }  else {</div></li><li class="li1"><div class="de1">      //Hi ha 2 arguments, el segon és el nombre de vegades.</div></li><li class="li1"><div class="de1">      int numVegades =  Integer.parseInt(args[1]);</div></li><li class="li1"><div class="de1">      //Fem una estructura de repetició. Cal mostrar el primer argument N vegades.</div></li><li class="li1"><div class="de1">      for (int i = 0 ; i &lt; numVegades; i++) {</div></li><li class="li1"><div class="de1">        System.out.println(args[0]);</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 7:</strong> feu un programa que calculi la divisió entre dos valors reals, fent que aquests valors siguin entrats com a arguments en el mètode principal.
+</p>
+
+<p>
+
+</p>
+
+</div>
+
+<h2><a id="solucions_dels_reptes_proposats" >Solucions dels reptes proposats</a></h2>
+<div class="level2">
+
+<p>
+<strong>Repte 1:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class InverteixCadena {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    String holaMon = &quot;Hola, món!&quot;;</div></li><li class="li1"><div class="de1">    //Es recorren les posicions de la cadena de text una per una.</div></li><li class="li1"><div class="de1">    for (int i = holaMon.length() - 1; i &gt;= 0; i--) {</div></li><li class="li1"><div class="de1">      System.out.print(holaMon.charAt(i));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 2:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">public class LecturaCaracterTresIntents {</div></li><li class="li1"><div class="de1">  //El nombre d'intents es declara com una constant.</div></li><li class="li1"><div class="de1">  public static final int INTENTS = 3;</div></li><li class="li1"><div class="de1">  public static final char RESPOSTA_CORRECTA = 'b';</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Endevina la pregunta.&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Quin dels següents no és un tipus primitiu?&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;a) Enter&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;b) Scanner&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;c) Caràcter&quot;);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;d) Booleà&quot;);    </div></li><li class="li1"><div class="de1">    //Cal un comptador d'intents.</div></li><li class="li1"><div class="de1">    int intents = 0;</div></li><li class="li1"><div class="de1">    //Cal saber si s'ha encertat (semàfor).</div></li><li class="li1"><div class="de1">    boolean encertat = false;</div></li><li class="li1"><div class="de1">    //Es pregunta mentre no s'encerti ni s'esgotin els intents.</div></li><li class="li1"><div class="de1">    while ((intents &lt; INTENTS)&amp;&amp;(!encertat)) {</div></li><li class="li1"><div class="de1">      System.out.print(&quot;La teva resposta és l'opció: &quot;);</div></li><li class="li1"><div class="de1">      //Es llegeix la cadena de text.</div></li><li class="li1"><div class="de1">      String paraula = lector.next();</div></li><li class="li1"><div class="de1">      //És una paraula d'un únic caràcter?</div></li><li class="li1"><div class="de1">      if (paraula.length() == 1) {</div></li><li class="li1"><div class="de1">        //S'extreu el caràcter de la cadena de text.</div></li><li class="li1"><div class="de1">        char caracter = paraula.charAt(0);</div></li><li class="li1"><div class="de1">        //És un caràcter vàlid? (a, b, c o d).</div></li><li class="li1"><div class="de1">        if ((caracter &gt;= 'a')&amp;&amp;(caracter &lt;= 'd')) {</div></li><li class="li1"><div class="de1">          //La resposta final és correcta?</div></li><li class="li1"><div class="de1">          if (caracter == RESPOSTA_CORRECTA) {</div></li><li class="li1"><div class="de1">            System.out.println(&quot;Efectivament, la resposta era '&quot; + RESPOSTA_CORRECTA + &quot;'.&quot;);</div></li><li class="li1"><div class="de1">            encertat = true;</div></li><li class="li1"><div class="de1">          } else {</div></li><li class="li1"><div class="de1">            System.out.println(&quot;La resposta '&quot; + caracter + &quot;' és incorrecta.&quot;);</div></li><li class="li1"><div class="de1">            intents++;</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">        } else {</div></li><li class="li1"><div class="de1">          System.out.println(&quot;'&quot; + caracter + &quot;' és una opció incorrecta.&quot;);</div></li><li class="li1"><div class="de1">          //Si hi ha aquest error, no s'esgotarà cap intent...</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        //No ho era.</div></li><li class="li1"><div class="de1">        System.out.println(&quot;\&quot;&quot; + paraula + &quot;\&quot; no és un caràcter individual.&quot;);</div></li><li class="li1"><div class="de1">        //Si hi ha aquest error, no s'esgotarà cap intent...</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">      lector.nextLine();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (intents &gt;= INTENTS ) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;Has esgotat tots els teus intents.&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 3:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class ComptaArgumentsA {</div></li><li class="li1"><div class="de1">  public static void  main(String[] args) {</div></li><li class="li1"><div class="de1">    //Un comptador de paraules amb 'a'.</div></li><li class="li1"><div class="de1">    int numAs = 0;</div></li><li class="li1"><div class="de1">    //Cal recórrer l'array d'arguments.</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; args.length; i++) {</div></li><li class="li1"><div class="de1">      //Es mira si hi ha alguna lletra 'a' a la cadena de text.</div></li><li class="li1"><div class="de1">      if (-1 != args[i].indexOf(&quot;a&quot;)) {</div></li><li class="li1"><div class="de1">        numAs++;</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println(&quot;El nombre d'arguments amb el caràcter 'a' és &quot; + numAs);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 4:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class OrdenaArguments {</div></li><li class="li1"><div class="de1">  public static void main (String[] args) {</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; args.length - 1; i++) {</div></li><li class="li1"><div class="de1">      for(int j = i + 1; j &lt; args.length; j++) {</div></li><li class="li1"><div class="de1">        if (args[i].compareTo(args[j]) &gt; 0) {</div></li><li class="li1"><div class="de1">          String canvi = args[i];</div></li><li class="li1"><div class="de1">          args[i] = args[j];</div></li><li class="li1"><div class="de1">          args[j] = canvi;</div></li><li class="li1"><div class="de1">        }</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    //El mostrem per pantalla.</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Les cadenes ordenades són:&quot;);</div></li><li class="li1"><div class="de1">    for (int i = 0; i &lt; args.length;i++) {</div></li><li class="li1"><div class="de1">      System.out.println(args[i]);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+<strong>Repte 5:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">public class ObtenirParaules {</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu una frase de text i pitja retorn:&quot;);</div></li><li class="li1"><div class="de1">    String text = lector.nextLine();</div></li><li class="li1"><div class="de1">    boolean fi = false;</div></li><li class="li1"><div class="de1">    //Mitjançant un bucle, s'anirà escurçant el text paraula per paraula.</div></li><li class="li1"><div class="de1">    do {</div></li><li class="li1"><div class="de1">      //La primera paraula va de l'inici al primer espai.</div></li><li class="li1"><div class="de1">      int primerEspai = text.indexOf(&quot; &quot;);</div></li><li class="li1"><div class="de1">      //No hi ha espais. No hi ha cap paraula més per escriure.</div></li><li class="li1"><div class="de1">      if (primerEspai == -1) {</div></li><li class="li1"><div class="de1">        System.out.println(text);</div></li><li class="li1"><div class="de1">        fi = true;</div></li><li class="li1"><div class="de1">      } else {</div></li><li class="li1"><div class="de1">        //Hi ha un espai. Extreure paraula i mostrar-la.</div></li><li class="li1"><div class="de1">        String paraula = text.substring(0, primerEspai);</div></li><li class="li1"><div class="de1">        System.out.println(paraula);</div></li><li class="li1"><div class="de1">        //S'elimina la paraula del text, de manera que s'escurça.</div></li><li class="li1"><div class="de1">        text = text.substring(primerEspai + 1, text.length());</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    } while (!fi);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 6:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">import java.util.Scanner;</div></li><li class="li1"><div class="de1">public class GeneradorAcronims {</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    Scanner lector = new Scanner(System.in);</div></li><li class="li1"><div class="de1">    System.out.println(&quot;Escriu una línia de text qualsevol i pitja retorn:&quot;);</div></li><li class="li1"><div class="de1">    String text = lector.nextLine();</div></li><li class="li1"><div class="de1">    //Dividim la frase en paraules, separades per espais.</div></li><li class="li1"><div class="de1">    String[] paraules = text.split(&quot; &quot;);</div></li><li class="li1"><div class="de1">    //Recorrem les paraules i escrivim cada inicial.</div></li><li class="li1"><div class="de1">    for(int i = 0; i &lt; paraules.length; i++) {</div></li><li class="li1"><div class="de1">      System.out.print(paraules[i].charAt(0));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    System.out.println();</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+<strong>Repte 7:</strong>
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class DividirArgumentsReals {</div></li><li class="li1"><div class="de1">  public static void main(String[] args) {</div></li><li class="li1"><div class="de1">    //Està bé comprovar si el nombre d'arguments és correcte.</div></li><li class="li1"><div class="de1">    if (args.length != 2) {</div></li><li class="li1"><div class="de1">      System.out.println(&quot;El nombre d'arguments és incorrecte.&quot;);</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      //Conversió de tipus.</div></li><li class="li1"><div class="de1">      double dividend = Double.parseDouble(args[0]);</div></li><li class="li1"><div class="de1">      double divisor = Double.parseDouble(args[1]);</div></li><li class="li1"><div class="de1">      double resultat = dividend/divisor;</div></li><li class="li1"><div class="de1">      System.out.println(&quot;El resultat és &quot; + resultat);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

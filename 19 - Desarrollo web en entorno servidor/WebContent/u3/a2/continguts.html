@@ -1,0 +1,1068 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Generació dinàmica de pàgines web</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Introducció a Spring i Spring MVC</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_maven">"Hola, Món" amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_web_amb_maven">'Hola, Món' web amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_spring_mvc">"Hola, Món" amb Spring MVC</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#estoc_de_medicaments_benvinguda">Estoc de medicaments, benvinguda</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_domini">Estoc de medicaments, capa de domini</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_persistencia">Estoc de medicaments, capa de persistència</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_servei">Estoc de medicaments, capa de servei</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a3" class="tocsection"><p id='u3a3continguts'><a class="section" href="../../../WebContent/u3/a3/continguts.html">Spring MVC, aprofundint en els controladors</a><span class="buttonexp"></span></p><ul><li id="u3a3exercicis"><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a3annexos"><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_capa_de_servei_a_medicament">Estoc de medicaments, capa de servei a medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_medicaments_per_malaltia">Estoc de medicaments, medicaments per malaltia</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_llista_de_medicaments_segons_filtre">"Estoc de medicaments", llista de medicaments segons filtre</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_detall_de_medicament">"Estoc de medicaments", detall de medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a4" class="tocsection"><p id='u3a4continguts'><a class="section" href="../../../WebContent/u3/a4/continguts.html">Spring MVC, altres aplicacions</a><span class="buttonexp"></span></p><ul><li id="u3a4activitats"><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></li><li id="u3a4exercicis"><a href="../../../WebContent/u3/a4/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a4annexos"><a href="../../../WebContent/u3/a4/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a4' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_formulari_per_afegir_medicaments">Estoc de medicaments, formulari per afegir medicaments</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_llista_blanca_al_formulari">Estoc de medicaments, llista blanca al formulari</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_pagina_de_login">Estoc de medicaments, pàgina de 'login'</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_internacionalitzacio">Estoc de medicaments, internacionalització</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Generació dinàmica de pàgines web</a></li><li>Spring MVC, aplicació web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="spring_mvc_aplicacio_web"> Spring MVC, aplicació web </a></h1>
+    	
+<p>
+L’arquitectura i el procés d’Spring MVC respecte a una petició des d’un navegador és la que es mostra a la <span class="figref"><a href="#figXB01"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXB01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura i procés d’una aplicació Spring MVC
+
+</figcaption><img src="../media/daw_m07_u3_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La petició feta des d’un navegador client és recollida pel <code>Front Controller</code> (<code>Dispatcher Servlet</code>) i la passa al controlador adient. Aquest construeix el <strong>model</strong> i el retorna (amb l’estat que correspongui) al <code>Dispatcher Servlet</code> que retornarà la resposta, determinant la vista a retornar a partir del <code>View Resolver</code> assignat i amb els valors del model.
+</p>
+
+<p>
+Veurem com el controlador construeix el model, és a dir, la part de negoci de la vostra aplicació web (<em>enterprise-level</em>).
+</p>
+
+<p>
+Amb Spring MVC podeu fer servir una bona pràctica per a aquest tipus de desenvolupament, consistent a estructurar el codi en capes (<em>layers</em>) i donant reusabilitat i baix acoblament a la vostra aplicació.
+</p>
+
+<p>
+Les capes que es recomanen són quatre:
+</p>
+<ul>
+<li class="level1"><div class="li"> presentació (<em>Presentation</em>)</div>
+</li>
+<li class="level1"><div class="li"> domini (<em>Domain</em>)</div>
+</li>
+<li class="level1"><div class="li"> serveis (<em>Services</em>)</div>
+</li>
+<li class="level1"><div class="li"> persistència (<em>Persist</em>)</div>
+</li>
+</ul>
+
+<p>
+El diagrama de la <span class="figref"><a href="#figXB2"><span>figura</span></a></span> mostra aquestes capes i les seves interaccions.
+</p>
+<div class="iocfigure"><a name="figXB2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capes i interaccions d’una aplicació Spring MVC
+
+</figcaption><img src="../media/daw_m07_u3_03.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Els objectes vistos fins ara, com <code>Dispatcher Servlet</code>, controladors, <code>View Resolvers</code> i d’altres conformen la capa de <strong>presentació</strong>.
+</p>
+
+<p>
+La capa de <strong>persistència</strong> és la que conté els objectes que interaccionen amb les dades; per exemple, obtenint un conjunt de registres d’una base de dades a partir d’una consulta SQL.
+</p>
+
+<p>
+Un controlador podria demanar directament les dades a la capa de persistència, però a l’arquitectura del diagrama es proposa la creació de la capa de <strong>servei</strong> per tal de poder aplicar les regles de negoci amb i/o abans d’obtenir les dades. Per exemple, l’aplicació d’una restricció no implementada a la base de dades, com no deixar a un client fer una comanda si el seu deute és superior a cert import.
+</p>
+
+<p>
+En tot cas, les dades que s’obtenen o s’estan construint es mapegen sobre els objectes de la capa de <strong>domini</strong>; per exemple, objectes de classes entitat que poden representar una taula d’una base de dades.
+</p>
+
+<p>
+Continuareu amb el vostre projecte d’Estoc de medicaments (“stmedioc”) desenvolupant la resta de capes i descrivint els conceptes i la metodologia implicades en cadascuna d’elles.
+</p>
+
+<h2><a id="estoc_de_medicaments_capa_de_domini" >Estoc de medicaments, capa de domini</a></h2>
+<div class="level2">
+
+<p>
+La capa <strong>domini</strong> d’una aplicació web consisteix en la implementació de les classes d’un o més models de domini.
+</p>
+
+<p>
+El <strong>model de domini</strong> és la representació, per exemple amb un diagrama UML, de les classes corresponents a les dades del problema a resoldre de la lògica de negoci.
+</p>
+
+<p>
+En el cas de l’aplicació d’Estoc de medicaments, dissenyada amb propòsits pedagògics, només hi ha una entitat <code>Medicament</code> i, per tant, la capa de domini només tindrà una classe, que anomenareu <code>Medicament</code> (vegeu la <span class="figref"><a href="#figXB3"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXB3"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Classe Medicament
+
+</figcaption><img src="../media/daw_m07_u3_04.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un entitat <code>Medicament</code> podria contenir més propietats i mètodes, però de moment només fareu servir aquest a la vostra aplicació. El nom de les propietats és suficient per relacionar-les amb els conceptes que representen. No obstant això, cal fer algunes apreciacions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>medicamentID</em> és el codi de medicament.</div>
+</li>
+<li class="level1"><div class="li"> <em>producer</em> és el proveïdor.</div>
+</li>
+<li class="level1"><div class="li"> <em>stockQuantity</em> són les unitats emmagatzemades i <em>stockInOrder</em> són les unitats que estan demanades al proveïdor però encara no heu introduït al magatzem.</div>
+</li>
+<li class="level1"><div class="li"> <em>active</em> és per indicar si un medicament es fa servir (valor <em>true</em>) o s’ha donat de baixa (valor <em>false</em>).</div>
+</li>
+</ul>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els objectes creats amb classes de domini s’acostumen a dir <strong>objectes de domini</strong> (<em>Domain Object</em>).
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_del_domini" >Creació del domini</a></h3>
+<div class="level3">
+
+<p>
+Com que el nostre domini està format unicament per la classe <code>Medicament</code>, al projecte “stmedioc” heu de crear un paquet <code>cat.xtec.ioc.domain</code> i la classe <code>Medicament</code> amb el contingut que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.domain;
+
+public class Medicament {
+
+    private String medicamentId;
+    private String name;
+    private double price;
+    private String description;
+    private String producer;
+    private String category;
+    private long stockQuantity;
+    private long stockInOrder;
+    private boolean active;
+
+    public Medicament() {
+        super();
+    }
+
+    public Medicament(String medicamentId, String name, double price) {
+        this.medicamentId = medicamentId;
+        this.name = name;
+        this.price = price;
+    }
+
+    //Heu d&#039;afegir els getters i setters de totes les propietats
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Medicament other = (Medicament) obj;
+        if (medicamentId == null) {
+            if (other.medicamentId != null) {
+                return false;
+            }
+        } else if (!medicamentId.equals(other.medicamentId)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result
+                + ((medicamentId == null) ? 0 : medicamentId.hashCode());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Medicament [codi=&quot; + medicamentId + &quot;, nom=&quot; + name + &quot;]&quot;;
+    }
+}</pre>
+
+</div>
+
+<h3><a id="fent_servir_el_domini" >Fent servir el domini</a></h3>
+<div class="level3">
+
+<p>
+Penseu ara en la necessitat de mostrar per al navegador un medicament mitjançant una petició GET des d’un <acronym title="Uniform Resource Locator">URL</acronym>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat de capa de domini es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament de la capa de domini és millor partir del que ja heu fet servir per a Estoc de medicaments. Benvinguda i copiar-lo amb el nom de “stmedioc201”.
+</p>
+</div></div>
+<p>
+
+</p>
+
+<p>
+Davant d’una petició, el <code>Dispatcher Servlet</code> delegarà a un controlador la petició i aquest s’encarregarà de construir el model.
+</p>
+
+<p>
+A Spring MVC, amb l’estructura de capes que esteu desenvolupant, implementareu un nou controlador <code>MedicamentController</code> que agafi aquesta petició i construeixi el model a partir del domini (de la classe <code>Medicament</code>). 
+</p>
+
+<p>
+Heu de crear la classe <code>MedicamentController</code> dins del paquet <code>cat.xtec.ioc.controller</code> amb el contingut que es mostra a continuació.
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import cat.xtec.ioc.domain.Medicament;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MedicamentController {
+
+    @RequestMapping(value = &quot;/medicaments&quot;, method = RequestMethod.GET)
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;medicaments&quot;);
+        Medicament ibuprofe = new Medicament(&quot;M010&quot;, &quot;Ibuprofé&quot;, 2);
+        ibuprofe.setDescription(&quot;Ibuprofé de 600mg&quot;);
+        ibuprofe.setCategory(&quot;Anti-inflamatori&quot;);
+        ibuprofe.setProducer(&quot;Cinfa&quot;);
+        ibuprofe.setStockQuantity(214);
+        modelview.getModelMap().addAttribute(&quot;medicament&quot;, ibuprofe);
+        return modelview;
+    }
+}</pre>
+
+<p>
+Cal destacar que al controlador <code>MedicamentController</code> esteu donant valors a l’entitat, i en el model de capes això serà responsabilitat d’altres. En aquest cas, doneu el valors en el controlador perquè encara no heu desenvolupat les altres capes, però després canviareu aquesta classe per fer-ho on toca.
+</p>
+
+<p>
+Fixeu-vos que fins ara els atributs que heu afegit al model eren simples, com <em>string</em>. En el cas de <code>MedicamentController</code> esteu creant un atribut que és un objecte: un <em>domain object</em> <code>Medicament</code>.
+</p>
+
+<p>
+<code>MedicamentController</code> retorna un <code>ModelAndView</code> amb nom <em>medicaments</em>. Segons la configuració que havíeu fet per al <code>View Resolver</code> a DispatcherServlet-servlet.xml, Spring cercarà la vista WEB-INF/views/medicaments.jsp per mostrar-la i afegirà l’atribut <code>medicament</code> (objecte <code>Medicament</code>) a la resposta.
+</p>
+
+<p>
+Heu de crear aquesta vista a la carpeta esmentada amb el contingut que es mostra a continuació.
+</p>
+<pre class="code">&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ca&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+        &lt;title&gt;Medicaments&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;h1&gt;Medicaments&lt;/h1&gt;
+                    &lt;p&gt;Llista de medicaments en magatzem&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-sm-6 col-md-3&quot; style=&quot;padding-bottom: 15px&quot;&gt;
+                    &lt;div class=&quot;thumbnail&quot;&gt;
+                        &lt;div class=&quot;caption&quot;&gt;
+                            &lt;h3&gt;${medicament.name}&lt;/h3&gt;
+                            &lt;p&gt;${medicament.description}&lt;/p&gt;
+                            &lt;p&gt;${medicament.price} €&lt;/p&gt;
+                            &lt;p&gt;Hi ha ${medicament.stockQuantity} unitats en magatzem&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+Fixeu-vos que esteu servir les expressions tipus EL (<em>Expression Language</em>) ${atribut.propietat} i que com a atribut havíeu passat un objecte <code>Medicament</code>, i per tant podeu usar les seves propietats. Tingueu en compte que, per exemple, amb ${medicament.name} s’executarà el mètode <code>medicament.getName()</code>, i si no l’heu implementat (<em>getters and setters</em>) llavors el resultat serà <em>null</em>.
+</p>
+
+<p>
+Si executeu l’aplicació i afegiu a l’<acronym title="Uniform Resource Locator">URL</acronym> del navegador <em>/medicaments</em> podreu veure el que es mostra en la <span class="figref"><a href="#figXB4"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXB4"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació Estoc de medicaments, domini
+
+</figcaption><img src="../media/daw_m07_u3_05.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Partíeu de la capa de presentació feta, però anireu afegint controladors i vistes a mesura que les necessiteu.
+</p>
+
+<p>
+La capa de <strong>domini</strong> es correspon pràcticament amb les classes <code>Entitat</code> del problema a resoldre, i en el cas de l’aplicació Estoc de medicaments és la classe <code>Medicament</code>. Però heu fet trampes posant valors en el controlador <code>MedicamentController</code> amb la finalitat de provar. I això s’ha de resoldre continuant amb el desenvolupament de les següents capes.
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_capa_de_persistencia" >Estoc de medicaments, capa de persistència</a></h2>
+<div class="level2">
+
+<p>
+La capa de <strong>persistència</strong> és el conjunt d’objectes que interaccionen amb les dades. Les dades poden estar emmagatzemades en bases de dades i en altres tipus de formats, com XML, JSON, imatges, vídeo, etc.
+</p>
+
+<p>
+La capa de persistència conté objectes <strong>repositori</strong> (<em>Repository Objects</em>) que permeten mapejar les dades de la font de dades (base de dades o no) amb els objectes de domini (<em>Domain Object</em>). Són, en realitat, els responsables de les operacions <em>CRUD</em> (<em>Create</em>, <em>Read</em>, <em>Update</em> i <em>Delete</em>).
+</p>
+
+<p>
+En operacions d’obtenció de dades, els objectes repositori consulten la font de dades, per exemple via SQL, i el resultat és mapejat sobre objectes de domini.
+</p>
+
+<p>
+En operacions d’actualització de les dades, els objectes repositori parteixen de l’estat dels objectes de domini i amb els seus valors actualitzen la font de dades.
+</p>
+
+<p>
+Per indicar a Spring que una classe és un repositori es fa servir l’anotació @<code>Repository</code> (<code>org.springframework.stereotype.Repository</code>). Aquesta anotació també permet que les excepcions SQL es converteixin en <code>DataAccessExceptions</code> de Spring.
+</p>
+
+<p>
+Amb aquests conceptes descrits ja podeu crear la capa de persistència de la vostra aplicació Estoc de medicaments.
+</p>
+
+<p>
+Al desenvolupament de la capa de domini heu mostrat un únic medicament que, a més, temporalment, es crea directament al controlador. Mostrareu una llista de medicaments i a més traureu la creació del medicament del controlador.
+</p>
+
+<p>
+La manera d’accedir a les dades està fora de l’abast d’aquesta unitat, i per això fareu servir objectes en memòria com si fossin la base de dades. Només haureu de canviar aquests objectes per d’altres que realment es connectin i dialoguin amb la base de dades si voleu dotar de veritable persistència l’Estoc de medicaments.
+</p>
+
+<p>
+Creareu una interfície <code>MedicamentRepository</code> i la implementareu amb la classe <code>InMemoryMedicamentRepository</code> amb els mètodes per mostrar la llista de medicaments, només un mètode en aquest cas. Per altra banda, fareu que el controlador dialogui directament amb aquesta capa de persistència, encara que ho canviareu més endavant per tal que dialogui amb la capa de servei.
+</p>
+
+<p>
+Feu servir una interfície, perquè això us permet que el controlador declari i cridi la interfície, i d’aquesta manera podeu canviar la implementació sense canviar res més.
+</p>
+
+</div>
+
+<h3><a id="creacio_de_la_persistencia" >Creació de la persistència</a></h3>
+<div class="level3">
+
+<p>
+Afegiu el paquet <em>cat.xtec.ioc.domain.repository</em> al nostre projecte “stmedioc”, i en aquest paquet una nova interfície <code>MedicamentRepository</code> amb el contingut següent:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository;
+ 
+import cat.xtec.ioc.domain.Medicament;
+import java.util.List;
+ 
+public interface MedicamentRepository {
+  List &lt;Medicament&gt; getAllMedicaments();
+}</pre>
+
+<p>
+Afegiu el paquet <code>cat.ioc.xtec.domain.repository.impl</code> al nostre projecte “stmedioc”. També us interessa que Spring cerqui automàticament les classes d’aquest paquet per poder injectar els objectes quan es trobi una anotació d’aquest tipus. Per això, canvieu la propietat <code>context:component-scan</code> de DispatcherServlet-servlet.xml:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat de capa de persistència es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+
+<p>
+Però per seguir el desenvolupament de la capa de persistència és millor partir del que ja heu fet servir per a Estoc de medicaments, capa de domini, i copiar-lo amb el nom de “stmedioc202”.
+</p>
+</div></div><pre class="code">&lt;context:component-scan base-package=&quot;cat.xtec.ioc.controller cat.xtec.ioc.domain.repository&quot; /&gt;</pre>
+
+<p>
+En el paquet <code>cat.ioc.xtec.domain.repository.impl</code>, la classe <code>InMemoryMedicamentRepository</code> implementa <code>MedicamentRepository</code> amb el següent contingut:
+</p>
+<pre class="code">package cat.xtec.ioc.domain.repository.impl;
+ 
+import cat.xtec.ioc.domain.Medicament;
+import cat.xtec.ioc.domain.repository.MedicamentRepository;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+ 
+@Repository
+public class InMemoryMedicamentRepository implements MedicamentRepository {
+ 
+	private List&lt;Medicament&gt; listOfMedicaments = new ArrayList&lt;Medicament&gt;();
+ 
+	public InMemoryMedicamentRepository() {
+    	Medicament ibuprofe = new Medicament(&quot;M010&quot;, &quot;Ibuprofé&quot;, 2);
+        ibuprofe.setDescription(&quot;Ibuprofé de 600mg&quot;);
+        ibuprofe.setCategory(&quot;Anti-inflamatori&quot;);
+        ibuprofe.setProducer(&quot;Cinfa&quot;);
+        ibuprofe.setStockQuantity(214);
+ 
+    	Medicament paracetamol = new Medicament(&quot;M020&quot;, &quot;Paracetamol&quot;, 2.6);
+        paracetamol.setDescription(&quot;Paracetamol 1g&quot;);
+        paracetamol.setCategory(&quot;Analgèsic&quot;);
+        paracetamol.setProducer(&quot;Ferrer&quot;);
+        paracetamol.setStockQuantity(56);
+ 
+    	Medicament acacetilsalicilico = new Medicament(&quot;M030&quot;, &quot;Ac Acetil Salicílico&quot;, 2.6);
+        acacetilsalicilico.setDescription(&quot;Ac Acetil Salicílico&quot;);
+        acacetilsalicilico.setCategory(&quot;Analgèsic&quot;);
+        acacetilsalicilico.setProducer(&quot;Bayer&quot;);
+        acacetilsalicilico.setStockQuantity(15);    	
+    	
+        listOfMedicaments.add(ibuprofe);
+        listOfMedicaments.add(paracetamol);
+        listOfMedicaments.add(acacetilsalicilico);
+	}
+ 
+	public List&lt;Medicament&gt; getAllMedicaments() {
+    	return listOfMedicaments;
+	}
+}</pre>
+
+<p>
+Aquesta classe <code>repository</code> hauria de connectar amb la font de dades, però com que és fora de l’abast d’aquesta unitat feu que les dades resideixin en memòria creant-les en el constructor. Per això, <code>getAllMedicaments</code> retorna la llista de medicaments propietat de la classe, però en realitat hauria d’anar a buscar-la a la font de dades.
+</p>
+
+<p>
+Canvieu el controlador <code>MedicamentController</code> per obtenir la llista de medicaments des de la capa de persistència. El contingut de <code>MedicamentController</code> sense els imports és com es mostra a continuació:
+</p>
+<pre class="code">@Controller
+public class MedicamentController {
+ 
+	@Autowired
+	private MedicamentRepository medicamentRepository;
+	
+	@RequestMapping(value = &quot;/medicaments&quot;, method = RequestMethod.GET)
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+        	throws ServletException, IOException {
+    	ModelAndView modelview = new ModelAndView(&quot;medicaments&quot;);    	
+        modelview.getModelMap().addAttribute(&quot;medicaments&quot;, medicamentRepository.getAllMedicaments());
+    	return modelview;
+	}
+}</pre>
+
+<p>
+Haureu d’afegir-hi els imports:
+</p>
+<pre class="code">import org.springframework.beans.factory.annotation.Autowired;
+import cat.xtec.ioc.domain.repository.MedicamentRepository;</pre>
+
+<p>
+Hi podeu suprimir l’import:
+</p>
+<pre class="code">import cat.xtec.ioc.domain.Medicament;)</pre>
+
+<p>
+S’ha creat la propietat <code>medicamentRepository</code> que, mitjançant l’anotació <code>@Autowired</code>, serà inicialitzada per Spring amb l’objecte de tipus <code>MedicamentRespository</code> del <code>Web Application Context</code>.
+</p>
+
+<p>
+S’ha canviat la creació d’un únic medicament en la mateixa classe controlador per a la crida a la llista de tots els medicaments que us proporciona la persistència. Noteu que s’ha canviat l’atribut <code>medicament</code> per <code>medicaments</code>.
+</p>
+
+<p>
+Fixeu-vos com no es crida directament la classe <code>InMemoryMedicamentRepository</code>, ja que es declara i es crida la interfície. Això us permetrà canvis en la font de dades i en la manera de dialogar amb ella sense tocar el controlador.
+</p>
+
+<p>
+Només us queda mostrar la llista dels medicaments que hi ha a la vostra font de dades (creats en memòria). Canvieu la vista medicaments.jsp: heu d’afegir al principi de tot la declaració del <em>taglib</em> i heu de canviar tot el contingut de la <em>div</em> amb <code>classe=”row”</code> pel codi que es mostra a continuació.
+</p>
+<pre class="code">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+...
+                &lt;c:forEach items=&quot;${medicaments}&quot; var=&quot;medicament&quot;&gt;
+                    &lt;div class=&quot;col-sm-6 col-md-3&quot; style=&quot;padding-bottom: 15px&quot;&gt;
+                        &lt;div class=&quot;thumbnail&quot;&gt;
+                            &lt;div class=&quot;caption&quot;&gt;
+                                &lt;h3&gt;${medicament.name}&lt;/h3&gt;
+                                &lt;p&gt;${medicament.description}&lt;/p&gt;
+                                &lt;p&gt;${medicament.price}&lt;/p&gt;
+                                &lt;p&gt;Hi ha ${medicament.stockQuantity} unitats en magatzem&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/c:forEach&gt;</pre>
+
+<p>
+Executeu l’aplicació i afegiu <em>/medicaments</em> a l’<acronym title="Uniform Resource Locator">URL</acronym>. Heu d’obtenir un resultat similar al de la <span class="figref"><a href="#figXB5"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXB5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació Estoc de medicaments, persistència
+
+</figcaption><img src="../media/daw_m07_u3_06.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+L’<acronym title="Uniform Resource Locator">URL</acronym> <em>/medicaments</em> ha fet que el <code>Dispatcher Servlet</code> passi la petició a <code>MedicamentController</code>. En primer lloc, demana la injecció d’un objecte <code>MedicamentRepository</code> (anotació <code>@Autowired</code>) i Spring retorna un objecte de la implementació <code>InMemoryMedicamentRepository</code>.
+</p>
+
+<p>
+Recordeu que feu servir una classe que construeix valors ficticis en memòria perquè l’accés a dades no és l’objectiu d’aquesta unitat, però podríeu fer una classe que retornarà els valors des d’una base de dades, per exemple <code>MedicamentDAO</code>, que implementaria <code>MedicamentRepository</code> i no hauríeu de canviar <code>MedicamentController</code>. Això és l’acoblament feble entre capes.
+</p>
+
+<p>
+En segon lloc, es construeix el <code>ModelAndView</code> a partir del repositori, demanant tots els medicaments al repositori i passant-los a la vista <code>Medicaments</code> sobre l’atribut del mateix nom.
+</p>
+
+<p>
+Finalment, es mostra la vista que, amb etiquetes de JSTL, recorrerà els objectes de l’atribut <code>medicaments</code> i els mostrarà.
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_capa_de_servei" >Estoc de medicaments, capa de servei</a></h2>
+<div class="level2">
+
+<p>
+El projecte Estoc de medicaments conté la capa de presentació, amb les vistes i els controladors; la capa de domini, amb la representació d’un medicament, i la capa de persistència, que dialoga amb les dades mitjançant objectes <code>repository</code>.
+</p>
+
+<p>
+En el projecte actual, els controladors criden directament, via injecció, els objectes <code>repository</code>. No obstant això, si recupereu el diagrama d’arquitectura i procés d’una aplicació Spring MVC, els controladors només dialoguen amb la capa de servei que us falta desenvolupar.
+</p>
+
+<p>
+Els objectes <code>repository</code> fan operacions <em>CRUD</em> simples, i els resultats els poden emmagatzemar en memòria en forma d’objectes de domini. Heu vist que obteniu una llista de medicaments perquè està guardada en una <em>List</em> d’objectes <code>Medicament</code> (objectes de domini) al repositori.
+</p>
+
+<p>
+Però on posareu operacions que siguin més complexes que abastin més d’una operació <em>CRUD</em>, més d’una entitat, o simplement que afegeixin restriccions? És a dir, on posareu les regles de negoci?
+</p>
+
+<p>
+Per exemple, penseu en un moviment d’estoc del nostre medicament que signifiqui baixar 10 unitats d’ibuprofèn. En una primera aproximació podríeu dir que això consisteix a crear un mètode al repositori que faci un <em>update</em> (com és a memòria, seria actualitzar l’element adient a <code>List&lt;Medicament&gt; listOfMedicaments</code> de <code>InMemoryMedicamentRepository</code>).
+</p>
+
+<p>
+Però hauríeu de fer més operacions. Hauríeu de veure que el medicament que es vol actualitzar existeix, que té suficient estoc, i després fer efectiva l’actualització. No ho fareu per ara, però a tot això hauríeu d’afegir-li la comprovació de si l’usuari té autorització per fer aquesta operació.
+</p>
+
+<p>
+Per contenir aquestes operacions complexes que abasten més d’una operació simple, on podeu fer servir un o més objectes de domini, fareu servir la capa de <strong>servei</strong>. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Com podeu veure en apartats d’accés a dades, les transaccions es defineixen a la <strong>capa de servei</strong>.
+</p>
+</div></div>
+<p>
+En el projecte <strong>Estoc de medicaments</strong> que esteu desenvolupant creareu un servei que faci els moviments d’estoc sobre els medicaments, és a dir, que simplement incrementi o redueixi les unitats en estoc. Llavors, la crida de la capa de presentació es farà com preveu l’arquitectura i el procés d’una aplicació web amb Spring MVC, és a dir, com es mostra en la <span class="figref"><a href="#figXB6"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXB6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capes i interaccions a Spring MVC
+
+</figcaption><img src="../media/daw_m07_u3_03.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Amb aquest objectiu, creareu un controlador específic que atengui les peticions de moviments d’estoc que cridi el vostre servei i que retorni el resultat. El servei cridarà el repositori i aquest farà l’actualització. Com és a memòria, farà l’actualització sobre la <em>List</em> de medicaments.
+</p>
+
+<p>
+Però al repositori només hi ha un mètode que retorna la llista de tots els medicaments. Llavors heu de modificar el repositori per adaptar-lo a les operacions que havíeu enumerat:
+</p>
+<ul>
+<li class="level1"><div class="li"> El medicament que es vol actualitzar existeix.</div>
+</li>
+<li class="level1"><div class="li"> El medicament té suficient estoc (només si és un moviment de decrement).</div>
+</li>
+<li class="level1"><div class="li"> Fer efectiva l’actualització.</div>
+</li>
+</ul>
+
+<p>
+Heu d’afegir al <code>repository</code> els mètodes adients per resoldre les operacions.
+</p>
+
+<p>
+El codi del projecte “stmedioc” en l’estat de capa de servei es pot descarregar del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/stmedioc203.zip">enllaç</a><span> ( 10.8 MB )</span></div></div>.
+</p>
+
+<p>
+Però per seguir el desenvolupament de la capa de servei és millor partir del que ja heu fet servir per a Estoc de medicaments, capa de persistència, i copiar-lo amb el nom de “stmedioc203” del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/stmedioc202.zip">enllaç</a><span> ( 10.8 MB )</span></div></div>.
+</p>
+
+</div>
+
+<h3><a id="adaptacio_del_repositori" >Adaptació del repositori</a></h3>
+<div class="level3">
+
+<p>
+Heu d’accedir a un medicament concret a partir del seu codi (<code>medicamentId</code>), i això us permetrà comprovar que existeix i veure si es pot fer el moviment d’estoc (ha de tenir prou unitats si voleu treure estoc).
+</p>
+
+<p>
+Modifiqueu la interfície <code>MedicamentRepository</code> afegint-hi el mètode <code>Medicament getMedicamentById(String medicamentId);</code>.
+</p>
+
+<p>
+Implementeu el mètode a <code>InMemoryMedicamentRepository</code> tal com es mostra a continuació:
+</p>
+<pre class="code">    public Medicament getMedicamentById(String medicamentId) {
+        Medicament medicamentById = null;
+        for (Medicament medicament : listOfMedicaments) {
+            if (medicament != null &amp;&amp; medicament.getMedicamentId() != null
+                    &amp;&amp; medicament.getMedicamentId().equals(medicamentId)) {
+                medicamentById = medicament;
+                break;
+            }
+        }
+        if (medicamentById == null) {
+            throw new IllegalArgumentException(
+                    &quot;No s&#039;han trobat medicaments amb el codi: &quot; + medicamentId);
+        }
+        return medicamentById;
+    }</pre>
+
+<p>
+El mètode <code>getMetdicamentById</code> cerca el medicament que coincideix en <em>id</em> amb el codi que es passa pel paràmetre. Fixeu-vos que si el troba retorna l’objecte de domini <code>Medicament</code>, i en un altre cas, llança una excepció.
+</p>
+
+</div>
+
+<h3><a id="creacio_del_servei" >Creació del servei</a></h3>
+<div class="level3">
+
+<p>
+Heu de crear el servei que faci totes les operacions per aconseguir l’actualització de l’estoc comprovant les regles de negoci: existeix el medicament i no deixeu l’estoc en negatiu.
+</p>
+
+<p>
+Com en altres casos fareu servir una interfície, ja que us permet l’acoblament més feble entre les capes.
+</p>
+
+<p>
+Creeu un nou paquet <code>cat.xtec.ioc.service</code> i en ell la interfície <code>MovimentStockService</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.service;
+
+public interface MovimentStockService {
+    void processMovimentStock(String medicamentId, long quantity, int signe);
+}</pre>
+
+<p>
+Creeu un nou paquet <code>cat.xtec.ioc.service.impl</code> i també la implementació <code>MovimentStockServiceImpl</code> amb el codi que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.service.impl;
+
+import cat.xtec.ioc.domain.Medicament;
+import cat.xtec.ioc.domain.repository.MedicamentRepository;
+import cat.xtec.ioc.service.MovimentStockService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MovimentStockServiceImpl implements MovimentStockService {
+
+    @Autowired
+    private MedicamentRepository medicamentRepository;
+
+    public void processMovimentStock(String medicamentId, long quantity, int signe) {
+        Medicament medicamentById = medicamentRepository.getMedicamentById(medicamentId);
+        long signedQuantity = quantity * signe;
+        if ((medicamentById.getStockQuantity() + signedQuantity) &lt; 0) {
+            throw new IllegalArgumentException(&quot;No hi ha prou unitats. La quantitat en estoc és: &quot; + medicamentById.getStockQuantity());
+        }
+        medicamentById.setStockQuantity(medicamentById.getStockQuantity() + signedQuantity);
+    }
+}</pre>
+
+<p>
+L’anotació <code>@Autowired</code> fa que Spring us retorni un objecte sense necessitat de crear-lo directament al nostre codi. En aquest cas voleu fer servir <code>MedicamentRepository</code>.
+</p>
+
+<p>
+El mètode <code>processMovimentStock</code> fa el conjunt d’operacions que requeríem. Demana al repositori el medicament i fa l’actualització del seu estoc amb <code>setStockQuantity</code>. Però en cap cas deixarà l’estoc en negatiu, perquè abans llançaria l’excepció <code>IllegalArgumentException</code>. Recordeu que al mètode <code>getMedicamentById</code> també es llança una excepció en cas de no existir el medicament.
+</p>
+
+<p>
+També us interessa que Spring cerqui automàticament les classes d’aquest paquet per poder injectar els objectes quan es trobi una anotació d’aquest tipus. Per això, canvieu la propietat <code>context:component-scan</code> de DispatcherServlet-servlet.xml:
+</p>
+<pre class="code">&lt;context:component-scan base-package=&quot;cat.xtec.ioc.controller cat.xtec.ioc.domain.repository cat.xtec.ioc.service&quot; /&gt;</pre>
+
+</div>
+
+<h3><a id="afegits_a_la_capa_de_presentacio" >Afegits a la capa de presentació</a></h3>
+<div class="level3">
+
+<p>
+En comptes de fer servir <code>MedicamentController</code> emprareu un nou controlador específic per a aquest cas.
+</p>
+
+<p>
+Al paquet <code>cat.xtec.ioc.controller</code>, creeu el controlador <code>MovimentStockController</code> amb el codi següent:
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import cat.xtec.ioc.service.MovimentStockService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MovimentStockController {
+
+    @Autowired
+    private MovimentStockService movimentStockService;
+
+    @RequestMapping(&quot;/movimentestoc/M020/2/-1&quot;)
+    public String process() {
+        movimentStockService.processMovimentStock(&quot;M020&quot;, 2, -1);
+        return &quot;redirect:/medicaments&quot;;
+    }
+}</pre>
+
+<p>
+Amb l’<acronym title="Uniform Resource Locator">URL</acronym> de <code>@RequestMapping</code>, el controlador crida la capa de servei per fer el moviment d’estoc. Si hi ha cap excepció es mostrarà el missatge que toca, però si no mostrarà la llista de medicaments on podeu veure el decrement de l’estoc (signe -1 en l’exemple).
+</p>
+
+<p>
+En aquest cas, l’<acronym title="Uniform Resource Locator">URL</acronym> és fix i es crida a fer el moviment amb constants. No us preocupeu, ja veureu com fer tot això variable.
+</p>
+
+<p>
+Fins ara havíeu fet servir la creació explícita del <code>ModelAndView</code> com a resposta, però també es pot retornar un <em>string</em> amb el nom de la vista i Spring crearà l’objecte <code>ModelAndView</code> per a vosaltres.
+</p>
+
+<p>
+En el cas que us ocupa heu d’anar a la vista <code>Medicaments</code>, i per evitar tornar a fer el moviment d’estoc, si l’usuari prem el botó <em>Anar enrere</em> del navegador, feu una redirecció (<code>return “redirect:/medicaments”</code>). I per fer servir <code>redirect</code> heu emprat el tipus <em>string</em> com a retorn.
+</p>
+
+<p>
+Executeu l’aplicació i aneu a <em>/medicaments</em>. El navegador us mostra la llista de medicaments amb l’estoc actual (vegeu la <span class="figref"><a href="#figXB7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXB7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de l’aplicació Estoc de medicaments, estoc actual
+
+</figcaption><img src="../media/daw_m07_u3_07.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara canvieu l’<acronym title="Uniform Resource Locator">URL</acronym> a <em>/movimentestoc/M020/2/-1</em> i veureu el següent resultat, que mostra com ha variat l’estoc del paracetamol (vegeu la <span class="figref"><a href="#figXB8"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXB8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de l’aplicació Estoc de medicaments, estoc modificat
+
+</figcaption><img src="../media/daw_m07_u3_08.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="que_heu_fet_i_que_heu_apres_amb_la_capa_de_servei" >Què heu fet i què heu après amb la capa de servei?</a></h3>
+<div class="level3">
+
+<p>
+A l’aplicació Estoc de medicaments heu implementat un moviment d’estoc d’un medicament, comprovant que existeix i que no deixeu l’estoc en negatiu.
+</p>
+
+<p>
+Per fer això heu seguit les recomanacions d’Spring MVC i heu creat la capa de <strong>servei</strong>, on s’implementen regles de negoci, és a dir, operacions complexes que poden abastar una o més entitats i que poden contenir operacions simples.
+</p>
+
+<p>
+Heu creat un nou controlador que crida la capa de servei, i és aquesta capa la que crida la de persistència. A la vegada, heu afegit els mètodes necessaris a la persistència per complir amb les noves peticions. En el vostre cas, la persistència us proporciona un medicament mitjançant el codi.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+A Estoc de medicaments partíeu d’una pàgina de benvinguda, i ara podeu mostrar la llista de medicaments i podeu fer moviments d’estoc (encara de manera fixa).
+</p>
+
+<p>
+Per fer això heu estructurat el projecte en capes, tal com es mostra en la <span class="figref"><a href="#figXB9"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="figXB9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Estructura de capes d’una aplicació Spring MVC
+
+</figcaption><img src="../media/estoc_a_u3a2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+
+</p>
+
+<p>
+Heu seguit l’estructuració de codi recomanada per a aplicacions web amb Spring MVC amb les capes següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> presentació (<em>Presentation</em>)</div>
+</li>
+<li class="level1"><div class="li"> domini (<em>Domain</em>)</div>
+</li>
+<li class="level1"><div class="li"> servei (<em>Service</em>)</div>
+</li>
+<li class="level1"><div class="li"> persistència (<em>Persistence</em>)</div>
+</li>
+</ul>
+
+<p>
+Heu vist que la capa de <strong>presentació</strong> la conformen les vistes jsp i les classes controladores. A més, mitjançant fitxers de configuració i anotacions, Spring MVC afegeix altres classes necessàries, com el <code>Dispatcher Servlet</code> i <code>View Resolvers</code>.
+</p>
+
+<p>
+Heu desenvolupat la <strong>persistència</strong> amb objectes repositori que dialoguen amb les dades. En el vostre cas no accediu a una base de dades, perquè no és dins de l’abast d’aquesta unitat; treballeu amb dades creades en memòria.
+</p>
+
+<p>
+Heu creat la capa <strong>domini</strong> com la respresentació del nostre model de dades, una classe per a cada entitat. En el vostre cas, una única classe <code>Medicament</code>.
+</p>
+
+<p>
+Heu acabat amb la capa de <strong>servei</strong>, que implementa les regles de negoci. En el vostre cas, un moviment d’estoc que es compon de diverses operacions: comprovació de l’existència del medicament, verificar que l’estoc no queda en negatiu i finalment, actualitzar les unitats en estoc.
+</p>
+
+<p>
+Heu connectat tot segons l’arquitectura que proposa Spring MVC (vegeu la <span class="figref"><a href="#figXB10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figXB10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Capes i interaccions a Spring MVC
+
+</figcaption><img src="../media/daw_m07_u3_03.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Heu fet injecció de dependències i l’heu fet mitjançant interfícies per aconseguir un acoblament feble entre les capes que permet un millor manteniment i adaptació futurs.
+</p>
+
+<p>
+
+</p>
+
+<p>
+L’aplicació Estoc de medicaments us mostra una llista de medicaments, i podeu fer un moviment d’estoc. Però us animo a continuar amb aquests materials per descobrir com fer que el moviment d’estoc sigui variable i moltes coses més, com crear productes amb formularis des del navegador.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

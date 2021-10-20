@@ -1,0 +1,759 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Objectes definits pel programador</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Objectes definits pel programador</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#introduccio_a_la_programacio_orientada_a_objectes">Introducció a la programació orientada a objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#creacio_d_objectes_amb_el_constructor">Creació d'objectes amb el constructor</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#declaracio_literal_d_objectes">Declaració literal d'objectes</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#prototipus">Prototipus</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#classes_en_javascript">Classes en JavaScript</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Estructures definides pel programador</a></li><li><a href="continguts.html">Programació amb col·leccions</a></li><li>Exercicis d'autoavaluació</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="exercicis_d_autoavaluacio"> Exercicis d'autoavaluació </a></h1>
+    	
+<h2><a id="exercici_1" >Exercici 1</a></h2>
+<div class="level2">
+
+<p>
+Tenint en compte el codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let arr = [1,2,3,4];</div></li><li class="li1"><div class="de1">alert(arr.indexOf(4));</div></li></ol></pre>
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_04025d76575a6a75d939df0f96f49886" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ L’alerta mostra el valor -1  
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ L’alerta mostra el valor 4
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ L’alerta mostra el valor 3  
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="3"></input><input type="hidden" name="qsol" value="3"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_2" >Exercici 2</a></h2>
+<div class="level2">
+
+<p>
+Tenint en compte el codi següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let missatge = &quot;Hola a tots&quot;;</div></li><li class="li1"><div class="de1">alert(missatge.split(&quot;&quot;).join(&quot;-&quot;).charAt(10));</div></li></ol></pre>
+
+<p>
+Trieu l’opció correcta:
+</p>
+<div id="id_choice_4ae350b56f7572420312de70698e71d0" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ L’alerta mostra el valor “a”
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ L’alerta mostra el valor “-”
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ L’alerta mostra el valor “o”
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="3"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_3" >Exercici 3</a></h2>
+<div class="level2">
+
+<p>
+Relacioneu els conceptes següents: 
+</p>
+<div id="id_relations_3b4d744d3a3e5504b97e914ebdd66d1a" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th>Resposta</th></tr><tr><td>1</td><td>
+<p>
+ Refacció: 
+</p>
+</td><td><select name="sol_1"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>2</td><td>
+<p>
+ La funció <code>concat()</code>: 
+</p>
+</td><td><select name="sol_2"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>3</td><td>
+<p>
+ La funció <code>push()</code>: 
+</p>
+</td><td><select name="sol_3"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>4</td><td>
+<p>
+ La funció <code>pop()</code>: 
+</p>
+</td><td><select name="sol_4"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>5</td><td>
+<p>
+ La funció <code>sort()</code>: 
+</p>
+</td><td><select name="sol_5"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>6</td><td>
+<p>
+ La funció <code>split()</code>: 
+</p>
+</td><td><select name="sol_6"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>7</td><td>
+<p>
+ La funció <code>join()</code>: 
+</p>
+</td><td><select name="sol_7"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>8</td><td>
+<p>
+ La funció <code>reverse()</code>: 
+</p>
+</td><td><select name="sol_8"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>9</td><td>
+<p>
+ La funció <code>indexOf()</code>: 
+</p>
+</td><td><select name="sol_9"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>10</td><td>
+<p>
+ La funció <code>lastIndexOf()</code>: 
+</p>
+</td><td><select name="sol_10"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>11</td><td>
+<p>
+ La funció <code>slice()</code>: 
+</p>
+</td><td><select name="sol_11"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr><tr><td>12</td><td>
+<p>
+ La funció <code>splice()</code>: 
+</p>
+</td><td><select name="sol_12"><option value="sol_0">............................................................................</option>
+<option value="sol_12">Afegeix i elimina elements a partir d’una posició de l’<em>array</em></option>
+<option value="sol_3">Afegeix un element al final d’un <em>array</em></option>
+<option value="sol_2">Crea un <em>array</em> amb dos <em>arrays</em> diferents </option>
+<option value="sol_6">Divideix la cadena de text a partir del caràcter separador indicat</option>
+<option value="sol_4">Elimina l’últim element d’un <em>array</em></option>
+<option value="sol_5">Ordena alfabèticament tots els elements d’un <em>array</em></option>
+<option value="sol_8">Ordena un <em>array</em> en l’ordre invers a la seva posició original </option>
+<option value="sol_1">Reestructura el codi per tal de millora-lo i reduir la seva complexitat</option>
+<option value="sol_9">Retorna la posició on es troba la primera ocurrència del valor cercat</option>
+<option value="sol_10">Retorna la posició on es troba l’última ocurrència del valor cercat </option>
+<option value="sol_11">Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs</option>
+<option value="sol_7">Uneix tots els elements d’un <em>array</em> en una cadena de text</option>
+</select></td></tr></table><input type="hidden" name="qtype" value="relations"></input><input type="hidden" name="qnum" value="12"></input><input type="hidden" name="qsol" value="Reestructura el codi per tal de millora-lo i reduir la seva complexitat,Crea un <em>array</em> amb dos <em>arrays</em> diferents ,Afegeix un element al final d’un <em>array</em>,Elimina l’últim element d’un <em>array</em>,Ordena alfabèticament tots els elements d’un <em>array</em>,Divideix la cadena de text a partir del caràcter separador indicat,Uneix tots els elements d’un <em>array</em> en una cadena de text,Ordena un <em>array</em> en l’ordre invers a la seva posició original ,Retorna la posició on es troba la primera ocurrència del valor cercat,Retorna la posició on es troba l’última ocurrència del valor cercat ,Retorna un nou <em>array</em> amb els valors que es troben entre dos índexs,Afegeix i elimina elements a partir d’una posició de l’<em>array</em>"></input><input class="btn_solution2" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_4" >Exercici 4</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array1 = [&quot;a&quot;, &quot;b&quot;];</div></li><li class="li1"><div class="de1">array1.concat(4, 5, 6); </div></li></ol></pre>
+
+<p>
+Quina d’aquestes afirmacions, sobre l<code>‘array1</code>, és correcta?
+</p>
+<div id="id_choice_77cac937e05d6aec7d87ed4417b78ff5" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ No es concatenen els valors 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Després de l’execució té una mida de 5 posicions.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ No s’executa.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Dona error.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_5" >Exercici 5</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array1 = [&quot;a&quot;, &quot;b&quot;];</div></li><li class="li1"><div class="de1">array1.push(4, 5, 6); </div></li></ol></pre>
+
+<p>
+Quina d’aquestes afirmacions, sobre l<code>‘array1</code>, és correcta?
+</p>
+<div id="id_choice_c7ddeb193503ba2c7bbe3e8bcf5016db" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ No s’afegeixen els valors.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Després de l’execució té una mida de 5 posicions.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ No s’executa.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Dona error.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_6" >Exercici 6</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array1 = [&quot;a&quot;, &quot;b&quot;];</div></li><li class="li1"><div class="de1">array1.shift();</div></li></ol></pre>
+
+<p>
+Quina d’aquestes afirmacions, sobre l<code>‘array1</code>, és correcta?
+</p>
+<div id="id_choice_3f280e0cb8072edd6b9e95cfe9956cbe" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ S’elimina el valor “b”
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ Després de l’execució té una mida de 2 posicions
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ S’elimina el valor “a”
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Dona error
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="3"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_7" >Exercici 7</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = new Array(3);</div></li><li class="li1"><div class="de1">let b = [3];</div></li></ol></pre>
+
+<p>
+Quina d’aquestes afirmacions és correcta?
+</p>
+<div id="id_choice_99632343fa78545feeb3e3ea2bc297b3" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ L’<em>array</em> ‘a’ té a la posició 1 el valor 3
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ L’<em>array</em> ‘b’ té tres posicions.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ L’<em>array</em> ‘a’ i l’<em>array</em> ‘b’ tenen 3 posicions.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ L’<em>array</em> ‘a’ té tres posicions. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="4"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_8" >Exercici 8</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];</div></li><li class="li1"><div class="de1">let missatge = array.join(&quot;&quot;)</div></li></ol></pre>
+
+<p>
+Quina de les següents cadenes conté la variable missatge?
+</p>
+<div id="id_choice_70958b3cc21a3a193c69783ec8473a64" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ abc 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ a b c  
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Dona error
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ No dona error però al no haver caràcter d’unió no retorna res.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_9" >Exercici 9</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [4, 5, 6, 7];</div></li><li class="li1"><div class="de1">array.splice(8,9);</div></li><li class="li1"><div class="de1">alert(array.length);</div></li></ol></pre>
+
+<p>
+Quina de les següents afirmacions és correcta?
+</p>
+<div id="id_choice_dd14d908d03be06f6d7bb3c6ac71c016" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ La funció alert s’executa i mostra el número 2.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ S’afegeixen els elements 8 i 9 a l’<em>array</em> original.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Dona error.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ S’executa la funció alert i mostra el número 4. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="4"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_10" >Exercici 10</a></h2>
+<div class="level2">
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let array = [4, 5, 6, 7];</div></li><li class="li1"><div class="de1">alert(array.slice(2,4));</div></li></ol></pre>
+
+<p>
+Quina de les següents afirmacions és correcta?
+</p>
+<div id="id_choice_722040851487a85b7d7293479464a9c3" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ La funció alert s’executa i mostra el valor <code>undefined</code>.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ La funció alert mostra els valors 6 i 7. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ Dona error.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ La funció alert no s’executa.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="2"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</div>
+
+<h2><a id="exercici_11" >Exercici 11</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let set = new Set();</div></li><li class="li1"><div class="de1">set.add('Vermell');</div></li><li class="li1"><div class="de1">set.add('Groc');</div></li><li class="li1"><div class="de1">set.add('Blau');</div></li><li class="li1"><div class="de1">set.add('Groc');</div></li><li class="li1"><div class="de1">alert(set.get('Groc'));</div></li></ol></pre>
+
+<p>
+Quina de les següents afirmacions és correcta?
+</p>
+<div id="id_choice_b283bf68249c09b06fcc9cea4bc08191" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Dona error: L’objecte set no te métode get 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ La funció alert s’executa i mostra el valor 2.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La funció alert s’executa i mostra el valor ‘Groc’. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ Dona error: set no admet l’addició de dos elements idèntics.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="1"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</p>
+
+</div>
+
+<h2><a id="exercici_12" >Exercici 12</a></h2>
+<div class="level2">
+
+<p>
+
+<p>
+Donat el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let map = new Map();</div></li><li class="li1"><div class="de1">map.set('Vermell', 1);</div></li><li class="li1"><div class="de1">map.set('Groc', 2);</div></li><li class="li1"><div class="de1">map.set('Blau', 5);</div></li><li class="li1"><div class="de1">map.set('Groc', 8);</div></li><li class="li1"><div class="de1">alert(map.get('Groc'));</div></li></ol></pre>
+
+<p>
+Quina de les següents afirmacions és correcta?
+</p>
+<div id="id_choice_a2012581c3ab277858c8c354714ab821" class="quiz"><form action=""><table><tr><th>Núm</th><th>Pregunta</th><th></th></tr><tr><td>1</td><td>
+<p>
+ Dona error: map no admet l’addició de dos elements idèntics.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_1"></input></td></tr><tr><td>2</td><td>
+<p>
+ La funció alert s’executa i mostra el valor 2.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_2"></input></td></tr><tr><td>3</td><td>
+<p>
+ La funció alert s’executa i mostra el valor 8. 
+</p>
+</td><td><input type="checkbox" value="V" name="sol_3"></input></td></tr><tr><td>4</td><td>
+<p>
+ La funció alert no s’executa.
+</p>
+</td><td><input type="checkbox" value="V" name="sol_4"></input></td></tr></table><input type="hidden" name="qtype" value="choice"></input><input type="hidden" name="qnum" value="4"></input><input type="hidden" name="qsol" value="3"></input><input class="btn_solution" type="button" value="Soluci&oacute;"></form><div class="quiz_result"></div></div>
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

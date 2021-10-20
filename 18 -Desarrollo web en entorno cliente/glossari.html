@@ -1,0 +1,370 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="_/js/modernizr-1.7.min.js"></script>
+	<script src="_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="presentacio" class="rootnode"><p><a href="presentacio.html">Presentació</a></p></li><li id="resultats" class="rootnode"><p><a href="resultats.html">Resultats d'aprenentatge</a></p></li><li id="material_pdf" class="rootnode"><p><a href="material_pdf.html">Continguts en PDF</a></p></li><li id="glossari" class="rootnode"><p><a href="glossari.html">Glossari</a></p></li><li id="" class="indexnode"><p><a href="index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li>Glossari</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="glossari"> Glossari </a></h1>
+    	<ul>
+<li class="level1"><div class="li"> <strong>abstracció</strong> <em>f</em> Procés pel qual se seleccionen les propietats i els comportaments més importants d’un objecte del món real sense tenir en compte la seva implementació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>actualitzar</strong> <em>v</em> Modificar una propietat d’un objecte, assignant-li un altre valor o funció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>AJAX</strong> <em>m</em> Acrònim d’<em>Asynchronous JavaScript And XML</em> (JavaScript asíncron i XML). Tècnica de desenvolupament web basada en JavaScript i comunicacions asíncrones client-servidor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>àmbit</strong> <em>m</em> Zona del codi en la qual es pot accedir a una variable o funció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Angular JS</strong> <em>m</em> Marc de treball per al desenvolupament d’aplicacions amb JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>array</em></strong> <em>m</em> Objecte que permet emmagatzemar una col·lecció d’objectes i després recuperar-los accedint-hi de manera arbitrària.</div>
+</li>
+<li class="level1"><div class="li"> <strong>augmentar</strong> <em>v</em> Afegir un nou mètode o propietat a un objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>BOM</strong> <em>m</em> Acrònim de <em>Browser Object Model</em> (model d’objectes del navegador). Sistema de classes que permet a una seqüència d’ordres (<em>script</em>) interactuar amb el navegador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cadena de prototipus</strong> <em>f</em> Seqüència de prototipus formada pel prototipus de l’objecte i els de l’objecte dels quals hereta.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CDN</strong> <em>f</em> Acrònim de <em>Content Delivery Network</em> (xarxa de lliurament de continguts). És habitual utilitzar-les per incloure la biblioteca JavaScript en una aplicació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>clausura</strong> <em>f</em> Àmbit format per tot allò accessible a una funció en el moment de la seva declaració. Aquest àmbit es manté encara que la funció s’invoqui des d’un altre context.</div>
+</li>
+<li class="level1"><div class="li"> <strong>client</strong> <em>m</em> Programa que envia peticions al programa servidor, processa les seves respostes i interactua amb l’usuari.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>closure</em></strong> <em>f</em> Expressió original anglesa corresponent a <em>clausura</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>composició</strong> <em>f</em> Inclusió d’objectes com a propietats d’altres objectes (aquests últims s’anomenen objectes compostos).</div>
+</li>
+<li class="level1"><div class="li"> <strong>constructor, patró</strong> <em>m</em> Patró d’implementació d’una funció constructora i instanciació dels objectes amb l’operador <code>new</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>cookie</em></strong> <em>f</em> Expressió original anglesa corresponent a <em>galeta</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CORS</strong> <em>f</em> Acrònim de <em>Cross-origin resource sharing</em> (compartició de recursos d’orígens creuats). Tècnica utilitzada per superar la limitació imposada per la política del mateix origen. Es basa en l’enviament per part del servidor d’informació addicional a la capçalera.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="Cascading Style Sheets">CSS</acronym></strong> <em>m</em> Acrònim de <em>Cascading Style Sheets</em> (fulls d’estil en cascada). Llenguatge utilitzat per especificar la presentació d’un document que s’ha definit amb un llenguatge de marques (habitualment <acronym title="HyperText Markup Language">HTML</acronym>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>dades obertes</strong> <em>f</em> Dades allotjades en un servidor i universalment accessibles sense cap limitació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>declaració literal, patró</strong> <em>m</em> Patró de programació que consisteix a declarar els objectes assignant-los directament la seva especificació JSON. És un llistat de parells propietat-valor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>delegació</strong> <em>f</em> Tècnica consistent a delegar les operacions d’un objecte a un altre en lloc de realitzar-les ell mateix.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DOM</strong> <em>m</em> Acrònim de <em>Document Object Model</em> (model d’objectes del document). És una estructura de dades que representa en forma arborescent els diferents elements d’un document i permet la seva consulta i manipulació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ECMA</strong> <em>f</em> Acrònim de l’European Computer Manufacturers Association (Associació Europea de Fabricants d’Ordinadors). Es dedica a generar estàndards per a sistemes d’informació. Un dels seus estàndards és ECMAScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ECMAScript</strong> <em>m</em> Estàndard de llenguatge de programació al costat client adoptat per l’ECMA. Es basa en JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> <strong>encapsulament</strong> <em>m</em> Efecte d’amagar part de la informació, fent-la inaccessible.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ES6</strong> <em>m</em> Versió estàndard de JavaScript a partir del 2015. El 2017 encara cap navegador té suport total per a aquesta versió.</div>
+</li>
+<li class="level1"><div class="li"> <strong>esdeveniment</strong> <em>m</em> Succés produït en un objecte. Se li pot associar l’execució d’un procediment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>espai de noms, patró</strong> <em>m</em> Tècnica consistent a evitar repeticions de noms entre diferents fragments de codi. Per exemple, posant-los prefixos diferents. A JavaScript pot fer-se definint-los dins d’objectes diferents.</div>
+</li>
+<li class="level1"><div class="li"> <strong>especialització</strong> <em>f</em> Implementació d’un patró de generació d’objectes a partir d’un altre objecte (anomenat pare), al qual s’afegeixen propietats i mètodes més específics.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>event</em></strong> <em>m</em> Objecte que representa un esdeveniment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>expressió regular</strong> <em>f</em> Seqüència de caràcters que defineixen un patró de cerca dins d’una cadena.</div>
+</li>
+<li class="level1"><div class="li"> <strong>formulari</strong> <em>m</em> Document que serveix per recollir informació que serà processada posteriorment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>funció anònima</strong> <em>f</em> Funció que es declara sense donar-li cap nom. També anomenada funció sense nom.</div>
+</li>
+<li class="level1"><div class="li"> <strong>funció immediata</strong> <em>f</em> Funció la declaració de la qual desencadena la seva execució.</div>
+</li>
+<li class="level1"><div class="li"> <strong>funció niada</strong> <em>f</em> Funció declarada dins d’una altra.</div>
+</li>
+<li class="level1"><div class="li"> <strong>funcional, patró</strong> <em>m</em> Implementació d’una funció generadora que retorna una instància de l’objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>galeta</strong> <em>f</em> Informació que, a petició del servidor, emmagatzema el navegador en l’ordinador client per ser recuperada en posteriors sessions.</div>
+</li>
+<li class="level1"><div class="li"> <strong>generalització</strong> <em>f</em> Implementació d’un patró de generació d’objectes per generar-ne un altre que agrupa les característiques comunes d’altres objectes (fills) que es crearan a partir d’aquest.</div>
+</li>
+<li class="level1"><div class="li"> <strong>grup de captura</strong> <em>m</em> En una expressió regular, part de la selecció que es tanca entre parèntesis per referir-s’hi posteriorment.</div>
+</li>
+<li class="level1"><div class="li"> <strong>herència</strong> <em>f</em> Relació entre objectes creats a partir d’altres objectes.</div>
+</li>
+<li class="level1"><div class="li"> <strong><acronym title="HyperText Markup Language">HTML</acronym></strong> <em>m</em> Acrònim d’<em>Hyper Text Markup Language</em> (llenguatge d’etiquetatge d’hipertext). Llenguatge utilitzat per definir els elements principals d’una pàgina web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>HTML5</strong> <em>m</em> Versió 5 del llenguatge <acronym title="HyperText Markup Language">HTML</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>HTML5 media</strong> <em>m</em> Conjunt d’elements introduïts a HTML5 especialitzats en la gestió d’elements multimèdia de la pàgina web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>IDE</strong> <em>m</em> Acrònim d’<em>Integrated Developement Environment</em> (entorn integrat de desenvolupament).</div>
+</li>
+<li class="level1"><div class="li"> <strong>JavaScript</strong> <em>m</em> Llenguatge de programació més utilitzat en el desenvolupament web en l’entorn client. És el llenguatge per defecte dels <em>script</em> inserits a <acronym title="HyperText Markup Language">HTML</acronym>. És compatible amb l’estàndard ECMAScript que, de fet, es basa en aquest llenguatge.</div>
+</li>
+<li class="level1"><div class="li"> <strong>jQuery</strong> <em>f</em> Biblioteca JavaScript molt utilitzada. Té com a finalitat simplificar la majoria de les tasques habituals dels programes de guions escrits en JavaScript i permetre escriure aquestes tasques sense haver de fer tractaments diferents en funció del navegador que està executant el programa.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JSON</strong> <em>f</em> Acrònim de <em>JavaScript Object Notation</em> (notació JavaScript per als objectes). És la notació que s’utilitza en JavaScript per fer una declaració literal d’un objecte. Juntament amb XML, també és el format més habitual d’intercanvi de dades entre programes, amb independència del llenguatge en què s’han escrit.</div>
+</li>
+<li class="level1"><div class="li"> <strong>JSONP</strong> <em>f</em> Acrònim de <em>Padding JSON</em> (JSON amb farciment). Tècnica utilitzada per superar la limitació imposada per la política del mateix origen. Envia les dades com a paràmetre d’una crida a una funció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge de guions</strong> <em>m</em> Llenguatge de programació interpretat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>llenguatge interpretat</strong> <em>m</em> Llenguatge de programació previst perquè els programes escrits amb ell es tradueixin al llenguatge màquina a mesura que s’han d’executar les seves instruccions.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>memoize</em></strong> <em>v</em> Memoritzar els valors calculats a la pròpia funció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mètode</strong> <em>m</em> Funció emmagatzemada com a propietat d’un objecte. El seu context d’execució és el mateix objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>minimització</strong> <em>f</em> Refacció del codi per reduir-ne la mida i dificultar-ne la comprensió. Consisteix sobre tot a substituir els identificadors per altres de més curts i sense significat per al programador.</div>
+</li>
+<li class="level1"><div class="li"> <strong>mòdul, patró</strong> <em>m</em> Patró de programació per crear un espai propi de noms per l’aplicació i evitar interferències amb altres components. Es basa a declarar tots els objectes dins d’una funció immediata.</div>
+</li>
+<li class="level1"><div class="li"> <strong>MVC</strong> <em>m</em> Acrònim de model-vista-controlador. Patró de disseny que independitza la lògica de l’aplicació de la informació amb què treballa i de la presentació que en fa a l’usuari.</div>
+</li>
+<li class="level1"><div class="li"> <strong>navegador</strong> <em>m</em> Programa client d’una aplicació web. És capaç d’interpretar el codi <acronym title="HyperText Markup Language">HTML</acronym> que li envia el servidor i d’executar els programes de guions que aquest codi pugui contenir.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Node.JS</strong> <em>m</em> Entorn d’execució de programes JavaScript a servidors d’aplicacions web.</div>
+</li>
+<li class="level1"><div class="li"> <strong>npm</strong> <em>m</em> Manegador de paquets per defecte de Node.JS.</div>
+</li>
+<li class="level1"><div class="li"> <strong>objecte</strong> <em>m</em> Element que modela un aspecte del món real. Pot estar format per propietats i/o mètodes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>observador, patró</strong> <em>m</em> Patró que divideix els objectes en generadors d’esdeveniments i observadors. Els segons se subscriuen a l’objecte generador d’esdeveniments. Quan aquest en genera un, els observadors reben una notificació perquè facin el tractament adient de l’esdeveniment generat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>polimorfisme</strong> <em>m</em> Capacitat de modificar el comportament d’un objecte actualitzant un o més dels seus mètodes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>política del mateix origen</strong> <em>f</em> Limitació que fa que els navegadors només puguin realitzar peticions dins del domini on es troba l’aplicació. </div>
+</li>
+<li class="level1"><div class="li"> <strong>programació orientada a objectes</strong> <em>f</em> Paradigma de programació que posa l’èmfasi en els objectes i les relacions i interaccions entre si.</div>
+</li>
+<li class="level1"><div class="li"> <strong>propietat</strong> <em>f</em> relaciona una clau i un valor lligats a un objecte.</div>
+</li>
+<li class="level1"><div class="li"> <strong>prototípic, patró</strong> <em>m</em> Patró que consisteix a crear un objecte a partir d’un altre ja existent invocant <code>Object.create</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>prototipus</strong> <em>m</em> Objecte del qual altres objectes hereten propietats i mètodes.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>prototype</em></strong> <em>f</em> Propietat que fa referència al prototipus de la funció constructora.</div>
+</li>
+<li class="level1"><div class="li"> <strong>REST</strong><em>m</em> Acrònim de <em>Representational State Transfer</em> (transferència d’estat representacional). És un dels models arquitectònics que permeten implementar serveis web.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>script</em></strong> <em>f</em> Seqüència d’ordres.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>selector</em></strong> <em>m</em> Expressió que defineix les condicions que han de complir els elements d’un subconjunt del DOM per ser seleccionats.</div>
+</li>
+<li class="level1"><div class="li"> <strong>servidor</strong> <em>m</em> Programa que atén, processa i respon les peticions dels programes client.</div>
+</li>
+<li class="level1"><div class="li"> <strong>SOAP</strong> <em>m</em> Acrònim de <em>Simple Object Access Protocol</em> (protocol d’accés a objecte simple). Protocol que especifica una forma de realitzar l’intercanvi entre dos processos de dades en format XML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>sobrecàrrega</strong> <em>f</em> Mecanisme que permet que un objecte tingui dues funcions amb el mateix nom sense que això generi ambigüitats.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>this</em></strong> <em>m</em> Context d’execució d’una funció.</div>
+</li>
+<li class="level1"><div class="li"> <strong>XML</strong> <em>m</em> Acrònim d’<em>eXtensible Markup Language</em> (llenguatge d’etiquetatge extensible). Llenguatge que s’utilitza per a l’intercanvi de dades entre dos processos i es basa a posar etiquetes a la informació.</div>
+</li>
+<li class="level1"><div class="li"> <strong>XMLHttpRequest</strong> <em>f</em> Objecte que permet obtenir informació d’una <acronym title="Uniform Resource Locator">URL</acronym> sense recarregar la pàgina sencera. </div>
+</li>
+</ul>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="material_pdf.html">Continguts en PDF</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="index.html">&Iacute;ndex general</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

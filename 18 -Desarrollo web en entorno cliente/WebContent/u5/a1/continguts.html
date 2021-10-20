@@ -1,0 +1,1792 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../../WebContent/u6/introduccio.html">6. Mecanismes de programació asíncrona client-servidor</a></p><ul class="expander"><li id="u6introduccio"><a href="../../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../../WebContent/u6/a1/continguts.html">Comunicació asíncrona amb JavaScript</a><span class="buttonexp"></span></p><ul><li id="u6a1activitats"><a href="../../../WebContent/u6/a1/activitats.html">Activitats</a></li><li id="u6a1exercicis"><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a1/continguts.html#introduccio_a_ajax">Introducció a AJAX</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#dificultats_a_l_hora_de_provar_el_codi_ajax">Dificultats a l'hora de provar el codi AJAX</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#l_objecte_xmlhttprequest">L'Objecte XMLHttpRequest</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#serveis_web">Serveis web</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#jsonp_i_cors">JSONP i CORS</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#acces_a_dades_obertes">Accés a dades obertes</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#api_web_sockets">API Web Sockets</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#depuracio_de_crides_ajax">Depuració de crides AJAX</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../../WebContent/u6/a2/continguts.html">Programació de la comunicació asíncrona amb jQuery</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a2/continguts.html#creacio_i_enviament_de_peticions_amb_jquery">Creació i enviament de peticions amb jQuery</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Model d'objectes del document</a></li><li>Programació amb el DOM (Document Object Model)</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="programacio_amb_el_dom_document_object_model"> Programació amb el DOM (Document Object Model) </a></h1>
+    	
+<p>
+La manipulació del <strong>model d’objectes del document</strong> –més conegut per les seves sigles en anglès: DOM (Document Object Model)– és fonamental per al desenvolupament d’aplicacions web, perquè sense aquesta capacitat no és possible alterar la visualització de les pàgines dinàmicament.
+</p>
+
+<p>
+Internament, els navegadors treballen amb els documents web com si es tractés d’un arbre, i és a partir d’aquest arbre que es pot modificar la representació de la pàgina, tant afegint nous elements (paràgrafs, capçaleres, taules…) com modificant els atributs dels nodes que ja es troben al document o eliminant-los.
+</p>
+
+<p>
+A més a més, és possible cercar tant elements concrets com llistes d’elements fent servir diferents propietats i mètodes segons les vostres necessitats: a través de relacions (el primer element, el pròxim element…), cercant segons el tipus d’element, el seu identificador o fent una cerca més complexa gràcies als selectors de <acronym title="Cascading Style Sheets">CSS</acronym>.
+</p>
+
+<p>
+A banda de manipular aquests elements, també és possible accedir-hi per fer operacions de consulta, com per exemple per extreure informació dels atributs o del text contingut.
+</p>
+
+<h2><a id="estructura_del_dom_interficies_principals" >Estructura del DOM. Interfícies principals</a></h2>
+<div class="level2">
+
+<p>
+El model d’objectes del document és una interfície que facilita treballar amb documents <strong><acronym title="HyperText Markup Language">HTML</acronym>, XML i SVG</strong>. És a dir, independentment del llenguatge de programació que es faci servir, el nom dels mètodes i paràmetres per manipular-lo són idèntics, tant si es tracta de PHP, com de JavaScript o de Python, per exemple.
+</p>
+
+<p>
+Aquesta interfície defineix els mètodes i propietats que permeten accedir i manipular el document com si es tractés d’un arbre de nodes, en el qual l’arrel és el node <code>document</code>, que pot contenir qualsevol quantitat de nodes fills, i les fulles són els nodes que no tinguin cap descendent (generalment el text dels elements <acronym title="HyperText Markup Language">HTML</acronym>).
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Tot i que el més habitual és accedir al DOM a través de JavaScript, el DOM no forma part de l’especificació de JavaScript, sinó que es troba especificat pel <acronym title="World Wide Web Consortium">W3C</acronym> com una sèrie d’<strong>interfícies independents</strong> de la plataforma i el llenguatge.
+</p>
+
+<p>
+Per tant, els mètodes i les propietats que formen part d’aquestes interfícies no són propis de JavaScript, sinó que es troben <strong>disponibles a qualsevol llenguatge</strong> que ofereixi la capacitat de manipular el DOM, com per exemple Python, tant directament com a través de biblioteques.
+</p>
+</div></div><div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Especificació del DOM segons el W3C</p>
+<p>
+Podeu trobar l’especificació del DOM del <acronym title="World Wide Web Consortium">W3C</acronym> (que és el consorci internacional que treballa per desenvolupar els estàndards utilitzats per internet) en l’enllaç següent: <a href="https://www.w3.org/DOM" class="urlextern" title="https://www.w3.org/DOM"  rel="nofollow">www.w3.org/DOM</a>.
+</p>
+</div></div>
+<p>
+Al llarg dels anys s’han produït molts canvis a l’especificació, i ha evolucionat i s’ha simplificat. Algunes de les interfícies antigues han estat declarades obsoletes i no s’han de fer servir perquè els navegadors moderns poden deixar d’admetre-les.
+</p>
+
+<p>
+És important tenir-ho en compte a l’hora de consultar materials de referència, ja que és fàcil trobar informació desactualitzada. És recomanable consultar directament la documentació del web Mozilla Developer Network (<a href="https://developer.mozilla.org/" class="urlextern" title="https://developer.mozilla.org/"  rel="nofollow">www.developer.mozilla.org</a>) o l’ ‘especificació viva’ (<em>DOM Living Standard</em>; <a href="https://dom.spec.whatwg.org/" class="urlextern" title="https://dom.spec.whatwg.org/"  rel="nofollow">www.dom.spec.whatwg.org</a>) per aclarir els dubtes que pugueu tenir.
+</p>
+
+<p>
+Actualment hi ha dos grups treballant en les especificacions per al web, el <em><acronym title="World Wide Web Consortium">W3C</acronym></em> i el <em>WHATWG</em>. Encara que tots dos van col·laborar temporalment fins al 2012, van deixar de fer-ho a causa del fet que els objectius de WHATWG (a favor dels estàndards vius) i del <acronym title="World Wide Web Consortium">W3C</acronym> (especificacions estàtiques) eren contraris. Actualment el <acronym title="World Wide Web Consortium">W3C</acronym> actualitza la seva versió de l’especificació a partir d’<em>instantànies</em> de l’especificació viva, centrant-se en la correcció d’errors.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">WHATWG</p>
+<p>
+El <em>Web Hypertext Application Technology Working Group</em> (WHATWG) és una comunitat fundada per integrants d’Apple, la fundació Mozilla i Opera. En trobareu més informació en l’enllaç següent: <a href="http://goo.gl/AFxeCb" class="urlextern" title="http://goo.gl/AFxeCb"  rel="nofollow">www.goo.gl/AFxeCb</a>.
+</p>
+</div></div>
+<p>
+Les especificacions proporcionades pel <acronym title="World Wide Web Consortium">W3C</acronym> sobre el DOM estan dividides en nivells i cadascun d’aquests nivells ho està, al seu torn, en diferents especificacions. D’aquesta manera es poden conèixer les capacitats quant a manipulació del DOM dels diferents navegadors. Per exemple, el <em>DOM nivell 1</em> és admès per pràcticament tots els navegadors, en canvi, durant l’any 2016 l’especificació <em>DOM3 carregar i guardar</em> encara no l’admetia  cap navegador.
+</p>
+
+<p>
+Per aquesta raó, trobareu que a la documentació sobre diferents webs <acronym title="Application Programming Interface">API</acronym> s’indica el nivell de DOM necessari per utilitzar-les, ja que no funcionaran en navegadors que no admetin aquest nivell.
+</p>
+
+</div>
+
+<h3><a id="tipus_de_models_dom" >Tipus de models DOM</a></h3>
+<div class="level3">
+
+<p>
+En desenvolupar aplicacions web es treballa amb la interfície HTMLDocument, que s’aplica als elements <acronym title="HyperText Markup Language">HTML</acronym>, però l’especificació del DOM consta de més interfícies que permeten manipular diferents tipus de documents. Són les següents:
+</p>
+
+<p>
+<ul>
+<li class="level1"><div class="li"> <strong>Interfície HTMLDocument</strong> (documents <acronym title="HyperText Markup Language">HTML</acronym>): és una extensió de la interfície <code>Document</code> i afegeix l’accés a característiques pròpies dels navegadors, com són la finestra (<code>window</code>) o les pestanyes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Interfície XMLDocument</strong> (documents XML): també és una extensió de la interfície <code>Document</code> i representa un document XML.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Interfícies SVG</strong>: es tracta d’un conjunt d’interfícies que permeten manipular directament des de JavaScript els elements d’una imatge vectorial de tipus SVG, per afegir formes, canviar colors… No es fa servir gaire perquè és molt complexa.</div>
+</li>
+</ul>
+
+</p>
+
+</div>
+
+<h3><a id="estructura_del_dom" >Estructura del DOM</a></h3>
+<div class="level3">
+
+<p>
+Per entendre més fàcilment com s’estructura el DOM fixeu-vos en el següent codi <acronym title="HyperText Markup Language">HTML</acronym> i contrasteu-lo amb la <span class="figref"><a href="#figura u5a101"><span>figura</span></a></span>:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Les interfícies SVG</p>
+<p>
+Podeu trobar un exemple d’ús de les interfícies SVG juntament amb JavaScript en l’enllaç següent: <a href="http://goo.gl/gz6Lg6" class="urlextern" title="http://goo.gl/gz6Lg6"  rel="nofollow">goo.gl/gz6Lg6</a>.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;head&gt;</div></li><li class="li1"><div class="de1">    &lt;title&gt;Títol&lt;/title&gt;</div></li><li class="li1"><div class="de1">  &lt;/head&gt;</div></li><li class="li1"><div class="de1">  &lt;body&gt;</div></li><li class="li1"><div class="de1">    &lt;h1&gt;Això és la capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">    &lt;p&gt;Això és un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">    &lt;p&gt;Això és un altre &lt;strong&gt;paràgraf&lt;/strong&gt; amb &lt;a&gt;enllaç&lt;/a&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">  &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+<div class="iocfigure"><a name="figura u5a101"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura d’arbre corresponent a un document <acronym title="HyperText Markup Language">HTML</acronym>
+
+</figcaption><img src="../media/daw_m06_u5_02_1_grafisme.png" alt="" /></figure>
+</div>
+<p>
+Com es pot apreciar, l’arrel de l’arbre és el node <code>document</code>, tot i que no forma part del codi <acronym title="HyperText Markup Language">HTML</acronym>. A continuació trobem el node <code>html</code>, que conté els nodes <code>head</code> i <code>body</code>; aquests contenen altres nodes: <code>title</code>, <code>h1</code> i <code>p</code>. Tots aquests nodes són de tipus <code>Element</code>. En canvi, l’últim element de cada branca (les fulles) són de tipus <code>Text</code> i tenen una consideració diferent.
+</p>
+
+<p>
+Pareu atenció a l’últim paràgraf del document: en aquest cas el text inclou els elements <code>strong</code> i <code>a</code>, però aquests elements no pengen del text sinó que pengen del node <code>p</code>. Per tant, es pot concloure que <strong>un element sempre és descendent d’un altre element</strong> i mai d’un text.
+</p>
+
+</div>
+
+<h3><a id="adaptacions_de_codi_per_diferents_navegadors" >Adaptacions de codi per diferents navegadors</a></h3>
+<div class="level3">
+
+<p>
+S’ha de tenir en compte que encara que s’amplien les especificacions de les interfícies i dels llenguatges de programació contínuament, els navegadors antics no les admeten.
+</p>
+
+<p>
+Actualment, tots els navegadors s’actualitzen automàticament de forma predeterminada. Per aquesta raó, es parla de Google Chrome o de Firefox sense indicar-ne la versió. En canvi, els navegadors més antics s’havien d’actualitzar manualment i en alguns països l’ús de navegadors obsolets (especialment Internet Explorer) ha estat molt estès fins fa pocs anys.
+</p>
+
+<p>
+Afortunadament, cada vegada hi ha menys usuaris que facin servir navegadors obsolets, i molts grups han deixat fer-los compatibles perquè consideren que mentre hi hagi compatibilitat amb aquests navegadors obsolets, la gent continuarà fent-los servir i això perjudica tant els desenvolupadors com els usuaris amb navegadors actualitzats.
+</p>
+
+<p>
+En cas de requerir compatibilitat amb aquests navegadors, al mateix temps que s’aprofiten les noves tecnologies, teniu a la vostra disposició dues opcions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Biblioteques</strong>: fer servir una biblioteca que implementi les característiques que necessiteu i que doni compatibilitat amb navegadors antics (per exemple, jQuery). En aquest cas, sempre que sigui possible, es recomana fer servir la biblioteca: les biblioteques implementen el comportament correcte per a tots els navegadors sense haver de modificar el vostre codi.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Polyfill</strong>: consisteix a afegir, juntament amb el vostre codi, una implementació pròpia de la característica que necessiteu i que no és disponible en tots els navegadors antics. Per exemple, abans que HTML5 fos disponible per a tots els navegadors moderns, era possible fer servir <em>polyfills</em> per implementar algunes de les noves característiques del llenguatge sense haver de preocupar-se pels navegadors dels usuaris.</div>
+</li>
+</ul>
+
+<p>
+Per exemple, si voleu fer una implementació per treballar amb JSON en navegadors antics, faríeu servir un codi similar al següent:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Al web de Mozilla Developer Network es pot trobar el <em>polyfill</em> per implementar moltes de les característiques d’HTML5. 
+</p>
+</div></div><pre class="code">if (!window.JSON) {
+  window.JSON = {
+    parse: function(text) { // Codi per retornar un objecte a partir del text},
+    stringify: function(obj) { // Codi per retornar una cadena de text a partir de l&#039;objecte}
+  }
+}</pre>
+
+<p>
+Cal destacar que la implementació pròpia dels navegadors d’aquestes funcions és molt més eficient que els <em>polyfills</em>. Per aquesta raó, és molt important comprovar primer si el navegador ja les implementa i, si no és així, cal afegir-les. Per fer-ho només cal comprovar si es troben definides a l’objecte o al prototipus, segons el cas.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Implementació &#039;polyfill&#039; per a JSON</p>
+<p>
+Es pot trobar la implementació completa del <em>polyfill</em> per a l’objecte JSON en l’enllaç següent: <a href="http://goo.gl/p4nm6l" class="urlextern" title="http://goo.gl/p4nm6l"  rel="nofollow">goo.gl/p4nm6l</a>.
+</p>
+</div></div>
+<p>
+Tenint en compte la complexitat afegida d’utilitzar <em>polyfills</em> i les seves limitacions, és més recomanable fer servir biblioteques que ja implementin aquests <em>polyfills</em> o incloguin les funcionalitats que requeriu en lloc de fer la vostra pròpia implementació.
+</p>
+
+</div>
+
+<h2><a id="interficies_del_dom" >Interfícies del DOM</a></h2>
+<div class="level2">
+
+<p>
+L’especificació del DOM està dividida en múltiples interfícies que determinen les possibles accions que es poden realitzar amb cada element; per exemple, per conèixer la classe o classes aplicades a un element, caldrà utilitzar la interfície <code>Element</code>; en canvi, per consultar o modificar el valor d’un atribut de l’element, s’utilitza la interfície <code>Attr</code>.
+</p>
+
+<p>
+A continuació podeu trobar una llista de les interfícies més destacables per a la manipulació de documents <acronym title="HyperText Markup Language">HTML</acronym>:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Llistat d&#039;interfícies</p>
+<p>
+Podeu trobar una llista de totes les interfícies DOM en l’enllaç següent: <a href="http://goo.gl/X3rGDj" class="urlextern" title="http://goo.gl/X3rGDj"  rel="nofollow">goo.gl/X3rGDj</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <strong>Node</strong>: molts dels elements del DOM hereten d’aquest tipus i, per tant, ofereixen aquestes funcionalitats. Aquesta interfície permet consultar i manipular els nodes, com per exemple navegar a través dels nodes fills, pares i contigus, cercar nodes, afegir nodes nous o eliminar-los.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Document</strong> (herència de <code>Node</code>): aquesta interfície és la que s’aplica a l’arrel del document. Permet, entre altres coses, conèixer l’element actiu, manipular les galetes (més conegudes com a <em>cookies</em>) i obtenir informació global del document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Element</strong> (herència de <code>Node</code>): s’aplica a tots els elements del document, és a dir, a les etiquetes que apareixen com a <code>body</code>, <code>h1</code> o <code>p</code>. A partir d’aquesta interfície es pot obtenir una llista d’atributs, la classe de l’element, el seu <code>id</code> i afegir observadors per escoltar diferents <em>events</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Attr</strong>: aquesta interfície permet consultar i modificar els atributs d’un element. En versions anteriors a DOM4 la interfície <code>Attr</code> derivava de <code>Node</code>, però no es recomana fer servir aquestes funcionalitats perquè no hi hagi discrepàncies amb els navegadors més actuals.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Event</strong>: aquesta interfície és implementada per altres interfícies de l’especificació i conté tots els mètodes comuns per representar un esdeveniment.</div>
+</li>
+</ul>
+
+<p>
+Cal destacar que existeix una interfície per a <code>text</code>, però no es fa servir gaire. El seu objectiu principal és representar el text contingut en un <code>element</code> o <code>attr</code> (atribut).
+</p>
+
+</div>
+
+<h2><a id="interficie_node" >Interficie &#039;Node&#039;</a></h2>
+<div class="level2">
+
+<p>
+D’entre totes les interfícies la més important és <code>Node</code>, ja que <code>Document</code> i <code>Element</code> deriven d’aquesta. És a dir, totes les propietats i mètodes de <code>Node</code> són accessibles tant per a <code>Document</code> com per a <code>Element</code>.
+</p>
+
+<p>
+Cal destacar que tot i que això implica que <code>Document</code> i <code>Element</code> inclouen la funcionalitat per navegar entre nodes, no s’acostuma a fer-les servir. En el cas de la primera interfície s’acostuma a cercar directament l’element que interessi (a través del tipus d’element, el seu identificador o la seva classe), mentre que el segon, a més de disposar de la capacitat de cerca, inclou propietats específiques per navegar entre els nodes de tipus <em>element</em>, filtrant-ne, així, la resta (per exemple, els de tipus <em>text</em>).
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Propietats de &#039;Node&#039;</p>
+<p>
+Podeu trobar informació més detallada sobre la interficie <code>Node</code> en l’enllaç següent: <a href="http://goo.gl/Rmwm4h" class="urlextern" title="http://goo.gl/Rmwm4h"  rel="nofollow">www.http://goo.gl/Rmwm4h</a>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="informacio_basica_dels_nodesnodetype_i_nodename" >Informació bàsica dels nodes: &#039;nodeType&#039; i &#039;nodeName&#039;</a></h3>
+<div class="level3">
+
+<p>
+La propietat <code>nodeType</code> permet determinar el tipus d’un node. Conté un valor numèric corresponent a les pseudoconstants (recordeu que realment a JavaScript no existeixen les constants), que podeu veure a la taula <span class="tabref"><a href="#tabu5a101"><span>taula</span></a></span>.
+</p>
+<div class="ioctable ">
+<div class="titletable"><a name="tabu5a101"><span>Taula: </span></a>Correspondència de valors de la propietat nodeType</div>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Pseudoconstant</th><th class="col1">Valor</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">ELEMENT_NODE</td><td class="col1">1</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TEXT_NODE</td><td class="col1">3</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">PROCESSING_INSTRUCTION_NODE</td><td class="col1">7</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">COMMENT_NODE</td><td class="col1">8</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">DOCUMENT_NODE</td><td class="col1">9</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">DOCUMENT_TYPE_NODE</td><td class="col1">10</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">DOCUMENT_FRAGMENT_NODE</td><td class="col1">11</td>
+	</tr>
+</table></div>
+<div class="foottable">Els números no són consecutius perquè alguns dels tipus han estat declarats obsolets</div></div>
+<p>
+Per exemple, per comprovar el valor de la propietat nodeType de <code>document</code> només cal mostrar-la per la consola:
+</p>
+<pre class="code">console.log(document.nodeType);</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/PGoGwP?editors=0011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/PGoGwP?editors=0011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/PGoGwP?editors=0011</a>.
+</p>
+
+<p>
+Com es pot apreciar, el valor retornat és <code>9</code>, ja que és el valor associat a <code>DOCUMENT_NODE</code>.
+</p>
+
+<p>
+En canvi, si es consulta el valor de la propietat d’un element, el valor associat serà <code>1</code>, com correspon a <code>ELEMENT_NODE</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let primer = document.getElementById('primer');</div></li><li class="li1"><div class="de1">console.log(primer.nodeType);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QKWKNg?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QKWKNg?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QKWKNg?editors=1011</a>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+<code>getElementById()</code> és un mètode de la interfície document que permet obtenir un element per al seu <code>id</code>.
+</p>
+</div></div>
+<p>
+Per altra banda, la propietat <code>nodeName</code> permet saber el nom del node, i això permet distingir-los entre d’altres. Aquest nom no correspon necessàriament amb el de l’etiqueta que crea el node, com es pot comprovar en l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let primer = document.getElementById('primer');</div></li><li class="li1"><div class="de1">  console.log(document.nodeName);</div></li><li class="li1"><div class="de1">  console.log(primer.nodeName);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/EgxgjZ?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/EgxgjZ?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/EgxgjZ?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos que el nom del node <code>document</code> és <code>#document</code>, mentre que el de l’element <code>p</code> és <code>P</code>.
+</p>
+
+</div>
+
+<h3><a id="contingut_textualtextcontent" >Contingut textual: &#039;textContent&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquesta propietat retorna el contingut textual:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let primer = document.getElementById('primer');</div></li><li class="li1"><div class="de1">  console.log(primer.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/GjRjOq?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/GjRjOq?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/GjRjOq?editors=1011</a>.
+</p>
+
+</div>
+
+<h3><a id="relacions_entre_nodesparentnode_firstchild_lastchild_previoussibling_i_nextsibling" >Relacions entre nodes: &#039;parentNode&#039;, &#039;firstChild&#039;, &#039;lastChild&#039;, &#039;previousSibling&#039; i &#039;nextSibling&#039;</a></h3>
+<div class="level3">
+
+<p>
+La propietat <code>parentNode</code> permet accedir al pare del node o retorna <code>null</code> si no existeix (per exemple, si el node no s’ha afegit al document).
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let primer = document.getElementById('primer');</div></li><li class="li1"><div class="de1">  console.log(primer.parentNode.nodeName);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/oBXRzP?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/oBXRzP?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/oBXRzP?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, el nom del node retornat és <code>DIV</code>, el corresponent al node pare. Aquest comportament permet recórrer l’arbre ascendentment; per exemple, es podria accedir al pare del pare: <code>primer.parentNode.parentNode.nodeName</code>.
+</p>
+
+<p>
+Les propietats <code>firstChild</code> i <code>lastChild</code> permeten accedir al primer i a l’últim fill d’un node, com es pot comprovar en l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;&lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;&lt;p id=&quot;segon&quot;&gt;Segon paràgraf&lt;/p&gt;&lt;p id=&quot;tercer&quot;&gt;Tercer paràgraf&lt;/p&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">  console.log(contenidor.firstChild.textContent);</div></li><li class="li1"><div class="de1">  console.log(contenidor.lastChild.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VKwKbw?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKwKbw?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKwKbw?editors=1011</a>.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>salts de línia</strong> són interpretats com a nodes de tipus text i, per consegüent, en cas d’afegir salts de línia, tant el <code>firstChild</code> com el <code>lastChild</code> serien nodes de tipus text.
+</p>
+
+<p>
+En el cas de <code>previousSibling</code> i <code>nextSibling</code> es produeix el mateix comportament, i per aquesta raó cal tenir en compte els salts de línies i tabulacions quan es tracta amb aquestes propietats.
+</p>
+</div></div>
+<p>
+Per altra banda, <code>previousSibling</code> i <code>nextSibling</code> permeten accedir als nodes germans, anterior i posterior respectivament, d’un mateix node:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;&lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;&lt;p id=&quot;segon&quot;&gt;Segon paràgraf&lt;/p&gt;&lt;p id=&quot;tercer&quot;&gt;Tercer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let segon = document.getElementById('segon');</div></li><li class="li1"><div class="de1">  console.log(segon.previousSibling.textContent);</div></li><li class="li1"><div class="de1">  console.log(segon.nextSibling.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/mAdAxE?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mAdAxE?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/mAdAxE?editors=1011</a>.
+</p>
+
+<p>
+En executar aquest exemple es mostrarà correctament el contingut textual dels nodes anterior i posterior, és a dir, <code>Primer paràgraf</code> i <code>Tercer paràgraf</code>.
+</p>
+
+</div>
+
+<h3><a id="obtencio_de_nodes_descendentschildnodes_i_haschildnodes" >Obtenció de nodes descendents: &#039;childNodes&#039; i &#039;hasChildNodes&#039;</a></h3>
+<div class="level3">
+
+<p>
+Per altra banda, la propietat <code>childNodes</code> ens permet accedir a la llista de nodes continguts que es pot tractar com un <em>array</em> i conèixer la quantitat de nodes a través de la propietat <code>length</code>. Per altra banda, si només es vol saber si conté altres nodes o no, es pot invocar el mètode <code>hasChildNodes()</code>, que retornarà <code>true</code> si en conté o <code>false</code> en cas contrari.
+</p>
+
+<p>
+Com que la llista de nodes es pot tractar com un <em>array</em>, es pot recórrer normalment:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;segon&quot;&gt;Segon paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;tercer&quot;&gt;Tercer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contenidor conté altres nodes: ' + contenidor.hasChildNodes());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('Conté ¡ + contenidor.childNodes.length + ' nodes');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; contenidor.childNodes.length; i++) {</div></li><li class="li1"><div class="de1">    console.log('Trobat un node de tipus ' + contenidor.childNodes[i].nodeType + ': ' + contenidor.childNodes[i].nodeName);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vXYXbX?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vXYXbX?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vXYXbX?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos que en aquest cas s’han fet servir la indentació habitual, i en recórrer la llista de nodes s’han trobat quatre nodes de tipus text, corresponents als nodes generats pels salts de línia i les indentacions.
+</p>
+
+</div>
+
+<h3><a id="insercio_de_nodesappendchild_i_insertbefore" >Inserció de nodes: &#039;appendChild&#039; i &#039;insertBefore&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquests dos mètodes permeten afegir un node com a fill d’un altre. La diferència és que <code>appendChild()</code> afegeix el node al final de la llista de fills, mentre que amb <code>insertBefore()</code> el node s’afegeix abans del node de referència passat com a argument.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  contenidor.appendChild(document.createElement('p'));</div></li><li class="li1"><div class="de1">  contenidor.appendChild(document.createElement('div'));</div></li><li class="li1"><div class="de1">  contenidor.insertBefore(document.createElement('h1'), contenidor.firstChild);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contenidor conté altres nodes: ' + contenidor.hasChildNodes());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('Conté ' + contenidor.childNodes.length + ' nodes');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; contenidor.childNodes.length; i++) {</div></li><li class="li1"><div class="de1">    console.log('Trobat un node de tipus ' + contenidor.childNodes[i].nodeType + ': ' + contenidor.childNodes[i].nodeName);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WGNooa?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WGNooa?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WGNooa?editors=1011</a>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>insertBefore()</code> requereix que es passin dos arguments, el node que s’ha d’afegir i el node de referència o <code>null</code>, obligatòriament.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+El mètode <code>createElement()</code> forma part de la interfície <code>Element</code>.
+</p>
+</div></div>
+<p>
+Com es pot apreciar en aquest exemple, els nodes afegits amb <code>appendChild()</code> s’han afegit en ordre, mentre que el node afegit amb <code>insertBefore()</code> s’ha afegit davant del primer fill del contenidor i, per tant, ha quedat en primera posició.
+</p>
+
+<p>
+S’ha de tenir en compte que en el cas d’invocar aquests mètodes passant com a paràmetre un node que ja es trobi al document, en lloc d’afegir-se, el node es mourà, és a dir, s’eliminarà de la seva posició anterior i s’afegirà a la nova:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1 id=&quot;titol1&quot;&gt;Aquest és el títol 1&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;contenidor2&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;h1 id=&quot;titol2&quot;&gt;Aquest és el títol 2&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor2 = document.getElementById('contenidor2');</div></li><li class="li1"><div class="de1">  let titol1 = document.getElementById('titol1');</div></li><li class="li1"><div class="de1">  contenidor2.appendChild(titol1);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/ALBOjL?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ALBOjL?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ALBOjL?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, una vegada s’afegeix el <code>titol1</code> al <code>contenidor2</code> s’elimina automàticament del <code>contenidor1</code>.
+</p>
+
+</div>
+
+<h3><a id="eliminacio_i_substitucio_de_nodesremovechild_i_replacechild" >Eliminació i substitució de nodes: &#039;removeChild&#039; i &#039;replaceChild&#039;</a></h3>
+<div class="level3">
+
+<p>
+El mètode <code>removeChild()</code> permet eliminar un node fill. S’ha de tenir en compte que per poder eliminar un node s’ha d’accedir al pare d’aquest, per tant, cal recordar que la propietat <code>parentNode</code> hi dona accés, tal com es pot veure a l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1 id=&quot;titol1&quot;&gt;Aquest és el títol 1&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;contenidor2&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;h1 id=&quot;titol2&quot;&gt;Aquest és el títol 2&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let titol1 = document.getElementById('titol1');</div></li><li class="li1"><div class="de1">  titol1.parentNode.removeChild(titol1);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/rrNWpX?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rrNWpX?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/rrNWpX?editors=1010</a>.
+</p>
+
+<p>
+Fixeu-vos que el <code>titol1</code> ha desaparegut i només es mostra el <code>titol2</code>. El <code>contenidor1</code> (el node pare) continua existint, però ara es troba buit.
+</p>
+
+<p>
+Tot i que el node ja no forma part del contenidor, es pot conservar una referència (per exemple, la retornada pel mètode <code>removeChild()</code>) i afegir-lo a un altre node:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1 id=&quot;titol1&quot;&gt;Aquest és el títol 1&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;contenidor2&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;h1 id=&quot;titol2&quot;&gt;Aquest és el títol 2&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor2 = document.getElementById('contenidor2');</div></li><li class="li1"><div class="de1">  let titol1 = document.getElementById('titol1');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let refNode = titol1.parentNode.removeChild(titol1);</div></li><li class="li1"><div class="de1">  contenidor2.appendChild(refNode);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yaLVmN?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yaLVmN?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yaLVmN?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, ara el <code>contenidor2</code> conté tots dos títols. Cal tenir en compte que en aquest cas concret no caldria guardar la referència perquè la variable <code>titol1</code> ja la manté. Si reemplaceu el codi JavaScript pel següent, el resultat és idèntic:
+</p>
+<pre class="code">let contenidor2 = document.getElementById(&#039;contenidor2&#039;);
+let titol1 = document.getElementById(&#039;titol1&#039;);
+
+titol1.parentNode.removeChild(titol1);
+contenidor2.appendChild(titol1);</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WGNRZV?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WGNRZV?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WGNRZV?editors=1010</a>.
+</p>
+
+<p>
+Per altra banda, <code>replaceChild()</code> permet reemplaçar un node per un altre. Per exemple, es poden intercanviar els continguts dels dos contenidors de l’exemple anterior:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor1&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;h1 id=&quot;titol1&quot;&gt;Aquest és el títol 1&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;contenidor2&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;h1 id=&quot;titol2&quot;&gt;Aquest és el títol 2&lt;h1&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor1 = document.getElementById('contenidor1');</div></li><li class="li1"><div class="de1">  let contenidor2 = document.getElementById('contenidor2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let titol1 = document.getElementById('titol1');</div></li><li class="li1"><div class="de1">  let titol2 = document.getElementById('titol2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let refNode = contenidor1.replaceChild(titol2, titol1);</div></li><li class="li1"><div class="de1">  contenidor2.appendChild(refNode);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/qRRzLj?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/qRRzLj?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/qRRzLj?editors=1010</a>.
+</p>
+
+<p>
+En primer lloc s’obté una referència als contenidors i els nodes, seguidament es fa el reemplaça de <code>titol1</code> per <code>titol2</code>, i finalment s’afegeix el <code>titol1</code> al segon contenidor.
+</p>
+
+<p>
+Com que <code>replaceChild()</code> retorna una referència al node reemplaçat, aquesta referència es pot fer servir per afegir aquest node al <code>contenidor2</code>. Cal tenir en compte que no és possible invocar el mètode <code>replaceChild()</code> per fer l’intercanvi al <code>contenidor2</code> perquè aquest ja no conté cap node que pugui ser reemplaçat.
+</p>
+
+</div>
+
+<h3><a id="copia_de_nodesclonenode" >Copia de nodes: &#039;cloneNode&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquest mètode permet clonar un node, de manera que es genera un nou node idèntic. Es pot passar <code>true</code> com a paràmetre, si volem que es faci una còpia profunda del node (és a dir, que cloni també tots els seus nodes descendents); o <code>false</code>, en cas contrari.
+</p>
+
+<p>
+En el següent exemple es pot veure com es clona la capçalera de tipus <code>h1</code> i s’afegeix cinc vegades:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per assegurar la compatibilitat amb navegadors que no admetin el DOM4 és recomanable passar <code>true</code> com argument per fer còpies profundes.
+</p>
+</div></div><pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;&lt;h1&gt;Això és un títol&lt;h1&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;5; i++) {</div></li><li class="li1"><div class="de1">    let clonedNode = contenidor.firstChild.cloneNode(true);</div></li><li class="li1"><div class="de1">    console.log(clonedNode);</div></li><li class="li1"><div class="de1">    contenidor.appendChild(clonedNode);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/GjRApw?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/GjRApw?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/GjRApw?editors=1011</a>.
+</p>
+
+<p>
+En cas de passar <code>false</code> com a argument, s’haurien afegit cinc elements de tipus <code>h1</code>, però sense cap contingut, ja que el node amb el contingut textual <code>Això és un títol</code> no s’hauria clonat.
+</p>
+
+</div>
+
+<h2><a id="interficie_document" >Interficie &#039;Document&#039;</a></h2>
+<div class="level2">
+
+<p>
+Aquesta interfície és herència de <code>Node</code> i d<code>‘EventTarget</code> (aquesta darrera permet la utilització d’<em>events</em>), així doncs, és possible manipular el document com si es tractés d’un node i gestionar <em>events</em>.
+</p>
+
+<p>
+Les propietats que ofereix aquesta interfície no són gaire utilitzades, en canvi, és fonamental conèixer els seus mètodes, perquè permeten cercar i crear nous nodes. En aquests materials només es tractarà un subconjunt d’aquests mètodes, els més utilitzats, ja que molts d’aquests tenen aplicacions molt concretes i no cal conèixer-los.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Mètodes i propietats de &#039;Document&#039;</p>
+<p>
+Podeu trobar més informació sobre la interfície <code>Document</code> en l’enllaç següent: <a href="http://goo.gl/Rmwm4h" class="urlextern" title="http://goo.gl/Rmwm4h"  rel="nofollow">www.goo.gl/Rmwm4h</a>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_de_nodescreatetextnode_i_createelement" >Creació de nodes: &#039;createTextNode&#039; i &#039;createElement&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquests mètodes permeten crear nodes de text i elements, respectivament. Com que totes dues implementen la interfície <code>Node</code>, es poden afegir al document, eliminar-los, reemplaçar-los o clonar-los:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1 id=&quot;titol1&quot;&gt;Aquest és el primer node de text.&lt;h1&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let titol1 = document.getElementById('titol1');</div></li><li class="li1"><div class="de1">  let nouNodeDeText = document.createTextNode('I aquest és el segon, afegit dinàmicament');</div></li><li class="li1"><div class="de1">  titol1.appendChild(nouNodeDeText);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/BLamyb?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/BLamyb?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/BLamyb?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, el codi <acronym title="HyperText Markup Language">HTML</acronym> només inclou un fragment de text, però s’afegeix el segon dinàmicament en crear un nou node i afegint-lo al contenidor (l’element <code>h1</code>).
+</p>
+
+<p>
+Per afegir-lo al principi del contenidor en lloc del final només cal substituir l’última línia per:
+</p>
+<pre class="code">titol1.insertBefore(nouNodeDeText, titol1.firstChild);</pre>
+
+<p>
+El mètode <code>createElement()</code> també crea nodes, però en aquest cas són de tipus element i, per consegüent, implementen la interfície ‘Element’. Això permet crear elements d’<acronym title="HyperText Markup Language">HTML</acronym>, com es pot apreciar en l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let nouElement = document.createElement('h1');</div></li><li class="li1"><div class="de1">  let nouText = document.createTextNode('Això és la capçalera')</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  nouElement.appendChild(nouText);</div></li><li class="li1"><div class="de1">  contenidor.appendChild(nouElement);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/pEodaE?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/pEodaE?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/pEodaE?editors=1010</a>.
+</p>
+
+<p>
+L’argument que es passa en invocar el mètode és una cadena de text amb l’etiqueta (<em>tag</em>), és a dir, si l’argument és <code>h1</code> es crearan les etiquetes <acronym title="HyperText Markup Language">HTML</acronym><code>&lt;h1&gt;&lt;/h1&gt;</code>. Aquesta etiqueta és important perquè també permet fer cerques a l’arbre de tots els nodes amb la mateixa etiqueta, per exemple: cercar tots els títols principals (<code>h1</code>), tots els enllaços (<code>a</code>)…
+</p>
+
+<p>
+Fixeu-vos que no cal afegir els nous nodes al document immediatament, es pot crear una branca a la memòria (en aquest cas el node referenciat per <code>nouelement</code>, que conté el node de text) i, una vegada afegits tots els nodes, afegir-la a l’arbre.
+</p>
+
+<p>
+Aquesta és la millor manera de fer-ho, perquè si s’afegeixen els nodes al document d’un en un, el navegador renderitzarà l’arbre una vegada per cada node. En canvi, si s’afegeix tota la branca, només ha de renderitzar l’arbre de nou un cop.
+</p>
+
+</div>
+
+<h3><a id="cerca_d_elements_simplegetelementsbyclassname_getelementsbytagname_i_getelementbyid" >Cerca d&#039;elements simple: &#039;getElementsByClassName&#039;, &#039;getElementsByTagName&#039; i &#039;getElementById&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquests mètodes permeten fer <strong>cerques d’elements</strong> al document. Cal recalcar que es tracta d’elements (implementen la interfície <code>Elements</code>) i no de qualsevol node. És a dir, es poden cercar tots els paràgrafs d’una pàgina però no els nodes de text que contingui.
+</p>
+
+<p>
+Els mètodes <code>getElementsByClassName()</code> i <code>getElementsByTagName()</code> retornen una llista de nodes de tipus element, mentre que <code>getElementById()</code> retorna sempre un únic node de tipus element.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’atribut <code>id</code> de qualsevol element d’un document sempre ha de ser únic. 
+</p>
+</div></div>
+<p>
+Cadascun realitza la cerca segons un aspecte diferent:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>getElementsByClassName</strong>: nodes de tipus element que continguin la classe passada com a argument.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getElementsByTagName</strong>: nodes de tipus element amb l’etiqueta passada com a argument; per exemple: <code>p</code>, per obtenir una llista de paràgrafs, o <code>h1</code> per obtenir totes les capçaleres de primer nivell.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getElementById</strong>: node de tipus element amb l’atribut <code>id</code> que coincideix amb el valor passat com a argument. Permet accedir de forma més directa a qualsevol element, però requereix afegir, abans, l’atribut <code>id</code> als elements que s’han de manipular.</div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1&gt;Primera capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&lt;h1 class=&quot;secundari&quot;&gt;Segona capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;contingut&quot; class=&quot;secundari paragraf&quot;&gt;Un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let elementsSecundaris = document.getElementsByClassName('secundari');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('Contingut textual dels elements amb classe=&quot;secundari&quot;:');</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; elementsSecundaris.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsSecundaris[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementsLlista = document.getElementsByTagName('li');</div></li><li class="li1"><div class="de1">  console.log('Contingut textual dels elements de la llista (&lt;li&gt;&lt;/li&gt;):');</div></li><li class="li1"><div class="de1">  for (i = 0; i &lt; elementsLlista.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsLlista[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementContingut = document.getElementById('contingut');</div></li><li class="li1"><div class="de1">  console.log('Contingut textual del element amb id=&quot;contingut&quot;: ' + elementContingut.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NRWwZx?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NRWwZx?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NRWwZx?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos que el mètode <code>getElementsByClassName()</code> retorna dos elements, ja que comprova totes les classes de cada element, de manera que tant <code>secundari</code> com <code>secundari paràgraf</code> són coincidències vàlides.
+</p>
+
+<p>
+També cal destacar que en el cas de <code>getElementsByTagName()</code> es retornen tots els elements amb l’etiqueta <code>li</code> del document, és a dir, inclou tant els elements de la primera llista com els de la segona.
+</p>
+
+<p>
+Com és d’esperar, és possible fer modificacions sobre aquests nodes, per exemple per moure’ls o eliminar-los. En cas de voler eliminar-los, es pot presentar un problema inesperat: com que en eliminar el node canvia la seva posició a la llista, es produirà un error en intentar accedir als elements posteriors. Una possible solució seria la següent: fer servir un bucle amb <code>while</code> que elimini el primer element de la llista i es repeteixi fins que la longitud de la llista sigui 0.
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1&gt;Primera capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&lt;h1 class=&quot;secundari&quot;&gt;Segona capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;contingut&quot; class=&quot;secundari paragraf&quot;&gt;Un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let elementsLlista = document.getElementsByTagName('li');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  while (elementsLlista.length&gt;0) {</div></li><li class="li1"><div class="de1">    elementsLlista[0].parentNode.removeChild(elementsLlista[0]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XjWVWE?editors=1010." class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XjWVWE?editors=1010."  rel="nofollow">codepen.io/ioc-daw-m06/pen/XjWVWE?editors=1010</a>.
+</p>
+
+</div>
+
+<h3><a id="cerca_d_elements_amb_selectors_queryselector_i_queryselectorall" >Cerca d&#039;elements amb selectors (&#039;querySelector&#039; i &#039;querySelectorAll&#039;)</a></h3>
+<div class="level3">
+
+<p>
+Aquests mètodes permeten fer una cerca específica d’elements, passant com a argument una cadena de text amb un selector <acronym title="Cascading Style Sheets">CSS</acronym>. La diferència entre tots dos és que el primer només retorna el primer element coincident, mentre que el segon retorna una llista amb totes les coincidències.
+</p>
+
+<p>
+Entre els selectors que es poden utilitzar hi ha:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Selectors CSS</p>
+<p>
+Podeu trobar informació detallada sobre els selectors <acronym title="Cascading Style Sheets">CSS</acronym> en l’enllaç següent: <a href="http://goo.gl/o8ELvX" class="urlextern" title="http://goo.gl/o8ELvX"  rel="nofollow">goo.gl/o8ELvX</a>.
+</p>
+</div></div><div class="iocnote"><div class="ioccontent">
+<p>
+Un element és <strong>descendent directe</strong> d’un altre quan el seu pare és aquest element.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>#identificador</code>: que contingui <code>id=“identificador”</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>.nom_classe</code>: que contingui <code>class=“nom_classe”</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>element</code>: que sigui un element amb l’etiqueta <code>element</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>element1 element2</code>: que sigui un element amb l’etiqueta <code>element2</code> descendent d’un element amb l’etiqueta <code>element1</code>. Cal destacar que <strong>no cal que sigui descendent directe</strong>.</div>
+</li>
+<li class="level1"><div class="li"> <code>element1&gt;element2</code>: que sigui un element amb el tag <code>element2</code> <strong>descendent directe</strong> d’un element amb l’etiqueta <code>element1</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>[type=“button”]</code>: elements que tinguin l’atribut <code>type</code> i el seu valor sigui exactament <code>button</code>.</div>
+</li>
+<li class="level1"><div class="li"> &#039;:first-child’ (exemple de pseudoclasse): elements que siguin el primer fill de qualsevol altre element.</div>
+</li>
+<li class="level1"><div class="li"> ‘element:first-child’ (exemple de pseudoclasse): elements que siguin el primer fill de l’element pare.</div>
+</li>
+</ul>
+
+<p>
+Cal remarcar que el nombre de possibles selectors i les seves combinacions és molt gran i el seu estudi queda fora de l’abast d’aquest mòdul.
+</p>
+
+<p>
+A continuació podeu veure un exemple d’ús del mètode <code>querySelectorAll()</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1&gt;Primera capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la primera llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&lt;h1 class=&quot;secundari&quot;&gt;Segona capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;contingut&quot; class=&quot;secundari paragraf&quot;&gt;Un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la segona llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  console.log('-- Capçaleras h1 amb classe secundari --');</div></li><li class="li1"><div class="de1">  let elementsTitols = document.querySelectorAll('h1.secundari');</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;elementsTitols.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsTitols[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Tots els elements de la primera llista --');</div></li><li class="li1"><div class="de1">  let elementsLlista = document.querySelectorAll('li');</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;elementsLlista.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsLlista[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Primers elements de les llistes --');</div></li><li class="li1"><div class="de1">  let elementsPrimers = document.querySelectorAll('li:first-child');</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;elementsPrimers.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsPrimers[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XjWVky?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XjWVky?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XjWVky?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, en el primer cas se seleccionen tots els elements amb l’etiqueta <code>h1</code> amb la classe <code>secundari</code>. Així doncs, només troba una coincidència, ja que tot i que hi ha dos elements amb l’etiqueta <code>h1</code> i dos elements amb la classe <code>secundari</code>, només hi ha un element que compleixi les dues condicions.
+</p>
+
+<p>
+En el segon cas s’han seleccionat tots els elements amb l’etiqueta <code>li</code>, de manera que el seu efecte resultat és idèntic al que retornaria el mètode <code>document.getElementsByTagName(‘li’);</code>.
+</p>
+
+<p>
+A l’últim cas, en canvi, s’ha afegit al selector <code>:first-child</code>, de manera que en lloc de retornar tots els elements de les llistes, només retorna el primer element de cadascuna.
+</p>
+
+</div>
+
+<h3><a id="l_extensio_htmldocument" >L&#039;extensió &#039;HTMLDocument&#039;</a></h3>
+<div class="level3">
+
+<p>
+En el cas dels documents <acronym title="HyperText Markup Language">HTML</acronym>, a banda de totes les propietats i mètodes de la interfície <code>Document</code>, s’aplica l’extensió <code>HTMLDocument</code>, que afegeix algunes propietats i mètodes extres que no es troben quan es treballa amb documents XML o SVG. Entre les més destacables es troben:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>activeElement</strong>: referència a l’element enfocat.</div>
+</li>
+<li class="level1"><div class="li"> <strong>cookie</strong>: cadena de text que permet consultar o modificar les galetes del document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>forms</strong> (només lectura): llista d’elements de tipus <code>form</code> (formularis).</div>
+</li>
+<li class="level1"><div class="li"> <strong>images</strong> (només lectura): llista d’elements de tipus <code>img</code> (imatges).</div>
+</li>
+<li class="level1"><div class="li"> <strong>getElementsByName(String name)</strong>: retorna una llista d’elements amb el nom (atribut <code>name</code>, habitualment utilitzat en formularis) passat com a argument.</div>
+</li>
+<li class="level1"><div class="li"> <strong>getSelection()</strong>: retorna el text seleccionat al document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>write(String text)</strong>: escriu el text al document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>writeln(String text)</strong>: escriu el text al document i afegeix un salt de línia.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="altres_propietatsbody_documentelement_i_forms" >Altres propietats: &#039;body&#039;, &#039;documentElement&#039; i &#039;forms&#039;</a></h3>
+<div class="level3">
+
+<p>
+La interfície <code>document</code> ofereix també dues propietats que permeten accedir directament als elements <code>body</code> i <code>html</code>: <code>body</code> i <code>documentElement</code> respectivament.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+
+<p>
+Encara que no es consideri una bona pràctica, és possible usar l’identificador d’un element per accedir-hi a ell com si ho féssim amb el mètode getElementById, ja que quan assignem un identificador a un element, es crea una variable global amb aquest nom que contè a aquest element. Per tant, seria el mateix <code>document.getElementById(“unID”).textContent</code> que <code>unID.textContent</code>.
+</p>
+
+</p>
+</div></div>
+<p>
+L’accés a l’element <code>body</code> és especialment útil per afegir la detecció de l’<em>event</em> <code>load</code>, ja que això permet detectar quan s’ha acabat de carregar el DOM. En cas contrari, es poden produir errors, per exemple si es volen realitzar modificacions al DOM abans que aquest s’hagi acabat de carregar completament.
+</p>
+<pre class="code">document.body.onload = function() {
+  console.log(&quot;DOM carregat&quot;);
+}</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/rrVmgb?editors=0111." class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rrVmgb?editors=0111."  rel="nofollow">codepen.io/ioc-daw-m06/pen/rrVmgb?editors=0111</a>.
+</p>
+
+<p>
+Fixeu-vos que <code>onload</code> és una drecera per l’<em>event</em> <code>load</code>, així doncs es podria haver fet servir també el mètode <code>addEventListener()</code> per afegir la detecció de l’<em>event</em>.
+</p>
+
+<p>
+Per altra banda, l’extensió <code>HTMLDocument</code> afegeix <code>forms</code> a la propietat, que permet accedir a una llista d’objectes que conté la informació de tots els formularis del document i, al seu torn, cadascun d’aquests formularis permet accedir als seus elements:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;form id=&quot;primer&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;input type=&quot;text&quot; /&gt;</div></li><li class="li1"><div class="de1">&lt;/form&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;form id=&quot;segon&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;input type=&quot;text&quot; /&gt;</div></li><li class="li1"><div class="de1">&lt;/form&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  console.log('Nombre de formularis al document: ', document.forms.length);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; document.forms.length; i++) {</div></li><li class="li1"><div class="de1">    console.log('id del formulari amb índex' + i + ':', document.forms[i].id);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WGQERN?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WGQERN?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WGQERN?editors=1011</a>.
+</p>
+
+<p>
+Tot i que en determinats casos pot ser útil accedir a aquesta propietat per recórrer tots els formularis del document, és poc habitual. Per una banda, els documents no acostumen a contenir múltiples formularis i, per altra banda, quan s’ha de treballar amb múltiples formularis s’acostuma a requerir un control més precís (s’obtenen a través del seu <code>id</code>).
+</p>
+
+</div>
+
+<h2><a id="la_interficie_element" >La interfície &#039;Element&#039;</a></h2>
+<div class="level2">
+
+<p>
+Aquesta interfície, com també <code>Document</code>, és herència de <code>Node</code> i d<code>‘EventTarget</code>, per tant, permet manipular els elements i gestionar esdeveniments. A més a més, afegeix mètodes per enregistrar i desenregistrar observadors del mateix element.
+</p>
+
+<p>
+Mentre que <code>Document</code> facilita la creació i manipulació del document que es mostra al navegador, la interfície <code>Element</code> permet manipular els elements concrets, manipulant les classes que els afecten, la llista d’atributs i afegint o eliminant detectors d’<em>events</em> específics.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Propietats d&#039;Element</p>
+<p>
+Podeu trobar més informació sobre la interfície <code>Element</code> en l’enllaç següent: <a href="http://goo.gl/0bCjXA" class="urlextern" title="http://goo.gl/0bCjXA"  rel="nofollow">goo.gl/0bCjXA</a>.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+
+<p>
+Un dels avantatges d’usar aquesta interfície és que aquesta solament filtra els nodes de tipus ‘Element’, i per tant, ignora aquells nodes que apareixen per indicar els salts de línia o les tabulacions existents al document, fent més fàcil navegar entre els elements.
+</p>
+
+</p>
+</div></div>
+</div>
+
+<h3><a id="informacio_basica_dels_elementstagname_classname_classlist_i_id" >Informació bàsica dels elements: &#039;tagName&#039;, &#039;className&#039;, &#039;classList&#039; i &#039;id&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquestes propietats permeten conèixer la informació bàsica d’un element. Fixeu-vos que aquesta és la que ens permet fer una cerca simple des del document, a través de la seva etiqueta, de les classes o de l&#039;<code>id</code>. Vegem-les detingudament:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>tagName</strong> (només lectura): nom de l’etiqueta d’aquest element.</div>
+</li>
+<li class="level1"><div class="li"> <strong>className</strong>: cadena de caràcters separats per espais que inclou tots els noms de classes que afecten l’element (per exemple, en aplicar un full d’estils <acronym title="Cascading Style Sheets">CSS</acronym>). Es pot modificar, per tant, permet afegir noves classes i establir una nova cadena de text com a valor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>classList</strong> (només lectura): llista amb el nom de les classes que es pot recórrer com un <em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>id</strong>: identificador únic de l’element dintre del document.</div>
+</li>
+</ul>
+
+<p>
+Com es pot apreciar a la llista anterior, no es pot modificar ni el <code>tagName</code> ni la llista de classes, però aquesta darrera pot modificar-se amb dos mètodes que aquesta proporciona:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>add(String classe)</strong>: afegeix a l’element la classe indicada pel paràmetre. Si ja hi era a l’element, no fa res. Té una versió que admet diferents classes, separades per comes, i que fa exactament el mateix, però per a cada classe que rep com a paràmetre. </div>
+</li>
+<li class="level1"><div class="li"> <strong>remove(String nomClasse)</strong>: suprimeix de l’element la classe indicada pel paràmetre. Si l’element no té la classe que es demana suprimir, no fa res. Té també una versió que admet diferents classes, separades per comes, i que suprimeix de l’element cadascuna de les classes rebudes com a paràmetre de la mateixa manera que es feia amb una.</div>
+</li>
+</ul>
+
+<p>
+Podem veure com utilitzar-les al següent exemple:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  .vermell{</div></li><li class="li1"><div class="de1">    color:red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .negreta{</div></li><li class="li1"><div class="de1">    font-weight:bold;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;para&quot;&gt;paràgraf de prova&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let paragraf=document.getElementById(&quot;para&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    paragraf.classList.add(&quot;vermell&quot;);</div></li><li class="li1"><div class="de1">    paragraf.classList.add(&quot;negreta&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    alert(&quot;Hem afegit els estils vermell i negreta.\n\n Ara eliminarem l'estil vermell.\n\n Prem una tecla per continuar&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    paragraf.classList.remove(&quot;vermell&quot;);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    alert(&quot;Hem suprimit l'estil vermell.\n\n Ara eliminarem també negreta.\n\n Prem una tecla per continuar.&quot;);</div></li><li class="li1"><div class="de1">    paragraf.classList.remove(&quot;negreta&quot;);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NwEMmJ" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NwEMmJ"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NwEMmJ</a>.
+</p>
+
+<p>
+El següent exemple treballa amb les propietats <code>tagName</code> i <code>className</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1 class=&quot;principal&quot;&gt;Primera capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;contingut&quot; class=&quot;principal paragraf&quot; title=&quot;Aqui va un paràgraf&quot;&gt;Un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let elementH1 = document.getElementsByTagName('h1')[0];</div></li><li class="li1"><div class="de1">  let elementP = document.getElementsByTagName('p')[0];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  elementH1.tagName = 'H2';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Tag dels elements --');</div></li><li class="li1"><div class="de1">  console.log(elementH1.tagName);</div></li><li class="li1"><div class="de1">  console.log(elementP.tagName);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Classes dels elements --');</div></li><li class="li1"><div class="de1">  console.log(elementH1.className);</div></li><li class="li1"><div class="de1">  console.log(elementP.className);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Modificació de els classes dels elements --');</div></li><li class="li1"><div class="de1">  elementH1.className = elementH1.className + ' ampliat';</div></li><li class="li1"><div class="de1">  elementP.className = 'canvi per noves classes ';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Classes dels elements ampliats--');</div></li><li class="li1"><div class="de1">  console.log(elementH1.className);</div></li><li class="li1"><div class="de1">  console.log(elementP.className);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Llista de classes del paràgraf --');</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; elementP.classList.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(&quot;Classe &quot; + i + &quot;:&quot; + elementP.classList[i]);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Identificadors dels elements --');</div></li><li class="li1"><div class="de1">  console.log('Capçalera: ' + elementH1.id);</div></li><li class="li1"><div class="de1">  console.log('Paràgraf: ' + elementP.id);</div></li><li class="li1"><div class="de1">  elementH1.id = 'actualitzat';</div></li><li class="li1"><div class="de1">  elementP.id = elementP.id + ' actualitzat';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('-- Identificadors dels elements actualitzats--');</div></li><li class="li1"><div class="de1">  console.log('Capçalera: ' + elementH1.id);</div></li><li class="li1"><div class="de1">  console.log('Paràgraf: ' + elementP.id);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xExYXV?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xExYXV?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/xExYXV?editors=1011</a>.
+</p>
+
+<p>
+Fixeu-vos que tant en el cas de <code>className</code> com a <code>id</code> es pot assignar com a valor una cadena de text, sigui una de nova o concatenant el valor anterior. En tots dos casos el valor per defecte que prenen és una cadena buida, de manera que es poden concatenar sense fer cap consideració especial.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle"> Relació entre &#039;&#039;className&#039;&#039; i &#039;&#039;classList&#039;&#039; </p>
+<p>
+El següent exemple mostra com, tal com és d’esperar, en modificar <code>className</code> també es modifica <code>classList</code>. Concretament, implementa els mètodes <code>afegirClasse()</code> i <code>eliminarClasse()</code>, que fan el mateix, respectivament, que <code>classList.add()</code> i <code>classList.remove()</code>, però sense utilitzar aquests. En la pràctica, aquest codi només té utilitat si es fa una aplicació per navegadors antics, que no proporcionen la propietat <code>classList</code>.
+</p>
+
+<p>
+Una opció seria dividir la cadena de caràcters assignada a <code>className</code> fent servir el mètode <code>split()</code>, i seguidament recórrer l’<em>array</em> generat per fer l’acció desitjada, però això no és necessari perquè la propietat <code>classList</code> ja conté aquest <em>array</em>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  .principal {</div></li><li class="li1"><div class="de1">    background-color: grey;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .vermell {</div></li><li class="li1"><div class="de1">    color: red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .important {</div></li><li class="li1"><div class="de1">    font-weight: bold;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;h1 class=&quot;principal&quot;&gt;Primera capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;contingut&quot; class=&quot;principal paragraf&quot; title=&quot;Aquí hi va un paràgraf&quot;&gt;Un paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let afegirClasse = function(element, classe) {</div></li><li class="li1"><div class="de1">    let trobada = false;</div></li><li class="li1"><div class="de1">    for (let i=0; i &lt;element.classList.length; i++) {</div></li><li class="li1"><div class="de1">      if (element.classList[i] == classe) {</div></li><li class="li1"><div class="de1">        trobada = true; // Ja es troba a l'element, no cal afegir-la</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    if (!trobada) {</div></li><li class="li1"><div class="de1">      element.className += ' ' + classe;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let eliminarClasse = function(element, classe) {</div></li><li class="li1"><div class="de1">    let nouClassName = '';</div></li><li class="li1"><div class="de1">    for (let i=0; i&lt;element.classList.length; i++) {</div></li><li class="li1"><div class="de1">      if (element.classList[i] != classe) {</div></li><li class="li1"><div class="de1">        nouClassName += element.classList[i] + ' ';</div></li><li class="li1"><div class="de1">      }</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">    element.className = nouClassName;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementH1 = document.getElementsByTagName('h1')[0];</div></li><li class="li1"><div class="de1">  let elementP = document.getElementsByTagName('p')[0];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  afegirClasse(elementH1, 'vermell');</div></li><li class="li1"><div class="de1">  afegirClasse(elementH1, 'vermell');</div></li><li class="li1"><div class="de1">  console.log(elementH1.className); // No es duplica</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  eliminarClasse(elementH1, 'principal');</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VKwQGz?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKwQGz?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKwQGz?editors=1111</a>.
+</p>
+
+<p>
+Com es pot comprovar, la funció <code>afegirClasse()</code> afegeix la classe i evita possibles repeticions, i la funció <code>eliminarClasse()</code> elimina la classe sense haver d’editar manualment la cadena de text i crea una nova cadena de text a partir de la llista de classes que no coincideixin amb la que es vol eliminar.
+</p>
+
+<p>
+Per simplificar més la utilització d’aquestes funcions es poden afegir al prototipus d<code>‘Element</code>, d’aquesta manera són accessibles directament per tots els elements. Modifiqueu el codi JavaScript de l’exemple anterior pel següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">Element.prototype.afegirClasse = function(classe) {</div></li><li class="li1"><div class="de1">  let trobada = false;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; this.classList.length; i++) {</div></li><li class="li1"><div class="de1">    if (this.classList[i] == classe) {</div></li><li class="li1"><div class="de1">      trobada = true; // Ja es troba a l'element, no cal afegir-la</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  if (!trobada) {</div></li><li class="li1"><div class="de1">    this.className += ' ' + classe;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">Element.prototype.eliminarClasse = function(classe) {</div></li><li class="li1"><div class="de1">  let nouClassName = '';</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; this.classList.length; i++) {</div></li><li class="li1"><div class="de1">    if (this.classList[i] != classe) {</div></li><li class="li1"><div class="de1">      nouClassName += this.classList[i] + ' ';</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  this.className = nouClassName;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let elementH1 = document.getElementsByTagName('h1')[0];</div></li><li class="li1"><div class="de1">let elementP = document.getElementsByTagName('p')[0];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">elementH1.afegirClasse('vermell');</div></li><li class="li1"><div class="de1">elementH1.afegirClasse('vermell');</div></li><li class="li1"><div class="de1">console.log(elementH1.className); // No es duplica</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">elementH1.eliminarClasse('principal');</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/yaLvWL" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yaLvWL"  rel="nofollow">www.https://codepen.io/ioc-daw-m06/pen/yaLvWL</a>.
+</p>
+
+<p>
+Fixeu-vos que la funcionalitat és idèntica, però en lloc d’haver d’invocar una funció i passar cada vegada l’element que s’ha de modificar i la classe, ara es poden invocar directament a partir de l’element concret que es vulgui manipular: <code>elementH1.afegirClasse(‘vermell’);</code>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="obtencio_dels_descendents_com_htmlinnerhtml" >Obtenció dels descendents com HTML: &#039;innerHTML&#039;</a></h3>
+<div class="level3">
+
+<p>
+Aquesta propietat és molt interessant perquè permet obtenir i establir el codi <acronym title="HyperText Markup Language">HTML</acronym> dels nodes descendents de l’element. És a dir, en lloc de crear una branca d’un arbre i afegir-la com a nodes, és possible assignar a aquesta propietat el codi <acronym title="HyperText Markup Language">HTML</acronym> que correspondria:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contingut&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contingut = document.getElementById('contingut');</div></li><li class="li1"><div class="de1">  contingut.innerHTML = '&lt;h1&gt;Això és una capçalera&lt;/h1&gt;';</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VKwdGz?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKwdGz?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKwdGz?editors=1010</a>.
+</p>
+
+<p>
+Com es pot apreciar, és fàcil de fer servir, però la cadena de codi <acronym title="HyperText Markup Language">HTML</acronym> es pot complicar ràpidament si s’hi han d’afegir múltiples elements:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contingut&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contingut = document.getElementById('contingut');</div></li><li class="li1"><div class="de1">  contingut.innerHTML = '&lt;h1&gt;Això és una capçalera&lt;/h1&gt;&lt;p&gt;I això un paràgraf amb un &lt;a href=&quot;#&quot;&gt;enllaç&lt;/a&gt;.&lt;/p&gt;';</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NRWzJJ?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NRWzJJ?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NRWzJJ?editors=1010</a>.
+</p>
+
+<p>
+Fixeu-vos que només s’ha afegit un paràgraf amb un enllaç a continuació de la capçalera, però el codi és molt menys entenedor i és més difícil detectar els errors.
+</p>
+
+<p>
+Per altra banda, com que es tracta d’una cadena de text, es pot manipular de la mateixa manera, per exemple: fent servir expressions regulars per fer canvis al text o concatenant valors per generar la cadena i seguidament assignant-la com a propietat:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contingut&quot;&gt;Carregant dades...&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let estudiants = ['Josep', 'Maria', 'Carles', 'Montserrat'];</div></li><li class="li1"><div class="de1">let codiHtml = '';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">codiHtml += '&lt;ul&gt;';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; estudiants.length; i++) {</div></li><li class="li1"><div class="de1">  codiHtml += '&lt;li&gt;' + estudiants[i] + '&lt;/li&gt;';</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">codiHtml += '&lt;/ul&gt;';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">document.getElementById('contingut');</div></li><li class="li1"><div class="de1">contingut.innerHTML = codiHtml;</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent:<a href="https://codepen.io/ioc-daw-m06/pen/yaLEdL?editors=1010" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yaLEdL?editors=1010"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yaLEdL?editors=1010</a>.
+</p>
+
+<p>
+Cal destacar que tot el contingut de l’element és reemplaçat, per aquesta raó no es mostra el text “Carregant dades”: és reemplaçat per la llista de noms una vegada s’executa el codi JavaScript.
+</p>
+
+<p>
+Per descomptat, és possible consultar la propietat per obtenir el codi <acronym title="HyperText Markup Language">HTML</acronym> corresponent als descendents del node:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contingut&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;ul&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Josep&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Maria&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Carles&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;li&gt;Montserrat&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;/ul&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  document.getElementById('contingut');</div></li><li class="li1"><div class="de1">  console.log(contingut.innerHTML);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/mAdKNK?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/mAdKNK?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/mAdKNK?editors=1011</a>.
+</p>
+
+<p>
+
+<p>
+Cal tenir en compte, però, que no es recomana l’ús de la propietat ‘innerHTML’ per assignar-li dades introduïdes per un usuari, ja que pot ser usada per algun usuari maliciós per manipular i mostrar elements no desitjats dintre d’altres elements <acronym title="HyperText Markup Language">HTML</acronym>; això podria comportar la pèrdua, filtració o modificació d’informació sensible o confidencial.
+</p>
+
+</p>
+
+</div>
+
+<h3><a id="atributsattributtes_getattribute_removeattribute_setattribute" >Atributs: &#039;attributtes&#039;, &#039;getAttribute&#039;, &#039;removeAttribute&#039;, &#039;setAttribute&#039;</a></h3>
+<div class="level3">
+
+<p>
+La interfície <code>Elements</code> ofereix una propietat per consultar la llista completa d’atributs i tres mètodes per afegir, actualitzar o eliminar un atribut complet.
+</p>
+
+<p>
+La propietat <code>attributes</code> (de només lectura) permet consultar la llista completa d’atributs. Els atributs es retornen com un objecte que es pot recórrer com si es tractés d’un <em>array</em>. Per consultar el nom i el valor de cadascun d’aquests atributs es pot consultar la propietat <code>name</code> i <code>value</code> respectivament:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;h1 id=&quot;titol&quot; class=&quot;vermell principal&quot;&gt;Aquesta és la capçalera&lt;/h1&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let titol = document.getElementById('titol');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; titol.attributes.length; i++) {</div></li><li class="li1"><div class="de1">  console.log(titol.attributes[i].name + ': ' + titol.attributes[i].value);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/WGNKAV?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/WGNKAV?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/WGNKAV?editors=1111</a>.
+</p>
+
+<p>
+Per altra banda, a diferència de la llista de noms de classes, amb els atributs no cal fer una implementació pròpia dels mètodes d’addició i eliminació, ja que la mateixa interfície els inclou:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>getAttribute</strong>: retorna el valor de l’atribut.</div>
+</li>
+<li class="level1"><div class="li"> <strong>removeAttribute</strong>: elimina l’atribut.</div>
+</li>
+<li class="level1"><div class="li"> <strong>setAttribute</strong>: estableix el valor de l’atribut.</div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  .vermell {</div></li><li class="li1"><div class="de1">    color:red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;h1 id=&quot;titol&quot; class=&quot;vermell principal&quot;&gt;Aquesta és la capçalera&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let titol = document.getElementById('titol');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  titol.setAttribute('title', 'Això es mostra en posar el cursor a sobre');</div></li><li class="li1"><div class="de1">  titol.removeAttribute('class');</div></li><li class="li1"><div class="de1">  console.log('L\'identificador és: ' + titol.getAttribute('id'));</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QKWBvw" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QKWBvw"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QKWBvw</a>. 
+</p>
+
+<p>
+Cal destacar que a HTML5 es va afegir la possibilitat de definir atributs personalitzats; d’aquesta manera és possible, per exemple, emmagatzemar identificadors de productes o tipus especials d’elements:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div data-id-producte=&quot;42&quot;&gt;...&lt;/div&gt;</div></li></ol></pre>
+
+<p>
+Tot i que els navegadors admeten la definició d’atributs amb qualsevol nom, l’especificació requereix que incloguin el prefix <code>data-</code> i que no continguin majúscules, per exemple: <code>data-id-producte</code>. Aquests nous atributs es poden fer  servir després per obtenir el seu valor o per seleccionar els elements fent servir selectors.
+</p>
+
+</div>
+
+<h3><a id="modificar_estils_cssstyle" >Modificar estils CSS: &#039;style&#039;</a></h3>
+<div class="level3">
+
+<p>
+A <acronym title="HyperText Markup Language">HTML</acronym> és possible modificar els estils concrets d’un element a través de l’atribut <code>style</code>. Normalment els estils aplicats d’aquesta forma tenen prioritat sobre qualsevol altre que afecti l’element.
+</p>
+
+<p>
+Tot i així, quan es vol tractar amb aquest atribut des de JavaScript no és tan simple com caldria esperar, perquè s’han de tenir en compte dos aspectes fonamentals:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Propietat &#039;style&#039;</p>
+<p>
+Podeu trobar més informació sobre la propietat <code>style</code> en l’enllaç següent: <a href="https://goo.gl/BYa2IC" class="urlextern" title="https://goo.gl/BYa2IC"  rel="nofollow">goo.gl/BYa2IC</a>.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> El valor final de la propietat no és l’indicat a l’atribut, sinó el calculat, que pot estar modificat per altres regles de diferents orígens (fulls d’estil, navegador…).</div>
+</li>
+<li class="level1"><div class="li"> En consultar el valor de l’atribut <code>style</code> d’un element des de JavaScript, s’obté una col·lecció i no una cadena de text.</div>
+</li>
+</ul>
+
+<p>
+Per altra banda, si es vol treballar amb el contingut textual de la propietat es pot fer o bé fent servir el mètode <code>setAttribute()</code> o modificant la propietat <code>cssText</code> de la col·lecció retornada per <code>style</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p id=&quot;paragraf1&quot; style=&quot;color: red; font-weight: bold&quot;&gt;Paràgraf 1&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;p id=&quot;paragraf2&quot; style=&quot;color: red; font-weight: bold&quot;&gt;Paràgraf 2&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let paragraf1 = document.getElementById('paragraf1');</div></li><li class="li1"><div class="de1">  let paragraf2 = document.getElementById('paragraf2');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  paragraf1.setAttribute('style', 'color:green;');</div></li><li class="li1"><div class="de1">  paragraf2.style.cssText = 'color: blue';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(paragraf1.style.cssText);</div></li><li class="li1"><div class="de1">  console.log(paragraf2.style.cssText);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/zKKNwa?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/zKKNwa?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/zKKNwa?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, tant fent servir el mètode <code>setAttribute()</code> com assignant el valor directament a la propietat <code>cssText</code>, el valor de la propietat és substituït; per aquesta raó cap dels dos textos es mostra en negreta.
+</p>
+
+<p>
+És a dir, en cas de voler modificar alguna de les propietats d’estil <acronym title="Cascading Style Sheets">CSS</acronym> s’hauria de crear una nova cadena de text amb el contingut correcte i reemplaçar el valor de la propietat <code>style.cssText</code>.
+</p>
+
+<p>
+Una manera més adequada de treballar amb els estils concrets és fer-ho a través de la col·lecció. Fixeu-vos en l’exemple següent, partint d’un element <acronym title="HyperText Markup Language">HTML</acronym> que conté dos estils (canvi de color a vermell i font gruixuda), s’elimina el color, es modifica el gruix de la font i s’afegeix un nou estil per augmentar-ne la mida. Per facilitar la reutilització i fer-lo més entenedor s’ha aplicat el disseny descendent i s’ha creat una funció per a cada acció:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p id=&quot;paragraf&quot; style=&quot;color: red; font-weight: bold&quot;&gt;Paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let mostrarEstils = function (element) {</div></li><li class="li1"><div class="de1">    let estil = element.style;</div></li><li class="li1"><div class="de1">    let css = window.getComputedStyle(element, null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    for (let i=0; i&lt;estil.length; i++) {</div></li><li class="li1"><div class="de1">      console.log (estil[i] + ':' +css[estil[i]] + &quot;;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let afegirEstil = function (element, clau, valor) {</div></li><li class="li1"><div class="de1">    element.style[clau] = valor;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let eliminarEstil = function (element, clau) {</div></li><li class="li1"><div class="de1">    element.style[clau]=null;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let actualitzarEstil = function (element, clau, valor) {</div></li><li class="li1"><div class="de1">    afegirEstil(element, clau, valor);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let paragraf = document.getElementById('paragraf');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(&quot;-- Estil original --&quot;);</div></li><li class="li1"><div class="de1">  mostrarEstils(paragraf);</div></li><li class="li1"><div class="de1">  afegirEstil(paragraf, 'font-size', '30px');</div></li><li class="li1"><div class="de1">  eliminarEstil(paragraf, 'color');</div></li><li class="li1"><div class="de1">  actualitzarEstil(paragraf, 'font-weight', 'lighter');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(&quot;-- Estil modificat --&quot;);</div></li><li class="li1"><div class="de1">  mostrarEstils(paragraf);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/dprOEx?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/dprOEx?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/dprOEx?editors=1011</a>. 
+</p>
+
+<p>
+El primer que us cridarà l’atenció és la complexitat que té mostrar els estils, ja que s’ha d’invocar el mètode <code>window.getComputedStyle()</code> per obtenir un objecte amb la informació de tots els valors calculats per l’objecte.
+</p>
+
+<p>
+S’ha de tenir en compte que no només s’apliquen els estils de la propietat, sinó que s’apliquen també els propis del navegador i els dels fulls d’estil carregats. És possible obtenir només els valors aplicats al propi estil, però aquests valors no són finals: pot ser que una altra regla <acronym title="Cascading Style Sheets">CSS</acronym> ho hagi sobreescrit, per exemple, si s’ha aplicat el modificador <code>!important</code> a una regla que l’afecti.
+</p>
+
+<p>
+Una vegada s’ha obtingut la llista de propietats calculades, es recorren els noms dels estils establerts a la propietat <code>style</code> com si es tractés d’un <em>array</em>, ja que la propietat <code>style</code> és una col·lecció que té una propietat <code>length</code>, i cada element es troba referenciat per un enter que es fa servir com a índex.
+</p>
+
+<p>
+D’aquesta manera, combinant els valors calculats amb els estils aplicats a l’element, es pot mostrar una llista dels valors reals aplicats a l’element.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Alternativament, imitant el comportament de la biblioteca jQuery, és possible modificar la interfície <code>Element</code> per afegir al seu prototip els mètodes <code>css</code> i <code>mostrarElements()</code>, de manera que tots els elements tinguin accés a aquesta funcionalitat:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;p id=&quot;paragraf&quot; style=&quot;color: red; font-weight: bold&quot;&gt;Paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  Element.prototype.mostrarEstils = function() {</div></li><li class="li1"><div class="de1">    let estil = this.style;</div></li><li class="li1"><div class="de1">    for (let i = 0; i &lt; estil.length; i++) {</div></li><li class="li1"><div class="de1">      console.log(estil[i] + ':' + this.css(estil[i]) + &quot;;&quot;);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  Element.prototype._mostrarEstil = function(clau) {</div></li><li class="li1"><div class="de1">    let css = window.getComputedStyle(this, null);</div></li><li class="li1"><div class="de1">    return css[clau];</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  Element.prototype.css = function(clau, valor) {</div></li><li class="li1"><div class="de1">    this.style[clau] = valor;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    return this._mostrarEstil(clau);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let paragraf = document.getElementById('paragraf');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(&quot;-- Estil original --&quot;);</div></li><li class="li1"><div class="de1">  paragraf.mostrarEstils();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  paragraf.css('font-size', '30px');</div></li><li class="li1"><div class="de1">  paragraf.css('color', '');</div></li><li class="li1"><div class="de1">  paragraf.css('font-weight', 'lighter');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log(&quot;-- Estil modificat --&quot;);</div></li><li class="li1"><div class="de1">  paragraf.mostrarEstils();</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç: <a href="https://codepen.io/ioc-daw-m06/pen/VKaPNP?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKaPNP?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKaPNP?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, a partir d’aquesta implementació es molt fàcil accedir i modificar els estils d’un node, tant si és per afegir-hi un estil nou, modificar-ne algun o eliminar-lo.
+</p>
+
+</div>
+
+<h3><a id="relacions_entre_elementspreviouselementsibling_nextelementsibling_firstelementchild_i_lastelementchild" >Relacions entre elements: &#039;previousElementSibling&#039;, &#039;nextElementSibling&#039;, &#039;firstElementChild&#039; i &#039;lastElementChild&#039;</a></h3>
+<div class="level3">
+
+<p>
+Tot i que la interfície <code>Element</code> deriva de <code>Node</code> i, consegüentment, disposa de les propietats <code>previousSibling</code> i <code>nextSibling</code>, aquestes no retornen els elements, sinó els nodes. És a dir, inclouen tot tipus de nodes, com per exemple els nodes de tipus text que es generen en afegir un salt de línia o un tabulador.
+</p>
+
+<p>
+En canvi, gràcies a <code>previousElementSibling</code> i <code>nextElementSibling</code> (totes dues propietats són de només lectura), es poden consultar els nodes anterior i posterior directament:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li id=&quot;central&quot;&gt;Segon element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let central = document.getElementById('central');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contingut de l\'element anterior és: ', central.previousElementSibling.textContent);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contingut de l\'element següent és: ', central.nextElementSibling.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/rrVydz?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/rrVydz?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/rrVydz?editors=1111</a>.
+</p>
+
+<p>
+Com es pot comprovar, a la consola es mostra correctament el contingut textual del primer i el tercer element, ignorant els nodes de tipus text.
+</p>
+
+<p>
+
+</p>
+
+<p>
+De la mateixa manera, es pot accedir al primer i l’últim element a través de les propietats <code>firstElementChild</code> i <code>lastElementChild</code>:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;ul id=&quot;llista&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Segon element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let central = document.getElementById('llista');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contingut del primer element és: ', central.firstElementChild.textContent);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contingut del darrer element és: ', central.lastElementChild.textContent);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/xEGqWa?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/xEGqWa?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/xEGqWa?editors=1011</a>.
+</p>
+
+<p>
+
+<h3><a id="obtencio_d_elements_descendentschildren" >Obtenció d&#039;elements descendents: &#039;children&#039;</a></h3>
+<div class="level3">
+
+<p>
+De manera semblant, <code>children</code> ens permet accedir a la llista dels elements continguts en un altre -és a dir, dels elements fills d’un altre fill. Aquesta llista es pot tractar com un <em>array</em> i conèixer la quantitat d’elements que hi ha a través de la propietat <code>length</code>. Aquest mètode no té en compte els nodes de tipus text generats pels salts de línia i les indentacions.
+</p>
+
+<p>
+Com la llista de nodes es pot tractar com un <em>array</em>, es pot recórrer amb un for i un índex:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;div id=&quot;contenidor&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;primer&quot;&gt;Primer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;segon&quot;&gt;Segon paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">  &lt;p id=&quot;tercer&quot;&gt;Tercer paràgraf&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let contenidor = document.getElementById('contenidor');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('El contenidor conté altres elements: ' + ((contenidor.children.length &gt; 0)?'Sí':'No'));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  console.log('Conté ' + contenidor.children.length + ' elements');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; contenidor.children.length; i++) {</div></li><li class="li1"><div class="de1">    console.log('Trobat un element: ' + contenidor.children[i].nodeName);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/QWpQXdq?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/QWpQXdq?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/QWpQXdq?editors=1011</a>.
+</p>
+
+</div>
+
+</p>
+
+</div>
+
+<h3><a id="cerca_d_elements_descendents_simplegetelementsbyclassname_getelementsbytagname" >Cerca d&#039;elements descendents simple: &#039;getElementsByClassName&#039;, &#039;getElementsByTagName&#039;</a></h3>
+<div class="level3">
+
+<p>
+La funcionalitat dels mètodes <code>getElementsByClassName()</code> i <code>getElementsByTagName()</code> és idèntica a la que proporciona la interfície <code>Document</code> amb la peculiaritat que la cerca només es fa entre els descendents del mateix element.
+</p>
+
+<p>
+Cal destacar que no s’inclou un mètode <code>getElementById()</code>, ja que els identificadors són únics i no és rellevant si és o no descendent d’un element concret, com es pot comprovar en l’exemple següent:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li id=&quot;central&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;ul&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;Primer element de la subllista&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li&gt;Segon element de la subllista&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;/ul&gt;</div></li><li class="li1"><div class="de1">  &lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Tercer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let central = document.getElementById('central');</div></li><li class="li1"><div class="de1">  let elementsSubLlista = central.getElementsByTagName('li');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;elementsSubLlista.length; i++) {</div></li><li class="li1"><div class="de1">    console.log(elementsSubLlista[i].textContent);</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/RGwBxE?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/RGwBxE?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/RGwBxE?editors=1111</a>.
+</p>
+
+<p>
+Cal destacar que tot i que inicialment s’invoca <code>getElementById()</code> per obtenir la referència a l’element amb identificador <code>central</code>, a continuació se cerquen els elements a partir d’aquest i no pas de <code>document</code>. Així doncs, es limita la cerca als seus descendents i el resultat obtingut són els elements de la subllista.
+</p>
+
+</div>
+
+<h3><a id="cerca_d_elements_descendents_amb_selectorsqueryselector_queryselectorall" >Cerca d&#039;elements descendents amb selectors: &#039;querySelector&#039;, &#039;querySelectorAll&#039;</a></h3>
+<div class="level3">
+
+<p>
+Igual que els mètodes <code>getElementsByTagName()</code> i <code>getElementsByClassName()</code>, la funcionalitat d’aquests és molt similar a la dels mètodes amb el mateix nom de la interfície <code>Document</code>, però en aquest cas la cerca també es limita als elements descendents del mateix element.
+</p>
+
+<p>
+En l’exemple següent podeu comprovar com es fa una selecció a partir d’un element, de manera que només retorna la llista d’elements descendents i no pas totes les coincidències del document:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;ul&gt;</div></li><li class="li1"><div class="de1">  &lt;li&gt;Primer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li id=&quot;central&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;ul data-quantaitat=&quot;0&quot;&gt;</div></li><li class="li1"><div class="de1">      &lt;li data-quantitat=&quot;0&quot;&gt;Primer element de la subllista&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li data-quantitat=&quot;19&quot;&gt;Segon element de la subllista&lt;/li&gt;</div></li><li class="li1"><div class="de1">      &lt;li data-quantitat=&quot;0&quot;&gt;Tercer element de la subllista&lt;/li&gt;</div></li><li class="li1"><div class="de1">    &lt;/ul&gt;</div></li><li class="li1"><div class="de1">  &lt;/li&gt;</div></li><li class="li1"><div class="de1">  &lt;li data-quantitat=&quot;0&quot;&gt;Tercer element de la llista&lt;/li&gt;</div></li><li class="li1"><div class="de1">&lt;/ul&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let central = document.getElementById('central');</div></li><li class="li1"><div class="de1">let elementsSubLlista = central.querySelectorAll('li[data-quantitat=&quot;0&quot;]');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">for (let i = 0; i &lt; elementsSubLlista.length; i++) {</div></li><li class="li1"><div class="de1">  console.log(elementsSubLlista[i].textContent + ' (data-quantitat=' + elementsSubLlista[i].getAttribute('data-quantitat') + ')');</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gwOjBN?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gwOjBN?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/gwOjBN?editors=1111</a>.
+</p>
+
+<p>
+Fixeu-vos que s’ha fet servir un atribut propi, <code>data-quantitat</code>, i que el selector <code>li[‘data-quantitat=“0”]</code> ha filtrat els resultats de manera que només es mostren a la consola el primer i tercer element de la subllista, sense incloure ni l’element <code>ul</code> ni el segon element, que té com a valor de l’atribut <code>19</code>. A més a més, com és d’esperar, tampoc no s’hi ha inclòs el tercer element de la llista, ja que no és descendent de l’element <code>central</code>.
+</p>
+
+</div>
+
+<h2><a id="integracio_de_la_deteccio_d_events_amb_el_dom" >Integració de la detecció d&#039;events amb el DOM</a></h2>
+<div class="level2">
+
+<p>
+La programació d’<em>events</em> permet interactuar amb l’aplicació web i afegeix la detecció d’<em>events</em> als elements (o al mateix document), de manera que l’aplicació pot reaccionar de diferents maneres, per exemple: afegint files a una taula, eliminant-les, modificant les classes <acronym title="Cascading Style Sheets">CSS</acronym> per canviar-ne els colors o aplicar efectes…
+</p>
+
+<p>
+S’ha de tenir en compte que quan es dispara un <em>event</em> en un element fill, si no s’especifica el contrari, aquest travessa tots els nodes pare, de manera que finalment són rebuts pel node arrel, que és <code>document</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Podeu trobar més informació sobre els <em>events</em> a la unitat “Programació d’events”.
+</p>
+</div></div>
+<p>
+És a dir, si s’implementa la gestió de l’esdeveniment <code>submit</code> al document, quan s’enviï un formulari (es dispara l’<em>event</em> <code>submit</code>) contingut en un element fill, el document detectarà aquest <em>event</em>.
+</p>
+
+<p>
+A continuació podeu trobar una llista dels <em>events</em> més destacables a l’hora de tractar amb un document o element:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>blur</strong>: es dispara quan es perd el focus.</div>
+</li>
+<li class="level1"><div class="li"> <strong>focus</strong>: es dispara quan l’element rep el focus.</div>
+</li>
+<li class="level1"><div class="li"> <strong>click</strong>: es dispara quan es produeix un clic sobre el document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>dblclick</strong>: es dispara quan es produeix un doble clic sobre el document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>keydown</strong>, <strong>keypress</strong>, <strong>keyup</strong>: es disparen quan es detecta que s’ha premut una tecla.</div>
+</li>
+<li class="level1"><div class="li"> <strong>load</strong>: es dispara quan es completa la càrrega del document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>scroll</strong>: es dispara quan es desplaça verticalment o horitzontalment el document.</div>
+</li>
+<li class="level1"><div class="li"> <strong>submit</strong>: es dispara quan s’envia un formulari.</div>
+</li>
+<li class="level1"><div class="li"> <strong>input</strong>: es dispara quan es modifica el valor d’un camp d’entrada (per exemple, un quadre de text).</div>
+</li>
+<li class="level1"><div class="li"> <strong>change</strong>: es dispara quan es modifica el valor d’un camp d’entrada però, a diferència d<code>‘input</code>, no es dispara l’<em>event</em> per cada canvi produït, només es dispara en determinades circumstàncies, com per exemple en canviar el focus a un altre element.</div>
+</li>
+</ul>
+
+<p>
+Això permet, per exemple, controlar quan es fa clic sobre qualsevol element d’una pàgina web, sense haver de gestionar aquest <em>event</em> en cadascun dels elements que formen la pàgina.
+</p>
+
+<p>
+La interfície ofereix mètodes per “escoltar” quan es dispara un <em>event</em> (<code>addEventListener</code>), per deixar d’escoltar-lo (<code>removeEventListener</code>) i tot un seguit de dreceres en forma de mètodes que permeten realitzar les dues accions per <em>events</em> concrets.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan es parla d’<em>events</em>, el terme ‘escoltar’ (<em>listening</em> en anglès) fa referència a la detecció de l’<em>event</em> al document o element.
+</p>
+</div></div>
+<p>
+La utilització de les dreceres comporta més limitacions, ja que no es pot afegir més d’una funció per a cada <em>event</em>, però pot simplificar el codi en casos molt simples (per exemple, per controlar la càrrega de documents o imatges).
+</p>
+
+</div>
+
+<h3><a id="afegir_deteccio_d_esdevenimentsaddeventlistener" >Afegir detecció d&#039;esdeveniments: &#039;addEventListener&#039;</a></h3>
+<div class="level3">
+
+<p>
+El mètode <code>addEventListener()</code> permet enregistrar una funció que serà invocada quan es dispari l’<em>event</em> passat com a argument a l’element, per exemple quan es faci un doble clic sobre ell o es detecti un canvi en un camp del formulari.
+</p>
+
+<p>
+En l’exemple següent podeu veure com s’ha afegit un comptador de caràcters que indica el nombre de caràcters introduït en una àrea de text i que, a més a més, en modifica el color segons els següents paràmetres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Menys de 100 caràcters o més de 156: text en vermell, el text és massa curt o massa llarg.</div>
+</li>
+<li class="level1"><div class="li"> Menys de 150 caràcters: text en taronja, el text és curt.</div>
+</li>
+<li class="level1"><div class="li"> Entre 150 i 156: text en verd, text amb llargària òptima.</div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  label,</div></li><li class="li1"><div class="de1">  small {</div></li><li class="li1"><div class="de1">    display: block;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .massa-curt-o-llarg {</div></li><li class="li1"><div class="de1">    color: red;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .curt {</div></li><li class="li1"><div class="de1">    color: orange;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  .correcte {</div></li><li class="li1"><div class="de1">    color: green;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;label&gt;Introduex el contingut de la descripció meta&lt;/label&gt;</div></li><li class="li1"><div class="de1">  &lt;textarea name=&quot;meta-description&quot; id=&quot;meta-description&quot; placeholder=&quot;Introdueix fins a 156 caràcters&quot; / cols=&quot;80&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;</div></li><li class="li1"><div class="de1">  &lt;small&gt;Nombre de caràcters: &lt;span id=&quot;comptador&quot; className=&quot;curt&quot;&gt;0&lt;/span&gt;&lt;/small&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let camp = document.getElementById('meta-description'),</div></li><li class="li1"><div class="de1">    comptador = document.getElementById('comptador');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let actualitzarComptador = function() {</div></li><li class="li1"><div class="de1">    let llargaria = camp.value.length</div></li><li class="li1"><div class="de1">    comptador.textContent = llargaria;</div></li><li class="li1"><div class="de1">    if (llargaria &gt; 156 || llargaria &lt; 100) {</div></li><li class="li1"><div class="de1">      comptador.className = 'massa-curt-o-llarg';</div></li><li class="li1"><div class="de1">    } else if (llargaria &lt; 150) {</div></li><li class="li1"><div class="de1">      comptador.className = 'curt';</div></li><li class="li1"><div class="de1">    } else {</div></li><li class="li1"><div class="de1">      comptador.className = 'correcte';</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  camp.addEventListener('input', actualitzarComptador);</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/NddQWZ" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NddQWZ"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NddQWZ</a>.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">L&#039;etiqueta &#039;meta-description&#039;</p>
+<p>
+L’etiqueta <code>meta-description</code> conté el text que mostren els cercadors a tall de resum quan surt el llistat de pàgines trobades. La llargària màxima recomanada de l’etiqueta per millorar el SEO és de 156 caràcters.
+</p>
+</div></div>
+<p>
+Com podeu apreciar, afegir un detector d’<em>events</em> és molt senzill, ja que només cal invocar el mètode <code>addEventListener()</code> passant com a arguments el nom de l’<em>event</em> al qual es vol reaccionar i la funció que s’ha d’executar quan es dispari: <code>camp.addEventListener(‘input’, actualitzarComptador);</code>.
+</p>
+
+<p>
+A continuació podeu comprovar, modificant el mateix exemple, la diferència més important entre els <em>events</em> <code>input</code> i <code>change</code>. Mentre que el primer es dispara cada vegada que es modifica el contingut del <code>textarea</code>, el segon només es dispara en canviar el focus (per exemple, fent clic en un altre punt del document):
+</p>
+<pre class="code">camp.addEventListener(&#039;change&#039;, actualitzarComptador);</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/Xjbddo" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/Xjbddo"  rel="nofollow">codepen.io/ioc-daw-m06/pen/Xjbddo</a>.
+</p>
+
+<p>
+Alternativament, es podria fer servir la drecera <code>oninput</code>, modificant la línia en què s’afegeix la detecció d’<em>events</em> per la següent:
+</p>
+<pre class="code">camp.oninput = actualitzarComptador;</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/jrPWvm" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jrPWvm"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jrPWvm</a>.
+</p>
+
+<p>
+Aquest format és més concís, però podria provocar errors si es fes servir aquest codi en un projecte més avançat en el qual s’haguessin de fer diferents accions quan es detectessin canvis (per exemple, guardar un esborrany): si s’ha fet servir aquest format en tots dos casos, només s’executaria la funció afegida en darrer lloc.
+</p>
+
+<p>
+Per altra banda, les dreceres permeten incrustar el codi JavaScript directament al codi <acronym title="HyperText Markup Language">HTML</acronym> com si es tractés d’un atribut:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;button onclick=&quot;escriureMissatge();&quot;&gt;Escriure missatge a la consola&lt;/button&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;button onclick=&quot;alert('Alerta!');&quot;&gt;Mostra una alerta&lt;/button&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">  let escriureMissatge=function() {</div></li><li class="li1"><div class="de1">    console.log('Aquesta funció ha estat invocada des del botó')</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/vXOKJd?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/vXOKJd?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/vXOKJd?editors=1011</a>.
+</p>
+
+<p>
+Com es pot apreciar, es poden invocar tant funcions pròpies com funcions predefinides de JavaScript.
+</p>
+
+</div>
+
+<h3><a id="eliminar_deteccio_d_esdevenimentsremoveeventlistener" >Eliminar detecció d&#039;esdeveniments: &#039;removeEventListener&#039;</a></h3>
+<div class="level3">
+
+<p>
+En alguns casos pot interessar-vos eliminar un detector d’<em>events</em>, per exemple, per deshabilitar un botó d’enviar formulari si els camps de text són buits o no s’ha passat la validació.
+</p>
+
+<p>
+En el següent exemple podeu veure com s’afegeixen i eliminen els detectors dinàmicament, de manera que només es pot clicar sobre el quadre blau:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">div {</div></li><li class="li1"><div class="de1">  width: 100px;</div></li><li class="li1"><div class="de1">  height: 100px;</div></li><li class="li1"><div class="de1">  background-color: grey;</div></li><li class="li1"><div class="de1">  float: left;</div></li><li class="li1"><div class="de1">  margin: 5px;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">span {</div></li><li class="li1"><div class="de1">  padding: 0 3px;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">.seleccionat {</div></li><li class="li1"><div class="de1">  background-color: green;</div></li><li class="li1"><div class="de1">  color:white;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">.proper {</div></li><li class="li1"><div class="de1">  background-color: blue;</div></li><li class="li1"><div class="de1">    color:white;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;p&gt;El quadre clicable es mostra de color &lt;span class=&quot;proper&quot;&gt;blau&lt;/span&gt; i l'últim quadre clicat de color &lt;span class=&quot;seleccionat&quot;&gt;verd&lt;/span&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;a&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;b&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;c&quot;&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let quadreA = document.getElementById('a');</div></li><li class="li1"><div class="de1">let quadreB = document.getElementById('b');</div></li><li class="li1"><div class="de1">let quadreC = document.getElementById('c');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let seleccionarA = function() {</div></li><li class="li1"><div class="de1">  quadreA.className = 'seleccionat';</div></li><li class="li1"><div class="de1">  quadreB.className = 'proper';</div></li><li class="li1"><div class="de1">  quadreC.className = '';</div></li><li class="li1"><div class="de1">  quadreA.removeEventListener('click', seleccionarA);</div></li><li class="li1"><div class="de1">  quadreB.addEventListener('click', seleccionarB);</div></li><li class="li1"><div class="de1">  console.log(listenerB);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let seleccionarB = function() {</div></li><li class="li1"><div class="de1">  quadreB.className = 'seleccionat';</div></li><li class="li1"><div class="de1">  quadreC.className = 'proper';</div></li><li class="li1"><div class="de1">  quadreA.className = '';</div></li><li class="li1"><div class="de1">  quadreB.removeEventListener('click', seleccionarB);</div></li><li class="li1"><div class="de1">  quadreC.addEventListener('click', seleccionarC);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let seleccionarC = function() {</div></li><li class="li1"><div class="de1">  quadreC.className = 'seleccionat';</div></li><li class="li1"><div class="de1">  quadreA.className = 'proper';</div></li><li class="li1"><div class="de1">  quadreB.className = '';</div></li><li class="li1"><div class="de1">  quadreC.removeEventListener('click', seleccionarC);</div></li><li class="li1"><div class="de1">  quadreA.addEventListener('click', seleccionarA);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  quadreA.className = 'proper';</div></li><li class="li1"><div class="de1">  listenerA = quadreA.addEventListener('click', seleccionarA);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/gwpAKx?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/gwpAKx?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/gwpAKx?editors=1111</a>.
+</p>
+
+<p>
+Com es pot apreciar, només cal indicar el nom de l’<em>event</em> (el seu tipus) i la funció que s’ha d’eliminar. És a dir, en cas que hi hagués múltiples funcions lligades al mateix <em>event</em>, només s’eliminaria la indicada.
+</p>
+
+<p>
+En cas de fer servir dreceres, per eliminar un detector només cal assignar el valor <code>nul</code> al mètode:
+</p>
+<pre class="code">let quadreA = document.getElementById(&#039;a&#039;);
+let quadreB = document.getElementById(&#039;b&#039;);
+let quadreC = document.getElementById(&#039;c&#039;);
+
+let seleccionarA = function() {
+  quadreA.className = &#039;seleccionat&#039;;
+  quadreB.className = &#039;proper&#039;;
+  quadreC.className = &#039;&#039;;
+  quadreA.onclick = null;
+  quadreB.onclick = seleccionarB;
+}
+
+let seleccionarB = function() {
+  quadreB.className = &#039;seleccionat&#039;;
+  quadreC.className = &#039;proper&#039;;
+  quadreA.className = &#039;&#039;;
+  quadreB.onclick = null;
+  quadreC.onclick = seleccionarC;
+}
+
+let seleccionarC = function() {
+  quadreC.className = &#039;seleccionat&#039;;
+  quadreA.className = &#039;proper&#039;;
+  quadreB.className = &#039;&#039;;
+  quadreC.onclick = null;
+  quadreA.onclick = seleccionarA;
+}
+
+let inicialitzar = function() {
+  quadreA.className = &#039;proper&#039;;
+  quadreA.onclick = seleccionarA;
+}
+
+inicialitzar();</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/LRVNwR" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LRVNwR"  rel="nofollow">codepen.io/ioc-daw-m06/pen/LRVNwR</a>.
+</p>
+
+<p>
+Com es pot veure, independentment de si es fan servir dreceres o no, crear una funció per a cada element que cal detectar no és gens pràctic. A l’exemple anterior si és volgués augmentar el nombre de quadres, caldria modificar les tres funcions existents i afegir-n’hi una altra. A més a més, totes les funcions són pràcticament idèntiques. Aquest és un senyal molt clar que cal refactoritzar el codi.
+</p>
+
+<p>
+Una opció és aprofitar les relacions entre nodes: en aquest cas el proper node sempre és el següent, i un cop no n’hi ha més es pot navegar directament al primer fill del node pare:
+</p>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">div#quadres div {</div></li><li class="li1"><div class="de1">  width: 100px;</div></li><li class="li1"><div class="de1">  height: 100px;</div></li><li class="li1"><div class="de1">  background-color: grey;</div></li><li class="li1"><div class="de1">  float: left;</div></li><li class="li1"><div class="de1">  margin: 5px;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">span {</div></li><li class="li1"><div class="de1">  padding: 0 3px;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">#quadres div.seleccionat {</div></li><li class="li1"><div class="de1">  background-color: green;</div></li><li class="li1"><div class="de1">  color:white;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">#quadres div.proper {</div></li><li class="li1"><div class="de1">  background-color: blue;</div></li><li class="li1"><div class="de1">    color:white;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;p&gt;El quadre clicable es mostra de color &lt;span class=&quot;proper&quot;&gt;blau&lt;/span&gt; i l'últim quadre clicat de color &lt;span class=&quot;seleccionat&quot;&gt;verd&lt;/span&gt;&lt;/p&gt;</div></li><li class="li1"><div class="de1">&lt;div id=&quot;quadres&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">  &lt;div&gt;&lt;/div&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;script&gt;</div></li><li class="li1"><div class="de1">let quadres = document.getElementById('quadres');</div></li><li class="li1"><div class="de1">let seleccionat;</div></li><li class="li1"><div class="de1">let proper;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let seleccionar = function() {</div></li><li class="li1"><div class="de1">  // S'elimina l'estil i el detector del seleccionat anterior</div></li><li class="li1"><div class="de1">  console.log(seleccionat, proper);</div></li><li class="li1"><div class="de1">  seleccionat.className = '';</div></li><li class="li1"><div class="de1">  seleccionat.removeEventListener('click', seleccionar);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // S'actualitza el seleccionat al proper quadre</div></li><li class="li1"><div class="de1">  seleccionat = proper;</div></li><li class="li1"><div class="de1">  seleccionat.className = 'seleccionat';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  // Es determina el proper quadre i s'afegeix el detector</div></li><li class="li1"><div class="de1">  proper = seleccionat.nextElementSibling;</div></li><li class="li1"><div class="de1">  if (!proper) {</div></li><li class="li1"><div class="de1">    proper = quadres.firstElementChild;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">  proper.className = 'proper';</div></li><li class="li1"><div class="de1">  proper.addEventListener('click', seleccionar);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  seleccionat = quadres.firstElementChild;</div></li><li class="li1"><div class="de1">  proper = seleccionat.nextElementSibling;</div></li><li class="li1"><div class="de1">  seleccionar();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">inicialitzar();</div></li><li class="li1"><div class="de1">&lt;/script&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/KgprwE?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/KgprwE?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/KgprwE?editors=1111</a>.
+</p>
+
+<p>
+Com es podeu veure, s’ha modificat el codi <acronym title="HyperText Markup Language">HTML</acronym> per afegir un element contenidor (<code>quadres</code>); ja no cal fer servir un <code>id</code> per a cada quadre i s’ha refinat el codi <acronym title="Cascading Style Sheets">CSS</acronym> perquè els estils només han d’afectar els elements <code>div</code> descendents de <code>quadres</code>.
+</p>
+
+<p>
+Ara bé, si no es poden fer servir les relacions entre elements, es pot aprofitar el context en el qual s’invoquen les funcions. S’ha de tenir en compte que dintre de la funció invocada, el seu context és el node al qual s’ha lligat el detector. Així doncs, és possible generalitzar aquestes funcions per fer servir el node com a context.
+</p>
+
+<p>
+En l’exemple següent podeu comprovar com es genera aleatòriament quin serà el proper element, només cal reemplaçar el codi JavaScript pel següent:
+</p>
+<pre class="code">let quadres = document.getElementById(&#039;quadres&#039;);
+let darrerSeleccionat;
+
+let seleccionar = function() {
+  let proper;
+
+  // S&#039;elimina l&#039;estil i el detector del seleccionat anterior
+  if (darrerSeleccionat) {
+    darrerSeleccionat.className = &#039;&#039;;
+  }
+
+  // S&#039;actualitza l&#039;element actual
+  this.removeEventListener(&#039;click&#039;, seleccionar);
+  this.className = &#039;seleccionat&#039;;
+  darrerSeleccionat = this;
+
+  // Es determina el proper quadre i s&#039;afegeix el detector
+  proper = seleccionarQuadreAleatori();
+  proper.className = &#039;proper&#039;;
+  proper.addEventListener(&#039;click&#039;, seleccionar);
+}
+
+let seleccionarQuadreAleatori = function() {
+  let maxIndex = quadres.childNodes.length - 1;
+  
+  // S&#039;han de descartar el darrer node seleccionat per no repetir i els nodes de text
+  do {
+    index = Math.floor(Math.random() * (maxIndex + 1));
+    proper = quadres.childNodes[index];
+  } while (proper.nodeName != &#039;DIV&#039; || proper === darrerSeleccionat);
+  
+  return proper;
+}
+
+seleccionar();</pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/VKLPxQ" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/VKLPxQ"  rel="nofollow">codepen.io/ioc-daw-m06/pen/VKLPxQ</a>.
+</p>
+
+<p>
+Fixeu-vos que en aquest exemple no cal controlar quin és l’element actual ni el proper globalment, només es guarda la referència al darrer seleccionat per poder esborrar-lo quan es cliqui el següent element i evitar que el mateix element es repeteixi. També s’ha eliminat la funció d’inicialització: no cal inicialitzar cap variable, només cal invocar <code>seleccionar()</code>.
+</p>
+
+<p>
+Per altra banda, s’ha afegit la funció <code>seleccionarQuadreAleatori()</code>, que genera un nombre entre 0 i el nombre de nodes descendents de l’element pare menys 1 (recordeu que els índexs dels <em>arrays</em> es compten començant per 0) i es van comprovant els nodes fins que se’n troba un que sigui de tipus <code>DIV</code> i no sigui el darrer seleccionat. Heu de tenir en compte que <code>childNodes</code> retorna una llista de nodes i, consegüentment, s’inclouen també els nodes amb text que es troben entre els elements: salts de línia i tabulacions.
+</p>
+
+</div>
+
+<h2><a id="cas_practicgenerador_de_factures" >Cas pràctic: generador de factures</a></h2>
+<div class="level2">
+
+<p>
+A continuació trobareu un exemple pràctic, un generador de factures. Hi podeu veure com s’integren les característiques principals de les interfícies del DOM, com pot ser la cerca, la consulta, la creació i l’eliminació d’elements.
+</p>
+
+<p>
+Primerament, afegiu el següent codi <acronym title="HyperText Markup Language">HTML</acronym> i <acronym title="Cascading Style Sheets">CSS</acronym> en un nou document per crear l’estructura del generador de factures, que està dividit en dues seccions:
+</p>
+<ul>
+<li class="level1"><div class="li"> Una àrea d’entrada de dades formada per 3 quadres de text i un botó.</div>
+</li>
+<li class="level1"><div class="li"> Una taula que contindrà les línies de la factura i el peu que mostra els totals.</div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;style&gt;</div></li><li class="li1"><div class="de1">  div {</div></li><li class="li1"><div class="de1">    margin-bottom: 15px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  label {</div></li><li class="li1"><div class="de1">    width: 100px;</div></li><li class="li1"><div class="de1">    display: inline-block;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  input {</div></li><li class="li1"><div class="de1">    width: 100px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  th {</div></li><li class="li1"><div class="de1">      width:136px;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  td {</div></li><li class="li1"><div class="de1">    text-align:right;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  td:first-child {</div></li><li class="li1"><div class="de1">    text-align:left;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  tfoot th {</div></li><li class="li1"><div class="de1">    text-align:left;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  tfoot th:last-child {</div></li><li class="li1"><div class="de1">    text-align:right;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  tfoot, thead, tbody, table {</div></li><li class="li1"><div class="de1">    border: 1px solid black;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  thead, tfoot {</div></li><li class="li1"><div class="de1">    background-color: grey;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  tbody tr:hover {</div></li><li class="li1"><div class="de1">    background-color:#2897E8;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&lt;/style&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;div&gt;</div></li><li class="li1"><div class="de1">  &lt;h3&gt;Introducció de productes a la factura&lt;/h3&gt;</div></li><li class="li1"><div class="de1">  &lt;label for=&quot;producte&quot;&gt;Producte:&lt;/label&gt;</div></li><li class="li1"><div class="de1">  &lt;input type=&quot;text&quot; id=&quot;producte&quot; /&gt;</div></li><li class="li1"><div class="de1">  &lt;label for=&quot;quantitat&quot;&gt;Quantitat:&lt;/label&gt;</div></li><li class="li1"><div class="de1">  &lt;input type=&quot;number&quot; id=&quot;quantitat&quot; value=&quot;0&quot; /&gt;</div></li><li class="li1"><div class="de1">  &lt;label for=&quot;preu-unitari&quot;&gt;Preu unitari:&lt;/label&gt;</div></li><li class="li1"><div class="de1">  &lt;input type=&quot;number&quot; id=&quot;preu-unitari&quot; value=&quot;0&quot; /&gt;</div></li><li class="li1"><div class="de1">  &lt;button id=&quot;afegir&quot;&gt;Afegir&lt;/button&gt;</div></li><li class="li1"><div class="de1">&lt;/div&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;table rules=&quot;groups&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;thead&gt;</div></li><li class="li1"><div class="de1">    &lt;tr&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;Producte&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;Quantitat&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;Preu unitari&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;Preu total&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;Accions&lt;/th&gt;</div></li><li class="li1"><div class="de1">    &lt;/tr&gt;</div></li><li class="li1"><div class="de1">  &lt;/thead&gt;</div></li><li class="li1"><div class="de1">  &lt;tfoot&gt;</div></li><li class="li1"><div class="de1">    &lt;tr&gt;</div></li><li class="li1"><div class="de1">      &lt;th colspan=&quot;4&quot;&gt;Base imposable&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;&lt;span id=&quot;base-imposable&quot;&gt;0&lt;/span&gt;€&lt;/th&gt;</div></li><li class="li1"><div class="de1">    &lt;/tr&gt;</div></li><li class="li1"><div class="de1">    &lt;tr&gt;</div></li><li class="li1"><div class="de1">      &lt;th colspan=&quot;4&quot; data-iva=&quot;0.21&quot;&gt;IVA 21%&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;&lt;span id=&quot;iva&quot;&gt;0&lt;/span&gt;€&lt;/th&gt;</div></li><li class="li1"><div class="de1">    &lt;/tr&gt;</div></li><li class="li1"><div class="de1">    &lt;tr&gt;</div></li><li class="li1"><div class="de1">      &lt;th colspan=&quot;4&quot;&gt;Total factura&lt;/th&gt;</div></li><li class="li1"><div class="de1">      &lt;th&gt;&lt;span id=&quot;total&quot;&gt;0&lt;/span&gt;€&lt;/th&gt;</div></li><li class="li1"><div class="de1">    &lt;/tr&gt;</div></li><li class="li1"><div class="de1">  &lt;/tfoot&gt;</div></li><li class="li1"><div class="de1">  &lt;tbody&gt;</div></li><li class="li1"><div class="de1">  &lt;/tbody&gt;</div></li><li class="li1"><div class="de1">&lt;/table&gt;</div></li></ol></pre>
+
+<p>
+
+</p>
+
+<p>
+Quant al codi <acronym title="HyperText Markup Language">HTML</acronym>, cal destacar que s’ha afegit la propietat <code>id</code> per als següents elements:
+</p>
+<ul>
+<li class="level1"><div class="li"> Entrada de text <code>producte</code> per introduir el nom del producte.</div>
+</li>
+<li class="level1"><div class="li"> Entrada de text <code>quantitat</code> per introduir la quantitat de productes facturats.</div>
+</li>
+<li class="level1"><div class="li"> Entrada de text <code>preu-unitari</code> per introduir el preu unitari del producte.</div>
+</li>
+<li class="level1"><div class="li"> Botó <code>afegir</code> per afegir la nova línia a la factura.</div>
+</li>
+<li class="level1"><div class="li"> Element <code>base-imposable</code> per mostrar la base imposable total.</div>
+</li>
+<li class="level1"><div class="li"> Element <code>iva</code> per mostrar el total calculat per l’IVA.</div>
+</li>
+<li class="level1"><div class="li"> Element <code>total</code> per mostrar el total a pagar.</div>
+</li>
+</ul>
+
+<p>
+Addicionalment, s’ha afegit l’atribut propi <code>data-iva</code> amb el valor <code>0.21</code> de manera que és possible modificar el percentatge d’IVA que s’ha d’aplicar a la factura modificant, directament, aquest atribut. Així doncs, és possible modificar aquest valor per aplicar, per exemple, un 7% d’IVA (0.07).
+</p>
+
+<p>
+El codi <acronym title="Cascading Style Sheets">CSS</acronym> només s’utilitza per donar estil al document. S’ha aplicat un fons de color gris a la capçalera i al peu de la taula. A més a més, per destacar quina és la fila a la qual afectaran les accions, aquesta canvia de color quan el cursor és a sobre.
+</p>
+
+<p>
+El codi JavaScript, tot i que a primera vista pot semblar complicat, és força senzill. No és res més que l’aplicació de les funcionalitats i l’accés a les propietats dels elements i el document.
+</p>
+
+<p>
+Primer de tot hi ha la funció <code>inicialitzar()</code>, que és l’encarregada d’inicialitzar tots els elements necessaris de l’aplicació. Aquesta funció és invocada automàticament quan es completa la càrrega del DOM:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let boto = document.getElementById('afegir');</div></li><li class="li1"><div class="de1">  boto.onclick = afegirLinia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Inicialització de l'aplicació quan es carregui el DOM</div></li><li class="li1"><div class="de1">document.body.onload = inicialitzar;</div></li></ol></pre>
+
+<p>
+Dins de la funció <code>inicialitzar()</code> se cerca l’element amb identificador <code>afegir</code>, que correspon al botó i assigna a l’<em>event</em> <code>click</code> la funció <code>afegirLinia()</code>, fent servir la drecera <code>onclick</code>. Seguidament, s’assigna aquesta funció a l’<em>event</em> <code>load</code> de <code>document.body</code>, de manera que aquesta funció s’executa una vegada s’acaba de carregar el DOM.
+</p>
+
+<p>
+Fixeu-vos que si en canvieu l’ordre, l’aplicació no funcionarà correctament. Primer s’ha de declarar la funció o el valor que s’assignarà a <code>document.body.onload</code>, que serà <code>null</code>.
+</p>
+
+<p>
+La següent funció és <code>afegirLinia()</code>, que és invocada quan es fa clic al botó <code>afegir</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let afegirLinia = function() {</div></li><li class="li1"><div class="de1">  let nomProducte = document.getElementById('producte').value;</div></li><li class="li1"><div class="de1">  let quantitatProducte = document.getElementById('quantitat').value;</div></li><li class="li1"><div class="de1">  let preuUnitari = document.getElementById('preu-unitari').value;</div></li><li class="li1"><div class="de1">  let totalProducte = quantitatProducte * preuUnitari;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  afegirFilaTaula(nomProducte, quantitatProducte, preuUnitari, totalProducte);</div></li><li class="li1"><div class="de1">  recalcularTotal();</div></li><li class="li1"><div class="de1">  netejarLinia();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Com es pot apreciar, en la implementació d’aquest programa s’ha aplicat el disseny descendent, de manera que s’ha dividit el codi en múltiples funcions específiques.
+</p>
+
+<p>
+En primer lloc, s’obté el valor dels tres camps de text. Com que no cal guardar la referència a l’element, s’accedeix directament a la seva propietat <code>value</code>: <code>document.getElementById(‘producte’).value</code>. Així, doncs, nomProducte contindrà el valor de l’element amb identificador <code>producte</code>. Una manera menys concisa d’implementar-lo seria la següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let elementNomProducte = document.getElementById('producte');</div></li><li class="li1"><div class="de1">let nomProducte = elementNomProducte.value;</div></li></ol></pre>
+
+<p>
+Una vegada s’han obtingut la <code>quantitatProducte</code> i el <code>preuUnitari</code>, es calcula el preu total i es passen aquests quatre valors a la funció <code>afegirFilaTaula()</code> per afegir les dades a la taula. Seguidament s’invoca <code>recalcularTotal()</code> (que recalcula la base imposable, l’IVA i l’import total), i finalment <code>netejarLinia()</code>, per eliminar les dades de l’entrada de text.
+</p>
+
+<p>
+La funció <code>afegirFilaTaula()</code>, tot i que és la més llarga de l’aplicació, és molt simple: bàsicament es repeteix el mateix codi per a cada columna. Es podria haver fet servir un <em>array</em> alternativament, però per simplificar el codi i fer-lo més entenedor s’ha optat per duplicar-lo:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let afegirFilaTaula = function(nomProducte, quantitatProducte, preuUnitari, totalProducte) {</div></li><li class="li1"><div class="de1">  let cosTaula = document.querySelector('tbody');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let fila = document.createElement('tr');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let col1 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col2 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col3 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col4 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col5 = document.createElement('td');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  col1.innerHTML = nomProducte + ' (detall)';</div></li><li class="li1"><div class="de1">  col2.innerHTML = quantitatProducte;</div></li><li class="li1"><div class="de1">  col3.innerHTML = preuUnitari + '€';</div></li><li class="li1"><div class="de1">  col4.innerHTML = totalProducte + '€';</div></li><li class="li1"><div class="de1">  col5.innerHTML = '(eliminar)';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  col1.addEventListener('click', mostrarDetall);</div></li><li class="li1"><div class="de1">  col5.addEventListener('click', eliminarFila);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  fila.appendChild(col1);</div></li><li class="li1"><div class="de1">  fila.appendChild(col2);</div></li><li class="li1"><div class="de1">  fila.appendChild(col3);</div></li><li class="li1"><div class="de1">  fila.appendChild(col4);</div></li><li class="li1"><div class="de1">  fila.appendChild(col5);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  cosTaula.appendChild(fila);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Primer de tot, s’obté la referència al cos de la taula (l’element <code>tbody</code>) amb el mètode <code>document.querySelector()</code>, perquè aquest permet accedir directament a l’element com si fos un selector <acronym title="Cascading Style Sheets">CSS</acronym> i sempre retorna un únic element (al contrari de <code>document.getElementsByTagName()</code>, que retorna un <em>array</em>).
+</p>
+
+<p>
+A continuació, es creen els nous elements que s’afegiran:
+</p>
+<ul>
+<li class="level1"><div class="li"> Una nova fila: <code>document.createElement(‘tr’)</code>.</div>
+</li>
+<li class="level1"><div class="li"> Cinc noves cel·les, una per a cada columna: <code>document.createElement(‘td’)</code>.</div>
+</li>
+</ul>
+
+<p>
+Una vegada s’han creat les columnes (recordeu que es tracta de nodes de tipus <code>element</code>) s’assigna el contingut corresponent a cadascuna d’elles, i s’estableix la seva propietat <code>innerHTML</code>.
+</p>
+
+<p>
+Tot seguit, s’afegeix la detecció de l’<em>event</em> <code>click</code> a les columnes 1 i 5, de manera que en clicar sobre les columnes s’invoca les funcions <code>mostrarDetall()</code> o <code>eliminarFila()</code>, respectivament.
+</p>
+
+<p>
+Amb els continguts i la detecció d’<em>events</em> afegida, només resta afegir les columnes a la fila (<code>fila.appendChild(col1)</code>) i, seguidament, la fila a la taula (<code>cosTaula.appendChild(fila)</code>).
+</p>
+
+<p>
+El següent mètode, <code>recalcularTotal()</code>, és l’encarregat de recalcular els totals que es mostren al peu de la taula. Aquest mètode és més complex, perquè es treballa amb selectors, accés als elements descendents i germans i s’accedeix a propietats.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let recalcularTotal = function() {</div></li><li class="li1"><div class="de1">  let files = document.querySelectorAll('tbody tr');</div></li><li class="li1"><div class="de1">  let valorBase = 0;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;files.length; i++) {</div></li><li class="li1"><div class="de1">    let columnaUltima = files[i].lastElementChild;</div></li><li class="li1"><div class="de1">    let columnaPenultima = columnaUltima.previousElementSibling;</div></li><li class="li1"><div class="de1">    let valorTotalFila = parseFloat(columnaPenultima.textContent);</div></li><li class="li1"><div class="de1">    valorBase += valorTotalFila;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementBase = document.getElementById('base-imposable');</div></li><li class="li1"><div class="de1">  elementBase.innerHTML = valorBase;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementPercentatgeIVA = document.querySelector('[data-iva]');</div></li><li class="li1"><div class="de1">  let valorPercentatgeIVA = elementPercentatgeIVA.getAttribute('data-iva');</div></li><li class="li1"><div class="de1">  let valorIVA = parseFloat(valorPercentatgeIVA * valorBase);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementIVA = document.getElementById('iva');</div></li><li class="li1"><div class="de1">  elementIVA.innerHTML = valorIVA;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementTotal = document.getElementById('total');</div></li><li class="li1"><div class="de1">  elementTotal.innerHTML = valorBase + valorIVA;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que per obtenir totes les files s’invoca <code>document.querySelectorAll(‘tbody tr’)</code>, de manera que s’obtenen totes les files (elements de tipus <code>tr</code>) que es trobin dins de l’element <code>tbody</code>. És a dir, s’exclouen les files de la capçalera i del peu de la taula. Cal destacar que a diferència de <code>querySelector</code>, que retorna només un únic element, <code>querySelectorAll</code> retorna una col·lecció d’elements.
+</p>
+
+<p>
+Seguidament es recorre aquesta col·lecció per extreure la informació de cada línia de la factura i calcular-ne el valor base total. Com que la columna que interessa és la cinquena, s’ha optat per accedir a l’últim element descendent de la fila (<code>files[i].lastElementChild</code>) i a continuació a l’element anterior (<code>columnaUltima.previousElementChild</code>).
+</p>
+
+<p>
+Per assegurar que el valor que s’afegeix és un nombre real (és a dir, no s’interpreta com una cadena de text), s’invoca la funció <code>parseFloat()</code> i aquest valor s’afegeix a la variable <code>valorBase</code>. Una vegada acaba l’execució del bucle, la variable <code>valorBase</code> correspondrà al total de la base imposable que s’afegeix al document a través de la propietat <code>innerHTML</code> de l’element amb l’identificador <code>base-imposable</code>.
+</p>
+
+<p>
+El següent pas és calcular l’IVA. Per fer-ho primer s’obté la referència a l’element que conté la propietat <code>data-iva</code> invocant <code>document.querySelector(&#039;[data-iva]&#039;)</code>. Seguidament, s’invoca <code>elementPercentatgeIVA.getAttribute(‘data-iva’)</code> per obtenir el valor d’aquest atribut que indica el percentatge que s’ha d’aplicar. Una vegada s’ha calculat, s’afegeix al document assignant-lo a la propietat <code>innerHTML</code> de l’element <code>iva</code>.
+</p>
+
+<p>
+Amb tots dos valors calculats, només queda sumar-los i afegir-los al document com a contingut de l’element <code>total</code>.
+</p>
+
+<p>
+La funció <code>netejarLinia()</code> és molt més simple que l’anterior. De la mateixa manera com s’obtenen els valors a la funció <code>afegirLinia()</code>, s’estableixen els valors per defecte de les entrades de text: una cadena buida per al producte i 0 per a la quantitat i el preu unitari.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let netejarLinia = function() {</div></li><li class="li1"><div class="de1">  document.getElementById('producte').value = '';</div></li><li class="li1"><div class="de1">  document.getElementById('quantitat').value = 0;</div></li><li class="li1"><div class="de1">  document.getElementById('preu-unitari').value = 0;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Seguidament es troba el codi que s’invoca en detectar-se l’<em>event</em> <code>click</code> sobre la primera i l’última columna. En el primer cas només cal destacar que s’obtenen tots els elements amb l’etiqueta <code>td</code> del node pare, i després es recorre aquesta llista per construir el text que es mostrarà com a detall:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let mostrarDetall = function() {</div></li><li class="li1"><div class="de1">  let missatge = 'Detall de la factura:\n';</div></li><li class="li1"><div class="de1">  let elementsFila = this.parentNode.getElementsByTagName('td');</div></li><li class="li1"><div class="de1">  let etiquetes = ['Producte', 'Quantitat', 'Preu unitari', 'Preu total'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; elementsFila.length; i++) {</div></li><li class="li1"><div class="de1">    missatge += '\t' + etiquetes[i] + ': ' + elementsFila[i].textContent + '\n';</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  alert(missatge);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que es fa servir <code>this</code> per accedir a les propietats pròpies de l’element clicat. Tot i que totes les cel·les de la primera columna criden aquesta funció, el context en el qual s’executen sempre és l’element concret on s’ha disparat l’<em>event</em>.
+</p>
+
+<p>
+Per acabar, hi ha el codi de la funció <code>eliminarFila()</code>. En primer lloc s’elimina la mateixa fila i per fer-ho s’accedeix al node pare del pare. És a dir, es travessa el node ascendentment fins a l’element <code>tr</code> (la fila), seguidament, fins a l’element <code>tbody</code> que la conté, i a partir d’aquest, s’elimina. Seguidament, s’invoca la funció <code>recalcularTotal()</code> per actualitzar els valors del peu de la taula.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let eliminarFila = function() {  </div></li><li class="li1"><div class="de1">  this.parentNode.parentNode.removeChild(this.parentNode);</div></li><li class="li1"><div class="de1">  recalcularTotal();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+A continuació podeu trobar el codi JavaScript complet del generador de factures:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let inicialitzar = function() {</div></li><li class="li1"><div class="de1">  let boto = document.getElementById('afegir');</div></li><li class="li1"><div class="de1">  boto.onclick = afegirLinia;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Inicialització de l'aplicació quan es carregui el DOM</div></li><li class="li1"><div class="de1">document.body.onload = inicialitzar;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let afegirLinia = function() {</div></li><li class="li1"><div class="de1">  let nomProducte = document.getElementById('producte').value;</div></li><li class="li1"><div class="de1">  let quantitatProducte = document.getElementById('quantitat').value;</div></li><li class="li1"><div class="de1">  let preuUnitari = document.getElementById('preu-unitari').value;</div></li><li class="li1"><div class="de1">  let totalProducte = quantitatProducte * preuUnitari;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  afegirFilaTaula(nomProducte, quantitatProducte, preuUnitari, totalProducte);</div></li><li class="li1"><div class="de1">  recalcularTotal();</div></li><li class="li1"><div class="de1">  netejarLinia();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let afegirFilaTaula = function(nomProducte, quantitatProducte, preuUnitari, totalProducte) {</div></li><li class="li1"><div class="de1">  let cosTaula = document.querySelector('tbody');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let fila = document.createElement('tr');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let col1 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col2 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col3 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col4 = document.createElement('td');</div></li><li class="li1"><div class="de1">  let col5 = document.createElement('td');</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  col1.innerHTML = nomProducte + ' (detall)';</div></li><li class="li1"><div class="de1">  col2.innerHTML = quantitatProducte;</div></li><li class="li1"><div class="de1">  col3.innerHTML = preuUnitari + '€';</div></li><li class="li1"><div class="de1">  col4.innerHTML = totalProducte + '€';</div></li><li class="li1"><div class="de1">  col5.innerHTML = '(eliminar)';</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  col1.addEventListener('click', mostrarDetall);</div></li><li class="li1"><div class="de1">  col5.addEventListener('click', eliminarFila);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  fila.appendChild(col1);</div></li><li class="li1"><div class="de1">  fila.appendChild(col2);</div></li><li class="li1"><div class="de1">  fila.appendChild(col3);</div></li><li class="li1"><div class="de1">  fila.appendChild(col4);</div></li><li class="li1"><div class="de1">  fila.appendChild(col5);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  cosTaula.appendChild(fila);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let recalcularTotal = function() {</div></li><li class="li1"><div class="de1">  let files = document.querySelectorAll('tbody tr');</div></li><li class="li1"><div class="de1">  let valorBase = 0;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i=0; i&lt;files.length; i++) {</div></li><li class="li1"><div class="de1">    let columnaUltima = files[i].lastElementChild;</div></li><li class="li1"><div class="de1">    let columnaPenultima = columnaUltima.previousElementSibling;</div></li><li class="li1"><div class="de1">    let valorTotalFila = parseFloat(columnaPenultima.textContent);</div></li><li class="li1"><div class="de1">    valorBase += valorTotalFila;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementBase = document.getElementById('base-imposable');</div></li><li class="li1"><div class="de1">  elementBase.innerHTML = valorBase;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementPercentatgeIVA = document.querySelector('[data-iva]');</div></li><li class="li1"><div class="de1">  let valorPercentatgeIVA = elementPercentatgeIVA.getAttribute('data-iva');</div></li><li class="li1"><div class="de1">  let valorIVA = parseFloat(valorPercentatgeIVA * valorBase);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementIVA = document.getElementById('iva');</div></li><li class="li1"><div class="de1">  elementIVA.innerHTML = valorIVA;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  let elementTotal = document.getElementById('total');</div></li><li class="li1"><div class="de1">  elementTotal.innerHTML = valorBase + valorIVA;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let netejarLinia = function() {</div></li><li class="li1"><div class="de1">  document.getElementById('producte').value = '';</div></li><li class="li1"><div class="de1">  document.getElementById('quantitat').value = 0;</div></li><li class="li1"><div class="de1">  document.getElementById('preu-unitari').value = 0;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let mostrarDetall = function() {</div></li><li class="li1"><div class="de1">  let missatge = 'Detall de la factura:\n';</div></li><li class="li1"><div class="de1">  let elementsFila = this.parentNode.getElementsByTagName('td');</div></li><li class="li1"><div class="de1">  let etiquetes = ['Producte', 'Quantitat', 'Preu unitari', 'Preu total'];</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  for (let i = 0; i &lt; elementsFila.length; i++) {</div></li><li class="li1"><div class="de1">    missatge += '\t' + etiquetes[i] + ': ' + elementsFila[i].textContent + '\n';</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  alert(missatge);</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let eliminarFila = function() {  </div></li><li class="li1"><div class="de1">  this.parentNode.parentNode.removeChild(this.parentNode);</div></li><li class="li1"><div class="de1">  recalcularTotal();</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en l’enllaç següent: <a href="https://codepen.io/ioc-daw-m06/pen/XjbooE" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XjbooE"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XjbooE</a>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u5/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u5/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

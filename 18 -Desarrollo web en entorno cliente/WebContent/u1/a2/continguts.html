@@ -1,0 +1,1193 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en l'entorn client</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en l'entorn client">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en l'entorn client</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u1" class="parentnode"><p><a class="unit" href="../../../WebContent/u1/introduccio.html">1. Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></p><ul class="expander"><li id="u1introduccio"><a href="../../../WebContent/u1/introduccio.html">Introducció</a></li><li id="u1resum"><a href="../../../WebContent/u1/resum.html">Resum</a></li><li id="u1resultats"><a href="../../../WebContent/u1/resultats.html">Resultats d'aprenentatge</a></li><li id="u1referencies"><a href="../../../WebContent/u1/referencies.html">Referències</a></li><li id="u1a1" class="tocsection"><p id='u1a1continguts'><a class="section" href="../../../WebContent/u1/a1/continguts.html">Execució de programes al costat client. Introducció a JavaScript</a><span class="buttonexp"></span></p><ul><li id="u1a1activitats"><a href="../../../WebContent/u1/a1/activitats.html">Activitats</a></li><li id="u1a1exercicis"><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a1/continguts.html#introduccio_al_llenguatge_javascript">Introducció al llenguatge JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#llenguatges_compilats_i_interpretats_llenguatges_de_guions">Llenguatges compilats i interpretats. Llenguatges de guions</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#el_motor_de_javascript_execucio_de_javascript_en_linia_d_ordres">El motor de JavaScript. Execució de JavaScript en línia d'ordres</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#aplicatius_webarquitectura_client-servidor">Aplicatius web: arquitectura client-servidor</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#beneficis_d_utilitzar_javascript_en_les_pagines_web">Beneficis d'utilitzar JavaScript en les pàgines web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#desavantatges_de_javascript">Desavantatges de JavaScript</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#integracio_del_codi_javascript_en_el_codi_html_primer_exemple">Integració del codi JavaScript en el codi HTML. Primer exemple</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#javascriptprogramacio_dirigida_per_esdeveniments">JavaScript: programació dirigida per esdeveniments</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#eines_i_entorns_per_al_desenvolupament_web">Eines i entorns per al desenvolupament web</a></li><li><a href="../../../WebContent/u1/a1/continguts.html#sintaxi_del_llenguatge_javascript">Sintaxi del llenguatge JavaScript</a></li></ul></div></div><li id="u1a2" class="tocsection"><p id='u1a2continguts'><a class="section" href="../../../WebContent/u1/a2/continguts.html">Introducció. Objectes predefinits i objectes del client web</a><span class="buttonexp"></span></p><ul><li id="u1a2activitats"><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></li><li id="u1a2exercicis"><a href="../../../WebContent/u1/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a2/continguts.html#objectes_predifinits_de_javascript">Objectes predifinits de JavaScript</a></li><li><a href="../../../WebContent/u1/a2/continguts.html#bom_browser_object_model">BOM (Browser Object Model)</a></li></ul></div></div><li id="u1a3" class="tocsection"><p id='u1a3continguts'><a class="section" href="../../../WebContent/u1/a3/continguts.html">Programació amb galetes, finestres i marcs</a><span class="buttonexp"></span></p><ul><li id="u1a3activitats"><a href="../../../WebContent/u1/a3/activitats.html">Activitats</a></li><li id="u1a3exercicis"><a href="../../../WebContent/u1/a3/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><div data-parent-id='u1a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u1/a3/continguts.html#programacio_amb_galetes_cookies">Programació amb galetes ('cookies')</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#emmagatzemar_informacio_amb_local_storage">Emmagatzemar informació amb Local Storage</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#comunicacio_entre_finestres">Comunicació entre finestres</a></li><li><a href="../../../WebContent/u1/a3/continguts.html#marcs_frames_iframes">Marcs (frames/iframes)</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Sintaxi del llenguatge. Objectes predefinits del llenguatge</a></li><li>Introducció. Objectes predefinits i objectes del client web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="introduccio_objectes_predefinits_i_objectes_del_client_web"> Introducció. Objectes predefinits i objectes del client web </a></h1>
+    	
+<p>
+Entre els objectes predefinits per JavaScript hem de distingir entre aquells que són propis de JavaScript com a llenguatge de programació, independentment del context; i aquells que es creen quan el client web (Firefox, Chrome, <acronym title="Internet Explorer">IE</acronym>) carrega un document <acronym title="HyperText Markup Language">HTML</acronym>, és a dir, en un context de navegador web.
+</p>
+
+<p>
+Els primers representen, bàsicament, cadenes de caràcters, nombres i elements matemàtics i dates, com passa a molts llenguatges de programació. A més, també n’hi ha que representen les expressions regulars, que permeten realitzar amb relativa facilitat operacions de tractament de text amb un grau de complexitat important.
+</p>
+
+<p>
+Els segons estan compresos en el BOM (<em>Browser Object Model</em>, que pot traduir-se per Model d’Objectes del Navegador). En aquest model s’inclouen objectes que representen els diferents elements del navegador com la finestra, l’historial, l’adreça web i, sobre tot, els documents <acronym title="HyperText Markup Language">HTML</acronym> que s’estan mostrant. Aquests documents presenten una complexitat important i requereixen un sistema d’objectes propi, el DOM (<em>Document Object Model</em>, que pot traduir-se per Model d’Objectes del Document).  
+</p>
+
+<p>
+Tot això suposa llargues llistes de propietats i mètodes. Caldrà estar-hi familiaritzats amb els d’ús més habitual i, també, amb la documentació que tots aquests objectes tenen associada. És bàsic ser capaç d’interpretar-la correctament per poder utilitzar fins i tot elements que no hàgiu utilitzat mai abans.
+</p>
+
+<h2><a id="objectes_predifinits_de_javascript" >Objectes predifinits de JavaScript</a></h2>
+<div class="level2">
+
+<p>
+Alguns dels objectes predefinits de JavaScript més utilitzats són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Objecte <code>String</code>: per representar i operar amb cadenes de text.</div>
+</li>
+<li class="level1"><div class="li"> Objecte <code>Number</code> i <code>BigInt</code>: per representar números.</div>
+</li>
+<li class="level1"><div class="li"> Objecte <code>Math</code>: per representar constants i funcions matemàtiques.</div>
+</li>
+<li class="level1"><div class="li"> Objecte <code>Date</code>: per representar dates.</div>
+</li>
+<li class="level1"><div class="li"> Objecte <code>RegExp</code>: per representar expressions regulars.</div>
+</li>
+<li class="level1"><div class="li"> Objectes <code>Array</code>, <code>Map</code> i <code>Set</code>: per treballar amb col·leccions d’elements.</div>
+</li>
+</ul>
+
+<p>
+Com a objectes que són, tots tenen unes propietats i uns mètodes. És difícil practicar amb totes les propietats i mètodes dels objectes. El que és important és saber cercar dins de la documentació i saber aplicar les propietats i mètodes d’aquests objectes.
+</p>
+
+<p>
+Un enllaç directe on podeu trobar la referència de tots els objectes predefinits, les seves propietats i els seus mètodes és: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" class="urlextern" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects"  rel="nofollow">mzl.la/3dkksJe</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_string" >L&#039;objecte String</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>String</code> és un constructor de cadenes. De fet, no és exactament el mateix el tipus primitiu <code>string</code> que un objecte <code>String</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+En l’apartat d’“Activitats” del web del mòdul trobareu un exemple de com afegir un nou mètode a un objecte <code>String</code>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">let strPrimitiva = 'IOC';</div></li><li class="li1"><div class="de1">let strObjecte = new String(strPrimitiva);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(typeof strPrimitiva); // string</div></li><li class="li1"><div class="de1">console.log(typeof strObjecte);  // object</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(strPrimitiva == strObjecte); //true</div></li><li class="li1"><div class="de1">console.log(strPrimitiva === strObjecte); //false</div></li></ol></pre>
+
+<p>
+Tot i que normalment no ens n’haurem de preocupar, podem obtenir resultats sorprenents. Per exemple, si utilitzem la funció de JavaScript <code>eval()</code>, que avalua o executa una expressió:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let str1 = '2 + 2';    //tipus primitiu de cadena</div></li><li class="li1"><div class="de1">let str2 = new String('2 + 2'); // objecte String</div></li><li class="li1"><div class="de1">console.log(eval(str1));        // retorna 4</div></li><li class="li1"><div class="de1">console.log(eval(str2));        // retorna la cadena &quot;2 + 2&quot;</div></li></ol></pre>
+
+<p>
+Amb el mètode <code>valueOf()</code> podem convertir un objecte al seu tipus primitiu:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(eval(str2.valueOf())); //retorna 4 </div></li></ol></pre>
+
+<p>
+Una altra propietat interessant dels objectes <code>String</code> és <code>length</code> que ens retorna la mida d’una cadena:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let str1=&quot;IOC&quot;;</div></li><li class="li1"><div class="de1">console.log(str1.length); // retorna 3</div></li></ol></pre>
+
+</div>
+
+<h4><a id="metodes_de_l_objecte_string" >Mètodes de l&#039;objecte String</a></h4>
+<div class="level4">
+
+<p>
+Els principals mètodes que farem servir són els següents.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>charAt(x)</code>: retorna el caràcter a la posició <code>x</code> (començant pel 0).</div>
+</li>
+<li class="level1"><div class="li"> <code>concat(str)</code>: concatena la cadena <code>str</code> a la cadena original.</div>
+</li>
+<li class="level1"><div class="li"> <code>startsWith(str)</code>: comprova si la cadena comença amb els caràcters o cadena especificats.</div>
+</li>
+<li class="level1"><div class="li"> <code>endsWith(str)</code>: comprova si la cadena acaba amb els caràcters o cadena especificats.</div>
+</li>
+<li class="level1"><div class="li"> <code>includes(str)</code>: comprova si la cadena conté  els caràcters o cadena especificats.</div>
+</li>
+<li class="level1"><div class="li"> <code>indexOf(str)</code>: retorna la posició de la primera ocurrència de la cadena que passem com a paràmetre.</div>
+</li>
+<li class="level1"><div class="li"> <code>lastIndexOf(str)</code>: retorna la posició de l’última ocurrència de la cadena que passem com a paràmetre.</div>
+</li>
+<li class="level1"><div class="li"> <code>match(regexp)</code>: cerca dins una cadena comparant-la amb l’expressió regular <code>regexp</code>, i retorna les coincidències en un <em>array</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>repeat(x)</code>: retorna una nova cadena que és la repetició de la cadena tantes vegades com el valor del paràmetre <code>x</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>replace(str1, str2)</code>: cerca dins la cadena els caràcters (o expressió regular) <code>str1</code>, i retorna una nova cadena amb aquests valors reemplaçats pel segon paràmetre <code>str2</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>search(str)</code>: cerca dins de la cadena els caràcters (o expressió regular) <code>str</code>, i retorna la posició de la primera ocurrència.</div>
+</li>
+<li class="level1"><div class="li"> <code>slice(x,y)</code>: extreu una part d’una cadena entre els caràcters <code>x</code> i <code>y</code>, i retorna una nova cadena.</div>
+</li>
+<li class="level1"><div class="li"> <code>split(car)</code>: separa una cadena en un <em>array</em> de subcadenes, agafant com a llavor del separador el caràcter <code>car</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>substr(x, y)</code>: extreu caràcters d’una cadena, començant en la posició <code>x</code>, i el número de caràcters especificat per <code>y</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>substring(x, y)</code>: extreu caràcters d’una cadena entre els dos index especificats, <code>x</code> i <code>y</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>toLowerCase(str)</code>: converteix una cadena a minúscules.</div>
+</li>
+<li class="level1"><div class="li"> <code>toUpperCase(str)</code>: converteix una cadena a majúscules.</div>
+</li>
+<li class="level1"><div class="li"> <code>trim()</code>: elimina els espais en blanc d’ambdós extrems de la cadena.</div>
+</li>
+<li class="level1"><div class="li"> <code>toString()</code>: retorna el valor d’un objecte <code>String</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>valueOf()</code>: retorna el tipus primitiu d’un objecte <code>String</code>.</div>
+</li>
+</ul>
+
+<p>
+Hi ha altres mètodes que només tenen sentit en el context de la web. Són els <em>wrapper <acronym title="HyperText Markup Language">HTML</acronym> methods</em>. Per exemple, el mètode <code>bold()</code> retorna la mateixa cadena embolcallat amb els tags <code>&lt;b&gt;</code> i <code>&lt;/b&gt;</code>, de manera que dins d’una pàgina web la cadena es veu com a negreta. Aquests mètodes no són un estàndard, poden tenir un comportament diferent en diversos navegadors i, a més, la majoria d’ells són obsolets. Els principals mètodes d’embolcall <acronym title="HyperText Markup Language">HTML</acronym> són: <code>big()</code>, <code>bold()</code>, <code>fontcolor()</code>, <code>fontsize()</code>, <code>italics()</code>, <code>small()</code>, que embolcallen la cadena amb <em>tags</em> perquè es mostri, respectivament: amb font gran, en negreta, d’un color determinat, amb una mida determinada, en cursiva i amb font petita.
+</p>
+<div class="iocexample"><div class="ioccontent"><p class="ioctitle">Exemple: funció per validar el DNI</p>
+<p>
+En el DNI tenim 8 números i una lletra. Per a cada número només una lletra és vàlida, i la manera de calcular-la la tenim en la funció següent.
+</p>
+
+<p>
+S’utilitzen diversos mètodes de <code>String</code>: <code>substr()</code>,<code> charAt()</code> i <code>toUpperCase()</code>.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">function validarDNI(dni) {</div></li><li class="li1"><div class="de1">  let lletres = &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;;</div></li><li class="li1"><div class="de1">  let numDni = dni.substr(0, dni.length - 1);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  //la línia següent pot substituir-se per: var lletra_dni=dni.substr(dni.length-1,1).toUpperCase();</div></li><li class="li1"><div class="de1">  let lletraDni = dni.charAt(dni.length - 1).toUpperCase();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  if (lletres.charAt(numDni % 23) === lletraDni) {</div></li><li class="li1"><div class="de1">    return true;</div></li><li class="li1"><div class="de1">  }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">  return false;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(validarDNI(&quot;38540343T&quot;)); //false</div></li><li class="li1"><div class="de1">console.log(validarDNI(&quot;38540343w&quot;)); //true</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/jOWdjmy?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOWdjmy?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jOWdjmy?editors=0012</a>.
+</p>
+</div></div>
+</div>
+
+<h3><a id="l_objecte_number" >L&#039;objecte Number</a></h3>
+<div class="level3">
+
+<p>
+A JavaScript comptem amb dos tipus primitius per treballar amb nombres:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>Number</code>: per a nombres enters i reals.</div>
+</li>
+<li class="level1"><div class="li"> <code>BigInit</code>: per treballar amb nombres enters grans.</div>
+</li>
+</ul>
+
+<p>
+En aquesta secció ens centrem en el tipus <code>Number</code>, que guarda els números en memòria amb una resolució de 64 bits (doble precisió) i coma flotant.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let a = 20;</div></li><li class="li1"><div class="de1">let b = -2.718;</div></li><li class="li1"><div class="de1">let c = 1e4;</div></li><li class="li1"><div class="de1">let d = 2.23e-3</div></li></ol></pre>
+
+<p>
+A part de la notació decimal, podem representar els números en binari, octal o hexadecimal.
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(0b1010);</div></li><li class="li1"><div class="de1">console.log(0xFF);</div></li></ol></pre>
+
+<p>
+I amb el mètode <code>toString()</code> podem representar els números en diferents notacions:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let num = 76;</div></li><li class="li1"><div class="de1">console.log(`${num.toString(16)} en hexadecimal`);</div></li><li class="li1"><div class="de1">console.log(`${num.toString(8)} en octal`);</div></li><li class="li1"><div class="de1">console.log(`${num.toString(2)} en binari`);    </div></li></ol></pre>
+
+<p>
+<code>Infinity</code> és el valor per representar que hem sobrepassat la precisió dels números (que és fins a 15 dígits en la part entera):
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log (5/0); //retorna Infinity </div></li></ol></pre>
+
+<p>
+<em>Not a Number</em> (<code>NaN</code>) és una paraula reservada per indicar que el valor no representa un número. Podem utilitzar la funció global <code>isNaN()</code> per saber si l’argument és un número:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(3 * &quot;a&quot;); //NaN. Recordeu que 3+&quot;a&quot; retorna &quot;3a&quot;</div></li><li class="li1"><div class="de1">console.log(isNaN(3 * 4)); //false</div></li><li class="li1"><div class="de1">console.log(isNaN(3 * &quot;a&quot;)); //true</div></li></ol></pre>
+
+<p>
+De la mateixa manera que passa amb les cadenes, a JavaScript normalment els números són tipus primitius, però també els podem crear com a objectes:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let x = 25; //tipus primitiu</div></li><li class="li1"><div class="de1">let y = new Number(25); //objecte</div></li><li class="li1"><div class="de1">console.log(typeof x); //number</div></li><li class="li1"><div class="de1">console.log(typeof y); //object</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log (x == y); //true</div></li><li class="li1"><div class="de1">console.log (x === y); //false</div></li></ol></pre>
+
+<p>
+Podeu veure els exemples anteriors a: <a href="https://codepen.io/ioc-daw-m06/pen/ZEQwdrv?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZEQwdrv?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ZEQwdrv?editors=0012</a>.
+</p>
+
+</div>
+
+<h4><a id="metodes_de_l_objecte_number" >Mètodes de l&#039;objecte Number</a></h4>
+<div class="level4">
+
+<p>
+
+</p>
+
+<p>
+Els principals mètodes de l’objecte <code>Number</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>isFinite()</code>: comprova si un valor és un número finit.</div>
+</li>
+<li class="level1"><div class="li"> <code>isInteger()</code>: comprova si un valor és un enter.</div>
+</li>
+<li class="level1"><div class="li"> <code>isNaN()</code>: comprova si un valor és un <code>NaN</code>. Alternativament es pot fer la comprovació <code>a === Number.NaN</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>toExponential(x)</code>: representa un número amb la seva notació exponencial. Per exemple, 20,31 a 2.031e+1, que significa 2.031 * 10^1.</div>
+</li>
+<li class="level1"><div class="li"> <code>toFixed(n)</code>: formata un número amb una precisió decimal de n dígits. Retorna una cadena que és la representació del número.</div>
+</li>
+<li class="level1"><div class="li"> <code>toPrecision(n)</code>: formata un número a una precisió de n dígits (número total de dígits, incloent la part entera i la decimal).</div>
+</li>
+<li class="level1"><div class="li"> <code>toString()</code>: converteix un número a una cadena.</div>
+</li>
+<li class="level1"><div class="li"> <code>parseInt()</code>: converteix un número a enter.</div>
+</li>
+<li class="level1"><div class="li"> <code>parseFloat()</code>: converteix un número a decimal.</div>
+</li>
+<li class="level1"><div class="li"> <code>valueOf()</code>: retorna el valor del tipus primitiu del número.</div>
+</li>
+</ul>
+
+<p>
+Posem alguns exemples:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log((18).toString() + (20).toString());</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let x = 234.456;</div></li><li class="li1"><div class="de1">console.log(typeof x); //number</div></li><li class="li1"><div class="de1">console.log (Number.isInteger(x)); //false</div></li><li class="li1"><div class="de1">console.log (x.toExponential());</div></li><li class="li1"><div class="de1">x = x.toFixed(2); // 234.46, arrodoneix de la forma esperada</div></li><li class="li1"><div class="de1">console.log(x);</div></li><li class="li1"><div class="de1">console.log(typeof x); //compte! x ara és un string</div></li><li class="li1"><div class="de1">x = parseFloat(x);</div></li><li class="li1"><div class="de1">console.log(typeof x); //number. Torna a ser number</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">x = x.toPrecision(6); //234.460</div></li><li class="li1"><div class="de1">console.log(x);</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/bGEzPKB?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/bGEzPKB?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/bGEzPKB?editors=0012</a>.
+</p>
+<div class="ioctextl"><div class="ioccontent"><p class="ioctitle">Paràmetres i valors retornats per funcions</p>
+<p>
+Aquest exemple que acabeu de veure no era trivial. Fixeu-vos que després d’utilitzar toFixed() el resultat és una cadena, i per tant no podem aplicar toPrecision(), que només s’aplica a <em>Numbers</em>. Per convertir a Number tampoc puc utilitzar Number.parseFloat(), que només s’aplica a Number, sinó la funció global <code>parseFloat(x)</code>. Un cop tenim Number, ja podem aplicar el mètode toPrecision(). Aquesta manera de raonar és habitual en JavaScript i en d’altres llenguatges de programació. Així doncs, quan us trobeu amb un resultat inesperat no heu de treure conclusions precipitades, i heu d’aprendre a trobar i raonar sobre la causa del problema.
+</p>
+</div></div>
+</div>
+
+<h3><a id="l_objecte_math" >L&#039;objecte Math</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>Math</code> permet realitzar tasques matemàtiques, com per exemple crear números aleatoris, realitzar funcions trigonomètriques, etc.
+</p>
+
+</div>
+
+<h4><a id="propietats_de_math" >Propietats de Math</a></h4>
+<div class="level4">
+
+<p>
+JavaScript té emmagatzemades les principals constants matemàtiques (número pi, número e, etc.), i per accedir-hi ho fem a través de les propietats corresponents de l’objecte <code>Math</code>. Així doncs, trobem: <code>Math.E</code> (número d’Euler, 2.718…), <code>Math.LN2</code> (logaritme neperià de 2), <code>Math.LN10</code> (logaritme natural de 10), <code>Math.PI</code> (número Pi), <code>Math.SQRT2</code> (arrel quadrada de 2), i algunes altres més.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+L’objecte <code>Math</code> és especial en el sentit que no té constructor. No hi ha cap mètode per crear un objecte <code>Math</code>. Podem fer-lo servir sense haver de crear-lo.
+</p>
+</div></div>
+<p>
+Per exemple,
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log (Math.PI);</div></li></ol></pre>
+
+</div>
+
+<h4><a id="metodes_de_l_objecte_math" >Mètodes de l&#039;objecte Math</a></h4>
+<div class="level4">
+
+<p>
+Amb els següents mètodes de <code>Math</code> podem realitzar operacions matemàtiques usuals:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>abs(x)</code>: valor absolut.</div>
+</li>
+<li class="level1"><div class="li"> <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>: funcions trigonomètriques de sinus, cosinus i tangent.</div>
+</li>
+<li class="level1"><div class="li"> <code>asin(x)</code>, <code>acos(x)</code>, <code>atan(x)</code>: retorna en radians l’arcsinus, arccosinus, arctangent.</div>
+</li>
+<li class="level1"><div class="li"> <code>round(x)</code>: arrodoneix x al valor enter més proper.</div>
+</li>
+<li class="level1"><div class="li"> <code>ceil(x)</code>, <code>floor(x)</code>: retorna el mateix número però arrodonit a l’enter més proper cap a dalt (<code>ceil</code>) o cap a baix (<code>floor</code>).</div>
+</li>
+<li class="level1"><div class="li"> <code>truncx(x)</code>: elimina la part fraccionària d’un número (i queda només la part entera).</div>
+</li>
+<li class="level1"><div class="li"> <code>exp(x)</code>: retorna el valor <span class="inlinelatex"><img src="../media/imgb6b70db98c2a5c2031dea120886f8211.png" /></span>.</div>
+</li>
+<li class="level1"><div class="li"> <code>max(a,b,…)</code>, <code>min(a,b,…)</code>: retorna el valor més gran (o més petit) de la llista de números.</div>
+</li>
+<li class="level1"><div class="li"> <code>pow(x,y)</code>: retorna <span class="inlinelatex"><img src="../media/imga77c2e31722d34fb6516004d5aad77e5.png" /></span>.</div>
+</li>
+<li class="level1"><div class="li"> <code>log(x)</code>: retorna el logaritme natural (base e) de x.</div>
+</li>
+<li class="level1"><div class="li"> <code>random()</code>: retorna un número aleatori entre 0 (inclòs) i 1 (exclòs).</div>
+</li>
+<li class="level1"><div class="li"> <code>sqrt(x)</code>: retorna l’arrel quadrada de x.</div>
+</li>
+</ul>
+
+<p>
+Quan es programa, sovint és necessari obtenir números aleatoris. Per generar-los, JavaScript utilitza una llavor (<em>seed</em>) interna que no és accessible a l’usuari. En el següent exemple es veu un exemple típic de com es poden generar números aleatoris en diferents rangs: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">// Funció que retorna un número aleatori entre 0 (inclusiu) i 1 (exclusiu)</div></li><li class="li1"><div class="de1">function getRandom() {</div></li><li class="li1"><div class="de1">  return Math.random();</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Funció que retorna un número aleatori entre min (inclusiu) i max (exclusiu)</div></li><li class="li1"><div class="de1">function getRandomArbitrary(min, max) {</div></li><li class="li1"><div class="de1">  return Math.random() * (max - min) + min;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Funció que retorna un número enter aleatori entre min (inclusiu) i max (exclusiu)</div></li><li class="li1"><div class="de1">function getRandomInt(min, max) {</div></li><li class="li1"><div class="de1">  return Math.floor(Math.random() * (max - min)) + min;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">// Funció que retorna un número enter aleatori entre min (inclusiu) i max (inclusiu)</div></li><li class="li1"><div class="de1">function getRandomIntInclusive(min, max) {</div></li><li class="li1"><div class="de1">  return Math.floor(Math.random() * (max - min + 1)) + min;</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('\nNúmero aleatori entre 0 (inclusiu) i 1 (exclusiu)');</div></li><li class="li1"><div class="de1">for (let i=0; i&lt;10; i++) {</div></li><li class="li1"><div class="de1">  console.log(getRandom());</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('\nNúmero aleatori entre 1 (inclusiu) i 5 (exclusiu)');</div></li><li class="li1"><div class="de1">for (let i=0; i&lt;10; i++) {</div></li><li class="li1"><div class="de1">    console.log(getRandomArbitrary(1,5));</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('\nNúmero enter aleatori entre 1 (inclusiu) i 5 (exclusiu)');</div></li><li class="li1"><div class="de1">for (let i=0; i&lt;10; i++) {</div></li><li class="li1"><div class="de1">    console.log(getRandomInt(1,5));</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log('\nNúmero enter aleatori entre 1 (inclusiu) i 5 (inclusiu)');</div></li><li class="li1"><div class="de1">for (let i=0; i&lt;10; i++) {</div></li><li class="li1"><div class="de1">    console.log(getRandomIntInclusive(1,5));</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/jrBeNW?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jrBeNW?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jrBeNW?editors=0012</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_date" >L&#039;objecte Date</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>Date</code> s’utilitza per treballar amb dates i temps. Per instanciar un objecte tipus <code>Date</code> s’utilitza <code>new</code>, i admet diferents arguments:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data = new Date(); //data del sistema</div></li><li class="li1"><div class="de1">console.log(data);</div></li><li class="li1"><div class="de1">data = new Date(34885453664); //genera un data que representa els mil·lisegons que han passat des de l'1 de gener de 1970</div></li><li class="li1"><div class="de1">console.log(data);</div></li><li class="li1"><div class="de1">data = new Date('2016/05/23');</div></li><li class="li1"><div class="de1">console.log(data);</div></li><li class="li1"><div class="de1">data = new Date(2016,5,23,12,15,24,220);  //any,mes,dia,hora,minuts,segons,mil·lisegons</div></li><li class="li1"><div class="de1">console.log(data);</div></li></ol></pre>
+
+<p>
+Treballar amb dates no sempre és fàcil i immediat: haurem de tenir en compte el format de data i el fus horari.
+</p>
+
+<p>
+Sigui quin sigui el format en què expressem les dates, aquestes es guarden internament com un número que representa els mil·lisegons que han passat des de l’1 de gener de 1970 (00:00:00). Per exemple, des de la data actual (amb precisió de mil·lisegons) fins aquesta data original han passat:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data = new Date(); //data del sistema</div></li><li class="li1"><div class="de1">console.log(data.getTime()); //milisegons</div></li><li class="li1"><div class="de1">console.log(`Des de 1970 han passat ${data.getTime()/1000/3600/24/365} anys aprox`);</div></li></ol></pre>
+
+<p>
+Podeu veure els exemples a: <a href="https://codepen.io/ioc-daw-m06/pen/jOWdjXG?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/jOWdjXG?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/jOWdjXG?editors=0012</a>.
+</p>
+
+</div>
+
+<h4><a id="metodes_de_l_objecte_date" >Mètodes de l&#039;objecte Date</a></h4>
+<div class="level4">
+
+<p>
+Hi ha molts mètodes de l’objecte <code>Date</code>. En veurem alguns, en especial aquells que permeten representar les dates en el format usual (dd/mm/aaaa):
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>getDay()</code>: retorna el dia de la setmana (0-6, començant per diumenge).</div>
+</li>
+<li class="level1"><div class="li"> <code>getFullYear()</code>: retorna l’any (4 dígits).</div>
+</li>
+<li class="level1"><div class="li"> <code>getMonth()</code>: retorna el mes (0-11).</div>
+</li>
+<li class="level1"><div class="li"> <code>getDate()</code>: retorna el dia del mes (1-31).</div>
+</li>
+<li class="level1"><div class="li"> <code>getHours()</code>: retorna l’hora (0-23).</div>
+</li>
+<li class="level1"><div class="li"> <code>getMinutes()</code>: retorna els minuts (0-59).</div>
+</li>
+<li class="level1"><div class="li"> <code>getSeconds()</code>: retorna els segons (0-59).</div>
+</li>
+<li class="level1"><div class="li"> <code>getMilliseconds()</code>: retorna els mil·lisegons (0-999).</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCDate()</code>: retorna el dia del mes (1-31), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCDay()</code>: retorna el dia de la setmana (0-6, començant per diumenge), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCFullYear()</code>: retorna l’any (4 dígits), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCMonth()</code>: retorna el mes (0-11), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCHours()</code>: retorna l’hora (0-23), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCMinutes()</code>: retorna els minuts (0-59), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCSeconds()</code>: retorna els segons (0-59), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getUTCMilliseconds()</code>: retorna els mil·lisegons (0-999), d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>getTime()</code>: retorna el nombre de mil·lisegons que han transcorregut des de la data fins l’1 de gener de 1970.</div>
+</li>
+<li class="level1"><div class="li"> <code>now()</code>: retorna el nombre de mil·lisegons que han transcorregut des de la data del sistema fins l’1 de gener de 1970.</div>
+</li>
+<li class="level1"><div class="li"> <code>parse()</code>: transforma una cadena de text (representant una data), i retorna el nombre de mil·lisegons transcorreguts des de la data fins l’1 de gener de 1970.</div>
+</li>
+<li class="level1"><div class="li"> <code>setFullYear()</code>: especifica el dia de l’any.</div>
+</li>
+<li class="level1"><div class="li"> <code>setMonth()</code>: especifica el mes.</div>
+</li>
+<li class="level1"><div class="li"> <code>setDate()</code>: especifica el dia del mes.</div>
+</li>
+<li class="level1"><div class="li"> <code>setHours()</code>: especifica l’hora.</div>
+</li>
+<li class="level1"><div class="li"> <code>setMinutes()</code>: especifica els minuts.</div>
+</li>
+<li class="level1"><div class="li"> <code>setSeconds()</code>: especifica els segons.</div>
+</li>
+<li class="level1"><div class="li"> <code>setMilliseconds()</code>: especifica els mil·lisegons.</div>
+</li>
+<li class="level1"><div class="li"> <code>setTime()</code>: especifica una data a partir del nombre de mil·lisegons abans o després de l’1 de gener de 1970.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCFullYear()</code>: especifica l’any, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCMonth()</code>: especifica el mes, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCDate()</code>: especifica el dia del mes, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCHours()</code>: especifica l’hora, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCMinutes()</code>: especifica els minuts, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCSeconds()</code>: especifica els segons, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>setUTCMilliseconds()</code>: especifica els mil·lisegons, d’acord amb l’horari UTC universal.</div>
+</li>
+<li class="level1"><div class="li"> <code>toDateString()</code>: converteix la part de la data en una cadena llegible.</div>
+</li>
+<li class="level1"><div class="li"> <code>toLocaleDateString()</code>: converteix la part de la data en una cadena llegible, utilitzant les convencions locals.</div>
+</li>
+<li class="level1"><div class="li"> <code>toISOString()</code>: converteix la data a cadena, utilitzant la convenció ISO.</div>
+</li>
+<li class="level1"><div class="li"> <code>toJSON()</code>: converteix la data a cadena amb format JSON.</div>
+</li>
+<li class="level1"><div class="li"> <code>toTimeString()</code>: converteix la part del <em>timestamp</em> de l’objecte <code>Date</code> a cadena.</div>
+</li>
+<li class="level1"><div class="li"> <code>toLocaleTimeString()</code>: converteix la part del <em>timestamp</em> de l’objecte <code>Date</code>, utilitzant les convencions locals.</div>
+</li>
+<li class="level1"><div class="li"> <code>toString()</code>: converteix l’objecte <code>Date</code> a cadena.</div>
+</li>
+<li class="level1"><div class="li"> <code>toLocaleString()</code>: converteix l’objecte <code>Date</code> a cadena, utilitzant les convencions locals.</div>
+</li>
+</ul>
+
+<p>
+Diferents exemples per mostrar com s’utilitzen aquests mètodes són:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data = new Date();</div></li><li class="li1"><div class="de1">let arrayMesos = ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'];</div></li><li class="li1"><div class="de1">var arrayDiesSetmana = ['diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte'];</div></li><li class="li1"><div class="de1">console.log(`Avui és ${arrayDiesSetmana[data.getDay()]}, ${data.getDate()} de ${arrayMesos[data.getMonth()]} de ${data.getFullYear()}`);</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">//Per veure el nombre de mil·lisegons des de l'origen dels temps (1 de gener de 1970 00:00:00):</div></li><li class="li1"><div class="de1">let data = new Date();</div></li><li class="li1"><div class="de1">console.log(data.getTime());</div></li><li class="li1"><div class="de1">// i també:</div></li><li class="li1"><div class="de1">console.log(Date.now());</div></li></ol></pre>
+<pre class="code java"><ol><li class="li1"><div class="de1">let d1 = Date.parse(&quot;23 March 2016&quot;); //parse sap interpretar diferents formats de data, però en anglès.</div></li><li class="li1"><div class="de1">let d2 = Date.parse(&quot;28 May 2016&quot;);</div></li><li class="li1"><div class="de1">console.log(d1);</div></li><li class="li1"><div class="de1">console.log(d2);</div></li><li class="li1"><div class="de1">console.log(d1 &gt; d2); //Podem comparar les dates per saber quina és la més gran</div></li></ol></pre>
+
+<p>
+Per veure la diferència entre utilitzar UTC o no, hem de pensar que aquí a Catalunya estem en el fus horari UTC/GMT +1 hora, però hem de tenir en compte si estem en horari d’estiu o d’hivern. Quan estem a l’estiu s’ha de compensar el fus horari i aleshores és UTC/GMT +2 hora. Per tant, podem veure la diferència entre l’hora local i l’hora absoluta internacional:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let data = new Date();</div></li><li class="li1"><div class="de1">console.log(data.getHours()); //per ex, 14, hora real d'un rellotge local.</div></li><li class="li1"><div class="de1">console.log(data.getUTCHours()); //per ex, 12, hora UTC</div></li></ol></pre>
+
+<p>
+Vegeu la diferència entre utilitzar les convencions locals o no:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let d = new Date();</div></li><li class="li1"><div class="de1">//Dia del Treball</div></li><li class="li1"><div class="de1">d.setDate(1); </div></li><li class="li1"><div class="de1">d.setMonth(4); //Representa el mes de maig </div></li><li class="li1"><div class="de1">d.setFullYear(2016); </div></li><li class="li1"><div class="de1">console.log(d); </div></li><li class="li1"><div class="de1">console.log(d.toDateString()); //Sun May 01 2016</div></li><li class="li1"><div class="de1">console.log(d.toLocaleDateString()); //1/5/2016</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">//Com que toLocaleDateString() retorna una cadena, ja puc utilitzar les funcions de cadena:</div></li><li class="li1"><div class="de1">let arrayData = d.toLocaleDateString().split('/');</div></li><li class="li1"><div class="de1">console.log(arrayData[0]); //dia</div></li><li class="li1"><div class="de1">console.log(arrayData[1]); //mes</div></li><li class="li1"><div class="de1">console.log(arrayData[2]); //any</div></li></ol></pre>
+
+<p>
+Utilitzant les convencions locals:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">let d = new Date();</div></li><li class="li1"><div class="de1">console.log(d.toLocaleString()); // 2/5/2016, 14:44:37</div></li><li class="li1"><div class="de1">console.log(d.toLocaleDateString()); // 2/5/2016</div></li><li class="li1"><div class="de1">console.log(d.toLocaleTimeString()); // 14:44:37</div></li></ol></pre>
+
+<p>
+Podeu veure els exemples a: <a href="https://codepen.io/ioc-daw-m06/pen/LYGqKoK?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/LYGqKoK?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/LYGqKoK?editors=0012</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_regexp" >L&#039;objecte RegExp</a></h3>
+<div class="level3">
+
+<p>
+Les expressions regulars són objectes de JavaScript que s’utilitzen per descriure un patró de caràcters. Aplicades a les cadenes de text, amb les expressions regulars podem esbrinar si una cadena de text compleix un patró, i realitzar funcions de cerca i reemplaçament. 
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les expressions regulars estan explicades amb deteniment en la unitat “Esdeveniments. Manejament de formularis”.
+</p>
+</div></div>
+<p>
+En una expressió regular distingim entre el <strong>patró</strong> i els <strong>modificadors</strong>: <em>/pattern/modificadors;</em>. 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">var patro = /IOC/i</div></li></ol></pre>
+
+<p>
+En aquest cas, la <em>i</em> és un modificador que significa que farem una cerca sense tenir en compte majúscules/minúscules. Hi ha altres modificadors que pots consultar, entre d’altres llocs, al tutorial de la Fundació Mozilla <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" class="urlextern" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions"  rel="nofollow">mzl.la/3atdqA2</a>. 
+</p>
+
+<p>
+Per veure el funcionament bàsic de les expressions regulars veurem els mètodes <code>test()</code> i <code>match()</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>test()</code>: mètode que retorna <code>true</code> o <code>false</code> si la cadena de text compleix el patró.</div>
+</li>
+<li class="level1"><div class="li"> <code>match()</code>: mètode de l’objecte <code>String</code> que fa una cerca de la cadena contra un patró, i retorna un <em>array</em> amb els resultats trobats, o el valor primitiu <code>null</code> en cas que no en trobi cap.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">let patro1 = /ioc/i</div></li><li class="li1"><div class="de1">let patro2 = /ioc/</div></li><li class="li1"><div class="de1">let cad=&quot;Curs de JavaScript de l'IOC&quot;;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">console.log(patro1.test(cad));</div></li><li class="li1"><div class="de1">console.log(patro2.test(cad));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">let res = cad.match(patro1);</div></li><li class="li1"><div class="de1">console.log(res.length); //1, una sola ocurrència</div></li><li class="li1"><div class="de1">console.log(res[0]); //IOC</div></li></ol></pre>
+
+<p>
+Dins una expressió regular podem utilitzar <em>brackets</em> per expressar un rang de caràcters, i metacaràcters, que tenen un significat especial. Per exemple, anem a veure una expressió regular per comprovar si una cadena compleix amb el format de data dd/mm/aaaa:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">regexp = /^(3[01]|[12][0-9]|0?[1-9])\/(1[0-2]|0?[1-9])\/([0-9]{2})?[0-9]{2}$/;</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;01/01/2016&quot;)); //true</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;2016/01/01&quot;)); //false</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;01/01/16&quot;)); //true</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;1/1/16&quot;)); //true</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;IOC&quot;)); //false</div></li></ol></pre>
+<ul>
+<li class="level1"><div class="li"> Amb el circumflex (<em>^</em>) estem indicant com ha de començar l’expressió.</div>
+</li>
+<li class="level1"><div class="li"> Amb el dòlar (<em>$</em>) estem indicant com ha d’acabar l’expressió.</div>
+</li>
+<li class="level1"><div class="li"> Utilitzem la contrabarra (<em>\</em>) per indicar que la barra (<em></em>/)  no és un metacaràcter, sinó un caràcter a tenir en compte.</div>
+</li>
+<li class="level1"><div class="li"> El dia del mes pot ser: 30 o 31; del 10 al 29; o també del 1 al 9, ficant o no un 0 al davant.</div>
+</li>
+<li class="level1"><div class="li"> El mes pot ser 1-12, ficant o no un zero al davant.</div>
+</li>
+<li class="level1"><div class="li"> L’any pot ser de 2 o 4 dígits.</div>
+</li>
+</ul>
+
+<p>
+Un altre exemple, en aquest cas per validar un número de targeta de crèdit:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">regexp = /^[0-9]{4}(-|\s)[0-9]{4}(-|\s)[0-9]{4}(-|\s)[0-9]{4}$/;</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;3782-8224-6310-0067&quot;)); //true</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;3782 8224 6310 0067&quot;)); //true</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;3782*8224*6310*0067&quot;)); //false</div></li><li class="li1"><div class="de1">console.log(regexp.test(&quot;37828224630006&quot;)); //false</div></li></ol></pre>
+
+<p>
+Podeu veure els exemples a: <a href="https://codepen.io/ioc-daw-m06/pen/XWXOLvy?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/XWXOLvy?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/XWXOLvy?editors=0012</a>.
+</p>
+
+</div>
+
+<h2><a id="bom_browser_object_model" >BOM (Browser Object Model)</a></h2>
+<div class="level2">
+
+<p>
+L’objectiu del BOM no és només canviar el contingut del document <acronym title="HyperText Markup Language">HTML</acronym>, sinó també realitzar altres manipulacions relacionades amb el navegador i les seves finestres. Per exemple, és possible redimensionar i moure una finestra del navegador, modificar la informació que es mostra a la barra d’estat, moure’s per l’historial d’URLs en les quals navegador ha accedit, gestionar les <em>cookies</em> (galetes), etc.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El DOM (Document Object Model) està explicat amb més detall a la unitat “Model d’objectes del document”.
+</p>
+</div></div>
+<p>
+Quan un client web (el navegador web: Firefox, Chrome, <acronym title="Internet Explorer">IE</acronym>) carrega un document <acronym title="HyperText Markup Language">HTML</acronym>, crea uns objectes associats al document, al seu contingut, i altra informació útil. Aquests objectes guarden una jerarquia en què l’objecte <code>window</code> és l’arrel, i d’aquí pengen els altres objectes que podem referenciar (vegeu la <span class="figref"><a href="#figura2"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="figura2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Jerarquia d’objectes del BOM
+
+</figcaption><img src="../media/daw_m06_u1_01.png" alt="" /></figure>
+</div>
+<p>
+Com es veu a la <span class="figref"><a href="#figura2"><span>figura</span></a></span>, cada document <acronym title="HyperText Markup Language">HTML</acronym> crea els següents objectes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>window</code>: representa l’arrel de l’arbre del BOM. Una finestra pot tenir subfinestres (per exemple, <em>pop-ups</em>), que seran fills en aquest arbre que representa l’estructura.</div>
+</li>
+<li class="level1"><div class="li"> <code>location</code>: conté les propietats de la direcció <acronym title="Uniform Resource Locator">URL</acronym> del document.</div>
+</li>
+<li class="level1"><div class="li"> <code>history</code>:conté la informació de les direccions <acronym title="Uniform Resource Locator">URL</acronym> que s’han visitat en la sessió actual.</div>
+</li>
+<li class="level1"><div class="li"> <code>document</code>: conté informació sobre el document actual, com ara el títol, imatges, <em>links</em>, taules, formularis que conté, etc. Per accedir a tota aquesta informació tenim el DOM. Les propietats de l’objecte <code>document</code> poden ser alhora altres objectes (com ara l’objecte <code>cookies</code>).</div>
+</li>
+</ul>
+
+<p>
+A més de propietats i mètodes, també hi tenim <em>events</em> associats. És a dir, aquests objectes poden respondre a <em>events</em> disparats per les accions de l’usuari.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_window_jerarquia_d_objectes_associats_al_navegador" >L&#039;objecte Window. Jerarquia d&#039;objectes associats al navegador</a></h3>
+<div class="level3">
+
+<p>
+En l’arrel de la jerarquia trobem l’objecte <code>window</code>, que representa una finestra oberta en el navegador. En la figura <span class="figref"><a href="#figura2"><span>figura</span></a></span> es pot veure la jerarquia d’objectes que pengen de <code>window</code>.
+</p>
+
+<p>
+En aquesta jerarquia, els descendents d’un objecte es representen mitjançant propietats de l’objecte. Per exemple, una imatge <code>img1</code> és un objecte però també és una propietat de l’objecte <code>document</code>, i serà referenciat com a <code>document.img1</code>. Per referenciar una propietat s’han de precisar els seus ascendents. De fet, seria <code>window.document.img1</code>, però <code>window</code>, que és l’arrel, es pot ometre. Alhora aquesta imatge, com a objecte que és, té les seves propietats (típicament <code>width</code> i <code>heigh</code>): <code>document.img1.width</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Com que una imatge forma part del contingut del document <acronym title="HyperText Markup Language">HTML</acronym> més que no pas de les propietats del navegador, s’estudia amb més profunditat en la unitat “Model d’objectes del document”.
+</p>
+</div></div>
+<p>
+Un altre exemple: utilitzant la jerarquia podem saber la <acronym title="Uniform Resource Locator">URL</acronym> actual de la pàgina que estem visitant: <code>window.location.href</code> (o <code>location.href</code>).
+</p>
+
+<p>
+El codi <acronym title="HyperText Markup Language">HTML</acronym> per poder provar els anteriors exemples és: 
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte window&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;img src=&quot;./muntanya.jpg&quot; name=&quot;img1&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            console.log(window.document.img1.width);</div></li><li class="li1"><div class="de1">            console.log(document.img1.height);</div></li><li class="li1"><div class="de1">            console.log(window.location.href);</div></li><li class="li1"><div class="de1">            console.log(location.protocol);</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Evidentment, l’usuari haurà de tenim una imatge <em>muntanya.jpg</em> en la mateixa carpeta que el document <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+
+</div>
+
+<h4><a id="propietats_de_window" >Propietats de window</a></h4>
+<div class="level4">
+
+<p>
+Les propietats de <code>window</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>defaultStatus</code>: és el missatge que es visualitza en la barra d’estat del navegador.</div>
+</li>
+<li class="level1"><div class="li"> <code>frames</code>: és la matriu de la col·lecció de <em>frames</em> que conté una finestra. Per exemple, si volem fer referència al primer <em>frame</em> de la finestra: <code>window.frames[0]</code>. <code>frames.length</code> és el número de <em>frames</em> que conté una finestra.</div>
+</li>
+<li class="level1"><div class="li"> <code>parent</code>: ascendent d’una finestra.</div>
+</li>
+<li class="level1"><div class="li"> <code>self</code>: fa referència a la finestra actual.</div>
+</li>
+<li class="level1"><div class="li"> <code>status</code>: missatge que mostra l’estat del client web.</div>
+</li>
+<li class="level1"><div class="li"> <code>top</code>: fa referència a l’arrel de la jerarquia d’objectes.</div>
+</li>
+<li class="level1"><div class="li"> <code>window</code>: fa referència a la finestra actual.</div>
+</li>
+<li class="level1"><div class="li"> <code>innerWidth</code>, <code>innerHeight</code>: amplada i altura interiors de la finestra.</div>
+</li>
+<li class="level1"><div class="li"> <code>closed</code>: retorna un <em>boolean</em> indicant si la finestra s’ha tancat o no.</div>
+</li>
+<li class="level1"><div class="li"> <code>screenX</code>, <code>screenY</code>: coordenades de la finestra en relació a la pantalla. Vàlid per als navegadors Google Chrome i <acronym title="Internet Explorer">IE</acronym> (per a Firefox utilitzar <code>screenLeft</code> i <code>screenTop</code>).</div>
+</li>
+<li class="level1"><div class="li"> <code>opener</code>: retorna una referència a la finestra que ha creat la finestra.</div>
+</li>
+<li class="level1"><div class="li"> <code>localStorage</code>: retorna una referència a l’objecte <code>localStorage</code> que s’utilitza per emmagatzemar dades. Al contrari que les galetes, no té data d’expiració.</div>
+</li>
+<li class="level1"><div class="li"> <code>document</code>, <code>history</code>, <code>location</code>, <code>navigator</code>, <code>screen</code>: són propietats de <code>window</code> que fan referència als objectes <code>document</code>, <code>history</code>, <code>location</code>, <code>navigator</code>, <code>screen</code>. Recordeu que formen part d’una estructura jeràrquica.</div>
+</li>
+<li class="level1"><div class="li"> <code>sessionStorage</code>: retorna un objecte <code>storage</code> per emmagatzemar dades en una sessió web.</div>
+</li>
+</ul>
+
+<p>
+Les propietats més clares les podem veure en aquest exemple:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte window&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            console.log(window.innerWidth + '-' + window.innerHeight); //Pots redimensionar la finestra per veure com canvia aquest valor</div></li><li class="li1"><div class="de1">            console.log(window.screenX + '-' + window.screenY); //Si mous la finestra de posició per veure com canvia aquest valor</div></li><li class="li1"><div class="de1">            window.defaultStatus = &quot;informació a la barra d'estat&quot;;</div></li><li class="li1"><div class="de1">            console.log(window.defaultStatus);</div></li><li class="li1"><div class="de1">            console.log(window.closed);</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt; </div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/JKWmdv" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/JKWmdv"  rel="nofollow">codepen.io/ioc-daw-m06/pen/JKWmdv</a>.
+</p>
+
+</div>
+
+<h4><a id="metodes_de_window" >Mètodes de window</a></h4>
+<div class="level4">
+
+<p>
+Els principals mètodes de l’objecte <code>window</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>alert(missatge)</code>: crea una finestra de diàleg on es mostra el missatge.</div>
+</li>
+<li class="level1"><div class="li"> <code>confirm(missatge)</code>: crea una finestra de confirmació (OK/Cancel) on es mostra el missatge. Retorna <code>true</code> o <code>false</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>prompt(missatge, text)</code>: crea una finestra de diàleg  on es mostra el missatge i permet l’edició. El paràmetre <code>text</code> és el valor predeterminat. Igual que <code>confirm()</code>, conté Acceptar i Cancelar. Si acceptem, el mètode retorna el valor inserit (o el valor per defecte). Si cancelem, retorna <code>null</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>close()</code>: només es poden tancar les finestres que també s’han creat amb un script.</div>
+</li>
+<li class="level1"><div class="li"> <code>stop()</code>: atura la càrrega de la finestra.</div>
+</li>
+<li class="level1"><div class="li"> <code>setTimeout(expressió, msec)</code>: executa l’expressió que es passa com a argument, un cop han passat <code>msec</code> mil·lisegons. S’utilitza per prorrogar l’execució de l’expressió. </div>
+</li>
+<li class="level1"><div class="li"> <code>clearTimeout(timeoutID)</code>: restaura el compte enrere iniciat per <code>setTimeout()</code>.</div>
+</li>
+<li class="level1"><div class="li"> <code>setInterval(expressió, msec)</code>: executa l’expressió passada com a argument cada <code>msec</code> mil·lisegons. S’utilitza per executar l’expressió a intervals regulars de temps.</div>
+</li>
+<li class="level1"><div class="li"> <code>open(url, windowName, params)</code>: crea una finestra nova, li associa el nom <code>windowName</code>, i accedeix a la <acronym title="Uniform Resource Locator">URL</acronym> que li hem passat. Li passem un conjunt de paràmetres que descriuen les propietats de la <em>finestra</em>. Entre d’altres: <em>toolbar</em>, <em>width</em>, <em>height</em>, <em>left</em>, <em>top</em>, <em>fullscreen</em>, <em>resizable</em>, <em>location</em>, <em>status</em>, <em>scrollbars</em>, <em>menubar</em>.</div>
+</li>
+</ul>
+
+<p>
+En el següent exemple utilitzem alguns d’aquests mètodes:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Cal tenir en compte que el nom de la finestra no és el títol i, per consegüent, no es mostra a la nova finestra.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;head&gt;</div></li><li class="li1"><div class="de1">  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">  &lt;title&gt;Creació d´una finestra&lt;/title&gt;</div></li><li class="li1"><div class="de1">&lt;/head&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;body&gt;</div></li><li class="li1"><div class="de1">  &lt;script&gt;</div></li><li class="li1"><div class="de1">    let finestra = window.open(&quot;http://ioc.xtec.cat&quot;, &quot;&quot;, &quot;width=300,height=300, left=300, top=300, resizable=1&quot;);</div></li><li class="li1"><div class="de1">    setTimeout(function() {</div></li><li class="li1"><div class="de1">      finestra.close();</div></li><li class="li1"><div class="de1">    }, 2000);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    setTimeout(function() {</div></li><li class="li1"><div class="de1">      let nom = prompt(&quot;Posa el nom de la finestra:&quot;, &quot;Nom&quot;);</div></li><li class="li1"><div class="de1">      crearFinestra(nom);</div></li><li class="li1"><div class="de1">    }, 2000);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    function crearFinestra(nom) {</div></li><li class="li1"><div class="de1">      let opcions = &quot;toolbar=0, location=0, directories=0, status=0,&quot;;</div></li><li class="li1"><div class="de1">      opcions += &quot;menubar=0, scrollbars=0, resizable=0, copyhistory=0,&quot;;</div></li><li class="li1"><div class="de1">      opcions += &quot;width=100,height=100&quot;;</div></li><li class="li1"><div class="de1">      window.open(&quot;&quot;, nom, opcions);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">  &lt;/script&gt;</div></li><li class="li1"><div class="de1">&lt;/body&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/ezvPgG?editors=1002" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ezvPgG?editors=1002"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ezvPgG?editors=1002</a>. Us recomanem, però, que proveu l’exercici amb un fitxer propi, ja que és posible que el <em>prompt</em> i les noves finestres siguin bloquejades.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_document" >L&#039;objecte document</a></h3>
+<div class="level3">
+
+<p>
+Quan un document <acronym title="HyperText Markup Language">HTML</acronym> es carrega en un navegador web, obtenim un objecte <code>document</code>. L’objecte <code>document</code> és el node arrel d’un document <acronym title="HyperText Markup Language">HTML</acronym>, i d’ell pengen tots els altres nodes: nodes d’elements, de text, d’atributs, de comentaris.
+</p>
+
+<p>
+Recordeu que el <code>document</code> és part de l’objecte <code>window</code> i, per tant, s’hi pot accedir amb <code>window.document</code>.
+</p>
+
+</div>
+
+<h4><a id="propietats_de_document" >Propietats de document</a></h4>
+<div class="level4">
+
+<p>
+Les propietats de <code>document</code> són:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+La programació amb <em>cookies</em> es detalla a l’apartat “Programació amb galetes, finestres i marcs” d’aquesta unitat.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>location</code>: conté la <acronym title="Uniform Resource Locator">URL</acronym> del document.</div>
+</li>
+<li class="level1"><div class="li"> <code>title</code>: títol del document <acronym title="HyperText Markup Language">HTML</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>lastModified</code>: data de l’última modificació.</div>
+</li>
+<li class="level1"><div class="li"> <code>cookie</code>: cadena de caràcters que conté la <em>cookie</em> associada al recurs representat per l’objecte.</div>
+</li>
+<li class="level1"><div class="li"> Les propietats <code>anchors</code>, <code>forms</code>, <code>images</code>, <code>links</code> retornen un objecte amb el qual podem accedir a cadascun dels elements (àncores, formularis, imatges, enllaços) presents en el document.</div>
+</li>
+</ul>
+
+<p>
+El següent exemple utilitza algunes d’aquestes propietats:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Les propietats <code>anchors</code>, <code>forms</code>, <code>images</code> i <code>links</code> es veuran amb més detall a la unitat “Model d’objectes del document”.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte document. Propietats&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;a href=&quot;http://ioc.xtec.cat&quot;&gt;IOC&lt;/a&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;img src=&quot;http://ioc.xtec.cat/educacio/templates/ioc/images/ioc_logo.png&quot; /img&gt;</div></li><li class="li1"><div class="de1">        &lt;script&gt;</div></li><li class="li1"><div class="de1">            console.log(`location: ${document.location}`);</div></li><li class="li1"><div class="de1">            console.log(`títol: ${document.title}`);</div></li><li class="li1"><div class="de1">            console.log(`lastModified: ${document.lastModified}`);</div></li><li class="li1"><div class="de1">            console.log(document.links[0].href);</div></li><li class="li1"><div class="de1">            console.log(document.links.item(0).href);</div></li><li class="li1"><div class="de1">            console.log(document.images[0].src);</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/yLeZmRw?editors=1011" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/yLeZmRw?editors=1011"  rel="nofollow">codepen.io/ioc-daw-m06/pen/yLeZmRw?editors=1011</a>.
+</p>
+
+</div>
+
+<h4><a id="metodes_de_document" >Mètodes de document</a></h4>
+<div class="level4">
+
+<p>
+Els mètodes més importants de l’objecte <code>document</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>write()</code>: escriu codi <acronym title="HyperText Markup Language">HTML</acronym> en el document.</div>
+</li>
+<li class="level1"><div class="li"> <code>writeln()</code>: idèntic a <code>write()</code>, però inserta un retorn de carro al final.</div>
+</li>
+<li class="level1"><div class="li"> <code>open(tipus MIME)</code>: obre un <em>buffer</em> per recollir el que retorna els mètodes <code>write()</code> i <code>writeln()</code>. Els tipus MIME que es poden utilitzar són: <code>text/html</code>, <code>text/plain</code>, <code>text/jpeg</code>, etc.</div>
+</li>
+<li class="level1"><div class="li"> <code>close()</code>: tanca el <em>buffer</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>clear()</code>:esborra el contingut del document.</div>
+</li>
+</ul>
+<pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte document. Mètodes&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script type=&quot;text/javascript&quot;&gt;</div></li><li class="li1"><div class="de1">          function ReemplacarContingut () {</div></li><li class="li1"><div class="de1">        		document.open (&quot;text/html&quot;);</div></li><li class="li1"><div class="de1">        		document.write (&quot;&lt;a href=\&quot;http://web.gencat.cat/ca/inici/\&quot;&gt;gencat.cat&lt;/a&gt;&lt;br /&gt;&quot;);</div></li><li class="li1"><div class="de1">        		document.write (&quot;&lt;img src=\&quot;http://web.gencat.cat/web/.content/Imatge/marca_home/NG_logo_generalitat_home.png_602392567.png\&quot; /img&gt;&quot;);</div></li><li class="li1"><div class="de1">        		document.close ();</div></li><li class="li1"><div class="de1">          }</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;a href=&quot;http://ioc.xtec.cat&quot;&gt;IOC&lt;/a&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;img src=&quot;http://ioc.xtec.cat/educacio/templates/ioc/images/ioc_logo.png&quot; /img&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;ReemplacarContingut();&quot;&gt;Reemplaçar el contingut del document&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/pbeYEK?editors=1000" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/pbeYEK?editors=1000"  rel="nofollow">codepen.io/ioc-daw-m06/pen/pbeYEK?editors=1000</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_location" >L&#039;objecte location</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>location</code> conté informació sobre l’actual <acronym title="Uniform Resource Locator">URL</acronym>, conté les propietats de la direcció <acronym title="Uniform Resource Locator">URL</acronym> del document. 
+</p>
+
+<p>
+L’objecte <code>location</code> és part de l’objecte <code>window</code> i, per tant, s’hi pot accedir a través de la propietat <code>window.location</code>.
+</p>
+
+</div>
+
+<h4><a id="propietats_de_location" >Propietats de Location</a></h4>
+<div class="level4">
+
+<p>
+Les propietats de l’objecte <code>location</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>hash</code>: retorna la part de la <acronym title="Uniform Resource Locator">URL</acronym> que representa l’àncora (#). Per ex, <em>url#IOC</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>host</code>: retorna el <em>hostname</em> i el número de port de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>hostname</code>: retorna el <em>hostname</em> de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>href</code>: retorna la <acronym title="Uniform Resource Locator">URL</acronym> sencera.</div>
+</li>
+<li class="level1"><div class="li"> <code>origin</code>: retorna el protocol, <em>hostname</em> i port de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>pathname</code>: retorna el <em>path</em> de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>port</code>: retorna el número de port de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>protocol</code>: retorna el protocol de la <acronym title="Uniform Resource Locator">URL</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> <code>search</code>: retorna la part de <em>querystring</em> de la <acronym title="Uniform Resource Locator">URL</acronym>. Per ex, <em>url?search=IOC</em>.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="metodes_de_location" >Mètodes de location</a></h4>
+<div class="level4">
+
+<p>
+Els mètodes més importants de l’objecte <code>location</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>assign()</code>: carrega un nou document.</div>
+</li>
+<li class="level1"><div class="li"> <code>reload()</code>: recarrega el document actual.</div>
+</li>
+<li class="level1"><div class="li"> <code>replace()</code>: reemplaça el document actual per un de nou.</div>
+</li>
+</ul>
+
+<p>
+Un exemple per veure la major part d’aquestes propietats i mètodes:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Si proveu l’anterior exemple com a fitxer <acronym title="HyperText Markup Language">HTML</acronym> obtindreu <code>location.protocol: file</code>. Si el proveu com a pàgina web que ens serveix un servidor web obtindreu <code>location.protocol: http</code>.
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte location. Propietats i Mètodes&lt;/title&gt;</div></li><li class="li1"><div class="de1">        &lt;script type=&quot;text/javascript&quot;&gt;</div></li><li class="li1"><div class="de1">          function assignUrl () {</div></li><li class="li1"><div class="de1">        		document.location.assign('http://www.gencat.cat');</div></li><li class="li1"><div class="de1">        	}</div></li><li class="li1"><div class="de1">        	function reloadUrl () {</div></li><li class="li1"><div class="de1">        		document.location.reload();</div></li><li class="li1"><div class="de1">        	}</div></li><li class="li1"><div class="de1">        	function replaceUrl () {</div></li><li class="li1"><div class="de1">        		document.location.replace('http://www.gencat.cat'); // fixeu-vos que no tenim l'històric de tirar enrere</div></li><li class="li1"><div class="de1">        	}</div></li><li class="li1"><div class="de1">        	console.log(`location.hash: ${location.hash}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.hostname: ${location.hostname}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.href: ${location.href}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.origin: ${location.origin}`);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        	console.log(`location.pathname: ${location.pathname}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.port: ${location.port}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.protocol: ${location.protocol}`);</div></li><li class="li1"><div class="de1">        	console.log(`location.search: ${location.search}`);</div></li><li class="li1"><div class="de1">        &lt;/script&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;a href=&quot;http://ioc.xtec.cat&quot;&gt;IOC&lt;/a&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;img src=&quot;http://ioc.xtec.cat/educacio/templates/ioc/images/ioc_logo.png&quot; /img&gt;&lt;br /&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;assignUrl();&quot;&gt;Mètode location.assign&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;reloadUrl();&quot;&gt;Mètode location.reload&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;replaceUrl();&quot;&gt;Mètode location.replace&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+<p>
+Podeu veure aquest exemple en el següent enllaç, però tingueu en compte que a la web de Codepen els botons no funcionaran: <a href="https://codepen.io/ioc-daw-m06/pen/ZEQwgaP?editors=1111" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/ZEQwgaP?editors=1111"  rel="nofollow">codepen.io/ioc-daw-m06/pen/ZEQwgaP?editors=1111</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_history" >L&#039;objecte history</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>history</code> conté les URLs visitades per l’usuari (en el marc d’una finestra del navegador). L’objecte <code>history</code> és part de l’objecte <code>window</code>, i s’hi pot accedir a través de la propietat <code>window.history</code>.
+</p>
+
+</div>
+
+<h4><a id="propietats_d_history" >Propietats d&#039;history</a></h4>
+<div class="level4">
+
+<p>
+La propietat més important de l’objecte <code>history</code> és:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>length</code>: retorna el nombre d’<acronym title="Uniform Resource Locator">URL</acronym> a la llista de l’històric de navegació.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="metodes_de_history" >Mètodes de history</a></h4>
+<div class="level4">
+
+<p>
+Els mètodes més importants de l’objecte <code>history</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>back()</code>: carrega la <acronym title="Uniform Resource Locator">URL</acronym> prèvia  en la llista de l’històric de navegació.</div>
+</li>
+<li class="level1"><div class="li"> <code>forward()</code>: carrega la següent <acronym title="Uniform Resource Locator">URL</acronym> en la llista de l’històric de navegació.</div>
+</li>
+<li class="level1"><div class="li"> <code>go()</code>: carrega una <acronym title="Uniform Resource Locator">URL</acronym> específica en la llista de l’històric de navegació.</div>
+</li>
+</ul>
+
+<p>
+Com a exemple, i sempre dins de la mateixa finestra, podeu navegar per les següents URLs, i finalment introduir la <acronym title="Uniform Resource Locator">URL</acronym> del codi que es proposa.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Manresa" class="urlextern" title="https://ca.wikipedia.org/wiki/Manresa"  rel="nofollow">ca.wikipedia.org/wiki/Manresa</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Balsareny" class="urlextern" title="https://ca.wikipedia.org/wiki/Balsareny"  rel="nofollow">ca.wikipedia.org/wiki/Balsareny</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Navàs" class="urlextern" title="https://ca.wikipedia.org/wiki/Navàs"  rel="nofollow">ca.wikipedia.org/wiki/Navàs</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Puig-reig" class="urlextern" title="https://ca.wikipedia.org/wiki/Puig-reig"  rel="nofollow">ca.wikipedia.org/wiki/Puig-reig</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Gironella" class="urlextern" title="https://ca.wikipedia.org/wiki/Gironella"  rel="nofollow">ca.wikipedia.org/wiki/Gironella</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ca.wikipedia.org/wiki/Berga" class="urlextern" title="https://ca.wikipedia.org/wiki/Berga"  rel="nofollow">ca.wikipedia.org/wiki/Berga</a></div>
+</li>
+</ul>
+<pre class="code html4strict"><ol><li class="li1"><div class="de1">&lt;!DOCTYPE html&gt;</div></li><li class="li1"><div class="de1">&lt;html&gt;</div></li><li class="li1"><div class="de1">    &lt;head&gt;</div></li><li class="li1"><div class="de1">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;title&gt;Objecte history. Propietats i Mètodes&lt;/title&gt;</div></li><li class="li1"><div class="de1">    &lt;/head&gt;</div></li><li class="li1"><div class="de1">    &lt;body&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;console.log(`Nombre elements: ${history.length}`);&quot;&gt;Nombre d'elements a la llista&lt;/button&gt;</div></li><li class="li1"><div class="de1">        &lt;button onclick=&quot;history.back()&quot;&gt;URL anterior&lt;/button&gt;</div></li><li class="li1"><div class="de1">    &lt;/body&gt;</div></li><li class="li1"><div class="de1">&lt;/html&gt;</div></li></ol></pre>
+
+</div>
+
+<h3><a id="l_objecte_navigator" >L&#039;objecte navigator</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>navigator</code> conté informació sobre el navegador web que s’està utilitzant.
+</p>
+
+</div>
+
+<h4><a id="propietats_de_navigator" >Propietats de navigator</a></h4>
+<div class="level4">
+
+<p>
+Les propietats de <code>navigator</code> són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>appCodeName</code>: retorna el codi del navegador, per exemple, Mozilla.</div>
+</li>
+<li class="level1"><div class="li"> <code>appName</code>: retorna el nom oficial del navegador. Per exemple, en el cas de Mozilla Firefox, retorna <em>netscape</em>.</div>
+</li>
+<li class="level1"><div class="li"> <code>appVersion</code>: la versió del navegador (potser no coincideix amb la versió real del navegador).</div>
+</li>
+<li class="level1"><div class="li"> <code>cookieEnabled</code>: retorna <code>true</code> si les galetes estan habilitades.</div>
+</li>
+<li class="level1"><div class="li"> <code>language</code>: retorna l’idioma del navegador.</div>
+</li>
+<li class="level1"><div class="li"> <code>onLine</code>: retorna <code>true</code> si el navegador està en línia.</div>
+</li>
+<li class="level1"><div class="li"> <code>platform</code>: retorna en quina plataforma es va compilar el navegador.</div>
+</li>
+<li class="level1"><div class="li"> <code>product</code>: retorna el nom del motor del navegador.</div>
+</li>
+<li class="level1"><div class="li"> <code>userAgent</code>: retorna tota la capçalera <em>user-agent</em> que el navegador envia al servidor en el protocol HTTP. Aquest valor l’utilitza el servidor per identificar el client. En aquesta capçalera sí que podem veure la versió real del nostre navegador (per exemple, Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:22.0) Gecko/20100101 Firefox/22.0).</div>
+</li>
+</ul>
+
+<p>
+En el següent exemple s’utilitzen les principals propietats de l’objecte <code>navigator</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(`appCodeName: ${navigator.appCodeName}`);</div></li><li class="li1"><div class="de1">console.log(`appName: ${navigator.appName}`);</div></li><li class="li1"><div class="de1">console.log(`appVersion: ${navigator.appVersion}`);</div></li><li class="li1"><div class="de1">console.log(`cookieEnabled: ${navigator.cookieEnabled}`);</div></li><li class="li1"><div class="de1">console.log(`language: ${navigator.language}`);</div></li><li class="li1"><div class="de1">console.log(`onLine: ${navigator.onLine}`);</div></li><li class="li1"><div class="de1">console.log(`platform: ${navigator.platform}`);</div></li><li class="li1"><div class="de1">console.log(`product: ${navigator.product}`);</div></li><li class="li1"><div class="de1">console.log(`userAgent: ${navigator.userAgent}`);</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/wWJOJr?editors=1012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/wWJOJr?editors=1012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/wWJOJr?editors=1012</a>.
+</p>
+
+</div>
+
+<h3><a id="l_objecte_screen" >L&#039;objecte screen</a></h3>
+<div class="level3">
+
+<p>
+L’objecte <code>screen</code> conté informació sobre la pantalla on està obert el navegador del client. Aquesta informació s’extreu a partir de les propietats descrites més avall. En canvi, no té mètodes. No s’ha de confondre l’objecte <code>screen</code> amb l’objecte <code>window</code>, que representa la finestra del navegador.
+</p>
+
+</div>
+
+<h4><a id="propietats_d_screen" >Propietats d&#039;Screen</a></h4>
+<div class="level4">
+
+<p>
+Les propietats d<code>‘screen</code> són:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Als dissenyadors web sempre els ha preocupat saber quina és la resolució del navegador del client per tal que les pàgines web es vegin bé en els diferents formats de pantalla. Avui en dia, gràcies a <em>frameworks</em> com <em>bootstrap</em>, l’adaptació de la web a diferents formats de pantalla és molt més fàcil.
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> <code>availHeight</code>: retorna l’altura de la pantalla.</div>
+</li>
+<li class="level1"><div class="li"> <code>height</code>: retorna l’altura total de la pantalla. La diferència amb <code>availHeight</code> és l’altura de la barra de tasques (depèn del sistema operatiu).</div>
+</li>
+<li class="level1"><div class="li"> <code>availWidth</code>: retorna l’amplada de la pantalla.</div>
+</li>
+<li class="level1"><div class="li"> <code>width</code>: retorna l’amplada total de la pantalla.</div>
+</li>
+<li class="level1"><div class="li"> <code>colorDepth</code>: retorna la resolució de la paleta de colors (en número de bits). Per exemple: 8 significa 256 colors; 24 significa 16 milions de colors.</div>
+</li>
+<li class="level1"><div class="li"> <code>pixelDepth</code>:retorna la resolució de color (en bits per píxel) de la pantalla.</div>
+</li>
+</ul>
+
+<p>
+En el següent exemple s’utilitzen les principals propietats de l’objecte <code>screen</code> que acabem de veure:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">console.log(`availHeight: ${screen.availHeight}`);</div></li><li class="li1"><div class="de1">console.log(`height: ${screen.height}`);</div></li><li class="li1"><div class="de1">console.log(`availWidth: ${screen.availWidth}`);</div></li><li class="li1"><div class="de1">console.log(`width: ${screen.width}`);</div></li><li class="li1"><div class="de1">console.log(`colorDepth: ${screen.colorDepth}`);</div></li><li class="li1"><div class="de1">console.log(`pixelDepth: ${screen.pixelDepth}`);</div></li></ol></pre>
+
+<p>
+Podeu veure l’exemple a: <a href="https://codepen.io/ioc-daw-m06/pen/NWxoQzz?editors=0012" class="urlextern" title="https://codepen.io/ioc-daw-m06/pen/NWxoQzz?editors=0012"  rel="nofollow">codepen.io/ioc-daw-m06/pen/NWxoQzz?editors=0012</a>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u1/a1/exercicis.html">Exercicis d'autoavaluació</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u1/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

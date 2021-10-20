@@ -1,0 +1,1205 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u3" class="parentnode"><p><a class="unit" href="../../../WebContent/u3/introduccio.html">3. Generació dinàmica de pàgines web</a></p><ul class="expander"><li id="u3introduccio"><a href="../../../WebContent/u3/introduccio.html">Introducció</a></li><li id="u3resum"><a href="../../../WebContent/u3/resum.html">Resum</a></li><li id="u3resultats"><a href="../../../WebContent/u3/resultats.html">Resultats d'aprenentatge</a></li><li id="u3referencies"><a href="../../../WebContent/u3/referencies.html">Referències</a></li><li id="u3a1" class="tocsection"><p id='u3a1continguts'><a class="section" href="../../../WebContent/u3/a1/continguts.html">Introducció a Spring i Spring MVC</a><span class="buttonexp"></span></p><ul><li id="u3a1activitats"><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></li><li id="u3a1exercicis"><a href="../../../WebContent/u3/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a1annexos"><a href="../../../WebContent/u3/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_maven">"Hola, Món" amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_web_amb_maven">'Hola, Món' web amb Maven</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#hola_mon_amb_spring_mvc">"Hola, Món" amb Spring MVC</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#estoc_de_medicaments_benvinguda">Estoc de medicaments, benvinguda</a></li><li><a href="../../../WebContent/u3/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a2" class="tocsection"><p id='u3a2continguts'><a class="section" href="../../../WebContent/u3/a2/continguts.html">Spring MVC, aplicació web</a><span class="buttonexp"></span></p><ul><li id="u3a2activitats"><a href="../../../WebContent/u3/a2/activitats.html">Activitats</a></li><li id="u3a2exercicis"><a href="../../../WebContent/u3/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a2annexos"><a href="../../../WebContent/u3/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_domini">Estoc de medicaments, capa de domini</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_persistencia">Estoc de medicaments, capa de persistència</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#estoc_de_medicaments_capa_de_servei">Estoc de medicaments, capa de servei</a></li><li><a href="../../../WebContent/u3/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a3" class="tocsection"><p id='u3a3continguts'><a class="section" href="../../../WebContent/u3/a3/continguts.html">Spring MVC, aprofundint en els controladors</a><span class="buttonexp"></span></p><ul><li id="u3a3exercicis"><a href="../../../WebContent/u3/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a3annexos"><a href="../../../WebContent/u3/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_capa_de_servei_a_medicament">Estoc de medicaments, capa de servei a medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_medicaments_per_malaltia">Estoc de medicaments, medicaments per malaltia</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_llista_de_medicaments_segons_filtre">"Estoc de medicaments", llista de medicaments segons filtre</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#estoc_de_medicaments_detall_de_medicament">"Estoc de medicaments", detall de medicament</a></li><li><a href="../../../WebContent/u3/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u3a4" class="tocsection"><p id='u3a4continguts'><a class="section" href="../../../WebContent/u3/a4/continguts.html">Spring MVC, altres aplicacions</a><span class="buttonexp"></span></p><ul><li id="u3a4activitats"><a href="../../../WebContent/u3/a4/activitats.html">Activitats</a></li><li id="u3a4exercicis"><a href="../../../WebContent/u3/a4/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u3a4annexos"><a href="../../../WebContent/u3/a4/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u3a4' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_formulari_per_afegir_medicaments">Estoc de medicaments, formulari per afegir medicaments</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_llista_blanca_al_formulari">Estoc de medicaments, llista blanca al formulari</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_pagina_de_login">Estoc de medicaments, pàgina de 'login'</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#estoc_de_medicaments_internacionalitzacio">Estoc de medicaments, internacionalització</a></li><li><a href="../../../WebContent/u3/a4/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Generació dinàmica de pàgines web</a></li><li>Introducció a Spring i Spring MVC</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="introduccio_a_spring_i_spring_mvc"> Introducció a Spring i Spring MVC</a></h1>
+    	
+<p>
+Spring és un <em>framework</em> amb mòduls basat en Java Enterprise Edition. La principal característica del seu <em>core</em> és la utilització del patró de disseny inversió de control (IoC, per les sigles en anglès) i també la injecció de dependències (DI, per les sigles en anglès), un tipus d’IoC.
+</p>
+
+<p>
+En concret, fent servir IoC i DI al nostre codi no crearem els objectes que necessitem de les llibreries del <em>framework</em>; simplement definint la configuració amb fitxers XML o amb anotacions al codi, Spring ens proporcionarà l’objecte adient.
+</p>
+
+<p>
+Spring MVC és un mòdul d’Spring que ens ajuda a construir aplicacions sota el patró model vista controlador (MVC, per les sigles en anglès)
+</p>
+
+<p>
+El model és el conjunt d’objectes que representen les dades de la nostra aplicació, la vista correspon a la manera de presentar les dades a l’usuari, i controlador manega les peticions fetes per l’usuari, interactuant amb la vista i amb el model.
+</p>
+
+<p>
+A Spring MVC, qualsevol petició de l’usuari és recollida per un controlador central (<code>Dispatcher Servlet</code>) que determinarà, segons la configuració, el controlador específic de la nostra aplicació que haurà de recollir la petició. El nostre controlador haurà de construir la resposta amb la vista que correspon a la petició amb el model adient. El <code>Dispatcher Servlet</code> tornarà a prendre el control i retornarà la resposta al client.
+</p>
+
+<p>
+I per fer independent els nostres projectes de l’IDE farem servir Maven com a eina que dóna estructura als projectes i que permet baixar les llibreries que fareu servir des de repositoris centrals a partir de la configuració de dependències.
+</p>
+
+<p>
+Començareu creant dos projectes amb Maven sense dependències d’Spring MVC per conèixer l’estructura dels projectes i les dependències necessàries amb Java Enterprise Edition per continuar amb projectes Spring MVC, un “Hola, Món” amb Spring MVC per apropar-nos al <em>framework</em> i un projecte “Estoc de medicaments” que simplement mostra una pàgina de benvinguda.
+</p>
+
+<h2><a id="hola_mon_amb_maven" >&quot;Hola, Món&quot; amb Maven</a></h2>
+<div class="level2">
+
+<p>
+Maven és una eina que us permet descarregar totes aquelles llibreries que necessita un servidor extern el qual conté un repositori amb un llistat molt ampli de llibreries i components; a més de poder descarregar llibreries, també us permet la generació de projectes de manera automàtica per a aplicacions de propòsit específic. Per exemple, una aplicació web, com seria el vostre cas.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Maven es una herramienta de software para la gestión y construcción de proyectos Java creada por Jason van Zyl, de Sonatype, en 2002. Tiene un modelo de configuración basado en un formato XML (archivo pom.xml).
+Actualmente es un proyecto perteneciente a la Apache Software Foundation.
+</p>
+</div></div>
+<p>
+Maven també permet transportar un projecte des d’un entorn de desenvolupament a un altre. Per exemple, si teniu un projecte Maven creat amb Eclipse el podreu importar sense problemes a NetBeans.
+</p>
+
+</div>
+
+<h3><a id="preparacio_de_l_entorn_de_desenvolupament" >Preparació de l&#039;entorn de desenvolupament</a></h3>
+<div class="level3">
+
+<p>
+El primer que farem per preparar el vostre entorn serà configurar Netbeans per aïllar els vostres projectes dels projectes d’altres mòduls desenvolupats amb Netbeans, i d’aquesta manera aconseguireu un espai de treball molt més net.
+</p>
+
+<p>
+Per tant, aneu al directori <em>NetBeansProjects</em> i allà creeu el directori <em>Spring_Projects</em>, que serà el que fareu servir per als vostres projectes amb Spring.
+</p>
+
+<p>
+Un cop creat el directori, torneu a Netbeans i aneu a <em>File/Projects Group</em>, això us obrirà una finestra que us permetrà definir el directori que acabeu de crear com un nou espai de treball en blanc (vegeu la <span class="figref"><a href="#fig01"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig01"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Creació d’un grup de projectes
+
+</figcaption><img src="../media/a01_maven.nougroup_v1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="actualitzacio_dels_repositoris_amb_maven" >Actualització dels repositoris amb Maven</a></h3>
+<div class="level3">
+
+<p>
+Un cop definit i seleccionat el nou espai de treball, el que fareu ara serà actualitzar els repositoris amb Maven.
+</p>
+
+<p>
+Per això, en el vostre entorn de Netbeans aneu a la pestanya <em>Serveis</em> i allà desplegueu l’apartat <em>Maven Repositories</em>; com podeu observar, existeixen dos repositoris: un d’extern, o repositori central, i un local.
+</p>
+
+<p>
+El que fareu serà establir una connexió amb el repositori central per tal d’obtenir una llista actualitzada de tots els components emmagatzemats al repositori central.
+</p>
+
+<p>
+Per fer-ho, aneu a la pestanya <em>Services</em> de NetBeans, desplegueu l’element <code>Maven Repositories</code> i, situats al node <em>Central Repository</em>, prement amb el botó dret, podreu actualitzar la llista (opció <em>Update Index</em>), tal com es pot veure en la <span class="figref"><a href="#fig03"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig03"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Actualització de l’índex de components
+
+</figcaption><img src="../media/updaterepository_v1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El procés d’actualització dels repositoris triga una bona estona; per tant, tingueu paciència.
+</p>
+
+</div>
+
+<h3><a id="creacio_d_un_projecte_amb_maven" >Creació d&#039;un projecte amb Maven</a></h3>
+<div class="level3">
+
+<p>
+Un cop actualitzats els repositoris podeu procedir a la creació d’un projecte amb Maven; a partir d’aquest aprofundirem en els conceptes i l’estructura que en proporciona.
+</p>
+
+<p>
+Per fer això aneu a <em>File/New Project</em>, en l’apartat de categories seleccioneu <em>Maven</em> i en l’apartat <em>Project</em> seleccioneu <em>POM Projects</em>. Ara només us resta definir el nom i la localització del vostre primer projecte amb Maven (vegeu la <span class="figref"><a href="#fig04"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig04"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nou projecte Maven
+
+</figcaption><img src="../media/nouprojecte_v1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquí haureu d’especificar tres apartats: el nom del projecte, la localització del projecte i l’identificador del grup (vegeu la <span class="figref"><a href="#fig05"><span>figura</span></a></span>).
+</p>
+<ul>
+<li class="level1"><div class="li"> nom del projecte: HolaMaven</div>
+</li>
+<li class="level1"><div class="li"> localització del projecte: Spring_Projects</div>
+</li>
+<li class="level1"><div class="li"> identificador del grup: cat.xtec.ioc</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="fig05"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Propietats del projecte
+
+</figcaption><img src="../media/holapom_v1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si tot ha anat bé, tant al directori <em>Spring_Projects</em> com a Netbeans podreu veure que s’ha creat un nou projecte.
+</p>
+
+</div>
+
+<h4><a id="definicio_de_les_dependencies" >Definició de les dependències</a></h4>
+<div class="level4">
+
+<p>
+Les dependències no són altra cosa que les llibreries o els components que necessita la nostra aplicació per funcionar o portar a terme una tasca determinada. Un exemple de dependència seria la llibreria JDBC per a MySQL, que ens permet obrir i tancar connexions contra una base de dades MySQL i fer diferents operacions contra aquesta.
+</p>
+
+<p>
+Per desenvolupar una aplicació web necessiteu descarregar tres dependències des dels repositoris de Maven, que són:
+</p>
+<ul>
+<li class="level1"><div class="li"> l’entorn de treball Spring</div>
+</li>
+<li class="level1"><div class="li"> la llibreria jstl</div>
+</li>
+<li class="level1"><div class="li"> la llibreria servlet-api</div>
+</li>
+</ul>
+
+<p>
+Maven fa servir un fitxer de configuració XML anomenat pom.xml on podeu indicar les dependències de la vostra aplicació web; aquest fitxer el podeu localitzar a la carpeta <em>Projects Files</em> del vostre nou projecte. Però com podeu veure si l’obriu, no fa cap esment de Spring ni a la resta de llibreries que comentàvem.
+</p>
+
+<p>
+L’edició del fitxer pom.xml per incloure aquestes tres llibreries la podem portar a terme de dues maneres: una seria fent-la directament contra el fitxer pom.xml i l’altra seria utilitzant l’assistent que ens ofereix NetBeans per tal de fer aquesta edició contra el fitxer pom.xml.
+</p>
+
+<p>
+En el vostre cas, i per començar, fareu servir l’assistent, ja que us ajudarà a comprendre d’una manera més senzilla què esteu fent.
+</p>
+
+<p>
+Així doncs, amb el fitxer pom.xml obert, aneu a la carpeta <em>Dependències</em> del vostre projecte i feu clic amb el botó dret del ratolí. Això obrirà un desplegable amb l’opció <em>Add Dependencie…</em>; feu clic sobre aquesta opció i s’obrirà una finestra nova.
+</p>
+
+<p>
+En aquesta finestra apareixen diferents camps per omplir, però a nosaltres només ens interessen tres, que són:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Group Id</em>: es correspon amb l’identificador que fa servir Maven per a un conjunt de components desenvolupats per un determinat projecte o empresa. Aquest identificador pren l’aspecte de l’espai de nom del projecte, com per exemple <em>org.springframework</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>Artifact Id</em>: es correspon amb un component determinat desenvolupat per un projecte o empresa; en general, és el nom del component o llibreria.</div>
+</li>
+<li class="level1"><div class="li"> <em>Version</em>: representa la versió del component que volem fer servir.</div>
+</li>
+</ul>
+
+<p>
+Ompliu els tres camps que hem comentat amb els següents valors, respectivament:
+</p>
+<ul>
+<li class="level1"><div class="li"> org.springframework</div>
+</li>
+<li class="level1"><div class="li"> spring-webmvc</div>
+</li>
+<li class="level1"><div class="li"> 4.0.3.RELEASE</div>
+</li>
+</ul>
+
+<p>
+Afegiu la dependència i observeu què ha passat amb el fitxer pom.xml i amb la carpeta <em>Dependències</em>.
+</p>
+
+<p>
+Com podeu veure, el fitxer pom.xml s’ha modificat amb noves etiquetes i valors, i la carpeta <em>Dependències</em> incorpora ara noves llibreries que es corresponen amb les llibreries que ens permeten desenvolupar aplicacions web amb l’entorn de treball Spring.
+</p>
+
+<p>
+Si haguéssiu tingut un error d’escriptura dels valors indicats per a la dependència, Maven seria incapaç de descarregar-la i ho indicaria amb un petit triangle groc d’advertència sobre la icona del component a la carpeta <em>Dependències</em>.
+</p>
+
+<p>
+Un cop descarregat el primer component, descarregueu els altres dos amb l’assistent. Les dades que necessiteu són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Per a la llibreria jstl</div>
+<ul>
+<li class="level2"><div class="li"> javax.servlet</div>
+</li>
+<li class="level2"><div class="li"> jstl</div>
+</li>
+<li class="level2"><div class="li"> 1.2</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Per a la llibreria servlet-api</div>
+<ul>
+<li class="level2"><div class="li"> javax.servlet</div>
+</li>
+<li class="level2"><div class="li"> javax.servlet-api</div>
+</li>
+<li class="level2"><div class="li"> 3.1.0</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+El fitxer pom.xml del projecte quedarà de la següent manera:
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; 
+                xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+                xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 
+                                    http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;cat.xtec.ioc&lt;/groupId&gt;
+    &lt;artifactId&gt;A0010_Spring_Introduccio&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+            &lt;version&gt;4.0.3.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+            &lt;version&gt;1.2&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+&lt;/project&gt;</pre>
+
+</div>
+
+<h2><a id="hola_mon_web_amb_maven" >&#039;Hola, Món&#039; web amb Maven</a></h2>
+<div class="level2">
+
+<p>
+La creació d’aquest segon projecte la farem mitjançant un arquetipus, que és la definició d’una estructura de directoris i fitxers específics per a un projecte genèric, i el que fa és permetre la creació d’un projecte nou seguint una convenció determinada; en el vostre cas, es crearà una estructura que segueix la convenció establerta per a la creació d’aplicacions web amb Spring.
+</p>
+
+</div>
+
+<h3><a id="creacio_d_un_projecte_nou" >Creació d&#039;un projecte nou</a></h3>
+<div class="level3">
+
+<p>
+Per crear aquest nou projecte web aprofitarem la carpeta <em>Modules</em> del projecte Maven creat anteriorment. Si feu clic sobre la carpeta amb el botó dret de ratolí s’obrirà un menú contextual, on podreu seleccionar l’opció <em>Create New Module</em>. Això obrirà un nou assistent per a la creació de projectes. Aquí seleccionareu la categoria <em>Maven</em>, i dintre del tipus de projectes disponibles seleccionareu <em>Project from Archetype</em> (vegeu la <span class="figref"><a href="#fig07"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig07"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Nou projecte Maven from Archetype
+
+</figcaption><img src="../media/maven_from_archetype.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop seleccionat el nou tipus d’aplicació a desenvolupar, cercareu l’arquetipus desitjat; en el vostre cas heu de cercar el següent arquetipus: <code>maven-archetype-webapp</code>. Un cop localitzat l’arquetipus, el seleccionareu i polsareu el següent en l’assistent (vegeu la <span class="figref"><a href="#fig08"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig08"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Propietats de l’arquetipus
+
+</figcaption><img src="../media/maven-archetype-webapp.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Això obrirà una nova finestra en l’assistent, on donareu el següent nom al projecte: A01_Maven_Web_App, i verificareu que tant la localització del projecte (Spring_Projects) com el Group Id (cat.xtec.ioc) són els correctes, i un cop fet això finalitzareu l’assistent.
+</p>
+
+<p>
+En tancar l’assistent es generarà un nou mòdul, així com un nou projecte. Si el nom no es correspon amb el que li havíeu indicat prèviament podeu reanomenar-lo amb el botó dret de ratolí obrint el menú contextual i seleccionant l’opció <em>Reanomenar</em>. Aquest punt l’heu de fer des del projecte generat, no des del mòdul. Finalment, amb el mateix menú contextual teniu l’opció d’executar el nou projecte web clicant sobre l’apartat <em>Run</em>. En aquest punt s’obrirà un nou assistent on haureu d’indicar qui serà el servidor de desplegament de l’aplicació; seleccioneu <em>GlassFish Server 4.1</em> (o la versió més recent) i l’opció <em>Recorda de manera permanent</em> (vegeu la <span class="figref"><a href="#fig09"><span>figura</span></a></span>).
+</p>
+
+<p>
+Després d’això, Netbeans procedirà al desplegament de la nostra aplicació, engegarà el servidor d’aplicacions GlassFish, executarà l’aplicació i podreu veure el resultat a través del vostre navegador web.
+</p>
+
+<p>
+Si el desplegament s’ha fet correctament podeu anar a la pestanya <em>Services</em> de NetBeans i veure la vostre aplicació web com a node de <em>Servers/Glassfish Server xxx/Applications</em>, on “xxx” és la versió del servidor que heu fet servir.
+</p>
+<div class="iocfigure"><a name="fig09"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Selecció del servidor d’aplicacions
+
+</figcaption><img src="../media/select_glassfish_server.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="estructura_tipica_d_una_aplicacio_web" >Estructura típica d&#039;una aplicació web</a></h3>
+<div class="level3">
+
+<p>
+Si us situeu sobre el projecte A01_Maven_Web_App, la vostra primera aplicació té la següent estructura des de la pestanya projectes: <em>Web Pages</em>, <em>Other Sources</em>, <em>Dependencies</em>, <em>Test Dependencies</em> i <em>Project Files</em> (vegeu la <span class="figref"><a href="#fig10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura d’un projecte Maven WebApp
+
+</figcaption><img src="../media/estructura_maven_webapp.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La carpeta <em>Project Files</em> conté el fitxer pom.xml, que és on es declaren les dependències del projecte. Com podeu observar, el fitxer pom.xml del mòdul (projecte A01_Maven_Web_App) és diferent del fitxer pom.xml del projecte arrel (projecte A00_HolaMaven); tot i això, si obriu la carpeta <em>Dependències</em> del projecte A01_Maven_Web_App podreu observar que fa referència a les dependències declarades en el projecte arrel.
+</p>
+
+<p>
+La carpeta <em>Test Dependencies</em> inclourà les llibreries necessàries per fer les proves de la nostra aplicació. <em>Other Sources</em> és una carpeta que no farem servir per ara, i finalment <em>Web Pages</em> contindrà tot allò vinculat a les vistes web de l’aplicació. Dintre de <em>Web Pages</em> hi ha la carpeta <em>WEB-INF</em>, que serà l’arrel de totes les vistes generades.
+</p>
+
+<p>
+Generalment, <em>WEB-INF</em>, a banda dels <em>scripts</em> jsp, contindrà el descriptor de desplegament web.xml i els fitxers de configuració de Spring que veurem més endavant.
+</p>
+
+</div>
+
+<h2><a id="hola_mon_amb_spring_mvc" >&quot;Hola, Món&quot; amb Spring MVC</a></h2>
+<div class="level2">
+
+<p>
+Fins ara heu après a crear projectes amb Maven, gestionar les dependències i crear una aplicació web molt senzilla però sense fer servir Spring.
+</p>
+
+<p>
+Ara farem la nostra primera aplicació amb el <em>framework</em> Spring MVC amb l’objectiu de mostrar com es configura tot l’entorn d’un projecte desenvolupat amb aquest <em>framework</em>.
+</p>
+
+<p>
+L’aplicació serà un “Hola, Món” per mostrar simplement aquest text en el navegador, però amb l’estructura d’un projecte Maven WebApp i els components de Spring MVC.
+</p>
+
+<p>
+El projecte sencer de l’aplicació es pot baixar des del següent <div class="mediaf filezip"><div class="mediacontent"><a href="../media/holamonspringmvc.zip">enllaç</a><span> ( 10.8 MB )</span></div></div>.
+</p>
+
+<p>
+És convenient fer servir el projecte anterior per consultar, però és millor anar construint el vostre propi projecte amb les indicacions que es van donant. No obstant això, si voleu executar el projecte sencer segurament us obligarà a fer <em>clean and build</em> abans.
+</p>
+
+</div>
+
+<h3><a id="creacio_del_projecte_hola_mon_a_partir_de_maven_webapp" >Creació del projecte &quot;Hola, Món&quot; a partir de Maven WebApp</a></h3>
+<div class="level3">
+
+<p>
+Creeu un nou projecte <em>Maven/Project from Archetype</em> amb l’arquetipus <code>maven-archetype-webapp</code> i anomeneu-lo HolaMonSpringMVC.
+</p>
+
+<p>
+Recordem l’estructura del projecte creat fins ara: només és un projecte Maven WebApp a tots els efectes (vegeu la <span class="figref"><a href="#fig12"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig12"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Estructura Maven d’una aplicació Spring MVC
+
+</figcaption><img src="../media/estructura_maven_webapp_springmvc.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Aquesta estructura correspon a qualsevol tipus d’aplicació, i per això, des de la pestanya <em>Files</em> de NetBeans o des del mateix explorador de fitxers del sistema operatiu creeu la carpeta <em>Java</em> dins de la carpeta <em>src/main</em>. Ara, si tornem a la pestanya <em>Projects</em> de NetBeans, veurem que ha aparegut la carpeta <em>Source Packages</em> on crear els nostres paquets.
+</p>
+
+<p>
+Abans de continuar, canvieu el fitxer de configuració web.xml a una versió més moderna de JAVA EE.
+</p>
+<pre class="code">&lt;web-app version=&quot;3.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+            xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee
+                                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;&gt;
+  &lt;display-name&gt;HolaMonSpringMVC&lt;/display-name&gt;
+&lt;/web-app&gt;</pre>
+
+<p>
+Ara ja podeu executar l’aplicació seleccionant el servidor Glassfish i fent que recordi aquesta decisió permanentment (vegeu la <span class="figref"><a href="#fig13"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig13"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació “Hola, Món” Spring MVC
+
+</figcaption><img src="../media/helloword.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+</div>
+
+<h3><a id="afegint_dependencies_j2ee_i_spring_mvc" >Afegint dependències J2EE i Spring MVC</a></h3>
+<div class="level3">
+
+<p>
+Anem a afegir les dependències que faran que el servidor d’aplicacions Glassfish, en executar la nostra aplicació, pugui crear els objectes necessaris de J2EE i Spring MVC i així aprofitar la funcionalitat que aquests entorns ens ofereixen.
+</p>
+
+<p>
+A la secció <em>dependències</em> de pom.xml heu d’afegir-hi les següents:
+</p>
+<pre class="code">        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+            &lt;version&gt;4.0.3.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+            &lt;version&gt;1.2&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax&lt;/groupId&gt;
+            &lt;artifactId&gt;javaee-web-api&lt;/artifactId&gt;
+            &lt;version&gt;7.0&lt;/version&gt;
+        &lt;/dependency&gt;</pre>
+
+<p>
+A més, aprofitareu per fer servir la codificació UTF8 en tot el projecte afegint la propietat que defineix aquesta característica en el mateix fitxer pom.xml:
+</p>
+<pre class="code">    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;</pre>
+
+</div>
+
+<h3><a id="arquitectura_i_proces_basic_d_una_aplicacio_spring_mvc" >Arquitectura i procés bàsic d&#039;una aplicació Spring MVC</a></h3>
+<div class="level3">
+
+<p>
+Des que un navegador fa una petició al servidor d’aplicacions, per exemple Glassfish, fins que el servidor construeix la resposta i retorna al navegador, el flux de l’aplicació és el que es mostra en la <span class="figref"><a href="#fig14"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig14"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Arquitectura i procés d’una petició amb Spring MVC
+
+</figcaption><img src="../media/daw_m07_u3_01.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A continuació es descriu la seqüència del procés petició-resposta.
+</p>
+<ol>
+<li class="level1"><div class="li"> El navegador demana (petició) un recurs a l’aplicació web.</div>
+</li>
+<li class="level1"><div class="li"> El <code>Front Controller</code> o <code>Dispatcher Servlet</code>, implementat com un <em>servlet</em>, intercepta la petició i la delega al controlador adient, que ha de gestionar (<em>handler</em>) aquesta petició. Com veurem més endavant, la determinació del controlador adient es fa mitjançant la configuració dels <em>Handler Mappings</em>.</div>
+</li>
+<li class="level1"><div class="li"> El controlador processa la petició i retorna al <code>Front Controller</code> el model i la vista. Aquest retorn es fa amb un objecte del tipus <code>ModelAndView</code>.</div>
+</li>
+<li class="level1"><div class="li"> El <code>Front Controller</code> resol la vista actual (per exemple, un jsp) consultant l’objecte <code>ViewResolver</code>.</div>
+</li>
+<li class="level1"><div class="li"> La vista seleccionada és retornada com a resposta al navegador que va fer la petició.</div>
+</li>
+</ol>
+
+</div>
+
+<h4><a id="web_application_context" >Web Application Context</a></h4>
+<div class="level4">
+
+<p>
+Desplegar una aplicació Spring al servidor d’aplicacions, per exemple a Glassfish, és com si l’aplicació s’estigués executant en segon pla dins del servidor. 
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Front Controller</p>
+<p>
+<code>Front Controller</code> és un patró de disseny que proposa la centralització de la gestió de les peticions i respostes. Cerqueu “front controller java enterprise edition” i trobareu documentació d’Oracle sobre aquest tema.
+</p>
+</div></div>
+<p>
+Els objectes de la nostra aplicació desplegada resideixen en <strong>contenidors</strong>. 
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per a tota l’aplicació hi ha un contenidor arrel anomenat <em>Application Context</em> que conté els objectes definits al fitxer de configuració anomenat applicationContext.xml.
+</p>
+</div></div>
+<p>
+El nom del fitxer de configuració per a <em>Application Context</em> es pot canviar a web.xml, com mostra l’exemple següent.
+</p>
+<pre class="code">&lt;context-param&gt;
+  &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+	&lt;param-value&gt;/WEB-INF/rootApplicationContext.xml&lt;/param-value&gt;
+&lt;/context-param&gt;</pre>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Per a cada Dispatcher Servlet es crearà un contenidor específic anomenat <em>Web Application Context</em>. Per defecte, el seu fitxer de configuració s’anomena xxx-servlet.xml, on “xxx” és el nom del Dispatcher Servlet.
+</p>
+</div></div>
+<p>
+El nom del fitxer per a <em>Web Application Context</em> es configura al mateix web.xml. L’exemple següent mostra com es configura un <code>Dispatcher Servlet</code> amb nom <code>Dispatcher Servlet</code> i amb fitxer de configuració /WEB-INF/spring/DispatcherServlet-servlet.xml.
+</p>
+<pre class="code">&lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;/WEB-INF/spring/DispatcherServlet-servlet.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;</pre>
+
+<p>
+Com es veurà més endavant, els fitxers de configuració de context, tant el de tota l’aplicació com els específics de cada <code>Dispatcher Servlet</code>, defineixen els objectes que es crearan al contenidor. La diferència és que els objectes a nivell d’aplicació es poder fer servir des de qualsevol contenidor, i els de nivell de <code>Dispatcher Servlet</code>, únicament des d’objectes del mateix contenidor. A més, els del contenidor a nivell d’aplicació poden fer servir qualsevol objecte de qualsevol contenidor específic, tal com es vol reflectir a la <span class="figref"><a href="#fig15"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig15"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Visibilitat d’objectes segons els nivells
+
+</figcaption><img src="../media/daw_m07_u3_02.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En aquests fitxers de configuració es defineixen quins objectes formaran part del contenidor, tant si són propis de l’aplicació com si són proporcionats per Spring o Java Enterprise Edition. Aquests objectes s’anomenen <em>Spring-managed beans</em> o simplement <em>beans</em>, i els farem servir al nostre codi declarant-los mitjançant anotacions, és a dir, no els instanciarem, perquè farem servir els objectes del contenidor. Per això es diu que l’objecte s’<strong>injecta</strong> quan es necessita i podem fer-lo servir (<strong>injecció de dependències</strong> o <strong>inversió de control</strong>)
+</p>
+
+<p>
+Quan es dissenya una aplicació és important tenir en compte que els <em>beans</em> que defineixen la lògica de negoci, la interacció amb la persistència i altres interaccions s’han de compartir entre tots els <em>servlets</em>, i per això els definirem a nivell d’<em>Application Context</em> (el contenidor general) En canvi, els controladors que maneguen peticions, els <code>View Resolvers</code> i altres com alguns que gestionen missatges, els ubicarem a nivell de <code>Web Application Context</code> (els específics de cada <code>Dispatcher Servlet</code>).
+</p>
+
+</div>
+
+<h3><a id="completant_hola_mon_amb_l_arquitectura_spring_mvc" >Completant &#039;Hola, Món&#039; amb l&#039;arquitectura Spring MVC</a></h3>
+<div class="level3">
+
+<p>
+Un cop sabeu com ha de ser el flux d’una aplicació Spring MVC i els components que ha de tenir, desenvolupeu les classes i la configuració que falten a la nostra aplicació “Hola, Món”.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Injecció de dependències</p>
+<p>
+La injecció de dependències o inversió de control aconsegueix codi més desacoblat, ens facilita els tests i, a més, ens permetrà canviar bocins de codi de manera més fiable i ràpida.
+</p>
+</div></div>
+<p>
+En el vostre cas, deixareu que Spring agafi la configuració per defecte a nivell d’<em>Application Context</em>. Per això no creareu cap fitxer de configuració de l’<em>Application Context</em> (applicationContext.xml).
+</p>
+
+<p>
+
+El que sí que hem de crear és la configuració del <code>Web Application Context</code>. Com només tindreu un <code>Dispatcher Servlet</code> amb el nom <code>Dispatcher Servlet</code>, podeu crear una nova carpeta de nom <em>spring</em> dins de <em>WEB-INF</em> i dins el fitxer DispatcherServlet-servlet.xml. El contingut és el que es mostra a continuació.
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;
+
+
+    &lt;mvc:annotation-driven /&gt;
+    &lt;context:component-scan base-package=&quot;cat.xtec.ioc&quot; /&gt;
+
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;</pre>
+
+<p>
+Amb <em>&lt;mvc:annotation-driven/&gt;</em> li diem a Spring MVC que farem servir els <em>beans</em> <code>DefaultAnnotationHandlerMapping</code>,
+<code>AnnotationMethodHandlerAdapter</code> i <code>ExceptionHandlerExceptionResolver</code>. Aquests <em>beans</em> són necessaris per enviar (<em>dispatch</em>) les peticions als controladors que les maneguen.
+</p>
+
+<p>
+Com s’ha dit a la part d’arquitectura i procés de Spring MVC, el <code>Dispatcher Servlet</code> ha d’identificar quin és el controlador que manegarà la petició. Per fer això cercarà tots els objectes amb l’anotació <code>@Controller</code> dels paquets indicats en la propietat <code>base-package</code> de l’etiqueta <code>context:component-scan</code>.
+</p>
+
+<p>
+La darrera etiqueta <em>bean</em> indica a Spring la creació d’un objecte <code>bean</code> a partir de la classe <code>InternalResourceViewResolver</code>. Un <code>View Resolver</code> ajuda el <code>Dispatcher Servlet</code> a construir la resposta a partir de determinada vista. Spring MVC proporciona diverses implementacions de <code>View Resolvers</code>, i <code>InternalResourceViewResolver</code> és una d’aquestes.
+</p>
+
+<p>
+
+Per definir el nostre <code>Front Controller</code> afegiu el següent contingut al fitxer de configuració web.xml.
+</p>
+<pre class="code">    &lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;/WEB-INF/spring/DispatcherServlet-servlet.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;</pre>
+
+<p>
+Fixeu-vos que es fa referència al fitxer de configuració DispatcherServlet-servlet.xml que hem creat. Podem canviar el nom del fitxer de configuració, però hauríeu de canviar-lo també aquí.
+</p>
+
+<p>
+Continuant la compleció de la vostra aplicació seguint l’arquitectura i el model bàsic de Spring MVC, només resta crear el controlador que manegarà les peticions.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+El <em>Controlador</em> és el responsable de processar les peticions, construir el model apropiat i passar-lo com a resposta a la vista que calgui.
+</p>
+</div></div>
+<p>
+Creeu el paquet <em>cat.xtec.ioc</em> i a dins la classe Java <code>HolaController</code> amb el contingut que es mostra a continuació.
+</p>
+<pre class="code">package cat.xtec.ioc;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping(&quot;/&quot;)
+public class HolaController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;resposta&quot;);
+        modelview.getModelMap().addAttribute(&quot;salutacio&quot;, &quot;Hola a tothom&quot;);
+        return modelview;
+    }
+
+    @RequestMapping(value = &quot;/bondia&quot;, method = RequestMethod.GET)
+    public ModelAndView handleRequestDia(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;resposta&quot;);
+        modelview.getModelMap().addAttribute(&quot;salutacio&quot;, &quot;Bon dia a tothom&quot;);
+        return modelview;
+    }
+
+    @RequestMapping(value = &quot;/bonanit&quot;, method = RequestMethod.GET)
+    public ModelAndView handleRequestNit(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;resposta&quot;);
+        modelview.getModelMap().addAttribute(&quot;salutacio&quot;, &quot;Bona nit a tothom&quot;);
+        return modelview;
+    }
+}</pre>
+
+<p>
+L’anotació <code>@Controller</code> és molt bàsica, però suficient en aquesta implementació.
+</p>
+
+<p>
+L’anotació <code>@RequestMapping</code> serveix per determinar l’origen de la petició i així poder decidir quin mètode manegarà el retorn. Com podeu veure, es pot fer a nivell de la classe o a nivell de mètode. Els paràmetres d’aquesta anotació els podeu consultar a la documentació de referència de Spring; en aquest cas hem fet servir el tipus de petició i l’<acronym title="Uniform Resource Locator">URL</acronym>.
+</p>
+
+<p>
+
+</p>
+
+<p>
+Cada mètode encarregat (<em>handler</em>) de construir el retorn crea un nou objecte <code>ModelAndView</code> amb el nom de la vista que ha de retornar. Aquest nom, en combinació amb la configuració feta a DispatcherServlet-servlet.xml (<code>InternalResourceViewResolver</code>), serveix perquè Spring MVC determini exactament la vista (WEB-INF/views/resposta.jsp).
+</p>
+
+<p>
+Als mètodes esmentats, abans de retornar la vista, s’afegeix un atribut al model (<em>ModelMap</em>) que en el nostre exemple serveix per provar diferents orígens a les peticions i veure diferents respostes.
+</p>
+
+<p>
+Finalment, creeu la carpeta <em>views</em> dins de <em>WEB-INF</em>, i a dins el fitxer resposta.jsp amb el contingut que es mostra a continuació.
+</p>
+<pre class="code">&lt;%@ page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ca&quot;&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+    &lt;title&gt;Salutació&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;section&gt;
+          &lt;div class=&quot;jumbotron&quot;&gt;
+              &lt;div class=&quot;container&quot;&gt;
+                  &lt;h1&gt;Salutació : ${salutacio} &lt;/h1&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+En aquest cas, quan es mostri la vista al navegador, el valor de la variable <code>salutacio</code> canviarà en funció de l’<acronym title="Uniform Resource Locator">URL</acronym> de petició. Executeu l’aplicació sense més, i us ha de donar la salutació estàndard (vegeu la <span class="figref"><a href="#fig16"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig16"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Sortida de l’aplicació “Hola, Món” amb Spring MVC
+
+</figcaption><img src="../media/salutacio_hola_tothom.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si al navegador canvieu l’<acronym title="Uniform Resource Locator">URL</acronym> afegint-hi <em>/bondia</em> o <em>/bonanit</em>, les salutacions canviaran. Proveu-ho.
+</p>
+
+</div>
+
+<h3><a id="conclusions_del_nostre_hola_mon_spring_mvc" >Conclusions del nostre &#039;Hola, Món&#039; Spring MVC</a></h3>
+<div class="level3">
+
+<p>
+L’aplicació simple Hola, Món està creada a partir d’una petició des d’un <acronym title="Uniform Resource Locator">URL</acronym> al navegador mostra diferents missatges. L’estructura està feta amb Maven WebApp, però després hi ha les dependències necessàries per a J2EE i Spring MVC al fitxer pom.xml.
+</p>
+
+<p>
+Una aplicació Spring MVC té una arquitectura de classes i un procés determinat. Tota petició és rebuda per un <code>Front Controller</code> (<code>Dispatcher Servlet</code>) configurat a web.xml. Aquest la dirigeix cap al controlador que realment la manegarà (<em>handler</em>), però en realitat és el controlador (<em>HolaController</em>, en el nostre exemple) qui mitjançant les anotacions agafarà les peticions, construirà un <code>ModelAndView</code> i el retornarà al <code>Front Controller</code> per tal que aquest el retorni al client (el navegador).
+</p>
+
+<p>
+Per tal que tot funcioni correctament hem configurat la resolució dinàmica de les anotacions i la resolució de la vista efectiva mitjançant el fitxer DispatcherServlet-servlet.xml.
+</p>
+
+</div>
+
+<h2><a id="estoc_de_medicaments_benvinguda" >Estoc de medicaments, benvinguda</a></h2>
+<div class="level2">
+
+<p>
+Desenvoluparem la pàgina d’inici (benvinguda) d’una aplicació per gestionar <strong>estocs de medicaments</strong> que anomenarem “<strong>stmedioc</strong>”. Crearem el projecte amb l’arquitectura d’una aplicació web basada en Spring MVC i amb la configuració basada en XML.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte_estoc_de_medicaments" >Creació i configuració inicial del projecte Estoc de medicaments</a></h3>
+<div class="level3">
+
+<p>
+És convenient fer servir el projecte anterior per consultar, però és millor anar construint el vostre propi projecte amb els indicacions que es van donant. No obstant això, si voleu executar el projecte sencer segurament us obliga a fer <em>clean and build</em> abans.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Configuració dels &#039;beans&#039;</p>
+<p>
+La configuració dels <em>beans</em> pot ser definida via fitxers de configuració XML, com applicationContext.xml i també via classes de configuració Java (<code>JavaConfig</code>).
+</p>
+</div></div>
+<p>
+Creeu un nou projecte <em>Maven/Project from Archetype</em> amb l’arquetipus <code>maven-archetype-webapp</code> i anomeneu-lo “stmedioc101”.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+El codi del projecte “stmedioc” en l’estat d’aquest apartat es pot descarregar des de l’enllaç que trobareu als annexos de la unitat.
+</p>
+</div></div>
+<p>
+Des de la pestanya <em>Files</em> de NetBeans o des del mateix explorador de fitxers del sistema operatiu, creeu la carpeta <em>Java</em> dins de la carpeta <em>src/main</em>. És important fer aquest pas, perquè veureu Source Packages a la pestanya de <em>Projectes</em>.
+</p>
+
+<p>
+Canvieu el fitxer de configuració web.xml.
+</p>
+<pre class="code">&lt;web-app version=&quot;3.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+            xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee
+                                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;&gt;
+  &lt;display-name&gt;Estoc de Medicaments&lt;/display-name&gt;
+&lt;/web-app&gt;</pre>
+
+<p>
+A la secció <em>Dependències</em> de pom.xml heu d’afegir les següents dependències:
+</p>
+<pre class="code">        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+            &lt;version&gt;4.0.3.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+            &lt;version&gt;1.2&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax&lt;/groupId&gt;
+            &lt;artifactId&gt;javaee-web-api&lt;/artifactId&gt;
+            &lt;version&gt;7.0&lt;/version&gt;
+        &lt;/dependency&gt;</pre>
+
+<p>
+Afegiu la propietat que defineix la utilització de la codificació UTF-8 en el mateix fitxer pom.xml.
+</p>
+<pre class="code">    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;</pre>
+
+<p>
+Executeu l’aplicació seleccionant el servidor <strong>Glassfish</strong> i fent que recordi aquesta decisió permanentment.
+</p>
+
+</div>
+
+<h3><a id="pagina_de_benvinguda" >Pàgina de benvinguda</a></h3>
+<div class="level3">
+
+<p>
+Creareu una pàgina de benvinguda per a la vostra aplicació consistent a mostrar un bàner però amb el procés de Spring MVC.
+</p>
+
+<p>
+Per fer això haureu de crear la pàgina jsp, configurar el <code>Dispatcher Servlet</code> i crear el controlador per manegar la petició de benvinguda.
+</p>
+
+<p>
+Creeu el fitxer DispatcherServlet-servlet.xml en una nova carpeta de nom <em>spring</em> dins de <em>WEB-INF</em>. El contingut és el que es mostra a continuació.
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;
+
+    &lt;mvc:annotation-driven /&gt;
+    &lt;context:component-scan base-package=&quot;cat.xtec.ioc.controller&quot; /&gt;
+
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</pre>
+
+<p>
+En aquesta configuració es podrien tenir més paquets en <em>base-package</em> simplement separant-los amb comes.
+</p>
+
+<p>
+Definim el <code>Dispatcher Servlet</code> (<code>Front Controller</code>) afegint el següent contingut al fitxer de configuració web.xml:
+</p>
+<pre class="code">    &lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;/WEB-INF/spring/DispatcherServlet-servlet.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;</pre>
+
+<p>
+Pel que fa al controlador que gestionarà les peticions, creeu el paquet <code>cat.xtec.ioc.controller</code> i a dins la classe Java <code>HomeController</code> amb el contingut que es mostra a continuació:
+</p>
+<pre class="code">package cat.xtec.ioc.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class HomeController {
+
+    @RequestMapping(value = &quot;/&quot;, method = RequestMethod.GET)
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        ModelAndView modelview = new ModelAndView(&quot;welcome&quot;);
+        modelview.getModelMap().addAttribute(&quot;benvinguda&quot;, &quot;Benvingut Estoc de Medicaments!&quot;);
+        modelview.getModelMap().addAttribute(&quot;tagline&quot;, &quot;Una aplicació de l&#039;Institut Obert de Catalunya&quot;);
+        return modelview;
+    }
+
+}</pre>
+
+<p>
+Finalment, creeu la carpeta <em>views</em> dins de <em>WEB-INF</em> i a dins el fitxer welcome.jsp amb el contingut que es mostra a continuació.
+</p>
+<pre class="code">&lt;%@ page contentType=&quot;text/html&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ca&quot;&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+    &lt;title&gt;Welcome&lt;/title&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+  &lt;section&gt;
+		&lt;div class=&quot;jumbotron&quot;&gt;
+			&lt;div class=&quot;container&quot;&gt;
+				&lt;h1&gt; ${benvinguda} &lt;/h1&gt;
+				&lt;p&gt; ${tagline} &lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>
+En executar l’aplicació us ha d’aparèixer el bàner que es mostra en la <span class="figref"><a href="#fig17"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig17"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Sortida de l’aplicació. “Estoc de medicaments”, benvinguda
+
+</figcaption><img src="../media/banner_stock_medicaments.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Ara ja teniu el projecte amb els elements i la configuració bàsica per continuar desenvolupant el vostre estoc de medicaments.
+</p>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat hem fet servir <strong>Maven</strong> com a eina que dóna estructura als projectes i permet baixar les llibreries que cal fer servir des de repositoris centrals a partir de la configuració de <strong>dependències</strong>. El gran avantatge de Maven és fer independent el nostre desenvolupament de l’IDE que es fa servir.
+</p>
+
+<p>
+Hem introduït el procés <strong>petició-resposta</strong> de Spring MVC, així com a l’arquitectura que en dóna suport. Heu creat dues aplicacions Spring MVC amb la mateixa estructura, és a dir, una part de vistes .jsp, la configuració del <code>Dispatcher Servlet</code> (o <code>Front Controller</code>) i la classe que fa de controlador per manegar les peticions i que retorna l’objecte <code>ModelAndView</code>.
+</p>
+
+<p>
+Les aplicacions fetes fins ara en aquesta unitat només mostren un text variable o no, encara que amb l’arquitectura de Spring MVC. Hem d’avançar una mica més i donar més funcionalitat a “Estoc de medicaments”.
+</p>
+
+<p>
+En els apartats següents veurem com afegir aquesta funcionalitat de manera ordenada, creant els paquets i les classes amb els patrons que suggereix Spring MVC.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u3/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u3/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

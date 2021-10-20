@@ -1,0 +1,878 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title></title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html"></a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u2" class="parentnode"><p><a href="../../../WebContent/u2/resum.html">2. Implantació de gestors de continguts</a></p><ul class="expander"><li id="u2resum"><a href="../../../WebContent/u2/resum.html">Resum</a></li><li id="u2resultats"><a href="../../../WebContent/u2/resultats.html">Resultats d'aprenentatge</a></li><li id="u2referencies"><a href="../../../WebContent/u2/referencies.html">Referències</a></li><li id="u2a1" class="tocsection"><p id="u2a1continguts"><a href="../../../WebContent/u2/a1/continguts.html">Ofimàtica web</a><span class="buttonexp"></span></p><ul><li id="u2a1activitats"><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></li><li id="u2a1exercicis"><a href="../../../WebContent/u2/a1/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><li id="u2a2" class="tocsection"><p id="u2a2continguts"><a href="../../../WebContent/u2/a2/continguts.html">Gestors de continguts</a><span class="buttonexp"></span></p><ul><li id="u2a2activitats"><a href="../../../WebContent/u2/a2/activitats.html">Activitats</a></li><li id="u2a2exercicis"><a href="../../../WebContent/u2/a2/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li><li id="u2a3" class="tocsection"><p id="u2a3continguts"><a href="../../../WebContent/u2/a3/continguts.html">Administració de gestors de continguts</a><span class="buttonexp"></span></p><ul><li id="u2a3activitats"><a href="../../../WebContent/u2/a3/activitats.html">Activitats</a></li><li id="u2a3exercicis"><a href="../../../WebContent/u2/a3/exercicis.html">Exercicis d'autoavaluació</a></li></ul></li></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../resum.html">Implantació de gestors de continguts</a></li><li>Ofimàtica web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="ofimatica_web"> Ofimàtica web </a></h1>
+    	
+<p>
+Els programes informàtics que solucionen el tractament automàtic de la informació donant resposta a tasques d’oficina rutinàries com gestionar documents de text, realitzar càlculs, portar una agenda d’activitats o fer presentacions multimèdia s’anomenen <strong>aplicacions ofimàtiques</strong> o <strong>paquets ofimàtics</strong>. Els paquets ofimàtics més coneguts a l’actualitat són els anomenats d’escriptori o estàndard, exemples dels quals són Microsoft Office i OpenOffice. Aquestes aplicacions ofimàtiques, al contrari que les web, necessiten una instal·lació local a cada ordinador on s’han d’utilitzar.
+</p>
+
+<h2><a id="introduccio_a_les_aplicacions_d_ofimatica_web" >Introducció a les aplicacions d&#039;ofimàtica web</a></h2>
+<div class="level2">
+<div class="iocimportant"><div class="ioccontent">
+<p>
+S’entén per <strong>aplicacions d’ofimàtica web</strong> els paquets ofimàtics, l’espai de treball dels quals es troba en un espai web.
+</p>
+</div></div>
+<p>
+La majoria d’aquests paquets ofimàtics estan formats per programes per processar textos, fer càlculs o fer presentacions multimèdia. La gran diferència entre un paquet ofimàtic estàndard (o també anomenat <em>d’escriptori</em>) i un de web és que l’espai de treball on es desen els documents dels usuaris es troba en un servidor web i no pas en l’ordinador local de l’usuari. Per tant, no importa el tipus d’ordinador amb el que treballeu, ni la plataforma de sistema operatiu que teniu, tan sols es necessita un navegador i connexió a Internet per accedir als documents i als serveis ofimàtics d’aquests programes.
+</p>
+
+<p>
+El principal avantatge d’aquests tipus de programes i la seva creixent popularitat es deu tant a la deslocalització de l’oficina com a la possibilitat de treballar col·laborativament. Per a un treballador d’una empresa, que ha de fer sovint reunions fora de la seva oficina, resulta molt còmode saber que l’última versió d’un document la té al servidor d’Internet i no ha de portar versions en dispositius d’emmagatzematge extern com discos o memòries USB.
+</p>
+
+<p>
+També és molt útil utilitzar aquest tipus d’aplicacions quan es tracta de crear documents i revisar-los entre més d’una persona. La compartició de documents i la gestió de l’accés a la informació permet estalviar molt de temps i maldecaps per detectar les últimes modificacions d’un document. Resulta molt més àgil que el procés d’adjuntar arxius i enviar-los per correu electrònic a tota una llista de contactes, esperant el retorn per veure’n les modificacions, per exemple.
+</p>
+
+<p>
+La majoria d’aplicacions d’ofimàtica web del mercat:
+</p>
+<ul>
+<li class="level1"><div class="li"> Permeten tenir els documents en un servidor web.</div>
+</li>
+<li class="level1"><div class="li"> Permeten el treball col·laboratiu.</div>
+</li>
+<li class="level1"><div class="li"> Permeten controlar qui accedeix a quina informació.</div>
+</li>
+<li class="level1"><div class="li"> Són compatibles amb diferents formats de documents (<acronym title="HyperText Markup Language">HTML</acronym>, DOC, TXT, RTF, ODT, PPT, XLS o PDF).</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="caracteristiques_dels_paquets_ofimatics_web" >Característiques dels paquets ofimàtics web</a></h3>
+<div class="level3">
+
+<p>
+Els paquets d’ofimàtica web més coneguts actualment són Google Drive, Zoho, FengOffice (abans conegut com a <em>OpenGoo</em>) i ThinkFree. 
+</p>
+<div class="ioctable"><div class="titletable"><a name="taula1"><span>Taula</span></a>
+
+Adreces web dels principals paquets ofimàtics web
+
+</div><div class="table"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Paquet ofimàtic web </th><th class="col1"> Adreça web </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> Google Drive             </td><td class="col1 leftalign"> <a href="http://drive.google.com/" class="urlextern" title="http://drive.google.com/"  rel="nofollow">http://drive.google.com</a>       </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Zoho                    </td><td class="col1 leftalign"> <a href="http://www.zoho.com/" class="urlextern" title="http://www.zoho.com/"  rel="nofollow">http://www.zoho.com</a>             </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> FengOffice              </td><td class="col1"> <a href="http://www.fengoffice.com/" class="urlextern" title="http://www.fengoffice.com/"  rel="nofollow">http://www.fengoffice.com</a> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> ThinkFree               </td><td class="col1 leftalign"> <a href="http://www.thinkfree.com/" class="urlextern" title="http://www.thinkfree.com/"  rel="nofollow">http://www.thinkfree.com</a>   </td>
+	</tr>
+</table></div>
+</div>
+<p>
+Com que es tracta de productes en plena fase de desenvolupament i implantació al mercat, les seves característiques varien contínuament. N’hi ha de codi obert, com FengOffice, que faciliten la migració de les dades i afavoreixen la creació d’una comunitat de programadors i usuaris que milloren el producte dia rere dia. Alguns, com Google Drive, Zoho i ThinkFree, ja tenen disponible l’accés als documents via telèfon mòbil. Zoho i ThinkFree estan més orientats a donar serveis d’empresa i, juntament amb FengOffice, es poden instal·lar als servidors locals.
+</p>
+
+</div>
+
+<h4><a id="caracteristiques_de_google_drive" >Característiques de Google Drive</a></h4>
+<div class="level4">
+
+<p>
+L’abril de 2012 Google va llançar Google Drive, que substituïa Google Docs. Google Drive combina les característiques de Google Docs amb funcionalitats d’emmagatzematge millorades. A partir d’aquest moment els serveis de Google Docs estan integrats dins de Google Drive. 
+</p>
+<ul>
+<li class="level1"><div class="li"> Paquet ofimàtic web de l’empresa Google.</div>
+</li>
+<li class="level1"><div class="li"> Està orientat a l’usuari. Els documents es desen sempre als servidors de Google.</div>
+</li>
+<li class="level1"><div class="li"> El codi és propietat de Google.</div>
+</li>
+<li class="level1"><div class="li"> La versió estàndard és gratuïta.</div>
+</li>
+<li class="level1"><div class="li"> Està disponible en molts idiomes.</div>
+</li>
+<li class="level1"><div class="li"> Permet utilitzar un processador de textos, un full de càlcul, un editor de presentacions, un editor de gràfics i un editor de formularis.</div>
+</li>
+<li class="level1"><div class="li"> Permet treballar fora de línia, és a dir, sense connexió a Internet.</div>
+</li>
+<li class="level1"><div class="li"> Es pot utilitzar a telèfons mòbils d’última generació (iPhone, Android…).</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="caracteristiques_de_zoho" >Característiques de Zoho</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Paquet ofimàtic web de l’empresa AdventNet Inc.</div>
+</li>
+<li class="level1"><div class="li"> Està orientat tant a l’usuari com a l’empresa. Es pot instal·lar als servidor locals d’una empresa.</div>
+</li>
+<li class="level1"><div class="li"> El codi és propietat de Zoho.</div>
+</li>
+<li class="level1"><div class="li"> Està disponible en diversos idiomes (xinès, japonès, italià, etc), però en català només està disponible el full de càlcul.</div>
+</li>
+<li class="level1"><div class="li"> Conté aplicacions orientades a usuaris individuals: client de correu, processador de textos, full de càlcul, eina de presentacions, wiki, organitzador, xat i altres aplicacions orientades a l’empresa: videoconferència, gestor de bases de dades, gestor de projectes, etc.</div>
+</li>
+<li class="level1"><div class="li"> Permet treballar fora de línia.</div>
+</li>
+<li class="level1"><div class="li"> Es pot utilitzar a telèfons mòbils d’última generació (iPhone, Android…).</div>
+</li>
+<li class="level1"><div class="li"> Les versions empresarials són de pagament, amb diferent tarifes segons quantitat d’usuaris, quotes i serveis.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="caracteristiques_de_fengoffice" >Característiques de FengOffice</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Paquet ofimàtic web de codi lliure. Això significa que el codi de l’aplicació està a l’abast de tota la comunitat i afavoreix les millores constants i la flexibilitat d’ús.</div>
+</li>
+<li class="level1"><div class="li"> Està orientat tant a l’usuari com a l’empresa. Es pot instal·lar als servidors d’una empresa (és necessari instal·lar un servidor Apache amb PHP5 i una base de dades MySql).</div>
+</li>
+<li class="level1"><div class="li"> Les seves eines són: un editor de textos, una eina de presentacions, llista de tasques, correu, calendari, enllaços web i agenda de contactes.</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a id="caracteristiques_de_thinkfree" >Característiques de ThinkFree</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Està escrit en llenguatge Java, per tant, està disponible per qualsevol sistema operatiu (Mac OSX, Windows, GNU/Linux, etc.).</div>
+</li>
+<li class="level1"><div class="li"> Les eines disponibles actualment són: processador de textos, full de càlcul i eina de presentacions, amb la millor compatibilitat amb els formats de Microsoft Office.</div>
+</li>
+<li class="level1"><div class="li"> Es pot instal·lar als servidor d’una empresa.</div>
+</li>
+<li class="level1"><div class="li"> Per ara, només està disponible en anglès, japonès i coreà.</div>
+</li>
+<li class="level1"><div class="li"> Té versions més lleugeres per ordinadors portàtils (NetBook Edition) i per dispositius més petits i tàctils (MID Edition).</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="eines_habituals_dels_paquets_ofimatics_web" >Eines habituals dels paquets ofimàtics web</a></h3>
+<div class="level3">
+
+<p>
+S’anomenen <strong>eines</strong> o <strong>mòduls</strong> als programes específics que conté un paquet ofimàtic web. Les eines més habituals són:
+</p>
+<ul>
+<li class="level1"><div class="li"> Processador de textos: programa preparat per crear i editar documents de text.</div>
+</li>
+<li class="level1"><div class="li"> Full de càlcul: programa preparat per gestionar informació numèrica i alfanumèrica emmagatzemada en cel·les.</div>
+</li>
+<li class="level1"><div class="li"> Eina de presentació multimèdia: programa utilitzat per crear successions de pantalles amb contingut variat (text, imatges, gràfics, música) per tal de presentar una informació d’una manera agradable, efectiva i moderna.</div>
+</li>
+<li class="level1"><div class="li"> Creació de formularis: permet demanar informació a l’usuari en forma de plantilles amb cel·les i caselles que després es gestionaran per fer estadístiques, omplir bases de dades, etc.</div>
+</li>
+<li class="level1"><div class="li"> Gràfics: programa destinat a la creació de gràfics amb figures geomètriques bàsiques (quadrats, línies, etc).</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="funcionalitats_dels_paquets_ofimatics_web" >Funcionalitats dels paquets ofimàtics web</a></h3>
+<div class="level3">
+
+<p>
+Anomenarem <strong>funcionalitats dels paquets</strong> ofimàtics web a les característiques especials que els distingeixen dels paquets ofimàtics d’escriptori. La majoria de productes d’ofimàtica web del mercat ofereixen la funcionalitat de:
+</p>
+<ul>
+<li class="level1"><div class="li"> Crear documents i organitzar la informació a l’escriptori web en forma de carpetes i subcarpetes.</div>
+</li>
+<li class="level1"><div class="li"> Moure, eliminar, ocultar, cercar i canviar de nom els documents de l’escriptori web.</div>
+</li>
+<li class="level1"><div class="li"> Pujar documents de diferents formats.</div>
+</li>
+<li class="level1"><div class="li"> Compartir documents amb diferents usuaris.</div>
+</li>
+<li class="level1"><div class="li"> Controlar quins usuaris poden accedir als documents i de quina manera (amb drets de lectura o també de lectura i modificació).</div>
+</li>
+<li class="level1"><div class="li"> Controlar diferents versions sobre un mateix document. És a dir, emmagatzemar i gestionar quin usuari ha modificat un document i en quin moment.</div>
+</li>
+</ul>
+
+<p>
+Altres funcionalitats que no tots els paquets ofimàtics han desenvolupat encara serien la publicació en línia (penjar un document públicament a Internet a partir d’una adreça <acronym title="Uniform Resource Locator">URL</acronym>), el treball fora de línia (poder treballar en l’ordinador local en cas de no tenir connexió a Internet) o la creació de formularis.
+</p>
+
+</div>
+
+<h2><a id="configuracio_de_google_drive" >Configuració de Google Drive</a></h2>
+<div class="level2">
+
+<p>
+Per començar a utilitzar Documents de Google no cal fer estrictament una instal·lació prèvia.
+</p>
+
+<p>
+Sí que es pot fer una configuració per tal de tenir accés <em>offline</em> als documents. La sincronització dels documents es fa a través de Google Drive. Google Drive és un servei d’emmagatzematge i sincronització de fitxers que va ser llançat per Google el 24 d’Abril de 2012 i que permet emmagatzemar fitxers al núvol, compartir fitxers i editar col·laborativament. 
+</p>
+
+<p>
+La configuració <em>offline</em> permet a l’usuari treballar tot i no tenir accés a Internet. Això és molt útil, especialment pels dispositius mòbils, ja que permet treballar fins i tot si s’ha perdut la connexió de xarxa o dins d’un avió, per exemple. 
+</p>
+
+<p>
+El procediment pot variar en el futur, així que aquí podeu trobar la darrera versió del procediment de configuració (a la pàgina d’ajuda de Google): 
+</p>
+
+<p>
+<a href="https://support.google.com/drive/bin/answer.py?hl=en&amp;answer=2375012&amp;topic=1628465&amp;ctx=topic" class="urlextern" title="https://support.google.com/drive/bin/answer.py?hl=en&amp;answer=2375012&amp;topic=1628465&amp;ctx=topic"  rel="nofollow">http://goo.gl/xdKYt</a>
+</p>
+
+<p>
+La configuració <em>offline</em> únicament està disponible fent servir el navegador Chrome o un dispositiu que funcioni amb el sistema operatiu de Google, Chrome <acronym title="Operating System">OS</acronym>. En el cas de treballar amb un dispositiu que funcioni amb Chrome <acronym title="Operating System">OS</acronym> no cal que configureu res, ja que té l’accés <em>offline</em> configurat com a predeterminat. 
+</p>
+
+<p>
+Per configurar l’accés offline heu d’entrar al web de Google Drive: 
+</p>
+
+<p>
+<a href="https://drive.google.com" class="urlextern" title="https://drive.google.com"  rel="nofollow">https://drive.google.com</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Feu clic a l’opció <em>More</em> al menú de l’esquerra. </div>
+</li>
+<li class="level1"><div class="li"> Seleccioneu <em>offline</em>.</div>
+</li>
+<li class="level1"><div class="li"> Si no teniu l’aplicació Google Drive instal·lada al Chrome, l’haureu d’instal·lar primer. Feu clic al botó blau <em>Get the app</em> i posteriorment <em>Add to Chrome</em>. </div>
+</li>
+<li class="level1"><div class="li"> Torneu al menú on estàveu a Google Drive i feu clic al botó blau que diu <em>Enable offline</em>. Després de passats uns segons durant els quals es fa la còpia local, ja estaran els documents accesibles <em>offline</em>. </div>
+</li>
+</ul>
+
+<p>
+En principi, únicament un compte de Google pot tenir documents offline a l’ordinador. Per poder tenir més d’un usuari amb fitxers offline, heu de crear un nou perfil al Chrome i posteriorment seguir els passos anteriors per donar-li accés offline. Podeu veure com crear un nou perfil al Chrome en el següent enllaç:
+</p>
+
+<p>
+<a href="https://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=2364824" class="urlextern" title="https://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=2364824"  rel="nofollow">https://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=2364824</a>
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Dels paquets ofimàtics que hem comentat en general, ens centrarem a partir d’ara en Google Drive.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+L’únic imprescindible per utilitzar Google Drive és una connexió a Internet, un navegador i un compte de Google.
+</p>
+</div></div>
+</div>
+
+<h3><a id="navegadors_suportats" >Navegadors suportats</a></h3>
+<div class="level3">
+
+<p>
+Google Drive funciona amb les versions més recents dels navegadors actuals:
+</p>
+<ul>
+<li class="level1"><div class="li"> Chrome</div>
+</li>
+<li class="level1"><div class="li"> Firefox</div>
+</li>
+<li class="level1"><div class="li"> Safari</div>
+</li>
+<li class="level1"><div class="li"> Internet Explorer</div>
+</li>
+</ul>
+
+<p>
+En qualsevol cas, les <em>cookies</em> i el JavaScript han d’estar habilitats. 
+</p>
+
+<p>
+Un cop disposem d’una connexió a Internet, un navegador que suporta Google Drive i un compte Google, simplement heu d’accedir a la pàgina <a href="http://drive.google.com/" class="urlextern" title="http://drive.google.com/"  rel="nofollow">http://drive.google.com</a> i us sortirà una imatge similar a la que es veu a la <span class="figref"><a href="#Figura1b"><span>figura<span class=refId> Figura1b</span></span></a></span>. 
+</p>
+<div class="iocfigure"><a name="Figura1b"></a>
+<p>
+ <figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Porta d’entrada a Google Drive
+
+</figcaption><img src="../media/asxm09u2_01.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+Si marqueu la casella <strong><em>Stay signed in</em></strong> estareu activant les <em>cookies</em>, de manera que les següents vegades que passeu per aquesta pàgina ja no caldrà que torneu a escriure ni el correu ni la contrasenya, el navegador els tindrà desats al vostre ordinador i els recordarà.
+</p>
+
+<p>
+La primera vegada que s’entra a l’escriptori de de Google Drive apareix la configuració per defecte en anglès.
+</p>
+
+</div>
+
+<h3><a id="com_canviar_la_configuracio_del_compte_google_drive" >Com canviar la configuració del compte Google Drive?</a></h3>
+<div class="level3">
+
+<p>
+Per facilitar l’aprenentatge de les eines i funcionalitats de Google Drive, el primer que farem serà canviar l’idioma. Heu de fer clic a l’icona en forma de roda dentada de la dreta i després seleccioneu <em>Settings</em>. La primera opció us permetrà canviar l’idioma. 
+</p>
+
+<p>
+Un cop hem tornat a l’escriptori web podem continuar revisant la configuració, si feu clic a l’enllaç <strong><em>Configuració</em></strong> (és el mateix enllaç d’abans, però ara les opcions de menú estan traduïdes). 
+</p>
+
+<p>
+A la pestanya <strong><em>General</em></strong> podeu canviar l’idioma per defecte de l’entorn de treball, el fus horari (per a nosaltres <em>GMT +1 Madrid</em>) i la configuració del compte Google que heu utilitzat per entrar a Google Drive.
+</p>
+
+<p>
+A la pestanya <strong><em>Edició</em></strong> podeu modificar la manera d’escriure i treballar amb l’editor perquè sigui de dreta a esquerra, com en els documents en àrab.
+</p>
+
+</div>
+
+<h2><a id="us_de_google_drive" >Ús de Google Drive</a></h2>
+<div class="level2">
+
+<p>
+Google Drive és tot un paquet ofimàtic complet, gratuït, i accessible via Internet amb un compte Google. Com la majoria d’aplicacions web de recent creació, les eines i funcionalitats s’aniran incrementant en un futur no molt llunyà. Ara mateix es poden crear documents de text, presentacions multimèdia, fulls de càlcul, gràfics i formularis. Les funcionalitats de cadascuna d’aquestes eines està en procés de revisió i millora i són les següents:
+</p>
+<ul>
+<li class="level1"><div class="li"> Creació i gestió de documents de text.</div>
+</li>
+<li class="level1"><div class="li"> Creació i gestió de presentacions multimèdia.</div>
+</li>
+<li class="level1"><div class="li"> Creació i gestió de fulls de càlcul.</div>
+</li>
+<li class="level1"><div class="li"> Creació i gestió de formularis.</div>
+</li>
+<li class="level1"><div class="li"> Creació i gestió de gràfics.</div>
+</li>
+</ul>
+
+<p>
+Un cop hem entrat a Google Drive a través de la pàgina <a href="http://drive.google.com/" class="urlextern" title="http://drive.google.com/"  rel="nofollow">http://drive.google.com</a> trobarem l’espai de treball.
+</p>
+
+<p>
+Si cliqueu al botó <strong><em>Crea</em></strong> podreu crear documents de text (seleccionant <strong><em>Document</em></strong>), presentacions multimèdia (seleccionant <strong><em>Presentació</em></strong>), fulls de càlcul (seleccionant <strong><em>Full de càlcul</em></strong>), formularis (seleccionant <strong><em>Formulari</em></strong>), dibuixos (seleccionant <strong><em>Dibuix</em></strong>)  i carpetes (seleccionant <strong><em>Carpeta</em></strong>).
+</p>
+
+</div>
+
+<h3><a id="creacio_i_gestio_de_documents_de_text" >Creació i gestió de documents de text</a></h3>
+<div class="level3">
+
+<p>
+El processador de textos que integra Documents de Google està basat en un antic producte conegut com <em>Writely</em>. És un processador de textos senzill amb un menú i una barra d’eines com aquesta (vegeu <span class="figref"><a href="#Figura2b"><span>figura<span class=refId> Figura2b</span></span></a></span>).
+</p>
+<div class="iocfigure"><a name="Figura2b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Menú del processador de textos
+
+</figcaption><img src="../media/asxm09u2_02.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+Les seves opcions principals, seguint d’esquerra a dreta el menú, són:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong><em>Fitxer</em></strong>: permet crear nous documents, canviar el nom, fer una còpia, imprimir (recordeu que com que estem treballant en web, les impressions es produeixen en format PDF), mostrar com a pàgina web i dues operacions no habituals dels processadors de text d’escriptori local, baixar i compartir. L’opció <strong><em>Baixa com a</em></strong> s’utilitza quan volem desar una versió del document web en un format accessible localment. Per exemple, quan voleu compartir un document amb algú que no té compte Google o no està habituat a treballar encara en format web, descarregueu el document en el format que aquella persona utilitza normalment (ja sigui un Microsoft Word o tipus OpenOffice). </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Edita</em></strong>: té les típiques operacions de fer i desfer operacions sobre el document, retallar, copiar, enganxar, seleccionar tot el text, cercar i reemplaçar. </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Visualitza</em></strong>: controla les opcions de visualització del document.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Insereix</em></strong>: permet inserir imatges, equacions (hi ha un petit editor d’equacions), dibuixos (existeix un petit editor gràfic), enllaços web, comentaris i notes al peu, entre d’altres.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Format</em></strong>: disposa d’alguns estils predefinits com ara barrat, superíndex o subíndex i diferents alineacions (dreta, esquerra, justificat, etc).</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Eines</em></strong>: té un comptador de paraules i un cercador de paraules al web molt interessant.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Taula</em></strong>: per inserir taules, amb les seves files i columnes.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Ajuda</em></strong>: ajuda sobre l’ús del programa. Inclou un vídeo demostratiu, en anglès.</div>
+</li>
+</ol>
+
+<p>
+Dins de les eines que té Google Drive, la més novedosa per formar part d’un processador de textos és l’anomenat <strong><em>Consulta historial de revisions</em></strong>, dins del menú <em>Fitxer</em>. Aquesta eina consisteix en tenir un llistat de les modificacions que s’han fet sobre un document, especificant qui ha modificat el document i en quin moment.
+</p>
+
+<p>
+Podeu comprovar els canvis que s’han fet a cada revisió successiva fent clic a cadascuna de les revisions. Hi ha colors diferents depenent de la quantitat d’editors que pugui tenir un document, per tal de distingir-los gràficament.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_gestio_de_presentacions_multimedia" >Creació i gestió de presentacions multimèdia</a></h3>
+<div class="level3">
+
+<p>
+Per crear una presentació, és a dir, un conjunt de diapositives que integren imatges, textos, música de fons, etc, heu de clicar a <strong><em>Crea</em></strong> i després escollir <strong><em>Presentació</em></strong>. En primer lloc haureu de seleccionar el tema que voleu fer servir a la presentació. 
+</p>
+
+<p>
+Trobareu un menú amb les següent opcions, d’esquerra a dreta:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong><em>Fitxer</em></strong>: conté les operacions bàsiques de crear una presentació nova, obrir una preexistent, anomenar i desar, canviar el nom i imprimir (en PDF). També estan integrades les operacions de carregar i descarregar presentacions. És a dir, l’exportació de presentacions la trobeu en aquesta opció del menú amb el nom <strong><em>Baixa com a</em></strong>. En aquest cas, teniu diferents formats de compatibilitat com PDF, PPTX (de Microsoft PowerPoint), PNG, JPG i TXT (exporta només el text, sense cap altre ingredient multimèdia). </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Edita</em></strong>: permet fer i desfer, retallar, copiar i enganxar.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Visualitza</em></strong>: permet escollir diferents opcions de visualització de la presentació. </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Insereix</em></strong>: permet inserir dintre de cada diapositiva requadres de text, imatges, dibuixos i taules. És força interessant la utilitat per inserir vídeos, molt fàcilment si són del Youtube. </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Diapositiva</em></strong>: per crear una nova diapositiva dins de la presentació, duplicar l’última, eliminar-la o afegir notes no visibles a la presentació.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Format</em></strong>: permet seleccionar el format del text que es farà servir, com ara subíndex, superíndex, etc.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Organitza</em></strong>: dóna opcions per col·locar els elements de la diapositiva en diferent ordre (a dalt, al mig, centrat, al davant, al fons, etc).</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Eines</em></strong>: conté diferents eines, com ara poder fer una recerca per Internet o cercar una definició a un diccionari. </div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Taula</em></strong>: permet inserir una taula, moure-la, inserir files i columnes i eliminar-ne.</div>
+</li>
+<li class="level1"><div class="li"> <strong><em>Ajuda</em></strong>: per últim, l’opció d’ajuda per utilitzar l’aplicació.</div>
+</li>
+</ol>
+<div class="iocnote"><div class="ioccontent">
+<p>
+No hem d’oblidar que l’any 2006, l’empresa Google va comprar Youtube.
+</p>
+</div></div>
+<p>
+No oblideu que la gràcia de crear una presentació consisteix a poder visualitzar-la. Per fer-ho heu de clicar el botó que diu <strong><em>Inicia la presentació</em></strong> que es troba a la part de dalt de la pàgina.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_gestio_de_fulls_de_calcul" >Creació i gestió de fulls de càlcul</a></h3>
+<div class="level3">
+
+<p>
+Per crear un full de càlcul amb Google Drive heu de clicar a <strong><em>Crea</em></strong> i després escollir <strong><em>Full de càlcul</em></strong>. Ara mateix com a full per fer càlculs és una mica limitat però té una característica força interessant i significativa de les tendències actuals de programació. Dins de l’opció <strong><em>Insereix</em></strong> del menú podeu seleccionar inserir <strong><em>Gadgets</em></strong>.
+</p>
+
+<p>
+Els <em>gadgets</em> són petits programes que es poden utilitzar dins del full de càlcul per mostrar la informació de les cel·les d’una manera especial o per interactuar amb altres pàgines web. També existeix la possibilitat de crear nous <em>gadgets</em>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Existeix tota una documentació per començar a treballar amb <em>gadgets</em> aquí:
+</p>
+
+<p>
+<a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=96978" class="urlextern" title="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=96978"  rel="nofollow">http://goo.gl/ycDNe</a>
+</p>
+</div></div>
+<p>
+Per ara apareixen <em>gadgets</em> en forma de gràfics específics (de finances, de temperatura, de barres, etc), taules, mapes, diagrames i altres personalitzats, com es pot veure a la <span class="figref"><a href="#Figura3b"><span>figura<span class=refId> Figura3b</span></span></a></span>. 
+</p>
+<div class="iocfigure"><a name="Figura3b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemples de gadgets
+
+</figcaption><img src="../media/asxm09u2_03.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+Us recordem que això seria un exemple molt evident de les tendències de les aplicacions web 2.0. Es tracta d’una aplicació amb unes funcionalitats bàsiques que es pot anar complicant, sofisticant i millorant a partir de petits afegitons que, en aquest cas, s’anomenen <em>gadgets</em>.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_gestio_de_formularis" >Creació i gestió de formularis</a></h3>
+<div class="level3">
+
+<p>
+Els formularis de Google permeten recollir informació que insereixen els usuaris a través d’una pàgina web. Això permet crear fàcilment enquestes sobre productes, dades d’inscripció a un curs, enquestes de satisfacció sobre un curs, sondejos sobre temes variats, etc. L’avantatge d’aquests formularis es que es poden incrustar en qualsevol pàgina web o bloc i les dades recopilades s’envien automàticament a un full de càlcul del mateix Documents de Google amb múltiples possibilitats d’anàlisi.
+</p>
+
+<p>
+Per crear un formulari heu d’anar a l’opció del menú <strong><em>Crea</em></strong> i després seleccionar <strong><em>Formulari</em></strong>.
+</p>
+
+<p>
+Depenent de la informació que convingui recol·lectar podeu anar afegint diferents tipus de pregunta. Les preguntes tenen:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un títol: el títol de la pregunta.</div>
+</li>
+<li class="level1"><div class="li"> Un text d’ajuda: és opcional, surt en un color una mica més suau, a sota del títol de la pregunta, a mode d’explicació o annotacions sobre la pregunta.</div>
+</li>
+<li class="level1"><div class="li"> El tipus de pregunta pot ser:</div>
+<ul>
+<li class="level2"><div class="li"> Text: una casella amb text d’una línia per omplir.</div>
+</li>
+<li class="level2"><div class="li"> Paràgraf: un requadre de text per omplir una resposta llarga, de més d’una línia.</div>
+</li>
+<li class="level2"><div class="li"> Selecció múltiple: apareix un botó de ràdio per cada opció (pot ser múltiple) que especifiquem. Les opcions són incompatibles.</div>
+</li>
+<li class="level2"><div class="li"> Quadres de verificació: apareixen tantes caselles per marcar com opcions escrivim. Es pot marcar més d’una opció al mateix temps (vegeu la <span class="figref"><a href="#Figura4b"><span>figura<span class=refId> Figura4b</span></span></a></span>).</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura4b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de quadres de verificació
+
+</figcaption><img src="../media/asxm09u2_04.png" alt="" /></figure>
+
+</p>
+</div><ul>
+<li class="level1"><div class="li"> Escolliu d’una llista: apareix un desplegable (com l’utilitzat per escollir el tipus de pregunta del formulari de Google Drive). Només es pot escollir una opció.</div>
+</li>
+<li class="level2"><div class="li"> Escala: va bé utilitzar les escales per fer tipus de preguntes la valoració de les quals es pot graduar, per exemple en una enquesta de satisfacció (1 poc satisfet, 5 molt satisfet, vegeu <span class="figref"><a href="#Figura5b"><span>figura<span class=refId> Figura5b</span></span></a></span>)</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura5b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple d’escala
+
+</figcaption><img src="../media/asxm09u2_05.png" alt="" /></figure>
+
+</p>
+</div><ul>
+<li class="level1"><div class="li"> Quadrícula: semblant a les escales, però amb les preguntes agrupades en una taula (vegeu <span class="figref"><a href="#Figura6b"><span>figura<span class=refId> Figura6b</span></span></a></span>).</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figura6b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de quadrícula
+
+</figcaption><img src="../media/asxm09u2_06.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+Podeu afegir altres elements dintre del formulari com una <em>capçalera de secció</em> o un <em>salt de pàgina</em> (en el cas que vulgueu fer un formulari amb més d’una pàgina, per qüestions d’organització). Aquests dos elements els podeu afegir clicant a les opcions que es troben al menú <strong><em>Insereix</em></strong>.
+</p>
+
+<p>
+Un cop ja teniu configurat tots els elements que voleu integrar dins del formulari heu de clicar al botó <strong><em>Fet</em></strong>.
+</p>
+
+<p>
+Per poder visualitzar el formulari tenim dues opcions:
+</p>
+<ol>
+<li class="level1"><div class="li"> Anar directament a l’enllaç que ens proposa Google mitjançant el botó <strong><em>Mostra el formulari publicat</em></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Tancar la finestra d’edició i, des del full de càlcul generat, anar al menú <strong><em>Visualitza</em></strong> i seleccionar <strong><em>Vés al formulari actiu</em></strong>.</div>
+</li>
+</ol>
+
+<p>
+Els formularis actius sempre acaben amb un botó <strong><em>Envia</em></strong> (com el de la <span class="figref"><a href="#Figura7b"><span>figura<span class=refId> Figura7b</span></span></a></span>).
+</p>
+<div class="iocfigure"><a name="Figura7b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Exemple de formulari actiu
+
+</figcaption><img src="../media/asxm09u2_07.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+El botó <strong><em>Tria destinació de les respostes</em></strong> us permet escollir on voleu que s’emmagatzemin les respostes. Podeu escollir que creï un nou full de càlcul o un full nou a un full de càlcul existent. 
+</p>
+
+<p>
+Quan l’usuari ha omplert les caselles i opcions i clica al botó <strong><em>Envia</em></strong>, es crea el full corresponent. 
+</p>
+
+</div>
+
+<h2><a id="compartir_documents" >Compartir documents</a></h2>
+<div class="level2">
+
+<p>
+Una de les característiques principals de les aplicacions web és que estan pensades per permetre <strong>treballar col·laborativament</strong>. Google Drive no és una excepció i té mecanismes intuïtius per compartir els documents amb altres usuaris de la xarxa.
+</p>
+
+<p>
+Els documents es poden compartir de diferents maneres:
+</p>
+<ul>
+<li class="level1"><div class="li"> Per tothom o només per a alguns usuaris.</div>
+</li>
+<li class="level1"><div class="li"> Amb permisos de visualització, d’edició o d’administració (ser el propietari).</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a id="compartir_per_tothom" >Compartir per tothom</a></h3>
+<div class="level3">
+
+<p>
+Quan volem que un document el pugui visualitzar qualsevol usuari de la xarxa, fins i tot aquells que no utilitzen Google Drive, heu de fer el següent:
+</p>
+
+<p>
+<strong>1.</strong> Seleccionar el document en l’explorador, marcant la casella que té a l’esquerra, i fent clic al botó de compartir (vegeu <span class="figref"><a href="#Figura8b"><span>figura<span class=refId> Figura8b</span></span></a></span>). O bé, seleccionar l’opció “Comparteix / Comparteix” amb el botó dret del ratolí. 
+</p>
+<div class="iocfigure"><a name="Figura8b"></a>
+<p>
+<figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Opció compartir
+
+</figcaption><img src="../media/asxm09u2_08.png" alt="" /></figure>
+
+</p>
+</div>
+<p>
+<strong>2.</strong> Copiar l’enllaç que apareix al requadre i publicar-lo o comunicar-lo als usuaris desitjats (normalment, per correu electrònic o missatgeria instantània).
+</p>
+
+<p>
+<strong>3.</strong> Des de la caixa <em>Afegir persones</em> podeu afegir nous usuaris del document. Quan afegiu nous usuaris, podreu escollir si voleu que aquests puguin editar, comentar o visualitzar. 
+</p>
+
+<p>
+<strong>4.</strong> Finalment, clicar <strong><em>Comparteix i desa</em></strong>, per activar els canvis.
+</p>
+
+<p>
+Fixeu-vos que, automàticament, a l’explorador apareix ara la paraula <em>Compartits</em>.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u2/referencies.html">Referències</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u2/a1/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>

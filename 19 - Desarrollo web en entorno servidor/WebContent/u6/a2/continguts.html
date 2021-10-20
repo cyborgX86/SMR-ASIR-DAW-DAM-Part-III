@@ -1,0 +1,1063 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="ca"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="ca"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="ca"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="ca"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="ca"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-sitename-com" data-template-set="html5-reset">
+
+	<meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Desenvolupament web en entorn servidor</title>
+	
+<!-- <meta name="title" content=""> --> 
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Institut Obert de Catalunya">
+	<meta name="Copyright" content="Copyright Institut Obert de Catalunya 2011. All Rights Reserved.">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Desenvolupament web en entorn servidor">
+	<meta name="DC.subject" content="Informàtica i comunicacions">
+	<meta name="DC.creator" content="Institut Obert de Catalunya">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use � use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
+
+	<link rel="shortcut icon" href="../../../img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="../../../img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="../../../_/css/style.css">
+
+	<!-- CSS: jQuery UI -->
+	<link rel="stylesheet" href="../../../_/css/jquery-ui.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="../../../_/js/modernizr-1.7.min.js"></script>
+	<script src="../../../_/js/Hyphenator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   Hyphenator.config({
+		minwordlength : 4
+	   });
+	   Hyphenator.run();
+	</script>
+    <script src="../../../_/js/build.js" type="text/javascript"></script>
+</head>
+
+<body class="style-newspaper">
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+	<header id="header">
+		<div class="head"><a href="http://ioc.gencat.cat"><img src="../../../img/logo.png" alt="Institut Obert de Catalunya"/></a><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/deed.ca"><img src="../../../img/license.png" alt="Llic&egrave;ncia" class="license"/></a></div>
+		<div class="headdocument"><a href="../../../index.html">Desenvolupament web en entorn servidor</a></div>
+        <div id="search" class="search" name="search">
+         <form id="frmsearch" action="../../../search.html" method="get">
+          <input type="text" name="q"/>
+        </form>
+        </div>
+	</header>
+   <div id="upbutton" class="upbutton" style="display:none;"><img src="../../../img/uparrow.png" alt="Pujar a l'inici de p&agrave;gina"/></div>
+   <aside id="aside">
+    <div id="menu">
+      <ul>
+       <li name="toc"><div><img src="../../../img/toc.png" alt="&Iacute;ndex"/></div></li>
+       <li name="settings"><div><img src="../../../img/settings.png" alt="Configuraci&oacute;"/></div></li>
+       <li name="printer"><div><img src="../../../img/printer.png" alt="Imprimir"/></div></li>
+       <li name="favorites"><div><img src="../../../img/favorites.png" alt="Favorits"/></div></li>
+       <li name="help_icon" class="help_icon"><div><img src="../../../img/help_icon.png" alt="Ajuda"/></div></li>
+      </ul>
+     </div>
+   </aside>
+   <div id="sidebar-hide" name="sidebar-hide"><img src="../../../img/arrows.png"/></div>
+   <section>
+     <div id="toc" class="hidden">
+      <div class="menucontent">
+        <ul>
+        <li id="u6" class="parentnode"><p><a class="unit" href="../../../WebContent/u6/introduccio.html">6. Serveis web amb Spring</a></p><ul class="expander"><li id="u6introduccio"><a href="../../../WebContent/u6/introduccio.html">Introducció</a></li><li id="u6resum"><a href="../../../WebContent/u6/resum.html">Resum</a></li><li id="u6resultats"><a href="../../../WebContent/u6/resultats.html">Resultats d'aprenentatge</a></li><li id="u6referencies"><a href="../../../WebContent/u6/referencies.html">Referències</a></li><li id="u6a1" class="tocsection"><p id='u6a1continguts'><a class="section" href="../../../WebContent/u6/a1/continguts.html">Serveis web SOAP amb Spring Web Services</a><span class="buttonexp"></span></p><ul><li id="u6a1exercicis"><a href="../../../WebContent/u6/a1/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a1annexos"><a href="../../../WebContent/u6/a1/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a1' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a1/continguts.html#escrivint_un_servei_web_soap_de_consulta_de_dades_d_empreses_amb_spring-ws">Escrivint un servei web SOAP de consulta de dades d’empreses amb Spring-WS</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#fent_servir_la_consulta_de_dades_d_empreses_des_d_una_aplicacio_java_stand-alone">Fent servir la consulta de dades d’empreses des d'una aplicació Java 'stand-alone'</a></li><li><a href="../../../WebContent/u6/a1/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a2" class="tocsection"><p id='u6a2continguts'><a class="section" href="../../../WebContent/u6/a2/continguts.html">Serveis web RESTful amb Spring. Escrivint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a2activitats"><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></li><li id="u6a2exercicis"><a href="../../../WebContent/u6/a2/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a2annexos"><a href="../../../WebContent/u6/a2/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a2' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a2/continguts.html#un_servei_web_restful_que_contesta_hello_world">Un servei web RESTful que contesta '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#testejant_el_servei_web_hello_world">Testejant el servei web '"Hello, World!!!"'</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#el_servei_web_de_gestio_d_equips_de_futbol_operacions_crud">El servei web de gestió d'equips de futbol. Operacions CRUD</a></li><li><a href="../../../WebContent/u6/a2/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div><li id="u6a3" class="tocsection"><p id='u6a3continguts'><a class="section" href="../../../WebContent/u6/a3/continguts.html">Serveis web RESTful amb Spring. Consumint serveis web</a><span class="buttonexp"></span></p><ul><li id="u6a3activitats"><a href="../../../WebContent/u6/a3/activitats.html">Activitats</a></li><li id="u6a3exercicis"><a href="../../../WebContent/u6/a3/exercicis.html">Exercicis d'autoavaluació</a></li><li id="u6a3annexos"><a href="../../../WebContent/u6/a3/annexos.html">Annexos</a></li></ul></li><div data-parent-id='u6a3' class='tocssection hidden'><div class="toc"><ul><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_java_per_al_servei_web_restful_hello_world">Un client Java per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#tests_d_integracio_per_al_servei_web_restful_hello_world">Tests d’integració per al servei web RESTful '"Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#un_client_javascript_per_al_servei_web_restful_hello_world">Un client JavaScript per al servei web RESTful "'Hello, World!!!'"</a></li><li><a href="../../../WebContent/u6/a3/continguts.html#que_s_ha_apres">Què s'ha après?</a></li></ul></div></div></ul></li><li id="" class="indexnode"><p><a href="../../../index.html">Anar a l&#39;&iacute;ndex general</a></p></li>
+        </ul>
+      </div>
+    </div>
+   </section>
+   <section>
+   <div id="settings" class="hidden">
+    <div class="menucontent">
+     <div class="allsettings">
+     <div class="settings">
+      <label>Font i Color</label>
+		<div class="setting-option">
+	        <ul class="fontBackground">
+				<li id="style-newspaper" title="Newspaper" class="appearance-style-newspaper"><span>Newspaper</span></li>
+                <li id="style-novel" title="Novel" class="appearance-style-novel"><span>Novel</span></li>
+                <li id="style-ebook" title="eBook" class="appearance-style-ebook"><span>eBook</span></li>
+				<li id="style-inverse" title="Inverse" class="appearance-style-inverse active"><span>Inverse</span></li>
+				<li id="style-athelas" title="Athelas" class="appearance-style-athelas"><span>Athelas</span></li>
+			</ul>
+		</div>
+     </div>
+	<div class="settings">
+      <label>Amplada</label>
+		<div class="setting-option">
+	        <div id="slider-width"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+		<div class="setting-option">
+	        <div id="slider-font"></div>
+		</div>
+     </div>
+     <div class="settings">
+      <label>Mida de la font</label>
+	  <div class="setting-option">
+       <form action="" class="sett-options">
+		<ul>
+		    <li><input type="checkbox" id="secondary-content" /><label for="secondary-content">Mostra recursos complementaris</label></li>
+		    <li><input type="checkbox" id="main-images" /><label for="main-images">Mostra imatges</label></li>
+		    <li><input type="checkbox" id="text-alignment" /><label for="text-alignment">Text justificat</label></li>
+			<li><input type="checkbox" id="text-hyphen" /><label for="text-hyphen">Partici&oacute; sil·l&agrave;bica</label></li>
+		</ul>
+       </form>
+	  </div>
+     </div>
+     </div>
+    </div>
+   </div>
+   </section>
+ <section>
+ <div id="favorites" class="hidden"></div>
+ </section>   
+ <div id="bridge" class="hidden"></div>
+ <div id="help" class="hidden">
+  <div class="helptitle">Dreceres del teclat<hr></div>
+  <div class="helpsection"><span>General</span>
+   <ul>
+    <li><span class="shortcut">g</span>: Anar al men&uacute; de navegaci&oacute;</li>
+    <li><span class="shortcut">o</span>: Anar a opcions</li>
+    <li><span class="shortcut">s</span>: Guardar la p&agrave;gina actual a favorits</li>
+    <li><span class="shortcut">p</span>: Imprimir la p&agrave;gina actual</li>
+    <li><span class="shortcut">?</span>: Mostrar/Ocultar l&#39;ajuda</li>
+   </ul>
+  </div>
+  <div class="helpsection"><span>Navegaci&oacute;</span>
+   <ul>
+    <li><span class="shortcut">i</span>: Anar a l&#39;&iacute;ndex general</li>
+    <li><span class="shortcut">t</span>: Anar a l&#39;inici de p&agrave;gina</li>
+    <li><span class="shortcut">b</span>: Anar al final de p&agrave;gina</li>
+    <li><span class="shortcut">j</span>: Anar cap endavant dintre la p&agrave;gina</li>
+    <li><span class="shortcut">k</span>: Anar cap enrere dintre la p&agrave;gina</li>
+    <li><span class="shortcut">h</span>: Anar a la p&agrave;gina anterior:</li>
+    <li><span class="shortcut">l</span>: Anar a la p&agrave;gina seg&uuml;ent:</li>
+   </ul>
+   </div>
+ </div>
+ <div id="favcounter" name="favcounter" class="hidden"><span></span></div>
+ <div id="navmenu" class="navmenu"><ul class="webnav"><li><a href="../../../index.html" title="Anar a l&#39;&iacute;ndex general">Inici</a></li><li><a href="../introduccio.html">Serveis web amb Spring</a></li><li>Serveis web RESTful amb Spring. Escrivint serveis web</li></ul></div>
+	<div id="content" lang="ca" class="hyphenate text">
+     <article lang="ca" class="sheet">
+        <h1><a id="serveis_web_restful_amb_spring_escrivint_serveis_web"> Serveis web RESTful amb Spring. Escrivint serveis web </a></h1>
+    	
+<p>
+Explicarem, mitjançant exemples, els conceptes mes rellevants dels serveis web RESTful (de l’anglès <em>REpresentational State Transfer</em>) amb Spring MVC; aprendreu a crear-ne, a fer-ne el desplegament i a provar-los mitjançant exemples.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>REST</strong> no és un protocol, sinó un conjunt de regles i principis que permeten desenvolupar serveis web fent servir HTTP com a protocol de comunicacions entre el client i el servei web, i es basa a definir <strong>accions sobre recursos</strong> mitjançant l’ús dels mètodes <code>GET</code>, <code>POST</code>, <code>PUT</code> i <code>DELETE</code>, inherents d’HTTP.
+</p>
+</div></div>
+<p>
+Per a <code>REST</code>, qualsevol cosa que es pugui identificar amb un <acronym title="Uniform Resource Identifier">URI</acronym> (de l’anglès <em>Uniform Resource Identifier</em>) es considera un recurs i, per tant, es pot manipular mitjançant accions (també anomenades <em>verbs</em>) especificades a la capçalera HTTP de les peticions seguint el següent conjunt de regles i principis que regeixen <code>REST</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>POST</code>: crea un recurs nou.</div>
+</li>
+<li class="level1"><div class="li"> <code>GET</code>: consulta el recurs, n’obté la representació.</div>
+</li>
+<li class="level1"><div class="li"> <code>DELETE</code>: esborra un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>PUT</code>: modifica un recurs.</div>
+</li>
+<li class="level1"><div class="li"> <code>HEAD</code>: obté metainformació del recurs.</div>
+</li>
+</ul>
+
+<p>
+<code>REST</code> es basa en l’ús d’estàndards oberts en totes les seves parts; així, fa servir <acronym title="Uniform Resource Identifier">URI</acronym> per a la localització de recursos, HTTP com a protocol de transport, els verbs HTTP per especificar les accions sobre els recursos i els tipus MIME per a la representació dels recursos (XML, JSON, XHTML, <acronym title="HyperText Markup Language">HTML</acronym>, PDF, GIF, JPG, PNG, etc.).
+</p>
+
+<p>
+L’especificació de Java EE 7 inclou l’<acronym title="Application Programming Interface">API</acronym> de JAX-RS (de l’anglès <em>Java <acronym title="Application Programming Interface">API</acronym> for RESTful Web Services</em>), que fa servir un conjunt d’anotacions per simplificar el desenvolupament, el desplegament i el consum de serveis web RESTful.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle"> Format JSON</p>
+<p>
+JSON (de l’anglès <em>Java Script Object Notation</em>) és un format lleuger d’intercanvi de dades. És fàcil de llegir i escriure per als éssers humans i, per a les màquines, d’analitzar i generar. Això el fa ideal per representar els recursos en arquitectures REST. Un dels principals problemes dels serveis web basats en SOAP és la mida dels missatges d’intercanvi; l’ús de JSON permet minimitzar la informació a enviar.
+</p>
+</div></div><div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>JAX-RS</strong> (de l’anglès <em>Java <acronym title="Application Programming Interface">API</acronym> for RESTful Web Services</em>) és l’<acronym title="Application Programming Interface">API</acronym> que inclou l’especificació de Java EE 7 per crear i consumir serveis web basats en REST.
+</p>
+</div></div>
+<p>
+Spring, per la seva banda, no proporciona un projecte ni un mòdul específic per a la creació i el consum de serveis web RESTful, sinó que ho engloba com una capacitat més dins el projecte Spring MVC.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+<strong>Spring MVC</strong> és el mòdul del projecte Spring que proporciona suport per crear i consumir serveis web basats en REST.
+</p>
+</div></div>
+<p>
+JAX-RS és una <acronym title="Application Programming Interface">API</acronym> centrada únicament i exclusivament en el desenvolupament de serveis web RESTful. Spring MVC és un mòdul del projecte Spring centrat en el desenvolupament web en general, i és en aquest marc que dóna complet suport tant al desenvolupament d’aplicacions web com al desenvolupament de serveis web RESTful.
+</p>
+
+<p>
+Les capacitats que ofereix Spring MVC per desenvolupar serveis web RESTful són una continuació del model més general de programació que té Spring MVC. No hi ha, doncs, un <em>framework</em> o mòdul específic a Spring per desenvolupar serveis web RESTful.
+</p>
+
+<p>
+Per escriure un servei web RESTful, tant amb JAX-RS com amb Spring, tan sols us caldria un client i un servidor que es puguin comunicar per HTTP, però hauríeu de fer a mà tota la configuració, el parseig de les peticions segons el verb HTTP emprat, el mapatge entre el format de dades de la petició i els objectes Java que representen el domini i enviar les respostes amb el tipus MIME que s’especifiqui a la capçalera de la petició. Tant JAX-RS com Spring us estalvien tota aquesta feina proporcionant-vos un petit conjunt d’anotacions que us permetran desenvolupar còmodament serveis web RESTful.
+</p>
+
+<p>
+Ens centrarem en les capacitats que proporciona Spring, i més concretament el mòdul Spring MCV, per donar suport a la creació i el consum de serveis web RESTful.
+</p>
+
+<h2><a id="un_servei_web_restful_que_contesta_hello_world" >Un servei web RESTful que contesta &#039;&quot;Hello, World!!!&quot;&#039;</a></h2>
+<div class="level2">
+
+<p>
+Veurem els diferents conceptes bàsics dels serveis web RESTful amb el típic exemple que sempre trobeu als manuals. Farem un <em>“Hello, World!!!</em>” i el publicarem com a servei web RESTful utilitzant Spring MVC per fer-ho.
+</p>
+
+<p>
+El servei web que farem tornarà <em>“Hello, World!!!”</em> si no li passem cap paràmetre; si li passem un paràmetre anomenat <code>name</code> ens tornarà una salutació personalitzada canviant la paraula <em>World</em> pel nom especificat a <code>name</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div>
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+Com que es tracta d’un exemple molt senzill no ens cal cap projecte de partida, simplement creeu a NetBeans un nou projecte Maven de tipus <em>Web Application</em>. Per fer-ho, feu <em>File / New Project</em> i us apareixerà l’assistent de creació de projectes. A l’assistent seleccioneu <em>Maven</em> i <em>Web Application</em>, tal com es veu en la <span class="figref"><a href="#fig1.1"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.1"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Creació de projectes a NetBeans
+
+</figcaption><img src="../media/fig1.1.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En la següent pantalla (vegeu la <span class="figref"><a href="#fig1.2"><span>figura</span></a></span>) triarem el nom del projecte (el podeu anomenar “Springresthelloioc”) i el paquet per defecte on anirà el codi font; per exemple, <code>cat.xtec.ioc.springresthelloioc</code>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Hem triat per a l’exemple un projecte web amb Maven, però és perfectament vàlid fer-ho amb qualsevol altre tipus de projecte web.
+</p>
+</div></div><div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Nom del nou projecte
+
+</figcaption><img src="../media/fig1.2.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+En la següent pantalla (vegeu la <span class="figref"><a href="#fig1.3"><span>figura</span></a></span>) de l’assistent deixeu els valors per defecte i polseu <em>Finish</em>.
+</p>
+<div class="iocfigure"><a name="fig1.2"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Configuració del nou projecte
+
+</figcaption><img src="../media/fig1.3.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Un cop creat el projecte cal que modifiqueu el pom.xml per afegir les dependències cap a Spring; afegiu les següent línies al fitxer pom.xml:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;dependency&gt;</div></li><li class="li1"><div class="de1">  &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div></li><li class="li1"><div class="de1">  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div></li><li class="li1"><div class="de1">  &lt;version&gt;4.0.3.RELEASE&lt;/version&gt;</div></li><li class="li1"><div class="de1">&lt;/dependency&gt;</div></li></ol></pre>
+
+<p>
+També heu de crear el fitxer web.xml i configurar el <em>servlet</em> <code>DispatcherServlet</code> per tal que Spring MVC serveixi les peticions web; creeu el fitxer web.xml a la carpeta <em>Web Pages/WEB-INF</em> amb el següent contingut:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;web-app version=&quot;3.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;</div></li><li class="li1"><div class="de1">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">         xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee</div></li><li class="li1"><div class="de1">                                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;display-name&gt;Spring RESTful Hello World&lt;/display-name&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;servlet&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</div></li><li class="li1"><div class="de1">        &lt;init-param&gt;</div></li><li class="li1"><div class="de1">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div></li><li class="li1"><div class="de1">            &lt;param-value&gt;/WEB-INF/spring/DispatcherServlet-servlet.xml&lt;/param-value&gt;</div></li><li class="li1"><div class="de1">        &lt;/init-param&gt;</div></li><li class="li1"><div class="de1">        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;servlet-mapping&gt;</div></li><li class="li1"><div class="de1">        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;</div></li><li class="li1"><div class="de1">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</div></li><li class="li1"><div class="de1">    &lt;/servlet-mapping&gt;</div></li><li class="li1"><div class="de1">&lt;/web-app&gt;</div></li></ol></pre>
+
+<p>
+Ens cal també crear el fitxer de configuració per a Spring; li hem indicat que el fitxer s’anomenarà DispatcherServlet-servlet.xml i serà a la ruta <em>/WEB-INF/spring</em>/. Creeu primer la carpeta <em>/WEB-INF/spring</em>/ i després el fitxer DispatcherServlet-servlet.xml amb el següent contingut:
+</p>
+<pre class="code xml"><ol><li class="li1"><div class="de1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div></li><li class="li1"><div class="de1">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div></li><li class="li1"><div class="de1">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div></li><li class="li1"><div class="de1">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</div></li><li class="li1"><div class="de1">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</div></li><li class="li1"><div class="de1">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</div></li><li class="li1"><div class="de1">                           http://www.springframework.org/schema/beans/spring-beans.xsd</div></li><li class="li1"><div class="de1">                           http://www.springframework.org/schema/context</div></li><li class="li1"><div class="de1">                           http://www.springframework.org/schema/context/spring-context-4.0.xsd</div></li><li class="li1"><div class="de1">                           http://www.springframework.org/schema/mvc</div></li><li class="li1"><div class="de1">                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;</div></li><li class="li1"><div class="de1">    &lt;mvc:annotation-driven /&gt;</div></li><li class="li1"><div class="de1">    &lt;context:component-scan base-package=&quot;cat.xtec.ioc&quot; /&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</div></li><li class="li1"><div class="de1">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;</div></li><li class="li1"><div class="de1">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</div></li><li class="li1"><div class="de1">    &lt;/bean&gt;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&lt;/beans&gt;</div></li></ol></pre>
+
+<p>
+Si recarregueu el pom.xml fent clic amb el botó dret damunt el nom del projecte i prement l’opció <em>Reload POM</em> del menú contextual ja tindreu el projecte configurat i llest per començar a crear el servei web RESTful amb Spring.
+</p>
+
+</div>
+
+<h3><a id="creacio_del_servei_web_restful" >Creació del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Ja heu creat el projecte que us servirà de base, ara cal que codifiqueu el servei web RESTful que ha de tornar la salutació <em>“Hello, World!!!”</em>; per fer-ho cal decidir primer dues coses: amb quin dels verbs HTTP ha de respondre el servei web i quin <acronym title="Uniform Resource Identifier">URI</acronym> fareu servir per cridar-lo.
+</p>
+
+<p>
+Aquest servei web ha d’<strong>obtenir una representació del recurs</strong> en format JSON, i per tant haurà de respondre el verb <code>GET</code>.
+</p>
+
+<p>
+La decisió sobre quin <acronym title="Uniform Resource Identifier">URI</acronym> utilitzar és força arbitrària; en aquest cas utilitzarem, per exemple, <em>/hello</em>.
+</p>
+
+<p>
+Per tant, a les peticions d’aquest tipus:
+</p>
+<pre class="code">GET http://localhost:8080/resthelloioc/hello</pre>
+
+<p>
+ha de respondre amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+I a les peticions d’aquest tipus:
+</p>
+<pre class="code">GET http://localhost:8080/resthelloioc/hello?name=User</pre>
+
+<p>
+ha de respondre amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, User!&quot;}</pre>
+
+<p>
+El servei web tornarà la informació en format JSON. A la sortida, el camp <em>id</em> és un identificador únic per a la salutació, i el camp <em>content</em> representa la salutació.
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">JSON</p>
+<p>
+A l’exemple us demanem que treballeu amb una representació JSON. La simplicitat, lleugeresa i facilitat de lectura fan ideals aquesta representació per treballar amb aplicacions i dispositius que tenen restriccions pel que fa al volum de dades a intercanviar. Les aplicacions mòbils que consumeixin dades de serveis web RESTful són un molt bon exemple en aquest sentit; la quantitat d’informació que s’intercanviaran client i servidor per fer les operacions és molt menor en una aproximació JSON + RESTful que en una aproximació XML + SOAP.
+</p>
+</div></div>
+<p>
+Un cop decidit el funcionament del nostre servei, el següent serà implementar la classe que modelarà la representació de la salutació, és a dir, la classe que modelarà el que torna el servei web.
+</p>
+
+<p>
+Creeu una classe Java anomenada <code>Greeting</code> al paquet <code>cat.xtec.ioc. springresthelloioc.domain</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">public class Greeting {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private final long id;</div></li><li class="li1"><div class="de1">    private final String content;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public Greeting(long id, String content) {</div></li><li class="li1"><div class="de1">        this.id = id;</div></li><li class="li1"><div class="de1">        this.content = content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public long getId() {</div></li><li class="li1"><div class="de1">        return id;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public String getContent() {</div></li><li class="li1"><div class="de1">        return content;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Spring fa servir la llibreria Jackson per fer les transformacions entre el format JSON i la seva representació Java, i a l’inrevés.
+</p>
+
+<p>
+El següent pas és crear el controlador Spring, que s’encarregarà de servir les peticions; per fer-ho, creeu una classe Java anomenada <code>GreetingController</code> al paquet <code>cat.xtec.ioc.springresthelloioc.controller</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.springresthelloioc.domain.Greeting;</div></li><li class="li1"><div class="de1">import java.util.concurrent.atomic.AtomicLong;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestParam;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class GreetingController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String template = &quot;Hello, %s&quot;;</div></li><li class="li1"><div class="de1">    private final AtomicLong counter = new AtomicLong();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method =  RequestMethod.GET, value = &quot;/hello&quot;)</div></li><li class="li1"><div class="de1">    public Greeting greeting(@RequestParam(value=&quot;name&quot;, defaultValue=&quot;World!!!&quot;) String name) {</div></li><li class="li1"><div class="de1">        return new Greeting(counter.incrementAndGet(),</div></li><li class="li1"><div class="de1">                            String.format(template, name));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi del controlador és molt simple, però porta algunes particularitats que cal remarcar; fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Hem anotat la classe amb <code>@RestController</code> per marcar la classe com un controlador <code>REST</code> on cada un dels seus mètodes tornarà un objecte del domini enlloc d’una vista. Aquesta és la diferència més gran entre un controlador MVC típic i un controlador per serveis web RESTful: el cos de la resposta HTTP es crea transformant un objecte del domini a JSON, i no es torna en format <acronym title="HyperText Markup Language">HTML</acronym>.</div>
+</li>
+<li class="level1"><div class="li"> L’objecte <code>Greeting</code> que torna el mètode <code>greeting</code> cal que sigui transformat a JSON; Spring s’encarrega de fer això automàticament.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode <code>greeting</code> amb <code>@RequestMapping</code> indicant que les peticions a <em>/hello</em> les servirem amb aquest mètode.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el mètode <code>greeting</code> amb <code>RequestMethod.GET</code> per indicar que respondrà a les peticions HTTP que es facin mitjançant el verb <code>GET</code>. Si no ho haguéssim fet, el mètode respondria a qualsevol dels verbs HTTP.</div>
+</li>
+<li class="level1"><div class="li"> Hem anotat el paràmetre del mètode <code>greeting</code> amb <code>@RequestParam</code> per indicar que el paràmetre <code>name</code> de la petició HTTP s’ha de vincular amb el paràmetre <code>name</code> del mètode. El paràmetre és opcional i, si no ve a la petició HTTP, farem servir <em>“World!!!”</em> com a valor per defecte.</div>
+</li>
+<li class="level1"><div class="li"> En la implementació simplement creem i retornem l’objecte <code>Greeting</code>, que modela la salutació.</div>
+</li>
+<li class="level1"><div class="li"> Com que hi ha la llibreria Jackson al <em>classpath</em>, Spring tria la conversió de l’objecte <code>Greeting</code> a JSON per defecte.</div>
+</li>
+</ul>
+
+<p>
+I aquesta és tota la feina que cal fer per implementar el servei web, Spring farà la resta. Ara tan sols manca fer-ne el desplegament al servidor d’aplicacions i provar-lo.
+</p>
+
+</div>
+
+<h3><a id="desplegament_i_prova_del_servei_web_restful" >Desplegament i prova del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Un cop creat el servei web, cal que el desplegueu per tal de fer-lo accessible als clients i poder-lo provar. El procés de desplegament del servei web es fa desplegant l’aplicació Java EE que el conté mitjançant els mecanismes normals de desplegament de qualsevol aplicació Java EE.
+</p>
+
+<p>
+Aquest procés és molt senzill, simplement cal que feu <em>Clean and Build</em> i després <em>Run</em> a NetBeans, i es farà el desplegament al servidor d’aplicacions que tingueu configurat per al projecte.
+</p>
+
+<p>
+Si proveu ara accedint a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springresthelloioc/hello" class="urlextern" title="http://localhost:8080/springresthelloioc/hello"  rel="nofollow">localhost:8080/springresthelloioc/hello</a> amb qualsevol navegador veureu que el servei web us torna la salutació en format JSON:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, World!!!!&quot;}</pre>
+
+<p>
+Proveu també especificant el paràmetre <code>name</code>, accedint a <a href="http://localhost:8080/springresthelloioc/hello?name=User" class="urlextern" title="http://localhost:8080/springresthelloioc/hello?name=User"  rel="nofollow">localhost:8080/springresthelloioc/hello?name=User</a>, per exemple, i veureu que la salutació canvia:
+</p>
+<pre class="code">{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, User!&quot;}</pre>
+
+<p>
+Amb això ja heu creat, configurat, desplegat i provat un servei web RESTful molt senzill amb Spring.
+</p>
+
+</div>
+
+<h2><a id="testejant_el_servei_web_hello_world" >Testejant el servei web &#039;&quot;Hello, World!!!&quot;&#039;</a></h2>
+<div class="level2">
+
+<p>
+Aprofitarem les capacitats que proporcions Spring, i més concretament Spring MVC, per crear un conjunt de tests que van a cavall entre un test unitari i un test d’integració. Aquests tests us permetran provar els serveis web sense necessitat de tenir-los desplegats i executant-se a un servidor d’aplicacions. Testejarem amb Spring el típic exemple de “<em>Hello, World!!!</em>”. 
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte1" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+El projecte té un servei web RESTful configurat a la classe <code>GreetingController</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.springresthelloioc.domain.Greeting;</div></li><li class="li1"><div class="de1">import java.util.concurrent.atomic.AtomicLong;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestParam;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class GreetingController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private static final String template = &quot;Hello, %s&quot;;</div></li><li class="li1"><div class="de1">    private final AtomicLong counter = new AtomicLong();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method =  RequestMethod.GET, value = &quot;/hello&quot;)</div></li><li class="li1"><div class="de1">    public Greeting greeting(@RequestParam(value=&quot;name&quot;, defaultValue=&quot;World!!!&quot;) String name) {</div></li><li class="li1"><div class="de1">        return new Greeting(counter.incrementAndGet(),</div></li><li class="li1"><div class="de1">                            String.format(template, name));</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquest servei web és un servei web RESTful desenvolupat amb Spring que torna “<em>Hello, World!!!</em>” si no li passem cap paràmetre, i si li passem un paràmetre anomenat <code>name</code> torna una salutació personalitzada canviant la paraula <em>World</em> pel nom especificat a <code>name</code>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springtestresthelloioc” en l’estat inicial d’aquest apartat en l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div>
+<p>
+El servei web torna la salutació en format JSON i respon a les peticions <code>GET</code> a <em>/hello</em> amb:
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en l’enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div><pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot; Hello, World!!!&quot;}</pre>
+
+<p>
+I a les peticions <code>GET</code> a <em>/hello?name=User</em> amb:
+</p>
+<pre class="code">{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, User!&quot;}</pre>
+
+<p>
+El test que escriurem utilitzarà les capacitats que té Spring MVC per fer test unitari dels <em>endpoints</em> configurats a un controlador RESTful. La principal diferència entre aquest tipus de tests i els tests d’integració és que en aquest cas <strong>no ens cal tenir el servei web que volem provar desplegat i executant-se</strong> a un servidor d’aplicacions.
+</p>
+<div class="iocimportant"><div class="ioccontent">
+<p>
+Els <strong>tests d’integració</strong> difereixen dels tests unitaris, ja que no testegen el codi de forma aïllada, sinó que requereixen que el codi a testejar estigui desplegat al servidor d’aplicacions per funcionar.
+</p>
+</div></div>
+<p>
+Els tests unitaris amb el bastiment proporcionat per Spring MVC es basen en JUnit 4. JUnit és un <em>framework</em> de test que utilitza anotacions per identificar els mètodes que especifiquen un test. A JUnit, un test, ja sigui unitari o d’integració, és un mètode que s’especifica en una classe que només s’utilitza per al test. Això s’anomena una <em>classe de test</em>. Un mètode de test amb JUnit 4 es defineix amb l’anotació <code>@org.junit.Test</code>. En aquest mètode s’utilitza un mètode d’asserció en el qual es comprova el resultat esperat de l’execució de codi en comparació del resultat real.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_execucio_dels_tests_unitaris" >Creació i execució dels tests unitaris</a></h3>
+<div class="level3">
+
+<p>
+Ara toca començar a crear els tests d’integració per provar el servei web. Per fer-ho, creeu un nou paquet dins de <em>Test Packages</em> anomenat, per exemple, <code>cat.xtec.ioc.springresthelloioc.controller</code>, i una classe Java anomenada <code>GreetingControllerTest</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.junit.Before;</div></li><li class="li1"><div class="de1">import org.junit.Test;</div></li><li class="li1"><div class="de1">import org.junit.runner.RunWith;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.http.MediaType;</div></li><li class="li1"><div class="de1">import org.springframework.http.converter.HttpMessageConverter;</div></li><li class="li1"><div class="de1">import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;</div></li><li class="li1"><div class="de1">import org.springframework.mock.http.MockHttpOutputMessage;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</div></li><li class="li1"><div class="de1">import org.springframework.test.context.web.WebAppConfiguration;</div></li><li class="li1"><div class="de1">import org.springframework.test.web.servlet.MockMvc;</div></li><li class="li1"><div class="de1">import org.springframework.web.context.WebApplicationContext;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import java.io.IOException;</div></li><li class="li1"><div class="de1">import java.nio.charset.Charset;</div></li><li class="li1"><div class="de1">import java.util.Arrays;</div></li><li class="li1"><div class="de1">import static junit.framework.Assert.assertNotNull;</div></li><li class="li1"><div class="de1">import static org.hamcrest.CoreMatchers.is;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.boot.test.SpringApplicationConfiguration;</div></li><li class="li1"><div class="de1">import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;</div></li><li class="li1"><div class="de1">import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;</div></li><li class="li1"><div class="de1">import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RunWith(SpringJUnit4ClassRunner.class)</div></li><li class="li1"><div class="de1">@SpringApplicationConfiguration(classes = Application.class)</div></li><li class="li1"><div class="de1">@WebAppConfiguration</div></li><li class="li1"><div class="de1">public class GreetingControllerTest {</div></li><li class="li1"><div class="de1">    private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),</div></li><li class="li1"><div class="de1">            MediaType.APPLICATION_JSON.getSubtype(),</div></li><li class="li1"><div class="de1">            Charset.forName(&quot;utf8&quot;));</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private MockMvc mockMvc;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    private HttpMessageConverter mappingJackson2HttpMessageConverter;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private WebApplicationContext webApplicationContext;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    void setConverters(HttpMessageConverter&lt;?&gt;[] converters) {</div></li><li class="li1"><div class="de1">        this.mappingJackson2HttpMessageConverter = Arrays.asList(converters).stream()</div></li><li class="li1"><div class="de1">            .filter(hmc -&gt; hmc instanceof MappingJackson2HttpMessageConverter)</div></li><li class="li1"><div class="de1">            .findAny()</div></li><li class="li1"><div class="de1">            .orElse(null);</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">        assertNotNull(&quot;the JSON message converter must not be null&quot;,</div></li><li class="li1"><div class="de1">                this.mappingJackson2HttpMessageConverter);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Before</div></li><li class="li1"><div class="de1">    public void setup() throws Exception {</div></li><li class="li1"><div class="de1">        this.mockMvc = webAppContextSetup(webApplicationContext).build();</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    protected String json(Object o) throws IOException {</div></li><li class="li1"><div class="de1">        MockHttpOutputMessage mockHttpOutputMessage = new MockHttpOutputMessage();</div></li><li class="li1"><div class="de1">        this.mappingJackson2HttpMessageConverter.write(</div></li><li class="li1"><div class="de1">                o, MediaType.APPLICATION_JSON, mockHttpOutputMessage);</div></li><li class="li1"><div class="de1">        return mockHttpOutputMessage.getBodyAsString();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Fixeu-vos que:
+</p>
+<ul>
+<li class="level1"><div class="li"> Anotem la classe amb <code>@RunWith(SpringJUnit4ClassRunner.class)</code> per indicar que es tracta d’un test unitari que s’executarà amb l’executor de JUnit que porta Spring.</div>
+</li>
+<li class="level1"><div class="li"> Anotem la classe amb <code>@SpringApplicationConfiguration(classes = Application.class)</code> per indicar que crearem una classe que carregui la configuració Spring. Aquesta és una de les diverses maneres de fer-ho, també es podria carregar la configuració amb fitxers XML.</div>
+</li>
+<li class="level1"><div class="li"> Anotem la classe amb <code>@WebAppConfiguration</code> per indicar a JUnit que es tracta d’un test unitari per a Spring MVC i que s’ha d’executar amb un context d’aplicació web i no d’aplicació <em>stand-alone</em>.</div>
+</li>
+<li class="level1"><div class="li"> Anotem un mètode anomenat <code>setup</code> amb <code>@Before</code> per indicar a JUnit que aquest mètode s’executi cada cop que es creï la classe de test. En aquest mètode creem un objecte de tipus <code>MockMvc</code> que serà el que ens proporcionarà tota la infraestructura necessària per fer els tests sense haver de desplegar l’aplicació a cap servidor d’aplicacions.</div>
+</li>
+<li class="level1"><div class="li"> El mètode <code>json</code> és un mètode que ens torna la representació en format JSON d’un objecte.</div>
+</li>
+<li class="level1"><div class="li"> S’han configurat tots els conversors que es requereixen per parsejar les peticions i les respostes.</div>
+</li>
+</ul>
+
+<p>
+Per tal que Spring pugui carregar la configuració cal una classe anomenada <code>Application</code> al paquet <code>cat.xtec.ioc.springresthelloioc.controller</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.springresthelloioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.boot.SpringApplication;</div></li><li class="li1"><div class="de1">import org.springframework.boot.autoconfigure.SpringBootApplication;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@SpringBootApplication</div></li><li class="li1"><div class="de1">public class Application {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public static void main(String[] args) {</div></li><li class="li1"><div class="de1">        SpringApplication.run(Application.class, args);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Aquesta classe ja la teniu creada al projecte de partida.
+</p>
+
+<p>
+El primer test que farem serà un test que <strong>comprovi que la petició <em>/hello</em> sense cap paràmetre torna la representació JSON de la salutació “<em>Hello, World!!!</em>”</strong>; per fer-ho, creeu un mètode anomenat  <code>greetingShouldReturnHelloWorldWithoutName</code> dins la classe <code>GreetingControllerTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void greetingShouldReturnHelloWorldWithoutName() throws Exception {</div></li><li class="li1"><div class="de1">    mockMvc.perform(get(&quot;/hello&quot;))                </div></li><li class="li1"><div class="de1">            .andExpect(status().isOk())</div></li><li class="li1"><div class="de1">            .andExpect(content().contentType(contentType))</div></li><li class="li1"><div class="de1">            .andExpect(jsonPath(&quot;$.content&quot;, is(&quot;Hello, World!!!&quot;)));        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Si analitzem el codi veiem diverses coses importants: la primera és que hem anotat el mètode <code>greetingShouldReturnHelloWorldWithoutName</code> amb l’anotació <code>@Test</code> per indicar que es tracta d’un mètode de test.
+</p>
+
+<p>
+També que fa servir l’objecte <code>MockMVC</code> que heu creat per fer una petició de tipus <code>GET</code> a l’ <acronym title="Uniform Resource Identifier">URI</acronym> <em>/hello</em>; comproveu que el resultat de la petició sigui un 200 (OK), que el <em>content type</em> sigui JSON i que tingui al camp <em>content</em> la salutació per defecte “<em>Hello, World!!!</em>”.
+</p>
+
+<p>
+Ja podem executar el test que hem creat fent <em>Test File</em> (vegeu la <span class="figref"><a href="#fig1.5"><span>figura</span></a></span>) al menú contextual de la classe de test.
+</p>
+<div class="iocfigure"><a name="fig1.5"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Execució del test
+
+</figcaption><img src="../media/fig1.5.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+Si tot ha anat bé veureu el resultat a la finestra de <em>Test</em> (vegeu la <span class="figref"><a href="#fig1.6"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.6"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Resultat de l’execució del test
+
+</figcaption><img src="../media/fig1.6.png" alt="" /></figure>
+</div>
+<p>
+Tot i que el resultat de l’execució dels test es pot veure a la finestra de sortida de NetBeans, és molt més còmode visualitzar-ho a la finestra de resultats de tests que proporciona també NetBeans; per mostrar aquesta finestra aneu al menú <em>Window / IDE Tools / Test Results</em> (vegeu la <span class="figref"><a href="#fig1.7"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.7"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+Finestra de resultats dels tests
+
+</figcaption><img src="../media/fig1.7.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+A Netbeans, els tests es poden executar de forma individual, és a dir, classe per classe o tots els del projecte. Si voleu executar tots els tests d’un projecte, primer heu de designar com a projecte principal el projecte “Springtestresthelloioc”, tal com podeu veure en la <span class="figref"><a href="#fig1.8"><span>figura</span></a></span>.
+</p>
+<div class="iocfigure"><a name="fig1.8"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Assignació del projecte com a projecte principal
+
+</figcaption><img src="../media/fig1.8.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+El segon test que farem serà un test que <strong>comprovi que la petició <em>/hello?name=User</em> torna la representació JSON de la salutació “<em>Hello, User</em>” </strong>; per fer-ho, creeu un mètode anomenat <code>greetingShouldReturnHelloNameWithName</code> dins la classe <code>GreetingControllerTest</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Test</div></li><li class="li1"><div class="de1">public void greetingShouldReturnHelloNameWithName() throws Exception {</div></li><li class="li1"><div class="de1">    mockMvc.perform(get(&quot;/hello?name=User&quot;))                </div></li><li class="li1"><div class="de1">            .andExpect(status().isOk())</div></li><li class="li1"><div class="de1">            .andExpect(content().contentType(contentType))</div></li><li class="li1"><div class="de1">            .andExpect(jsonPath(&quot;$.content&quot;, is(&quot;Hello, User&quot;)));        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi és molt similar al primer test; executeu-lo de la mateixa manera i comproveu que el test s’executa correctament (vegeu la <span class="figref"><a href="#fig1.9"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.9"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Resultat de l’execució dels dos tests
+
+</figcaption><img src="../media/fig1.9.png" alt="" /></figure>
+</div>
+<p>
+Aquest dos exemples us donen la base per tal que pugueu fer tots els tests unitaris que se us acudeixin per als serveis web RESTful que desenvolupeu amb Spring i així tenir-los totalment provats.
+</p>
+
+</div>
+
+<h2><a id="el_servei_web_de_gestio_d_equips_de_futbol_operacions_crud" >El servei web de gestió d&#039;equips de futbol. Operacions CRUD</a></h2>
+<div class="level2">
+
+<p>
+Veurem els conceptes referents a la creació de serveis web RETSful amb Spring desenvolupant un servei web RESTful que permeti fer operacions sobre equips de futbol i els jugadors que els integren. Farem les operacions típiques CRUD amb els jugadors, una operació que mostra el llistat d’equips, una que mostra els jugadors d’un equip i una altra que mostra les dades d’un equip.
+</p>
+
+<p>
+Concretament, el servei web que farem tindrà les següents operacions:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+CRUD és l’acrònim en anglès de les operacions de creació (<code>Create</code>), lectura (<code>Read</code>), actualització (<code>Update</code>) i esborrat (<code>Delete</code>).
+</p>
+</div></div><ul>
+<li class="level1"><div class="li"> llistar tots els equips</div>
+</li>
+<li class="level1"><div class="li"> consulta de les dades d’un equip</div>
+</li>
+<li class="level1"><div class="li"> llistar tots els jugadors d’un equip</div>
+</li>
+<li class="level1"><div class="li"> consulta d’un jugador d’un equip (operació <code>Read</code> CRUD)</div>
+</li>
+<li class="level1"><div class="li"> creació d’un jugador en un equip (operació <code>Create</code> CRUD)</div>
+</li>
+<li class="level1"><div class="li"> actualització de les dades d’un jugador d’un equip (operació <code>Update</code> CRUD)</div>
+</li>
+<li class="level1"><div class="li"> esborrar un jugador d’un equip (operació <code>Delete</code> CRUD)</div>
+</li>
+</ul>
+
+<p>
+Per fer-ho emprareu una aplicació web ja desenvolupada que segueix una arquitectura per capes i hi afegireu una capa de serveis on creareu i publicareu el servei web de gestió d’equips catàleg com a servei web RESTful. La representació dels recursos que fareu servir en tot l’exemple serà JSON.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_configuracio_inicial_del_projecte2" >Creació i configuració inicial del projecte</a></h3>
+<div class="level3">
+
+<p>
+L’aplicació de la qual partireu s’anomena “Springrestteamsioc” i servirà per veure com podeu exposar algunes funcionalitats de la capa de serveis d’una aplicació mitjançant serveis web RESTful. Es tracta d’un projecte Spring MVC senzill que segueix una arquitectura típica per capes per tal d’aconseguir una alta reusabilitat, un baix acoblament i una alta cohesió a l’aplicació.
+</p>
+
+<p>
+El projecte consta de quatre capes:
+</p>
+<ul>
+<li class="level1"><div class="li"> capa de presentació</div>
+</li>
+<li class="level1"><div class="li"> capa de domini</div>
+</li>
+<li class="level1"><div class="li"> capa de serveis</div>
+</li>
+<li class="level1"><div class="li"> capa de persistència</div>
+</li>
+</ul>
+
+<p>
+Com que l’aplicació d’exemple no ha de proporcionar interfície gràfica, fareu servir la capa de presentació com la capa on publicareu els serveis RESTful; seria igualment vàlid fer-ho a una capa de serveis independent.
+</p>
+
+<p>
+El model de domini ja el teniu implementat i és molt senzill: hi ha una entitat <code>Team</code> que representa un equip i una entitat <code>Player</code> que representa els jugadors d’un equip. Entre <code>Team</code> i <code>Player</code> hi ha una associació <em>1:N</em> per indicar que un jugador pertany a un equip i que un equip està format per <em>N</em> jugadors (vegeu la <span class="figref"><a href="#fig1.10"><span>figura</span></a></span>).
+</p>
+<div class="iocfigure"><a name="fig1.10"></a><figure>
+<figcaption><span class="figuretitle">Figura</span>
+
+ Entitats Team i Player
+
+</figcaption><img src="../media/daw_m07_u6_02.png" alt="" /></figure>
+<div class="footfigure"></div></div>
+<p>
+La representació en JSON d’un equip és la següent:
+</p>
+<pre class="code">{ 
+  &quot;id&quot;:1,
+  &quot;name&quot;:&quot;F.C. Barcelona&quot;,
+  &quot;foundationYear&quot;:&quot;1899&quot;
+}</pre>
+
+<p>
+I la representació JSON d’un jugador és la següent:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Repositoris &#039;in memory&#039;</p>
+<p>
+Tot i que podríem haver optat per fer l’exemple amb un repositori connectat a una font de dades persistent com una base de dades relacional i utilitzar l’<acronym title="Application Programming Interface">API</acronym> JPA per definir les entitats del projecte, s’ha considerat que això afegeix “soroll” a l’exemple i us faria fer algunes tasques de configuració que no són pròpies de l’objectiu principal. Per aquest motiu fareu servir repositoris <em>in memory</em> tant per als equips com per als jugadors.
+</p>
+</div></div><pre class="code">{
+  &quot;id&quot;:1,
+  &quot;name&quot;:&quot;Lionel Messi&quot;,
+  &quot;goals&quot;:472,
+  &quot;age&quot;:29,
+  &quot;teamId&quot;:1
+}</pre>
+
+<p>
+La capa de serveis serà la que treballarem i haurà de proporcionar <strong>un servei web RESTful</strong> que permeti als clients fer les següents operacions sobre els equips:
+</p>
+<ul>
+<li class="level1"><div class="li"> llistar tots els equips</div>
+</li>
+<li class="level1"><div class="li"> consulta de les dades d’un equip</div>
+</li>
+<li class="level1"><div class="li"> llistar tots els jugadors d’un equip</div>
+</li>
+<li class="level1"><div class="li"> consulta d’un jugador d’un equip</div>
+</li>
+<li class="level1"><div class="li"> creació d’un jugador en un equip</div>
+</li>
+<li class="level1"><div class="li"> actualització de les dades d’un jugador d’un equip</div>
+</li>
+<li class="level1"><div class="li"> esborrar un jugador d’un equip</div>
+</li>
+</ul>
+
+<p>
+La capa de persistència també la teniu implementada i conté dos objectes repositori que permeten mapar les dades de les fonts de dades amb els objectes del domini. En el nostre cas, per simplicitat,  farem servir repositoris <em>in memory</em> que tindran una llista precarregada amb els equips i els jugadors de cada equip.
+</p>
+
+</div>
+
+<h3><a id="creacio_i_prova_del_servei_web_restful" >Creació i prova del servei web RESTful</a></h3>
+<div class="level3">
+
+<p>
+Un cop fet, creareu una classe que exposarà les operacions que voleu realitzar sobre els equips; anomenareu la classe <code>TeamsController</code>, la creareu al paquet <code>cat.xtec.ioc.controller</code> i l’anotareu amb <code>@RestController</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class TeamsController {</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Simplement heu anotat la classe amb <code>@RestController</code> per marcar la classe com un controlador <code>REST</code> on cada un dels seus mètodes tornarà un objecte del domini enlloc d’una vista. Aquesta és la diferència més gran entre un controlador MVC típic i un controlador per a serveis web RESTful: el cos de la resposta HTTP es crea transformant un objecte del domini a JSON i no es torna en format <acronym title="HyperText Markup Language">HTML</acronym>.
+</p>
+<div class="iocreference"><div class="ioccontent">
+<p>
+Descarregueu el codi del projecte “Springrestteamsioc” de l’enllaç que trobareu als annexos de la unitat i importeu-lo a NetBeans.
+</p>
+</div></div><div class="iocreference"><div class="ioccontent">
+<p>
+Tot i que podeu descarregar-vos el projecte en l’estat final d’aquest apartat en enllaç que trobareu als annexos de la unitat, sempre és millor que aneu fent vosaltres tots els passos partint del projecte en l’estat inicial de l’apartat. Recordeu que podeu utilitzar la funció d’importar per carregar els projectes a NetBeans.
+</p>
+</div></div>
+<p>
+Un cop creada la classe cal que hi afegiu una referència al repositori dels equips fent que Spring el carregui amb el seu mòdul d’injecció de dependències:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Autowired</div></li><li class="li1"><div class="de1">private TeamRepository teamRepository;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public TeamsController() {</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public TeamsController(TeamRepository teamRepository) {</div></li><li class="li1"><div class="de1">    this.teamRepository = teamRepository;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I ja podeu començar a codificar el primer servei que voleu oferir; per exemple, la consulta de tots els equips. Per fer-ho, creeu un mètode anomenat <code>getAll</code> amb el següent codi:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Quan NetBeans us demani quins imports voleu afegir especifiqueu, a la major part de casos, els del paquet <code>org.springframework.web. bind.annotation.</code>
+</p>
+</div></div><pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(method =  RequestMethod.GET, value = &quot;/teams&quot;)</div></li><li class="li1"><div class="de1">public @ResponseBody List&lt;Team&gt; getAll() {</div></li><li class="li1"><div class="de1">    return this.teamRepository.getAll();        </div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Hem anotat el mètode amb l’anotació <code>@RequestMapping(method =  RequestMethod.GET, value = ”/teams“)</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>GET</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <em>/teams</em>.
+</p>
+
+<p>
+Hem anotat el mètode amb <code>@ResponseBody</code> per indicar a Spring que torni el resultat en un format que sigui entenedor per al client a partir de les capçaleres HTTP que envia amb la petició. Per defecte, es torna en format JSON.
+</p>
+
+<p>
+Tornem la llista d’equips com una llista d’objectes Java de tipus <code>Team</code> i Spring s’encarregarà de transformar-los a format JSON.
+</p>
+
+<p>
+Per provar si funciona, desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc/teams" class="urlextern" title="http://localhost:8080/springrestteamsioc/teams"  rel="nofollow">localhost:8080/springrestteamsioc/teams</a>; si tot ha anat bé, veureu la representació JSON dels equips al navegador:
+</p>
+<pre class="code">[
+{&quot;id&quot;:1,&quot;name&quot;:&quot;F.C.Barcelona&quot;,&quot;foundationYear&quot;:&quot;1899&quot;},
+{&quot;id&quot;:2,&quot;name&quot;:&quot;Real Madrid&quot;,&quot;foundationYear&quot;:&quot;1902&quot;}
+]</pre>
+
+<p>
+Passem a crear ara el servei de consulta de les dades d’un equip; per fer-ho, creeu un mètode anomenat <code>getById</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(value = &quot;/teams/{id}&quot;, method = RequestMethod.GET)</div></li><li class="li1"><div class="de1"> public @ResponseBody Team getById(@PathVariable int id) {</div></li><li class="li1"><div class="de1">    return this.teamRepository.get(id);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi és molt similar a la consulta d’equips, però com a particularitat cal comentar que ara tornem un objecte Java de tipus <code>Team</code> que Spring convertirà a JSON abans de tornar-lo al client i que hem anotat el mètode amb l’anotació <code>@RequestMapping(value = ”/teams/{id}“, method = RequestMethod.GET)</code> per indicar que la informació de l’equip la tornarem quan ens arribin peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/teams/{id}</em>; és a dir, el que posem darrere de <em>/teams</em> serà l’identificador de l’equip que volem consultar. 
+</p>
+
+<p>
+El paràmetre que rep el mètode s’ha anotat amb l’anotació <code>@PathVariable int id</code>. Aquesta és la forma que proporciona Spring per extreure els paràmetres d’una petició. En aquest cas estem extraient un paràmetre del <em>path</em> i el passem com a <em>int</em> al mètode <code>getById</code>.
+</p>
+
+<p>
+Spring MVC proporciona un ampli conjunt d’anotacions per fer aquesta tasca fàcil, entre elles <code>@PathParam</code>, <code>@RequestParam</code>, <code>@CookieValue</code>, <code>@RequestHeader</code>, etc.
+</p>
+
+<p>
+Per exemple, podríem utilitzar <code>@RequestParam(“id”)</code> per extreure un paràmetre que vingués en una petició d’aquesta forma: <a href="http://localhost:8080/springrestteamsioc/teams?id=2" class="urlextern" title="http://localhost:8080/springrestteamsioc/teams?id=2"  rel="nofollow">localhost:8080/springrestteamsioc/teams?id=2</a>.
+</p>
+
+<p>
+Per provar si funciona desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc/teams/1" class="urlextern" title="http://localhost:8080/springrestteamsioc/teams/1"  rel="nofollow">localhost:8080/springrestteamsioc/teams/1</a>; si tot ha anat bé, veureu la representació JSON de l’equip consultat al navegador:
+</p>
+<pre class="code">[{ 
+  &quot;id&quot;:1,
+  &quot;name&quot;:&quot;F.C. Barcelona&quot;,
+  &quot;foundationYear&quot;:&quot;1899&quot;
+}]</pre>
+
+<p>
+Ja heu creat les dues operacions que volíeu per als equips, ara començareu amb les operacions que voleu oferir per als jugadors d’un equip. Aquestes operacions les podríeu posar el mateix controlador on heu posat les operacions per als equips, però per fer un codi més net i que respecti al màxim el principi de disseny SRP (de l’anglès <em>Single Responsability Principle</em>) ho fareu en un controlador diferent.
+</p>
+
+<p>
+Creeu una classe que exposarà les operacions que voleu realitzar sobre els jugadors dels equips; anomenareu la classe <code>PlayerController</code>, la creareu al paquet <code>cat.xtec.ioc.controller</code> i l’anotareu amb <code>@RestController</code>:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">@RequestMapping(&quot;/teams/{teamId}/players&quot;)</div></li><li class="li1"><div class="de1">public class PlayerController {</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Simplement heu anotat la classe amb <code>@RestController</code> per marcar la classe com un controlador <code>REST</code> on cada un dels seus mètodes tornarà un objecte del domini enlloc d’una vista. 
+</p>
+
+<p>
+També heu anotat la classe amb <code>@RequestMapping(”/teams/{teamId}/players“)</code> per indicar que tots els mètodes del controlador s’han d’accedir amb aquest format. Amb això, tots els mètodes del controlador podran extreure del <em>path</em> l’identificador de l’equip i no us caldrà repetir-ho a cada un d’ells.
+</p>
+
+<p>
+Un cop creada la classe, cal que hi afegiu una referència al repositori dels jugadors dels equips fent que Spring el carregui amb el seu mòdul d’injecció de dependències:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@Autowired</div></li><li class="li1"><div class="de1">private PlayerRepository playerRepository;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public PlayerController() {</div></li><li class="li1"><div class="de1">}</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">public PlayerController(PlayerRepository playerRepository) {</div></li><li class="li1"><div class="de1">    this.playerRepository = playerRepository;</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Creeu primer la funcionalitat que permeti la consulta de tots els jugadors d’un equip. Per fer-ho, creeu un mètode anomenat <code>getTeamPlayers</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">public @ResponseBody List&lt;Player&gt; getTeamPlayers(@PathVariable int teamId) {</div></li><li class="li1"><div class="de1">    return this.playerRepository.getByTeam(teamId);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Heu anotat el mètode amb l’anotació <code>@RequestMapping(method =  RequestMethod.GET)</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>GET</code> i ho farà a l’<acronym title="Uniform Resource Identifier">URI</acronym> per defecte que heu configurat al controlador (<em>/teams/{teamId}/players</em>).
+</p>
+
+<p>
+Heu anotat el mètode amb <code>@ResponseBody</code> per indicar a Spring que torni el resultat en un format que sigui comprensible per al client a partir de les capçaleres HTTP que el client envia amb la petició. Per defecte, es torna en format JSON.
+</p>
+
+<p>
+Torneu la llista d’equips com una llista d’objectes Java de tipus <code>Player</code> i Spring s’encarregarà de transformar-los a format JSON.
+</p>
+
+<p>
+Per provar si funciona, desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc/teams/1/players" class="urlextern" title="http://localhost:8080/springrestteamsioc/teams/1/players"  rel="nofollow">localhost:8080/springrestteamsioc/teams/1/players</a>; si tot ha anat bé, veureu la representació JSON dels jugadors del FC Barcelona al navegador:
+</p>
+<pre class="code">[
+{&quot;id&quot;:1,&quot;name&quot;:&quot;LionelMessi&quot;,&quot;goals&quot;:472,&quot;age&quot;:29,&quot;teamId&quot;:1},
+{&quot;id&quot;:2,&quot;name&quot;:&quot;Luis Suarez&quot;,&quot;goals&quot;:100,&quot;age&quot;:29,&quot;teamId&quot;:1}}
+]</pre>
+
+<p>
+Passareu a crear ara el servei de consulta de les dades d’un jugador d’un equip (l’operació <code>Read</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>getById</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(value = &quot;{playerId}&quot;, method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">public @ResponseBody Player getById(@PathVariable int teamId, @PathVariable int playerId) {</div></li><li class="li1"><div class="de1">    return this.playerRepository.get(teamId, playerId);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+El codi és molt similar a la consulta dels jugadors d’un equip; com a particularitat, cal comentar que ara tornem un objecte Java de tipus <code>Player</code> que Spring convertirà a JSON abans de tornar-lo al client i que hem anotat el mètode amb l’anotació <code>@RequestMapping(value = ”{playerId}“, method = RequestMethod.GET)</code> per indicar que la informació del jugador la tornarem quan ens arribin peticions <code>GET</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/teams/{teamId}/players/{playerId}</em>; és a dir, el que posem darrere de <em>/teams</em> serà l’identificador de l’equip al qual pertany el jugador, i el que posem darrere de <em>players</em> serà l’identificador del jugador que volem consultar. 
+</p>
+
+<p>
+Els paràmetres que rep el mètode s’han anotat amb les anotacions <code>@PathVariable int teamId</code> i <code>@PathVariable int playerId</code>, respectivament. Aquesta és la forma que proporciona Spring per extreure els paràmetres d’una petició. En aquest cas, estem extraient dos paràmetres del <em>path</em> i els passem com a <em>int</em> al mètode <code>getById</code>.
+</p>
+
+<p>
+Per provar si funciona, desplegueu el projecte fent <em>Run</em> a NetBeans i accediu amb un navegador a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc/teams/1/players/1" class="urlextern" title="http://localhost:8080/springrestteamsioc/teams/1/players/1"  rel="nofollow">localhost:8080/springrestteamsioc/teams/1/players/1</a>; si tot ha anat bé, veureu la representació JSON del jugador “Lionel Messi” del “FC Barcelona” al navegador:
+</p>
+<pre class="code">[{ 
+  {&quot;id&quot;:1,
+   &quot;name&quot;:&quot;Lionel Messi&quot;,
+   &quot;goals&quot;:472,
+   &quot;age&quot;:29,
+   &quot;teamId&quot;:1}
+ }
+]</pre>
+
+<p>
+Un cop fetes les dues operacions de consulta sobre els jugadors d’un equip passareu ara a crear el servei que permeti donar d’alta un jugador d’un equip (l’operació <code>Create</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>create</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(method = RequestMethod.POST)</div></li><li class="li1"><div class="de1">public @ResponseBody ResponseEntity&lt;Player&gt; create(@PathVariable int teamId, @RequestBody Player player) {</div></li><li class="li1"><div class="de1">    player.setTeamId(teamId);</div></li><li class="li1"><div class="de1">    this.playerRepository.add(player);</div></li><li class="li1"><div class="de1">    return new ResponseEntity&lt;&gt;(player, HttpStatus.CREATED);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Heu anotat el mètode amb l’anotació <code>@RequestMapping(method = RequestMethod.POST)</code> per indicar que aquest mètode respondrà a peticions HTTP de tipus <code>POST</code> i ho farà a l’<acronym title="Uniform Resource Identifier">URI</acronym> per defecte que heu configurat al controlador (<em>/teams/{teamId}/players</em>).
+</p>
+
+<p>
+La resposta que tornem és de tipus <code>ResponseEntity&lt;Player&gt;</code> per tal que hi puguem afegir la representació del jugador creat i el codi HTTP (en aquest cas un codi 201, <code>CREATED</code>, per indicar que el recurs s’ha creat satisfactòriament).
+</p>
+
+<p>
+Fixeu-vos que tan sols amb aquesta informació Spring és capaç, quan rep una petició <code>POST</code> a l’<acronym title="Uniform Resource Identifier">URI</acronym> <em>/teams/{teamId}/players</em> amb una representació JSON d’un jugador, de crear un objecte de tipus <code>Player</code> i passar-lo al mètode <code>create</code>.
+</p>
+
+<p>
+Ara tocaria provar aquesta funcionalitat, però tenim un problema: com podem enviar peticions <code>POST</code> sense fer una aplicació web amb un formulari? Per fer una petició <code>GET</code> tan sols hem de posar l’<acronym title="Uniform Resource Locator">URL</acronym> al navegador i ja ho tenim, però per fer peticions <code>POST</code> caldrà alguna utilitat extra. La nostra proposta és que feu servir <strong>cURL</strong>, que és una eina molt útil per fer peticions HTTP de diferents tipus i és multiplataforma. Si feu servir Linux possiblement ja la tingueu instal·lada al sistema; en cas que utilitzeu Windows, la podeu descarregar en el següent enllaç: <a href="https://curl.haxx.se/download.html" class="urlextern" title="https://curl.haxx.se/download.html"  rel="nofollow">curl.haxx.se/download.html</a>.
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Per documentar i provar <acronym title="Application Programming Interface">API</acronym> RESTful teniu moltes alternatives, entre les quals cal destacar Swagger <a href="http://swagger.io/" class="urlextern" title="http://swagger.io/"  rel="nofollow">swagger.io</a> i Postman <a href="https://www.getpostman.com/" class="urlextern" title="https://www.getpostman.com/"  rel="nofollow">www.getpostman.com</a>, que és una extensió per al navegador Google Chrome.
+</p>
+</div></div>
+<p>
+La sintaxi de cURL per fer peticions és molt senzilla; per exemple, per consultar tots els equips feu un <em>command prompt</em>:
+</p>
+<div class="iocnote"><div class="ioccontent">
+<p>
+Afegiu el paràmetre <code>-v</code> (<em>verbose</em>) a les crides a cURL si voleu veure més informació sobre les peticions i respostes que feu.
+</p>
+</div></div><pre class="code">curl localhost:8080/springrestteamsioc/teams</pre>
+
+<p>
+Per provar la funcionalitat que permet afegir un jugador al FC Barcelona desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>POST</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc /teams/1/players" class="urlextern" title="http://localhost:8080/springrestteamsioc /teams/1/players"  rel="nofollow">localhost:8080/springrestteamsioc /teams/1/players</a> especificant la informació del jugador amb JSON; això ho podeu fer amb cURL i la següent comanda:
+</p>
+<pre class="code">curl -H &quot;Content-Type: application/json&quot; -X POST -d &quot;{\&quot;id\&quot;:\&quot;3\&quot;,\&quot;name\&quot;:\&quot;Neymar da Silva Santos\&quot;,\&quot;age\&quot;:\&quot;24\&quot;,\&quot;goals\&quot;:\&quot;100\&quot;}&quot; http://localhost:8080/springrestteamsioc/teams/1/players</pre>
+
+<p>
+Fixeu-vos: li diem que farem una petició <code>POST</code> amb el paràmetre <code>-X</code>, li especifiquem el format JSON del jugador amb el paràmetre <code>-d</code> i li indiquem que el format és JSON especificant-ho a la capçalera amb el paràmetre <code>-H</code>.
+</p>
+
+<p>
+Executeu la comanda anterior i després consulteu els jugadors del FC Barcelona amb:
+</p>
+<pre class="code">curl localhost:8080/springrestteamsioc/teams/1/players</pre>
+
+<p>
+Si tot ha anat bé, veureu que Neymar s’ha afegit com a jugador del FC Barcelona:
+</p>
+<pre class="code">[
+ {&quot;id&quot;:1,&quot;name&quot;:&quot;Lionel Messi&quot;,&quot;goals&quot;:472,&quot;age&quot;:29,&quot;teamId&quot;:1},
+ {&quot;id&quot;:2,&quot;name&quot;:&quot;Luis Suarez&quot;,&quot;goals&quot;:100,&quot;age&quot;:29,&quot;teamId&quot;:1},
+ {&quot;id&quot;:3,&quot;name&quot;:&quot;Neymar da Silva Santos&quot;,&quot;goals&quot;:100,&quot;age&quot;:24,&quot;teamId&quot;:1}
+]</pre>
+
+<p>
+Creem ara el servei que permeti modificar la informació d’un jugador (l’operació <code>Update</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>update</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(method = RequestMethod.PUT)</div></li><li class="li1"><div class="de1">public @ResponseBody ResponseEntity&lt;Player&gt; update(@PathVariable int teamId, @RequestBody Player player) {</div></li><li class="li1"><div class="de1">    player.setTeamId(teamId);</div></li><li class="li1"><div class="de1">    this.playerRepository.update(player);</div></li><li class="li1"><div class="de1">    return new ResponseEntity&lt;&gt;(player, HttpStatus.OK);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les consideracions en aquest cas són les mateixes que hem vist per al cas de la creació d’un jugador, l’únic que canvia és que farem servir el verb <code>PUT</code> en lloc del verb <code>POST</code>.
+</p>
+
+<p>
+Per provar la funcionalitat que permet modificar la informació d’un jugador desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>PUT</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc /teams/1/players" class="urlextern" title="http://localhost:8080/springrestteamsioc /teams/1/players"  rel="nofollow">localhost:8080/springrestteamsioc /teams/1/players</a> especificant la nova informació del jugador; això ho podeu fer amb cURL i la següent comanda:
+</p>
+<pre class="code">curl -H &quot;Content-Type: application/json&quot; -X PUT -d &quot;{\&quot;id\&quot;:\&quot;3\&quot;,\&quot;name\&quot;:\&quot;Neymar da Silva Santos\&quot;,\&quot;age\&quot;:\&quot;24\&quot;,\&quot;goals\&quot;:\&quot;120\&quot;}&quot; http://localhost:8080/springrestteamsioc/teams/1/players</pre>
+
+<p>
+Executeu la comanda anterior i després consulteu la informació del jugador que heu modificat amb:
+</p>
+<div class="ioctext"><div class="ioccontent"><p class="ioctitle">Pèrdua de dades</p>
+<p>
+Us pot passar que en afegir el mètode <code>update</code> per modificar la informació d’un jugador es torni a desplegar l’aplicació, i, com que feu servir un repositori <em>in memory</em>, es perdin les dades dels jugadors que heu donat d’alta. Si us trobeu en aquest cas simplement cal que torneu a fer l’alta del jugador <em>Neymar</em> i després en feu la modificació.
+</p>
+</div></div><pre class="code">curl http://localhost:8080/springrestteamsioc/teams/1/players/3</pre>
+
+<p>
+Si tot ha anat bé, veureu que el nombre de gols que ha marcat Neymar ha passat de 100 a 120:
+</p>
+<pre class="code">[ 
+ {&quot;id&quot;:3,&quot;name&quot;:&quot;Neymar da Silva Santos&quot;,&quot;goals&quot;:120,&quot;age&quot;:24,&quot;teamId&quot;:1}
+]</pre>
+
+<p>
+Creem ara el servei que permeti esborrar un jugador d’un equip (l’operació <code>Delete</code> de CRUD); per fer-ho, creeu un mètode anomenat <code>delete</code> amb el següent codi:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">@RequestMapping(value = &quot;{playerId}&quot;, method = RequestMethod.DELETE)</div></li><li class="li1"><div class="de1">public @ResponseBody ResponseEntity&lt;Player&gt; delete(@PathVariable int teamId, @PathVariable int playerId) {     </div></li><li class="li1"><div class="de1">    this.playerRepository.delete(teamId, playerId);</div></li><li class="li1"><div class="de1">    return new ResponseEntity&lt;&gt;(HttpStatus.OK);</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+Les consideracions en aquest cas són les mateixes que hem vist per al cas de la consulta d’un jugador d’un equip, i l’únic que canvia és que fareu servir el verb <code>DELETE</code> en lloc del verb <code>GET</code>.
+</p>
+
+<p>
+Per provar la funcionalitat que permet esborrar un jugador d’un equip desplegueu el projecte fent <em>Run</em> a NetBeans i feu una petició <code>DELETE</code> a l’<acronym title="Uniform Resource Locator">URL</acronym> <a href="http://localhost:8080/springrestteamsioc/{teamId}/players/{playerId}" class="urlextern" title="http://localhost:8080/springrestteamsioc/{teamId}/players/{playerId}"  rel="nofollow">localhost:8080/springrestteamsioc/{teamId}/players/{playerId}</a> especificant l’equip al qual pertany el jugador i l’identificador del jugador que volem esborrar; això ho podeu fer amb cURL i la següent comanda (per exemple, per esborrar el jugador Neymar del FC Barcelona):
+</p>
+<pre class="code">curl -X DELETE localhost:8080/springrestteamsioc/teams/1/players/3</pre>
+
+<p>
+Executeu la comanda anterior i després consulteu els jugadors del FC Barcelona amb:
+</p>
+<pre class="code">curl localhost:8080/springrestteamsioc/teams/1/players/</pre>
+
+<p>
+Si tot ha anat bé, veureu que Neymar ja no és jugador del FC Barcelona:
+</p>
+<pre class="code">[
+ {&quot;id&quot;:1,&quot;name&quot;:&quot;Lionel Messi&quot;,&quot;goals&quot;:472,&quot;age&quot;:29,&quot;teamId&quot;:1},
+ {&quot;id&quot;:2,&quot;name&quot;:&quot;Luis Suarez&quot;,&quot;goals&quot;:100,&quot;age&quot;:29,&quot;teamId&quot;:1}
+]</pre>
+
+<p>
+I amb això ja heu codificat i provat el servei web RESTful que us permet treballar amb els equips i els seus jugadors. El codi final de la classe <code>TeamController</code> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Team;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.TeamRepository;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.PathVariable;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.ResponseBody;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">public class TeamsController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private TeamRepository teamRepository;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public TeamsController() {</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public TeamsController(TeamRepository teamRepository) {</div></li><li class="li1"><div class="de1">        this.teamRepository = teamRepository;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method = RequestMethod.GET, value = &quot;/teams&quot;)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    List&lt;Team&gt; getAll() {</div></li><li class="li1"><div class="de1">        return this.teamRepository.getAll();</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(value = &quot;/teams/{id}&quot;, method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    Team getById(@PathVariable int id) {</div></li><li class="li1"><div class="de1">        return this.teamRepository.get(id);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+<p>
+I el de la classe <code>PlayerController</code> és el següent:
+</p>
+<pre class="code java"><ol><li class="li1"><div class="de1">package cat.xtec.ioc.controller;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.Player;</div></li><li class="li1"><div class="de1">import cat.xtec.ioc.domain.repository.PlayerRepository;</div></li><li class="li1"><div class="de1">import java.util.List;</div></li><li class="li1"><div class="de1">import org.springframework.beans.factory.annotation.Autowired;</div></li><li class="li1"><div class="de1">import org.springframework.http.HttpStatus;</div></li><li class="li1"><div class="de1">import org.springframework.http.ResponseEntity;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.PathVariable;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestBody;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMapping;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RequestMethod;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.ResponseBody;</div></li><li class="li1"><div class="de1">import org.springframework.web.bind.annotation.RestController;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">@RestController</div></li><li class="li1"><div class="de1">@RequestMapping(&quot;/teams/{teamId}/players&quot;)</div></li><li class="li1"><div class="de1">public class PlayerController {</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @Autowired</div></li><li class="li1"><div class="de1">    private PlayerRepository playerRepository;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public PlayerController() {</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    public PlayerController(PlayerRepository playerRepository) {</div></li><li class="li1"><div class="de1">        this.playerRepository = playerRepository;</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    List&lt;Player&gt; getTeamPlayers(@PathVariable int teamId) {</div></li><li class="li1"><div class="de1">        return this.playerRepository.getByTeam(teamId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(value = &quot;{playerId}&quot;, method = RequestMethod.GET)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    Player getById(@PathVariable int teamId, @PathVariable int playerId) {</div></li><li class="li1"><div class="de1">        return this.playerRepository.get(teamId, playerId);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method = RequestMethod.POST)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    ResponseEntity&lt;Player&gt; create(@PathVariable int teamId, @RequestBody Player player) {</div></li><li class="li1"><div class="de1">        player.setTeamId(teamId);</div></li><li class="li1"><div class="de1">        this.playerRepository.add(player);</div></li><li class="li1"><div class="de1">        return new ResponseEntity&lt;&gt;(player, HttpStatus.CREATED);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(method = RequestMethod.PUT)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    ResponseEntity&lt;Player&gt; update(@PathVariable int teamId, @RequestBody Player player) {</div></li><li class="li1"><div class="de1">        player.setTeamId(teamId);</div></li><li class="li1"><div class="de1">        this.playerRepository.update(player);</div></li><li class="li1"><div class="de1">        return new ResponseEntity&lt;&gt;(player, HttpStatus.OK);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    @RequestMapping(value = &quot;{playerId}&quot;, method = RequestMethod.DELETE)</div></li><li class="li1"><div class="de1">    public @ResponseBody</div></li><li class="li1"><div class="de1">    ResponseEntity&lt;Player&gt; delete(@PathVariable int teamId, @PathVariable int playerId) {</div></li><li class="li1"><div class="de1">        this.playerRepository.delete(teamId, playerId);</div></li><li class="li1"><div class="de1">        return new ResponseEntity&lt;&gt;(HttpStatus.OK);</div></li><li class="li1"><div class="de1">    }</div></li><li class="li1"><div class="de1">}</div></li></ol></pre>
+
+</div>
+
+<h2><a id="que_s_ha_apres" >Què s&#039;ha après?</a></h2>
+<div class="level2">
+
+<p>
+En aquest apartat heu vist les bases per al desenvolupament dels serveis web RESTful amb Spring i les heu treballat de forma pràctica mitjançant exemples.
+</p>
+
+<p>
+Concretament, heu après:
+</p>
+<ul>
+<li class="level1"><div class="li"> Les nocions bàsiques dels serveis web RESTful amb Spring.</div>
+</li>
+<li class="level1"><div class="li"> Desenvolupar, desplegar i provar un servei web RESTful senzill amb Spring.</div>
+</li>
+<li class="level1"><div class="li"> Fer tests unitaris dels serveis web RESTful amb Spring.</div>
+</li>
+<li class="level1"><div class="li"> Desenvolupar, desplegar i provar un servei web RESTful complex amb Spring que inclou operacions CRUD sobre un recurs.</div>
+</li>
+</ul>
+
+<p>
+Per aprofundir en aquests conceptes i veure quins són els conceptes que hi ha darrere de HATEOAS (de l’anglès <em>Hypermedia as the Engine of Application State</em>) us recomanem la realització de l’
+activitat associada a aquest apartat.
+</p>
+
+</div>
+
+	 </article>
+     <div class="pnpage">
+      <div class="left-corner"></div>
+      <div id="prevpage">Anar a la p&agrave;gina anterior:<br /><a href="../../../WebContent/u6/a1/annexos.html">Annexos</a></div>
+      <div id="nextpage">Anar a la p&agrave;gina seg&uuml;ent:<br /><a href="../../../WebContent/u6/a2/activitats.html">Activitats</a></div>
+      <div class="right-corner"></div>
+     </div>
+    </div>
+    <footer class="footer">
+      <div><small>Aquest document està subjecte a una llicència oberta de Creative Commons, es reserva el dret de reconeixement de l'autoria, d'exigir que no se'n faci cap mena d'ús comercial. Si altereu o transformeu aquesta obra, o en genereu obres derivades, només podeu distribuir l'obra generada amb una llicència idèntica a aquesta.</small></div>
+    </footer>
+ </div>
+ <div id="back_preview" class="hidden"></div>
+ <div id="preview" class="hidden">
+  <div class="prevcontent"></div>
+ </div>
+ <div id="help-tooltips">
+  <div id="help-toc" class="hidden tooltip"><span>Taula de continguts:</span> Ofereix una vista general de l&#39;estructura del m&ograve;dul, que us facilitar&agrave; la navegaci&oacute; a trav&eacute;s dels seus continguts.<span class="arrow-left"></span></div> 
+  <div id="help-settings" class="hidden tooltip"><span>Opcions de format:</span> Permet configurar el format de lectura a partir de les vostres prefer&egrave;ncies, modificant la mida de la lletra, el color del fons, l&#39;amplada de la p&agrave;gina o l&#39;ocultaci&oacute; dels continguts complementaris, entre d&#39;altres.<span class="arrow-left"></span></div>
+  <div id="help-printer" class="hidden tooltip"><span>Imprimir:</span>  Envia el contingut seleccionat a la impressora.<span class="arrow-left"></span></div>
+  <div id="help-favorites" class="hidden tooltip"><span>Prefereits:</span> Permet desar aquelles parts del contingut a les que us interessi accedir en un moment posterior; us permetr&agrave; anar creant un repositori personalitzat de les seccions que considereu m&eacute;s rellevants. Un cop l&#39;hageu començat a fer servir se us mostrar&agrave; a sota un comptador que us informar&agrave; del nombre de preferits que s&#39;hagin emmagatzemat fins al moment.<span class="arrow-left"></span></div>
+  <div id="help-favcounter" class="hidden tooltip"><span>Comptador i llistat de preferits:</span> Indica el nombre de preferits que s&#39;han desat fins el moment; clicant damunt seu accedireu al llistat de preferits, i a trav&eacute;s d&#39;aquest podreu accedir directament als continguts que hageu emmagatzemat.<span class="arrow-left"></span></div>
+  <div id="help-help_icon" class="hidden tooltip"><span>Ajuda:</span> Aquesta opci&oacute; activa la informaci&oacute; de les funcionalitats del web tot situant el punter del ratol&iacute; al damunt dels diferents &iacute;tems.<span class="arrow-left"></span></div>
+  <div id="help-sidebar-hide" class="hidden tooltip"><span>Mostrar/Ocultar barra lateral:</span>  Deshabilita la barra d&#39;opcions, permetent la seva recuperaci&oacute; quan es desitgi.<span class="arrow-left"></span></div>
+  <div id="help-search" class="hidden tooltip"><span>Cerca:</span>  Introdu&iuml;u les paraules clau sobre aquells conceptes que desitgeu localitzar en els continguts del m&ograve;dul. Tamb&eacute; podeu excloure un terme de la cerca tot afegint-hi el signe &#8220;-&#8221; al davant.<span class="arrow-top"></span></div>
+  <div id="help-header" class="hidden tooltip"><span>Cap&ccedil;alera:</span>  Indica l&#39;apartat o secci&oacute; que es mostra en pantalla. Tingueu present que les capçaleres de segon, tercer i quart nivell tamb&eacute; es poden desar com a marcadors.<span class="arrow-left"></span></div>
+</div> 
+</body>
+</html>
